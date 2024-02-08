@@ -361,7 +361,7 @@ definitions:
                 description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
-                format: uint32
+                format: int32
     DnsAttack:
         type: object
         required:
@@ -378,14 +378,14 @@ definitions:
                 description: "Time in minutes after which mitigation will be deactivated. Allowed values are 1-4294967295. Special values are 0- blocked for ever. Field introduced in 18.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
-                format: uint32
+                format: int32
             mitigation_action:
                 description: "Mitigation action to perform for this DNS attack vector. Field introduced in 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AttackMitigationAction'
             threshold:
                 description: "Threshold, in terms of DNS packet per second, for the DNS attack vector. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint64
+                format: int64
     DnsAttacks:
         type: object
         properties:
@@ -421,7 +421,7 @@ definitions:
                 type: array
                 items:
                     type: integer
-                format: uint32
+                format: int32
             ranges:
                 description: "A port range defined by a start and end, including both. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
@@ -436,11 +436,11 @@ definitions:
             end:
                 description: "TCP/UDP port range end (inclusive). Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             start:
                 description: "TCP/UDP port range start (inclusive). Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
     RoleFilterMatchLabel:
         type: object
         required:
@@ -480,7 +480,7 @@ definitions:
             dns_policy_index:
                 description: "Index of the dns policy to use for the mitigation rules applied to the dns attacks. Field introduced in 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             markers:
                 description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: array
@@ -492,7 +492,7 @@ definitions:
             network_security_policy_index:
                 description: "Index of the network security policy to use for the mitigation rules applied to the attacks. Field introduced in 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             oper_mode:
                 description: "Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks. Enum options - DETECTION, MITIGATION. Field introduced in 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string

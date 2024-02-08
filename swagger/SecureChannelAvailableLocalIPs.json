@@ -516,7 +516,7 @@
                 "end": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "free_ips": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -524,7 +524,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "name": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -533,7 +533,7 @@
                 "start": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "url": {
                     "description": "url",

@@ -601,7 +601,7 @@
                     "description": "Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "portal_url": {
                     "description": "The FQDN or IP address of the customer portal. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -707,7 +707,7 @@
                     "description": "Application Signature db sync interval in minutes. Allowed values are 1440-10080. Field introduced in 20.1.4. Unit is MIN. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. Special default for Essentials edition is 1440, Basic edition is 1440, Enterprise is 1440.",
                     "type": "integer",
                     "default": 1440,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -736,7 +736,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -761,13 +761,13 @@
                     "description": "IP reputation db file object expiry duration in days. Allowed values are 1-7. Field introduced in 20.1.1. Unit is DAYS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ip_reputation_sync_interval": {
                     "description": "IP reputation db sync interval in minutes. Allowed values are 30-1440. Field introduced in 20.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 60), Basic edition(Allowed values- 60), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -844,7 +844,7 @@
                 "port": {
                     "description": "Proxy port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "username": {
                     "description": "Username for proxy. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -874,7 +874,7 @@
                     "description": "Batch query limit. Allowed values are 1-500. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 500), Basic edition(Allowed values- 500), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 500,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },

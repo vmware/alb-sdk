@@ -513,7 +513,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -585,7 +585,7 @@
                     "description": "Mail server port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 25,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "smtp_type": {
                     "description": "Type of SMTP Mail Service. Enum options - SMTP_NONE, SMTP_LOCAL_HOST, SMTP_SERVER, SMTP_ANONYMOUS_SERVER. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -724,7 +724,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -772,7 +772,7 @@
                 "key_number": {
                     "description": "Key number to be assigned to the authentication-key. Allowed values are 1-65534. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -811,7 +811,7 @@
                 "key_number": {
                     "description": "Key number from the list of trusted keys used to authenticate this server. Allowed values are 1-65534. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "server": {
                     "description": "IP Address of the NTP Server. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -830,7 +830,7 @@
                     "description": "Force API session timeout after the specified time (in hours). Allowed values are 1-24. Field introduced in 18.2.3. Unit is HOURS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 24,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "disable_remote_cli_shell": {
                     "description": "Disable Remote CLI Shell Client access. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -858,18 +858,18 @@
                 "http_port": {
                     "description": "HTTP port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "https_port": {
                     "description": "HTTPS port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "minimum_password_length": {
                     "description": "Minimum password length for user accounts. Allowed values are 6-32. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "password_strength_check": {
                     "description": "Strict checking of password strength for user accounts. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -915,7 +915,7 @@
                 "port": {
                     "description": "Proxy port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "username": {
                     "description": "Username for proxy. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

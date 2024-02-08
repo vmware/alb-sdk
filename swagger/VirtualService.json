@@ -4376,13 +4376,13 @@
                     "description": "This setting limits the number of significant logs generated per second for this VS on each SE. Default is 10 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "udf_log_throttle": {
                     "description": "This setting limits the total number of UDF logs generated per second for this VS on each SE. UDF logs are generated due to the configured client log filters or the rules with logging enabled. Default is 10 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -4653,7 +4653,7 @@
                     "description": " Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "enabled": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -4662,7 +4662,7 @@
                 "index": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "name": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -4681,7 +4681,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -4695,7 +4695,7 @@
                 "port": {
                     "description": "Port number. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -4827,12 +4827,12 @@
                 "num_records_in_response": {
                     "description": "Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ttl": {
                     "description": "Time to live for fqdn record. Default value is chosen from DNS profile for this cloud if no value provided. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "type": {
                     "description": "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -4855,7 +4855,7 @@
                 "priority": {
                     "description": "The priority field identifies which mail server should be preferred. Allowed values are 0-65535. Field introduced in 18.2.9, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -4893,7 +4893,7 @@
                 "index": {
                     "description": "Index of the dns policy. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -4962,7 +4962,7 @@
                 "num_records_in_response": {
                     "description": "Specifies the number of records returned by the DNS service. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "service_locator": {
                     "description": "Service locator info in SRV record. Maximum of 4 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -4974,7 +4974,7 @@
                 "ttl": {
                     "description": "Time To Live for this DNS record. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "txt_records": {
                     "description": "Text record. Field introduced in 18.2.9, 20.1.1. Maximum of 4 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -5002,12 +5002,12 @@
                 "port": {
                     "description": "Service port. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "priority": {
                     "description": "Priority of the target hosting the service, low value implies higher priority for this service record. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "target": {
                     "description": "Canonical hostname, of the machine hosting the service, with no trailing period. 'default.host' is valid but not 'default.host.'. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -5017,7 +5017,7 @@
                 "weight": {
                     "description": "Relative weight for service records with same priority, high value implies higher preference for this service record. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -5043,7 +5043,7 @@
                     "description": "How long should the system capture all logs, measured in minutes. Set to 0 for infinite. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "enabled": {
                     "description": "Capture all client logs including connections and requests.  When deactivated, only errors will be logged. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is False.",
@@ -5053,7 +5053,7 @@
                     "description": "This setting limits the number of non-significant logs generated per second for this VS on each SE. Default is 10 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -5203,7 +5203,7 @@
                 "file_length": {
                     "description": "File content length. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -5251,7 +5251,7 @@
                 "port": {
                     "description": "Port to which redirect the request. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "protocol": {
                     "description": "Protocol type. Enum options - HTTP, HTTPS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -5435,7 +5435,7 @@
                 "int_match": {
                     "description": "Integer value against which the claim is matched. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "is_mandatory": {
                     "description": "Specified Claim should be present in the JWT. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -5554,37 +5554,37 @@
                     "description": "Default bind timeout enforced on connections to LDAP server. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_auth_ldap_cache_size": {
                     "description": "Size of LDAP auth credentials cache used on the dataplane. Field introduced in 21.1.1. Unit is BYTES. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_auth_ldap_connect_timeout": {
                     "description": "Default connection timeout enforced on connections to LDAP server. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_auth_ldap_conns_per_server": {
                     "description": "Number of concurrent connections to LDAP server by a single basic auth LDAP process. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_auth_ldap_reconnect_timeout": {
                     "description": "Default reconnect timeout enforced on connections to LDAP server. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_auth_ldap_request_timeout": {
                     "description": "Default login or group search request timeout enforced on connections to LDAP server. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_auth_ldap_servers_failover_only": {
                     "description": "If enabled, connections are always made to the first available LDAP server in the list and will failover to subsequent servers. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -5606,7 +5606,7 @@
                 "port": {
                     "description": "Port number for the service listening for learning logs. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -5710,7 +5710,7 @@
                     "description": "Real time metrics collection duration in minutes. 0 for infinite. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "enabled": {
                     "description": "Enables real time metrics collection.  When deactivated, 6 hour view is the most granular the system will track. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -5936,7 +5936,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -6003,13 +6003,13 @@
                 "burst_sz": {
                     "description": "Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Basic edition(Allowed values- 0), Essentials, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "count": {
                     "description": "Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000000000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "name": {
                     "description": "Identifier for Rate Limit. Constructed according to context. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -6019,7 +6019,7 @@
                     "description": "Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed in Enterprise edition with any value, Basic edition(Allowed values- 1), Essentials, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -6308,12 +6308,12 @@
                 "port": {
                     "description": "The Virtual Service's port number. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "port_range_end": {
                     "description": "The end of the Virtual Service's port number range. Allowed values are 1-65535. Special values are 0- single port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -6334,12 +6334,12 @@
                 "service_port": {
                     "description": "Pool based destination port. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "service_port_range_end": {
                     "description": "The end of the Service port number range. Allowed values are 1-65535. Special values are 0- single port. Field introduced in 17.2.4. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "service_protocol": {
                     "description": "Destination protocol to match for the pool selection. If not specified, it will match any protocol. Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY, PROTOCOL_TYPE_SCTP_PROXY, PROTOCOL_TYPE_SCTP_FAST_PATH. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -6548,12 +6548,12 @@
                 "end_index": {
                     "description": "Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "start_index": {
                     "description": "Index of the starting token in the incoming URI. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "str_value": {
                     "description": "Constant string to use as a token. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -6698,7 +6698,7 @@
                     "description": "Mask applied for the Vip, non-default mask supported only for wildcard Vip. Allowed values are 0-32. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 32), Basic edition(Allowed values- 32), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 32,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "subnet": {
                     "description": "Subnet providing reachability for client facing Vip IP. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -6941,7 +6941,7 @@
                 "max_cps_per_client": {
                     "description": "Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- unlimited. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "microservice_ref": {
                     "description": "Microservice representing the virtual service. It is a reference to an object of type MicroService. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -6950,7 +6950,7 @@
                 "min_pools_up": {
                     "description": "Minimum number of UP pools to mark VS up. Field introduced in 18.2.1, 17.2.12. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "name": {
                     "description": "Name for the Virtual Service. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -7074,7 +7074,7 @@
                     "description": "Expected number of SSL session cache entries (may be exceeded). Allowed values are 1024-16383. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1024,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "sso_policy_ref": {
                     "description": "The SSO Policy attached to the virtualservice. It is a reference to an object of type SSOPolicy. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -7190,7 +7190,7 @@
                     "description": "The Quality of Service weight to assign to traffic transmitted from this Virtual Service.  A higher weight will prioritize traffic versus other Virtual Services sharing the same Service Engines. Allowed values are 1-128. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -7247,7 +7247,7 @@
                 "new_vcpus": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "to_host_ref": {
                     "description": " It is a reference to an object of type VIMgrHostRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -7328,7 +7328,7 @@
                 "new_vcpus": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "to_host_ref": {
                     "description": " It is a reference to an object of type VIMgrHostRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

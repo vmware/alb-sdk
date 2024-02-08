@@ -544,7 +544,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -686,7 +686,7 @@
                 "hdr_index": {
                     "description": "Index to identify the header actions. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -738,7 +738,7 @@
                 "file_length": {
                     "description": "File content length. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -867,7 +867,7 @@
                 "port": {
                     "description": "Port to which redirect the request. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "protocol": {
                     "description": "Protocol type. Enum options - HTTP, HTTPS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1028,7 +1028,7 @@
                 "port": {
                     "description": "Port to use in the redirected URI. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "protocol": {
                     "description": "HTTP protocol type. Enum options - HTTP, HTTPS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1070,7 +1070,7 @@
                 "https_port": {
                     "description": "Secure SSL/TLS port to redirect the HTTP request to. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "rate_profile": {
                     "description": "Rate limiting configuration for this action. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -1547,7 +1547,7 @@
                 "port": {
                     "description": "Port of the pool server listening for HTTP/HTTPS. Default value is the default port in the pool. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -1567,7 +1567,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -1634,13 +1634,13 @@
                 "burst_sz": {
                     "description": "Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Basic edition(Allowed values- 0), Essentials, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "count": {
                     "description": "Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000000000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "name": {
                     "description": "Identifier for Rate Limit. Constructed according to context. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1650,7 +1650,7 @@
                     "description": "Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed in Enterprise edition with any value, Basic edition(Allowed values- 1), Essentials, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -1863,12 +1863,12 @@
                 "end_index": {
                     "description": "Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "start_index": {
                     "description": "Index of the starting token in the incoming URI. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "str_value": {
                     "description": "Constant string to use as a token. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

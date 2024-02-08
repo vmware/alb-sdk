@@ -417,11 +417,11 @@ definitions:
             num_records_in_response:
                 description: "Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             ttl:
                 description: "Time to live for fqdn record. Default value is chosen from DNS profile for this cloud if no value provided. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             type:
                 description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -481,7 +481,7 @@ definitions:
             anomaly_penalty:
                 description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             health_score:
                 description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: number
@@ -492,11 +492,11 @@ definitions:
             resources_penalty:
                 description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             security_penalty:
                 description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
     InventoryMetrics:
         type: object
         properties:
@@ -539,7 +539,7 @@ definitions:
             num_samples:
                 description: "Number of actual data samples. It excludes fake data. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
     IpAddr:
         type: object
         required:
@@ -597,7 +597,7 @@ definitions:
             reason_code:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint64
+                format: int64
             reason_code_string:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -734,11 +734,11 @@ definitions:
             port:
                 description: "The Virtual Service's port number. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             port_range_end:
                 description: "The end of the Virtual Service's port number range. Allowed values are 1-65535. Special values are 0- single port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
     ServiceEnginePerformanceScoreData:
         type: object
         required:
@@ -839,7 +839,7 @@ definitions:
                 description: "Mask applied for the Vip, non-default mask supported only for wildcard Vip. Allowed values are 0-32. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 32), Basic edition(Allowed values- 32), Enterprise with Cloud Services edition."
                 type: integer
                 default: 32
-                format: uint32
+                format: int32
             subnet:
                 description: "Subnet providing reachability for client facing Vip IP. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
@@ -955,11 +955,11 @@ definitions:
             num_se_assigned:
                 description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             num_se_requested:
                 description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             oper_status:
                 description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/OperationalStatus'
@@ -976,7 +976,7 @@ definitions:
                 description: "Mask applied for the Vip, non-default mask supported only for wildcard Vip. Allowed values are 0-32. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 32
-                format: uint32
+                format: int32
             service_engine:
                 description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array

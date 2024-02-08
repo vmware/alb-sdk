@@ -572,7 +572,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -922,7 +922,7 @@
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 65537,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "key_size": {
                     "description": " Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

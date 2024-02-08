@@ -460,7 +460,7 @@ definitions:
             index:
                 description: "Priority of the file - larger number takes precedence. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             name:
                 description: "Name of the file. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
