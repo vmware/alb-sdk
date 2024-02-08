@@ -377,7 +377,7 @@ font-style: italic;
   "results" : [ {
     "dns_policies" : [ {
       "dns_policy_ref" : "aeiou",
-      "index" : ""
+      "index" : 123
     } ],
     "l4_policies" : [ {
       "l4_policy_set_ref" : "aeiou",
@@ -403,12 +403,12 @@ font-style: italic;
     "dns_info" : [ {
       "metadata" : "aeiou",
       "fqdn" : "aeiou",
-      "num_records_in_response" : "",
+      "num_records_in_response" : 123,
       "cname" : {
         "cname" : "aeiou"
       },
       "type" : "aeiou",
-      "ttl" : "",
+      "ttl" : 123,
       "algorithm" : "aeiou"
     } ],
     "content_rewrite" : {
@@ -441,19 +441,19 @@ font-style: italic;
     "microservice_ref" : "aeiou",
     "error_page_profile_ref" : "aeiou",
     "configpb_attributes" : {
-      "version" : ""
+      "version" : 123
     },
     "server_network_profile_ref" : "aeiou",
     "use_vip_as_snat" : true,
     "analytics_policy" : {
-      "significant_log_throttle" : "",
+      "significant_log_throttle" : 123,
       "all_headers" : true,
       "client_insights" : "aeiou",
       "client_log_filters" : [ {
-        "duration" : "",
+        "duration" : 123,
         "all_headers" : true,
         "name" : "aeiou",
-        "index" : "",
+        "index" : 123,
         "client_ip" : "",
         "uri" : "",
         "enabled" : true
@@ -483,18 +483,18 @@ font-style: italic;
         }
       },
       "metrics_realtime_update" : {
-        "duration" : "",
+        "duration" : 123,
         "enabled" : true
       },
-      "udf_log_throttle" : "",
+      "udf_log_throttle" : 123,
       "learning_log_policy" : {
-        "port" : "",
+        "port" : 123,
         "host" : "aeiou",
         "enabled" : true
       },
       "full_client_logs" : {
-        "duration" : "",
-        "throttle" : "",
+        "duration" : 123,
+        "throttle" : 123,
         "enabled" : true
       }
     },
@@ -536,14 +536,14 @@ font-style: italic;
         "network_ref" : "aeiou"
       },
       "network_ref" : "aeiou",
-      "prefix_length" : "",
+      "prefix_length" : 123,
       "discovered_networks" : [ {
         "subnet" : [ "" ],
         "subnet6" : [ "" ],
         "network_ref" : "aeiou"
       } ]
     } ],
-    "min_pools_up" : "",
+    "min_pools_up" : 123,
     "performance_limits" : {
       "max_concurrent_connections" : 123,
       "max_throughput" : 123
@@ -555,7 +555,7 @@ font-style: italic;
       } ],
       "mx_records" : [ {
         "host" : "aeiou",
-        "priority" : ""
+        "priority" : 123
       } ],
       "metadata" : "aeiou",
       "fqdn" : [ "aeiou" ],
@@ -570,16 +570,16 @@ font-style: italic;
         "ip_address" : ""
       } ],
       "type" : "aeiou",
-      "ttl" : "",
+      "ttl" : 123,
       "wildcard_match" : true,
       "txt_records" : [ {
         "text_str" : "aeiou"
       } ],
-      "num_records_in_response" : "",
+      "num_records_in_response" : 123,
       "service_locator" : [ {
-        "port" : "",
-        "weight" : "",
-        "priority" : "",
+        "port" : 123,
+        "weight" : 123,
+        "priority" : 123,
         "target" : "aeiou"
       } ],
       "delegated" : true,
@@ -589,31 +589,31 @@ font-style: italic;
     "fqdn" : "aeiou",
     "bulk_sync_kvcache" : true,
     "vh_parent_vs_ref" : "aeiou",
-    "weight" : "",
+    "weight" : 123,
     "ldap_vs_config" : {
       "se_auth_ldap_servers_failover_only" : true,
-      "se_auth_ldap_conns_per_server" : "",
-      "se_auth_ldap_reconnect_timeout" : "",
+      "se_auth_ldap_conns_per_server" : 123,
+      "se_auth_ldap_reconnect_timeout" : 123,
       "realm" : "aeiou",
-      "se_auth_ldap_cache_size" : "",
-      "se_auth_ldap_connect_timeout" : "",
-      "se_auth_ldap_request_timeout" : "",
-      "se_auth_ldap_bind_timeout" : ""
+      "se_auth_ldap_cache_size" : 123,
+      "se_auth_ldap_connect_timeout" : 123,
+      "se_auth_ldap_request_timeout" : 123,
+      "se_auth_ldap_bind_timeout" : 123
     },
     "waf_policy_ref" : "aeiou",
     "created_by" : "aeiou",
     "service_pool_select" : [ {
       "service_protocol" : "aeiou",
-      "service_port_range_end" : "",
+      "service_port_range_end" : 123,
       "service_pool_ref" : "aeiou",
       "service_pool_group_ref" : "aeiou",
-      "service_port" : ""
+      "service_port" : 123
     } ],
     "vh_type" : "aeiou",
     "allow_invalid_client_cert" : true,
     "security_policy_ref" : "aeiou",
     "application_profile_ref" : "aeiou",
-    "ssl_sess_cache_avg_size" : "",
+    "ssl_sess_cache_avg_size" : 123,
     "cloud_type" : "aeiou",
     "scaleout_ecmp" : true,
     "flow_label_type" : "aeiou",
@@ -625,10 +625,10 @@ font-style: italic;
     "host_name_xlate" : "aeiou",
     "connections_rate_limit" : {
       "rate_limiter" : {
-        "period" : "",
-        "count" : "",
+        "period" : 123,
+        "count" : 123,
         "name" : "aeiou",
-        "burst_sz" : ""
+        "burst_sz" : 123
       },
       "action" : {
         "redirect" : {
@@ -637,12 +637,12 @@ font-style: italic;
           "protocol" : "aeiou",
           "status_code" : "aeiou",
           "add_string" : "aeiou",
-          "port" : "",
+          "port" : 123,
           "host" : {
             "tokens" : [ {
-              "start_index" : "",
+              "start_index" : 123,
               "str_value" : "aeiou",
-              "end_index" : "",
+              "end_index" : 123,
               "type" : "aeiou"
             } ],
             "type" : "aeiou"
@@ -651,7 +651,7 @@ font-style: italic;
         "file" : {
           "file_content" : "aeiou",
           "content_type" : "aeiou",
-          "file_length" : ""
+          "file_length" : 123
         },
         "status_code" : "aeiou",
         "type" : "aeiou"
@@ -718,7 +718,7 @@ font-style: italic;
     "se_group_ref" : "aeiou",
     "network_profile_ref" : "aeiou",
     "close_client_conn_on_config_update" : true,
-    "max_cps_per_client" : "",
+    "max_cps_per_client" : 123,
     "sso_policy_ref" : "aeiou",
     "http_policies" : [ {
       "http_policy_set_ref" : "aeiou",
@@ -732,8 +732,8 @@ font-style: italic;
     "enable_rhi" : true,
     "services" : [ {
       "override_network_profile_ref" : "aeiou",
-      "port" : "",
-      "port_range_end" : "",
+      "port" : 123,
+      "port_range_end" : 123,
       "is_active_ftp_data_port" : true,
       "enable_http2" : true,
       "horizon_internal_ports" : true,
@@ -891,7 +891,7 @@ font-style: italic;
     <pre class="example"><code>{
   "dns_policies" : [ {
     "dns_policy_ref" : "aeiou",
-    "index" : ""
+    "index" : 123
   } ],
   "l4_policies" : [ {
     "l4_policy_set_ref" : "aeiou",
@@ -917,12 +917,12 @@ font-style: italic;
   "dns_info" : [ {
     "metadata" : "aeiou",
     "fqdn" : "aeiou",
-    "num_records_in_response" : "",
+    "num_records_in_response" : 123,
     "cname" : {
       "cname" : "aeiou"
     },
     "type" : "aeiou",
-    "ttl" : "",
+    "ttl" : 123,
     "algorithm" : "aeiou"
   } ],
   "content_rewrite" : {
@@ -955,19 +955,19 @@ font-style: italic;
   "microservice_ref" : "aeiou",
   "error_page_profile_ref" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "server_network_profile_ref" : "aeiou",
   "use_vip_as_snat" : true,
   "analytics_policy" : {
-    "significant_log_throttle" : "",
+    "significant_log_throttle" : 123,
     "all_headers" : true,
     "client_insights" : "aeiou",
     "client_log_filters" : [ {
-      "duration" : "",
+      "duration" : 123,
       "all_headers" : true,
       "name" : "aeiou",
-      "index" : "",
+      "index" : 123,
       "client_ip" : "",
       "uri" : "",
       "enabled" : true
@@ -997,18 +997,18 @@ font-style: italic;
       }
     },
     "metrics_realtime_update" : {
-      "duration" : "",
+      "duration" : 123,
       "enabled" : true
     },
-    "udf_log_throttle" : "",
+    "udf_log_throttle" : 123,
     "learning_log_policy" : {
-      "port" : "",
+      "port" : 123,
       "host" : "aeiou",
       "enabled" : true
     },
     "full_client_logs" : {
-      "duration" : "",
-      "throttle" : "",
+      "duration" : 123,
+      "throttle" : 123,
       "enabled" : true
     }
   },
@@ -1050,14 +1050,14 @@ font-style: italic;
       "network_ref" : "aeiou"
     },
     "network_ref" : "aeiou",
-    "prefix_length" : "",
+    "prefix_length" : 123,
     "discovered_networks" : [ {
       "subnet" : [ "" ],
       "subnet6" : [ "" ],
       "network_ref" : "aeiou"
     } ]
   } ],
-  "min_pools_up" : "",
+  "min_pools_up" : 123,
   "performance_limits" : {
     "max_concurrent_connections" : 123,
     "max_throughput" : 123
@@ -1069,7 +1069,7 @@ font-style: italic;
     } ],
     "mx_records" : [ {
       "host" : "aeiou",
-      "priority" : ""
+      "priority" : 123
     } ],
     "metadata" : "aeiou",
     "fqdn" : [ "aeiou" ],
@@ -1084,16 +1084,16 @@ font-style: italic;
       "ip_address" : ""
     } ],
     "type" : "aeiou",
-    "ttl" : "",
+    "ttl" : 123,
     "wildcard_match" : true,
     "txt_records" : [ {
       "text_str" : "aeiou"
     } ],
-    "num_records_in_response" : "",
+    "num_records_in_response" : 123,
     "service_locator" : [ {
-      "port" : "",
-      "weight" : "",
-      "priority" : "",
+      "port" : 123,
+      "weight" : 123,
+      "priority" : 123,
       "target" : "aeiou"
     } ],
     "delegated" : true,
@@ -1103,31 +1103,31 @@ font-style: italic;
   "fqdn" : "aeiou",
   "bulk_sync_kvcache" : true,
   "vh_parent_vs_ref" : "aeiou",
-  "weight" : "",
+  "weight" : 123,
   "ldap_vs_config" : {
     "se_auth_ldap_servers_failover_only" : true,
-    "se_auth_ldap_conns_per_server" : "",
-    "se_auth_ldap_reconnect_timeout" : "",
+    "se_auth_ldap_conns_per_server" : 123,
+    "se_auth_ldap_reconnect_timeout" : 123,
     "realm" : "aeiou",
-    "se_auth_ldap_cache_size" : "",
-    "se_auth_ldap_connect_timeout" : "",
-    "se_auth_ldap_request_timeout" : "",
-    "se_auth_ldap_bind_timeout" : ""
+    "se_auth_ldap_cache_size" : 123,
+    "se_auth_ldap_connect_timeout" : 123,
+    "se_auth_ldap_request_timeout" : 123,
+    "se_auth_ldap_bind_timeout" : 123
   },
   "waf_policy_ref" : "aeiou",
   "created_by" : "aeiou",
   "service_pool_select" : [ {
     "service_protocol" : "aeiou",
-    "service_port_range_end" : "",
+    "service_port_range_end" : 123,
     "service_pool_ref" : "aeiou",
     "service_pool_group_ref" : "aeiou",
-    "service_port" : ""
+    "service_port" : 123
   } ],
   "vh_type" : "aeiou",
   "allow_invalid_client_cert" : true,
   "security_policy_ref" : "aeiou",
   "application_profile_ref" : "aeiou",
-  "ssl_sess_cache_avg_size" : "",
+  "ssl_sess_cache_avg_size" : 123,
   "cloud_type" : "aeiou",
   "scaleout_ecmp" : true,
   "flow_label_type" : "aeiou",
@@ -1139,10 +1139,10 @@ font-style: italic;
   "host_name_xlate" : "aeiou",
   "connections_rate_limit" : {
     "rate_limiter" : {
-      "period" : "",
-      "count" : "",
+      "period" : 123,
+      "count" : 123,
       "name" : "aeiou",
-      "burst_sz" : ""
+      "burst_sz" : 123
     },
     "action" : {
       "redirect" : {
@@ -1151,12 +1151,12 @@ font-style: italic;
         "protocol" : "aeiou",
         "status_code" : "aeiou",
         "add_string" : "aeiou",
-        "port" : "",
+        "port" : 123,
         "host" : {
           "tokens" : [ {
-            "start_index" : "",
+            "start_index" : 123,
             "str_value" : "aeiou",
-            "end_index" : "",
+            "end_index" : 123,
             "type" : "aeiou"
           } ],
           "type" : "aeiou"
@@ -1165,7 +1165,7 @@ font-style: italic;
       "file" : {
         "file_content" : "aeiou",
         "content_type" : "aeiou",
-        "file_length" : ""
+        "file_length" : 123
       },
       "status_code" : "aeiou",
       "type" : "aeiou"
@@ -1232,7 +1232,7 @@ font-style: italic;
   "se_group_ref" : "aeiou",
   "network_profile_ref" : "aeiou",
   "close_client_conn_on_config_update" : true,
-  "max_cps_per_client" : "",
+  "max_cps_per_client" : 123,
   "sso_policy_ref" : "aeiou",
   "http_policies" : [ {
     "http_policy_set_ref" : "aeiou",
@@ -1246,8 +1246,8 @@ font-style: italic;
   "enable_rhi" : true,
   "services" : [ {
     "override_network_profile_ref" : "aeiou",
-    "port" : "",
-    "port_range_end" : "",
+    "port" : 123,
+    "port_range_end" : 123,
     "is_active_ftp_data_port" : true,
     "enable_http2" : true,
     "horizon_internal_ports" : true,
@@ -2210,7 +2210,7 @@ font-style: italic;
     <pre class="example"><code>{
   "dns_policies" : [ {
     "dns_policy_ref" : "aeiou",
-    "index" : ""
+    "index" : 123
   } ],
   "l4_policies" : [ {
     "l4_policy_set_ref" : "aeiou",
@@ -2236,12 +2236,12 @@ font-style: italic;
   "dns_info" : [ {
     "metadata" : "aeiou",
     "fqdn" : "aeiou",
-    "num_records_in_response" : "",
+    "num_records_in_response" : 123,
     "cname" : {
       "cname" : "aeiou"
     },
     "type" : "aeiou",
-    "ttl" : "",
+    "ttl" : 123,
     "algorithm" : "aeiou"
   } ],
   "content_rewrite" : {
@@ -2274,19 +2274,19 @@ font-style: italic;
   "microservice_ref" : "aeiou",
   "error_page_profile_ref" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "server_network_profile_ref" : "aeiou",
   "use_vip_as_snat" : true,
   "analytics_policy" : {
-    "significant_log_throttle" : "",
+    "significant_log_throttle" : 123,
     "all_headers" : true,
     "client_insights" : "aeiou",
     "client_log_filters" : [ {
-      "duration" : "",
+      "duration" : 123,
       "all_headers" : true,
       "name" : "aeiou",
-      "index" : "",
+      "index" : 123,
       "client_ip" : "",
       "uri" : "",
       "enabled" : true
@@ -2316,18 +2316,18 @@ font-style: italic;
       }
     },
     "metrics_realtime_update" : {
-      "duration" : "",
+      "duration" : 123,
       "enabled" : true
     },
-    "udf_log_throttle" : "",
+    "udf_log_throttle" : 123,
     "learning_log_policy" : {
-      "port" : "",
+      "port" : 123,
       "host" : "aeiou",
       "enabled" : true
     },
     "full_client_logs" : {
-      "duration" : "",
-      "throttle" : "",
+      "duration" : 123,
+      "throttle" : 123,
       "enabled" : true
     }
   },
@@ -2369,14 +2369,14 @@ font-style: italic;
       "network_ref" : "aeiou"
     },
     "network_ref" : "aeiou",
-    "prefix_length" : "",
+    "prefix_length" : 123,
     "discovered_networks" : [ {
       "subnet" : [ "" ],
       "subnet6" : [ "" ],
       "network_ref" : "aeiou"
     } ]
   } ],
-  "min_pools_up" : "",
+  "min_pools_up" : 123,
   "performance_limits" : {
     "max_concurrent_connections" : 123,
     "max_throughput" : 123
@@ -2388,7 +2388,7 @@ font-style: italic;
     } ],
     "mx_records" : [ {
       "host" : "aeiou",
-      "priority" : ""
+      "priority" : 123
     } ],
     "metadata" : "aeiou",
     "fqdn" : [ "aeiou" ],
@@ -2403,16 +2403,16 @@ font-style: italic;
       "ip_address" : ""
     } ],
     "type" : "aeiou",
-    "ttl" : "",
+    "ttl" : 123,
     "wildcard_match" : true,
     "txt_records" : [ {
       "text_str" : "aeiou"
     } ],
-    "num_records_in_response" : "",
+    "num_records_in_response" : 123,
     "service_locator" : [ {
-      "port" : "",
-      "weight" : "",
-      "priority" : "",
+      "port" : 123,
+      "weight" : 123,
+      "priority" : 123,
       "target" : "aeiou"
     } ],
     "delegated" : true,
@@ -2422,31 +2422,31 @@ font-style: italic;
   "fqdn" : "aeiou",
   "bulk_sync_kvcache" : true,
   "vh_parent_vs_ref" : "aeiou",
-  "weight" : "",
+  "weight" : 123,
   "ldap_vs_config" : {
     "se_auth_ldap_servers_failover_only" : true,
-    "se_auth_ldap_conns_per_server" : "",
-    "se_auth_ldap_reconnect_timeout" : "",
+    "se_auth_ldap_conns_per_server" : 123,
+    "se_auth_ldap_reconnect_timeout" : 123,
     "realm" : "aeiou",
-    "se_auth_ldap_cache_size" : "",
-    "se_auth_ldap_connect_timeout" : "",
-    "se_auth_ldap_request_timeout" : "",
-    "se_auth_ldap_bind_timeout" : ""
+    "se_auth_ldap_cache_size" : 123,
+    "se_auth_ldap_connect_timeout" : 123,
+    "se_auth_ldap_request_timeout" : 123,
+    "se_auth_ldap_bind_timeout" : 123
   },
   "waf_policy_ref" : "aeiou",
   "created_by" : "aeiou",
   "service_pool_select" : [ {
     "service_protocol" : "aeiou",
-    "service_port_range_end" : "",
+    "service_port_range_end" : 123,
     "service_pool_ref" : "aeiou",
     "service_pool_group_ref" : "aeiou",
-    "service_port" : ""
+    "service_port" : 123
   } ],
   "vh_type" : "aeiou",
   "allow_invalid_client_cert" : true,
   "security_policy_ref" : "aeiou",
   "application_profile_ref" : "aeiou",
-  "ssl_sess_cache_avg_size" : "",
+  "ssl_sess_cache_avg_size" : 123,
   "cloud_type" : "aeiou",
   "scaleout_ecmp" : true,
   "flow_label_type" : "aeiou",
@@ -2458,10 +2458,10 @@ font-style: italic;
   "host_name_xlate" : "aeiou",
   "connections_rate_limit" : {
     "rate_limiter" : {
-      "period" : "",
-      "count" : "",
+      "period" : 123,
+      "count" : 123,
       "name" : "aeiou",
-      "burst_sz" : ""
+      "burst_sz" : 123
     },
     "action" : {
       "redirect" : {
@@ -2470,12 +2470,12 @@ font-style: italic;
         "protocol" : "aeiou",
         "status_code" : "aeiou",
         "add_string" : "aeiou",
-        "port" : "",
+        "port" : 123,
         "host" : {
           "tokens" : [ {
-            "start_index" : "",
+            "start_index" : 123,
             "str_value" : "aeiou",
-            "end_index" : "",
+            "end_index" : 123,
             "type" : "aeiou"
           } ],
           "type" : "aeiou"
@@ -2484,7 +2484,7 @@ font-style: italic;
       "file" : {
         "file_content" : "aeiou",
         "content_type" : "aeiou",
-        "file_length" : ""
+        "file_length" : 123
       },
       "status_code" : "aeiou",
       "type" : "aeiou"
@@ -2551,7 +2551,7 @@ font-style: italic;
   "se_group_ref" : "aeiou",
   "network_profile_ref" : "aeiou",
   "close_client_conn_on_config_update" : true,
-  "max_cps_per_client" : "",
+  "max_cps_per_client" : 123,
   "sso_policy_ref" : "aeiou",
   "http_policies" : [ {
     "http_policy_set_ref" : "aeiou",
@@ -2565,8 +2565,8 @@ font-style: italic;
   "enable_rhi" : true,
   "services" : [ {
     "override_network_profile_ref" : "aeiou",
-    "port" : "",
-    "port_range_end" : "",
+    "port" : 123,
+    "port_range_end" : 123,
     "is_active_ftp_data_port" : true,
     "enable_http2" : true,
     "horizon_internal_ports" : true,
@@ -3839,7 +3839,7 @@ font-style: italic;
     <pre class="example"><code>{
   "dns_policies" : [ {
     "dns_policy_ref" : "aeiou",
-    "index" : ""
+    "index" : 123
   } ],
   "l4_policies" : [ {
     "l4_policy_set_ref" : "aeiou",
@@ -3865,12 +3865,12 @@ font-style: italic;
   "dns_info" : [ {
     "metadata" : "aeiou",
     "fqdn" : "aeiou",
-    "num_records_in_response" : "",
+    "num_records_in_response" : 123,
     "cname" : {
       "cname" : "aeiou"
     },
     "type" : "aeiou",
-    "ttl" : "",
+    "ttl" : 123,
     "algorithm" : "aeiou"
   } ],
   "content_rewrite" : {
@@ -3903,19 +3903,19 @@ font-style: italic;
   "microservice_ref" : "aeiou",
   "error_page_profile_ref" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "server_network_profile_ref" : "aeiou",
   "use_vip_as_snat" : true,
   "analytics_policy" : {
-    "significant_log_throttle" : "",
+    "significant_log_throttle" : 123,
     "all_headers" : true,
     "client_insights" : "aeiou",
     "client_log_filters" : [ {
-      "duration" : "",
+      "duration" : 123,
       "all_headers" : true,
       "name" : "aeiou",
-      "index" : "",
+      "index" : 123,
       "client_ip" : "",
       "uri" : "",
       "enabled" : true
@@ -3945,18 +3945,18 @@ font-style: italic;
       }
     },
     "metrics_realtime_update" : {
-      "duration" : "",
+      "duration" : 123,
       "enabled" : true
     },
-    "udf_log_throttle" : "",
+    "udf_log_throttle" : 123,
     "learning_log_policy" : {
-      "port" : "",
+      "port" : 123,
       "host" : "aeiou",
       "enabled" : true
     },
     "full_client_logs" : {
-      "duration" : "",
-      "throttle" : "",
+      "duration" : 123,
+      "throttle" : 123,
       "enabled" : true
     }
   },
@@ -3998,14 +3998,14 @@ font-style: italic;
       "network_ref" : "aeiou"
     },
     "network_ref" : "aeiou",
-    "prefix_length" : "",
+    "prefix_length" : 123,
     "discovered_networks" : [ {
       "subnet" : [ "" ],
       "subnet6" : [ "" ],
       "network_ref" : "aeiou"
     } ]
   } ],
-  "min_pools_up" : "",
+  "min_pools_up" : 123,
   "performance_limits" : {
     "max_concurrent_connections" : 123,
     "max_throughput" : 123
@@ -4017,7 +4017,7 @@ font-style: italic;
     } ],
     "mx_records" : [ {
       "host" : "aeiou",
-      "priority" : ""
+      "priority" : 123
     } ],
     "metadata" : "aeiou",
     "fqdn" : [ "aeiou" ],
@@ -4032,16 +4032,16 @@ font-style: italic;
       "ip_address" : ""
     } ],
     "type" : "aeiou",
-    "ttl" : "",
+    "ttl" : 123,
     "wildcard_match" : true,
     "txt_records" : [ {
       "text_str" : "aeiou"
     } ],
-    "num_records_in_response" : "",
+    "num_records_in_response" : 123,
     "service_locator" : [ {
-      "port" : "",
-      "weight" : "",
-      "priority" : "",
+      "port" : 123,
+      "weight" : 123,
+      "priority" : 123,
       "target" : "aeiou"
     } ],
     "delegated" : true,
@@ -4051,31 +4051,31 @@ font-style: italic;
   "fqdn" : "aeiou",
   "bulk_sync_kvcache" : true,
   "vh_parent_vs_ref" : "aeiou",
-  "weight" : "",
+  "weight" : 123,
   "ldap_vs_config" : {
     "se_auth_ldap_servers_failover_only" : true,
-    "se_auth_ldap_conns_per_server" : "",
-    "se_auth_ldap_reconnect_timeout" : "",
+    "se_auth_ldap_conns_per_server" : 123,
+    "se_auth_ldap_reconnect_timeout" : 123,
     "realm" : "aeiou",
-    "se_auth_ldap_cache_size" : "",
-    "se_auth_ldap_connect_timeout" : "",
-    "se_auth_ldap_request_timeout" : "",
-    "se_auth_ldap_bind_timeout" : ""
+    "se_auth_ldap_cache_size" : 123,
+    "se_auth_ldap_connect_timeout" : 123,
+    "se_auth_ldap_request_timeout" : 123,
+    "se_auth_ldap_bind_timeout" : 123
   },
   "waf_policy_ref" : "aeiou",
   "created_by" : "aeiou",
   "service_pool_select" : [ {
     "service_protocol" : "aeiou",
-    "service_port_range_end" : "",
+    "service_port_range_end" : 123,
     "service_pool_ref" : "aeiou",
     "service_pool_group_ref" : "aeiou",
-    "service_port" : ""
+    "service_port" : 123
   } ],
   "vh_type" : "aeiou",
   "allow_invalid_client_cert" : true,
   "security_policy_ref" : "aeiou",
   "application_profile_ref" : "aeiou",
-  "ssl_sess_cache_avg_size" : "",
+  "ssl_sess_cache_avg_size" : 123,
   "cloud_type" : "aeiou",
   "scaleout_ecmp" : true,
   "flow_label_type" : "aeiou",
@@ -4087,10 +4087,10 @@ font-style: italic;
   "host_name_xlate" : "aeiou",
   "connections_rate_limit" : {
     "rate_limiter" : {
-      "period" : "",
-      "count" : "",
+      "period" : 123,
+      "count" : 123,
       "name" : "aeiou",
-      "burst_sz" : ""
+      "burst_sz" : 123
     },
     "action" : {
       "redirect" : {
@@ -4099,12 +4099,12 @@ font-style: italic;
         "protocol" : "aeiou",
         "status_code" : "aeiou",
         "add_string" : "aeiou",
-        "port" : "",
+        "port" : 123,
         "host" : {
           "tokens" : [ {
-            "start_index" : "",
+            "start_index" : 123,
             "str_value" : "aeiou",
-            "end_index" : "",
+            "end_index" : 123,
             "type" : "aeiou"
           } ],
           "type" : "aeiou"
@@ -4113,7 +4113,7 @@ font-style: italic;
       "file" : {
         "file_content" : "aeiou",
         "content_type" : "aeiou",
-        "file_length" : ""
+        "file_length" : 123
       },
       "status_code" : "aeiou",
       "type" : "aeiou"
@@ -4180,7 +4180,7 @@ font-style: italic;
   "se_group_ref" : "aeiou",
   "network_profile_ref" : "aeiou",
   "close_client_conn_on_config_update" : true,
-  "max_cps_per_client" : "",
+  "max_cps_per_client" : 123,
   "sso_policy_ref" : "aeiou",
   "http_policies" : [ {
     "http_policy_set_ref" : "aeiou",
@@ -4194,8 +4194,8 @@ font-style: italic;
   "enable_rhi" : true,
   "services" : [ {
     "override_network_profile_ref" : "aeiou",
-    "port" : "",
-    "port_range_end" : "",
+    "port" : 123,
+    "port_range_end" : 123,
     "is_active_ftp_data_port" : true,
     "enable_http2" : true,
     "horizon_internal_ports" : true,
@@ -4572,7 +4572,7 @@ font-style: italic;
     <pre class="example"><code>{
   "dns_policies" : [ {
     "dns_policy_ref" : "aeiou",
-    "index" : ""
+    "index" : 123
   } ],
   "l4_policies" : [ {
     "l4_policy_set_ref" : "aeiou",
@@ -4598,12 +4598,12 @@ font-style: italic;
   "dns_info" : [ {
     "metadata" : "aeiou",
     "fqdn" : "aeiou",
-    "num_records_in_response" : "",
+    "num_records_in_response" : 123,
     "cname" : {
       "cname" : "aeiou"
     },
     "type" : "aeiou",
-    "ttl" : "",
+    "ttl" : 123,
     "algorithm" : "aeiou"
   } ],
   "content_rewrite" : {
@@ -4636,19 +4636,19 @@ font-style: italic;
   "microservice_ref" : "aeiou",
   "error_page_profile_ref" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "server_network_profile_ref" : "aeiou",
   "use_vip_as_snat" : true,
   "analytics_policy" : {
-    "significant_log_throttle" : "",
+    "significant_log_throttle" : 123,
     "all_headers" : true,
     "client_insights" : "aeiou",
     "client_log_filters" : [ {
-      "duration" : "",
+      "duration" : 123,
       "all_headers" : true,
       "name" : "aeiou",
-      "index" : "",
+      "index" : 123,
       "client_ip" : "",
       "uri" : "",
       "enabled" : true
@@ -4678,18 +4678,18 @@ font-style: italic;
       }
     },
     "metrics_realtime_update" : {
-      "duration" : "",
+      "duration" : 123,
       "enabled" : true
     },
-    "udf_log_throttle" : "",
+    "udf_log_throttle" : 123,
     "learning_log_policy" : {
-      "port" : "",
+      "port" : 123,
       "host" : "aeiou",
       "enabled" : true
     },
     "full_client_logs" : {
-      "duration" : "",
-      "throttle" : "",
+      "duration" : 123,
+      "throttle" : 123,
       "enabled" : true
     }
   },
@@ -4731,14 +4731,14 @@ font-style: italic;
       "network_ref" : "aeiou"
     },
     "network_ref" : "aeiou",
-    "prefix_length" : "",
+    "prefix_length" : 123,
     "discovered_networks" : [ {
       "subnet" : [ "" ],
       "subnet6" : [ "" ],
       "network_ref" : "aeiou"
     } ]
   } ],
-  "min_pools_up" : "",
+  "min_pools_up" : 123,
   "performance_limits" : {
     "max_concurrent_connections" : 123,
     "max_throughput" : 123
@@ -4750,7 +4750,7 @@ font-style: italic;
     } ],
     "mx_records" : [ {
       "host" : "aeiou",
-      "priority" : ""
+      "priority" : 123
     } ],
     "metadata" : "aeiou",
     "fqdn" : [ "aeiou" ],
@@ -4765,16 +4765,16 @@ font-style: italic;
       "ip_address" : ""
     } ],
     "type" : "aeiou",
-    "ttl" : "",
+    "ttl" : 123,
     "wildcard_match" : true,
     "txt_records" : [ {
       "text_str" : "aeiou"
     } ],
-    "num_records_in_response" : "",
+    "num_records_in_response" : 123,
     "service_locator" : [ {
-      "port" : "",
-      "weight" : "",
-      "priority" : "",
+      "port" : 123,
+      "weight" : 123,
+      "priority" : 123,
       "target" : "aeiou"
     } ],
     "delegated" : true,
@@ -4784,31 +4784,31 @@ font-style: italic;
   "fqdn" : "aeiou",
   "bulk_sync_kvcache" : true,
   "vh_parent_vs_ref" : "aeiou",
-  "weight" : "",
+  "weight" : 123,
   "ldap_vs_config" : {
     "se_auth_ldap_servers_failover_only" : true,
-    "se_auth_ldap_conns_per_server" : "",
-    "se_auth_ldap_reconnect_timeout" : "",
+    "se_auth_ldap_conns_per_server" : 123,
+    "se_auth_ldap_reconnect_timeout" : 123,
     "realm" : "aeiou",
-    "se_auth_ldap_cache_size" : "",
-    "se_auth_ldap_connect_timeout" : "",
-    "se_auth_ldap_request_timeout" : "",
-    "se_auth_ldap_bind_timeout" : ""
+    "se_auth_ldap_cache_size" : 123,
+    "se_auth_ldap_connect_timeout" : 123,
+    "se_auth_ldap_request_timeout" : 123,
+    "se_auth_ldap_bind_timeout" : 123
   },
   "waf_policy_ref" : "aeiou",
   "created_by" : "aeiou",
   "service_pool_select" : [ {
     "service_protocol" : "aeiou",
-    "service_port_range_end" : "",
+    "service_port_range_end" : 123,
     "service_pool_ref" : "aeiou",
     "service_pool_group_ref" : "aeiou",
-    "service_port" : ""
+    "service_port" : 123
   } ],
   "vh_type" : "aeiou",
   "allow_invalid_client_cert" : true,
   "security_policy_ref" : "aeiou",
   "application_profile_ref" : "aeiou",
-  "ssl_sess_cache_avg_size" : "",
+  "ssl_sess_cache_avg_size" : 123,
   "cloud_type" : "aeiou",
   "scaleout_ecmp" : true,
   "flow_label_type" : "aeiou",
@@ -4820,10 +4820,10 @@ font-style: italic;
   "host_name_xlate" : "aeiou",
   "connections_rate_limit" : {
     "rate_limiter" : {
-      "period" : "",
-      "count" : "",
+      "period" : 123,
+      "count" : 123,
       "name" : "aeiou",
-      "burst_sz" : ""
+      "burst_sz" : 123
     },
     "action" : {
       "redirect" : {
@@ -4832,12 +4832,12 @@ font-style: italic;
         "protocol" : "aeiou",
         "status_code" : "aeiou",
         "add_string" : "aeiou",
-        "port" : "",
+        "port" : 123,
         "host" : {
           "tokens" : [ {
-            "start_index" : "",
+            "start_index" : 123,
             "str_value" : "aeiou",
-            "end_index" : "",
+            "end_index" : 123,
             "type" : "aeiou"
           } ],
           "type" : "aeiou"
@@ -4846,7 +4846,7 @@ font-style: italic;
       "file" : {
         "file_content" : "aeiou",
         "content_type" : "aeiou",
-        "file_length" : ""
+        "file_length" : 123
       },
       "status_code" : "aeiou",
       "type" : "aeiou"
@@ -4913,7 +4913,7 @@ font-style: italic;
   "se_group_ref" : "aeiou",
   "network_profile_ref" : "aeiou",
   "close_client_conn_on_config_update" : true,
-  "max_cps_per_client" : "",
+  "max_cps_per_client" : 123,
   "sso_policy_ref" : "aeiou",
   "http_policies" : [ {
     "http_policy_set_ref" : "aeiou",
@@ -4927,8 +4927,8 @@ font-style: italic;
   "enable_rhi" : true,
   "services" : [ {
     "override_network_profile_ref" : "aeiou",
-    "port" : "",
-    "port_range_end" : "",
+    "port" : 123,
+    "port_range_end" : 123,
     "is_active_ftp_data_port" : true,
     "enable_http2" : true,
     "horizon_internal_ports" : true,
@@ -6202,8 +6202,8 @@ font-style: italic;
 <div class="param">full_client_logs (optional)</div><div class="param-desc"><span class="param-type"><a href="#FullClientLogs">FullClientLogs</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">learning_log_policy (optional)</div><div class="param-desc"><span class="param-type"><a href="#LearningLogPolicy">LearningLogPolicy</a></span> Configuration for learning logging determining whether it&#39;s enabled and where is the destination. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">metrics_realtime_update (optional)</div><div class="param-desc"><span class="param-type"><a href="#MetricsRealTimeUpdate">MetricsRealTimeUpdate</a></span> Settings to turn on realtime metrics and set duration for realtime updates. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">significant_log_throttle (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This setting limits the number of significant logs generated per second for this VS on each SE. Default is 10 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">udf_log_throttle (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This setting limits the total number of UDF logs generated per second for this VS on each SE. UDF logs are generated due to the configured client log filters or the rules with logging enabled. Default is 10 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">significant_log_throttle (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This setting limits the number of significant logs generated per second for this VS on each SE. Default is 10 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">udf_log_throttle (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This setting limits the total number of UDF logs generated per second for this VS on each SE. UDF logs are generated due to the configured client log filters or the rules with logging enabled. Default is 10 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6310,9 +6310,9 @@ font-style: italic;
     <div class="field-items">
       <div class="param">all_headers (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">client_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">enabled </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">uri (optional)</div><div class="param-desc"><span class="param-type"><a href="#StringMatch">StringMatch</a></span>  Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
@@ -6320,14 +6320,14 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="ConnectionClearFilter">ConnectionClearFilter</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">ip_addr (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP address in dotted decimal notation. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port number. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port number. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6379,8 +6379,8 @@ font-style: italic;
 <div class="param">cname (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsCnameRdata">DnsCnameRdata</a></span> Canonical name in CNAME record. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">fqdn (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Fully qualified domain name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">metadata (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Any metadata associated with this record. Field introduced in 17.2.2. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">num_records_in_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">ttl (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time to live for fqdn record. Default value is chosen from DNS profile for this cloud if no value provided. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">num_records_in_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">ttl (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time to live for fqdn record. Default value is chosen from DNS profile for this cloud if no value provided. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -6388,7 +6388,7 @@ font-style: italic;
     <h3 class="field-label"><a name="DnsMxRdata">DnsMxRdata</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">host </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Fully qualified domain name of a mailserver . The host name maps directly to one or more address records in the DNS table, and must not point to any CNAME records (RFC 2181). Field introduced in 18.2.9, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">priority </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The priority field identifies which mail server should be preferred. Allowed values are 0-65535. Field introduced in 18.2.9, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">priority </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The priority field identifies which mail server should be preferred. Allowed values are 0-65535. Field introduced in 18.2.9, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6403,7 +6403,7 @@ font-style: italic;
     <h3 class="field-label"><a name="DnsPolicies">DnsPolicies</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">dns_policy_ref </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the dns policy. It is a reference to an object of type DnsPolicy. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the dns policy. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the dns policy. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6419,9 +6419,9 @@ font-style: italic;
 <div class="param">metadata (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Internal metadata for the DNS record. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">mx_records (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsMxRdata">array[DnsMxRdata]</a></span> MX record. Field introduced in 18.2.9, 20.1.1. Maximum of 4 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ns (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsNsRdata">array[DnsNsRdata]</a></span> Name Server information in NS record. Field introduced in 17.1.1. Maximum of 13 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">num_records_in_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Specifies the number of records returned by the DNS service. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">num_records_in_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Specifies the number of records returned by the DNS service. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">service_locator (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsSrvRdata">array[DnsSrvRdata]</a></span> Service locator info in SRV record. Maximum of 4 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">ttl (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time To Live for this DNS record. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">ttl (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time To Live for this DNS record. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">txt_records (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsTxtRdata">array[DnsTxtRdata]</a></span> Text record. Field introduced in 18.2.9, 20.1.1. Maximum of 4 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">wildcard_match (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable wild-card match of fqdn  if an exact match is not found in the DNS table, the longest match is chosen by wild-carding the fqdn in the DNS request. Default is false. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -6430,10 +6430,10 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="DnsSrvRdata">DnsSrvRdata</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">port </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Service port. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">priority (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Priority of the target hosting the service, low value implies higher priority for this service record. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+      <div class="param">port </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Service port. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">priority (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Priority of the target hosting the service, low value implies higher priority for this service record. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">target (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Canonical hostname, of the machine hosting the service, with no trailing period. &#39;default.host&#39; is valid but not &#39;default.host.&#39;. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">weight (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Relative weight for service records with same priority, high value implies higher preference for this service record. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">weight (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Relative weight for service records with same priority, high value implies higher preference for this service record. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6445,9 +6445,9 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="FullClientLogs">FullClientLogs</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> How long should the system capture all logs, measured in minutes. Set to 0 for infinite. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+      <div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> How long should the system capture all logs, measured in minutes. Set to 0 for infinite. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">enabled </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Capture all client logs including connections and requests.  When deactivated, only errors will be logged. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is False. </div>
-<div class="param">throttle (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This setting limits the number of non-significant logs generated per second for this VS on each SE. Default is 10 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">throttle (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This setting limits the number of non-significant logs generated per second for this VS on each SE. Default is 10 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6478,7 +6478,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">content_type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Mime-type of the content in the file. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">file_content </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> File content to used in the local HTTP response body. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">file_length (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> File content length. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">file_length (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> File content length. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6495,7 +6495,7 @@ font-style: italic;
 <div class="param">host (optional)</div><div class="param-desc"><span class="param-type"><a href="#URIParam">URIParam</a></span> Host config. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">keep_query (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Keep or drop the query of the incoming request URI in the redirected URI. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">path (optional)</div><div class="param-desc"><span class="param-type"><a href="#URIParam">URIParam</a></span> Path config. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port to which redirect the request. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port to which redirect the request. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">protocol </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Protocol type. Enum options - HTTP, HTTPS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">status_code (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP redirect status code. Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
@@ -6584,7 +6584,7 @@ font-style: italic;
     <h3 class="field-label"><a name="JWTClaimMatch">JWTClaimMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">bool_match (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Boolean value against which the claim is matched. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">int_match (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Integer value against which the claim is matched. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">int_match (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Integer value against which the claim is matched. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">is_mandatory </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Specified Claim should be present in the JWT. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> JWT Claim name to be validated. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">string_match (optional)</div><div class="param-desc"><span class="param-type"><a href="#StringMatch">StringMatch</a></span> String values against which the claim is matched. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
@@ -6631,12 +6631,12 @@ font-style: italic;
     <h3 class="field-label"><a name="LDAPVSConfig">LDAPVSConfig</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">realm (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Basic authentication realm to present to a user along with the prompt for credentials. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">se_auth_ldap_bind_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Default bind timeout enforced on connections to LDAP server. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">se_auth_ldap_cache_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Size of LDAP auth credentials cache used on the dataplane. Field introduced in 21.1.1. Unit is BYTES. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">se_auth_ldap_connect_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Default connection timeout enforced on connections to LDAP server. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">se_auth_ldap_conns_per_server (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of concurrent connections to LDAP server by a single basic auth LDAP process. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">se_auth_ldap_reconnect_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Default reconnect timeout enforced on connections to LDAP server. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">se_auth_ldap_request_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Default login or group search request timeout enforced on connections to LDAP server. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">se_auth_ldap_bind_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Default bind timeout enforced on connections to LDAP server. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">se_auth_ldap_cache_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Size of LDAP auth credentials cache used on the dataplane. Field introduced in 21.1.1. Unit is BYTES. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">se_auth_ldap_connect_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Default connection timeout enforced on connections to LDAP server. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">se_auth_ldap_conns_per_server (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of concurrent connections to LDAP server by a single basic auth LDAP process. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">se_auth_ldap_reconnect_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Default reconnect timeout enforced on connections to LDAP server. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">se_auth_ldap_request_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Default login or group search request timeout enforced on connections to LDAP server. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">se_auth_ldap_servers_failover_only (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If enabled, connections are always made to the first available LDAP server in the list and will failover to subsequent servers. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -6645,7 +6645,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Determine whether app learning logging is enabled. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">host (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Host name where learning logs will be sent to. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port number for the service listening for learning logs. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port number for the service listening for learning logs. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6678,7 +6678,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="MetricsRealTimeUpdate">MetricsRealTimeUpdate</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Real time metrics collection duration in minutes. 0 for infinite. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+      <div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Real time metrics collection duration in minutes. 0 for infinite. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">enabled </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enables real time metrics collection.  When deactivated, 6 hour view is the most granular the system will track. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -6779,10 +6779,10 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="RateLimiter">RateLimiter</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">burst_sz (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Basic edition(Allowed values- 0), Essentials, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+      <div class="param">burst_sz (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Basic edition(Allowed values- 0), Essentials, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Identifier for Rate Limit. Constructed according to context. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">period </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed in Enterprise edition with any value, Basic edition(Allowed values- 1), Essentials, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">period </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed in Enterprise edition with any value, Basic edition(Allowed values- 1), Essentials, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6920,8 +6920,8 @@ font-style: italic;
 <div class="param">is_active_ftp_data_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Source port used by VS for active FTP data connections. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">override_application_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Enable application layer specific features for the this specific service. It is a reference to an object of type ApplicationProfile. Field introduced in 17.2.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">override_network_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Override the network profile for this specific service port. It is a reference to an object of type NetworkProfile. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">port </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The Virtual Service&#39;s port number. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">port_range_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The end of the Virtual Service&#39;s port number range. Allowed values are 1-65535. Special values are 0- single port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">port </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The Virtual Service&#39;s port number. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">port_range_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The end of the Virtual Service&#39;s port number range. Allowed values are 1-65535. Special values are 0- single port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6929,8 +6929,8 @@ font-style: italic;
     <div class="field-items">
       <div class="param">service_pool_group_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type PoolGroup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">service_pool_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">service_port </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Pool based destination port. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">service_port_range_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The end of the Service port number range. Allowed values are 1-65535. Special values are 0- single port. Field introduced in 17.2.4. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">service_port </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Pool based destination port. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">service_port_range_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The end of the Service port number range. Allowed values are 1-65535. Special values are 0- single port. Field introduced in 17.2.4. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">service_protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Destination protocol to match for the pool selection. If not specified, it will match any protocol. Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY, PROTOCOL_TYPE_SCTP_PROXY, PROTOCOL_TYPE_SCTP_FAST_PATH. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -6967,8 +6967,8 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="URIParamToken">URIParamToken</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">end_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">start_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the starting token in the incoming URI. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+      <div class="param">end_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">start_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the starting token in the incoming URI. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">str_value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Constant string to use as a token. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Token type for constructing the URI. Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX, URI_TOKEN_TYPE_REGEX_QUERY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
@@ -7016,7 +7016,7 @@ font-style: italic;
 <div class="param">network_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Manually override the network on which the Vip is placed. It is a reference to an object of type Network. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">placement_networks (optional)</div><div class="param-desc"><span class="param-type"><a href="#VipPlacementNetwork">array[VipPlacementNetwork]</a></span> Placement networks/subnets to use for vip placement. Field introduced in 18.2.5. Maximum of 10 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">port_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> (internal-use) Network port assigned to the Vip IP address. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">prefix_length (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Mask applied for the Vip, non-default mask supported only for wildcard Vip. Allowed values are 0-32. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 32), Basic edition(Allowed values- 32), Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">prefix_length (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Mask applied for the Vip, non-default mask supported only for wildcard Vip. Allowed values are 0-32. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 32), Basic edition(Allowed values- 32), Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">subnet (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">IpAddrPrefix</a></span> Subnet providing reachability for client facing Vip IP. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">subnet6 (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">IpAddrPrefix</a></span> Subnet providing reachability for client facing Vip IPv6. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">subnet6_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> If auto_allocate_ip is True, then the subnet for the Vip IPv6 address allocation. This field is applicable only if the VirtualService belongs to an Openstack or AWS cloud, in which case it is mandatory, if auto_allocate is selected. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition. </div>
@@ -7076,9 +7076,9 @@ font-style: italic;
 <div class="param">ldap_vs_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#LDAPVSConfig">LDAPVSConfig</a></span> Application-specific LDAP config. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">limit_doser (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Limit potential DoS attackers who exceed max_cps_per_client significantly to a fraction of max_cps_per_client for a while. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">max_cps_per_client (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- unlimited. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">max_cps_per_client (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- unlimited. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">microservice_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Microservice representing the virtual service. It is a reference to an object of type MicroService. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">min_pools_up (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum number of UP pools to mark VS up. Field introduced in 18.2.1, 17.2.12. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">min_pools_up (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum number of UP pools to mark VS up. Field introduced in 18.2.1, 17.2.12. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name for the Virtual Service. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">network_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Determines network settings such as protocol, TCP or UDP, and related options for the protocol. It is a reference to an object of type NetworkProfile. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. Special default for Essentials edition is System-TCP-Fast-Path. </div>
 <div class="param">network_security_policy_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Network security policies for the Virtual Service. It is a reference to an object of type NetworkSecurityPolicy. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -7103,7 +7103,7 @@ font-style: italic;
 <div class="param">ssl_key_and_certificate_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Select or create one or two certificates, EC and/or RSA, that will be presented to SSL/TLS terminated connections. It is a reference to an object of type SSLKeyAndCertificate. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Determines the set of SSL versions and ciphers to accept for SSL/TLS terminated connections. It is a reference to an object of type SSLProfile. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_profile_selectors (optional)</div><div class="param-desc"><span class="param-type"><a href="#SSLProfileSelector">array[SSLProfileSelector]</a></span> Select SSL Profile based on client IP address match. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">ssl_sess_cache_avg_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Expected number of SSL session cache entries (may be exceeded). Allowed values are 1024-16383. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">ssl_sess_cache_avg_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Expected number of SSL session cache entries (may be exceeded). Allowed values are 1024-16383. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">sso_policy_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The SSO Policy attached to the virtualservice. It is a reference to an object of type SSOPolicy. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">static_dns_records (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRecord">array[DnsRecord]</a></span> List of static DNS records applied to this Virtual Service. These are static entries and no health monitoring is performed against the IP addresses. Maximum of 1000 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -7126,7 +7126,7 @@ font-style: italic;
 <div class="param">vsvip_cloud_config_cksum (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Checksum of cloud configuration for VsVip. Internally set by cloud connector. Field introduced in 17.2.9, 18.1.2. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">vsvip_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Mostly used during the creation of Shared VS, this field refers to entities that can be shared across Virtual Services. It is a reference to an object of type VsVip. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">waf_policy_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> WAF policy for the Virtual Service. It is a reference to an object of type WafPolicy. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">weight (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The Quality of Service weight to assign to traffic transmitted from this Virtual Service.  A higher weight will prioritize traffic versus other Virtual Services sharing the same Service Engines. Allowed values are 1-128. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">weight (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The Quality of Service weight to assign to traffic transmitted from this Virtual Service.  A higher weight will prioritize traffic versus other Virtual Services sharing the same Service Engines. Allowed values are 1-128. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -7141,7 +7141,7 @@ font-style: italic;
     <h3 class="field-label"><a name="VsMigrateParams">VsMigrateParams</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">from_se_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type ServiceEngine. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">new_vcpus (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">new_vcpus (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">to_host_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type VIMgrHostRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">to_new_se (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">to_se_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type ServiceEngine. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -7170,7 +7170,7 @@ font-style: italic;
     <h3 class="field-label"><a name="VsScaleoutParams">VsScaleoutParams</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">admin_up (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">new_vcpus (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">new_vcpus (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">to_host_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type VIMgrHostRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">to_new_se (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">to_se_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type ServiceEngine. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>

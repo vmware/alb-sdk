@@ -262,7 +262,7 @@ font-style: italic;
   "count" : 123,
   "results" : [ {
     "ip_persistence_profile" : {
-      "ip_mask" : "",
+      "ip_mask" : 123,
       "ip_persistent_timeout" : 123
     },
     "description" : "aeiou",
@@ -290,7 +290,7 @@ font-style: italic;
     "name" : "aeiou",
     "server_hm_down_recovery" : "aeiou",
     "configpb_attributes" : {
-      "version" : ""
+      "version" : 123
     },
     "markers" : [ {
       "values" : [ "aeiou" ],
@@ -357,7 +357,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "ip_persistence_profile" : {
-    "ip_mask" : "",
+    "ip_mask" : 123,
     "ip_persistent_timeout" : 123
   },
   "description" : "aeiou",
@@ -385,7 +385,7 @@ font-style: italic;
   "name" : "aeiou",
   "server_hm_down_recovery" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -575,7 +575,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "ip_persistence_profile" : {
-    "ip_mask" : "",
+    "ip_mask" : 123,
     "ip_persistent_timeout" : 123
   },
   "description" : "aeiou",
@@ -603,7 +603,7 @@ font-style: italic;
   "name" : "aeiou",
   "server_hm_down_recovery" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -681,7 +681,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "ip_persistence_profile" : {
-    "ip_mask" : "",
+    "ip_mask" : 123,
     "ip_persistent_timeout" : 123
   },
   "description" : "aeiou",
@@ -709,7 +709,7 @@ font-style: italic;
   "name" : "aeiou",
   "server_hm_down_recovery" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -787,7 +787,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "ip_persistence_profile" : {
-    "ip_mask" : "",
+    "ip_mask" : 123,
     "ip_persistent_timeout" : 123
   },
   "description" : "aeiou",
@@ -815,7 +815,7 @@ font-style: italic;
   "name" : "aeiou",
   "server_hm_down_recovery" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -903,7 +903,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -935,7 +935,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="IPPersistenceProfile">IPPersistenceProfile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">ip_mask (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Mask to be applied on client IP. This may be used to persist clients from a subnet to the same server. When set to 0, all requests are sent to the same server. Allowed values are 0-128. Field introduced in 18.2.7. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+      <div class="param">ip_mask (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Mask to be applied on client IP. This may be used to persist clients from a subnet to the same server. When set to 0, all requests are sent to the same server. Allowed values are 0-128. Field introduced in 18.2.7. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">ip_persistent_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The length of time after a client&#39;s connections have closed before expiring the client&#39;s persistence to a server. Allowed values are 1-720. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
