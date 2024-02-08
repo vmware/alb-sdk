@@ -211,10 +211,11 @@ class ProfileConfigConv(object):
                                                                                      conv_status['skipped']))
 
     def convert_http(self, alb_pr, lb_pr):
+        xff_enabled = True if lb_pr.get('x_forwarded_for') else False
         alb_pr['type'] = 'APPLICATION_PROFILE_TYPE_HTTP'
         alb_pr['http_profile'] = dict(
-            xff_enabled=lb_pr.get('xForwardedFor', False),
-            http_to_https=lb_pr.get('httpRedirectToHttps', False),
+            xff_enabled=xff_enabled,
+            http_to_https=lb_pr.get('http_redirect_to_https'),
             keepalive_timeout=lb_pr.get('idle_timeout'),
             # nsx-t config value in bytes, so converting from bytes to KB for ALB
             client_max_header_size=lb_pr.get('request_header_size') / 1024,
