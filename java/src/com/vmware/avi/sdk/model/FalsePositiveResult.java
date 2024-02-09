@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FalsePositiveResult  {
     @JsonProperty("attack")
-    private Boolean attack = null;
+    private Boolean attack;
 
     @JsonProperty("confidence")
-    private Float confidence = null;
+    private Float confidence;
 
     @JsonProperty("false_positive")
-    private Boolean falsePositive = null;
+    private Boolean falsePositive;
 
     @JsonProperty("fp_result_header")
-    private FalsePositiveResultHeader fpResultHeader = null;
+    private FalsePositiveResultHeader fpResultHeader;
 
     @JsonProperty("http_method")
-    private String httpMethod = null;
+    private String httpMethod;
 
     @JsonProperty("http_request_header_info")
-    private HeaderInfoInURI httpRequestHeaderInfo = null;
+    private HeaderInfoInURI httpRequestHeaderInfo;
 
     @JsonProperty("params_info")
-    private ParamsInURI paramsInfo = null;
+    private ParamsInURI paramsInfo;
 
     @JsonProperty("rule_info")
-    private RuleInfo ruleInfo = null;
+    private RuleInfo ruleInfo;
 
     @JsonProperty("uri")
-    private String uri = null;
+    private String uri;
 
     @JsonProperty("uri_result_mode")
-    private String uriResultMode = null;
+    private String uriResultMode;
 
 
 

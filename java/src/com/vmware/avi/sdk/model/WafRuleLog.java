@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafRuleLog  {
     @JsonProperty("matches")
-    private List<WafRuleMatchData> matches = null;
+    private List<WafRuleMatchData> matches;
 
     @JsonProperty("msg")
-    private String msg = null;
+    private String msg;
 
     @JsonProperty("omitted_match_elements")
     private Integer omittedMatchElements = 0;
 
     @JsonProperty("phase")
-    private String phase = null;
+    private String phase;
 
     @JsonProperty("rule_group")
-    private String ruleGroup = null;
+    private String ruleGroup;
 
     @JsonProperty("rule_id")
-    private Integer ruleId = null;
+    private Integer ruleId;
 
     @JsonProperty("rule_name")
-    private String ruleName = null;
+    private String ruleName;
 
     @JsonProperty("tags")
-    private List<String> tags = null;
+    private List<String> tags;
 
 
     /**

@@ -22,40 +22,40 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsRequest  {
     @JsonProperty("additional_records_count")
-    private Integer additionalRecordsCount = null;
+    private Integer additionalRecordsCount;
 
     @JsonProperty("answer_records_count")
-    private Integer answerRecordsCount = null;
+    private Integer answerRecordsCount;
 
     @JsonProperty("authentic_data")
-    private Boolean authenticData = null;
+    private Boolean authenticData;
 
     @JsonProperty("checking_disabled")
-    private Boolean checkingDisabled = null;
+    private Boolean checkingDisabled;
 
     @JsonProperty("client_location")
-    private GeoLocation clientLocation = null;
+    private GeoLocation clientLocation;
 
     @JsonProperty("identifier")
-    private Integer identifier = null;
+    private Integer identifier;
 
     @JsonProperty("nameserver_records_count")
-    private Integer nameserverRecordsCount = null;
+    private Integer nameserverRecordsCount;
 
     @JsonProperty("opcode")
-    private String opcode = null;
+    private String opcode;
 
     @JsonProperty("opt_record")
-    private DnsOptRecord optRecord = null;
+    private DnsOptRecord optRecord;
 
     @JsonProperty("query_or_response")
-    private Boolean queryOrResponse = null;
+    private Boolean queryOrResponse;
 
     @JsonProperty("question_count")
-    private Integer questionCount = null;
+    private Integer questionCount;
 
     @JsonProperty("recursion_desired")
-    private Boolean recursionDesired = null;
+    private Boolean recursionDesired;
 
 
 

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerPortalAsset  {
     @JsonProperty("asset_id")
-    private String assetId = null;
+    private String assetId;
 
 
 

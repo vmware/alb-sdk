@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SnmpTrapProfile extends AviRestResource  {
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("trap_servers")
-    private List<SnmpTrapServer> trapServers = null;
+    private List<SnmpTrapServer> trapServers;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

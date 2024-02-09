@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FailActionHTTPLocalResponse  {
     @JsonProperty("file")
-    private HTTPLocalFile file = null;
+    private HTTPLocalFile file;
 
     @JsonProperty("status_code")
     private String statusCode = "FAIL_HTTP_STATUS_CODE_503";

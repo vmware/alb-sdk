@@ -25,22 +25,22 @@ public class IpamDnsGCPProfile  {
     private Boolean matchSeGroupSubnet = false;
 
     @JsonProperty("network_host_project_id")
-    private String networkHostProjectId = null;
+    private String networkHostProjectId;
 
     @JsonProperty("region_name")
-    private String regionName = null;
+    private String regionName;
 
     @JsonProperty("se_project_id")
-    private String seProjectId = null;
+    private String seProjectId;
 
     @JsonProperty("usable_network_refs")
-    private List<String> usableNetworkRefs = null;
+    private List<String> usableNetworkRefs;
 
     @JsonProperty("use_gcp_network")
     private Boolean useGcpNetwork = false;
 
     @JsonProperty("vpc_network_name")
-    private String vpcNetworkName = null;
+    private String vpcNetworkName;
 
 
 

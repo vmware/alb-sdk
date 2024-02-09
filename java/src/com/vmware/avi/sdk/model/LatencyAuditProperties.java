@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LatencyAuditProperties  {
     @JsonProperty("conn_est_audit_mode")
-    private String connEstAuditMode = null;
+    private String connEstAuditMode;
 
     @JsonProperty("conn_est_threshold")
-    private Integer connEstThreshold = null;
+    private Integer connEstThreshold;
 
     @JsonProperty("latency_audit_mode")
-    private String latencyAuditMode = null;
+    private String latencyAuditMode;
 
     @JsonProperty("latency_threshold")
-    private Integer latencyThreshold = null;
+    private Integer latencyThreshold;
 
 
 

@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbPoolMember  {
     @JsonProperty("cloud_uuid")
-    private String cloudUuid = null;
+    private String cloudUuid;
 
     @JsonProperty("cluster_uuid")
-    private String clusterUuid = null;
+    private String clusterUuid;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("enabled")
     private Boolean enabled = true;
 
     @JsonProperty("fqdn")
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("hostname")
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("location")
-    private GslbGeoLocation location = null;
+    private GslbGeoLocation location;
 
     @JsonProperty("preference_order")
     private Integer preferenceOrder = 1;
 
     @JsonProperty("public_ip")
-    private GslbIpAddr publicIp = null;
+    private GslbIpAddr publicIp;
 
     @JsonProperty("ratio")
     private Integer ratio = 1;
@@ -58,7 +58,7 @@ public class GslbPoolMember  {
     private Boolean resolveFqdnToV6 = false;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

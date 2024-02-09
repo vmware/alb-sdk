@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HSMThalesRFS  {
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("port")
     private Integer port = 9004;

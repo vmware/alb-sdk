@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthMappingProfile extends AviRestResource  {
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("mapping_rules")
-    private List<AuthMappingRule> mappingRules = null;
+    private List<AuthMappingRule> mappingRules;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

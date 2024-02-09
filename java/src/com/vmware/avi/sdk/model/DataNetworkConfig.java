@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DataNetworkConfig  {
     @JsonProperty("tier1_segment_config")
-    private NsxtTier1SegmentConfig tier1SegmentConfig = null;
+    private NsxtTier1SegmentConfig tier1SegmentConfig;
 
     @JsonProperty("transport_zone")
-    private String transportZone = null;
+    private String transportZone;
 
     @JsonProperty("tz_type")
-    private String tzType = null;
+    private String tzType;
 
     @JsonProperty("vlan_segments")
-    private List<String> vlanSegments = null;
+    private List<String> vlanSegments;
 
 
 

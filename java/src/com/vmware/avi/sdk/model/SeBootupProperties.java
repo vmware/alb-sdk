@@ -46,7 +46,7 @@ public class SeBootupProperties  {
     private Boolean logAgentTraceEnabled = true;
 
     @JsonProperty("se_dp_compression")
-    private SeBootupCompressionProperties seDpCompression = null;
+    private SeBootupCompressionProperties seDpCompression;
 
     @JsonProperty("se_emulated_cores")
     private Integer seEmulatedCores = 0;

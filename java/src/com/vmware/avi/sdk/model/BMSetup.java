@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BMSetup  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
 
 

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RateProfile  {
     @JsonProperty("action")
-    private RateLimiterAction action = null;
+    private RateLimiterAction action;
 
     @JsonProperty("explicit_tracking")
     private Boolean explicitTracking = false;
@@ -31,13 +31,13 @@ public class RateProfile  {
     private Boolean fineGrain = false;
 
     @JsonProperty("http_cookie")
-    private String httpCookie = null;
+    private String httpCookie;
 
     @JsonProperty("http_header")
-    private String httpHeader = null;
+    private String httpHeader;
 
     @JsonProperty("rate_limiter")
-    private RateLimiter rateLimiter = null;
+    private RateLimiter rateLimiter;
 
 
 

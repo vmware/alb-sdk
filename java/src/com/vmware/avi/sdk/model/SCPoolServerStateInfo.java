@@ -25,22 +25,22 @@ public class SCPoolServerStateInfo extends AviRestResource  {
     private Boolean isServer = false;
 
     @JsonProperty("oper_status")
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("pool_id")
-    private String poolId = null;
+    private String poolId;
 
     @JsonProperty("server_states")
-    private List<SCServerStateInfo> serverStates = null;
+    private List<SCServerStateInfo> serverStates;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

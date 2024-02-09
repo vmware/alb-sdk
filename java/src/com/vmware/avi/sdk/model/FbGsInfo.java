@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FbGsInfo  {
     @JsonProperty("oper_status")
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
 
 

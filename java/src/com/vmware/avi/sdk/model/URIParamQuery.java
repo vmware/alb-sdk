@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class URIParamQuery  {
     @JsonProperty("add_string")
-    private String addString = null;
+    private String addString;
 
     @JsonProperty("keep_query")
     private Boolean keepQuery = true;

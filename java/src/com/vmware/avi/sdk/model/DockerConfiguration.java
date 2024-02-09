@@ -25,10 +25,10 @@ public class DockerConfiguration  {
     private Integer appSyncFrequency = 60;
 
     @JsonProperty("ca_tls_key_and_certificate_ref")
-    private String caTlsKeyAndCertificateRef = null;
+    private String caTlsKeyAndCertificateRef;
 
     @JsonProperty("client_tls_key_and_certificate_ref")
-    private String clientTlsKeyAndCertificateRef = null;
+    private String clientTlsKeyAndCertificateRef;
 
     @JsonProperty("container_port_match_http_service")
     private Boolean containerPortMatchHttpService = true;
@@ -46,10 +46,10 @@ public class DockerConfiguration  {
     private Boolean disableAutoSeCreation = false;
 
     @JsonProperty("docker_registry_se")
-    private DockerRegistry dockerRegistrySe = null;
+    private DockerRegistry dockerRegistrySe;
 
     @JsonProperty("east_west_placement_subnet")
-    private IpAddrPrefix eastWestPlacementSubnet = null;
+    private IpAddrPrefix eastWestPlacementSubnet;
 
     @JsonProperty("enable_event_subscription")
     private Boolean enableEventSubscription = true;
@@ -61,19 +61,19 @@ public class DockerConfiguration  {
     private Boolean feproxyVipsEnableProxyArp = true;
 
     @JsonProperty("fleet_endpoint")
-    private String fleetEndpoint = null;
+    private String fleetEndpoint;
 
     @JsonProperty("http_container_ports")
-    private List<Integer> httpContainerPorts = null;
+    private List<Integer> httpContainerPorts;
 
     @JsonProperty("se_deployment_method")
     private String seDeploymentMethod = "SE_CREATE_SSH";
 
     @JsonProperty("se_exclude_attributes")
-    private List<MesosAttribute> seExcludeAttributes = null;
+    private List<MesosAttribute> seExcludeAttributes;
 
     @JsonProperty("se_include_attributes")
-    private List<MesosAttribute> seIncludeAttributes = null;
+    private List<MesosAttribute> seIncludeAttributes;
 
     @JsonProperty("se_spawn_rate")
     private Integer seSpawnRate = 25;
@@ -85,10 +85,10 @@ public class DockerConfiguration  {
     private Boolean servicesAccessibleAllInterfaces = false;
 
     @JsonProperty("ssh_user_ref")
-    private String sshUserRef = null;
+    private String sshUserRef;
 
     @JsonProperty("ucp_nodes")
-    private List<String> ucpNodes = null;
+    private List<String> ucpNodes;
 
     @JsonProperty("use_container_ip_port")
     private Boolean useContainerIpPort = false;

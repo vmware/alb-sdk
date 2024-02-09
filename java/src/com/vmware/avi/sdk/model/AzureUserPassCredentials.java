@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AzureUserPassCredentials  {
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("tenant_name")
-    private String tenantName = null;
+    private String tenantName;
 
     @JsonProperty("username")
-    private String username = null;
+    private String username;
 
 
 

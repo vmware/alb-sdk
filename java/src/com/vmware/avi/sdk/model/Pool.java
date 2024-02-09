@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Pool extends AviRestResource  {
     @JsonProperty("analytics_policy")
-    private PoolAnalyticsPolicy analyticsPolicy = null;
+    private PoolAnalyticsPolicy analyticsPolicy;
 
     @JsonProperty("analytics_profile_ref")
-    private String analyticsProfileRef = null;
+    private String analyticsProfileRef;
 
     @JsonProperty("append_port")
     private String appendPort;
 
     @JsonProperty("application_persistence_profile_ref")
-    private String applicationPersistenceProfileRef = null;
+    private String applicationPersistenceProfileRef;
 
     @JsonProperty("autoscale_launch_config_ref")
-    private String autoscaleLaunchConfigRef = null;
+    private String autoscaleLaunchConfigRef;
 
     @JsonProperty("autoscale_networks")
-    private List<String> autoscaleNetworks = null;
+    private List<String> autoscaleNetworks;
 
     @JsonProperty("autoscale_policy_ref")
-    private String autoscalePolicyRef = null;
+    private String autoscalePolicyRef;
 
     @JsonProperty("capacity_estimation")
     private Boolean capacityEstimation = false;
@@ -49,19 +49,19 @@ public class Pool extends AviRestResource  {
     private Integer capacityEstimationTtfbThresh = 0;
 
     @JsonProperty("cloud_config_cksum")
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("conn_pool_properties")
-    private ConnPoolProperties connPoolProperties = null;
+    private ConnPoolProperties connPoolProperties;
 
     @JsonProperty("connection_ramp_duration")
     private Integer connectionRampDuration;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("default_server_port")
     private Integer defaultServerPort = 80;
@@ -70,13 +70,13 @@ public class Pool extends AviRestResource  {
     private Boolean deleteServerOnDnsRefresh = true;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("domain_name")
-    private List<String> domainName = null;
+    private List<String> domainName;
 
     @JsonProperty("east_west")
-    private Boolean eastWest = null;
+    private Boolean eastWest;
 
     @JsonProperty("enable_http2")
     private Boolean enableHttp2 = false;
@@ -85,10 +85,10 @@ public class Pool extends AviRestResource  {
     private Boolean enabled = true;
 
     @JsonProperty("external_autoscale_groups")
-    private List<String> externalAutoscaleGroups = null;
+    private List<String> externalAutoscaleGroups;
 
     @JsonProperty("fail_action")
-    private FailAction failAction = null;
+    private FailAction failAction;
 
     @JsonProperty("fewest_tasks_feedback_delay")
     private Integer fewestTasksFeedbackDelay = 10;
@@ -103,16 +103,16 @@ public class Pool extends AviRestResource  {
     private Boolean gslbSpEnabled;
 
     @JsonProperty("health_monitor_refs")
-    private List<String> healthMonitorRefs = null;
+    private List<String> healthMonitorRefs;
 
     @JsonProperty("horizon_profile")
-    private HorizonProfile horizonProfile = null;
+    private HorizonProfile horizonProfile;
 
     @JsonProperty("host_check_enabled")
     private Boolean hostCheckEnabled = false;
 
     @JsonProperty("http2_properties")
-    private HTTP2PoolProperties http2Properties = null;
+    private HTTP2PoolProperties http2Properties;
 
     @JsonProperty("ignore_server_port")
     private Boolean ignoreServerPort = false;
@@ -121,7 +121,7 @@ public class Pool extends AviRestResource  {
     private Boolean inlineHealthMonitor = true;
 
     @JsonProperty("ipaddrgroup_ref")
-    private String ipaddrgroupRef = null;
+    private String ipaddrgroupRef;
 
     @JsonProperty("lb_algo_rr_per_se")
     private Boolean lbAlgoRrPerSe = false;
@@ -130,7 +130,7 @@ public class Pool extends AviRestResource  {
     private String lbAlgorithm = "LB_ALGORITHM_LEAST_CONNECTIONS";
 
     @JsonProperty("lb_algorithm_consistent_hash_hdr")
-    private String lbAlgorithmConsistentHashHdr = null;
+    private String lbAlgorithmConsistentHashHdr;
 
     @JsonProperty("lb_algorithm_core_nonaffinity")
     private Integer lbAlgorithmCoreNonaffinity = 2;
@@ -142,34 +142,34 @@ public class Pool extends AviRestResource  {
     private Boolean lookupServerByName = false;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("max_concurrent_connections_per_server")
     private Integer maxConcurrentConnectionsPerServer = 0;
 
     @JsonProperty("max_conn_rate_per_server")
-    private RateProfile maxConnRatePerServer = null;
+    private RateProfile maxConnRatePerServer;
 
     @JsonProperty("min_health_monitors_up")
-    private Integer minHealthMonitorsUp = null;
+    private Integer minHealthMonitorsUp;
 
     @JsonProperty("min_servers_up")
-    private Integer minServersUp = null;
+    private Integer minServersUp;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("networks")
-    private List<NetworkFilter> networks = null;
+    private List<NetworkFilter> networks;
 
     @JsonProperty("nsx_securitygroup")
-    private List<String> nsxSecuritygroup = null;
+    private List<String> nsxSecuritygroup;
 
     @JsonProperty("pki_profile_ref")
-    private String pkiProfileRef = null;
+    private String pkiProfileRef;
 
     @JsonProperty("placement_networks")
-    private List<PlacementNetwork> placementNetworks = null;
+    private List<PlacementNetwork> placementNetworks;
 
     @JsonProperty("pool_type")
     private String poolType = "POOL_TYPE_GENERIC_APP";
@@ -193,34 +193,34 @@ public class Pool extends AviRestResource  {
     private String serverDisableType = "DISALLOW_NEW_CONNECTION";
 
     @JsonProperty("server_name")
-    private String serverName = null;
+    private String serverName;
 
     @JsonProperty("server_reselect")
-    private HTTPServerReselect serverReselect = null;
+    private HTTPServerReselect serverReselect;
 
     @JsonProperty("server_timeout")
     private Integer serverTimeout = 0;
 
     @JsonProperty("servers")
-    private List<Server> servers = null;
+    private List<Server> servers;
 
     @JsonProperty("service_metadata")
-    private String serviceMetadata = null;
+    private String serviceMetadata;
 
     @JsonProperty("sni_enabled")
     private Boolean sniEnabled = true;
 
     @JsonProperty("ssl_key_and_certificate_ref")
-    private String sslKeyAndCertificateRef = null;
+    private String sslKeyAndCertificateRef;
 
     @JsonProperty("ssl_profile_ref")
-    private String sslProfileRef = null;
+    private String sslProfileRef;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("tier1_lr")
-    private String tier1Lr = null;
+    private String tier1Lr;
 
     @JsonProperty("url")
     private String url = "url";
@@ -232,10 +232,10 @@ public class Pool extends AviRestResource  {
     private Boolean useServiceSslMode = false;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vrf_ref")
-    private String vrfRef = null;
+    private String vrfRef;
 
 
 

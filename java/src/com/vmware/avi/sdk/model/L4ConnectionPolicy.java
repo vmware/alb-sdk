@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class L4ConnectionPolicy  {
     @JsonProperty("rules")
-    private List<L4Rule> rules = null;
+    private List<L4Rule> rules;
 
 
     /**

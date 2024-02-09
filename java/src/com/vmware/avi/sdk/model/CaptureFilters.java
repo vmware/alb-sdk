@@ -22,40 +22,40 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CaptureFilters  {
     @JsonProperty("capture_ip")
-    private DebugIpAddr captureIp = null;
+    private DebugIpAddr captureIp;
 
     @JsonProperty("capture_ipc")
-    private CaptureIPC captureIpc = null;
+    private CaptureIPC captureIpc;
 
     @JsonProperty("dst_port_end")
-    private Integer dstPortEnd = null;
+    private Integer dstPortEnd;
 
     @JsonProperty("dst_port_start")
-    private Integer dstPortStart = null;
+    private Integer dstPortStart;
 
     @JsonProperty("eth_proto")
-    private String ethProto = null;
+    private String ethProto;
 
     @JsonProperty("ip_proto")
-    private String ipProto = null;
+    private String ipProto;
 
     @JsonProperty("src_port")
-    private Integer srcPort = null;
+    private Integer srcPort;
 
     @JsonProperty("src_port_range_end")
-    private Integer srcPortRangeEnd = null;
+    private Integer srcPortRangeEnd;
 
     @JsonProperty("tcp_ack")
-    private Boolean tcpAck = null;
+    private Boolean tcpAck;
 
     @JsonProperty("tcp_fin")
-    private Boolean tcpFin = null;
+    private Boolean tcpFin;
 
     @JsonProperty("tcp_push")
-    private Boolean tcpPush = null;
+    private Boolean tcpPush;
 
     @JsonProperty("tcp_syn")
-    private Boolean tcpSyn = null;
+    private Boolean tcpSyn;
 
 
 

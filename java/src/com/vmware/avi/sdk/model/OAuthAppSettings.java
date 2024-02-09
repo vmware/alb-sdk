@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OAuthAppSettings  {
     @JsonProperty("client_id")
-    private String clientId = null;
+    private String clientId;
 
     @JsonProperty("client_secret")
-    private String clientSecret = null;
+    private String clientSecret;
 
     @JsonProperty("oidc_config")
-    private OIDCConfig oidcConfig = null;
+    private OIDCConfig oidcConfig;
 
     @JsonProperty("scopes")
-    private List<String> scopes = null;
+    private List<String> scopes;
 
 
 

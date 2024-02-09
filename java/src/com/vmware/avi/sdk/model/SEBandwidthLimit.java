@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SEBandwidthLimit  {
     @JsonProperty("count")
-    private Integer count = null;
+    private Integer count;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

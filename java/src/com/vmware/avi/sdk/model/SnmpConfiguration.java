@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SnmpConfiguration  {
     @JsonProperty("community")
-    private String community = null;
+    private String community;
 
     @JsonProperty("large_trap_payload")
     private Boolean largeTrapPayload = false;
 
     @JsonProperty("snmp_v3_config")
-    private SnmpV3Configuration snmpV3Config = null;
+    private SnmpV3Configuration snmpV3Config;
 
     @JsonProperty("sys_contact")
     private String sysContact = "support@avinetworks.com";
 
     @JsonProperty("sys_location")
-    private String sysLocation = null;
+    private String sysLocation;
 
     @JsonProperty("version")
     private String version = "SNMP_VER2";

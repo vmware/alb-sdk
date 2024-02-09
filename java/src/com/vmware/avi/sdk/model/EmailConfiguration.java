@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class EmailConfiguration  {
     @JsonProperty("auth_password")
-    private String authPassword = null;
+    private String authPassword;
 
     @JsonProperty("auth_username")
-    private String authUsername = null;
+    private String authUsername;
 
     @JsonProperty("disable_tls")
     private Boolean disableTls = false;
 
     @JsonProperty("email_timezone")
-    private String emailTimezone = null;
+    private String emailTimezone;
 
     @JsonProperty("from_email")
     private String fromEmail = "admin@avicontroller.net";
 
     @JsonProperty("from_name")
-    private String fromName = null;
+    private String fromName;
 
     @JsonProperty("mail_server_name")
     private String mailServerName = "localhost";

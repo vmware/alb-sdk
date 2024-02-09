@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MicroServiceMatch  {
     @JsonProperty("group_ref")
-    private String groupRef = null;
+    private String groupRef;
 
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
 
 

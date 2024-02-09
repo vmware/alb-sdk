@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafPSMLocation  {
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
-    private WafPSMLocationMatch match = null;
+    private WafPSMLocationMatch match;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("rules")
-    private List<WafPSMRule> rules = null;
+    private List<WafPSMRule> rules;
 
 
 

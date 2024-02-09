@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConnpoolFilter  {
     @JsonProperty("ip_addr")
-    private String ipAddr = null;
+    private String ipAddr;
 
     @JsonProperty("ip_mask")
-    private String ipMask = null;
+    private String ipMask;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

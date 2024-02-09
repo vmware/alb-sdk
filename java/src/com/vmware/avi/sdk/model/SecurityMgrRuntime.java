@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SecurityMgrRuntime  {
     @JsonProperty("thresholds")
-    private List<SecMgrThreshold> thresholds = null;
+    private List<SecMgrThreshold> thresholds;
 
 
     /**

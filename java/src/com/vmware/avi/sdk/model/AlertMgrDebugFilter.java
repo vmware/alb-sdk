@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AlertMgrDebugFilter  {
     @JsonProperty("alert_objid")
-    private String alertObjid = null;
+    private String alertObjid;
 
     @JsonProperty("alert_uuid")
-    private String alertUuid = null;
+    private String alertUuid;
 
     @JsonProperty("cfg_uuid")
-    private String cfgUuid = null;
+    private String cfgUuid;
 
 
 

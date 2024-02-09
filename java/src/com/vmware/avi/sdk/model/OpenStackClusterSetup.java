@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OpenStackClusterSetup  {
     @JsonProperty("admin_tenant")
-    private String adminTenant = null;
+    private String adminTenant;
 
     @JsonProperty("auth_url")
-    private String authUrl = null;
+    private String authUrl;
 
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("keystone_host")
-    private String keystoneHost = null;
+    private String keystoneHost;
 
     @JsonProperty("privilege")
-    private String privilege = null;
+    private String privilege;
 
 
 

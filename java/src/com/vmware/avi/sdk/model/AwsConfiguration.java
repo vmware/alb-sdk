@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AwsConfiguration  {
     @JsonProperty("access_key_id")
-    private String accessKeyId = null;
+    private String accessKeyId;
 
     @JsonProperty("asg_poll_interval")
     private Integer asgPollInterval = 600;
 
     @JsonProperty("ebs_encryption")
-    private AwsEncryption ebsEncryption = null;
+    private AwsEncryption ebsEncryption;
 
     @JsonProperty("free_elasticips")
     private Boolean freeElasticips = true;
 
     @JsonProperty("iam_assume_role")
-    private String iamAssumeRole = null;
+    private String iamAssumeRole;
 
     @JsonProperty("publish_vip_to_public_zone")
     private Boolean publishVipToPublicZone = false;
@@ -46,13 +46,13 @@ public class AwsConfiguration  {
     private Boolean route53Integration = false;
 
     @JsonProperty("s3_encryption")
-    private AwsEncryption s3Encryption = null;
+    private AwsEncryption s3Encryption;
 
     @JsonProperty("secret_access_key")
-    private String secretAccessKey = null;
+    private String secretAccessKey;
 
     @JsonProperty("sqs_encryption")
-    private AwsEncryption sqsEncryption = null;
+    private AwsEncryption sqsEncryption;
 
     @JsonProperty("ttl")
     private Integer ttl = 60;
@@ -64,13 +64,13 @@ public class AwsConfiguration  {
     private Boolean useSnsSqs = false;
 
     @JsonProperty("vpc")
-    private String vpc = null;
+    private String vpc;
 
     @JsonProperty("vpc_id")
-    private String vpcId = null;
+    private String vpcId;
 
     @JsonProperty("zones")
-    private List<AwsZoneConfig> zones = null;
+    private List<AwsZoneConfig> zones;
 
 
 

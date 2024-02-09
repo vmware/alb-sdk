@@ -25,43 +25,43 @@ public class HealthScoreDetails  {
     private Integer anomalyPenalty = 0;
 
     @JsonProperty("anomaly_reason")
-    private String anomalyReason = null;
+    private String anomalyReason;
 
     @JsonProperty("performance_reason")
-    private String performanceReason = null;
+    private String performanceReason;
 
     @JsonProperty("performance_score")
     private Integer performanceScore = 100;
 
     @JsonProperty("previous_value")
-    private Float previousValue = null;
+    private Float previousValue;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("resources_penalty")
     private Integer resourcesPenalty = 0;
 
     @JsonProperty("resources_reason")
-    private String resourcesReason = null;
+    private String resourcesReason;
 
     @JsonProperty("security_penalty")
     private Integer securityPenalty = 0;
 
     @JsonProperty("security_reason")
-    private String securityReason = null;
+    private String securityReason;
 
     @JsonProperty("step")
-    private Integer step = null;
+    private Integer step;
 
     @JsonProperty("sub_resource_prefix")
-    private String subResourcePrefix = null;
+    private String subResourcePrefix;
 
     @JsonProperty("timestamp")
-    private String timestamp = null;
+    private String timestamp;
 
     @JsonProperty("value")
-    private Float value = null;
+    private Float value;
 
 
 

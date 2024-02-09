@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Network extends AviRestResource  {
     @JsonProperty("attrs")
-    private List<KeyValue> attrs = null;
+    private List<KeyValue> attrs;
 
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("configured_subnets")
-    private List<Subnet> configuredSubnets = null;
+    private List<Subnet> configuredSubnets;
 
     @JsonProperty("dhcp_enabled")
     private Boolean dhcpEnabled = true;
@@ -40,22 +40,22 @@ public class Network extends AviRestResource  {
     private Boolean ip6AutocfgEnabled = true;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("synced_from_se")
     private Boolean syncedFromSe = false;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vcenter_dvs")
     private Boolean vcenterDvs = true;
@@ -64,7 +64,7 @@ public class Network extends AviRestResource  {
     private String vimgrnwRef;
 
     @JsonProperty("vrf_context_ref")
-    private String vrfContextRef = null;
+    private String vrfContextRef;
 
 
     /**

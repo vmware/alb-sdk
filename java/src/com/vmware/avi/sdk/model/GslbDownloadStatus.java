@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbDownloadStatus  {
     @JsonProperty("last_changed_time")
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("state")
     private String state = "GSLB_DOWNLOAD_NONE";

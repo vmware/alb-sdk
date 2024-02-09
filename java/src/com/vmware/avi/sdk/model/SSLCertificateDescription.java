@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SSLCertificateDescription  {
     @JsonProperty("common_name")
-    private String commonName = null;
+    private String commonName;
 
     @JsonProperty("country")
-    private String country = null;
+    private String country;
 
     @JsonProperty("distinguished_name")
-    private String distinguishedName = null;
+    private String distinguishedName;
 
     @JsonProperty("email_address")
-    private String emailAddress = null;
+    private String emailAddress;
 
     @JsonProperty("locality")
-    private String locality = null;
+    private String locality;
 
     @JsonProperty("organization")
-    private String organization = null;
+    private String organization;
 
     @JsonProperty("organization_unit")
-    private String organizationUnit = null;
+    private String organizationUnit;
 
     @JsonProperty("state")
-    private String state = null;
+    private String state;
 
 
 

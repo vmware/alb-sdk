@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsClientIpMatch  {
     @JsonProperty("client_ip")
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("use_edns_client_subnet_ip")
     private Boolean useEdnsClientSubnetIp = true;

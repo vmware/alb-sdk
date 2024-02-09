@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class EventCache  {
     @JsonProperty("dns_state")
-    private Boolean dnsState = null;
+    private Boolean dnsState;
 
     @JsonProperty("exceptions")
-    private List<String> exceptions = null;
+    private List<String> exceptions;
 
 
 

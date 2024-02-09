@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbThirdPartySiteRuntime  {
     @JsonProperty("health_monitor_info")
-    private String healthMonitorInfo = null;
+    private String healthMonitorInfo;
 
     @JsonProperty("site_info")
-    private GslbSiteRuntimeInfo siteInfo = null;
+    private GslbSiteRuntimeInfo siteInfo;
 
 
 

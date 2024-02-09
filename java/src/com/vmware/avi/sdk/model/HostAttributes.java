@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HostAttributes  {
     @JsonProperty("attr_key")
-    private String attrKey = null;
+    private String attrKey;
 
     @JsonProperty("attr_val")
-    private String attrVal = null;
+    private String attrVal;
 
 
 

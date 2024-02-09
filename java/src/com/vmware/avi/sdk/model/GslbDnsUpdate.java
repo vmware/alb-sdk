@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbDnsUpdate extends AviRestResource  {
     @JsonProperty("clear_on_max_retries")
-    private Integer clearOnMaxRetries = null;
+    private Integer clearOnMaxRetries;
 
     @JsonProperty("gslb_geo_db_profile_uuids")
-    private List<String> gslbGeoDbProfileUuids = null;
+    private List<String> gslbGeoDbProfileUuids;
 
     @JsonProperty("gslb_service_uuids")
-    private List<String> gslbServiceUuids = null;
+    private List<String> gslbServiceUuids;
 
     @JsonProperty("gslb_uuids")
-    private List<String> gslbUuids = null;
+    private List<String> gslbUuids;
 
     @JsonProperty("obj_info")
-    private List<GslbObjectInfo> objInfo = null;
+    private List<GslbObjectInfo> objInfo;
 
     @JsonProperty("send_interval")
-    private Integer sendInterval = null;
+    private Integer sendInterval;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

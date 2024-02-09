@@ -22,46 +22,46 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugFilterUnion  {
     @JsonProperty("alert_debug_filter")
-    private AlertMgrDebugFilter alertDebugFilter = null;
+    private AlertMgrDebugFilter alertDebugFilter;
 
     @JsonProperty("autoscale_mgr_debug_filter")
-    private AutoScaleMgrDebugFilter autoscaleMgrDebugFilter = null;
+    private AutoScaleMgrDebugFilter autoscaleMgrDebugFilter;
 
     @JsonProperty("cloud_connector_debug_filter")
-    private CloudConnectorDebugFilter cloudConnectorDebugFilter = null;
+    private CloudConnectorDebugFilter cloudConnectorDebugFilter;
 
     @JsonProperty("hs_debug_filter")
-    private HSMgrDebugFilter hsDebugFilter = null;
+    private HSMgrDebugFilter hsDebugFilter;
 
     @JsonProperty("logmanager_debug_filter")
-    private LogManagerDebugFilter logmanagerDebugFilter = null;
+    private LogManagerDebugFilter logmanagerDebugFilter;
 
     @JsonProperty("mesos_metrics_debug_filter")
-    private MesosMetricsDebugFilter mesosMetricsDebugFilter = null;
+    private MesosMetricsDebugFilter mesosMetricsDebugFilter;
 
     @JsonProperty("metrics_debug_filter")
-    private MetricsMgrDebugFilter metricsDebugFilter = null;
+    private MetricsMgrDebugFilter metricsDebugFilter;
 
     @JsonProperty("metricsapi_srv_debug_filter")
-    private MetricsApiSrvDebugFilter metricsapiSrvDebugFilter = null;
+    private MetricsApiSrvDebugFilter metricsapiSrvDebugFilter;
 
     @JsonProperty("se_mgr_debug_filter")
-    private SeMgrDebugFilter seMgrDebugFilter = null;
+    private SeMgrDebugFilter seMgrDebugFilter;
 
     @JsonProperty("se_rpc_proxy_filter")
-    private SeRpcProxyDebugFilter seRpcProxyFilter = null;
+    private SeRpcProxyDebugFilter seRpcProxyFilter;
 
     @JsonProperty("securitymgr_debug_filter")
-    private SecurityMgrDebugFilter securitymgrDebugFilter = null;
+    private SecurityMgrDebugFilter securitymgrDebugFilter;
 
     @JsonProperty("state_cache_mgr_debug_filter")
-    private StateCacheMgrDebugFilter stateCacheMgrDebugFilter = null;
+    private StateCacheMgrDebugFilter stateCacheMgrDebugFilter;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("vs_debug_filter")
-    private VsDebugFilter vsDebugFilter = null;
+    private VsDebugFilter vsDebugFilter;
 
 
 

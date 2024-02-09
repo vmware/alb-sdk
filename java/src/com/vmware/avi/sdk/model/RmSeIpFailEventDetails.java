@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RmSeIpFailEventDetails  {
     @JsonProperty("host_name")
-    private String hostName = null;
+    private String hostName;
 
     @JsonProperty("networks")
-    private List<RmAddVnic> networks = null;
+    private List<RmAddVnic> networks;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
 
 

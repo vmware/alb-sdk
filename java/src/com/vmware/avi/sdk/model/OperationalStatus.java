@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OperationalStatus  {
     @JsonProperty("last_changed_time")
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("reason")
-    private List<String> reason = null;
+    private List<String> reason;
 
     @JsonProperty("reason_code")
-    private Integer reasonCode = null;
+    private Integer reasonCode;
 
     @JsonProperty("reason_code_string")
-    private String reasonCodeString = null;
+    private String reasonCodeString;
 
     @JsonProperty("state")
     private String state = "OPER_UNAVAIL";

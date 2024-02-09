@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RateLimiterEventDetails  {
     @JsonProperty("error_message")
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("rl_resource_name")
-    private String rlResourceName = null;
+    private String rlResourceName;
 
     @JsonProperty("rl_resource_type")
-    private String rlResourceType = null;
+    private String rlResourceType;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
 
 

@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotMappingRuleMatchTarget  {
     @JsonProperty("class_matcher")
-    private BotClassMatcher classMatcher = null;
+    private BotClassMatcher classMatcher;
 
     @JsonProperty("client_ip")
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("component_matcher")
-    private String componentMatcher = null;
+    private String componentMatcher;
 
     @JsonProperty("hdrs")
-    private List<HdrMatch> hdrs = null;
+    private List<HdrMatch> hdrs;
 
     @JsonProperty("host_hdr")
-    private HostHdrMatch hostHdr = null;
+    private HostHdrMatch hostHdr;
 
     @JsonProperty("identifier_matcher")
-    private StringMatch identifierMatcher = null;
+    private StringMatch identifierMatcher;
 
     @JsonProperty("method")
-    private MethodMatch method = null;
+    private MethodMatch method;
 
     @JsonProperty("path")
-    private PathMatch path = null;
+    private PathMatch path;
 
     @JsonProperty("type_matcher")
-    private BotTypeMatcher typeMatcher = null;
+    private BotTypeMatcher typeMatcher;
 
 
 

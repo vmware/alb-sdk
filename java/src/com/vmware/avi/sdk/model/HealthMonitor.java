@@ -22,109 +22,109 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitor extends AviRestResource  {
     @JsonProperty("allow_duplicate_monitors")
-    private Boolean allowDuplicateMonitors = null;
+    private Boolean allowDuplicateMonitors;
 
     @JsonProperty("authentication")
-    private HealthMonitorAuthInfo authentication = null;
+    private HealthMonitorAuthInfo authentication;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("disable_quickstart")
-    private Boolean disableQuickstart = null;
+    private Boolean disableQuickstart;
 
     @JsonProperty("dns_monitor")
-    private HealthMonitorDNS dnsMonitor = null;
+    private HealthMonitorDNS dnsMonitor;
 
     @JsonProperty("external_monitor")
-    private HealthMonitorExternal externalMonitor = null;
+    private HealthMonitorExternal externalMonitor;
 
     @JsonProperty("failed_checks")
     private Integer failedChecks = 2;
 
     @JsonProperty("ftp_monitor")
-    private HealthMonitorFtp ftpMonitor = null;
+    private HealthMonitorFtp ftpMonitor;
 
     @JsonProperty("ftps_monitor")
-    private HealthMonitorFtp ftpsMonitor = null;
+    private HealthMonitorFtp ftpsMonitor;
 
     @JsonProperty("http_monitor")
-    private HealthMonitorHttp httpMonitor = null;
+    private HealthMonitorHttp httpMonitor;
 
     @JsonProperty("https_monitor")
-    private HealthMonitorHttp httpsMonitor = null;
+    private HealthMonitorHttp httpsMonitor;
 
     @JsonProperty("imap_monitor")
-    private HealthMonitorImap imapMonitor = null;
+    private HealthMonitorImap imapMonitor;
 
     @JsonProperty("imaps_monitor")
-    private HealthMonitorImap imapsMonitor = null;
+    private HealthMonitorImap imapsMonitor;
 
     @JsonProperty("is_federated")
     private Boolean isFederated = false;
 
     @JsonProperty("ldap_monitor")
-    private HealthMonitorLdap ldapMonitor = null;
+    private HealthMonitorLdap ldapMonitor;
 
     @JsonProperty("ldaps_monitor")
-    private HealthMonitorLdap ldapsMonitor = null;
+    private HealthMonitorLdap ldapsMonitor;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("monitor_port")
-    private Integer monitorPort = null;
+    private Integer monitorPort;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("pop3_monitor")
-    private HealthMonitorPop3 pop3Monitor = null;
+    private HealthMonitorPop3 pop3Monitor;
 
     @JsonProperty("pop3s_monitor")
-    private HealthMonitorPop3 pop3sMonitor = null;
+    private HealthMonitorPop3 pop3sMonitor;
 
     @JsonProperty("radius_monitor")
-    private HealthMonitorRadius radiusMonitor = null;
+    private HealthMonitorRadius radiusMonitor;
 
     @JsonProperty("receive_timeout")
     private Integer receiveTimeout = 4;
 
     @JsonProperty("sctp_monitor")
-    private HealthMonitorSctp sctpMonitor = null;
+    private HealthMonitorSctp sctpMonitor;
 
     @JsonProperty("send_interval")
     private Integer sendInterval = 10;
 
     @JsonProperty("sip_monitor")
-    private HealthMonitorSIP sipMonitor = null;
+    private HealthMonitorSIP sipMonitor;
 
     @JsonProperty("smtp_monitor")
-    private HealthMonitorSmtp smtpMonitor = null;
+    private HealthMonitorSmtp smtpMonitor;
 
     @JsonProperty("smtps_monitor")
-    private HealthMonitorSmtp smtpsMonitor = null;
+    private HealthMonitorSmtp smtpsMonitor;
 
     @JsonProperty("successful_checks")
     private Integer successfulChecks = 2;
 
     @JsonProperty("tcp_monitor")
-    private HealthMonitorTcp tcpMonitor = null;
+    private HealthMonitorTcp tcpMonitor;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("udp_monitor")
-    private HealthMonitorUdp udpMonitor = null;
+    private HealthMonitorUdp udpMonitor;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

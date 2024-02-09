@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AzureConfiguration  {
     @JsonProperty("availability_zones")
-    private List<String> availabilityZones = null;
+    private List<String> availabilityZones;
 
     @JsonProperty("cloud_credentials_ref")
-    private String cloudCredentialsRef = null;
+    private String cloudCredentialsRef;
 
     @JsonProperty("des_id")
-    private String desId = null;
+    private String desId;
 
     @JsonProperty("location")
-    private String location = null;
+    private String location;
 
     @JsonProperty("network_info")
-    private List<AzureNetworkInfo> networkInfo = null;
+    private List<AzureNetworkInfo> networkInfo;
 
     @JsonProperty("resource_group")
-    private String resourceGroup = null;
+    private String resourceGroup;
 
     @JsonProperty("se_storage_account")
-    private String seStorageAccount = null;
+    private String seStorageAccount;
 
     @JsonProperty("subscription_id")
-    private String subscriptionId = null;
+    private String subscriptionId;
 
     @JsonProperty("use_azure_dns")
     private Boolean useAzureDns = false;

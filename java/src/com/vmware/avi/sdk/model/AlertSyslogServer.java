@@ -28,16 +28,16 @@ public class AlertSyslogServer  {
     private String format = "SYSLOG_LEGACY";
 
     @JsonProperty("pkiprofile_ref")
-    private String pkiprofileRef = null;
+    private String pkiprofileRef;
 
     @JsonProperty("ssl_key_and_certificate_ref")
-    private String sslKeyAndCertificateRef = null;
+    private String sslKeyAndCertificateRef;
 
     @JsonProperty("strict_cert_verify")
     private Boolean strictCertVerify = false;
 
     @JsonProperty("syslog_server")
-    private String syslogServer = null;
+    private String syslogServer;
 
     @JsonProperty("syslog_server_port")
     private Integer syslogServerPort = 514;

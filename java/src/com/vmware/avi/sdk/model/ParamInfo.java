@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ParamInfo  {
     @JsonProperty("param_hits")
-    private Integer paramHits = null;
+    private Integer paramHits;
 
     @JsonProperty("param_key")
-    private String paramKey = null;
+    private String paramKey;
 
     @JsonProperty("param_size_classes")
-    private List<ParamSizeClass> paramSizeClasses = null;
+    private List<ParamSizeClass> paramSizeClasses;
 
     @JsonProperty("param_type_classes")
-    private List<ParamTypeClass> paramTypeClasses = null;
+    private List<ParamTypeClass> paramTypeClasses;
 
 
 

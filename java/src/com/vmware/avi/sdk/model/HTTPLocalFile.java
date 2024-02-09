@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPLocalFile  {
     @JsonProperty("content_type")
-    private String contentType = null;
+    private String contentType;
 
     @JsonProperty("file_content")
-    private String fileContent = null;
+    private String fileContent;
 
 
 

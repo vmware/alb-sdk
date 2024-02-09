@@ -25,28 +25,28 @@ public class ApplicationLog  {
     private Boolean adf = false;
 
     @JsonProperty("all_request_headers")
-    private String allRequestHeaders = null;
+    private String allRequestHeaders;
 
     @JsonProperty("all_response_headers")
-    private String allResponseHeaders = null;
+    private String allResponseHeaders;
 
     @JsonProperty("app_response_time")
-    private Integer appResponseTime = null;
+    private Integer appResponseTime;
 
     @JsonProperty("auth_status")
     private String authStatus = "AUTH_STATUS_NO_AUTHENTICATION";
 
     @JsonProperty("avg_ingress_latency_be")
-    private Integer avgIngressLatencyBe = null;
+    private Integer avgIngressLatencyBe;
 
     @JsonProperty("avg_ingress_latency_fe")
-    private Integer avgIngressLatencyFe = null;
+    private Integer avgIngressLatencyFe;
 
     @JsonProperty("body_updated")
     private String bodyUpdated = "NOT_UPDATED";
 
     @JsonProperty("bot_management_log")
-    private BotManagementLog botManagementLog = null;
+    private BotManagementLog botManagementLog;
 
     @JsonProperty("cache_disabled_by_ds")
     private Boolean cacheDisabledByDs = false;
@@ -58,217 +58,217 @@ public class ApplicationLog  {
     private Boolean cacheable = false;
 
     @JsonProperty("client_browser")
-    private String clientBrowser = null;
+    private String clientBrowser;
 
     @JsonProperty("client_cipher_list")
-    private SSLCipherList clientCipherList = null;
+    private SSLCipherList clientCipherList;
 
     @JsonProperty("client_dest_port")
-    private Integer clientDestPort = null;
+    private Integer clientDestPort;
 
     @JsonProperty("client_device")
-    private String clientDevice = null;
+    private String clientDevice;
 
     @JsonProperty("client_fingerprints")
-    private ClientFingerprints clientFingerprints = null;
+    private ClientFingerprints clientFingerprints;
 
     @JsonProperty("client_insights")
-    private String clientInsights = null;
+    private String clientInsights;
 
     @JsonProperty("client_ip")
-    private Integer clientIp = null;
+    private Integer clientIp;
 
     @JsonProperty("client_ip6")
-    private String clientIp6 = null;
+    private String clientIp6;
 
     @JsonProperty("client_location")
-    private String clientLocation = null;
+    private String clientLocation;
 
     @JsonProperty("client_log_filter_name")
-    private String clientLogFilterName = null;
+    private String clientLogFilterName;
 
     @JsonProperty("client_os")
-    private String clientOs = null;
+    private String clientOs;
 
     @JsonProperty("client_rtt")
-    private Integer clientRtt = null;
+    private Integer clientRtt;
 
     @JsonProperty("client_src_port")
-    private Integer clientSrcPort = null;
+    private Integer clientSrcPort;
 
     @JsonProperty("compression")
-    private String compression = null;
+    private String compression;
 
     @JsonProperty("compression_percentage")
-    private Integer compressionPercentage = null;
+    private Integer compressionPercentage;
 
     @JsonProperty("conn_est_time_be")
-    private Integer connEstTimeBe = null;
+    private Integer connEstTimeBe;
 
     @JsonProperty("conn_est_time_fe")
-    private Integer connEstTimeFe = null;
+    private Integer connEstTimeFe;
 
     @JsonProperty("connection_error_info")
-    private ConnErrorInfo connectionErrorInfo = null;
+    private ConnErrorInfo connectionErrorInfo;
 
     @JsonProperty("critical_error_encountered")
     private Boolean criticalErrorEncountered = false;
 
     @JsonProperty("data_transfer_time")
-    private Integer dataTransferTime = null;
+    private Integer dataTransferTime;
 
     @JsonProperty("datascript_error_trace")
-    private DataScriptErrorTrace datascriptErrorTrace = null;
+    private DataScriptErrorTrace datascriptErrorTrace;
 
     @JsonProperty("datascript_log")
-    private String datascriptLog = null;
+    private String datascriptLog;
 
     @JsonProperty("etag")
-    private String etag = null;
+    private String etag;
 
     @JsonProperty("grpc_method_name")
-    private String grpcMethodName = null;
+    private String grpcMethodName;
 
     @JsonProperty("grpc_service_name")
-    private String grpcServiceName = null;
+    private String grpcServiceName;
 
     @JsonProperty("grpc_status")
-    private Integer grpcStatus = null;
+    private Integer grpcStatus;
 
     @JsonProperty("grpc_status_reason_phrase")
-    private String grpcStatusReasonPhrase = null;
+    private String grpcStatusReasonPhrase;
 
     @JsonProperty("headers_received_from_server")
-    private String headersReceivedFromServer = null;
+    private String headersReceivedFromServer;
 
     @JsonProperty("headers_sent_to_server")
-    private String headersSentToServer = null;
+    private String headersSentToServer;
 
     @JsonProperty("host")
-    private String host = null;
+    private String host;
 
     @JsonProperty("http2_stream_id")
-    private Integer http2StreamId = null;
+    private Integer http2StreamId;
 
     @JsonProperty("http_request_policy_rule_name")
-    private String httpRequestPolicyRuleName = null;
+    private String httpRequestPolicyRuleName;
 
     @JsonProperty("http_response_policy_rule_name")
-    private String httpResponsePolicyRuleName = null;
+    private String httpResponsePolicyRuleName;
 
     @JsonProperty("http_security_policy_rule_name")
-    private String httpSecurityPolicyRuleName = null;
+    private String httpSecurityPolicyRuleName;
 
     @JsonProperty("http_version")
-    private String httpVersion = null;
+    private String httpVersion;
 
     @JsonProperty("icap_log")
-    private IcapLog icapLog = null;
+    private IcapLog icapLog;
 
     @JsonProperty("jwt_log")
-    private JwtLog jwtLog = null;
+    private JwtLog jwtLog;
 
     @JsonProperty("log_id")
-    private Integer logId = null;
+    private Integer logId;
 
     @JsonProperty("max_ingress_latency_be")
-    private Integer maxIngressLatencyBe = null;
+    private Integer maxIngressLatencyBe;
 
     @JsonProperty("max_ingress_latency_fe")
-    private Integer maxIngressLatencyFe = null;
+    private Integer maxIngressLatencyFe;
 
     @JsonProperty("method")
-    private String method = null;
+    private String method;
 
     @JsonProperty("microservice")
-    private String microservice = null;
+    private String microservice;
 
     @JsonProperty("microservice_name")
-    private String microserviceName = null;
+    private String microserviceName;
 
     @JsonProperty("network_security_policy_rule_name")
-    private String networkSecurityPolicyRuleName = null;
+    private String networkSecurityPolicyRuleName;
 
     @JsonProperty("ntlm_log")
-    private NtlmLog ntlmLog = null;
+    private NtlmLog ntlmLog;
 
     @JsonProperty("oauth_log")
-    private OauthLog oauthLog = null;
+    private OauthLog oauthLog;
 
     @JsonProperty("ocsp_status_resp_sent")
     private Boolean ocspStatusRespSent = false;
 
     @JsonProperty("oob_log")
-    private OutOfBandRequestLog oobLog = null;
+    private OutOfBandRequestLog oobLog;
 
     @JsonProperty("orig_uri")
-    private String origUri = null;
+    private String origUri;
 
     @JsonProperty("paa_log")
-    private PaaLog paaLog = null;
+    private PaaLog paaLog;
 
     @JsonProperty("persistence_used")
     private Boolean persistenceUsed = false;
 
     @JsonProperty("persistent_session_id")
-    private Integer persistentSessionId = null;
+    private Integer persistentSessionId;
 
     @JsonProperty("pool")
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("pool_name")
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("redirected_uri")
-    private String redirectedUri = null;
+    private String redirectedUri;
 
     @JsonProperty("referer")
-    private String referer = null;
+    private String referer;
 
     @JsonProperty("report_timestamp")
-    private Integer reportTimestamp = null;
+    private Integer reportTimestamp;
 
     @JsonProperty("request_content_type")
-    private String requestContentType = null;
+    private String requestContentType;
 
     @JsonProperty("request_headers")
-    private Integer requestHeaders = null;
+    private Integer requestHeaders;
 
     @JsonProperty("request_id")
-    private String requestId = null;
+    private String requestId;
 
     @JsonProperty("request_length")
-    private Integer requestLength = null;
+    private Integer requestLength;
 
     @JsonProperty("request_served_locally_remote_site_down")
     private Boolean requestServedLocallyRemoteSiteDown = false;
 
     @JsonProperty("request_state")
-    private String requestState = null;
+    private String requestState;
 
     @JsonProperty("response_code")
-    private Integer responseCode = null;
+    private Integer responseCode;
 
     @JsonProperty("response_content_type")
-    private String responseContentType = null;
+    private String responseContentType;
 
     @JsonProperty("response_headers")
-    private Integer responseHeaders = null;
+    private Integer responseHeaders;
 
     @JsonProperty("response_length")
-    private Integer responseLength = null;
+    private Integer responseLength;
 
     @JsonProperty("response_time_first_byte")
-    private Integer responseTimeFirstByte = null;
+    private Integer responseTimeFirstByte;
 
     @JsonProperty("response_time_last_byte")
-    private Integer responseTimeLastByte = null;
+    private Integer responseTimeLastByte;
 
     @JsonProperty("rewritten_uri_path")
-    private String rewrittenUriPath = null;
+    private String rewrittenUriPath;
 
     @JsonProperty("rewritten_uri_query")
-    private String rewrittenUriQuery = null;
+    private String rewrittenUriQuery;
 
     @JsonProperty("saml_auth_request_generated")
     private Boolean samlAuthRequestGenerated = false;
@@ -277,67 +277,67 @@ public class ApplicationLog  {
     private Boolean samlAuthResponseReceived = false;
 
     @JsonProperty("saml_auth_session_id")
-    private Integer samlAuthSessionId = null;
+    private Integer samlAuthSessionId;
 
     @JsonProperty("saml_authentication_used")
     private Boolean samlAuthenticationUsed = false;
 
     @JsonProperty("saml_log")
-    private SamlLog samlLog = null;
+    private SamlLog samlLog;
 
     @JsonProperty("saml_session_cookie_valid")
     private Boolean samlSessionCookieValid = false;
 
     @JsonProperty("server_conn_src_ip")
-    private Integer serverConnSrcIp = null;
+    private Integer serverConnSrcIp;
 
     @JsonProperty("server_conn_src_ip6")
-    private String serverConnSrcIp6 = null;
+    private String serverConnSrcIp6;
 
     @JsonProperty("server_connection_reused")
     private Boolean serverConnectionReused = false;
 
     @JsonProperty("server_dest_port")
-    private Integer serverDestPort = null;
+    private Integer serverDestPort;
 
     @JsonProperty("server_ip")
-    private Integer serverIp = null;
+    private Integer serverIp;
 
     @JsonProperty("server_ip6")
-    private String serverIp6 = null;
+    private String serverIp6;
 
     @JsonProperty("server_name")
-    private String serverName = null;
+    private String serverName;
 
     @JsonProperty("server_push_initiated")
-    private Boolean serverPushInitiated = null;
+    private Boolean serverPushInitiated;
 
     @JsonProperty("server_pushed_request")
-    private Boolean serverPushedRequest = null;
+    private Boolean serverPushedRequest;
 
     @JsonProperty("server_response_code")
-    private Integer serverResponseCode = null;
+    private Integer serverResponseCode;
 
     @JsonProperty("server_response_length")
-    private Integer serverResponseLength = null;
+    private Integer serverResponseLength;
 
     @JsonProperty("server_response_time_first_byte")
-    private Integer serverResponseTimeFirstByte = null;
+    private Integer serverResponseTimeFirstByte;
 
     @JsonProperty("server_response_time_last_byte")
-    private Integer serverResponseTimeLastByte = null;
+    private Integer serverResponseTimeLastByte;
 
     @JsonProperty("server_rtt")
-    private Integer serverRtt = null;
+    private Integer serverRtt;
 
     @JsonProperty("server_side_redirect_uri")
-    private String serverSideRedirectUri = null;
+    private String serverSideRedirectUri;
 
     @JsonProperty("server_src_port")
-    private Integer serverSrcPort = null;
+    private Integer serverSrcPort;
 
     @JsonProperty("server_ssl_session_id")
-    private String serverSslSessionId = null;
+    private String serverSslSessionId;
 
     @JsonProperty("server_ssl_session_reused")
     private Boolean serverSslSessionReused = false;
@@ -346,79 +346,79 @@ public class ApplicationLog  {
     private Integer serversTried = 0;
 
     @JsonProperty("service_engine")
-    private String serviceEngine = null;
+    private String serviceEngine;
 
     @JsonProperty("session_id")
-    private String sessionId = null;
+    private String sessionId;
 
     @JsonProperty("significance")
-    private String significance = null;
+    private String significance;
 
     @JsonProperty("significant")
-    private Integer significant = null;
+    private Integer significant;
 
     @JsonProperty("significant_log")
-    private List<String> significantLog = null;
+    private List<String> significantLog;
 
     @JsonProperty("sni_hostname")
-    private String sniHostname = null;
+    private String sniHostname;
 
     @JsonProperty("source_ip")
-    private Integer sourceIp = null;
+    private Integer sourceIp;
 
     @JsonProperty("source_ip6")
-    private String sourceIp6 = null;
+    private String sourceIp6;
 
     @JsonProperty("spdy_version")
-    private String spdyVersion = null;
+    private String spdyVersion;
 
     @JsonProperty("ssl_cipher")
-    private String sslCipher = null;
+    private String sslCipher;
 
     @JsonProperty("ssl_session_id")
-    private String sslSessionId = null;
+    private String sslSessionId;
 
     @JsonProperty("ssl_version")
-    private String sslVersion = null;
+    private String sslVersion;
 
     @JsonProperty("total_time")
-    private Integer totalTime = null;
+    private Integer totalTime;
 
     @JsonProperty("udf")
     private Boolean udf = false;
 
     @JsonProperty("uri_path")
-    private String uriPath = null;
+    private String uriPath;
 
     @JsonProperty("uri_query")
-    private String uriQuery = null;
+    private String uriQuery;
 
     @JsonProperty("user_agent")
-    private String userAgent = null;
+    private String userAgent;
 
     @JsonProperty("user_id")
-    private String userId = null;
+    private String userId;
 
     @JsonProperty("vcpu_id")
-    private Integer vcpuId = null;
+    private Integer vcpuId;
 
     @JsonProperty("vh_match_rule")
-    private String vhMatchRule = null;
+    private String vhMatchRule;
 
     @JsonProperty("virtualservice")
-    private String virtualservice = null;
+    private String virtualservice;
 
     @JsonProperty("vs_ip")
-    private Integer vsIp = null;
+    private Integer vsIp;
 
     @JsonProperty("vs_ip6")
-    private String vsIp6 = null;
+    private String vsIp6;
 
     @JsonProperty("waf_log")
-    private WafLog wafLog = null;
+    private WafLog wafLog;
 
     @JsonProperty("xff")
-    private String xff = null;
+    private String xff;
 
 
 

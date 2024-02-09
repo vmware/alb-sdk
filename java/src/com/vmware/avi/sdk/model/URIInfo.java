@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class URIInfo  {
     @JsonProperty("param_info")
-    private List<ParamInfo> paramInfo = null;
+    private List<ParamInfo> paramInfo;
 
     @JsonProperty("uri_hits")
-    private Integer uriHits = null;
+    private Integer uriHits;
 
     @JsonProperty("uri_key")
-    private String uriKey = null;
+    private String uriKey;
 
 
     /**

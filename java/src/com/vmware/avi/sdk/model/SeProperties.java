@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeProperties extends AviRestResource  {
     @JsonProperty("se_agent_properties")
-    private SeAgentProperties seAgentProperties = null;
+    private SeAgentProperties seAgentProperties;
 
     @JsonProperty("se_bootup_properties")
-    private SeBootupProperties seBootupProperties = null;
+    private SeBootupProperties seBootupProperties;
 
     @JsonProperty("se_runtime_properties")
-    private SeRuntimeProperties seRuntimeProperties = null;
+    private SeRuntimeProperties seRuntimeProperties;
 
     @JsonProperty("url")
     private String url = "url";

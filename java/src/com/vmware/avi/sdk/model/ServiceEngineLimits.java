@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServiceEngineLimits  {
     @JsonProperty("all_virtualservices_per_serviceengine")
-    private Integer allVirtualservicesPerServiceengine = null;
+    private Integer allVirtualservicesPerServiceengine;
 
     @JsonProperty("ew_virtualservices_per_serviceengine")
-    private Integer ewVirtualservicesPerServiceengine = null;
+    private Integer ewVirtualservicesPerServiceengine;
 
     @JsonProperty("ns_virtualservices_per_serviceengine")
-    private Integer nsVirtualservicesPerServiceengine = null;
+    private Integer nsVirtualservicesPerServiceengine;
 
     @JsonProperty("num_logical_intf_per_se")
-    private Integer numLogicalIntfPerSe = null;
+    private Integer numLogicalIntfPerSe;
 
     @JsonProperty("num_phy_intf_per_se")
-    private Integer numPhyIntfPerSe = null;
+    private Integer numPhyIntfPerSe;
 
     @JsonProperty("num_virtualservices_rt_metrics")
-    private Integer numVirtualservicesRtMetrics = null;
+    private Integer numVirtualservicesRtMetrics;
 
     @JsonProperty("num_vlan_intf_per_phy_intf")
-    private Integer numVlanIntfPerPhyIntf = null;
+    private Integer numVlanIntfPerPhyIntf;
 
     @JsonProperty("num_vlan_intf_per_se")
-    private Integer numVlanIntfPerSe = null;
+    private Integer numVlanIntfPerSe;
 
     @JsonProperty("serviceengine_cloud_limits")
-    private List<ServiceEngineCloudLimits> serviceengineCloudLimits = null;
+    private List<ServiceEngineCloudLimits> serviceengineCloudLimits;
 
 
 

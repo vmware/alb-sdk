@@ -22,43 +22,43 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpamDnsAwsProfile  {
     @JsonProperty("access_key_id")
-    private String accessKeyId = null;
+    private String accessKeyId;
 
     @JsonProperty("egress_service_subnets")
-    private List<String> egressServiceSubnets = null;
+    private List<String> egressServiceSubnets;
 
     @JsonProperty("iam_assume_role")
-    private String iamAssumeRole = null;
+    private String iamAssumeRole;
 
     @JsonProperty("publish_vip_to_public_zone")
     private Boolean publishVipToPublicZone = false;
 
     @JsonProperty("region")
-    private String region = null;
+    private String region;
 
     @JsonProperty("secret_access_key")
-    private String secretAccessKey = null;
+    private String secretAccessKey;
 
     @JsonProperty("ttl")
     private Integer ttl = 60;
 
     @JsonProperty("usable_domains")
-    private List<String> usableDomains = null;
+    private List<String> usableDomains;
 
     @JsonProperty("usable_network_uuids")
-    private List<String> usableNetworkUuids = null;
+    private List<String> usableNetworkUuids;
 
     @JsonProperty("use_iam_roles")
     private Boolean useIamRoles = false;
 
     @JsonProperty("vpc")
-    private String vpc = null;
+    private String vpc;
 
     @JsonProperty("vpc_id")
-    private String vpcId = null;
+    private String vpcId;
 
     @JsonProperty("zones")
-    private List<AwsZoneNetwork> zones = null;
+    private List<AwsZoneNetwork> zones;
 
 
 

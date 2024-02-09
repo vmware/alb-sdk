@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Hypervisor_Properties  {
     @JsonProperty("htype")
-    private String htype = null;
+    private String htype;
 
     @JsonProperty("max_ips_per_nic")
-    private Integer maxIpsPerNic = null;
+    private Integer maxIpsPerNic;
 
     @JsonProperty("max_nics")
-    private Integer maxNics = null;
+    private Integer maxNics;
 
 
 

@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OauthLog  {
     @JsonProperty("authn_rule_match")
-    private AuthnRuleMatch authnRuleMatch = null;
+    private AuthnRuleMatch authnRuleMatch;
 
     @JsonProperty("authz_rule_match")
-    private AuthzRuleMatch authzRuleMatch = null;
+    private AuthzRuleMatch authzRuleMatch;
 
     @JsonProperty("is_session_cookie_expired")
-    private Boolean isSessionCookieExpired = null;
+    private Boolean isSessionCookieExpired;
 
     @JsonProperty("jwks_subrequest")
-    private OauthSubRequestLog jwksSubrequest = null;
+    private OauthSubRequestLog jwksSubrequest;
 
     @JsonProperty("oauth_state")
-    private String oauthState = null;
+    private String oauthState;
 
     @JsonProperty("state")
-    private String state = null;
+    private String state;
 
     @JsonProperty("token_exchange_subrequest")
-    private OauthSubRequestLog tokenExchangeSubrequest = null;
+    private OauthSubRequestLog tokenExchangeSubrequest;
 
     @JsonProperty("token_introspection_subrequest")
-    private OauthSubRequestLog tokenIntrospectionSubrequest = null;
+    private OauthSubRequestLog tokenIntrospectionSubrequest;
 
     @JsonProperty("token_refresh_subrequest")
-    private OauthSubRequestLog tokenRefreshSubrequest = null;
+    private OauthSubRequestLog tokenRefreshSubrequest;
 
     @JsonProperty("userinfo_subrequest")
-    private OauthSubRequestLog userinfoSubrequest = null;
+    private OauthSubRequestLog userinfoSubrequest;
 
 
 

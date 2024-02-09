@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Cluster extends AviRestResource  {
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("nodes")
-    private List<ClusterNode> nodes = null;
+    private List<ClusterNode> nodes;
 
     @JsonProperty("rejoin_nodes_automatically")
     private Boolean rejoinNodesAutomatically = true;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("virtual_ip")
-    private IpAddr virtualIp = null;
+    private IpAddr virtualIp;
 
     @JsonProperty("virtual_ip6")
-    private IpAddr virtualIp6 = null;
+    private IpAddr virtualIp6;
 
 
 

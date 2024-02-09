@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AzureInfo  {
     @JsonProperty("availability_set")
-    private String availabilitySet = null;
+    private String availabilitySet;
 
     @JsonProperty("fault_domain")
-    private String faultDomain = null;
+    private String faultDomain;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("resource_group")
-    private String resourceGroup = null;
+    private String resourceGroup;
 
     @JsonProperty("subnet_id")
-    private String subnetId = null;
+    private String subnetId;
 
     @JsonProperty("update_domain")
-    private String updateDomain = null;
+    private String updateDomain;
 
     @JsonProperty("vm_uuid")
-    private String vmUuid = null;
+    private String vmUuid;
 
     @JsonProperty("vnic_id")
-    private String vnicId = null;
+    private String vnicId;
 
 
 

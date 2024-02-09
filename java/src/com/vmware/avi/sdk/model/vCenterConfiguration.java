@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class vCenterConfiguration  {
     @JsonProperty("content_lib")
-    private ContentLibConfig contentLib = null;
+    private ContentLibConfig contentLib;
 
     @JsonProperty("datacenter")
-    private String datacenter = null;
+    private String datacenter;
 
     @JsonProperty("datacenter_managed_object_id")
-    private String datacenterManagedObjectId = null;
+    private String datacenterManagedObjectId;
 
     @JsonProperty("deactivate_vm_discovery")
     private Boolean deactivateVmDiscovery;
@@ -37,13 +37,13 @@ public class vCenterConfiguration  {
     private Boolean isNsxEnvironment = false;
 
     @JsonProperty("management_ip_subnet")
-    private IpAddrPrefix managementIpSubnet = null;
+    private IpAddrPrefix managementIpSubnet;
 
     @JsonProperty("management_network")
-    private String managementNetwork = null;
+    private String managementNetwork;
 
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("privilege")
     private String privilege = "WRITE_ACCESS";
@@ -52,13 +52,13 @@ public class vCenterConfiguration  {
     private Boolean useContentLib = true;
 
     @JsonProperty("username")
-    private String username = null;
+    private String username;
 
     @JsonProperty("vcenter_template_se_location")
-    private String vcenterTemplateSeLocation = null;
+    private String vcenterTemplateSeLocation;
 
     @JsonProperty("vcenter_url")
-    private String vcenterUrl = null;
+    private String vcenterUrl;
 
 
 

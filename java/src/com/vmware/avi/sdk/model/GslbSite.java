@@ -22,49 +22,49 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbSite  {
     @JsonProperty("address")
-    private String address = null;
+    private String address;
 
     @JsonProperty("cluster_uuid")
-    private String clusterUuid = null;
+    private String clusterUuid;
 
     @JsonProperty("dns_vses")
-    private List<GslbSiteDnsVs> dnsVses = null;
+    private List<GslbSiteDnsVs> dnsVses;
 
     @JsonProperty("enabled")
     private Boolean enabled = true;
 
     @JsonProperty("hm_proxies")
-    private List<GslbHealthMonitorProxy> hmProxies = null;
+    private List<GslbHealthMonitorProxy> hmProxies;
 
     @JsonProperty("hm_shard_enabled")
     private Boolean hmShardEnabled = false;
 
     @JsonProperty("ip_addresses")
-    private List<IpAddr> ipAddresses = null;
+    private List<IpAddr> ipAddresses;
 
     @JsonProperty("location")
-    private GslbGeoLocation location = null;
+    private GslbGeoLocation location;
 
     @JsonProperty("member_type")
     private String memberType = "GSLB_PASSIVE_MEMBER";
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("port")
     private Integer port = 443;
 
     @JsonProperty("ratio")
-    private Integer ratio = null;
+    private Integer ratio;
 
     @JsonProperty("suspend_mode")
     private Boolean suspendMode = false;
 
     @JsonProperty("username")
-    private String username = null;
+    private String username;
 
 
 

@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitorTcp  {
     @JsonProperty("maintenance_response")
-    private String maintenanceResponse = null;
+    private String maintenanceResponse;
 
     @JsonProperty("tcp_half_open")
     private Boolean tcpHalfOpen = false;
 
     @JsonProperty("tcp_request")
-    private String tcpRequest = null;
+    private String tcpRequest;
 
     @JsonProperty("tcp_response")
-    private String tcpResponse = null;
+    private String tcpResponse;
 
 
 

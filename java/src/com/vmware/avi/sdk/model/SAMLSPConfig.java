@@ -28,28 +28,28 @@ public class SAMLSPConfig  {
     private String authnReqAcsType = "SAML_AUTHN_REQ_ACS_TYPE_NONE";
 
     @JsonProperty("cookie_name")
-    private String cookieName = null;
+    private String cookieName;
 
     @JsonProperty("cookie_timeout")
     private Integer cookieTimeout = 60;
 
     @JsonProperty("entity_id")
-    private String entityId = null;
+    private String entityId;
 
     @JsonProperty("key")
-    private List<HttpCookiePersistenceKey> key = null;
+    private List<HttpCookiePersistenceKey> key;
 
     @JsonProperty("signing_ssl_key_and_certificate_ref")
-    private String signingSslKeyAndCertificateRef = null;
+    private String signingSslKeyAndCertificateRef;
 
     @JsonProperty("single_signon_url")
-    private String singleSignonUrl = null;
+    private String singleSignonUrl;
 
     @JsonProperty("sp_metadata")
     private String spMetadata;
 
     @JsonProperty("use_idp_session_timeout")
-    private Boolean useIdpSessionTimeout = null;
+    private Boolean useIdpSessionTimeout;
 
 
 

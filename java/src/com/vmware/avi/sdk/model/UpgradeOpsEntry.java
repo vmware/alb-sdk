@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UpgradeOpsEntry extends AviRestResource  {
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("node_type")
-    private String nodeType = null;
+    private String nodeType;
 
     @JsonProperty("obj_cloud_ref")
-    private String objCloudRef = null;
+    private String objCloudRef;
 
     @JsonProperty("params")
-    private UpgradeOpsParam params = null;
+    private UpgradeOpsParam params;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("upgrade_info")
-    private UpgradeStatusInfo upgradeInfo = null;
+    private UpgradeStatusInfo upgradeInfo;
 
     @JsonProperty("upgrade_ops")
-    private String upgradeOps = null;
+    private String upgradeOps;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

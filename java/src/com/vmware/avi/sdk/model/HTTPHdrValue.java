@@ -25,10 +25,10 @@ public class HTTPHdrValue  {
     private Boolean isSensitive = false;
 
     @JsonProperty("val")
-    private String val = null;
+    private String val;
 
     @JsonProperty("var")
-    private String var = null;
+    private String var;
 
 
 

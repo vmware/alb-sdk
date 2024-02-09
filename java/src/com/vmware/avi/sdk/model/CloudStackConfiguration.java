@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudStackConfiguration  {
     @JsonProperty("access_key_id")
-    private String accessKeyId = null;
+    private String accessKeyId;
 
     @JsonProperty("api_url")
-    private String apiUrl = null;
+    private String apiUrl;
 
     @JsonProperty("cntr_public_ip")
-    private String cntrPublicIp = null;
+    private String cntrPublicIp;
 
     @JsonProperty("hypervisor")
     private String hypervisor = "KVM";
 
     @JsonProperty("mgmt_network_name")
-    private String mgmtNetworkName = null;
+    private String mgmtNetworkName;
 
     @JsonProperty("mgmt_network_uuid")
-    private String mgmtNetworkUuid = null;
+    private String mgmtNetworkUuid;
 
     @JsonProperty("secret_access_key")
-    private String secretAccessKey = null;
+    private String secretAccessKey;
 
 
 

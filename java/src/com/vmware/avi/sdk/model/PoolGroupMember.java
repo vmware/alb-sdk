@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PoolGroupMember  {
     @JsonProperty("deployment_state")
-    private String deploymentState = null;
+    private String deploymentState;
 
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("priority_label")
-    private String priorityLabel = null;
+    private String priorityLabel;
 
     @JsonProperty("ratio")
     private Integer ratio = 1;

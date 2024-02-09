@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class EventLog  {
     @JsonProperty("context")
-    private String context = null;
+    private String context;
 
     @JsonProperty("details_summary")
-    private String detailsSummary = null;
+    private String detailsSummary;
 
     @JsonProperty("event_description")
-    private String eventDescription = null;
+    private String eventDescription;
 
     @JsonProperty("event_details")
-    private EventDetails eventDetails = null;
+    private EventDetails eventDetails;
 
     @JsonProperty("event_id")
-    private String eventId = null;
+    private String eventId;
 
     @JsonProperty("event_pages")
-    private List<String> eventPages = null;
+    private List<String> eventPages;
 
     @JsonProperty("ignore_event_details_display")
     private Boolean ignoreEventDetailsDisplay = false;
@@ -49,31 +49,31 @@ public class EventLog  {
     private Boolean isSecurityEvent = false;
 
     @JsonProperty("module")
-    private String module = null;
+    private String module;
 
     @JsonProperty("obj_name")
-    private String objName = null;
+    private String objName;
 
     @JsonProperty("obj_type")
-    private String objType = null;
+    private String objType;
 
     @JsonProperty("obj_uuid")
-    private String objUuid = null;
+    private String objUuid;
 
     @JsonProperty("reason_code")
-    private String reasonCode = null;
+    private String reasonCode;
 
     @JsonProperty("related_uuids")
-    private List<String> relatedUuids = null;
+    private List<String> relatedUuids;
 
     @JsonProperty("report_timestamp")
-    private Integer reportTimestamp = null;
+    private Integer reportTimestamp;
 
     @JsonProperty("tenant")
-    private String tenant = null;
+    private String tenant;
 
     @JsonProperty("tenant_name")
-    private String tenantName = null;
+    private String tenantName;
 
 
 

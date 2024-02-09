@@ -22,76 +22,76 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Alert extends AviRestResource  {
     @JsonProperty("action_script_output")
-    private String actionScriptOutput = null;
+    private String actionScriptOutput;
 
     @JsonProperty("alert_config_ref")
-    private String alertConfigRef = null;
+    private String alertConfigRef;
 
     @JsonProperty("app_events")
-    private List<ApplicationLog> appEvents = null;
+    private List<ApplicationLog> appEvents;
 
     @JsonProperty("conn_events")
-    private List<ConnectionLog> connEvents = null;
+    private List<ConnectionLog> connEvents;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("event_pages")
-    private List<String> eventPages = null;
+    private List<String> eventPages;
 
     @JsonProperty("events")
-    private List<EventLog> events = null;
+    private List<EventLog> events;
 
     @JsonProperty("last_throttle_timestamp")
-    private Float lastThrottleTimestamp = null;
+    private Float lastThrottleTimestamp;
 
     @JsonProperty("level")
-    private String level = null;
+    private String level;
 
     @JsonProperty("metric_info")
-    private List<MetricLog> metricInfo = null;
+    private List<MetricLog> metricInfo;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("obj_key")
-    private String objKey = null;
+    private String objKey;
 
     @JsonProperty("obj_name")
-    private String objName = null;
+    private String objName;
 
     @JsonProperty("obj_uuid")
-    private String objUuid = null;
+    private String objUuid;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("related_uuids")
-    private List<String> relatedUuids = null;
+    private List<String> relatedUuids;
 
     @JsonProperty("state")
-    private String state = null;
+    private String state;
 
     @JsonProperty("summary")
-    private String summary = null;
+    private String summary;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("threshold")
-    private Integer threshold = null;
+    private Integer threshold;
 
     @JsonProperty("throttle_count")
     private Integer throttleCount = 0;
 
     @JsonProperty("timestamp")
-    private Float timestamp = null;
+    private Float timestamp;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

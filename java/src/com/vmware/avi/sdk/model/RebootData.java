@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RebootData  {
     @JsonProperty("patch_version")
-    private String patchVersion = null;
+    private String patchVersion;
 
     @JsonProperty("reboot")
-    private Boolean reboot = null;
+    private Boolean reboot;
 
 
 

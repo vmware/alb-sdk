@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbObj  {
     @JsonProperty("gslb_geo_db_profile_uuid")
-    private String gslbGeoDbProfileUuid = null;
+    private String gslbGeoDbProfileUuid;
 
     @JsonProperty("gslb_service_uuid")
-    private String gslbServiceUuid = null;
+    private String gslbServiceUuid;
 
     @JsonProperty("gslb_uuid")
-    private String gslbUuid = null;
+    private String gslbUuid;
 
 
 

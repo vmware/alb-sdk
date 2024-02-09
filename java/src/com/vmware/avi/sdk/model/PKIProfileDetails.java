@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PKIProfileDetails  {
     @JsonProperty("crls")
-    private String crls = null;
+    private String crls;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

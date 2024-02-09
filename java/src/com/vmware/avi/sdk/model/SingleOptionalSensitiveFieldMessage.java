@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SingleOptionalSensitiveFieldMessage  {
     @JsonProperty("optional_sensitive_string")
-    private String optionalSensitiveString = null;
+    private String optionalSensitiveString;
 
 
 

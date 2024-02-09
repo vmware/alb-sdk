@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConfigUserLogout  {
     @JsonProperty("client_ip")
-    private String clientIp = null;
+    private String clientIp;
 
     @JsonProperty("error_message")
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("local")
-    private Boolean local = null;
+    private Boolean local;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
     @JsonProperty("user")
-    private String user = null;
+    private String user;
 
 
 

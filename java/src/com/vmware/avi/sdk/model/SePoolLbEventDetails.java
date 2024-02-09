@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SePoolLbEventDetails  {
     @JsonProperty("failure_code")
-    private String failureCode = null;
+    private String failureCode;
 
     @JsonProperty("pool")
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("src_uuid")
-    private String srcUuid = null;
+    private String srcUuid;
 
     @JsonProperty("virtual_service")
-    private String virtualService = null;
+    private String virtualService;
 
 
 

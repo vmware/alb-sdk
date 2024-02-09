@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeDiscontinuousTimeChangeEventDetails  {
     @JsonProperty("drift_time")
-    private Integer driftTime = null;
+    private Integer driftTime;
 
     @JsonProperty("from_time")
-    private String fromTime = null;
+    private String fromTime;
 
     @JsonProperty("ntp_servers")
-    private String ntpServers = null;
+    private String ntpServers;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_ref")
-    private String seRef = null;
+    private String seRef;
 
     @JsonProperty("to_time")
-    private String toTime = null;
+    private String toTime;
 
 
 

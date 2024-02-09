@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApiVersionDeprecated  {
     @JsonProperty("api_version_used")
-    private String apiVersionUsed = null;
+    private String apiVersionUsed;
 
     @JsonProperty("client_ip")
-    private String clientIp = null;
+    private String clientIp;
 
     @JsonProperty("min_supported_api_version")
-    private String minSupportedApiVersion = null;
+    private String minSupportedApiVersion;
 
     @JsonProperty("path")
-    private String path = null;
+    private String path;
 
     @JsonProperty("user")
-    private String user = null;
+    private String user;
 
 
 

@@ -22,106 +22,106 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VIMgrVMRuntime extends AviRestResource  {
     @JsonProperty("availability_zone")
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("connection_state")
-    private String connectionState = null;
+    private String connectionState;
 
     @JsonProperty("controller_cluster_uuid")
-    private String controllerClusterUuid = null;
+    private String controllerClusterUuid;
 
     @JsonProperty("controller_ip_addr")
-    private String controllerIpAddr = null;
+    private String controllerIpAddr;
 
     @JsonProperty("controller_vm")
-    private Boolean controllerVm = null;
+    private Boolean controllerVm;
 
     @JsonProperty("cpu_reservation")
-    private Integer cpuReservation = null;
+    private Integer cpuReservation;
 
     @JsonProperty("cpu_shares")
-    private Integer cpuShares = null;
+    private Integer cpuShares;
 
     @JsonProperty("creation_in_progress")
-    private Boolean creationInProgress = null;
+    private Boolean creationInProgress;
 
     @JsonProperty("guest_nic")
-    private List<VIMgrGuestNicRuntime> guestNic = null;
+    private List<VIMgrGuestNicRuntime> guestNic;
 
     @JsonProperty("host")
-    private String host = null;
+    private String host;
 
     @JsonProperty("init_vnics")
-    private Integer initVnics = null;
+    private Integer initVnics;
 
     @JsonProperty("managed_object_id")
-    private String managedObjectId = null;
+    private String managedObjectId;
 
     @JsonProperty("mem_shares")
-    private Integer memShares = null;
+    private Integer memShares;
 
     @JsonProperty("memory")
-    private Integer memory = null;
+    private Integer memory;
 
     @JsonProperty("memory_reservation")
-    private Integer memoryReservation = null;
+    private Integer memoryReservation;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("num_cpu")
-    private Integer numCpu = null;
+    private Integer numCpu;
 
     @JsonProperty("ovf_avisetype_field")
-    private String ovfAvisetypeField = null;
+    private String ovfAvisetypeField;
 
     @JsonProperty("powerstate")
-    private String powerstate = null;
+    private String powerstate;
 
     @JsonProperty("se_ver")
     private Integer seVer = 1;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vcenter_datacenter_uuid")
-    private String vcenterDatacenterUuid = null;
+    private String vcenterDatacenterUuid;
 
     @JsonProperty("vcenter_rm_cookie")
-    private String vcenterRmCookie = null;
+    private String vcenterRmCookie;
 
     @JsonProperty("vcenter_se_type")
-    private String vcenterSeType = null;
+    private String vcenterSeType;
 
     @JsonProperty("vcenter_template_vm")
-    private Boolean vcenterTemplateVm = null;
+    private Boolean vcenterTemplateVm;
 
     @JsonProperty("vcenter_vAppName")
-    private String vcenterVappname = null;
+    private String vcenterVappname;
 
     @JsonProperty("vcenter_vAppVendor")
-    private String vcenterVappvendor = null;
+    private String vcenterVappvendor;
 
     @JsonProperty("vcenter_vm_type")
-    private String vcenterVmType = null;
+    private String vcenterVmType;
 
     @JsonProperty("vcenter_vnic_discovered")
-    private Boolean vcenterVnicDiscovered = null;
+    private Boolean vcenterVnicDiscovered;
 
     @JsonProperty("vm_lb_weight")
-    private Integer vmLbWeight = null;
+    private Integer vmLbWeight;
 
 
 

@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VinfraVcenterBadCredentials  {
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("previous_count")
-    private Integer previousCount = null;
+    private Integer previousCount;
 
     @JsonProperty("user")
-    private String user = null;
+    private String user;
 
     @JsonProperty("vcenter")
-    private String vcenter = null;
+    private String vcenter;
 
     @JsonProperty("vcenter_name")
-    private String vcenterName = null;
+    private String vcenterName;
 
     @JsonProperty("vcenter_object")
-    private String vcenterObject = null;
+    private String vcenterObject;
 
 
 

@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPHdrAction  {
     @JsonProperty("action")
-    private String action = null;
+    private String action;
 
     @JsonProperty("cookie")
-    private HTTPCookieData cookie = null;
+    private HTTPCookieData cookie;
 
     @JsonProperty("hdr")
-    private HTTPHdrData hdr = null;
+    private HTTPHdrData hdr;
 
     @JsonProperty("hdr_index")
-    private Integer hdrIndex = null;
+    private Integer hdrIndex;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeGatewayHeartbeatSuccessDetails  {
     @JsonProperty("gateway_ip")
-    private String gatewayIp = null;
+    private String gatewayIp;
 
     @JsonProperty("vrf_name")
-    private String vrfName = null;
+    private String vrfName;
 
     @JsonProperty("vrf_uuid")
-    private String vrfUuid = null;
+    private String vrfUuid;
 
 
 

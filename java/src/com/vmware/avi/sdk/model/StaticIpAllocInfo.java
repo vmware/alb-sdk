@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StaticIpAllocInfo  {
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("obj_info")
-    private String objInfo = null;
+    private String objInfo;
 
     @JsonProperty("obj_uuid")
-    private String objUuid = null;
+    private String objUuid;
 
 
 

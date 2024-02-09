@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServiceEngineCloudLimits  {
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("vrfs_per_serviceengine")
-    private Integer vrfsPerServiceengine = null;
+    private Integer vrfsPerServiceengine;
 
 
 

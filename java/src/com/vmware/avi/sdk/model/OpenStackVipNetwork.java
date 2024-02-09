@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OpenStackVipNetwork  {
     @JsonProperty("os_network_uuid")
-    private String osNetworkUuid = null;
+    private String osNetworkUuid;
 
     @JsonProperty("os_tenant_uuids")
-    private List<String> osTenantUuids = null;
+    private List<String> osTenantUuids;
 
 
 

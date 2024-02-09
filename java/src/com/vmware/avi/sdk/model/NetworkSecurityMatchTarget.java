@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NetworkSecurityMatchTarget  {
     @JsonProperty("client_ip")
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("client_port")
-    private PortMatchGeneric clientPort = null;
+    private PortMatchGeneric clientPort;
 
     @JsonProperty("geo_matches")
-    private List<GeoMatch> geoMatches = null;
+    private List<GeoMatch> geoMatches;
 
     @JsonProperty("ip_reputation_type")
-    private IPReputationTypeMatch ipReputationType = null;
+    private IPReputationTypeMatch ipReputationType;
 
     @JsonProperty("microservice")
-    private MicroServiceMatch microservice = null;
+    private MicroServiceMatch microservice;
 
     @JsonProperty("vs_port")
-    private PortMatch vsPort = null;
+    private PortMatch vsPort;
 
 
 

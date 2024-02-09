@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SamlSettings  {
     @JsonProperty("idp")
-    private SamlIdentityProviderSettings idp = null;
+    private SamlIdentityProviderSettings idp;
 
     @JsonProperty("sp")
-    private SamlServiceProviderSettings sp = null;
+    private SamlServiceProviderSettings sp;
 
 
 

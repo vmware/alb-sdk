@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SensitiveLogProfile  {
     @JsonProperty("header_field_rules")
-    private List<SensitiveFieldRule> headerFieldRules = null;
+    private List<SensitiveFieldRule> headerFieldRules;
 
     @JsonProperty("uri_query_field_rules")
-    private List<SensitiveFieldRule> uriQueryFieldRules = null;
+    private List<SensitiveFieldRule> uriQueryFieldRules;
 
     @JsonProperty("waf_field_rules")
-    private List<SensitiveFieldRule> wafFieldRules = null;
+    private List<SensitiveFieldRule> wafFieldRules;
 
 
     /**

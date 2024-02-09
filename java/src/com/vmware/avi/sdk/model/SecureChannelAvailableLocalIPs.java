@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SecureChannelAvailableLocalIPs extends AviRestResource  {
     @JsonProperty("end")
-    private Integer end = null;
+    private Integer end;
 
     @JsonProperty("free_ips")
-    private List<Integer> freeIps = null;
+    private List<Integer> freeIps;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("start")
-    private Integer start = null;
+    private Integer start;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

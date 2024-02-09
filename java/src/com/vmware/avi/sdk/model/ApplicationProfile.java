@@ -22,61 +22,61 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApplicationProfile extends AviRestResource  {
     @JsonProperty("app_service_type")
-    private String appServiceType = null;
+    private String appServiceType;
 
     @JsonProperty("cloud_config_cksum")
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("dns_service_profile")
-    private DnsServiceApplicationProfile dnsServiceProfile = null;
+    private DnsServiceApplicationProfile dnsServiceProfile;
 
     @JsonProperty("dos_rl_profile")
-    private DosRateLimitProfile dosRlProfile = null;
+    private DosRateLimitProfile dosRlProfile;
 
     @JsonProperty("http_profile")
-    private HTTPApplicationProfile httpProfile = null;
+    private HTTPApplicationProfile httpProfile;
 
     @JsonProperty("l4_ssl_profile")
-    private L4SSLApplicationProfile l4SslProfile = null;
+    private L4SSLApplicationProfile l4SslProfile;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("preserve_client_ip")
     private Boolean preserveClientIp = false;
 
     @JsonProperty("preserve_client_port")
-    private Boolean preserveClientPort = null;
+    private Boolean preserveClientPort;
 
     @JsonProperty("preserve_dest_ip_port")
     private Boolean preserveDestIpPort = false;
 
     @JsonProperty("sip_service_profile")
-    private SipServiceApplicationProfile sipServiceProfile = null;
+    private SipServiceApplicationProfile sipServiceProfile;
 
     @JsonProperty("tcp_app_profile")
-    private TCPApplicationProfile tcpAppProfile = null;
+    private TCPApplicationProfile tcpAppProfile;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

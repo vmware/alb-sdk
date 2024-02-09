@@ -31,7 +31,7 @@ public class Vip  {
     private String autoAllocateIpType = "V4_ONLY";
 
     @JsonProperty("availability_zone")
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("avi_allocated_fip")
     private Boolean aviAllocatedFip = false;
@@ -40,58 +40,58 @@ public class Vip  {
     private Boolean aviAllocatedVip = false;
 
     @JsonProperty("discovered_networks")
-    private List<DiscoveredNetwork> discoveredNetworks = null;
+    private List<DiscoveredNetwork> discoveredNetworks;
 
     @JsonProperty("enabled")
     private Boolean enabled = true;
 
     @JsonProperty("floating_ip")
-    private IpAddr floatingIp = null;
+    private IpAddr floatingIp;
 
     @JsonProperty("floating_ip6")
-    private IpAddr floatingIp6 = null;
+    private IpAddr floatingIp6;
 
     @JsonProperty("floating_subnet6_uuid")
-    private String floatingSubnet6Uuid = null;
+    private String floatingSubnet6Uuid;
 
     @JsonProperty("floating_subnet_uuid")
-    private String floatingSubnetUuid = null;
+    private String floatingSubnetUuid;
 
     @JsonProperty("ip6_address")
-    private IpAddr ip6Address = null;
+    private IpAddr ip6Address;
 
     @JsonProperty("ip_address")
-    private IpAddr ipAddress = null;
+    private IpAddr ipAddress;
 
     @JsonProperty("ipam_network_subnet")
-    private IPNetworkSubnet ipamNetworkSubnet = null;
+    private IPNetworkSubnet ipamNetworkSubnet;
 
     @JsonProperty("network_ref")
-    private String networkRef = null;
+    private String networkRef;
 
     @JsonProperty("placement_networks")
-    private List<VipPlacementNetwork> placementNetworks = null;
+    private List<VipPlacementNetwork> placementNetworks;
 
     @JsonProperty("port_uuid")
-    private String portUuid = null;
+    private String portUuid;
 
     @JsonProperty("prefix_length")
     private Integer prefixLength = 32;
 
     @JsonProperty("subnet")
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
     @JsonProperty("subnet6")
-    private IpAddrPrefix subnet6 = null;
+    private IpAddrPrefix subnet6;
 
     @JsonProperty("subnet6_uuid")
-    private String subnet6Uuid = null;
+    private String subnet6Uuid;
 
     @JsonProperty("subnet_uuid")
-    private String subnetUuid = null;
+    private String subnetUuid;
 
     @JsonProperty("vip_id")
-    private String vipId = null;
+    private String vipId;
 
 
 

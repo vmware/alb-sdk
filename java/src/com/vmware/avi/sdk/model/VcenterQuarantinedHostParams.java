@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VcenterQuarantinedHostParams  {
     @JsonProperty("cloud_uuid")
-    private String cloudUuid = null;
+    private String cloudUuid;
 
 
 

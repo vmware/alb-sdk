@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeIpRemovedEventDetails  {
     @JsonProperty("if_name")
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("ip")
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("linux_name")
-    private String linuxName = null;
+    private String linuxName;
 
     @JsonProperty("mac")
-    private String mac = null;
+    private String mac;
 
     @JsonProperty("mask")
-    private Integer mask = null;
+    private Integer mask;
 
     @JsonProperty("mode")
-    private String mode = null;
+    private String mode;
 
     @JsonProperty("network_uuid")
-    private String networkUuid = null;
+    private String networkUuid;
 
     @JsonProperty("ns")
-    private String ns = null;
+    private String ns;
 
     @JsonProperty("se_ref")
-    private String seRef = null;
+    private String seRef;
 
 
 

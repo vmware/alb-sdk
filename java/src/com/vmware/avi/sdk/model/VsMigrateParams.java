@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsMigrateParams extends AviRestResource  {
     @JsonProperty("from_se_ref")
-    private String fromSeRef = null;
+    private String fromSeRef;
 
     @JsonProperty("new_vcpus")
-    private Integer newVcpus = null;
+    private Integer newVcpus;
 
     @JsonProperty("to_host_ref")
-    private String toHostRef = null;
+    private String toHostRef;
 
     @JsonProperty("to_new_se")
     private Boolean toNewSe = false;
 
     @JsonProperty("to_se_ref")
-    private String toSeRef = null;
+    private String toSeRef;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vip_id")
-    private String vipId = null;
+    private String vipId;
 
 
 

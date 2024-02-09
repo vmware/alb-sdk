@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CumulativeLicense  {
     @JsonProperty("burst_cores")
-    private Integer burstCores = null;
+    private Integer burstCores;
 
     @JsonProperty("cores")
-    private Integer cores = null;
+    private Integer cores;
 
     @JsonProperty("max_ses")
-    private Integer maxSes = null;
+    private Integer maxSes;
 
     @JsonProperty("se_bandwidth_limits")
-    private List<SEBandwidthLimit> seBandwidthLimits = null;
+    private List<SEBandwidthLimit> seBandwidthLimits;
 
     @JsonProperty("service_cores")
-    private Float serviceCores = null;
+    private Float serviceCores;
 
     @JsonProperty("sockets")
-    private Integer sockets = null;
+    private Integer sockets;
 
     @JsonProperty("tier_type")
-    private String tierType = null;
+    private String tierType;
 
 
 

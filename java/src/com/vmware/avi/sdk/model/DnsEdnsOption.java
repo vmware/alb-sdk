@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsEdnsOption  {
     @JsonProperty("addr_family")
-    private Integer addrFamily = null;
+    private Integer addrFamily;
 
     @JsonProperty("code")
-    private String code = null;
+    private String code;
 
     @JsonProperty("scope_prefix_len")
-    private Integer scopePrefixLen = null;
+    private Integer scopePrefixLen;
 
     @JsonProperty("source_prefix_len")
-    private Integer sourcePrefixLen = null;
+    private Integer sourcePrefixLen;
 
     @JsonProperty("subnet_ip")
-    private Integer subnetIp = null;
+    private Integer subnetIp;
 
     @JsonProperty("subnet_ip6")
-    private String subnetIp6 = null;
+    private String subnetIp6;
 
 
 

@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GCPNetworkConfig  {
     @JsonProperty("config")
-    private String config = null;
+    private String config;
 
     @JsonProperty("inband")
-    private GCPInBandManagement inband = null;
+    private GCPInBandManagement inband;
 
     @JsonProperty("one_arm")
-    private GCPOneArmMode oneArm = null;
+    private GCPOneArmMode oneArm;
 
     @JsonProperty("two_arm")
-    private GCPTwoArmMode twoArm = null;
+    private GCPTwoArmMode twoArm;
 
 
 

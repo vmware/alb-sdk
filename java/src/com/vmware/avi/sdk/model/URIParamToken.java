@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class URIParamToken  {
     @JsonProperty("end_index")
-    private Integer endIndex = null;
+    private Integer endIndex;
 
     @JsonProperty("start_index")
-    private Integer startIndex = null;
+    private Integer startIndex;
 
     @JsonProperty("str_value")
-    private String strValue = null;
+    private String strValue;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

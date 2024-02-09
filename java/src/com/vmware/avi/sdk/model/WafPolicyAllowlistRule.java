@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafPolicyAllowlistRule  {
     @JsonProperty("actions")
-    private List<String> actions = null;
+    private List<String> actions;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable")
     private Boolean enable = true;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
-    private MatchTarget match = null;
+    private MatchTarget match;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("sampling_percent")
     private Integer samplingPercent = 100;

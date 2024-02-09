@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbGeoDbEntry  {
     @JsonProperty("file")
-    private GslbGeoDbFile file = null;
+    private GslbGeoDbFile file;
 
     @JsonProperty("priority")
     private Integer priority = 10;

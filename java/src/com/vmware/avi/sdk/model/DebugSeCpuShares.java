@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugSeCpuShares  {
     @JsonProperty("cpu")
-    private Integer cpu = null;
+    private Integer cpu;
 
     @JsonProperty("shares")
-    private Integer shares = null;
+    private Integer shares;
 
 
 

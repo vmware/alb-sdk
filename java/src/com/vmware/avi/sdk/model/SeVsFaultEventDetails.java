@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeVsFaultEventDetails  {
     @JsonProperty("fault_object")
-    private String faultObject = null;
+    private String faultObject;
 
     @JsonProperty("fault_reason")
-    private String faultReason = null;
+    private String faultReason;
 
     @JsonProperty("service_engine")
-    private String serviceEngine = null;
+    private String serviceEngine;
 
     @JsonProperty("virtual_service")
-    private String virtualService = null;
+    private String virtualService;
 
 
 

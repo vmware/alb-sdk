@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NsxtCredentials  {
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("username")
-    private String username = null;
+    private String username;
 
 
 

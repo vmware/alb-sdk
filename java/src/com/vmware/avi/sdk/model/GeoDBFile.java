@@ -25,16 +25,16 @@ public class GeoDBFile  {
     private Boolean enabled = true;
 
     @JsonProperty("file_ref")
-    private String fileRef = null;
+    private String fileRef;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("vendor")
-    private String vendor = null;
+    private String vendor;
 
 
 

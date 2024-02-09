@@ -25,7 +25,7 @@ public class ClientLogFilter  {
     private Boolean allHeaders = false;
 
     @JsonProperty("client_ip")
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("duration")
     private Integer duration = 30;
@@ -34,13 +34,13 @@ public class ClientLogFilter  {
     private Boolean enabled = false;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("uri")
-    private StringMatch uri = null;
+    private StringMatch uri;
 
 
 

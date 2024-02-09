@@ -25,13 +25,13 @@ public class WafLog  {
     private Boolean allowlistConfigured = false;
 
     @JsonProperty("allowlist_logs")
-    private List<WafAllowlistLog> allowlistLogs = null;
+    private List<WafAllowlistLog> allowlistLogs;
 
     @JsonProperty("allowlist_processed")
     private Boolean allowlistProcessed = false;
 
     @JsonProperty("application_rule_logs")
-    private List<WafRuleLog> applicationRuleLogs = null;
+    private List<WafRuleLog> applicationRuleLogs;
 
     @JsonProperty("application_rules_configured")
     private Boolean applicationRulesConfigured = false;
@@ -40,40 +40,40 @@ public class WafLog  {
     private Boolean applicationRulesProcessed = false;
 
     @JsonProperty("latency_request_body_phase")
-    private Integer latencyRequestBodyPhase = null;
+    private Integer latencyRequestBodyPhase;
 
     @JsonProperty("latency_request_header_phase")
-    private Integer latencyRequestHeaderPhase = null;
+    private Integer latencyRequestHeaderPhase;
 
     @JsonProperty("latency_response_body_phase")
-    private Integer latencyResponseBodyPhase = null;
+    private Integer latencyResponseBodyPhase;
 
     @JsonProperty("latency_response_header_phase")
-    private Integer latencyResponseHeaderPhase = null;
+    private Integer latencyResponseHeaderPhase;
 
     @JsonProperty("learning_status")
     private String learningStatus = "NOT_ACTIVE";
 
     @JsonProperty("memory_allocated")
-    private Integer memoryAllocated = null;
+    private Integer memoryAllocated;
 
     @JsonProperty("omitted_app_rule_stats")
-    private OmittedWafLogStats omittedAppRuleStats = null;
+    private OmittedWafLogStats omittedAppRuleStats;
 
     @JsonProperty("omitted_signature_stats")
-    private OmittedWafLogStats omittedSignatureStats = null;
+    private OmittedWafLogStats omittedSignatureStats;
 
     @JsonProperty("psm_configured")
     private Boolean psmConfigured = false;
 
     @JsonProperty("psm_logs")
-    private List<WafPSMLog> psmLogs = null;
+    private List<WafPSMLog> psmLogs;
 
     @JsonProperty("psm_processed")
     private Boolean psmProcessed = false;
 
     @JsonProperty("rule_logs")
-    private List<WafRuleLog> ruleLogs = null;
+    private List<WafRuleLog> ruleLogs;
 
     @JsonProperty("rules_configured")
     private Boolean rulesConfigured = false;
@@ -82,7 +82,7 @@ public class WafLog  {
     private Boolean rulesProcessed = false;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
 
 

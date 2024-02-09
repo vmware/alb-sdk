@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsDimensionData  {
     @JsonProperty("dimension")
-    private String dimension = null;
+    private String dimension;
 
     @JsonProperty("dimension_id")
-    private String dimensionId = null;
+    private String dimensionId;
 
 
 

@@ -31,10 +31,10 @@ public class IcapProfile extends AviRestResource  {
     private String bufferSizeExceedAction = "ICAP_FAIL_OPEN";
 
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable_preview")
     private Boolean enablePreview = true;
@@ -43,13 +43,13 @@ public class IcapProfile extends AviRestResource  {
     private String failAction = "ICAP_FAIL_OPEN";
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("nsx_defender_config")
-    private IcapNsxDefenderConfig nsxDefenderConfig = null;
+    private IcapNsxDefenderConfig nsxDefenderConfig;
 
     @JsonProperty("pool_group_ref")
-    private String poolGroupRef = null;
+    private String poolGroupRef;
 
     @JsonProperty("preview_size")
     private Integer previewSize = 5000;
@@ -58,19 +58,19 @@ public class IcapProfile extends AviRestResource  {
     private Integer responseTimeout = 60000;
 
     @JsonProperty("service_uri")
-    private String serviceUri = null;
+    private String serviceUri;
 
     @JsonProperty("slow_response_warning_threshold")
     private Integer slowResponseWarningThreshold = 10000;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vendor")
     private String vendor = "ICAP_VENDOR_OPSWAT";

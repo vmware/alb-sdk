@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class JWTClaimMatch  {
     @JsonProperty("bool_match")
-    private Boolean boolMatch = null;
+    private Boolean boolMatch;
 
     @JsonProperty("int_match")
-    private Integer intMatch = null;
+    private Integer intMatch;
 
     @JsonProperty("is_mandatory")
-    private Boolean isMandatory = null;
+    private Boolean isMandatory;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("string_match")
-    private StringMatch stringMatch = null;
+    private StringMatch stringMatch;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("validate")
-    private Boolean validate = null;
+    private Boolean validate;
 
 
 

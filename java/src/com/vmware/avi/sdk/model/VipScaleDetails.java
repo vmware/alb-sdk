@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VipScaleDetails  {
     @JsonProperty("availability_zone")
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("error")
-    private String error = null;
+    private String error;
 
     @JsonProperty("subnet_uuid")
-    private String subnetUuid = null;
+    private String subnetUuid;
 
     @JsonProperty("vip_id")
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("vsvip_uuid")
-    private String vsvipUuid = null;
+    private String vsvipUuid;
 
 
 

@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PKIProfile extends AviRestResource  {
     @JsonProperty("allow_pki_errors")
-    private List<String> allowPkiErrors = null;
+    private List<String> allowPkiErrors;
 
     @JsonProperty("ca_certs")
-    private List<SSLCertificate> caCerts = null;
+    private List<SSLCertificate> caCerts;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("crl_check")
     private Boolean crlCheck = true;
 
     @JsonProperty("crls")
-    private List<CRL> crls = null;
+    private List<CRL> crls;
 
     @JsonProperty("ignore_peer_chain")
     private Boolean ignorePeerChain;
@@ -43,19 +43,19 @@ public class PKIProfile extends AviRestResource  {
     private Boolean isFederated = false;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("validate_only_leaf_crl")
     private Boolean validateOnlyLeafCrl = true;

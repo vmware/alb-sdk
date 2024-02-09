@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConnectionEventDetails  {
     @JsonProperty("host")
-    private String host = null;
+    private String host;
 
     @JsonProperty("info")
-    private String info = null;
+    private String info;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
 
 

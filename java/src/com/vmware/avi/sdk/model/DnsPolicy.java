@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsPolicy extends AviRestResource  {
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("internal")
-    private Boolean internal = null;
+    private Boolean internal;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("rule")
-    private List<DnsRule> rule = null;
+    private List<DnsRule> rule;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

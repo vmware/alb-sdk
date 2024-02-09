@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OCICredentials  {
     @JsonProperty("fingerprint")
-    private String fingerprint = null;
+    private String fingerprint;
 
     @JsonProperty("key_content")
-    private String keyContent = null;
+    private String keyContent;
 
     @JsonProperty("pass_phrase")
-    private String passPhrase = null;
+    private String passPhrase;
 
     @JsonProperty("user")
-    private String user = null;
+    private String user;
 
 
 

@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsRuleMatchTarget  {
     @JsonProperty("client_ip_address")
-    private DnsClientIpMatch clientIpAddress = null;
+    private DnsClientIpMatch clientIpAddress;
 
     @JsonProperty("client_port_numbers")
-    private DnsClientPortMatch clientPortNumbers = null;
+    private DnsClientPortMatch clientPortNumbers;
 
     @JsonProperty("geo_location")
-    private DnsGeoLocationMatch geoLocation = null;
+    private DnsGeoLocationMatch geoLocation;
 
     @JsonProperty("protocol")
-    private DnsTransportProtocolMatch protocol = null;
+    private DnsTransportProtocolMatch protocol;
 
     @JsonProperty("query_name")
-    private DnsQueryNameMatch queryName = null;
+    private DnsQueryNameMatch queryName;
 
     @JsonProperty("query_type")
-    private DnsQueryTypeMatch queryType = null;
+    private DnsQueryTypeMatch queryType;
 
 
 

@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbSiteHealthStatus  {
     @JsonProperty("controller_gsinfo")
-    private List<GslbPoolMemberRuntimeInfo> controllerGsinfo = null;
+    private List<GslbPoolMemberRuntimeInfo> controllerGsinfo;
 
     @JsonProperty("datapath_gsinfo")
-    private List<GslbPoolMemberRuntimeInfo> datapathGsinfo = null;
+    private List<GslbPoolMemberRuntimeInfo> datapathGsinfo;
 
     @JsonProperty("dns_info")
-    private GslbDnsInfo dnsInfo = null;
+    private GslbDnsInfo dnsInfo;
 
     @JsonProperty("gap_table")
-    private List<CfgState> gapTable = null;
+    private List<CfgState> gapTable;
 
     @JsonProperty("geo_table")
-    private List<CfgState> geoTable = null;
+    private List<CfgState> geoTable;
 
     @JsonProperty("ghm_table")
-    private List<CfgState> ghmTable = null;
+    private List<CfgState> ghmTable;
 
     @JsonProperty("glb_table")
-    private List<CfgState> glbTable = null;
+    private List<CfgState> glbTable;
 
     @JsonProperty("gs_table")
-    private List<CfgState> gsTable = null;
+    private List<CfgState> gsTable;
 
     @JsonProperty("sw_version")
-    private String swVersion = null;
+    private String swVersion;
 
     @JsonProperty("timestamp")
-    private Float timestamp = null;
+    private Float timestamp;
 
 
     /**

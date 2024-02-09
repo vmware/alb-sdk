@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbSiteRuntimeCfg  {
     @JsonProperty("fd_info")
-    private ConfigInfo fdInfo = null;
+    private ConfigInfo fdInfo;
 
     @JsonProperty("gap_info")
-    private ConfigInfo gapInfo = null;
+    private ConfigInfo gapInfo;
 
     @JsonProperty("geo_info")
-    private ConfigInfo geoInfo = null;
+    private ConfigInfo geoInfo;
 
     @JsonProperty("ghm_info")
-    private ConfigInfo ghmInfo = null;
+    private ConfigInfo ghmInfo;
 
     @JsonProperty("gjwt_info")
-    private ConfigInfo gjwtInfo = null;
+    private ConfigInfo gjwtInfo;
 
     @JsonProperty("glb_info")
-    private ConfigInfo glbInfo = null;
+    private ConfigInfo glbInfo;
 
     @JsonProperty("gpki_info")
-    private ConfigInfo gpkiInfo = null;
+    private ConfigInfo gpkiInfo;
 
     @JsonProperty("gs_info")
-    private ConfigInfo gsInfo = null;
+    private ConfigInfo gsInfo;
 
     @JsonProperty("mm_info")
-    private ConfigInfo mmInfo = null;
+    private ConfigInfo mmInfo;
 
     @JsonProperty("repl_queue")
-    private ConfigInfo replQueue = null;
+    private ConfigInfo replQueue;
 
     @JsonProperty("sync_info")
-    private GslbSiteCfgSyncInfo syncInfo = null;
+    private GslbSiteCfgSyncInfo syncInfo;
 
 
 

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class L4RuleAction  {
     @JsonProperty("select_pool")
-    private L4RuleActionSelectPool selectPool = null;
+    private L4RuleActionSelectPool selectPool;
 
 
 

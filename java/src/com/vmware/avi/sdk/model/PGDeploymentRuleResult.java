@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PGDeploymentRuleResult  {
     @JsonProperty("metric_value")
-    private Float metricValue = null;
+    private Float metricValue;
 
     @JsonProperty("result")
-    private Boolean result = null;
+    private Boolean result;
 
     @JsonProperty("rule")
-    private PGDeploymentRule rule = null;
+    private PGDeploymentRule rule;
 
 
 

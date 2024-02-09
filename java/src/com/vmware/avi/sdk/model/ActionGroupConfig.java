@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ActionGroupConfig extends AviRestResource  {
     @JsonProperty("action_script_config_ref")
-    private String actionScriptConfigRef = null;
+    private String actionScriptConfigRef;
 
     @JsonProperty("autoscale_trigger_notification")
     private Boolean autoscaleTriggerNotification = false;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("email_config_ref")
-    private String emailConfigRef = null;
+    private String emailConfigRef;
 
     @JsonProperty("external_only")
     private Boolean externalOnly = false;
@@ -40,22 +40,22 @@ public class ActionGroupConfig extends AviRestResource  {
     private String level = "ALERT_LOW";
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("snmp_trap_profile_ref")
-    private String snmpTrapProfileRef = null;
+    private String snmpTrapProfileRef;
 
     @JsonProperty("syslog_config_ref")
-    private String syslogConfigRef = null;
+    private String syslogConfigRef;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

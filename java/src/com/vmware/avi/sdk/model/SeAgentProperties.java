@@ -97,7 +97,7 @@ public class SeAgentProperties  {
     private Boolean seGrpChangeDisruptive = true;
 
     @JsonProperty("seagent_statecache_properties")
-    private SeAgentStateCacheProperties seagentStatecacheProperties = null;
+    private SeAgentStateCacheProperties seagentStatecacheProperties;
 
     @JsonProperty("send_se_ready_timeout")
     private Integer sendSeReadyTimeout = 300;

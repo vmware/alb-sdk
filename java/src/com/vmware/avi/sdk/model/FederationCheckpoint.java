@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FederationCheckpoint extends AviRestResource  {
     @JsonProperty("date")
-    private String date = null;
+    private String date;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("is_federated")
     private Boolean isFederated = true;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

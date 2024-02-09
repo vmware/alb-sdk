@@ -22,88 +22,88 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ALBServicesCase  {
     @JsonProperty("additional_emails")
-    private List<String> additionalEmails = null;
+    private List<String> additionalEmails;
 
     @JsonProperty("asset_id")
-    private String assetId = null;
+    private String assetId;
 
     @JsonProperty("case_attachments")
-    private List<ALBServicesCaseAttachment> caseAttachments = null;
+    private List<ALBServicesCaseAttachment> caseAttachments;
 
     @JsonProperty("case_created_by")
-    private String caseCreatedBy = null;
+    private String caseCreatedBy;
 
     @JsonProperty("case_number")
-    private String caseNumber = null;
+    private String caseNumber;
 
     @JsonProperty("case_status")
-    private String caseStatus = null;
+    private String caseStatus;
 
     @JsonProperty("contact_info")
-    private ALBServicesUser contactInfo = null;
+    private ALBServicesUser contactInfo;
 
     @JsonProperty("created_date")
-    private String createdDate = null;
+    private String createdDate;
 
     @JsonProperty("custom_tag")
-    private String customTag = null;
+    private String customTag;
 
     @JsonProperty("deployment_environment")
-    private String deploymentEnvironment = null;
+    private String deploymentEnvironment;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("email")
-    private String email = null;
+    private String email;
 
     @JsonProperty("environment")
-    private String environment = null;
+    private String environment;
 
     @JsonProperty("fr_business_justification")
-    private String frBusinessJustification = null;
+    private String frBusinessJustification;
 
     @JsonProperty("fr_current_solution")
-    private String frCurrentSolution = null;
+    private String frCurrentSolution;
 
     @JsonProperty("fr_timing")
-    private String frTiming = null;
+    private String frTiming;
 
     @JsonProperty("fr_use_cases")
-    private String frUseCases = null;
+    private String frUseCases;
 
     @JsonProperty("id")
-    private String id = null;
+    private String id;
 
     @JsonProperty("last_modified_date")
-    private String lastModifiedDate = null;
+    private String lastModifiedDate;
 
     @JsonProperty("mode")
-    private String mode = null;
+    private String mode;
 
     @JsonProperty("patch_version")
-    private String patchVersion = null;
+    private String patchVersion;
 
     @JsonProperty("severity")
-    private String severity = null;
+    private String severity;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
     @JsonProperty("subject")
-    private String subject = null;
+    private String subject;
 
     @JsonProperty("tenant_uuid")
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("time")
-    private String time = null;
+    private String time;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
     /**

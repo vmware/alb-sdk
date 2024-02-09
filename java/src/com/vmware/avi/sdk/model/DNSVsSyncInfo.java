@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DNSVsSyncInfo  {
     @JsonProperty("error")
-    private String error = null;
+    private String error;
 
     @JsonProperty("total_records")
-    private Integer totalRecords = null;
+    private Integer totalRecords;
 
 
 

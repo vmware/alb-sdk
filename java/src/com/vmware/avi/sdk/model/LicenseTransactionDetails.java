@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicenseTransactionDetails  {
     @JsonProperty("cookie")
-    private String cookie = null;
+    private String cookie;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("id")
-    private String id = null;
+    private String id;
 
     @JsonProperty("licensed_service_cores")
-    private Float licensedServiceCores = null;
+    private Float licensedServiceCores;
 
     @JsonProperty("operation")
-    private String operation = null;
+    private String operation;
 
     @JsonProperty("overdraft")
-    private Boolean overdraft = null;
+    private Boolean overdraft;
 
     @JsonProperty("service_cores")
-    private Float serviceCores = null;
+    private Float serviceCores;
 
     @JsonProperty("tenant_uuid")
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("tier")
-    private String tier = null;
+    private String tier;
 
 
 

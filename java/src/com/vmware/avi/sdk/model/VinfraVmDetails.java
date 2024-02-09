@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VinfraVmDetails  {
     @JsonProperty("datacenter")
-    private String datacenter = null;
+    private String datacenter;
 
     @JsonProperty("host")
-    private String host = null;
+    private String host;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

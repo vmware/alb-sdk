@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WebApplicationSignatureServiceStatus  {
     @JsonProperty("error")
-    private String error = null;
+    private String error;
 
     @JsonProperty("last_successful_update_check")
-    private TimeStamp lastSuccessfulUpdateCheck = null;
+    private TimeStamp lastSuccessfulUpdateCheck;
 
     @JsonProperty("upstream_sync_timestamp")
-    private TimeStamp upstreamSyncTimestamp = null;
+    private TimeStamp upstreamSyncTimestamp;
 
 
 

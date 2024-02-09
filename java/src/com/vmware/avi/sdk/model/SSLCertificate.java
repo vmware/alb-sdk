@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SSLCertificate  {
     @JsonProperty("certificate")
-    private String certificate = null;
+    private String certificate;
 
     @JsonProperty("certificate_signing_request")
-    private String certificateSigningRequest = null;
+    private String certificateSigningRequest;
 
     @JsonProperty("chain_verified")
-    private Boolean chainVerified = null;
+    private Boolean chainVerified;
 
     @JsonProperty("days_until_expire")
     private Integer daysUntilExpire = 365;
@@ -37,46 +37,46 @@ public class SSLCertificate  {
     private String expiryStatus = "SSL_CERTIFICATE_GOOD";
 
     @JsonProperty("fingerprint")
-    private String fingerprint = null;
+    private String fingerprint;
 
     @JsonProperty("issuer")
-    private SSLCertificateDescription issuer = null;
+    private SSLCertificateDescription issuer;
 
     @JsonProperty("key_params")
-    private SSLKeyParams keyParams = null;
+    private SSLKeyParams keyParams;
 
     @JsonProperty("not_after")
-    private String notAfter = null;
+    private String notAfter;
 
     @JsonProperty("not_before")
-    private String notBefore = null;
+    private String notBefore;
 
     @JsonProperty("public_key")
-    private String publicKey = null;
+    private String publicKey;
 
     @JsonProperty("self_signed")
-    private Boolean selfSigned = null;
+    private Boolean selfSigned;
 
     @JsonProperty("serial_number")
-    private String serialNumber = null;
+    private String serialNumber;
 
     @JsonProperty("signature")
-    private String signature = null;
+    private String signature;
 
     @JsonProperty("signature_algorithm")
-    private String signatureAlgorithm = null;
+    private String signatureAlgorithm;
 
     @JsonProperty("subject")
-    private SSLCertificateDescription subject = null;
+    private SSLCertificateDescription subject;
 
     @JsonProperty("subject_alt_names")
-    private List<String> subjectAltNames = null;
+    private List<String> subjectAltNames;
 
     @JsonProperty("text")
-    private String text = null;
+    private String text;
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
 

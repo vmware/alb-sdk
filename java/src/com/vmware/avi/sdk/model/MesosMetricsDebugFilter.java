@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MesosMetricsDebugFilter  {
     @JsonProperty("mesos_master")
-    private String mesosMaster = null;
+    private String mesosMaster;
 
     @JsonProperty("mesos_slave")
-    private String mesosSlave = null;
+    private String mesosSlave;
 
     @JsonProperty("metric_entity")
-    private String metricEntity = null;
+    private String metricEntity;
 
     @JsonProperty("metrics_collection_frq")
     private Integer metricsCollectionFrq = 60;

@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudClusterVip  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("vtype")
-    private String vtype = null;
+    private String vtype;
 
 
 

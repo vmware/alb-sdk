@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsDbQueueFullEventDetails  {
     @JsonProperty("high")
-    private Integer high = null;
+    private Integer high;
 
     @JsonProperty("instanceport")
-    private Integer instanceport = null;
+    private Integer instanceport;
 
     @JsonProperty("low")
-    private Integer low = null;
+    private Integer low;
 
     @JsonProperty("nodeid")
-    private String nodeid = null;
+    private String nodeid;
 
     @JsonProperty("period")
-    private String period = null;
+    private String period;
 
     @JsonProperty("runtime")
-    private MetricsDbRuntime runtime = null;
+    private MetricsDbRuntime runtime;
 
     @JsonProperty("watermark")
-    private Integer watermark = null;
+    private Integer watermark;
 
 
 

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DestinationPortAddr  {
     @JsonProperty("dst_port_end")
-    private Integer dstPortEnd = null;
+    private Integer dstPortEnd;
 
     @JsonProperty("dst_port_start")
-    private Integer dstPortStart = null;
+    private Integer dstPortStart;
 
     @JsonProperty("match_operation")
     private String matchOperation = "IS_IN";

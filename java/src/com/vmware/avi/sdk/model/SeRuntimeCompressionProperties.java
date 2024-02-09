@@ -31,7 +31,7 @@ public class SeRuntimeCompressionProperties  {
     private Integer minLength = 128;
 
     @JsonProperty("mobile_str")
-    private List<String> mobileStr = null;
+    private List<String> mobileStr;
 
 
 

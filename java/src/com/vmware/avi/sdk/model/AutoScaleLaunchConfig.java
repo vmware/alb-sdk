@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AutoScaleLaunchConfig extends AviRestResource  {
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("image_id")
-    private String imageId = null;
+    private String imageId;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("mesos")
-    private AutoScaleMesosSettings mesos = null;
+    private AutoScaleMesosSettings mesos;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("openstack")
-    private AutoScaleOpenStackSettings openstack = null;
+    private AutoScaleOpenStackSettings openstack;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
@@ -49,7 +49,7 @@ public class AutoScaleLaunchConfig extends AviRestResource  {
     private Boolean useExternalAsg = true;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

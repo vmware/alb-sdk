@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class L4PolicySet extends AviRestResource  {
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("is_internal_policy")
     private Boolean isInternalPolicy = false;
 
     @JsonProperty("l4_connection_policy")
-    private L4ConnectionPolicy l4ConnectionPolicy = null;
+    private L4ConnectionPolicy l4ConnectionPolicy;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

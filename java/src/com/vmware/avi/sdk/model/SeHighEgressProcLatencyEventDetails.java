@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeHighEgressProcLatencyEventDetails  {
     @JsonProperty("dispatcher_core")
-    private Integer dispatcherCore = null;
+    private Integer dispatcherCore;
 
     @JsonProperty("event_count")
-    private Integer eventCount = null;
+    private Integer eventCount;
 
     @JsonProperty("flow_core")
-    private List<Integer> flowCore = null;
+    private List<Integer> flowCore;
 
     @JsonProperty("max_proxy_to_disp_queing_delay")
-    private Integer maxProxyToDispQueingDelay = null;
+    private Integer maxProxyToDispQueingDelay;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_ref")
-    private String seRef = null;
+    private String seRef;
 
 
 

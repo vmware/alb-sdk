@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthorizationAction  {
     @JsonProperty("status_code")
-    private String statusCode = null;
+    private String statusCode;
 
     @JsonProperty("type")
     private String type = "ALLOW_ACCESS";

@@ -22,52 +22,52 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SubRequestLog  {
     @JsonProperty("headers_received_from_server")
-    private String headersReceivedFromServer = null;
+    private String headersReceivedFromServer;
 
     @JsonProperty("headers_sent_to_server")
-    private String headersSentToServer = null;
+    private String headersSentToServer;
 
     @JsonProperty("http_response_code")
-    private Integer httpResponseCode = null;
+    private Integer httpResponseCode;
 
     @JsonProperty("http_version")
-    private String httpVersion = null;
+    private String httpVersion;
 
     @JsonProperty("method")
-    private String method = null;
+    private String method;
 
     @JsonProperty("pool_name")
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("pool_uuid")
-    private String poolUuid = null;
+    private String poolUuid;
 
     @JsonProperty("request_length")
-    private Integer requestLength = null;
+    private Integer requestLength;
 
     @JsonProperty("response_length")
-    private Integer responseLength = null;
+    private Integer responseLength;
 
     @JsonProperty("server_ip")
-    private Integer serverIp = null;
+    private Integer serverIp;
 
     @JsonProperty("server_name")
-    private String serverName = null;
+    private String serverName;
 
     @JsonProperty("server_port")
-    private Integer serverPort = null;
+    private Integer serverPort;
 
     @JsonProperty("source_port")
-    private Integer sourcePort = null;
+    private Integer sourcePort;
 
     @JsonProperty("total_time")
-    private Integer totalTime = null;
+    private Integer totalTime;
 
     @JsonProperty("uri_path")
-    private String uriPath = null;
+    private String uriPath;
 
     @JsonProperty("uri_query")
-    private String uriQuery = null;
+    private String uriQuery;
 
 
 

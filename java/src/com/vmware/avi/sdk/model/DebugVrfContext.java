@@ -28,7 +28,7 @@ public class DebugVrfContext  {
     private Integer commandBufferSize = 32768;
 
     @JsonProperty("flags")
-    private List<DebugVrf> flags = null;
+    private List<DebugVrf> flags;
 
 
 

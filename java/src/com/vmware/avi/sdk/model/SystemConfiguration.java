@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("admin_auth_configuration")
-    private AdminAuthConfiguration adminAuthConfiguration = null;
+    private AdminAuthConfiguration adminAuthConfiguration;
 
     @JsonProperty("common_criteria_mode")
     private Boolean commonCriteriaMode = false;
 
     @JsonProperty("controller_analytics_policy")
-    private ControllerAnalyticsPolicy controllerAnalyticsPolicy = null;
+    private ControllerAnalyticsPolicy controllerAnalyticsPolicy;
 
     @JsonProperty("default_license_tier")
     private String defaultLicenseTier;
 
     @JsonProperty("dns_configuration")
-    private DNSConfiguration dnsConfiguration = null;
+    private DNSConfiguration dnsConfiguration;
 
     @JsonProperty("dns_virtualservice_refs")
-    private List<String> dnsVirtualserviceRefs = null;
+    private List<String> dnsVirtualserviceRefs;
 
     @JsonProperty("docker_mode")
     private Boolean dockerMode = false;
 
     @JsonProperty("email_configuration")
-    private EmailConfiguration emailConfiguration = null;
+    private EmailConfiguration emailConfiguration;
 
     @JsonProperty("enable_cors")
     private Boolean enableCors = false;
@@ -52,28 +52,28 @@ public class SystemConfiguration extends AviRestResource  {
     private Boolean fipsMode = false;
 
     @JsonProperty("global_tenant_config")
-    private TenantConfiguration globalTenantConfig = null;
+    private TenantConfiguration globalTenantConfig;
 
     @JsonProperty("host_key_algorithm_exclude")
-    private String hostKeyAlgorithmExclude = null;
+    private String hostKeyAlgorithmExclude;
 
     @JsonProperty("kex_algorithm_exclude")
-    private String kexAlgorithmExclude = null;
+    private String kexAlgorithmExclude;
 
     @JsonProperty("linux_configuration")
-    private LinuxConfiguration linuxConfiguration = null;
+    private LinuxConfiguration linuxConfiguration;
 
     @JsonProperty("mgmt_ip_access_control")
-    private MgmtIpAccessControl mgmtIpAccessControl = null;
+    private MgmtIpAccessControl mgmtIpAccessControl;
 
     @JsonProperty("ntp_configuration")
-    private NTPConfiguration ntpConfiguration = null;
+    private NTPConfiguration ntpConfiguration;
 
     @JsonProperty("portal_configuration")
-    private PortalConfiguration portalConfiguration = null;
+    private PortalConfiguration portalConfiguration;
 
     @JsonProperty("proxy_configuration")
-    private ProxyConfiguration proxyConfiguration = null;
+    private ProxyConfiguration proxyConfiguration;
 
     @JsonProperty("rekey_time_limit")
     private String rekeyTimeLimit = "none";
@@ -82,22 +82,22 @@ public class SystemConfiguration extends AviRestResource  {
     private String rekeyVolumeLimit = "default";
 
     @JsonProperty("secure_channel_configuration")
-    private SecureChannelConfiguration secureChannelConfiguration = null;
+    private SecureChannelConfiguration secureChannelConfiguration;
 
     @JsonProperty("snmp_configuration")
-    private SnmpConfiguration snmpConfiguration = null;
+    private SnmpConfiguration snmpConfiguration;
 
     @JsonProperty("ssh_ciphers")
-    private List<String> sshCiphers = null;
+    private List<String> sshCiphers;
 
     @JsonProperty("ssh_hmacs")
-    private List<String> sshHmacs = null;
+    private List<String> sshHmacs;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("welcome_workflow_complete")
     private Boolean welcomeWorkflowComplete = false;

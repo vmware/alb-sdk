@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthMatchGroupMembership  {
     @JsonProperty("criteria")
-    private String criteria = null;
+    private String criteria;
 
     @JsonProperty("groups")
-    private List<String> groups = null;
+    private List<String> groups;
 
 
 

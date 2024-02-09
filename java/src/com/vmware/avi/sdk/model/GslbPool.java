@@ -25,31 +25,31 @@ public class GslbPool  {
     private String algorithm = "GSLB_ALGORITHM_ROUND_ROBIN";
 
     @JsonProperty("consistent_hash_mask")
-    private Integer consistentHashMask = null;
+    private Integer consistentHashMask;
 
     @JsonProperty("consistent_hash_mask6")
-    private Integer consistentHashMask6 = null;
+    private Integer consistentHashMask6;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("enabled")
     private Boolean enabled = true;
 
     @JsonProperty("fallback_algorithm")
-    private String fallbackAlgorithm = null;
+    private String fallbackAlgorithm;
 
     @JsonProperty("manual_resume")
     private Boolean manualResume = false;
 
     @JsonProperty("members")
-    private List<GslbPoolMember> members = null;
+    private List<GslbPoolMember> members;
 
     @JsonProperty("min_health_monitors_up")
-    private Integer minHealthMonitorsUp = null;
+    private Integer minHealthMonitorsUp;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("priority")
     private Integer priority = 10;

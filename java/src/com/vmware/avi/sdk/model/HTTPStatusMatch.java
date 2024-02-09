@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPStatusMatch  {
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("ranges")
-    private List<HTTPStatusRange> ranges = null;
+    private List<HTTPStatusRange> ranges;
 
     @JsonProperty("status_codes")
-    private List<Integer> statusCodes = null;
+    private List<Integer> statusCodes;
 
 
 

@@ -22,40 +22,40 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClusterNode  {
     @JsonProperty("categories")
-    private List<String> categories = null;
+    private List<String> categories;
 
     @JsonProperty("interfaces")
-    private List<ControllerInterface> interfaces = null;
+    private List<ControllerInterface> interfaces;
 
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("ip6")
-    private IpAddr ip6 = null;
+    private IpAddr ip6;
 
     @JsonProperty("name")
     private String name = "node";
 
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("public_ip_or_name")
-    private IpAddr publicIpOrName = null;
+    private IpAddr publicIpOrName;
 
     @JsonProperty("static_routes")
-    private List<StaticRoute> staticRoutes = null;
+    private List<StaticRoute> staticRoutes;
 
     @JsonProperty("vm_hostname")
-    private String vmHostname = null;
+    private String vmHostname;
 
     @JsonProperty("vm_mor")
-    private String vmMor = null;
+    private String vmMor;
 
     @JsonProperty("vm_name")
-    private String vmName = null;
+    private String vmName;
 
     @JsonProperty("vm_uuid")
-    private String vmUuid = null;
+    private String vmUuid;
 
 
     /**

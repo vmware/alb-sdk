@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbObjectInfo  {
     @JsonProperty("obj")
-    private GslbObj obj = null;
+    private GslbObj obj;
 
     @JsonProperty("object_uuid")
-    private String objectUuid = null;
+    private String objectUuid;
 
     @JsonProperty("pb_name")
-    private String pbName = null;
+    private String pbName;
 
     @JsonProperty("state")
-    private String state = null;
+    private String state;
 
 
 

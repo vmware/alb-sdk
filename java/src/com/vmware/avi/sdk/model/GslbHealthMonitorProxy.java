@@ -25,7 +25,7 @@ public class GslbHealthMonitorProxy  {
     private String proxyType = "GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS";
 
     @JsonProperty("site_uuid")
-    private String siteUuid = null;
+    private String siteUuid;
 
 
 

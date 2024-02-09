@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPReselectRespCode  {
     @JsonProperty("codes")
-    private List<Integer> codes = null;
+    private List<Integer> codes;
 
     @JsonProperty("ranges")
-    private List<HTTPStatusRange> ranges = null;
+    private List<HTTPStatusRange> ranges;
 
     @JsonProperty("resp_code_block")
-    private List<String> respCodeBlock = null;
+    private List<String> respCodeBlock;
 
 
     /**

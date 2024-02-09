@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConfigUserAuthrzByRule  {
     @JsonProperty("policies")
-    private String policies = null;
+    private String policies;
 
     @JsonProperty("roles")
-    private String roles = null;
+    private String roles;
 
     @JsonProperty("rule")
-    private String rule = null;
+    private String rule;
 
     @JsonProperty("tenants")
-    private String tenants = null;
+    private String tenants;
 
     @JsonProperty("user")
-    private String user = null;
+    private String user;
 
     @JsonProperty("userprofile")
-    private String userprofile = null;
+    private String userprofile;
 
 
 

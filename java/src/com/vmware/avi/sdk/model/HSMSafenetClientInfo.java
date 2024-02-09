@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HSMSafenetClientInfo  {
     @JsonProperty("chrystoki_conf")
-    private String chrystokiConf = null;
+    private String chrystokiConf;
 
     @JsonProperty("client_cert")
-    private String clientCert = null;
+    private String clientCert;
 
     @JsonProperty("client_ip")
-    private String clientIp = null;
+    private String clientIp;
 
     @JsonProperty("client_priv_key")
-    private String clientPrivKey = null;
+    private String clientPrivKey;
 
     @JsonProperty("session_major_number")
-    private Integer sessionMajorNumber = null;
+    private Integer sessionMajorNumber;
 
     @JsonProperty("session_minor_number")
-    private Integer sessionMinorNumber = null;
+    private Integer sessionMinorNumber;
 
 
 

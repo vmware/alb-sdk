@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SCServerStateInfo  {
     @JsonProperty("oper_status")
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("server_ip")
-    private IpAddr serverIp = null;
+    private IpAddr serverIp;
 
     @JsonProperty("server_port")
-    private Integer serverPort = null;
+    private Integer serverPort;
 
 
 

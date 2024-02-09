@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServerScaleOutParams extends AviRestResource  {
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

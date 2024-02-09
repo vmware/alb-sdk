@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NatAddrInfo  {
     @JsonProperty("nat_ip")
-    private IpAddr natIp = null;
+    private IpAddr natIp;
 
     @JsonProperty("nat_ip_range")
-    private IpAddrRange natIpRange = null;
+    private IpAddrRange natIpRange;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Permission  {
     @JsonProperty("resource")
-    private String resource = null;
+    private String resource;
 
     @JsonProperty("subresource")
-    private SubResource subresource = null;
+    private SubResource subresource;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

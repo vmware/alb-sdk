@@ -25,19 +25,19 @@ public class DnsInfo  {
     private String algorithm = "DNS_RECORD_RESPONSE_CONSISTENT_HASH";
 
     @JsonProperty("cname")
-    private DnsCnameRdata cname = null;
+    private DnsCnameRdata cname;
 
     @JsonProperty("fqdn")
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("metadata")
     private String metadata;
 
     @JsonProperty("num_records_in_response")
-    private Integer numRecordsInResponse = null;
+    private Integer numRecordsInResponse;
 
     @JsonProperty("ttl")
-    private Integer ttl = null;
+    private Integer ttl;
 
     @JsonProperty("type")
     private String type = "DNS_RECORD_A";

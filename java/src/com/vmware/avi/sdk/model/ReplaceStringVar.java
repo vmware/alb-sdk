@@ -25,7 +25,7 @@ public class ReplaceStringVar  {
     private String type = "LITERAL_STRING";
 
     @JsonProperty("val")
-    private String val = null;
+    private String val;
 
 
 

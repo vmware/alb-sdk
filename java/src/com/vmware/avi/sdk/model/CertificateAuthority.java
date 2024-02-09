@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CertificateAuthority  {
     @JsonProperty("ca_ref")
-    private String caRef = null;
+    private String caRef;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

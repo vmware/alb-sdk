@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthorizationPolicy  {
     @JsonProperty("authz_rules")
-    private List<AuthorizationRule> authzRules = null;
+    private List<AuthorizationRule> authzRules;
 
 
     /**

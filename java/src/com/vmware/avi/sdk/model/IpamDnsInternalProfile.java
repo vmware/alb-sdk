@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpamDnsInternalProfile  {
     @JsonProperty("dns_service_domain")
-    private List<DnsServiceDomain> dnsServiceDomain = null;
+    private List<DnsServiceDomain> dnsServiceDomain;
 
     @JsonProperty("dns_virtualservice_ref")
-    private String dnsVirtualserviceRef = null;
+    private String dnsVirtualserviceRef;
 
     @JsonProperty("ttl")
     private Integer ttl = 30;
 
     @JsonProperty("usable_networks")
-    private List<IpamUsableNetwork> usableNetworks = null;
+    private List<IpamUsableNetwork> usableNetworks;
 
 
     /**

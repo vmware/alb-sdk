@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpamDnsOpenstackProfile  {
     @JsonProperty("keystone_host")
-    private String keystoneHost = null;
+    private String keystoneHost;
 
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("region")
-    private String region = null;
+    private String region;
 
     @JsonProperty("tenant")
-    private String tenant = null;
+    private String tenant;
 
     @JsonProperty("username")
-    private String username = null;
+    private String username;
 
     @JsonProperty("vip_network_name")
-    private String vipNetworkName = null;
+    private String vipNetworkName;
 
 
 

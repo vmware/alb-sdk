@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VinfraPoolServerDeleteDetails  {
     @JsonProperty("pool_name")
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("server_ip")
-    private List<String> serverIp = null;
+    private List<String> serverIp;
 
 
 

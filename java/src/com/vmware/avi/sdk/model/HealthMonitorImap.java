@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitorImap  {
     @JsonProperty("folder")
-    private String folder = null;
+    private String folder;
 
     @JsonProperty("ssl_attributes")
-    private HealthMonitorSSLAttributes sslAttributes = null;
+    private HealthMonitorSSLAttributes sslAttributes;
 
 
 

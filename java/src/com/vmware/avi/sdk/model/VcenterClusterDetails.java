@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VcenterClusterDetails  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("cluster")
-    private String cluster = null;
+    private String cluster;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("hosts")
-    private List<String> hosts = null;
+    private List<String> hosts;
 
     @JsonProperty("vc_url")
-    private String vcUrl = null;
+    private String vcUrl;
 
 
 

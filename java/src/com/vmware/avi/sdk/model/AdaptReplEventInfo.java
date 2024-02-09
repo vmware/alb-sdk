@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AdaptReplEventInfo  {
     @JsonProperty("obj_info")
-    private ConfigVersionStatus objInfo = null;
+    private ConfigVersionStatus objInfo;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("recommendation")
-    private String recommendation = null;
+    private String recommendation;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GeoMatch  {
     @JsonProperty("attribute")
-    private String attribute = null;
+    private String attribute;
 
     @JsonProperty("match_operation")
-    private String matchOperation = null;
+    private String matchOperation;
 
     @JsonProperty("values")
-    private List<String> values = null;
+    private List<String> values;
 
 
 

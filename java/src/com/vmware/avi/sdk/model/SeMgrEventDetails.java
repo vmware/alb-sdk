@@ -22,67 +22,67 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeMgrEventDetails  {
     @JsonProperty("cloud_name")
-    private String cloudName = null;
+    private String cloudName;
 
     @JsonProperty("cloud_uuid")
-    private String cloudUuid = null;
+    private String cloudUuid;
 
     @JsonProperty("enable_state")
-    private String enableState = null;
+    private String enableState;
 
     @JsonProperty("gcp_info")
-    private GcpInfo gcpInfo = null;
+    private GcpInfo gcpInfo;
 
     @JsonProperty("host_name")
-    private String hostName = null;
+    private String hostName;
 
     @JsonProperty("host_uuid")
-    private String hostUuid = null;
+    private String hostUuid;
 
     @JsonProperty("memory")
-    private Integer memory = null;
+    private Integer memory;
 
     @JsonProperty("migrate_state")
-    private String migrateState = null;
+    private String migrateState;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("new_mgmt_ip")
-    private String newMgmtIp = null;
+    private String newMgmtIp;
 
     @JsonProperty("new_mgmt_ip6")
-    private String newMgmtIp6 = null;
+    private String newMgmtIp6;
 
     @JsonProperty("old_mgmt_ip")
-    private String oldMgmtIp = null;
+    private String oldMgmtIp;
 
     @JsonProperty("old_mgmt_ip6")
-    private String oldMgmtIp6 = null;
+    private String oldMgmtIp6;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_grp_name")
-    private String seGrpName = null;
+    private String seGrpName;
 
     @JsonProperty("se_grp_uuid")
-    private String seGrpUuid = null;
+    private String seGrpUuid;
 
     @JsonProperty("vcpus")
-    private Integer vcpus = null;
+    private Integer vcpus;
 
     @JsonProperty("vs_name")
-    private List<String> vsName = null;
+    private List<String> vsName;
 
     @JsonProperty("vs_uuid")
-    private List<String> vsUuid = null;
+    private List<String> vsUuid;
 
     @JsonProperty("vsphere_ha_enabled")
-    private Boolean vsphereHaEnabled = null;
+    private Boolean vsphereHaEnabled;
 
     @JsonProperty("vsphere_ha_inprogress")
-    private Boolean vsphereHaInprogress = null;
+    private Boolean vsphereHaInprogress;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPRewriteURLAction  {
     @JsonProperty("host_hdr")
-    private URIParam hostHdr = null;
+    private URIParam hostHdr;
 
     @JsonProperty("path")
-    private URIParam path = null;
+    private URIParam path;
 
     @JsonProperty("query")
-    private URIParamQuery query = null;
+    private URIParamQuery query;
 
 
 

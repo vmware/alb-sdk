@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LogAgentEventDetail  {
     @JsonProperty("protocol")
-    private String protocol = null;
+    private String protocol;
 
     @JsonProperty("rapid_connection")
-    private LogAgentTCPConnEstRateExcdEvent rapidConnection = null;
+    private LogAgentTCPConnEstRateExcdEvent rapidConnection;
 
     @JsonProperty("tcp_detail")
-    private LogAgentTCPClientEventDetail tcpDetail = null;
+    private LogAgentTCPClientEventDetail tcpDetail;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

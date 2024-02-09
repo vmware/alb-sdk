@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProtocolMatch  {
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("protocols")
-    private String protocols = null;
+    private String protocols;
 
 
 

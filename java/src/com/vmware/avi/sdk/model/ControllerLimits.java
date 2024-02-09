@@ -22,67 +22,67 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerLimits  {
     @JsonProperty("bot_limits")
-    private BOTLimits botLimits = null;
+    private BOTLimits botLimits;
 
     @JsonProperty("certificates_per_virtualservice")
-    private Integer certificatesPerVirtualservice = null;
+    private Integer certificatesPerVirtualservice;
 
     @JsonProperty("controller_cloud_limits")
-    private List<ControllerCloudLimits> controllerCloudLimits = null;
+    private List<ControllerCloudLimits> controllerCloudLimits;
 
     @JsonProperty("controller_sizing_limits")
-    private List<ControllerSizingLimits> controllerSizingLimits = null;
+    private List<ControllerSizingLimits> controllerSizingLimits;
 
     @JsonProperty("default_routes_per_vrfcontext")
-    private Integer defaultRoutesPerVrfcontext = null;
+    private Integer defaultRoutesPerVrfcontext;
 
     @JsonProperty("gateway_mon_per_vrf")
-    private Integer gatewayMonPerVrf = null;
+    private Integer gatewayMonPerVrf;
 
     @JsonProperty("ipaddress_limits")
-    private IPAddrLimits ipaddressLimits = null;
+    private IPAddrLimits ipaddressLimits;
 
     @JsonProperty("ips_per_ipgroup")
-    private Integer ipsPerIpgroup = null;
+    private Integer ipsPerIpgroup;
 
     @JsonProperty("l7_limits")
-    private L7limits l7Limits = null;
+    private L7limits l7Limits;
 
     @JsonProperty("poolgroups_per_virtualservice")
-    private Integer poolgroupsPerVirtualservice = null;
+    private Integer poolgroupsPerVirtualservice;
 
     @JsonProperty("pools_per_poolgroup")
-    private Integer poolsPerPoolgroup = null;
+    private Integer poolsPerPoolgroup;
 
     @JsonProperty("pools_per_virtualservice")
-    private Integer poolsPerVirtualservice = null;
+    private Integer poolsPerVirtualservice;
 
     @JsonProperty("routes_per_vrfcontext")
-    private Integer routesPerVrfcontext = null;
+    private Integer routesPerVrfcontext;
 
     @JsonProperty("rules_per_nat_policy")
-    private Integer rulesPerNatPolicy = null;
+    private Integer rulesPerNatPolicy;
 
     @JsonProperty("rules_per_networksecuritypolicy")
-    private Integer rulesPerNetworksecuritypolicy = null;
+    private Integer rulesPerNetworksecuritypolicy;
 
     @JsonProperty("servers_per_pool")
-    private Integer serversPerPool = null;
+    private Integer serversPerPool;
 
     @JsonProperty("sni_children_per_parent")
-    private Integer sniChildrenPerParent = null;
+    private Integer sniChildrenPerParent;
 
     @JsonProperty("strings_per_stringgroup")
-    private Integer stringsPerStringgroup = null;
+    private Integer stringsPerStringgroup;
 
     @JsonProperty("vs_bgp_scaleout")
-    private Integer vsBgpScaleout = null;
+    private Integer vsBgpScaleout;
 
     @JsonProperty("vs_l2_scaleout")
-    private Integer vsL2Scaleout = null;
+    private Integer vsL2Scaleout;
 
     @JsonProperty("waf_limits")
-    private WAFLimits wafLimits = null;
+    private WAFLimits wafLimits;
 
 
 

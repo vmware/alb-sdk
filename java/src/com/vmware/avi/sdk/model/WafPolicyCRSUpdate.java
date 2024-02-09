@@ -25,7 +25,7 @@ public class WafPolicyCRSUpdate  {
     private Boolean commit = false;
 
     @JsonProperty("waf_crs_ref")
-    private String wafCrsRef = null;
+    private String wafCrsRef;
 
 
 

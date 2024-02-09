@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RmUnbindVsSeEventDetails  {
     @JsonProperty("ip")
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("ip6")
-    private String ip6 = null;
+    private String ip6;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("vs_name")
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AlertTestEmailParams extends AviRestResource  {
     @JsonProperty("subject")
-    private String subject = null;
+    private String subject;
 
     @JsonProperty("text")
-    private String text = null;
+    private String text;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

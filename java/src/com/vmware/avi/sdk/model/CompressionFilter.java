@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CompressionFilter  {
     @JsonProperty("devices_ref")
-    private String devicesRef = null;
+    private String devicesRef;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("ip_addr_prefixes")
-    private List<IpAddrPrefix> ipAddrPrefixes = null;
+    private List<IpAddrPrefix> ipAddrPrefixes;
 
     @JsonProperty("ip_addr_ranges")
-    private List<IpAddrRange> ipAddrRanges = null;
+    private List<IpAddrRange> ipAddrRanges;
 
     @JsonProperty("ip_addrs")
-    private List<IpAddr> ipAddrs = null;
+    private List<IpAddr> ipAddrs;
 
     @JsonProperty("ip_addrs_ref")
-    private String ipAddrsRef = null;
+    private String ipAddrsRef;
 
     @JsonProperty("level")
     private String level = "NORMAL_COMPRESSION";
@@ -46,10 +46,10 @@ public class CompressionFilter  {
     private String match = "IS_IN";
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("user_agent")
-    private List<String> userAgent = null;
+    private List<String> userAgent;
 
 
 

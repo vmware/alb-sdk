@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitorPop3  {
     @JsonProperty("ssl_attributes")
-    private HealthMonitorSSLAttributes sslAttributes = null;
+    private HealthMonitorSSLAttributes sslAttributes;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ReportSummary  {
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("previews")
-    private List<String> previews = null;
+    private List<String> previews;
 
     @JsonProperty("title")
-    private String title = null;
+    private String title;
 
 
 

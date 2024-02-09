@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudConnectorDebugFilter  {
     @JsonProperty("app_id")
-    private String appId = null;
+    private String appId;
 
     @JsonProperty("disable_se_reboot")
-    private Boolean disableSeReboot = null;
+    private Boolean disableSeReboot;
 
     @JsonProperty("se_id")
-    private String seId = null;
+    private String seId;
 
 
 

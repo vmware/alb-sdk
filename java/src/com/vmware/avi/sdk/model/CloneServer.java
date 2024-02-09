@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloneServer  {
     @JsonProperty("ip_address")
-    private IpAddr ipAddress = null;
+    private IpAddr ipAddress;
 
     @JsonProperty("mac")
-    private String mac = null;
+    private String mac;
 
     @JsonProperty("network_ref")
-    private String networkRef = null;
+    private String networkRef;
 
     @JsonProperty("subnet")
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
 
 

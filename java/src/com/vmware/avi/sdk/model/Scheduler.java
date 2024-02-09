@@ -22,43 +22,43 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Scheduler extends AviRestResource  {
     @JsonProperty("backup_config_ref")
-    private String backupConfigRef = null;
+    private String backupConfigRef;
 
     @JsonProperty("enabled")
     private Boolean enabled = true;
 
     @JsonProperty("end_date_time")
-    private String endDateTime = null;
+    private String endDateTime;
 
     @JsonProperty("frequency")
-    private Integer frequency = null;
+    private Integer frequency;
 
     @JsonProperty("frequency_unit")
-    private String frequencyUnit = null;
+    private String frequencyUnit;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("run_mode")
-    private String runMode = null;
+    private String runMode;
 
     @JsonProperty("run_script_ref")
-    private String runScriptRef = null;
+    private String runScriptRef;
 
     @JsonProperty("scheduler_action")
     private String schedulerAction = "SCHEDULER_ACTION_BACKUP";
 
     @JsonProperty("start_date_time")
-    private String startDateTime = null;
+    private String startDateTime;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerSite extends AviRestResource  {
     @JsonProperty("address")
-    private String address = null;
+    private String address;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("port")
     private Integer port = 443;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

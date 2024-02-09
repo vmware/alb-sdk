@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DatabaseEventInfo  {
     @JsonProperty("component")
-    private String component = null;
+    private String component;
 
     @JsonProperty("message")
-    private String message = null;
+    private String message;
 
 
 

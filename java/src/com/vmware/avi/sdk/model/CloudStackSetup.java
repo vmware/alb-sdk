@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudStackSetup  {
     @JsonProperty("access_key_id")
-    private String accessKeyId = null;
+    private String accessKeyId;
 
     @JsonProperty("api_url")
-    private String apiUrl = null;
+    private String apiUrl;
 
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("privilege")
-    private String privilege = null;
+    private String privilege;
 
 
 

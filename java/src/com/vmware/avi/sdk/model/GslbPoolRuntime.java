@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbPoolRuntime  {
     @JsonProperty("members")
-    private List<GslbPoolMemberRuntimeInfo> members = null;
+    private List<GslbPoolMemberRuntimeInfo> members;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("oper_status")
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
 
     /**

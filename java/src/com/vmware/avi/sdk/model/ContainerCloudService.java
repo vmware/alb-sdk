@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ContainerCloudService  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("object")
-    private String object = null;
+    private String object;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("service")
-    private String service = null;
+    private String service;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
 
 

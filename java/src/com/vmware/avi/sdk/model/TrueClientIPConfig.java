@@ -25,7 +25,7 @@ public class TrueClientIPConfig  {
     private String direction = "LEFT";
 
     @JsonProperty("headers")
-    private List<String> headers = null;
+    private List<String> headers;
 
     @JsonProperty("index_in_header")
     private Integer indexInHeader = 1;

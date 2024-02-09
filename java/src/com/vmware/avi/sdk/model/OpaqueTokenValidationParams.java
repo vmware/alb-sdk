@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OpaqueTokenValidationParams  {
     @JsonProperty("server_id")
-    private String serverId = null;
+    private String serverId;
 
     @JsonProperty("server_secret")
-    private String serverSecret = null;
+    private String serverSecret;
 
 
 

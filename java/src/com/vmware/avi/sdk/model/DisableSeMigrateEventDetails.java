@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DisableSeMigrateEventDetails  {
     @JsonProperty("migrate_params")
-    private VsMigrateParams migrateParams = null;
+    private VsMigrateParams migrateParams;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

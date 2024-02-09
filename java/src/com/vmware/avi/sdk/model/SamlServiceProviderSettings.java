@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SamlServiceProviderSettings  {
     @JsonProperty("fqdn")
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("org_display_name")
-    private String orgDisplayName = null;
+    private String orgDisplayName;
 
     @JsonProperty("org_name")
-    private String orgName = null;
+    private String orgName;
 
     @JsonProperty("org_url")
-    private String orgUrl = null;
+    private String orgUrl;
 
     @JsonProperty("saml_entity_type")
-    private String samlEntityType = null;
+    private String samlEntityType;
 
     @JsonProperty("sp_nodes")
-    private List<SamlServiceProviderNode> spNodes = null;
+    private List<SamlServiceProviderNode> spNodes;
 
     @JsonProperty("tech_contact_email")
-    private String techContactEmail = null;
+    private String techContactEmail;
 
     @JsonProperty("tech_contact_name")
-    private String techContactName = null;
+    private String techContactName;
 
 
 

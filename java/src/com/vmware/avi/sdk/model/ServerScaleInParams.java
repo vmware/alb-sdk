@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServerScaleInParams extends AviRestResource  {
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("servers")
-    private List<ServerId> servers = null;
+    private List<ServerId> servers;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

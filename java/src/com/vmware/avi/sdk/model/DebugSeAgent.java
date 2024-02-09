@@ -25,13 +25,13 @@ public class DebugSeAgent  {
     private Integer logEveryN = 0;
 
     @JsonProperty("log_level")
-    private String logLevel = null;
+    private String logLevel;
 
     @JsonProperty("sub_module")
-    private String subModule = null;
+    private String subModule;
 
     @JsonProperty("trace_level")
-    private String traceLevel = null;
+    private String traceLevel;
 
 
 

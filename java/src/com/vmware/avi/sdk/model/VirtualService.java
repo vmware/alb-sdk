@@ -31,22 +31,22 @@ public class VirtualService extends AviRestResource  {
     private Boolean allowInvalidClientCert = false;
 
     @JsonProperty("analytics_policy")
-    private AnalyticsPolicy analyticsPolicy = null;
+    private AnalyticsPolicy analyticsPolicy;
 
     @JsonProperty("analytics_profile_ref")
-    private String analyticsProfileRef = null;
+    private String analyticsProfileRef;
 
     @JsonProperty("application_profile_ref")
-    private String applicationProfileRef = null;
+    private String applicationProfileRef;
 
     @JsonProperty("azure_availability_set")
     private String azureAvailabilitySet;
 
     @JsonProperty("bgp_peer_labels")
-    private List<String> bgpPeerLabels = null;
+    private List<String> bgpPeerLabels;
 
     @JsonProperty("bot_policy_ref")
-    private String botPolicyRef = null;
+    private String botPolicyRef;
 
     @JsonProperty("bulk_sync_kvcache")
     private Boolean bulkSyncKvcache = false;
@@ -55,37 +55,37 @@ public class VirtualService extends AviRestResource  {
     private Boolean closeClientConnOnConfigUpdate = false;
 
     @JsonProperty("cloud_config_cksum")
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("cloud_type")
     private String cloudType = "CLOUD_NONE";
 
     @JsonProperty("connections_rate_limit")
-    private RateProfile connectionsRateLimit = null;
+    private RateProfile connectionsRateLimit;
 
     @JsonProperty("content_rewrite")
-    private ContentRewriteProfile contentRewrite = null;
+    private ContentRewriteProfile contentRewrite;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("csrf_policy_ref")
-    private String csrfPolicyRef = null;
+    private String csrfPolicyRef;
 
     @JsonProperty("delay_fairness")
     private Boolean delayFairness = false;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("dns_info")
-    private List<DnsInfo> dnsInfo = null;
+    private List<DnsInfo> dnsInfo;
 
     @JsonProperty("dns_policies")
-    private List<DnsPolicies> dnsPolicies = null;
+    private List<DnsPolicies> dnsPolicies;
 
     @JsonProperty("east_west_placement")
     private Boolean eastWestPlacement = false;
@@ -94,10 +94,10 @@ public class VirtualService extends AviRestResource  {
     private Boolean enableAutogw;
 
     @JsonProperty("enable_rhi")
-    private Boolean enableRhi = null;
+    private Boolean enableRhi;
 
     @JsonProperty("enable_rhi_snat")
-    private Boolean enableRhiSnat = null;
+    private Boolean enableRhiSnat;
 
     @JsonProperty("enable_session")
     private Boolean enableSession = false;
@@ -106,7 +106,7 @@ public class VirtualService extends AviRestResource  {
     private Boolean enabled = true;
 
     @JsonProperty("error_page_profile_ref")
-    private String errorPageProfileRef = null;
+    private String errorPageProfileRef;
 
     @JsonProperty("flow_dist")
     private String flowDist = "LOAD_AWARE";
@@ -115,142 +115,142 @@ public class VirtualService extends AviRestResource  {
     private String flowLabelType = "NO_LABEL";
 
     @JsonProperty("fqdn")
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("host_name_xlate")
-    private String hostNameXlate = null;
+    private String hostNameXlate;
 
     @JsonProperty("http_policies")
-    private List<HTTPPolicies> httpPolicies = null;
+    private List<HTTPPolicies> httpPolicies;
 
     @JsonProperty("icap_request_profile_refs")
-    private List<String> icapRequestProfileRefs = null;
+    private List<String> icapRequestProfileRefs;
 
     @JsonProperty("ign_pool_net_reach")
     private Boolean ignPoolNetReach = false;
 
     @JsonProperty("jwt_config")
-    private JWTValidationVsConfig jwtConfig = null;
+    private JWTValidationVsConfig jwtConfig;
 
     @JsonProperty("l4_policies")
-    private List<L4Policies> l4Policies = null;
+    private List<L4Policies> l4Policies;
 
     @JsonProperty("ldap_vs_config")
-    private LDAPVSConfig ldapVsConfig = null;
+    private LDAPVSConfig ldapVsConfig;
 
     @JsonProperty("limit_doser")
     private Boolean limitDoser = false;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("max_cps_per_client")
     private Integer maxCpsPerClient = 0;
 
     @JsonProperty("microservice_ref")
-    private String microserviceRef = null;
+    private String microserviceRef;
 
     @JsonProperty("min_pools_up")
-    private Integer minPoolsUp = null;
+    private Integer minPoolsUp;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("network_profile_ref")
-    private String networkProfileRef = null;
+    private String networkProfileRef;
 
     @JsonProperty("network_security_policy_ref")
-    private String networkSecurityPolicyRef = null;
+    private String networkSecurityPolicyRef;
 
     @JsonProperty("nsx_securitygroup")
-    private List<String> nsxSecuritygroup = null;
+    private List<String> nsxSecuritygroup;
 
     @JsonProperty("oauth_vs_config")
-    private OAuthVSConfig oauthVsConfig = null;
+    private OAuthVSConfig oauthVsConfig;
 
     @JsonProperty("performance_limits")
-    private PerformanceLimits performanceLimits = null;
+    private PerformanceLimits performanceLimits;
 
     @JsonProperty("pool_group_ref")
-    private String poolGroupRef = null;
+    private String poolGroupRef;
 
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("remove_listening_port_on_vs_down")
     private Boolean removeListeningPortOnVsDown = false;
 
     @JsonProperty("requests_rate_limit")
-    private RateProfile requestsRateLimit = null;
+    private RateProfile requestsRateLimit;
 
     @JsonProperty("revoke_vip_route")
     private Boolean revokeVipRoute = false;
 
     @JsonProperty("saml_sp_config")
-    private SAMLSPConfig samlSpConfig = null;
+    private SAMLSPConfig samlSpConfig;
 
     @JsonProperty("scaleout_ecmp")
     private Boolean scaleoutEcmp = false;
 
     @JsonProperty("se_group_ref")
-    private String seGroupRef = null;
+    private String seGroupRef;
 
     @JsonProperty("security_policy_ref")
-    private String securityPolicyRef = null;
+    private String securityPolicyRef;
 
     @JsonProperty("server_network_profile_ref")
-    private String serverNetworkProfileRef = null;
+    private String serverNetworkProfileRef;
 
     @JsonProperty("service_metadata")
-    private String serviceMetadata = null;
+    private String serviceMetadata;
 
     @JsonProperty("service_pool_select")
-    private List<ServicePoolSelector> servicePoolSelect = null;
+    private List<ServicePoolSelector> servicePoolSelect;
 
     @JsonProperty("services")
-    private List<Service> services = null;
+    private List<Service> services;
 
     @JsonProperty("sideband_profile")
-    private SidebandProfile sidebandProfile = null;
+    private SidebandProfile sidebandProfile;
 
     @JsonProperty("snat_ip")
-    private List<IpAddr> snatIp = null;
+    private List<IpAddr> snatIp;
 
     @JsonProperty("snat_ip6_addresses")
-    private List<IpAddr> snatIp6Addresses = null;
+    private List<IpAddr> snatIp6Addresses;
 
     @JsonProperty("sp_pool_refs")
     private List<String> spPoolRefs;
 
     @JsonProperty("ssl_key_and_certificate_refs")
-    private List<String> sslKeyAndCertificateRefs = null;
+    private List<String> sslKeyAndCertificateRefs;
 
     @JsonProperty("ssl_profile_ref")
-    private String sslProfileRef = null;
+    private String sslProfileRef;
 
     @JsonProperty("ssl_profile_selectors")
-    private List<SSLProfileSelector> sslProfileSelectors = null;
+    private List<SSLProfileSelector> sslProfileSelectors;
 
     @JsonProperty("ssl_sess_cache_avg_size")
     private Integer sslSessCacheAvgSize = 1024;
 
     @JsonProperty("sso_policy_ref")
-    private String ssoPolicyRef = null;
+    private String ssoPolicyRef;
 
     @JsonProperty("static_dns_records")
-    private List<DnsRecord> staticDnsRecords = null;
+    private List<DnsRecord> staticDnsRecords;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("test_se_datastore_level_1_ref")
-    private String testSeDatastoreLevel1Ref = null;
+    private String testSeDatastoreLevel1Ref;
 
     @JsonProperty("topology_policies")
-    private List<DnsPolicies> topologyPolicies = null;
+    private List<DnsPolicies> topologyPolicies;
 
     @JsonProperty("traffic_clone_profile_ref")
-    private String trafficCloneProfileRef = null;
+    private String trafficCloneProfileRef;
 
     @JsonProperty("traffic_enabled")
     private Boolean trafficEnabled = true;
@@ -268,34 +268,34 @@ public class VirtualService extends AviRestResource  {
     private Boolean useVipAsSnat = false;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vh_domain_name")
-    private List<String> vhDomainName = null;
+    private List<String> vhDomainName;
 
     @JsonProperty("vh_matches")
-    private List<VHMatch> vhMatches = null;
+    private List<VHMatch> vhMatches;
 
     @JsonProperty("vh_parent_vs_ref")
-    private String vhParentVsRef = null;
+    private String vhParentVsRef;
 
     @JsonProperty("vh_type")
     private String vhType = "VS_TYPE_VH_SNI";
 
     @JsonProperty("vip")
-    private List<Vip> vip = null;
+    private List<Vip> vip;
 
     @JsonProperty("vrf_context_ref")
-    private String vrfContextRef = null;
+    private String vrfContextRef;
 
     @JsonProperty("vs_datascripts")
-    private List<VSDataScripts> vsDatascripts = null;
+    private List<VSDataScripts> vsDatascripts;
 
     @JsonProperty("vsvip_ref")
-    private String vsvipRef = null;
+    private String vsvipRef;
 
     @JsonProperty("waf_policy_ref")
-    private String wafPolicyRef = null;
+    private String wafPolicyRef;
 
     @JsonProperty("weight")
     private Integer weight = 1;

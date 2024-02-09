@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CC_VnicInfo  {
     @JsonProperty("mac_address")
-    private String macAddress = null;
+    private String macAddress;
 
     @JsonProperty("network_uuid")
-    private String networkUuid = null;
+    private String networkUuid;
 
     @JsonProperty("port_uuid")
-    private String portUuid = null;
+    private String portUuid;
 
     @JsonProperty("status")
     private String status = "SYSERR_SUCCESS";
 
     @JsonProperty("status_string")
-    private String statusString = null;
+    private String statusString;
 
     @JsonProperty("subnet_uuid")
-    private String subnetUuid = null;
+    private String subnetUuid;
 
     @JsonProperty("vrf_uuid")
-    private String vrfUuid = null;
+    private String vrfUuid;
 
 
 

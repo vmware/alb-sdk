@@ -25,10 +25,10 @@ public class NTPAuthenticationKey  {
     private String algorithm = "NTP_AUTH_ALGORITHM_MD5";
 
     @JsonProperty("key")
-    private String key = null;
+    private String key;
 
     @JsonProperty("key_number")
-    private Integer keyNumber = null;
+    private Integer keyNumber;
 
 
 

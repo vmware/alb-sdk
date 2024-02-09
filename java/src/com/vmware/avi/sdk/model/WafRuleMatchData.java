@@ -25,10 +25,10 @@ public class WafRuleMatchData  {
     private Boolean isInternal = false;
 
     @JsonProperty("match_element")
-    private String matchElement = null;
+    private String matchElement;
 
     @JsonProperty("match_value")
-    private String matchValue = null;
+    private String matchValue;
 
     @JsonProperty("match_value_offset")
     private Integer matchValueOffset = 0;

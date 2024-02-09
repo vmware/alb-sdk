@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class URIParam  {
     @JsonProperty("tokens")
-    private List<URIParamToken> tokens = null;
+    private List<URIParamToken> tokens;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
     /**

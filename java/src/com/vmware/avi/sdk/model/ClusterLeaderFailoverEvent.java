@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClusterLeaderFailoverEvent  {
     @JsonProperty("leader_node")
-    private ClusterNode leaderNode = null;
+    private ClusterNode leaderNode;
 
     @JsonProperty("previous_leader_node")
-    private ClusterNode previousLeaderNode = null;
+    private ClusterNode previousLeaderNode;
 
 
 

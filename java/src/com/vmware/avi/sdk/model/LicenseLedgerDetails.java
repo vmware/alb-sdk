@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicenseLedgerDetails extends AviRestResource  {
     @JsonProperty("escrow_infos")
-    private List<LicenseInfo> escrowInfos = null;
+    private List<LicenseInfo> escrowInfos;
 
     @JsonProperty("se_infos")
-    private List<LicenseInfo> seInfos = null;
+    private List<LicenseInfo> seInfos;
 
     @JsonProperty("tier_usages")
-    private List<LicenseTierUsage> tierUsages = null;
+    private List<LicenseTierUsage> tierUsages;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
     /**

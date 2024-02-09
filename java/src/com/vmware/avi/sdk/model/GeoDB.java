@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GeoDB extends AviRestResource  {
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("files")
-    private List<GeoDBFile> files = null;
+    private List<GeoDBFile> files;
 
     @JsonProperty("is_federated")
     private Boolean isFederated = false;
 
     @JsonProperty("mappings")
-    private List<GeoDBMapping> mappings = null;
+    private List<GeoDBMapping> mappings;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

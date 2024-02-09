@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPSecurityRule  {
     @JsonProperty("action")
-    private HTTPSecurityAction action = null;
+    private HTTPSecurityAction action;
 
     @JsonProperty("enable")
     private Boolean enable = true;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("log")
-    private Boolean log = null;
+    private Boolean log;
 
     @JsonProperty("match")
-    private MatchTarget match = null;
+    private MatchTarget match;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

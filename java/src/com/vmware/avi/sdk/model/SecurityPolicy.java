@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SecurityPolicy extends AviRestResource  {
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("dns_amplification_denyports")
-    private PortMatchGeneric dnsAmplificationDenyports = null;
+    private PortMatchGeneric dnsAmplificationDenyports;
 
     @JsonProperty("dns_attacks")
-    private DnsAttacks dnsAttacks = null;
+    private DnsAttacks dnsAttacks;
 
     @JsonProperty("dns_policy_index")
     private Integer dnsPolicyIndex = 0;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("network_security_policy_index")
     private Integer networkSecurityPolicyIndex = 0;
@@ -46,13 +46,13 @@ public class SecurityPolicy extends AviRestResource  {
     private String operMode = "DETECTION";
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

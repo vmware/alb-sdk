@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VirtualServiceRuntime extends AviRestResource  {
     @JsonProperty("controller_ip")
-    private String controllerIp = null;
+    private String controllerIp;
 
     @JsonProperty("datapath_debug")
-    private DebugVirtualService datapathDebug = null;
+    private DebugVirtualService datapathDebug;
 
     @JsonProperty("east_west")
     private Boolean eastWest = false;
 
     @JsonProperty("gslb_dns_update")
-    private GslbDnsUpdate gslbDnsUpdate = null;
+    private GslbDnsUpdate gslbDnsUpdate;
 
     @JsonProperty("ipam_dns_records")
-    private List<DnsRecord> ipamDnsRecords = null;
+    private List<DnsRecord> ipamDnsRecords;
 
     @JsonProperty("is_dns_vs")
     private Boolean isDnsVs = false;
 
     @JsonProperty("key_rotation_count")
-    private Integer keyRotationCount = null;
+    private Integer keyRotationCount;
 
     @JsonProperty("last_changed_time")
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("last_key_rotation_time")
-    private TimeStamp lastKeyRotationTime = null;
+    private TimeStamp lastKeyRotationTime;
 
     @JsonProperty("lif")
-    private List<String> lif = null;
+    private List<String> lif;
 
     @JsonProperty("manual_placement")
     private Boolean manualPlacement = false;
@@ -58,7 +58,7 @@ public class VirtualServiceRuntime extends AviRestResource  {
     private Boolean markedForDelete = false;
 
     @JsonProperty("metrics_mgr_port")
-    private String metricsMgrPort = null;
+    private String metricsMgrPort;
 
     @JsonProperty("num_additional_se")
     private Integer numAdditionalSe = 0;
@@ -67,43 +67,43 @@ public class VirtualServiceRuntime extends AviRestResource  {
     private Boolean onePlusOneHa = false;
 
     @JsonProperty("prev_controller_ip")
-    private String prevControllerIp = null;
+    private String prevControllerIp;
 
     @JsonProperty("prev_metrics_mgr_port")
-    private String prevMetricsMgrPort = null;
+    private String prevMetricsMgrPort;
 
     @JsonProperty("redis_db")
-    private Integer redisDb = null;
+    private Integer redisDb;
 
     @JsonProperty("redis_port")
-    private Integer redisPort = null;
+    private Integer redisPort;
 
     @JsonProperty("sec_mgr_info")
-    private SecurityMgrRuntime secMgrInfo = null;
+    private SecurityMgrRuntime secMgrInfo;
 
     @JsonProperty("self_se_election")
     private Boolean selfSeElection = false;
 
     @JsonProperty("tls_ticket_key")
-    private List<TLSTicket> tlsTicketKey = null;
+    private List<TLSTicket> tlsTicketKey;
 
     @JsonProperty("type")
     private String type = "VS_TYPE_NORMAL";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("version")
     private Integer version = 0;
 
     @JsonProperty("vh_child_vs_ref")
-    private List<String> vhChildVsRef = null;
+    private List<String> vhChildVsRef;
 
     @JsonProperty("vip_runtime")
-    private List<VipRuntime> vipRuntime = null;
+    private List<VipRuntime> vipRuntime;
 
     @JsonProperty("vs_update_pending")
-    private VirtualService vsUpdatePending = null;
+    private VirtualService vsUpdatePending;
 
 
 

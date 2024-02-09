@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsAttacks  {
     @JsonProperty("attacks")
-    private List<DnsAttack> attacks = null;
+    private List<DnsAttack> attacks;
 
     @JsonProperty("oper_mode")
-    private String operMode = null;
+    private String operMode;
 
 
     /**

@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StatediffOperation extends AviRestResource  {
     @JsonProperty("events")
-    private List<StatediffEvent> events = null;
+    private List<StatediffEvent> events;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("node_uuid")
-    private String nodeUuid = null;
+    private String nodeUuid;
 
     @JsonProperty("operation")
-    private String operation = null;
+    private String operation;
 
     @JsonProperty("phase")
-    private String phase = null;
+    private String phase;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
     /**

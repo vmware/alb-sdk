@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ReportOpsState  {
     @JsonProperty("last_changed_time")
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("state")
-    private String state = null;
+    private String state;
 
 
 

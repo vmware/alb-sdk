@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GCPSeGroupConfig  {
     @JsonProperty("backend_data_vpc_network_name")
-    private String backendDataVpcNetworkName = null;
+    private String backendDataVpcNetworkName;
 
     @JsonProperty("backend_data_vpc_project_id")
-    private String backendDataVpcProjectId = null;
+    private String backendDataVpcProjectId;
 
     @JsonProperty("backend_data_vpc_subnet_name")
-    private String backendDataVpcSubnetName = null;
+    private String backendDataVpcSubnetName;
 
 
 

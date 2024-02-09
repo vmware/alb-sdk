@@ -25,7 +25,7 @@ public class SeRuntimeProperties  {
     private Boolean adminSshEnabled = true;
 
     @JsonProperty("app_headers")
-    private List<AppHdr> appHeaders = null;
+    private List<AppHdr> appHeaders;
 
     @JsonProperty("baremetal_dispatcher_handles_flows")
     private Boolean baremetalDispatcherHandlesFlows = false;
@@ -40,7 +40,7 @@ public class SeRuntimeProperties  {
     private Boolean disableFlowProbes = false;
 
     @JsonProperty("dos_profile")
-    private DosThresholdProfile dosProfile = null;
+    private DosThresholdProfile dosProfile;
 
     @JsonProperty("downstream_send_timeout")
     private Integer downstreamSendTimeout = 3600000;
@@ -157,7 +157,7 @@ public class SeRuntimeProperties  {
     private Boolean seAuthLdapServersFailoverOnly = false;
 
     @JsonProperty("se_dp_compression")
-    private SeRuntimeCompressionProperties seDpCompression = null;
+    private SeRuntimeCompressionProperties seDpCompression;
 
     @JsonProperty("se_dp_hm_drops")
     private Integer seDpHmDrops = 0;
@@ -202,13 +202,13 @@ public class SeRuntimeProperties  {
     private Boolean seRandomTcpDrops = false;
 
     @JsonProperty("se_rate_limiters")
-    private SeRateLimiters seRateLimiters = null;
+    private SeRateLimiters seRateLimiters;
 
     @JsonProperty("service_ip_subnets")
-    private List<IpAddrPrefix> serviceIpSubnets = null;
+    private List<IpAddrPrefix> serviceIpSubnets;
 
     @JsonProperty("service_port_ranges")
-    private List<PortRange> servicePortRanges = null;
+    private List<PortRange> servicePortRanges;
 
     @JsonProperty("services_accessible_all_interfaces")
     private Boolean servicesAccessibleAllInterfaces = false;

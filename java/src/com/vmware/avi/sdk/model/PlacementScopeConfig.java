@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PlacementScopeConfig  {
     @JsonProperty("clusters")
-    private List<ClusterHAConfig> clusters = null;
+    private List<ClusterHAConfig> clusters;
 
     @JsonProperty("nsxt_clusters")
-    private NsxtClusters nsxtClusters = null;
+    private NsxtClusters nsxtClusters;
 
     @JsonProperty("nsxt_datastores")
-    private NsxtDatastores nsxtDatastores = null;
+    private NsxtDatastores nsxtDatastores;
 
     @JsonProperty("nsxt_hosts")
-    private NsxtHosts nsxtHosts = null;
+    private NsxtHosts nsxtHosts;
 
     @JsonProperty("vcenter_folder")
-    private String vcenterFolder = null;
+    private String vcenterFolder;
 
     @JsonProperty("vcenter_ref")
-    private String vcenterRef = null;
+    private String vcenterRef;
 
 
     /**

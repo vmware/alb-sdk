@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConfigUpdateDetails  {
     @JsonProperty("error_message")
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("new_resource_data")
-    private String newResourceData = null;
+    private String newResourceData;
 
     @JsonProperty("old_resource_data")
-    private String oldResourceData = null;
+    private String oldResourceData;
 
     @JsonProperty("path")
-    private String path = null;
+    private String path;
 
     @JsonProperty("request_data")
-    private String requestData = null;
+    private String requestData;
 
     @JsonProperty("resource_name")
-    private String resourceName = null;
+    private String resourceName;
 
     @JsonProperty("resource_type")
-    private String resourceType = null;
+    private String resourceType;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
     @JsonProperty("user")
-    private String user = null;
+    private String user;
 
 
 

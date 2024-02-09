@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClientLogStreamingConfig  {
     @JsonProperty("external_server")
-    private String externalServer = null;
+    private String externalServer;
 
     @JsonProperty("external_server_port")
     private Integer externalServerPort = 514;
 
     @JsonProperty("format_config")
-    private ClientLogStreamingFormat formatConfig = null;
+    private ClientLogStreamingFormat formatConfig;
 
     @JsonProperty("log_types_to_send")
     private String logTypesToSend = "LOGS_ALL";
 
     @JsonProperty("marker_keys")
-    private List<RoleFilterMatchLabel> markerKeys = null;
+    private List<RoleFilterMatchLabel> markerKeys;
 
     @JsonProperty("max_logs_per_second")
     private Integer maxLogsPerSecond = 100;
@@ -43,7 +43,7 @@ public class ClientLogStreamingConfig  {
     private String protocol = "LOG_STREAMING_PROTOCOL_UDP";
 
     @JsonProperty("syslog_config")
-    private StreamingSyslogConfig syslogConfig = null;
+    private StreamingSyslogConfig syslogConfig;
 
 
 

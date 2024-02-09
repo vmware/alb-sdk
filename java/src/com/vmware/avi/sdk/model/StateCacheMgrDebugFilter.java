@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StateCacheMgrDebugFilter  {
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("vs_ref")
-    private String vsRef = null;
+    private String vsRef;
 
 
 

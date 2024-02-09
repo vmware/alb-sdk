@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AvgUptimeChangeDetails  {
     @JsonProperty("current_value")
-    private Float currentValue = null;
+    private Float currentValue;
 
     @JsonProperty("metric_id")
-    private String metricId = null;
+    private String metricId;
 
     @JsonProperty("metric_name")
-    private String metricName = null;
+    private String metricName;
 
     @JsonProperty("resource_str")
-    private String resourceStr = null;
+    private String resourceStr;
 
     @JsonProperty("threshold")
-    private Float threshold = null;
+    private Float threshold;
 
 
 

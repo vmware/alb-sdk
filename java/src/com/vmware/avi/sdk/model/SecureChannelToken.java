@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SecureChannelToken extends AviRestResource  {
     @JsonProperty("expiry_time")
-    private Float expiryTime = null;
+    private Float expiryTime;
 
     @JsonProperty("in_use")
     private Boolean inUse = false;
 
     @JsonProperty("metadata")
-    private List<SecureChannelMetadata> metadata = null;
+    private List<SecureChannelMetadata> metadata;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

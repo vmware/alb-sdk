@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MustChecksInfo  {
     @JsonProperty("check_code")
-    private String checkCode = null;
+    private String checkCode;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("details")
-    private List<String> details = null;
+    private List<String> details;
 
     @JsonProperty("duration")
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("start_time")
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("state")
-    private String state = null;
+    private String state;
 
 
 

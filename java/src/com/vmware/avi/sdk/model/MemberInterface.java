@@ -25,10 +25,10 @@ public class MemberInterface  {
     private Boolean active = false;
 
     @JsonProperty("if_name")
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("mac_address")
-    private String macAddress = null;
+    private String macAddress;
 
 
 

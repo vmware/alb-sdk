@@ -7,6 +7,7 @@ package com.vmware.avi.sdk.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -22,43 +23,46 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ALBServicesJob extends AviRestResource  {
     @JsonProperty("command")
-    private String command = null;
+    private String command;
 
     @JsonProperty("end_time")
-    private TimeStamp endTime = null;
+    private TimeStamp endTime;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("params")
-    private List<ALBServicesJobParam> params = null;
+    private List<ALBServicesJobParam> params;
 
     @JsonProperty("pulse_job_id")
-    private String pulseJobId = null;
+    private String pulseJobId;
 
     @JsonProperty("pulse_sync_status")
-    private Boolean pulseSyncStatus = null;
+    private Boolean pulseSyncStatus;
 
     @JsonProperty("result")
-    private String result = null;
+    private String result;
 
     @JsonProperty("start_time")
-    private TimeStamp startTime = null;
+    private TimeStamp startTime;
 
     @JsonProperty("status")
     private String status = "PENDING";
 
     @JsonProperty("status_update_time")
-    private TimeStamp statusUpdateTime = null;
+    private TimeStamp statusUpdateTime;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
+
+    @JsonIgnore
+    private String token;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 
@@ -344,6 +348,30 @@ public class ALBServicesJob extends AviRestResource  {
     public void setTenantRef(String  tenantRef) {
         this.tenantRef = tenantRef;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Job token.
+     * Field introduced in 22.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return token
+     */
+    public String getToken() {
+        return token;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Job token.
+     * Field introduced in 22.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param token set the token.
+     */
+    public void setToken(String  token) {
+        this.token = token;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Avi controller URL of the object.
@@ -407,6 +435,7 @@ public class ALBServicesJob extends AviRestResource  {
   Objects.equals(this.pulseSyncStatus, objALBServicesJob.pulseSyncStatus)&&
   Objects.equals(this.result, objALBServicesJob.result)&&
   Objects.equals(this.params, objALBServicesJob.params)&&
+  Objects.equals(this.token, objALBServicesJob.token)&&
   Objects.equals(this.statusUpdateTime, objALBServicesJob.statusUpdateTime);
     }
 
@@ -425,6 +454,7 @@ public class ALBServicesJob extends AviRestResource  {
                         sb.append("    status: ").append(toIndentedString(status)).append("\n");
                         sb.append("    statusUpdateTime: ").append(toIndentedString(statusUpdateTime)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+                        sb.append("    token: ").append(toIndentedString(token)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();

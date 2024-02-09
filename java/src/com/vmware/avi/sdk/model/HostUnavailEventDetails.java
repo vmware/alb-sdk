@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HostUnavailEventDetails  {
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("reasons")
-    private List<String> reasons = null;
+    private List<String> reasons;
 
     @JsonProperty("vs_name")
-    private String vsName = null;
+    private String vsName;
 
 
 

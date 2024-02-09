@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsGeoLocationMatch  {
     @JsonProperty("geolocation_name")
-    private String geolocationName = null;
+    private String geolocationName;
 
     @JsonProperty("geolocation_tag")
-    private String geolocationTag = null;
+    private String geolocationTag;
 
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("use_edns_client_subnet_ip")
     private Boolean useEdnsClientSubnetIp = true;

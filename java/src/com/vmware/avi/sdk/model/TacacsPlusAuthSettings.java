@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TacacsPlusAuthSettings  {
     @JsonProperty("authorization_attrs")
-    private List<AuthTacacsPlusAttributeValuePair> authorizationAttrs = null;
+    private List<AuthTacacsPlusAttributeValuePair> authorizationAttrs;
 
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("port")
     private Integer port = 49;
 
     @JsonProperty("server")
-    private List<String> server = null;
+    private List<String> server;
 
     @JsonProperty("service")
     private String service = "AUTH_TACACS_PLUS_SERVICE_LOGIN";

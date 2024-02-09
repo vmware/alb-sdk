@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthenticationPolicy  {
     @JsonProperty("authn_rules")
-    private List<AuthenticationRule> authnRules = null;
+    private List<AuthenticationRule> authnRules;
 
     @JsonProperty("default_auth_profile_ref")
-    private String defaultAuthProfileRef = null;
+    private String defaultAuthProfileRef;
 
 
     /**

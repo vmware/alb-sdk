@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GCPCredentials  {
     @JsonProperty("service_account_keyfile_data")
-    private String serviceAccountKeyfileData = null;
+    private String serviceAccountKeyfileData;
 
 
 

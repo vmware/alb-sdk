@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPSecurityActionRateProfile  {
     @JsonProperty("action")
-    private RateLimiterAction action = null;
+    private RateLimiterAction action;
 
     @JsonProperty("per_client_ip")
-    private Boolean perClientIp = null;
+    private Boolean perClientIp;
 
     @JsonProperty("per_uri_path")
-    private Boolean perUriPath = null;
+    private Boolean perUriPath;
 
     @JsonProperty("rate_limiter")
-    private RateLimiter rateLimiter = null;
+    private RateLimiter rateLimiter;
 
 
 

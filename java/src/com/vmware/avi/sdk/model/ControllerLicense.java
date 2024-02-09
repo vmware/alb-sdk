@@ -22,67 +22,67 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerLicense extends AviRestResource  {
     @JsonProperty("active_burst_resources")
-    private List<BurstResource> activeBurstResources = null;
+    private List<BurstResource> activeBurstResources;
 
     @JsonProperty("burst_cores")
-    private Integer burstCores = null;
+    private Integer burstCores;
 
     @JsonProperty("cores")
-    private Integer cores = null;
+    private Integer cores;
 
     @JsonProperty("customer_name")
-    private String customerName = null;
+    private String customerName;
 
     @JsonProperty("disable_enforcement")
-    private Boolean disableEnforcement = null;
+    private Boolean disableEnforcement;
 
     @JsonProperty("expired_burst_resources")
-    private List<BurstResource> expiredBurstResources = null;
+    private List<BurstResource> expiredBurstResources;
 
     @JsonProperty("initialized")
-    private Boolean initialized = null;
+    private Boolean initialized;
 
     @JsonProperty("license_id")
-    private String licenseId = null;
+    private String licenseId;
 
     @JsonProperty("license_tier")
-    private List<String> licenseTier = null;
+    private List<String> licenseTier;
 
     @JsonProperty("license_tiers")
-    private List<CumulativeLicense> licenseTiers = null;
+    private List<CumulativeLicense> licenseTiers;
 
     @JsonProperty("licenses")
-    private List<SingleLicense> licenses = null;
+    private List<SingleLicense> licenses;
 
     @JsonProperty("max_ses")
-    private Integer maxSes = null;
+    private Integer maxSes;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("se_bandwidth_limits")
-    private List<SEBandwidthLimit> seBandwidthLimits = null;
+    private List<SEBandwidthLimit> seBandwidthLimits;
 
     @JsonProperty("service_cores")
-    private Float serviceCores = null;
+    private Float serviceCores;
 
     @JsonProperty("sockets")
-    private Integer sockets = null;
+    private Integer sockets;
 
     @JsonProperty("start_on")
-    private String startOn = null;
+    private String startOn;
 
     @JsonProperty("tenant_uuid")
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("valid_until")
-    private String validUntil = null;
+    private String validUntil;
 
 
     /**

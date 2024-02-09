@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AwsZoneConfig  {
     @JsonProperty("availability_zone")
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("mgmt_network_name")
-    private String mgmtNetworkName = null;
+    private String mgmtNetworkName;
 
     @JsonProperty("mgmt_network_uuid")
-    private String mgmtNetworkUuid = null;
+    private String mgmtNetworkUuid;
 
 
 

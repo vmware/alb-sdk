@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CRSDeploymentFailure  {
     @JsonProperty("crs_info")
-    private List<CRSDetails> crsInfo = null;
+    private List<CRSDetails> crsInfo;
 
     @JsonProperty("message")
-    private String message = null;
+    private String message;
 
 
     /**

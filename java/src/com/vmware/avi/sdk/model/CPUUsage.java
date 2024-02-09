@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CPUUsage  {
     @JsonProperty("cpu_percent")
-    private Float cpuPercent = null;
+    private Float cpuPercent;
 
     @JsonProperty("num_cores")
-    private Integer numCores = null;
+    private Integer numCores;
 
 
 

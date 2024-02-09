@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeMigrateEventDetails  {
     @JsonProperty("num_vs")
-    private Integer numVs = null;
+    private Integer numVs;
 
     @JsonProperty("reason")
-    private List<String> reason = null;
+    private List<String> reason;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_uuid")
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("vs_name")
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

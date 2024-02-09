@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsRuleActionGslbSiteSelection  {
     @JsonProperty("fallback_site_names")
-    private List<String> fallbackSiteNames = null;
+    private List<String> fallbackSiteNames;
 
     @JsonProperty("is_site_preferred")
     private Boolean isSitePreferred = true;
 
     @JsonProperty("site_name")
-    private String siteName = null;
+    private String siteName;
 
 
     /**

@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StringGroup extends AviRestResource  {
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("kv")
-    private List<KeyValue> kv = null;
+    private List<KeyValue> kv;
 
     @JsonProperty("longest_match")
     private Boolean longestMatch = false;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     private String type = "SG_TYPE_STRING";
@@ -46,7 +46,7 @@ public class StringGroup extends AviRestResource  {
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

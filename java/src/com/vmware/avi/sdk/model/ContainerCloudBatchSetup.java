@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ContainerCloudBatchSetup  {
     @JsonProperty("ccs")
-    private List<ContainerCloudSetup> ccs = null;
+    private List<ContainerCloudSetup> ccs;
 
 
     /**

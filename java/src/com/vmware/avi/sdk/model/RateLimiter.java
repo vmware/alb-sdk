@@ -28,7 +28,7 @@ public class RateLimiter  {
     private Integer count = 1000000000;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("period")
     private Integer period = 1;

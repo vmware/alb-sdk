@@ -22,70 +22,70 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsData  {
     @JsonProperty("application_response_time")
-    private Float applicationResponseTime = null;
+    private Float applicationResponseTime;
 
     @JsonProperty("blocking_time")
-    private Float blockingTime = null;
+    private Float blockingTime;
 
     @JsonProperty("browser_rendering_time")
-    private Float browserRenderingTime = null;
+    private Float browserRenderingTime;
 
     @JsonProperty("client_rtt")
-    private Float clientRtt = null;
+    private Float clientRtt;
 
     @JsonProperty("connection_time")
-    private Float connectionTime = null;
+    private Float connectionTime;
 
     @JsonProperty("dns_lookup_time")
-    private Float dnsLookupTime = null;
+    private Float dnsLookupTime;
 
     @JsonProperty("dom_content_load_time")
-    private Float domContentLoadTime = null;
+    private Float domContentLoadTime;
 
     @JsonProperty("is_null")
-    private Boolean isNull = null;
+    private Boolean isNull;
 
     @JsonProperty("num_samples")
-    private Integer numSamples = null;
+    private Integer numSamples;
 
     @JsonProperty("page_download_time")
-    private Float pageDownloadTime = null;
+    private Float pageDownloadTime;
 
     @JsonProperty("page_load_time")
-    private Float pageLoadTime = null;
+    private Float pageLoadTime;
 
     @JsonProperty("prediction_interval_high")
-    private Float predictionIntervalHigh = null;
+    private Float predictionIntervalHigh;
 
     @JsonProperty("prediction_interval_low")
-    private Float predictionIntervalLow = null;
+    private Float predictionIntervalLow;
 
     @JsonProperty("redirection_time")
-    private Float redirectionTime = null;
+    private Float redirectionTime;
 
     @JsonProperty("rum_client_data_transfer_time")
-    private Float rumClientDataTransferTime = null;
+    private Float rumClientDataTransferTime;
 
     @JsonProperty("server_rtt")
-    private Float serverRtt = null;
+    private Float serverRtt;
 
     @JsonProperty("service_time")
-    private Float serviceTime = null;
+    private Float serviceTime;
 
     @JsonProperty("timestamp")
-    private String timestamp = null;
+    private String timestamp;
 
     @JsonProperty("value")
-    private Float value = null;
+    private Float value;
 
     @JsonProperty("value_str")
-    private String valueStr = null;
+    private String valueStr;
 
     @JsonProperty("value_str_desc")
-    private String valueStrDesc = null;
+    private String valueStrDesc;
 
     @JsonProperty("waiting_time")
-    private Float waitingTime = null;
+    private Float waitingTime;
 
 
 

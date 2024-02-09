@@ -22,40 +22,40 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ContainerCloudSetup  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("cloud_access")
-    private Boolean cloudAccess = null;
+    private Boolean cloudAccess;
 
     @JsonProperty("failed_hosts")
-    private List<String> failedHosts = null;
+    private List<String> failedHosts;
 
     @JsonProperty("fleet_endpoint")
-    private String fleetEndpoint = null;
+    private String fleetEndpoint;
 
     @JsonProperty("hosts")
-    private List<String> hosts = null;
+    private List<String> hosts;
 
     @JsonProperty("master_nodes")
-    private List<String> masterNodes = null;
+    private List<String> masterNodes;
 
     @JsonProperty("missing_hosts")
-    private List<String> missingHosts = null;
+    private List<String> missingHosts;
 
     @JsonProperty("new_hosts")
-    private List<String> newHosts = null;
+    private List<String> newHosts;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_deploy_method_access")
-    private Boolean seDeployMethodAccess = null;
+    private Boolean seDeployMethodAccess;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
 

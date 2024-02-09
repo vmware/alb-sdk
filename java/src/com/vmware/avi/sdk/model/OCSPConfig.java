@@ -31,10 +31,10 @@ public class OCSPConfig  {
     private Integer ocspReqInterval = 86400;
 
     @JsonProperty("ocsp_resp_timeout")
-    private Integer ocspRespTimeout = null;
+    private Integer ocspRespTimeout;
 
     @JsonProperty("responder_url_lists")
-    private List<String> responderUrlLists = null;
+    private List<String> responderUrlLists;
 
     @JsonProperty("url_action")
     private String urlAction = "OCSP_RESPONDER_URL_FAILOVER";

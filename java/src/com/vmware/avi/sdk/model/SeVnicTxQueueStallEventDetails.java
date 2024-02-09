@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeVnicTxQueueStallEventDetails  {
     @JsonProperty("if_name")
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("linux_name")
-    private String linuxName = null;
+    private String linuxName;
 
     @JsonProperty("queue")
-    private Integer queue = null;
+    private Integer queue;
 
     @JsonProperty("se_ref")
-    private String seRef = null;
+    private String seRef;
 
 
 

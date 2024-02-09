@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LdapDirectorySettings  {
     @JsonProperty("admin_bind_dn")
-    private String adminBindDn = null;
+    private String adminBindDn;
 
     @JsonProperty("group_filter")
     private String groupFilter = "(objectClass=*)";
@@ -34,7 +34,7 @@ public class LdapDirectorySettings  {
     private Boolean groupMemberIsFullDn = true;
 
     @JsonProperty("group_search_dn")
-    private String groupSearchDn = null;
+    private String groupSearchDn;
 
     @JsonProperty("group_search_scope")
     private String groupSearchScope = "AUTH_LDAP_SCOPE_SUBTREE";
@@ -43,16 +43,16 @@ public class LdapDirectorySettings  {
     private Boolean ignoreReferrals = false;
 
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("user_attributes")
-    private List<String> userAttributes = null;
+    private List<String> userAttributes;
 
     @JsonProperty("user_id_attribute")
-    private String userIdAttribute = null;
+    private String userIdAttribute;
 
     @JsonProperty("user_search_dn")
-    private String userSearchDn = null;
+    private String userSearchDn;
 
     @JsonProperty("user_search_scope")
     private String userSearchScope = "AUTH_LDAP_SCOPE_ONE";

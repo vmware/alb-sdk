@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NTPConfiguration  {
     @JsonProperty("ntp_authentication_keys")
-    private List<NTPAuthenticationKey> ntpAuthenticationKeys = null;
+    private List<NTPAuthenticationKey> ntpAuthenticationKeys;
 
     @JsonProperty("ntp_server_list")
-    private List<IpAddr> ntpServerList = null;
+    private List<IpAddr> ntpServerList;
 
     @JsonProperty("ntp_servers")
-    private List<NTPServer> ntpServers = null;
+    private List<NTPServer> ntpServers;
 
 
     /**

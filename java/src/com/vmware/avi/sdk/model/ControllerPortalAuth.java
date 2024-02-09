@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerPortalAuth  {
     @JsonProperty("access_token")
-    private String accessToken = null;
+    private String accessToken;
 
     @JsonProperty("grant_type")
     private String grantType = "REFRESH_TOKEN";
 
     @JsonProperty("instance_url")
-    private String instanceUrl = null;
+    private String instanceUrl;
 
     @JsonProperty("jwt_token")
-    private String jwtToken = null;
+    private String jwtToken;
 
     @JsonProperty("tenant")
-    private String tenant = null;
+    private String tenant;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsPoolNwFilterEventDetails  {
     @JsonProperty("filter")
-    private String filter = null;
+    private String filter;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("network")
-    private String network = null;
+    private String network;
 
 
 

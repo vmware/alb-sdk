@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafPSMLog  {
     @JsonProperty("actions")
-    private List<String> actions = null;
+    private List<String> actions;
 
     @JsonProperty("group_name")
-    private String groupName = null;
+    private String groupName;
 
     @JsonProperty("group_uuid")
-    private String groupUuid = null;
+    private String groupUuid;
 
     @JsonProperty("location")
-    private String location = null;
+    private String location;
 
     @JsonProperty("matches")
-    private List<WafRuleMatchData> matches = null;
+    private List<WafRuleMatchData> matches;
 
     @JsonProperty("rule_id")
-    private String ruleId = null;
+    private String ruleId;
 
     @JsonProperty("rule_name")
-    private String ruleName = null;
+    private String ruleName;
 
 
     /**

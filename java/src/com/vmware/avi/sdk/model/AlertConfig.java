@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AlertConfig extends AviRestResource  {
     @JsonProperty("action_group_ref")
-    private String actionGroupRef = null;
+    private String actionGroupRef;
 
     @JsonProperty("alert_rule")
-    private AlertRule alertRule = null;
+    private AlertRule alertRule;
 
     @JsonProperty("autoscale_alert")
-    private Boolean autoscaleAlert = null;
+    private Boolean autoscaleAlert;
 
     @JsonProperty("category")
     private String category = "REALTIME";
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("enabled")
     private Boolean enabled = true;
@@ -43,28 +43,28 @@ public class AlertConfig extends AviRestResource  {
     private Integer expiryTime = 86400;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("obj_uuid")
-    private String objUuid = null;
+    private String objUuid;
 
     @JsonProperty("object_type")
-    private String objectType = null;
+    private String objectType;
 
     @JsonProperty("recommendation")
-    private String recommendation = null;
+    private String recommendation;
 
     @JsonProperty("rolling_window")
     private Integer rollingWindow = 300;
 
     @JsonProperty("source")
-    private String source = null;
+    private String source;
 
     @JsonProperty("summary")
-    private String summary = null;
+    private String summary;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("threshold")
     private Integer threshold = 1;
@@ -76,7 +76,7 @@ public class AlertConfig extends AviRestResource  {
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

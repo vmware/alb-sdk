@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BOTLimits  {
     @JsonProperty("allow_rules")
-    private Integer allowRules = null;
+    private Integer allowRules;
 
     @JsonProperty("hdrs")
-    private Integer hdrs = null;
+    private Integer hdrs;
 
     @JsonProperty("mapping_rules")
-    private Integer mappingRules = null;
+    private Integer mappingRules;
 
 
 

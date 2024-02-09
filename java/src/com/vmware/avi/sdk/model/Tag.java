@@ -25,7 +25,7 @@ public class Tag  {
     private String type = "USER_DEFINED";
 
     @JsonProperty("value")
-    private String value = null;
+    private String value;
 
 
 

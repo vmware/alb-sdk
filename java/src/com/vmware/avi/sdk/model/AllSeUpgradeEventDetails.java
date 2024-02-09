@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AllSeUpgradeEventDetails  {
     @JsonProperty("notes")
-    private List<String> notes = null;
+    private List<String> notes;
 
     @JsonProperty("num_se")
-    private Integer numSe = null;
+    private Integer numSe;
 
     @JsonProperty("num_vs")
-    private Integer numVs = null;
+    private Integer numVs;
 
     @JsonProperty("request")
-    private SeUpgradeParams request = null;
+    private SeUpgradeParams request;
 
 
     /**

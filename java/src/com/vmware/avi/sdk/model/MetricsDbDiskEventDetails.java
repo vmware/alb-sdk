@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsDbDiskEventDetails  {
     @JsonProperty("metrics_deleted_tables")
-    private List<String> metricsDeletedTables = null;
+    private List<String> metricsDeletedTables;
 
     @JsonProperty("metrics_free_sz")
-    private Integer metricsFreeSz = null;
+    private Integer metricsFreeSz;
 
     @JsonProperty("metrics_quota")
-    private Integer metricsQuota = null;
+    private Integer metricsQuota;
 
 
     /**

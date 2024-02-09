@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AwsZoneNetwork  {
     @JsonProperty("availability_zone")
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("usable_network_uuids")
-    private List<String> usableNetworkUuids = null;
+    private List<String> usableNetworkUuids;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TlsFingerprintMatch  {
     @JsonProperty("fingerprints")
-    private List<String> fingerprints = null;
+    private List<String> fingerprints;
 
     @JsonProperty("match_operation")
-    private String matchOperation = null;
+    private String matchOperation;
 
     @JsonProperty("string_group_refs")
-    private List<String> stringGroupRefs = null;
+    private List<String> stringGroupRefs;
 
 
     /**

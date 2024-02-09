@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AppSignatureEventData  {
     @JsonProperty("last_successful_updated_time")
-    private String lastSuccessfulUpdatedTime = null;
+    private String lastSuccessfulUpdatedTime;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
 
 

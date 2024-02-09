@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SSOPolicy extends AviRestResource  {
     @JsonProperty("authentication_policy")
-    private AuthenticationPolicy authenticationPolicy = null;
+    private AuthenticationPolicy authenticationPolicy;
 
     @JsonProperty("authorization_policy")
-    private AuthorizationPolicy authorizationPolicy = null;
+    private AuthorizationPolicy authorizationPolicy;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
     private String type = "SSO_TYPE_SAML";
@@ -43,7 +43,7 @@ public class SSOPolicy extends AviRestResource  {
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

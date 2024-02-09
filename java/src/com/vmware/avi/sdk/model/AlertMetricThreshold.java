@@ -25,7 +25,7 @@ public class AlertMetricThreshold  {
     private String comparator = "ALERT_OP_GT";
 
     @JsonProperty("threshold")
-    private Integer threshold = null;
+    private Integer threshold;
 
 
 

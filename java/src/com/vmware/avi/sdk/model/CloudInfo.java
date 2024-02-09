@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudInfo  {
     @JsonProperty("cca_props")
-    private CC_AgentProperties ccaProps = null;
+    private CC_AgentProperties ccaProps;
 
     @JsonProperty("controller_props")
-    private ControllerProperties controllerProps = null;
+    private ControllerProperties controllerProps;
 
     @JsonProperty("flavor_props")
-    private List<CloudFlavor> flavorProps = null;
+    private List<CloudFlavor> flavorProps;
 
     @JsonProperty("flavor_regex_filter")
-    private String flavorRegexFilter = null;
+    private String flavorRegexFilter;
 
     @JsonProperty("htypes")
-    private List<String> htypes = null;
+    private List<String> htypes;
 
     @JsonProperty("vtype")
-    private String vtype = null;
+    private String vtype;
 
 
 

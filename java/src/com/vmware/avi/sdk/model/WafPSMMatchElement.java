@@ -25,7 +25,7 @@ public class WafPSMMatchElement  {
     private Boolean excluded = false;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match_case")
     private String matchCase = "INSENSITIVE";
@@ -34,10 +34,10 @@ public class WafPSMMatchElement  {
     private String matchOp = "EQUALS";
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("sub_element")
-    private String subElement = null;
+    private String subElement;
 
 
 

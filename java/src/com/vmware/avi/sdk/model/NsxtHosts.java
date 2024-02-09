@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NsxtHosts  {
     @JsonProperty("host_ids")
-    private List<String> hostIds = null;
+    private List<String> hostIds;
 
     @JsonProperty("include")
     private Boolean include = false;

@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeResources  {
     @JsonProperty("cores_per_socket")
-    private Integer coresPerSocket = null;
+    private Integer coresPerSocket;
 
     @JsonProperty("disk")
-    private Integer disk = null;
+    private Integer disk;
 
     @JsonProperty("hyper_threading")
-    private Boolean hyperThreading = null;
+    private Boolean hyperThreading;
 
     @JsonProperty("hypervisor_mode")
-    private Boolean hypervisorMode = null;
+    private Boolean hypervisorMode;
 
     @JsonProperty("memory")
-    private Integer memory = null;
+    private Integer memory;
 
     @JsonProperty("num_datapath_processes")
-    private Integer numDatapathProcesses = null;
+    private Integer numDatapathProcesses;
 
     @JsonProperty("num_vcpus")
-    private Integer numVcpus = null;
+    private Integer numVcpus;
 
     @JsonProperty("sockets")
-    private Integer sockets = null;
+    private Integer sockets;
 
 
 

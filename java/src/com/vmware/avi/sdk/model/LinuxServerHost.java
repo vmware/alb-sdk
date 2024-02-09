@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LinuxServerHost  {
     @JsonProperty("host_attr")
-    private List<HostAttributes> hostAttr = null;
+    private List<HostAttributes> hostAttr;
 
     @JsonProperty("host_ip")
-    private IpAddr hostIp = null;
+    private IpAddr hostIp;
 
     @JsonProperty("node_availability_zone")
-    private String nodeAvailabilityZone = null;
+    private String nodeAvailabilityZone;
 
     @JsonProperty("se_group_ref")
-    private String seGroupRef = null;
+    private String seGroupRef;
 
 
     /**

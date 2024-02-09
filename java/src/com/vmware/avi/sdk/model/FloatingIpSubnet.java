@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FloatingIpSubnet extends AviRestResource  {
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("prefix")
-    private IpAddrPrefix prefix = null;
+    private IpAddrPrefix prefix;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

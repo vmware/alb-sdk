@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpamDnsInfobloxProfile  {
     @JsonProperty("dns_view")
-    private String dnsView = null;
+    private String dnsView;
 
     @JsonProperty("extensible_attributes")
-    private List<CustomParams> extensibleAttributes = null;
+    private List<CustomParams> extensibleAttributes;
 
     @JsonProperty("ip6_address")
-    private IpAddr ip6Address = null;
+    private IpAddr ip6Address;
 
     @JsonProperty("ip_address")
-    private IpAddr ipAddress = null;
+    private IpAddr ipAddress;
 
     @JsonProperty("network_view")
-    private String networkView = null;
+    private String networkView;
 
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("usable_alloc_subnets")
-    private List<InfobloxSubnet> usableAllocSubnets = null;
+    private List<InfobloxSubnet> usableAllocSubnets;
 
     @JsonProperty("usable_domains")
-    private List<String> usableDomains = null;
+    private List<String> usableDomains;
 
     @JsonProperty("username")
-    private String username = null;
+    private String username;
 
     @JsonProperty("wapi_version")
     private String wapiVersion = "2.0";

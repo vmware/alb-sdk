@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotClassification  {
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("user_defined_type")
-    private String userDefinedType = null;
+    private String userDefinedType;
 
 
 

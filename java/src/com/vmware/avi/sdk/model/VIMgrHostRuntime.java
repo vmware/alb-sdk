@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VIMgrHostRuntime extends AviRestResource  {
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("cluster_name")
-    private String clusterName = null;
+    private String clusterName;
 
     @JsonProperty("cluster_uuid")
-    private String clusterUuid = null;
+    private String clusterUuid;
 
     @JsonProperty("cntlr_accessible")
     private Boolean cntlrAccessible = true;
@@ -37,70 +37,70 @@ public class VIMgrHostRuntime extends AviRestResource  {
     private String connectionState = "connected";
 
     @JsonProperty("cpu_hz")
-    private Integer cpuHz = null;
+    private Integer cpuHz;
 
     @JsonProperty("maintenance_mode")
-    private Boolean maintenanceMode = null;
+    private Boolean maintenanceMode;
 
     @JsonProperty("managed_object_id")
-    private String managedObjectId = null;
+    private String managedObjectId;
 
     @JsonProperty("mem")
-    private Integer mem = null;
+    private Integer mem;
 
     @JsonProperty("mgmt_portgroup")
-    private String mgmtPortgroup = null;
+    private String mgmtPortgroup;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("network_uuids")
-    private List<String> networkUuids = null;
+    private List<String> networkUuids;
 
     @JsonProperty("num_cpu_cores")
-    private Integer numCpuCores = null;
+    private Integer numCpuCores;
 
     @JsonProperty("num_cpu_packages")
-    private Integer numCpuPackages = null;
+    private Integer numCpuPackages;
 
     @JsonProperty("num_cpu_threads")
-    private Integer numCpuThreads = null;
+    private Integer numCpuThreads;
 
     @JsonProperty("pnics")
-    private List<CdpLldpInfo> pnics = null;
+    private List<CdpLldpInfo> pnics;
 
     @JsonProperty("powerstate")
-    private String powerstate = null;
+    private String powerstate;
 
     @JsonProperty("quarantine_start_ts")
-    private String quarantineStartTs = null;
+    private String quarantineStartTs;
 
     @JsonProperty("quarantined")
-    private Boolean quarantined = null;
+    private Boolean quarantined;
 
     @JsonProperty("quarantined_periods")
     private Integer quarantinedPeriods = 1;
 
     @JsonProperty("se_fail_cnt")
-    private Integer seFailCnt = null;
+    private Integer seFailCnt;
 
     @JsonProperty("se_success_cnt")
-    private Integer seSuccessCnt = null;
+    private Integer seSuccessCnt;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vm_refs")
-    private List<String> vmRefs = null;
+    private List<String> vmRefs;
 
 
 

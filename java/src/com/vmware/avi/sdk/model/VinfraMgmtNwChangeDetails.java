@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VinfraMgmtNwChangeDetails  {
     @JsonProperty("existing_nw")
-    private String existingNw = null;
+    private String existingNw;
 
     @JsonProperty("new_nw")
-    private String newNw = null;
+    private String newNw;
 
     @JsonProperty("vcenter")
-    private String vcenter = null;
+    private String vcenter;
 
 
 

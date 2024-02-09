@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Action  {
     @JsonProperty("data")
-    private String data = null;
+    private String data;
 
     @JsonProperty("url_ref")
-    private String urlRef = null;
+    private String urlRef;
 
 
 

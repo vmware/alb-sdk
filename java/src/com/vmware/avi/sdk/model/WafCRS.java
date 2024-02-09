@@ -22,49 +22,49 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafCRS extends AviRestResource  {
     @JsonProperty("allowed_request_content_type_charsets")
-    private List<String> allowedRequestContentTypeCharsets = null;
+    private List<String> allowedRequestContentTypeCharsets;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("files")
-    private List<WafDataFile> files = null;
+    private List<WafDataFile> files;
 
     @JsonProperty("groups")
-    private List<WafRuleGroup> groups = null;
+    private List<WafRuleGroup> groups;
 
     @JsonProperty("integrity")
-    private String integrity = null;
+    private String integrity;
 
     @JsonProperty("integrity_values")
-    private List<String> integrityValues = null;
+    private List<String> integrityValues;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("release_date")
-    private String releaseDate = null;
+    private String releaseDate;
 
     @JsonProperty("restricted_extensions")
-    private List<String> restrictedExtensions = null;
+    private List<String> restrictedExtensions;
 
     @JsonProperty("restricted_headers")
-    private List<String> restrictedHeaders = null;
+    private List<String> restrictedHeaders;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
     /**

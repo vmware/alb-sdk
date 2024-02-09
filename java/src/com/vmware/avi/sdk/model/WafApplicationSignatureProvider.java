@@ -28,22 +28,22 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
     private Boolean filterRulesOnImport = true;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("ruleset_version")
     private String rulesetVersion;
 
     @JsonProperty("service_status")
-    private WebApplicationSignatureServiceStatus serviceStatus = null;
+    private WebApplicationSignatureServiceStatus serviceStatus;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
     /**

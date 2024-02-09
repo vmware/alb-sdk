@@ -28,10 +28,10 @@ public class CustomParams  {
     private Boolean isSensitive = false;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("value")
-    private String value = null;
+    private String value;
 
 
 

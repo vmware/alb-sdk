@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ReplicationPolicy  {
     @JsonProperty("checkpoint_ref")
-    private String checkpointRef = null;
+    private String checkpointRef;
 
     @JsonProperty("replication_mode")
     private String replicationMode = "REPLICATION_MODE_CONTINUOUS";

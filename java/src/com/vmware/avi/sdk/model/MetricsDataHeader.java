@@ -22,52 +22,52 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsDataHeader  {
     @JsonProperty("derivation_data")
-    private MetricsDerivationData derivationData = null;
+    private MetricsDerivationData derivationData;
 
     @JsonProperty("dimension_data")
-    private List<MetricsDimensionData> dimensionData = null;
+    private List<MetricsDimensionData> dimensionData;
 
     @JsonProperty("entity_uuid")
-    private String entityUuid = null;
+    private String entityUuid;
 
     @JsonProperty("metric_description")
-    private String metricDescription = null;
+    private String metricDescription;
 
     @JsonProperty("metrics_min_scale")
-    private Float metricsMinScale = null;
+    private Float metricsMinScale;
 
     @JsonProperty("metrics_sum_agg_invalid")
     private Boolean metricsSumAggInvalid = false;
 
     @JsonProperty("missing_intervals")
-    private List<MetricsMissingDataInterval> missingIntervals = null;
+    private List<MetricsMissingDataInterval> missingIntervals;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("obj_id")
-    private String objId = null;
+    private String objId;
 
     @JsonProperty("obj_id_type")
-    private String objIdType = null;
+    private String objIdType;
 
     @JsonProperty("pool_uuid")
-    private String poolUuid = null;
+    private String poolUuid;
 
     @JsonProperty("priority")
     private Boolean priority = true;
 
     @JsonProperty("server")
-    private String server = null;
+    private String server;
 
     @JsonProperty("serviceengine_uuid")
-    private String serviceengineUuid = null;
+    private String serviceengineUuid;
 
     @JsonProperty("statistics")
-    private MetricStatistics statistics = null;
+    private MetricStatistics statistics;
 
     @JsonProperty("tenant_uuid")
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("units")
     private String units = "METRIC_COUNT";

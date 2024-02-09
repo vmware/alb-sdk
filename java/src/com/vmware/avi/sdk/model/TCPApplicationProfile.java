@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TCPApplicationProfile  {
     @JsonProperty("ftp_profile")
-    private FTPProfile ftpProfile = null;
+    private FTPProfile ftpProfile;
 
     @JsonProperty("pki_profile_ref")
-    private String pkiProfileRef = null;
+    private String pkiProfileRef;
 
     @JsonProperty("proxy_protocol_enabled")
     private Boolean proxyProtocolEnabled = false;

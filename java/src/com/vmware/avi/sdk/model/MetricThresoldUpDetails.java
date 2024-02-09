@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricThresoldUpDetails  {
     @JsonProperty("current_value")
-    private Float currentValue = null;
+    private Float currentValue;
 
     @JsonProperty("entity_uuid")
-    private String entityUuid = null;
+    private String entityUuid;
 
     @JsonProperty("metric_id")
-    private String metricId = null;
+    private String metricId;
 
     @JsonProperty("metric_name")
-    private String metricName = null;
+    private String metricName;
 
     @JsonProperty("pool_uuid")
-    private String poolUuid = null;
+    private String poolUuid;
 
     @JsonProperty("server")
-    private String server = null;
+    private String server;
 
     @JsonProperty("threshold")
-    private Float threshold = null;
+    private Float threshold;
 
     @JsonProperty("vm_type")
-    private String vmType = null;
+    private String vmType;
 
 
 

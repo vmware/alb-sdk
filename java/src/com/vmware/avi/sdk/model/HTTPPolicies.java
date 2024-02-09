@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPPolicies  {
     @JsonProperty("http_policy_set_ref")
-    private String httpPolicySetRef = null;
+    private String httpPolicySetRef;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
 
 

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SEFaultInjectExhaustParam  {
     @JsonProperty("leak")
-    private Boolean leak = null;
+    private Boolean leak;
 
     @JsonProperty("num")
-    private Integer num = null;
+    private Integer num;
 
 
 

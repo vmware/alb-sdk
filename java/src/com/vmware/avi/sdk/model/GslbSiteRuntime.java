@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbSiteRuntime  {
     @JsonProperty("clear_on_max_retries")
-    private Integer clearOnMaxRetries = null;
+    private Integer clearOnMaxRetries;
 
     @JsonProperty("glb_uuid")
-    private String glbUuid = null;
+    private String glbUuid;
 
     @JsonProperty("health_monitor_info")
-    private String healthMonitorInfo = null;
+    private String healthMonitorInfo;
 
     @JsonProperty("replication_stats")
-    private GslbReplicationStats replicationStats = null;
+    private GslbReplicationStats replicationStats;
 
     @JsonProperty("rxed_site_hs")
-    private GslbSiteHealthStatus rxedSiteHs = null;
+    private GslbSiteHealthStatus rxedSiteHs;
 
     @JsonProperty("send_interval")
-    private Integer sendInterval = null;
+    private Integer sendInterval;
 
     @JsonProperty("site_cfg")
-    private GslbSiteRuntimeCfg siteCfg = null;
+    private GslbSiteRuntimeCfg siteCfg;
 
     @JsonProperty("site_info")
-    private GslbSiteRuntimeInfo siteInfo = null;
+    private GslbSiteRuntimeInfo siteInfo;
 
     @JsonProperty("site_stats")
-    private GslbSiteRuntimeStats siteStats = null;
+    private GslbSiteRuntimeStats siteStats;
 
     @JsonProperty("tenant_name")
-    private String tenantName = null;
+    private String tenantName;
 
     @JsonProperty("view_id")
-    private Integer viewId = null;
+    private Integer viewId;
 
 
 

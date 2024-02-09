@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SchedulerActionDetails  {
     @JsonProperty("backup_uri")
-    private List<String> backupUri = null;
+    private List<String> backupUri;
 
     @JsonProperty("control_script_output")
-    private String controlScriptOutput = null;
+    private String controlScriptOutput;
 
     @JsonProperty("execution_datestamp")
-    private String executionDatestamp = null;
+    private String executionDatestamp;
 
     @JsonProperty("scheduler_uuid")
-    private String schedulerUuid = null;
+    private String schedulerUuid;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
 
     /**

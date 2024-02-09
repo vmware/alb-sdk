@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClientLogStreamingFormat  {
     @JsonProperty("format")
-    private String format = null;
+    private String format;
 
     @JsonProperty("included_fields")
-    private List<String> includedFields = null;
+    private List<String> includedFields;
 
 
 

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IPReputationTypeMatch  {
     @JsonProperty("match_operation")
-    private String matchOperation = null;
+    private String matchOperation;
 
     @JsonProperty("reputation_types")
-    private List<String> reputationTypes = null;
+    private List<String> reputationTypes;
 
 
 

@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApplicationPersistenceProfile extends AviRestResource  {
     @JsonProperty("app_cookie_persistence_profile")
-    private AppCookiePersistenceProfile appCookiePersistenceProfile = null;
+    private AppCookiePersistenceProfile appCookiePersistenceProfile;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("hdr_persistence_profile")
-    private HdrPersistenceProfile hdrPersistenceProfile = null;
+    private HdrPersistenceProfile hdrPersistenceProfile;
 
     @JsonProperty("http_cookie_persistence_profile")
-    private HttpCookiePersistenceProfile httpCookiePersistenceProfile = null;
+    private HttpCookiePersistenceProfile httpCookiePersistenceProfile;
 
     @JsonProperty("ip_persistence_profile")
-    private IPPersistenceProfile ipPersistenceProfile = null;
+    private IPPersistenceProfile ipPersistenceProfile;
 
     @JsonProperty("is_federated")
     private Boolean isFederated = false;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("persistence_type")
     private String persistenceType = "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS";
@@ -52,13 +52,13 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     private String serverHmDownRecovery = "HM_DOWN_PICK_NEW_SERVER";
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

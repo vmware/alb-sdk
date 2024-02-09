@@ -25,7 +25,7 @@ public class SecurityMgrDebugFilter  {
     private Boolean enableAdaptiveConfig = true;
 
     @JsonProperty("entity_ref")
-    private String entityRef = null;
+    private String entityRef;
 
 
 

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LdapAuthSettings  {
     @JsonProperty("base_dn")
-    private String baseDn = null;
+    private String baseDn;
 
     @JsonProperty("bind_as_administrator")
     private Boolean bindAsAdministrator = true;
@@ -40,13 +40,13 @@ public class LdapAuthSettings  {
     private String securityMode = "AUTH_LDAP_SECURE_USE_LDAPS";
 
     @JsonProperty("server")
-    private List<String> server = null;
+    private List<String> server;
 
     @JsonProperty("settings")
-    private LdapDirectorySettings settings = null;
+    private LdapDirectorySettings settings;
 
     @JsonProperty("user_bind")
-    private LdapUserBindSettings userBind = null;
+    private LdapUserBindSettings userBind;
 
 
 

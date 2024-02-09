@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotIdentification  {
     @JsonProperty("class")
-    private String classStr = null;
+    private String classStr;
 
     @JsonProperty("identifier")
-    private String identifier = null;
+    private String identifier;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

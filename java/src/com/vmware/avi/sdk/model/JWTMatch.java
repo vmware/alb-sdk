@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class JWTMatch  {
     @JsonProperty("matches")
-    private List<JWTClaimMatch> matches = null;
+    private List<JWTClaimMatch> matches;
 
     @JsonProperty("token_name")
-    private String tokenName = null;
+    private String tokenName;
 
 
     /**

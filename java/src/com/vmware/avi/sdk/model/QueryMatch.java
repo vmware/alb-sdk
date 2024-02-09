@@ -25,16 +25,16 @@ public class QueryMatch  {
     private String matchCase = "INSENSITIVE";
 
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("match_decoded_string")
     private Boolean matchDecodedString = true;
 
     @JsonProperty("match_str")
-    private List<String> matchStr = null;
+    private List<String> matchStr;
 
     @JsonProperty("string_group_refs")
-    private List<String> stringGroupRefs = null;
+    private List<String> stringGroupRefs;
 
 
 

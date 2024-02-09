@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AppHdr  {
     @JsonProperty("hdr_match_case")
-    private String hdrMatchCase = null;
+    private String hdrMatchCase;
 
     @JsonProperty("hdr_name")
-    private String hdrName = null;
+    private String hdrName;
 
     @JsonProperty("hdr_string_op")
-    private String hdrStringOp = null;
+    private String hdrStringOp;
 
 
 

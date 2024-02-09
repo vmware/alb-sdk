@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class L2FMandatoryTestCase  {
     @JsonProperty("mandatory_message")
-    private SingleOptionalFieldMessage mandatoryMessage = null;
+    private SingleOptionalFieldMessage mandatoryMessage;
 
     @JsonProperty("mandatory_messages")
-    private List<SingleOptionalFieldMessage> mandatoryMessages = null;
+    private List<SingleOptionalFieldMessage> mandatoryMessages;
 
     @JsonProperty("mandatory_string")
-    private String mandatoryString = null;
+    private String mandatoryString;
 
     @JsonProperty("mandatory_strings")
-    private List<String> mandatoryStrings = null;
+    private List<String> mandatoryStrings;
 
 
 

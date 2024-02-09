@@ -28,13 +28,13 @@ public class SensitiveFieldRule  {
     private Boolean enabled = false;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
-    private StringMatch match = null;
+    private StringMatch match;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

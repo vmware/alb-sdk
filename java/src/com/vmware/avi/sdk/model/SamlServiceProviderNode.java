@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SamlServiceProviderNode  {
     @JsonProperty("entity_id")
-    private String entityId = null;
+    private String entityId;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("signing_ssl_key_and_certificate_ref")
-    private String signingSslKeyAndCertificateRef = null;
+    private String signingSslKeyAndCertificateRef;
 
     @JsonProperty("single_signon_url")
-    private String singleSignonUrl = null;
+    private String singleSignonUrl;
 
 
 

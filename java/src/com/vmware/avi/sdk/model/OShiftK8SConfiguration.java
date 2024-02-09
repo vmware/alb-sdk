@@ -28,16 +28,16 @@ public class OShiftK8SConfiguration  {
     private Boolean autoAssignFqdn = true;
 
     @JsonProperty("avi_bridge_subnet")
-    private IpAddrPrefix aviBridgeSubnet = null;
+    private IpAddrPrefix aviBridgeSubnet;
 
     @JsonProperty("ca_tls_key_and_certificate_ref")
-    private String caTlsKeyAndCertificateRef = null;
+    private String caTlsKeyAndCertificateRef;
 
     @JsonProperty("client_tls_key_and_certificate_ref")
-    private String clientTlsKeyAndCertificateRef = null;
+    private String clientTlsKeyAndCertificateRef;
 
     @JsonProperty("cluster_tag")
-    private String clusterTag = null;
+    private String clusterTag;
 
     @JsonProperty("container_port_match_http_service")
     private Boolean containerPortMatchHttpService = true;
@@ -64,10 +64,10 @@ public class OShiftK8SConfiguration  {
     private String dockerEndpoint = "/var/run/docker.sock";
 
     @JsonProperty("docker_registry_se")
-    private DockerRegistry dockerRegistrySe = null;
+    private DockerRegistry dockerRegistrySe;
 
     @JsonProperty("east_west_placement_subnet")
-    private IpAddrPrefix eastWestPlacementSubnet = null;
+    private IpAddrPrefix eastWestPlacementSubnet;
 
     @JsonProperty("enable_event_subscription")
     private Boolean enableEventSubscription = true;
@@ -79,28 +79,28 @@ public class OShiftK8SConfiguration  {
     private Boolean feproxyVipsEnableProxyArp = true;
 
     @JsonProperty("http_container_ports")
-    private List<Integer> httpContainerPorts = null;
+    private List<Integer> httpContainerPorts;
 
     @JsonProperty("ing_exclude_attributes")
-    private List<IngAttribute> ingExcludeAttributes = null;
+    private List<IngAttribute> ingExcludeAttributes;
 
     @JsonProperty("ing_include_attributes")
-    private List<IngAttribute> ingIncludeAttributes = null;
+    private List<IngAttribute> ingIncludeAttributes;
 
     @JsonProperty("l4_health_monitoring")
     private Boolean l4HealthMonitoring = true;
 
     @JsonProperty("master_nodes")
-    private List<String> masterNodes = null;
+    private List<String> masterNodes;
 
     @JsonProperty("node_availability_zone_label")
-    private String nodeAvailabilityZoneLabel = null;
+    private String nodeAvailabilityZoneLabel;
 
     @JsonProperty("ns_exclude_attributes")
-    private List<MesosAttribute> nsExcludeAttributes = null;
+    private List<MesosAttribute> nsExcludeAttributes;
 
     @JsonProperty("ns_include_attributes")
-    private List<MesosAttribute> nsIncludeAttributes = null;
+    private List<MesosAttribute> nsIncludeAttributes;
 
     @JsonProperty("num_shards")
     private Integer numShards = 0;
@@ -109,10 +109,10 @@ public class OShiftK8SConfiguration  {
     private Boolean overrideServicePorts = true;
 
     @JsonProperty("persistent_volume_claim")
-    private String persistentVolumeClaim = null;
+    private String persistentVolumeClaim;
 
     @JsonProperty("routes")
-    private List<RouteInfo> routes = null;
+    private List<RouteInfo> routes;
 
     @JsonProperty("sdn_overlay")
     private Boolean sdnOverlay = true;
@@ -121,22 +121,22 @@ public class OShiftK8SConfiguration  {
     private String seDeploymentMethod = "SE_CREATE_POD";
 
     @JsonProperty("se_exclude_attributes")
-    private List<MesosAttribute> seExcludeAttributes = null;
+    private List<MesosAttribute> seExcludeAttributes;
 
     @JsonProperty("se_image_pull_secret")
-    private String seImagePullSecret = null;
+    private String seImagePullSecret;
 
     @JsonProperty("se_include_attributes")
-    private List<MesosAttribute> seIncludeAttributes = null;
+    private List<MesosAttribute> seIncludeAttributes;
 
     @JsonProperty("se_namespace")
     private String seNamespace = "default";
 
     @JsonProperty("se_pod_tolerations")
-    private List<PodToleration> sePodTolerations = null;
+    private List<PodToleration> sePodTolerations;
 
     @JsonProperty("se_priority_class")
-    private String sePriorityClass = null;
+    private String sePriorityClass;
 
     @JsonProperty("se_restart_batch_size")
     private Integer seRestartBatchSize = 1;
@@ -151,16 +151,16 @@ public class OShiftK8SConfiguration  {
     private Boolean secureEgressMode = false;
 
     @JsonProperty("service_account_token")
-    private String serviceAccountToken = null;
+    private String serviceAccountToken;
 
     @JsonProperty("shard_prefix")
-    private String shardPrefix = null;
+    private String shardPrefix;
 
     @JsonProperty("shared_virtualservice_namespace")
     private Boolean sharedVirtualserviceNamespace = false;
 
     @JsonProperty("ssh_user_ref")
-    private String sshUserRef = null;
+    private String sshUserRef;
 
     @JsonProperty("sync_not_ready_addresses")
     private Boolean syncNotReadyAddresses = true;
@@ -178,7 +178,7 @@ public class OShiftK8SConfiguration  {
     private Boolean useServiceClusterIpAsEwVip = false;
 
     @JsonProperty("vip_default_gateway")
-    private IpAddr vipDefaultGateway = null;
+    private IpAddr vipDefaultGateway;
 
 
 

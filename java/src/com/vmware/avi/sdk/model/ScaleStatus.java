@@ -22,40 +22,40 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ScaleStatus  {
     @JsonProperty("action")
-    private String action = null;
+    private String action;
 
     @JsonProperty("action_success")
-    private Boolean actionSuccess = null;
+    private Boolean actionSuccess;
 
     @JsonProperty("end_time_str")
-    private String endTimeStr = null;
+    private String endTimeStr;
 
     @JsonProperty("num_se_assigned")
-    private Integer numSeAssigned = null;
+    private Integer numSeAssigned;
 
     @JsonProperty("num_se_requested")
-    private Integer numSeRequested = null;
+    private Integer numSeRequested;
 
     @JsonProperty("reason")
-    private List<String> reason = null;
+    private List<String> reason;
 
     @JsonProperty("reason_code")
-    private Integer reasonCode = null;
+    private Integer reasonCode;
 
     @JsonProperty("reason_code_string")
-    private String reasonCodeString = null;
+    private String reasonCodeString;
 
     @JsonProperty("scale_se")
-    private String scaleSe = null;
+    private String scaleSe;
 
     @JsonProperty("start_time_str")
-    private String startTimeStr = null;
+    private String startTimeStr;
 
     @JsonProperty("state")
-    private String state = null;
+    private String state;
 
     @JsonProperty("vip_placement_resolution_info")
-    private VipPlacementResolutionInfo vipPlacementResolutionInfo = null;
+    private VipPlacementResolutionInfo vipPlacementResolutionInfo;
 
 
 

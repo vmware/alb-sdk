@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VcenterClusters  {
     @JsonProperty("cluster_refs")
-    private List<String> clusterRefs = null;
+    private List<String> clusterRefs;
 
     @JsonProperty("include")
     private Boolean include = false;

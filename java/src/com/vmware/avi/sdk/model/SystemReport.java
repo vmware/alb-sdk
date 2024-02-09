@@ -22,43 +22,43 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SystemReport extends AviRestResource  {
     @JsonProperty("archive_ref")
-    private String archiveRef = null;
+    private String archiveRef;
 
     @JsonProperty("controller_patch_image_ref")
-    private String controllerPatchImageRef = null;
+    private String controllerPatchImageRef;
 
     @JsonProperty("downloadable")
     private Boolean downloadable = false;
 
     @JsonProperty("events")
-    private List<ReportEvent> events = null;
+    private List<ReportEvent> events;
 
     @JsonProperty("image_ref")
-    private String imageRef = null;
+    private String imageRef;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("readiness_reports")
-    private List<ReportDetail> readinessReports = null;
+    private List<ReportDetail> readinessReports;
 
     @JsonProperty("se_patch_image_ref")
-    private String sePatchImageRef = null;
+    private String sePatchImageRef;
 
     @JsonProperty("state")
-    private ReportOpsState state = null;
+    private ReportOpsState state;
 
     @JsonProperty("summary")
-    private ReportSummary summary = null;
+    private ReportSummary summary;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

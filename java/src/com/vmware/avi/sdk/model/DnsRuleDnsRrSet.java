@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsRuleDnsRrSet  {
     @JsonProperty("resource_record_set")
-    private DnsRrSet resourceRecordSet = null;
+    private DnsRrSet resourceRecordSet;
 
     @JsonProperty("section")
     private String section = "DNS_MESSAGE_SECTION_ANSWER";

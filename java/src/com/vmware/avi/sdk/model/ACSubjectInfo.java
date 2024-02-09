@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ACSubjectInfo  {
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("value")
-    private String value = null;
+    private String value;
 
 
 

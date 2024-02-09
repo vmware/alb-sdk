@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IcapViolation  {
     @JsonProperty("file_name")
-    private String fileName = null;
+    private String fileName;
 
     @JsonProperty("resolution")
-    private String resolution = null;
+    private String resolution;
 
     @JsonProperty("threat_name")
-    private String threatName = null;
+    private String threatName;
 
 
 

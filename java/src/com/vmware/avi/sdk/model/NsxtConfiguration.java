@@ -28,7 +28,7 @@ public class NsxtConfiguration  {
     private Boolean automateDfwRules = false;
 
     @JsonProperty("data_network_config")
-    private DataNetworkConfig dataNetworkConfig = null;
+    private DataNetworkConfig dataNetworkConfig;
 
     @JsonProperty("domain_id")
     private String domainId = "default";
@@ -37,13 +37,13 @@ public class NsxtConfiguration  {
     private String enforcementpointId = "default";
 
     @JsonProperty("management_network_config")
-    private ManagementNetworkConfig managementNetworkConfig = null;
+    private ManagementNetworkConfig managementNetworkConfig;
 
     @JsonProperty("nsxt_credentials_ref")
-    private String nsxtCredentialsRef = null;
+    private String nsxtCredentialsRef;
 
     @JsonProperty("nsxt_url")
-    private String nsxtUrl = null;
+    private String nsxtUrl;
 
     @JsonProperty("site_id")
     private String siteId = "default";
@@ -52,7 +52,7 @@ public class NsxtConfiguration  {
     private Boolean vmcMode = false;
 
     @JsonProperty("vpc_mode")
-    private Boolean vpcMode = null;
+    private Boolean vpcMode;
 
 
 

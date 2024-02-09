@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OauthSubRequestLog  {
     @JsonProperty("error_code")
-    private String errorCode = null;
+    private String errorCode;
 
     @JsonProperty("error_description")
-    private String errorDescription = null;
+    private String errorDescription;
 
     @JsonProperty("sub_request_log")
-    private SubRequestLog subRequestLog = null;
+    private SubRequestLog subRequestLog;
 
 
 

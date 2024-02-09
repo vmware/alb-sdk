@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeLicensedBandwdithExceededEventDetails  {
     @JsonProperty("num_pkts_dropped")
-    private Integer numPktsDropped = null;
+    private Integer numPktsDropped;
 
     @JsonProperty("se_ref")
-    private String seRef = null;
+    private String seRef;
 
 
 

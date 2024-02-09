@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NsxtTier1SegmentManualMode  {
     @JsonProperty("tier1_lrs")
-    private List<Tier1LogicalRouterInfo> tier1Lrs = null;
+    private List<Tier1LogicalRouterInfo> tier1Lrs;
 
 
     /**

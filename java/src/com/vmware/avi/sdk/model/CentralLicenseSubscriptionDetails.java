@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CentralLicenseSubscriptionDetails  {
     @JsonProperty("message")
-    private String message = null;
+    private String message;
 
     @JsonProperty("tenant_uuid")
-    private String tenantUuid = null;
+    private String tenantUuid;
 
 
 

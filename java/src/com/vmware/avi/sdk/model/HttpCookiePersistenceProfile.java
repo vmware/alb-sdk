@@ -25,10 +25,10 @@ public class HttpCookiePersistenceProfile  {
     private Boolean alwaysSendCookie = false;
 
     @JsonProperty("cookie_name")
-    private String cookieName = null;
+    private String cookieName;
 
     @JsonProperty("encryption_key")
-    private String encryptionKey = null;
+    private String encryptionKey;
 
     @JsonProperty("http_only")
     private Boolean httpOnly = false;
@@ -37,10 +37,10 @@ public class HttpCookiePersistenceProfile  {
     private Boolean isPersistentCookie = false;
 
     @JsonProperty("key")
-    private List<HttpCookiePersistenceKey> key = null;
+    private List<HttpCookiePersistenceKey> key;
 
     @JsonProperty("timeout")
-    private Integer timeout = null;
+    private Integer timeout;
 
 
 

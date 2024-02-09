@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbPoolMemberDatapathStatus  {
     @JsonProperty("location")
-    private GeoLocation location = null;
+    private GeoLocation location;
 
     @JsonProperty("oper_status")
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("site_uuid")
-    private String siteUuid = null;
+    private String siteUuid;
 
 
 

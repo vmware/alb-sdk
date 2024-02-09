@@ -28,7 +28,7 @@ public class OshiftDockerRegistryMetaData  {
     private String registryService = "docker-registry";
 
     @JsonProperty("registry_vip")
-    private IpAddr registryVip = null;
+    private IpAddr registryVip;
 
 
 

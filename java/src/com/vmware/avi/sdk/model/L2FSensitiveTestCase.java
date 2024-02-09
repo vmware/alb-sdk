@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class L2FSensitiveTestCase  {
     @JsonProperty("sensitive_message")
-    private SingleOptionalSensitiveFieldMessage sensitiveMessage = null;
+    private SingleOptionalSensitiveFieldMessage sensitiveMessage;
 
     @JsonProperty("sensitive_messages")
-    private List<SingleOptionalSensitiveFieldMessage> sensitiveMessages = null;
+    private List<SingleOptionalSensitiveFieldMessage> sensitiveMessages;
 
     @JsonProperty("sensitive_string")
-    private String sensitiveString = null;
+    private String sensitiveString;
 
 
 

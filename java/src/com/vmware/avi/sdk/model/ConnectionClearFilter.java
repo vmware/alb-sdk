@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConnectionClearFilter  {
     @JsonProperty("ip_addr")
-    private String ipAddr = null;
+    private String ipAddr;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
 
 

@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class L2StringLengthTestCase  {
     @JsonProperty("string_length_message")
-    private SingleOptionalStringField stringLengthMessage = null;
+    private SingleOptionalStringField stringLengthMessage;
 
     @JsonProperty("string_length_messages")
-    private List<SingleOptionalStringField> stringLengthMessages = null;
+    private List<SingleOptionalStringField> stringLengthMessages;
 
     @JsonProperty("test_string")
-    private String testString = null;
+    private String testString;
 
     @JsonProperty("test_strings")
-    private List<String> testStrings = null;
+    private List<String> testStrings;
 
 
 

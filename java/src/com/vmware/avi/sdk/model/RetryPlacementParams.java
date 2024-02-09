@@ -25,10 +25,10 @@ public class RetryPlacementParams extends AviRestResource  {
     private Boolean allEastWest = false;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vip_id")
-    private String vipId = null;
+    private String vipId;
 
 
 

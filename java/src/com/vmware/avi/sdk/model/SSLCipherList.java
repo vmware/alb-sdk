@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SSLCipherList  {
     @JsonProperty("identified_ciphers")
-    private List<String> identifiedCiphers = null;
+    private List<String> identifiedCiphers;
 
     @JsonProperty("unidentified_ciphers")
-    private List<String> unidentifiedCiphers = null;
+    private List<String> unidentifiedCiphers;
 
 
     /**

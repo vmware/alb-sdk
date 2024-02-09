@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsQueryNameMatch  {
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("query_domain_names")
-    private List<String> queryDomainNames = null;
+    private List<String> queryDomainNames;
 
     @JsonProperty("string_group_refs")
-    private List<String> stringGroupRefs = null;
+    private List<String> stringGroupRefs;
 
 
 

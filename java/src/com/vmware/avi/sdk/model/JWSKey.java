@@ -25,10 +25,10 @@ public class JWSKey  {
     private String alg = "HS256";
 
     @JsonProperty("key")
-    private String key = null;
+    private String key;
 
     @JsonProperty("kid")
-    private String kid = null;
+    private String kid;
 
     @JsonProperty("kty")
     private String kty = "oct";

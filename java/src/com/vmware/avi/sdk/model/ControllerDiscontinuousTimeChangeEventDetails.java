@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerDiscontinuousTimeChangeEventDetails  {
     @JsonProperty("from_time")
-    private String fromTime = null;
+    private String fromTime;
 
     @JsonProperty("node_name")
-    private String nodeName = null;
+    private String nodeName;
 
     @JsonProperty("ntp_servers")
-    private String ntpServers = null;
+    private String ntpServers;
 
     @JsonProperty("to_time")
-    private String toTime = null;
+    private String toTime;
 
 
 

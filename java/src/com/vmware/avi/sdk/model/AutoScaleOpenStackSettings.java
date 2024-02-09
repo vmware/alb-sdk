@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AutoScaleOpenStackSettings  {
     @JsonProperty("heat_scale_down_url")
-    private String heatScaleDownUrl = null;
+    private String heatScaleDownUrl;
 
     @JsonProperty("heat_scale_up_url")
-    private String heatScaleUpUrl = null;
+    private String heatScaleUpUrl;
 
 
 

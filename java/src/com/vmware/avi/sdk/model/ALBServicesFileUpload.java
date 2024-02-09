@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ALBServicesFileUpload extends AviRestResource  {
     @JsonProperty("case_id")
-    private String caseId = null;
+    private String caseId;
 
     @JsonProperty("error")
     private String error;
 
     @JsonProperty("file_path")
-    private String filePath = null;
+    private String filePath;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("s3_directory")
-    private String s3Directory = null;
+    private String s3Directory;
 
     @JsonProperty("status")
     private String status;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

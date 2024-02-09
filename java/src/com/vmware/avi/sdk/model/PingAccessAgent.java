@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PingAccessAgent extends AviRestResource  {
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("pingaccess_pool_ref")
-    private String pingaccessPoolRef = null;
+    private String pingaccessPoolRef;
 
     @JsonProperty("primary_server")
-    private PoolServer primaryServer = null;
+    private PoolServer primaryServer;
 
     @JsonProperty("properties_file_data")
-    private String propertiesFileData = null;
+    private String propertiesFileData;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

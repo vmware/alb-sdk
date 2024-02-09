@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ALBServicesAccountUser  {
     @JsonProperty("email")
-    private String email = null;
+    private String email;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("phone")
-    private String phone = null;
+    private String phone;
 
 
 

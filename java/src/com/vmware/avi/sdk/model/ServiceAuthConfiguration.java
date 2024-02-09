@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServiceAuthConfiguration  {
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("service_auth_mapping_profile_ref")
-    private String serviceAuthMappingProfileRef = null;
+    private String serviceAuthMappingProfileRef;
 
     @JsonProperty("service_auth_profile_ref")
-    private String serviceAuthProfileRef = null;
+    private String serviceAuthProfileRef;
 
 
 

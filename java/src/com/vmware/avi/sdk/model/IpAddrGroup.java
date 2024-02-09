@@ -22,43 +22,43 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpAddrGroup extends AviRestResource  {
     @JsonProperty("addrs")
-    private List<IpAddr> addrs = null;
+    private List<IpAddr> addrs;
 
     @JsonProperty("country_codes")
-    private List<String> countryCodes = null;
+    private List<String> countryCodes;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("ip_ports")
-    private List<IpAddrPort> ipPorts = null;
+    private List<IpAddrPort> ipPorts;
 
     @JsonProperty("marathon_app_name")
-    private String marathonAppName = null;
+    private String marathonAppName;
 
     @JsonProperty("marathon_service_port")
-    private Integer marathonServicePort = null;
+    private Integer marathonServicePort;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("prefixes")
-    private List<IpAddrPrefix> prefixes = null;
+    private List<IpAddrPrefix> prefixes;
 
     @JsonProperty("ranges")
-    private List<IpAddrRange> ranges = null;
+    private List<IpAddrRange> ranges;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
     /**

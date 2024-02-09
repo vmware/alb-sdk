@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeHmEventPoolDetails  {
     @JsonProperty("ha_reason")
-    private String haReason = null;
+    private String haReason;
 
     @JsonProperty("percent_servers_up")
-    private String percentServersUp = null;
+    private String percentServersUp;
 
     @JsonProperty("pool")
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("server")
-    private SeHmEventServerDetails server = null;
+    private SeHmEventServerDetails server;
 
     @JsonProperty("src_uuid")
-    private String srcUuid = null;
+    private String srcUuid;
 
     @JsonProperty("virtual_service")
-    private String virtualService = null;
+    private String virtualService;
 
 
 

@@ -28,7 +28,7 @@ public class VipAutoscaleZones  {
     private Boolean fipCapable;
 
     @JsonProperty("subnet_uuid")
-    private String subnetUuid = null;
+    private String subnetUuid;
 
 
 

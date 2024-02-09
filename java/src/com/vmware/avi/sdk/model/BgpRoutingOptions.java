@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BgpRoutingOptions  {
     @JsonProperty("advertise_default_route")
-    private Boolean advertiseDefaultRoute = null;
+    private Boolean advertiseDefaultRoute;
 
     @JsonProperty("advertise_learned_routes")
-    private Boolean advertiseLearnedRoutes = null;
+    private Boolean advertiseLearnedRoutes;
 
     @JsonProperty("label")
-    private String label = null;
+    private String label;
 
     @JsonProperty("learn_only_default_route")
-    private Boolean learnOnlyDefaultRoute = null;
+    private Boolean learnOnlyDefaultRoute;
 
     @JsonProperty("learn_routes")
-    private Boolean learnRoutes = null;
+    private Boolean learnRoutes;
 
     @JsonProperty("max_learn_limit")
     private Integer maxLearnLimit = 50;

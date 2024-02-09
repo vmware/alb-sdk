@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ParamSizeClass  {
     @JsonProperty("hits")
-    private Integer hits = null;
+    private Integer hits;
 
     @JsonProperty("len")
-    private String len = null;
+    private String len;
 
 
 

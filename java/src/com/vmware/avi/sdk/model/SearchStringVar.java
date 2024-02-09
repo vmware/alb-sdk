@@ -25,7 +25,7 @@ public class SearchStringVar  {
     private String type = "SEARCH_LITERAL_STRING";
 
     @JsonProperty("val")
-    private String val = null;
+    private String val;
 
 
 

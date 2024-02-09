@@ -7,6 +7,7 @@ package com.vmware.avi.sdk.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -22,22 +23,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SaasLicensingStatus  {
     @JsonProperty("connected")
-    private Boolean connected = null;
+    private Boolean connected;
 
     @JsonProperty("enabled")
-    private Boolean enabled = null;
+    private Boolean enabled;
 
     @JsonProperty("expired")
-    private Boolean expired = null;
+    private Boolean expired;
 
     @JsonProperty("message")
-    private String message = null;
+    private String message;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
+
+    @JsonIgnore
+    private String publicKey;
 
     @JsonProperty("reserve_service_units")
-    private Float reserveServiceUnits = null;
+    private Float reserveServiceUnits;
 
 
 
@@ -163,6 +167,30 @@ public class SaasLicensingStatus  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Public key.
+     * Field introduced in 21.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return publicKey
+     */
+    public String getPublicKey() {
+        return publicKey;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Public key.
+     * Field introduced in 21.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param publicKey set the publicKey.
+     */
+    public void setPublicKey(String  publicKey) {
+        this.publicKey = publicKey;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Service units reserved on controller.
      * Field introduced in 21.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -200,6 +228,7 @@ public class SaasLicensingStatus  {
   Objects.equals(this.reserveServiceUnits, objSaasLicensingStatus.reserveServiceUnits)&&
   Objects.equals(this.connected, objSaasLicensingStatus.connected)&&
   Objects.equals(this.message, objSaasLicensingStatus.message)&&
+  Objects.equals(this.publicKey, objSaasLicensingStatus.publicKey)&&
   Objects.equals(this.expired, objSaasLicensingStatus.expired);
     }
 
@@ -212,6 +241,7 @@ public class SaasLicensingStatus  {
                         sb.append("    expired: ").append(toIndentedString(expired)).append("\n");
                         sb.append("    message: ").append(toIndentedString(message)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
                         sb.append("    reserveServiceUnits: ").append(toIndentedString(reserveServiceUnits)).append("\n");
                   sb.append("}");
       return sb.toString();

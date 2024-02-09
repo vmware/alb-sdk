@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthMatchAttribute  {
     @JsonProperty("criteria")
-    private String criteria = null;
+    private String criteria;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("values")
-    private List<String> values = null;
+    private List<String> values;
 
 
 

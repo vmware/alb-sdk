@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServiceEngine extends AviRestResource  {
     @JsonProperty("availability_zone")
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("container_mode")
     private Boolean containerMode = false;
@@ -37,46 +37,46 @@ public class ServiceEngine extends AviRestResource  {
     private Boolean controllerCreated = false;
 
     @JsonProperty("controller_ip")
-    private String controllerIp = null;
+    private String controllerIp;
 
     @JsonProperty("data_vnics")
-    private List<vNIC> dataVnics = null;
+    private List<vNIC> dataVnics;
 
     @JsonProperty("enable_state")
     private String enableState = "SE_STATE_ENABLED";
 
     @JsonProperty("flavor")
-    private String flavor = null;
+    private String flavor;
 
     @JsonProperty("host_ref")
-    private String hostRef = null;
+    private String hostRef;
 
     @JsonProperty("hypervisor")
-    private String hypervisor = null;
+    private String hypervisor;
 
     @JsonProperty("mgmt_vnic")
-    private vNIC mgmtVnic = null;
+    private vNIC mgmtVnic;
 
     @JsonProperty("name")
     private String name = "VM name unknown";
 
     @JsonProperty("nsxt_no_hotplug")
-    private Boolean nsxtNoHotplug = null;
+    private Boolean nsxtNoHotplug;
 
     @JsonProperty("resources")
-    private SeResources resources = null;
+    private SeResources resources;
 
     @JsonProperty("se_group_ref")
-    private String seGroupRef = null;
+    private String seGroupRef;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

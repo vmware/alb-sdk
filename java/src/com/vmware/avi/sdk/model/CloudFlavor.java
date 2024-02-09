@@ -22,43 +22,43 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudFlavor  {
     @JsonProperty("cost")
-    private String cost = null;
+    private String cost;
 
     @JsonProperty("disk_gb")
-    private Integer diskGb = null;
+    private Integer diskGb;
 
     @JsonProperty("enhanced_nw")
-    private Boolean enhancedNw = null;
+    private Boolean enhancedNw;
 
     @JsonProperty("id")
-    private String id = null;
+    private String id;
 
     @JsonProperty("is_recommended")
-    private Boolean isRecommended = null;
+    private Boolean isRecommended;
 
     @JsonProperty("max_ip6s_per_nic")
-    private Integer maxIp6SPerNic = null;
+    private Integer maxIp6SPerNic;
 
     @JsonProperty("max_ips_per_nic")
-    private Integer maxIpsPerNic = null;
+    private Integer maxIpsPerNic;
 
     @JsonProperty("max_nics")
-    private Integer maxNics = null;
+    private Integer maxNics;
 
     @JsonProperty("meta")
-    private List<CloudMeta> meta = null;
+    private List<CloudMeta> meta;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("publics")
     private Boolean publics = true;
 
     @JsonProperty("ram_mb")
-    private Integer ramMb = null;
+    private Integer ramMb;
 
     @JsonProperty("vcpus")
-    private Integer vcpus = null;
+    private Integer vcpus;
 
 
 

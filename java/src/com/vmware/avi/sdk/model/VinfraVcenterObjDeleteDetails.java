@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VinfraVcenterObjDeleteDetails  {
     @JsonProperty("obj_name")
-    private String objName = null;
+    private String objName;
 
     @JsonProperty("vcenter")
-    private String vcenter = null;
+    private String vcenter;
 
 
 

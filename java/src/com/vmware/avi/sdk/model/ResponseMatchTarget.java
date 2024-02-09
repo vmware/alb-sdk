@@ -22,46 +22,46 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseMatchTarget  {
     @JsonProperty("client_ip")
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("cookie")
-    private CookieMatch cookie = null;
+    private CookieMatch cookie;
 
     @JsonProperty("hdrs")
-    private List<HdrMatch> hdrs = null;
+    private List<HdrMatch> hdrs;
 
     @JsonProperty("host_hdr")
-    private HostHdrMatch hostHdr = null;
+    private HostHdrMatch hostHdr;
 
     @JsonProperty("loc_hdr")
-    private LocationHdrMatch locHdr = null;
+    private LocationHdrMatch locHdr;
 
     @JsonProperty("method")
-    private MethodMatch method = null;
+    private MethodMatch method;
 
     @JsonProperty("path")
-    private PathMatch path = null;
+    private PathMatch path;
 
     @JsonProperty("protocol")
-    private ProtocolMatch protocol = null;
+    private ProtocolMatch protocol;
 
     @JsonProperty("query")
-    private QueryMatch query = null;
+    private QueryMatch query;
 
     @JsonProperty("rsp_hdrs")
-    private List<HdrMatch> rspHdrs = null;
+    private List<HdrMatch> rspHdrs;
 
     @JsonProperty("source_ip")
-    private IpAddrMatch sourceIp = null;
+    private IpAddrMatch sourceIp;
 
     @JsonProperty("status")
-    private HTTPStatusMatch status = null;
+    private HTTPStatusMatch status;
 
     @JsonProperty("version")
-    private HTTPVersionMatch version = null;
+    private HTTPVersionMatch version;
 
     @JsonProperty("vs_port")
-    private PortMatch vsPort = null;
+    private PortMatch vsPort;
 
 
 

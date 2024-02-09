@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OpenStackRoleMapping  {
     @JsonProperty("avi_role")
-    private String aviRole = null;
+    private String aviRole;
 
     @JsonProperty("os_role")
-    private String osRole = null;
+    private String osRole;
 
 
 

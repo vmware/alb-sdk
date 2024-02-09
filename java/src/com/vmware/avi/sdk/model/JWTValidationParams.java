@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class JWTValidationParams  {
     @JsonProperty("audience")
-    private String audience = null;
+    private String audience;
 
 
 

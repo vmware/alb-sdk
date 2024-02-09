@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AzureMarketplace  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("offer")
-    private String offer = null;
+    private String offer;
 
     @JsonProperty("publisher")
-    private String publisher = null;
+    private String publisher;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("resource_group")
-    private String resourceGroup = null;
+    private String resourceGroup;
 
     @JsonProperty("skus")
-    private List<String> skus = null;
+    private List<String> skus;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
     @JsonProperty("subscription_id")
-    private String subscriptionId = null;
+    private String subscriptionId;
 
     @JsonProperty("vnet_id")
-    private String vnetId = null;
+    private String vnetId;
 
 
 

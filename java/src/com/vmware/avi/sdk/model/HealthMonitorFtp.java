@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitorFtp  {
     @JsonProperty("filename")
-    private String filename = null;
+    private String filename;
 
     @JsonProperty("mode")
     private String mode = "FTP_PASSIVE_MODE";
 
     @JsonProperty("ssl_attributes")
-    private HealthMonitorSSLAttributes sslAttributes = null;
+    private HealthMonitorSSLAttributes sslAttributes;
 
 
 

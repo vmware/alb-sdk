@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SwitchoverEventDetails  {
     @JsonProperty("from_se_name")
-    private String fromSeName = null;
+    private String fromSeName;
 
     @JsonProperty("ip")
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("ip6")
-    private String ip6 = null;
+    private String ip6;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("to_se_name")
-    private String toSeName = null;
+    private String toSeName;
 
     @JsonProperty("vs_name")
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VCASetup  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("instance")
-    private String instance = null;
+    private String instance;
 
     @JsonProperty("privilege")
-    private String privilege = null;
+    private String privilege;
 
     @JsonProperty("username")
-    private String username = null;
+    private String username;
 
 
 

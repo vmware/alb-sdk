@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricStatistics  {
     @JsonProperty("last_sample")
-    private Float lastSample = null;
+    private Float lastSample;
 
     @JsonProperty("max")
-    private Float max = null;
+    private Float max;
 
     @JsonProperty("max_ts")
-    private String maxTs = null;
+    private String maxTs;
 
     @JsonProperty("mean")
-    private Float mean = null;
+    private Float mean;
 
     @JsonProperty("min")
-    private Float min = null;
+    private Float min;
 
     @JsonProperty("min_ts")
-    private String minTs = null;
+    private String minTs;
 
     @JsonProperty("num_samples")
-    private Integer numSamples = null;
+    private Integer numSamples;
 
     @JsonProperty("sum")
-    private Float sum = null;
+    private Float sum;
 
     @JsonProperty("trend")
-    private Float trend = null;
+    private Float trend;
 
 
 

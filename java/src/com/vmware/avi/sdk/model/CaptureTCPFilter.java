@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CaptureTCPFilter  {
     @JsonProperty("dst_port_range")
-    private DestinationPortAddr dstPortRange = null;
+    private DestinationPortAddr dstPortRange;
 
     @JsonProperty("eth_proto")
     private String ethProto = "ETH_TYPE_IPV4";
 
     @JsonProperty("host_ip")
-    private DebugIpAddr hostIp = null;
+    private DebugIpAddr hostIp;
 
     @JsonProperty("src_port_range")
-    private SourcePortAddr srcPortRange = null;
+    private SourcePortAddr srcPortRange;
 
     @JsonProperty("tcpflags")
-    private List<CaptureTCP> tcpflags = null;
+    private List<CaptureTCP> tcpflags;
 
 
 

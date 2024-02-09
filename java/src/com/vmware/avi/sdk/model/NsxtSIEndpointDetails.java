@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NsxtSIEndpointDetails  {
     @JsonProperty("endpoint")
-    private String endpoint = null;
+    private String endpoint;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("segroup")
-    private String segroup = null;
+    private String segroup;
 
     @JsonProperty("services")
-    private List<String> services = null;
+    private List<String> services;
 
     @JsonProperty("targetIps")
-    private List<String> targetIps = null;
+    private List<String> targetIps;
 
     @JsonProperty("tier1")
-    private String tier1 = null;
+    private String tier1;
 
 
 

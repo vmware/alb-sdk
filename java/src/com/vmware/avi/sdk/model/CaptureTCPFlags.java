@@ -25,16 +25,16 @@ public class CaptureTCPFlags  {
     private String matchOperation = "IS_IN";
 
     @JsonProperty("tcp_ack")
-    private Boolean tcpAck = null;
+    private Boolean tcpAck;
 
     @JsonProperty("tcp_fin")
-    private Boolean tcpFin = null;
+    private Boolean tcpFin;
 
     @JsonProperty("tcp_push")
-    private Boolean tcpPush = null;
+    private Boolean tcpPush;
 
     @JsonProperty("tcp_syn")
-    private Boolean tcpSyn = null;
+    private Boolean tcpSyn;
 
 
 

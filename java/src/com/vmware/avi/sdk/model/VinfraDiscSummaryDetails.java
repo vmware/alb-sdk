@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VinfraDiscSummaryDetails  {
     @JsonProperty("num_clusters")
-    private Integer numClusters = null;
+    private Integer numClusters;
 
     @JsonProperty("num_dcs")
-    private Integer numDcs = null;
+    private Integer numDcs;
 
     @JsonProperty("num_hosts")
-    private Integer numHosts = null;
+    private Integer numHosts;
 
     @JsonProperty("num_nws")
-    private Integer numNws = null;
+    private Integer numNws;
 
     @JsonProperty("num_vms")
-    private Integer numVms = null;
+    private Integer numVms;
 
     @JsonProperty("vcenter")
-    private String vcenter = null;
+    private String vcenter;
 
 
 

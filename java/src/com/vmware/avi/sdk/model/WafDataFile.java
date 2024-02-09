@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafDataFile  {
     @JsonProperty("data")
-    private String data = null;
+    private String data;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("type")
     private String type = "WAF_DATAFILE_PM_FROM_FILE";

@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PersistenceFilter  {
     @JsonProperty("persistence_cookie")
-    private String persistenceCookie = null;
+    private String persistenceCookie;
 
     @JsonProperty("persistence_end_ip")
-    private IpAddr persistenceEndIp = null;
+    private IpAddr persistenceEndIp;
 
     @JsonProperty("persistence_ip")
-    private IpAddr persistenceIp = null;
+    private IpAddr persistenceIp;
 
     @JsonProperty("persistence_mask")
-    private Integer persistenceMask = null;
+    private Integer persistenceMask;
 
     @JsonProperty("server_end_ip")
-    private IpAddr serverEndIp = null;
+    private IpAddr serverEndIp;
 
     @JsonProperty("server_ip")
-    private IpAddr serverIp = null;
+    private IpAddr serverIp;
 
     @JsonProperty("server_mask")
-    private Integer serverMask = null;
+    private Integer serverMask;
 
     @JsonProperty("server_port")
-    private Integer serverPort = null;
+    private Integer serverPort;
 
 
 

@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OAuthVSConfig  {
     @JsonProperty("cookie_name")
-    private String cookieName = null;
+    private String cookieName;
 
     @JsonProperty("cookie_timeout")
     private Integer cookieTimeout = 60;
 
     @JsonProperty("key")
-    private List<HttpCookiePersistenceKey> key = null;
+    private List<HttpCookiePersistenceKey> key;
 
     @JsonProperty("logout_uri")
-    private String logoutUri = null;
+    private String logoutUri;
 
     @JsonProperty("oauth_settings")
-    private List<OAuthSettings> oauthSettings = null;
+    private List<OAuthSettings> oauthSettings;
 
     @JsonProperty("post_logout_redirect_uri")
-    private String postLogoutRedirectUri = null;
+    private String postLogoutRedirectUri;
 
     @JsonProperty("redirect_uri")
-    private String redirectUri = null;
+    private String redirectUri;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GCPInBandManagement  {
     @JsonProperty("vpc_network_name")
-    private String vpcNetworkName = null;
+    private String vpcNetworkName;
 
     @JsonProperty("vpc_project_id")
-    private String vpcProjectId = null;
+    private String vpcProjectId;
 
     @JsonProperty("vpc_subnet_name")
-    private String vpcSubnetName = null;
+    private String vpcSubnetName;
 
 
 

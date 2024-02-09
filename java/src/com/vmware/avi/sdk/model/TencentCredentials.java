@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TencentCredentials  {
     @JsonProperty("secret_id")
-    private String secretId = null;
+    private String secretId;
 
     @JsonProperty("secret_key")
-    private String secretKey = null;
+    private String secretKey;
 
 
 

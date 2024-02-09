@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VinfraCntlrHostUnreachableList  {
     @JsonProperty("host_name")
-    private List<String> hostName = null;
+    private List<String> hostName;
 
     @JsonProperty("vcenter")
-    private String vcenter = null;
+    private String vcenter;
 
 
     /**

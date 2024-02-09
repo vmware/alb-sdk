@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbSiteCfgSyncInfo  {
     @JsonProperty("errored_objects")
-    private List<VersionInfo> erroredObjects = null;
+    private List<VersionInfo> erroredObjects;
 
     @JsonProperty("last_changed_time")
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("last_fail_obj")
-    private ConfigVersionStatus lastFailObj = null;
+    private ConfigVersionStatus lastFailObj;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("recommendation")
-    private String recommendation = null;
+    private String recommendation;
 
     @JsonProperty("sync_state")
-    private String syncState = null;
+    private String syncState;
 
 
     /**

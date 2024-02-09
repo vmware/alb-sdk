@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class EquivalentLabels  {
     @JsonProperty("labels")
-    private List<String> labels = null;
+    private List<String> labels;
 
 
     /**

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DosThresholdProfile  {
     @JsonProperty("thresh_info")
-    private List<DosThreshold> threshInfo = null;
+    private List<DosThreshold> threshInfo;
 
     @JsonProperty("thresh_period")
     private Integer threshPeriod = 5;

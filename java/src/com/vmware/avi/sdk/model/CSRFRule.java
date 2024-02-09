@@ -28,13 +28,13 @@ public class CSRFRule  {
     private Boolean enable = true;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
-    private MatchTarget match = null;
+    private MatchTarget match;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

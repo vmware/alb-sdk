@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerInfo  {
     @JsonProperty("current_controller_mem_usage")
-    private Float currentControllerMemUsage = null;
+    private Float currentControllerMemUsage;
 
 
 

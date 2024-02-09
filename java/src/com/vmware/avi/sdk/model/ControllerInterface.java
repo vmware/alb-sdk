@@ -22,40 +22,40 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerInterface  {
     @JsonProperty("gateway")
-    private IpAddr gateway = null;
+    private IpAddr gateway;
 
     @JsonProperty("gateway6")
-    private IpAddr gateway6 = null;
+    private IpAddr gateway6;
 
     @JsonProperty("if_name")
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("ip")
-    private IpAddrPrefix ip = null;
+    private IpAddrPrefix ip;
 
     @JsonProperty("ip6")
-    private IpAddrPrefix ip6 = null;
+    private IpAddrPrefix ip6;
 
     @JsonProperty("labels")
-    private List<String> labels = null;
+    private List<String> labels;
 
     @JsonProperty("mac_address")
-    private String macAddress = null;
+    private String macAddress;
 
     @JsonProperty("mode")
-    private String mode = null;
+    private String mode;
 
     @JsonProperty("mode6")
-    private String mode6 = null;
+    private String mode6;
 
     @JsonProperty("public_ip_or_name")
-    private IpAddr publicIpOrName = null;
+    private IpAddr publicIpOrName;
 
     @JsonProperty("v4_enabled")
-    private Boolean v4Enabled = null;
+    private Boolean v4Enabled;
 
     @JsonProperty("v6_enabled")
-    private Boolean v6Enabled = null;
+    private Boolean v6Enabled;
 
 
 

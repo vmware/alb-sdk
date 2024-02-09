@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MgmtIpAccessControl  {
     @JsonProperty("api_access")
-    private IpAddrMatch apiAccess = null;
+    private IpAddrMatch apiAccess;
 
     @JsonProperty("shell_server_access")
-    private IpAddrMatch shellServerAccess = null;
+    private IpAddrMatch shellServerAccess;
 
     @JsonProperty("snmp_access")
-    private IpAddrMatch snmpAccess = null;
+    private IpAddrMatch snmpAccess;
 
     @JsonProperty("ssh_access")
-    private IpAddrMatch sshAccess = null;
+    private IpAddrMatch sshAccess;
 
     @JsonProperty("sysint_access")
-    private IpAddrMatch sysintAccess = null;
+    private IpAddrMatch sysintAccess;
 
 
 

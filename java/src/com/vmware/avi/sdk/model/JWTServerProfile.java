@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class JWTServerProfile extends AviRestResource  {
     @JsonProperty("controller_internal_auth")
-    private ControllerInternalAuth controllerInternalAuth = null;
+    private ControllerInternalAuth controllerInternalAuth;
 
     @JsonProperty("is_federated")
     private Boolean isFederated = false;
 
     @JsonProperty("issuer")
-    private String issuer = null;
+    private String issuer;
 
     @JsonProperty("jwks_keys")
-    private String jwksKeys = null;
+    private String jwksKeys;
 
     @JsonProperty("jwt_profile_type")
     private String jwtProfileType = "CLIENT_AUTH";
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

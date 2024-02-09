@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafAllowlistLog  {
     @JsonProperty("actions")
-    private List<String> actions = null;
+    private List<String> actions;
 
     @JsonProperty("rule_name")
-    private String ruleName = null;
+    private String ruleName;
 
 
     /**

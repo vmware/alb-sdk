@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsTxtRdata  {
     @JsonProperty("text_str")
-    private String textStr = null;
+    private String textStr;
 
 
 

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MemoryUsage  {
     @JsonProperty("free")
-    private Integer free = null;
+    private Integer free;
 
     @JsonProperty("total")
-    private Integer total = null;
+    private Integer total;
 
 
 

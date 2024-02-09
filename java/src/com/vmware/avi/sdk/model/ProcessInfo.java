@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProcessInfo  {
     @JsonProperty("current_process_id")
-    private Float currentProcessId = null;
+    private Float currentProcessId;
 
     @JsonProperty("current_process_mem_usage")
-    private Float currentProcessMemUsage = null;
+    private Float currentProcessMemUsage;
 
     @JsonProperty("intimation_count")
-    private Float intimationCount = null;
+    private Float intimationCount;
 
     @JsonProperty("memory_limit")
-    private Float memoryLimit = null;
+    private Float memoryLimit;
 
     @JsonProperty("memory_trend_usage")
-    private String memoryTrendUsage = null;
+    private String memoryTrendUsage;
 
     @JsonProperty("process_mode")
-    private String processMode = null;
+    private String processMode;
 
     @JsonProperty("threshold_percent")
-    private Float thresholdPercent = null;
+    private Float thresholdPercent;
 
 
 

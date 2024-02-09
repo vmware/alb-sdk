@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbServiceSitePersistencePool extends AviRestResource  {
     @JsonProperty("enable_http2")
-    private Boolean enableHttp2 = null;
+    private Boolean enableHttp2;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("num_servers")
-    private Integer numServers = null;
+    private Integer numServers;
 
     @JsonProperty("num_servers_up")
-    private Integer numServersUp = null;
+    private Integer numServersUp;
 
     @JsonProperty("servers")
-    private List<ServerConfig> servers = null;
+    private List<ServerConfig> servers;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

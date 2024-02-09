@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugTraceShmMallocTypes  {
     @JsonProperty("shm_malloc_type_index")
-    private Integer shmMallocTypeIndex = null;
+    private Integer shmMallocTypeIndex;
 
 
 

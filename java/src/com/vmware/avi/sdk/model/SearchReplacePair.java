@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SearchReplacePair  {
     @JsonProperty("replacement_string")
-    private ReplaceStringVar replacementString = null;
+    private ReplaceStringVar replacementString;
 
     @JsonProperty("search_string")
-    private SearchStringVar searchString = null;
+    private SearchStringVar searchString;
 
 
 

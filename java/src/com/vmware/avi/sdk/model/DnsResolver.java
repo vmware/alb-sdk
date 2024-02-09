@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsResolver  {
     @JsonProperty("fixed_ttl")
-    private Integer fixedTtl = null;
+    private Integer fixedTtl;
 
     @JsonProperty("min_ttl")
     private Integer minTtl = 5;
 
     @JsonProperty("nameserver_ips")
-    private List<IpAddr> nameserverIps = null;
+    private List<IpAddr> nameserverIps;
 
     @JsonProperty("resolver_name")
-    private String resolverName = null;
+    private String resolverName;
 
     @JsonProperty("use_mgmt")
     private Boolean useMgmt = false;

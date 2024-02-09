@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class InventoryConfig  {
     @JsonProperty("enable")
-    private Boolean enable = null;
+    private Boolean enable;
 
 
 

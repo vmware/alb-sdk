@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LogControllerMapping extends AviRestResource  {
     @JsonProperty("controller_ip")
-    private String controllerIp = null;
+    private String controllerIp;
 
     @JsonProperty("metrics_mgr_port")
     private String metricsMgrPort = "METRICS_MGR_PORT_0";
 
     @JsonProperty("node_uuid")
-    private String nodeUuid = null;
+    private String nodeUuid;
 
     @JsonProperty("prev_controller_ip")
-    private String prevControllerIp = null;
+    private String prevControllerIp;
 
     @JsonProperty("prev_metrics_mgr_port")
     private String prevMetricsMgrPort = "METRICS_MGR_PORT_0";
@@ -40,16 +40,16 @@ public class LogControllerMapping extends AviRestResource  {
     private Boolean staticMapping = false;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

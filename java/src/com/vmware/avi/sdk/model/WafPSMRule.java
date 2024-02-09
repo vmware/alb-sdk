@@ -22,43 +22,43 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafPSMRule  {
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable")
     private Boolean enable = true;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match_case")
     private String matchCase = "INSENSITIVE";
 
     @JsonProperty("match_elements")
-    private List<WafPSMMatchElement> matchElements = null;
+    private List<WafPSMMatchElement> matchElements;
 
     @JsonProperty("match_value_max_length")
-    private Integer matchValueMaxLength = null;
+    private Integer matchValueMaxLength;
 
     @JsonProperty("match_value_pattern")
-    private String matchValuePattern = null;
+    private String matchValuePattern;
 
     @JsonProperty("match_value_string_group_key")
-    private String matchValueStringGroupKey = null;
+    private String matchValueStringGroupKey;
 
     @JsonProperty("match_value_string_group_ref")
-    private String matchValueStringGroupRef = null;
+    private String matchValueStringGroupRef;
 
     @JsonProperty("mode")
-    private String mode = null;
+    private String mode;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("paranoia_level")
     private String paranoiaLevel = "WAF_PARANOIA_LEVEL_LOW";
 
     @JsonProperty("rule_id")
-    private String ruleId = null;
+    private String ruleId;
 
 
 

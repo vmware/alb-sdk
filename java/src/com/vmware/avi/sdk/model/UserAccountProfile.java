@@ -40,13 +40,13 @@ public class UserAccountProfile extends AviRestResource  {
     private Integer maxPasswordHistoryCount = 4;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

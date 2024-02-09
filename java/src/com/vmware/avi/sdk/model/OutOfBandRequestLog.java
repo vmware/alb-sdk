@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OutOfBandRequestLog  {
     @JsonProperty("ds_req_logs")
-    private List<DSRequestLog> dsReqLogs = null;
+    private List<DSRequestLog> dsReqLogs;
 
 
     /**

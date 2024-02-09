@@ -22,49 +22,49 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConnErrorInfo  {
     @JsonProperty("num_syn_retransmit")
-    private Integer numSynRetransmit = null;
+    private Integer numSynRetransmit;
 
     @JsonProperty("num_window_shrink")
-    private Integer numWindowShrink = null;
+    private Integer numWindowShrink;
 
     @JsonProperty("out_of_orders")
-    private Integer outOfOrders = null;
+    private Integer outOfOrders;
 
     @JsonProperty("retransmits")
-    private Integer retransmits = null;
+    private Integer retransmits;
 
     @JsonProperty("rx_pkts")
-    private Integer rxPkts = null;
+    private Integer rxPkts;
 
     @JsonProperty("server_num_window_shrink")
-    private Integer serverNumWindowShrink = null;
+    private Integer serverNumWindowShrink;
 
     @JsonProperty("server_out_of_orders")
-    private Integer serverOutOfOrders = null;
+    private Integer serverOutOfOrders;
 
     @JsonProperty("server_retransmits")
-    private Integer serverRetransmits = null;
+    private Integer serverRetransmits;
 
     @JsonProperty("server_rx_pkts")
-    private Integer serverRxPkts = null;
+    private Integer serverRxPkts;
 
     @JsonProperty("server_timeouts")
-    private Integer serverTimeouts = null;
+    private Integer serverTimeouts;
 
     @JsonProperty("server_tx_pkts")
-    private Integer serverTxPkts = null;
+    private Integer serverTxPkts;
 
     @JsonProperty("server_zero_window_size_events")
-    private Integer serverZeroWindowSizeEvents = null;
+    private Integer serverZeroWindowSizeEvents;
 
     @JsonProperty("timeouts")
-    private Integer timeouts = null;
+    private Integer timeouts;
 
     @JsonProperty("tx_pkts")
-    private Integer txPkts = null;
+    private Integer txPkts;
 
     @JsonProperty("zero_window_size_events")
-    private Integer zeroWindowSizeEvents = null;
+    private Integer zeroWindowSizeEvents;
 
 
 

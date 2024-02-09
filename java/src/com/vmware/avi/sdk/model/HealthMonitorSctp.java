@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitorSctp  {
     @JsonProperty("sctp_request")
-    private String sctpRequest = null;
+    private String sctpRequest;
 
     @JsonProperty("sctp_response")
-    private String sctpResponse = null;
+    private String sctpResponse;
 
 
 

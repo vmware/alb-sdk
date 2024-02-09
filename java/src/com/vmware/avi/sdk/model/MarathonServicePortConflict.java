@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MarathonServicePortConflict  {
     @JsonProperty("app_name")
-    private String appName = null;
+    private String appName;
 
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("marathon_url")
-    private String marathonUrl = null;
+    private String marathonUrl;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
 
 

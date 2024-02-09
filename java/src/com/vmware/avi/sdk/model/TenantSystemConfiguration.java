@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TenantSystemConfiguration extends AviRestResource  {
     @JsonProperty("dns_virtualservice_refs")
-    private List<String> dnsVirtualserviceRefs = null;
+    private List<String> dnsVirtualserviceRefs;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
     /**

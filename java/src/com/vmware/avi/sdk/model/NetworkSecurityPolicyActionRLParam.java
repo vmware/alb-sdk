@@ -25,7 +25,7 @@ public class NetworkSecurityPolicyActionRLParam  {
     private Integer burstSize = 0;
 
     @JsonProperty("max_rate")
-    private Integer maxRate = null;
+    private Integer maxRate;
 
 
 

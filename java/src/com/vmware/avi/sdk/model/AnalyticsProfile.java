@@ -52,10 +52,10 @@ public class AnalyticsProfile extends AviRestResource  {
     private Float apdexServerRttToleratedFactor = 4.0f;
 
     @JsonProperty("client_log_config")
-    private ClientLogConfiguration clientLogConfig = null;
+    private ClientLogConfiguration clientLogConfig;
 
     @JsonProperty("client_log_streaming_config")
-    private ClientLogStreamingConfig clientLogStreamingConfig = null;
+    private ClientLogStreamingConfig clientLogStreamingConfig;
 
     @JsonProperty("conn_lossy_ooo_threshold")
     private Integer connLossyOooThreshold = 50;
@@ -82,7 +82,7 @@ public class AnalyticsProfile extends AviRestResource  {
     private Integer connServerLossyZeroWinSizeEventThreshold = 2;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable_adaptive_config")
     private Boolean enableAdaptiveConfig = true;
@@ -112,7 +112,7 @@ public class AnalyticsProfile extends AviRestResource  {
     private Boolean excludeGsDownAsError = false;
 
     @JsonProperty("exclude_http_error_codes")
-    private List<Integer> excludeHttpErrorCodes = null;
+    private List<Integer> excludeHttpErrorCodes;
 
     @JsonProperty("exclude_invalid_dns_domain_as_error")
     private Boolean excludeInvalidDnsDomainAsError = false;
@@ -142,7 +142,7 @@ public class AnalyticsProfile extends AviRestResource  {
     private Boolean excludeServerTcpResetAsError = false;
 
     @JsonProperty("exclude_sip_error_codes")
-    private List<Integer> excludeSipErrorCodes = null;
+    private List<Integer> excludeSipErrorCodes;
 
     @JsonProperty("exclude_stale_ocsp_responses_as_error")
     private Boolean excludeStaleOcspResponsesAsError = true;
@@ -247,40 +247,40 @@ public class AnalyticsProfile extends AviRestResource  {
     private Float hsSecurityWeakSignatureAlgoPenalty = 1.0f;
 
     @JsonProperty("latency_audit_props")
-    private LatencyAuditProperties latencyAuditProps = null;
+    private LatencyAuditProperties latencyAuditProps;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("ondemand_metrics_idle_timeout")
     private Integer ondemandMetricsIdleTimeout = 1800;
 
     @JsonProperty("ranges")
-    private List<HTTPStatusRange> ranges = null;
+    private List<HTTPStatusRange> ranges;
 
     @JsonProperty("resp_code_block")
-    private List<String> respCodeBlock = null;
+    private List<String> respCodeBlock;
 
     @JsonProperty("sensitive_log_profile")
-    private SensitiveLogProfile sensitiveLogProfile = null;
+    private SensitiveLogProfile sensitiveLogProfile;
 
     @JsonProperty("sip_log_depth")
     private Integer sipLogDepth = 20;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("time_tracker_props")
-    private TimeTrackerProperties timeTrackerProps = null;
+    private TimeTrackerProperties timeTrackerProps;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

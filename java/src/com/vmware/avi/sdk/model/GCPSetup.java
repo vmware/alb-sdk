@@ -22,43 +22,43 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GCPSetup  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("hostname")
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("network")
-    private String network = null;
+    private String network;
 
     @JsonProperty("nhop_inst")
-    private String nhopInst = null;
+    private String nhopInst;
 
     @JsonProperty("nhop_ip")
-    private IpAddr nhopIp = null;
+    private IpAddr nhopIp;
 
     @JsonProperty("project")
-    private String project = null;
+    private String project;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("route_name")
-    private String routeName = null;
+    private String routeName;
 
     @JsonProperty("subnet")
-    private String subnet = null;
+    private String subnet;
 
     @JsonProperty("vip")
-    private IpAddr vip = null;
+    private IpAddr vip;
 
     @JsonProperty("vs_name")
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
     @JsonProperty("zone")
-    private String zone = null;
+    private String zone;
 
 
 

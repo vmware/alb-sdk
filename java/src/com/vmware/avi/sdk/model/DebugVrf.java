@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugVrf  {
     @JsonProperty("flag")
-    private String flag = null;
+    private String flag;
 
 
 

@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TimeTrackerProperties  {
     @JsonProperty("be_conn_est_audit_mode")
-    private String beConnEstAuditMode = null;
+    private String beConnEstAuditMode;
 
     @JsonProperty("be_conn_est_threshold")
-    private Integer beConnEstThreshold = null;
+    private Integer beConnEstThreshold;
 
     @JsonProperty("fe_conn_est_audit_mode")
-    private String feConnEstAuditMode = null;
+    private String feConnEstAuditMode;
 
     @JsonProperty("fe_conn_est_threshold")
-    private Integer feConnEstThreshold = null;
+    private Integer feConnEstThreshold;
 
     @JsonProperty("ingress_sig_log")
-    private Boolean ingressSigLog = null;
+    private Boolean ingressSigLog;
 
 
 

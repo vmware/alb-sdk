@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConfigUserLogin  {
     @JsonProperty("client_ip")
-    private String clientIp = null;
+    private String clientIp;
 
     @JsonProperty("client_type")
-    private String clientType = null;
+    private String clientType;
 
     @JsonProperty("error_message")
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("local")
-    private Boolean local = null;
+    private Boolean local;
 
     @JsonProperty("remote_attributes")
-    private String remoteAttributes = null;
+    private String remoteAttributes;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
     @JsonProperty("user")
-    private String user = null;
+    private String user;
 
 
 

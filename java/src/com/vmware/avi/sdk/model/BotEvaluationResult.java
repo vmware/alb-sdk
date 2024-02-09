@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotEvaluationResult  {
     @JsonProperty("component")
-    private String component = null;
+    private String component;
 
     @JsonProperty("confidence")
-    private String confidence = null;
+    private String confidence;
 
     @JsonProperty("identification")
-    private BotIdentification identification = null;
+    private BotIdentification identification;
 
     @JsonProperty("notes")
-    private List<String> notes = null;
+    private List<String> notes;
 
 
 

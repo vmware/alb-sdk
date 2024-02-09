@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafPositiveSecurityModel  {
     @JsonProperty("group_refs")
-    private List<String> groupRefs = null;
+    private List<String> groupRefs;
 
 
     /**

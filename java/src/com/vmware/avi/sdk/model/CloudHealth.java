@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudHealth  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("first_fail")
-    private String firstFail = null;
+    private String firstFail;
 
     @JsonProperty("last_fail")
-    private String lastFail = null;
+    private String lastFail;
 
     @JsonProperty("last_ok")
-    private String lastOk = null;
+    private String lastOk;
 
     @JsonProperty("num_fails")
-    private Integer numFails = null;
+    private Integer numFails;
 
     @JsonProperty("vtype")
-    private String vtype = null;
+    private String vtype;
 
 
 

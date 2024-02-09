@@ -22,55 +22,55 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WAFLimits  {
     @JsonProperty("num_allowed_content_types")
-    private Integer numAllowedContentTypes = null;
+    private Integer numAllowedContentTypes;
 
     @JsonProperty("num_allowed_request_content_type_charsets")
-    private Integer numAllowedRequestContentTypeCharsets = null;
+    private Integer numAllowedRequestContentTypeCharsets;
 
     @JsonProperty("num_allowlist_policy_rules")
-    private Integer numAllowlistPolicyRules = null;
+    private Integer numAllowlistPolicyRules;
 
     @JsonProperty("num_applications")
-    private Integer numApplications = null;
+    private Integer numApplications;
 
     @JsonProperty("num_content_type_mappings")
-    private Integer numContentTypeMappings = null;
+    private Integer numContentTypeMappings;
 
     @JsonProperty("num_data_files")
-    private Integer numDataFiles = null;
+    private Integer numDataFiles;
 
     @JsonProperty("num_exclude_list_per_rule_group")
-    private Integer numExcludeListPerRuleGroup = null;
+    private Integer numExcludeListPerRuleGroup;
 
     @JsonProperty("num_pre_post_crs_groups")
-    private Integer numPrePostCrsGroups = null;
+    private Integer numPrePostCrsGroups;
 
     @JsonProperty("num_psm_groups")
-    private Integer numPsmGroups = null;
+    private Integer numPsmGroups;
 
     @JsonProperty("num_psm_match_elements")
-    private Integer numPsmMatchElements = null;
+    private Integer numPsmMatchElements;
 
     @JsonProperty("num_psm_match_rules_per_loc")
-    private Integer numPsmMatchRulesPerLoc = null;
+    private Integer numPsmMatchRulesPerLoc;
 
     @JsonProperty("num_psm_total_locations")
-    private Integer numPsmTotalLocations = null;
+    private Integer numPsmTotalLocations;
 
     @JsonProperty("num_restricted_extensions")
-    private Integer numRestrictedExtensions = null;
+    private Integer numRestrictedExtensions;
 
     @JsonProperty("num_restricted_headers")
-    private Integer numRestrictedHeaders = null;
+    private Integer numRestrictedHeaders;
 
     @JsonProperty("num_rule_tags")
-    private Integer numRuleTags = null;
+    private Integer numRuleTags;
 
     @JsonProperty("num_rules_per_rulegroup")
-    private Integer numRulesPerRulegroup = null;
+    private Integer numRulesPerRulegroup;
 
     @JsonProperty("num_static_extensions")
-    private Integer numStaticExtensions = null;
+    private Integer numStaticExtensions;
 
 
 

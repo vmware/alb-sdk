@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AttackDnsAmplification  {
     @JsonProperty("record_type")
-    private String recordType = null;
+    private String recordType;
 
     @JsonProperty("src_port")
-    private Integer srcPort = null;
+    private Integer srcPort;
 
 
 

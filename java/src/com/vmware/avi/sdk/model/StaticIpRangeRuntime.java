@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StaticIpRangeRuntime  {
     @JsonProperty("allocated_ips")
-    private List<StaticIpAllocInfo> allocatedIps = null;
+    private List<StaticIpAllocInfo> allocatedIps;
 
     @JsonProperty("free_ip_count")
-    private Integer freeIpCount = null;
+    private Integer freeIpCount;
 
     @JsonProperty("total_ip_count")
-    private Integer totalIpCount = null;
+    private Integer totalIpCount;
 
     @JsonProperty("type")
     private String type = "STATIC_IPS_FOR_VIP_AND_SE";

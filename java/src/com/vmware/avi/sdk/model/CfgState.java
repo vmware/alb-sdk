@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CfgState extends AviRestResource  {
     @JsonProperty("cfg_version")
-    private Integer cfgVersion = null;
+    private Integer cfgVersion;
 
     @JsonProperty("cfg_version_in_flight")
-    private Integer cfgVersionInFlight = null;
+    private Integer cfgVersionInFlight;
 
     @JsonProperty("last_changed_time")
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("site_uuid")
-    private String siteUuid = null;
+    private String siteUuid;
 
     @JsonProperty("status")
     private String status = "SYSERR_SUCCESS";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

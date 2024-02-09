@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DosAttackEventDetails  {
     @JsonProperty("attack")
-    private String attack = null;
+    private String attack;
 
     @JsonProperty("attack_count")
-    private Float attackCount = null;
+    private Float attackCount;
 
     @JsonProperty("ipgroup_uuids")
-    private List<String> ipgroupUuids = null;
+    private List<String> ipgroupUuids;
 
     @JsonProperty("meta_data")
-    private List<AttackMetaData> metaData = null;
+    private List<AttackMetaData> metaData;
 
     @JsonProperty("src_ips")
-    private List<String> srcIps = null;
+    private List<String> srcIps;
 
     @JsonProperty("urls")
-    private List<String> urls = null;
+    private List<String> urls;
 
 
 

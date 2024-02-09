@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class vNIC  {
     @JsonProperty("adapter")
-    private String adapter = null;
+    private String adapter;
 
     @JsonProperty("aggregator_chgd")
     private Boolean aggregatorChgd = false;
@@ -31,7 +31,7 @@ public class vNIC  {
     private Boolean canSeDpTakeover = true;
 
     @JsonProperty("connected")
-    private Boolean connected = null;
+    private Boolean connected;
 
     @JsonProperty("del_pending")
     private Boolean delPending = false;
@@ -49,7 +49,7 @@ public class vNIC  {
     private Boolean enabled = true;
 
     @JsonProperty("if_name")
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("ip6_autocfg_enabled")
     private Boolean ip6AutocfgEnabled = true;
@@ -73,43 +73,49 @@ public class vNIC  {
     private Boolean linkUp = true;
 
     @JsonProperty("linux_name")
-    private String linuxName = null;
+    private String linuxName;
 
     @JsonProperty("mac_address")
-    private String macAddress = null;
+    private String macAddress;
 
     @JsonProperty("members")
-    private List<MemberInterface> members = null;
+    private List<MemberInterface> members;
 
     @JsonProperty("mtu")
     private Integer mtu = 1500;
 
     @JsonProperty("network_name")
-    private String networkName = null;
+    private String networkName;
 
     @JsonProperty("network_ref")
-    private String networkRef = null;
+    private String networkRef;
+
+    @JsonProperty("num_rx_descriptors")
+    private Integer numRxDescriptors;
+
+    @JsonProperty("num_tx_descriptors")
+    private Integer numTxDescriptors;
 
     @JsonProperty("pci_id")
-    private String pciId = null;
+    private String pciId;
 
     @JsonProperty("port_uuid")
-    private String portUuid = null;
+    private String portUuid;
 
     @JsonProperty("vlan_id")
     private Integer vlanId = 0;
 
     @JsonProperty("vlan_interfaces")
-    private List<VlanInterface> vlanInterfaces = null;
+    private List<VlanInterface> vlanInterfaces;
 
     @JsonProperty("vnic_networks")
-    private List<vNICNetwork> vnicNetworks = null;
+    private List<vNICNetwork> vnicNetworks;
 
     @JsonProperty("vrf_id")
     private Integer vrfId = 0;
 
     @JsonProperty("vrf_ref")
-    private String vrfRef = null;
+    private String vrfRef;
 
 
 
@@ -610,6 +616,62 @@ public class vNIC  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * User defined value for rx descriptor ring size, expressed as power of 2.
+     * Setting a value of 0 implies the default value for that environment.
+     * (tech-preview, vcenter only).
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numRxDescriptors
+     */
+    public Integer getNumRxDescriptors() {
+        return numRxDescriptors;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * User defined value for rx descriptor ring size, expressed as power of 2.
+     * Setting a value of 0 implies the default value for that environment.
+     * (tech-preview, vcenter only).
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numRxDescriptors set the numRxDescriptors.
+     */
+    public void setNumRxDescriptors(Integer  numRxDescriptors) {
+        this.numRxDescriptors = numRxDescriptors;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * User defined value for tx descriptor ring size, expressed as power of 2.
+     * Setting a value of 0 implies the default value for that environment.
+     * (tech-preview, vcenter only).
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numTxDescriptors
+     */
+    public Integer getNumTxDescriptors() {
+        return numTxDescriptors;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * User defined value for tx descriptor ring size, expressed as power of 2.
+     * Setting a value of 0 implies the default value for that environment.
+     * (tech-preview, vcenter only).
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numTxDescriptors set the numTxDescriptors.
+     */
+    public void setNumTxDescriptors(Integer  numTxDescriptors) {
+        this.numTxDescriptors = numTxDescriptors;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pciId
@@ -815,7 +877,9 @@ public class vNIC  {
   Objects.equals(this.aggregatorChgd, objvNIC.aggregatorChgd)&&
   Objects.equals(this.dpDeletionDone, objvNIC.dpDeletionDone)&&
   Objects.equals(this.deleteVnic, objvNIC.deleteVnic)&&
-  Objects.equals(this.linkUp, objvNIC.linkUp);
+  Objects.equals(this.linkUp, objvNIC.linkUp)&&
+  Objects.equals(this.numRxDescriptors, objvNIC.numRxDescriptors)&&
+  Objects.equals(this.numTxDescriptors, objvNIC.numTxDescriptors);
     }
 
     @Override
@@ -845,6 +909,8 @@ public class vNIC  {
                         sb.append("    mtu: ").append(toIndentedString(mtu)).append("\n");
                         sb.append("    networkName: ").append(toIndentedString(networkName)).append("\n");
                         sb.append("    networkRef: ").append(toIndentedString(networkRef)).append("\n");
+                        sb.append("    numRxDescriptors: ").append(toIndentedString(numRxDescriptors)).append("\n");
+                        sb.append("    numTxDescriptors: ").append(toIndentedString(numTxDescriptors)).append("\n");
                         sb.append("    pciId: ").append(toIndentedString(pciId)).append("\n");
                         sb.append("    portUuid: ").append(toIndentedString(portUuid)).append("\n");
                         sb.append("    vlanId: ").append(toIndentedString(vlanId)).append("\n");

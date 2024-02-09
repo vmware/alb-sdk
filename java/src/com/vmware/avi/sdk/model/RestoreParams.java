@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RestoreParams  {
     @JsonProperty("file")
-    private String file = null;
+    private String file;
 
     @JsonProperty("passphrase")
-    private String passphrase = null;
+    private String passphrase;
 
     @JsonProperty("prechecks_only")
     private Boolean prechecksOnly = false;

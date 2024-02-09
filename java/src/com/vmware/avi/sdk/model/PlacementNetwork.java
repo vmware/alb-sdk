@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PlacementNetwork  {
     @JsonProperty("network_ref")
-    private String networkRef = null;
+    private String networkRef;
 
     @JsonProperty("subnet")
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
 
 

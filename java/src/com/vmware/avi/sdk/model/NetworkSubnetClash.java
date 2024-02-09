@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NetworkSubnetClash  {
     @JsonProperty("ip_nw")
-    private String ipNw = null;
+    private String ipNw;
 
     @JsonProperty("networks")
-    private List<String> networks = null;
+    private List<String> networks;
 
 
 

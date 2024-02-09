@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotClassMatcher  {
     @JsonProperty("client_classes")
-    private List<String> clientClasses = null;
+    private List<String> clientClasses;
 
     @JsonProperty("op")
     private String op = "IS_IN";

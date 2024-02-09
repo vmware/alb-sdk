@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ALBServicesUser  {
     @JsonProperty("account_id")
-    private String accountId = null;
+    private String accountId;
 
     @JsonProperty("account_name")
-    private String accountName = null;
+    private String accountName;
 
     @JsonProperty("email")
-    private String email = null;
+    private String email;
 
     @JsonProperty("managed_accounts")
-    private List<ALBServicesAccount> managedAccounts = null;
+    private List<ALBServicesAccount> managedAccounts;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("phone")
-    private String phone = null;
+    private String phone;
 
 
 

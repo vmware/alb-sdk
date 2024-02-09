@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsSeVnic  {
     @JsonProperty("lif")
-    private String lif = null;
+    private String lif;
 
     @JsonProperty("mac")
-    private String mac = null;
+    private String mac;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

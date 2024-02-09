@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicenseDetails  {
     @JsonProperty("backend_servers")
-    private Integer backendServers = null;
+    private Integer backendServers;
 
     @JsonProperty("expiry_at")
-    private String expiryAt = null;
+    private String expiryAt;
 
     @JsonProperty("license_id")
-    private String licenseId = null;
+    private String licenseId;
 
     @JsonProperty("license_type")
-    private String licenseType = null;
+    private String licenseType;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsRule  {
     @JsonProperty("action")
-    private DnsRuleAction action = null;
+    private DnsRuleAction action;
 
     @JsonProperty("enable")
     private Boolean enable = true;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("log")
-    private Boolean log = null;
+    private Boolean log;
 
     @JsonProperty("match")
-    private DnsRuleMatchTarget match = null;
+    private DnsRuleMatchTarget match;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

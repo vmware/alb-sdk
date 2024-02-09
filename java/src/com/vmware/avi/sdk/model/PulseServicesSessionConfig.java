@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PulseServicesSessionConfig  {
     @JsonProperty("session_headers")
-    private List<SessionHeaders> sessionHeaders = null;
+    private List<SessionHeaders> sessionHeaders;
 
 
     /**

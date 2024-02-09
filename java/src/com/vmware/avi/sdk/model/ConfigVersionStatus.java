@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConfigVersionStatus  {
     @JsonProperty("event_type")
-    private String eventType = null;
+    private String eventType;
 
     @JsonProperty("obj_name")
-    private String objName = null;
+    private String objName;
 
     @JsonProperty("obj_uuid")
-    private String objUuid = null;
+    private String objUuid;
 
 
 

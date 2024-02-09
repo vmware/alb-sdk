@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ALBServicesJobParam  {
     @JsonProperty("key")
-    private String key = null;
+    private String key;
 
     @JsonProperty("value")
-    private String value = null;
+    private String value;
 
 
 

@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudDnsUpdate  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("dns_fqdn")
-    private String dnsFqdn = null;
+    private String dnsFqdn;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("fip")
-    private IpAddr fip = null;
+    private IpAddr fip;
 
     @JsonProperty("vip")
-    private IpAddr vip = null;
+    private IpAddr vip;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
     @JsonProperty("vtype")
-    private String vtype = null;
+    private String vtype;
 
 
 

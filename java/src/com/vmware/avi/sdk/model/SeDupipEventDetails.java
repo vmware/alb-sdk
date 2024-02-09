@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeDupipEventDetails  {
     @JsonProperty("local_mac")
-    private String localMac = null;
+    private String localMac;
 
     @JsonProperty("remote_mac")
-    private String remoteMac = null;
+    private String remoteMac;
 
     @JsonProperty("vnic_ip")
-    private String vnicIp = null;
+    private String vnicIp;
 
     @JsonProperty("vnic_name")
-    private String vnicName = null;
+    private String vnicName;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LinuxConfiguration  {
     @JsonProperty("banner")
-    private String banner = null;
+    private String banner;
 
     @JsonProperty("cis_mode")
     private Boolean cisMode = false;
 
     @JsonProperty("motd")
-    private String motd = null;
+    private String motd;
 
 
 

@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HSMgrDebugFilter  {
     @JsonProperty("entity")
-    private String entity = null;
+    private String entity;
 
     @JsonProperty("metric_entity")
-    private String metricEntity = null;
+    private String metricEntity;
 
     @JsonProperty("period")
-    private Integer period = null;
+    private Integer period;
 
     @JsonProperty("pool")
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("server")
-    private String server = null;
+    private String server;
 
     @JsonProperty("skip_hs_db_writes")
-    private Boolean skipHsDbWrites = null;
+    private Boolean skipHsDbWrites;
 
 
 

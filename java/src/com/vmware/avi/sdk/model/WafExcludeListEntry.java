@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafExcludeListEntry  {
     @JsonProperty("client_subnet")
-    private IpAddrPrefix clientSubnet = null;
+    private IpAddrPrefix clientSubnet;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("match_element")
-    private String matchElement = null;
+    private String matchElement;
 
     @JsonProperty("match_element_criteria")
-    private WafExclusionType matchElementCriteria = null;
+    private WafExclusionType matchElementCriteria;
 
     @JsonProperty("uri_match_criteria")
-    private WafExclusionType uriMatchCriteria = null;
+    private WafExclusionType uriMatchCriteria;
 
     @JsonProperty("uri_path")
-    private String uriPath = null;
+    private String uriPath;
 
 
 

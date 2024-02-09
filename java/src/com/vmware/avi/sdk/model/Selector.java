@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Selector  {
     @JsonProperty("labels")
-    private List<KeyValueTuple> labels = null;
+    private List<KeyValueTuple> labels;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
     /**

@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RmAddNetworksEventDetails  {
     @JsonProperty("networks")
-    private List<RmAddVnic> networks = null;
+    private List<RmAddVnic> networks;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_uuid")
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("vs_name")
-    private List<String> vsName = null;
+    private List<String> vsName;
 
     @JsonProperty("vs_uuid")
-    private List<String> vsUuid = null;
+    private List<String> vsUuid;
 
 
     /**

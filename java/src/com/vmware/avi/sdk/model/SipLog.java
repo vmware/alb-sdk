@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SipLog  {
     @JsonProperty("server_protocol")
-    private String serverProtocol = null;
+    private String serverProtocol;
 
     @JsonProperty("sip_callid_hdr")
-    private String sipCallidHdr = null;
+    private String sipCallidHdr;
 
     @JsonProperty("sip_contact_hdr")
-    private String sipContactHdr = null;
+    private String sipContactHdr;
 
     @JsonProperty("sip_from_hdr")
-    private String sipFromHdr = null;
+    private String sipFromHdr;
 
     @JsonProperty("sip_messages")
-    private List<SipMessage> sipMessages = null;
+    private List<SipMessage> sipMessages;
 
     @JsonProperty("sip_to_hdr")
-    private String sipToHdr = null;
+    private String sipToHdr;
 
 
 

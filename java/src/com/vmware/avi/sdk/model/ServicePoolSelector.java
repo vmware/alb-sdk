@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServicePoolSelector  {
     @JsonProperty("service_pool_group_ref")
-    private String servicePoolGroupRef = null;
+    private String servicePoolGroupRef;
 
     @JsonProperty("service_pool_ref")
-    private String servicePoolRef = null;
+    private String servicePoolRef;
 
     @JsonProperty("service_port")
-    private Integer servicePort = null;
+    private Integer servicePort;
 
     @JsonProperty("service_port_range_end")
     private Integer servicePortRangeEnd = 0;
 
     @JsonProperty("service_protocol")
-    private String serviceProtocol = null;
+    private String serviceProtocol;
 
 
 

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DispatcherTableDumpClear  {
     @JsonProperty("se_uuid")
-    private String seUuid = null;
+    private String seUuid;
 
 
 

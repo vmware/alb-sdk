@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HardwareSecurityModule  {
     @JsonProperty("cloudhsm")
-    private HSMAwsCloudHsm cloudhsm = null;
+    private HSMAwsCloudHsm cloudhsm;
 
     @JsonProperty("nethsm")
-    private List<HSMThalesNetHsm> nethsm = null;
+    private List<HSMThalesNetHsm> nethsm;
 
     @JsonProperty("rfs")
-    private HSMThalesRFS rfs = null;
+    private HSMThalesRFS rfs;
 
     @JsonProperty("sluna")
-    private HSMSafenetLuna sluna = null;
+    private HSMSafenetLuna sluna;
 
     @JsonProperty("type")
     private String type = "HSM_TYPE_SAFENET_LUNA";

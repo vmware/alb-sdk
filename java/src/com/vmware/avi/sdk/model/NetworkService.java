@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NetworkService extends AviRestResource  {
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("routing_service")
-    private RoutingService routingService = null;
+    private RoutingService routingService;
 
     @JsonProperty("se_group_ref")
-    private String seGroupRef = null;
+    private String seGroupRef;
 
     @JsonProperty("service_type")
-    private String serviceType = null;
+    private String serviceType;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vrf_ref")
-    private String vrfRef = null;
+    private String vrfRef;
 
 
 

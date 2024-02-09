@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UDPFastPathProfile  {
     @JsonProperty("dsr_profile")
-    private DsrProfile dsrProfile = null;
+    private DsrProfile dsrProfile;
 
     @JsonProperty("per_pkt_loadbalance")
     private Boolean perPktLoadbalance = false;

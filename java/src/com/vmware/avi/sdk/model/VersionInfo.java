@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VersionInfo extends AviRestResource  {
     @JsonProperty("ds_name")
-    private String dsName = null;
+    private String dsName;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("ops")
-    private String ops = null;
+    private String ops;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

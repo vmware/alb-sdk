@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VinfraVcenterNetworkLimit  {
     @JsonProperty("additional_reason")
-    private String additionalReason = null;
+    private String additionalReason;
 
     @JsonProperty("current")
-    private Integer current = null;
+    private Integer current;
 
     @JsonProperty("limit")
-    private Integer limit = null;
+    private Integer limit;
 
 
 

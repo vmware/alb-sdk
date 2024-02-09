@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CapturePacketFilter  {
     @JsonProperty("capture_tcp_filters")
-    private List<CaptureTCPFilter> captureTcpFilters = null;
+    private List<CaptureTCPFilter> captureTcpFilters;
 
 
     /**

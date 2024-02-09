@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SSLClientRequestHeader  {
     @JsonProperty("request_header")
-    private String requestHeader = null;
+    private String requestHeader;
 
     @JsonProperty("request_header_value")
-    private String requestHeaderValue = null;
+    private String requestHeaderValue;
 
 
 

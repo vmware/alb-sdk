@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsMgrDebugFilter  {
     @JsonProperty("debug_skip_eval_period")
-    private String debugSkipEvalPeriod = null;
+    private String debugSkipEvalPeriod;
 
     @JsonProperty("disable_hw_training")
-    private String disableHwTraining = null;
+    private String disableHwTraining;
 
     @JsonProperty("entity")
-    private String entity = null;
+    private String entity;
 
     @JsonProperty("license_grace_period")
-    private String licenseGracePeriod = null;
+    private String licenseGracePeriod;
 
     @JsonProperty("log_first_n")
-    private String logFirstN = null;
+    private String logFirstN;
 
     @JsonProperty("logging_freq")
-    private String loggingFreq = null;
+    private String loggingFreq;
 
     @JsonProperty("metric_instance_id")
-    private String metricInstanceId = null;
+    private String metricInstanceId;
 
     @JsonProperty("obj")
-    private String obj = null;
+    private String obj;
 
     @JsonProperty("skip_cluster_map_check")
-    private String skipClusterMapCheck = null;
+    private String skipClusterMapCheck;
 
     @JsonProperty("skip_metrics_db_writes")
-    private String skipMetricsDbWrites = null;
+    private String skipMetricsDbWrites;
 
 
 

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthzRuleMatch  {
     @JsonProperty("rule_action")
-    private String ruleAction = null;
+    private String ruleAction;
 
     @JsonProperty("rule_name")
-    private String ruleName = null;
+    private String ruleName;
 
 
 

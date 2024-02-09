@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StatediffEvent  {
     @JsonProperty("duration")
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("message")
-    private String message = null;
+    private String message;
 
     @JsonProperty("start_time")
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("status")
     private String status = "FB_INIT";
 
     @JsonProperty("task_name")
-    private String taskName = null;
+    private String taskName;
 
 
 

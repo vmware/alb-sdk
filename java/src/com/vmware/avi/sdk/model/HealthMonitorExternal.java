@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitorExternal  {
     @JsonProperty("command_code")
-    private String commandCode = null;
+    private String commandCode;
 
     @JsonProperty("command_parameters")
-    private String commandParameters = null;
+    private String commandParameters;
 
     @JsonProperty("command_path")
-    private String commandPath = null;
+    private String commandPath;
 
     @JsonProperty("command_variables")
-    private String commandVariables = null;
+    private String commandVariables;
 
 
 

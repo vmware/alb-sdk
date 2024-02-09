@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicenseStatus extends AviRestResource  {
     @JsonProperty("saas_status")
-    private SaasLicensingStatus saasStatus = null;
+    private SaasLicensingStatus saasStatus;
 
     @JsonProperty("service_update")
-    private LicenseServiceUpdate serviceUpdate = null;
+    private LicenseServiceUpdate serviceUpdate;
 
     @JsonProperty("tenant_uuid")
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

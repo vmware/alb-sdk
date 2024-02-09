@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotAllowList  {
     @JsonProperty("rules")
-    private List<BotAllowRule> rules = null;
+    private List<BotAllowRule> rules;
 
 
     /**

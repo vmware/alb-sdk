@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DNSConfig  {
     @JsonProperty("domain_name")
-    private String domainName = null;
+    private String domainName;
 
 
 

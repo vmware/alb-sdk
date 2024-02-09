@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IcapOPSWATLog  {
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("threat_id")
-    private String threatId = null;
+    private String threatId;
 
     @JsonProperty("violations")
-    private List<IcapViolation> violations = null;
+    private List<IcapViolation> violations;
 
 
 

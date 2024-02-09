@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AbPool  {
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("ratio")
     private Integer ratio = 0;

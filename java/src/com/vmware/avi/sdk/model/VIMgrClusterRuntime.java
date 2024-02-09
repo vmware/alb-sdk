@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VIMgrClusterRuntime extends AviRestResource  {
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("datacenter_managed_object_id")
-    private String datacenterManagedObjectId = null;
+    private String datacenterManagedObjectId;
 
     @JsonProperty("datacenter_uuid")
-    private String datacenterUuid = null;
+    private String datacenterUuid;
 
     @JsonProperty("host_refs")
-    private List<String> hostRefs = null;
+    private List<String> hostRefs;
 
     @JsonProperty("managed_object_id")
-    private String managedObjectId = null;
+    private String managedObjectId;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

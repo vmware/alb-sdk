@@ -25,16 +25,16 @@ public class HSMAwsCloudHsm  {
     private String clientConfig;
 
     @JsonProperty("cluster_cert")
-    private String clusterCert = null;
+    private String clusterCert;
 
     @JsonProperty("crypto_user_name")
-    private String cryptoUserName = null;
+    private String cryptoUserName;
 
     @JsonProperty("crypto_user_password")
-    private String cryptoUserPassword = null;
+    private String cryptoUserPassword;
 
     @JsonProperty("hsm_ip")
-    private List<String> hsmIp = null;
+    private List<String> hsmIp;
 
     @JsonProperty("mgmt_config")
     private String mgmtConfig;

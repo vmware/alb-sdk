@@ -34,13 +34,13 @@ public class Service  {
     private Boolean isActiveFtpDataPort = false;
 
     @JsonProperty("override_application_profile_ref")
-    private String overrideApplicationProfileRef = null;
+    private String overrideApplicationProfileRef;
 
     @JsonProperty("override_network_profile_ref")
-    private String overrideNetworkProfileRef = null;
+    private String overrideNetworkProfileRef;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("port_range_end")
     private Integer portRangeEnd = 0;

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpAddrRange  {
     @JsonProperty("begin")
-    private IpAddr begin = null;
+    private IpAddr begin;
 
     @JsonProperty("end")
-    private IpAddr end = null;
+    private IpAddr end;
 
 
 

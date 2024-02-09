@@ -25,25 +25,25 @@ public class vCloudAirConfiguration  {
     private String privilege = "WRITE_ACCESS";
 
     @JsonProperty("vca_host")
-    private String vcaHost = null;
+    private String vcaHost;
 
     @JsonProperty("vca_instance")
-    private String vcaInstance = null;
+    private String vcaInstance;
 
     @JsonProperty("vca_mgmt_network")
-    private String vcaMgmtNetwork = null;
+    private String vcaMgmtNetwork;
 
     @JsonProperty("vca_orgnization")
-    private String vcaOrgnization = null;
+    private String vcaOrgnization;
 
     @JsonProperty("vca_password")
-    private String vcaPassword = null;
+    private String vcaPassword;
 
     @JsonProperty("vca_username")
-    private String vcaUsername = null;
+    private String vcaUsername;
 
     @JsonProperty("vca_vdc")
-    private String vcaVdc = null;
+    private String vcaVdc;
 
 
 

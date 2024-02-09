@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeBgpPeerDownDetails  {
     @JsonProperty("message")
-    private String message = null;
+    private String message;
 
     @JsonProperty("peer_ip")
-    private String peerIp = null;
+    private String peerIp;
 
     @JsonProperty("vrf_name")
-    private String vrfName = null;
+    private String vrfName;
 
 
 

@@ -25,10 +25,10 @@ public class AuthProfileHTTPClientParams  {
     private Integer cacheExpirationTime = 5;
 
     @JsonProperty("request_header")
-    private String requestHeader = null;
+    private String requestHeader;
 
     @JsonProperty("require_user_groups")
-    private List<String> requireUserGroups = null;
+    private List<String> requireUserGroups;
 
 
 
