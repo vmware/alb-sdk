@@ -541,6 +541,7 @@ public class VirtualService extends AviRestResource  {
      * Bot detection policy for the virtual service.
      * It is a reference to an object of type botdetectionpolicy.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return botPolicyRef
      */
@@ -553,6 +554,7 @@ public class VirtualService extends AviRestResource  {
      * Bot detection policy for the virtual service.
      * It is a reference to an object of type botdetectionpolicy.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param botPolicyRef set the botPolicyRef.
      */
