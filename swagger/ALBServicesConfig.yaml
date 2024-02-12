@@ -564,20 +564,20 @@ definitions:
         type: object
         properties:
             enable_appsignature_sync:
-                description: "Enable to receive Application specific signature updates. Field introduced in 20.1.4. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition."
+                description: "Enable to receive Application specific signature updates. Field introduced in 20.1.4. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition."
                 type: boolean
             enable_ip_reputation:
-                description: "Enable to receive IP reputation updates. Field introduced in 20.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition."
+                description: "Enable to receive IP reputation updates. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition."
                 type: boolean
             enable_pulse_case_management:
-                description: "Enable Pulse Cloud Services Case Management. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Enterprise edition is false, Essentials edition is false, Basic edition is false, Enterprise is True."
+                description: "Enable Pulse Cloud Services Case Management. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True."
                 type: boolean
                 default: True
             enable_pulse_inventory:
                 description: "Enable Pulse Cloud Services Inventory. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is False."
                 type: boolean
             enable_pulse_waf_management:
-                description: "Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Enterprise edition is false, Essentials edition is false, Basic edition is false, Enterprise is True."
+                description: "Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True."
                 type: boolean
                 default: True
             enable_search_info:
@@ -690,7 +690,7 @@ definitions:
         type: object
         properties:
             enable_auto_download_waf_signatures:
-                description: "Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition."
+                description: "Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition."
                 type: boolean
             enable_waf_signatures_notifications:
                 description: "Enable event notifications when new WAF signatures/CRS versions are available. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True."
