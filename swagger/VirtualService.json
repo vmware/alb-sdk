@@ -6759,7 +6759,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "description": "SSO Policy Type. Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP, SSO_TYPE_OAUTH. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "SSO Policy Type. Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP, SSO_TYPE_OAUTH. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition(Allowed values- SSO_TYPE_SAML, SSO_TYPE_JWT, SSO_TYPE_LDAP, SSO_TYPE_OAUTH), Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SSO_TYPE_SAML"
                 },
