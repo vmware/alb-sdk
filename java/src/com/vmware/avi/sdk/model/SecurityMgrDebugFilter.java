@@ -27,6 +27,9 @@ public class SecurityMgrDebugFilter  {
     @JsonProperty("entity_ref")
     private String entityRef;
 
+    @JsonProperty("psm_rule_id_multiplier")
+    private Integer psmRuleIdMultiplier;
+
 
 
     /**
@@ -79,6 +82,32 @@ public class SecurityMgrDebugFilter  {
         this.entityRef = entityRef;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Dynamically update the multiplier for rule id generation in psm programming for learning feature.
+     * Allowed values are 10-100000.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return psmRuleIdMultiplier
+     */
+    public Integer getPsmRuleIdMultiplier() {
+        return psmRuleIdMultiplier;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Dynamically update the multiplier for rule id generation in psm programming for learning feature.
+     * Allowed values are 10-100000.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param psmRuleIdMultiplier set the psmRuleIdMultiplier.
+     */
+    public void setPsmRuleIdMultiplier(Integer  psmRuleIdMultiplier) {
+        this.psmRuleIdMultiplier = psmRuleIdMultiplier;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,7 +119,8 @@ public class SecurityMgrDebugFilter  {
       }
       SecurityMgrDebugFilter objSecurityMgrDebugFilter = (SecurityMgrDebugFilter) o;
       return   Objects.equals(this.entityRef, objSecurityMgrDebugFilter.entityRef)&&
-  Objects.equals(this.enableAdaptiveConfig, objSecurityMgrDebugFilter.enableAdaptiveConfig);
+  Objects.equals(this.enableAdaptiveConfig, objSecurityMgrDebugFilter.enableAdaptiveConfig)&&
+  Objects.equals(this.psmRuleIdMultiplier, objSecurityMgrDebugFilter.psmRuleIdMultiplier);
     }
 
     @Override
@@ -99,6 +129,7 @@ public class SecurityMgrDebugFilter  {
       sb.append("class SecurityMgrDebugFilter {\n");
                   sb.append("    enableAdaptiveConfig: ").append(toIndentedString(enableAdaptiveConfig)).append("\n");
                         sb.append("    entityRef: ").append(toIndentedString(entityRef)).append("\n");
+                        sb.append("    psmRuleIdMultiplier: ").append(toIndentedString(psmRuleIdMultiplier)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
