@@ -988,7 +988,7 @@ paths:
                     description: not found
 
 
-    /albservicesfiledownload:
+    /debugvirtualservice:
         get:
             consumes:
                 -   application/json
@@ -1052,7 +1052,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownloadApiResponse"
+                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
                 401:
                     description: log in failed
         post:
@@ -1083,20 +1083,20 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: ALBServicesFileDownload object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/DebugVirtualService"
             security:
                 - basicAuth: []
             responses:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/DebugVirtualService"
                 401:
                     description: log in failed
-    /albservicesfiledownload/{uuid}:
+    /debugvirtualservice/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -1157,7 +1157,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/DebugVirtualService"
                 401:
                     description: log in failed
         put:
@@ -1193,10 +1193,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: ALBServicesFileDownload object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/DebugVirtualService"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1208,7 +1208,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/DebugVirtualService"
                 401:
                     description: log in failed
         patch:
@@ -1244,10 +1244,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: ALBServicesFileDownload object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/DebugVirtualService"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1259,7 +1259,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/DebugVirtualService"
                 401:
                     description: log in failed
         delete:
@@ -1630,7 +1630,7 @@ paths:
                     description: not found
 
 
-    /debugvirtualservice:
+    /albservicesfiledownload:
         get:
             consumes:
                 -   application/json
@@ -1694,7 +1694,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
+                        $ref: "#/definitions/ALBServicesFileDownloadApiResponse"
                 401:
                     description: log in failed
         post:
@@ -1725,20 +1725,20 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: ALBServicesFileDownload object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/ALBServicesFileDownload"
             security:
                 - basicAuth: []
             responses:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/ALBServicesFileDownload"
                 401:
                     description: log in failed
-    /debugvirtualservice/{uuid}:
+    /albservicesfiledownload/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -1799,7 +1799,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/ALBServicesFileDownload"
                 401:
                     description: log in failed
         put:
@@ -1835,10 +1835,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: ALBServicesFileDownload object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/ALBServicesFileDownload"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1850,7 +1850,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/ALBServicesFileDownload"
                 401:
                     description: log in failed
         patch:
@@ -1886,10 +1886,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: ALBServicesFileDownload object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/ALBServicesFileDownload"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1901,7 +1901,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/ALBServicesFileDownload"
                 401:
                     description: log in failed
         delete:
