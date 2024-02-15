@@ -34,7 +34,7 @@ type ALBServicesConfig struct {
 	// Required: true
 	IPReputationConfig *IPReputationConfig `json:"ip_reputation_config"`
 
-	// Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Basic edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Enterprise with Cloud Services edition.
+	// Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Basic edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Enterprise with Cloud Services edition.
 	Mode *string `json:"mode,omitempty"`
 
 	// Name of the ALBServicesConfig object. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
