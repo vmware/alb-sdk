@@ -13,6 +13,7 @@ import (
 	"io/ioutil"
 	"math"
 	"mime/multipart"
+	"net"
 	"net/http"
 	"net/http/httputil"
 	"os"
@@ -290,6 +291,15 @@ const DEFAULT_API_TENANT = "admin"
 const DEFAULT_MAX_API_RETRIES = 3
 const DEFAULT_API_RETRY_INTERVAL = 500
 
+func GetIpVersion(ipAddr string) net.IP {
+	ip := net.ParseIP(ipAddr)
+	if ip == nil {
+		glog.Errorf("Controller Host is not valid.")
+		return nil
+	}
+	return ip
+}
+
 // NewAviSession initiates a session to AviController and returns it
 func NewAviSession(host string, username string, options ...func(*AviSession) error) (*AviSession, error) {
 	if flag.Parsed() == false {
@@ -301,7 +311,17 @@ func NewAviSession(host string, username string, options ...func(*AviSession) er
 	}
 	avisess.sessionid = ""
 	avisess.csrfToken = ""
-	avisess.prefix = "https://" + avisess.host + "/"
+
+	if strings.HasPrefix(avisess.host, "http") {
+		avisess.prefix = avisess.host + "/"
+	} else {
+		ip := GetIpVersion(avisess.host)
+		if ip.To4() != nil {
+			avisess.prefix = "https://" + avisess.host + "/"
+		} else if ip.To16() != nil {
+			avisess.prefix = fmt.Sprintf("https://[%s]/", avisess.host)
+		}
+	}
 	avisess.tenant = ""
 	avisess.insecure = false
 	// The default behaviour was for 10 iterations, if client does not init session with specific retry
