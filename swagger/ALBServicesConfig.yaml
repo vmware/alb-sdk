@@ -412,7 +412,7 @@ definitions:
                 description: "Default values to be used for IP Reputation sync. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpReputationConfig'
             mode:
-                description: "Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Basic edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Enterprise with Cloud Services edition."
+                description: "Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Basic edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Enterprise with Cloud Services edition."
                 type: string
                 default: "MYVMWARE"
             name:
