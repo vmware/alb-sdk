@@ -488,48 +488,36 @@ class NsUtil(MigrationUtil):
             'ApplicationProfile']) if p['name'] == profile_name]
         if profile:
             if prop_dict.get('clttimeout'):
-                profile[0]['client_header_timeout'] = int(prop_dict[
-                                                              'clttimeout'])
-                profile[0]['client_body_timeout'] = int(prop_dict['clttimeout'])
-            if prop_dict.get('xff_enabled'):
+                timeout_dict = {
+                    'client_header_timeout': int(prop_dict['clttimeout']),
+                    'client_body_timeout': int(prop_dict['clttimeout'])
+                }
                 if profile[0].get('http_profile'):
-                    profile[0]['http_profile'].update(
-                        {
-                            'xff_enabled': True,
-                            'xff_alternate_name': 'X-Forwarded-For'
-                        }
-                    )
+                    profile[0]['http_profile'].update(timeout_dict)
                 else:
-                    profile[0].update({'http_profile':
-                        {
-                            'xff_enabled': True,
-                            'xff_alternate_name': 'X-Forwarded-For'
-                        }
-                    })
+                    profile[0].update({'http_profile': timeout_dict})
+            if prop_dict.get('xff_enabled'):
+                xff_dict = {
+                    'xff_enabled': True,
+                    'xff_alternate_name': 'X-Forwarded-For'
+                }
+                if profile[0].get('http_profile'):
+                    profile[0]['http_profile'].update(xff_dict)
+                else:
+                    profile[0].update({'http_profile': xff_dict})
+            http_profile_attr_dict = {
+                'x_forwarded_proto_enabled': True,
+                'hsts_enabled': True,
+                'http_to_https': True,
+                'httponly_enabled': True,
+                'hsts_max_age': 365,
+                'server_side_redirect_to_https': True,
+                'secure_cookie_enabled': True
+            }
             if profile[0].get('http_profile'):
-                profile[0]['http_profile'].update(
-                    {
-                        'x_forwarded_proto_enabled': True,
-                        'hsts_enabled': True,
-                        'http_to_https': True,
-                        'httponly_enabled': True,
-                        'hsts_max_age': 365,
-                        'server_side_redirect_to_https': True,
-                        'secure_cookie_enabled': True
-                    }
-                )
+                profile[0]['http_profile'].update(http_profile_attr_dict)
             else:
-                profile[0].update({'http_profile':
-                    {
-                        'x_forwarded_proto_enabled': True,
-                        'hsts_enabled': True,
-                        'http_to_https': True,
-                        'httponly_enabled': True,
-                        'hsts_max_age': 365,
-                        'server_side_redirect_to_https': True,
-                        'secure_cookie_enabled': True
-                    }
-                })
+                profile[0].update({'http_profile': http_profile_attr_dict})
 
     def object_exist(self, object_type, name, avi_config):
         '''
