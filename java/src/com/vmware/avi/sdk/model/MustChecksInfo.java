@@ -36,6 +36,9 @@ public class MustChecksInfo  {
     @JsonProperty("end_time")
     private String endTime;
 
+    @JsonProperty("error_details")
+    private List<String> errorDetails;
+
     @JsonProperty("start_time")
     private String startTime;
 
@@ -99,7 +102,7 @@ public class MustChecksInfo  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Additional details of the must check failure.
+     * Additional details of the must check.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -111,7 +114,7 @@ public class MustChecksInfo  {
 
     /**
      * This is the setter method. this will set the details
-     * Additional details of the must check failure.
+     * Additional details of the must check.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -123,7 +126,7 @@ public class MustChecksInfo  {
 
     /**
      * This is the setter method this will set the details
-     * Additional details of the must check failure.
+     * Additional details of the must check.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -185,6 +188,45 @@ public class MustChecksInfo  {
      */
     public void setEndTime(String  endTime) {
         this.endTime = endTime;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Error/failure details of the must check.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return errorDetails
+     */
+    public List<String> getErrorDetails() {
+        return errorDetails;
+    }
+
+    /**
+     * This is the setter method. this will set the errorDetails
+     * Error/failure details of the must check.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return errorDetails
+     */
+    public void setErrorDetails(List<String>  errorDetails) {
+        this.errorDetails = errorDetails;
+    }
+
+    /**
+     * This is the setter method this will set the errorDetails
+     * Error/failure details of the must check.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return errorDetails
+     */
+    public MustChecksInfo addErrorDetailsItem(String errorDetailsItem) {
+      if (this.errorDetails == null) {
+        this.errorDetails = new ArrayList<String>();
+      }
+      this.errorDetails.add(errorDetailsItem);
+      return this;
     }
 
     /**
@@ -259,7 +301,8 @@ public class MustChecksInfo  {
   Objects.equals(this.state, objMustChecksInfo.state)&&
   Objects.equals(this.startTime, objMustChecksInfo.startTime)&&
   Objects.equals(this.endTime, objMustChecksInfo.endTime)&&
-  Objects.equals(this.duration, objMustChecksInfo.duration);
+  Objects.equals(this.duration, objMustChecksInfo.duration)&&
+  Objects.equals(this.errorDetails, objMustChecksInfo.errorDetails);
     }
 
     @Override
@@ -271,6 +314,7 @@ public class MustChecksInfo  {
                         sb.append("    details: ").append(toIndentedString(details)).append("\n");
                         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
                         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+                        sb.append("    errorDetails: ").append(toIndentedString(errorDetails)).append("\n");
                         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
                         sb.append("    state: ").append(toIndentedString(state)).append("\n");
                   sb.append("}");
