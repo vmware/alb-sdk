@@ -31,7 +31,7 @@ class VSConfig(unittest.TestCase):
     def test_run_input_config_over_ns_tool(self):
         os.system('python netscaler_converter/netscaler_converter.py -f '
                   'netscaler_converter/test/input_vs_configuration.conf -l '
-                  'netscaler_converter/test/certs --no_profile_merge')
+                  'netscaler_converter/test/certs')
 
     def test_pool_groups(self):
         """
