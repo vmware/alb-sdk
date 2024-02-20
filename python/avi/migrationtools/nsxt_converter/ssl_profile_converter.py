@@ -3,13 +3,11 @@
 
 import logging
 import os
-import json
+
 from avi.migrationtools.avi_migration_utils import update_count, MigrationUtil
 from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil
 import avi.migrationtools.nsxt_converter.converter_constants as final
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
-
-
 
 LOG = logging.getLogger(__name__)
 
@@ -33,7 +31,6 @@ class SslProfileConfigConv(object):
         self.merge_object_mapping = merge_object_mapping
         self.sys_dict = sys_dict
         self.ssl_profile_count = 0
-        self.sup_ciphers,self.unsup_ciphers=conv_utils.get_supported_n_unsupported_ciphers_dict()
 
     def convert(self, alb_config, nsx_lb_config, prefix, tenant):
         alb_config["SSLProfile"] = []
@@ -80,7 +77,7 @@ class SslProfileConfigConv(object):
                         alb_ssl['ssl_session_timeout'] = lb_ssl['session_cache_timeout']
 
                     if lb_ssl.get("ciphers"):
-                        converted_ciphers,unsup_cipher_from_cipher_str = self.convert_ciphers(":".join(lb_ssl['ciphers']))
+                        converted_ciphers = self.convert_ciphers_to_valid_format(":".join(lb_ssl['ciphers']))
                         alb_ssl['accepted_ciphers'] = converted_ciphers
 
                     if lb_ssl.get("protocols"):
@@ -106,11 +103,9 @@ class SslProfileConfigConv(object):
                         id=lb_ssl["id"],
                         name=name,
                         resource_type=lb_ssl['resource_type'],
-                        alb_ssl=alb_ssl,
-                        unsup_cipher=unsup_cipher_from_cipher_str
+                        alb_ssl=alb_ssl
 
                     )
-
                     converted_alb_ssl.append(val)
 
                     msg = "SSLProfile conversion started..."
@@ -138,19 +133,14 @@ class SslProfileConfigConv(object):
                 ssl_id = converted_alb_ssl[index]['id']
                 alb_mig_ssl = converted_alb_ssl[index]['alb_ssl']
                 resource_type = converted_alb_ssl[index]['resource_type']
-                unsup_ciphers=converted_alb_ssl[index]["unsup_cipher"]
-                if conv_status["status"]=="SUCCESSFUL" and unsup_ciphers:
-                    conv_status["status"]="SUCCESSFUL WITH UNSUPPORTED CIPHERS"
-                if unsup_ciphers:
-                    unsup_ciphers={'Unsupported ciphers':unsup_ciphers}
                 if self.object_merge_check:
                     alb_mig_ssl = [pp for pp in alb_config['SSLProfile'] if
                                    pp.get('name') == self.merge_object_mapping['ssl_profile'].get(name)]
                     conv_utils.add_conv_status('sslprofile', resource_type, name, conv_status,
-                                               [{'ssl_profile': alb_mig_ssl[0]}],unsup_ciphers)
+                                               [{'ssl_profile': alb_mig_ssl[0]}])
                 else:
                     conv_utils.add_conv_status('sslprofile', resource_type, name, conv_status,
-                                               [{'ssl_profile': alb_mig_ssl}],unsup_ciphers)
+                                               [{'ssl_profile': alb_mig_ssl}])
                 if len(conv_status['skipped']) > 0:
                     LOG.debug(
                         '[SSL-PROFILE] Skipped Attribute {}:{}'.format(name,
@@ -191,7 +181,7 @@ class SslProfileConfigConv(object):
                     )
                     ssl_profile_list[lb_ssl['id']] = name
                     if lb_ssl.get("ciphers"):
-                        converted_ciphers,unsup_cipher_from_cipher_str = self.convert_ciphers(":".join(lb_ssl['ciphers']))
+                        converted_ciphers = self.convert_ciphers_to_valid_format(":".join(lb_ssl['ciphers']))
                         alb_ssl['accepted_ciphers'] = converted_ciphers
 
                     if lb_ssl.get("protocols"):
@@ -215,11 +205,9 @@ class SslProfileConfigConv(object):
                         id=lb_ssl["id"],
                         name=name,
                         resource_type=lb_ssl['resource_type'],
-                        alb_ssl=alb_ssl,
-                        unsup_cipher=unsup_cipher_from_cipher_str
+                        alb_ssl=alb_ssl
 
                     )
-
                     converted_alb_ssl.append(val)
 
                     msg = "SSLProfile conversion started..."
@@ -247,19 +235,14 @@ class SslProfileConfigConv(object):
                 ssl_id = converted_alb_ssl[index]['id']
                 alb_mig_ssl = converted_alb_ssl[index]['alb_ssl']
                 resource_type = converted_alb_ssl[index]['resource_type']
-                unsup_ciphers=converted_alb_ssl[index]["unsup_cipher"]
-                if conv_status["status"]=="SUCCESSFUL" and unsup_ciphers:
-                    conv_status["status"]="SUCCESSFUL WITH UNSUPPORTED CIPHERS"
-                if unsup_ciphers:
-                    unsup_ciphers={'Unsupported ciphers':unsup_ciphers}
                 if self.object_merge_check:
                     alb_mig_ssl = [pp for pp in alb_config['SSLProfile'] if
                                    pp.get('name') == self.merge_object_mapping['ssl_profile'].get(name)]
                     conv_utils.add_conv_status('sslprofile', resource_type, name, conv_status,
-                                               [{'ssl_profile': alb_mig_ssl[0]}],unsup_ciphers)
+                                               [{'ssl_profile': alb_mig_ssl[0]}])
                 else:
                     conv_utils.add_conv_status('sslprofile', resource_type, name, conv_status,
-                                               [{'ssl_profile': alb_mig_ssl}],unsup_ciphers)
+                                               [{'ssl_profile': alb_mig_ssl}])
                 if len(conv_status['skipped']) > 0:
                     LOG.debug(
                         '[SSL-PROFILE] Skipped Attribute {}:{}'.format(name,
@@ -282,18 +265,9 @@ class SslProfileConfigConv(object):
             )
             alb_ssl['accepted_versions'].append(acc_version)
 
-    def convert_ciphers(self, cipher_str):
-        '''
-        This method will remove all the unsupported ciphers from cipher string
-        e.g cipher_str := TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
-        '''
-        cipher_str = cipher_str.replace('TLS_RSA_', '')
+    def convert_ciphers_to_valid_format(self, cipher_str):
         cipher_str = cipher_str.replace('TLS_', '')
-        cipher_str=cipher_str.replace('CBC_','')
         cipher_str = cipher_str.replace('_', '-')
         cipher_str = cipher_str.replace('WITH-AES-128', 'AES128')
         cipher_str = cipher_str.replace('WITH-AES-256', 'AES256')
-        unsup_cipher_from_cipher_str=[cipher for cipher in cipher_str.split(":") if cipher in  self.unsup_ciphers]
-        sup_cipher= [cipher for cipher in cipher_str.split(":") if cipher not in unsup_cipher_from_cipher_str]
-        sup_cipher_str=":".join(sup_cipher)
-        return sup_cipher_str,unsup_cipher_from_cipher_str
+        return cipher_str
