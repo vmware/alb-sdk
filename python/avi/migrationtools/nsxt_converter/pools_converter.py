@@ -376,12 +376,12 @@ class PoolConfigConv(object):
                 pool_bmd.append(member)
         if pool_bme and pool_bmd:
             is_pool_group = True
-            if not sorry_pool:
-                bmd_priority = "3"
-                bme_priority = "2"
-            else:
+            if sorry_pool:
                 bmd_priority = "1"
                 bme_priority = "0"
+            else:
+                bmd_priority = "3"
+                bme_priority = "2"
             priority_list = pg_dict.get(bmd_priority, [])
             priority_list = pool_bmd
             pg_dict[bmd_priority] = priority_list
@@ -393,10 +393,10 @@ class PoolConfigConv(object):
 
         elif pool_bme:
             is_pool_group = True
-            if not sorry_pool:
-                priority = "2"
-            else:
+            if sorry_pool:
                 priority = "0"
+            else:
+                priority = "2"
             priority_list = pg_dict.get(priority, [])
             priority_list = pool_bme
             pg_dict[priority] = priority_list
