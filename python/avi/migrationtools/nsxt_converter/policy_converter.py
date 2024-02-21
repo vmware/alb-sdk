@@ -287,7 +287,7 @@ class PolicyConfigConverter(object):
             [], indirect, ignore_for_defaults, [],
             u_ignore, [])
 
-        if http_rules or sec_rules or rsp_rules or self.policy_datascript_obj:
+        if http_rules or sec_rules or rsp_rules:
             conv_status["skipped"] = skipped_rule
             conv_status["na_list"] = []
             if not skipped_rule:
@@ -518,6 +518,7 @@ class PolicyConfigConverter(object):
             if action["type"] == "LBVariablePersistenceLearnAction" or \
                     action['type'] == 'LBVariablePersistenceOnAction':
                 # skip rule
+                LOG.debug("Rule action of type {} skipped".format(action["type"]))
                 continue
 
             if action["type"] == "LBHttpRequestUriRewriteAction":
@@ -643,7 +644,9 @@ class PolicyConfigConverter(object):
 
         pool_present = False
         if self.lb_vs_config["id"] in vs_select_pool_action_list.keys():
-            pool_segment = vs_pool_segment_list[self.lb_vs_config["id"]].get("pool_segment")
+            pool_segment = None
+            if self.lb_vs_config["id"] in vs_pool_segment_list:
+                pool_segment = vs_pool_segment_list[self.lb_vs_config["id"]].get("pool_segment")
             is_pg_created = False
             if pool_ref:
                 p_tenant, pool_ref = conv_utils.get_tenant_ref(pool_ref)

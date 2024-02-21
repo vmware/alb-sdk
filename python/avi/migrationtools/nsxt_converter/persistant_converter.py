@@ -148,7 +148,7 @@ class PersistantProfileConfigConv(object):
                 conv_utils.print_progress_bar(progressbar_count, total_size, msg,
                                               prefix='Progress', suffix='')
 
-                LOG.info('[ApplicationPersistenceProfile] Migration completed for HM {}'.format(lb_pp['display_name']))
+                LOG.info('[ApplicationPersistenceProfile] Migration completed for {}'.format(lb_pp['display_name']))
 
             except Exception as e:
                 LOG.error(
@@ -276,6 +276,8 @@ class PersistantProfileConfigConv(object):
                          % (lb_pp.get('cookie_name'), lb_pp.get('cookie_path', '/'), lb_pp.get('cookie_domain'),
                             cookie_max_idle, cookie_max_life, lb_pp.get('cookie_httponly', False))
                 is_ds_created = True
+            else:
+                LOG.debug("No cookie_path or cookie_domain for {}".format(lb_pp.get('display_name')))
 
         elif lb_pp.get("cookie_mode") == 'REWRITE':
             script = "ip,port = avi.pool.get_server_info() cookie_name = \"%s\" " \

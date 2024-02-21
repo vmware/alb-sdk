@@ -720,9 +720,9 @@ class VsConfigConv(object):
                         self.add_sorry_pool_member_to_poolgroup(alb_config, main_pool_ref, sorry_pool_ref)
                     else:
                         if pool_present:
-                            self.attach_pool_to_sry_pool_group(alb_config, main_pool_ref,
+                            sorry_pool_ref = self.attach_pool_to_sry_pool_group(alb_config, main_pool_ref,
                                                             sorry_pool_ref, tenant, cloud_name)
-                        main_pool_ref = sorry_pool_ref
+                        main_pool_ref = f"{sorry_pool_ref}"
                         is_pg_created = True
 
                 if is_pg_created:
@@ -1270,7 +1270,6 @@ class VsConfigConv(object):
                       if obj['name'] == pg_ref]
         if pool_group:
             pool_group = pool_group[0]
-            pool_group['tier1_lr'] = tier1_lr
             for member in pool_group['members']:
                 pool_name = conv_utils.get_name(member['pool_ref'])
                 self.add_tier_to_pool(pool_name, alb_config, tier1_lr)
@@ -1322,6 +1321,8 @@ class VsConfigConv(object):
             pool_ref=conv_utils.get_object_ref(main_pool_ref, 'pool', tenant=tenant, cloud_name=cloud_name)
         )
         sry_pool_group['members'].append(pool_member)
+        sry_pool_group['name'] = f"{main_pool_ref}-{str(random.randint(0, 20))}"
+        return sry_pool_group['name']
 
     def update_poolgroup_with_ssl(self, alb_config, nsx_lb_config, lb_vs, pg_name,
                                   prefix, tenant,

@@ -123,7 +123,7 @@ class PoolConfigConv(object):
                         pool_seg_list,is_member_ip_in_range ,pool_skip= self.check_pool_member_ip_ranges \
                             (vs_list_for_sorry_pool, pool_count, lb_list, pool_members_list, pool_skip, name,
                              vs_sorry_pool_segment_list)
-                        if is_member_ip_in_range:
+                        if is_member_ip_in_range or self.skip_datapath_check:
                             is_sry_pool_present = True
                         is_pool_orphan=False
 
@@ -332,6 +332,7 @@ class PoolConfigConv(object):
             if member.get("port", ""):
                 server_obj['port'] = int(member.get("port"))
             else:
+                LOG.debug(f"No port value found for {member.get('display_name')}")
                 server_skipped.append(member.get("display_name"))
 
             if member.get("weight"):
@@ -533,14 +534,14 @@ class PoolConfigConv(object):
                     else:
                         new_pool_name = '%s-%s' % (pool_name, pool_segment[0].get("subnets").get("network_range"))
                         new_pool_name = new_pool_name.replace('/', '-')
-                        vs_pool_segment_list[vs_id] = {
+                        pool_segment_list[vs_id] = {
                             "pool_name": new_pool_name,
                             "pool_segment": pool_segment
                         }
                         lb_list[lb] = pool_segment_list.get(vs_id)
                     pool_count += 1
                 elif self.skip_datapath_check:
-                    vs_pool_segment_list[vs_id] = {
+                    pool_segment_list[vs_id] = {
                         "pool_name": pool_name,
                         "pool_segment": None
                     }

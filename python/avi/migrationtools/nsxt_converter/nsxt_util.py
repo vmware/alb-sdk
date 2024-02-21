@@ -290,7 +290,7 @@ class NSXUtil():
             results = api_resp.to_dict().get("results", [])
 
             while 'cursor' in api_resp.to_dict() and api_resp.to_dict()['cursor']:
-                print(f"Cursor: {api_resp.to_dict()['cursor']}")
+                LOG.debug(f"Cursor: {api_resp.to_dict()['cursor']}")
                 kwargs['cursor'] = str(api_resp.to_dict()['cursor'])
                 api_resp = api(*args, **kwargs)
                 if api_resp and "results" in vars(api_resp):
@@ -1192,6 +1192,7 @@ class NSXUtil():
                 "https://{}/policy/api/v1/infra/domains/{}/groups/{}".format(self.nsxt_ip, domain_id, ns_name),
                 auth=(self.nsxt_un, self.nsxt_pw), headers=headers, verify=False)
             response = json.loads(response.text)
+            LOG.debug("NS group get response: {}".format(response))
 
             if response.get('httpStatus') == "NOT_FOUND":
                 ip_address_list = list()
@@ -1213,20 +1214,21 @@ class NSXUtil():
                                         data=json.dumps(data), auth=(self.nsxt_un, self.nsxt_pw),
                                         headers=headers, verify=False)
                 response = json.loads(response.text)
+                LOG.debug("NS group post response: {}".format(response))
 
             for pool in alb_config["Pool"]:
                 if pool["name"] == pool_name:
                     pool["nsx_securitygroup"] = [response["path"]]
                     # Make sure to update the pool server port to be retained
-                    if pool_members:
+                    if pool_members and 'port' in pool_members[0].keys():
                         pool["default_server_port"] = pool_members[0]["port"]
                     if "servers" in pool:
                         del pool["servers"]
                     break
 
             LOG.debug("ns group created for pool {}".format(pool_name))
-        except Exception:
-            LOG.debug("Error in creating ns group for pool {}".format(pool_name))
+        except Exception as e:
+            LOG.debug("Error in creating ns group for pool {}. Error: {}".format(pool_name, str(e)))
 
     def create_network_service_obj(self, name, se_group_ref, cloud_ref, vrf_ref, floating_ip, tenant_ref):
         new_network_service = dict()
