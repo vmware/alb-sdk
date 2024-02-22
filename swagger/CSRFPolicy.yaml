@@ -463,9 +463,9 @@ definitions:
             -   name
         properties:
             action:
-                description: "CSRF Action to be applied for matched target. Enum options - VERIFY_CSRF_TOKEN, VERIFY_ORIGIN, VERIFY_CSRF_TOKEN_AND_ORIGIN, BYPASS_CSRF. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "CSRF Action to be applied for matched target. Enum options - VERIFY_CSRF_TOKEN, VERIFY_ORIGIN, VERIFY_ORIGIN_AND_CSRF_TOKEN, BYPASS_CSRF. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-                default: "VERIFY_CSRF_TOKEN"
+                default: "VERIFY_ORIGIN_AND_CSRF_TOKEN"
             enable:
                 description: "Enable or deactivate the rule. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: boolean
