@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CSRFRule  {
     @JsonProperty("action")
-    private String action = "VERIFY_CSRF_TOKEN";
+    private String action = "VERIFY_ORIGIN_AND_CSRF_TOKEN";
 
     @JsonProperty("enable")
     private Boolean enable = true;
@@ -41,10 +41,10 @@ public class CSRFRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Csrf action to be applied for matched target.
-     * Enum options - VERIFY_CSRF_TOKEN, VERIFY_ORIGIN, VERIFY_CSRF_TOKEN_AND_ORIGIN, BYPASS_CSRF.
+     * Enum options - VERIFY_CSRF_TOKEN, VERIFY_ORIGIN, VERIFY_ORIGIN_AND_CSRF_TOKEN, BYPASS_CSRF.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "VERIFY_CSRF_TOKEN".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "VERIFY_ORIGIN_AND_CSRF_TOKEN".
      * @return action
      */
     public String getAction() {
@@ -54,10 +54,10 @@ public class CSRFRule  {
     /**
      * This is the setter method to the attribute.
      * Csrf action to be applied for matched target.
-     * Enum options - VERIFY_CSRF_TOKEN, VERIFY_ORIGIN, VERIFY_CSRF_TOKEN_AND_ORIGIN, BYPASS_CSRF.
+     * Enum options - VERIFY_CSRF_TOKEN, VERIFY_ORIGIN, VERIFY_ORIGIN_AND_CSRF_TOKEN, BYPASS_CSRF.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "VERIFY_CSRF_TOKEN".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "VERIFY_ORIGIN_AND_CSRF_TOKEN".
      * @param action set the action.
      */
     public void setAction(String  action) {
