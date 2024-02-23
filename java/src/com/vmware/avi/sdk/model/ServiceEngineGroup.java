@@ -534,6 +534,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("se_bandwidth_type")
     private String seBandwidthType;
 
+    @JsonProperty("se_debug_trace_sz")
+    private Integer seDebugTraceSz = 8;
+
     @JsonProperty("se_delayed_flow_delete")
     private Boolean seDelayedFlowDelete = true;
 
@@ -5470,6 +5473,36 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Use to cap the size of debug ring min(se_debug_trace_sz, num_dispatcher_cores).
+     * Only applicable to > 8g systems.
+     * Requires se reboot.
+     * Allowed values are 1,2,4,8.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 8.
+     * @return seDebugTraceSz
+     */
+    public Integer getSeDebugTraceSz() {
+        return seDebugTraceSz;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Use to cap the size of debug ring min(se_debug_trace_sz, num_dispatcher_cores).
+     * Only applicable to > 8g systems.
+     * Requires se reboot.
+     * Allowed values are 1,2,4,8.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 8.
+     * @param seDebugTraceSz set the seDebugTraceSz.
+     */
+    public void setSeDebugTraceSz(Integer  seDebugTraceSz) {
+        this.seDebugTraceSz = seDebugTraceSz;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Delay the cleanup of flowtable entry.
      * To be used under surveillance of avi support.
      * Field introduced in 20.1.2.
@@ -8775,7 +8808,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.vsSePrimarySwitchoverAdditionalWaitTime, objServiceEngineGroup.vsSePrimarySwitchoverAdditionalWaitTime)&&
   Objects.equals(this.pathMtuDiscoveryV4, objServiceEngineGroup.pathMtuDiscoveryV4)&&
   Objects.equals(this.pathMtuDiscoveryV6, objServiceEngineGroup.pathMtuDiscoveryV6)&&
-  Objects.equals(this.metricsCollectionMode, objServiceEngineGroup.metricsCollectionMode);
+  Objects.equals(this.metricsCollectionMode, objServiceEngineGroup.metricsCollectionMode)&&
+  Objects.equals(this.seDebugTraceSz, objServiceEngineGroup.seDebugTraceSz);
     }
 
     @Override
@@ -8953,6 +8987,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    sdbPipelineSize: ").append(toIndentedString(sdbPipelineSize)).append("\n");
                         sb.append("    sdbScanCount: ").append(toIndentedString(sdbScanCount)).append("\n");
                         sb.append("    seBandwidthType: ").append(toIndentedString(seBandwidthType)).append("\n");
+                        sb.append("    seDebugTraceSz: ").append(toIndentedString(seDebugTraceSz)).append("\n");
                         sb.append("    seDelayedFlowDelete: ").append(toIndentedString(seDelayedFlowDelete)).append("\n");
                         sb.append("    seDeprovisionDelay: ").append(toIndentedString(seDeprovisionDelay)).append("\n");
                         sb.append("    seDosProfile: ").append(toIndentedString(seDosProfile)).append("\n");
