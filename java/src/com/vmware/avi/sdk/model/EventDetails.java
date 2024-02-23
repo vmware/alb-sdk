@@ -600,6 +600,9 @@ public class EventDetails  {
     @JsonProperty("sync_services_info")
     private CloudSyncServices syncServicesInfo = null;
 
+    @JsonProperty("system_report_event_details")
+    private SystemReport systemReportEventDetails = null;
+
     @JsonProperty("tencent_info")
     private TencentSetup tencentInfo = null;
 
@@ -4662,6 +4665,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * System report event details.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return systemReportEventDetails
+     */
+    public SystemReport getSystemReportEventDetails() {
+        return systemReportEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * System report event details.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param systemReportEventDetails set the systemReportEventDetails.
+     */
+    public void setSystemReportEventDetails(SystemReport systemReportEventDetails) {
+        this.systemReportEventDetails = systemReportEventDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tencentInfo
@@ -5432,7 +5459,8 @@ public class EventDetails  {
   Objects.equals(this.databaseEventInfo, objEventDetails.databaseEventInfo)&&
   Objects.equals(this.dnsQueryError, objEventDetails.dnsQueryError)&&
   Objects.equals(this.connectionEvent, objEventDetails.connectionEvent)&&
-  Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent);
+  Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent)&&
+  Objects.equals(this.systemReportEventDetails, objEventDetails.systemReportEventDetails);
     }
 
     @Override
@@ -5632,6 +5660,7 @@ public class EventDetails  {
                         sb.append("    switchoverDetails: ").append(toIndentedString(switchoverDetails)).append("\n");
                         sb.append("    switchoverFailDetails: ").append(toIndentedString(switchoverFailDetails)).append("\n");
                         sb.append("    syncServicesInfo: ").append(toIndentedString(syncServicesInfo)).append("\n");
+                        sb.append("    systemReportEventDetails: ").append(toIndentedString(systemReportEventDetails)).append("\n");
                         sb.append("    tencentInfo: ").append(toIndentedString(tencentInfo)).append("\n");
                         sb.append("    unbindVsSeDetails: ").append(toIndentedString(unbindVsSeDetails)).append("\n");
                         sb.append("    upgradeEntry: ").append(toIndentedString(upgradeEntry)).append("\n");
