@@ -547,6 +547,7 @@ font-style: italic;
     "vnic_rpc_retry_interval" : 123,
     "allow_burst" : true,
     "reboot_on_panic" : true,
+    "se_debug_trace_sz" : 123,
     "transient_shared_memory_max" : 123,
     "dp_enq_interval_msec" : 123,
     "se_tunnel_udp_port" : 123,
@@ -1081,6 +1082,7 @@ font-style: italic;
       "vnic_rpc_retry_interval" : 123,
       "allow_burst" : true,
       "reboot_on_panic" : true,
+      "se_debug_trace_sz" : 123,
       "transient_shared_memory_max" : 123,
       "dp_enq_interval_msec" : 123,
       "se_tunnel_udp_port" : 123,
@@ -1604,6 +1606,7 @@ font-style: italic;
     "vnic_rpc_retry_interval" : 123,
     "allow_burst" : true,
     "reboot_on_panic" : true,
+    "se_debug_trace_sz" : 123,
     "transient_shared_memory_max" : 123,
     "dp_enq_interval_msec" : 123,
     "se_tunnel_udp_port" : 123,
@@ -2198,6 +2201,7 @@ font-style: italic;
     "vnic_rpc_retry_interval" : 123,
     "allow_burst" : true,
     "reboot_on_panic" : true,
+    "se_debug_trace_sz" : 123,
     "transient_shared_memory_max" : 123,
     "dp_enq_interval_msec" : 123,
     "se_tunnel_udp_port" : 123,
@@ -2732,6 +2736,7 @@ font-style: italic;
     "vnic_rpc_retry_interval" : 123,
     "allow_burst" : true,
     "reboot_on_panic" : true,
+    "se_debug_trace_sz" : 123,
     "transient_shared_memory_max" : 123,
     "dp_enq_interval_msec" : 123,
     "se_tunnel_udp_port" : 123,
@@ -3266,6 +3271,7 @@ font-style: italic;
     "vnic_rpc_retry_interval" : 123,
     "allow_burst" : true,
     "reboot_on_panic" : true,
+    "se_debug_trace_sz" : 123,
     "transient_shared_memory_max" : 123,
     "dp_enq_interval_msec" : 123,
     "se_tunnel_udp_port" : 123,
@@ -3753,6 +3759,7 @@ font-style: italic;
   "vnic_rpc_retry_interval" : 123,
   "allow_burst" : true,
   "reboot_on_panic" : true,
+  "se_debug_trace_sz" : 123,
   "transient_shared_memory_max" : 123,
   "dp_enq_interval_msec" : 123,
   "se_tunnel_udp_port" : 123,
@@ -4308,6 +4315,7 @@ font-style: italic;
   "vnic_rpc_retry_interval" : 123,
   "allow_burst" : true,
   "reboot_on_panic" : true,
+  "se_debug_trace_sz" : 123,
   "transient_shared_memory_max" : 123,
   "dp_enq_interval_msec" : 123,
   "se_tunnel_udp_port" : 123,
@@ -4803,6 +4811,7 @@ font-style: italic;
   "vnic_rpc_retry_interval" : 123,
   "allow_burst" : true,
   "reboot_on_panic" : true,
+  "se_debug_trace_sz" : 123,
   "transient_shared_memory_max" : 123,
   "dp_enq_interval_msec" : 123,
   "se_tunnel_udp_port" : 123,
@@ -5298,6 +5307,7 @@ font-style: italic;
   "vnic_rpc_retry_interval" : 123,
   "allow_burst" : true,
   "reboot_on_panic" : true,
+  "se_debug_trace_sz" : 123,
   "transient_shared_memory_max" : 123,
   "dp_enq_interval_msec" : 123,
   "se_tunnel_udp_port" : 123,
@@ -6424,6 +6434,7 @@ font-style: italic;
 <div class="param">sdb_pipeline_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> SDB pipeline size. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">sdb_scan_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> SDB scan count. Allowed values are 1-1000. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">se_bandwidth_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Select the SE bandwidth for the bandwidth license. Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SE_BANDWIDTH_UNLIMITED), Basic edition(Allowed values- SE_BANDWIDTH_UNLIMITED), Enterprise with Cloud Services edition. </div>
+<div class="param">se_debug_trace_sz (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Use to cap the size of debug ring min(se_debug_trace_sz, num_dispatcher_cores). Only applicable to &gt; 8G systems.  Requires SE Reboot. Allowed values are 1,2,4,8. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">se_delayed_flow_delete (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Delay the cleanup of flowtable entry. To be used under surveillance of Avi Support. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- true), Basic edition(Allowed values- true), Enterprise with Cloud Services edition. </div>
 <div class="param">se_deprovision_delay (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Duration to preserve unused Service Engine virtual machines before deleting them. If traffic to a Virtual Service were to spike up abruptly, this SE would still be available to be utilized again rather than creating a new SE. If this value is set to 0, Controller will never delete any SEs and administrator has to manually cleanup unused SEs. Allowed values are 0-525600. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">se_dos_profile (optional)</div><div class="param-desc"><span class="param-type"><a href="#DosThresholdProfile">DosThresholdProfile</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
