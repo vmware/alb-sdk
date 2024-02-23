@@ -2104,6 +2104,11 @@ definitions:
             se_bandwidth_type:
                 description: "Select the SE bandwidth for the bandwidth license. Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SE_BANDWIDTH_UNLIMITED), Basic edition(Allowed values- SE_BANDWIDTH_UNLIMITED), Enterprise with Cloud Services edition."
                 type: string
+            se_debug_trace_sz:
+                description: "Use to cap the size of debug ring min(se_debug_trace_sz, num_dispatcher_cores). Only applicable to > 8G systems.  Requires SE Reboot. Allowed values are 1,2,4,8. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 8
+                format: int32
             se_delayed_flow_delete:
                 description: "Delay the cleanup of flowtable entry. To be used under surveillance of Avi Support. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- true), Basic edition(Allowed values- true), Enterprise with Cloud Services edition."
                 type: boolean
