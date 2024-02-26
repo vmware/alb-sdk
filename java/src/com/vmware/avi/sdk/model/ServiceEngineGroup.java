@@ -435,6 +435,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("minimum_connection_memory")
     private Integer minimumConnectionMemory = 20;
 
+    @JsonProperty("multicast_enable")
+    private Boolean multicastEnable = true;
+
     @JsonProperty("n_log_streaming_threads")
     private Integer nLogStreamingThreads = 1;
 
@@ -4578,6 +4581,30 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * This knob enables the service engine to process multicast traffic(for vmware hypervisor).
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return multicastEnable
+     */
+    public Boolean getMulticastEnable() {
+        return multicastEnable;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This knob enables the service engine to process multicast traffic(for vmware hypervisor).
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param multicastEnable set the multicastEnable.
+     */
+    public void setMulticastEnable(Boolean  multicastEnable) {
+        this.multicastEnable = multicastEnable;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Number of threads to use for log streaming.
      * Allowed values are 1-100.
      * Field introduced in 17.2.12, 18.1.2.
@@ -5476,7 +5503,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Use to cap the size of debug ring min(se_debug_trace_sz, num_dispatcher_cores).
      * Only applicable to > 8g systems.
      * Requires se reboot.
-     * Allowed values are 1,2,4,8.
+     * Allowed values are 1,2,4,8,255.
      * Field introduced in 22.1.6.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
@@ -5491,7 +5518,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Use to cap the size of debug ring min(se_debug_trace_sz, num_dispatcher_cores).
      * Only applicable to > 8g systems.
      * Requires se reboot.
-     * Allowed values are 1,2,4,8.
+     * Allowed values are 1,2,4,8,255.
      * Field introduced in 22.1.6.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
@@ -8809,7 +8836,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.pathMtuDiscoveryV4, objServiceEngineGroup.pathMtuDiscoveryV4)&&
   Objects.equals(this.pathMtuDiscoveryV6, objServiceEngineGroup.pathMtuDiscoveryV6)&&
   Objects.equals(this.metricsCollectionMode, objServiceEngineGroup.metricsCollectionMode)&&
-  Objects.equals(this.seDebugTraceSz, objServiceEngineGroup.seDebugTraceSz);
+  Objects.equals(this.seDebugTraceSz, objServiceEngineGroup.seDebugTraceSz)&&
+  Objects.equals(this.multicastEnable, objServiceEngineGroup.multicastEnable);
     }
 
     @Override
@@ -8954,6 +8982,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    minScaleoutPerVs: ").append(toIndentedString(minScaleoutPerVs)).append("\n");
                         sb.append("    minSe: ").append(toIndentedString(minSe)).append("\n");
                         sb.append("    minimumConnectionMemory: ").append(toIndentedString(minimumConnectionMemory)).append("\n");
+                        sb.append("    multicastEnable: ").append(toIndentedString(multicastEnable)).append("\n");
                         sb.append("    nLogStreamingThreads: ").append(toIndentedString(nLogStreamingThreads)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    netlinkPollerThreads: ").append(toIndentedString(netlinkPollerThreads)).append("\n");
