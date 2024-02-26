@@ -2766,6 +2766,11 @@
                     "default": 20,
                     "format": "uint32"
                 },
+                "multicast_enable": {
+                    "description": "This knob enables the Service Engine to process multicast traffic(For VMware Hypervisor). Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                },
                 "n_log_streaming_threads": {
                     "description": "Number of threads to use for log streaming. Allowed values are 1-100. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
@@ -2938,7 +2943,7 @@
                     "type": "string"
                 },
                 "se_debug_trace_sz": {
-                    "description": "Use to cap the size of debug ring min(se_debug_trace_sz, num_dispatcher_cores). Only applicable to > 8G systems.  Requires SE Reboot. Allowed values are 1,2,4,8. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Use to cap the size of debug ring min(se_debug_trace_sz, num_dispatcher_cores). Only applicable to > 8G systems.  Requires SE Reboot. Allowed values are 1,2,4,8,255. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
                     "format": "uint32"
