@@ -4799,6 +4799,6 @@ definitions:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             mode:
-                description: " Enum options - DHCP, STATIC, VIP, DOCKER_HOST. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - DHCP, STATIC, VIP, DOCKER_HOST, MODE_MANUAL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "DHCP"
