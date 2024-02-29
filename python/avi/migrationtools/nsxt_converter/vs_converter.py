@@ -18,7 +18,7 @@ import random
 
 from avi.migrationtools.nsxt_converter.pools_converter import skipped_pools_list, vs_pool_segment_list, \
     vs_sorry_pool_segment_list, pool_name_dict
-from avi.migrationtools.nsxt_converter.profile_converter import application_profile_list, network_profile_list
+from avi.migrationtools.nsxt_converter.profile_converter import application_profile_list, network_profile_list, set_certificate_mode
 from avi.migrationtools.nsxt_converter.ssl_profile_converter import ssl_profile_list
 
 LOG = logging.getLogger(__name__)
@@ -430,7 +430,7 @@ class VsConfigConv(object):
                         for profile in alb_config["ApplicationProfile"]:
                             if merge_profile_name == profile["name"]:
                                 if client_ssl["client_auth"] == 'IGNORE':
-                                    profile["ssl_client_certificate_mode"] = 'SSL_CLIENT_CERTIFICATE_NONE'
+                                    set_certificate_mode(profile, 'SSL_CLIENT_CERTIFICATE_NONE')
                     if ssl_key_cert_refs:
                         alb_vs["ssl_key_and_certificate_refs"] = list(set(ssl_key_cert_refs))
                     skipped_client_ssl = [val for val in client_ssl.keys()
