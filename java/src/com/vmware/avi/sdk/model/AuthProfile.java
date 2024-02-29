@@ -247,9 +247,9 @@ public class AuthProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Pingaccessagent uuid.
      * It is a reference to an object of type pingaccessagent.
+     * Field deprecated in 30.2.1.
      * Field introduced in 18.2.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return paAgentRef
      */
     public String getPaAgentRef() {
@@ -260,9 +260,9 @@ public class AuthProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Pingaccessagent uuid.
      * It is a reference to an object of type pingaccessagent.
+     * Field deprecated in 30.2.1.
      * Field introduced in 18.2.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param paAgentRef set the paAgentRef.
      */
     public void setPaAgentRef(String  paAgentRef) {
@@ -341,7 +341,9 @@ public class AuthProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Type of the auth profile.
      * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition(allowed values-
+     * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth), basic edition(allowed values-
+     * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth), enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -353,7 +355,9 @@ public class AuthProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Type of the auth profile.
      * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition(allowed values-
+     * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth), basic edition(allowed values-
+     * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth), enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */

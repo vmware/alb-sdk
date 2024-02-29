@@ -33,8 +33,8 @@ public class CaptureTCPFilter  {
     @JsonProperty("src_port_range")
     private SourcePortAddr srcPortRange;
 
-    @JsonProperty("tcpflags")
-    private List<CaptureTCP> tcpflags;
+    @JsonProperty("tcpflag")
+    private CaptureTCPFlags tcpflag;
 
 
 
@@ -137,50 +137,31 @@ public class CaptureTCPFilter  {
     public void setSrcPortRange(SourcePortAddr srcPortRange) {
         this.srcPortRange = srcPortRange;
     }
+
     /**
      * This is the getter method this will return the attribute value.
      * Tcp flags filter.
      * Or'ed internally and and'ed amongst each other.
      * Field introduced in 30.2.1.
-     * Maximum of 4 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return tcpflags
+     * @return tcpflag
      */
-    public List<CaptureTCP> getTcpflags() {
-        return tcpflags;
+    public CaptureTCPFlags getTcpflag() {
+        return tcpflag;
     }
 
     /**
-     * This is the setter method. this will set the tcpflags
+     * This is the setter method to the attribute.
      * Tcp flags filter.
      * Or'ed internally and and'ed amongst each other.
      * Field introduced in 30.2.1.
-     * Maximum of 4 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return tcpflags
+     * @param tcpflag set the tcpflag.
      */
-    public void setTcpflags(List<CaptureTCP>  tcpflags) {
-        this.tcpflags = tcpflags;
-    }
-
-    /**
-     * This is the setter method this will set the tcpflags
-     * Tcp flags filter.
-     * Or'ed internally and and'ed amongst each other.
-     * Field introduced in 30.2.1.
-     * Maximum of 4 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return tcpflags
-     */
-    public CaptureTCPFilter addTcpflagsItem(CaptureTCP tcpflagsItem) {
-      if (this.tcpflags == null) {
-        this.tcpflags = new ArrayList<CaptureTCP>();
-      }
-      this.tcpflags.add(tcpflagsItem);
-      return this;
+    public void setTcpflag(CaptureTCPFlags tcpflag) {
+        this.tcpflag = tcpflag;
     }
 
 
@@ -193,7 +174,7 @@ public class CaptureTCPFilter  {
           return false;
       }
       CaptureTCPFilter objCaptureTCPFilter = (CaptureTCPFilter) o;
-      return   Objects.equals(this.tcpflags, objCaptureTCPFilter.tcpflags)&&
+      return   Objects.equals(this.tcpflag, objCaptureTCPFilter.tcpflag)&&
   Objects.equals(this.hostIp, objCaptureTCPFilter.hostIp)&&
   Objects.equals(this.ethProto, objCaptureTCPFilter.ethProto)&&
   Objects.equals(this.srcPortRange, objCaptureTCPFilter.srcPortRange)&&
@@ -208,7 +189,7 @@ public class CaptureTCPFilter  {
                         sb.append("    ethProto: ").append(toIndentedString(ethProto)).append("\n");
                         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
                         sb.append("    srcPortRange: ").append(toIndentedString(srcPortRange)).append("\n");
-                        sb.append("    tcpflags: ").append(toIndentedString(tcpflags)).append("\n");
+                        sb.append("    tcpflag: ").append(toIndentedString(tcpflag)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

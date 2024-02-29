@@ -33,8 +33,8 @@ public class WafCrsConfig  {
      * This is the getter method this will return the attribute value.
      * Enable to automatically download new waf signatures/crs version to the controller.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition only with addon license, essentials edition(allowed values- false), basic edition(allowed values- false),
-     * enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableAutoDownloadWafSignatures
      */
@@ -46,8 +46,8 @@ public class WafCrsConfig  {
      * This is the setter method to the attribute.
      * Enable to automatically download new waf signatures/crs version to the controller.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition only with addon license, essentials edition(allowed values- false), basic edition(allowed values- false),
-     * enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableAutoDownloadWafSignatures set the enableAutoDownloadWafSignatures.
      */

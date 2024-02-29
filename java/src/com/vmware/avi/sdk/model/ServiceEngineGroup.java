@@ -435,6 +435,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("minimum_connection_memory")
     private Integer minimumConnectionMemory = 20;
 
+    @JsonProperty("multicast_enable")
+    private Boolean multicastEnable = true;
+
     @JsonProperty("n_log_streaming_threads")
     private Integer nLogStreamingThreads = 1;
 
@@ -533,6 +536,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("se_bandwidth_type")
     private String seBandwidthType;
+
+    @JsonProperty("se_debug_trace_sz")
+    private Integer seDebugTraceSz = 8;
 
     @JsonProperty("se_delayed_flow_delete")
     private Boolean seDelayedFlowDelete = true;
@@ -4575,6 +4581,30 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * This knob enables the service engine to process multicast traffic(for vmware hypervisor).
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return multicastEnable
+     */
+    public Boolean getMulticastEnable() {
+        return multicastEnable;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This knob enables the service engine to process multicast traffic(for vmware hypervisor).
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param multicastEnable set the multicastEnable.
+     */
+    public void setMulticastEnable(Boolean  multicastEnable) {
+        this.multicastEnable = multicastEnable;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Number of threads to use for log streaming.
      * Allowed values are 1-100.
      * Field introduced in 17.2.12, 18.1.2.
@@ -5466,6 +5496,36 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setSeBandwidthType(String  seBandwidthType) {
         this.seBandwidthType = seBandwidthType;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Use to cap the size of debug ring min(se_debug_trace_sz, num_dispatcher_cores).
+     * Only applicable to > 8g systems.
+     * Requires se reboot.
+     * Allowed values are 1,2,4,8,255.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 8.
+     * @return seDebugTraceSz
+     */
+    public Integer getSeDebugTraceSz() {
+        return seDebugTraceSz;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Use to cap the size of debug ring min(se_debug_trace_sz, num_dispatcher_cores).
+     * Only applicable to > 8g systems.
+     * Requires se reboot.
+     * Allowed values are 1,2,4,8,255.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 8.
+     * @param seDebugTraceSz set the seDebugTraceSz.
+     */
+    public void setSeDebugTraceSz(Integer  seDebugTraceSz) {
+        this.seDebugTraceSz = seDebugTraceSz;
     }
 
     /**
@@ -8775,7 +8835,9 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.vsSePrimarySwitchoverAdditionalWaitTime, objServiceEngineGroup.vsSePrimarySwitchoverAdditionalWaitTime)&&
   Objects.equals(this.pathMtuDiscoveryV4, objServiceEngineGroup.pathMtuDiscoveryV4)&&
   Objects.equals(this.pathMtuDiscoveryV6, objServiceEngineGroup.pathMtuDiscoveryV6)&&
-  Objects.equals(this.metricsCollectionMode, objServiceEngineGroup.metricsCollectionMode);
+  Objects.equals(this.metricsCollectionMode, objServiceEngineGroup.metricsCollectionMode)&&
+  Objects.equals(this.seDebugTraceSz, objServiceEngineGroup.seDebugTraceSz)&&
+  Objects.equals(this.multicastEnable, objServiceEngineGroup.multicastEnable);
     }
 
     @Override
@@ -8920,6 +8982,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    minScaleoutPerVs: ").append(toIndentedString(minScaleoutPerVs)).append("\n");
                         sb.append("    minSe: ").append(toIndentedString(minSe)).append("\n");
                         sb.append("    minimumConnectionMemory: ").append(toIndentedString(minimumConnectionMemory)).append("\n");
+                        sb.append("    multicastEnable: ").append(toIndentedString(multicastEnable)).append("\n");
                         sb.append("    nLogStreamingThreads: ").append(toIndentedString(nLogStreamingThreads)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    netlinkPollerThreads: ").append(toIndentedString(netlinkPollerThreads)).append("\n");
@@ -8953,6 +9016,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    sdbPipelineSize: ").append(toIndentedString(sdbPipelineSize)).append("\n");
                         sb.append("    sdbScanCount: ").append(toIndentedString(sdbScanCount)).append("\n");
                         sb.append("    seBandwidthType: ").append(toIndentedString(seBandwidthType)).append("\n");
+                        sb.append("    seDebugTraceSz: ").append(toIndentedString(seDebugTraceSz)).append("\n");
                         sb.append("    seDelayedFlowDelete: ").append(toIndentedString(seDelayedFlowDelete)).append("\n");
                         sb.append("    seDeprovisionDelay: ").append(toIndentedString(seDeprovisionDelay)).append("\n");
                         sb.append("    seDosProfile: ").append(toIndentedString(seDosProfile)).append("\n");
