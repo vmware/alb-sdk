@@ -776,7 +776,7 @@
                     "type": "string"
                 },
                 "license_grace_period": {
-                    "description": "setting to reduce the grace period for license expiry in hours. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Setting to reduce the grace period for license expiry in hours. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "log_first_n": {
@@ -789,6 +789,10 @@
                 },
                 "metric_instance_id": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "min_db_queries_each_conn": {
+                    "description": "Setting to change the number of queries being processed by per DB connection by Metrics Manager. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "obj": {
