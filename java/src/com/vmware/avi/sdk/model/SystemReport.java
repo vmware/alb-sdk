@@ -203,7 +203,7 @@ public class SystemReport extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the report dervied from operation in a readable format.
+     * Name of the report derived from operation in a readable format.
      * Ex  upgrade_system_1a5c.
      * Field introduced in 22.1.6.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -216,7 +216,7 @@ public class SystemReport extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the report dervied from operation in a readable format.
+     * Name of the report derived from operation in a readable format.
      * Ex  upgrade_system_1a5c.
      * Field introduced in 22.1.6.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.

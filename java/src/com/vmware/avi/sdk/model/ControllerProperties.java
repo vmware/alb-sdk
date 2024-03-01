@@ -249,6 +249,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("ssl_certificate_expiry_warning_days")
     private List<Integer> sslCertificateExpiryWarningDays = null;
 
+    @JsonProperty("system_report_cleanup_interval")
+    private Integer systemReportCleanupInterval = 60;
+
     @JsonProperty("system_report_limit")
     private Integer systemReportLimit = 10;
 
@@ -2244,13 +2247,44 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Time in minutes to wait between cleanup of systemreports.
+     * Allowed values are 15-300.
+     * Field introduced in 22.1.6.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+     * @return systemReportCleanupInterval
+     */
+    public Integer getSystemReportCleanupInterval() {
+        return systemReportCleanupInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Time in minutes to wait between cleanup of systemreports.
+     * Allowed values are 15-300.
+     * Field introduced in 22.1.6.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+     * @param systemReportCleanupInterval set the systemReportCleanupInterval.
+     */
+    public void setSystemReportCleanupInterval(Integer  systemReportCleanupInterval) {
+        this.systemReportCleanupInterval = systemReportCleanupInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Number of systemreports retained in the system.
      * Once the number of system reports exceed this threshold, the oldest systemreport will be removed and the latest one retained.
      * I.e.
      * The systemreport will be rotated and the reports don't exceed the threshold.
      * Allowed values are 5-50.
      * Field introduced in 22.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return systemReportLimit
      */
@@ -2266,7 +2300,8 @@ public class ControllerProperties extends AviRestResource  {
      * The systemreport will be rotated and the reports don't exceed the threshold.
      * Allowed values are 5-50.
      * Field introduced in 22.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param systemReportLimit set the systemReportLimit.
      */
@@ -2997,7 +3032,8 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.seupgradeCopyBufferSize, objControllerProperties.seupgradeCopyBufferSize)&&
   Objects.equals(this.cloudReconcileInterval, objControllerProperties.cloudReconcileInterval)&&
   Objects.equals(this.cloudDiscoveryInterval, objControllerProperties.cloudDiscoveryInterval)&&
-  Objects.equals(this.systemReportLimit, objControllerProperties.systemReportLimit);
+  Objects.equals(this.systemReportLimit, objControllerProperties.systemReportLimit)&&
+  Objects.equals(this.systemReportCleanupInterval, objControllerProperties.systemReportCleanupInterval);
     }
 
     @Override
@@ -3080,6 +3116,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    seupgradeSegroupMinDeadTimeout: ").append(toIndentedString(seupgradeSegroupMinDeadTimeout)).append("\n");
                         sb.append("    sharedSslCertificates: ").append(toIndentedString(sharedSslCertificates)).append("\n");
                         sb.append("    sslCertificateExpiryWarningDays: ").append(toIndentedString(sslCertificateExpiryWarningDays)).append("\n");
+                        sb.append("    systemReportCleanupInterval: ").append(toIndentedString(systemReportCleanupInterval)).append("\n");
                         sb.append("    systemReportLimit: ").append(toIndentedString(systemReportLimit)).append("\n");
                         sb.append("    unresponsiveSeReboot: ").append(toIndentedString(unresponsiveSeReboot)).append("\n");
                         sb.append("    updateDnsEntryRetryLimit: ").append(toIndentedString(updateDnsEntryRetryLimit)).append("\n");
