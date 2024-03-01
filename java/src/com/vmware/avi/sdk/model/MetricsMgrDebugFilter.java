@@ -42,6 +42,9 @@ public class MetricsMgrDebugFilter  {
     @JsonProperty("metric_instance_id")
     private String metricInstanceId;
 
+    @JsonProperty("min_db_queries_each_conn")
+    private String minDbQueriesEachConn;
+
     @JsonProperty("obj")
     private String obj;
 
@@ -201,6 +204,30 @@ public class MetricsMgrDebugFilter  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Setting to change the number of queries being processed by per db connection by metrics manager.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return minDbQueriesEachConn
+     */
+    public String getMinDbQueriesEachConn() {
+        return minDbQueriesEachConn;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Setting to change the number of queries being processed by per db connection by metrics manager.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param minDbQueriesEachConn set the minDbQueriesEachConn.
+     */
+    public void setMinDbQueriesEachConn(String  minDbQueriesEachConn) {
+        this.minDbQueriesEachConn = minDbQueriesEachConn;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return obj
@@ -278,7 +305,8 @@ public class MetricsMgrDebugFilter  {
   Objects.equals(this.skipClusterMapCheck, objMetricsMgrDebugFilter.skipClusterMapCheck)&&
   Objects.equals(this.disableHwTraining, objMetricsMgrDebugFilter.disableHwTraining)&&
   Objects.equals(this.licenseGracePeriod, objMetricsMgrDebugFilter.licenseGracePeriod)&&
-  Objects.equals(this.debugSkipEvalPeriod, objMetricsMgrDebugFilter.debugSkipEvalPeriod);
+  Objects.equals(this.debugSkipEvalPeriod, objMetricsMgrDebugFilter.debugSkipEvalPeriod)&&
+  Objects.equals(this.minDbQueriesEachConn, objMetricsMgrDebugFilter.minDbQueriesEachConn);
     }
 
     @Override
@@ -292,6 +320,7 @@ public class MetricsMgrDebugFilter  {
                         sb.append("    logFirstN: ").append(toIndentedString(logFirstN)).append("\n");
                         sb.append("    loggingFreq: ").append(toIndentedString(loggingFreq)).append("\n");
                         sb.append("    metricInstanceId: ").append(toIndentedString(metricInstanceId)).append("\n");
+                        sb.append("    minDbQueriesEachConn: ").append(toIndentedString(minDbQueriesEachConn)).append("\n");
                         sb.append("    obj: ").append(toIndentedString(obj)).append("\n");
                         sb.append("    skipClusterMapCheck: ").append(toIndentedString(skipClusterMapCheck)).append("\n");
                         sb.append("    skipMetricsDbWrites: ").append(toIndentedString(skipMetricsDbWrites)).append("\n");
