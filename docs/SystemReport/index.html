@@ -184,7 +184,7 @@ font-style: italic;
   </head>
   <body>
   <h1>Avi SystemReport Object API</h1>
-    <div class="app-desc">CLI ``` - show systemreport <key> - show systemreport <key> export ``` </div>
+    <div class="app-desc">CLI ``` - show systemreport <key> - show systemreport <key> export - delete systemreport <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
     <div class="app-desc">Version: 30.2.1</div>
@@ -980,7 +980,7 @@ font-style: italic;
 <div class="param">downloadable (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Indicates whether this report is downloadable as an archive. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">events (optional)</div><div class="param-desc"><span class="param-type"><a href="#ReportEvent">array[ReportEvent]</a></span> List of events associated with the report. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">image_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> System Image associated with the report. It is a reference to an object of type Image. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the report dervied from operation in a readable format. Ex  upgrade_system_1a5c. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the report derived from operation in a readable format. Ex  upgrade_system_1a5c. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">readiness_reports (optional)</div><div class="param-desc"><span class="param-type"><a href="#ReportDetail">array[ReportDetail]</a></span> Readiness state of the system. Ex  Upgrade Pre-check Results. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">se_patch_image_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> SE Patch Image associated with the report. It is a reference to an object of type Image. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">state (optional)</div><div class="param-desc"><span class="param-type"><a href="#ReportOpsState">ReportOpsState</a></span> Report state combines all applicable states. Ex  readiness_reports.system_readiness.state. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
