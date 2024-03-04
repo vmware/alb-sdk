@@ -602,6 +602,9 @@ type EventDetails struct {
 	// Azure cloud sync services event details. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SyncServicesInfo *CloudSyncServices `json:"sync_services_info,omitempty"`
 
+	// System Report event details. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SystemReportEventDetails *SystemReport `json:"system_report_event_details,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	TencentInfo *TencentSetup `json:"tencent_info,omitempty"`
 
