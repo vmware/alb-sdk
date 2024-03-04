@@ -39,7 +39,7 @@ func TestCreateCloud(t *testing.T) {
 	cloudobj.LicenseType = &lt
 	ltier := "ENTERPRISE_18"
 	cloudobj.LicenseTier = &ltier
-	mtu := (uint32)(1300)
+	mtu := (int32)(1300)
 	cloudobj.Mtu = &mtu
 
 	tobj, err := aviClient.Cloud.Create(&cloudobj)
