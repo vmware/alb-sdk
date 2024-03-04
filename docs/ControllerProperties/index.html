@@ -374,6 +374,7 @@ font-style: italic;
   "allow_admin_network_updates" : true,
   "vnic_op_fail_time" : "",
   "_last_modified" : "aeiou",
+  "system_report_cleanup_interval" : "",
   "portal_token" : "aeiou",
   "soft_min_mem_per_se_limit" : "",
   "vs_se_create_fail" : "",
@@ -567,6 +568,7 @@ font-style: italic;
   "allow_admin_network_updates" : true,
   "vnic_op_fail_time" : "",
   "_last_modified" : "aeiou",
+  "system_report_cleanup_interval" : "",
   "portal_token" : "aeiou",
   "soft_min_mem_per_se_limit" : "",
   "vs_se_create_fail" : "",
@@ -760,6 +762,7 @@ font-style: italic;
   "allow_admin_network_updates" : true,
   "vnic_op_fail_time" : "",
   "_last_modified" : "aeiou",
+  "system_report_cleanup_interval" : "",
   "portal_token" : "aeiou",
   "soft_min_mem_per_se_limit" : "",
   "vs_se_create_fail" : "",
@@ -899,7 +902,8 @@ font-style: italic;
 <div class="param">skopeo_retry_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of times to try skopeo commands for remote image registries. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">soft_min_mem_per_se_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Soft Limit on the minimum SE Memory that an SE needs to have on SE Register. Field introduced in 30.1.1. Unit is MB. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">ssl_certificate_expiry_warning_days (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">array[Integer]</a></span> Number of days for SSL Certificate expiry warning. Unit is DAYS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">system_report_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of SystemReports retained in the system. Once the number of system reports exceed this threshold, the oldest SystemReport will be removed and the latest one retained. i.e. the SystemReport will be rotated and the reports don&#39;t exceed the threshold. Allowed values are 5-50. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">system_report_cleanup_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time in minutes to wait between cleanup of SystemReports. Allowed values are 15-300. Field introduced in 22.1.6, 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">system_report_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of SystemReports retained in the system. Once the number of system reports exceed this threshold, the oldest SystemReport will be removed and the latest one retained. i.e. the SystemReport will be rotated and the reports don&#39;t exceed the threshold. Allowed values are 5-50. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">unresponsive_se_reboot (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">update_dns_entry_retry_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of times to retry a DNS entry update/delete operation. Field introduced in 21.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">update_dns_entry_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Timeout period for a DNS entry update/delete operation. Field introduced in 21.1.4. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
