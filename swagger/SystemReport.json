@@ -8,7 +8,7 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show systemreport <key>\n- show systemreport <key> export\n```\n"
+        "description": "CLI\n```\n- show systemreport <key>\n- show systemreport <key> export\n- delete systemreport <key>\n```\n"
     },
     "securityDefinitions": {
         "basicAuth": {
@@ -673,7 +673,7 @@
                     "type": "string"
                 },
                 "name": {
-                    "description": "Name of the report dervied from operation in a readable format. Ex  upgrade_system_1a5c. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Name of the report derived from operation in a readable format. Ex  upgrade_system_1a5c. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "readiness_reports": {
