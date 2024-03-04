@@ -857,6 +857,8 @@ class VsConfigConv(object):
             self.update_ssl_key_refernce(alb_config)
             self.update_pki_refernce(alb_config)
 
+        self.verify_must_checks(alb_config)
+
     def get_vs_app_profile_ref(self, alb_profile_config, profile_name, object_merge_check,
                                merge_object_mapping, profile_type, tenant):
         if object_merge_check:
@@ -1409,3 +1411,63 @@ class VsConfigConv(object):
                 pki_name = self.merge_object_mapping['pki_profile'].get(pki_name)
                 if pki_name:
                     app['pki_profile_ref'] = pki_profile_ref + pki_name
+
+    def verify_must_checks(self, alb_config):
+        # If https monitor is attached to a VS pool and ssl profile is not attached to with of VS or monitor then
+        # add a default system SSL profile to https type monitor
+        self.verify_must_checks_for_https_healh_monitor(alb_config)
+
+    def verify_must_checks_for_https_healh_monitor(self, alb_config):
+        LOG.debug("Starting must check verification for https health monitor ssl profile")
+
+        alb_pool_name_object_dict = dict()
+        alb_pool_group_name_object_dict = dict()
+        alb_hm_name_object_dict = dict()
+
+        for alb_pool in alb_config['Pool']:
+            alb_pool_name_object_dict[alb_pool['name']] = alb_pool
+        for alb_pool_group in alb_config['PoolGroup']:
+            alb_pool_group_name_object_dict[alb_pool_group['name']] = alb_pool_group
+        for alb_hm in alb_config['HealthMonitor']:
+            alb_hm_name_object_dict[alb_hm['name']] = alb_hm
+
+        for alb_vs in alb_config['VirtualService']:
+            if alb_vs.get('pool_ref'):
+                self.attach_ssl_profile_to_https_monitor(alb_vs.get('name'), alb_vs.get('pool_ref'),
+                                                         alb_pool_name_object_dict, alb_hm_name_object_dict)
+            elif alb_vs.get('pool_group_ref'):
+                pool_group_name = alb_vs['pool_group_ref'].split("name=")[1].split("&")[0]
+                pool_group_obj = alb_pool_group_name_object_dict.get(pool_group_name)
+                if pool_group_obj and pool_group_obj.get("members"):
+                    for pool_member in pool_group_obj.get("members"):
+                        self.attach_ssl_profile_to_https_monitor(alb_vs.get('name'), pool_member.get('pool_ref'),
+                                                                 alb_pool_name_object_dict, alb_hm_name_object_dict)
+            else:
+                LOG.debug(f"No pool group or pool attached to VS: {alb_vs.get('name')}")
+
+        LOG.debug("Completed must check verification for https health monitor ssl profile")
+
+    def attach_ssl_profile_to_https_monitor(self, vs_name, pool_ref, alb_pool_name_object_dict, alb_hm_name_object_dict):
+        is_ssl_configured = False
+
+        pool_name = pool_ref.split("name=")[1].split("&")[0]
+        pool_obj = alb_pool_name_object_dict.get(pool_name)
+        if pool_obj.get('ssl_profile_ref'):
+            is_ssl_configured = True
+        if not is_ssl_configured:
+            hm_name_list = pool_obj.get('health_monitor_refs')
+            if hm_name_list:
+                for hm in hm_name_list:
+                    hm_name = hm.split("name=")[1].split("&")[0]
+                    hm_obj = alb_hm_name_object_dict.get(hm_name)
+                    if hm_obj.get('type') == 'HEALTH_MONITOR_HTTPS' and not hm_obj.get('ssl_attributes'):
+                        LOG.debug(f"Not found ssl profile for https monitor type for VS: {vs_name}, "
+                                  f"Pool: {pool_obj.get('name')}, HM: {hm_obj.get('name')}. "
+                                  f"Attaching system default ssl profile.")
+                        ssl_attributes = {
+                            "ssl_profile_ref": f"/api/sslprofile/?tenant=admin&name=System-Standard"
+                        }
+                        hm_obj["https_monitor"]['ssl_attributes'] = ssl_attributes
+        else:
+            LOG.debug(f"SSL profile is already attached to Pool: {pool_obj.get('name')}, "
+                      f"VS: {vs_name}")
