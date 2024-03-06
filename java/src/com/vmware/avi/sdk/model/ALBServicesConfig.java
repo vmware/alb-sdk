@@ -33,6 +33,9 @@ public class ALBServicesConfig extends AviRestResource  {
     @JsonProperty("feature_opt_in_status")
     private PortalFeatureOptIn featureOptInStatus;
 
+    @JsonProperty("inventory_config")
+    private InventoryConfiguration inventoryConfig;
+
     @JsonProperty("ip_reputation_config")
     private IpReputationConfig ipReputationConfig;
 
@@ -182,6 +185,32 @@ public class ALBServicesConfig extends AviRestResource  {
      */
     public void setFeatureOptInStatus(PortalFeatureOptIn featureOptInStatus) {
         this.featureOptInStatus = featureOptInStatus;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Inventory configurations for pulse cloud services.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return inventoryConfig
+     */
+    public InventoryConfiguration getInventoryConfig() {
+        return inventoryConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Inventory configurations for pulse cloud services.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param inventoryConfig set the inventoryConfig.
+     */
+    public void setInventoryConfig(InventoryConfiguration inventoryConfig) {
+        this.inventoryConfig = inventoryConfig;
     }
 
     /**
@@ -636,7 +665,8 @@ public class ALBServicesConfig extends AviRestResource  {
   Objects.equals(this.tenantRef, objALBServicesConfig.tenantRef)&&
   Objects.equals(this.name, objALBServicesConfig.name)&&
   Objects.equals(this.tenantConfig, objALBServicesConfig.tenantConfig)&&
-  Objects.equals(this.sessionConfig, objALBServicesConfig.sessionConfig);
+  Objects.equals(this.sessionConfig, objALBServicesConfig.sessionConfig)&&
+  Objects.equals(this.inventoryConfig, objALBServicesConfig.inventoryConfig);
     }
 
     @Override
@@ -647,6 +677,7 @@ public class ALBServicesConfig extends AviRestResource  {
                         sb.append("    assetContact: ").append(toIndentedString(assetContact)).append("\n");
                         sb.append("    caseConfig: ").append(toIndentedString(caseConfig)).append("\n");
                         sb.append("    featureOptInStatus: ").append(toIndentedString(featureOptInStatus)).append("\n");
+                        sb.append("    inventoryConfig: ").append(toIndentedString(inventoryConfig)).append("\n");
                         sb.append("    ipReputationConfig: ").append(toIndentedString(ipReputationConfig)).append("\n");
                         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
