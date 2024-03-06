@@ -282,6 +282,9 @@ font-style: italic;
       "host" : "aeiou",
       "username" : "aeiou"
     },
+    "inventory_config" : {
+      "enable_search_info" : true
+    },
     "saas_licensing_config" : {
       "max_service_units" : 1.3579000000000001069366817318950779736042022705078125,
       "reserve_service_units" : 1.3579000000000001069366817318950779736042022705078125
@@ -302,7 +305,6 @@ font-style: italic;
       "enable_pulse_waf_management" : true,
       "enable_pulse_case_management" : true,
       "enable_user_agent_db_sync" : true,
-      "enable_search_info" : true,
       "enable_pulse_inventory" : true,
       "enable_ip_reputation" : true
     },
@@ -419,6 +421,9 @@ font-style: italic;
     "host" : "aeiou",
     "username" : "aeiou"
   },
+  "inventory_config" : {
+    "enable_search_info" : true
+  },
   "saas_licensing_config" : {
     "max_service_units" : 1.3579000000000001069366817318950779736042022705078125,
     "reserve_service_units" : 1.3579000000000001069366817318950779736042022705078125
@@ -439,7 +444,6 @@ font-style: italic;
     "enable_pulse_waf_management" : true,
     "enable_pulse_case_management" : true,
     "enable_user_agent_db_sync" : true,
-    "enable_search_info" : true,
     "enable_pulse_inventory" : true,
     "enable_ip_reputation" : true
   },
@@ -627,6 +631,9 @@ font-style: italic;
     "host" : "aeiou",
     "username" : "aeiou"
   },
+  "inventory_config" : {
+    "enable_search_info" : true
+  },
   "saas_licensing_config" : {
     "max_service_units" : 1.3579000000000001069366817318950779736042022705078125,
     "reserve_service_units" : 1.3579000000000001069366817318950779736042022705078125
@@ -647,7 +654,6 @@ font-style: italic;
     "enable_pulse_waf_management" : true,
     "enable_pulse_case_management" : true,
     "enable_user_agent_db_sync" : true,
-    "enable_search_info" : true,
     "enable_pulse_inventory" : true,
     "enable_ip_reputation" : true
   },
@@ -775,6 +781,9 @@ font-style: italic;
     "host" : "aeiou",
     "username" : "aeiou"
   },
+  "inventory_config" : {
+    "enable_search_info" : true
+  },
   "saas_licensing_config" : {
     "max_service_units" : 1.3579000000000001069366817318950779736042022705078125,
     "reserve_service_units" : 1.3579000000000001069366817318950779736042022705078125
@@ -795,7 +804,6 @@ font-style: italic;
     "enable_pulse_waf_management" : true,
     "enable_pulse_case_management" : true,
     "enable_user_agent_db_sync" : true,
-    "enable_search_info" : true,
     "enable_pulse_inventory" : true,
     "enable_ip_reputation" : true
   },
@@ -923,6 +931,9 @@ font-style: italic;
     "host" : "aeiou",
     "username" : "aeiou"
   },
+  "inventory_config" : {
+    "enable_search_info" : true
+  },
   "saas_licensing_config" : {
     "max_service_units" : 1.3579000000000001069366817318950779736042022705078125,
     "reserve_service_units" : 1.3579000000000001069366817318950779736042022705078125
@@ -943,7 +954,6 @@ font-style: italic;
     "enable_pulse_waf_management" : true,
     "enable_pulse_case_management" : true,
     "enable_user_agent_db_sync" : true,
-    "enable_search_info" : true,
     "enable_pulse_inventory" : true,
     "enable_ip_reputation" : true
   },
@@ -1018,6 +1028,7 @@ font-style: italic;
     <li><a href="#CaseConfig"><code>CaseConfig</code></a></li>
     <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#InventoryConfig"><code>InventoryConfig</code></a></li>
+    <li><a href="#InventoryConfiguration"><code>InventoryConfiguration</code></a></li>
     <li><a href="#IpReputationConfig"><code>IpReputationConfig</code></a></li>
     <li><a href="#OperationsConfig"><code>OperationsConfig</code></a></li>
     <li><a href="#PortalFeatureOptIn"><code>PortalFeatureOptIn</code></a></li>
@@ -1056,6 +1067,7 @@ font-style: italic;
 <div class="param">case_config </div><div class="param-desc"><span class="param-type"><a href="#CaseConfig">CaseConfig</a></span> Default values for case management. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">feature_opt_in_status </div><div class="param-desc"><span class="param-type"><a href="#PortalFeatureOptIn">PortalFeatureOptIn</a></span> Features opt-in for Pulse Cloud Services. Field introduced in 20.1.1. </div>
+<div class="param">inventory_config </div><div class="param-desc"><span class="param-type"><a href="#InventoryConfiguration">InventoryConfiguration</a></span> Inventory Configurations for Pulse Cloud Services. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ip_reputation_config </div><div class="param-desc"><span class="param-type"><a href="#IpReputationConfig">IpReputationConfig</a></span> Default values to be used for IP Reputation sync. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Basic edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Enterprise with Cloud Services edition. </div>
 <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the ALBServicesConfig object. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
@@ -1121,6 +1133,12 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="InventoryConfiguration">InventoryConfiguration</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">enable_search_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Names, IP&#39;s of VS, Pool(PoolGroup) servers would be searchable on Cloud console. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="IpReputationConfig">IpReputationConfig</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">ip_reputation_file_object_expiry_duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> IP reputation db file object expiry duration in days. Allowed values are 1-7. Field introduced in 20.1.1. Unit is DAYS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
@@ -1141,7 +1159,6 @@ font-style: italic;
 <div class="param">enable_pulse_case_management (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable Pulse Cloud Services Case Management. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True. </div>
 <div class="param">enable_pulse_inventory (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable Pulse Cloud Services Inventory. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is False. </div>
 <div class="param">enable_pulse_waf_management (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True. </div>
-<div class="param">enable_search_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Names, IP&#39;s of VS, Pool(PoolGroup) servers would be searchable on Cloud console. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">enable_user_agent_db_sync (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable to receive Bot Management updates. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
