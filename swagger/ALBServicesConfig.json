@@ -550,6 +550,7 @@
                 "app_signature_config",
                 "case_config",
                 "feature_opt_in_status",
+                "inventory_config",
                 "ip_reputation_config",
                 "portal_url",
                 "saas_licensing_config",
@@ -581,6 +582,10 @@
                 "feature_opt_in_status": {
                     "description": "Features opt-in for Pulse Cloud Services. Field introduced in 20.1.1.",
                     "$ref": "#/definitions/PortalFeatureOptIn"
+                },
+                "inventory_config": {
+                    "description": "Inventory Configurations for Pulse Cloud Services. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/InventoryConfiguration"
                 },
                 "ip_reputation_config": {
                     "description": "Default values to be used for IP Reputation sync. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -766,6 +771,15 @@
                 }
             }
         },
+        "InventoryConfiguration": {
+            "type": "object",
+            "properties": {
+                "enable_search_info": {
+                    "description": "Names, IP's of VS, Pool(PoolGroup) servers would be searchable on Cloud console. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                }
+            }
+        },
         "IpReputationConfig": {
             "type": "object",
             "properties": {
@@ -816,10 +830,6 @@
                     "description": "Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True.",
                     "type": "boolean",
                     "default": true
-                },
-                "enable_search_info": {
-                    "description": "Names, IP's of VS, Pool(PoolGroup) servers would be searchable on Cloud console. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
                 },
                 "enable_user_agent_db_sync": {
                     "description": "Enable to receive Bot Management updates. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.",
