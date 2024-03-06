@@ -35,6 +35,9 @@ type EventDetails struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	AppSignatureEventData *AppSignatureEventData `json:"app_signature_event_data,omitempty"`
 
+	//  Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	AsyncPatchState *AsyncPatchState `json:"async_patch_state,omitempty"`
+
 	// Details for Attach IP status. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	AttachIPStatusDetails *AttachIPStatusEventDetails `json:"attach_ip_status_details,omitempty"`
 
@@ -583,6 +586,9 @@ type EventDetails struct {
 
 	// Azure cloud sync services event details. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SyncServicesInfo *CloudSyncServices `json:"sync_services_info,omitempty"`
+
+	// System Report event details. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SystemReportEventDetails *SystemReport `json:"system_report_event_details,omitempty"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	TencentInfo *TencentSetup `json:"tencent_info,omitempty"`

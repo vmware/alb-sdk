@@ -27,7 +27,7 @@ type SystemReport struct {
 	// System Image associated with the report. It is a reference to an object of type Image. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	ImageRef *string `json:"image_ref,omitempty"`
 
-	// Name of the report dervied from operation in a readable format. Ex  upgrade_system_1a5c. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Name of the report derived from operation in a readable format. Ex  upgrade_system_1a5c. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
 	// Readiness state of the system. Ex  Upgrade Pre-check Results. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
