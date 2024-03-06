@@ -123,7 +123,7 @@ func TestCreateVirtualservice(t *testing.T) {
 	vsobj.TenantRef = &tr
 	vsobj.PoolRef = npobj.UUID
 	vsobj.CloudRef = &cuuid
-	port := (int32)(80)
+	port := (uint32)(80)
 	vsobj.Services = append(vsobj.Services, &models.Service{Port: &port})
 
 	nvsobj, err := aviClient.VirtualService.Create(&vsobj)
@@ -139,7 +139,7 @@ func TestCreateVirtualservice(t *testing.T) {
 	if err == nil {
 		vsname := "Test-vs"
 		vservice.Name = &vsname
-		port := (int32)(443)
+		port := (uint32)(443)
 		vservice.Services = append(vsobj.Services, &models.Service{Port: &port})
 		upObj, err := aviClient.VirtualService.Update(&vservice)
 		if err != nil {
