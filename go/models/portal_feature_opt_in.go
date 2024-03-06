@@ -23,9 +23,6 @@ type PortalFeatureOptIn struct {
 	// Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True.
 	EnablePulseWafManagement *bool `json:"enable_pulse_waf_management,omitempty"`
 
-	// Names, IP's of VS, Pool(PoolGroup) servers would be searchable on Cloud console. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
-	EnableSearchInfo *bool `json:"enable_search_info,omitempty"`
-
 	// Enable to receive Bot Management updates. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.
 	EnableUserAgentDbSync *bool `json:"enable_user_agent_db_sync,omitempty"`
 }

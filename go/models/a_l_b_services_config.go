@@ -30,6 +30,10 @@ type ALBServicesConfig struct {
 	// Required: true
 	FeatureOptInStatus *PortalFeatureOptIn `json:"feature_opt_in_status"`
 
+	// Inventory Configurations for Pulse Cloud Services. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	// Required: true
+	InventoryConfig *InventoryConfiguration `json:"inventory_config"`
+
 	// Default values to be used for IP Reputation sync. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	IPReputationConfig *IPReputationConfig `json:"ip_reputation_config"`
