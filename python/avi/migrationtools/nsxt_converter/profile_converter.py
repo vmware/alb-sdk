@@ -228,7 +228,7 @@ class ProfileConfigConv(object):
         alb_pr["preserve_client_ip"] = False
         if lb_pr.get("http_redirect_to"):
             # TODO
-            print("http_redirect_to")
+            LOG.debug("TODO: http_redirect_to")
 
     def convert_udp(self, alb_pr, lb_pr):
         alb_pr['profile'] = dict(

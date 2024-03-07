@@ -78,6 +78,9 @@ class VsConfigConv(object):
         converted_http_policy_sets = list()
         converted_http_policy_na_list = list()
         converted_http_policy_skipped = list()
+        new_pci_app_profile_list = list()
+        new_service_engine_group_list = list()
+        new_network_service_list = list()
         indirect_client_ssl = []
         indirect_server_ssl = []
         alb_config['VirtualService'] = list()
@@ -558,6 +561,7 @@ class VsConfigConv(object):
                                             "tenant_ref": conv_utils.get_object_ref(tenant, 'tenant')
                                         }
                                         alb_config["ApplicationProfile"].append(new_pci_app_profile)
+                                        new_pci_app_profile_list.append(new_pci_app_profile)
                                         app_profile_pci_created = True
 
                                 pci_se_group_name = prefix if prefix else self.nsxt_ip
@@ -572,6 +576,7 @@ class VsConfigConv(object):
                                         "tenant_ref": conv_utils.get_object_ref(cloud_tenant, 'tenant')
                                     }
                                     alb_config["ServiceEngineGroup"].append(new_pci_se_group)
+                                    new_service_engine_group_list.append(new_pci_se_group)
                                     se_group_created_for_cloud[cloud_name] = new_pci_se_group
 
                                 vs_with_custom_se_group.append(lb_vs['display_name'])
@@ -621,6 +626,7 @@ class VsConfigConv(object):
                                                                                                ns_cloud_ref, ns_vrf_ref,
                                                                                                floating_ip, tenant_ref)
                                     alb_config["NetworkService"].append(new_network_service)
+                                    new_network_service_list.append(new_network_service)
                                     is_network_service_created["{}-{}-{}".format(pci_se_group_name, cloud_name, ns_vrf_name)] = new_network_service
 
                                 vs_list_with_snat_deactivated.append(alb_vs["name"])
@@ -845,14 +851,24 @@ class VsConfigConv(object):
                 conv_utils.add_status_row('virtualservice', None, lb_vs['display_name'],
                                           conv_const.STATUS_ERROR, "Conversion failure")
         for cert in converted_alb_ssl_certs:
-            indirect = []
-            u_ignore = []
-            ignore_for_defaults = {}
-            conv_status = conv_utils.get_conv_status(
-                [], indirect, ignore_for_defaults, [],
-                u_ignore, [])
+            conv_status = conv_utils.get_conv_status([], [], {}, cert, [], [])
             conv_utils.add_conv_status('ssl_key_and_certificate', None, cert['name'], conv_status,
                                        [{"ssl_cert_key": cert}])
+
+        for new_ap in new_pci_app_profile_list:
+            conv_status = conv_utils.get_conv_status([], [], {}, new_ap)
+            conv_utils.add_conv_status('applicationprofile', None, new_ap['name'], conv_status, new_ap)
+
+        for new_service_engine in new_service_engine_group_list:
+            conv_status = conv_utils.get_conv_status([], [], {}, new_service_engine)
+            conv_utils.add_conv_status('serviceenginegroup', None, new_service_engine['name'], conv_status,
+                                       new_service_engine)
+
+        for new_network_service in new_network_service_list:
+            conv_status = conv_utils.get_conv_status([], [], {}, new_network_service)
+            conv_utils.add_conv_status('networkservice', None, new_network_service['name'], conv_status,
+                                       new_network_service)
+
         if self.object_merge_check:
             self.update_ssl_key_refernce(alb_config)
             self.update_pki_refernce(alb_config)
