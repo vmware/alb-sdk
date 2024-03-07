@@ -54,7 +54,7 @@ func TestCreateProfiles(t *testing.T) {
 	sslobj.TenantRef = &tr
 	essr := true
 	sslobj.EnableSslSessionReuse = &essr
-	sst := (int32)(86400)
+	sst := (uint32)(86400)
 	sslobj.SslSessionTimeout = &sst
 	pcco := false
 	sslobj.PreferClientCipherOrdering = &pcco
