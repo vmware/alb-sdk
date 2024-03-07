@@ -228,7 +228,7 @@ class ProfileConfigConv(object):
         alb_pr["preserve_client_ip"] = False
         if lb_pr.get("http_redirect_to"):
             # TODO
-            print("http_redirect_to")
+            LOG.debug("TODO: http_redirect_to")
 
     def convert_udp(self, alb_pr, lb_pr):
         alb_pr['profile'] = dict(
@@ -249,3 +249,12 @@ class ProfileConfigConv(object):
             session_idle_timeout=lb_pr.get('idle_timeout')
         )
         return path
+
+
+def set_certificate_mode(t_obj_body, certificate_mode):
+    if 'http_profile' in t_obj_body.keys():
+        t_obj_body['http_profile']['ssl_client_certificate_mode'] = certificate_mode
+    else:
+        t_obj_body.update({"http_profile": {
+            "ssl_client_certificate_mode": certificate_mode
+        }})

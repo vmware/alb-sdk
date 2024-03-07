@@ -18,7 +18,7 @@ import random
 
 from avi.migrationtools.nsxt_converter.pools_converter import skipped_pools_list, vs_pool_segment_list, \
     vs_sorry_pool_segment_list, pool_name_dict
-from avi.migrationtools.nsxt_converter.profile_converter import application_profile_list, network_profile_list
+from avi.migrationtools.nsxt_converter.profile_converter import application_profile_list, network_profile_list, set_certificate_mode
 from avi.migrationtools.nsxt_converter.ssl_profile_converter import ssl_profile_list
 
 LOG = logging.getLogger(__name__)
@@ -78,6 +78,9 @@ class VsConfigConv(object):
         converted_http_policy_sets = list()
         converted_http_policy_na_list = list()
         converted_http_policy_skipped = list()
+        new_pci_app_profile_list = list()
+        new_service_engine_group_list = list()
+        new_network_service_list = list()
         indirect_client_ssl = []
         indirect_server_ssl = []
         alb_config['VirtualService'] = list()
@@ -430,7 +433,7 @@ class VsConfigConv(object):
                         for profile in alb_config["ApplicationProfile"]:
                             if merge_profile_name == profile["name"]:
                                 if client_ssl["client_auth"] == 'IGNORE':
-                                    profile["ssl_client_certificate_mode"] = 'SSL_CLIENT_CERTIFICATE_NONE'
+                                    set_certificate_mode(profile, 'SSL_CLIENT_CERTIFICATE_NONE')
                     if ssl_key_cert_refs:
                         alb_vs["ssl_key_and_certificate_refs"] = list(set(ssl_key_cert_refs))
                     skipped_client_ssl = [val for val in client_ssl.keys()
@@ -558,6 +561,7 @@ class VsConfigConv(object):
                                             "tenant_ref": conv_utils.get_object_ref(tenant, 'tenant')
                                         }
                                         alb_config["ApplicationProfile"].append(new_pci_app_profile)
+                                        new_pci_app_profile_list.append(new_pci_app_profile)
                                         app_profile_pci_created = True
 
                                 pci_se_group_name = prefix if prefix else self.nsxt_ip
@@ -572,6 +576,7 @@ class VsConfigConv(object):
                                         "tenant_ref": conv_utils.get_object_ref(cloud_tenant, 'tenant')
                                     }
                                     alb_config["ServiceEngineGroup"].append(new_pci_se_group)
+                                    new_service_engine_group_list.append(new_pci_se_group)
                                     se_group_created_for_cloud[cloud_name] = new_pci_se_group
 
                                 vs_with_custom_se_group.append(lb_vs['display_name'])
@@ -621,6 +626,7 @@ class VsConfigConv(object):
                                                                                                ns_cloud_ref, ns_vrf_ref,
                                                                                                floating_ip, tenant_ref)
                                     alb_config["NetworkService"].append(new_network_service)
+                                    new_network_service_list.append(new_network_service)
                                     is_network_service_created["{}-{}-{}".format(pci_se_group_name, cloud_name, ns_vrf_name)] = new_network_service
 
                                 vs_list_with_snat_deactivated.append(alb_vs["name"])
@@ -720,9 +726,9 @@ class VsConfigConv(object):
                         self.add_sorry_pool_member_to_poolgroup(alb_config, main_pool_ref, sorry_pool_ref)
                     else:
                         if pool_present:
-                            self.attach_pool_to_sry_pool_group(alb_config, main_pool_ref,
+                            sorry_pool_ref = self.attach_pool_to_sry_pool_group(alb_config, main_pool_ref,
                                                             sorry_pool_ref, tenant, cloud_name)
-                        main_pool_ref = sorry_pool_ref
+                        main_pool_ref = f"{sorry_pool_ref}"
                         is_pg_created = True
 
                 if is_pg_created:
@@ -845,17 +851,29 @@ class VsConfigConv(object):
                 conv_utils.add_status_row('virtualservice', None, lb_vs['display_name'],
                                           conv_const.STATUS_ERROR, "Conversion failure")
         for cert in converted_alb_ssl_certs:
-            indirect = []
-            u_ignore = []
-            ignore_for_defaults = {}
-            conv_status = conv_utils.get_conv_status(
-                [], indirect, ignore_for_defaults, [],
-                u_ignore, [])
+            conv_status = conv_utils.get_conv_status([], [], {}, cert, [], [])
             conv_utils.add_conv_status('ssl_key_and_certificate', None, cert['name'], conv_status,
                                        [{"ssl_cert_key": cert}])
+
+        for new_ap in new_pci_app_profile_list:
+            conv_status = conv_utils.get_conv_status([], [], {}, new_ap)
+            conv_utils.add_conv_status('applicationprofile', None, new_ap['name'], conv_status, new_ap)
+
+        for new_service_engine in new_service_engine_group_list:
+            conv_status = conv_utils.get_conv_status([], [], {}, new_service_engine)
+            conv_utils.add_conv_status('serviceenginegroup', None, new_service_engine['name'], conv_status,
+                                       new_service_engine)
+
+        for new_network_service in new_network_service_list:
+            conv_status = conv_utils.get_conv_status([], [], {}, new_network_service)
+            conv_utils.add_conv_status('networkservice', None, new_network_service['name'], conv_status,
+                                       new_network_service)
+
         if self.object_merge_check:
             self.update_ssl_key_refernce(alb_config)
             self.update_pki_refernce(alb_config)
+
+        self.verify_must_checks(alb_config)
 
     def get_vs_app_profile_ref(self, alb_profile_config, profile_name, object_merge_check,
                                merge_object_mapping, profile_type, tenant):
@@ -1270,7 +1288,6 @@ class VsConfigConv(object):
                       if obj['name'] == pg_ref]
         if pool_group:
             pool_group = pool_group[0]
-            pool_group['tier1_lr'] = tier1_lr
             for member in pool_group['members']:
                 pool_name = conv_utils.get_name(member['pool_ref'])
                 self.add_tier_to_pool(pool_name, alb_config, tier1_lr)
@@ -1322,6 +1339,8 @@ class VsConfigConv(object):
             pool_ref=conv_utils.get_object_ref(main_pool_ref, 'pool', tenant=tenant, cloud_name=cloud_name)
         )
         sry_pool_group['members'].append(pool_member)
+        sry_pool_group['name'] = f"{main_pool_ref}-{str(random.randint(0, 20))}"
+        return sry_pool_group['name']
 
     def update_poolgroup_with_ssl(self, alb_config, nsx_lb_config, lb_vs, pg_name,
                                   prefix, tenant,
@@ -1408,3 +1427,63 @@ class VsConfigConv(object):
                 pki_name = self.merge_object_mapping['pki_profile'].get(pki_name)
                 if pki_name:
                     app['pki_profile_ref'] = pki_profile_ref + pki_name
+
+    def verify_must_checks(self, alb_config):
+        # If https monitor is attached to a VS pool and ssl profile is not attached to with of VS or monitor then
+        # add a default system SSL profile to https type monitor
+        self.verify_must_checks_for_https_healh_monitor(alb_config)
+
+    def verify_must_checks_for_https_healh_monitor(self, alb_config):
+        LOG.debug("Starting must check verification for https health monitor ssl profile")
+
+        alb_pool_name_object_dict = dict()
+        alb_pool_group_name_object_dict = dict()
+        alb_hm_name_object_dict = dict()
+
+        for alb_pool in alb_config['Pool']:
+            alb_pool_name_object_dict[alb_pool['name']] = alb_pool
+        for alb_pool_group in alb_config['PoolGroup']:
+            alb_pool_group_name_object_dict[alb_pool_group['name']] = alb_pool_group
+        for alb_hm in alb_config['HealthMonitor']:
+            alb_hm_name_object_dict[alb_hm['name']] = alb_hm
+
+        for alb_vs in alb_config['VirtualService']:
+            if alb_vs.get('pool_ref'):
+                self.attach_ssl_profile_to_https_monitor(alb_vs.get('name'), alb_vs.get('pool_ref'),
+                                                         alb_pool_name_object_dict, alb_hm_name_object_dict)
+            elif alb_vs.get('pool_group_ref'):
+                pool_group_name = alb_vs['pool_group_ref'].split("name=")[1].split("&")[0]
+                pool_group_obj = alb_pool_group_name_object_dict.get(pool_group_name)
+                if pool_group_obj and pool_group_obj.get("members"):
+                    for pool_member in pool_group_obj.get("members"):
+                        self.attach_ssl_profile_to_https_monitor(alb_vs.get('name'), pool_member.get('pool_ref'),
+                                                                 alb_pool_name_object_dict, alb_hm_name_object_dict)
+            else:
+                LOG.debug(f"No pool group or pool attached to VS: {alb_vs.get('name')}")
+
+        LOG.debug("Completed must check verification for https health monitor ssl profile")
+
+    def attach_ssl_profile_to_https_monitor(self, vs_name, pool_ref, alb_pool_name_object_dict, alb_hm_name_object_dict):
+        is_ssl_configured = False
+
+        pool_name = pool_ref.split("name=")[1].split("&")[0]
+        pool_obj = alb_pool_name_object_dict.get(pool_name)
+        if pool_obj.get('ssl_profile_ref'):
+            is_ssl_configured = True
+        if not is_ssl_configured:
+            hm_name_list = pool_obj.get('health_monitor_refs')
+            if hm_name_list:
+                for hm in hm_name_list:
+                    hm_name = hm.split("name=")[1].split("&")[0]
+                    hm_obj = alb_hm_name_object_dict.get(hm_name)
+                    if hm_obj.get('type') == 'HEALTH_MONITOR_HTTPS' and not hm_obj.get('ssl_attributes'):
+                        LOG.debug(f"Not found ssl profile for https monitor type for VS: {vs_name}, "
+                                  f"Pool: {pool_obj.get('name')}, HM: {hm_obj.get('name')}. "
+                                  f"Attaching system default ssl profile.")
+                        ssl_attributes = {
+                            "ssl_profile_ref": f"/api/sslprofile/?tenant=admin&name=System-Standard"
+                        }
+                        hm_obj["https_monitor"]['ssl_attributes'] = ssl_attributes
+        else:
+            LOG.debug(f"SSL profile is already attached to Pool: {pool_obj.get('name')}, "
+                      f"VS: {vs_name}")

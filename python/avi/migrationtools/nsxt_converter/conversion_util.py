@@ -1062,13 +1062,13 @@ class NsxtConvUtil(MigrationUtil):
         pool_obj = [pool for pool in avi_config['Pool'] if pool['name'] == ref
                     and pool['tenant_ref'] == self.get_object_ref(tenant,
                                                                   'tenant')]
-        pool_per_ref = pool_obj[0].get(
+        pool_persis_ref = pool_obj[0].get(
             'application_persistence_profile_ref') if pool_obj else None
-        pool_per_name = self.get_name(pool_per_ref) if pool_per_ref else None
-        pool_per_types = [obj['persistence_type'] for obj in (avi_config[
+        pool_persis_name = self.get_name(pool_persis_ref) if pool_persis_ref else None
+        pool_persis_types = [obj['persistence_type'] for obj in (avi_config[
             'ApplicationPersistenceProfile']) if obj['name'] ==
-                          pool_per_name] if pool_per_name else []
-        pool_per_type = pool_per_types[0] if pool_per_types else None
+                          pool_persis_name] if pool_persis_name else []
+        pool_persis_type = pool_persis_types[0] if pool_persis_types else None
         if not pool_obj:
             pool_group_obj = [pool for pool in avi_config['PoolGroup']
                               if pool['name'] == ref and
@@ -1149,6 +1149,8 @@ class NsxtConvUtil(MigrationUtil):
                 ref = self.clone_pool_group(ref, vs_name, avi_config, True,
                                             tenant, cloud_name=cloud_name)
             else:
+                if isinstance(shared_vs[0], str):
+                    shared_vs = [obj for obj in avi_config['VirtualService'] if obj['name'] == shared_vs[0]]
                 shared_appref = shared_vs[0].get('application_profile_ref')
                 shared_apptype = None
                 if shared_appref:
@@ -1168,7 +1170,7 @@ class NsxtConvUtil(MigrationUtil):
 
                 if self.is_pool_clone_criteria(
                         controller_version, app_prof_type, shared_apptype,
-                        persist_type, pool_per_type, shared_appobj,
+                        persist_type, pool_persis_type, shared_appobj,
                         app_prof_obj):
                     LOG.debug('Cloned the pool %s for VS %s', ref, vs_name)
                     ref = self.clone_pool(ref, vs_name, avi_config['Pool'],
@@ -1361,7 +1363,7 @@ class NsxtConvUtil(MigrationUtil):
         :param pool_ref: name of the pool
         """
         for pool_obj in avi_pool_list:
-            if pool_ref == pool_obj["name"]:
+            if pool_ref == pool_obj["name"] and pool_segment:
                 pool_obj["placement_networks"] = list()
                 for sub in pool_segment:
                     ip_addreses = dict(

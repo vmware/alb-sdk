@@ -123,6 +123,10 @@ class AviAnsibleConverterBase(object):
         # query.pop('cloud', None)
         u = u._replace(query=urlencode(query, True))
         x = urlunparse(u)
+        if '+' in x:
+            # Spaces get replaced with '+' which further causes error like 'Object not found'.
+            # Hence, replacing all the '+' back to spaces
+            x = x.replace('+', ' ')
         return unquote(x)
 
     def transform_obj_refs(self, obj):
