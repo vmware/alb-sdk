@@ -63,26 +63,26 @@ jobs:
           echo "Java version ${JAVA_VERSION}"
           echo "::set-output name=JAVA_RELEASE_VERSION::${JAVA_VERSION}"
 
-      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
-        name: Publish JAVA
-        run: |
-          echo "Publish Java Version ${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}"
-          echo "Publish AVI VERSION ${{ steps.get_sdk_version.outputs.AVI_VERSION }}"
-          cd java
-          mvn versions:set -DnewVersion=${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}
-          if [[ ${{ steps.publish_target.outputs.TAG_NAME }} == "test-"* ]]; then
-            echo "Test tag found. Skipping java assets upload to public repo."
-            mvn clean install -Dgpg.skip=true
-          else
-            echo "Normal tag found. Uploading java assets to public repo."
-            # mvn clean install -Dgpg.skip=true
-            mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
-          fi
-          cd ..
-          ls java/target/
-          cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}.jar .
-          cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javadoc.jar .
-          cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-sources.jar .
+#      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
+#        name: Publish JAVA
+#        run: |
+#          echo "Publish Java Version ${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}"
+#          echo "Publish AVI VERSION ${{ steps.get_sdk_version.outputs.AVI_VERSION }}"
+#          cd java
+#          mvn versions:set -DnewVersion=${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}
+#          if [[ ${{ steps.publish_target.outputs.TAG_NAME }} == "test-"* ]]; then
+#            echo "Test tag found. Skipping java assets upload to public repo."
+#            mvn clean install -Dgpg.skip=true
+#          else
+#            echo "Normal tag found. Uploading java assets to public repo."
+#            # mvn clean install -Dgpg.skip=true
+#            mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
+#          fi
+#          cd ..
+#          ls java/target/
+#          cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}.jar .
+#          cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javadoc.jar .
+#          cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-sources.jar .
 
       # Installs and upgrades pip, installs other dependencies and installs the package from setup.py
       - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'python-sdk') || steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET == 'true'
