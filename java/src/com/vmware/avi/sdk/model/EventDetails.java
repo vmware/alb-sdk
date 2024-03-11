@@ -51,6 +51,9 @@ public class EventDetails  {
     @JsonProperty("app_signature_event_data")
     private AppSignatureEventData appSignatureEventData;
 
+    @JsonProperty("async_patch_state")
+    private AsyncPatchState asyncPatchState;
+
     @JsonProperty("attach_ip_status_details")
     private AttachIpStatusEventDetails attachIpStatusDetails;
 
@@ -909,6 +912,28 @@ public class EventDetails  {
      */
     public void setAppSignatureEventData(AppSignatureEventData appSignatureEventData) {
         this.appSignatureEventData = appSignatureEventData;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Field introduced in 22.1.6,30.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return asyncPatchState
+     */
+    public AsyncPatchState getAsyncPatchState() {
+        return asyncPatchState;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Field introduced in 22.1.6,30.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param asyncPatchState set the asyncPatchState.
+     */
+    public void setAsyncPatchState(AsyncPatchState asyncPatchState) {
+        this.asyncPatchState = asyncPatchState;
     }
 
     /**
@@ -5491,6 +5516,7 @@ public class EventDetails  {
   Objects.equals(this.configUserNotAuthrzRuleDetails, objEventDetails.configUserNotAuthrzRuleDetails)&&
   Objects.equals(this.configSeGrpFlvUpdateDetails, objEventDetails.configSeGrpFlvUpdateDetails)&&
   Objects.equals(this.apiVersionDeprecated, objEventDetails.apiVersionDeprecated)&&
+  Objects.equals(this.asyncPatchState, objEventDetails.asyncPatchState)&&
   Objects.equals(this.sslExpireDetails, objEventDetails.sslExpireDetails)&&
   Objects.equals(this.sslExportDetails, objEventDetails.sslExportDetails)&&
   Objects.equals(this.sslRenewDetails, objEventDetails.sslRenewDetails)&&
@@ -5637,6 +5663,7 @@ public class EventDetails  {
                         sb.append("    anomalyDetails: ").append(toIndentedString(anomalyDetails)).append("\n");
                         sb.append("    apiVersionDeprecated: ").append(toIndentedString(apiVersionDeprecated)).append("\n");
                         sb.append("    appSignatureEventData: ").append(toIndentedString(appSignatureEventData)).append("\n");
+                        sb.append("    asyncPatchState: ").append(toIndentedString(asyncPatchState)).append("\n");
                         sb.append("    attachIpStatusDetails: ").append(toIndentedString(attachIpStatusDetails)).append("\n");
                         sb.append("    avgUptimeChangeDetails: ").append(toIndentedString(avgUptimeChangeDetails)).append("\n");
                         sb.append("    awsAsgDeletionDetails: ").append(toIndentedString(awsAsgDeletionDetails)).append("\n");
