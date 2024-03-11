@@ -382,8 +382,11 @@ font-style: italic;
       "session_config" : {
         "session_cookie_samesite" : "aeiou",
         "session_cookie_httponly" : true,
+        "session_establishment_timeout" : "",
         "session_cookie_name" : "aeiou",
-        "session_cookie_secure" : true
+        "session_idle_timeout" : "",
+        "session_cookie_secure" : true,
+        "session_maximum_timeout" : ""
       },
       "max_rps_unknown_cip" : "",
       "use_true_client_ip" : true,
@@ -697,8 +700,11 @@ font-style: italic;
     "session_config" : {
       "session_cookie_samesite" : "aeiou",
       "session_cookie_httponly" : true,
+      "session_establishment_timeout" : "",
       "session_cookie_name" : "aeiou",
-      "session_cookie_secure" : true
+      "session_idle_timeout" : "",
+      "session_cookie_secure" : true,
+      "session_maximum_timeout" : ""
     },
     "max_rps_unknown_cip" : "",
     "use_true_client_ip" : true,
@@ -1083,8 +1089,11 @@ font-style: italic;
     "session_config" : {
       "session_cookie_samesite" : "aeiou",
       "session_cookie_httponly" : true,
+      "session_establishment_timeout" : "",
       "session_cookie_name" : "aeiou",
-      "session_cookie_secure" : true
+      "session_idle_timeout" : "",
+      "session_cookie_secure" : true,
+      "session_maximum_timeout" : ""
     },
     "max_rps_unknown_cip" : "",
     "use_true_client_ip" : true,
@@ -1409,8 +1418,11 @@ font-style: italic;
     "session_config" : {
       "session_cookie_samesite" : "aeiou",
       "session_cookie_httponly" : true,
+      "session_establishment_timeout" : "",
       "session_cookie_name" : "aeiou",
-      "session_cookie_secure" : true
+      "session_idle_timeout" : "",
+      "session_cookie_secure" : true,
+      "session_maximum_timeout" : ""
     },
     "max_rps_unknown_cip" : "",
     "use_true_client_ip" : true,
@@ -1735,8 +1747,11 @@ font-style: italic;
     "session_config" : {
       "session_cookie_samesite" : "aeiou",
       "session_cookie_httponly" : true,
+      "session_establishment_timeout" : "",
       "session_cookie_name" : "aeiou",
-      "session_cookie_secure" : true
+      "session_idle_timeout" : "",
+      "session_cookie_secure" : true,
+      "session_maximum_timeout" : ""
     },
     "max_rps_unknown_cip" : "",
     "use_true_client_ip" : true,
@@ -2223,6 +2238,9 @@ font-style: italic;
 <div class="param">session_cookie_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP session cookie name to use. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">session_cookie_samesite (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP session cookie SameSite attribute. Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">session_cookie_secure (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If set, HTTP session cookie will use &#39;Secure&#39; attribute. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">session_establishment_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum allowed time between creating a session and the client coming back. Value in seconds. Allowed values are 120-3600. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">session_idle_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum allowed time to expire the session after establishment on client inactivity. Value in seconds. Allowed values are 120-604800. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">session_maximum_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum allowed time to expire the session, even if it is still active. Value in seconds. Allowed values are 120-604800. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
