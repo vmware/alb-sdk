@@ -38,6 +38,9 @@ type EventDetails struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	AppSignatureEventData *AppSignatureEventData `json:"app_signature_event_data,omitempty"`
 
+	//  Field introduced in 22.1.6,30.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	AsyncPatchState *AsyncPatchState `json:"async_patch_state,omitempty"`
+
 	// Details for Attach IP status. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	AttachIPStatusDetails *AttachIPStatusEventDetails `json:"attach_ip_status_details,omitempty"`
 
