@@ -59,6 +59,19 @@ aviClient, err := clients.NewAviClient("10.10.25.25", "admin",
 		session.SetTenant("admin"),
 		session.SetInsecure)
 ```
+- Create AVI API session using IPV6:
+
+```go
+aviClient, err := clients.NewAviClient("2610:124:6020:c703::12e", "admin",
+		session.SetPassword("something"),
+		session.SetTenant("admin"),
+		session.SetInsecure)
+
+aviClient, err := clients.NewAviClient("https://[2610:124:6020:c703::12e]", "admin",
+		session.SetPassword("something"),
+		session.SetTenant("admin"),
+		session.SetInsecure)
+```
 
 For custom retry count and interval (in seconds) between retries to poll for 
 controller status, below example can be used to initialise the client.

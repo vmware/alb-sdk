@@ -13,6 +13,7 @@ import (
 	"io/ioutil"
 	"math"
 	"mime/multipart"
+	"net"
 	"net/http"
 	"net/http/httputil"
 	"os"
@@ -311,7 +312,17 @@ func NewAviSession(host string, username string, options ...func(*AviSession) er
 	}
 	avisess.sessionid = ""
 	avisess.csrfToken = ""
-	avisess.prefix = "https://" + avisess.host + "/"
+
+	if strings.HasPrefix(avisess.host, "http") {
+		avisess.prefix = avisess.host + "/"
+	} else {
+		ip := GetIPVersion(avisess.host)
+		if ip.To4() != nil {
+			avisess.prefix = "https://" + avisess.host + "/"
+		} else if ip.To16() != nil {
+			avisess.prefix = fmt.Sprintf("https://[%s]/", avisess.host)
+		}
+	}
 	avisess.tenant = ""
 	avisess.insecure = false
 	// The default behaviour was for 10 iterations, if client does not init session with specific retry
@@ -1615,4 +1626,13 @@ func updateUri(uri string, opts *ApiOptions) string {
 		}
 	}
 	return uri
+}
+
+func GetIPVersion(ipAddr string) net.IP {
+	ip := net.ParseIP(ipAddr)
+	if ip == nil {
+		glog.Errorf("Controller Host is not valid.")
+		return nil
+	}
+	return ip
 }

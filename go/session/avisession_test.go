@@ -916,3 +916,20 @@ func TestAviSessionGoRoutine(t *testing.T) {
 		wg.Wait()
 	}
 }
+
+// Tests to verify IP version.
+func TestIPV6_V6(t *testing.T) {
+	ip := GetIPVersion("2620:124:6020:c703::22e")
+	if ip.To16() == nil {
+		t.Errorf("Invalid IPV6 address")
+		t.Fail()
+	}
+}
+
+func TestIPV6_V4(t *testing.T) {
+	ip := GetIPVersion("1.2.3.4")
+	if ip.To16() == nil {
+		t.Errorf("Invalid IPV4 address")
+		t.Fail()
+	}
+}
