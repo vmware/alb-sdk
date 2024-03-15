@@ -257,6 +257,9 @@ type EventDetails struct {
 	// False positive details. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	FalsePositiveDetails *FalsePositiveDetails `json:"false_positive_details,omitempty"`
 
+	// File object event. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	FileobjectDetails *FileObjectDetails `json:"fileobject_details,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	GcpCloudRouterInfo *GCPCloudRouterUpdate `json:"gcp_cloud_router_info,omitempty"`
 
