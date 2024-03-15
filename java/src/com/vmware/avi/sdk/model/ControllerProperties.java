@@ -142,6 +142,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("file_reference_mappings")
     private List<FileReferenceMapping> fileReferenceMappings;
 
+    @JsonProperty("fileobject_max_file_versions")
+    private Integer fileobjectMaxFileVersions = 3;
+
     @JsonProperty("gslb_purge_batch_size")
     private Integer gslbPurgeBatchSize = 1000;
 
@@ -1366,6 +1369,40 @@ public class ControllerProperties extends AviRestResource  {
       }
       this.fileReferenceMappings.add(fileReferenceMappingsItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This is the max number of file versions that will be retained for a file referenced by the local fileobject.
+     * Subsequent uploads of file will result in the file rotation of the older version and the latest version retained.
+     * Example  when a file upload is done for the first time, there will be a v1 version.
+     * Subsequent uploads will get mapped to v1, v2 and v3 versions.
+     * On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained.
+     * Allowed values are 1-5.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+     * @return fileobjectMaxFileVersions
+     */
+    public Integer getFileobjectMaxFileVersions() {
+        return fileobjectMaxFileVersions;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This is the max number of file versions that will be retained for a file referenced by the local fileobject.
+     * Subsequent uploads of file will result in the file rotation of the older version and the latest version retained.
+     * Example  when a file upload is done for the first time, there will be a v1 version.
+     * Subsequent uploads will get mapped to v1, v2 and v3 versions.
+     * On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained.
+     * Allowed values are 1-5.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+     * @param fileobjectMaxFileVersions set the fileobjectMaxFileVersions.
+     */
+    public void setFileobjectMaxFileVersions(Integer  fileobjectMaxFileVersions) {
+        this.fileobjectMaxFileVersions = fileobjectMaxFileVersions;
     }
 
     /**
@@ -3225,7 +3262,8 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.cloudReconcileInterval, objControllerProperties.cloudReconcileInterval)&&
   Objects.equals(this.cloudDiscoveryInterval, objControllerProperties.cloudDiscoveryInterval)&&
   Objects.equals(this.systemReportLimit, objControllerProperties.systemReportLimit)&&
-  Objects.equals(this.systemReportCleanupInterval, objControllerProperties.systemReportCleanupInterval);
+  Objects.equals(this.systemReportCleanupInterval, objControllerProperties.systemReportCleanupInterval)&&
+  Objects.equals(this.fileobjectMaxFileVersions, objControllerProperties.fileobjectMaxFileVersions);
     }
 
     @Override
@@ -3272,6 +3310,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    federatedDatastoreCleanupDuration: ").append(toIndentedString(federatedDatastoreCleanupDuration)).append("\n");
                         sb.append("    fileObjectCleanupPeriod: ").append(toIndentedString(fileObjectCleanupPeriod)).append("\n");
                         sb.append("    fileReferenceMappings: ").append(toIndentedString(fileReferenceMappings)).append("\n");
+                        sb.append("    fileobjectMaxFileVersions: ").append(toIndentedString(fileobjectMaxFileVersions)).append("\n");
                         sb.append("    gslbPurgeBatchSize: ").append(toIndentedString(gslbPurgeBatchSize)).append("\n");
                         sb.append("    gslbPurgeSleepTimeMs: ").append(toIndentedString(gslbPurgeSleepTimeMs)).append("\n");
                         sb.append("    ignoreVrfInNetworksubnetlist: ").append(toIndentedString(ignoreVrfInNetworksubnetlist)).append("\n");

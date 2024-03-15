@@ -270,6 +270,9 @@ public class EventDetails  {
     @JsonProperty("false_positive_details")
     private FalsePositiveDetails falsePositiveDetails;
 
+    @JsonProperty("fileobject_details")
+    private FileObjectDetails fileobjectDetails;
+
     @JsonProperty("gcp_cloud_router_info")
     private GCPCloudRouterUpdate gcpCloudRouterInfo;
 
@@ -2420,6 +2423,30 @@ public class EventDetails  {
      */
     public void setFalsePositiveDetails(FalsePositiveDetails falsePositiveDetails) {
         this.falsePositiveDetails = falsePositiveDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * File object event.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return fileobjectDetails
+     */
+    public FileObjectDetails getFileobjectDetails() {
+        return fileobjectDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * File object event.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param fileobjectDetails set the fileobjectDetails.
+     */
+    public void setFileobjectDetails(FileObjectDetails fileobjectDetails) {
+        this.fileobjectDetails = fileobjectDetails;
     }
 
     /**
@@ -5645,6 +5672,7 @@ public class EventDetails  {
   Objects.equals(this.connectionEvent, objEventDetails.connectionEvent)&&
   Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent)&&
   Objects.equals(this.pkiprofileDetails, objEventDetails.pkiprofileDetails)&&
+  Objects.equals(this.fileobjectDetails, objEventDetails.fileobjectDetails)&&
   Objects.equals(this.systemReportEventDetails, objEventDetails.systemReportEventDetails)&&
   Objects.equals(this.diskCleanupEventDetails, objEventDetails.diskCleanupEventDetails);
     }
@@ -5736,6 +5764,7 @@ public class EventDetails  {
                         sb.append("    dockerUcpDetails: ").append(toIndentedString(dockerUcpDetails)).append("\n");
                         sb.append("    dosAttackEventDetails: ").append(toIndentedString(dosAttackEventDetails)).append("\n");
                         sb.append("    falsePositiveDetails: ").append(toIndentedString(falsePositiveDetails)).append("\n");
+                        sb.append("    fileobjectDetails: ").append(toIndentedString(fileobjectDetails)).append("\n");
                         sb.append("    gcpCloudRouterInfo: ").append(toIndentedString(gcpCloudRouterInfo)).append("\n");
                         sb.append("    gcpInfo: ").append(toIndentedString(gcpInfo)).append("\n");
                         sb.append("    genericAuditComplianceEventInfo: ").append(toIndentedString(genericAuditComplianceEventInfo)).append("\n");
