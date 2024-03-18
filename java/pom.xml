@@ -254,7 +254,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>5.3.32</version>
+			<version>6.0.18</version>
 			<scope>provided</scope>
 		</dependency>
 
