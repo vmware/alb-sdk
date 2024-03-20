@@ -36,9 +36,6 @@ public class PKIProfile extends AviRestResource  {
     @JsonProperty("crl_file_refs")
     private List<String> crlFileRefs;
 
-    @JsonProperty("crls")
-    private List<CRL> crls;
-
     @JsonProperty("ignore_peer_chain")
     private Boolean ignorePeerChain;
 
@@ -229,42 +226,6 @@ public class PKIProfile extends AviRestResource  {
         this.crlFileRefs = new ArrayList<String>();
       }
       this.crlFileRefs.add(crlFileRefsItem);
-      return this;
-    }
-    /**
-     * This is the getter method this will return the attribute value.
-     * List of certificate revocation lists.this field is now represented by a file via the fileobject semantics.
-     * Field deprecated in 30.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * @return crls
-     */
-    public List<CRL> getCrls() {
-        return crls;
-    }
-
-    /**
-     * This is the setter method. this will set the crls
-     * List of certificate revocation lists.this field is now represented by a file via the fileobject semantics.
-     * Field deprecated in 30.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * @return crls
-     */
-    public void setCrls(List<CRL>  crls) {
-        this.crls = crls;
-    }
-
-    /**
-     * This is the setter method this will set the crls
-     * List of certificate revocation lists.this field is now represented by a file via the fileobject semantics.
-     * Field deprecated in 30.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * @return crls
-     */
-    public PKIProfile addCrlsItem(CRL crlsItem) {
-      if (this.crls == null) {
-        this.crls = new ArrayList<CRL>();
-      }
-      this.crls.add(crlsItem);
       return this;
     }
 
@@ -484,7 +445,6 @@ public class PKIProfile extends AviRestResource  {
       return   Objects.equals(this.uuid, objPKIProfile.uuid)&&
   Objects.equals(this.name, objPKIProfile.name)&&
   Objects.equals(this.caCerts, objPKIProfile.caCerts)&&
-  Objects.equals(this.crls, objPKIProfile.crls)&&
   Objects.equals(this.ignorePeerChain, objPKIProfile.ignorePeerChain)&&
   Objects.equals(this.crlCheck, objPKIProfile.crlCheck)&&
   Objects.equals(this.validateOnlyLeafCrl, objPKIProfile.validateOnlyLeafCrl)&&
@@ -505,7 +465,6 @@ public class PKIProfile extends AviRestResource  {
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
                         sb.append("    crlCheck: ").append(toIndentedString(crlCheck)).append("\n");
                         sb.append("    crlFileRefs: ").append(toIndentedString(crlFileRefs)).append("\n");
-                        sb.append("    crls: ").append(toIndentedString(crls)).append("\n");
                         sb.append("    ignorePeerChain: ").append(toIndentedString(ignorePeerChain)).append("\n");
                         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
