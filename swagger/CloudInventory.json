@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "30.2.1",
+        "version": "31.1.1",
         "title": "Avi CloudInventory Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -830,10 +830,6 @@
                 "datacenter_managed_object_id": {
                     "description": "Managed object id of the datacenter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
-                },
-                "deactivate_vm_discovery": {
-                    "description": "If true, VM's on the vCenter will not be discovered.Set it to true if there are more than 10000 VMs in the datacenter. Field deprecated in 30.1.1. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
                 },
                 "is_nsx_environment": {
                     "description": "If true, NSX-T segment spanning multiple VDS with vCenter cloud are merged to a single network in Avi. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
