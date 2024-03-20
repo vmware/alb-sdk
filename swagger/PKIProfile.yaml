@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '30.2.1'
+    version: '31.1.1'
     title: Avi PKIProfile Object API
     contact:
         name: Avi Networks Inc.
@@ -399,9 +399,6 @@ definitions:
     CRL:
         type: object
         properties:
-            body:
-                description: "Certificate Revocation list from a given issuer in PEM format. This can either be configured directly or via the server_url. . Field deprecated in 30.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             common_name:
                 description: "Common name of the issuer in the Certificate Revocation list. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -479,11 +476,6 @@ definitions:
                 type: array
                 items:
                     type: string
-            crls:
-                description: "List of Certificate Revocation Lists.This field is now represented by a file via the fileobject semantics. Field deprecated in 30.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/CRL'
             ignore_peer_chain:
                 description: "When enabled, Avi will not trust Intermediate and Root certs presented by a client.  Instead, only the chain certs configured in the Certificate Authority section will be used to verify trust of the client's cert. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- true), Basic edition(Allowed values- true), Enterprise with Cloud Services edition. Special default for Essentials edition is true, Basic edition is true, Enterprise is False."
                 type: boolean
