@@ -8,9 +8,6 @@ package models
 // swagger:model CRL
 type CRL struct {
 
-	// Certificate Revocation list from a given issuer in PEM format. This can either be configured directly or via the server_url. . Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	Body *string `json:"body,omitempty"`
-
 	// Common name of the issuer in the Certificate Revocation list. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CommonName *string `json:"common_name,omitempty"`
 
@@ -19,9 +16,6 @@ type CRL struct {
 
 	// Cached etag to optimize the download of the CRL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Etag *string `json:"etag,omitempty"`
-
-	// Refers to FileObject containing CRL body. It is a reference to an object of type FileObject. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	FileRef *string `json:"file_ref,omitempty"`
 
 	// Fingerprint of the CRL. Used to avoid configuring duplicates. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Fingerprint *string `json:"fingerprint,omitempty"`

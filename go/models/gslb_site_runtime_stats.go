@@ -50,6 +50,15 @@ type GslbSiteRuntimeStats struct {
 	//  Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGeoUpdTxed *uint32 `json:"num_geo_upd_txed,omitempty"`
 
+	// Used for federated file object stats for create. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	NumGfoCrRxed *uint32 `json:"num_gfo_cr_rxed,omitempty"`
+
+	// Used for federated file object stats for delete. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	NumGfoDelRxed *uint32 `json:"num_gfo_del_rxed,omitempty"`
+
+	// Used for federated file object stats for update. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	NumGfoUpdRxed *uint32 `json:"num_gfo_upd_rxed,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGhmCrRxed *uint32 `json:"num_ghm_cr_rxed,omitempty"`
 

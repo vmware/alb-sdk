@@ -92,7 +92,6 @@ type AviClient struct {
 	NetworkService                  *NetworkServiceClient
 	NsxtSegmentRuntime              *NsxtSegmentRuntimeClient
 	PKIprofile                      *PKIprofileClient
-	PingAccessAgent                 *PingAccessAgentClient
 	Pool                            *PoolClient
 	PoolGroup                       *PoolGroupClient
 	PoolGroupDeploymentPolicy       *PoolGroupDeploymentPolicyClient
@@ -253,7 +252,6 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.NetworkService = NewNetworkServiceClient(aviSession)
 	aviClient.NsxtSegmentRuntime = NewNsxtSegmentRuntimeClient(aviSession)
 	aviClient.PKIprofile = NewPKIprofileClient(aviSession)
-	aviClient.PingAccessAgent = NewPingAccessAgentClient(aviSession)
 	aviClient.Pool = NewPoolClient(aviSession)
 	aviClient.PoolGroup = NewPoolGroupClient(aviSession)
 	aviClient.PoolGroupDeploymentPolicy = NewPoolGroupDeploymentPolicyClient(aviSession)
