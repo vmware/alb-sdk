@@ -263,6 +263,8 @@ class ProfileConfigConv(object):
         key_passphrase = None
         # Get the key passphrase for key_file
         if is_key_protected and self.f5_passphrase_keys:
+            if ":" in key_file_name:
+                key_file_name = key_file_name.split(":")[-1]
             key_passphrase = self.f5_passphrase_keys.get(key_file_name, None)
 
         if is_key_protected and not key_passphrase:
