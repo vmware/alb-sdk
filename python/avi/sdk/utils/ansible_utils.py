@@ -164,8 +164,9 @@ RE_REF_MATCH = re.compile(r'^/api/[\w/]+\?name\=[\w*]+[^#<>]*$')
 # if HTTP ref match then strip out the #name
 # HTTP_REF_MATCH = re.compile('https://[\w.0-9:-]+/api/[\w/\?.#&-]*$')
 HTTP_REF_MATCH = re.compile(r'https://[\w.0-9:-]+/api/.+')
+HTTP_REF_MATCH_IPV6 = re.compile(r'https://[[\w.0-9:-]+]/api/.+')
 HTTP_REF_W_NAME_MATCH = re.compile(r'https://[\w.0-9:-]+/api/.*#.+')
-
+HTTP_REF_W_NAME_MATCH_IPV6 = re.compile(r'https://[[\w.0-9:-]+]/api/.*#.+')
 
 def ref_n_str_cmp(x, y):
     """
@@ -206,10 +207,10 @@ def ref_n_str_cmp(x, y):
     elif HTTP_REF_MATCH.match(x):
         x = x.rsplit('#', 1)[0]
         y = y.rsplit('#', 1)[0]
-    elif RE_REF_MATCH.match(y):
+    elif RE_REF_MATCH.match(y) or HTTP_REF_MATCH_IPV6.match(y):
         y = y.split('name=')[1]
 
-    if HTTP_REF_W_NAME_MATCH.match(y):
+    if HTTP_REF_W_NAME_MATCH.match(y) or HTTP_REF_W_NAME_MATCH_IPV6.match(y):
         path = y.split('api/', 1)[1]
         # Fetching name or uuid from path /xxxx_xx/xx/xx_x/uuid_or_name
         uuid_or_name = path.split('/')[-1]
