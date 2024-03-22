@@ -133,7 +133,6 @@ class PoolConfigConv(object):
                              vs_select_pool_action_list)
                         is_pool_orphan=False
 
-
                     if is_pool_orphan:
                         skipped_pools_list.append(name)
                         skip_msg = 'Pool is orphan , it is not associated with any vs'
@@ -168,23 +167,36 @@ class PoolConfigConv(object):
 
                 na_list = [val for val in lb_pl.keys()
                            if val in self.common_na_attr or val in self.pool_na_attr]
-                if lb_pl['snat_translation'].get('type') != "LBSnatDisabled":
-                    if lb_pl.get('member_group'):
-                        servers, member_skipped_config, skipped_servers, limits = \
-                            self.convert_member_group_to_pool_servers(ip_addr_grp, lb_pl['member_group'])
-                        if lb_pl['member_group'].get('customized_members'):
-                            customized_members = lb_pl['member_group'].get('customized_members')
-                            self.update_pool_member_group_with_customized_member(servers, customized_members)
-                    else:
-                        servers, member_skipped_config, skipped_servers, limits = \
-                            self.convert_servers_config(lb_pl.get("members", []))
-                else:
+                servers = []
+                skipped_servers = []
+                member_skipped_config = []
+                skipped_list_mg = []
+                limits = {}
+                if lb_pl.get("members", []):
                     servers, member_skipped_config, skipped_servers, limits = \
                         self.convert_servers_config(lb_pl.get("members", []))
+                elif lb_pl.get('member_group', []):
+                    skipped_mg = [val for val in lb_pl.get('member_group').keys() if val not in self.member_group_attr]
+                    if skipped_mg:
+                        skipped_list_mg.append({"skipped_mg": skipped_mg})
+                    if lb_pl['member_group'].get('group_path'):
+                        alb_pl['nsx_securitygroup'] = [lb_pl.get('member_group').get('group_path')]
+                    if lb_pl['member_group'].get("port", None):
+                        alb_pl['default_server_port'] = lb_pl['member_group'].get("port")
+                    if lb_pl.get("snat_translation"):
+                        # TO-DO - HANDLE In APPLICATION PROFILE
+                        # Need to set in Application profile
+                        LOG.info('[POOL] snat_translation Needs to Handle in Application Profile.')
+                        pass
+                else:
+                    LOG.warning(f"None of the pool members or member group are present for pool "
+                                f"{lb_pl['display_name']}")
+
                 alb_pl["name"] = name
-                alb_pl["servers"] = servers
+                if servers:
+                    alb_pl["servers"] = servers
                 pool_name_dict[lb_pl['id']] = pool_name_without_prefix
-                if any(server.get("port") == None for server in servers):
+                if any(server.get("port") is None for server in servers):
                     alb_pl.update({"use_service_port": "true"})
                 alb_pl['tenant_ref'] = conv_utils.get_object_ref(
                     tenant, 'tenant')
@@ -205,25 +217,6 @@ class PoolConfigConv(object):
                 if limits.get('connection_limit', 0) > 0:
                     alb_pl['max_concurrent_connections_per_server'] = \
                         limits['connection_limit']
-
-                skipped_list_mg = []
-                if lb_pl.get('member_group') and lb_pl['snat_translation'].get('type') == "LBSnatDisabled":
-                    skipped_mg = [val for val in
-                                  lb_pl.get('member_group').keys()
-                                  if val not in self.member_group_attr]
-                    skipped_list_mg.append({"skipped_mg": skipped_mg})
-                    if lb_pl['member_group'].get('group_path'):
-                        alb_pl['nsx_securitygroup'] = [
-                            lb_pl.get('member_group').get('group_path')
-                        ]
-                    if lb_pl['member_group'].get("port", None):
-                        alb_pl['default_server_port'] = lb_pl[
-                            'member_group'].get("port")
-                if lb_pl.get("snat_translation"):
-                    # TO-DO - HANDLE In APPLICATION PROFILE
-                    # Need to set in Application profile
-                    LOG.info('[POOL] snat_translation Needs to Handle in Application Profile.')
-                    pass
 
                 active_monitor_paths = lb_pl.get("active_monitor_paths", None)
                 if active_monitor_paths:
@@ -441,12 +434,8 @@ class PoolConfigConv(object):
                 }
                 pg_members.append(member)
 
-        pg_obj = {
-            'name': name,
-            'members': pg_members,
-        }
+        pg_obj = {'name': name, 'members': pg_members, 'tenant_ref': conv_utils.get_object_ref(tenant, 'tenant')}
 
-        pg_obj['tenant_ref'] = conv_utils.get_object_ref(tenant, 'tenant')
         converted_objs = {
             'pools': pools,
             'pg_obj': [pg_obj]
