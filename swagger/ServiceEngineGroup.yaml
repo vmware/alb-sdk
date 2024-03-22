@@ -1748,7 +1748,6 @@ definitions:
             path_mtu_discovery_v4:
                 description: "Enable Path MTU Discovery feature for IPv4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: boolean
-                default: True
             path_mtu_discovery_v6:
                 description: "Enable Path MTU Discovery feature for IPv6. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: boolean
