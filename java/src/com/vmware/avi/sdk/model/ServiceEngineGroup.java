@@ -493,7 +493,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer osReservedMemory = 0;
 
     @JsonProperty("path_mtu_discovery_v4")
-    private Boolean pathMtuDiscoveryV4 = true;
+    private Boolean pathMtuDiscoveryV4 = false;
 
     @JsonProperty("path_mtu_discovery_v6")
     private Boolean pathMtuDiscoveryV6 = true;
@@ -5099,7 +5099,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enable path mtu discovery feature for ipv4.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return pathMtuDiscoveryV4
      */
     public Boolean getPathMtuDiscoveryV4() {
@@ -5111,7 +5111,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enable path mtu discovery feature for ipv4.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param pathMtuDiscoveryV4 set the pathMtuDiscoveryV4.
      */
     public void setPathMtuDiscoveryV4(Boolean  pathMtuDiscoveryV4) {
