@@ -432,6 +432,9 @@ type ServiceEngineGroup struct {
 	// Indicates the percent of memory reserved for connections. Allowed values are 0-100. Field introduced in 18.1.2. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	MinimumConnectionMemory *uint32 `json:"minimum_connection_memory,omitempty"`
 
+	// This knob enables the Service Engine to process multicast traffic(For VMware Hypervisor). Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	MulticastEnable *bool `json:"multicast_enable,omitempty"`
+
 	// Number of threads to use for log streaming. Allowed values are 1-100. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	NLogStreamingThreads *uint32 `json:"n_log_streaming_threads,omitempty"`
 
@@ -531,6 +534,9 @@ type ServiceEngineGroup struct {
 
 	// Select the SE bandwidth for the bandwidth license. Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SE_BANDWIDTH_UNLIMITED), Basic edition(Allowed values- SE_BANDWIDTH_UNLIMITED), Enterprise with Cloud Services edition.
 	SeBandwidthType *string `json:"se_bandwidth_type,omitempty"`
+
+	// Use to cap the size of debug ring min(se_debug_trace_sz, num_dispatcher_cores). Only applicable to > 8G systems.  Requires SE Reboot. Allowed values are 1,2,4,8,255. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SeDebugTraceSz *uint32 `json:"se_debug_trace_sz,omitempty"`
 
 	// Delay the cleanup of flowtable entry. To be used under surveillance of Avi Support. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- true), Basic edition(Allowed values- true), Enterprise with Cloud Services edition.
 	SeDelayedFlowDelete *bool `json:"se_delayed_flow_delete,omitempty"`

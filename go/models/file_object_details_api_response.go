@@ -4,9 +4,9 @@ package models
 
 // This file is auto-generated.
 
-// PingAccessAgentAPIResponse ping access agent Api response
-// swagger:model PingAccessAgentApiResponse
-type PingAccessAgentAPIResponse struct {
+// FileObjectDetailsAPIResponse file object details Api response
+// swagger:model FileObjectDetailsApiResponse
+type FileObjectDetailsAPIResponse struct {
 
 	// count
 	// Required: true
@@ -17,5 +17,5 @@ type PingAccessAgentAPIResponse struct {
 
 	// results
 	// Required: true
-	Results []*PingAccessAgent `json:"results,omitempty"`
+	Results []*FileObjectDetails `json:"results,omitempty"`
 }
