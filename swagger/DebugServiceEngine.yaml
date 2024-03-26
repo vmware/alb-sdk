@@ -489,12 +489,6 @@ definitions:
                 type: array
                 items:
                     $ref: '#/definitions/CaptureTCPFilter'
-    CaptureTCP:
-        type: object
-        properties:
-            tcpflag:
-                description: "TCP flags filter. Or'ed internally and And'ed amongst each other. . Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/CaptureTCPFlags'
     CaptureTCPFilter:
         type: object
         properties:
@@ -511,14 +505,16 @@ definitions:
             src_port_range:
                 description: "Source Port range filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SourcePortAddr'
-            tcpflags:
-                description: "TCP flags filter. Or'ed internally and And'ed amongst each other. . Field introduced in 30.2.1. Maximum of 4 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/CaptureTCP'
+            tcpflag:
+                description: "TCP flags filter. Or'ed internally and And'ed amongst each other. . Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/CaptureTCPFlags'
     CaptureTCPFlags:
         type: object
         properties:
+            filter_op:
+                description: "Logical operation based filter criteria. Enum options - OR, AND. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "OR"
             match_operation:
                 description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
@@ -531,6 +527,9 @@ definitions:
                 type: boolean
             tcp_push:
                 description: "TCP PUSH flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
+            tcp_rst:
+                description: "TCP RST flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: boolean
             tcp_syn:
                 description: "TCP SYN flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
