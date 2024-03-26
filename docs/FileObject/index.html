@@ -184,7 +184,7 @@ font-style: italic;
   </head>
   <body>
   <h1>Avi FileObject Object API</h1>
-    <div class="app-desc">CLI ``` - configure fileobject <key> - show fileobject <key> - show fileobject ``` </div>
+    <div class="app-desc">CLI ``` - upload fileobject file - configure fileobject <key> - show fileobject <key> - show fileobject ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
     <div class="app-desc">Version: 30.2.1</div>
@@ -205,9 +205,12 @@ font-style: italic;
   <li><a href="#fileobjectGet"><code><span class="http-method">get</span> /fileobject</code></a></li>
   <li><a href="#fileobjectPost"><code><span class="http-method">post</span> /fileobject</code></a></li>
   <li><a href="#fileobjectUuidDelete"><code><span class="http-method">delete</span> /fileobject/{uuid}</code></a></li>
+  <li><a href="#fileobjectUuidFederatedInfoGet"><code><span class="http-method">get</span> /fileobject/{uuid}/federated_info/</code></a></li>
   <li><a href="#fileobjectUuidGet"><code><span class="http-method">get</span> /fileobject/{uuid}</code></a></li>
   <li><a href="#fileobjectUuidPatch"><code><span class="http-method">patch</span> /fileobject/{uuid}</code></a></li>
+  <li><a href="#fileobjectUuidPatch_1"><code><span class="http-method">patch</span> /fileobject/{uuid}/[&#39;&#39;]/</code></a></li>
   <li><a href="#fileobjectUuidPut"><code><span class="http-method">put</span> /fileobject/{uuid}</code></a></li>
+  <li><a href="#fileobjectUuidPut_2"><code><span class="http-method">put</span> /fileobject/{uuid}/[&#39;&#39;]/</code></a></li>
   </ol>
 
   <div class="method"><a name="fileobjectGet"/>
@@ -260,6 +263,19 @@ font-style: italic;
   "next" : "aeiou",
   "count" : 123,
   "results" : [ {
+    "crl_info" : {
+      "update_interval" : 123,
+      "last_update" : "aeiou",
+      "distinguished_name" : "aeiou",
+      "fingerprint" : "aeiou",
+      "etag" : "aeiou",
+      "text" : "aeiou",
+      "body" : "aeiou",
+      "common_name" : "aeiou",
+      "server_url" : "aeiou",
+      "last_refreshed" : "aeiou",
+      "next_update" : "aeiou"
+    },
     "restrict_download" : true,
     "created" : "aeiou",
     "description" : "aeiou",
@@ -275,6 +291,9 @@ font-style: italic;
     "tenant_ref" : "aeiou",
     "checksum" : "aeiou",
     "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : ""
+    },
     "compressed" : true,
     "is_federated" : true
   } ]
@@ -331,6 +350,19 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "crl_info" : {
+    "update_interval" : 123,
+    "last_update" : "aeiou",
+    "distinguished_name" : "aeiou",
+    "fingerprint" : "aeiou",
+    "etag" : "aeiou",
+    "text" : "aeiou",
+    "body" : "aeiou",
+    "common_name" : "aeiou",
+    "server_url" : "aeiou",
+    "last_refreshed" : "aeiou",
+    "next_update" : "aeiou"
+  },
   "restrict_download" : true,
   "created" : "aeiou",
   "description" : "aeiou",
@@ -346,6 +378,9 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "checksum" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
   "compressed" : true,
   "is_federated" : true
 }</code></pre>
@@ -424,6 +459,58 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
+  <div class="method"><a name="fileobjectUuidFederatedInfoGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /fileobject/{uuid}/federated_info/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">fileobjectUuidFederatedInfoGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
   <div class="method"><a name="fileobjectUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -473,6 +560,19 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "crl_info" : {
+    "update_interval" : 123,
+    "last_update" : "aeiou",
+    "distinguished_name" : "aeiou",
+    "fingerprint" : "aeiou",
+    "etag" : "aeiou",
+    "text" : "aeiou",
+    "body" : "aeiou",
+    "common_name" : "aeiou",
+    "server_url" : "aeiou",
+    "last_refreshed" : "aeiou",
+    "next_update" : "aeiou"
+  },
   "restrict_download" : true,
   "created" : "aeiou",
   "description" : "aeiou",
@@ -488,6 +588,9 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "checksum" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
   "compressed" : true,
   "is_federated" : true
 }</code></pre>
@@ -555,6 +658,19 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "crl_info" : {
+    "update_interval" : 123,
+    "last_update" : "aeiou",
+    "distinguished_name" : "aeiou",
+    "fingerprint" : "aeiou",
+    "etag" : "aeiou",
+    "text" : "aeiou",
+    "body" : "aeiou",
+    "common_name" : "aeiou",
+    "server_url" : "aeiou",
+    "last_refreshed" : "aeiou",
+    "next_update" : "aeiou"
+  },
   "restrict_download" : true,
   "created" : "aeiou",
   "description" : "aeiou",
@@ -570,6 +686,9 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "checksum" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
   "compressed" : true,
   "is_federated" : true
 }</code></pre>
@@ -585,6 +704,58 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#FileObject">FileObject</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="fileobjectUuidPatch_1"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /fileobject/{uuid}/[&#39;&#39;]/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">fileobjectUuidPatch_1</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
@@ -637,6 +808,19 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "crl_info" : {
+    "update_interval" : 123,
+    "last_update" : "aeiou",
+    "distinguished_name" : "aeiou",
+    "fingerprint" : "aeiou",
+    "etag" : "aeiou",
+    "text" : "aeiou",
+    "body" : "aeiou",
+    "common_name" : "aeiou",
+    "server_url" : "aeiou",
+    "last_refreshed" : "aeiou",
+    "next_update" : "aeiou"
+  },
   "restrict_download" : true,
   "created" : "aeiou",
   "description" : "aeiou",
@@ -652,6 +836,9 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "checksum" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
   "compressed" : true,
   "is_federated" : true
 }</code></pre>
@@ -672,6 +859,64 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
+  <div class="method"><a name="fileobjectUuidPut_2"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /fileobject/{uuid}/[&#39;&#39;]/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">fileobjectUuidPut_2</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; empty </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
 
   <div class="up"><a href="#__Models">Up</a></div>
   <h2><a name="__Models">Models</a></h2>
@@ -679,17 +924,43 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
+    <li><a href="#CRL"><code>CRL</code></a></li>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#FileObject"><code>FileObject</code></a></li>
     <li><a href="#FileObjectApiResponse"><code>FileObjectApiResponse</code></a></li>
   </ol>
 
+  <div class="model">
+    <h3 class="field-label"><a name="CRL">CRL</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">body (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Certificate Revocation list from a given issuer in PEM format. This can either be configured directly or via the server_url. . Field deprecated in 30.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">common_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Common name of the issuer in the Certificate Revocation list. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">distinguished_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Distinguished name of the issuer in the Certificate Revocation list. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">etag (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Cached etag to optimize the download of the CRL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">fingerprint (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Fingerprint of the CRL. Used to avoid configuring duplicates. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">last_refreshed (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Last time CRL was refreshed by the system. This is an internal field used by the system. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">last_update (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The date when this CRL was last issued. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">next_update (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The date when a newer CRL will be available. Also conveys the date after which the CRL should be considered obsolete. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">server_url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> URL of a server that issues the Certificate Revocation list. If this is configured, CRL will be periodically downloaded either based on the configured update interval or the next update interval in the CRL. CRL itself is stored in the body. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">text (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Certificate Revocation list in plain text for readability. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">update_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Interval in minutes to check for CRL update. If not specified, interval will be 1 day. Allowed values are 30-525600. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+    </div>  <!-- field-items -->
+  </div>
   <div class="model">
     <h3 class="field-label"><a name="FileObject">FileObject</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
 <div class="param">checksum (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> SHA1 checksum of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">compressed (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This field indicates whether the file is gzip-compressed. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">created (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Timestamp of creation for the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">crl_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#CRL">CRL</a></span> This field contains Certificate Revocation List metadata. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Description of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">expires_at (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Timestamp when the file will be no longer needed and can be removed by the system. If this is set, a garbage collector process will try to remove the file after this time. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">is_federated (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This field describes the object&#39;s replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
