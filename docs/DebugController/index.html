@@ -286,6 +286,7 @@ font-style: italic;
         "disable_hw_training" : "aeiou",
         "obj" : "aeiou",
         "debug_skip_eval_period" : "aeiou",
+        "min_db_queries_each_conn" : "aeiou",
         "skip_metrics_db_writes" : "aeiou",
         "license_grace_period" : "aeiou",
         "entity" : "aeiou",
@@ -328,6 +329,7 @@ font-style: italic;
       },
       "securitymgr_debug_filter" : {
         "enable_adaptive_config" : true,
+        "psm_rule_id_multiplier" : "",
         "entity_ref" : "aeiou"
       },
       "vs_debug_filter" : {
@@ -418,6 +420,7 @@ font-style: italic;
       "disable_hw_training" : "aeiou",
       "obj" : "aeiou",
       "debug_skip_eval_period" : "aeiou",
+      "min_db_queries_each_conn" : "aeiou",
       "skip_metrics_db_writes" : "aeiou",
       "license_grace_period" : "aeiou",
       "entity" : "aeiou",
@@ -460,6 +463,7 @@ font-style: italic;
     },
     "securitymgr_debug_filter" : {
       "enable_adaptive_config" : true,
+      "psm_rule_id_multiplier" : "",
       "entity_ref" : "aeiou"
     },
     "vs_debug_filter" : {
@@ -621,6 +625,7 @@ font-style: italic;
       "disable_hw_training" : "aeiou",
       "obj" : "aeiou",
       "debug_skip_eval_period" : "aeiou",
+      "min_db_queries_each_conn" : "aeiou",
       "skip_metrics_db_writes" : "aeiou",
       "license_grace_period" : "aeiou",
       "entity" : "aeiou",
@@ -663,6 +668,7 @@ font-style: italic;
     },
     "securitymgr_debug_filter" : {
       "enable_adaptive_config" : true,
+      "psm_rule_id_multiplier" : "",
       "entity_ref" : "aeiou"
     },
     "vs_debug_filter" : {
@@ -764,6 +770,7 @@ font-style: italic;
       "disable_hw_training" : "aeiou",
       "obj" : "aeiou",
       "debug_skip_eval_period" : "aeiou",
+      "min_db_queries_each_conn" : "aeiou",
       "skip_metrics_db_writes" : "aeiou",
       "license_grace_period" : "aeiou",
       "entity" : "aeiou",
@@ -806,6 +813,7 @@ font-style: italic;
     },
     "securitymgr_debug_filter" : {
       "enable_adaptive_config" : true,
+      "psm_rule_id_multiplier" : "",
       "entity_ref" : "aeiou"
     },
     "vs_debug_filter" : {
@@ -907,6 +915,7 @@ font-style: italic;
       "disable_hw_training" : "aeiou",
       "obj" : "aeiou",
       "debug_skip_eval_period" : "aeiou",
+      "min_db_queries_each_conn" : "aeiou",
       "skip_metrics_db_writes" : "aeiou",
       "license_grace_period" : "aeiou",
       "entity" : "aeiou",
@@ -949,6 +958,7 @@ font-style: italic;
     },
     "securitymgr_debug_filter" : {
       "enable_adaptive_config" : true,
+      "psm_rule_id_multiplier" : "",
       "entity_ref" : "aeiou"
     },
     "vs_debug_filter" : {
@@ -1105,10 +1115,11 @@ font-style: italic;
       <div class="param">debug_skip_eval_period (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Set to ignore skip_eval_period field in metrics_anomaly_option. Field introduced in 20.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">disable_hw_training (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">entity (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">license_grace_period (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> setting to reduce the grace period for license expiry in hours. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">license_grace_period (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Setting to reduce the grace period for license expiry in hours. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">log_first_n (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">logging_freq (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">metric_instance_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">min_db_queries_each_conn (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Setting to change the number of queries being processed by per DB connection by Metrics Manager. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">obj (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">skip_cluster_map_check (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">skip_metrics_db_writes (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -1133,6 +1144,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">enable_adaptive_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Dynamically adapt configuration parameters for Application Learning feature. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">entity_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> uuid of the entity. It is a reference to an object of type Virtualservice. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">psm_rule_id_multiplier (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Dynamically update the multiplier for rule ID generation in PSM programming for Learning feature. Allowed values are 10-100000. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

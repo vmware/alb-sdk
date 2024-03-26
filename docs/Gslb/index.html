@@ -329,6 +329,7 @@ font-style: italic;
     "url" : "aeiou",
     "_last_modified" : "aeiou",
     "send_interval_prior_to_maintenance_mode" : "",
+    "fileobject_max_file_versions" : "",
     "send_interval" : "",
     "error_resync_interval" : "",
     "tenant_ref" : "aeiou",
@@ -466,6 +467,7 @@ font-style: italic;
   "url" : "aeiou",
   "_last_modified" : "aeiou",
   "send_interval_prior_to_maintenance_mode" : "",
+  "fileobject_max_file_versions" : "",
   "send_interval" : "",
   "error_resync_interval" : "",
   "tenant_ref" : "aeiou",
@@ -674,6 +676,7 @@ font-style: italic;
   "url" : "aeiou",
   "_last_modified" : "aeiou",
   "send_interval_prior_to_maintenance_mode" : "",
+  "fileobject_max_file_versions" : "",
   "send_interval" : "",
   "error_resync_interval" : "",
   "tenant_ref" : "aeiou",
@@ -822,6 +825,7 @@ font-style: italic;
   "url" : "aeiou",
   "_last_modified" : "aeiou",
   "send_interval_prior_to_maintenance_mode" : "",
+  "fileobject_max_file_versions" : "",
   "send_interval" : "",
   "error_resync_interval" : "",
   "tenant_ref" : "aeiou",
@@ -970,6 +974,7 @@ font-style: italic;
   "url" : "aeiou",
   "_last_modified" : "aeiou",
   "send_interval_prior_to_maintenance_mode" : "",
+  "fileobject_max_file_versions" : "",
   "send_interval" : "",
   "error_resync_interval" : "",
   "tenant_ref" : "aeiou",
@@ -1218,6 +1223,7 @@ font-style: italic;
 <div class="param">dns_configs (optional)</div><div class="param-desc"><span class="param-type"><a href="#DNSConfig">array[DNSConfig]</a></span> Sub domain configuration for the GSLB.  GSLB service&#39;s FQDN must be a match one of these subdomains. . Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">enable_config_by_members (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allows enable/disable of GslbService pool groups and pool members from the gslb follower members. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">error_resync_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Frequency with which errored messages are resynced to follower sites. Value of 0 disables resync behavior. Allowed values are 60-3600. Special values are 0 - Disable. Field introduced in 18.2.3. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">fileobject_max_file_versions (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This is the max number of file versions that will be retained for a file referenced by the federated FileObject. Subsequent uploads of file will result in the file rotation of the older version and the latest version retained. Example  When a file Upload is done for the first time, there will be a v1 version. Subsequent uploads will get mapped to v1, v2 and v3 versions. On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained. Allowed values are 1-5. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">is_federated (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This field indicates that this object is replicated across GSLB federation. Field introduced in 17.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">leader_cluster_uuid </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Mark this Site as leader of GSLB configuration. This site is the one among the Avi sites. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">maintenance_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This field disables the configuration operations on the leader for all federated objects.  CUD operations on Gslb, GslbService, GslbGeoDbProfile and other federated objects will be rejected. The rest-api disabling helps in upgrade scenarios where we don&#39;t want configuration sync operations to the Gslb member when the member is being upgraded.  This configuration programmatically blocks the leader from accepting new Gslb configuration when member sites are undergoing upgrade. . Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
