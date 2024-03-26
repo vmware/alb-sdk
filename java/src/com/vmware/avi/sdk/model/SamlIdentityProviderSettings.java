@@ -38,7 +38,7 @@ public class SamlIdentityProviderSettings  {
     /**
      * This is the getter method this will return the attribute value.
      * The interval to query and download saml idp metadata using the metadata url.
-     * Allowed values are 0-10080.
+     * Allowed values are 1-10080.
      * Field introduced in 30.2.1.
      * Unit is min.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -52,7 +52,7 @@ public class SamlIdentityProviderSettings  {
     /**
      * This is the setter method to the attribute.
      * The interval to query and download saml idp metadata using the metadata url.
-     * Allowed values are 0-10080.
+     * Allowed values are 1-10080.
      * Field introduced in 30.2.1.
      * Unit is min.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
