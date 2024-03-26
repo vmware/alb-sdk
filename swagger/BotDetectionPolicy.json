@@ -568,8 +568,7 @@
                 },
                 "enabled": {
                     "description": "Whether client behavior based Bot detection is enabled. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "boolean",
-                    "default": true
+                    "type": "boolean"
                 },
                 "minimum_requests": {
                     "description": "Minimum requests for the client behavior component to make a decision. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",

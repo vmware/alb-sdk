@@ -677,7 +677,7 @@ definitions:
         type: object
         properties:
             meta_data_download_interval:
-                description: "The interval to query and download SAML IDP metadata using the metadata URL. Allowed values are 0-10080. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The interval to query and download SAML IDP metadata using the metadata URL. Allowed values are 1-10080. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
