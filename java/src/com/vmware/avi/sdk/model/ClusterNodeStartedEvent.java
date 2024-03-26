@@ -24,6 +24,9 @@ public class ClusterNodeStartedEvent  {
     @JsonProperty("ip")
     private IpAddr ip;
 
+    @JsonProperty("ip6")
+    private IpAddr ip6;
+
     @JsonProperty("node_name")
     private String nodeName;
 
@@ -31,7 +34,7 @@ public class ClusterNodeStartedEvent  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ip address of the controller vm.
+     * Ipv4 address of the controller vm.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
@@ -42,13 +45,37 @@ public class ClusterNodeStartedEvent  {
 
     /**
      * This is the setter method to the attribute.
-     * Ip address of the controller vm.
+     * Ipv4 address of the controller vm.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
     public void setIp(IpAddr ip) {
         this.ip = ip;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ipv6 address of the controller vm.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return ip6
+     */
+    public IpAddr getIp6() {
+        return ip6;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Ipv6 address of the controller vm.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param ip6 set the ip6.
+     */
+    public void setIp6(IpAddr ip6) {
+        this.ip6 = ip6;
     }
 
     /**
@@ -84,7 +111,8 @@ public class ClusterNodeStartedEvent  {
       }
       ClusterNodeStartedEvent objClusterNodeStartedEvent = (ClusterNodeStartedEvent) o;
       return   Objects.equals(this.nodeName, objClusterNodeStartedEvent.nodeName)&&
-  Objects.equals(this.ip, objClusterNodeStartedEvent.ip);
+  Objects.equals(this.ip, objClusterNodeStartedEvent.ip)&&
+  Objects.equals(this.ip6, objClusterNodeStartedEvent.ip6);
     }
 
     @Override
@@ -92,6 +120,7 @@ public class ClusterNodeStartedEvent  {
       StringBuilder sb = new StringBuilder();
       sb.append("class ClusterNodeStartedEvent {\n");
                   sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+                        sb.append("    ip6: ").append(toIndentedString(ip6)).append("\n");
                         sb.append("    nodeName: ").append(toIndentedString(nodeName)).append("\n");
                   sb.append("}");
       return sb.toString();

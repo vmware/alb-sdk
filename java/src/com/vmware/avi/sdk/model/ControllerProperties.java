@@ -142,6 +142,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("file_reference_mappings")
     private List<FileReferenceMapping> fileReferenceMappings;
 
+    @JsonProperty("fileobject_max_file_versions")
+    private Integer fileobjectMaxFileVersions = 3;
+
     @JsonProperty("gslb_purge_batch_size")
     private Integer gslbPurgeBatchSize = 1000;
 
@@ -264,6 +267,9 @@ public class ControllerProperties extends AviRestResource  {
 
     @JsonProperty("ssl_certificate_expiry_warning_days")
     private List<Integer> sslCertificateExpiryWarningDays;
+
+    @JsonProperty("system_report_cleanup_interval")
+    private Integer systemReportCleanupInterval = 60;
 
     @JsonProperty("system_report_limit")
     private Integer systemReportLimit = 10;
@@ -1367,6 +1373,40 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * This is the max number of file versions that will be retained for a file referenced by the local fileobject.
+     * Subsequent uploads of file will result in the file rotation of the older version and the latest version retained.
+     * Example  when a file upload is done for the first time, there will be a v1 version.
+     * Subsequent uploads will get mapped to v1, v2 and v3 versions.
+     * On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained.
+     * Allowed values are 1-5.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+     * @return fileobjectMaxFileVersions
+     */
+    public Integer getFileobjectMaxFileVersions() {
+        return fileobjectMaxFileVersions;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This is the max number of file versions that will be retained for a file referenced by the local fileobject.
+     * Subsequent uploads of file will result in the file rotation of the older version and the latest version retained.
+     * Example  when a file upload is done for the first time, there will be a v1 version.
+     * Subsequent uploads will get mapped to v1, v2 and v3 versions.
+     * On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained.
+     * Allowed values are 1-5.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+     * @param fileobjectMaxFileVersions set the fileobjectMaxFileVersions.
+     */
+    public void setFileobjectMaxFileVersions(Integer  fileobjectMaxFileVersions) {
+        this.fileobjectMaxFileVersions = fileobjectMaxFileVersions;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Batch size for the vs_mgr to perform datastrorecleanup during a gslb purge.
      * Allowed values are 50-1200.
      * Field introduced in 22.1.3.
@@ -2404,13 +2444,44 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Time in minutes to wait between cleanup of systemreports.
+     * Allowed values are 15-300.
+     * Field introduced in 22.1.6, 30.2.1.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+     * @return systemReportCleanupInterval
+     */
+    public Integer getSystemReportCleanupInterval() {
+        return systemReportCleanupInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Time in minutes to wait between cleanup of systemreports.
+     * Allowed values are 15-300.
+     * Field introduced in 22.1.6, 30.2.1.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+     * @param systemReportCleanupInterval set the systemReportCleanupInterval.
+     */
+    public void setSystemReportCleanupInterval(Integer  systemReportCleanupInterval) {
+        this.systemReportCleanupInterval = systemReportCleanupInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Number of systemreports retained in the system.
      * Once the number of system reports exceed this threshold, the oldest systemreport will be removed and the latest one retained.
      * I.e.
      * The systemreport will be rotated and the reports don't exceed the threshold.
      * Allowed values are 5-50.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return systemReportLimit
      */
@@ -2426,7 +2497,8 @@ public class ControllerProperties extends AviRestResource  {
      * The systemreport will be rotated and the reports don't exceed the threshold.
      * Allowed values are 5-50.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param systemReportLimit set the systemReportLimit.
      */
@@ -3189,7 +3261,9 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.fileReferenceMappings, objControllerProperties.fileReferenceMappings)&&
   Objects.equals(this.cloudReconcileInterval, objControllerProperties.cloudReconcileInterval)&&
   Objects.equals(this.cloudDiscoveryInterval, objControllerProperties.cloudDiscoveryInterval)&&
-  Objects.equals(this.systemReportLimit, objControllerProperties.systemReportLimit);
+  Objects.equals(this.systemReportLimit, objControllerProperties.systemReportLimit)&&
+  Objects.equals(this.systemReportCleanupInterval, objControllerProperties.systemReportCleanupInterval)&&
+  Objects.equals(this.fileobjectMaxFileVersions, objControllerProperties.fileobjectMaxFileVersions);
     }
 
     @Override
@@ -3236,6 +3310,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    federatedDatastoreCleanupDuration: ").append(toIndentedString(federatedDatastoreCleanupDuration)).append("\n");
                         sb.append("    fileObjectCleanupPeriod: ").append(toIndentedString(fileObjectCleanupPeriod)).append("\n");
                         sb.append("    fileReferenceMappings: ").append(toIndentedString(fileReferenceMappings)).append("\n");
+                        sb.append("    fileobjectMaxFileVersions: ").append(toIndentedString(fileobjectMaxFileVersions)).append("\n");
                         sb.append("    gslbPurgeBatchSize: ").append(toIndentedString(gslbPurgeBatchSize)).append("\n");
                         sb.append("    gslbPurgeSleepTimeMs: ").append(toIndentedString(gslbPurgeSleepTimeMs)).append("\n");
                         sb.append("    ignoreVrfInNetworksubnetlist: ").append(toIndentedString(ignoreVrfInNetworksubnetlist)).append("\n");
@@ -3277,6 +3352,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    skopeoRetryLimit: ").append(toIndentedString(skopeoRetryLimit)).append("\n");
                         sb.append("    softMinMemPerSeLimit: ").append(toIndentedString(softMinMemPerSeLimit)).append("\n");
                         sb.append("    sslCertificateExpiryWarningDays: ").append(toIndentedString(sslCertificateExpiryWarningDays)).append("\n");
+                        sb.append("    systemReportCleanupInterval: ").append(toIndentedString(systemReportCleanupInterval)).append("\n");
                         sb.append("    systemReportLimit: ").append(toIndentedString(systemReportLimit)).append("\n");
                         sb.append("    unresponsiveSeReboot: ").append(toIndentedString(unresponsiveSeReboot)).append("\n");
                         sb.append("    updateDnsEntryRetryLimit: ").append(toIndentedString(updateDnsEntryRetryLimit)).append("\n");
