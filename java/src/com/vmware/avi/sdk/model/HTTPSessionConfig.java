@@ -33,6 +33,15 @@ public class HTTPSessionConfig  {
     @JsonProperty("session_cookie_secure")
     private Boolean sessionCookieSecure = true;
 
+    @JsonProperty("session_establishment_timeout")
+    private Integer sessionEstablishmentTimeout = 300;
+
+    @JsonProperty("session_idle_timeout")
+    private Integer sessionIdleTimeout = 1800;
+
+    @JsonProperty("session_maximum_timeout")
+    private Integer sessionMaximumTimeout = 28800;
+
 
 
     /**
@@ -133,6 +142,96 @@ public class HTTPSessionConfig  {
         this.sessionCookieSecure = sessionCookieSecure;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum allowed time between creating a session and the client coming back.
+     * Value in seconds.
+     * Allowed values are 120-3600.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+     * @return sessionEstablishmentTimeout
+     */
+    public Integer getSessionEstablishmentTimeout() {
+        return sessionEstablishmentTimeout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum allowed time between creating a session and the client coming back.
+     * Value in seconds.
+     * Allowed values are 120-3600.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+     * @param sessionEstablishmentTimeout set the sessionEstablishmentTimeout.
+     */
+    public void setSessionEstablishmentTimeout(Integer  sessionEstablishmentTimeout) {
+        this.sessionEstablishmentTimeout = sessionEstablishmentTimeout;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum allowed time to expire the session after establishment on client inactivity.
+     * Value in seconds.
+     * Allowed values are 120-604800.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
+     * @return sessionIdleTimeout
+     */
+    public Integer getSessionIdleTimeout() {
+        return sessionIdleTimeout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum allowed time to expire the session after establishment on client inactivity.
+     * Value in seconds.
+     * Allowed values are 120-604800.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
+     * @param sessionIdleTimeout set the sessionIdleTimeout.
+     */
+    public void setSessionIdleTimeout(Integer  sessionIdleTimeout) {
+        this.sessionIdleTimeout = sessionIdleTimeout;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum allowed time to expire the session, even if it is still active.
+     * Value in seconds.
+     * Allowed values are 120-604800.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 28800.
+     * @return sessionMaximumTimeout
+     */
+    public Integer getSessionMaximumTimeout() {
+        return sessionMaximumTimeout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum allowed time to expire the session, even if it is still active.
+     * Value in seconds.
+     * Allowed values are 120-604800.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 28800.
+     * @param sessionMaximumTimeout set the sessionMaximumTimeout.
+     */
+    public void setSessionMaximumTimeout(Integer  sessionMaximumTimeout) {
+        this.sessionMaximumTimeout = sessionMaximumTimeout;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -146,7 +245,10 @@ public class HTTPSessionConfig  {
       return   Objects.equals(this.sessionCookieName, objHTTPSessionConfig.sessionCookieName)&&
   Objects.equals(this.sessionCookieSamesite, objHTTPSessionConfig.sessionCookieSamesite)&&
   Objects.equals(this.sessionCookieSecure, objHTTPSessionConfig.sessionCookieSecure)&&
-  Objects.equals(this.sessionCookieHttponly, objHTTPSessionConfig.sessionCookieHttponly);
+  Objects.equals(this.sessionCookieHttponly, objHTTPSessionConfig.sessionCookieHttponly)&&
+  Objects.equals(this.sessionEstablishmentTimeout, objHTTPSessionConfig.sessionEstablishmentTimeout)&&
+  Objects.equals(this.sessionIdleTimeout, objHTTPSessionConfig.sessionIdleTimeout)&&
+  Objects.equals(this.sessionMaximumTimeout, objHTTPSessionConfig.sessionMaximumTimeout);
     }
 
     @Override
@@ -157,6 +259,9 @@ public class HTTPSessionConfig  {
                         sb.append("    sessionCookieName: ").append(toIndentedString(sessionCookieName)).append("\n");
                         sb.append("    sessionCookieSamesite: ").append(toIndentedString(sessionCookieSamesite)).append("\n");
                         sb.append("    sessionCookieSecure: ").append(toIndentedString(sessionCookieSecure)).append("\n");
+                        sb.append("    sessionEstablishmentTimeout: ").append(toIndentedString(sessionEstablishmentTimeout)).append("\n");
+                        sb.append("    sessionIdleTimeout: ").append(toIndentedString(sessionIdleTimeout)).append("\n");
+                        sb.append("    sessionMaximumTimeout: ").append(toIndentedString(sessionMaximumTimeout)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

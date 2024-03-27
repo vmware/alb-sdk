@@ -63,6 +63,15 @@ public class GslbSiteRuntimeStats  {
     @JsonProperty("num_geo_upd_txed")
     private Integer numGeoUpdTxed;
 
+    @JsonProperty("num_gfo_cr_rxed")
+    private Integer numGfoCrRxed;
+
+    @JsonProperty("num_gfo_del_rxed")
+    private Integer numGfoDelRxed;
+
+    @JsonProperty("num_gfo_upd_rxed")
+    private Integer numGfoUpdRxed;
+
     @JsonProperty("num_ghm_cr_rxed")
     private Integer numGhmCrRxed;
 
@@ -497,6 +506,78 @@ public class GslbSiteRuntimeStats  {
      */
     public void setNumGeoUpdTxed(Integer  numGeoUpdTxed) {
         this.numGeoUpdTxed = numGeoUpdTxed;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Used for federated file object stats for create.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numGfoCrRxed
+     */
+    public Integer getNumGfoCrRxed() {
+        return numGfoCrRxed;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Used for federated file object stats for create.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numGfoCrRxed set the numGfoCrRxed.
+     */
+    public void setNumGfoCrRxed(Integer  numGfoCrRxed) {
+        this.numGfoCrRxed = numGfoCrRxed;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Used for federated file object stats for delete.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numGfoDelRxed
+     */
+    public Integer getNumGfoDelRxed() {
+        return numGfoDelRxed;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Used for federated file object stats for delete.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numGfoDelRxed set the numGfoDelRxed.
+     */
+    public void setNumGfoDelRxed(Integer  numGfoDelRxed) {
+        this.numGfoDelRxed = numGfoDelRxed;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Used for federated file object stats for update.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numGfoUpdRxed
+     */
+    public Integer getNumGfoUpdRxed() {
+        return numGfoUpdRxed;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Used for federated file object stats for update.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numGfoUpdRxed set the numGfoUpdRxed.
+     */
+    public void setNumGfoUpdRxed(Integer  numGfoUpdRxed) {
+        this.numGfoUpdRxed = numGfoUpdRxed;
     }
 
     /**
@@ -1452,7 +1533,10 @@ public class GslbSiteRuntimeStats  {
   Objects.equals(this.numGsslUpdRxed, objGslbSiteRuntimeStats.numGsslUpdRxed)&&
   Objects.equals(this.numGsslCertCrRxed, objGslbSiteRuntimeStats.numGsslCertCrRxed)&&
   Objects.equals(this.numGsslCertDelRxed, objGslbSiteRuntimeStats.numGsslCertDelRxed)&&
-  Objects.equals(this.numGsslCertUpdRxed, objGslbSiteRuntimeStats.numGsslCertUpdRxed);
+  Objects.equals(this.numGsslCertUpdRxed, objGslbSiteRuntimeStats.numGsslCertUpdRxed)&&
+  Objects.equals(this.numGfoCrRxed, objGslbSiteRuntimeStats.numGfoCrRxed)&&
+  Objects.equals(this.numGfoDelRxed, objGslbSiteRuntimeStats.numGfoDelRxed)&&
+  Objects.equals(this.numGfoUpdRxed, objGslbSiteRuntimeStats.numGfoUpdRxed);
     }
 
     @Override
@@ -1473,6 +1557,9 @@ public class GslbSiteRuntimeStats  {
                         sb.append("    numGeoDelTxed: ").append(toIndentedString(numGeoDelTxed)).append("\n");
                         sb.append("    numGeoUpdRxed: ").append(toIndentedString(numGeoUpdRxed)).append("\n");
                         sb.append("    numGeoUpdTxed: ").append(toIndentedString(numGeoUpdTxed)).append("\n");
+                        sb.append("    numGfoCrRxed: ").append(toIndentedString(numGfoCrRxed)).append("\n");
+                        sb.append("    numGfoDelRxed: ").append(toIndentedString(numGfoDelRxed)).append("\n");
+                        sb.append("    numGfoUpdRxed: ").append(toIndentedString(numGfoUpdRxed)).append("\n");
                         sb.append("    numGhmCrRxed: ").append(toIndentedString(numGhmCrRxed)).append("\n");
                         sb.append("    numGhmCrTxed: ").append(toIndentedString(numGhmCrTxed)).append("\n");
                         sb.append("    numGhmDelRxed: ").append(toIndentedString(numGhmDelRxed)).append("\n");

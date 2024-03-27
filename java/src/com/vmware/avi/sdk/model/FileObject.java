@@ -30,6 +30,9 @@ public class FileObject extends AviRestResource  {
     @JsonProperty("created")
     private String created;
 
+    @JsonProperty("crl_info")
+    private CRL crlInfo;
+
     @JsonProperty("description")
     private String description;
 
@@ -141,6 +144,30 @@ public class FileObject extends AviRestResource  {
      */
     public void setCreated(String  created) {
         this.created = created;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This field contains certificate revocation list metadata.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return crlInfo
+     */
+    public CRL getCrlInfo() {
+        return crlInfo;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This field contains certificate revocation list metadata.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param crlInfo set the crlInfo.
+     */
+    public void setCrlInfo(CRL crlInfo) {
+        this.crlInfo = crlInfo;
     }
 
     /**
@@ -484,7 +511,8 @@ public class FileObject extends AviRestResource  {
   Objects.equals(this.restrictDownload, objFileObject.restrictDownload)&&
   Objects.equals(this.isFederated, objFileObject.isFederated)&&
   Objects.equals(this.compressed, objFileObject.compressed)&&
-  Objects.equals(this.expiresAt, objFileObject.expiresAt);
+  Objects.equals(this.expiresAt, objFileObject.expiresAt)&&
+  Objects.equals(this.crlInfo, objFileObject.crlInfo);
     }
 
     @Override
@@ -494,6 +522,7 @@ public class FileObject extends AviRestResource  {
                   sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
                         sb.append("    compressed: ").append(toIndentedString(compressed)).append("\n");
                         sb.append("    created: ").append(toIndentedString(created)).append("\n");
+                        sb.append("    crlInfo: ").append(toIndentedString(crlInfo)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
                         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
