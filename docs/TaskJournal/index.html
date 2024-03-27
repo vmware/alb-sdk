@@ -1,0 +1,880 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
+<!doctype html>
+<html>
+  <head>
+    <title>Avi TaskJournal Object API</title>
+    <style type="text/css">
+      body { 
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+	display: none;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+    </style>
+  </head>
+  <body>
+  <h1>Avi TaskJournal Object API</h1>
+    <div class="app-desc">CLI ``` - show taskjournal <key> ``` </div>
+    <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
+    <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
+    <div class="app-desc">Version: 30.2.1</div>
+    <div class="app-desc">BasePath:/api</div>
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+    <ol>
+      <li>HTTP Basic Authentication</li>
+    </ol>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h2>Table of Contents </h2>
+  <div class="method-summary"></div>
+  <ol>
+  <li><a href="#taskjournalGet"><code><span class="http-method">get</span> /taskjournal</code></a></li>
+  <li><a href="#taskjournalPost"><code><span class="http-method">post</span> /taskjournal</code></a></li>
+  <li><a href="#taskjournalUuidDelete"><code><span class="http-method">delete</span> /taskjournal/{uuid}</code></a></li>
+  <li><a href="#taskjournalUuidGet"><code><span class="http-method">get</span> /taskjournal/{uuid}</code></a></li>
+  <li><a href="#taskjournalUuidPatch"><code><span class="http-method">patch</span> /taskjournal/{uuid}</code></a></li>
+  <li><a href="#taskjournalUuidPut"><code><span class="http-method">put</span> /taskjournal/{uuid}</code></a></li>
+  </ol>
+
+  <div class="method"><a name="taskjournalGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /taskjournal</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">taskjournalGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#TaskJournalApiResponse">TaskJournalApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "summary" : {
+      "duration" : "",
+      "reason" : "aeiou",
+      "start_time" : "aeiou",
+      "end_time" : "aeiou",
+      "description" : "aeiou",
+      "error_count" : "",
+      "type" : "aeiou",
+      "status" : "aeiou"
+    },
+    "image_ref" : "aeiou",
+    "obj_cloud_ref" : "aeiou",
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "patch_image_ref" : "aeiou",
+    "operation" : "aeiou",
+    "uuid" : "aeiou",
+    "errors" : [ {
+      "name" : "aeiou",
+      "details" : [ "aeiou" ],
+      "uuid" : "aeiou",
+      "version" : "aeiou",
+      "tenant" : "aeiou",
+      "object" : "aeiou"
+    } ],
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "info" : {
+      "total_objects" : "",
+      "versions" : [ "aeiou" ],
+      "actions" : [ {
+        "objects" : [ {
+          "success" : "",
+          "model" : "aeiou",
+          "failed" : "",
+          "skipped" : ""
+        } ],
+        "version" : "aeiou"
+      } ]
+    }
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#TaskJournalApiResponse">TaskJournalApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="taskjournalPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /taskjournal</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">taskjournalPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; TaskJournal object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#TaskJournal">TaskJournal</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "summary" : {
+    "duration" : "",
+    "reason" : "aeiou",
+    "start_time" : "aeiou",
+    "end_time" : "aeiou",
+    "description" : "aeiou",
+    "error_count" : "",
+    "type" : "aeiou",
+    "status" : "aeiou"
+  },
+  "image_ref" : "aeiou",
+  "obj_cloud_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "patch_image_ref" : "aeiou",
+  "operation" : "aeiou",
+  "uuid" : "aeiou",
+  "errors" : [ {
+    "name" : "aeiou",
+    "details" : [ "aeiou" ],
+    "uuid" : "aeiou",
+    "version" : "aeiou",
+    "tenant" : "aeiou",
+    "object" : "aeiou"
+  } ],
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "info" : {
+    "total_objects" : "",
+    "versions" : [ "aeiou" ],
+    "actions" : [ {
+      "objects" : [ {
+        "success" : "",
+        "model" : "aeiou",
+        "failed" : "",
+        "skipped" : ""
+      } ],
+      "version" : "aeiou"
+    } ]
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#TaskJournal">TaskJournal</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="taskjournalUuidDelete"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /taskjournal/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">taskjournalUuidDelete</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="taskjournalUuidGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /taskjournal/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">taskjournalUuidGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#TaskJournal">TaskJournal</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "summary" : {
+    "duration" : "",
+    "reason" : "aeiou",
+    "start_time" : "aeiou",
+    "end_time" : "aeiou",
+    "description" : "aeiou",
+    "error_count" : "",
+    "type" : "aeiou",
+    "status" : "aeiou"
+  },
+  "image_ref" : "aeiou",
+  "obj_cloud_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "patch_image_ref" : "aeiou",
+  "operation" : "aeiou",
+  "uuid" : "aeiou",
+  "errors" : [ {
+    "name" : "aeiou",
+    "details" : [ "aeiou" ],
+    "uuid" : "aeiou",
+    "version" : "aeiou",
+    "tenant" : "aeiou",
+    "object" : "aeiou"
+  } ],
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "info" : {
+    "total_objects" : "",
+    "versions" : [ "aeiou" ],
+    "actions" : [ {
+      "objects" : [ {
+        "success" : "",
+        "model" : "aeiou",
+        "failed" : "",
+        "skipped" : ""
+      } ],
+      "version" : "aeiou"
+    } ]
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#TaskJournal">TaskJournal</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="taskjournalUuidPatch"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /taskjournal/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">taskjournalUuidPatch</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; TaskJournal object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#TaskJournal">TaskJournal</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "summary" : {
+    "duration" : "",
+    "reason" : "aeiou",
+    "start_time" : "aeiou",
+    "end_time" : "aeiou",
+    "description" : "aeiou",
+    "error_count" : "",
+    "type" : "aeiou",
+    "status" : "aeiou"
+  },
+  "image_ref" : "aeiou",
+  "obj_cloud_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "patch_image_ref" : "aeiou",
+  "operation" : "aeiou",
+  "uuid" : "aeiou",
+  "errors" : [ {
+    "name" : "aeiou",
+    "details" : [ "aeiou" ],
+    "uuid" : "aeiou",
+    "version" : "aeiou",
+    "tenant" : "aeiou",
+    "object" : "aeiou"
+  } ],
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "info" : {
+    "total_objects" : "",
+    "versions" : [ "aeiou" ],
+    "actions" : [ {
+      "objects" : [ {
+        "success" : "",
+        "model" : "aeiou",
+        "failed" : "",
+        "skipped" : ""
+      } ],
+      "version" : "aeiou"
+    } ]
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#TaskJournal">TaskJournal</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="taskjournalUuidPut"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /taskjournal/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">taskjournalUuidPut</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; TaskJournal object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#TaskJournal">TaskJournal</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "summary" : {
+    "duration" : "",
+    "reason" : "aeiou",
+    "start_time" : "aeiou",
+    "end_time" : "aeiou",
+    "description" : "aeiou",
+    "error_count" : "",
+    "type" : "aeiou",
+    "status" : "aeiou"
+  },
+  "image_ref" : "aeiou",
+  "obj_cloud_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "patch_image_ref" : "aeiou",
+  "operation" : "aeiou",
+  "uuid" : "aeiou",
+  "errors" : [ {
+    "name" : "aeiou",
+    "details" : [ "aeiou" ],
+    "uuid" : "aeiou",
+    "version" : "aeiou",
+    "tenant" : "aeiou",
+    "object" : "aeiou"
+  } ],
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "info" : {
+    "total_objects" : "",
+    "versions" : [ "aeiou" ],
+    "actions" : [ {
+      "objects" : [ {
+        "success" : "",
+        "model" : "aeiou",
+        "failed" : "",
+        "skipped" : ""
+      } ],
+      "version" : "aeiou"
+    } ]
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#TaskJournal">TaskJournal</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+
+  <div class="up"><a href="#__Models">Up</a></div>
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h2>Table of Contents</h2>
+  <ol>
+    <li><a href="#JournalAction"><code>JournalAction</code></a></li>
+    <li><a href="#JournalError"><code>JournalError</code></a></li>
+    <li><a href="#JournalInfo"><code>JournalInfo</code></a></li>
+    <li><a href="#JournalObject"><code>JournalObject</code></a></li>
+    <li><a href="#JournalSummary"><code>JournalSummary</code></a></li>
+    <li><a href="#TaskJournal"><code>TaskJournal</code></a></li>
+    <li><a href="#TaskJournalApiResponse"><code>TaskJournalApiResponse</code></a></li>
+  </ol>
+
+  <div class="model">
+    <h3 class="field-label"><a name="JournalAction">JournalAction</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">objects (optional)</div><div class="param-desc"><span class="param-type"><a href="#JournalObject">array[JournalObject]</a></span> Details of the process for each object type. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Migrated version. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="JournalError">JournalError</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">details (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> List of error messages for this object. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the object for which error was reported. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">object (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Object type on which the error was reported. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant for which error was reported. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Uuid of the object for which error was reported. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Version to which the migration failed. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="JournalInfo">JournalInfo</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">actions (optional)</div><div class="param-desc"><span class="param-type"><a href="#JournalAction">array[JournalAction]</a></span> Details of run for each version. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">total_objects </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of objects to be processed. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">versions (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> List of versions to be migrated. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="JournalObject">JournalObject</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">failed (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of object caused a failure. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">model (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the model. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">skipped (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of object skipped. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">success (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of object for which processing is successful. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="JournalSummary">JournalSummary</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Description of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Duration of the process in seconds. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">end_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> End time of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">error_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of errors in the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Summary reason for process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">start_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Start time of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">status (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Status of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Process Type. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="TaskJournal">TaskJournal</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">errors (optional)</div><div class="param-desc"><span class="param-type"><a href="#JournalError">array[JournalError]</a></span> List of errors in the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">image_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Image uuid for identifying the current base image. It is a reference to an object of type Image. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">info (optional)</div><div class="param-desc"><span class="param-type"><a href="#JournalInfo">JournalInfo</a></span> Detailed Information of Journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name for the task journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">obj_cloud_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Cloud that this object belongs to. It is a reference to an object of type Cloud. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">operation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Operation for which the task journal created. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">patch_image_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Image uuid for identifying the current patch. It is a reference to an object of type Image. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">summary </div><div class="param-desc"><span class="param-type"><a href="#JournalSummary">JournalSummary</a></span> Summary of Journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID Identifier for the task journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="TaskJournalApiResponse">TaskJournalApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#TaskJournal">array[TaskJournal]</a></span>  </div>
+<div class="param">next (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
