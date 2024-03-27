@@ -139,9 +139,6 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("file_object_cleanup_period")
     private Integer fileObjectCleanupPeriod = 1440;
 
-    @JsonProperty("file_reference_mappings")
-    private List<FileReferenceMapping> fileReferenceMappings;
-
     @JsonProperty("fileobject_max_file_versions")
     private Integer fileobjectMaxFileVersions = 3;
 
@@ -1330,45 +1327,6 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setFileObjectCleanupPeriod(Integer  fileObjectCleanupPeriod) {
         this.fileObjectCleanupPeriod = fileObjectCleanupPeriod;
-    }
-    /**
-     * This is the getter method this will return the attribute value.
-     * List of mapping for file reference and their absolute path.
-     * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return fileReferenceMappings
-     */
-    public List<FileReferenceMapping> getFileReferenceMappings() {
-        return fileReferenceMappings;
-    }
-
-    /**
-     * This is the setter method. this will set the fileReferenceMappings
-     * List of mapping for file reference and their absolute path.
-     * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return fileReferenceMappings
-     */
-    public void setFileReferenceMappings(List<FileReferenceMapping>  fileReferenceMappings) {
-        this.fileReferenceMappings = fileReferenceMappings;
-    }
-
-    /**
-     * This is the setter method this will set the fileReferenceMappings
-     * List of mapping for file reference and their absolute path.
-     * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return fileReferenceMappings
-     */
-    public ControllerProperties addFileReferenceMappingsItem(FileReferenceMapping fileReferenceMappingsItem) {
-      if (this.fileReferenceMappings == null) {
-        this.fileReferenceMappings = new ArrayList<FileReferenceMapping>();
-      }
-      this.fileReferenceMappings.add(fileReferenceMappingsItem);
-      return this;
     }
 
     /**
@@ -3258,7 +3216,6 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.skopeoRetryLimit, objControllerProperties.skopeoRetryLimit)&&
   Objects.equals(this.skopeoRetryInterval, objControllerProperties.skopeoRetryInterval)&&
   Objects.equals(this.softMinMemPerSeLimit, objControllerProperties.softMinMemPerSeLimit)&&
-  Objects.equals(this.fileReferenceMappings, objControllerProperties.fileReferenceMappings)&&
   Objects.equals(this.cloudReconcileInterval, objControllerProperties.cloudReconcileInterval)&&
   Objects.equals(this.cloudDiscoveryInterval, objControllerProperties.cloudDiscoveryInterval)&&
   Objects.equals(this.systemReportLimit, objControllerProperties.systemReportLimit)&&
@@ -3309,7 +3266,6 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    fatalErrorLeaseTime: ").append(toIndentedString(fatalErrorLeaseTime)).append("\n");
                         sb.append("    federatedDatastoreCleanupDuration: ").append(toIndentedString(federatedDatastoreCleanupDuration)).append("\n");
                         sb.append("    fileObjectCleanupPeriod: ").append(toIndentedString(fileObjectCleanupPeriod)).append("\n");
-                        sb.append("    fileReferenceMappings: ").append(toIndentedString(fileReferenceMappings)).append("\n");
                         sb.append("    fileobjectMaxFileVersions: ").append(toIndentedString(fileobjectMaxFileVersions)).append("\n");
                         sb.append("    gslbPurgeBatchSize: ").append(toIndentedString(gslbPurgeBatchSize)).append("\n");
                         sb.append("    gslbPurgeSleepTimeMs: ").append(toIndentedString(gslbPurgeSleepTimeMs)).append("\n");
