@@ -1046,67 +1046,6 @@
             }
         },
         "/fileobject/{uuid}/['']/": {
-            "patch": {
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
             "put": {
                 "consumes": [
                     "application/json"
@@ -1154,6 +1093,67 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "patch": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
                     },
                     {
                         "in": "path",
@@ -44472,67 +44472,6 @@
             }
         },
         "/cloud/{uuid}/gc/": {
-            "patch": {
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
             "put": {
                 "consumes": [
                     "application/json"
@@ -44580,6 +44519,67 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "patch": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
                     },
                     {
                         "in": "path",
@@ -94789,13 +94789,6 @@
                     "type": "integer",
                     "default": 1440,
                     "format": "uint32"
-                },
-                "file_reference_mappings": {
-                    "description": "List of mapping for file reference and their absolute path . Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/FileReferenceMapping"
-                    }
                 },
                 "fileobject_max_file_versions": {
                     "description": "This is the max number of file versions that will be retained for a file referenced by the local FileObject. Subsequent uploads of file will result in the file rotation of the older version and the latest version retained. Example  When a file Upload is done for the first time, there will be a v1 version. Subsequent uploads will get mapped to v1, v2 and v3 versions. On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained. Allowed values are 1-5. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
