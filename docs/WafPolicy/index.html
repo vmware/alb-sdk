@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure wafpolicy <key> - show wafpolicy <key> - updatecrsrules virtualservice <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 30.2.1</div>
+    <div class="app-desc">Version: 31.1.1</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -370,6 +370,7 @@ font-style: italic;
       "enable_per_uri_learning" : true,
       "min_hits_to_learn" : "",
       "max_uris" : "",
+      "enable_learn_from_bots" : true,
       "update_interval" : "",
       "sampling_percent" : "",
       "learn_from_bots" : "",
@@ -622,6 +623,7 @@ font-style: italic;
     "enable_per_uri_learning" : true,
     "min_hits_to_learn" : "",
     "max_uris" : "",
+    "enable_learn_from_bots" : true,
     "update_interval" : "",
     "sampling_percent" : "",
     "learn_from_bots" : "",
@@ -945,6 +947,7 @@ font-style: italic;
     "enable_per_uri_learning" : true,
     "min_hits_to_learn" : "",
     "max_uris" : "",
+    "enable_learn_from_bots" : true,
     "update_interval" : "",
     "sampling_percent" : "",
     "learn_from_bots" : "",
@@ -1208,6 +1211,7 @@ font-style: italic;
     "enable_per_uri_learning" : true,
     "min_hits_to_learn" : "",
     "max_uris" : "",
+    "enable_learn_from_bots" : true,
     "update_interval" : "",
     "sampling_percent" : "",
     "learn_from_bots" : "",
@@ -1471,6 +1475,7 @@ font-style: italic;
     "enable_per_uri_learning" : true,
     "min_hits_to_learn" : "",
     "max_uris" : "",
+    "enable_learn_from_bots" : true,
     "update_interval" : "",
     "sampling_percent" : "",
     "learn_from_bots" : "",
@@ -1695,7 +1700,8 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="AppLearningParams">AppLearningParams</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">enable_per_uri_learning (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Learn the params per URI path. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+      <div class="param">enable_learn_from_bots (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If this is set to true, WAF will only learn from clients which match the learn_from_bots specification. The settings learn_from_authenticated_requests and trusted_ip_groups always take precedence. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">enable_per_uri_learning (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Learn the params per URI path. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">learn_from_authenticated_clients_only (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If true, learning will only be performed on requests from clients who have passed the authentication process configured in the Virtual Service&#39;s Auth Profile. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">learn_from_bots (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotDetectionMatch">BotDetectionMatch</a></span> If Bot detection is active for this Virtual Service, learning will only be performed on requests from clients within the configured bot classification types. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">max_params (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of params programmed for an application. Allowed values are 10-1000. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
