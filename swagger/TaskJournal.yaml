@@ -6,7 +6,7 @@
 swagger: '2.0'
 info:
     version: '30.2.1'
-    title: Avi FileObject Object API
+    title: Avi TaskJournal Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
@@ -14,10 +14,7 @@ info:
     description: |
         CLI
         ```
-        - upload fileobject file
-        - configure fileobject <key>
-        - show fileobject <key>
-        - show fileobject
+        - show taskjournal <key>
         ```
 
 
@@ -27,7 +24,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /fileobject:
+    /taskjournal:
         get:
             consumes:
                 -   application/json
@@ -91,7 +88,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/FileObjectApiResponse"
+                        $ref: "#/definitions/TaskJournalApiResponse"
                 401:
                     description: log in failed
         post:
@@ -122,20 +119,20 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: FileObject object creation
+                    description: TaskJournal object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/FileObject"
+                        $ref: "#/definitions/TaskJournal"
             security:
                 - basicAuth: []
             responses:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/FileObject"
+                        $ref: "#/definitions/TaskJournal"
                 401:
                     description: log in failed
-    /fileobject/{uuid}:
+    /taskjournal/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -196,7 +193,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/FileObject"
+                        $ref: "#/definitions/TaskJournal"
                 401:
                     description: log in failed
         put:
@@ -232,10 +229,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: FileObject object creation
+                    description: TaskJournal object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/FileObject"
+                        $ref: "#/definitions/TaskJournal"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -247,7 +244,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/FileObject"
+                        $ref: "#/definitions/TaskJournal"
                 401:
                     description: log in failed
         patch:
@@ -283,10 +280,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: FileObject object creation
+                    description: TaskJournal object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/FileObject"
+                        $ref: "#/definitions/TaskJournal"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -298,7 +295,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/FileObject"
+                        $ref: "#/definitions/TaskJournal"
                 401:
                     description: log in failed
         delete:
@@ -348,250 +345,155 @@ paths:
                     description: not found
 
 
-    /fileobject/{uuid}/federated_info/:
-        get:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        type: string
-                401:
-                    description: log in failed
-    /fileobject/{uuid}/['']/:
-        patch:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        type: string
-                401:
-                    description: log in failed
-        put:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   in: body
-                    name: body
-                    description: empty
-                    required: true
-                    schema:
-                        type: object
-                        additionalProperties:
-                            type: string
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        type: string
-                401:
-                    description: log in failed
 definitions:
-    ConfigPbAttributes:
+    JournalAction:
         type: object
         properties:
+            objects:
+                description: "Details of the process for each object type. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/JournalObject'
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
-    CRL:
+                description: "Migrated version. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+    JournalError:
         type: object
         properties:
-            body:
-                description: "Certificate Revocation list from a given issuer in PEM format. This can either be configured directly or via the server_url. . Field deprecated in 30.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+            details:
+                description: "List of error messages for this object. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            name:
+                description: "Name of the object for which error was reported. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            common_name:
-                description: "Common name of the issuer in the Certificate Revocation list. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+            object:
+                description: "Object type on which the error was reported. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            distinguished_name:
-                description: "Distinguished name of the issuer in the Certificate Revocation list. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+            tenant:
+                description: "Tenant for which error was reported. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            etag:
-                description: "Cached etag to optimize the download of the CRL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+            uuid:
+                description: "Uuid of the object for which error was reported. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            fingerprint:
-                description: "Fingerprint of the CRL. Used to avoid configuring duplicates. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+            version:
+                description: "Version to which the migration failed. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            last_refreshed:
-                description: "Last time CRL was refreshed by the system. This is an internal field used by the system. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            last_update:
-                description: "The date when this CRL was last issued. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            next_update:
-                description: "The date when a newer CRL will be available. Also conveys the date after which the CRL should be considered obsolete. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            server_url:
-                description: "URL of a server that issues the Certificate Revocation list. If this is configured, CRL will be periodically downloaded either based on the configured update interval or the next update interval in the CRL. CRL itself is stored in the body. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                type: string
-            text:
-                description: "Certificate Revocation list in plain text for readability. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            update_interval:
-                description: "Interval in minutes to check for CRL update. If not specified, interval will be 1 day. Allowed values are 30-525600. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1440
-                format: int32
-    FileObject:
+    JournalInfo:
         type: object
         required:
-            -   name
+            -   total_objects
+        properties:
+            actions:
+                description: "Details of run for each version. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/JournalAction'
+            total_objects:
+                description: "Number of objects to be processed. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            versions:
+                description: "List of versions to be migrated. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+    JournalObject:
+        type: object
+        properties:
+            failed:
+                description: "Number of object caused a failure. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            model:
+                description: "Name of the model. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            skipped:
+                description: "Number of object skipped. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            success:
+                description: "Number of object for which processing is successful. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+    JournalSummary:
+        type: object
+        required:
             -   type
+        properties:
+            description:
+                description: "Description of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            duration:
+                description: "Duration of the process in seconds. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            end_time:
+                description: "End time of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            error_count:
+                description: "Number of errors in the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            reason:
+                description: "Summary reason for process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            start_time:
+                description: "Start time of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            status:
+                description: "Status of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            type:
+                description: "Process Type. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+    TaskJournal:
+        type: object
+        required:
+            -   summary
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
-            checksum:
-                description: "SHA1 checksum of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+            errors:
+                description: "List of errors in the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/JournalError'
+            image_ref:
+                description: "Image uuid for identifying the current base image. It is a reference to an object of type Image. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            compressed:
-                description: "This field indicates whether the file is gzip-compressed. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: boolean
-            configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/ConfigPbAttributes'
-            created:
-                description: "Timestamp of creation for the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            crl_info:
-                description: "This field contains Certificate Revocation List metadata. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/CRL'
-            description:
-                description: "Description of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            expires_at:
-                description: "Timestamp when the file will be no longer needed and can be removed by the system. If this is set, a garbage collector process will try to remove the file after this time. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            is_federated:
-                description: "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: boolean
+            info:
+                description: "Detailed Information of Journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/JournalInfo'
             name:
-                description: "Name of the file object. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name for the task journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            path:
-                description: "Path to the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+            obj_cloud_ref:
+                description: "Cloud that this object belongs to. It is a reference to an object of type Cloud. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            read_only:
-                description: "Enforce Read-Only on the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: boolean
-            restrict_download:
-                description: "Flag to allow/restrict download of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: boolean
-            size:
-                description: "Size of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint64
+            operation:
+                description: "Operation for which the task journal created. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            patch_image_ref:
+                description: "Image uuid for identifying the current patch. It is a reference to an object of type Image. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            summary:
+                description: "Summary of Journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/JournalSummary'
             tenant_ref:
-                description: "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            type:
-                description: "Type of the file. Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- OTHER_FILE_TYPES), Basic edition(Allowed values- OTHER_FILE_TYPES), Enterprise with Cloud Services edition."
+                description: "Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID Identifier for the task journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            version:
-                description: "Version of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-    FileObjectApiResponse:
+    TaskJournalApiResponse:
         type: object
         required:
             - count
@@ -603,6 +505,6 @@ definitions:
             results:
                 type: array
                 items:
-                    $ref: "#/definitions/FileObject"
+                    $ref: "#/definitions/TaskJournal"
             next:
                 type: string
