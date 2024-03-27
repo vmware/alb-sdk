@@ -25,7 +25,7 @@ public class BotConfigClientBehavior  {
     private Integer badRequestPercent = 20;
 
     @JsonProperty("enabled")
-    private Boolean enabled = true;
+    private Boolean enabled = false;
 
     @JsonProperty("minimum_requests")
     private Integer minimumRequests = 3;
@@ -64,7 +64,7 @@ public class BotConfigClientBehavior  {
      * Whether client behavior based bot detection is enabled.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -76,7 +76,7 @@ public class BotConfigClientBehavior  {
      * Whether client behavior based bot detection is enabled.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enabled set the enabled.
      */
     public void setEnabled(Boolean  enabled) {
