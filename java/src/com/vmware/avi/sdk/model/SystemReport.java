@@ -51,6 +51,9 @@ public class SystemReport extends AviRestResource  {
     @JsonProperty("summary")
     private ReportSummary summary;
 
+    @JsonProperty("tasks")
+    private List<ReportTask> tasks;
+
     @JsonProperty("tenant_ref")
     private String tenantRef;
 
@@ -344,6 +347,45 @@ public class SystemReport extends AviRestResource  {
     public void setSummary(ReportSummary summary) {
         this.summary = summary;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of tasks associated with the report.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tasks
+     */
+    public List<ReportTask> getTasks() {
+        return tasks;
+    }
+
+    /**
+     * This is the setter method. this will set the tasks
+     * List of tasks associated with the report.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tasks
+     */
+    public void setTasks(List<ReportTask>  tasks) {
+        this.tasks = tasks;
+    }
+
+    /**
+     * This is the setter method this will set the tasks
+     * List of tasks associated with the report.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tasks
+     */
+    public SystemReport addTasksItem(ReportTask tasksItem) {
+      if (this.tasks == null) {
+        this.tasks = new ArrayList<ReportTask>();
+      }
+      this.tasks.add(tasksItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -433,7 +475,8 @@ public class SystemReport extends AviRestResource  {
   Objects.equals(this.archiveRef, objSystemReport.archiveRef)&&
   Objects.equals(this.summary, objSystemReport.summary)&&
   Objects.equals(this.readinessReports, objSystemReport.readinessReports)&&
-  Objects.equals(this.events, objSystemReport.events);
+  Objects.equals(this.events, objSystemReport.events)&&
+  Objects.equals(this.tasks, objSystemReport.tasks);
     }
 
     @Override
@@ -450,6 +493,7 @@ public class SystemReport extends AviRestResource  {
                         sb.append("    sePatchImageRef: ").append(toIndentedString(sePatchImageRef)).append("\n");
                         sb.append("    state: ").append(toIndentedString(state)).append("\n");
                         sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
+                        sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
