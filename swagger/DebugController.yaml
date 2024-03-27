@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '30.2.1'
+    version: '31.1.1'
     title: Avi DebugController Object API
     contact:
         name: Avi Networks Inc.
@@ -548,7 +548,7 @@ definitions:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             license_grace_period:
-                description: "setting to reduce the grace period for license expiry in hours. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Setting to reduce the grace period for license expiry in hours. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             log_first_n:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -558,6 +558,9 @@ definitions:
                 type: string
             metric_instance_id:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            min_db_queries_each_conn:
+                description: "Setting to change the number of queries being processed by per DB connection by Metrics Manager. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             obj:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -578,6 +581,10 @@ definitions:
             entity_ref:
                 description: "uuid of the entity. It is a reference to an object of type Virtualservice. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            psm_rule_id_multiplier:
+                description: "Dynamically update the multiplier for rule ID generation in PSM programming for Learning feature. Allowed values are 10-100000. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
     SeMgrDebugFilter:
         type: object
         properties:

@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "30.2.1",
+        "version": "31.1.1",
         "title": "Avi PKIProfile Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -579,10 +579,6 @@
         "CRL": {
             "type": "object",
             "properties": {
-                "body": {
-                    "description": "Certificate Revocation list from a given issuer in PEM format. This can either be configured directly or via the server_url. . Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
                 "common_name": {
                     "description": "Common name of the issuer in the Certificate Revocation list. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
@@ -593,10 +589,6 @@
                 },
                 "etag": {
                     "description": "Cached etag to optimize the download of the CRL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "file_ref": {
-                    "description": "Refers to FileObject containing CRL body. It is a reference to an object of type FileObject. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "fingerprint": {
@@ -626,6 +618,7 @@
                 "update_interval": {
                     "description": "Interval in minutes to check for CRL update. If not specified, interval will be 1 day. Allowed values are 30-525600. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
+                    "default": 1440,
                     "format": "int32"
                 }
             }
@@ -684,11 +677,11 @@
                     "type": "boolean",
                     "default": true
                 },
-                "crls": {
-                    "description": "Certificate Revocation Lists. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "crl_file_refs": {
+                    "description": "Refers to FileObject containing CRL body. It is a reference to an object of type FileObject. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/CRL"
+                        "type": "string"
                     }
                 },
                 "ignore_peer_chain": {
