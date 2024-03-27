@@ -270,7 +270,7 @@ public class AlertConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Uuid of the resource for which alert was raised.
+     * Instance of the resource for which alert was raised.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objUuid
@@ -281,7 +281,7 @@ public class AlertConfig extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Uuid of the resource for which alert was raised.
+     * Instance of the resource for which alert was raised.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objUuid set the objUuid.

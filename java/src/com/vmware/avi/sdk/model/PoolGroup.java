@@ -39,9 +39,6 @@ public class PoolGroup extends AviRestResource  {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("enable_http2")
-    private Boolean enableHttp2;
-
     @JsonProperty("fail_action")
     private FailAction failAction;
 
@@ -213,30 +210,6 @@ public class PoolGroup extends AviRestResource  {
      */
     public void setDescription(String  description) {
         this.description = description;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Enable http/2 for traffic from virtualservice to all the backend servers in all the pools configured under this poolgroup.
-     * Field deprecated in 30.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * @return enableHttp2
-     */
-    public Boolean getEnableHttp2() {
-        return enableHttp2;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Enable http/2 for traffic from virtualservice to all the backend servers in all the pools configured under this poolgroup.
-     * Field deprecated in 30.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * @param enableHttp2 set the enableHttp2.
-     */
-    public void setEnableHttp2(Boolean  enableHttp2) {
-        this.enableHttp2 = enableHttp2;
     }
 
     /**
@@ -555,7 +528,6 @@ public class PoolGroup extends AviRestResource  {
   Objects.equals(this.description, objPoolGroup.description)&&
   Objects.equals(this.tenantRef, objPoolGroup.tenantRef)&&
   Objects.equals(this.cloudRef, objPoolGroup.cloudRef)&&
-  Objects.equals(this.enableHttp2, objPoolGroup.enableHttp2)&&
   Objects.equals(this.deactivatePrimaryPoolOnDown, objPoolGroup.deactivatePrimaryPoolOnDown);
     }
 
@@ -569,7 +541,6 @@ public class PoolGroup extends AviRestResource  {
                         sb.append("    deactivatePrimaryPoolOnDown: ").append(toIndentedString(deactivatePrimaryPoolOnDown)).append("\n");
                         sb.append("    deploymentPolicyRef: ").append(toIndentedString(deploymentPolicyRef)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-                        sb.append("    enableHttp2: ").append(toIndentedString(enableHttp2)).append("\n");
                         sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
                         sb.append("    implicitPriorityLabels: ").append(toIndentedString(implicitPriorityLabels)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");

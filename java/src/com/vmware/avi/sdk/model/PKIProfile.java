@@ -33,8 +33,8 @@ public class PKIProfile extends AviRestResource  {
     @JsonProperty("crl_check")
     private Boolean crlCheck = true;
 
-    @JsonProperty("crls")
-    private List<CRL> crls;
+    @JsonProperty("crl_file_refs")
+    private List<String> crlFileRefs;
 
     @JsonProperty("ignore_peer_chain")
     private Boolean ignorePeerChain;
@@ -188,38 +188,44 @@ public class PKIProfile extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Certificate revocation lists.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Refers to fileobject containing crl body.
+     * It is a reference to an object of type fileobject.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return crls
+     * @return crlFileRefs
      */
-    public List<CRL> getCrls() {
-        return crls;
+    public List<String> getCrlFileRefs() {
+        return crlFileRefs;
     }
 
     /**
-     * This is the setter method. this will set the crls
-     * Certificate revocation lists.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * This is the setter method. this will set the crlFileRefs
+     * Refers to fileobject containing crl body.
+     * It is a reference to an object of type fileobject.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return crls
+     * @return crlFileRefs
      */
-    public void setCrls(List<CRL>  crls) {
-        this.crls = crls;
+    public void setCrlFileRefs(List<String>  crlFileRefs) {
+        this.crlFileRefs = crlFileRefs;
     }
 
     /**
-     * This is the setter method this will set the crls
-     * Certificate revocation lists.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * This is the setter method this will set the crlFileRefs
+     * Refers to fileobject containing crl body.
+     * It is a reference to an object of type fileobject.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return crls
+     * @return crlFileRefs
      */
-    public PKIProfile addCrlsItem(CRL crlsItem) {
-      if (this.crls == null) {
-        this.crls = new ArrayList<CRL>();
+    public PKIProfile addCrlFileRefsItem(String crlFileRefsItem) {
+      if (this.crlFileRefs == null) {
+        this.crlFileRefs = new ArrayList<String>();
       }
-      this.crls.add(crlsItem);
+      this.crlFileRefs.add(crlFileRefsItem);
       return this;
     }
 
@@ -439,12 +445,12 @@ public class PKIProfile extends AviRestResource  {
       return   Objects.equals(this.uuid, objPKIProfile.uuid)&&
   Objects.equals(this.name, objPKIProfile.name)&&
   Objects.equals(this.caCerts, objPKIProfile.caCerts)&&
-  Objects.equals(this.crls, objPKIProfile.crls)&&
   Objects.equals(this.ignorePeerChain, objPKIProfile.ignorePeerChain)&&
   Objects.equals(this.crlCheck, objPKIProfile.crlCheck)&&
   Objects.equals(this.validateOnlyLeafCrl, objPKIProfile.validateOnlyLeafCrl)&&
   Objects.equals(this.createdBy, objPKIProfile.createdBy)&&
   Objects.equals(this.markers, objPKIProfile.markers)&&
+  Objects.equals(this.crlFileRefs, objPKIProfile.crlFileRefs)&&
   Objects.equals(this.isFederated, objPKIProfile.isFederated)&&
   Objects.equals(this.tenantRef, objPKIProfile.tenantRef)&&
   Objects.equals(this.allowPkiErrors, objPKIProfile.allowPkiErrors);
@@ -458,7 +464,7 @@ public class PKIProfile extends AviRestResource  {
                         sb.append("    caCerts: ").append(toIndentedString(caCerts)).append("\n");
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
                         sb.append("    crlCheck: ").append(toIndentedString(crlCheck)).append("\n");
-                        sb.append("    crls: ").append(toIndentedString(crls)).append("\n");
+                        sb.append("    crlFileRefs: ").append(toIndentedString(crlFileRefs)).append("\n");
                         sb.append("    ignorePeerChain: ").append(toIndentedString(ignorePeerChain)).append("\n");
                         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
