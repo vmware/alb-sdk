@@ -322,6 +322,21 @@ font-style: italic;
       "event_name" : "aeiou",
       "messages" : [ "aeiou" ],
       "status" : "aeiou"
+    } ],
+    "tasks" : [ {
+      "summary" : {
+        "duration" : "",
+        "reason" : "aeiou",
+        "start_time" : "aeiou",
+        "end_time" : "aeiou",
+        "description" : "aeiou",
+        "error_count" : "",
+        "type" : "aeiou",
+        "status" : "aeiou"
+      },
+      "reason" : "aeiou",
+      "task_journal_ref" : "aeiou",
+      "name" : "aeiou"
     } ]
   } ]
 }</code></pre>
@@ -439,6 +454,21 @@ font-style: italic;
     "event_name" : "aeiou",
     "messages" : [ "aeiou" ],
     "status" : "aeiou"
+  } ],
+  "tasks" : [ {
+    "summary" : {
+      "duration" : "",
+      "reason" : "aeiou",
+      "start_time" : "aeiou",
+      "end_time" : "aeiou",
+      "description" : "aeiou",
+      "error_count" : "",
+      "type" : "aeiou",
+      "status" : "aeiou"
+    },
+    "reason" : "aeiou",
+    "task_journal_ref" : "aeiou",
+    "name" : "aeiou"
   } ]
 }</code></pre>
 
@@ -627,6 +657,21 @@ font-style: italic;
     "event_name" : "aeiou",
     "messages" : [ "aeiou" ],
     "status" : "aeiou"
+  } ],
+  "tasks" : [ {
+    "summary" : {
+      "duration" : "",
+      "reason" : "aeiou",
+      "start_time" : "aeiou",
+      "end_time" : "aeiou",
+      "description" : "aeiou",
+      "error_count" : "",
+      "type" : "aeiou",
+      "status" : "aeiou"
+    },
+    "reason" : "aeiou",
+    "task_journal_ref" : "aeiou",
+    "name" : "aeiou"
   } ]
 }</code></pre>
 
@@ -755,6 +800,21 @@ font-style: italic;
     "event_name" : "aeiou",
     "messages" : [ "aeiou" ],
     "status" : "aeiou"
+  } ],
+  "tasks" : [ {
+    "summary" : {
+      "duration" : "",
+      "reason" : "aeiou",
+      "start_time" : "aeiou",
+      "end_time" : "aeiou",
+      "description" : "aeiou",
+      "error_count" : "",
+      "type" : "aeiou",
+      "status" : "aeiou"
+    },
+    "reason" : "aeiou",
+    "task_journal_ref" : "aeiou",
+    "name" : "aeiou"
   } ]
 }</code></pre>
 
@@ -883,6 +943,21 @@ font-style: italic;
     "event_name" : "aeiou",
     "messages" : [ "aeiou" ],
     "status" : "aeiou"
+  } ],
+  "tasks" : [ {
+    "summary" : {
+      "duration" : "",
+      "reason" : "aeiou",
+      "start_time" : "aeiou",
+      "end_time" : "aeiou",
+      "description" : "aeiou",
+      "error_count" : "",
+      "type" : "aeiou",
+      "status" : "aeiou"
+    },
+    "reason" : "aeiou",
+    "task_journal_ref" : "aeiou",
+    "name" : "aeiou"
   } ]
 }</code></pre>
 
@@ -909,11 +984,13 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
+    <li><a href="#JournalSummary"><code>JournalSummary</code></a></li>
     <li><a href="#MustChecksInfo"><code>MustChecksInfo</code></a></li>
     <li><a href="#ReportDetail"><code>ReportDetail</code></a></li>
     <li><a href="#ReportEvent"><code>ReportEvent</code></a></li>
     <li><a href="#ReportOpsState"><code>ReportOpsState</code></a></li>
     <li><a href="#ReportSummary"><code>ReportSummary</code></a></li>
+    <li><a href="#ReportTask"><code>ReportTask</code></a></li>
     <li><a href="#SystemReport"><code>SystemReport</code></a></li>
     <li><a href="#SystemReportApiResponse"><code>SystemReportApiResponse</code></a></li>
     <li><a href="#TimeStamp"><code>TimeStamp</code></a></li>
@@ -921,6 +998,19 @@ font-style: italic;
     <li><a href="#UpgradeReadinessCheckObj"><code>UpgradeReadinessCheckObj</code></a></li>
   </ol>
 
+  <div class="model">
+    <h3 class="field-label"><a name="JournalSummary">JournalSummary</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Description of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Duration of the process in seconds. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">end_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> End time of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">error_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of errors in the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Summary reason for process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">start_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Start time of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">status (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Status of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Process Type. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
   <div class="model">
     <h3 class="field-label"><a name="MustChecksInfo">MustChecksInfo</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
@@ -972,6 +1062,15 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="ReportTask">ReportTask</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name for the Task journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reason in case of failure. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">summary (optional)</div><div class="param-desc"><span class="param-type"><a href="#JournalSummary">JournalSummary</a></span> Copy of journal summary for immediate visibility. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">task_journal_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Journal reference for the task. It is a reference to an object of type TaskJournal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="SystemReport">SystemReport</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
@@ -985,6 +1084,7 @@ font-style: italic;
 <div class="param">se_patch_image_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> SE Patch Image associated with the report. It is a reference to an object of type Image. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">state (optional)</div><div class="param-desc"><span class="param-type"><a href="#ReportOpsState">ReportOpsState</a></span> Report state combines all applicable states. Ex  readiness_reports.system_readiness.state. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">summary (optional)</div><div class="param-desc"><span class="param-type"><a href="#ReportSummary">ReportSummary</a></span> Summary of the report. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tasks (optional)</div><div class="param-desc"><span class="param-type"><a href="#ReportTask">array[ReportTask]</a></span> List of tasks associated with the report. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
 <div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID Identifier for the report. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
