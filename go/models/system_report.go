@@ -42,6 +42,9 @@ type SystemReport struct {
 	// Summary of the report. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	Summary *ReportSummary `json:"summary,omitempty"`
 
+	// List of tasks associated with the report. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	Tasks []*ReportTask `json:"tasks,omitempty"`
+
 	// Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 

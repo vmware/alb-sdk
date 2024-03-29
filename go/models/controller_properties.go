@@ -120,6 +120,15 @@ type ControllerProperties struct {
 	// Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	EnableResmgrLogCachePrint *bool `json:"enable_resmgr_log_cache_print,omitempty"`
 
+	// Maximum number of goroutines for event manager process. Allowed values are 1-64. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EventManagerMaxGoroutines *uint32 `json:"event_manager_max_goroutines,omitempty"`
+
+	// Maximum number of subscribers for event manager process. Allowed values are 1-6. Special values are 0 - Disabled. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EventManagerMaxSubscribers *uint32 `json:"event_manager_max_subscribers,omitempty"`
+
+	// Log instances for event manager processing delay; recorded whenever event processing delay exceeds configured interval specified in seconds. Allowed values are 1-5. Special values are 0 - Disabled. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EventManagerProcessingTimeThreshold *uint32 `json:"event_manager_processing_time_threshold,omitempty"`
+
 	// False Positive learning configuration. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	FalsePositiveLearningConfig *FalsePositiveLearningConfig `json:"false_positive_learning_config,omitempty"`
 
