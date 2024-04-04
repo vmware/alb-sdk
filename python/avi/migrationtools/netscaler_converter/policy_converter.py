@@ -551,6 +551,7 @@ class PolicyConverter(object):
                                 'HTTP.REQ.URL.STARTSWITH' in query.upper() or \
                                 'HTTP.REQ.URL.PATH_AND_QUERY.CONTAINS' \
                                 in query.upper():
+                    element = element.strip('"') if element.startswith('"/') else element
                     element = re.sub('[\\\/]', '', element)
                 match["query"]["match_str"].append(element)
 
