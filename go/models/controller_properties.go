@@ -120,6 +120,15 @@ type ControllerProperties struct {
 	// Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	EnableResmgrLogCachePrint *bool `json:"enable_resmgr_log_cache_print,omitempty"`
 
+	// Maximum number of goroutines for event manager process. Allowed values are 1-64. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EventManagerMaxGoroutines *uint32 `json:"event_manager_max_goroutines,omitempty"`
+
+	// Maximum number of subscribers for event manager process. Allowed values are 1-6. Special values are 0 - Disabled. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EventManagerMaxSubscribers *uint32 `json:"event_manager_max_subscribers,omitempty"`
+
+	// Log instances for event manager processing delay; recorded whenever event processing delay exceeds configured interval specified in seconds. Allowed values are 1-5. Special values are 0 - Disabled. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EventManagerProcessingTimeThreshold *uint32 `json:"event_manager_processing_time_threshold,omitempty"`
+
 	// False Positive learning configuration. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	FalsePositiveLearningConfig *FalsePositiveLearningConfig `json:"false_positive_learning_config,omitempty"`
 
@@ -131,9 +140,6 @@ type ControllerProperties struct {
 
 	// Period for file object cleanup job. Field introduced in 20.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	FileObjectCleanupPeriod *uint32 `json:"file_object_cleanup_period,omitempty"`
-
-	// List of mapping for file reference and their absolute path . Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	FileReferenceMappings []*FileReferenceMapping `json:"file_reference_mappings,omitempty"`
 
 	// This is the max number of file versions that will be retained for a file referenced by the local FileObject. Subsequent uploads of file will result in the file rotation of the older version and the latest version retained. Example  When a file Upload is done for the first time, there will be a v1 version. Subsequent uploads will get mapped to v1, v2 and v3 versions. On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained. Allowed values are 1-5. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	FileobjectMaxFileVersions *uint32 `json:"fileobject_max_file_versions,omitempty"`
