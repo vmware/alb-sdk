@@ -265,7 +265,7 @@ definitions:
                 default: 60
                 format: uint32
             cloud_discovery_interval:
-                description: "Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5
                 format: uint32
@@ -274,7 +274,7 @@ definitions:
                 type: boolean
                 default: True
             cloud_reconcile_interval:
-                description: "Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5
                 format: uint32
