@@ -284,10 +284,11 @@ class MonitorConverter(object):
                     # Removed \\ from response.
                     if '\\' in response:
                         response = response.replace('\\', '"')
-
+                https_monitor = {}
+                https_monitor['ssl_attributes'] = ssl_attributes
                 custom_header = ns_monitor.get('customHeaders')
                 if custom_header:
-                    avi_monitor['https_monitor'] = {
+                    https_monitor.update({
                         'exact_http_request': True,
                         'http_request': (send + ' HTTP/1.0' + "\r\n" +
                                         custom_header + "\r\n").replace('"',
@@ -295,7 +296,8 @@ class MonitorConverter(object):
                                         send else ('HTTP/1.0' + "\r\n" +
                                         custom_header + "\r\n").replace('"',
                                         '').replace('\\r\\n', '\r\n')
-                    }
+                    })
+                avi_monitor["https_monitor"] = https_monitor
             elif mon_type == 'HTTP':
                 avi_monitor["type"] = "HEALTH_MONITOR_HTTP"
                 send = ns_monitor.get('httpRequest', None)
