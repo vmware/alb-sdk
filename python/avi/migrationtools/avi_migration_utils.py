@@ -193,12 +193,16 @@ class MigrationUtil(object):
         :param key_file: Path of key file
         :return: Return True if key is passphrase protected else return False
         """
+        if '/Common/' in key_file:
+            key_file = key_file.replace('/Common/', '')
+        if ':Common:' in key_file:
+            key_file = key_file.replace(':Common:', '')
         try:
             child = pexpect.spawn(
                 'openssl rsa -in %s -check -noout' % key_file)
             # Expect for enter pass phrase if key is protected else it will raise
             # an exception
-            child.expect('Enter pass phrase for')
+            child.expect('Enter pass phrase for %s' %  key_file)
             update_count('warning')
             return True
         except Exception as e:

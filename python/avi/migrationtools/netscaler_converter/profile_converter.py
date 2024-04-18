@@ -351,6 +351,8 @@ class ProfileConverter(object):
                     accepted_versions.append({'type': 'SSL_VERSION_TLS1_1'})
                 if ssl_service.get('tls12', 'ENABLED') == 'ENABLED':
                     accepted_versions.append({'type': 'SSL_VERSION_TLS1_2'})
+                if ssl_service.get('tls13', '') == 'ENABLED':
+                    accepted_versions.append({'type': 'SSL_VERSION_TLS1_3'})
                 if accepted_versions:
                     ssl_profile['accepted_versions'] = accepted_versions
                 else:
@@ -674,6 +676,8 @@ class ProfileConverter(object):
                 key_passphrase = None
                 # Get the key passphrase for key_file
                 if self.netscalar_passphrase_keys:
+                    if ":" in key_file_name:
+                        key_file_name = key_file_name.split(":")[-1]
                     key_passphrase = self.netscalar_passphrase_keys.get(
                         key_file_name, None)
                 # if key is protected and does not find passphrase key
