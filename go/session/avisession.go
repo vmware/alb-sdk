@@ -16,6 +16,7 @@ import (
 	"net"
 	"net/http"
 	"net/http/httputil"
+	"net/url"
 	"os"
 	"reflect"
 	"regexp"
@@ -887,9 +888,9 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 			glog.Error("CheckControllerStatus is disabled for this session, not going to retry.")
 			if err != nil {
 				glog.Errorf("Failed to invoke API. Error: %s", err.Error())
+				return nil, err
 			}
-			return nil, fmt.Errorf("Rest request error, returning to caller: %s", err.Error())
-
+			return nil, errors.New("Rest request error, returning to caller")
 		}
 	}
 	return resp, nil
@@ -1505,11 +1506,11 @@ func (avisess *AviSession) GetUri(obj string, options ...ApiOptionsParams) (stri
 		return "", errors.New("Name not specified")
 	}
 
-	uri := "api/" + obj + "?name=" + opts.name
+	uri := "api/" + obj + "?name=" + url.QueryEscape(opts.name)
 	if opts.cloud != "" {
-		uri = uri + "&cloud=" + opts.cloud
+		uri = uri + "&cloud=" + url.QueryEscape(opts.cloud)
 	} else if opts.cloudUUID != "" {
-		uri = uri + "&cloud_ref.uuid=" + opts.cloudUUID
+		uri = uri + "&cloud_ref.uuid=" + url.QueryEscape(opts.cloudUUID)
 	}
 	if opts.skipDefault {
 		uri = uri + "&skip_default=true"

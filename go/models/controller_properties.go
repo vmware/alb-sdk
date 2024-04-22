@@ -57,13 +57,13 @@ type ControllerProperties struct {
 	// Period for sessions cleanup job. Field introduced in 18.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CleanupSessionsTimeoutPeriod *uint32 `json:"cleanup_sessions_timeout_period,omitempty"`
 
-	// Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	CloudDiscoveryInterval *uint32 `json:"cloud_discovery_interval,omitempty"`
 
 	// Enable/Disable periodic reconcile for all the clouds. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudReconcile *bool `json:"cloud_reconcile,omitempty"`
 
-	// Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	CloudReconcileInterval *uint32 `json:"cloud_reconcile_interval,omitempty"`
 
 	// Period for cluster ip gratuitous arp job. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
