@@ -357,6 +357,7 @@ NO_UUID_OBJ = ['cluster', 'systemconfiguration', 'inventoryfaultconfig']
 SKIP_DELETE_ERROR = ["Cannot delete system default object", "Method \'DELETE\' not allowed"]
 BUFFER_DELAY = 120
 
+
 def get_idp_class(idp):
     """
     This return corresponding idp class.
@@ -404,7 +405,9 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
             token=api_context['csrftoken'],
             port=api_creds.port,
             session_id=api_context['session_id'],
-            csrftoken=api_context['csrftoken'])
+            csrftoken=api_context['csrftoken'],
+            ssl_cert=api_context['ssl_cert'],
+            ssl_key=api_context['ssl_key'])
     else:
         api = ApiSession.get_session(
             api_creds.controller,
@@ -417,7 +420,9 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
             port=api_creds.port,
             idp_class=idp,
             csp_host=api_creds.csp_host,
-            csp_token=api_creds.csp_token,)
+            csp_token=api_creds.csp_token,
+            ssl_cert=api_creds.ssl_cert,
+            ssl_key=api_creds.ssl_key)
     state = module.params['state']
     # Get the api version.
     avi_update_method = module.params.get('avi_api_update_method', 'put')
@@ -619,7 +624,9 @@ def avi_common_argument_spec():
         csrftoken=dict(default='', type='str', no_log=True),
         idp_class=dict(default='', type='str'),
         csp_host=dict(default='', type='str', no_log=True),
-        csp_token=dict(default='', type='str', no_log=True)
+        csp_token=dict(default='', type='str', no_log=True),
+        ssl_cert=dict(default='', type='str', no_log=True),
+        ssl_key=dict(default='', type='str', no_log=True)
     )
 
     return dict(
