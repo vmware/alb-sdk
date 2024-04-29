@@ -1532,12 +1532,12 @@
                     "format": "uint32"
                 },
                 "mgmt_ip_v4_enabled": {
-                    "description": "Enable IPv4 on the Management interface of the ServiceEngine. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Enable IPv4 on the Management interface of the ServiceEngine. Defaults to dhcp if no static config on Network present. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "mgmt_ip_v6_enabled": {
-                    "description": "Enable IPv6 on the Management interface of the ServiceEngine. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Enable IPv6 on the Management interface of the ServiceEngine. Defaults to autocfg if no static config on Network present. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
