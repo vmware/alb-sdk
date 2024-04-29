@@ -767,6 +767,7 @@ public class Cloud extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable ipv4 on the management interface of the serviceengine.
+     * Defaults to dhcp if no static config on network present.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
@@ -779,6 +780,7 @@ public class Cloud extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enable ipv4 on the management interface of the serviceengine.
+     * Defaults to dhcp if no static config on network present.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
@@ -791,6 +793,7 @@ public class Cloud extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable ipv6 on the management interface of the serviceengine.
+     * Defaults to autocfg if no static config on network present.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
@@ -803,6 +806,7 @@ public class Cloud extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enable ipv6 on the management interface of the serviceengine.
+     * Defaults to autocfg if no static config on network present.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
