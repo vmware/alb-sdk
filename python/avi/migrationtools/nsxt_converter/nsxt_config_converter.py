@@ -100,8 +100,8 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
 
     output_config = output_path + os.path.sep + "avi_config.json"
 
-   # with open(output_config, "w", encoding='utf-8') as text_file:
-       # json.dump(avi_config_dict, text_file, indent=4)
+    with open(output_config, "w", encoding='utf-8') as text_file:
+        json.dump(avi_config_dict, text_file, indent=4)
 
     # Add nsxt converter status report in xslx report
     try:

@@ -658,13 +658,30 @@ class NSXUtil():
 
         return "Cloud Not Found"
 
+    def is_lb_ncp_created(self, lb):
+        is_lb_ncp_created = False
+        if lb and 'tags' in lb.keys():
+            for tags in lb['tags']:
+                if 'ncp' in tags['scope']:
+                    is_lb_ncp_created = True
+                    break
+        return is_lb_ncp_created
+
     def get_lb_services_details(self):
+        tier1_mapping = dict()
         lb_services = self.call_api_with_retry(self.nsx_api_client.infra.LbServices.list)
         for lb in lb_services:
+            is_lb_ncp_created = self.is_lb_ncp_created(lb)
+            if is_lb_ncp_created:
+                # If LB service is created by NCP then skip
+                LOG.warning(f"Skipping LB {lb['display_name']} as it is created by NCP")
+                continue
+
             self.cloud = self.session.get("cloud/", tenant=self.cloud_tenant).json()["results"]
             if not lb.get("connectivity_path"):
                 continue
             tier = get_name_and_entity(lb["connectivity_path"])[-1]
+
             results = self.call_api_with_retry(self.nsx_api_client.infra.tier_1s.LocaleServices.list, tier)
             ls_id = results[0]["id"]
             interface_list = self.call_api_with_retry(self.nsx_api_client.infra.tier_1s.locale_services.Interfaces.list,
