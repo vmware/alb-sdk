@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "30.2.1",
+        "version": "31.1.1",
         "title": "Avi DebugServiceEngine Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -702,15 +702,6 @@
                 }
             }
         },
-        "CaptureTCP": {
-            "type": "object",
-            "properties": {
-                "tcpflag": {
-                    "description": "TCP flags filter. Or'ed internally and And'ed amongst each other. . Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/CaptureTCPFlags"
-                }
-            }
-        },
         "CaptureTCPFilter": {
             "type": "object",
             "properties": {
@@ -731,18 +722,20 @@
                     "description": "Source Port range filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SourcePortAddr"
                 },
-                "tcpflags": {
-                    "description": "TCP flags filter. Or'ed internally and And'ed amongst each other. . Field introduced in 30.2.1. Maximum of 4 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/CaptureTCP"
-                    }
+                "tcpflag": {
+                    "description": "TCP flags filter. Or'ed internally and And'ed amongst each other. . Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/CaptureTCPFlags"
                 }
             }
         },
         "CaptureTCPFlags": {
             "type": "object",
             "properties": {
+                "filter_op": {
+                    "description": "Logical operation based filter criteria. Enum options - OR, AND. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "OR"
+                },
                 "match_operation": {
                     "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string",
@@ -758,6 +751,10 @@
                 },
                 "tcp_push": {
                     "description": "TCP PUSH flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "tcp_rst": {
+                    "description": "TCP RST flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tcp_syn": {
@@ -815,7 +812,7 @@
                     "type": "string"
                 },
                 "sub_module": {
-                    "description": " Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG, EVENTMANAGER_DEBUG. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "trace_level": {

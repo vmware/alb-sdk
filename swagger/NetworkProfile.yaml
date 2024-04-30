@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '30.2.1'
+    version: '31.1.1'
     title: Avi NetworkProfile Object API
     contact:
         name: Avi Networks Inc.
@@ -554,17 +554,17 @@ definitions:
                 default: 8
                 format: int32
             number_of_streams:
-                description: "Number of incoming SCTP Streams. Allowed values are 1-65535. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Number of incoming SCTP Streams. Allowed values are 1-100. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: int32
             receive_window:
                 description: "SCTP send and receive buffer size. Allowed values are 2-65536. Field introduced in 22.1.3. Unit is KB. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                default: 256
+                default: 1024
                 format: int32
             reset_timeout:
-                description: "SCTP reset timeout. 0 means 5 times RTO max. Allowed values are 0-247483647. Field introduced in 22.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "SCTP reset/shutdown guard timeout. 0 means 5 times RTO max. Allowed values are 0-247483647. Field introduced in 22.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     TCPFastPathProfile:

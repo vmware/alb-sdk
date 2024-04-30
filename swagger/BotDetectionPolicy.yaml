@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '30.2.1'
+    version: '31.1.1'
     title: Avi BotDetectionPolicy Object API
     contact:
         name: Avi Networks Inc.
@@ -397,7 +397,6 @@ definitions:
             enabled:
                 description: "Whether client behavior based Bot detection is enabled. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: boolean
-                default: True
             minimum_requests:
                 description: "Minimum requests for the client behavior component to make a decision. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer

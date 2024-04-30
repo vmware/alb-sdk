@@ -2,13 +2,13 @@
     "swagger": "2.0",
     "info": {
         "version": "31.1.1",
-        "title": "Avi ProtocolParser Object API",
+        "title": "Avi TaskJournal Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure protocolparser <key>\n- show protocolparser <key>\n```\n"
+        "description": "CLI\n```\n- show taskjournal <key>\n```\n"
     },
     "securityDefinitions": {
         "basicAuth": {
@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/protocolparser": {
+        "/taskjournal": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -110,7 +110,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ProtocolParserApiResponse"
+                            "$ref": "#/definitions/TaskJournalApiResponse"
                         }
                     },
                     "401": {
@@ -157,10 +157,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ProtocolParser object creation",
+                        "description": "TaskJournal object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ProtocolParser"
+                            "$ref": "#/definitions/TaskJournal"
                         }
                     }
                 ],
@@ -173,7 +173,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ProtocolParser"
+                            "$ref": "#/definitions/TaskJournal"
                         }
                     },
                     "401": {
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/protocolparser/{uuid}": {
+        "/taskjournal/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -269,7 +269,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ProtocolParser"
+                            "$ref": "#/definitions/TaskJournal"
                         }
                     },
                     "401": {
@@ -323,10 +323,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ProtocolParser object creation",
+                        "description": "TaskJournal object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ProtocolParser"
+                            "$ref": "#/definitions/TaskJournal"
                         }
                     },
                     {
@@ -346,7 +346,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ProtocolParser"
+                            "$ref": "#/definitions/TaskJournal"
                         }
                     },
                     "401": {
@@ -400,10 +400,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ProtocolParser object creation",
+                        "description": "TaskJournal object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ProtocolParser"
+                            "$ref": "#/definitions/TaskJournal"
                         }
                     },
                     {
@@ -423,7 +423,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ProtocolParser"
+                            "$ref": "#/definitions/TaskJournal"
                         }
                     },
                     "401": {
@@ -502,38 +502,151 @@
         }
     },
     "definitions": {
-        "ConfigPbAttributes": {
+        "JournalAction": {
             "type": "object",
             "properties": {
+                "objects": {
+                    "description": "Details of the process for each object type. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/JournalObject"
+                    }
+                },
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Migrated version. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "JournalError": {
+            "type": "object",
+            "properties": {
+                "details": {
+                    "description": "List of error messages for this object. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "name": {
+                    "description": "Name of the object for which error was reported. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "Object type on which the error was reported. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "tenant": {
+                    "description": "Tenant for which error was reported. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "uuid": {
+                    "description": "Uuid of the object for which error was reported. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "Version to which the migration failed. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "JournalInfo": {
+            "type": "object",
+            "required": [
+                "total_objects"
+            ],
+            "properties": {
+                "actions": {
+                    "description": "Details of run for each version. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/JournalAction"
+                    }
+                },
+                "total_objects": {
+                    "description": "Number of objects to be processed. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "default": 1,
+                    "format": "uint32"
+                },
+                "versions": {
+                    "description": "List of versions to be migrated. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "JournalObject": {
+            "type": "object",
+            "properties": {
+                "failed": {
+                    "description": "Number of object caused a failure. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "model": {
+                    "description": "Name of the model. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "skipped": {
+                    "description": "Number of object skipped. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "success": {
+                    "description": "Number of object for which processing is successful. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
                     "format": "uint32"
                 }
             }
         },
-        "KeyValue": {
+        "JournalSummary": {
             "type": "object",
             "required": [
-                "key"
+                "type"
             ],
             "properties": {
-                "key": {
-                    "description": "Key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "description": {
+                    "description": "Description of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
-                "value": {
-                    "description": "Value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "duration": {
+                    "description": "Duration of the process in seconds. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "end_time": {
+                    "description": "End time of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "error_count": {
+                    "description": "Number of errors in the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "reason": {
+                    "description": "Summary reason for process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "start_time": {
+                    "description": "Start time of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "Status of the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Process Type. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
         },
-        "ProtocolParser": {
+        "TaskJournal": {
             "type": "object",
             "required": [
-                "name",
-                "parser_code"
+                "summary"
             ],
             "properties": {
                 "_last_modified": {
@@ -541,31 +654,43 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/ConfigPbAttributes"
-                },
-                "description": {
-                    "description": "Description of the protocol parser. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                "errors": {
+                    "description": "List of errors in the process. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/RoleFilterMatchLabel"
+                        "$ref": "#/definitions/JournalError"
                     }
                 },
-                "name": {
-                    "description": "Name of the protocol parser. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "image_ref": {
+                    "description": "Image uuid for identifying the current base image. It is a reference to an object of type Image. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
-                "parser_code": {
-                    "description": "Command script provided inline. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "info": {
+                    "description": "Detailed Information of Journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/JournalInfo"
+                },
+                "name": {
+                    "description": "Name for the task journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
+                },
+                "obj_cloud_ref": {
+                    "description": "Cloud that this object belongs to. It is a reference to an object of type Cloud. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "operation": {
+                    "description": "Operation for which the task journal created. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "patch_image_ref": {
+                    "description": "Image uuid for identifying the current patch. It is a reference to an object of type Image. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "summary": {
+                    "description": "Summary of Journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/JournalSummary"
                 },
                 "tenant_ref": {
-                    "description": "Tenant UUID of the protocol parser. It is a reference to an object of type Tenant. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -574,12 +699,12 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the protocol parser. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID Identifier for the task journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
         },
-        "ProtocolParserApiResponse": {
+        "TaskJournalApiResponse": {
             "type": "object",
             "required": [
                 "count",
@@ -593,30 +718,11 @@
                 "results": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/ProtocolParser"
+                        "$ref": "#/definitions/TaskJournal"
                     }
                 },
                 "next": {
                     "type": "string"
-                }
-            }
-        },
-        "RoleFilterMatchLabel": {
-            "type": "object",
-            "required": [
-                "key"
-            ],
-            "properties": {
-                "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
                 }
             }
         }
