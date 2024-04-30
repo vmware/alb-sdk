@@ -37,7 +37,7 @@ public class Cloud extends AviRestResource  {
     private List<CustomTag> customTags;
 
     @JsonProperty("dhcp_enabled")
-    private Boolean dhcpEnabled = false;
+    private Boolean dhcpEnabled = true;
 
     @JsonProperty("dns_provider_ref")
     private String dnsProviderRef;
@@ -67,7 +67,7 @@ public class Cloud extends AviRestResource  {
     private GCPConfiguration gcpConfiguration;
 
     @JsonProperty("ip6_autocfg_enabled")
-    private Boolean ip6AutocfgEnabled = false;
+    private Boolean ip6AutocfgEnabled = true;
 
     @JsonProperty("ipam_provider_ref")
     private String ipamProviderRef;
@@ -290,7 +290,7 @@ public class Cloud extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Select the ip address management scheme.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return dhcpEnabled
      */
     public Boolean getDhcpEnabled() {
@@ -301,7 +301,7 @@ public class Cloud extends AviRestResource  {
      * This is the setter method to the attribute.
      * Select the ip address management scheme.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param dhcpEnabled set the dhcpEnabled.
      */
     public void setDhcpEnabled(Boolean  dhcpEnabled) {
@@ -553,7 +553,7 @@ public class Cloud extends AviRestResource  {
      * Enable ipv6 auto configuration.
      * Field introduced in 18.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return ip6AutocfgEnabled
      */
     public Boolean getIp6AutocfgEnabled() {
@@ -565,7 +565,7 @@ public class Cloud extends AviRestResource  {
      * Enable ipv6 auto configuration.
      * Field introduced in 18.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param ip6AutocfgEnabled set the ip6AutocfgEnabled.
      */
     public void setIp6AutocfgEnabled(Boolean  ip6AutocfgEnabled) {

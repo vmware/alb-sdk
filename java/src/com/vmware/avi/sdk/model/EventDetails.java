@@ -51,6 +51,9 @@ public class EventDetails  {
     @JsonProperty("app_signature_event_data")
     private AppSignatureEventData appSignatureEventData;
 
+    @JsonProperty("async_patch_state")
+    private AsyncPatchState asyncPatchState;
+
     @JsonProperty("attach_ip_status_details")
     private AttachIpStatusEventDetails attachIpStatusDetails;
 
@@ -266,6 +269,9 @@ public class EventDetails  {
 
     @JsonProperty("false_positive_details")
     private FalsePositiveDetails falsePositiveDetails;
+
+    @JsonProperty("fileobject_details")
+    private FileObjectDetails fileobjectDetails;
 
     @JsonProperty("gcp_cloud_router_info")
     private GCPCloudRouterUpdate gcpCloudRouterInfo;
@@ -615,6 +621,9 @@ public class EventDetails  {
     @JsonProperty("sync_services_info")
     private CloudSyncServices syncServicesInfo;
 
+    @JsonProperty("system_report_event_details")
+    private SystemReport systemReportEventDetails;
+
     @JsonProperty("tencent_info")
     private TencentSetup tencentInfo;
 
@@ -906,6 +915,28 @@ public class EventDetails  {
      */
     public void setAppSignatureEventData(AppSignatureEventData appSignatureEventData) {
         this.appSignatureEventData = appSignatureEventData;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Field introduced in 22.1.6,30.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return asyncPatchState
+     */
+    public AsyncPatchState getAsyncPatchState() {
+        return asyncPatchState;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Field introduced in 22.1.6,30.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param asyncPatchState set the asyncPatchState.
+     */
+    public void setAsyncPatchState(AsyncPatchState asyncPatchState) {
+        this.asyncPatchState = asyncPatchState;
     }
 
     /**
@@ -2392,6 +2423,30 @@ public class EventDetails  {
      */
     public void setFalsePositiveDetails(FalsePositiveDetails falsePositiveDetails) {
         this.falsePositiveDetails = falsePositiveDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * File object event.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return fileobjectDetails
+     */
+    public FileObjectDetails getFileobjectDetails() {
+        return fileobjectDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * File object event.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param fileobjectDetails set the fileobjectDetails.
+     */
+    public void setFileobjectDetails(FileObjectDetails fileobjectDetails) {
+        this.fileobjectDetails = fileobjectDetails;
     }
 
     /**
@@ -4792,6 +4847,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * System report event details.
+     * Field introduced in 22.1.6, 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return systemReportEventDetails
+     */
+    public SystemReport getSystemReportEventDetails() {
+        return systemReportEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * System report event details.
+     * Field introduced in 22.1.6, 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param systemReportEventDetails set the systemReportEventDetails.
+     */
+    public void setSystemReportEventDetails(SystemReport systemReportEventDetails) {
+        this.systemReportEventDetails = systemReportEventDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tencentInfo
@@ -5464,6 +5543,7 @@ public class EventDetails  {
   Objects.equals(this.configUserNotAuthrzRuleDetails, objEventDetails.configUserNotAuthrzRuleDetails)&&
   Objects.equals(this.configSeGrpFlvUpdateDetails, objEventDetails.configSeGrpFlvUpdateDetails)&&
   Objects.equals(this.apiVersionDeprecated, objEventDetails.apiVersionDeprecated)&&
+  Objects.equals(this.asyncPatchState, objEventDetails.asyncPatchState)&&
   Objects.equals(this.sslExpireDetails, objEventDetails.sslExpireDetails)&&
   Objects.equals(this.sslExportDetails, objEventDetails.sslExportDetails)&&
   Objects.equals(this.sslRenewDetails, objEventDetails.sslRenewDetails)&&
@@ -5592,6 +5672,8 @@ public class EventDetails  {
   Objects.equals(this.connectionEvent, objEventDetails.connectionEvent)&&
   Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent)&&
   Objects.equals(this.pkiprofileDetails, objEventDetails.pkiprofileDetails)&&
+  Objects.equals(this.fileobjectDetails, objEventDetails.fileobjectDetails)&&
+  Objects.equals(this.systemReportEventDetails, objEventDetails.systemReportEventDetails)&&
   Objects.equals(this.diskCleanupEventDetails, objEventDetails.diskCleanupEventDetails);
     }
 
@@ -5609,6 +5691,7 @@ public class EventDetails  {
                         sb.append("    anomalyDetails: ").append(toIndentedString(anomalyDetails)).append("\n");
                         sb.append("    apiVersionDeprecated: ").append(toIndentedString(apiVersionDeprecated)).append("\n");
                         sb.append("    appSignatureEventData: ").append(toIndentedString(appSignatureEventData)).append("\n");
+                        sb.append("    asyncPatchState: ").append(toIndentedString(asyncPatchState)).append("\n");
                         sb.append("    attachIpStatusDetails: ").append(toIndentedString(attachIpStatusDetails)).append("\n");
                         sb.append("    avgUptimeChangeDetails: ").append(toIndentedString(avgUptimeChangeDetails)).append("\n");
                         sb.append("    awsAsgDeletionDetails: ").append(toIndentedString(awsAsgDeletionDetails)).append("\n");
@@ -5681,6 +5764,7 @@ public class EventDetails  {
                         sb.append("    dockerUcpDetails: ").append(toIndentedString(dockerUcpDetails)).append("\n");
                         sb.append("    dosAttackEventDetails: ").append(toIndentedString(dosAttackEventDetails)).append("\n");
                         sb.append("    falsePositiveDetails: ").append(toIndentedString(falsePositiveDetails)).append("\n");
+                        sb.append("    fileobjectDetails: ").append(toIndentedString(fileobjectDetails)).append("\n");
                         sb.append("    gcpCloudRouterInfo: ").append(toIndentedString(gcpCloudRouterInfo)).append("\n");
                         sb.append("    gcpInfo: ").append(toIndentedString(gcpInfo)).append("\n");
                         sb.append("    genericAuditComplianceEventInfo: ").append(toIndentedString(genericAuditComplianceEventInfo)).append("\n");
@@ -5797,6 +5881,7 @@ public class EventDetails  {
                         sb.append("    switchoverDetails: ").append(toIndentedString(switchoverDetails)).append("\n");
                         sb.append("    switchoverFailDetails: ").append(toIndentedString(switchoverFailDetails)).append("\n");
                         sb.append("    syncServicesInfo: ").append(toIndentedString(syncServicesInfo)).append("\n");
+                        sb.append("    systemReportEventDetails: ").append(toIndentedString(systemReportEventDetails)).append("\n");
                         sb.append("    tencentInfo: ").append(toIndentedString(tencentInfo)).append("\n");
                         sb.append("    unbindVsSeDetails: ").append(toIndentedString(unbindVsSeDetails)).append("\n");
                         sb.append("    upgradeEntry: ").append(toIndentedString(upgradeEntry)).append("\n");

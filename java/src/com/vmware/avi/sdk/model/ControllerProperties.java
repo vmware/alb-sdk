@@ -127,6 +127,15 @@ public class ControllerProperties extends AviRestResource  {
     @JsonIgnore
     private Boolean enableResmgrLogCachePrint = false;
 
+    @JsonProperty("event_manager_max_goroutines")
+    private Integer eventManagerMaxGoroutines = 8;
+
+    @JsonProperty("event_manager_max_subscribers")
+    private Integer eventManagerMaxSubscribers = 5;
+
+    @JsonProperty("event_manager_processing_time_threshold")
+    private Integer eventManagerProcessingTimeThreshold = 4;
+
     @JsonProperty("false_positive_learning_config")
     private FalsePositiveLearningConfig falsePositiveLearningConfig;
 
@@ -139,8 +148,8 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("file_object_cleanup_period")
     private Integer fileObjectCleanupPeriod = 1440;
 
-    @JsonProperty("file_reference_mappings")
-    private List<FileReferenceMapping> fileReferenceMappings;
+    @JsonProperty("fileobject_max_file_versions")
+    private Integer fileobjectMaxFileVersions = 3;
 
     @JsonProperty("gslb_purge_batch_size")
     private Integer gslbPurgeBatchSize = 1000;
@@ -264,6 +273,9 @@ public class ControllerProperties extends AviRestResource  {
 
     @JsonProperty("ssl_certificate_expiry_warning_days")
     private List<Integer> sslCertificateExpiryWarningDays;
+
+    @JsonProperty("system_report_cleanup_interval")
+    private Integer systemReportCleanupInterval = 60;
 
     @JsonProperty("system_report_limit")
     private Integer systemReportLimit = 10;
@@ -1230,6 +1242,90 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Maximum number of goroutines for event manager process.
+     * Allowed values are 1-64.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 8.
+     * @return eventManagerMaxGoroutines
+     */
+    public Integer getEventManagerMaxGoroutines() {
+        return eventManagerMaxGoroutines;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of goroutines for event manager process.
+     * Allowed values are 1-64.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 8.
+     * @param eventManagerMaxGoroutines set the eventManagerMaxGoroutines.
+     */
+    public void setEventManagerMaxGoroutines(Integer  eventManagerMaxGoroutines) {
+        this.eventManagerMaxGoroutines = eventManagerMaxGoroutines;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum number of subscribers for event manager process.
+     * Allowed values are 1-6.
+     * Special values are 0 - disabled.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @return eventManagerMaxSubscribers
+     */
+    public Integer getEventManagerMaxSubscribers() {
+        return eventManagerMaxSubscribers;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of subscribers for event manager process.
+     * Allowed values are 1-6.
+     * Special values are 0 - disabled.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @param eventManagerMaxSubscribers set the eventManagerMaxSubscribers.
+     */
+    public void setEventManagerMaxSubscribers(Integer  eventManagerMaxSubscribers) {
+        this.eventManagerMaxSubscribers = eventManagerMaxSubscribers;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Log instances for event manager processing delay; recorded whenever event processing delay exceeds configured interval specified in seconds.
+     * Allowed values are 1-5.
+     * Special values are 0 - disabled.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @return eventManagerProcessingTimeThreshold
+     */
+    public Integer getEventManagerProcessingTimeThreshold() {
+        return eventManagerProcessingTimeThreshold;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Log instances for event manager processing delay; recorded whenever event processing delay exceeds configured interval specified in seconds.
+     * Allowed values are 1-5.
+     * Special values are 0 - disabled.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @param eventManagerProcessingTimeThreshold set the eventManagerProcessingTimeThreshold.
+     */
+    public void setEventManagerProcessingTimeThreshold(Integer  eventManagerProcessingTimeThreshold) {
+        this.eventManagerProcessingTimeThreshold = eventManagerProcessingTimeThreshold;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * False positive learning configuration.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -1325,44 +1421,39 @@ public class ControllerProperties extends AviRestResource  {
     public void setFileObjectCleanupPeriod(Integer  fileObjectCleanupPeriod) {
         this.fileObjectCleanupPeriod = fileObjectCleanupPeriod;
     }
+
     /**
      * This is the getter method this will return the attribute value.
-     * List of mapping for file reference and their absolute path.
-     * Field introduced in 30.1.1.
+     * This is the max number of file versions that will be retained for a file referenced by the local fileobject.
+     * Subsequent uploads of file will result in the file rotation of the older version and the latest version retained.
+     * Example  when a file upload is done for the first time, there will be a v1 version.
+     * Subsequent uploads will get mapped to v1, v2 and v3 versions.
+     * On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained.
+     * Allowed values are 1-5.
+     * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return fileReferenceMappings
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+     * @return fileobjectMaxFileVersions
      */
-    public List<FileReferenceMapping> getFileReferenceMappings() {
-        return fileReferenceMappings;
+    public Integer getFileobjectMaxFileVersions() {
+        return fileobjectMaxFileVersions;
     }
 
     /**
-     * This is the setter method. this will set the fileReferenceMappings
-     * List of mapping for file reference and their absolute path.
-     * Field introduced in 30.1.1.
+     * This is the setter method to the attribute.
+     * This is the max number of file versions that will be retained for a file referenced by the local fileobject.
+     * Subsequent uploads of file will result in the file rotation of the older version and the latest version retained.
+     * Example  when a file upload is done for the first time, there will be a v1 version.
+     * Subsequent uploads will get mapped to v1, v2 and v3 versions.
+     * On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained.
+     * Allowed values are 1-5.
+     * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return fileReferenceMappings
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+     * @param fileobjectMaxFileVersions set the fileobjectMaxFileVersions.
      */
-    public void setFileReferenceMappings(List<FileReferenceMapping>  fileReferenceMappings) {
-        this.fileReferenceMappings = fileReferenceMappings;
-    }
-
-    /**
-     * This is the setter method this will set the fileReferenceMappings
-     * List of mapping for file reference and their absolute path.
-     * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return fileReferenceMappings
-     */
-    public ControllerProperties addFileReferenceMappingsItem(FileReferenceMapping fileReferenceMappingsItem) {
-      if (this.fileReferenceMappings == null) {
-        this.fileReferenceMappings = new ArrayList<FileReferenceMapping>();
-      }
-      this.fileReferenceMappings.add(fileReferenceMappingsItem);
-      return this;
+    public void setFileobjectMaxFileVersions(Integer  fileobjectMaxFileVersions) {
+        this.fileobjectMaxFileVersions = fileobjectMaxFileVersions;
     }
 
     /**
@@ -2404,13 +2495,44 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Time in minutes to wait between cleanup of systemreports.
+     * Allowed values are 15-300.
+     * Field introduced in 22.1.6, 30.2.1.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+     * @return systemReportCleanupInterval
+     */
+    public Integer getSystemReportCleanupInterval() {
+        return systemReportCleanupInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Time in minutes to wait between cleanup of systemreports.
+     * Allowed values are 15-300.
+     * Field introduced in 22.1.6, 30.2.1.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+     * @param systemReportCleanupInterval set the systemReportCleanupInterval.
+     */
+    public void setSystemReportCleanupInterval(Integer  systemReportCleanupInterval) {
+        this.systemReportCleanupInterval = systemReportCleanupInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Number of systemreports retained in the system.
      * Once the number of system reports exceed this threshold, the oldest systemreport will be removed and the latest one retained.
      * I.e.
      * The systemreport will be rotated and the reports don't exceed the threshold.
      * Allowed values are 5-50.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return systemReportLimit
      */
@@ -2426,7 +2548,8 @@ public class ControllerProperties extends AviRestResource  {
      * The systemreport will be rotated and the reports don't exceed the threshold.
      * Allowed values are 5-50.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param systemReportLimit set the systemReportLimit.
      */
@@ -3186,10 +3309,14 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.skopeoRetryLimit, objControllerProperties.skopeoRetryLimit)&&
   Objects.equals(this.skopeoRetryInterval, objControllerProperties.skopeoRetryInterval)&&
   Objects.equals(this.softMinMemPerSeLimit, objControllerProperties.softMinMemPerSeLimit)&&
-  Objects.equals(this.fileReferenceMappings, objControllerProperties.fileReferenceMappings)&&
   Objects.equals(this.cloudReconcileInterval, objControllerProperties.cloudReconcileInterval)&&
   Objects.equals(this.cloudDiscoveryInterval, objControllerProperties.cloudDiscoveryInterval)&&
-  Objects.equals(this.systemReportLimit, objControllerProperties.systemReportLimit);
+  Objects.equals(this.systemReportLimit, objControllerProperties.systemReportLimit)&&
+  Objects.equals(this.systemReportCleanupInterval, objControllerProperties.systemReportCleanupInterval)&&
+  Objects.equals(this.fileobjectMaxFileVersions, objControllerProperties.fileobjectMaxFileVersions)&&
+  Objects.equals(this.eventManagerProcessingTimeThreshold, objControllerProperties.eventManagerProcessingTimeThreshold)&&
+  Objects.equals(this.eventManagerMaxSubscribers, objControllerProperties.eventManagerMaxSubscribers)&&
+  Objects.equals(this.eventManagerMaxGoroutines, objControllerProperties.eventManagerMaxGoroutines);
     }
 
     @Override
@@ -3231,11 +3358,14 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    enableMemoryBalancer: ").append(toIndentedString(enableMemoryBalancer)).append("\n");
                         sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
                         sb.append("    enableResmgrLogCachePrint: ").append(toIndentedString(enableResmgrLogCachePrint)).append("\n");
+                        sb.append("    eventManagerMaxGoroutines: ").append(toIndentedString(eventManagerMaxGoroutines)).append("\n");
+                        sb.append("    eventManagerMaxSubscribers: ").append(toIndentedString(eventManagerMaxSubscribers)).append("\n");
+                        sb.append("    eventManagerProcessingTimeThreshold: ").append(toIndentedString(eventManagerProcessingTimeThreshold)).append("\n");
                         sb.append("    falsePositiveLearningConfig: ").append(toIndentedString(falsePositiveLearningConfig)).append("\n");
                         sb.append("    fatalErrorLeaseTime: ").append(toIndentedString(fatalErrorLeaseTime)).append("\n");
                         sb.append("    federatedDatastoreCleanupDuration: ").append(toIndentedString(federatedDatastoreCleanupDuration)).append("\n");
                         sb.append("    fileObjectCleanupPeriod: ").append(toIndentedString(fileObjectCleanupPeriod)).append("\n");
-                        sb.append("    fileReferenceMappings: ").append(toIndentedString(fileReferenceMappings)).append("\n");
+                        sb.append("    fileobjectMaxFileVersions: ").append(toIndentedString(fileobjectMaxFileVersions)).append("\n");
                         sb.append("    gslbPurgeBatchSize: ").append(toIndentedString(gslbPurgeBatchSize)).append("\n");
                         sb.append("    gslbPurgeSleepTimeMs: ").append(toIndentedString(gslbPurgeSleepTimeMs)).append("\n");
                         sb.append("    ignoreVrfInNetworksubnetlist: ").append(toIndentedString(ignoreVrfInNetworksubnetlist)).append("\n");
@@ -3277,6 +3407,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    skopeoRetryLimit: ").append(toIndentedString(skopeoRetryLimit)).append("\n");
                         sb.append("    softMinMemPerSeLimit: ").append(toIndentedString(softMinMemPerSeLimit)).append("\n");
                         sb.append("    sslCertificateExpiryWarningDays: ").append(toIndentedString(sslCertificateExpiryWarningDays)).append("\n");
+                        sb.append("    systemReportCleanupInterval: ").append(toIndentedString(systemReportCleanupInterval)).append("\n");
                         sb.append("    systemReportLimit: ").append(toIndentedString(systemReportLimit)).append("\n");
                         sb.append("    unresponsiveSeReboot: ").append(toIndentedString(unresponsiveSeReboot)).append("\n");
                         sb.append("    updateDnsEntryRetryLimit: ").append(toIndentedString(updateDnsEntryRetryLimit)).append("\n");
