@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 6]
+AVICLONE_VERSION = [2, 0, 7]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -119,6 +119,12 @@ class AviClone:
         'ssl-hsmgroup': 'hardwaresecuritymodulegroup_ref'}
     VALID_SSOPOLICY_REF_OBJECTS = {
         'sso-authprofile': 'authentication_policy/default_auth_profile_ref'}
+    VALID_HEALTHMONITOR_REF_OBJECTS = {
+        'hm-sslprofile': 'https_monitor/ssl_attributes/ssl_profile_ref',
+        'hm-pkiprofile': 'https_monitor/ssl_attributes/pki_profile_ref',
+        'hm-sslkeyandcertificate':
+          'https_monitor/ssl_attributes/ssl_key_and_certificate_ref'
+    }
 
     def __init__(self, source_api, dest_api=None, flags=None, tenant=None,
                  other_tenant=None, other_cloud=None,
@@ -802,6 +808,44 @@ class AviClone:
 
         try:
             valid_ref_objects = self.VALID_SSOPOLICY_REF_OBJECTS
+
+            # Process generic references, re-using or cloning referenced
+            # objects as necessary
+
+            created_objs, warnings = self._process_refs(parent_obj=obj,
+                                                        refs=valid_ref_objects,
+                                                        force_clone=force_clone)
+
+        except Exception as ex:
+            # If an exception occurred, delete any intermediate objects we
+            # have created
+
+            self.delete_objects(created_objs)
+
+            raise
+
+        return created_objs, warnings
+
+    def _processobject_healthmonitor(self, obj, force_clone):
+        """
+        Performs healthmonitor-specific manipulations on the cloned
+        object
+        """
+
+        logger.debug('Running _process_healthmonitor')
+
+        created_objs = []
+        warnings = []
+
+        if 'authentication' in obj:
+            obj['authentication']['username'] = 'placeholder'
+            obj['authentication']['password'] = 'placeholder'
+            warnings.append('The authentication username and password '
+                            'referenced in healthmonitor %s cannot be cloned '
+                            'and must be re-entered manually.' % obj['name'])
+
+        try:
+            valid_ref_objects = self.VALID_HEALTHMONITOR_REF_OBJECTS
 
             # Process generic references, re-using or cloning referenced
             # objects as necessary

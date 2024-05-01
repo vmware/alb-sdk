@@ -324,3 +324,7 @@ Changelog:
 * Changed handling of PoolGroup cloning
   * Will now try to preserve the names of Pools when cloning a PoolGroup if possible (e.g. when cloning to a different tenant/Controller)
   * If name preservation is not possible, unique names will now be generated from the old Pool name (previous behaviour was to generate names based on PoolGroup name)
+
+2.0.7:
+
+* Add support for cloning HealthMonitors with SSL attributes or authentication attributes (authentication attributes must be manually re-entered)
