@@ -381,6 +381,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("max_memory_per_mempool")
     private Integer maxMemoryPerMempool = 64;
 
+    @JsonProperty("max_num_http_sessions_to_store")
+    private Integer maxNumHttpSessionsToStore = 50000;
+
     @JsonProperty("max_num_se_dps")
     private Integer maxNumSeDps;
 
@@ -4101,6 +4104,36 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setMaxMemoryPerMempool(Integer  maxMemoryPerMempool) {
         this.maxMemoryPerMempool = maxMemoryPerMempool;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum number of http session that will be created.
+     * Each session uses about 1kb in the key-value storage in shared memory.
+     * Setting this value too high can lead to exhaustion of shared memory and affect services.
+     * Allowed values are 1-2000000.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 50000.
+     * @return maxNumHttpSessionsToStore
+     */
+    public Integer getMaxNumHttpSessionsToStore() {
+        return maxNumHttpSessionsToStore;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of http session that will be created.
+     * Each session uses about 1kb in the key-value storage in shared memory.
+     * Setting this value too high can lead to exhaustion of shared memory and affect services.
+     * Allowed values are 1-2000000.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 50000.
+     * @param maxNumHttpSessionsToStore set the maxNumHttpSessionsToStore.
+     */
+    public void setMaxNumHttpSessionsToStore(Integer  maxNumHttpSessionsToStore) {
+        this.maxNumHttpSessionsToStore = maxNumHttpSessionsToStore;
     }
 
     /**
@@ -8837,7 +8870,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.pathMtuDiscoveryV6, objServiceEngineGroup.pathMtuDiscoveryV6)&&
   Objects.equals(this.metricsCollectionMode, objServiceEngineGroup.metricsCollectionMode)&&
   Objects.equals(this.seDebugTraceSz, objServiceEngineGroup.seDebugTraceSz)&&
-  Objects.equals(this.multicastEnable, objServiceEngineGroup.multicastEnable);
+  Objects.equals(this.multicastEnable, objServiceEngineGroup.multicastEnable)&&
+  Objects.equals(this.maxNumHttpSessionsToStore, objServiceEngineGroup.maxNumHttpSessionsToStore);
     }
 
     @Override
@@ -8964,6 +8998,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    maxConcurrentExternalHm: ").append(toIndentedString(maxConcurrentExternalHm)).append("\n");
                         sb.append("    maxCpuUsage: ").append(toIndentedString(maxCpuUsage)).append("\n");
                         sb.append("    maxMemoryPerMempool: ").append(toIndentedString(maxMemoryPerMempool)).append("\n");
+                        sb.append("    maxNumHttpSessionsToStore: ").append(toIndentedString(maxNumHttpSessionsToStore)).append("\n");
                         sb.append("    maxNumSeDps: ").append(toIndentedString(maxNumSeDps)).append("\n");
                         sb.append("    maxPublicIpsPerLb: ").append(toIndentedString(maxPublicIpsPerLb)).append("\n");
                         sb.append("    maxQueuesPerVnic: ").append(toIndentedString(maxQueuesPerVnic)).append("\n");
