@@ -361,6 +361,7 @@ font-style: italic;
     "se_flow_probe_retry_timer" : "",
     "l7_resvd_listen_conns_per_core" : "",
     "vs_scalein_timeout" : "",
+    "max_num_http_sessions_to_store" : "",
     "metrics_collection_mode" : "",
     "se_dump_core_on_assert" : true,
     "se_pcap_qdisc_bypass" : true,
@@ -852,6 +853,7 @@ font-style: italic;
   "se_flow_probe_retry_timer" : "",
   "l7_resvd_listen_conns_per_core" : "",
   "vs_scalein_timeout" : "",
+  "max_num_http_sessions_to_store" : "",
   "metrics_collection_mode" : "",
   "se_dump_core_on_assert" : true,
   "se_pcap_qdisc_bypass" : true,
@@ -1414,6 +1416,7 @@ font-style: italic;
   "se_flow_probe_retry_timer" : "",
   "l7_resvd_listen_conns_per_core" : "",
   "vs_scalein_timeout" : "",
+  "max_num_http_sessions_to_store" : "",
   "metrics_collection_mode" : "",
   "se_dump_core_on_assert" : true,
   "se_pcap_qdisc_bypass" : true,
@@ -1916,6 +1919,7 @@ font-style: italic;
   "se_flow_probe_retry_timer" : "",
   "l7_resvd_listen_conns_per_core" : "",
   "vs_scalein_timeout" : "",
+  "max_num_http_sessions_to_store" : "",
   "metrics_collection_mode" : "",
   "se_dump_core_on_assert" : true,
   "se_pcap_qdisc_bypass" : true,
@@ -2574,6 +2578,7 @@ font-style: italic;
   "se_flow_probe_retry_timer" : "",
   "l7_resvd_listen_conns_per_core" : "",
   "vs_scalein_timeout" : "",
+  "max_num_http_sessions_to_store" : "",
   "metrics_collection_mode" : "",
   "se_dump_core_on_assert" : true,
   "se_pcap_qdisc_bypass" : true,
@@ -3506,6 +3511,7 @@ font-style: italic;
 <div class="param">max_concurrent_external_hm (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of external health monitors that can run concurrently in a service engine. This helps control the CPU and memory use by external health monitors. Special values are 0- Value will be internally calculated based on cpu and memory. Field introduced in 18.2.7. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">max_cpu_usage (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> When CPU usage on an SE exceeds this threshold, Virtual Services hosted on this SE may be rebalanced to other SEs to reduce load. A new SE may be created as part of this process. Allowed values are 40-90. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">max_memory_per_mempool (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Max bytes that can be allocated in a single mempool. Field introduced in 18.1.5. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">max_num_http_sessions_to_store (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of HTTP session that will be created. Each session uses about 1kB in the key-value storage in shared memory. Setting this value too high can lead to exhaustion of shared memory and affect services. Allowed values are 1-2000000. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">max_num_se_dps (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Configures the maximum number of se_dp processes that handles traffic. If not configured, defaults to the number of CPUs on the SE. If decreased, it will only take effect after SE reboot. Allowed values are 1-128. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">max_public_ips_per_lb (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Applicable to Azure platform only. Maximum number of public IPs per Azure LB. . Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">max_queues_per_vnic (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of queues per vnic Setting to &#39;0&#39; utilises all queues that are distributed across dispatcher cores. Allowed values are 0,1,2,4,8,16. Field introduced in 18.2.7, 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition. format: uint32</div>

@@ -405,6 +405,7 @@ font-style: italic;
           "percent_reserved_for_outstanding" : ""
         },
         "portal_request_burst_limit" : "",
+        "alert_manager_use_evms" : true,
         "se_offline_del" : "",
         "uuid" : "aeiou",
         "seupgrade_fabric_pool_size" : "",
@@ -646,6 +647,7 @@ font-style: italic;
         "percent_reserved_for_outstanding" : ""
       },
       "portal_request_burst_limit" : "",
+      "alert_manager_use_evms" : true,
       "se_offline_del" : "",
       "uuid" : "aeiou",
       "seupgrade_fabric_pool_size" : "",
@@ -958,6 +960,7 @@ font-style: italic;
         "percent_reserved_for_outstanding" : ""
       },
       "portal_request_burst_limit" : "",
+      "alert_manager_use_evms" : true,
       "se_offline_del" : "",
       "uuid" : "aeiou",
       "seupgrade_fabric_pool_size" : "",
@@ -1210,6 +1213,7 @@ font-style: italic;
         "percent_reserved_for_outstanding" : ""
       },
       "portal_request_burst_limit" : "",
+      "alert_manager_use_evms" : true,
       "se_offline_del" : "",
       "uuid" : "aeiou",
       "seupgrade_fabric_pool_size" : "",
@@ -1462,6 +1466,7 @@ font-style: italic;
         "percent_reserved_for_outstanding" : ""
       },
       "portal_request_burst_limit" : "",
+      "alert_manager_use_evms" : true,
       "se_offline_del" : "",
       "uuid" : "aeiou",
       "seupgrade_fabric_pool_size" : "",
@@ -1667,6 +1672,7 @@ font-style: italic;
       "percent_reserved_for_outstanding" : ""
     },
     "portal_request_burst_limit" : "",
+    "alert_manager_use_evms" : true,
     "se_offline_del" : "",
     "uuid" : "aeiou",
     "seupgrade_fabric_pool_size" : "",
@@ -1856,6 +1862,7 @@ font-style: italic;
     "percent_reserved_for_outstanding" : ""
   },
   "portal_request_burst_limit" : "",
+  "alert_manager_use_evms" : true,
   "se_offline_del" : "",
   "uuid" : "aeiou",
   "seupgrade_fabric_pool_size" : "",
@@ -2116,6 +2123,7 @@ font-style: italic;
     "percent_reserved_for_outstanding" : ""
   },
   "portal_request_burst_limit" : "",
+  "alert_manager_use_evms" : true,
   "se_offline_del" : "",
   "uuid" : "aeiou",
   "seupgrade_fabric_pool_size" : "",
@@ -2316,6 +2324,7 @@ font-style: italic;
     "percent_reserved_for_outstanding" : ""
   },
   "portal_request_burst_limit" : "",
+  "alert_manager_use_evms" : true,
   "se_offline_del" : "",
   "uuid" : "aeiou",
   "seupgrade_fabric_pool_size" : "",
@@ -2516,6 +2525,7 @@ font-style: italic;
     "percent_reserved_for_outstanding" : ""
   },
   "portal_request_burst_limit" : "",
+  "alert_manager_use_evms" : true,
   "se_offline_del" : "",
   "uuid" : "aeiou",
   "seupgrade_fabric_pool_size" : "",
@@ -2693,6 +2703,7 @@ font-style: italic;
     <h3 class="field-label"><a name="ControllerProperties">ControllerProperties</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">alert_manager_use_evms (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable to use event manager as source of eventsDisable to use log manager as source of events. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">allow_admin_network_updates (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allow non-admin tenants to update admin VrfContext and Network objects. Field introduced in 18.2.7, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">allow_ip_forwarding (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">allow_unauthenticated_apis (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allow unauthenticated access for special APIs. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -2708,9 +2719,9 @@ font-style: italic;
 <div class="param">check_vsvip_fqdn_syntax (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enforce VsVip FQDN syntax checks. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">cleanup_expired_authtoken_timeout_period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Period for auth token cleanup job. Field introduced in 18.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">cleanup_sessions_timeout_period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Period for sessions cleanup job. Field introduced in 18.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">cloud_discovery_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">cloud_discovery_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">cloud_reconcile (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable/Disable periodic reconcile for all the clouds. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">cloud_reconcile_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">cloud_reconcile_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">cluster_ip_gratuitous_arp_period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Period for cluster ip gratuitous arp job. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">consistency_check_timeout_period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Period for consistency check job. Field introduced in 18.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
