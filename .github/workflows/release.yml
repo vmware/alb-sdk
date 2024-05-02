@@ -111,12 +111,12 @@ jobs:
             echo "Normal tag found. Uploading python assets to public repo."
             if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
               ./create_sdk_pypi.sh sdk
+              ./create_sdk_pkgs.sh
             fi
             if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
-              ./create_sdk_pypi.sh
+              ./create_sdk_pypi.sh migrationtools
             fi
           fi
-          ./create_sdk_pkgs.sh
           echo "AVI VERSION=== $AVI_VERSION"
           ls dist/
           if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
