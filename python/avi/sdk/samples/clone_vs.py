@@ -91,6 +91,7 @@ class AviClone:
         'vs-wafpolicy': 'waf_policy_ref',
         'vs-rewritablecontent': 'content_rewrite/rewritable_content_ref',
         'vs-authprofile': 'client_auth/auth_profile_ref',
+        'vs-ssoauthprofile': 'sso_policy/default_auth_profile_ref',
         'vs-ssopolicy': 'sso_policy_ref',
         'vs-botpolicy': 'bot_policy_ref'}
     VALID_GS_REF_OBJECTS = {
@@ -106,19 +107,29 @@ class AviClone:
             'http_profile/compression_profile/compressible_content_ref',
         'appprofile-compressibleipaddrgroup': 'ip_addrs_ref',
         'appprofile-compressibledevices': 'devices_ref'}
-    VALID_WAFPOLICY_REF_OBJECTS = {'waf-profile': 'waf_profile_ref',
-                                   'waf-crs': 'waf_crs_ref',
-                                   'positive-security-model':
-                                       'positive_security_model/group_refs',
-                                   'waf-appsignatures':
-                                       'application_signatures/provider_ref'}
-    VALID_WAFPOLICYPSMGROUP_REF_OBJECTS = {'wafpsm-stringgroup':
-                                           'match_value_string_group_ref'}
+    VALID_WAFPOLICY_REF_OBJECTS = {
+        'waf-profile': 'waf_profile_ref',
+        'waf-crs': 'waf_crs_ref',
+        'positive-security-model': 'positive_security_model/group_refs',
+        'waf-appsignatures': 'application_signatures/provider_ref'
+    }
+    VALID_WAFPOLICYPSMGROUP_REF_OBJECTS = {
+        'wafpsm-stringgroup': 'match_value_string_group_ref'
+    }
     VALID_SSLCERT_REF_OBJECTS = {
         'ssl-certmgmt': 'certificate_management_profile_ref',
-        'ssl-hsmgroup': 'hardwaresecuritymodulegroup_ref'}
+        'ssl-hsmgroup': 'hardwaresecuritymodulegroup_ref'
+    }
     VALID_SSOPOLICY_REF_OBJECTS = {
-        'sso-authprofile': 'authentication_policy/default_auth_profile_ref'}
+        'sso-authprofile': 'authentication_policy/default_auth_profile_ref'
+    }
+    VALID_OAUTHSETTINGS_REF_OBJECTS = {
+        'oauth-authprofile': 'auth_profile_ref'
+    }
+    VALID_AUTHPROFILE_REF_OBJECTS = {
+        'authprofile-pool': 'oauth_profile/pool_ref',
+        'authprofile-jwtprofile': 'jwt_profile_ref'
+    }
     VALID_HEALTHMONITOR_REF_OBJECTS = {
         'hm-sslprofile': 'https_monitor/ssl_attributes/ssl_profile_ref',
         'hm-pkiprofile': 'https_monitor/ssl_attributes/pki_profile_ref',
@@ -792,6 +803,24 @@ class AviClone:
             warnings.append('The TACACS password referenced in authprofile '
                             '%s cannot be cloned and must be re-entered '
                             'manually.' % obj['name'])
+
+        try:
+            valid_ref_objects = self.VALID_AUTHPROFILE_REF_OBJECTS
+
+            # Process generic references, re-using or cloning referenced
+            # objects as necessary
+
+            created_objs, warnings = self._process_refs(parent_obj=obj,
+                                                        refs=valid_ref_objects,
+                                                        force_clone=force_clone)
+
+        except Exception as ex:
+            # If an exception occurred, delete any intermediate objects we
+            # have created
+
+            self.delete_objects(created_objs)
+
+            raise
 
         return created_objs, warnings
 
@@ -2269,6 +2298,27 @@ class AviClone:
                 warnings.append('VS has a SAML configuration that will need to '
                                 'be manually updated.')
 
+            # Handle OAuth Configuration
+
+            if 'oauth_settings' in v_obj.get('oauth_vs_config', {}):
+                oauth_settings = v_obj['oauth_vs_config']['oauth_settings']
+                valid_ref_objects = self.VALID_OAUTHSETTINGS_REF_OBJECTS
+                for oauth_setting in oauth_settings:
+
+                    (oa_created_objs,
+                     oa_warnings) = self._process_refs(parent_obj=oauth_setting,
+                                                       refs=valid_ref_objects,
+                                                       force_clone=force_clone)
+                    created_objs.extend(oa_created_objs)
+                    warnings.extend(oa_warnings)
+
+                    app_settings = oauth_setting.get('app_settings', {})
+                    if app_settings.get('client_secret', None):
+                        app_settings['client_secret'] = 'placeholder'
+                        warnings.append('VS has an OAuth App Client Secret '
+                                        'that will need to be manually '
+                                        'updated.')
+
             # (Try to!) move the new Virtual Service and VsVip
             # to a different cloud
 
@@ -2525,7 +2575,10 @@ if __name__ == '__main__':
         set(AviClone.VALID_POLICYSET_REF_OBJECTS.keys()) |
         set(AviClone.VALID_DATASCRIPT_REF_OBJECTS.keys()) |
         set(AviClone.VALID_APPLICATIONPROFILE_REF_OBJECTS.keys()) |
-        set(AviClone.VALID_SSLCERT_REF_OBJECTS.keys()))
+        set(AviClone.VALID_SSLCERT_REF_OBJECTS.keys()) |
+        set(AviClone.VALID_SSOPOLICY_REF_OBJECTS.keys()) |
+        set(AviClone.VALID_HEALTHMONITOR_REF_OBJECTS.keys()) |
+        set(AviClone.VALID_OAUTHSETTINGS_REF_OBJECTS.keys()))
 
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,

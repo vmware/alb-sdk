@@ -328,3 +328,5 @@ Changelog:
 2.0.7:
 
 * Add support for cloning HealthMonitors with SSL attributes or authentication attributes (authentication attributes must be manually re-entered)
+* Add support for cloning AuthProfiles for OAuth2
+* Add support for cloning VS with OAuth2 SSO configuration
