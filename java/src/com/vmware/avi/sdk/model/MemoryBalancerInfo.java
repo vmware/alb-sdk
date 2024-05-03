@@ -308,7 +308,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Size of the task queue usage.
-     * Field introduced in 31.1.1.
+     * Field introduced in 30.2.1, 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return taskQueueLength
@@ -320,7 +320,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the setter method to the attribute.
      * Size of the task queue usage.
-     * Field introduced in 31.1.1.
+     * Field introduced in 30.2.1, 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param taskQueueLength set the taskQueueLength.
