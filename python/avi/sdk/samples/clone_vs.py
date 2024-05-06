@@ -64,7 +64,8 @@ class AviClone:
         'pool-pkiprofile': 'pki_profile_ref',
         'pool-sslcert': 'ssl_key_and_certificate_ref',
         'pool-analyticsprofile': 'analytics_profile_ref',
-        'pool-autoscalepolicy': 'autoscale_policy_ref'}
+        'pool-autoscalepolicy': 'autoscale_policy_ref'
+    }
     VALID_DATASCRIPT_REF_OBJECTS = {
         'ds-ipgroup': 'ipgroup_refs',
         'ds-stringgroup': 'string_group_refs',
@@ -72,12 +73,14 @@ class AviClone:
         'ds-sslprofile': 'ssl_profile_refs',
         'ds-pkiprofile': 'pki_profile_refs',
         'ds-geodb': 'geo_db_ref',
-        'ds-ipreputation': 'ip_reputation_db_ref'}
+        'ds-ipreputation': 'ip_reputation_db_ref'
+    }
     VALID_POLICYSET_REF_OBJECTS = {
         'policy-ipgroup': 'group_refs',
         'policy-stringgroup': 'string_group_refs',
         'policy-geodb': 'geo_db_ref',
-        'policy-ipreputation': 'ip_reputation_db_ref'}
+        'policy-ipreputation': 'ip_reputation_db_ref'
+    }
     VALID_VS_REF_OBJECTS = {
         'vs-appprofile': 'application_profile_ref',
         'vs-networkprofile': 'network_profile_ref',
@@ -93,7 +96,12 @@ class AviClone:
         'vs-authprofile': 'client_auth/auth_profile_ref',
         'vs-ssoauthprofile': 'sso_policy/default_auth_profile_ref',
         'vs-ssopolicy': 'sso_policy_ref',
-        'vs-botpolicy': 'bot_policy_ref'}
+        'vs-botpolicy': 'bot_policy_ref'
+    }
+    VALID_VS_OVERRIDE_REF_OBJECTS = {
+        'vsoverride-appprofile': 'override_application_profile_ref',
+        'vsoverride-networkprofile': 'override_network_profile_ref',
+    }
     VALID_GS_REF_OBJECTS = {
         'gs-persistency': 'application_persistence_profile_ref',
         'gs-healthmonitor': 'health_monitor_refs'
@@ -2270,6 +2278,18 @@ class AviClone:
 
                 v_obj['pool_group_ref'] = pg_obj['url']
 
+            # Handle service overrides
+
+            if 'services' in v_obj:
+                valid_s_ref_objects = self.VALID_VS_OVERRIDE_REF_OBJECTS
+                for service in v_obj['services']:
+                    (s_created_objs,
+                     s_warnings) = self._process_refs(parent_obj=service,
+                                                       refs=valid_s_ref_objects,
+                                                       force_clone=force_clone)
+                    created_objs.extend(s_created_objs)
+                    warnings.extend(s_warnings)
+
             # Remove unique atributes and rename
 
             v_obj.pop('uuid', None)
@@ -2302,12 +2322,12 @@ class AviClone:
 
             if 'oauth_settings' in v_obj.get('oauth_vs_config', {}):
                 oauth_settings = v_obj['oauth_vs_config']['oauth_settings']
-                valid_ref_objects = self.VALID_OAUTHSETTINGS_REF_OBJECTS
+                valid_o_ref_objects = self.VALID_OAUTHSETTINGS_REF_OBJECTS
                 for oauth_setting in oauth_settings:
 
                     (oa_created_objs,
                      oa_warnings) = self._process_refs(parent_obj=oauth_setting,
-                                                       refs=valid_ref_objects,
+                                                       refs=valid_o_ref_objects,
                                                        force_clone=force_clone)
                     created_objs.extend(oa_created_objs)
                     warnings.extend(oa_warnings)
@@ -2397,24 +2417,26 @@ class AviClone:
                     created_objs.extend(ps_created_objs)
                     warnings.extend(ps_warnings)
 
-            # Clone any DNS policy sets referenced in the VS
+            # Clone any DNS / Topology Policy sets referenced in the VS
 
-            if 'dns_policies' in v_obj:
-                for polset in v_obj['dns_policies']:
-                    ps_path = polset['dns_policy_ref'].split('/api/')[1]
-                    ps_name = '-'.join([new_vs_name,
-                                        (c_obj['name']
-                                         if self.oc_obj is None
-                                         else self.oc_obj['name']),
-                                        'DNS-Policy'])
-                    ps_obj, ps_created_objs, ps_warnings = self.clone_object(
-                        old_name=ps_path, new_name=ps_name,
-                        force_clone=force_clone, force_unique_name=True)
+            dns_topo_policies = (v_obj.get('dns_policies', []) +
+                                 v_obj.get('topology_policies', []))
 
-                    polset['dns_policy_ref'] = ps_obj['url']
-                    created_objs.append(ps_obj)
-                    created_objs.extend(ps_created_objs)
-                    warnings.extend(ps_warnings)
+            for polset in dns_topo_policies:
+                ps_path = polset['dns_policy_ref'].split('/api/')[1]
+                ps_name = '-'.join([new_vs_name,
+                                    (c_obj['name']
+                                        if self.oc_obj is None
+                                        else self.oc_obj['name']),
+                                    'DNS-Policy'])
+                ps_obj, ps_created_objs, ps_warnings = self.clone_object(
+                    old_name=ps_path, new_name=ps_name,
+                    force_clone=force_clone, force_unique_name=True)
+
+                polset['dns_policy_ref'] = ps_obj['url']
+                created_objs.append(ps_obj)
+                created_objs.extend(ps_created_objs)
+                warnings.extend(ps_warnings)
 
             # Clone network security policy referenced in the VS
 
@@ -2568,6 +2590,7 @@ if __name__ == '__main__':
 
     valid_refs = sorted(
         set(AviClone.VALID_VS_REF_OBJECTS.keys()) |
+        set(AviClone.VALID_VS_OVERRIDE_REF_OBJECTS.keys()) |
         set(AviClone.VALID_GS_REF_OBJECTS.keys()) |
         set(AviClone.VALID_WAFPOLICY_REF_OBJECTS.keys()) |
         set(AviClone.VALID_WAFPOLICYPSMGROUP_REF_OBJECTS.keys()) |

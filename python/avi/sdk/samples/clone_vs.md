@@ -330,3 +330,5 @@ Changelog:
 * Add support for cloning HealthMonitors with SSL attributes or authentication attributes (authentication attributes must be manually re-entered)
 * Add support for cloning AuthProfiles for OAuth2
 * Add support for cloning VS with OAuth2 SSO configuration
+* Add support for cloning VS with service-level network/application profile overrides
+* Add support for cloning DNS VS with Topology Policies
