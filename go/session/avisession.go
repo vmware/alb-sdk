@@ -1077,6 +1077,10 @@ func (avisess *AviSession) restMultipartDownloadRequest(verb string, uri string,
 		return errorResult
 	}
 
+	if avisess.lazyAuthentication && avisess.sessionid == "" && !(uri == "" || uri == "login") {
+		avisess.initiateSession()
+	}
+
 	req, errorResult := avisess.newAviRequest(verb, url, nil, tenant)
 	if errorResult.err != nil {
 		return errorResult
