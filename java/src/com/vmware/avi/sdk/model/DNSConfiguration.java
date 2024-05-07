@@ -31,7 +31,7 @@ public class DNSConfiguration  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Search domain to use in dns lookup.
+     * Search domain to use in dns lookup, multiple domains must be delimited by space only.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return searchDomain
@@ -42,7 +42,7 @@ public class DNSConfiguration  {
 
     /**
      * This is the setter method to the attribute.
-     * Search domain to use in dns lookup.
+     * Search domain to use in dns lookup, multiple domains must be delimited by space only.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param searchDomain set the searchDomain.
