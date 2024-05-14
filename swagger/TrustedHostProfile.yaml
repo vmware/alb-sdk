@@ -6,7 +6,7 @@
 swagger: '2.0'
 info:
     version: '31.1.1'
-    title: Avi AlertObjectList Object API
+    title: Avi TrustedHostProfile Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
@@ -14,8 +14,8 @@ info:
     description: |
         CLI
         ```
-        - configure alertobjectlist
-        - show alertobjectlist
+        - configure trustedhostprofile <key>
+        - show trustedhostprofile <key>
         ```
 
 
@@ -25,7 +25,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /alertobjectlist:
+    /trustedhostprofile:
         get:
             consumes:
                 -   application/json
@@ -89,7 +89,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/AlertObjectListApiResponse"
+                        $ref: "#/definitions/TrustedHostProfileApiResponse"
                 401:
                     description: log in failed
         post:
@@ -120,20 +120,20 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: AlertObjectList object creation
+                    description: TrustedHostProfile object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/TrustedHostProfile"
             security:
                 - basicAuth: []
             responses:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/TrustedHostProfile"
                 401:
                     description: log in failed
-    /alertobjectlist/{uuid}:
+    /trustedhostprofile/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -194,7 +194,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/TrustedHostProfile"
                 401:
                     description: log in failed
         put:
@@ -230,10 +230,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: AlertObjectList object creation
+                    description: TrustedHostProfile object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/TrustedHostProfile"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -245,7 +245,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/TrustedHostProfile"
                 401:
                     description: log in failed
         patch:
@@ -281,10 +281,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: AlertObjectList object creation
+                    description: TrustedHostProfile object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/TrustedHostProfile"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -296,7 +296,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/TrustedHostProfile"
                 401:
                     description: log in failed
         delete:
@@ -347,41 +347,44 @@ paths:
 
 
 definitions:
-    AlertObjectList:
+    ConfigPbAttributes:
+        type: object
+        properties:
+            version:
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1
+                format: uint32
+    TrustedHostProfile:
         type: object
         required:
+            -   host_list
             -   name
-            -   source
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
-            name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+            host_list:
+                description: "List of Host IP(v4/v6) addresses or FQDNs. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            objects:
-                description: " Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP, STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT, PKIPROFILE, AUTHPROFILE, CLOUD, SERVERAUTOSCALEPOLICY, AUTOSCALELAUNCHCONFIG, MICROSERVICEGROUP, IPAMPROFILE, HARDWARESECURITYMODULEGROUP, POOLGROUP, PRIORITYLABELS, POOLGROUPDEPLOYMENTPOLICY, GSLBSERVICE, GSLBSERVICERUNTIME, SCHEDULER, GSLBGEODBPROFILE, GSLBAPPLICATIONPERSISTENCEPROFILE, TRAFFICCLONEPROFILE, VSVIP, WAFPOLICY, WAFPROFILE, ERRORPAGEPROFILE, ERRORPAGEBODY, L4POLICYSET, GSLBSERVICERUNTIMEBATCH, WAFPOLICYPSMGROUP, PINGACCESSAGENT, NETWORKSERVICE, NATPOLICY, SSOPOLICY, PROTOCOLPARSER, EXAMPLECHILD, TESTSEDATASTORELEVEL1, TESTSEDATASTORELEVEL2, TESTSEDATASTORELEVEL3, FILEOBJECT, IPREPUTATIONDB, FEDERATIONCHECKPOINT, ICAPPROFILE, DYNAMICDNSRECORD, JWTSERVERPROFILE, GEODB, BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING, AVIFALSEPOSITIVEDETECTION, VSGS, WAFCRS, SYSTEMDEFAULTOBJECT, CSRFPOLICY, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER, DEBUGVIRTUALSERVICE, SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE, CONTROLLERPROPERTIES, SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG, ALERTSYSLOGCONFIG, ALERTEMAILCONFIG, ALERTTYPECONFIG, APPLICATION, ROLE, CLOUDPROPERTIES, SNMPTRAPPROFILE, ACTIONGROUPPROFILE, MICROSERVICE, ALERTPARAMS, ACTIONGROUPCONFIG, CLOUDCONNECTORUSER, GSLB, GSLBDNSUPDATE, GSLBSITEOPS, GLBMGRWARMSTART, IPAMDNSRECORD, GSLBDNSGSSTATUS, GSLBDNSGEOFILEOPS, GSLBDNSGEOUPDATE, GSLBDNSGEOCLUSTEROPS, GSLBDNSCLEANUP, GSLBSITEOPSRESYNC, IPAMDNSPROVIDERPROFILE, ALBSERVICESCONFIG, SYSTEMLIMITS, REPLICATIONOPERATION, VCENTERSERVER, AVAILABILITYZONE, IMAGE, VSMGRDNSCLEANUP, ALBSERVICESFILEUPLOAD, CONTROLLERSITE, ALERTOBJECTLIST, BACKUPCONFIGURATION, USERACCOUNTPROFILE, WAFAPPLICATIONSIGNATUREPROVIDER, LABELGROUP, CERTIFICATEMANAGEMENTPROFILE, CUSTOMIPAMDNSPROFILE, ALERTSCRIPTCONFIG, WEBHOOK, CLUSTERCLOUDDETAILS, INVENTORYFAULTCONFIG, MEMORYBALANCERREQUEST, SECURECHANNELMAPPING, ALBSERVICESJOB, STATEDIFFOPERATION, SITEVERSION, AUTHMAPPINGPROFILE, WEBAPPUT, TENANTSYSTEMCONFIGURATION, ALERT, JOBENTRY, SECURECHANNELTOKEN, SECURECHANNELAVAILABLELOCALIPS, LICENSESTATUS, FLOATINGIPSUBNET, STATEDIFFSNAPSHOT, CONTROLLERLICENSE, SCVSSTATEINFO, SCPOOLSERVERSTATEINFO, UPGRADESTATUSSUMMARY, CONTROLLERPORTALREGISTRATION, LOGCONTROLLERMAPPING, VIDCINFO, VIPGNAMEINFO, BACKUP, SECURITYMANAGERDATA, VSAPICEXTENSION, GSLBSITE, GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY, SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME, SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME, DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME, DISPATCHERREMOTETIMERLISTDUMPRUNTIME, METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME, METRICSENTITYRUNTIME, PERSISTENCEINTERNAL, HTTPPOLICYSETINTERNAL, DNSPOLICYINTERNAL, CONNECTIONDUMPRUNTIME, SHAREDDBSTATS, SHAREDDBSTATSCLEAR, ICMPSTATRUNTIME, ROUTETABLERUNTIME, VIRTUALMACHINE, POOLSERVER, SEVSLIST, MEMINFORUNTIME, RTERINGSTATRUNTIME, ALGOSTATRUNTIME, HEALTHMONITORRUNTIME, CPUSTATRUNTIME, SEVM, HOST, PORTGROUP, CLUSTER, DATACENTER, VCENTER, HTTPPOLICYSETSTATS, DNSPOLICYSTATS, METRICSSESTATS, RATELIMITERSTATRUNTIME, NETWORKSECURITYPOLICYSTATS, TCPCONNRUNTIME, POOLSTATS, CONNPOOLINTERNAL, CONNPOOLSTATS, VSHASHSHOWRUNTIME, SELOGSTATSRUNTIME, NETWORKSECURITYPOLICYDETAIL, LICENSERUNTIME, SERVERRUNTIME, METRICSRUNTIMESUMMARY, METRICSRUNTIMEDETAIL, DISPATCHERSEHMPROBETEMPDISABLERUNTIME, POOLDEBUG, VSLOGMGRMAP, SERUMINSERTIONSTATS, HTTPCACHE, HTTPCACHESTATS, SEDOSSTATRUNTIME, VSDOSSTATRUNTIME, SERVERUPDATEREQ, VSSCALEOUTLIST, SEMEMDISTRUNTIME, TCPCONNRUNTIMEDETAIL, SEUPGRADESTATUS, SEUPGRADEPREVIEW, SEFAULTINJECTEXHAUSTM, SEFAULTINJECTEXHAUSTMCL, SEFAULTINJECTEXHAUSTMCLSMALL, SEFAULTINJECTEXHAUSTCONN, SEHEADLESSONLINEREQ, SEUPGRADE, SEUPGRADESTATUSDETAIL, SERESERVEDVS, SERESERVEDVSCLEAR, VSCANDIDATESEHOSTLIST, SEGROUPUPGRADE, REBALANCE, SEGROUPREBALANCE, SEAUTHSTATSRUNTIME, AUTOSCALESTATE, VIRTUALSERVICEAUTHSTATS, NETWORKSECURITYPOLICYDOS, KEYVALINTERNAL, KEYVALSUMMARYINTERNAL, SERVERSTATEUPDATEINFO, CLTRACKINTERNAL, CLTRACKSUMMARYINTERNAL, MICROSERVICERUNTIME, SEMICROSERVICE, VIRTUALSERVICEANALYSIS, CLIENTINTERNAL, CLIENTSUMMARYINTERNAL, MICROSERVICEGROUPRUNTIME, BGPRUNTIME, REQUESTQUEUERUNTIME, MIGRATEALL, MIGRATEALLSTATUSSUMMARY, MIGRATEALLSTATUSDETAIL, INTERFACESUMMARYRUNTIME, INTERFACELACPRUNTIME, DNSTABLE, GSLBSERVICEDETAIL, GSLBSERVICEINTERNAL, GSLBSERVICEHMONSTAT, SETROLESREQUEST, TRAFFICCLONERUNTIME, GEOLOCATIONINFO, SEVSHBSTATRUNTIME, GEODBINTERNAL, GSLBSITEINTERNAL, WAFSTATS, USERDEFINEDDATASCRIPTCOUNTERS, LLDPRUNTIME, VSESSHARINGPOOL, NDTABLERUNTIME, IP6STATRUNTIME, ICMP6STATRUNTIME, SEVSSPLACEMENT, L4POLICYSETSTATS, L4POLICYSETINTERNAL, BGPDEBUGINFO, SHARD, CPUSTATRUNTIMEDETAIL, SEASSERTSTATRUNTIME, SEFAULTINJECTINFRA, SEAGENTASSERTSTATRUNTIME, SEDATASTORESTATUS, DIFFQUEUESTATUS, IP6ROUTETABLERUNTIME, SECURITYMGRSTATE, VIRTUALSERVICESESCALEOUTSTATUS, SHARDSERVERSTATUS, SEAGENTSHARDCLIENTRESOURCEMAP, SEAGENTCONSISTENTHASH, SEAGENTVNICDBHISTORY, SEAGENTSHARDCLIENTAPPMAP, SEAGENTSHARDCLIENTEVENTHISTORY, NATSTATRUNTIME, NATFLOWRUNTIME, SECUTIRYMGRRUNTIME, SSOPOLICYSTATS, SENETWORKSERVICERUNTIME, SEGEORUNTIME, NATPOLICYSTATS, SEFAULTRUNTIME, VIRTUALSERVICESCALEOUTSTATUS, VIRTUALSERVICESCALEOUTSTATUSDETAIL, SECURITYMGRLEARN, SECURITYMGRTOPN, SSLSESSIONCACHE, SEGEODETAILS, GSLBSERVICEALGOSTAT, HTTPCONNECTIONRUNTIME, HTTPCONNECTIONRUNTIMEDETAIL, REMOTESITEWATCHERSUMMARY, REMOTESITEWATCHEREVENT, IPREPUTATIONDBRUNTIME, SEFAULTINJECTEXHAUSTCFG, SEFAULTINJECTEXHAUSTSHMCFG, SEFAULTINJECTEXHAUSTSHMCONN, BGPRUNNINGCONFIG, BGPADVERTISEDROUTES, BGPPEERSTATUS, BFDSESSIONSTATUS, BGPPEERINFO, GSLBSITEOPSREPLICATIONPOLICYOPS, FEDERATEDDATASTORESTATUS, FEDERATEDDIFFQUEUESTATUS, ROUTESTATRUNTIME, ROUTEFLOWRUNTIME, NSXTSEGMENTRUNTIME, VIRTUALSERVICEICAPSTATS, KEYVALSUMMARYOBJSYNC, POOLOBJSYNC, KEYVALDISPATCH, SEAGENTOBJSYNCDETAILS, VIRTUALSERVICESCALEOUTSTATUSKEYVAL, VIRTUALSERVICESCALEOUTSTATUSKEYVALSUMMARY, VIRTUALSERVICEOUTOFBANDREQUESTSTATS, GEODBLOCATIONINFO, SEAGENTRESOLVDBRUNTIME, SEAGENTRESOLVDBRUNTIMESUMMARY, METRICSRUNTIMEDEBUG, BOTCLASSIFICATIONRESULTMETRICS, BOTUACACHERUNTIME, BOTUACACHESTATSRUNTIME, POOLGROUPRUNTIMEDETAIL, SECURITYMGRUACACHEQUERY, SECURITYMGRUACACHECLEAR, SECURITYMGRUACACHESUMMARY, GSLBADAPTIVERUNTIME, BGPPEERSSTATE, VSSERVICESERVERMAPKV, VSSERVICESERVERMAPTABLE, UPGRADESTATUSINFO, CLOUDRUNTIME, ALERTPERFDATA, METRICSRUNTIMEDEBUGSUMMARY, SCTPCONNRUNTIME, SCTPCONNRUNTIMEDETAIL, VIMGRIPSUBNETRUNTIME, VIMGRSEVMRUNTIME, VIMGRVMRUNTIME, VIMGRCLUSTERRUNTIME, SEAGENTDPPROBE, BFDRUNNINGCONFIG, LOGAGENTSTATSPERVS, VSLOGSTATSDISAGGR, VRFIPINFORUNTIME, DPMETRICSRUNTIME, SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS, VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME, PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE, SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE, SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL, PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME, APICCONFIGURATION, CIFTABLE, APICTRANSACTION, VIRTUALSERVICESTATEDBCACHESUMMARY, POOLSTATEDBCACHESUMMARY, SERVERSTATEDBCACHESUMMARY, APICAGENTINTERNAL, APICTRANSACTIONFLAP, APICGRAPHINSTANCES, APICEPGS, APICEPGEPS, APICDEVICEPKGVER, APICTENANTS, APICVMMDOMAINS, STATECACHESTATS, STATECACHECONFIG, STATECACHEINTERNAL, STATECACHEDNS, STATECACHECONFIGVERSION, STATECACHEOPERSTATUS, NSXCONFIGURATION, NSXSGTABLE, NSXAGENTINTERNAL, NSXSGINFO, NSXSGIPS, NSXAGENTINTERNALCLI, NSXTAGENT, SERATELIMITINGRLINTERNAL, SERATELIMITINGMSFINTERNAL, ADAPTREPL, POOLGROUPENABLEPRIMARYPOOL, KEYVALSESSION, KEYVALSESSIONSUMMARY, SYSTEMREPORT, AWSLOGIN, ADAPTREPLFAULTINJ, ALERTFAULTPARAMS, ALERTMGRPARAMS, ALERTTESTEMAILPARAMS, ALERTTESTSYSLOGSNMPPARAMS, APICVSPLACEMENTREQ, APPLYLOGRECOMMENDATIONS, CCFAULTPARAMS, CLUSTERPARAMS, CREDPARAMS, GETLOGRECOMMENDATIONS, GROUPPARAMS, NSXTNSSERVICEPARAMS, OPENSTACKLOGIN, RETRYPLACEMENTPARAMS, SERVERSCALEINPARAMS, SERVERSCALEOUTPARAMS, SYSTESTEMAILPARAMS, TIER1ROUTERFILTER, TRANSPORTZONEPARAMS, VIFAULTINJECTION, VISETMGMTIPSEREQ, VCENTERCLOUDSTATUSREQ, VCENTERINVENTORYDIAGREQ, VCENTERQUARANTINEDHOSTPARAMS, VSMIGRATEPARAMS, VSRESYNCPARAMS, VSSCALEINPARAMS, VSSCALEOUTPARAMS, VSSWITCHOVERPARAMS, TASKJOURNAL, JOURNALERROR, JOURNALINFO, JOURNALSUMMARY, EVENTMANAGERSTATS, EVENTMANAGERSUBSCRIPTIONS, EVENTMANAGERCONFIG, MAXOBJECTS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
-            source:
-                description: " Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+            name:
+                description: "TrustedHostProfile name. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Tenant ref for trusted host profile. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "TrustedHostProfile UUID. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-    AlertObjectListApiResponse:
+    TrustedHostProfileApiResponse:
         type: object
         required:
             - count
@@ -393,14 +396,6 @@ definitions:
             results:
                 type: array
                 items:
-                    $ref: "#/definitions/AlertObjectList"
+                    $ref: "#/definitions/TrustedHostProfile"
             next:
                 type: string
-    ConfigPbAttributes:
-        type: object
-        properties:
-            version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
