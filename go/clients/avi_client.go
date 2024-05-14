@@ -133,6 +133,7 @@ type AviClient struct {
 	TestSeDatastoreLevel2           *TestSeDatastoreLevel2Client
 	TestSeDatastoreLevel3           *TestSeDatastoreLevel3Client
 	TrafficCloneProfile             *TrafficCloneProfileClient
+	TrustedHostProfile              *TrustedHostProfileClient
 	UpgradeStatusInfo               *UpgradeStatusInfoClient
 	UpgradeStatusSummary            *UpgradeStatusSummaryClient
 	User                            *UserClient
@@ -294,6 +295,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.TestSeDatastoreLevel2 = NewTestSeDatastoreLevel2Client(aviSession)
 	aviClient.TestSeDatastoreLevel3 = NewTestSeDatastoreLevel3Client(aviSession)
 	aviClient.TrafficCloneProfile = NewTrafficCloneProfileClient(aviSession)
+	aviClient.TrustedHostProfile = NewTrustedHostProfileClient(aviSession)
 	aviClient.UpgradeStatusInfo = NewUpgradeStatusInfoClient(aviSession)
 	aviClient.UpgradeStatusSummary = NewUpgradeStatusSummaryClient(aviSession)
 	aviClient.User = NewUserClient(aviSession)
