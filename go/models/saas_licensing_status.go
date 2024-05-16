@@ -28,4 +28,7 @@ type SaasLicensingStatus struct {
 
 	// Service units reserved on controller. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	ReserveServiceUnits *float64 `json:"reserve_service_units,omitempty"`
+
+	// Saas license request status. Enum options - SUBSCRIPTION_NONE, SUBSCRIPTION_SUCCESS, SUBSCRIPTION_FAILED, SUBSCRIPTION_IN_PROGRESS. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	State *string `json:"state,omitempty"`
 }
