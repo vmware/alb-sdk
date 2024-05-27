@@ -15,7 +15,7 @@ type TrustedHostProfile struct {
 	// Protobuf versioning for config pbs. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
-	// List of Host IP(v4/v6) addresses or FQDNs. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Comma separated list of Host IP(v4/v6) addresses or FQDNs. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	// Required: true
 	HostList *string `json:"host_list"`
 
