@@ -627,6 +627,9 @@ public class EventDetails  {
     @JsonProperty("tencent_info")
     private TencentSetup tencentInfo;
 
+    @JsonProperty("uber_event_details")
+    private LogMgrUberEventDetails uberEventDetails;
+
     @JsonProperty("unbind_vs_se_details")
     private RmUnbindVsSeEventDetails unbindVsSeDetails;
 
@@ -4891,6 +4894,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Uber event details, for testing only.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return uberEventDetails
+     */
+    public LogMgrUberEventDetails getUberEventDetails() {
+        return uberEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Uber event details, for testing only.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param uberEventDetails set the uberEventDetails.
+     */
+    public void setUberEventDetails(LogMgrUberEventDetails uberEventDetails) {
+        this.uberEventDetails = uberEventDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return unbindVsSeDetails
@@ -5674,7 +5701,8 @@ public class EventDetails  {
   Objects.equals(this.pkiprofileDetails, objEventDetails.pkiprofileDetails)&&
   Objects.equals(this.fileobjectDetails, objEventDetails.fileobjectDetails)&&
   Objects.equals(this.systemReportEventDetails, objEventDetails.systemReportEventDetails)&&
-  Objects.equals(this.diskCleanupEventDetails, objEventDetails.diskCleanupEventDetails);
+  Objects.equals(this.diskCleanupEventDetails, objEventDetails.diskCleanupEventDetails)&&
+  Objects.equals(this.uberEventDetails, objEventDetails.uberEventDetails);
     }
 
     @Override
@@ -5883,6 +5911,7 @@ public class EventDetails  {
                         sb.append("    syncServicesInfo: ").append(toIndentedString(syncServicesInfo)).append("\n");
                         sb.append("    systemReportEventDetails: ").append(toIndentedString(systemReportEventDetails)).append("\n");
                         sb.append("    tencentInfo: ").append(toIndentedString(tencentInfo)).append("\n");
+                        sb.append("    uberEventDetails: ").append(toIndentedString(uberEventDetails)).append("\n");
                         sb.append("    unbindVsSeDetails: ").append(toIndentedString(unbindVsSeDetails)).append("\n");
                         sb.append("    upgradeEntry: ").append(toIndentedString(upgradeEntry)).append("\n");
                         sb.append("    upgradeStatusInfo: ").append(toIndentedString(upgradeStatusInfo)).append("\n");

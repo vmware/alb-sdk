@@ -40,7 +40,7 @@ public class TrustedHostProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * List of host ip(v4/v6) addresses or fqdns.
+     * Comma separated list of host ip(v4/v6) addresses or fqdns.
      * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -52,7 +52,7 @@ public class TrustedHostProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * List of host ip(v4/v6) addresses or fqdns.
+     * Comma separated list of host ip(v4/v6) addresses or fqdns.
      * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
