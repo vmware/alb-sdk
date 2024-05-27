@@ -530,7 +530,7 @@
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "host_list": {
-                    "description": "List of Host IP(v4/v6) addresses or FQDNs. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Comma separated list of Host IP(v4/v6) addresses or FQDNs. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
