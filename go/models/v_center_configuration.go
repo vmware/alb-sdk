@@ -14,7 +14,7 @@ type VCenterConfiguration struct {
 	// Datacenter for virtual infrastructure discovery. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Datacenter *string `json:"datacenter,omitempty"`
 
-	// Managed object id of the datacenter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Managed object id of the datacenter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Enterprise with Cloud Services edition.
 	DatacenterManagedObjectID *string `json:"datacenter_managed_object_id,omitempty"`
 
 	// If true, NSX-T segment spanning multiple VDS with vCenter cloud are merged to a single network in Avi. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
