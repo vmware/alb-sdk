@@ -24,6 +24,9 @@ public class PoolAnalyticsPolicy  {
     @JsonProperty("enable_realtime_metrics")
     private Boolean enableRealtimeMetrics = false;
 
+    @JsonProperty("metrics_realtime_update")
+    private MetricsRealTimeUpdate metricsRealtimeUpdate;
+
 
 
     /**
@@ -52,6 +55,30 @@ public class PoolAnalyticsPolicy  {
         this.enableRealtimeMetrics = enableRealtimeMetrics;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Settings to turn on realtime metrics and set duration for realtime updates.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return metricsRealtimeUpdate
+     */
+    public MetricsRealTimeUpdate getMetricsRealtimeUpdate() {
+        return metricsRealtimeUpdate;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Settings to turn on realtime metrics and set duration for realtime updates.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param metricsRealtimeUpdate set the metricsRealtimeUpdate.
+     */
+    public void setMetricsRealtimeUpdate(MetricsRealTimeUpdate metricsRealtimeUpdate) {
+        this.metricsRealtimeUpdate = metricsRealtimeUpdate;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -62,7 +89,8 @@ public class PoolAnalyticsPolicy  {
           return false;
       }
       PoolAnalyticsPolicy objPoolAnalyticsPolicy = (PoolAnalyticsPolicy) o;
-      return   Objects.equals(this.enableRealtimeMetrics, objPoolAnalyticsPolicy.enableRealtimeMetrics);
+      return   Objects.equals(this.enableRealtimeMetrics, objPoolAnalyticsPolicy.enableRealtimeMetrics)&&
+  Objects.equals(this.metricsRealtimeUpdate, objPoolAnalyticsPolicy.metricsRealtimeUpdate);
     }
 
     @Override
@@ -70,6 +98,7 @@ public class PoolAnalyticsPolicy  {
       StringBuilder sb = new StringBuilder();
       sb.append("class PoolAnalyticsPolicy {\n");
                   sb.append("    enableRealtimeMetrics: ").append(toIndentedString(enableRealtimeMetrics)).append("\n");
+                        sb.append("    metricsRealtimeUpdate: ").append(toIndentedString(metricsRealtimeUpdate)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
