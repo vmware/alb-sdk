@@ -1810,6 +1810,19 @@ definitions:
             value:
                 description: "Value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    MetricsRealTimeUpdate:
+        type: object
+        required:
+            -   enabled
+        properties:
+            duration:
+                description: "Real time metrics collection duration in minutes. 0 for infinite. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 30
+                format: uint32
+            enabled:
+                description: "Enables real time metrics collection.  When deactivated, 6 hour view is the most granular the system will track. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
     NetworkFilter:
         type: object
         required:
@@ -2166,6 +2179,9 @@ definitions:
             enable_realtime_metrics:
                 description: "Enable real time metrics for server and pool metrics eg. l4_server.xxx, l7_server.xxx. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
+            metrics_realtime_update:
+                description: "Settings to turn on realtime metrics and set duration for realtime updates. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/MetricsRealTimeUpdate'
     RateLimiter:
         type: object
         required:
