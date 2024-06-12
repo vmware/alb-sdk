@@ -611,6 +611,9 @@ type EventDetails struct {
 	// System Report event details. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	SystemReportEventDetails *SystemReport `json:"system_report_event_details,omitempty"`
 
+	//  Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	TechSupportEvent *TechSupportEvent `json:"tech_support_event,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	TencentInfo *TencentSetup `json:"tencent_info,omitempty"`
 
