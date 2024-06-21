@@ -15,6 +15,9 @@ type LicenseStatus struct {
 	// Protobuf versioning for config pbs. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
+	// License enforcement date when we upgrade controller to 31.1.1 and license tier is essential before upgrade. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EssentialsEnforcedAt *string `json:"essentials_enforced_at,omitempty"`
+
 	// Saas licensing status. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	SaasStatus *SaasLicensingStatus `json:"saas_status,omitempty"`
 

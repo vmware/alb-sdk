@@ -744,6 +744,10 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 	}
 	req.Header.Set("Content-Type", "application/json")
 
+	if avisess.prefix != "" {
+		req.Header.Set("Referer", avisess.prefix)
+	}
+
 	if avisess.user_headers != nil {
 		for k, v := range avisess.user_headers {
 			req.Header.Set(k, v)
@@ -758,9 +762,6 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 	if !strings.HasSuffix(url, "login") && avisess.csrfToken != "" {
 		req.Header["X-CSRFToken"] = []string{avisess.csrfToken}
 		req.AddCookie(&http.Cookie{Name: "csrftoken", Value: avisess.csrfToken})
-	}
-	if avisess.prefix != "" {
-		req.Header.Set("Referer", avisess.prefix)
 	}
 	if tenant != "" {
 		req.Header.Set("X-Avi-Tenant", tenant)
@@ -903,9 +904,9 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 			glog.Error("CheckControllerStatus is disabled for this session, not going to retry.")
 			if err != nil {
 				glog.Errorf("Failed to invoke API. Error: %s", err.Error())
+				return nil, err
 			}
-			return nil, fmt.Errorf("Rest request error, returning to caller: %s", err.Error())
-
+			return nil, errors.New("Rest request error, returning to caller")
 		}
 	}
 	return resp, nil
