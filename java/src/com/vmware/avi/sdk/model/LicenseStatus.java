@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicenseStatus extends AviRestResource  {
+    @JsonProperty("essentials_enforced_at")
+    private String essentialsEnforcedAt;
+
     @JsonProperty("saas_status")
     private SaasLicensingStatus saasStatus;
 
@@ -37,6 +40,30 @@ public class LicenseStatus extends AviRestResource  {
     private String uuid;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * License enforcement date when we upgrade controller to 31.1.1 and license tier is essential before upgrade.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return essentialsEnforcedAt
+     */
+    public String getEssentialsEnforcedAt() {
+        return essentialsEnforcedAt;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * License enforcement date when we upgrade controller to 31.1.1 and license tier is essential before upgrade.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param essentialsEnforcedAt set the essentialsEnforcedAt.
+     */
+    public void setEssentialsEnforcedAt(String  essentialsEnforcedAt) {
+        this.essentialsEnforcedAt = essentialsEnforcedAt;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -164,14 +191,16 @@ public class LicenseStatus extends AviRestResource  {
       return   Objects.equals(this.uuid, objLicenseStatus.uuid)&&
   Objects.equals(this.saasStatus, objLicenseStatus.saasStatus)&&
   Objects.equals(this.serviceUpdate, objLicenseStatus.serviceUpdate)&&
-  Objects.equals(this.tenantUuid, objLicenseStatus.tenantUuid);
+  Objects.equals(this.tenantUuid, objLicenseStatus.tenantUuid)&&
+  Objects.equals(this.essentialsEnforcedAt, objLicenseStatus.essentialsEnforcedAt);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class LicenseStatus {\n");
-                  sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
+                  sb.append("    essentialsEnforcedAt: ").append(toIndentedString(essentialsEnforcedAt)).append("\n");
+                        sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
                         sb.append("    serviceUpdate: ").append(toIndentedString(serviceUpdate)).append("\n");
                         sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
