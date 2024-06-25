@@ -12,20 +12,25 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi VsInventory object api
         ```
         - show vsinventory <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_VIRTUALSERVICE
+tags:
+  - name: VsInventory
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /virtualservice-inventory:
         get:
+            tags:
+                - VsInventory
+            description: /virtualservice-inventory
+            operationId: GET /virtualservice-inventory
             consumes:
                 -   application/json
             produces:
@@ -82,16 +87,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsInventoryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VsInventory
+            description: /virtualservice-inventory
+            operationId: POST /virtualservice-inventory
             consumes:
                 -   application/json
             produces:
@@ -123,17 +131,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/VsInventory"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsInventory"
-                401:
+                "401":
                     description: log in failed
     /virtualservice-inventory/{uuid}:
         get:
+            tags:
+                - VsInventory
+            description: /virtualservice-inventory/{uuid}
+            operationId: GET /virtualservice-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -187,16 +198,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsInventory"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VsInventory
+            description: /virtualservice-inventory/{uuid}
+            operationId: PUT /virtualservice-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -238,16 +252,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsInventory"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VsInventory
+            description: /virtualservice-inventory/{uuid}
+            operationId: PATCH /virtualservice-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -289,16 +306,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsInventory"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VsInventory
+            description: /virtualservice-inventory/{uuid}
+            operationId: DELETE /virtualservice-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -334,14 +354,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

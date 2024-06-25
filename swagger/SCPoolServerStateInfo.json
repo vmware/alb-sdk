@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show poolserverstateinfo\n```\n"
+        "description": "Avi SCPoolServerStateInfo object api\n```\n- show poolserverstateinfo\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "SCPoolServerStateInfo"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/scpoolserverstateinfo": {
             "get": {
+                "tags": [
+                    "SCPoolServerStateInfo"
+                ],
+                "description": "/scpoolserverstateinfo",
+                "operationId": "GET /scpoolserverstateinfo",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "SCPoolServerStateInfo"
+                ],
+                "description": "/scpoolserverstateinfo",
+                "operationId": "POST /scpoolserverstateinfo",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/scpoolserverstateinfo/{uuid}": {
             "get": {
+                "tags": [
+                    "SCPoolServerStateInfo"
+                ],
+                "description": "/scpoolserverstateinfo/{uuid}",
+                "operationId": "GET /scpoolserverstateinfo/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "SCPoolServerStateInfo"
+                ],
+                "description": "/scpoolserverstateinfo/{uuid}",
+                "operationId": "PUT /scpoolserverstateinfo/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "SCPoolServerStateInfo"
+                ],
+                "description": "/scpoolserverstateinfo/{uuid}",
+                "operationId": "PATCH /scpoolserverstateinfo/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "SCPoolServerStateInfo"
+                ],
+                "description": "/scpoolserverstateinfo/{uuid}",
+                "operationId": "DELETE /scpoolserverstateinfo/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",

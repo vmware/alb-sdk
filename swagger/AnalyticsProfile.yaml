@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi AnalyticsProfile object api
         ```
         - configure analyticsprofile <key>
         - show analyticsprofile <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_ANALYTICSPROFILE
+tags:
+  - name: AnalyticsProfile
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /analyticsprofile:
         get:
+            tags:
+                - AnalyticsProfile
+            description: /analyticsprofile
+            operationId: GET /analyticsprofile
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AnalyticsProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - AnalyticsProfile
+            description: /analyticsprofile
+            operationId: POST /analyticsprofile
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/AnalyticsProfile"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AnalyticsProfile"
-                401:
+                "401":
                     description: log in failed
     /analyticsprofile/{uuid}:
         get:
+            tags:
+                - AnalyticsProfile
+            description: /analyticsprofile/{uuid}
+            operationId: GET /analyticsprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AnalyticsProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - AnalyticsProfile
+            description: /analyticsprofile/{uuid}
+            operationId: PUT /analyticsprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AnalyticsProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - AnalyticsProfile
+            description: /analyticsprofile/{uuid}
+            operationId: PATCH /analyticsprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AnalyticsProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - AnalyticsProfile
+            description: /analyticsprofile/{uuid}
+            operationId: DELETE /analyticsprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,19 +355,22 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 
     /analyticsprofile/{uuid}/runtime/internal/:
         get:
+            tags:
+                - AnalyticsProfile
+            description: /analyticsprofile/{uuid}/runtime/internal/
+            operationId: GET /analyticsprofile/{uuid}/runtime/internal/
             consumes:
                 -   application/json
             produces:
@@ -378,14 +401,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     AnalyticsProfile:

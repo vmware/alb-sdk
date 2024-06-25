@@ -12,7 +12,7 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi VsVip object api
         ```
         - configure vsvip <key>
         - show vsvip <key>
@@ -23,16 +23,20 @@ info:
           ```json
             {'name': 'production_vsvip', 'vip': [{'subnet': {'ip_addr': {'addr': '10.10.10.0', 'type': 'V4'}}, 'auto_allocate_ip': True}], 'east_west_placement': False}
           ```
-
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_VIRTUALSERVICE
+tags:
+  - name: VsVip
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /vsvip:
         get:
+            tags:
+                - VsVip
+            description: /vsvip
+            operationId: GET /vsvip
             consumes:
                 -   application/json
             produces:
@@ -152,16 +156,19 @@ paths:
                     description: Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.
                     type: string
                     required: false
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsVipApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VsVip
+            description: /vsvip
+            operationId: POST /vsvip
             consumes:
                 -   application/json
             produces:
@@ -193,17 +200,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/VsVip"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsVip"
-                401:
+                "401":
                     description: log in failed
     /vsvip/{uuid}:
         get:
+            tags:
+                - VsVip
+            description: /vsvip/{uuid}
+            operationId: GET /vsvip/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -257,16 +267,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsVip"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VsVip
+            description: /vsvip/{uuid}
+            operationId: PUT /vsvip/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -308,16 +321,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsVip"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VsVip
+            description: /vsvip/{uuid}
+            operationId: PATCH /vsvip/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -359,16 +375,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsVip"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VsVip
+            description: /vsvip/{uuid}
+            operationId: DELETE /vsvip/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -404,14 +423,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

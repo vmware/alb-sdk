@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi NetworkProfile object api
         ```
         - configure networkprofile <key>
         - show networkprofile <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_NETWORKPROFILE
+tags:
+  - name: NetworkProfile
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /networkprofile:
         get:
+            tags:
+                - NetworkProfile
+            description: /networkprofile
+            operationId: GET /networkprofile
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - NetworkProfile
+            description: /networkprofile
+            operationId: POST /networkprofile
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/NetworkProfile"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkProfile"
-                401:
+                "401":
                     description: log in failed
     /networkprofile/{uuid}:
         get:
+            tags:
+                - NetworkProfile
+            description: /networkprofile/{uuid}
+            operationId: GET /networkprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - NetworkProfile
+            description: /networkprofile/{uuid}
+            operationId: PUT /networkprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - NetworkProfile
+            description: /networkprofile/{uuid}
+            operationId: PATCH /networkprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - NetworkProfile
+            description: /networkprofile/{uuid}
+            operationId: DELETE /networkprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,19 +355,22 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 
     /networkprofile/{uuid}/runtime/internal/:
         get:
+            tags:
+                - NetworkProfile
+            description: /networkprofile/{uuid}/runtime/internal/
+            operationId: GET /networkprofile/{uuid}/runtime/internal/
             consumes:
                 -   application/json
             produces:
@@ -378,14 +401,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

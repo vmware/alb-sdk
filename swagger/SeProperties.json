@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure serviceengineproperties\n- show serviceengineproperties\n```\n"
+        "description": "Avi SeProperties object api\n```\n- configure serviceengineproperties\n- show serviceengineproperties\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "SeProperties"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/seproperties": {
             "get": {
+                "tags": [
+                    "SeProperties"
+                ],
+                "description": "/seproperties",
+                "operationId": "GET /seproperties",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "SeProperties"
+                ],
+                "description": "/seproperties",
+                "operationId": "PUT /seproperties",
                 "consumes": [
                     "application/json"
                 ],
@@ -171,11 +180,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -189,6 +194,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "SeProperties"
+                ],
+                "description": "/seproperties",
+                "operationId": "PATCH /seproperties",
                 "consumes": [
                     "application/json"
                 ],
@@ -241,11 +251,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

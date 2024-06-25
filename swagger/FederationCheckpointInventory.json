@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show federationcheckpointinventory <key>\n```\n"
+        "description": "Avi FederationCheckpointInventory object api\n```\n- show federationcheckpointinventory <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "FederationCheckpointInventory"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/federationcheckpoint-inventory": {
             "get": {
+                "tags": [
+                    "FederationCheckpointInventory"
+                ],
+                "description": "/federationcheckpoint-inventory",
+                "operationId": "GET /federationcheckpoint-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "FederationCheckpointInventory"
+                ],
+                "description": "/federationcheckpoint-inventory",
+                "operationId": "POST /federationcheckpoint-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/federationcheckpoint-inventory/{uuid}": {
             "get": {
+                "tags": [
+                    "FederationCheckpointInventory"
+                ],
+                "description": "/federationcheckpoint-inventory/{uuid}",
+                "operationId": "GET /federationcheckpoint-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "FederationCheckpointInventory"
+                ],
+                "description": "/federationcheckpoint-inventory/{uuid}",
+                "operationId": "PUT /federationcheckpoint-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "FederationCheckpointInventory"
+                ],
+                "description": "/federationcheckpoint-inventory/{uuid}",
+                "operationId": "PATCH /federationcheckpoint-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "FederationCheckpointInventory"
+                ],
+                "description": "/federationcheckpoint-inventory/{uuid}",
+                "operationId": "DELETE /federationcheckpoint-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -502,6 +511,11 @@
         },
         "/federationcheckpoint": {
             "get": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint",
+                "operationId": "GET /federationcheckpoint",
                 "consumes": [
                     "application/json"
                 ],
@@ -583,11 +597,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -601,6 +611,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint",
+                "operationId": "POST /federationcheckpoint",
                 "consumes": [
                     "application/json"
                 ],
@@ -646,11 +661,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -666,6 +677,11 @@
         },
         "/federationcheckpoint/{uuid}": {
             "get": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint/{uuid}",
+                "operationId": "GET /federationcheckpoint/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -742,11 +758,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -760,6 +772,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint/{uuid}",
+                "operationId": "PUT /federationcheckpoint/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -819,11 +836,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -837,6 +850,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint/{uuid}",
+                "operationId": "PATCH /federationcheckpoint/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -896,11 +914,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -914,6 +928,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint/{uuid}",
+                "operationId": "DELETE /federationcheckpoint/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -964,11 +983,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",

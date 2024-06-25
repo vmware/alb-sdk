@@ -12,20 +12,25 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi VIMgrVMRuntime object api
         ```
         - show vinfra virtualmachine <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_CLOUD
+tags:
+  - name: VIMgrVMRuntime
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /vimgrvmruntime:
         get:
+            tags:
+                - VIMgrVMRuntime
+            description: /vimgrvmruntime
+            operationId: GET /vimgrvmruntime
             consumes:
                 -   application/json
             produces:
@@ -145,16 +150,19 @@ paths:
                     description: Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.
                     type: string
                     required: false
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrVMRuntimeApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VIMgrVMRuntime
+            description: /vimgrvmruntime
+            operationId: POST /vimgrvmruntime
             consumes:
                 -   application/json
             produces:
@@ -186,17 +194,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/VIMgrVMRuntime"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrVMRuntime"
-                401:
+                "401":
                     description: log in failed
     /vimgrvmruntime/{uuid}:
         get:
+            tags:
+                - VIMgrVMRuntime
+            description: /vimgrvmruntime/{uuid}
+            operationId: GET /vimgrvmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -250,16 +261,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrVMRuntime"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VIMgrVMRuntime
+            description: /vimgrvmruntime/{uuid}
+            operationId: PUT /vimgrvmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -301,16 +315,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrVMRuntime"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VIMgrVMRuntime
+            description: /vimgrvmruntime/{uuid}
+            operationId: PATCH /vimgrvmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -352,16 +369,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrVMRuntime"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VIMgrVMRuntime
+            description: /vimgrvmruntime/{uuid}
+            operationId: DELETE /vimgrvmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -397,14 +417,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

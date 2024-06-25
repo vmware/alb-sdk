@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show serviceenginegroupinventory <key>\n```\n"
+        "description": "Avi ServiceEngineGroupInventory object api\n```\n- show serviceenginegroupinventory <key>\n```\n\nAPI permission: PERMISSION_SERVICEENGINEGROUP\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "ServiceEngineGroupInventory"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/serviceenginegroup-inventory": {
             "get": {
+                "tags": [
+                    "ServiceEngineGroupInventory"
+                ],
+                "description": "/serviceenginegroup-inventory",
+                "operationId": "GET /serviceenginegroup-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ServiceEngineGroupInventory"
+                ],
+                "description": "/serviceenginegroup-inventory",
+                "operationId": "POST /serviceenginegroup-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/serviceenginegroup-inventory/{uuid}": {
             "get": {
+                "tags": [
+                    "ServiceEngineGroupInventory"
+                ],
+                "description": "/serviceenginegroup-inventory/{uuid}",
+                "operationId": "GET /serviceenginegroup-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ServiceEngineGroupInventory"
+                ],
+                "description": "/serviceenginegroup-inventory/{uuid}",
+                "operationId": "PUT /serviceenginegroup-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ServiceEngineGroupInventory"
+                ],
+                "description": "/serviceenginegroup-inventory/{uuid}",
+                "operationId": "PATCH /serviceenginegroup-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ServiceEngineGroupInventory"
+                ],
+                "description": "/serviceenginegroup-inventory/{uuid}",
+                "operationId": "DELETE /serviceenginegroup-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -502,6 +511,11 @@
         },
         "/serviceenginegroup": {
             "get": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup",
+                "operationId": "GET /serviceenginegroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -583,11 +597,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -601,6 +611,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup",
+                "operationId": "POST /serviceenginegroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -646,11 +661,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -666,6 +677,11 @@
         },
         "/serviceenginegroup/{uuid}": {
             "get": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}",
+                "operationId": "GET /serviceenginegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -742,11 +758,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -760,6 +772,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}",
+                "operationId": "PUT /serviceenginegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -819,11 +836,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -837,6 +850,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}",
+                "operationId": "PATCH /serviceenginegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -896,11 +914,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -914,6 +928,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}",
+                "operationId": "DELETE /serviceenginegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -964,11 +983,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -984,6 +999,11 @@
         },
         "/upgradestatussummary": {
             "get": {
+                "tags": [
+                    "UpgradeStatusSummary"
+                ],
+                "description": "/upgradestatussummary",
+                "operationId": "GET /upgradestatussummary",
                 "consumes": [
                     "application/json"
                 ],
@@ -1065,11 +1085,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1083,6 +1099,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "UpgradeStatusSummary"
+                ],
+                "description": "/upgradestatussummary",
+                "operationId": "POST /upgradestatussummary",
                 "consumes": [
                     "application/json"
                 ],
@@ -1128,11 +1149,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1148,6 +1165,11 @@
         },
         "/upgradestatussummary/{uuid}": {
             "get": {
+                "tags": [
+                    "UpgradeStatusSummary"
+                ],
+                "description": "/upgradestatussummary/{uuid}",
+                "operationId": "GET /upgradestatussummary/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1224,11 +1246,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1242,6 +1260,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "UpgradeStatusSummary"
+                ],
+                "description": "/upgradestatussummary/{uuid}",
+                "operationId": "PUT /upgradestatussummary/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1301,11 +1324,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1319,6 +1338,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "UpgradeStatusSummary"
+                ],
+                "description": "/upgradestatussummary/{uuid}",
+                "operationId": "PATCH /upgradestatussummary/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1378,11 +1402,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1396,6 +1416,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "UpgradeStatusSummary"
+                ],
+                "description": "/upgradestatussummary/{uuid}",
+                "operationId": "DELETE /upgradestatussummary/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1446,11 +1471,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",

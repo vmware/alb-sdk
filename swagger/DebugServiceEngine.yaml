@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi DebugServiceEngine object api
         ```
         - debug serviceengine <key>
         - show debug serviceengine <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_SERVICEENGINE
+tags:
+  - name: DebugServiceEngine
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /debugserviceengine:
         get:
+            tags:
+                - DebugServiceEngine
+            description: /debugserviceengine
+            operationId: GET /debugserviceengine
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/DebugServiceEngineApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - DebugServiceEngine
+            description: /debugserviceengine
+            operationId: POST /debugserviceengine
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/DebugServiceEngine"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/DebugServiceEngine"
-                401:
+                "401":
                     description: log in failed
     /debugserviceengine/{uuid}:
         get:
+            tags:
+                - DebugServiceEngine
+            description: /debugserviceengine/{uuid}
+            operationId: GET /debugserviceengine/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/DebugServiceEngine"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - DebugServiceEngine
+            description: /debugserviceengine/{uuid}
+            operationId: PUT /debugserviceengine/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/DebugServiceEngine"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - DebugServiceEngine
+            description: /debugserviceengine/{uuid}
+            operationId: PATCH /debugserviceengine/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/DebugServiceEngine"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - DebugServiceEngine
+            description: /debugserviceengine/{uuid}
+            operationId: DELETE /debugserviceengine/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,19 +355,22 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 
     /debugserviceengine/{uuid}/faultruntime/:
         get:
+            tags:
+                - DebugServiceEngine
+            description: /debugserviceengine/{uuid}/faultruntime/
+            operationId: GET /debugserviceengine/{uuid}/faultruntime/
             consumes:
                 -   application/json
             produces:
@@ -378,14 +401,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     CaptureFileSize:

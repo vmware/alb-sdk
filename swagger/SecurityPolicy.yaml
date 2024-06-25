@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi SecurityPolicy object api
         ```
         - configure securitypolicy <key>
         - show securitypolicy <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_SECURITYPOLICY
+tags:
+  - name: SecurityPolicy
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /securitypolicy:
         get:
+            tags:
+                - SecurityPolicy
+            description: /securitypolicy
+            operationId: GET /securitypolicy
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecurityPolicyApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - SecurityPolicy
+            description: /securitypolicy
+            operationId: POST /securitypolicy
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/SecurityPolicy"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecurityPolicy"
-                401:
+                "401":
                     description: log in failed
     /securitypolicy/{uuid}:
         get:
+            tags:
+                - SecurityPolicy
+            description: /securitypolicy/{uuid}
+            operationId: GET /securitypolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecurityPolicy"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - SecurityPolicy
+            description: /securitypolicy/{uuid}
+            operationId: PUT /securitypolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecurityPolicy"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - SecurityPolicy
+            description: /securitypolicy/{uuid}
+            operationId: PATCH /securitypolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecurityPolicy"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - SecurityPolicy
+            description: /securitypolicy/{uuid}
+            operationId: DELETE /securitypolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,14 +355,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

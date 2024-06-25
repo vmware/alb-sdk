@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure gslbservice <key>\n- show gslbservice <key>\n```\n"
+        "description": "Avi GslbService object api\n```\n- configure gslbservice <key>\n- show gslbservice <key>\n```\n\nAPI permission: PERMISSION_GSLBSERVICE\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "GslbService"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/gslbservice": {
             "get": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice",
+                "operationId": "GET /gslbservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice",
+                "operationId": "POST /gslbservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/gslbservice/{uuid}": {
             "get": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice/{uuid}",
+                "operationId": "GET /gslbservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice/{uuid}",
+                "operationId": "PUT /gslbservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice/{uuid}",
+                "operationId": "PATCH /gslbservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice/{uuid}",
+                "operationId": "DELETE /gslbservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -502,6 +511,11 @@
         },
         "/gslbservice/{uuid}/runtime/": {
             "get": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice/{uuid}/runtime/",
+                "operationId": "GET /gslbservice/{uuid}/runtime/",
                 "consumes": [
                     "application/json"
                 ],
@@ -545,11 +559,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

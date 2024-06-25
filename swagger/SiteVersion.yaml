@@ -12,20 +12,25 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi SiteVersion object api
         ```
         - show siteversion <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_CONTROLLER
+tags:
+  - name: SiteVersion
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /siteversion:
         get:
+            tags:
+                - SiteVersion
+            description: /siteversion
+            operationId: GET /siteversion
             consumes:
                 -   application/json
             produces:
@@ -82,16 +87,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SiteVersionApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - SiteVersion
+            description: /siteversion
+            operationId: POST /siteversion
             consumes:
                 -   application/json
             produces:
@@ -123,17 +131,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/SiteVersion"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SiteVersion"
-                401:
+                "401":
                     description: log in failed
     /siteversion/{uuid}:
         get:
+            tags:
+                - SiteVersion
+            description: /siteversion/{uuid}
+            operationId: GET /siteversion/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -187,16 +198,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SiteVersion"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - SiteVersion
+            description: /siteversion/{uuid}
+            operationId: PUT /siteversion/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -238,16 +252,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SiteVersion"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - SiteVersion
+            description: /siteversion/{uuid}
+            operationId: PATCH /siteversion/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -289,16 +306,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SiteVersion"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - SiteVersion
+            description: /siteversion/{uuid}
+            operationId: DELETE /siteversion/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -334,14 +354,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

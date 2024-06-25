@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi SeProperties object api
         ```
         - configure serviceengineproperties
         - show serviceengineproperties
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_CONTROLLER
+tags:
+  - name: SeProperties
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /seproperties:
         get:
+            tags:
+                - SeProperties
+            description: /seproperties
+            operationId: GET /seproperties
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SeProperties"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - SeProperties
+            description: /seproperties
+            operationId: PUT /seproperties
             consumes:
                 -   application/json
             produces:
@@ -129,16 +137,19 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/SeProperties"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SeProperties"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - SeProperties
+            description: /seproperties
+            operationId: PATCH /seproperties
             consumes:
                 -   application/json
             produces:
@@ -175,14 +186,13 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/SeProperties"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SeProperties"
-                401:
+                "401":
                     description: log in failed
         
 

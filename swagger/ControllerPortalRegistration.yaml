@@ -12,19 +12,24 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi ControllerPortalRegistration object api
         ```
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_CONTROLLER
+tags:
+  - name: ControllerPortalRegistration
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /controllerportalregistration:
         get:
+            tags:
+                - ControllerPortalRegistration
+            description: /controllerportalregistration
+            operationId: GET /controllerportalregistration
             consumes:
                 -   application/json
             produces:
@@ -81,16 +86,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerPortalRegistrationApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ControllerPortalRegistration
+            description: /controllerportalregistration
+            operationId: POST /controllerportalregistration
             consumes:
                 -   application/json
             produces:
@@ -122,17 +130,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/ControllerPortalRegistration"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerPortalRegistration"
-                401:
+                "401":
                     description: log in failed
     /controllerportalregistration/{uuid}:
         get:
+            tags:
+                - ControllerPortalRegistration
+            description: /controllerportalregistration/{uuid}
+            operationId: GET /controllerportalregistration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -186,16 +197,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerPortalRegistration"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ControllerPortalRegistration
+            description: /controllerportalregistration/{uuid}
+            operationId: PUT /controllerportalregistration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -237,16 +251,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerPortalRegistration"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ControllerPortalRegistration
+            description: /controllerportalregistration/{uuid}
+            operationId: PATCH /controllerportalregistration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -288,16 +305,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerPortalRegistration"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ControllerPortalRegistration
+            description: /controllerportalregistration/{uuid}
+            operationId: DELETE /controllerportalregistration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -333,14 +353,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

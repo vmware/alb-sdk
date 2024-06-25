@@ -12,7 +12,7 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi HealthMonitor object api
         ```
         - configure healthmonitor <key>
         - show healthmonitor <key>
@@ -23,16 +23,20 @@ info:
           ```json
             {'name': 'http-hmon', 'send_interval': 10, 'receive_timeout': 4, 'failed_checks': 3, 'type': 'HEALTH_MONITOR_HTTP', 'http_monitor': {'http_request': 'GET / HTTP/1.0'}}
           ```
-
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_HEALTHMONITOR
+tags:
+  - name: HealthMonitor
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /healthmonitor:
         get:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor
+            operationId: GET /healthmonitor
             consumes:
                 -   application/json
             produces:
@@ -89,16 +93,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HealthMonitorApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor
+            operationId: POST /healthmonitor
             consumes:
                 -   application/json
             produces:
@@ -130,17 +137,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/HealthMonitor"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HealthMonitor"
-                401:
+                "401":
                     description: log in failed
     /healthmonitor/{uuid}:
         get:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor/{uuid}
+            operationId: GET /healthmonitor/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -194,16 +204,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HealthMonitor"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor/{uuid}
+            operationId: PUT /healthmonitor/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -245,16 +258,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HealthMonitor"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor/{uuid}
+            operationId: PATCH /healthmonitor/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -296,16 +312,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HealthMonitor"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor/{uuid}
+            operationId: DELETE /healthmonitor/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -341,19 +360,22 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 
     /healthmonitor/{uuid}/federated_info/:
         get:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor/{uuid}/federated_info/
+            operationId: GET /healthmonitor/{uuid}/federated_info/
             consumes:
                 -   application/json
             produces:
@@ -384,14 +406,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

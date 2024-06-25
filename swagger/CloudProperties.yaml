@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi CloudProperties object api
         ```
         - configure cloudproperties
         - show cloudproperties
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_CLOUD
+tags:
+  - name: CloudProperties
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /cloudproperties:
         get:
+            tags:
+                - CloudProperties
+            description: /cloudproperties
+            operationId: GET /cloudproperties
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudPropertiesApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - CloudProperties
+            description: /cloudproperties
+            operationId: POST /cloudproperties
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/CloudProperties"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudProperties"
-                401:
+                "401":
                     description: log in failed
     /cloudproperties/{uuid}:
         get:
+            tags:
+                - CloudProperties
+            description: /cloudproperties/{uuid}
+            operationId: GET /cloudproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudProperties"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - CloudProperties
+            description: /cloudproperties/{uuid}
+            operationId: PUT /cloudproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudProperties"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - CloudProperties
+            description: /cloudproperties/{uuid}
+            operationId: PATCH /cloudproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudProperties"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - CloudProperties
+            description: /cloudproperties/{uuid}
+            operationId: DELETE /cloudproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,19 +355,22 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 
     /controllerproperties:
         get:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties
+            operationId: GET /controllerproperties
             consumes:
                 -   application/json
             produces:
@@ -404,16 +427,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerPropertiesApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties
+            operationId: POST /controllerproperties
             consumes:
                 -   application/json
             produces:
@@ -445,17 +471,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-                401:
+                "401":
                     description: log in failed
     /controllerproperties/{uuid}:
         get:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties/{uuid}
+            operationId: GET /controllerproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -509,16 +538,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties/{uuid}
+            operationId: PUT /controllerproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -560,16 +592,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties/{uuid}
+            operationId: PATCH /controllerproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -611,16 +646,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties/{uuid}
+            operationId: DELETE /controllerproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -656,14 +694,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

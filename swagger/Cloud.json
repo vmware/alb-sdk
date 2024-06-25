@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure cloud <key>\n- show cloud <key>\n- show cloud internals\n```\n"
+        "description": "Avi Cloud object api\n```\n- configure cloud <key>\n- show cloud <key>\n- show cloud internals\n```\n\nAPI permission: PERMISSION_CLOUD\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "Cloud"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/cloud": {
             "get": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud",
+                "operationId": "GET /cloud",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud",
+                "operationId": "POST /cloud",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/cloud/{uuid}": {
             "get": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}",
+                "operationId": "GET /cloud/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}",
+                "operationId": "PUT /cloud/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}",
+                "operationId": "PATCH /cloud/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}",
+                "operationId": "DELETE /cloud/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -502,6 +511,11 @@
         },
         "/cloud/list": {
             "post": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/list",
+                "operationId": "POST /cloud/list",
                 "consumes": [
                     "application/json"
                 ],
@@ -550,11 +564,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -570,6 +580,11 @@
         },
         "/cloud/{uuid}/internals/": {
             "get": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}/internals/",
+                "operationId": "GET /cloud/{uuid}/internals/",
                 "consumes": [
                     "application/json"
                 ],
@@ -613,11 +628,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -633,6 +644,11 @@
         },
         "/cloud/{uuid}/status/": {
             "get": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}/status/",
+                "operationId": "GET /cloud/{uuid}/status/",
                 "consumes": [
                     "application/json"
                 ],
@@ -676,11 +692,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -696,6 +708,11 @@
         },
         "/cloud/{uuid}/gc/": {
             "put": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}/gc/",
+                "operationId": "PUT /cloud/{uuid}/gc/",
                 "consumes": [
                     "application/json"
                 ],
@@ -751,11 +768,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -769,6 +782,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}/gc/",
+                "operationId": "PATCH /cloud/{uuid}/gc/",
                 "consumes": [
                     "application/json"
                 ],
@@ -812,11 +830,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -832,6 +846,11 @@
         },
         "/cloud/{uuid}/health/": {
             "get": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}/health/",
+                "operationId": "GET /cloud/{uuid}/health/",
                 "consumes": [
                     "application/json"
                 ],
@@ -875,11 +894,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -895,6 +910,11 @@
         },
         "/cloud/{uuid}/hosts/": {
             "get": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}/hosts/",
+                "operationId": "GET /cloud/{uuid}/hosts/",
                 "consumes": [
                     "application/json"
                 ],
@@ -938,11 +958,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -958,6 +974,11 @@
         },
         "/cloud/{uuid}/autoscalegroup/": {
             "get": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}/autoscalegroup/",
+                "operationId": "GET /cloud/{uuid}/autoscalegroup/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1001,11 +1022,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1021,6 +1038,11 @@
         },
         "/cloud/{uuid}/autoscalegroupservers/": {
             "get": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}/autoscalegroupservers/",
+                "operationId": "GET /cloud/{uuid}/autoscalegroupservers/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1064,11 +1086,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1084,6 +1102,11 @@
         },
         "/cloud/{uuid}/placement/summary/": {
             "get": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}/placement/summary/",
+                "operationId": "GET /cloud/{uuid}/placement/summary/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1127,11 +1150,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1147,6 +1166,11 @@
         },
         "/cloud/{uuid}/placement/ineligible/": {
             "get": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}/placement/ineligible/",
+                "operationId": "GET /cloud/{uuid}/placement/ineligible/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1190,11 +1214,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

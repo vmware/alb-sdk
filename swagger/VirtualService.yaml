@@ -12,7 +12,7 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi VirtualService object api
         ```
         - configure virtualservice <key>
         - show virtualservice <key>
@@ -34,26 +34,28 @@ info:
           ```json
             {'name': 'production_vs', 'services': [{'port': 80}, {'port': 443, 'enable_ssl': True}], 'vsvip_ref': '/api/vsvip/vsvip-5b310671-7784-472b-8096-8679d3e1c769'}
           ```
-
         - **virtualservice_example_ipamdns_infoblox**: Create a basic virtualservice object that requires IP to be auto-allocated and DNS record to be registered. @Assumptions: - This example assumes the virtualservice being created is part of a Cloud with Infoblox as IPAM & DNS provider - On Infoblox server - "10.10.10.0/24" is configured for VIPs - "prod.corp" is configured as zone
           ```json
             {'name': 'production_vs', 'fqdn': 'production_vs.prod.corp', 'vsvip_ref': '/api/vsvip/vsvip-5b310671-7784-472b-8096-8679d3e1c769'}
           ```
-
         - **virtualservice_example_ipamdns_internal**: Create a basic virtualservice object that requires IP to be auto-allocated and DNS record to be registered. @Assumptions: - This example assumes the virtualservice being created is part of a Cloud with Internal IPAM & DNS provider - On Avi - Network object containing free IPs from "10.10.10.0/24" is already created - "prod.corp" is configured as a domain name in DNS provider config in Avi
           ```json
             {'name': 'production_vs', 'fqdn': 'production_vs.prod.corp', 'vsvip_ref': '/api/vsvip/vsvip-5b310671-7784-472b-8096-8679d3e1c769'}
           ```
-
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_VIRTUALSERVICE
+tags:
+  - name: VirtualService
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /virtualservice:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice
+            operationId: GET /virtualservice
             consumes:
                 -   application/json
             produces:
@@ -173,16 +175,19 @@ paths:
                     description: Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.
                     type: string
                     required: false
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VirtualServiceApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VirtualService
+            description: /virtualservice
+            operationId: POST /virtualservice
             consumes:
                 -   application/json
             produces:
@@ -214,17 +219,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/VirtualService"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VirtualService"
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}
+            operationId: GET /virtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -278,16 +286,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VirtualService"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}
+            operationId: PUT /virtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -329,16 +340,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VirtualService"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}
+            operationId: PATCH /virtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -380,16 +394,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VirtualService"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}
+            operationId: DELETE /virtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -425,18 +442,21 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
     /virtualservice/{uuid}/scaleout:
         post:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/scaleout
+            operationId: POST /virtualservice/{uuid}/scaleout
             consumes:
                 -   application/json
             produces:
@@ -473,17 +493,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/scalein:
         post:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/scalein
+            operationId: POST /virtualservice/{uuid}/scalein
             consumes:
                 -   application/json
             produces:
@@ -520,17 +543,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/migrate:
         post:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/migrate
+            operationId: POST /virtualservice/{uuid}/migrate
             consumes:
                 -   application/json
             produces:
@@ -567,17 +593,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/switchover:
         post:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/switchover
+            operationId: POST /virtualservice/{uuid}/switchover
             consumes:
                 -   application/json
             produces:
@@ -614,17 +643,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/clear:
         post:
+            tags:
+                - VirtualService
+            description: /virtualservice/clear
+            operationId: POST /virtualservice/clear
             consumes:
                 -   application/json
             produces:
@@ -658,17 +690,20 @@ paths:
                         type: object
                         additionalProperties:
                             type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/resync:
         post:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/resync
+            operationId: POST /virtualservice/{uuid}/resync
             consumes:
                 -   application/json
             produces:
@@ -705,17 +740,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/rotatekeys:
         post:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/rotatekeys
+            operationId: POST /virtualservice/{uuid}/rotatekeys
             consumes:
                 -   application/json
             produces:
@@ -754,17 +792,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/retryplacement:
         post:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/retryplacement
+            operationId: POST /virtualservice/{uuid}/retryplacement
             consumes:
                 -   application/json
             produces:
@@ -801,17 +842,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/log-recommendation:
         post:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/log-recommendation
+            operationId: POST /virtualservice/{uuid}/log-recommendation
             consumes:
                 -   application/json
             produces:
@@ -848,17 +892,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/apply-log-recommendation:
         post:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/apply-log-recommendation
+            operationId: POST /virtualservice/{uuid}/apply-log-recommendation
             consumes:
                 -   application/json
             produces:
@@ -895,18 +942,21 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
     /virtualservice/{uuid}/runtime/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/runtime/
+            operationId: GET /virtualservice/{uuid}/runtime/
             consumes:
                 -   application/json
             produces:
@@ -937,17 +987,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/runtime/detail/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/runtime/detail/
+            operationId: GET /virtualservice/{uuid}/runtime/detail/
             consumes:
                 -   application/json
             produces:
@@ -978,17 +1031,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/runtime/internal/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/runtime/internal/
+            operationId: GET /virtualservice/{uuid}/runtime/internal/
             consumes:
                 -   application/json
             produces:
@@ -1019,17 +1075,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/udpstat/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/udpstat/
+            operationId: GET /virtualservice/{uuid}/udpstat/
             consumes:
                 -   application/json
             produces:
@@ -1060,17 +1119,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/tcpstat/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/tcpstat/
+            operationId: GET /virtualservice/{uuid}/tcpstat/
             consumes:
                 -   application/json
             produces:
@@ -1101,17 +1163,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/sctpstat/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/sctpstat/
+            operationId: GET /virtualservice/{uuid}/sctpstat/
             consumes:
                 -   application/json
             produces:
@@ -1142,17 +1207,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/traffic_clone_stats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/traffic_clone_stats/
+            operationId: GET /virtualservice/{uuid}/traffic_clone_stats/
             consumes:
                 -   application/json
             produces:
@@ -1183,17 +1251,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/dosstat/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/dosstat/
+            operationId: GET /virtualservice/{uuid}/dosstat/
             consumes:
                 -   application/json
             produces:
@@ -1224,17 +1295,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/connections/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/connections/
+            operationId: GET /virtualservice/{uuid}/connections/
             consumes:
                 -   application/json
             produces:
@@ -1265,17 +1339,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/httpconnections/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/httpconnections/
+            operationId: GET /virtualservice/{uuid}/httpconnections/
             consumes:
                 -   application/json
             produces:
@@ -1306,17 +1383,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/httpconnections/detail/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/httpconnections/detail/
+            operationId: GET /virtualservice/{uuid}/httpconnections/detail/
             consumes:
                 -   application/json
             produces:
@@ -1347,17 +1427,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/httpstats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/httpstats/
+            operationId: GET /virtualservice/{uuid}/httpstats/
             consumes:
                 -   application/json
             produces:
@@ -1388,17 +1471,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/authstats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/authstats/
+            operationId: GET /virtualservice/{uuid}/authstats/
             consumes:
                 -   application/json
             produces:
@@ -1429,17 +1515,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/httppolicyset/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/httppolicyset/
+            operationId: GET /virtualservice/{uuid}/httppolicyset/
             consumes:
                 -   application/json
             produces:
@@ -1470,17 +1559,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/httppolicysetstats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/httppolicysetstats/
+            operationId: GET /virtualservice/{uuid}/httppolicysetstats/
             consumes:
                 -   application/json
             produces:
@@ -1511,17 +1603,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/dnspolicystats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/dnspolicystats/
+            operationId: GET /virtualservice/{uuid}/dnspolicystats/
             consumes:
                 -   application/json
             produces:
@@ -1552,17 +1647,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/networksecuritypolicystats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/networksecuritypolicystats/
+            operationId: GET /virtualservice/{uuid}/networksecuritypolicystats/
             consumes:
                 -   application/json
             produces:
@@ -1593,17 +1691,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/networksecuritypolicy/detail/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/networksecuritypolicy/detail/
+            operationId: GET /virtualservice/{uuid}/networksecuritypolicy/detail/
             consumes:
                 -   application/json
             produces:
@@ -1634,17 +1735,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/candidatesehostlist/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/candidatesehostlist/
+            operationId: GET /virtualservice/{uuid}/candidatesehostlist/
             consumes:
                 -   application/json
             produces:
@@ -1675,17 +1779,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/placement/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/placement/
+            operationId: GET /virtualservice/{uuid}/placement/
             consumes:
                 -   application/json
             produces:
@@ -1716,17 +1823,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/keyval/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/keyval/
+            operationId: GET /virtualservice/{uuid}/keyval/
             consumes:
                 -   application/json
             produces:
@@ -1757,17 +1867,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/keyvalsummary/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/keyvalsummary/
+            operationId: GET /virtualservice/{uuid}/keyvalsummary/
             consumes:
                 -   application/json
             produces:
@@ -1798,17 +1911,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/keyvalsummaryobjsync/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/keyvalsummaryobjsync/
+            operationId: GET /virtualservice/{uuid}/keyvalsummaryobjsync/
             consumes:
                 -   application/json
             produces:
@@ -1839,17 +1955,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/keyvaldispatch/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/keyvaldispatch/
+            operationId: GET /virtualservice/{uuid}/keyvaldispatch/
             consumes:
                 -   application/json
             produces:
@@ -1880,17 +1999,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/keyvalsession/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/keyvalsession/
+            operationId: GET /virtualservice/{uuid}/keyvalsession/
             consumes:
                 -   application/json
             produces:
@@ -1921,17 +2043,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/keyvalsessionsummary/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/keyvalsessionsummary/
+            operationId: GET /virtualservice/{uuid}/keyvalsessionsummary/
             consumes:
                 -   application/json
             produces:
@@ -1962,17 +2087,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/sslsessioncache/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/sslsessioncache/
+            operationId: GET /virtualservice/{uuid}/sslsessioncache/
             consumes:
                 -   application/json
             produces:
@@ -2003,17 +2131,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/vslogstats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/vslogstats/
+            operationId: GET /virtualservice/{uuid}/vslogstats/
             consumes:
                 -   application/json
             produces:
@@ -2044,17 +2175,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/aggrvslogstats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/aggrvslogstats/
+            operationId: GET /virtualservice/{uuid}/aggrvslogstats/
             consumes:
                 -   application/json
             produces:
@@ -2085,17 +2219,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/cltrack/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/cltrack/
+            operationId: GET /virtualservice/{uuid}/cltrack/
             consumes:
                 -   application/json
             produces:
@@ -2126,17 +2263,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/cltracksummary/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/cltracksummary/
+            operationId: GET /virtualservice/{uuid}/cltracksummary/
             consumes:
                 -   application/json
             produces:
@@ -2167,17 +2307,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/client/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/client/
+            operationId: GET /virtualservice/{uuid}/client/
             consumes:
                 -   application/json
             produces:
@@ -2208,17 +2351,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/clientsummary/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/clientsummary/
+            operationId: GET /virtualservice/{uuid}/clientsummary/
             consumes:
                 -   application/json
             produces:
@@ -2249,17 +2395,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/dnstable/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/dnstable/
+            operationId: GET /virtualservice/{uuid}/dnstable/
             consumes:
                 -   application/json
             produces:
@@ -2290,17 +2439,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/gslbservicedetail/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/gslbservicedetail/
+            operationId: GET /virtualservice/{uuid}/gslbservicedetail/
             consumes:
                 -   application/json
             produces:
@@ -2331,17 +2483,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/gslbserviceinternal/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/gslbserviceinternal/
+            operationId: GET /virtualservice/{uuid}/gslbserviceinternal/
             consumes:
                 -   application/json
             produces:
@@ -2372,17 +2527,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/gslbservicealgostat/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/gslbservicealgostat/
+            operationId: GET /virtualservice/{uuid}/gslbservicealgostat/
             consumes:
                 -   application/json
             produces:
@@ -2413,17 +2571,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/gslbservicehmonstat/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/gslbservicehmonstat/
+            operationId: GET /virtualservice/{uuid}/gslbservicehmonstat/
             consumes:
                 -   application/json
             produces:
@@ -2454,17 +2615,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/geolocationinfo/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/geolocationinfo/
+            operationId: GET /virtualservice/{uuid}/geolocationinfo/
             consumes:
                 -   application/json
             produces:
@@ -2495,17 +2659,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/geodbinternal/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/geodbinternal/
+            operationId: GET /virtualservice/{uuid}/geodbinternal/
             consumes:
                 -   application/json
             produces:
@@ -2536,17 +2703,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/gslbsiteinternal/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/gslbsiteinternal/
+            operationId: GET /virtualservice/{uuid}/gslbsiteinternal/
             consumes:
                 -   application/json
             produces:
@@ -2577,17 +2747,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/userdefineddatascriptcounters/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/userdefineddatascriptcounters/
+            operationId: GET /virtualservice/{uuid}/userdefineddatascriptcounters/
             consumes:
                 -   application/json
             produces:
@@ -2618,17 +2791,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/l4policysetstats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/l4policysetstats/
+            operationId: GET /virtualservice/{uuid}/l4policysetstats/
             consumes:
                 -   application/json
             produces:
@@ -2659,17 +2835,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/sescaleoutstatus/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/sescaleoutstatus/
+            operationId: GET /virtualservice/{uuid}/sescaleoutstatus/
             consumes:
                 -   application/json
             produces:
@@ -2700,17 +2879,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/scaleoutstatus/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/scaleoutstatus/
+            operationId: GET /virtualservice/{uuid}/scaleoutstatus/
             consumes:
                 -   application/json
             produces:
@@ -2741,17 +2923,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/scaleoutstatus/detail/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/scaleoutstatus/detail/
+            operationId: GET /virtualservice/{uuid}/scaleoutstatus/detail/
             consumes:
                 -   application/json
             produces:
@@ -2782,17 +2967,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/ssopolicystats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/ssopolicystats/
+            operationId: GET /virtualservice/{uuid}/ssopolicystats/
             consumes:
                 -   application/json
             produces:
@@ -2823,17 +3011,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/icapstats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/icapstats/
+            operationId: GET /virtualservice/{uuid}/icapstats/
             consumes:
                 -   application/json
             produces:
@@ -2864,17 +3055,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/outofbandstats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/outofbandstats/
+            operationId: GET /virtualservice/{uuid}/outofbandstats/
             consumes:
                 -   application/json
             produces:
@@ -2905,17 +3099,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/botstats/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/botstats/
+            operationId: GET /virtualservice/{uuid}/botstats/
             consumes:
                 -   application/json
             produces:
@@ -2946,17 +3143,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/placement/summary/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/placement/summary/
+            operationId: GET /virtualservice/{uuid}/placement/summary/
             consumes:
                 -   application/json
             produces:
@@ -2987,17 +3187,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/placement/detail/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/placement/detail/
+            operationId: GET /virtualservice/{uuid}/placement/detail/
             consumes:
                 -   application/json
             produces:
@@ -3028,17 +3231,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /virtualservice/{uuid}/placement/status/:
         get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/placement/status/
+            operationId: GET /virtualservice/{uuid}/placement/status/
             consumes:
                 -   application/json
             produces:
@@ -3069,14 +3275,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     Action:

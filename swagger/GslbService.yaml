@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi GslbService object api
         ```
         - configure gslbservice <key>
         - show gslbservice <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_GSLBSERVICE
+tags:
+  - name: GslbService
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /gslbservice:
         get:
+            tags:
+                - GslbService
+            description: /gslbservice
+            operationId: GET /gslbservice
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbServiceApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - GslbService
+            description: /gslbservice
+            operationId: POST /gslbservice
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/GslbService"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbService"
-                401:
+                "401":
                     description: log in failed
     /gslbservice/{uuid}:
         get:
+            tags:
+                - GslbService
+            description: /gslbservice/{uuid}
+            operationId: GET /gslbservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbService"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - GslbService
+            description: /gslbservice/{uuid}
+            operationId: PUT /gslbservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbService"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - GslbService
+            description: /gslbservice/{uuid}
+            operationId: PATCH /gslbservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbService"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - GslbService
+            description: /gslbservice/{uuid}
+            operationId: DELETE /gslbservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,19 +355,22 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 
     /gslbservice/{uuid}/runtime/:
         get:
+            tags:
+                - GslbService
+            description: /gslbservice/{uuid}/runtime/
+            operationId: GET /gslbservice/{uuid}/runtime/
             consumes:
                 -   application/json
             produces:
@@ -378,14 +401,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

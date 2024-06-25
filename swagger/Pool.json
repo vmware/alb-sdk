@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure pool <key>\n- show pool <key>\n- scaleout pool <key>\n- scalein pool <key>\n- clear pool <key>\n```\n\nExamples\n- **pool_example**: To create a basic pool object that uses the least connections algorithm and has a couple of application servers in the backend\n  ```json\n    {'name': 'production_pool', 'default_server_port': 80, 'servers': [{'ip': {'addr': '10.10.90.120', 'type': 'V4'}}, {'ip': {'addr': '10.10.90.121', 'type': 'V4'}}], 'lb_algorithm': 'LB_ALGORITHM_LEAST_CONNECTIONS'}\n  ```\n"
+        "description": "Avi Pool object api\n```\n- configure pool <key>\n- show pool <key>\n- scaleout pool <key>\n- scalein pool <key>\n- clear pool <key>\n```\n\nExamples\n- **pool_example**: To create a basic pool object that uses the least connections algorithm and has a couple of application servers in the backend\n  ```json\n    {'name': 'production_pool', 'default_server_port': 80, 'servers': [{'ip': {'addr': '10.10.90.120', 'type': 'V4'}}, {'ip': {'addr': '10.10.90.121', 'type': 'V4'}}], 'lb_algorithm': 'LB_ALGORITHM_LEAST_CONNECTIONS'}\n  ```\nAPI permission: PERMISSION_POOL\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "Pool"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/pool": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool",
+                "operationId": "GET /pool",
                 "consumes": [
                     "application/json"
                 ],
@@ -190,11 +198,7 @@
                         "required": false
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -208,6 +212,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool",
+                "operationId": "POST /pool",
                 "consumes": [
                     "application/json"
                 ],
@@ -253,11 +262,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -273,6 +278,11 @@
         },
         "/pool/{uuid}": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}",
+                "operationId": "GET /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -349,11 +359,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -367,6 +373,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}",
+                "operationId": "PUT /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -426,11 +437,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -444,6 +451,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}",
+                "operationId": "PATCH /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -503,11 +515,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -521,6 +529,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}",
+                "operationId": "DELETE /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -571,11 +584,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -591,6 +600,11 @@
         },
         "/pool/{uuid}/scaleout": {
             "post": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/scaleout",
+                "operationId": "POST /pool/{uuid}/scaleout",
                 "consumes": [
                     "application/json"
                 ],
@@ -643,11 +657,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -663,6 +673,11 @@
         },
         "/pool/{uuid}/scalein": {
             "post": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/scalein",
+                "operationId": "POST /pool/{uuid}/scalein",
                 "consumes": [
                     "application/json"
                 ],
@@ -715,11 +730,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -735,6 +746,11 @@
         },
         "/pool/clear": {
             "post": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/clear",
+                "operationId": "POST /pool/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -783,11 +799,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -803,6 +815,11 @@
         },
         "/pool/{uuid}/runtime/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/runtime/",
+                "operationId": "GET /pool/{uuid}/runtime/",
                 "consumes": [
                     "application/json"
                 ],
@@ -846,11 +863,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -866,6 +879,11 @@
         },
         "/pool/{uuid}/runtime/server/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/runtime/server/",
+                "operationId": "GET /pool/{uuid}/runtime/server/",
                 "consumes": [
                     "application/json"
                 ],
@@ -909,11 +927,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -929,6 +943,11 @@
         },
         "/pool/{uuid}/runtime/detail/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/runtime/detail/",
+                "operationId": "GET /pool/{uuid}/runtime/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -972,11 +991,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -992,6 +1007,11 @@
         },
         "/pool/{uuid}/runtime/server/detail/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/runtime/server/detail/",
+                "operationId": "GET /pool/{uuid}/runtime/server/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1035,11 +1055,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1055,6 +1071,11 @@
         },
         "/pool/{uuid}/runtime/internal/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/runtime/internal/",
+                "operationId": "GET /pool/{uuid}/runtime/internal/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1098,11 +1119,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1118,6 +1135,11 @@
         },
         "/pool/{uuid}/objsync/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/objsync/",
+                "operationId": "GET /pool/{uuid}/objsync/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1161,11 +1183,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1181,6 +1199,11 @@
         },
         "/pool/{uuid}/runtime/server/internal/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/runtime/server/internal/",
+                "operationId": "GET /pool/{uuid}/runtime/server/internal/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1224,11 +1247,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1244,6 +1263,11 @@
         },
         "/pool/{uuid}/runtime/stats/clear": {
             "post": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/runtime/stats/clear",
+                "operationId": "POST /pool/{uuid}/runtime/stats/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -1299,11 +1323,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1319,6 +1339,11 @@
         },
         "/pool/{uuid}/runtime/request_queue/clear": {
             "post": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/runtime/request_queue/clear",
+                "operationId": "POST /pool/{uuid}/runtime/request_queue/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -1374,11 +1399,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1394,6 +1415,11 @@
         },
         "/pool/{uuid}/runtime/debug/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/runtime/debug/",
+                "operationId": "GET /pool/{uuid}/runtime/debug/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1437,11 +1463,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1457,6 +1479,11 @@
         },
         "/pool/{uuid}/hmon/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/hmon/",
+                "operationId": "GET /pool/{uuid}/hmon/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1500,11 +1527,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1520,6 +1543,11 @@
         },
         "/pool/{uuid}/runtime/server/hmonstat/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/runtime/server/hmonstat/",
+                "operationId": "GET /pool/{uuid}/runtime/server/hmonstat/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1563,11 +1591,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1583,6 +1607,11 @@
         },
         "/pool/{uuid}/algo/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/algo/",
+                "operationId": "GET /pool/{uuid}/algo/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1626,11 +1655,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1646,6 +1671,11 @@
         },
         "/pool/{uuid}/persistence/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/persistence/",
+                "operationId": "GET /pool/{uuid}/persistence/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1689,11 +1719,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1709,6 +1735,11 @@
         },
         "/pool/{uuid}/connpool/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/connpool/",
+                "operationId": "GET /pool/{uuid}/connpool/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1752,11 +1783,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1772,6 +1799,11 @@
         },
         "/pool/{uuid}/connpoolstats/clear": {
             "post": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/connpoolstats/clear",
+                "operationId": "POST /pool/{uuid}/connpoolstats/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -1827,11 +1859,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1847,6 +1875,11 @@
         },
         "/pool/{uuid}/httpcache/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/httpcache/",
+                "operationId": "GET /pool/{uuid}/httpcache/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1890,11 +1923,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1910,6 +1939,11 @@
         },
         "/pool/{uuid}/httpcachestats/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/httpcachestats/",
+                "operationId": "GET /pool/{uuid}/httpcachestats/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1953,11 +1987,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1973,6 +2003,11 @@
         },
         "/pool/{uuid}/httpcachestats/detail/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/httpcachestats/detail/",
+                "operationId": "GET /pool/{uuid}/httpcachestats/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2016,11 +2051,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2036,6 +2067,11 @@
         },
         "/pool/{uuid}/vs/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/vs/",
+                "operationId": "GET /pool/{uuid}/vs/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2079,11 +2115,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2099,6 +2131,11 @@
         },
         "/pool/{uuid}/runtime/vs/service/server/map/kv/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/runtime/vs/service/server/map/kv/",
+                "operationId": "GET /pool/{uuid}/runtime/vs/service/server/map/kv/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2142,11 +2179,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2162,6 +2195,11 @@
         },
         "/pool/{uuid}/runtime/vs/service/server/map/table/": {
             "get": {
+                "tags": [
+                    "Pool"
+                ],
+                "description": "/pool/{uuid}/runtime/vs/service/server/map/table/",
+                "operationId": "GET /pool/{uuid}/runtime/vs/service/server/map/table/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2205,11 +2243,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

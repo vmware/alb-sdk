@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi Tenant object api
         ```
         - configure tenant <key>
         - show tenant <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_TENANT
+tags:
+  - name: Tenant
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /tenant:
         get:
+            tags:
+                - Tenant
+            description: /tenant
+            operationId: GET /tenant
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/TenantApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - Tenant
+            description: /tenant
+            operationId: POST /tenant
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/Tenant"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Tenant"
-                401:
+                "401":
                     description: log in failed
     /tenant/{uuid}:
         get:
+            tags:
+                - Tenant
+            description: /tenant/{uuid}
+            operationId: GET /tenant/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Tenant"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - Tenant
+            description: /tenant/{uuid}
+            operationId: PUT /tenant/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Tenant"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - Tenant
+            description: /tenant/{uuid}
+            operationId: PATCH /tenant/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Tenant"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - Tenant
+            description: /tenant/{uuid}
+            operationId: DELETE /tenant/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,14 +355,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

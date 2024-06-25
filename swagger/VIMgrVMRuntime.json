@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show vinfra virtualmachine <key>\n```\n"
+        "description": "Avi VIMgrVMRuntime object api\n```\n- show vinfra virtualmachine <key>\n```\n\nAPI permission: PERMISSION_CLOUD\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "VIMgrVMRuntime"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/vimgrvmruntime": {
             "get": {
+                "tags": [
+                    "VIMgrVMRuntime"
+                ],
+                "description": "/vimgrvmruntime",
+                "operationId": "GET /vimgrvmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -190,11 +198,7 @@
                         "required": false
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -208,6 +212,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VIMgrVMRuntime"
+                ],
+                "description": "/vimgrvmruntime",
+                "operationId": "POST /vimgrvmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -253,11 +262,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -273,6 +278,11 @@
         },
         "/vimgrvmruntime/{uuid}": {
             "get": {
+                "tags": [
+                    "VIMgrVMRuntime"
+                ],
+                "description": "/vimgrvmruntime/{uuid}",
+                "operationId": "GET /vimgrvmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -349,11 +359,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -367,6 +373,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VIMgrVMRuntime"
+                ],
+                "description": "/vimgrvmruntime/{uuid}",
+                "operationId": "PUT /vimgrvmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -426,11 +437,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -444,6 +451,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VIMgrVMRuntime"
+                ],
+                "description": "/vimgrvmruntime/{uuid}",
+                "operationId": "PATCH /vimgrvmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -503,11 +515,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -521,6 +529,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VIMgrVMRuntime"
+                ],
+                "description": "/vimgrvmruntime/{uuid}",
+                "operationId": "DELETE /vimgrvmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -571,11 +584,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",

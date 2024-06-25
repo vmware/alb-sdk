@@ -12,20 +12,25 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi GslbInventory object api
         ```
         - show gslbinventory <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_GSLB
+tags:
+  - name: GslbInventory
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /gslb-inventory:
         get:
+            tags:
+                - GslbInventory
+            description: /gslb-inventory
+            operationId: GET /gslb-inventory
             consumes:
                 -   application/json
             produces:
@@ -82,16 +87,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbInventoryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - GslbInventory
+            description: /gslb-inventory
+            operationId: POST /gslb-inventory
             consumes:
                 -   application/json
             produces:
@@ -123,17 +131,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/GslbInventory"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbInventory"
-                401:
+                "401":
                     description: log in failed
     /gslb-inventory/{uuid}:
         get:
+            tags:
+                - GslbInventory
+            description: /gslb-inventory/{uuid}
+            operationId: GET /gslb-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -187,16 +198,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbInventory"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - GslbInventory
+            description: /gslb-inventory/{uuid}
+            operationId: PUT /gslb-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -238,16 +252,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbInventory"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - GslbInventory
+            description: /gslb-inventory/{uuid}
+            operationId: PATCH /gslb-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -289,16 +306,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbInventory"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - GslbInventory
+            description: /gslb-inventory/{uuid}
+            operationId: DELETE /gslb-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -334,14 +354,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

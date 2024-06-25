@@ -12,22 +12,27 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi AlertSyslogConfig object api
         ```
         - configure alertsyslogconfig <key>
         - show alertsyslogconfig <key>
         - test alerttestsyslog <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_ALERTSYSLOGCONFIG
+tags:
+  - name: AlertSyslogConfig
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /alertsyslogconfig:
         get:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig
+            operationId: GET /alertsyslogconfig
             consumes:
                 -   application/json
             produces:
@@ -84,16 +89,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertSyslogConfigApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig
+            operationId: POST /alertsyslogconfig
             consumes:
                 -   application/json
             produces:
@@ -125,17 +133,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/AlertSyslogConfig"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertSyslogConfig"
-                401:
+                "401":
                     description: log in failed
     /alertsyslogconfig/{uuid}:
         get:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig/{uuid}
+            operationId: GET /alertsyslogconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -189,16 +200,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertSyslogConfig"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig/{uuid}
+            operationId: PUT /alertsyslogconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -240,16 +254,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertSyslogConfig"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig/{uuid}
+            operationId: PATCH /alertsyslogconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -291,16 +308,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertSyslogConfig"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig/{uuid}
+            operationId: DELETE /alertsyslogconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -336,18 +356,21 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
     /alertsyslogconfig/{uuid}/testsyslog:
         post:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig/{uuid}/testsyslog
+            operationId: POST /alertsyslogconfig/{uuid}/testsyslog
             consumes:
                 -   application/json
             produces:
@@ -384,14 +407,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
 definitions:

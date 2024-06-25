@@ -12,22 +12,27 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi SystemReport object api
         ```
         - show systemreport <key>
         - show systemreport <key> export
         - delete systemreport <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_SYSTEMREPORT
+tags:
+  - name: SystemReport
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /systemreport:
         get:
+            tags:
+                - SystemReport
+            description: /systemreport
+            operationId: GET /systemreport
             consumes:
                 -   application/json
             produces:
@@ -84,16 +89,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemReportApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - SystemReport
+            description: /systemreport
+            operationId: POST /systemreport
             consumes:
                 -   application/json
             produces:
@@ -125,17 +133,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/SystemReport"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemReport"
-                401:
+                "401":
                     description: log in failed
     /systemreport/{uuid}:
         get:
+            tags:
+                - SystemReport
+            description: /systemreport/{uuid}
+            operationId: GET /systemreport/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -189,16 +200,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemReport"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - SystemReport
+            description: /systemreport/{uuid}
+            operationId: PUT /systemreport/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -240,16 +254,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemReport"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - SystemReport
+            description: /systemreport/{uuid}
+            operationId: PATCH /systemreport/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -291,16 +308,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemReport"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - SystemReport
+            description: /systemreport/{uuid}
+            operationId: DELETE /systemreport/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -336,14 +356,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

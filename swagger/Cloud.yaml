@@ -12,22 +12,27 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi Cloud object api
         ```
         - configure cloud <key>
         - show cloud <key>
         - show cloud internals
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_CLOUD
+tags:
+  - name: Cloud
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /cloud:
         get:
+            tags:
+                - Cloud
+            description: /cloud
+            operationId: GET /cloud
             consumes:
                 -   application/json
             produces:
@@ -84,16 +89,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - Cloud
+            description: /cloud
+            operationId: POST /cloud
             consumes:
                 -   application/json
             produces:
@@ -125,17 +133,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/Cloud"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Cloud"
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}
+            operationId: GET /cloud/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -189,16 +200,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Cloud"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}
+            operationId: PUT /cloud/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -240,16 +254,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Cloud"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}
+            operationId: PATCH /cloud/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -291,16 +308,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Cloud"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}
+            operationId: DELETE /cloud/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -336,18 +356,21 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
     /cloud/list:
         post:
+            tags:
+                - Cloud
+            description: /cloud/list
+            operationId: POST /cloud/list
             consumes:
                 -   application/json
             produces:
@@ -381,18 +404,21 @@ paths:
                         type: object
                         additionalProperties:
                             type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
     /cloud/{uuid}/internals/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/internals/
+            operationId: GET /cloud/{uuid}/internals/
             consumes:
                 -   application/json
             produces:
@@ -423,17 +449,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/status/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/status/
+            operationId: GET /cloud/{uuid}/status/
             consumes:
                 -   application/json
             produces:
@@ -464,17 +493,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/gc/:
         put:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/gc/
+            operationId: PUT /cloud/{uuid}/gc/
             consumes:
                 -   application/json
             produces:
@@ -513,16 +545,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/gc/
+            operationId: PATCH /cloud/{uuid}/gc/
             consumes:
                 -   application/json
             produces:
@@ -553,17 +588,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/health/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/health/
+            operationId: GET /cloud/{uuid}/health/
             consumes:
                 -   application/json
             produces:
@@ -594,17 +632,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/hosts/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/hosts/
+            operationId: GET /cloud/{uuid}/hosts/
             consumes:
                 -   application/json
             produces:
@@ -635,17 +676,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/autoscalegroup/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/autoscalegroup/
+            operationId: GET /cloud/{uuid}/autoscalegroup/
             consumes:
                 -   application/json
             produces:
@@ -676,17 +720,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/autoscalegroupservers/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/autoscalegroupservers/
+            operationId: GET /cloud/{uuid}/autoscalegroupservers/
             consumes:
                 -   application/json
             produces:
@@ -717,17 +764,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/placement/summary/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/placement/summary/
+            operationId: GET /cloud/{uuid}/placement/summary/
             consumes:
                 -   application/json
             produces:
@@ -758,17 +808,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/placement/ineligible/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/placement/ineligible/
+            operationId: GET /cloud/{uuid}/placement/ineligible/
             consumes:
                 -   application/json
             produces:
@@ -799,14 +852,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     AwsConfiguration:

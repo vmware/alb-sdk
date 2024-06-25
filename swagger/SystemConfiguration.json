@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure systemconfiguration\n- show systemconfiguration\n- test systememail\n```\n"
+        "description": "Avi SystemConfiguration object api\n```\n- configure systemconfiguration\n- show systemconfiguration\n- test systememail\n```\n\nAPI permission: PERMISSION_SYSTEMCONFIGURATION\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "SystemConfiguration"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/systemconfiguration": {
             "get": {
+                "tags": [
+                    "SystemConfiguration"
+                ],
+                "description": "/systemconfiguration",
+                "operationId": "GET /systemconfiguration",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "SystemConfiguration"
+                ],
+                "description": "/systemconfiguration",
+                "operationId": "PUT /systemconfiguration",
                 "consumes": [
                     "application/json"
                 ],
@@ -171,11 +180,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -189,6 +194,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "SystemConfiguration"
+                ],
+                "description": "/systemconfiguration",
+                "operationId": "PATCH /systemconfiguration",
                 "consumes": [
                     "application/json"
                 ],
@@ -241,11 +251,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -261,6 +267,11 @@
         },
         "/systemconfiguration/systestemail": {
             "post": {
+                "tags": [
+                    "SystemConfiguration"
+                ],
+                "description": "/systemconfiguration/systestemail",
+                "operationId": "POST /systemconfiguration/systestemail",
                 "consumes": [
                     "application/json"
                 ],
@@ -306,11 +317,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

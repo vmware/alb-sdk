@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure snmptrapprofile <key>\n- show snmptrapprofile <key>\n- test alerttestsnmptrap <key>\n```\n"
+        "description": "Avi SnmpTrapProfile object api\n```\n- configure snmptrapprofile <key>\n- show snmptrapprofile <key>\n- test alerttestsnmptrap <key>\n```\n\nAPI permission: PERMISSION_SNMPTRAPPROFILE\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "SnmpTrapProfile"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/snmptrapprofile": {
             "get": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile",
+                "operationId": "GET /snmptrapprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile",
+                "operationId": "POST /snmptrapprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/snmptrapprofile/{uuid}": {
             "get": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile/{uuid}",
+                "operationId": "GET /snmptrapprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile/{uuid}",
+                "operationId": "PUT /snmptrapprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile/{uuid}",
+                "operationId": "PATCH /snmptrapprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile/{uuid}",
+                "operationId": "DELETE /snmptrapprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -502,6 +511,11 @@
         },
         "/snmptrapprofile/{uuid}/testsnmptrap": {
             "post": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile/{uuid}/testsnmptrap",
+                "operationId": "POST /snmptrapprofile/{uuid}/testsnmptrap",
                 "consumes": [
                     "application/json"
                 ],
@@ -554,11 +568,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

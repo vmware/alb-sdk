@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi ApplicationProfile object api
         ```
         - configure applicationprofile <key>
         - show applicationprofile <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_APPLICATIONPROFILE
+tags:
+  - name: ApplicationProfile
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /applicationprofile:
         get:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile
+            operationId: GET /applicationprofile
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile
+            operationId: POST /applicationprofile
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/ApplicationProfile"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationProfile"
-                401:
+                "401":
                     description: log in failed
     /applicationprofile/{uuid}:
         get:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile/{uuid}
+            operationId: GET /applicationprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile/{uuid}
+            operationId: PUT /applicationprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile/{uuid}
+            operationId: PATCH /applicationprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile/{uuid}
+            operationId: DELETE /applicationprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,19 +355,22 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 
     /applicationprofile/{uuid}/runtime/internal/:
         get:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile/{uuid}/runtime/internal/
+            operationId: GET /applicationprofile/{uuid}/runtime/internal/
             consumes:
                 -   application/json
             produces:
@@ -378,14 +401,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ApplicationProfile:

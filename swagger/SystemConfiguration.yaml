@@ -12,22 +12,27 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi SystemConfiguration object api
         ```
         - configure systemconfiguration
         - show systemconfiguration
         - test systememail
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_SYSTEMCONFIGURATION
+tags:
+  - name: SystemConfiguration
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /systemconfiguration:
         get:
+            tags:
+                - SystemConfiguration
+            description: /systemconfiguration
+            operationId: GET /systemconfiguration
             consumes:
                 -   application/json
             produces:
@@ -84,16 +89,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemConfiguration"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - SystemConfiguration
+            description: /systemconfiguration
+            operationId: PUT /systemconfiguration
             consumes:
                 -   application/json
             produces:
@@ -130,16 +138,19 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/SystemConfiguration"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemConfiguration"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - SystemConfiguration
+            description: /systemconfiguration
+            operationId: PATCH /systemconfiguration
             consumes:
                 -   application/json
             produces:
@@ -176,18 +187,21 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/SystemConfiguration"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemConfiguration"
-                401:
+                "401":
                     description: log in failed
         
     /systemconfiguration/systestemail:
         post:
+            tags:
+                - SystemConfiguration
+            description: /systemconfiguration/systestemail
+            operationId: POST /systemconfiguration/systestemail
             consumes:
                 -   application/json
             produces:
@@ -219,14 +233,13 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/SysTestEmailParams"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
 definitions:

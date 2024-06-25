@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure controller properties\n- show controller properties\n```\n"
+        "description": "Avi ControllerProperties object api\n```\n- configure controller properties\n- show controller properties\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "ControllerProperties"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/controllerproperties": {
             "get": {
+                "tags": [
+                    "ControllerProperties"
+                ],
+                "description": "/controllerproperties",
+                "operationId": "GET /controllerproperties",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ControllerProperties"
+                ],
+                "description": "/controllerproperties",
+                "operationId": "PUT /controllerproperties",
                 "consumes": [
                     "application/json"
                 ],
@@ -171,11 +180,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -189,6 +194,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ControllerProperties"
+                ],
+                "description": "/controllerproperties",
+                "operationId": "PATCH /controllerproperties",
                 "consumes": [
                     "application/json"
                 ],
@@ -241,11 +251,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

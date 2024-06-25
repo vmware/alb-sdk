@@ -12,7 +12,7 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi FileObject object api
         ```
         - upload fileobject file
         - configure fileobject <key>
@@ -20,15 +20,20 @@ info:
         - show fileobject
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_FILE_OBJECT
+tags:
+  - name: FileObject
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /fileobject:
         get:
+            tags:
+                - FileObject
+            description: /fileobject
+            operationId: GET /fileobject
             consumes:
                 -   application/json
             produces:
@@ -85,16 +90,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FileObjectApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - FileObject
+            description: /fileobject
+            operationId: POST /fileobject
             consumes:
                 -   application/json
             produces:
@@ -126,17 +134,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/FileObject"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FileObject"
-                401:
+                "401":
                     description: log in failed
     /fileobject/{uuid}:
         get:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}
+            operationId: GET /fileobject/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -190,16 +201,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FileObject"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}
+            operationId: PUT /fileobject/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,16 +255,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FileObject"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}
+            operationId: PATCH /fileobject/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,16 +309,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FileObject"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}
+            operationId: DELETE /fileobject/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -337,19 +357,22 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 
     /fileobject/{uuid}/federated_info/:
         get:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}/federated_info/
+            operationId: GET /fileobject/{uuid}/federated_info/
             consumes:
                 -   application/json
             produces:
@@ -380,17 +403,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /fileobject/{uuid}/['']/:
         put:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}/['']/
+            operationId: PUT /fileobject/{uuid}/['']/
             consumes:
                 -   application/json
             produces:
@@ -429,16 +455,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}/['']/
+            operationId: PATCH /fileobject/{uuid}/['']/
             consumes:
                 -   application/json
             produces:
@@ -469,14 +498,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

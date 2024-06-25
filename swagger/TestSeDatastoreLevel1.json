@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure testsedatastorelevel1 <key>\n- show testsedatastorelevel1 <key>\n```\n"
+        "description": "Avi TestSeDatastoreLevel1 object api\n```\n- configure testsedatastorelevel1 <key>\n- show testsedatastorelevel1 <key>\n```\n\nAPI permission: PERMISSION_TESTSEDATASTORELEVEL1\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "TestSeDatastoreLevel1"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/testsedatastorelevel1": {
             "get": {
+                "tags": [
+                    "TestSeDatastoreLevel1"
+                ],
+                "description": "/testsedatastorelevel1",
+                "operationId": "GET /testsedatastorelevel1",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "TestSeDatastoreLevel1"
+                ],
+                "description": "/testsedatastorelevel1",
+                "operationId": "POST /testsedatastorelevel1",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/testsedatastorelevel1/{uuid}": {
             "get": {
+                "tags": [
+                    "TestSeDatastoreLevel1"
+                ],
+                "description": "/testsedatastorelevel1/{uuid}",
+                "operationId": "GET /testsedatastorelevel1/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "TestSeDatastoreLevel1"
+                ],
+                "description": "/testsedatastorelevel1/{uuid}",
+                "operationId": "PUT /testsedatastorelevel1/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "TestSeDatastoreLevel1"
+                ],
+                "description": "/testsedatastorelevel1/{uuid}",
+                "operationId": "PATCH /testsedatastorelevel1/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "TestSeDatastoreLevel1"
+                ],
+                "description": "/testsedatastorelevel1/{uuid}",
+                "operationId": "DELETE /testsedatastorelevel1/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",

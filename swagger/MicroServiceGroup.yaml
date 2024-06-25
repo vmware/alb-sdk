@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi MicroServiceGroup object api
         ```
         - configure microservicegroup <key>
         - show microservicegroup <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_MICROSERVICEGROUP
+tags:
+  - name: MicroServiceGroup
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /microservicegroup:
         get:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup
+            operationId: GET /microservicegroup
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup
+            operationId: POST /microservicegroup
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-                401:
+                "401":
                     description: log in failed
     /microservicegroup/{uuid}:
         get:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}
+            operationId: GET /microservicegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}
+            operationId: PUT /microservicegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}
+            operationId: PATCH /microservicegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}
+            operationId: DELETE /microservicegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,19 +355,22 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 
     /microservicegroup/{uuid}/runtime/detail/:
         get:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}/runtime/detail/
+            operationId: GET /microservicegroup/{uuid}/runtime/detail/
             consumes:
                 -   application/json
             produces:
@@ -378,14 +401,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

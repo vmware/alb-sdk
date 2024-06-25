@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure alertemailconfig <key>\n- show alertemailconfig <key>\n- test alerttestemail <key>\n```\n"
+        "description": "Avi AlertEmailConfig object api\n```\n- configure alertemailconfig <key>\n- show alertemailconfig <key>\n- test alerttestemail <key>\n```\n\nAPI permission: PERMISSION_ALERTEMAILCONFIG\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "AlertEmailConfig"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/alertemailconfig": {
             "get": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig",
+                "operationId": "GET /alertemailconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig",
+                "operationId": "POST /alertemailconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/alertemailconfig/{uuid}": {
             "get": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig/{uuid}",
+                "operationId": "GET /alertemailconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig/{uuid}",
+                "operationId": "PUT /alertemailconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig/{uuid}",
+                "operationId": "PATCH /alertemailconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig/{uuid}",
+                "operationId": "DELETE /alertemailconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -502,6 +511,11 @@
         },
         "/alertemailconfig/{uuid}/testemail": {
             "post": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig/{uuid}/testemail",
+                "operationId": "POST /alertemailconfig/{uuid}/testemail",
                 "consumes": [
                     "application/json"
                 ],
@@ -554,11 +568,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

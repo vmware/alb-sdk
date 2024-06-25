@@ -12,22 +12,27 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi PoolGroup object api
         ```
         - configure poolgroup <key>
         - show poolgroup <key>
         - clear poolgroup <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_POOLGROUP
+tags:
+  - name: PoolGroup
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /poolgroup:
         get:
+            tags:
+                - PoolGroup
+            description: /poolgroup
+            operationId: GET /poolgroup
             consumes:
                 -   application/json
             produces:
@@ -147,16 +152,19 @@ paths:
                     description: Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.
                     type: string
                     required: false
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PoolGroupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - PoolGroup
+            description: /poolgroup
+            operationId: POST /poolgroup
             consumes:
                 -   application/json
             produces:
@@ -188,17 +196,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/PoolGroup"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PoolGroup"
-                401:
+                "401":
                     description: log in failed
     /poolgroup/{uuid}:
         get:
+            tags:
+                - PoolGroup
+            description: /poolgroup/{uuid}
+            operationId: GET /poolgroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -252,16 +263,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PoolGroup"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - PoolGroup
+            description: /poolgroup/{uuid}
+            operationId: PUT /poolgroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -303,16 +317,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PoolGroup"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - PoolGroup
+            description: /poolgroup/{uuid}
+            operationId: PATCH /poolgroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -354,16 +371,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PoolGroup"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - PoolGroup
+            description: /poolgroup/{uuid}
+            operationId: DELETE /poolgroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -399,18 +419,21 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
     /poolgroup/clear:
         post:
+            tags:
+                - PoolGroup
+            description: /poolgroup/clear
+            operationId: POST /poolgroup/clear
             consumes:
                 -   application/json
             produces:
@@ -444,18 +467,21 @@ paths:
                         type: object
                         additionalProperties:
                             type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
     /poolgroup/{uuid}/runtime/detail/:
         get:
+            tags:
+                - PoolGroup
+            description: /poolgroup/{uuid}/runtime/detail/
+            operationId: GET /poolgroup/{uuid}/runtime/detail/
             consumes:
                 -   application/json
             produces:
@@ -486,17 +512,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /poolgroup/{uuid}/enable_primary_pool/clear:
         post:
+            tags:
+                - PoolGroup
+            description: /poolgroup/{uuid}/enable_primary_pool/clear
+            operationId: POST /poolgroup/{uuid}/enable_primary_pool/clear
             consumes:
                 -   application/json
             produces:
@@ -533,14 +562,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

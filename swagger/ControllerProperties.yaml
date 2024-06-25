@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi ControllerProperties object api
         ```
         - configure controller properties
         - show controller properties
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_CONTROLLER
+tags:
+  - name: ControllerProperties
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /controllerproperties:
         get:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties
+            operationId: GET /controllerproperties
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties
+            operationId: PUT /controllerproperties
             consumes:
                 -   application/json
             produces:
@@ -129,16 +137,19 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties
+            operationId: PATCH /controllerproperties
             consumes:
                 -   application/json
             produces:
@@ -175,14 +186,13 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-                401:
+                "401":
                     description: log in failed
         
 

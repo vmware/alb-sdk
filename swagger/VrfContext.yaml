@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi VrfContext object api
         ```
         - configure vrfcontext <key>
         - show vrfcontext <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_VRFCONTEXT
+tags:
+  - name: VrfContext
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /vrfcontext:
         get:
+            tags:
+                - VrfContext
+            description: /vrfcontext
+            operationId: GET /vrfcontext
             consumes:
                 -   application/json
             produces:
@@ -146,16 +151,19 @@ paths:
                     description: Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.
                     type: string
                     required: false
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VrfContextApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VrfContext
+            description: /vrfcontext
+            operationId: POST /vrfcontext
             consumes:
                 -   application/json
             produces:
@@ -187,17 +195,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/VrfContext"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VrfContext"
-                401:
+                "401":
                     description: log in failed
     /vrfcontext/{uuid}:
         get:
+            tags:
+                - VrfContext
+            description: /vrfcontext/{uuid}
+            operationId: GET /vrfcontext/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -251,16 +262,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VrfContext"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VrfContext
+            description: /vrfcontext/{uuid}
+            operationId: PUT /vrfcontext/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -302,16 +316,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VrfContext"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VrfContext
+            description: /vrfcontext/{uuid}
+            operationId: PATCH /vrfcontext/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -353,16 +370,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VrfContext"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VrfContext
+            description: /vrfcontext/{uuid}
+            operationId: DELETE /vrfcontext/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -398,14 +418,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

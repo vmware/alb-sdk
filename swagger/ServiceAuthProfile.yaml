@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi ServiceAuthProfile object api
         ```
         - configure serviceauthprofile <key>
         - show serviceauthprofile <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_SERVICEAUTHPROFILE
+tags:
+  - name: ServiceAuthProfile
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /serviceauthprofile:
         get:
+            tags:
+                - ServiceAuthProfile
+            description: /serviceauthprofile
+            operationId: GET /serviceauthprofile
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceAuthProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ServiceAuthProfile
+            description: /serviceauthprofile
+            operationId: POST /serviceauthprofile
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/ServiceAuthProfile"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceAuthProfile"
-                401:
+                "401":
                     description: log in failed
     /serviceauthprofile/{uuid}:
         get:
+            tags:
+                - ServiceAuthProfile
+            description: /serviceauthprofile/{uuid}
+            operationId: GET /serviceauthprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceAuthProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ServiceAuthProfile
+            description: /serviceauthprofile/{uuid}
+            operationId: PUT /serviceauthprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceAuthProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ServiceAuthProfile
+            description: /serviceauthprofile/{uuid}
+            operationId: PATCH /serviceauthprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceAuthProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ServiceAuthProfile
+            description: /serviceauthprofile/{uuid}
+            operationId: DELETE /serviceauthprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,14 +355,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

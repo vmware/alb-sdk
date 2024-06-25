@@ -12,22 +12,27 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi CloudConnectorUser object api
         ```
         - configure cloudconnectoruser <key>
         - show cloudconnectoruser <key>
         - test cloudconnectoruser <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_USER_CREDENTIAL
+tags:
+  - name: CloudConnectorUser
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /cloudconnectoruser:
         get:
+            tags:
+                - CloudConnectorUser
+            description: /cloudconnectoruser
+            operationId: GET /cloudconnectoruser
             consumes:
                 -   application/json
             produces:
@@ -84,16 +89,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudConnectorUserApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - CloudConnectorUser
+            description: /cloudconnectoruser
+            operationId: POST /cloudconnectoruser
             consumes:
                 -   application/json
             produces:
@@ -125,17 +133,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/CloudConnectorUser"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudConnectorUser"
-                401:
+                "401":
                     description: log in failed
     /cloudconnectoruser/{uuid}:
         get:
+            tags:
+                - CloudConnectorUser
+            description: /cloudconnectoruser/{uuid}
+            operationId: GET /cloudconnectoruser/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -189,16 +200,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudConnectorUser"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - CloudConnectorUser
+            description: /cloudconnectoruser/{uuid}
+            operationId: PUT /cloudconnectoruser/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -240,16 +254,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudConnectorUser"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - CloudConnectorUser
+            description: /cloudconnectoruser/{uuid}
+            operationId: PATCH /cloudconnectoruser/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -291,16 +308,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudConnectorUser"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - CloudConnectorUser
+            description: /cloudconnectoruser/{uuid}
+            operationId: DELETE /cloudconnectoruser/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -336,18 +356,21 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
     /cloudconnectoruser/{uuid}/test:
         post:
+            tags:
+                - CloudConnectorUser
+            description: /cloudconnectoruser/{uuid}/test
+            operationId: POST /cloudconnectoruser/{uuid}/test
             consumes:
                 -   application/json
             produces:
@@ -384,14 +407,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
 definitions:

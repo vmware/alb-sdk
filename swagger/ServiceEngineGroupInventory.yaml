@@ -12,20 +12,25 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi ServiceEngineGroupInventory object api
         ```
         - show serviceenginegroupinventory <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_SERVICEENGINEGROUP
+tags:
+  - name: ServiceEngineGroupInventory
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /serviceenginegroup-inventory:
         get:
+            tags:
+                - ServiceEngineGroupInventory
+            description: /serviceenginegroup-inventory
+            operationId: GET /serviceenginegroup-inventory
             consumes:
                 -   application/json
             produces:
@@ -82,16 +87,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupInventoryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ServiceEngineGroupInventory
+            description: /serviceenginegroup-inventory
+            operationId: POST /serviceenginegroup-inventory
             consumes:
                 -   application/json
             produces:
@@ -123,17 +131,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupInventory"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupInventory"
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup-inventory/{uuid}:
         get:
+            tags:
+                - ServiceEngineGroupInventory
+            description: /serviceenginegroup-inventory/{uuid}
+            operationId: GET /serviceenginegroup-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -187,16 +198,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupInventory"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ServiceEngineGroupInventory
+            description: /serviceenginegroup-inventory/{uuid}
+            operationId: PUT /serviceenginegroup-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -238,16 +252,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupInventory"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ServiceEngineGroupInventory
+            description: /serviceenginegroup-inventory/{uuid}
+            operationId: PATCH /serviceenginegroup-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -289,16 +306,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupInventory"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ServiceEngineGroupInventory
+            description: /serviceenginegroup-inventory/{uuid}
+            operationId: DELETE /serviceenginegroup-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -334,19 +354,22 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 
     /serviceenginegroup:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup
+            operationId: GET /serviceenginegroup
             consumes:
                 -   application/json
             produces:
@@ -403,16 +426,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup
+            operationId: POST /serviceenginegroup
             consumes:
                 -   application/json
             produces:
@@ -444,17 +470,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup/{uuid}:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: GET /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -508,16 +537,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: PUT /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -559,16 +591,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: PATCH /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -610,16 +645,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: DELETE /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -655,19 +693,22 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 
     /upgradestatussummary:
         get:
+            tags:
+                - UpgradeStatusSummary
+            description: /upgradestatussummary
+            operationId: GET /upgradestatussummary
             consumes:
                 -   application/json
             produces:
@@ -724,16 +765,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UpgradeStatusSummaryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - UpgradeStatusSummary
+            description: /upgradestatussummary
+            operationId: POST /upgradestatussummary
             consumes:
                 -   application/json
             produces:
@@ -765,17 +809,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/UpgradeStatusSummary"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UpgradeStatusSummary"
-                401:
+                "401":
                     description: log in failed
     /upgradestatussummary/{uuid}:
         get:
+            tags:
+                - UpgradeStatusSummary
+            description: /upgradestatussummary/{uuid}
+            operationId: GET /upgradestatussummary/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -829,16 +876,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UpgradeStatusSummary"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - UpgradeStatusSummary
+            description: /upgradestatussummary/{uuid}
+            operationId: PUT /upgradestatussummary/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -880,16 +930,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UpgradeStatusSummary"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - UpgradeStatusSummary
+            description: /upgradestatussummary/{uuid}
+            operationId: PATCH /upgradestatussummary/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -931,16 +984,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UpgradeStatusSummary"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - UpgradeStatusSummary
+            description: /upgradestatussummary/{uuid}
+            operationId: DELETE /upgradestatussummary/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -976,14 +1032,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

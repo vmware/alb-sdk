@@ -12,22 +12,27 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi VIMgrHostRuntime object api
         ```
         - show vinfra host <key>
         - vinfra makehostaccessible  <key>
         - show vinfra quarantinedhost
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_CLOUD
+tags:
+  - name: VIMgrHostRuntime
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /vimgrhostruntime:
         get:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime
+            operationId: GET /vimgrhostruntime
             consumes:
                 -   application/json
             produces:
@@ -147,16 +152,19 @@ paths:
                     description: Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.
                     type: string
                     required: false
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrHostRuntimeApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime
+            operationId: POST /vimgrhostruntime
             consumes:
                 -   application/json
             produces:
@@ -188,17 +196,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/VIMgrHostRuntime"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrHostRuntime"
-                401:
+                "401":
                     description: log in failed
     /vimgrhostruntime/{uuid}:
         get:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime/{uuid}
+            operationId: GET /vimgrhostruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -252,16 +263,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrHostRuntime"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime/{uuid}
+            operationId: PUT /vimgrhostruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -303,16 +317,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrHostRuntime"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime/{uuid}
+            operationId: PATCH /vimgrhostruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -354,16 +371,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrHostRuntime"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime/{uuid}
+            operationId: DELETE /vimgrhostruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -399,18 +419,21 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
     /vimgrhostruntime/{uuid}/accessible:
         post:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime/{uuid}/accessible
+            operationId: POST /vimgrhostruntime/{uuid}/accessible
             consumes:
                 -   application/json
             produces:
@@ -449,17 +472,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /vimgrhostruntime/getquarantinedhosts:
         post:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime/getquarantinedhosts
+            operationId: POST /vimgrhostruntime/getquarantinedhosts
             consumes:
                 -   application/json
             produces:
@@ -491,14 +517,13 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/VcenterQuarantinedHostParams"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
 definitions:

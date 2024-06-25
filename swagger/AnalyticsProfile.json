@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure analyticsprofile <key>\n- show analyticsprofile <key>\n```\n"
+        "description": "Avi AnalyticsProfile object api\n```\n- configure analyticsprofile <key>\n- show analyticsprofile <key>\n```\n\nAPI permission: PERMISSION_ANALYTICSPROFILE\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "AnalyticsProfile"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/analyticsprofile": {
             "get": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile",
+                "operationId": "GET /analyticsprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile",
+                "operationId": "POST /analyticsprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/analyticsprofile/{uuid}": {
             "get": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile/{uuid}",
+                "operationId": "GET /analyticsprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile/{uuid}",
+                "operationId": "PUT /analyticsprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile/{uuid}",
+                "operationId": "PATCH /analyticsprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile/{uuid}",
+                "operationId": "DELETE /analyticsprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -502,6 +511,11 @@
         },
         "/analyticsprofile/{uuid}/runtime/internal/": {
             "get": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile/{uuid}/runtime/internal/",
+                "operationId": "GET /analyticsprofile/{uuid}/runtime/internal/",
                 "consumes": [
                     "application/json"
                 ],
@@ -545,11 +559,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi UserAccountProfile object api
         ```
         - configure useraccountprofile <key>
         - show useraccountprofile <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_USER
+tags:
+  - name: UserAccountProfile
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /useraccountprofile:
         get:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile
+            operationId: GET /useraccountprofile
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile
+            operationId: POST /useraccountprofile
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-                401:
+                "401":
                     description: log in failed
     /useraccountprofile/{uuid}:
         get:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile/{uuid}
+            operationId: GET /useraccountprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile/{uuid}
+            operationId: PUT /useraccountprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile/{uuid}
+            operationId: PATCH /useraccountprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile/{uuid}
+            operationId: DELETE /useraccountprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,14 +355,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

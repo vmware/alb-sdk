@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show cloudinventory <key>\n```\n"
+        "description": "Avi CloudInventory object api\n```\n- show cloudinventory <key>\n```\n\nAPI permission: PERMISSION_CLOUD\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "CloudInventory"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/cloud-inventory": {
             "get": {
+                "tags": [
+                    "CloudInventory"
+                ],
+                "description": "/cloud-inventory",
+                "operationId": "GET /cloud-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "CloudInventory"
+                ],
+                "description": "/cloud-inventory",
+                "operationId": "POST /cloud-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/cloud-inventory/{uuid}": {
             "get": {
+                "tags": [
+                    "CloudInventory"
+                ],
+                "description": "/cloud-inventory/{uuid}",
+                "operationId": "GET /cloud-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "CloudInventory"
+                ],
+                "description": "/cloud-inventory/{uuid}",
+                "operationId": "PUT /cloud-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "CloudInventory"
+                ],
+                "description": "/cloud-inventory/{uuid}",
+                "operationId": "PATCH /cloud-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "CloudInventory"
+                ],
+                "description": "/cloud-inventory/{uuid}",
+                "operationId": "DELETE /cloud-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -502,6 +511,11 @@
         },
         "/cloud": {
             "get": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud",
+                "operationId": "GET /cloud",
                 "consumes": [
                     "application/json"
                 ],
@@ -583,11 +597,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -601,6 +611,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud",
+                "operationId": "POST /cloud",
                 "consumes": [
                     "application/json"
                 ],
@@ -646,11 +661,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -666,6 +677,11 @@
         },
         "/cloud/{uuid}": {
             "get": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}",
+                "operationId": "GET /cloud/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -742,11 +758,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -760,6 +772,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}",
+                "operationId": "PUT /cloud/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -819,11 +836,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -837,6 +850,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}",
+                "operationId": "PATCH /cloud/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -896,11 +914,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -914,6 +928,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "Cloud"
+                ],
+                "description": "/cloud/{uuid}",
+                "operationId": "DELETE /cloud/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -964,11 +983,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",

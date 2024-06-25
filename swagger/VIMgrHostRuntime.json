@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show vinfra host <key>\n- vinfra makehostaccessible  <key>\n- show vinfra quarantinedhost\n```\n"
+        "description": "Avi VIMgrHostRuntime object api\n```\n- show vinfra host <key>\n- vinfra makehostaccessible  <key>\n- show vinfra quarantinedhost\n```\n\nAPI permission: PERMISSION_CLOUD\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "VIMgrHostRuntime"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/vimgrhostruntime": {
             "get": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime",
+                "operationId": "GET /vimgrhostruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -190,11 +198,7 @@
                         "required": false
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -208,6 +212,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime",
+                "operationId": "POST /vimgrhostruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -253,11 +262,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -273,6 +278,11 @@
         },
         "/vimgrhostruntime/{uuid}": {
             "get": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime/{uuid}",
+                "operationId": "GET /vimgrhostruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -349,11 +359,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -367,6 +373,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime/{uuid}",
+                "operationId": "PUT /vimgrhostruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -426,11 +437,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -444,6 +451,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime/{uuid}",
+                "operationId": "PATCH /vimgrhostruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -503,11 +515,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -521,6 +529,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime/{uuid}",
+                "operationId": "DELETE /vimgrhostruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -571,11 +584,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -591,6 +600,11 @@
         },
         "/vimgrhostruntime/{uuid}/accessible": {
             "post": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime/{uuid}/accessible",
+                "operationId": "POST /vimgrhostruntime/{uuid}/accessible",
                 "consumes": [
                     "application/json"
                 ],
@@ -646,11 +660,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -666,6 +676,11 @@
         },
         "/vimgrhostruntime/getquarantinedhosts": {
             "post": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime/getquarantinedhosts",
+                "operationId": "POST /vimgrhostruntime/getquarantinedhosts",
                 "consumes": [
                     "application/json"
                 ],
@@ -711,11 +726,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

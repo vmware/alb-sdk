@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure applicationpersistenceprofile <key>\n- show applicationpersistenceprofile <key>\n```\n"
+        "description": "Avi ApplicationPersistenceProfile object api\n```\n- configure applicationpersistenceprofile <key>\n- show applicationpersistenceprofile <key>\n```\n\nAPI permission: PERMISSION_APPLICATIONPERSISTENCEPROFILE\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "ApplicationPersistenceProfile"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/applicationpersistenceprofile": {
             "get": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile",
+                "operationId": "GET /applicationpersistenceprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile",
+                "operationId": "POST /applicationpersistenceprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/applicationpersistenceprofile/{uuid}": {
             "get": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile/{uuid}",
+                "operationId": "GET /applicationpersistenceprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile/{uuid}",
+                "operationId": "PUT /applicationpersistenceprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile/{uuid}",
+                "operationId": "PATCH /applicationpersistenceprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile/{uuid}",
+                "operationId": "DELETE /applicationpersistenceprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -502,6 +511,11 @@
         },
         "/applicationpersistenceprofile/{uuid}/federated_info/": {
             "get": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile/{uuid}/federated_info/",
+                "operationId": "GET /applicationpersistenceprofile/{uuid}/federated_info/",
                 "consumes": [
                     "application/json"
                 ],
@@ -545,11 +559,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

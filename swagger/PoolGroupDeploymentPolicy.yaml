@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi PoolGroupDeploymentPolicy object api
         ```
         - configure poolgroupdeploymentpolicy <key>
         - show poolgroupdeploymentpolicy <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_POOLGROUPDEPLOYMENTPOLICY
+tags:
+  - name: PoolGroupDeploymentPolicy
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /poolgroupdeploymentpolicy:
         get:
+            tags:
+                - PoolGroupDeploymentPolicy
+            description: /poolgroupdeploymentpolicy
+            operationId: GET /poolgroupdeploymentpolicy
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PoolGroupDeploymentPolicyApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - PoolGroupDeploymentPolicy
+            description: /poolgroupdeploymentpolicy
+            operationId: POST /poolgroupdeploymentpolicy
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/PoolGroupDeploymentPolicy"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PoolGroupDeploymentPolicy"
-                401:
+                "401":
                     description: log in failed
     /poolgroupdeploymentpolicy/{uuid}:
         get:
+            tags:
+                - PoolGroupDeploymentPolicy
+            description: /poolgroupdeploymentpolicy/{uuid}
+            operationId: GET /poolgroupdeploymentpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PoolGroupDeploymentPolicy"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - PoolGroupDeploymentPolicy
+            description: /poolgroupdeploymentpolicy/{uuid}
+            operationId: PUT /poolgroupdeploymentpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PoolGroupDeploymentPolicy"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - PoolGroupDeploymentPolicy
+            description: /poolgroupdeploymentpolicy/{uuid}
+            operationId: PATCH /poolgroupdeploymentpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PoolGroupDeploymentPolicy"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - PoolGroupDeploymentPolicy
+            description: /poolgroupdeploymentpolicy/{uuid}
+            operationId: DELETE /poolgroupdeploymentpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,14 +355,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

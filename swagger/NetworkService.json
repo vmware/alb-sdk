@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure networkservice <key>\n- show networkservice <key>\n```\n"
+        "description": "Avi NetworkService object api\n```\n- configure networkservice <key>\n- show networkservice <key>\n```\n\nAPI permission: PERMISSION_NETWORKSERVICE\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "NetworkService"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/networkservice": {
             "get": {
+                "tags": [
+                    "NetworkService"
+                ],
+                "description": "/networkservice",
+                "operationId": "GET /networkservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -190,11 +198,7 @@
                         "required": false
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -208,6 +212,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "NetworkService"
+                ],
+                "description": "/networkservice",
+                "operationId": "POST /networkservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -253,11 +262,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -273,6 +278,11 @@
         },
         "/networkservice/{uuid}": {
             "get": {
+                "tags": [
+                    "NetworkService"
+                ],
+                "description": "/networkservice/{uuid}",
+                "operationId": "GET /networkservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -349,11 +359,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -367,6 +373,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "NetworkService"
+                ],
+                "description": "/networkservice/{uuid}",
+                "operationId": "PUT /networkservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -426,11 +437,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -444,6 +451,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "NetworkService"
+                ],
+                "description": "/networkservice/{uuid}",
+                "operationId": "PATCH /networkservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -503,11 +515,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -521,6 +529,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "NetworkService"
+                ],
+                "description": "/networkservice/{uuid}",
+                "operationId": "DELETE /networkservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -571,11 +584,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",

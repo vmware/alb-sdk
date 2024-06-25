@@ -12,22 +12,27 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi WafProfile object api
         ```
         - configure wafprofile <key>
         - show wafprofile <key>
         - updatefromcrs wafprofile <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_WAFPROFILE
+tags:
+  - name: WafProfile
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /wafprofile:
         get:
+            tags:
+                - WafProfile
+            description: /wafprofile
+            operationId: GET /wafprofile
             consumes:
                 -   application/json
             produces:
@@ -84,16 +89,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - WafProfile
+            description: /wafprofile
+            operationId: POST /wafprofile
             consumes:
                 -   application/json
             produces:
@@ -125,17 +133,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/WafProfile"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafProfile"
-                401:
+                "401":
                     description: log in failed
     /wafprofile/{uuid}:
         get:
+            tags:
+                - WafProfile
+            description: /wafprofile/{uuid}
+            operationId: GET /wafprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -189,16 +200,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - WafProfile
+            description: /wafprofile/{uuid}
+            operationId: PUT /wafprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -240,16 +254,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - WafProfile
+            description: /wafprofile/{uuid}
+            operationId: PATCH /wafprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -291,16 +308,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - WafProfile
+            description: /wafprofile/{uuid}
+            operationId: DELETE /wafprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -336,18 +356,21 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
     /wafprofile/{uuid}/update-from-crs:
         put:
+            tags:
+                - WafProfile
+            description: /wafprofile/{uuid}/update-from-crs
+            operationId: PUT /wafprofile/{uuid}/update-from-crs
             consumes:
                 -   application/json
             produces:
@@ -386,14 +409,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
 definitions:

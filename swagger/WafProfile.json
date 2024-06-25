@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure wafprofile <key>\n- show wafprofile <key>\n- updatefromcrs wafprofile <key>\n```\n"
+        "description": "Avi WafProfile object api\n```\n- configure wafprofile <key>\n- show wafprofile <key>\n- updatefromcrs wafprofile <key>\n```\n\nAPI permission: PERMISSION_WAFPROFILE\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "WafProfile"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/wafprofile": {
             "get": {
+                "tags": [
+                    "WafProfile"
+                ],
+                "description": "/wafprofile",
+                "operationId": "GET /wafprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "WafProfile"
+                ],
+                "description": "/wafprofile",
+                "operationId": "POST /wafprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/wafprofile/{uuid}": {
             "get": {
+                "tags": [
+                    "WafProfile"
+                ],
+                "description": "/wafprofile/{uuid}",
+                "operationId": "GET /wafprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "WafProfile"
+                ],
+                "description": "/wafprofile/{uuid}",
+                "operationId": "PUT /wafprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "WafProfile"
+                ],
+                "description": "/wafprofile/{uuid}",
+                "operationId": "PATCH /wafprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "WafProfile"
+                ],
+                "description": "/wafprofile/{uuid}",
+                "operationId": "DELETE /wafprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -502,6 +511,11 @@
         },
         "/wafprofile/{uuid}/update-from-crs": {
             "put": {
+                "tags": [
+                    "WafProfile"
+                ],
+                "description": "/wafprofile/{uuid}/update-from-crs",
+                "operationId": "PUT /wafprofile/{uuid}/update-from-crs",
                 "consumes": [
                     "application/json"
                 ],
@@ -557,11 +571,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

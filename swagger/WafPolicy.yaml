@@ -12,22 +12,27 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi WafPolicy object api
         ```
         - configure wafpolicy <key>
         - show wafpolicy <key>
         - updatecrsrules virtualservice <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_WAFPOLICY
+tags:
+  - name: WafPolicy
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /wafpolicy:
         get:
+            tags:
+                - WafPolicy
+            description: /wafpolicy
+            operationId: GET /wafpolicy
             consumes:
                 -   application/json
             produces:
@@ -84,16 +89,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicyApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - WafPolicy
+            description: /wafpolicy
+            operationId: POST /wafpolicy
             consumes:
                 -   application/json
             produces:
@@ -125,17 +133,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/WafPolicy"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicy"
-                401:
+                "401":
                     description: log in failed
     /wafpolicy/{uuid}:
         get:
+            tags:
+                - WafPolicy
+            description: /wafpolicy/{uuid}
+            operationId: GET /wafpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -189,16 +200,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicy"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - WafPolicy
+            description: /wafpolicy/{uuid}
+            operationId: PUT /wafpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -240,16 +254,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicy"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - WafPolicy
+            description: /wafpolicy/{uuid}
+            operationId: PATCH /wafpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -291,16 +308,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicy"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - WafPolicy
+            description: /wafpolicy/{uuid}
+            operationId: DELETE /wafpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -336,18 +356,21 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
     /wafpolicy/{uuid}/update-crs-rules:
         put:
+            tags:
+                - WafPolicy
+            description: /wafpolicy/{uuid}/update-crs-rules
+            operationId: PUT /wafpolicy/{uuid}/update-crs-rules
             consumes:
                 -   application/json
             produces:
@@ -384,14 +407,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
 definitions:

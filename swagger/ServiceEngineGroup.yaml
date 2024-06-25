@@ -12,7 +12,7 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi ServiceEngineGroup object api
         ```
         - configure serviceenginegroup <key>
         - show serviceenginegroup <key>
@@ -25,21 +25,24 @@ info:
           ```json
             {'name': 'production-group', 'min_scaleout_per_vs': 2, 'ha_mode': 'HA_MODE_SHARED_PAIR'}
           ```
-
         - **serviceenginegroup_example_2**: To create a SE group that is of best effort category suitable for test deployments
           ```json
             {'name': 'test-group', 'max_se': 8, 'ha_mode': 'HA_MODE_SHARED', 'buffer_se': 0}
           ```
-
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_SERVICEENGINEGROUP
+tags:
+  - name: ServiceEngineGroup
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /serviceenginegroup:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup
+            operationId: GET /serviceenginegroup
             consumes:
                 -   application/json
             produces:
@@ -159,16 +162,19 @@ paths:
                     description: Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.
                     type: string
                     required: false
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup
+            operationId: POST /serviceenginegroup
             consumes:
                 -   application/json
             produces:
@@ -200,17 +206,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup/{uuid}:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: GET /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -264,16 +273,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: PUT /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -315,16 +327,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: PATCH /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -366,16 +381,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: DELETE /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -411,18 +429,21 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
     /serviceenginegroup/{uuid}/redistribute:
         post:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}/redistribute
+            operationId: POST /serviceenginegroup/{uuid}/redistribute
             consumes:
                 -   application/json
             produces:
@@ -461,17 +482,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup/clear:
         post:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/clear
+            operationId: POST /serviceenginegroup/clear
             consumes:
                 -   application/json
             produces:
@@ -505,18 +529,21 @@ paths:
                         type: object
                         additionalProperties:
                             type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
     /serviceenginegroup/{uuid}/runtime/:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}/runtime/
+            operationId: GET /serviceenginegroup/{uuid}/runtime/
             consumes:
                 -   application/json
             produces:
@@ -547,17 +574,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup/{uuid}/placement/summary/:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}/placement/summary/
+            operationId: GET /serviceenginegroup/{uuid}/placement/summary/
             consumes:
                 -   application/json
             produces:
@@ -588,17 +618,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup/{uuid}/placement/detail/:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}/placement/detail/
+            operationId: GET /serviceenginegroup/{uuid}/placement/detail/
             consumes:
                 -   application/json
             produces:
@@ -629,17 +662,20 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup/{uuid}/placement/ineligible/:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}/placement/ineligible/
+            operationId: GET /serviceenginegroup/{uuid}/placement/ineligible/
             consumes:
                 -   application/json
             produces:
@@ -670,14 +706,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     CloudFlavor:

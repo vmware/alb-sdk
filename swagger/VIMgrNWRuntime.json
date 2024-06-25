@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show vinfra network <key>\n```\n"
+        "description": "Avi VIMgrNWRuntime object api\n```\n- show vinfra network <key>\n```\n\nAPI permission: PERMISSION_CLOUD\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "VIMgrNWRuntime"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/vimgrnwruntime": {
             "get": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime",
+                "operationId": "GET /vimgrnwruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -190,11 +198,7 @@
                         "required": false
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -208,6 +212,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime",
+                "operationId": "POST /vimgrnwruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -253,11 +262,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -273,6 +278,11 @@
         },
         "/vimgrnwruntime/{uuid}": {
             "get": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime/{uuid}",
+                "operationId": "GET /vimgrnwruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -349,11 +359,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -367,6 +373,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime/{uuid}",
+                "operationId": "PUT /vimgrnwruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -426,11 +437,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -444,6 +451,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime/{uuid}",
+                "operationId": "PATCH /vimgrnwruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -503,11 +515,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -521,6 +529,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime/{uuid}",
+                "operationId": "DELETE /vimgrnwruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -571,11 +584,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",

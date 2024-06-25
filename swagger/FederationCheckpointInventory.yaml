@@ -12,20 +12,25 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi FederationCheckpointInventory object api
         ```
         - show federationcheckpointinventory <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_CONTROLLER
+tags:
+  - name: FederationCheckpointInventory
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /federationcheckpoint-inventory:
         get:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory
+            operationId: GET /federationcheckpoint-inventory
             consumes:
                 -   application/json
             produces:
@@ -82,16 +87,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventoryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory
+            operationId: POST /federationcheckpoint-inventory
             consumes:
                 -   application/json
             produces:
@@ -123,17 +131,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventory"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventory"
-                401:
+                "401":
                     description: log in failed
     /federationcheckpoint-inventory/{uuid}:
         get:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory/{uuid}
+            operationId: GET /federationcheckpoint-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -187,16 +198,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventory"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory/{uuid}
+            operationId: PUT /federationcheckpoint-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -238,16 +252,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventory"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory/{uuid}
+            operationId: PATCH /federationcheckpoint-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -289,16 +306,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventory"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory/{uuid}
+            operationId: DELETE /federationcheckpoint-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -334,19 +354,22 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 
     /federationcheckpoint:
         get:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint
+            operationId: GET /federationcheckpoint
             consumes:
                 -   application/json
             produces:
@@ -403,16 +426,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint
+            operationId: POST /federationcheckpoint
             consumes:
                 -   application/json
             produces:
@@ -444,17 +470,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-                401:
+                "401":
                     description: log in failed
     /federationcheckpoint/{uuid}:
         get:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint/{uuid}
+            operationId: GET /federationcheckpoint/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -508,16 +537,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint/{uuid}
+            operationId: PUT /federationcheckpoint/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -559,16 +591,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint/{uuid}
+            operationId: PATCH /federationcheckpoint/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -610,16 +645,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint/{uuid}
+            operationId: DELETE /federationcheckpoint/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -655,14 +693,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

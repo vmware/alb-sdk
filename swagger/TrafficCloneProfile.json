@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure trafficcloneprofile <key>\n- show trafficcloneprofile <key>\n```\n"
+        "description": "Avi TrafficCloneProfile object api\n```\n- configure trafficcloneprofile <key>\n- show trafficcloneprofile <key>\n```\n\nAPI permission: PERMISSION_TRAFFICCLONEPROFILE\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "TrafficCloneProfile"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/trafficcloneprofile": {
             "get": {
+                "tags": [
+                    "TrafficCloneProfile"
+                ],
+                "description": "/trafficcloneprofile",
+                "operationId": "GET /trafficcloneprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -190,11 +198,7 @@
                         "required": false
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -208,6 +212,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "TrafficCloneProfile"
+                ],
+                "description": "/trafficcloneprofile",
+                "operationId": "POST /trafficcloneprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -253,11 +262,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -273,6 +278,11 @@
         },
         "/trafficcloneprofile/{uuid}": {
             "get": {
+                "tags": [
+                    "TrafficCloneProfile"
+                ],
+                "description": "/trafficcloneprofile/{uuid}",
+                "operationId": "GET /trafficcloneprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -349,11 +359,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -367,6 +373,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "TrafficCloneProfile"
+                ],
+                "description": "/trafficcloneprofile/{uuid}",
+                "operationId": "PUT /trafficcloneprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -426,11 +437,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -444,6 +451,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "TrafficCloneProfile"
+                ],
+                "description": "/trafficcloneprofile/{uuid}",
+                "operationId": "PATCH /trafficcloneprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -503,11 +515,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -521,6 +529,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "TrafficCloneProfile"
+                ],
+                "description": "/trafficcloneprofile/{uuid}",
+                "operationId": "DELETE /trafficcloneprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -571,11 +584,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",

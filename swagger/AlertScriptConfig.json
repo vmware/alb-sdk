@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure alertscriptconfig <key>\n- show alertscriptconfig <key>\n```\n"
+        "description": "Avi AlertScriptConfig object api\n```\n- configure alertscriptconfig <key>\n- show alertscriptconfig <key>\n```\n\nAPI permission: PERMISSION_ALERTCONFIG\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "AlertScriptConfig"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/alertscriptconfig": {
             "get": {
+                "tags": [
+                    "AlertScriptConfig"
+                ],
+                "description": "/alertscriptconfig",
+                "operationId": "GET /alertscriptconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "AlertScriptConfig"
+                ],
+                "description": "/alertscriptconfig",
+                "operationId": "POST /alertscriptconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/alertscriptconfig/{uuid}": {
             "get": {
+                "tags": [
+                    "AlertScriptConfig"
+                ],
+                "description": "/alertscriptconfig/{uuid}",
+                "operationId": "GET /alertscriptconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "AlertScriptConfig"
+                ],
+                "description": "/alertscriptconfig/{uuid}",
+                "operationId": "PUT /alertscriptconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "AlertScriptConfig"
+                ],
+                "description": "/alertscriptconfig/{uuid}",
+                "operationId": "PATCH /alertscriptconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "AlertScriptConfig"
+                ],
+                "description": "/alertscriptconfig/{uuid}",
+                "operationId": "DELETE /alertscriptconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",

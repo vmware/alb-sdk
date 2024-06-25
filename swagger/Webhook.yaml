@@ -12,21 +12,26 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi Webhook object api
         ```
         - configure webhook <key>
         - show webhook <key>
         ```
 
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        API permission: PERMISSION_AUTOSCALE
+tags:
+  - name: Webhook
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /webhook:
         get:
+            tags:
+                - Webhook
+            description: /webhook
+            operationId: GET /webhook
             consumes:
                 -   application/json
             produces:
@@ -83,16 +88,19 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WebhookApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - Webhook
+            description: /webhook
+            operationId: POST /webhook
             consumes:
                 -   application/json
             produces:
@@ -124,17 +132,20 @@ paths:
                     required: true
                     schema:
                         $ref: "#/definitions/Webhook"
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Webhook"
-                401:
+                "401":
                     description: log in failed
     /webhook/{uuid}:
         get:
+            tags:
+                - Webhook
+            description: /webhook/{uuid}
+            operationId: GET /webhook/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -188,16 +199,19 @@ paths:
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Webhook"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - Webhook
+            description: /webhook/{uuid}
+            operationId: PUT /webhook/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -239,16 +253,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Webhook"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - Webhook
+            description: /webhook/{uuid}
+            operationId: PATCH /webhook/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -290,16 +307,19 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Webhook"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - Webhook
+            description: /webhook/{uuid}
+            operationId: DELETE /webhook/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -335,14 +355,13 @@ paths:
                     description: UUID of the object to fetch
                     required: true
                     type: string
-            security:
-                - basicAuth: []
+            security: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
+                "404":
                     description: not found
 
 

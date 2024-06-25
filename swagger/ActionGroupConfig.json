@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure actiongroupconfig <key>\n- show actiongroupconfig <key>\n```\n"
+        "description": "Avi ActionGroupConfig object api\n```\n- configure actiongroupconfig <key>\n- show actiongroupconfig <key>\n```\n\nAPI permission: PERMISSION_ACTIONGROUPCONFIG\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "ActionGroupConfig"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/actiongroupconfig": {
             "get": {
+                "tags": [
+                    "ActionGroupConfig"
+                ],
+                "description": "/actiongroupconfig",
+                "operationId": "GET /actiongroupconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ActionGroupConfig"
+                ],
+                "description": "/actiongroupconfig",
+                "operationId": "POST /actiongroupconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/actiongroupconfig/{uuid}": {
             "get": {
+                "tags": [
+                    "ActionGroupConfig"
+                ],
+                "description": "/actiongroupconfig/{uuid}",
+                "operationId": "GET /actiongroupconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ActionGroupConfig"
+                ],
+                "description": "/actiongroupconfig/{uuid}",
+                "operationId": "PUT /actiongroupconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ActionGroupConfig"
+                ],
+                "description": "/actiongroupconfig/{uuid}",
+                "operationId": "PATCH /actiongroupconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ActionGroupConfig"
+                ],
+                "description": "/actiongroupconfig/{uuid}",
+                "operationId": "DELETE /actiongroupconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",

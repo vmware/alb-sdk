@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure gslb <key>\n- show gslb <key>\n```\n"
+        "description": "Avi Gslb object api\n```\n- configure gslb <key>\n- show gslb <key>\n```\n\nAPI permission: PERMISSION_GSLB\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "Gslb"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/gslb": {
             "get": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb",
+                "operationId": "GET /gslb",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb",
+                "operationId": "POST /gslb",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/gslb/{uuid}": {
             "get": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}",
+                "operationId": "GET /gslb/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}",
+                "operationId": "PUT /gslb/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}",
+                "operationId": "PATCH /gslb/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}",
+                "operationId": "DELETE /gslb/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -502,6 +511,11 @@
         },
         "/gslb/{uuid}/runtime/": {
             "get": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}/runtime/",
+                "operationId": "GET /gslb/{uuid}/runtime/",
                 "consumes": [
                     "application/json"
                 ],
@@ -545,11 +559,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -565,6 +575,11 @@
         },
         "/gslb/{uuid}/runtime/detail/": {
             "get": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}/runtime/detail/",
+                "operationId": "GET /gslb/{uuid}/runtime/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -608,11 +623,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -628,6 +639,11 @@
         },
         "/gslb/{uuid}/runtime/internal/": {
             "get": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}/runtime/internal/",
+                "operationId": "GET /gslb/{uuid}/runtime/internal/",
                 "consumes": [
                     "application/json"
                 ],
@@ -671,11 +687,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

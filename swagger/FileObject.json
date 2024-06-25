@@ -8,18 +8,26 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- upload fileobject file\n- configure fileobject <key>\n- show fileobject <key>\n- show fileobject\n```\n"
+        "description": "Avi FileObject object api\n```\n- upload fileobject file\n- configure fileobject <key>\n- show fileobject <key>\n- show fileobject\n```\n\nAPI permission: PERMISSION_FILE_OBJECT\n"
     },
-    "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic",
-            "description": "basic authentication"
+    "tags": [
+        {
+            "name": "FileObject"
         }
-    },
+    ],
+    "schemes": [
+        "https"
+    ],
+    "host": "api_host",
     "basePath": "/api",
     "paths": {
         "/fileobject": {
             "get": {
+                "tags": [
+                    "FileObject"
+                ],
+                "description": "/fileobject",
+                "operationId": "GET /fileobject",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,11 +109,7 @@
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -119,6 +123,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "FileObject"
+                ],
+                "description": "/fileobject",
+                "operationId": "POST /fileobject",
                 "consumes": [
                     "application/json"
                 ],
@@ -164,11 +173,7 @@
                         }
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -184,6 +189,11 @@
         },
         "/fileobject/{uuid}": {
             "get": {
+                "tags": [
+                    "FileObject"
+                ],
+                "description": "/fileobject/{uuid}",
+                "operationId": "GET /fileobject/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -260,11 +270,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -278,6 +284,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "FileObject"
+                ],
+                "description": "/fileobject/{uuid}",
+                "operationId": "PUT /fileobject/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -337,11 +348,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -355,6 +362,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "FileObject"
+                ],
+                "description": "/fileobject/{uuid}",
+                "operationId": "PATCH /fileobject/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -414,11 +426,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -432,6 +440,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "FileObject"
+                ],
+                "description": "/fileobject/{uuid}",
+                "operationId": "DELETE /fileobject/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -482,11 +495,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "204": {
                         "description": "object deleted",
@@ -502,6 +511,11 @@
         },
         "/fileobject/{uuid}/federated_info/": {
             "get": {
+                "tags": [
+                    "FileObject"
+                ],
+                "description": "/fileobject/{uuid}/federated_info/",
+                "operationId": "GET /fileobject/{uuid}/federated_info/",
                 "consumes": [
                     "application/json"
                 ],
@@ -545,11 +559,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -565,6 +575,11 @@
         },
         "/fileobject/{uuid}/['']/": {
             "put": {
+                "tags": [
+                    "FileObject"
+                ],
+                "description": "/fileobject/{uuid}/['']/",
+                "operationId": "PUT /fileobject/{uuid}/['']/",
                 "consumes": [
                     "application/json"
                 ],
@@ -620,11 +635,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -638,6 +649,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "FileObject"
+                ],
+                "description": "/fileobject/{uuid}/['']/",
+                "operationId": "PATCH /fileobject/{uuid}/['']/",
                 "consumes": [
                     "application/json"
                 ],
@@ -681,11 +697,7 @@
                         "type": "string"
                     }
                 ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "OK",

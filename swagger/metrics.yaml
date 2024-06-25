@@ -12,11 +12,12 @@ info:
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-
-securityDefinitions:
-    basicAuth:
-        type: basic
-        description: basic authentication
+        
+tags:
+  - name: 
+schemes:
+  - https
+host: api_host
 basePath: /api
 paths:
     /analytics/metrics/collection/:
