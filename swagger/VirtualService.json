@@ -6765,15 +6765,6 @@
                 }
             }
         },
-        "SSLCacheFilter": {
-            "type": "object",
-            "properties": {
-                "ssl_session_id": {
-                    "description": "Hexadecimal representation of the SSL session ID. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                }
-            }
-        },
         "SSLProfileSelector": {
             "type": "object",
             "required": [
