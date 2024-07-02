@@ -14031,55 +14031,6 @@ paths:
         '401':
           description: log in failed
   /fileobject/{uuid}/['']/:
-    patch:
-      tags:
-      - FileObject
-      description: /fileobject/{uuid}/['']/
-      operationId: PATCH /fileobject/{uuid}/['']/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
     put:
       tags:
       - FileObject
@@ -14124,6 +14075,55 @@ paths:
           type: object
           additionalProperties:
             type: string
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+    patch:
+      tags:
+      - FileObject
+      description: /fileobject/{uuid}/['']/
+      operationId: PATCH /fileobject/{uuid}/['']/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -34710,55 +34710,6 @@ paths:
         '401':
           description: log in failed
   /cloud/{uuid}/gc/:
-    patch:
-      tags:
-      - Cloud
-      description: /cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
     put:
       tags:
       - Cloud
@@ -34803,6 +34754,55 @@ paths:
           type: object
           additionalProperties:
             type: string
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+    patch:
+      tags:
+      - Cloud
+      description: /cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -93573,9 +93573,12 @@ definitions:
           Enterprise with Cloud Services edition.'
         type: string
       session_id:
-        description: Field set by datascript using avi.vs.set_session_id(). Field
-          introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise
-          with Cloud Services edition.
+        description: If the HTTP Session module is enabled for the Virtual Service,
+          this field will contain the session id created by the module. Later calls
+          to the DataScript function avi.vs.set_session_id() overwrite the value of
+          this field with the value supplied in the function call. Field introduced
+          in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with
+          Cloud Services edition.
         type: string
       significance:
         description: ' Allowed in Enterprise edition with any value, Essentials, Basic,
@@ -121063,14 +121066,14 @@ definitions:
     properties:
       enable_realtime_metrics:
         description: Enable real time metrics for server and pool metrics eg. l4_server.xxx,
-          l7_server.xxx. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise
-          edition with any value, Essentials, Basic, Enterprise with Cloud Services
-          edition.
+          l7_server.xxx. Field deprecated in 31.1.1. Field introduced in 18.1.5, 18.2.1.
+          Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise
+          with Cloud Services edition.
         type: boolean
       metrics_realtime_update:
-        description: Settings to turn on realtime metrics and set duration for realtime
-          updates. Field introduced in 31.1.1. Allowed in Enterprise edition with
-          any value, Enterprise with Cloud Services edition.
+        description: Enable realtime metrics and its duration. Field introduced in
+          31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud
+          Services edition.
         $ref: '#/definitions/MetricsRealTimeUpdate'
   PoolConfig:
     type: object
@@ -132990,9 +132993,9 @@ definitions:
           JOB_TYPE_POOL_ASYNC, JOB_TYPE_PROCESS_BASELINE_BENCHMARK, JOB_TYPE_GEODB_REFRESH_CONTROLLER_DATABASES,
           JOB_TYPE_POSTGRES_VACUUM, JOB_TYPE_WAF_POLICY_AUTO_UPDATE_CRS, JOB_TYPE_POOL_V6_DNS_REFRESH,
           JOB_TYPE_AUTHPROFILE_SAML_METADATA_UPDATE, JOB_TYPE_SYSTEM_REPORT_CLEANUP,
-          JOB_TYPE_FILE_OBJECT_CRL. Field introduced in 18.1.1. Allowed in Enterprise
-          edition with any value, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
+          JOB_TYPE_FILE_OBJECT_CRL, JOB_TYPE_POOL_METRICS_RT. Field introduced in
+          18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic,
+          Enterprise with Cloud Services edition.'
         type: string
   Subnet:
     type: object

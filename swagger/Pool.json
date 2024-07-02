@@ -3196,11 +3196,11 @@
             "type": "object",
             "properties": {
                 "enable_realtime_metrics": {
-                    "description": "Enable real time metrics for server and pool metrics eg. l4_server.xxx, l7_server.xxx. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable real time metrics for server and pool metrics eg. l4_server.xxx, l7_server.xxx. Field deprecated in 31.1.1. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "metrics_realtime_update": {
-                    "description": "Settings to turn on realtime metrics and set duration for realtime updates. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Enable realtime metrics and its duration. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/MetricsRealTimeUpdate"
                 }
             }
