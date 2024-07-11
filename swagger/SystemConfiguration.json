@@ -1107,7 +1107,7 @@
                     "type": "boolean"
                 },
                 "enable_host_header_check": {
-                    "description": "Host Header check. Field introduced in 30.2.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Host Header check. Field introduced in 22.1.7, 30.2.2, 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "fips_mode": {
@@ -1179,7 +1179,7 @@
                     }
                 },
                 "trusted_host_profiles_refs": {
-                    "description": "Trusted Host Profiles for host header validation. Only function when enable_host_header_check is set to true. It is a reference to an object of type TrustedHostProfile. Field introduced in 30.2.2. Maximum of 20 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Trusted Host Profiles for host header validation. Only function when enable_host_header_check is set to true. It is a reference to an object of type TrustedHostProfile. Field introduced in 22.1.7, 30.2.2, 31.1.1. Maximum of 20 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
