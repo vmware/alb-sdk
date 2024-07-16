@@ -45,6 +45,9 @@ type SystemConfiguration struct {
 	// Host Header check. Field introduced in 22.1.7, 30.2.2, 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	EnableHostHeaderCheck *bool `json:"enable_host_header_check,omitempty"`
 
+	// Enables sending anonymous operational metrics to AVI. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EnableTelemetry *bool `json:"enable_telemetry,omitempty"`
+
 	// FIPS mode current state. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	FipsMode *bool `json:"fips_mode,omitempty"`
 
