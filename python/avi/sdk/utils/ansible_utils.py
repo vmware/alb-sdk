@@ -25,6 +25,10 @@ else:
     log = avi_sdk_syslog_logger()
 
 
+class InvalidRefFormat(Exception):
+    pass
+
+
 class AviCheckModeResponse(object):
     """
     Class to support ansible check mode.
@@ -479,6 +483,9 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
         params = {'include_refs': '', 'include_name': ''}
         if obj.get('cloud_ref', None):
             # this is the case when gets have to be scoped with cloud
+            if not obj['cloud_ref'].startswith("/api/cloud/?name=") and obj['cloud_ref'] is not None:
+                raise InvalidRefFormat(
+                    f"Invalid cloud_ref format: {obj['cloud_ref']}. Expected format: /api/cloud/?name=<name> (specifying the cloud name by name).")
             cloud = obj['cloud_ref'].split('name=')[1]
             params['cloud_ref.name'] = cloud
         existing_obj = api.get_object_by_name(
@@ -489,6 +496,9 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
         # is actually in admin tenant.
         if existing_obj and 'tenant_ref' in obj and 'tenant_ref' in existing_obj:
             # https://10.10.25.42/api/tenant/admin#admin
+            if not obj.get('tenant_ref').startswith("/api/tenant/?name=") and obj.get('tenant_ref') is not None:
+                raise InvalidRefFormat(
+                    f"Invalid tenant_ref format: {obj['tenant_ref']}. Expected format: /api/tenant/?name=<name> (specifying the tenant name by name).")
             existing_obj_tenant = existing_obj['tenant_ref'].split('#')[1]
             obj_tenant = obj['tenant_ref'].split('name=')[1]
             if obj_tenant != existing_obj_tenant:
