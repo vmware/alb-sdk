@@ -1278,7 +1278,7 @@
                     "type": "string"
                 },
                 "prev_remote_image_ref": {
-                    "description": "Remote image reference of previous base image. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Remote image reference of previous base image. Field deprecated in 31.1.1. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "previous_image_ref": {
@@ -1314,7 +1314,7 @@
                     "type": "string"
                 },
                 "remote_image_ref": {
-                    "description": "Remote image reference of current base image. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Remote image reference of current base image. Field deprecated in 31.1.1. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_patch_image_path": {

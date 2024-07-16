@@ -1751,15 +1751,13 @@
                     "type": "boolean"
                 },
                 "skopeo_retry_interval": {
-                    "description": "Time interval (in seconds) between retires for skopeo commands. Field introduced in 30.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Time interval (in seconds) between retires for skopeo commands. Field deprecated in 31.1.1. Field introduced in 30.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "default": 5,
                     "format": "uint32"
                 },
                 "skopeo_retry_limit": {
-                    "description": "Number of times to try skopeo commands for remote image registries. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Number of times to try skopeo commands for remote image registries. Field deprecated in 31.1.1. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "default": 3,
                     "format": "uint32"
                 },
                 "soft_min_mem_per_se_limit": {

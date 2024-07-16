@@ -1110,6 +1110,11 @@
                     "description": "Host Header check. Field introduced in 22.1.7, 30.2.2, 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
+                "enable_telemetry": {
+                    "description": "Enables sending anonymous operational metrics to AVI. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                },
                 "fips_mode": {
                     "description": "FIPS mode current state. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
