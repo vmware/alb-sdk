@@ -198,9 +198,9 @@ public class BuildInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Remote reference of the container image.
+     * Field deprecated in 31.1.1.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteImageRef
      */
     public String getRemoteImageRef() {
@@ -210,9 +210,9 @@ public class BuildInfo  {
     /**
      * This is the setter method to the attribute.
      * Remote reference of the container image.
+     * Field deprecated in 31.1.1.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param remoteImageRef set the remoteImageRef.
      */
     public void setRemoteImageRef(String  remoteImageRef) {

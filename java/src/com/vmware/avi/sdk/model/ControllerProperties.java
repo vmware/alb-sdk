@@ -266,10 +266,10 @@ public class ControllerProperties extends AviRestResource  {
     private Boolean sharedSslCertificates = false;
 
     @JsonProperty("skopeo_retry_interval")
-    private Integer skopeoRetryInterval = 5;
+    private Integer skopeoRetryInterval;
 
     @JsonProperty("skopeo_retry_limit")
-    private Integer skopeoRetryLimit = 3;
+    private Integer skopeoRetryLimit;
 
     @JsonProperty("soft_min_mem_per_se_limit")
     private Integer softMinMemPerSeLimit = 1900;
@@ -2408,10 +2408,10 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Time interval (in seconds) between retires for skopeo commands.
+     * Field deprecated in 31.1.1.
      * Field introduced in 30.1.1.
      * Unit is sec.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return skopeoRetryInterval
      */
     public Integer getSkopeoRetryInterval() {
@@ -2421,10 +2421,10 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Time interval (in seconds) between retires for skopeo commands.
+     * Field deprecated in 31.1.1.
      * Field introduced in 30.1.1.
      * Unit is sec.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param skopeoRetryInterval set the skopeoRetryInterval.
      */
     public void setSkopeoRetryInterval(Integer  skopeoRetryInterval) {
@@ -2434,9 +2434,9 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of times to try skopeo commands for remote image registries.
+     * Field deprecated in 31.1.1.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @return skopeoRetryLimit
      */
     public Integer getSkopeoRetryLimit() {
@@ -2446,9 +2446,9 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Number of times to try skopeo commands for remote image registries.
+     * Field deprecated in 31.1.1.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @param skopeoRetryLimit set the skopeoRetryLimit.
      */
     public void setSkopeoRetryLimit(Integer  skopeoRetryLimit) {

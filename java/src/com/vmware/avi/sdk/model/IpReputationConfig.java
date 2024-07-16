@@ -21,6 +21,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpReputationConfig  {
+    @JsonProperty("enable_ipv4_reputation")
+    private Boolean enableIpv4Reputation;
+
+    @JsonProperty("enable_ipv6_reputation")
+    private Boolean enableIpv6Reputation;
+
     @JsonProperty("ip_reputation_file_object_expiry_duration")
     private Integer ipReputationFileObjectExpiryDuration = 3;
 
@@ -28,6 +34,54 @@ public class IpReputationConfig  {
     private Integer ipReputationSyncInterval = 60;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable ipv4 reputation.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return enableIpv4Reputation
+     */
+    public Boolean getEnableIpv4Reputation() {
+        return enableIpv4Reputation;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable ipv4 reputation.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param enableIpv4Reputation set the enableIpv4Reputation.
+     */
+    public void setEnableIpv4Reputation(Boolean  enableIpv4Reputation) {
+        this.enableIpv4Reputation = enableIpv4Reputation;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable ipv6 reputation.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return enableIpv6Reputation
+     */
+    public Boolean getEnableIpv6Reputation() {
+        return enableIpv6Reputation;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable ipv6 reputation.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param enableIpv6Reputation set the enableIpv6Reputation.
+     */
+    public void setEnableIpv6Reputation(Boolean  enableIpv6Reputation) {
+        this.enableIpv6Reputation = enableIpv6Reputation;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -98,14 +152,18 @@ public class IpReputationConfig  {
       }
       IpReputationConfig objIpReputationConfig = (IpReputationConfig) o;
       return   Objects.equals(this.ipReputationSyncInterval, objIpReputationConfig.ipReputationSyncInterval)&&
-  Objects.equals(this.ipReputationFileObjectExpiryDuration, objIpReputationConfig.ipReputationFileObjectExpiryDuration);
+  Objects.equals(this.ipReputationFileObjectExpiryDuration, objIpReputationConfig.ipReputationFileObjectExpiryDuration)&&
+  Objects.equals(this.enableIpv4Reputation, objIpReputationConfig.enableIpv4Reputation)&&
+  Objects.equals(this.enableIpv6Reputation, objIpReputationConfig.enableIpv6Reputation);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class IpReputationConfig {\n");
-                  sb.append("    ipReputationFileObjectExpiryDuration: ").append(toIndentedString(ipReputationFileObjectExpiryDuration)).append("\n");
+                  sb.append("    enableIpv4Reputation: ").append(toIndentedString(enableIpv4Reputation)).append("\n");
+                        sb.append("    enableIpv6Reputation: ").append(toIndentedString(enableIpv6Reputation)).append("\n");
+                        sb.append("    ipReputationFileObjectExpiryDuration: ").append(toIndentedString(ipReputationFileObjectExpiryDuration)).append("\n");
                         sb.append("    ipReputationSyncInterval: ").append(toIndentedString(ipReputationSyncInterval)).append("\n");
                   sb.append("}");
       return sb.toString();

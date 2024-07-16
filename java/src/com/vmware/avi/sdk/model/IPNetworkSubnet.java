@@ -21,8 +21,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IPNetworkSubnet  {
+    @JsonProperty("ipv6_range")
+    private IpAddrRange ipv6Range;
+
     @JsonProperty("network_ref")
     private String networkRef;
+
+    @JsonProperty("range")
+    private IpAddrRange range;
 
     @JsonProperty("subnet")
     private IpAddrPrefix subnet;
@@ -37,6 +43,30 @@ public class IPNetworkSubnet  {
     private String subnetUuid;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ipv6 reserved range of ips for virtualservice ip allocation with infoblox as the ipam provider.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return ipv6Range
+     */
+    public IpAddrRange getIpv6Range() {
+        return ipv6Range;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Ipv6 reserved range of ips for virtualservice ip allocation with infoblox as the ipam provider.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param ipv6Range set the ipv6Range.
+     */
+    public void setIpv6Range(IpAddrRange ipv6Range) {
+        this.ipv6Range = ipv6Range;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -62,6 +92,30 @@ public class IPNetworkSubnet  {
      */
     public void setNetworkRef(String  networkRef) {
         this.networkRef = networkRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ipv4 reserved range of ips for virtualservice ip allocation with infoblox as the ipam provider.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return range
+     */
+    public IpAddrRange getRange() {
+        return range;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Ipv4 reserved range of ips for virtualservice ip allocation with infoblox as the ipam provider.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param range set the range.
+     */
+    public void setRange(IpAddrRange range) {
+        this.range = range;
     }
 
     /**
@@ -178,14 +232,18 @@ public class IPNetworkSubnet  {
   Objects.equals(this.subnet, objIPNetworkSubnet.subnet)&&
   Objects.equals(this.subnetUuid, objIPNetworkSubnet.subnetUuid)&&
   Objects.equals(this.subnet6, objIPNetworkSubnet.subnet6)&&
-  Objects.equals(this.subnet6Uuid, objIPNetworkSubnet.subnet6Uuid);
+  Objects.equals(this.subnet6Uuid, objIPNetworkSubnet.subnet6Uuid)&&
+  Objects.equals(this.range, objIPNetworkSubnet.range)&&
+  Objects.equals(this.ipv6Range, objIPNetworkSubnet.ipv6Range);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class IPNetworkSubnet {\n");
-                  sb.append("    networkRef: ").append(toIndentedString(networkRef)).append("\n");
+                  sb.append("    ipv6Range: ").append(toIndentedString(ipv6Range)).append("\n");
+                        sb.append("    networkRef: ").append(toIndentedString(networkRef)).append("\n");
+                        sb.append("    range: ").append(toIndentedString(range)).append("\n");
                         sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
                         sb.append("    subnet6: ").append(toIndentedString(subnet6)).append("\n");
                         sb.append("    subnet6Uuid: ").append(toIndentedString(subnet6Uuid)).append("\n");
