@@ -23,6 +23,9 @@ type ControllerSizingLimits struct {
 	// Maximum number of pools with realtime metrics enabled. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	NumPoolRtMetrics *int32 `json:"num_pool_rt_metrics,omitempty"`
 
+	// Maximum number of Serviceengine with realtime metrics enabled. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	NumSeRtMetrics *int32 `json:"num_se_rt_metrics,omitempty"`
+
 	// Maximum number of servers. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumServers *int32 `json:"num_servers,omitempty"`
 
