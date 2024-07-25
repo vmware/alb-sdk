@@ -434,6 +434,11 @@ definitions:
                 type: array
                 items:
                     type: string
+            base_file_v6_refs:
+                description: "IP reputation DB base file for IPv6. It is a reference to an object of type FileObject. Field introduced in 31.1.1. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
             configpb_attributes:
                 description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
@@ -442,6 +447,11 @@ definitions:
                 type: string
             incremental_file_refs:
                 description: "IP reputation DB incremental update files. It is a reference to an object of type FileObject. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            incremental_file_v6_refs:
+                description: "IP reputation DB incremental update files for IPv6. It is a reference to an object of type FileObject. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
