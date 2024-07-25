@@ -15,6 +15,9 @@ type IPReputationDB struct {
 	// IP reputation DB base file. It is a reference to an object of type FileObject. Field introduced in 20.1.1. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	BaseFileRefs []string `json:"base_file_refs,omitempty"`
 
+	// IP reputation DB base file for IPv6. It is a reference to an object of type FileObject. Field introduced in 31.1.1. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	BaseFileV6Refs []string `json:"base_file_v6_refs,omitempty"`
+
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
@@ -23,6 +26,9 @@ type IPReputationDB struct {
 
 	// IP reputation DB incremental update files. It is a reference to an object of type FileObject. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	IncrementalFileRefs []string `json:"incremental_file_refs,omitempty"`
+
+	// IP reputation DB incremental update files for IPv6. It is a reference to an object of type FileObject. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	IncrementalFileV6Refs []string `json:"incremental_file_v6_refs,omitempty"`
 
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`

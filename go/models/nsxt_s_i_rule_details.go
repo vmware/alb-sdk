@@ -34,4 +34,7 @@ type NsxtSIRuleDetails struct {
 
 	// Sources of redirection rule. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	Sources []string `json:"sources,omitempty"`
+
+	// VS name. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	Vs *string `json:"vs,omitempty"`
 }
