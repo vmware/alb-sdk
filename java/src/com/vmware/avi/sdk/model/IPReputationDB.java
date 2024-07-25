@@ -24,11 +24,17 @@ public class IPReputationDB extends AviRestResource  {
     @JsonProperty("base_file_refs")
     private List<String> baseFileRefs;
 
+    @JsonProperty("base_file_v6_refs")
+    private List<String> baseFileV6Refs;
+
     @JsonProperty("description")
     private String description;
 
     @JsonProperty("incremental_file_refs")
     private List<String> incrementalFileRefs;
+
+    @JsonProperty("incremental_file_v6_refs")
+    private List<String> incrementalFileV6Refs;
 
     @JsonProperty("markers")
     private List<RoleFilterMatchLabel> markers;
@@ -100,6 +106,51 @@ public class IPReputationDB extends AviRestResource  {
       this.baseFileRefs.add(baseFileRefsItem);
       return this;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ip reputation db base file for ipv6.
+     * It is a reference to an object of type fileobject.
+     * Field introduced in 31.1.1.
+     * Maximum of 1 items allowed.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return baseFileV6Refs
+     */
+    public List<String> getBaseFileV6Refs() {
+        return baseFileV6Refs;
+    }
+
+    /**
+     * This is the setter method. this will set the baseFileV6Refs
+     * Ip reputation db base file for ipv6.
+     * It is a reference to an object of type fileobject.
+     * Field introduced in 31.1.1.
+     * Maximum of 1 items allowed.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return baseFileV6Refs
+     */
+    public void setBaseFileV6Refs(List<String>  baseFileV6Refs) {
+        this.baseFileV6Refs = baseFileV6Refs;
+    }
+
+    /**
+     * This is the setter method this will set the baseFileV6Refs
+     * Ip reputation db base file for ipv6.
+     * It is a reference to an object of type fileobject.
+     * Field introduced in 31.1.1.
+     * Maximum of 1 items allowed.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return baseFileV6Refs
+     */
+    public IPReputationDB addBaseFileV6RefsItem(String baseFileV6RefsItem) {
+      if (this.baseFileV6Refs == null) {
+        this.baseFileV6Refs = new ArrayList<String>();
+      }
+      this.baseFileV6Refs.add(baseFileV6RefsItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -164,6 +215,48 @@ public class IPReputationDB extends AviRestResource  {
         this.incrementalFileRefs = new ArrayList<String>();
       }
       this.incrementalFileRefs.add(incrementalFileRefsItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ip reputation db incremental update files for ipv6.
+     * It is a reference to an object of type fileobject.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return incrementalFileV6Refs
+     */
+    public List<String> getIncrementalFileV6Refs() {
+        return incrementalFileV6Refs;
+    }
+
+    /**
+     * This is the setter method. this will set the incrementalFileV6Refs
+     * Ip reputation db incremental update files for ipv6.
+     * It is a reference to an object of type fileobject.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return incrementalFileV6Refs
+     */
+    public void setIncrementalFileV6Refs(List<String>  incrementalFileV6Refs) {
+        this.incrementalFileV6Refs = incrementalFileV6Refs;
+    }
+
+    /**
+     * This is the setter method this will set the incrementalFileV6Refs
+     * Ip reputation db incremental update files for ipv6.
+     * It is a reference to an object of type fileobject.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return incrementalFileV6Refs
+     */
+    public IPReputationDB addIncrementalFileV6RefsItem(String incrementalFileV6RefsItem) {
+      if (this.incrementalFileV6Refs == null) {
+        this.incrementalFileV6Refs = new ArrayList<String>();
+      }
+      this.incrementalFileV6Refs.add(incrementalFileV6RefsItem);
       return this;
     }
     /**
@@ -395,7 +488,9 @@ public class IPReputationDB extends AviRestResource  {
   Objects.equals(this.vendor, objIPReputationDB.vendor)&&
   Objects.equals(this.version, objIPReputationDB.version)&&
   Objects.equals(this.serviceStatus, objIPReputationDB.serviceStatus)&&
-  Objects.equals(this.markers, objIPReputationDB.markers);
+  Objects.equals(this.markers, objIPReputationDB.markers)&&
+  Objects.equals(this.baseFileV6Refs, objIPReputationDB.baseFileV6Refs)&&
+  Objects.equals(this.incrementalFileV6Refs, objIPReputationDB.incrementalFileV6Refs);
     }
 
     @Override
@@ -403,8 +498,10 @@ public class IPReputationDB extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class IPReputationDB {\n");
                   sb.append("    baseFileRefs: ").append(toIndentedString(baseFileRefs)).append("\n");
+                        sb.append("    baseFileV6Refs: ").append(toIndentedString(baseFileV6Refs)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    incrementalFileRefs: ").append(toIndentedString(incrementalFileRefs)).append("\n");
+                        sb.append("    incrementalFileV6Refs: ").append(toIndentedString(incrementalFileV6Refs)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    serviceStatus: ").append(toIndentedString(serviceStatus)).append("\n");

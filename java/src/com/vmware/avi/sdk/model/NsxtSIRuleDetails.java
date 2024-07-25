@@ -48,6 +48,9 @@ public class NsxtSIRuleDetails  {
     @JsonProperty("sources")
     private List<String> sources;
 
+    @JsonProperty("vs")
+    private String vs;
+
 
 
     /**
@@ -311,6 +314,30 @@ public class NsxtSIRuleDetails  {
       return this;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Vs name.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vs
+     */
+    public String getVs() {
+        return vs;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Vs name.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param vs set the vs.
+     */
+    public void setVs(String  vs) {
+        this.vs = vs;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -329,7 +356,8 @@ public class NsxtSIRuleDetails  {
   Objects.equals(this.sources, objNsxtSIRuleDetails.sources)&&
   Objects.equals(this.services, objNsxtSIRuleDetails.services)&&
   Objects.equals(this.dests, objNsxtSIRuleDetails.dests)&&
-  Objects.equals(this.destexclude, objNsxtSIRuleDetails.destexclude);
+  Objects.equals(this.destexclude, objNsxtSIRuleDetails.destexclude)&&
+  Objects.equals(this.vs, objNsxtSIRuleDetails.vs);
     }
 
     @Override
@@ -345,6 +373,7 @@ public class NsxtSIRuleDetails  {
                         sb.append("    segroup: ").append(toIndentedString(segroup)).append("\n");
                         sb.append("    services: ").append(toIndentedString(services)).append("\n");
                         sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
+                        sb.append("    vs: ").append(toIndentedString(vs)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
