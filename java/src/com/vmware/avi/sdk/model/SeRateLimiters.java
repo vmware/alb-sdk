@@ -36,6 +36,9 @@ public class SeRateLimiters  {
     @JsonProperty("icmp_rsp_rl")
     private Integer icmpRspRl = 2000;
 
+    @JsonProperty("nd_rl")
+    private Integer ndRl = 2000;
+
     @JsonProperty("rst_rl")
     private Integer rstRl = 100;
 
@@ -153,6 +156,30 @@ public class SeRateLimiters  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Rate limiter for nd packets in pps.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
+     * @return ndRl
+     */
+    public Integer getNdRl() {
+        return ndRl;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate limiter for nd packets in pps.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
+     * @param ndRl set the ndRl.
+     */
+    public void setNdRl(Integer  ndRl) {
+        this.ndRl = ndRl;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Rate limiter for number rst pkts sent in pps.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
@@ -188,7 +215,8 @@ public class SeRateLimiters  {
   Objects.equals(this.arpRl, objSeRateLimiters.arpRl)&&
   Objects.equals(this.rstRl, objSeRateLimiters.rstRl)&&
   Objects.equals(this.flowProbeRl, objSeRateLimiters.flowProbeRl)&&
-  Objects.equals(this.defaultRl, objSeRateLimiters.defaultRl);
+  Objects.equals(this.defaultRl, objSeRateLimiters.defaultRl)&&
+  Objects.equals(this.ndRl, objSeRateLimiters.ndRl);
     }
 
     @Override
@@ -200,6 +228,7 @@ public class SeRateLimiters  {
                         sb.append("    flowProbeRl: ").append(toIndentedString(flowProbeRl)).append("\n");
                         sb.append("    icmpRl: ").append(toIndentedString(icmpRl)).append("\n");
                         sb.append("    icmpRspRl: ").append(toIndentedString(icmpRspRl)).append("\n");
+                        sb.append("    ndRl: ").append(toIndentedString(ndRl)).append("\n");
                         sb.append("    rstRl: ").append(toIndentedString(rstRl)).append("\n");
                   sb.append("}");
       return sb.toString();
