@@ -208,7 +208,7 @@ public class ClientLogStreamingConfig  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Maximum number of logs per second streamed to the remote server.
+     * This setting limits the number of logs streamed per vs from each se to the external server.
      * By default, 100 logs per second are streamed.
      * Set this to zero(0) to not enforce any limit.
      * Field introduced in 17.1.1.
@@ -222,7 +222,7 @@ public class ClientLogStreamingConfig  {
 
     /**
      * This is the setter method to the attribute.
-     * Maximum number of logs per second streamed to the remote server.
+     * This setting limits the number of logs streamed per vs from each se to the external server.
      * By default, 100 logs per second are streamed.
      * Set this to zero(0) to not enforce any limit.
      * Field introduced in 17.1.1.
