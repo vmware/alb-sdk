@@ -859,7 +859,7 @@ definitions:
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
             max_logs_per_second:
-                description: "Maximum number of logs per second streamed to the remote server. By default, 100 logs per second are streamed. Set this to zero(0) to not enforce any limit. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "This setting limits the number of logs streamed per VS from each SE to the external server. By default, 100 logs per second are streamed. Set this to zero(0) to not enforce any limit. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: uint32
