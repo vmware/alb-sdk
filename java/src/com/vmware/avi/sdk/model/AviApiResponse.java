@@ -13,9 +13,6 @@ public class AviApiResponse<T> {
 	@JsonProperty("count")
 	private String count = null;
 
-	@JsonProperty("next")
-	private String next = null;
-
 	@JsonProperty("results")
 	private List<T> results = null;
 
@@ -25,14 +22,6 @@ public class AviApiResponse<T> {
 
 	public void setCount(String count) {
 		this.count = count;
-	}
-
-	public String getNext() {
-		return next;
-	}
-
-	public void setNext(String next) {
-		this.next = next;
 	}
 
 	public List<T> getResults() {
