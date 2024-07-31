@@ -458,7 +458,7 @@ definitions:
                 type: integer
                 format: uint32
             eth_proto:
-                description: "Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Ethernet Proto filter. Enum options - ETH_TYPE_IPV4, ETH_TYPE_IPV6. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             ip_proto:
                 description: "IP Proto filter. Support for TCP only for now. Enum options - IP_TYPE_TCP. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -537,7 +537,7 @@ definitions:
                 description: "Destination Port range filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DestinationPortAddr'
             eth_proto:
-                description: "Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Ethernet Proto filter. Enum options - ETH_TYPE_IPV4, ETH_TYPE_IPV6. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
                 default: "ETH_TYPE_IPV4"
             host_ip:
