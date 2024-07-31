@@ -15,6 +15,7 @@ import (
 	"mime/multipart"
 	"net/http"
 	"net/http/httputil"
+	"net/url"
 	"os"
 	"reflect"
 	"regexp"
@@ -1404,11 +1405,11 @@ func (avisess *AviSession) GetUri(obj string, options ...ApiOptionsParams) (stri
 		return "", errors.New("Name not specified")
 	}
 
-	uri := "api/" + obj + "?name=" + opts.name
+	uri := "api/" + obj + "?name=" + url.QueryEscape(opts.name)
 	if opts.cloud != "" {
-		uri = uri + "&cloud=" + opts.cloud
+		uri = uri + "&cloud=" + url.QueryEscape(opts.cloud)
 	} else if opts.cloudUUID != "" {
-		uri = uri + "&cloud_ref.uuid=" + opts.cloudUUID
+		uri = uri + "&cloud_ref.uuid=" + url.QueryEscape(opts.cloudUUID)
 	}
 	if opts.skipDefault {
 		uri = uri + "&skip_default=true"
