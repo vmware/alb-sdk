@@ -65,7 +65,7 @@ public class CaptureTCPFilter  {
     /**
      * This is the getter method this will return the attribute value.
      * Ethernet proto filter.
-     * Enum options - ETH_TYPE_IPV4.
+     * Enum options - ETH_TYPE_IPV4, ETH_TYPE_IPV6.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ETH_TYPE_IPV4".
@@ -78,7 +78,7 @@ public class CaptureTCPFilter  {
     /**
      * This is the setter method to the attribute.
      * Ethernet proto filter.
-     * Enum options - ETH_TYPE_IPV4.
+     * Enum options - ETH_TYPE_IPV4, ETH_TYPE_IPV6.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ETH_TYPE_IPV4".
