@@ -112,7 +112,6 @@ NSXT:
      - "display_name"
      - "resource_type"
      - "id"
-     - "description"
 
     Monitor_http_attr:
     - "request_url"
@@ -172,7 +171,6 @@ NSXT:
     - "min_active_members"
     - "resource_type"
     - "id"
-    - "description"
 
     Pool_supported_attr_convert_servers_config:
     - "display_name"
@@ -217,7 +215,6 @@ NSXT:
     Network_Profile_supported_attr:
     - "display_name"
     - "resource_type"
-    - "description"
     - "id"
     - "idle_timeout"
     - 'ha_flow_mirroring_enabled'
@@ -287,7 +284,6 @@ NSXT:
     - "id"
     - "resource_type"
     - 'prefer_server_ciphers'
-    - "description"
 
     SSLProfile_Client_Indirect_Attributes:
      - "is_secure"
@@ -301,7 +297,6 @@ NSXT:
     - "display_name"
     - "id"
     - "resource_type"
-    - "description"
 
     SSLProfile_Server_Indirect_Attributes:
         - "is_secure"
@@ -314,7 +309,6 @@ NSXT:
     - "display_name"
     - "id"
     - "resource_type"
-    - "description"
 
     CookiePersistenceProfile_Supported_Attributes:
     - "cookie_name"

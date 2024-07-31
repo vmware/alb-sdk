@@ -196,8 +196,6 @@ class PolicyConfigConverter(object):
                                 elif rule_dict.__contains__('redirect_action') or rule_dict.__contains__(
                                         'switching_action'):
                                     http_rules.append(rule_dict)
-                                elif rule_dict.__contains__('action'):
-                                    sec_rules.append(rule_dict)
                 if match_strategy == "ANY" and match_conditions:
                     supp_match_conditions = list()
                     for match_condition in match_conditions:
@@ -261,8 +259,6 @@ class PolicyConfigConverter(object):
                                 elif rule_dict.__contains__('redirect_action') or rule_dict.__contains__(
                                         'switching_action'):
                                     http_rules.append(rule_dict)
-                                elif rule_dict.__contains__('action'):
-                                    sec_rules.append(rule_dict)
         ds_counter = 1
         for index, rule in enumerate(http_rules):
             counter = index + 1

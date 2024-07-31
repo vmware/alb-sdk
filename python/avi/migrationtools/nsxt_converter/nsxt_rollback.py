@@ -71,8 +71,6 @@ class NsxtAlbRollback(AviConverter):
             self.alb_controller_tenant = data.get('alb_controller_tenant')
         if not self.prefix:
             self.prefix = data.get('prefix')
-        self.default_vs_state = data.get('vs_state')
-        self.default_traffic_state = data.get('traffic_state')
 
         input_path = None
         self.input_data = None
@@ -91,10 +89,8 @@ class NsxtAlbRollback(AviConverter):
 
         nsx_util = NSXUtil(self.nsxt_user, self.nsxt_password, self.nsxt_ip, self.nsxt_port,
                            self.controller_ip, self.user, self.password, self.controller_version)
-        vs_not_found, vs_with_no_lb, alb_vs_not_found = nsx_util.rollback_vs(self.vs_filter, self.input_data,
-                                                                             self.prefix, self.alb_controller_tenant,
-                                                                             self.default_vs_state,
-                                                                             self.default_traffic_state)
+        vs_not_found, vs_with_no_lb = nsx_util.rollback_vs(self.vs_filter, self.input_data,
+                                                           self.prefix, self.alb_controller_tenant)
         if vs_not_found:
             print_msg = "\033[93m" + "Warning: Following virtual service/s could not be found" + "\033[0m"
             print(print_msg)
@@ -106,11 +102,6 @@ class NsxtAlbRollback(AviConverter):
             print(warn_msg)
             print(vs_with_no_lb)
             LOG.warning("{} {}".format(warn_msg, vs_with_no_lb))
-        if alb_vs_not_found:
-            warn_msg = "\033[93m" + "Warning: Following virtual service(s) not found on ALB " + "\033[0m"
-            print(warn_msg)
-            print(alb_vs_not_found)
-            LOG.warning("{} {}".format(warn_msg, alb_vs_not_found))
 
         print("Total Warning: ", get_count('warning'))
         print("Total Errors: ", get_count('error'))

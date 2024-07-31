@@ -12,8 +12,6 @@ import pytest
 import yaml
 
 import subprocess
-from avi.migrationtools.nsxt_converter.test.conftest import option
-
 from avi.migrationtools.avi_migration_utils import get_count, set_update_count
 from avi.migrationtools.nsxt_converter.nsxt_converter import NsxtConverter
 
@@ -23,8 +21,8 @@ from avi.migrationtools.test.common.test_clean_reboot \
     import verify_controller_is_up, clean_reboot
 
 
-config_file = option.config
-output_file = option.out
+config_file = pytest.config.getoption('--config')
+output_file = pytest.config.getoption('--out')
 
 with open(config_file) as f:
     file_attribute = yaml.load(f, Loader=yaml.Loader)
@@ -55,10 +53,9 @@ setup = dict(nsxt_ip=file_attribute['nsxt_ip'],
              segroup = None,
              patch = os.path.abspath(os.path.join(os.path.dirname(__file__),
                                        'patch.yaml')),
-             traffic_state = 'enable',
+             traffic_enabled = False,
              default_params_file = None,
-             cloud_tenant = 'admin',
-             skip_datapath_check = False,
+             cloud_tenant = 'admin'
         )
 
 if not os.path.exists(setup.get("output_file_path")):
@@ -83,18 +80,17 @@ def Nsxt_conv(nsxt_ip=None, nsxt_user=None, nsxt_password=None, ssh_root_passwor
               controller_version = None, ansible_filter_types = None, vs_level_status = False,
               option = None, ansible = False, object_merge_check = True,
               vs_state = None, vs_filter = None, segroup = None, patch = None,
-              traffic_state = 'enable', default_params_file = None, cloud_tenant = 'admin'
+              traffic_enabled = False, default_params_file = None, cloud_tenant = 'admin'
               ):
     args = Namespace(nsxt_ip=nsxt_ip, nsxt_user=nsxt_user, nsxt_password=nsxt_password, ssh_root_password=ssh_root_password,
-                     alb_controller_ip=controller_ip, alb_controller_password=password, alb_controller_user=user,
-                     alb_controller_version=alb_controller_version,
+                     alb_controller_ip=controller_ip, alb_controller_password=password, alb_controller_user=user, alb_controller_version=alb_controller_version,
                      output_file_path=output_file_path, nsxt_port=nsxt_port, prefix=prefix, alb_controller_tenant=tenant,
                      not_in_use=not_in_use, ansible_skip_types=ansible_skip_types, controller_version=controller_version,
                      ansible_filter_types=ansible_filter_types, vs_level_status=vs_level_status,
                      option=option, ansible=ansible, no_object_merge=object_merge_check,
                      vs_state=vs_state, vs_filter=vs_filter, segroup=segroup, patch=patch,
-                     traffic_state=traffic_state, default_params_file=default_params_file, cloud_tenant=cloud_tenant,
-                     skip_datapath_check = False)
+                     traffic_enabled=traffic_enabled, default_params_file=default_params_file, cloud_tenant=cloud_tenant
+                     )
     nsxt_converter = NsxtConverter(args)
     nsxt_converter.convert_lb_config(args)
 
@@ -463,50 +459,4 @@ class TestNSXTConverter:
                                             if data['name'] == policy_name][0]
                     assert network_security_name == policy_name
 
-    def test_vs_state_and_traffic_state_with_default_values(self, cleanup):
-        Nsxt_conv(nsxt_ip=setup.get('nsxt_ip'),
-                  nsxt_user=setup.get('nsxt_user'),
-                  nsxt_password=setup.get('nsxt_password'),
-                  controller_ip=setup.get('alb_controller_ip'),
-                  user=setup.get('alb_controller_user'),
-                  alb_controller_version=setup.get('alb_controller_version'),
-                  password=setup.get('alb_controller_password'),
-                  output_file_path=setup.get('output_file_path'),
-                  vs_state='deactivate',
-                  traffic_state='enable')
-
-        output_json = os.path.abspath(os.path.join(
-            output_file, '{}/output/avi_config.json'.format(setup.get('nsxt_ip'))))
-        with open(output_json) as json_file:
-            data = json.load(json_file)
-            virtual_services = data['VirtualService']
-            for vs in virtual_services:
-                vs_state = vs['enabled']
-                traffic_state = vs['traffic_enabled']
-                assert not vs_state, f"VS state is expected to be deactivated, found {vs_state}"
-                assert traffic_state, f"VS traffic state is expected to be enabled, found {traffic_state}"
-
-    def test_vs_state_and_traffic_state_with_nondefault_values(self, cleanup):
-        Nsxt_conv(nsxt_ip=setup.get('nsxt_ip'),
-                  nsxt_user=setup.get('nsxt_user'),
-                  nsxt_password=setup.get('nsxt_password'),
-                  controller_ip=setup.get('alb_controller_ip'),
-                  user=setup.get('alb_controller_user'),
-                  alb_controller_version=setup.get('alb_controller_version'),
-                  password=setup.get('alb_controller_password'),
-                  output_file_path=setup.get('output_file_path'),
-                  vs_state='enable',
-                  traffic_state='deactivate')
-
-        output_json = os.path.abspath(os.path.join(
-            output_file, '{}/output/avi_config.json'.format(setup.get('nsxt_ip'))))
-        with open(output_json) as json_file:
-            data = json.load(json_file)
-            virtual_services = data['VirtualService']
-            for vs in virtual_services:
-                vs_state = vs['enabled']
-                traffic_state = vs['traffic_enabled']
-                assert vs_state, f"VS state is expected to be enabled, found {vs_state}"
-                assert not traffic_state, f"VS traffic state is expected to be deactivated" \
-                                          f", found {traffic_state}"
 

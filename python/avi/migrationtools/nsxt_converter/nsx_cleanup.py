@@ -57,8 +57,7 @@ class NSXCleanup:
                                     vs_attached_server_ssl.append(
                                         vs['server_ssl_profile_binding']['ssl_profile_path'].split('/')[-1])
 
-                            self.nsx_util.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.delete,
-                                                              vs["id"])
+                            self.nsx_api_client.infra.LbVirtualServers.delete(vs["id"])
                             cleanup_msg = "Deleted VS {} from NSX-T".format(vs["display_name"])
                             LOG.debug(cleanup_msg)
                             print(cleanup_msg)
@@ -77,14 +76,13 @@ class NSXCleanup:
                                    (vs.get("lb_persistence_profile_path") and
                                     vs.get("lb_persistence_profile_path").split("/")[-1] == persis_id)]
                         if not vs_list:
-                            self.nsx_util.call_api_with_retry(self.nsx_api_client.infra.LbPersistenceProfiles.delete,
-                                                              persis_id)
+                            self.nsx_api_client.infra.LbPersistenceProfiles.delete(persis_id)
                             cleanup_msg = "Performed cleanup of referenced persistence profile"
                             LOG.debug(cleanup_msg)
                             print(cleanup_msg)
                         else:
-                            msg = "No cleanup performed on persistence profile " \
-                                  "as it is referenced by other virtual service/s"
+                            msg="No cleanup performed on persistence profile " \
+                            "as it is referenced by other virtual service/s"
                             LOG.debug(msg)
                             print(msg)
                     else:
@@ -103,8 +101,7 @@ class NSXCleanup:
                                     vs['server_ssl_profile_binding'].get('ssl_profile_path') and
                                     vs['server_ssl_profile_binding']['ssl_profile_path'].split("/")[-1] == s_ssl_id)]
                         if not vs_list:
-                            self.nsx_util.call_api_with_retry(self.nsx_api_client.infra.LbServerSslProfiles.delete,
-                                                              s_ssl_id)
+                            self.nsx_api_client.infra.LbServerSslProfiles.delete(s_ssl_id)
                             cleanup_msg = "Performed cleanup of referenced server ssl profile"
                             LOG.debug(cleanup_msg)
                             print(cleanup_msg)
@@ -129,8 +126,7 @@ class NSXCleanup:
                                     vs['client_ssl_profile_binding'].get('ssl_profile_path') and
                                     vs['client_ssl_profile_binding']['ssl_profile_path'].split("/")[-1] == c_ssl_id)]
                         if not vs_list:
-                            self.nsx_util.call_api_with_retry(self.nsx_api_client.infra.LbClientSslProfiles.delete,
-                                                              c_ssl_id)
+                            self.nsx_api_client.infra.LbClientSslProfiles.delete(c_ssl_id)
                             cleanup_msg = "Performed cleanup of referenced client ssl profile"
                             LOG.debug(cleanup_msg)
                             print(cleanup_msg)
@@ -154,8 +150,7 @@ class NSXCleanup:
                                    (vs.get("application_profile_path") and
                                     vs.get("application_profile_path").split("/")[-1] == pr_id)]
                         if not vs_list:
-                            self.nsx_util.call_api_with_retry(self.nsx_api_client.infra.LbAppProfiles.delete,
-                                                              pr_id)
+                            self.nsx_api_client.infra.LbAppProfiles.delete(pr_id)
                             cleanup_msg = "Performed cleanup of referenced application profile"
                             LOG.debug(cleanup_msg)
                             print(cleanup_msg)
@@ -186,8 +181,7 @@ class NSXCleanup:
                                 active_monitor_list = pool_config[0].get("active_monitor_paths")
                                 for monitor in active_monitor_list:
                                     pool_attached_monitor.append(monitor.split('/')[-1])
-                            self.nsx_util.call_api_with_retry(self.nsx_api_client.infra.LbPools.delete,
-                                                              pool_id)
+                            self.nsx_api_client.infra.LbPools.delete(pool_id)
                             cleanup_msg = "Performed cleanup of referenced pool"
                             LOG.debug(cleanup_msg)
                             print(cleanup_msg)
@@ -216,8 +210,7 @@ class NSXCleanup:
                                     pool_list.append(pool["id"])
 
                         if not pool_list:
-                            self.nsx_util.call_api_with_retry(self.nsx_api_client.infra.LbMonitorProfiles.delete,
-                                                              monitor_id)
+                            self.nsx_api_client.infra.LbMonitorProfiles.delete(monitor_id)
                             cleanup_msg = "Performed cleanup of referenced monitor"
                             LOG.debug(cleanup_msg)
                             print(cleanup_msg)

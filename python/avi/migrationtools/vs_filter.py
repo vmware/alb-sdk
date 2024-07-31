@@ -40,7 +40,6 @@ def filter_for_vs(avi_config, vs_names, prefix=None, skip_ref_objects=skip_ref_o
         virtual_services = vs_names.split(',')
     elif vs_names and isinstance(vs_names, list):
         virtual_services = vs_names
-    virtual_services = [vs.strip() for vs in virtual_services]
 
     for vs_name in virtual_services:
         if prefix:
