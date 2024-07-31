@@ -43,17 +43,6 @@ Pip packages hosted at pypi. They can be installed simply as:
 $ pip install avisdk
 ```
 
-Tar packages hosted at GitHub releases can be found under assets on page https://github.com/vmware/alb-sdk/releases. <br>
-
-Pip Package can be installed simply as:
-```sh
-$ pip install pip-package-avisdk-<release_version>.tar.gz
-```
-Rpm Package can be installed simply as
-```sh
-$ rpm -i rpm--package-avisdk-<release_version>.rpm
-```
-
 --------------
 Usage Examples
 --------------
