@@ -22,7 +22,7 @@ DEFAULT_SKIP_TYPES = [
     'SystemConfiguration', 'Network', 'debugcontroller', 'VIMgrVMRuntime',
     'VIMgrIPSubnetRuntime', 'Alert', 'VIMgrSEVMRuntime', 'VIMgrClusterRuntime',
     'VIMgrHostRuntime', 'DebugController', 'ServiceEngineGroup',
-    'SeProperties', 'ControllerProperties', 'CloudProperties', 'ALBServicesConfig']
+    'SeProperties', 'ControllerProperties', 'CloudProperties']
 
 
 SKIP_FIELDS = ['uuid', 'url', 'ref_key', 'se_uuids', 'key_passphrase',

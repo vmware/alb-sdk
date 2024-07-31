@@ -13,7 +13,6 @@ from urllib.parse import urlparse, parse_qs
 
 # global vs reference object
 global vs_ref_dict_g
-vs_ref_dict_g=()
 
 PATH_KEY_MAP = {'poolgroup': 'PoolGroup', 'healthmonitor': 'HealthMonitor',
                 'sslprofile': 'SSLProfile', 'httppolicyset': 'HTTPPolicySet',
@@ -241,7 +240,6 @@ def wipe_out_not_in_use(avi_config):
     :param avi_config:
     :return:
     """
-    use_obj = []
     if 'VirtualService' in avi_config:
         use_obj = filter_for_vs(avi_config)
     for key in DEFAULT_META_ORDER:
