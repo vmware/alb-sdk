@@ -22,6 +22,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RestoreParams  {
+    @JsonProperty("dryrun")
+    private Boolean dryrun = false;
+
     @JsonIgnore
     private Boolean enableMigration = false;
 
@@ -41,6 +44,30 @@ public class RestoreParams  {
     private String type = "JSON";
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This flag is set to perform the upgrade dry-run operations.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return dryrun
+     */
+    public Boolean getDryrun() {
+        return dryrun;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This flag is set to perform the upgrade dry-run operations.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param dryrun set the dryrun.
+     */
+    public void setDryrun(Boolean  dryrun) {
+        this.dryrun = dryrun;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -203,14 +230,16 @@ public class RestoreParams  {
   Objects.equals(this.skipWarnings, objRestoreParams.skipWarnings)&&
   Objects.equals(this.passphrase, objRestoreParams.passphrase)&&
   Objects.equals(this.prechecksOnly, objRestoreParams.prechecksOnly)&&
-  Objects.equals(this.enableMigration, objRestoreParams.enableMigration);
+  Objects.equals(this.enableMigration, objRestoreParams.enableMigration)&&
+  Objects.equals(this.dryrun, objRestoreParams.dryrun);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class RestoreParams {\n");
-                  sb.append("    enableMigration: ").append(toIndentedString(enableMigration)).append("\n");
+                  sb.append("    dryrun: ").append(toIndentedString(dryrun)).append("\n");
+                        sb.append("    enableMigration: ").append(toIndentedString(enableMigration)).append("\n");
                         sb.append("    file: ").append(toIndentedString(file)).append("\n");
                         sb.append("    passphrase: ").append(toIndentedString(passphrase)).append("\n");
                         sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");

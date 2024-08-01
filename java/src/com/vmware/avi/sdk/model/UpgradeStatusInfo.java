@@ -30,6 +30,9 @@ public class UpgradeStatusInfo extends AviRestResource  {
     @JsonProperty("clean")
     private Boolean clean;
 
+    @JsonProperty("dryrun_info")
+    private DryrunInfo dryrunInfo;
+
     @JsonProperty("duration")
     private Integer duration;
 
@@ -246,6 +249,30 @@ public class UpgradeStatusInfo extends AviRestResource  {
      */
     public void setClean(Boolean  clean) {
         this.clean = clean;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Upgrade dry-run operation details.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dryrunInfo
+     */
+    public DryrunInfo getDryrunInfo() {
+        return dryrunInfo;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Upgrade dry-run operation details.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param dryrunInfo set the dryrunInfo.
+     */
+    public void setDryrunInfo(DryrunInfo dryrunInfo) {
+        this.dryrunInfo = dryrunInfo;
     }
 
     /**
@@ -1425,7 +1452,7 @@ public class UpgradeStatusInfo extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Upgrade operations requested.
      * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
-     * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE.
+     * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -1439,7 +1466,7 @@ public class UpgradeStatusInfo extends AviRestResource  {
      * This is the setter method to the attribute.
      * Upgrade operations requested.
      * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
-     * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE.
+     * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -1588,9 +1615,10 @@ public class UpgradeStatusInfo extends AviRestResource  {
   Objects.equals(this.afterRebootTaskName, objUpgradeStatusInfo.afterRebootTaskName)&&
   Objects.equals(this.afterRebootRollbackFnc, objUpgradeStatusInfo.afterRebootRollbackFnc)&&
   Objects.equals(this.upgradeReadiness, objUpgradeStatusInfo.upgradeReadiness)&&
-  Objects.equals(this.systemReportRefs, objUpgradeStatusInfo.systemReportRefs)&&
   Objects.equals(this.remoteImageRef, objUpgradeStatusInfo.remoteImageRef)&&
   Objects.equals(this.prevRemoteImageRef, objUpgradeStatusInfo.prevRemoteImageRef)&&
+  Objects.equals(this.systemReportRefs, objUpgradeStatusInfo.systemReportRefs)&&
+  Objects.equals(this.dryrunInfo, objUpgradeStatusInfo.dryrunInfo)&&
   Objects.equals(this.tenantRef, objUpgradeStatusInfo.tenantRef)&&
   Objects.equals(this.objCloudRef, objUpgradeStatusInfo.objCloudRef)&&
   Objects.equals(this.seUpgradeEvents, objUpgradeStatusInfo.seUpgradeEvents)&&
@@ -1607,6 +1635,7 @@ public class UpgradeStatusInfo extends AviRestResource  {
                   sb.append("    afterRebootRollbackFnc: ").append(toIndentedString(afterRebootRollbackFnc)).append("\n");
                         sb.append("    afterRebootTaskName: ").append(toIndentedString(afterRebootTaskName)).append("\n");
                         sb.append("    clean: ").append(toIndentedString(clean)).append("\n");
+                        sb.append("    dryrunInfo: ").append(toIndentedString(dryrunInfo)).append("\n");
                         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
                         sb.append("    enablePatchRollback: ").append(toIndentedString(enablePatchRollback)).append("\n");
                         sb.append("    enableRollback: ").append(toIndentedString(enableRollback)).append("\n");

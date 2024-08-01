@@ -24,6 +24,9 @@ public class UpgradeControllerParams  {
     @JsonProperty("controller_patch_ref")
     private String controllerPatchRef;
 
+    @JsonProperty("dryrun")
+    private Boolean dryrun = false;
+
     @JsonProperty("image_ref")
     private String imageRef;
 
@@ -59,6 +62,30 @@ public class UpgradeControllerParams  {
      */
     public void setControllerPatchRef(String  controllerPatchRef) {
         this.controllerPatchRef = controllerPatchRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This flag is set to perform the upgrade dry-run operations.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return dryrun
+     */
+    public Boolean getDryrun() {
+        return dryrun;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This flag is set to perform the upgrade dry-run operations.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param dryrun set the dryrun.
+     */
+    public void setDryrun(Boolean  dryrun) {
+        this.dryrun = dryrun;
     }
 
     /**
@@ -148,7 +175,8 @@ public class UpgradeControllerParams  {
       return   Objects.equals(this.imageRef, objUpgradeControllerParams.imageRef)&&
   Objects.equals(this.controllerPatchRef, objUpgradeControllerParams.controllerPatchRef)&&
   Objects.equals(this.skipWarnings, objUpgradeControllerParams.skipWarnings)&&
-  Objects.equals(this.prechecksOnly, objUpgradeControllerParams.prechecksOnly);
+  Objects.equals(this.prechecksOnly, objUpgradeControllerParams.prechecksOnly)&&
+  Objects.equals(this.dryrun, objUpgradeControllerParams.dryrun);
     }
 
     @Override
@@ -156,6 +184,7 @@ public class UpgradeControllerParams  {
       StringBuilder sb = new StringBuilder();
       sb.append("class UpgradeControllerParams {\n");
                   sb.append("    controllerPatchRef: ").append(toIndentedString(controllerPatchRef)).append("\n");
+                        sb.append("    dryrun: ").append(toIndentedString(dryrun)).append("\n");
                         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
                         sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");
                         sb.append("    skipWarnings: ").append(toIndentedString(skipWarnings)).append("\n");

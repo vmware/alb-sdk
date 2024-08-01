@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The UpgradeReadinessCheckObj is a POJO class extends AviRestResource that used for creating
- * UpgradeReadinessCheckObj.
+ * The DryrunInfo is a POJO class extends AviRestResource that used for creating
+ * DryrunInfo.
  *
  * @version 1.0
  * @since 
@@ -20,24 +20,18 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UpgradeReadinessCheckObj  {
-    @JsonProperty("checks")
-    private List<MustChecksInfo> checks;
-
-    @JsonProperty("checks_completed")
-    private Integer checksCompleted;
-
+public class DryrunInfo  {
     @JsonProperty("duration")
     private Integer duration;
 
     @JsonProperty("end_time")
     private String endTime;
 
-    @JsonProperty("image_ref")
-    private String imageRef;
+    @JsonProperty("operation")
+    private String operation;
 
-    @JsonProperty("patch_image_ref")
-    private String patchImageRef;
+    @JsonProperty("params")
+    private UpgradeParams params;
 
     @JsonProperty("progress")
     private Integer progress = 0;
@@ -48,83 +42,24 @@ public class UpgradeReadinessCheckObj  {
     @JsonProperty("state")
     private UpgradeOpsState state;
 
-    @JsonProperty("total_checks")
-    private Integer totalChecks;
+    @JsonProperty("tasks_completed")
+    private Integer tasksCompleted;
 
-    @JsonProperty("upgrade_ops")
-    private String upgradeOps;
+    @JsonProperty("total_tasks")
+    private Integer totalTasks;
+
+    @JsonProperty("upgrade_events")
+    private List<EventMap> upgradeEvents;
+
+    @JsonProperty("worker")
+    private String worker;
 
 
-    /**
-     * This is the getter method this will return the attribute value.
-     * List of upgrade readiness check exceptions.
-     * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return checks
-     */
-    public List<MustChecksInfo> getChecks() {
-        return checks;
-    }
-
-    /**
-     * This is the setter method. this will set the checks
-     * List of upgrade readiness check exceptions.
-     * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return checks
-     */
-    public void setChecks(List<MustChecksInfo>  checks) {
-        this.checks = checks;
-    }
-
-    /**
-     * This is the setter method this will set the checks
-     * List of upgrade readiness check exceptions.
-     * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return checks
-     */
-    public UpgradeReadinessCheckObj addChecksItem(MustChecksInfo checksItem) {
-      if (this.checks == null) {
-        this.checks = new ArrayList<MustChecksInfo>();
-      }
-      this.checks.add(checksItem);
-      return this;
-    }
 
     /**
      * This is the getter method this will return the attribute value.
-     * No.
-     * Of checks completed.
-     * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return checksCompleted
-     */
-    public Integer getChecksCompleted() {
-        return checksCompleted;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * No.
-     * Of checks completed.
-     * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param checksCompleted set the checksCompleted.
-     */
-    public void setChecksCompleted(Integer  checksCompleted) {
-        this.checksCompleted = checksCompleted;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Time taken to complete upgrade readiness checks in seconds.
-     * Field introduced in 22.1.3.
+     * Duration of dry-run operation in seconds.
+     * Field introduced in 31.1.1.
      * Unit is sec.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -136,8 +71,8 @@ public class UpgradeReadinessCheckObj  {
 
     /**
      * This is the setter method to the attribute.
-     * Time taken to complete upgrade readiness checks in seconds.
-     * Field introduced in 22.1.3.
+     * Duration of dry-run operation in seconds.
+     * Field introduced in 31.1.1.
      * Unit is sec.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -149,8 +84,8 @@ public class UpgradeReadinessCheckObj  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Time at which execution of upgrade readiness checks was completed.
-     * Field introduced in 22.1.3.
+     * End time of dry-run operation.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endTime
@@ -161,8 +96,8 @@ public class UpgradeReadinessCheckObj  {
 
     /**
      * This is the setter method to the attribute.
-     * Time at which execution of upgrade readiness checks was completed.
-     * Field introduced in 22.1.3.
+     * End time of dry-run operation.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endTime set the endTime.
@@ -173,59 +108,59 @@ public class UpgradeReadinessCheckObj  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Image uuid for identifying the next base image.
-     * It is a reference to an object of type image.
-     * Field introduced in 22.1.3.
+     * Dryrun operations requested.
+     * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
+     * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return imageRef
+     * @return operation
      */
-    public String getImageRef() {
-        return imageRef;
+    public String getOperation() {
+        return operation;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Image uuid for identifying the next base image.
-     * It is a reference to an object of type image.
-     * Field introduced in 22.1.3.
+     * Dryrun operations requested.
+     * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
+     * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param imageRef set the imageRef.
+     * @param operation set the operation.
      */
-    public void setImageRef(String  imageRef) {
-        this.imageRef = imageRef;
+    public void setOperation(String  operation) {
+        this.operation = operation;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Image uuid for identifying the next patch.
-     * It is a reference to an object of type image.
-     * Field introduced in 22.1.3.
+     * Parameters for performing the dry-run operation.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return patchImageRef
+     * @return params
      */
-    public String getPatchImageRef() {
-        return patchImageRef;
+    public UpgradeParams getParams() {
+        return params;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Image uuid for identifying the next patch.
-     * It is a reference to an object of type image.
-     * Field introduced in 22.1.3.
+     * Parameters for performing the dry-run operation.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param patchImageRef set the patchImageRef.
+     * @param params set the params.
      */
-    public void setPatchImageRef(String  patchImageRef) {
-        this.patchImageRef = patchImageRef;
+    public void setParams(UpgradeParams params) {
+        this.params = params;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Checks progress which holds value between 0-100.
+     * Dry-run operations progress which holds value between 0-100.
      * Allowed values are 0-100.
      * Field introduced in 31.1.1.
      * Unit is percent.
@@ -239,7 +174,7 @@ public class UpgradeReadinessCheckObj  {
 
     /**
      * This is the setter method to the attribute.
-     * Checks progress which holds value between 0-100.
+     * Dry-run operations progress which holds value between 0-100.
      * Allowed values are 0-100.
      * Field introduced in 31.1.1.
      * Unit is percent.
@@ -253,8 +188,8 @@ public class UpgradeReadinessCheckObj  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Time at which execution of upgrade readiness checks was started.
-     * Field introduced in 22.1.3.
+     * Start time of dry-run operation.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startTime
@@ -265,8 +200,8 @@ public class UpgradeReadinessCheckObj  {
 
     /**
      * This is the setter method to the attribute.
-     * Time at which execution of upgrade readiness checks was started.
-     * Field introduced in 22.1.3.
+     * Start time of dry-run operation.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startTime set the startTime.
@@ -277,8 +212,8 @@ public class UpgradeReadinessCheckObj  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * The upgrade readiness check operations current fsm-state.
-     * Field introduced in 22.1.3.
+     * Current status of the dry-run operation.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return state
@@ -289,8 +224,8 @@ public class UpgradeReadinessCheckObj  {
 
     /**
      * This is the setter method to the attribute.
-     * The upgrade readiness check operations current fsm-state.
-     * Field introduced in 22.1.3.
+     * Current status of the dry-run operation.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param state set the state.
@@ -301,56 +236,113 @@ public class UpgradeReadinessCheckObj  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Total no.
-     * Of checks.
-     * Field introduced in 22.1.3.
+     * Completed set of tasks in the upgrade operation.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return totalChecks
+     * @return tasksCompleted
      */
-    public Integer getTotalChecks() {
-        return totalChecks;
+    public Integer getTasksCompleted() {
+        return tasksCompleted;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Total no.
-     * Of checks.
-     * Field introduced in 22.1.3.
+     * Completed set of tasks in the upgrade operation.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param totalChecks set the totalChecks.
+     * @param tasksCompleted set the tasksCompleted.
      */
-    public void setTotalChecks(Integer  totalChecks) {
-        this.totalChecks = totalChecks;
+    public void setTasksCompleted(Integer  tasksCompleted) {
+        this.tasksCompleted = tasksCompleted;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Upgrade operations along with type requested such as upgradesystem upgradecontroller etc.
-     * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
-     * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
-     * Field introduced in 22.1.3.
+     * Total number of tasks in the upgrade operation.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return upgradeOps
+     * @return totalTasks
      */
-    public String getUpgradeOps() {
-        return upgradeOps;
+    public Integer getTotalTasks() {
+        return totalTasks;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Upgrade operations along with type requested such as upgradesystem upgradecontroller etc.
-     * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
-     * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
-     * Field introduced in 22.1.3.
+     * Total number of tasks in the upgrade operation.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param upgradeOps set the upgradeOps.
+     * @param totalTasks set the totalTasks.
      */
-    public void setUpgradeOps(String  upgradeOps) {
-        this.upgradeOps = upgradeOps;
+    public void setTotalTasks(Integer  totalTasks) {
+        this.totalTasks = totalTasks;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Controller events for dry-run operation.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return upgradeEvents
+     */
+    public List<EventMap> getUpgradeEvents() {
+        return upgradeEvents;
+    }
+
+    /**
+     * This is the setter method. this will set the upgradeEvents
+     * Controller events for dry-run operation.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return upgradeEvents
+     */
+    public void setUpgradeEvents(List<EventMap>  upgradeEvents) {
+        this.upgradeEvents = upgradeEvents;
+    }
+
+    /**
+     * This is the setter method this will set the upgradeEvents
+     * Controller events for dry-run operation.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return upgradeEvents
+     */
+    public DryrunInfo addUpgradeEventsItem(EventMap upgradeEventsItem) {
+      if (this.upgradeEvents == null) {
+        this.upgradeEvents = new ArrayList<EventMap>();
+      }
+      this.upgradeEvents.add(upgradeEventsItem);
+      return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Node on which the dry-run is performed.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return worker
+     */
+    public String getWorker() {
+        return worker;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Node on which the dry-run is performed.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param worker set the worker.
+     */
+    public void setWorker(String  worker) {
+        this.worker = worker;
     }
 
 
@@ -362,35 +354,35 @@ public class UpgradeReadinessCheckObj  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      UpgradeReadinessCheckObj objUpgradeReadinessCheckObj = (UpgradeReadinessCheckObj) o;
-      return   Objects.equals(this.state, objUpgradeReadinessCheckObj.state)&&
-  Objects.equals(this.checks, objUpgradeReadinessCheckObj.checks)&&
-  Objects.equals(this.startTime, objUpgradeReadinessCheckObj.startTime)&&
-  Objects.equals(this.endTime, objUpgradeReadinessCheckObj.endTime)&&
-  Objects.equals(this.duration, objUpgradeReadinessCheckObj.duration)&&
-  Objects.equals(this.upgradeOps, objUpgradeReadinessCheckObj.upgradeOps)&&
-  Objects.equals(this.imageRef, objUpgradeReadinessCheckObj.imageRef)&&
-  Objects.equals(this.patchImageRef, objUpgradeReadinessCheckObj.patchImageRef)&&
-  Objects.equals(this.totalChecks, objUpgradeReadinessCheckObj.totalChecks)&&
-  Objects.equals(this.checksCompleted, objUpgradeReadinessCheckObj.checksCompleted)&&
-  Objects.equals(this.progress, objUpgradeReadinessCheckObj.progress);
+      DryrunInfo objDryrunInfo = (DryrunInfo) o;
+      return   Objects.equals(this.state, objDryrunInfo.state)&&
+  Objects.equals(this.operation, objDryrunInfo.operation)&&
+  Objects.equals(this.params, objDryrunInfo.params)&&
+  Objects.equals(this.worker, objDryrunInfo.worker)&&
+  Objects.equals(this.startTime, objDryrunInfo.startTime)&&
+  Objects.equals(this.endTime, objDryrunInfo.endTime)&&
+  Objects.equals(this.duration, objDryrunInfo.duration)&&
+  Objects.equals(this.totalTasks, objDryrunInfo.totalTasks)&&
+  Objects.equals(this.tasksCompleted, objDryrunInfo.tasksCompleted)&&
+  Objects.equals(this.progress, objDryrunInfo.progress)&&
+  Objects.equals(this.upgradeEvents, objDryrunInfo.upgradeEvents);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class UpgradeReadinessCheckObj {\n");
-                  sb.append("    checks: ").append(toIndentedString(checks)).append("\n");
-                        sb.append("    checksCompleted: ").append(toIndentedString(checksCompleted)).append("\n");
-                        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+      sb.append("class DryrunInfo {\n");
+                  sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
                         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-                        sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
-                        sb.append("    patchImageRef: ").append(toIndentedString(patchImageRef)).append("\n");
+                        sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
+                        sb.append("    params: ").append(toIndentedString(params)).append("\n");
                         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
                         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
                         sb.append("    state: ").append(toIndentedString(state)).append("\n");
-                        sb.append("    totalChecks: ").append(toIndentedString(totalChecks)).append("\n");
-                        sb.append("    upgradeOps: ").append(toIndentedString(upgradeOps)).append("\n");
+                        sb.append("    tasksCompleted: ").append(toIndentedString(tasksCompleted)).append("\n");
+                        sb.append("    totalTasks: ").append(toIndentedString(totalTasks)).append("\n");
+                        sb.append("    upgradeEvents: ").append(toIndentedString(upgradeEvents)).append("\n");
+                        sb.append("    worker: ").append(toIndentedString(worker)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

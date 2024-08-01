@@ -24,11 +24,14 @@ public class UpgradeParams  {
     @JsonProperty("controller_patch_ref")
     private String controllerPatchRef;
 
+    @JsonProperty("dryrun")
+    private Boolean dryrun;
+
     @JsonProperty("image_ref")
     private String imageRef;
 
     @JsonProperty("prechecks_only")
-    private Boolean prechecksOnly = false;
+    private Boolean prechecksOnly;
 
     @JsonProperty("se_group_options")
     private SeGroupOptions seGroupOptions;
@@ -40,10 +43,10 @@ public class UpgradeParams  {
     private String sePatchRef;
 
     @JsonProperty("skip_warnings")
-    private Boolean skipWarnings = false;
+    private Boolean skipWarnings;
 
     @JsonProperty("system")
-    private Boolean system = false;
+    private Boolean system;
 
 
 
@@ -71,6 +74,30 @@ public class UpgradeParams  {
      */
     public void setControllerPatchRef(String  controllerPatchRef) {
         this.controllerPatchRef = controllerPatchRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This flag is set to perform the upgrade dry-run operations.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dryrun
+     */
+    public Boolean getDryrun() {
+        return dryrun;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This flag is set to perform the upgrade dry-run operations.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param dryrun set the dryrun.
+     */
+    public void setDryrun(Boolean  dryrun) {
+        this.dryrun = dryrun;
     }
 
     /**
@@ -104,7 +131,7 @@ public class UpgradeParams  {
      * This flag is set to run the pre-checks without the subsequent upgrade operations.
      * Field introduced in 22.1.6, 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prechecksOnly
      */
     public Boolean getPrechecksOnly() {
@@ -116,7 +143,7 @@ public class UpgradeParams  {
      * This flag is set to run the pre-checks without the subsequent upgrade operations.
      * Field introduced in 22.1.6, 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param prechecksOnly set the prechecksOnly.
      */
     public void setPrechecksOnly(Boolean  prechecksOnly) {
@@ -223,7 +250,7 @@ public class UpgradeParams  {
      * This is flag when set as true skips few optional must check.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return skipWarnings
      */
     public Boolean getSkipWarnings() {
@@ -235,7 +262,7 @@ public class UpgradeParams  {
      * This is flag when set as true skips few optional must check.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param skipWarnings set the skipWarnings.
      */
     public void setSkipWarnings(Boolean  skipWarnings) {
@@ -247,7 +274,7 @@ public class UpgradeParams  {
      * Apply upgrade operations such as upgrade/patch to controller and all se groups.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return system
      */
     public Boolean getSystem() {
@@ -259,7 +286,7 @@ public class UpgradeParams  {
      * Apply upgrade operations such as upgrade/patch to controller and all se groups.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param system set the system.
      */
     public void setSystem(Boolean  system) {
@@ -283,7 +310,8 @@ public class UpgradeParams  {
   Objects.equals(this.seGroupOptions, objUpgradeParams.seGroupOptions)&&
   Objects.equals(this.seGroupRefs, objUpgradeParams.seGroupRefs)&&
   Objects.equals(this.skipWarnings, objUpgradeParams.skipWarnings)&&
-  Objects.equals(this.prechecksOnly, objUpgradeParams.prechecksOnly);
+  Objects.equals(this.prechecksOnly, objUpgradeParams.prechecksOnly)&&
+  Objects.equals(this.dryrun, objUpgradeParams.dryrun);
     }
 
     @Override
@@ -291,6 +319,7 @@ public class UpgradeParams  {
       StringBuilder sb = new StringBuilder();
       sb.append("class UpgradeParams {\n");
                   sb.append("    controllerPatchRef: ").append(toIndentedString(controllerPatchRef)).append("\n");
+                        sb.append("    dryrun: ").append(toIndentedString(dryrun)).append("\n");
                         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
                         sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");
                         sb.append("    seGroupOptions: ").append(toIndentedString(seGroupOptions)).append("\n");
