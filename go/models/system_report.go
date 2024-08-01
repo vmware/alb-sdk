@@ -21,6 +21,9 @@ type SystemReport struct {
 	// Indicates whether this report is downloadable as an archive. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	Downloadable *bool `json:"downloadable,omitempty"`
 
+	// Dry-run report. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DryrunInfo *DryrunInfo `json:"dryrun_info,omitempty"`
+
 	// List of events associated with the report. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	Events []*ReportEvent `json:"events,omitempty"`
 
