@@ -15216,55 +15216,6 @@ paths:
         '401':
           description: log in failed
   /fileobject/{uuid}/['']/:
-    patch:
-      tags:
-      - FileObject
-      description: /fileobject/{uuid}/['']/
-      operationId: PATCH /fileobject/{uuid}/['']/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
     put:
       tags:
       - FileObject
@@ -15309,6 +15260,55 @@ paths:
           type: object
           additionalProperties:
             type: string
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+    patch:
+      tags:
+      - FileObject
+      description: /fileobject/{uuid}/['']/
+      operationId: PATCH /fileobject/{uuid}/['']/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -34201,391 +34201,6 @@ paths:
             type: string
         '404':
           description: not found
-  /vimgrnwruntime:
-    get:
-      tags:
-      - VIMgrNWRuntime
-      description: /vimgrnwruntime
-      operationId: GET /vimgrnwruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/VIMgrNWRuntimeApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - VIMgrNWRuntime
-      description: /vimgrnwruntime
-      operationId: POST /vimgrnwruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: VIMgrNWRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/VIMgrNWRuntime'
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/VIMgrNWRuntime'
-        '401':
-          description: log in failed
-  /vimgrnwruntime/{uuid}:
-    get:
-      tags:
-      - VIMgrNWRuntime
-      description: /vimgrnwruntime/{uuid}
-      operationId: GET /vimgrnwruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/VIMgrNWRuntime'
-        '401':
-          description: log in failed
-    put:
-      tags:
-      - VIMgrNWRuntime
-      description: /vimgrnwruntime/{uuid}
-      operationId: PUT /vimgrnwruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: VIMgrNWRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/VIMgrNWRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/VIMgrNWRuntime'
-        '401':
-          description: log in failed
-    patch:
-      tags:
-      - VIMgrNWRuntime
-      description: /vimgrnwruntime/{uuid}
-      operationId: PATCH /vimgrnwruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: VIMgrNWRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/VIMgrNWRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/VIMgrNWRuntime'
-        '401':
-          description: log in failed
-    delete:
-      tags:
-      - VIMgrNWRuntime
-      description: /vimgrnwruntime/{uuid}
-      operationId: DELETE /vimgrnwruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
-        '404':
-          description: not found
   /networkruntime:
     get:
       tags:
@@ -34922,6 +34537,391 @@ paths:
       - NetworkRuntime
       description: /networkruntime/{uuid}
       operationId: DELETE /networkruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: not found
+  /vimgrnwruntime:
+    get:
+      tags:
+      - VIMgrNWRuntime
+      description: /vimgrnwruntime
+      operationId: GET /vimgrnwruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/VIMgrNWRuntimeApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - VIMgrNWRuntime
+      description: /vimgrnwruntime
+      operationId: POST /vimgrnwruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: VIMgrNWRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/VIMgrNWRuntime'
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/VIMgrNWRuntime'
+        '401':
+          description: log in failed
+  /vimgrnwruntime/{uuid}:
+    get:
+      tags:
+      - VIMgrNWRuntime
+      description: /vimgrnwruntime/{uuid}
+      operationId: GET /vimgrnwruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/VIMgrNWRuntime'
+        '401':
+          description: log in failed
+    put:
+      tags:
+      - VIMgrNWRuntime
+      description: /vimgrnwruntime/{uuid}
+      operationId: PUT /vimgrnwruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: VIMgrNWRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/VIMgrNWRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/VIMgrNWRuntime'
+        '401':
+          description: log in failed
+    patch:
+      tags:
+      - VIMgrNWRuntime
+      description: /vimgrnwruntime/{uuid}
+      operationId: PATCH /vimgrnwruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: VIMgrNWRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/VIMgrNWRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/VIMgrNWRuntime'
+        '401':
+          description: log in failed
+    delete:
+      tags:
+      - VIMgrNWRuntime
+      description: /vimgrnwruntime/{uuid}
+      operationId: DELETE /vimgrnwruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -35895,55 +35895,6 @@ paths:
         '401':
           description: log in failed
   /cloud/{uuid}/gc/:
-    patch:
-      tags:
-      - Cloud
-      description: /cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
     put:
       tags:
       - Cloud
@@ -35988,6 +35939,55 @@ paths:
           type: object
           additionalProperties:
             type: string
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+    patch:
+      tags:
+      - Cloud
+      description: /cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -81460,11 +81460,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -81487,17 +81487,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -81585,6 +81586,104 @@ definitions:
         items:
           $ref: '#/definitions/ALBServicesFileUpload'
       next:
+        type: string
+  DryrunInfo:
+    type: object
+    properties:
+      duration:
+        description: Duration of dry-run operation in seconds. Field introduced in
+          31.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
+        type: integer
+        format: int32
+      end_time:
+        description: End time of dry-run operation. Field introduced in 31.1.1. Allowed
+          in Enterprise edition with any value, Enterprise with Cloud Services edition.
+        type: string
+      operation:
+        description: Dryrun operations requested. Enum options - UPGRADE, PATCH, ROLLBACK,
+          ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK,
+          EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
+          Field introduced in 31.1.1. Allowed in Enterprise edition with any value,
+          Enterprise with Cloud Services edition.
+        type: string
+      params:
+        description: Parameters for performing the dry-run operation. Field introduced
+          in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with
+          Cloud Services edition.
+        $ref: '#/definitions/UpgradeParams'
+      progress:
+        description: Dry-run operations progress which holds value between 0-100.
+          Allowed values are 0-100. Field introduced in 31.1.1. Unit is PERCENT. Allowed
+          in Enterprise edition with any value, Enterprise with Cloud Services edition.
+        type: integer
+        format: uint32
+      start_time:
+        description: Start time of dry-run operation. Field introduced in 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
+        type: string
+      state:
+        description: Current status of the dry-run operation. Field introduced in
+          31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud
+          Services edition.
+        $ref: '#/definitions/UpgradeOpsState'
+      tasks_completed:
+        description: Completed set of tasks in the Upgrade operation. Field introduced
+          in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with
+          Cloud Services edition.
+        type: integer
+        format: int32
+      total_tasks:
+        description: Total number of tasks in the Upgrade operation. Field introduced
+          in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with
+          Cloud Services edition.
+        type: integer
+        format: int32
+      upgrade_events:
+        description: Controller events for dry-run operation. Field introduced in
+          31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud
+          Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/EventMap'
+      worker:
+        description: Node on which the dry-run is performed. Field introduced in 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
+        type: string
+  EventMap:
+    type: object
+    properties:
+      nodes_events:
+        description: List of all events node wise.(Not in use). Field introduced in
+          18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic,
+          Enterprise with Cloud Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/UpgradeEvent'
+      sub_events:
+        description: List of all events node wise. Field introduced in 18.2.10, 20.1.1.
+          Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/UpgradeEvent'
+      task:
+        description: Enum representing the task.(Not in use). Enum options - PREPARE_FOR_SHUTDOWN,
+          COPY_AND_VERIFY_IMAGE, INSTALL_IMAGE, POST_INSTALL_HOOKS, PREPARE_CONTROLLER_FOR_SHUTDOWN,
+          STOP_CONTROLLER, EXTRACT_PATCH_IMAGE, EXECUTE_PRE_INSTALL_COMMANDS, INSTALL_PATCH_IMAGE,
+          PREPARE_FOR_REBOOT_CONTROLLER_NODES, REBOOT_CONTROLLER_NODES, WAIT_FOR_ALL_CONTROLLER_NODES_ONLINE,
+          PRE_UPGRADE_HOOKS, MIGRATE_CONFIG, START_PRIMARY_CONTROLLER, START_ALL_CONTROLLERS,
+          POST_UPGRADE_HOOKS, EXECUTE_POST_INSTALL_COMMANDS, SET_CONTROLLER_UPGRADE_COMPLETED,
+          STATE_NOT_USED_IN_V2, COMMIT_UPGRADE, UNKNOWN_TASK, PATCH_CONTROLLER_HEALTH_CHECK.
+          Field introduced in 18.2.6. Allowed in Enterprise edition with any value,
+          Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+      task_name:
+        description: Name representing the task. Field introduced in 18.2.10, 20.1.1.
+          Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise
+          with Cloud Services edition.
         type: string
   JournalSummary:
     type: object
@@ -81899,11 +81998,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -81926,17 +82025,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -82367,11 +82467,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -82394,17 +82494,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -82526,6 +82627,21 @@ definitions:
           of type TaskJournal. Field introduced in 30.2.1. Allowed in Enterprise edition
           with any value, Enterprise with Cloud Services edition.
         type: string
+  SeGroupOptions:
+    type: object
+    properties:
+      action_on_error:
+        description: The error recovery action configured for a SE Group. Enum options
+          - ROLLBACK_UPGRADE_OPS_ON_ERROR, SUSPEND_UPGRADE_OPS_ON_ERROR, CONTINUE_UPGRADE_OPS_ON_ERROR.
+          Field introduced in 18.2.6. Allowed in Enterprise edition with any value,
+          Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+        default: SUSPEND_UPGRADE_OPS_ON_ERROR
+      disruptive:
+        description: Disable non-disruptive mechanism. Field introduced in 18.2.6.
+          Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: boolean
   SystemReport:
     type: object
     properties:
@@ -82549,6 +82665,10 @@ definitions:
           Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any
           value, Enterprise with Cloud Services edition.
         type: boolean
+      dryrun_info:
+        description: Dry-run report. Field introduced in 31.1.1. Allowed in Enterprise
+          edition with any value, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/DryrunInfo'
       events:
         description: List of events associated with the report. Field introduced in
           22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise
@@ -82639,6 +82759,47 @@ definitions:
           Enterprise with Cloud Services edition.'
         type: integer
         format: int64
+  UpgradeEvent:
+    type: object
+    properties:
+      duration:
+        description: Time taken to complete upgrade event in seconds. Field introduced
+          in 18.2.6. Unit is SEC. Allowed in Enterprise edition with any value, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: integer
+        format: uint32
+      end_time:
+        description: Task end time. Field introduced in 18.2.6. Allowed in Enterprise
+          edition with any value, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+      ip:
+        description: Ip of the node. Field introduced in 18.2.6. Allowed in Enterprise
+          edition with any value, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        $ref: '#/definitions/IpAddr'
+      message:
+        description: Upgrade event message if any. Field introduced in 18.2.6. Allowed
+          in Enterprise edition with any value, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: string
+      start_time:
+        description: Task start time. Field introduced in 18.2.6. Allowed in Enterprise
+          edition with any value, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+      status:
+        description: Upgrade event status. Field introduced in 18.2.6. Allowed in
+          Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud
+          Services edition.
+        type: boolean
+      sub_tasks:
+        description: Sub tasks executed on each node. Field introduced in 18.2.8,
+          20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic,
+          Enterprise with Cloud Services edition.
+        type: array
+        items:
+          type: string
   UpgradeOpsState:
     type: object
     properties:
@@ -82669,6 +82830,62 @@ definitions:
           Field introduced in 18.2.6. Allowed in Enterprise edition with any value,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
+  UpgradeParams:
+    type: object
+    properties:
+      controller_patch_ref:
+        description: Image uuid for identifying Controller patch. It is a reference
+          to an object of type Image. Field introduced in 18.2.6. Allowed in Enterprise
+          edition with any value, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+      dryrun:
+        description: This flag is set to perform the upgrade dry-run operations. Field
+          introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
+        type: boolean
+      image_ref:
+        description: Image uuid for identifying base image. It is a reference to an
+          object of type Image. Field introduced in 18.2.6. Allowed in Enterprise
+          edition with any value, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+      prechecks_only:
+        description: This flag is set to run the pre-checks without the subsequent
+          upgrade operations. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise
+          edition with any value, Enterprise with Cloud Services edition.
+        type: boolean
+      se_group_options:
+        description: This field identifies SE group options that need to be applied
+          during the upgrade operations. Field introduced in 18.2.6. Allowed in Enterprise
+          edition with any value, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        $ref: '#/definitions/SeGroupOptions'
+      se_group_refs:
+        description: This field identifies the list of SE groups for which the upgrade
+          operations are applicable.  This field is ignored if the 'system' is enabled.
+          It is a reference to an object of type ServiceEngineGroup. Field introduced
+          in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic,
+          Enterprise with Cloud Services edition.
+        type: array
+        items:
+          type: string
+      se_patch_ref:
+        description: Image uuid for identifying Service Engine patch. It is a reference
+          to an object of type Image. Field introduced in 18.2.6. Allowed in Enterprise
+          edition with any value, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+      skip_warnings:
+        description: This is flag when set as true skips few optional must check.
+          Field introduced in 18.2.6. Allowed in Enterprise edition with any value,
+          Essentials, Basic, Enterprise with Cloud Services edition.
+        type: boolean
+      system:
+        description: Apply upgrade operations such as Upgrade/Patch to Controller
+          and ALL SE groups. Field introduced in 18.2.6. Allowed in Enterprise edition
+          with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: boolean
   UpgradeReadinessCheckObj:
     type: object
     properties:
@@ -82705,6 +82922,12 @@ definitions:
           to an object of type Image. Field introduced in 22.1.3. Allowed in Enterprise
           edition with any value, Enterprise with Cloud Services edition.
         type: string
+      progress:
+        description: Checks progress which holds value between 0-100. Allowed values
+          are 0-100. Field introduced in 31.1.1. Unit is PERCENT. Allowed in Enterprise
+          edition with any value, Enterprise with Cloud Services edition.
+        type: integer
+        format: uint32
       start_time:
         description: Time at which execution of upgrade readiness checks was started.
           Field introduced in 22.1.3. Allowed in Enterprise edition with any value,
@@ -82724,9 +82947,9 @@ definitions:
         description: Upgrade operations along with type requested such as UpgradeSystem
           UpgradeController etc. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH,
           SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
-          EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE. Field introduced in 22.1.3.
-          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
-          edition.
+          EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN. Field introduced
+          in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with
+          Cloud Services edition.
         type: string
   AnomalyContext:
     type: object
@@ -91322,11 +91545,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -91349,17 +91572,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -92460,6 +92684,7 @@ definitions:
           LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE, LICENSE_TIER_SWITCH,
           CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION, CENTRAL_LICENSE_REFRESH_SUCCESS,
           CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED, ROLLBACKPATCH_CONTROLLER_ABORTED,
+          UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED, UPGRADE_DRYRUN_ABORTED,
           AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT, CONTROLLER_DB_ERROR,
           AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR, DNS_VS_STATUS,
           CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED, POSTGRES_REPLICATION_FAILED,
@@ -97476,11 +97701,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -97503,17 +97728,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -98033,11 +98259,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -98060,17 +98286,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -106745,6 +106972,7 @@ definitions:
           LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE, LICENSE_TIER_SWITCH,
           CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION, CENTRAL_LICENSE_REFRESH_SUCCESS,
           CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED, ROLLBACKPATCH_CONTROLLER_ABORTED,
+          UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED, UPGRADE_DRYRUN_ABORTED,
           AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT, CONTROLLER_DB_ERROR,
           AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR, DNS_VS_STATUS,
           CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED, POSTGRES_REPLICATION_FAILED,
@@ -107179,11 +107407,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -107206,17 +107434,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -107294,39 +107523,6 @@ definitions:
       tenant_name:
         description: ' Field introduced in 17.2.1. Allowed in Enterprise edition with
           any value, Essentials, Basic, Enterprise with Cloud Services edition.'
-        type: string
-  EventMap:
-    type: object
-    properties:
-      nodes_events:
-        description: List of all events node wise.(Not in use). Field introduced in
-          18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic,
-          Enterprise with Cloud Services edition.
-        type: array
-        items:
-          $ref: '#/definitions/UpgradeEvent'
-      sub_events:
-        description: List of all events node wise. Field introduced in 18.2.10, 20.1.1.
-          Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise
-          with Cloud Services edition.
-        type: array
-        items:
-          $ref: '#/definitions/UpgradeEvent'
-      task:
-        description: Enum representing the task.(Not in use). Enum options - PREPARE_FOR_SHUTDOWN,
-          COPY_AND_VERIFY_IMAGE, INSTALL_IMAGE, POST_INSTALL_HOOKS, PREPARE_CONTROLLER_FOR_SHUTDOWN,
-          STOP_CONTROLLER, EXTRACT_PATCH_IMAGE, EXECUTE_PRE_INSTALL_COMMANDS, INSTALL_PATCH_IMAGE,
-          PREPARE_FOR_REBOOT_CONTROLLER_NODES, REBOOT_CONTROLLER_NODES, WAIT_FOR_ALL_CONTROLLER_NODES_ONLINE,
-          PRE_UPGRADE_HOOKS, MIGRATE_CONFIG, START_PRIMARY_CONTROLLER, START_ALL_CONTROLLERS,
-          POST_UPGRADE_HOOKS, EXECUTE_POST_INSTALL_COMMANDS, SET_CONTROLLER_UPGRADE_COMPLETED,
-          STATE_NOT_USED_IN_V2, COMMIT_UPGRADE, UNKNOWN_TASK, PATCH_CONTROLLER_HEALTH_CHECK.
-          Field introduced in 18.2.6. Allowed in Enterprise edition with any value,
-          Essentials, Basic, Enterprise with Cloud Services edition.
-        type: string
-      task_name:
-        description: Name representing the task. Field introduced in 18.2.10, 20.1.1.
-          Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise
-          with Cloud Services edition.
         type: string
   FalsePositiveDetails:
     type: object
@@ -113621,11 +113817,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -113648,17 +113844,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -120076,9 +120273,9 @@ definitions:
       ops:
         description: Upgrade operation performed. Enum options - UPGRADE, PATCH, ROLLBACK,
           ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK,
-          EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE. Field introduced
-          in 20.1.4. Allowed in Enterprise edition with any value, Enterprise with
-          Cloud Services edition.
+          EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
+          Field introduced in 20.1.4. Allowed in Enterprise edition with any value,
+          Enterprise with Cloud Services edition.
         type: string
       patch_version:
         description: Patch after the upgrade operation. . Field introduced in 20.1.4.
@@ -125378,11 +125575,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -125405,17 +125602,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -125879,21 +126077,6 @@ definitions:
           VirtualService. Allowed in Enterprise edition with any value, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
-  SeGroupOptions:
-    type: object
-    properties:
-      action_on_error:
-        description: The error recovery action configured for a SE Group. Enum options
-          - ROLLBACK_UPGRADE_OPS_ON_ERROR, SUSPEND_UPGRADE_OPS_ON_ERROR, CONTINUE_UPGRADE_OPS_ON_ERROR.
-          Field introduced in 18.2.6. Allowed in Enterprise edition with any value,
-          Essentials, Basic, Enterprise with Cloud Services edition.
-        type: string
-        default: SUSPEND_UPGRADE_OPS_ON_ERROR
-      disruptive:
-        description: Disable non-disruptive mechanism. Field introduced in 18.2.6.
-          Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise
-          with Cloud Services edition.
-        type: boolean
   SeGroupResumeOptions:
     type: object
     properties:
@@ -128912,11 +129095,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -128939,17 +129122,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -129298,11 +129482,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -129325,17 +129509,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -129714,11 +129899,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -129741,17 +129926,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -130116,11 +130302,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -130143,17 +130329,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -130532,11 +130719,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -130559,17 +130746,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -134739,11 +134927,11 @@ definitions:
           SYSERR_CHECK_CONFIG_SE, SYSERR_CHECK_CONFIG_ENV, SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS,
           SYSERR_CHECK_RESTORE_PATCH, SYSERR_GSLB_MAINTENANCE_MODE_CHECK, SYSERR_CHECK_VERSION_MIGRATION,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -134766,17 +134954,18 @@ definitions:
           SYSERR_CHECK_CONFIG_ACTIVE_VERSIONS_ERR, SYSERR_CHECK_RESTORE_PATCH_ERR,
           SYSERR_MC_GSLB_MAINTENANCE_MODE_ERR, SYSERR_CHECK_VERSION_MIGRATION_ERR,
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
-          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
-          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
-          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
-          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
-          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
-          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
-          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
-          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
-          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
-          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
-          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
+          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
+          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
+          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
+          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
+          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
+          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
+          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
+          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
+          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
+          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -135497,47 +135686,6 @@ definitions:
         type: integer
         default: 10
         format: int32
-  UpgradeEvent:
-    type: object
-    properties:
-      duration:
-        description: Time taken to complete upgrade event in seconds. Field introduced
-          in 18.2.6. Unit is SEC. Allowed in Enterprise edition with any value, Essentials,
-          Basic, Enterprise with Cloud Services edition.
-        type: integer
-        format: uint32
-      end_time:
-        description: Task end time. Field introduced in 18.2.6. Allowed in Enterprise
-          edition with any value, Essentials, Basic, Enterprise with Cloud Services
-          edition.
-        type: string
-      ip:
-        description: Ip of the node. Field introduced in 18.2.6. Allowed in Enterprise
-          edition with any value, Essentials, Basic, Enterprise with Cloud Services
-          edition.
-        $ref: '#/definitions/IpAddr'
-      message:
-        description: Upgrade event message if any. Field introduced in 18.2.6. Allowed
-          in Enterprise edition with any value, Essentials, Basic, Enterprise with
-          Cloud Services edition.
-        type: string
-      start_time:
-        description: Task start time. Field introduced in 18.2.6. Allowed in Enterprise
-          edition with any value, Essentials, Basic, Enterprise with Cloud Services
-          edition.
-        type: string
-      status:
-        description: Upgrade event status. Field introduced in 18.2.6. Allowed in
-          Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud
-          Services edition.
-        type: boolean
-      sub_tasks:
-        description: Sub tasks executed on each node. Field introduced in 18.2.8,
-          20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic,
-          Enterprise with Cloud Services edition.
-        type: array
-        items:
-          type: string
   UpgradeOpsEntry:
     type: object
     properties:
@@ -135575,9 +135723,9 @@ definitions:
       upgrade_ops:
         description: Identifies the upgrade operations. Enum options - UPGRADE, PATCH,
           ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK,
-          EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE. Field introduced
-          in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic,
-          Enterprise with Cloud Services edition.
+          EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
+          Field introduced in 18.2.6. Allowed in Enterprise edition with any value,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       uuid:
         description: Uuid identifier for the system such as cluster, se group and
@@ -135631,6 +135779,11 @@ definitions:
           Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: boolean
+      dryrun_info:
+        description: Upgrade dry-run operation details. Field introduced in 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
+        $ref: '#/definitions/DryrunInfo'
       duration:
         description: Duration of Upgrade operation in seconds. Field introduced in
           18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic,
@@ -135887,9 +136040,9 @@ definitions:
       upgrade_ops:
         description: Upgrade operations requested. Enum options - UPGRADE, PATCH,
           ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK,
-          EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE. Field introduced
-          in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic,
-          Enterprise with Cloud Services edition.
+          EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
+          Field introduced in 18.2.6. Allowed in Enterprise edition with any value,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       upgrade_readiness:
         description: Upgrade readiness check execution detail. Field introduced in
@@ -136005,9 +136158,9 @@ definitions:
       upgrade_ops:
         description: Upgrade operations requested. Enum options - UPGRADE, PATCH,
           ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK,
-          EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE. Field introduced
-          in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic,
-          Enterprise with Cloud Services edition.
+          EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
+          Field introduced in 18.2.6. Allowed in Enterprise edition with any value,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       url:
         description: url
