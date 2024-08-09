@@ -12,8 +12,14 @@ type AvailabilityZone struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
+	// Datastores associated with the AZ. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	AzDatastore *AZDatastore `json:"az_datastore,omitempty"`
+
 	// Availability zone belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudRef *string `json:"cloud_ref,omitempty"`
+
+	// List of Managed Object IDs of clusters belong to this AZ. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	ClusterIds []string `json:"cluster_ids,omitempty"`
 
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
@@ -32,6 +38,9 @@ type AvailabilityZone struct {
 	// Availability zone config UUID. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 
-	// Group of VCenter list belong to availabilty zone. It is a reference to an object of type VCenterServer. Field introduced in 20.1.1. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Vcenter belongs to the AZ. It is a reference to an object of type VCenterServer. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	VcenterRef *string `json:"vcenter_ref,omitempty"`
+
+	// Group of VCenter list belong to availabilty zone. It is a reference to an object of type VCenterServer. Field deprecated in 31.1.1. Field introduced in 20.1.1. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterRefs []string `json:"vcenter_refs,omitempty"`
 }
