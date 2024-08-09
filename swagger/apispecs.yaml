@@ -79037,6 +79037,36 @@ definitions:
         type: array
         items:
           type: string
+  IpAddr:
+    type: object
+    required:
+    - addr
+    - type
+    properties:
+      addr:
+        description: IP address. Allowed in Enterprise edition with any value, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: string
+      type:
+        description: ' Enum options - V4, DNS, V6. Allowed in Enterprise edition with
+          any value, Essentials, Basic, Enterprise with Cloud Services edition.'
+        type: string
+  TrustedHost:
+    type: object
+    required:
+    - host
+    properties:
+      host:
+        description: Any valid IPv4,IPv6, or domain addresshost name. Field introduced
+          in 30.2.2, 31.1.1. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
+        $ref: '#/definitions/IpAddr'
+      port:
+        description: Optionally specify the port number. Allowed values are 1-65535.
+          Field introduced in 30.2.2, 31.1.1. Allowed in Enterprise edition with any
+          value, Enterprise with Cloud Services edition.
+        type: integer
+        format: int32
   TrustedHostProfile:
     type: object
     required:
@@ -79048,37 +79078,37 @@ definitions:
         readOnly: true
         type: string
       configpb_attributes:
-        description: Protobuf versioning for config pbs. Field introduced in 22.1.7,
-          30.2.2, 31.1.1. Allowed in Enterprise edition with any value, Essentials
-          edition with any value, Basic edition with any value, Enterprise with Cloud
-          Services edition.
+        description: Protobuf versioning for config pbs. Field introduced in 30.2.2,
+          31.1.1. Allowed in Enterprise edition with any value, Essentials edition
+          with any value, Basic edition with any value, Enterprise with Cloud Services
+          edition.
         $ref: '#/definitions/ConfigPbAttributes'
       hosts:
         description: List of Host IP(v4/v6) addresses or FQDNs. Field introduced in
-          22.1.7, 30.2.2, 31.1.1. Minimum of 1 items required. Maximum of 20 items
-          allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud
-          Services edition.
+          30.2.2, 31.1.1. Minimum of 1 items required. Maximum of 20 items allowed.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
         type: array
         items:
-          type: string
+          $ref: '#/definitions/TrustedHost'
       name:
-        description: TrustedHostProfile name. Field introduced in 22.1.7, 30.2.2,
-          31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud
-          Services edition.
+        description: TrustedHostProfile name. Field introduced in 30.2.2, 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
         type: string
       tenant_ref:
         description: Tenant ref for trusted host profile. It is a reference to an
-          object of type Tenant. Field introduced in 22.1.7, 30.2.2, 31.1.1. Allowed
-          in Enterprise edition with any value, Enterprise with Cloud Services edition.
+          object of type Tenant. Field introduced in 30.2.2, 31.1.1. Allowed in Enterprise
+          edition with any value, Enterprise with Cloud Services edition.
         type: string
       url:
         description: url
         readOnly: true
         type: string
       uuid:
-        description: TrustedHostProfile UUID. Field introduced in 22.1.7, 30.2.2,
-          31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud
-          Services edition.
+        description: TrustedHostProfile UUID. Field introduced in 30.2.2, 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
         type: string
   TrustedHostProfileApiResponse:
     type: object
@@ -80467,20 +80497,6 @@ definitions:
         type: integer
         default: 28800
         format: uint32
-  IpAddr:
-    type: object
-    required:
-    - addr
-    - type
-    properties:
-      addr:
-        description: IP address. Allowed in Enterprise edition with any value, Essentials,
-          Basic, Enterprise with Cloud Services edition.
-        type: string
-      type:
-        description: ' Enum options - V4, DNS, V6. Allowed in Enterprise edition with
-          any value, Essentials, Basic, Enterprise with Cloud Services edition.'
-        type: string
   IpAddrPrefix:
     type: object
     required:
@@ -95466,11 +95482,23 @@ definitions:
         description: UNIX time since epoch in microseconds. Units(MICROSECONDS).
         readOnly: true
         type: string
+      az_datastore:
+        description: Datastores associated with the AZ. Field introduced in 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
+        $ref: '#/definitions/AZDatastore'
       cloud_ref:
         description: Availability zone belongs to cloud. It is a reference to an object
           of type Cloud. Field introduced in 20.1.1. Allowed in Enterprise edition
           with any value, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
+      cluster_ids:
+        description: List of Managed Object IDs of clusters belong to this AZ. Field
+          introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
+        type: array
+        items:
+          type: string
       configpb_attributes:
         description: Protobuf versioning for config pbs. Field introduced in 21.1.1.
           Allowed in Enterprise edition with any value, Essentials edition with any
@@ -95495,11 +95523,16 @@ definitions:
           in Enterprise edition with any value, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
+      vcenter_ref:
+        description: Vcenter belongs to the AZ. It is a reference to an object of
+          type VCenterServer. Field introduced in 31.1.1. Allowed in Enterprise edition
+          with any value, Enterprise with Cloud Services edition.
+        type: string
       vcenter_refs:
         description: Group of VCenter list belong to availabilty zone. It is a reference
-          to an object of type VCenterServer. Field introduced in 20.1.1. Minimum
-          of 1 items required. Allowed in Enterprise edition with any value, Essentials,
-          Basic, Enterprise with Cloud Services edition.
+          to an object of type VCenterServer. Field deprecated in 31.1.1. Field introduced
+          in 20.1.1. Minimum of 1 items required. Allowed in Enterprise edition with
+          any value, Essentials, Basic, Enterprise with Cloud Services edition.
         type: array
         items:
           type: string
@@ -95778,6 +95811,21 @@ definitions:
         type: array
         items:
           type: string
+  AZDatastore:
+    type: object
+    properties:
+      ds_ids:
+        description: List of Managed object id of datastores. Field introduced in
+          31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud
+          Services edition.
+        type: array
+        items:
+          type: string
+      include:
+        description: Include or exclude the datastores from the list. Field introduced
+          in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with
+          Cloud Services edition.
+        type: boolean
   AzureClusterInfo:
     type: object
     required:
@@ -134075,9 +134123,8 @@ definitions:
           with any value, Enterprise with Cloud Services edition.
         type: boolean
       enable_host_header_check:
-        description: Host Header check. Field introduced in 22.1.7, 30.2.2, 31.1.1.
-          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
-          edition.
+        description: Host Header check. Field introduced in 30.2.2, 31.1.1. Allowed
+          in Enterprise edition with any value, Enterprise with Cloud Services edition.
         type: boolean
       enable_telemetry:
         description: Enables sending anonymous operational metrics to AVI. Field introduced
@@ -134171,9 +134218,9 @@ definitions:
       trusted_host_profiles_refs:
         description: Trusted Host Profiles for host header validation. Only function
           when enable_host_header_check is set to true. It is a reference to an object
-          of type TrustedHostProfile. Field introduced in 22.1.7, 30.2.2, 31.1.1.
-          Maximum of 20 items allowed. Allowed in Enterprise edition with any value,
-          Enterprise with Cloud Services edition.
+          of type TrustedHostProfile. Field introduced in 30.2.2, 31.1.1. Maximum
+          of 20 items allowed. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
         type: array
         items:
           type: string
