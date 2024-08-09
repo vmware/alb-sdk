@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TrustedHostProfile extends AviRestResource  {
     @JsonProperty("hosts")
-    private List<String> hosts;
+    private List<TrustedHost> hosts;
 
     @JsonProperty("name")
     private String name;
@@ -40,44 +40,44 @@ public class TrustedHostProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * List of host ip(v4/v6) addresses or fqdns.
-     * Field introduced in 22.1.7, 30.2.2, 31.1.1.
+     * Field introduced in 30.2.2, 31.1.1.
      * Minimum of 1 items required.
      * Maximum of 20 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
-    public List<String> getHosts() {
+    public List<TrustedHost> getHosts() {
         return hosts;
     }
 
     /**
      * This is the setter method. this will set the hosts
      * List of host ip(v4/v6) addresses or fqdns.
-     * Field introduced in 22.1.7, 30.2.2, 31.1.1.
+     * Field introduced in 30.2.2, 31.1.1.
      * Minimum of 1 items required.
      * Maximum of 20 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
-    public void setHosts(List<String>  hosts) {
+    public void setHosts(List<TrustedHost>  hosts) {
         this.hosts = hosts;
     }
 
     /**
      * This is the setter method this will set the hosts
      * List of host ip(v4/v6) addresses or fqdns.
-     * Field introduced in 22.1.7, 30.2.2, 31.1.1.
+     * Field introduced in 30.2.2, 31.1.1.
      * Minimum of 1 items required.
      * Maximum of 20 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
-    public TrustedHostProfile addHostsItem(String hostsItem) {
+    public TrustedHostProfile addHostsItem(TrustedHost hostsItem) {
       if (this.hosts == null) {
-        this.hosts = new ArrayList<String>();
+        this.hosts = new ArrayList<TrustedHost>();
       }
       this.hosts.add(hostsItem);
       return this;
@@ -86,7 +86,7 @@ public class TrustedHostProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Trustedhostprofile name.
-     * Field introduced in 22.1.7, 30.2.2, 31.1.1.
+     * Field introduced in 30.2.2, 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
@@ -98,7 +98,7 @@ public class TrustedHostProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Trustedhostprofile name.
-     * Field introduced in 22.1.7, 30.2.2, 31.1.1.
+     * Field introduced in 30.2.2, 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
@@ -111,7 +111,7 @@ public class TrustedHostProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Tenant ref for trusted host profile.
      * It is a reference to an object of type tenant.
-     * Field introduced in 22.1.7, 30.2.2, 31.1.1.
+     * Field introduced in 30.2.2, 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
@@ -124,7 +124,7 @@ public class TrustedHostProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Tenant ref for trusted host profile.
      * It is a reference to an object of type tenant.
-     * Field introduced in 22.1.7, 30.2.2, 31.1.1.
+     * Field introduced in 30.2.2, 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
@@ -153,7 +153,7 @@ public class TrustedHostProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Trustedhostprofile uuid.
-     * Field introduced in 22.1.7, 30.2.2, 31.1.1.
+     * Field introduced in 30.2.2, 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
@@ -165,7 +165,7 @@ public class TrustedHostProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Trustedhostprofile uuid.
-     * Field introduced in 22.1.7, 30.2.2, 31.1.1.
+     * Field introduced in 30.2.2, 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
