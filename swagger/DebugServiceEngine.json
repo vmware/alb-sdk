@@ -987,6 +987,10 @@
                     "type": "string",
                     "default": "VM name unknown"
                 },
+                "objsync": {
+                    "description": "Objsync specific debug options. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/DebugServiceEngineObjSync"
+                },
                 "seagent_debug": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -1036,6 +1040,16 @@
                 },
                 "next": {
                     "type": "string"
+                }
+            }
+        },
+        "DebugServiceEngineObjSync": {
+            "type": "object",
+            "properties": {
+                "publish_packet_drops": {
+                    "description": "Drop 1 packet in every n packets. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
                 }
             }
         },

@@ -10382,6 +10382,56 @@ paths:
             type: string
         '401':
           description: log in failed
+  /virtualservice/{uuid}/keyvalstats/:
+    get:
+      tags:
+      - VirtualService
+      description: /virtualservice/{uuid}/keyvalstats/
+      operationId: GET /virtualservice/{uuid}/keyvalstats/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
   /serviceenginegroup:
     get:
       tags:
@@ -15216,6 +15266,55 @@ paths:
         '401':
           description: log in failed
   /fileobject/{uuid}/['']/:
+    patch:
+      tags:
+      - FileObject
+      description: /fileobject/{uuid}/['']/
+      operationId: PATCH /fileobject/{uuid}/['']/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
     put:
       tags:
       - FileObject
@@ -15260,55 +15359,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-    patch:
-      tags:
-      - FileObject
-      description: /fileobject/{uuid}/['']/
-      operationId: PATCH /fileobject/{uuid}/['']/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -35895,6 +35945,55 @@ paths:
         '401':
           description: log in failed
   /cloud/{uuid}/gc/:
+    patch:
+      tags:
+      - Cloud
+      description: /cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
     put:
       tags:
       - Cloud
@@ -35939,55 +36038,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-    patch:
-      tags:
-      - Cloud
-      description: /cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -59290,6 +59340,56 @@ paths:
       - ServiceEngine
       description: /serviceengine/{uuid}/dpmetrics/
       operationId: GET /serviceengine/{uuid}/dpmetrics/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+  /serviceengine/{uuid}/objsync_stats/:
+    get:
+      tags:
+      - ServiceEngine
+      description: /serviceengine/{uuid}/objsync_stats/
+      operationId: GET /serviceengine/{uuid}/objsync_stats/
       consumes:
       - application/json
       produces:
@@ -88824,6 +88924,7 @@ definitions:
           with any value, Basic edition with any value, Enterprise with Cloud Services
           edition.
         type: boolean
+        default: true
       use_standard_alb:
         description: Use Standard SKU Azure Load Balancer. By default cloud level
           flag is set. If not set, it inherits/uses the use_standard_alb flag from
@@ -92097,13 +92198,14 @@ definitions:
           CLOUDRUNTIME, ALERTPERFDATA, METRICSRUNTIMEDEBUGSUMMARY, SCTPCONNRUNTIME,
           SCTPCONNRUNTIMEDETAIL, VIMGRIPSUBNETRUNTIME, VIMGRSEVMRUNTIME, VIMGRVMRUNTIME,
           VIMGRCLUSTERRUNTIME, SEAGENTDPPROBE, BFDRUNNINGCONFIG, LOGAGENTSTATSPERVS,
-          VSLOGSTATSDISAGGR, VRFIPINFORUNTIME, DPMETRICSRUNTIME, SERESOURCEPROTO,
-          SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO,
-          VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS,
-          ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS,
-          VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
-          VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME,
-          PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
+          VSLOGSTATSDISAGGR, VRFIPINFORUNTIME, DPMETRICSRUNTIME, SEAGENTOBJSYNCSTATS,
+          KEYVALSTATS, SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS,
+          SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS,
+          INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS, TRANSACTIONSTATS,
+          SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE, VIHOSTRESOURCES,
+          CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS, VIMGRVCENTERCLOUDRUNTIME,
+          VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME, PLACEMENTGLOBALS,
+          ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
           SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL,
           PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME,
@@ -92406,13 +92508,14 @@ definitions:
           CLOUDRUNTIME, ALERTPERFDATA, METRICSRUNTIMEDEBUGSUMMARY, SCTPCONNRUNTIME,
           SCTPCONNRUNTIMEDETAIL, VIMGRIPSUBNETRUNTIME, VIMGRSEVMRUNTIME, VIMGRVMRUNTIME,
           VIMGRCLUSTERRUNTIME, SEAGENTDPPROBE, BFDRUNNINGCONFIG, LOGAGENTSTATSPERVS,
-          VSLOGSTATSDISAGGR, VRFIPINFORUNTIME, DPMETRICSRUNTIME, SERESOURCEPROTO,
-          SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO,
-          VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS,
-          ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS,
-          VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
-          VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME,
-          PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
+          VSLOGSTATSDISAGGR, VRFIPINFORUNTIME, DPMETRICSRUNTIME, SEAGENTOBJSYNCSTATS,
+          KEYVALSTATS, SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS,
+          SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS,
+          INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS, TRANSACTIONSTATS,
+          SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE, VIHOSTRESOURCES,
+          CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS, VIMGRVCENTERCLOUDRUNTIME,
+          VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME, PLACEMENTGLOBALS,
+          ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
           SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL,
           PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME,
@@ -103520,6 +103623,10 @@ definitions:
           Enterprise with Cloud Services edition.'
         type: string
         default: VM name unknown
+      objsync:
+        description: Objsync specific debug options. Field introduced in 31.1.1. Allowed
+          in Enterprise edition with any value, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/DebugServiceEngineObjSync'
       seagent_debug:
         description: ' Allowed in Enterprise edition with any value, Essentials, Basic,
           Enterprise with Cloud Services edition.'
@@ -103564,6 +103671,15 @@ definitions:
           $ref: '#/definitions/DebugServiceEngine'
       next:
         type: string
+  DebugServiceEngineObjSync:
+    type: object
+    properties:
+      publish_packet_drops:
+        description: Drop 1 packet in every n packets. Field introduced in 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
+        type: integer
+        format: uint32
   DebugTraceMallocTypes:
     type: object
     properties:
@@ -107152,13 +107268,14 @@ definitions:
           CLOUDRUNTIME, ALERTPERFDATA, METRICSRUNTIMEDEBUGSUMMARY, SCTPCONNRUNTIME,
           SCTPCONNRUNTIMEDETAIL, VIMGRIPSUBNETRUNTIME, VIMGRSEVMRUNTIME, VIMGRVMRUNTIME,
           VIMGRCLUSTERRUNTIME, SEAGENTDPPROBE, BFDRUNNINGCONFIG, LOGAGENTSTATSPERVS,
-          VSLOGSTATSDISAGGR, VRFIPINFORUNTIME, DPMETRICSRUNTIME, SERESOURCEPROTO,
-          SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO,
-          VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS,
-          ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS,
-          VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
-          VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME,
-          PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
+          VSLOGSTATSDISAGGR, VRFIPINFORUNTIME, DPMETRICSRUNTIME, SEAGENTOBJSYNCSTATS,
+          KEYVALSTATS, SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS,
+          SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS,
+          INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS, TRANSACTIONSTATS,
+          SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE, VIHOSTRESOURCES,
+          CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS, VIMGRVCENTERCLOUDRUNTIME,
+          VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME, PLACEMENTGLOBALS,
+          ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
           SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL,
           PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME,
