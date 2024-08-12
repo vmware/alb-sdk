@@ -784,7 +784,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean useLegacyNetlink = false;
 
     @JsonProperty("use_objsync")
-    private Boolean useObjsync = false;
+    private Boolean useObjsync = true;
 
     @JsonProperty("use_standard_alb")
     private Boolean useStandardAlb;
@@ -7727,7 +7727,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Field introduced in 20.1.3.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return useObjsync
      */
     public Boolean getUseObjsync() {
@@ -7740,7 +7740,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Field introduced in 20.1.3.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param useObjsync set the useObjsync.
      */
     public void setUseObjsync(Boolean  useObjsync) {

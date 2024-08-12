@@ -66,6 +66,9 @@ public class DebugServiceEngine extends AviRestResource  {
     @JsonProperty("name")
     private String name = "VM name unknown";
 
+    @JsonProperty("objsync")
+    private DebugServiceEngineObjSync objsync;
+
     @JsonProperty("seagent_debug")
     private List<DebugSeAgent> seagentDebug;
 
@@ -483,6 +486,30 @@ public class DebugServiceEngine extends AviRestResource  {
     public void setName(String  name) {
         this.name = name;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Objsync specific debug options.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return objsync
+     */
+    public DebugServiceEngineObjSync getObjsync() {
+        return objsync;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Objsync specific debug options.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param objsync set the objsync.
+     */
+    public void setObjsync(DebugServiceEngineObjSync objsync) {
+        this.objsync = objsync;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -653,6 +680,7 @@ public class DebugServiceEngine extends AviRestResource  {
   Objects.equals(this.traceMemory, objDebugServiceEngine.traceMemory)&&
   Objects.equals(this.enableRpcTimingProfiler, objDebugServiceEngine.enableRpcTimingProfiler)&&
   Objects.equals(this.capturePktFilter, objDebugServiceEngine.capturePktFilter)&&
+  Objects.equals(this.objsync, objDebugServiceEngine.objsync)&&
   Objects.equals(this.tenantRef, objDebugServiceEngine.tenantRef);
     }
 
@@ -675,6 +703,7 @@ public class DebugServiceEngine extends AviRestResource  {
                         sb.append("    fault: ").append(toIndentedString(fault)).append("\n");
                         sb.append("    flags: ").append(toIndentedString(flags)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    objsync: ").append(toIndentedString(objsync)).append("\n");
                         sb.append("    seagentDebug: ").append(toIndentedString(seagentDebug)).append("\n");
                         sb.append("    selogagentDebug: ").append(toIndentedString(selogagentDebug)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
