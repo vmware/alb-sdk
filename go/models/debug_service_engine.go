@@ -57,6 +57,9 @@ type DebugServiceEngine struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
+	// Objsync specific debug options. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	Objsync *DebugServiceEngineObjSync `json:"objsync,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeagentDebug []*DebugSeAgent `json:"seagent_debug,omitempty"`
 
