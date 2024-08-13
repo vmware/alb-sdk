@@ -136,16 +136,16 @@ jobs:
           asset_name: pip-package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
           asset_content_type: application/gzip
 
-      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET == 'true'
-        name: Upload Avi Migration Tools pip package
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        with:
-          upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
-          asset_name: pip-package-avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
-          asset_content_type: application/gzip
+      # - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET == 'true'
+      #   name: Upload Avi Migration Tools pip package
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.github_token }}
+      #   with:
+      #     upload_url: ${{ steps.update_release.outputs.upload_url }}
+      #     asset_path: avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
+      #     asset_name: pip-package-avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
+      #     asset_content_type: application/gzip
 
       #- name: Upload Avi API SDK debian package
       #  uses: actions/upload-release-asset@v1
