@@ -1128,7 +1128,8 @@ class ApiSession(Session):
                                "for session ID: %s %s",
                                session, e)
                 pass
-            del session_cache[key]
+            if session_cache.get(key):
+                del session_cache[key]
             logger.debug("Cleaned inactive session : %s", key)
 
     def delete_session(self):
