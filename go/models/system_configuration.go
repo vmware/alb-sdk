@@ -96,6 +96,9 @@ type SystemConfiguration struct {
 	// Trusted Host Profiles for host header validation. Only function when enable_host_header_check is set to true. It is a reference to an object of type TrustedHostProfile. Field introduced in 30.2.2, 31.1.1. Maximum of 20 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	TrustedHostProfilesRefs []string `json:"trusted_host_profiles_refs,omitempty"`
 
+	// Reference to PKIProfile used for validating the CA certificates for external comminications from Avi Load Balancer Controller  This acts as trust store for Avi Load Balancer Controller. It is a reference to an object of type PKIProfile. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	TruststorePkiprofileRef *string `json:"truststore_pkiprofile_ref,omitempty"`
+
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`

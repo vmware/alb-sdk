@@ -44,4 +44,7 @@ type VCenterConfiguration struct {
 
 	// vCenter hostname or IP address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterURL *string `json:"vcenter_url,omitempty"`
+
+	// Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter server. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	VerifyCertificate *bool `json:"verify_certificate,omitempty"`
 }

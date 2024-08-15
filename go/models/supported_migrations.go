@@ -29,6 +29,15 @@ type SupportedMigrations struct {
 	// Minimum space required(in GB) for Controller. Field introduced in 18.2.10, 20.1.2. Unit is GB. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	ControllerMinTotalDisk *int32 `json:"controller_min_total_disk,omitempty"`
 
+	// Minimum cpu cores required to perform dryrun operation for this image. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DryrunMinCores *uint32 `json:"dryrun_min_cores,omitempty"`
+
+	// Minimum free disk space required (in GB) to perform dryrun operation for this image. Field introduced in 31.1.1. Unit is GB. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DryrunMinFreeDiskSize *uint32 `json:"dryrun_min_free_disk_size,omitempty"`
+
+	// Minimum memory required to perform dryrun operation for this image. Field introduced in 31.1.1. Unit is GB. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DryrunMinMemory *float32 `json:"dryrun_min_memory,omitempty"`
+
 	// Supported active versions for this image. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxActiveVersions *int32 `json:"max_active_versions,omitempty"`
 
