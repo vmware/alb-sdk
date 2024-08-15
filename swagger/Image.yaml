@@ -663,6 +663,21 @@ definitions:
                 type: integer
                 default: 128
                 format: int32
+            dryrun_min_cores:
+                description: "Minimum cpu cores required to perform dryrun operation for this image. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1
+                format: uint32
+            dryrun_min_free_disk_size:
+                description: "Minimum free disk space required (in GB) to perform dryrun operation for this image. Field introduced in 31.1.1. Unit is GB. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 18
+                format: uint32
+            dryrun_min_memory:
+                description: "Minimum memory required to perform dryrun operation for this image. Field introduced in 31.1.1. Unit is GB. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: number
+                default: 1.0
+                format: float
             max_active_versions:
                 description: "Supported active versions for this image. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
