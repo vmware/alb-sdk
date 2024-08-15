@@ -102,6 +102,9 @@ public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("trusted_host_profiles_refs")
     private List<String> trustedHostProfilesRefs;
 
+    @JsonProperty("truststore_pkiprofile_ref")
+    private String truststorePkiprofileRef;
+
     @JsonProperty("url")
     private String url = "url";
 
@@ -803,6 +806,34 @@ public class SystemConfiguration extends AviRestResource  {
       this.trustedHostProfilesRefs.add(trustedHostProfilesRefsItem);
       return this;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Reference to pkiprofile used for validating the ca certificates for external comminications from avi load balancer controller  this acts as trust
+     * store for avi load balancer controller.
+     * It is a reference to an object of type pkiprofile.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return truststorePkiprofileRef
+     */
+    public String getTruststorePkiprofileRef() {
+        return truststorePkiprofileRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Reference to pkiprofile used for validating the ca certificates for external comminications from avi load balancer controller  this acts as trust
+     * store for avi load balancer controller.
+     * It is a reference to an object of type pkiprofile.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param truststorePkiprofileRef set the truststorePkiprofileRef.
+     */
+    public void setTruststorePkiprofileRef(String  truststorePkiprofileRef) {
+        this.truststorePkiprofileRef = truststorePkiprofileRef;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Avi controller URL of the object.
@@ -903,7 +934,8 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.rekeyTimeLimit, objSystemConfiguration.rekeyTimeLimit)&&
   Objects.equals(this.enableHostHeaderCheck, objSystemConfiguration.enableHostHeaderCheck)&&
   Objects.equals(this.trustedHostProfilesRefs, objSystemConfiguration.trustedHostProfilesRefs)&&
-  Objects.equals(this.enableTelemetry, objSystemConfiguration.enableTelemetry);
+  Objects.equals(this.enableTelemetry, objSystemConfiguration.enableTelemetry)&&
+  Objects.equals(this.truststorePkiprofileRef, objSystemConfiguration.truststorePkiprofileRef);
     }
 
     @Override
@@ -937,6 +969,7 @@ public class SystemConfiguration extends AviRestResource  {
                         sb.append("    sshCiphers: ").append(toIndentedString(sshCiphers)).append("\n");
                         sb.append("    sshHmacs: ").append(toIndentedString(sshHmacs)).append("\n");
                         sb.append("    trustedHostProfilesRefs: ").append(toIndentedString(trustedHostProfilesRefs)).append("\n");
+                        sb.append("    truststorePkiprofileRef: ").append(toIndentedString(truststorePkiprofileRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    welcomeWorkflowComplete: ").append(toIndentedString(welcomeWorkflowComplete)).append("\n");
                   sb.append("}");

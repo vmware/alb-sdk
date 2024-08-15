@@ -48,6 +48,9 @@ public class NsxtConfiguration  {
     @JsonProperty("site_id")
     private String siteId = "default";
 
+    @JsonProperty("verify_certificate")
+    private Boolean verifyCertificate = false;
+
     @JsonProperty("vmc_mode")
     private Boolean vmcMode = false;
 
@@ -276,6 +279,30 @@ public class NsxtConfiguration  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Flag is used to indicate whether tls certificate verificationbe done when establishing a connection to a vcenter and nsx-t manager.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return verifyCertificate
+     */
+    public Boolean getVerifyCertificate() {
+        return verifyCertificate;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Flag is used to indicate whether tls certificate verificationbe done when establishing a connection to a vcenter and nsx-t manager.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param verifyCertificate set the verifyCertificate.
+     */
+    public void setVerifyCertificate(Boolean  verifyCertificate) {
+        this.verifyCertificate = verifyCertificate;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Vmc mode.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -342,7 +369,8 @@ public class NsxtConfiguration  {
   Objects.equals(this.dataNetworkConfig, objNsxtConfiguration.dataNetworkConfig)&&
   Objects.equals(this.vpcMode, objNsxtConfiguration.vpcMode)&&
   Objects.equals(this.vmcMode, objNsxtConfiguration.vmcMode)&&
-  Objects.equals(this.automateDfwObjects, objNsxtConfiguration.automateDfwObjects);
+  Objects.equals(this.automateDfwObjects, objNsxtConfiguration.automateDfwObjects)&&
+  Objects.equals(this.verifyCertificate, objNsxtConfiguration.verifyCertificate);
     }
 
     @Override
@@ -358,6 +386,7 @@ public class NsxtConfiguration  {
                         sb.append("    nsxtCredentialsRef: ").append(toIndentedString(nsxtCredentialsRef)).append("\n");
                         sb.append("    nsxtUrl: ").append(toIndentedString(nsxtUrl)).append("\n");
                         sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
+                        sb.append("    verifyCertificate: ").append(toIndentedString(verifyCertificate)).append("\n");
                         sb.append("    vmcMode: ").append(toIndentedString(vmcMode)).append("\n");
                         sb.append("    vpcMode: ").append(toIndentedString(vpcMode)).append("\n");
                   sb.append("}");

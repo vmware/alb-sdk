@@ -21,10 +21,39 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugServiceEngineObjSync  {
+    @JsonProperty("log_level")
+    private String logLevel = "LOG_LVL_INFO";
+
     @JsonProperty("publish_packet_drops")
     private Integer publishPacketDrops;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Objsync logging verbosity.
+     * Enum options - LOG_LVL_ERROR, LOG_LVL_WARNING, LOG_LVL_INFO, LOG_LVL_DEBUG.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_LVL_INFO".
+     * @return logLevel
+     */
+    public String getLogLevel() {
+        return logLevel;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Objsync logging verbosity.
+     * Enum options - LOG_LVL_ERROR, LOG_LVL_WARNING, LOG_LVL_INFO, LOG_LVL_DEBUG.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_LVL_INFO".
+     * @param logLevel set the logLevel.
+     */
+    public void setLogLevel(String  logLevel) {
+        this.logLevel = logLevel;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -60,14 +89,16 @@ public class DebugServiceEngineObjSync  {
           return false;
       }
       DebugServiceEngineObjSync objDebugServiceEngineObjSync = (DebugServiceEngineObjSync) o;
-      return   Objects.equals(this.publishPacketDrops, objDebugServiceEngineObjSync.publishPacketDrops);
+      return   Objects.equals(this.publishPacketDrops, objDebugServiceEngineObjSync.publishPacketDrops)&&
+  Objects.equals(this.logLevel, objDebugServiceEngineObjSync.logLevel);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class DebugServiceEngineObjSync {\n");
-                  sb.append("    publishPacketDrops: ").append(toIndentedString(publishPacketDrops)).append("\n");
+                  sb.append("    logLevel: ").append(toIndentedString(logLevel)).append("\n");
+                        sb.append("    publishPacketDrops: ").append(toIndentedString(publishPacketDrops)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

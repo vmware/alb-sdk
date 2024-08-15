@@ -57,6 +57,9 @@ public class vCenterConfiguration  {
     @JsonProperty("vcenter_url")
     private String vcenterUrl;
 
+    @JsonProperty("verify_certificate")
+    private Boolean verifyCertificate = false;
+
 
 
     /**
@@ -337,6 +340,30 @@ public class vCenterConfiguration  {
         this.vcenterUrl = vcenterUrl;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Flag is used to indicate whether tls certificate verificationbe done when establishing a connection to a vcenter server.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return verifyCertificate
+     */
+    public Boolean getVerifyCertificate() {
+        return verifyCertificate;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Flag is used to indicate whether tls certificate verificationbe done when establishing a connection to a vcenter server.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param verifyCertificate set the verifyCertificate.
+     */
+    public void setVerifyCertificate(Boolean  verifyCertificate) {
+        this.verifyCertificate = verifyCertificate;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -358,7 +385,8 @@ public class vCenterConfiguration  {
   Objects.equals(this.useContentLib, objvCenterConfiguration.useContentLib)&&
   Objects.equals(this.contentLib, objvCenterConfiguration.contentLib)&&
   Objects.equals(this.isNsxEnvironment, objvCenterConfiguration.isNsxEnvironment)&&
-  Objects.equals(this.datacenterManagedObjectId, objvCenterConfiguration.datacenterManagedObjectId);
+  Objects.equals(this.datacenterManagedObjectId, objvCenterConfiguration.datacenterManagedObjectId)&&
+  Objects.equals(this.verifyCertificate, objvCenterConfiguration.verifyCertificate);
     }
 
     @Override
@@ -377,6 +405,7 @@ public class vCenterConfiguration  {
                         sb.append("    username: ").append(toIndentedString(username)).append("\n");
                         sb.append("    vcenterTemplateSeLocation: ").append(toIndentedString(vcenterTemplateSeLocation)).append("\n");
                         sb.append("    vcenterUrl: ").append(toIndentedString(vcenterUrl)).append("\n");
+                        sb.append("    verifyCertificate: ").append(toIndentedString(verifyCertificate)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

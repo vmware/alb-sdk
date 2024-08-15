@@ -42,6 +42,15 @@ public class SupportedMigrations  {
     @JsonProperty("controller_min_total_disk")
     private Integer controllerMinTotalDisk = 128;
 
+    @JsonProperty("dryrun_min_cores")
+    private Integer dryrunMinCores = 1;
+
+    @JsonProperty("dryrun_min_free_disk_size")
+    private Integer dryrunMinFreeDiskSize = 18;
+
+    @JsonProperty("dryrun_min_memory")
+    private Float dryrunMinMemory = 1.0f;
+
     @JsonProperty("max_active_versions")
     private Integer maxActiveVersions = 2;
 
@@ -260,6 +269,82 @@ public class SupportedMigrations  {
      */
     public void setControllerMinTotalDisk(Integer  controllerMinTotalDisk) {
         this.controllerMinTotalDisk = controllerMinTotalDisk;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Minimum cpu cores required to perform dryrun operation for this image.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @return dryrunMinCores
+     */
+    public Integer getDryrunMinCores() {
+        return dryrunMinCores;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Minimum cpu cores required to perform dryrun operation for this image.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @param dryrunMinCores set the dryrunMinCores.
+     */
+    public void setDryrunMinCores(Integer  dryrunMinCores) {
+        this.dryrunMinCores = dryrunMinCores;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Minimum free disk space required (in gb) to perform dryrun operation for this image.
+     * Field introduced in 31.1.1.
+     * Unit is gb.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 18.
+     * @return dryrunMinFreeDiskSize
+     */
+    public Integer getDryrunMinFreeDiskSize() {
+        return dryrunMinFreeDiskSize;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Minimum free disk space required (in gb) to perform dryrun operation for this image.
+     * Field introduced in 31.1.1.
+     * Unit is gb.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 18.
+     * @param dryrunMinFreeDiskSize set the dryrunMinFreeDiskSize.
+     */
+    public void setDryrunMinFreeDiskSize(Integer  dryrunMinFreeDiskSize) {
+        this.dryrunMinFreeDiskSize = dryrunMinFreeDiskSize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Minimum memory required to perform dryrun operation for this image.
+     * Field introduced in 31.1.1.
+     * Unit is gb.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
+     * @return dryrunMinMemory
+     */
+    public Float getDryrunMinMemory() {
+        return dryrunMinMemory;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Minimum memory required to perform dryrun operation for this image.
+     * Field introduced in 31.1.1.
+     * Unit is gb.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
+     * @param dryrunMinMemory set the dryrunMinMemory.
+     */
+    public void setDryrunMinMemory(Float  dryrunMinMemory) {
+        this.dryrunMinMemory = dryrunMinMemory;
     }
 
     /**
@@ -615,7 +700,10 @@ public class SupportedMigrations  {
   Objects.equals(this.controllerMinDockerVersion, objSupportedMigrations.controllerMinDockerVersion)&&
   Objects.equals(this.minSupportedApiVersion, objSupportedMigrations.minSupportedApiVersion)&&
   Objects.equals(this.podmanControllerHostMinFreeDiskSize, objSupportedMigrations.podmanControllerHostMinFreeDiskSize)&&
-  Objects.equals(this.podmanSeHostMinFreeDiskSize, objSupportedMigrations.podmanSeHostMinFreeDiskSize);
+  Objects.equals(this.podmanSeHostMinFreeDiskSize, objSupportedMigrations.podmanSeHostMinFreeDiskSize)&&
+  Objects.equals(this.dryrunMinCores, objSupportedMigrations.dryrunMinCores)&&
+  Objects.equals(this.dryrunMinMemory, objSupportedMigrations.dryrunMinMemory)&&
+  Objects.equals(this.dryrunMinFreeDiskSize, objSupportedMigrations.dryrunMinFreeDiskSize);
     }
 
     @Override
@@ -629,6 +717,9 @@ public class SupportedMigrations  {
                         sb.append("    controllerMinFreeDiskSize: ").append(toIndentedString(controllerMinFreeDiskSize)).append("\n");
                         sb.append("    controllerMinMemory: ").append(toIndentedString(controllerMinMemory)).append("\n");
                         sb.append("    controllerMinTotalDisk: ").append(toIndentedString(controllerMinTotalDisk)).append("\n");
+                        sb.append("    dryrunMinCores: ").append(toIndentedString(dryrunMinCores)).append("\n");
+                        sb.append("    dryrunMinFreeDiskSize: ").append(toIndentedString(dryrunMinFreeDiskSize)).append("\n");
+                        sb.append("    dryrunMinMemory: ").append(toIndentedString(dryrunMinMemory)).append("\n");
                         sb.append("    maxActiveVersions: ").append(toIndentedString(maxActiveVersions)).append("\n");
                         sb.append("    minSupportedApiVersion: ").append(toIndentedString(minSupportedApiVersion)).append("\n");
                         sb.append("    podmanControllerHostMinFreeDiskSize: ").append(toIndentedString(podmanControllerHostMinFreeDiskSize)).append("\n");
