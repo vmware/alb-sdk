@@ -921,7 +921,7 @@
                     "type": "string"
                 },
                 "profile_url": {
-                    "description": "url of the profile writen to /etc/hosts for HA between IPv6 and IPv4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "url of the profile writen to /etc/hosts for HA between IPv6 and IPv4. Field deprecated in 31.1.1. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "usable_alloc_subnets": {
