@@ -42,6 +42,9 @@ public class Server  {
     @JsonProperty("external_uuid")
     private String externalUuid;
 
+    @JsonProperty("health_monitor_refs")
+    private List<String> healthMonitorRefs;
+
     @JsonProperty("hostname")
     private String hostname;
 
@@ -257,6 +260,54 @@ public class Server  {
      */
     public void setExternalUuid(String  externalUuid) {
         this.externalUuid = externalUuid;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Verify server health by applying one or more health monitors.
+     * Active monitors generate synthetic traffic from each service engine and mark a server up or down based on the response.
+     * It is a reference to an object of type healthmonitor.
+     * Field introduced in 31.1.1.
+     * Maximum of 10 items allowed.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return healthMonitorRefs
+     */
+    public List<String> getHealthMonitorRefs() {
+        return healthMonitorRefs;
+    }
+
+    /**
+     * This is the setter method. this will set the healthMonitorRefs
+     * Verify server health by applying one or more health monitors.
+     * Active monitors generate synthetic traffic from each service engine and mark a server up or down based on the response.
+     * It is a reference to an object of type healthmonitor.
+     * Field introduced in 31.1.1.
+     * Maximum of 10 items allowed.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return healthMonitorRefs
+     */
+    public void setHealthMonitorRefs(List<String>  healthMonitorRefs) {
+        this.healthMonitorRefs = healthMonitorRefs;
+    }
+
+    /**
+     * This is the setter method this will set the healthMonitorRefs
+     * Verify server health by applying one or more health monitors.
+     * Active monitors generate synthetic traffic from each service engine and mark a server up or down based on the response.
+     * It is a reference to an object of type healthmonitor.
+     * Field introduced in 31.1.1.
+     * Maximum of 10 items allowed.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return healthMonitorRefs
+     */
+    public Server addHealthMonitorRefsItem(String healthMonitorRefsItem) {
+      if (this.healthMonitorRefs == null) {
+        this.healthMonitorRefs = new ArrayList<String>();
+      }
+      this.healthMonitorRefs.add(healthMonitorRefsItem);
+      return this;
     }
 
     /**
@@ -619,7 +670,8 @@ public class Server  {
   Objects.equals(this.externalOrchestrationId, objServer.externalOrchestrationId)&&
   Objects.equals(this.description, objServer.description)&&
   Objects.equals(this.location, objServer.location)&&
-  Objects.equals(this.autoscalingGroupName, objServer.autoscalingGroupName);
+  Objects.equals(this.autoscalingGroupName, objServer.autoscalingGroupName)&&
+  Objects.equals(this.healthMonitorRefs, objServer.healthMonitorRefs);
     }
 
     @Override
@@ -633,6 +685,7 @@ public class Server  {
                         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
                         sb.append("    externalOrchestrationId: ").append(toIndentedString(externalOrchestrationId)).append("\n");
                         sb.append("    externalUuid: ").append(toIndentedString(externalUuid)).append("\n");
+                        sb.append("    healthMonitorRefs: ").append(toIndentedString(healthMonitorRefs)).append("\n");
                         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
                         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
                         sb.append("    isStatic: ").append(toIndentedString(isStatic)).append("\n");
