@@ -29,6 +29,9 @@ type Server struct {
 	// UUID identifying VM in OpenStack and other external compute. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ExternalUUID *string `json:"external_uuid,omitempty"`
 
+	// Verify server health by applying one or more health monitors.  Active monitors generate synthetic traffic from each Service Engine and mark a server up or down based on the response. . It is a reference to an object of type HealthMonitor. Field introduced in 31.1.1. Maximum of 10 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	HealthMonitorRefs []string `json:"health_monitor_refs,omitempty"`
+
 	// DNS resolvable name of the server.  May be used in place of the IP address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Hostname *string `json:"hostname,omitempty"`
 
