@@ -2288,7 +2288,7 @@ definitions:
                 type: integer
                 format: uint32
             se_kni_burst_factor:
-                description: "This knob controls the resource availability and burst size used between SE datapath and KNI. This helps in minimising packet drops when there is higher KNI traffic (non-VIP traffic from and to Linux). The factor takes the following values      0-default.     1-doubles the burst size and KNI resources.     2-quadruples the burst size and KNI resources. Allowed values are 0-2. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "This knob controls the resource availability and burst size used between SE datapath and KNI. This helps in minimising packet drops when there is higher KNI traffic (non-VIP traffic from and to Linux). The factor takes the following values      0-default.     1-doubles the burst size and KNI resources.     2-quadruples the burst size and KNI resources.    3-Increases the burst size and KNI resources by a factor of eight. Allowed values are 0-3. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             se_l3_encap_ipc:
