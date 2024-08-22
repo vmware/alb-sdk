@@ -42,7 +42,7 @@ type SystemConfiguration struct {
 	// Enable CORS Header. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	EnableCors *bool `json:"enable_cors,omitempty"`
 
-	// Host Header check. Field introduced in 30.2.2, 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Host Header check. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	EnableHostHeaderCheck *bool `json:"enable_host_header_check,omitempty"`
 
 	// Enables sending anonymous operational metrics to AVI. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
@@ -93,7 +93,7 @@ type SystemConfiguration struct {
 	// Allowed HMAC list for SSH to the management interface on the Controller and Service Engines. If this is not specified, all the default HMACs are allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SSHHmacs []string `json:"ssh_hmacs,omitempty"`
 
-	// Trusted Host Profiles for host header validation. Only function when enable_host_header_check is set to true. It is a reference to an object of type TrustedHostProfile. Field introduced in 30.2.2, 31.1.1. Maximum of 20 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Trusted Host Profiles for host header validation. Only function when enable_host_header_check is set to true. It is a reference to an object of type TrustedHostProfile. Field introduced in 31.1.1. Maximum of 20 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	TrustedHostProfilesRefs []string `json:"trusted_host_profiles_refs,omitempty"`
 
 	// Reference to PKIProfile used for validating the CA certificates for external comminications from Avi Load Balancer Controller  This acts as trust store for Avi Load Balancer Controller. It is a reference to an object of type PKIProfile. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
