@@ -6207,7 +6207,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * The factor takes the following values      0-default.
      * 1-doubles the burst size and kni resources.
      * 2-quadruples the burst size and kni resources.
-     * Allowed values are 0-2.
+     * 3-increases the burst size and kni resources by a factor of eight.
+     * Allowed values are 0-3.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -6224,7 +6225,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * The factor takes the following values      0-default.
      * 1-doubles the burst size and kni resources.
      * 2-quadruples the burst size and kni resources.
-     * Allowed values are 0-2.
+     * 3-increases the burst size and kni resources by a factor of eight.
+     * Allowed values are 0-3.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.

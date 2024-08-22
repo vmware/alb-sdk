@@ -32,7 +32,7 @@ public class TrustedHost  {
     /**
      * This is the getter method this will return the attribute value.
      * Any valid ipv4,ipv6, or domain addresshost name.
-     * Field introduced in 30.2.2, 31.1.1.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return host
@@ -44,7 +44,7 @@ public class TrustedHost  {
     /**
      * This is the setter method to the attribute.
      * Any valid ipv4,ipv6, or domain addresshost name.
-     * Field introduced in 30.2.2, 31.1.1.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param host set the host.
@@ -57,7 +57,7 @@ public class TrustedHost  {
      * This is the getter method this will return the attribute value.
      * Optionally specify the port number.
      * Allowed values are 1-65535.
-     * Field introduced in 30.2.2, 31.1.1.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
@@ -70,7 +70,7 @@ public class TrustedHost  {
      * This is the setter method to the attribute.
      * Optionally specify the port number.
      * Allowed values are 1-65535.
-     * Field introduced in 30.2.2, 31.1.1.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
