@@ -59,8 +59,7 @@ public class TrueClientIPConfig  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Headers to derive client ip from.
-     * The header value needs to be a comma-separated list of ip addresses.
+     * Http headers to derive client ip from.
      * If none specified and use_true_client_ip is set to true, it will use x-forwarded-for header, if present.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
@@ -74,8 +73,7 @@ public class TrueClientIPConfig  {
 
     /**
      * This is the setter method. this will set the headers
-     * Headers to derive client ip from.
-     * The header value needs to be a comma-separated list of ip addresses.
+     * Http headers to derive client ip from.
      * If none specified and use_true_client_ip is set to true, it will use x-forwarded-for header, if present.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
@@ -89,8 +87,7 @@ public class TrueClientIPConfig  {
 
     /**
      * This is the setter method this will set the headers
-     * Headers to derive client ip from.
-     * The header value needs to be a comma-separated list of ip addresses.
+     * Http headers to derive client ip from.
      * If none specified and use_true_client_ip is set to true, it will use x-forwarded-for header, if present.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
