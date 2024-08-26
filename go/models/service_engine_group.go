@@ -883,4 +883,7 @@ type ServiceEngineGroup struct {
 
 	// Memory pool size used for WAF.Requires SE Reboot. Field introduced in 17.2.3. Unit is KB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	WafMempoolSize *uint32 `json:"waf_mempool_size,omitempty"`
+
+	// Use the JIT compiler for PCRE regular expressions in WAF. Setting this to false will impact performance. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	WafUseJitForPcre *bool `json:"waf_use_jit_for_pcre,omitempty"`
 }
