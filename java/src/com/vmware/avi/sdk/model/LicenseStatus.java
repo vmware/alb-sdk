@@ -44,7 +44,7 @@ public class LicenseStatus extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * License enforcement date when we upgrade controller to higher version and license tier is essential before upgrade.
-     * Field introduced in 30.2.2, 31.1.1.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return essentialsEnforcedAt
@@ -56,7 +56,7 @@ public class LicenseStatus extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * License enforcement date when we upgrade controller to higher version and license tier is essential before upgrade.
-     * Field introduced in 30.2.2, 31.1.1.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param essentialsEnforcedAt set the essentialsEnforcedAt.

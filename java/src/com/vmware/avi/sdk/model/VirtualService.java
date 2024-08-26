@@ -2315,7 +2315,7 @@ public class VirtualService extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of static dns records applied to this virtual service.
      * These are static entries and no health monitoring is performed against the ip addresses.
-     * Maximum of 1000 items allowed.
+     * Maximum of 2000 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticDnsRecords
@@ -2328,7 +2328,7 @@ public class VirtualService extends AviRestResource  {
      * This is the setter method. this will set the staticDnsRecords
      * List of static dns records applied to this virtual service.
      * These are static entries and no health monitoring is performed against the ip addresses.
-     * Maximum of 1000 items allowed.
+     * Maximum of 2000 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticDnsRecords
@@ -2341,7 +2341,7 @@ public class VirtualService extends AviRestResource  {
      * This is the setter method this will set the staticDnsRecords
      * List of static dns records applied to this virtual service.
      * These are static entries and no health monitoring is performed against the ip addresses.
-     * Maximum of 1000 items allowed.
+     * Maximum of 2000 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticDnsRecords

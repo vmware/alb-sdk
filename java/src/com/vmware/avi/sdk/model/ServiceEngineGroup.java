@@ -885,6 +885,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("waf_mempool_size")
     private Integer wafMempoolSize = 64;
 
+    @JsonProperty("waf_use_jit_for_pcre")
+    private Boolean wafUseJitForPcre = true;
+
 
 
     /**
@@ -8607,6 +8610,32 @@ public class ServiceEngineGroup extends AviRestResource  {
         this.wafMempoolSize = wafMempoolSize;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Use the jit compiler for pcre regular expressions in waf.
+     * Setting this to false will impact performance.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return wafUseJitForPcre
+     */
+    public Boolean getWafUseJitForPcre() {
+        return wafUseJitForPcre;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Use the jit compiler for pcre regular expressions in waf.
+     * Setting this to false will impact performance.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param wafUseJitForPcre set the wafUseJitForPcre.
+     */
+    public void setWafUseJitForPcre(Boolean  wafUseJitForPcre) {
+        this.wafUseJitForPcre = wafUseJitForPcre;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -8903,7 +8932,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.seDebugTraceSz, objServiceEngineGroup.seDebugTraceSz)&&
   Objects.equals(this.multicastEnable, objServiceEngineGroup.multicastEnable)&&
   Objects.equals(this.maxNumHttpSessionsToStore, objServiceEngineGroup.maxNumHttpSessionsToStore)&&
-  Objects.equals(this.gveEnabled, objServiceEngineGroup.gveEnabled);
+  Objects.equals(this.gveEnabled, objServiceEngineGroup.gveEnabled)&&
+  Objects.equals(this.wafUseJitForPcre, objServiceEngineGroup.wafUseJitForPcre);
     }
 
     @Override
@@ -9197,6 +9227,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    vssPlacementEnabled: ").append(toIndentedString(vssPlacementEnabled)).append("\n");
                         sb.append("    wafMempool: ").append(toIndentedString(wafMempool)).append("\n");
                         sb.append("    wafMempoolSize: ").append(toIndentedString(wafMempoolSize)).append("\n");
+                        sb.append("    wafUseJitForPcre: ").append(toIndentedString(wafUseJitForPcre)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
