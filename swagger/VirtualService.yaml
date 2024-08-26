@@ -5392,7 +5392,7 @@ definitions:
                 description: "The SSO Policy attached to the virtualservice. It is a reference to an object of type SSOPolicy. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             static_dns_records:
-                description: "List of static DNS records applied to this Virtual Service. These are static entries and no health monitoring is performed against the IP addresses. Maximum of 1000 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "List of static DNS records applied to this Virtual Service. These are static entries and no health monitoring is performed against the IP addresses. Maximum of 2000 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DnsRecord'

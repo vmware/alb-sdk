@@ -548,7 +548,7 @@
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "essentials_enforced_at": {
-                    "description": "License enforcement date when we upgrade controller to higher version and license tier is essential before upgrade. Field introduced in 30.2.2, 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "License enforcement date when we upgrade controller to higher version and license tier is essential before upgrade. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "saas_status": {

@@ -2333,6 +2333,10 @@ definitions:
                 type: integer
                 default: 64
                 format: uint32
+            waf_use_jit_for_pcre:
+                description: "Use the JIT compiler for PCRE regular expressions in WAF. Setting this to false will impact performance. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
     ServiceEngineGroupApiResponse:
         type: object
         required:
