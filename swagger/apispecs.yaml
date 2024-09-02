@@ -15316,6 +15316,55 @@ paths:
         '401':
           description: log in failed
   /fileobject/{uuid}/['']/:
+    patch:
+      tags:
+      - FileObject
+      description: /fileobject/{uuid}/['']/
+      operationId: PATCH /fileobject/{uuid}/['']/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
     put:
       tags:
       - FileObject
@@ -15360,55 +15409,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-    patch:
-      tags:
-      - FileObject
-      description: /fileobject/{uuid}/['']/
-      operationId: PATCH /fileobject/{uuid}/['']/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -35995,6 +35995,55 @@ paths:
         '401':
           description: log in failed
   /cloud/{uuid}/gc/:
+    patch:
+      tags:
+      - Cloud
+      description: /cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
     put:
       tags:
       - Cloud
@@ -36039,55 +36088,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-    patch:
-      tags:
-      - Cloud
-      description: /cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -59484,6 +59484,56 @@ paths:
             type: string
         '401':
           description: log in failed
+  /serviceengine/{uuid}/diameter/connections/:
+    get:
+      tags:
+      - ServiceEngine
+      description: /serviceengine/{uuid}/diameter/connections/
+      operationId: GET /serviceengine/{uuid}/diameter/connections/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
   /wafpolicy:
     get:
       tags:
@@ -79425,6 +79475,11 @@ definitions:
         description: ' Allowed in Enterprise edition with any value, Essentials, Basic,
           Enterprise with Cloud Services edition.'
         type: string
+      diameter_service_profile:
+        description: Specifies various Diameter service related controls for virtual
+          service. Field introduced in 31.1.1. Allowed in Enterprise edition with
+          any value, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/DiameterServiceApplicationProfile'
       dns_service_profile:
         description: Specifies various DNS service related controls for virtual service.
           Allowed in Enterprise edition with any value, Enterprise with Cloud Services
@@ -79493,10 +79548,10 @@ definitions:
         description: Specifies which application layer proxy is enabled for the virtual
           service. Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP,
           APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS, APPLICATION_PROFILE_TYPE_SSL,
-          APPLICATION_PROFILE_TYPE_SIP. Allowed in Enterprise edition with any value,
-          Essentials edition(Allowed values- APPLICATION_PROFILE_TYPE_L4), Basic edition(Allowed
-          values- APPLICATION_PROFILE_TYPE_L4,APPLICATION_PROFILE_TYPE_HTTP), Enterprise
-          with Cloud Services edition.
+          APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER. Allowed
+          in Enterprise edition with any value, Essentials edition(Allowed values-
+          APPLICATION_PROFILE_TYPE_L4), Basic edition(Allowed values- APPLICATION_PROFILE_TYPE_L4,APPLICATION_PROFILE_TYPE_HTTP),
+          Enterprise with Cloud Services edition.
         type: string
       url:
         description: url
@@ -79691,6 +79746,45 @@ definitions:
         type: integer
         default: 4096
         format: int32
+  DiameterServiceApplicationProfile:
+    type: object
+    properties:
+      client_origin_host:
+        description: Origin-Host AVP towards client. Field introduced in 31.1.1. Allowed
+          in Enterprise edition with any value, Enterprise with Cloud Services edition.
+        type: string
+      client_origin_realm:
+        description: Origin-Realm AVP towards client. Field introduced in 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
+        type: string
+      host_ip_addr_rewrite:
+        description: Rwrite Host-IP-Address AVP. Field introduced in 31.1.1. Allowed
+          in Enterprise edition with any value, Enterprise with Cloud Services edition.
+        type: boolean
+      max_outstanding_req:
+        description: Max number of outstanding request waiting for response. Field
+          introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
+        type: integer
+        default: 4098
+        format: uint32
+      req_timeout:
+        description: Response waiting time for the request sent. Field introduced
+          in 31.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
+        type: integer
+        default: 5
+        format: uint32
+      server_origin_host:
+        description: Origin-Host AVP towards server. Field introduced in 31.1.1. Allowed
+          in Enterprise edition with any value, Enterprise with Cloud Services edition.
+        type: string
+      server_origin_realm:
+        description: Origin-Realm AVP towards server. Field introduced in 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
+        type: string
   DnsServiceApplicationProfile:
     type: object
     properties:
@@ -82850,6 +82944,11 @@ definitions:
           Ex  upgrade_system_1a5c. Field introduced in 22.1.6, 30.2.1. Allowed in
           Enterprise edition with any value, Enterprise with Cloud Services edition.
         type: string
+      operation:
+        description: Nature of operation. Ex  Controller Upgrade, System Patch, etc.
+          Field introduced in 31.1.1. Allowed in Enterprise edition with any value,
+          Enterprise with Cloud Services edition.
+        type: string
       readiness_reports:
         description: Readiness state of the system. Ex  Upgrade Pre-check Results.
           Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any
@@ -82882,6 +82981,11 @@ definitions:
         description: Tenant UUID associated with the Object. It is a reference to
           an object of type Tenant. Field introduced in 22.1.6, 30.2.1. Allowed in
           Enterprise edition with any value, Enterprise with Cloud Services edition.
+        type: string
+      type:
+        description: Type of report. Pre-Checks, Dry-run or an upgrade operation.
+          Field introduced in 31.1.1. Allowed in Enterprise edition with any value,
+          Enterprise with Cloud Services edition.
         type: string
       url:
         description: url
@@ -84554,6 +84658,13 @@ definitions:
           HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise edition with any value,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
+      string_group_refs:
+        description: UUID of the string group(s). It is a reference to an object of
+          type StringGroup. Field introduced in 31.1.1. Allowed in Enterprise edition
+          with any value, Enterprise with Cloud Services edition.
+        type: array
+        items:
+          type: string
       value:
         description: String values to match in the HTTP header. Allowed in Enterprise
           edition with any value, Essentials, Basic, Enterprise with Cloud Services
@@ -85523,6 +85634,11 @@ definitions:
       is_active_ftp_data_port:
         description: Source port used by VS for active FTP data connections. Field
           introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
+        type: boolean
+      is_passive_ftp_data_port:
+        description: Source port used by VS for passive FTP data connections. Field
+          introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise
           with Cloud Services edition.
         type: boolean
       override_application_profile_ref:
@@ -89883,6 +89999,11 @@ definitions:
         description: ' Allowed in Enterprise edition with any value, Essentials, Basic,
           Enterprise with Cloud Services edition.'
         type: string
+      diameter_app_cookie_persistence_profile:
+        description: Specifies the Diameter Persistence profile parameters. Field
+          introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
+        $ref: '#/definitions/DiameterAVPPersistenceProfile'
       hdr_persistence_profile:
         description: Specifies the custom HTTP Header Persistence profile parameters.
           Allowed in Enterprise edition with any value, Enterprise with Cloud Services
@@ -89967,6 +90088,22 @@ definitions:
           $ref: '#/definitions/ApplicationPersistenceProfile'
       next:
         type: string
+  DiameterAVPPersistenceProfile:
+    type: object
+    properties:
+      avp_key_type:
+        description: AvpKey type. Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM,
+          DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID, SUBSCRIPTION_ID. Field
+          introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
+        type: string
+        default: SESSION_ID
+      timeout:
+        description: The maximum lifetime of diameter cookie. No value or 'zero' indicates
+          no timeout. Field introduced in 31.1.1. Unit is SEC. Allowed in Enterprise
+          edition with any value, Enterprise with Cloud Services edition.
+        type: integer
+        format: uint32
   HdrPersistenceProfile:
     type: object
     properties:
@@ -90285,6 +90422,12 @@ definitions:
         type: integer
         default: 32
         format: uint32
+      collect_cpu_usage_metrics_per_waf_rule:
+        description: Enable collection of CPU time per WAF rule. By default, WAF CPU
+          usage is collected per WAF phase only. Enable this temporarily while investigating
+          rule processing performance. Field introduced in 31.1.1. Allowed in Enterprise
+          edition with any value, Enterprise with Cloud Services edition.
+        type: boolean
       content_type_mappings:
         description: WAF Content-Types and their request body parsers. Use this field
           to configure which Content-Types should be handled by WAF and which parser
@@ -92255,11 +92398,11 @@ definitions:
           SCTPCONNRUNTIMEDETAIL, VIMGRIPSUBNETRUNTIME, VIMGRSEVMRUNTIME, VIMGRVMRUNTIME,
           VIMGRCLUSTERRUNTIME, SEAGENTDPPROBE, BFDRUNNINGCONFIG, LOGAGENTSTATSPERVS,
           VSLOGSTATSDISAGGR, VRFIPINFORUNTIME, DPMETRICSRUNTIME, SEAGENTOBJSYNCSTATS,
-          KEYVALSTATS, CSRFMETRICS, SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO,
-          PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME,
-          INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS,
-          TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE,
-          VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
+          KEYVALSTATS, CSRFMETRICS, DIAMETERCONNECTIONS, SERESOURCEPROTO, SECONSUMERPROTO,
+          SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO, VCENTERMAP,
+          VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS,
+          ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS,
+          VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
           VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME,
           PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
@@ -92565,11 +92708,11 @@ definitions:
           SCTPCONNRUNTIMEDETAIL, VIMGRIPSUBNETRUNTIME, VIMGRSEVMRUNTIME, VIMGRVMRUNTIME,
           VIMGRCLUSTERRUNTIME, SEAGENTDPPROBE, BFDRUNNINGCONFIG, LOGAGENTSTATSPERVS,
           VSLOGSTATSDISAGGR, VRFIPINFORUNTIME, DPMETRICSRUNTIME, SEAGENTOBJSYNCSTATS,
-          KEYVALSTATS, CSRFMETRICS, SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO,
-          PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME,
-          INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS,
-          TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE,
-          VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
+          KEYVALSTATS, CSRFMETRICS, DIAMETERCONNECTIONS, SERESOURCEPROTO, SECONSUMERPROTO,
+          SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO, VCENTERMAP,
+          VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS,
+          ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS,
+          VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
           VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME,
           PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
@@ -92729,9 +92872,9 @@ definitions:
           USER_NOT_AUTHORIZED_BY_ANY_RULE, CONFIG_SE_GRP_FLAVOR_UPDATE, API_VERSION_DEPRECATED,
           DNS_QUERY_ERROR, ASYNC_PATCH_STATUS, MERGED_ASYNC_PATCH_STATUS, CONFIG_EXPORT,
           TECHSUPPORT_COLLECTION_STARTED, TECHSUPPORT_COLLECTION_ONGOING, TECHSUPPORT_COLLECTION_SUCCESS,
-          TECHSUPPORT_COLLECTION_SUCCESS_WITH_ERROR, SSL_CERT_EXPIRE, SSL_KEY_EXPORTED,
-          SSL_CERT_RENEW, SSL_CERT_RENEW_FAILED, SSL_CERT_IGNORED, SSL_CERT_REVOKED,
-          CONTROLLER_NODE_JOINED, CONTROLLER_NODE_LEFT, CONTROLLER_SERVICE_FAILURE,
+          TECHSUPPORT_COLLECTION_SUCCESS_WITH_ERROR, WARNING_EVENT, SSL_CERT_EXPIRE,
+          SSL_KEY_EXPORTED, SSL_CERT_RENEW, SSL_CERT_RENEW_FAILED, SSL_CERT_IGNORED,
+          SSL_CERT_REVOKED, CONTROLLER_NODE_JOINED, CONTROLLER_NODE_LEFT, CONTROLLER_SERVICE_FAILURE,
           CONTROLLER_LEADER_FAILOVER, CONTROLLER_WARM_REBOOT, CONTROLLER_SERVICE_RESTORED,
           CONTROLLER_SERVICE_CRITICAL_FAILURE, CONTROLLER_NODE_SHUTDOWN, CONTROLLER_NODE_STARTED,
           CLUSTER_CONFIG_FAILED, SE_SECURE_KEY_EXCHANGE, CTLR_SECURE_KEY_EXCHANGE,
@@ -94874,9 +95017,9 @@ definitions:
           ADF_WEBSOCKET_DETECTED, ADF_WEBSOCKET_HANDSHAKE_FAILED, ADF_WEBSOCKET_WRONG_SEC_WEBSOCKET_KEY,
           ADF_OAUTH_TOKEN_ENDPOINT_CONN_FAIL, ADF_OAUTH_USERINFO_ENDPOINT_CONN_FAIL,
           ADF_OAUTH_JWKS_ENDPOINT_CONN_FAIL, ADF_OAUTH_INTRO_ENDPOINT_CONN_FAIL, ADF_SESSION_NOT_ENABLED,
-          ADF_SESSION_MODULE_LENGTH_MISMATCH, ADF_HTTP_UNEXPECTED_CSRF_REQUEST, ADF_CSRF_REJECTED.
-          Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+          ADF_SESSION_MODULE_LENGTH_MISMATCH, ADF_HTTP_UNEXPECTED_CSRF_REQUEST, ADF_CSRF_REJECTED,
+          ADF_DIAM_REQUEST_TIMEDOUT. Allowed in Enterprise edition with any value,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: array
         items:
           type: string
@@ -100662,6 +100805,11 @@ definitions:
           Enterprise with Cloud Services edition.'
         type: boolean
         default: true
+      diameter_log:
+        description: Diameter related logging information. Field introduced in 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
+        $ref: '#/definitions/DiameterLog'
       dns_etype:
         description: ' Enum options - DNS_ENTRY_PASS_THROUGH, DNS_ENTRY_GSLB, DNS_ENTRY_VIRTUALSERVICE,
           DNS_ENTRY_STATIC, DNS_ENTRY_POLICY, DNS_ENTRY_LOCAL. Allowed in Enterprise
@@ -101171,9 +101319,9 @@ definitions:
           ADF_WEBSOCKET_DETECTED, ADF_WEBSOCKET_HANDSHAKE_FAILED, ADF_WEBSOCKET_WRONG_SEC_WEBSOCKET_KEY,
           ADF_OAUTH_TOKEN_ENDPOINT_CONN_FAIL, ADF_OAUTH_USERINFO_ENDPOINT_CONN_FAIL,
           ADF_OAUTH_JWKS_ENDPOINT_CONN_FAIL, ADF_OAUTH_INTRO_ENDPOINT_CONN_FAIL, ADF_SESSION_NOT_ENABLED,
-          ADF_SESSION_MODULE_LENGTH_MISMATCH, ADF_HTTP_UNEXPECTED_CSRF_REQUEST, ADF_CSRF_REJECTED.
-          Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+          ADF_SESSION_MODULE_LENGTH_MISMATCH, ADF_HTTP_UNEXPECTED_CSRF_REQUEST, ADF_CSRF_REJECTED,
+          ADF_DIAM_REQUEST_TIMEDOUT. Allowed in Enterprise edition with any value,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: array
         items:
           type: string
@@ -104045,6 +104193,59 @@ definitions:
       vs_name:
         description: Name of the Virtual Service. Field introduced in 21.1.3. Allowed
           in Enterprise edition with any value, Enterprise with Cloud Services edition.
+        type: string
+  DiameterLog:
+    type: object
+    properties:
+      application_id:
+        description: Field to identify which application the message is applicable
+          for. Field introduced in 31.1.1. Allowed in Enterprise edition with any
+          value, Enterprise with Cloud Services edition.
+        type: integer
+        format: uint32
+      avp_key_type:
+        description: AvpKey type. Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM,
+          DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID, SUBSCRIPTION_ID. Field
+          introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
+        type: string
+      command_code:
+        description: Field to indicate command associated with message. Field introduced
+          in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with
+          Cloud Services edition.
+        type: integer
+        format: uint32
+      destination_host:
+        description: Field to identify the target server for the message. Field introduced
+          in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with
+          Cloud Services edition.
+        type: string
+      destination_realm:
+        description: Field to identify the realm where receiving server resides. Field
+          introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
+        type: string
+      end_to_end_identifier:
+        description: Field to detect duplicate messages. Field introduced in 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
+        type: integer
+        format: uint32
+      hop_by_hop_identifier:
+        description: Field to match requests and responses. Field introduced in 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
+        type: integer
+        format: uint32
+      origin_host:
+        description: Field to identify endpoint that originated the message. Field
+          introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise
+          with Cloud Services edition.
+        type: string
+      origin_realm:
+        description: Field to identify realm that originated the message. Field introduced
+          in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with
+          Cloud Services edition.
         type: string
   DisableSeMigrateEventDetails:
     type: object
@@ -106963,6 +107164,10 @@ definitions:
           Allowed in Enterprise edition with any value, Enterprise with Cloud Services
           edition.
         $ref: '#/definitions/VsSwitchoverEventDetails'
+      warning_event_details:
+        description: ' Field introduced in 31.1.1. Allowed in Enterprise edition with
+          any value, Enterprise with Cloud Services edition.'
+        $ref: '#/definitions/WarningEventDetails'
   EventDetailsFilter:
     type: object
     required:
@@ -107070,9 +107275,9 @@ definitions:
           USER_NOT_AUTHORIZED_BY_ANY_RULE, CONFIG_SE_GRP_FLAVOR_UPDATE, API_VERSION_DEPRECATED,
           DNS_QUERY_ERROR, ASYNC_PATCH_STATUS, MERGED_ASYNC_PATCH_STATUS, CONFIG_EXPORT,
           TECHSUPPORT_COLLECTION_STARTED, TECHSUPPORT_COLLECTION_ONGOING, TECHSUPPORT_COLLECTION_SUCCESS,
-          TECHSUPPORT_COLLECTION_SUCCESS_WITH_ERROR, SSL_CERT_EXPIRE, SSL_KEY_EXPORTED,
-          SSL_CERT_RENEW, SSL_CERT_RENEW_FAILED, SSL_CERT_IGNORED, SSL_CERT_REVOKED,
-          CONTROLLER_NODE_JOINED, CONTROLLER_NODE_LEFT, CONTROLLER_SERVICE_FAILURE,
+          TECHSUPPORT_COLLECTION_SUCCESS_WITH_ERROR, WARNING_EVENT, SSL_CERT_EXPIRE,
+          SSL_KEY_EXPORTED, SSL_CERT_RENEW, SSL_CERT_RENEW_FAILED, SSL_CERT_IGNORED,
+          SSL_CERT_REVOKED, CONTROLLER_NODE_JOINED, CONTROLLER_NODE_LEFT, CONTROLLER_SERVICE_FAILURE,
           CONTROLLER_LEADER_FAILOVER, CONTROLLER_WARM_REBOOT, CONTROLLER_SERVICE_RESTORED,
           CONTROLLER_SERVICE_CRITICAL_FAILURE, CONTROLLER_NODE_SHUTDOWN, CONTROLLER_NODE_STARTED,
           CLUSTER_CONFIG_FAILED, SE_SECURE_KEY_EXCHANGE, CTLR_SECURE_KEY_EXCHANGE,
@@ -107333,11 +107538,11 @@ definitions:
           SCTPCONNRUNTIMEDETAIL, VIMGRIPSUBNETRUNTIME, VIMGRSEVMRUNTIME, VIMGRVMRUNTIME,
           VIMGRCLUSTERRUNTIME, SEAGENTDPPROBE, BFDRUNNINGCONFIG, LOGAGENTSTATSPERVS,
           VSLOGSTATSDISAGGR, VRFIPINFORUNTIME, DPMETRICSRUNTIME, SEAGENTOBJSYNCSTATS,
-          KEYVALSTATS, CSRFMETRICS, SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO,
-          PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME,
-          INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS,
-          TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE,
-          VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
+          KEYVALSTATS, CSRFMETRICS, DIAMETERCONNECTIONS, SERESOURCEPROTO, SECONSUMERPROTO,
+          SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO, VCENTERMAP,
+          VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS,
+          ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS,
+          VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
           VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME,
           PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
@@ -109799,9 +110004,9 @@ definitions:
       app_type:
         description: Application type of the VS. Enum options - APPLICATION_PROFILE_TYPE_L4,
           APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
-          APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP. Field introduced
-          in 17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic,
-          Enterprise with Cloud Services edition.
+          APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER.
+          Field introduced in 17.2.2. Allowed in Enterprise edition with any value,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       cluster_uuid:
         description: The Site Controller Cluster UUID to which this member belongs.
@@ -112081,6 +112286,12 @@ definitions:
           SSLProfile. Field introduced in 17.1.1. Allowed in Enterprise edition with
           any value, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
+      use_pool_sni_server_name:
+        description: Use the SNI server name configured in the Pool. This will override
+          the server_name configured in the Health Monitor. Field introduced in 31.1.1.
+          Allowed in Enterprise edition with any value, Enterprise with Cloud Services
+          edition.
+        type: boolean
   HealthMonitorTcp:
     type: object
     properties:
@@ -122406,9 +122617,9 @@ definitions:
       app_profile_type:
         description: Application type of the VS. Enum options - APPLICATION_PROFILE_TYPE_L4,
           APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
-          APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP. Field introduced
-          in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with
-          Cloud Services edition.
+          APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER.
+          Field introduced in 22.1.1. Allowed in Enterprise edition with any value,
+          Enterprise with Cloud Services edition.
         type: string
       config:
         description: Configuration summary of the pool. Field introduced in 22.1.1.
@@ -127119,9 +127330,9 @@ definitions:
           ADF_WEBSOCKET_DETECTED, ADF_WEBSOCKET_HANDSHAKE_FAILED, ADF_WEBSOCKET_WRONG_SEC_WEBSOCKET_KEY,
           ADF_OAUTH_TOKEN_ENDPOINT_CONN_FAIL, ADF_OAUTH_USERINFO_ENDPOINT_CONN_FAIL,
           ADF_OAUTH_JWKS_ENDPOINT_CONN_FAIL, ADF_OAUTH_INTRO_ENDPOINT_CONN_FAIL, ADF_SESSION_NOT_ENABLED,
-          ADF_SESSION_MODULE_LENGTH_MISMATCH, ADF_HTTP_UNEXPECTED_CSRF_REQUEST, ADF_CSRF_REJECTED.
-          Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise
-          with Cloud Services edition.'
+          ADF_SESSION_MODULE_LENGTH_MISMATCH, ADF_HTTP_UNEXPECTED_CSRF_REQUEST, ADF_CSRF_REJECTED,
+          ADF_DIAM_REQUEST_TIMEDOUT. Allowed in Enterprise edition with any value,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
         type: string
   SeHmEventPoolDetails:
     type: object
@@ -127445,9 +127656,9 @@ definitions:
           ADF_WEBSOCKET_DETECTED, ADF_WEBSOCKET_HANDSHAKE_FAILED, ADF_WEBSOCKET_WRONG_SEC_WEBSOCKET_KEY,
           ADF_OAUTH_TOKEN_ENDPOINT_CONN_FAIL, ADF_OAUTH_USERINFO_ENDPOINT_CONN_FAIL,
           ADF_OAUTH_JWKS_ENDPOINT_CONN_FAIL, ADF_OAUTH_INTRO_ENDPOINT_CONN_FAIL, ADF_SESSION_NOT_ENABLED,
-          ADF_SESSION_MODULE_LENGTH_MISMATCH, ADF_HTTP_UNEXPECTED_CSRF_REQUEST, ADF_CSRF_REJECTED.
-          Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise
-          with Cloud Services edition.'
+          ADF_SESSION_MODULE_LENGTH_MISMATCH, ADF_HTTP_UNEXPECTED_CSRF_REQUEST, ADF_CSRF_REJECTED,
+          ADF_DIAM_REQUEST_TIMEDOUT. Allowed in Enterprise edition with any value,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
         type: string
   SeHmEventShmDetails:
     type: object
@@ -141512,9 +141723,9 @@ definitions:
       app_profile_type:
         description: Application type of the virtual service. Enum options - APPLICATION_PROFILE_TYPE_L4,
           APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
-          APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP. Field introduced
-          in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with
-          Cloud Services edition.
+          APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER.
+          Field introduced in 22.1.1. Allowed in Enterprise edition with any value,
+          Enterprise with Cloud Services edition.
         type: string
       config:
         description: Configuration summary of the virtual service. Field introduced
@@ -143780,6 +143991,17 @@ definitions:
         description: The rule_id of the rule where attributes are overridden. Field
           introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise
           with Cloud Services edition.
+        type: string
+  WarningEventDetails:
+    type: object
+    properties:
+      event_data:
+        description: Event data. Allowed in Enterprise edition with any value, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: string
+      warning_message:
+        description: Warning message. Allowed in Enterprise edition with any value,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
   WebApplicationSignatureServiceStatus:
     type: object

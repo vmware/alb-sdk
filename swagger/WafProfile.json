@@ -795,6 +795,10 @@
                     "default": 32,
                     "format": "uint32"
                 },
+                "collect_cpu_usage_metrics_per_waf_rule": {
+                    "description": "Enable collection of CPU time per WAF rule. By default, WAF CPU usage is collected per WAF phase only. Enable this temporarily while investigating rule processing performance. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
                 "content_type_mappings": {
                     "description": "WAF Content-Types and their request body parsers. Use this field to configure which Content-Types should be handled by WAF and which parser should be used. All Content-Types here are treated as 'allowed'. The order of entries matters. If the request's Content-Type matches an entry, its request body parser will run and no other parser will be invoked. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "array",

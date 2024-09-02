@@ -869,6 +869,10 @@
                     "description": "Name of the report derived from operation in a readable format. Ex  upgrade_system_1a5c. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
+                "operation": {
+                    "description": "Nature of operation. Ex  Controller Upgrade, System Patch, etc. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
                 "readiness_reports": {
                     "description": "Readiness state of the system. Ex  Upgrade Pre-check Results. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -897,6 +901,10 @@
                 },
                 "tenant_ref": {
                     "description": "Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Type of report. Pre-Checks, Dry-run or an upgrade operation. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {

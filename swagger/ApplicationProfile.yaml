@@ -435,6 +435,9 @@ definitions:
             description:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            diameter_service_profile:
+                description: "Specifies various Diameter service related controls for virtual service. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/DiameterServiceApplicationProfile'
             dns_service_profile:
                 description: "Specifies various DNS service related controls for virtual service. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DnsServiceApplicationProfile'
@@ -474,7 +477,7 @@ definitions:
                 description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: "Specifies which application layer proxy is enabled for the virtual service. Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS, APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- APPLICATION_PROFILE_TYPE_L4), Basic edition(Allowed values- APPLICATION_PROFILE_TYPE_L4,APPLICATION_PROFILE_TYPE_HTTP), Enterprise with Cloud Services edition."
+                description: "Specifies which application layer proxy is enabled for the virtual service. Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS, APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- APPLICATION_PROFILE_TYPE_L4), Basic edition(Allowed values- APPLICATION_PROFILE_TYPE_L4,APPLICATION_PROFILE_TYPE_HTTP), Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
@@ -628,6 +631,34 @@ definitions:
                 type: integer
                 default: 1
                 format: uint32
+    DiameterServiceApplicationProfile:
+        type: object
+        properties:
+            client_origin_host:
+                description: "Origin-Host AVP towards client. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            client_origin_realm:
+                description: "Origin-Realm AVP towards client. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            host_ip_addr_rewrite:
+                description: "Rwrite Host-IP-Address AVP. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
+            max_outstanding_req:
+                description: "Max number of outstanding request waiting for response. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 4098
+                format: uint32
+            req_timeout:
+                description: "Response waiting time for the request sent. Field introduced in 31.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 5
+                format: uint32
+            server_origin_host:
+                description: "Origin-Host AVP towards server. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            server_origin_realm:
+                description: "Origin-Realm AVP towards server. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
     DnsServiceApplicationProfile:
         type: object
         properties:
