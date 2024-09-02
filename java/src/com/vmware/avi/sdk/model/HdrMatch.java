@@ -30,6 +30,9 @@ public class HdrMatch  {
     @JsonProperty("match_criteria")
     private String matchCriteria;
 
+    @JsonProperty("string_group_refs")
+    private List<String> stringGroupRefs;
+
     @JsonProperty("value")
     private List<String> value;
 
@@ -108,6 +111,48 @@ public class HdrMatch  {
     }
     /**
      * This is the getter method this will return the attribute value.
+     * Uuid of the string group(s).
+     * It is a reference to an object of type stringgroup.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return stringGroupRefs
+     */
+    public List<String> getStringGroupRefs() {
+        return stringGroupRefs;
+    }
+
+    /**
+     * This is the setter method. this will set the stringGroupRefs
+     * Uuid of the string group(s).
+     * It is a reference to an object of type stringgroup.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return stringGroupRefs
+     */
+    public void setStringGroupRefs(List<String>  stringGroupRefs) {
+        this.stringGroupRefs = stringGroupRefs;
+    }
+
+    /**
+     * This is the setter method this will set the stringGroupRefs
+     * Uuid of the string group(s).
+     * It is a reference to an object of type stringgroup.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return stringGroupRefs
+     */
+    public HdrMatch addStringGroupRefsItem(String stringGroupRefsItem) {
+      if (this.stringGroupRefs == null) {
+        this.stringGroupRefs = new ArrayList<String>();
+      }
+      this.stringGroupRefs.add(stringGroupRefsItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
      * String values to match in the http header.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -156,7 +201,8 @@ public class HdrMatch  {
       return   Objects.equals(this.matchCriteria, objHdrMatch.matchCriteria)&&
   Objects.equals(this.hdr, objHdrMatch.hdr)&&
   Objects.equals(this.matchCase, objHdrMatch.matchCase)&&
-  Objects.equals(this.value, objHdrMatch.value);
+  Objects.equals(this.value, objHdrMatch.value)&&
+  Objects.equals(this.stringGroupRefs, objHdrMatch.stringGroupRefs);
     }
 
     @Override
@@ -166,6 +212,7 @@ public class HdrMatch  {
                   sb.append("    hdr: ").append(toIndentedString(hdr)).append("\n");
                         sb.append("    matchCase: ").append(toIndentedString(matchCase)).append("\n");
                         sb.append("    matchCriteria: ").append(toIndentedString(matchCriteria)).append("\n");
+                        sb.append("    stringGroupRefs: ").append(toIndentedString(stringGroupRefs)).append("\n");
                         sb.append("    value: ").append(toIndentedString(value)).append("\n");
                   sb.append("}");
       return sb.toString();

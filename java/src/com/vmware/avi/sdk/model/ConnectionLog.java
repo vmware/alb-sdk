@@ -63,6 +63,9 @@ public class ConnectionLog  {
     @JsonProperty("connection_ended")
     private Boolean connectionEnded = true;
 
+    @JsonProperty("diameter_log")
+    private DiameterLog diameterLog;
+
     @JsonProperty("dns_etype")
     private String dnsEtype;
 
@@ -590,6 +593,30 @@ public class ConnectionLog  {
      */
     public void setConnectionEnded(Boolean  connectionEnded) {
         this.connectionEnded = connectionEnded;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Diameter related logging information.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return diameterLog
+     */
+    public DiameterLog getDiameterLog() {
+        return diameterLog;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Diameter related logging information.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param diameterLog set the diameterLog.
+     */
+    public void setDiameterLog(DiameterLog diameterLog) {
+        this.diameterLog = diameterLog;
     }
 
     /**
@@ -2277,7 +2304,8 @@ public class ConnectionLog  {
   Objects.equals(this.maxIngressLatencyBe, objConnectionLog.maxIngressLatencyBe)&&
   Objects.equals(this.avgIngressLatencyBe, objConnectionLog.avgIngressLatencyBe)&&
   Objects.equals(this.connEstTimeBe, objConnectionLog.connEstTimeBe)&&
-  Objects.equals(this.dnsTcpConnCloseFromSe, objConnectionLog.dnsTcpConnCloseFromSe);
+  Objects.equals(this.dnsTcpConnCloseFromSe, objConnectionLog.dnsTcpConnCloseFromSe)&&
+  Objects.equals(this.diameterLog, objConnectionLog.diameterLog);
     }
 
     @Override
@@ -2298,6 +2326,7 @@ public class ConnectionLog  {
                         sb.append("    connEstTimeBe: ").append(toIndentedString(connEstTimeBe)).append("\n");
                         sb.append("    connEstTimeFe: ").append(toIndentedString(connEstTimeFe)).append("\n");
                         sb.append("    connectionEnded: ").append(toIndentedString(connectionEnded)).append("\n");
+                        sb.append("    diameterLog: ").append(toIndentedString(diameterLog)).append("\n");
                         sb.append("    dnsEtype: ").append(toIndentedString(dnsEtype)).append("\n");
                         sb.append("    dnsFqdn: ").append(toIndentedString(dnsFqdn)).append("\n");
                         sb.append("    dnsIps: ").append(toIndentedString(dnsIps)).append("\n");

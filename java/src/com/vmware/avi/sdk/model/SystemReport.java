@@ -42,6 +42,9 @@ public class SystemReport extends AviRestResource  {
     @JsonProperty("name")
     private String name;
 
+    @JsonProperty("operation")
+    private String operation;
+
     @JsonProperty("readiness_reports")
     private List<ReportDetail> readinessReports;
 
@@ -59,6 +62,9 @@ public class SystemReport extends AviRestResource  {
 
     @JsonProperty("tenant_ref")
     private String tenantRef;
+
+    @JsonProperty("type")
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
@@ -256,6 +262,32 @@ public class SystemReport extends AviRestResource  {
     public void setName(String  name) {
         this.name = name;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Nature of operation.
+     * Ex  controller upgrade, system patch, etc.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return operation
+     */
+    public String getOperation() {
+        return operation;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Nature of operation.
+     * Ex  controller upgrade, system patch, etc.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param operation set the operation.
+     */
+    public void setOperation(String  operation) {
+        this.operation = operation;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Readiness state of the system.
@@ -439,6 +471,32 @@ public class SystemReport extends AviRestResource  {
     public void setTenantRef(String  tenantRef) {
         this.tenantRef = tenantRef;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Type of report.
+     * Pre-checks, dry-run or an upgrade operation.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Type of report.
+     * Pre-checks, dry-run or an upgrade operation.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param type set the type.
+     */
+    public void setType(String  type) {
+        this.type = type;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Avi controller URL of the object.
@@ -504,7 +562,9 @@ public class SystemReport extends AviRestResource  {
   Objects.equals(this.readinessReports, objSystemReport.readinessReports)&&
   Objects.equals(this.events, objSystemReport.events)&&
   Objects.equals(this.tasks, objSystemReport.tasks)&&
-  Objects.equals(this.dryrunInfo, objSystemReport.dryrunInfo);
+  Objects.equals(this.dryrunInfo, objSystemReport.dryrunInfo)&&
+  Objects.equals(this.operation, objSystemReport.operation)&&
+  Objects.equals(this.type, objSystemReport.type);
     }
 
     @Override
@@ -518,12 +578,14 @@ public class SystemReport extends AviRestResource  {
                         sb.append("    events: ").append(toIndentedString(events)).append("\n");
                         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
                         sb.append("    readinessReports: ").append(toIndentedString(readinessReports)).append("\n");
                         sb.append("    sePatchImageRef: ").append(toIndentedString(sePatchImageRef)).append("\n");
                         sb.append("    state: ").append(toIndentedString(state)).append("\n");
                         sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
                         sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+                        sb.append("    type: ").append(toIndentedString(type)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();

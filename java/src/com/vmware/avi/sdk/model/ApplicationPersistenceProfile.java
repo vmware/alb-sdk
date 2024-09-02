@@ -27,6 +27,9 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     @JsonProperty("description")
     private String description;
 
+    @JsonProperty("diameter_app_cookie_persistence_profile")
+    private DiameterAVPPersistenceProfile diameterAppCookiePersistenceProfile;
+
     @JsonProperty("hdr_persistence_profile")
     private HdrPersistenceProfile hdrPersistenceProfile;
 
@@ -102,6 +105,30 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
      */
     public void setDescription(String  description) {
         this.description = description;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Specifies the diameter persistence profile parameters.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return diameterAppCookiePersistenceProfile
+     */
+    public DiameterAVPPersistenceProfile getDiameterAppCookiePersistenceProfile() {
+        return diameterAppCookiePersistenceProfile;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Specifies the diameter persistence profile parameters.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param diameterAppCookiePersistenceProfile set the diameterAppCookiePersistenceProfile.
+     */
+    public void setDiameterAppCookiePersistenceProfile(DiameterAVPPersistenceProfile diameterAppCookiePersistenceProfile) {
+        this.diameterAppCookiePersistenceProfile = diameterAppCookiePersistenceProfile;
     }
 
     /**
@@ -400,7 +427,8 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
   Objects.equals(this.markers, objApplicationPersistenceProfile.markers)&&
   Objects.equals(this.isFederated, objApplicationPersistenceProfile.isFederated)&&
   Objects.equals(this.description, objApplicationPersistenceProfile.description)&&
-  Objects.equals(this.tenantRef, objApplicationPersistenceProfile.tenantRef);
+  Objects.equals(this.tenantRef, objApplicationPersistenceProfile.tenantRef)&&
+  Objects.equals(this.diameterAppCookiePersistenceProfile, objApplicationPersistenceProfile.diameterAppCookiePersistenceProfile);
     }
 
     @Override
@@ -409,6 +437,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
       sb.append("class ApplicationPersistenceProfile {\n");
                   sb.append("    appCookiePersistenceProfile: ").append(toIndentedString(appCookiePersistenceProfile)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+                        sb.append("    diameterAppCookiePersistenceProfile: ").append(toIndentedString(diameterAppCookiePersistenceProfile)).append("\n");
                         sb.append("    hdrPersistenceProfile: ").append(toIndentedString(hdrPersistenceProfile)).append("\n");
                         sb.append("    httpCookiePersistenceProfile: ").append(toIndentedString(httpCookiePersistenceProfile)).append("\n");
                         sb.append("    ipPersistenceProfile: ").append(toIndentedString(ipPersistenceProfile)).append("\n");

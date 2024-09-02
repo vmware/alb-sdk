@@ -711,6 +711,9 @@ public class EventDetails  {
     @JsonProperty("vs_switchover_details")
     private VsSwitchoverEventDetails vsSwitchoverDetails;
 
+    @JsonProperty("warning_event_details")
+    private WarningEventDetails warningEventDetails;
+
 
 
     /**
@@ -5489,6 +5492,28 @@ public class EventDetails  {
         this.vsSwitchoverDetails = vsSwitchoverDetails;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return warningEventDetails
+     */
+    public WarningEventDetails getWarningEventDetails() {
+        return warningEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param warningEventDetails set the warningEventDetails.
+     */
+    public void setWarningEventDetails(WarningEventDetails warningEventDetails) {
+        this.warningEventDetails = warningEventDetails;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -5597,6 +5622,7 @@ public class EventDetails  {
   Objects.equals(this.apiVersionDeprecated, objEventDetails.apiVersionDeprecated)&&
   Objects.equals(this.asyncPatchState, objEventDetails.asyncPatchState)&&
   Objects.equals(this.techSupportEvent, objEventDetails.techSupportEvent)&&
+  Objects.equals(this.warningEventDetails, objEventDetails.warningEventDetails)&&
   Objects.equals(this.sslExpireDetails, objEventDetails.sslExpireDetails)&&
   Objects.equals(this.sslExportDetails, objEventDetails.sslExportDetails)&&
   Objects.equals(this.sslRenewDetails, objEventDetails.sslRenewDetails)&&
@@ -5965,6 +5991,7 @@ public class EventDetails  {
                         sb.append("    vsScaleinDetails: ").append(toIndentedString(vsScaleinDetails)).append("\n");
                         sb.append("    vsScaleoutDetails: ").append(toIndentedString(vsScaleoutDetails)).append("\n");
                         sb.append("    vsSwitchoverDetails: ").append(toIndentedString(vsSwitchoverDetails)).append("\n");
+                        sb.append("    warningEventDetails: ").append(toIndentedString(warningEventDetails)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

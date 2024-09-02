@@ -33,6 +33,9 @@ public class ApplicationProfile extends AviRestResource  {
     @JsonProperty("description")
     private String description;
 
+    @JsonProperty("diameter_service_profile")
+    private DiameterServiceApplicationProfile diameterServiceProfile;
+
     @JsonProperty("dns_service_profile")
     private DnsServiceApplicationProfile dnsServiceProfile;
 
@@ -174,6 +177,30 @@ public class ApplicationProfile extends AviRestResource  {
      */
     public void setDescription(String  description) {
         this.description = description;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Specifies various diameter service related controls for virtual service.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return diameterServiceProfile
+     */
+    public DiameterServiceApplicationProfile getDiameterServiceProfile() {
+        return diameterServiceProfile;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Specifies various diameter service related controls for virtual service.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param diameterServiceProfile set the diameterServiceProfile.
+     */
+    public void setDiameterServiceProfile(DiameterServiceApplicationProfile diameterServiceProfile) {
+        this.diameterServiceProfile = diameterServiceProfile;
     }
 
     /**
@@ -476,7 +503,7 @@ public class ApplicationProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Specifies which application layer proxy is enabled for the virtual service.
      * Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
-     * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
+     * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER.
      * Allowed in enterprise edition with any value, essentials edition(allowed values- application_profile_type_l4), basic edition(allowed values-
      * application_profile_type_l4,application_profile_type_http), enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -490,7 +517,7 @@ public class ApplicationProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Specifies which application layer proxy is enabled for the virtual service.
      * Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
-     * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
+     * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER.
      * Allowed in enterprise edition with any value, essentials edition(allowed values- application_profile_type_l4), basic edition(allowed values-
      * application_profile_type_l4,application_profile_type_http), enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -564,6 +591,7 @@ public class ApplicationProfile extends AviRestResource  {
   Objects.equals(this.preserveDestIpPort, objApplicationProfile.preserveDestIpPort)&&
   Objects.equals(this.markers, objApplicationProfile.markers)&&
   Objects.equals(this.l4SslProfile, objApplicationProfile.l4SslProfile)&&
+  Objects.equals(this.diameterServiceProfile, objApplicationProfile.diameterServiceProfile)&&
   Objects.equals(this.description, objApplicationProfile.description)&&
   Objects.equals(this.tenantRef, objApplicationProfile.tenantRef)&&
   Objects.equals(this.appServiceType, objApplicationProfile.appServiceType);
@@ -577,6 +605,7 @@ public class ApplicationProfile extends AviRestResource  {
                         sb.append("    cloudConfigCksum: ").append(toIndentedString(cloudConfigCksum)).append("\n");
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+                        sb.append("    diameterServiceProfile: ").append(toIndentedString(diameterServiceProfile)).append("\n");
                         sb.append("    dnsServiceProfile: ").append(toIndentedString(dnsServiceProfile)).append("\n");
                         sb.append("    dosRlProfile: ").append(toIndentedString(dosRlProfile)).append("\n");
                         sb.append("    httpProfile: ").append(toIndentedString(httpProfile)).append("\n");

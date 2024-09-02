@@ -36,6 +36,9 @@ public class WafConfig  {
     @JsonProperty("client_request_max_body_size")
     private Integer clientRequestMaxBodySize = 32;
 
+    @JsonProperty("collect_cpu_usage_metrics_per_waf_rule")
+    private Boolean collectCpuUsageMetricsPerWafRule = false;
+
     @JsonProperty("content_type_mappings")
     private List<WafContentTypeMapping> contentTypeMappings;
 
@@ -274,6 +277,34 @@ public class WafConfig  {
      */
     public void setClientRequestMaxBodySize(Integer  clientRequestMaxBodySize) {
         this.clientRequestMaxBodySize = clientRequestMaxBodySize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable collection of cpu time per waf rule.
+     * By default, waf cpu usage is collected per waf phase only.
+     * Enable this temporarily while investigating rule processing performance.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return collectCpuUsageMetricsPerWafRule
+     */
+    public Boolean getCollectCpuUsageMetricsPerWafRule() {
+        return collectCpuUsageMetricsPerWafRule;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable collection of cpu time per waf rule.
+     * By default, waf cpu usage is collected per waf phase only.
+     * Enable this temporarily while investigating rule processing performance.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param collectCpuUsageMetricsPerWafRule set the collectCpuUsageMetricsPerWafRule.
+     */
+    public void setCollectCpuUsageMetricsPerWafRule(Boolean  collectCpuUsageMetricsPerWafRule) {
+        this.collectCpuUsageMetricsPerWafRule = collectCpuUsageMetricsPerWafRule;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -849,7 +880,8 @@ public class WafConfig  {
   Objects.equals(this.statusHeaderName, objWafConfig.statusHeaderName)&&
   Objects.equals(this.sendStatusHeader, objWafConfig.sendStatusHeader)&&
   Objects.equals(this.contentTypeMappings, objWafConfig.contentTypeMappings)&&
-  Objects.equals(this.allowedRequestContentTypeCharsets, objWafConfig.allowedRequestContentTypeCharsets);
+  Objects.equals(this.allowedRequestContentTypeCharsets, objWafConfig.allowedRequestContentTypeCharsets)&&
+  Objects.equals(this.collectCpuUsageMetricsPerWafRule, objWafConfig.collectCpuUsageMetricsPerWafRule);
     }
 
     @Override
@@ -861,6 +893,7 @@ public class WafConfig  {
                         sb.append("    allowedRequestContentTypeCharsets: ").append(toIndentedString(allowedRequestContentTypeCharsets)).append("\n");
                         sb.append("    argumentSeparator: ").append(toIndentedString(argumentSeparator)).append("\n");
                         sb.append("    clientRequestMaxBodySize: ").append(toIndentedString(clientRequestMaxBodySize)).append("\n");
+                        sb.append("    collectCpuUsageMetricsPerWafRule: ").append(toIndentedString(collectCpuUsageMetricsPerWafRule)).append("\n");
                         sb.append("    contentTypeMappings: ").append(toIndentedString(contentTypeMappings)).append("\n");
                         sb.append("    cookieFormatVersion: ").append(toIndentedString(cookieFormatVersion)).append("\n");
                         sb.append("    ignoreIncompleteRequestBodyError: ").append(toIndentedString(ignoreIncompleteRequestBodyError)).append("\n");
