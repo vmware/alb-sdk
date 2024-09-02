@@ -20,4 +20,7 @@ type HealthMonitorSSlattributes struct {
 	// SSL profile defines ciphers and SSL versions to be used for healthmonitor traffic to the back-end servers. It is a reference to an object of type SSLProfile. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	SslProfileRef *string `json:"ssl_profile_ref"`
+
+	// Use the SNI server name configured in the Pool. This will override the server_name configured in the Health Monitor. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	UsePoolSniServerName *bool `json:"use_pool_sni_server_name,omitempty"`
 }

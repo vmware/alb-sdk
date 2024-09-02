@@ -697,4 +697,7 @@ type EventDetails struct {
 
 	// Details for Primary Switchover status. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	VsSwitchoverDetails *VsSwitchoverEventDetails `json:"vs_switchover_details,omitempty"`
+
+	//  Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	WarningEventDetails *WarningEventDetails `json:"warning_event_details,omitempty"`
 }

@@ -21,6 +21,9 @@ type ApplicationPersistenceProfile struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
+	// Specifies the Diameter Persistence profile parameters. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DiameterAppCookiePersistenceProfile *DiameterAVPPersistenceProfile `json:"diameter_app_cookie_persistence_profile,omitempty"`
+
 	// Specifies the custom HTTP Header Persistence profile parameters. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	HdrPersistenceProfile *HdrPersistenceProfile `json:"hdr_persistence_profile,omitempty"`
 

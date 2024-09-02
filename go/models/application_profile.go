@@ -27,6 +27,9 @@ type ApplicationProfile struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
+	// Specifies various Diameter service related controls for virtual service. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DiameterServiceProfile *DiameterServiceApplicationProfile `json:"diameter_service_profile,omitempty"`
+
 	// Specifies various DNS service related controls for virtual service. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	DNSServiceProfile *DNSServiceApplicationProfile `json:"dns_service_profile,omitempty"`
 
@@ -64,7 +67,7 @@ type ApplicationProfile struct {
 	//  It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
-	// Specifies which application layer proxy is enabled for the virtual service. Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS, APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- APPLICATION_PROFILE_TYPE_L4), Basic edition(Allowed values- APPLICATION_PROFILE_TYPE_L4,APPLICATION_PROFILE_TYPE_HTTP), Enterprise with Cloud Services edition.
+	// Specifies which application layer proxy is enabled for the virtual service. Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS, APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- APPLICATION_PROFILE_TYPE_L4), Basic edition(Allowed values- APPLICATION_PROFILE_TYPE_L4,APPLICATION_PROFILE_TYPE_HTTP), Enterprise with Cloud Services edition.
 	// Required: true
 	Type *string `json:"type"`
 

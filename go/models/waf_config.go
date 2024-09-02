@@ -23,6 +23,9 @@ type WafConfig struct {
 	// Maximum size for the client request body scanned by WAF. Allowed values are 1-32768. Field introduced in 18.1.5, 18.2.1. Unit is KB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientRequestMaxBodySize *uint32 `json:"client_request_max_body_size,omitempty"`
 
+	// Enable collection of CPU time per WAF rule. By default, WAF CPU usage is collected per WAF phase only. Enable this temporarily while investigating rule processing performance. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	CollectCPUUsageMetricsPerWafRule *bool `json:"collect_cpu_usage_metrics_per_waf_rule,omitempty"`
+
 	// WAF Content-Types and their request body parsers. Use this field to configure which Content-Types should be handled by WAF and which parser should be used. All Content-Types here are treated as 'allowed'. The order of entries matters. If the request's Content-Type matches an entry, its request body parser will run and no other parser will be invoked. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	ContentTypeMappings []*WafContentTypeMapping `json:"content_type_mappings,omitempty"`
 
