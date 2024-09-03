@@ -743,49 +743,6 @@ paths:
                 "401":
                     description: log in failed
     /fileobject/{uuid}/['']/:
-        patch:
-            tags:
-                - FileObject
-            description: /fileobject/{uuid}/['']/
-            operationId: PATCH /fileobject/{uuid}/['']/
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        type: string
-                "401":
-                    description: log in failed
         put:
             tags:
                 - FileObject
@@ -824,6 +781,49 @@ paths:
                         type: object
                         additionalProperties:
                             type: string
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
+                    description: log in failed
+        patch:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}/['']/
+            operationId: PATCH /fileobject/{uuid}/['']/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -22279,49 +22279,6 @@ paths:
                 "401":
                     description: log in failed
     /cloud/{uuid}/gc/:
-        patch:
-            tags:
-                - Cloud
-            description: /cloud/{uuid}/gc/
-            operationId: PATCH /cloud/{uuid}/gc/
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        type: string
-                "401":
-                    description: log in failed
         put:
             tags:
                 - Cloud
@@ -22360,6 +22317,49 @@ paths:
                         type: object
                         additionalProperties:
                             type: string
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
+                    description: log in failed
+        patch:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/gc/
+            operationId: PATCH /cloud/{uuid}/gc/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -74447,6 +74447,12 @@ definitions:
             ftps_monitor:
                 description: "Health monitor for FTPS. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthMonitorFtp'
+            http2_monitor:
+                description: "Health monitor for HTTP2. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/HealthMonitorHttp'
+            http2s_monitor:
+                description: "Health monitor for HTTP2S. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/HealthMonitorHttp'
             http_monitor:
                 description: " Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthMonitorHttp'
@@ -74523,7 +74529,7 @@ definitions:
                 description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: "Type of the health monitor. Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP, HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS, HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS, HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS, HEALTH_MONITOR_SCTP. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP), Basic edition(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP,HEALTH_MONITOR_HTTP,HEALTH_MONITOR_HTTPS), Enterprise with Cloud Services edition."
+                description: "Type of the health monitor. Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP, HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS, HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS, HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS, HEALTH_MONITOR_SCTP, HEALTH_MONITOR_HTTP2, HEALTH_MONITOR_HTTP2S. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP), Basic edition(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP,HEALTH_MONITOR_HTTP,HEALTH_MONITOR_HTTPS), Enterprise with Cloud Services edition."
                 type: string
             udp_monitor:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -74627,12 +74633,23 @@ definitions:
             exact_http_request:
                 description: "Use the exact http_request string as specified by user, without any automatic insert of headers like Host header. Field introduced in 17.1.6,17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
+            http_headers:
+                description: "For HTTP2 and HTTP2S health monitor, send an HTTP request to the server. Extended with additional headers or information when exact request is marked false. For instance Host  www.site.com Connection  Close. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            http_method:
+                description: "HTTP method for HTTP2 and HTTP2S health monitor. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_POST,HTTP_METHOD_HEAD), Basic edition(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_POST,HTTP_METHOD_HEAD), Enterprise with Cloud Services edition."
+                type: string
             http_request:
                 description: "Send an HTTP request to the server.  The default GET / HTTP/1.0 may be extended with additional headers or information.  For instance, GET /index.htm HTTP/1.1 Host  www.site.com Connection  Close. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "GET / HTTP/1.0"
             http_request_body:
                 description: "HTTP request body. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            http_request_header_path:
+                description: "HTTP client request header path for HTTP2 and HTTP2S health monitor. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             http_response:
                 description: "Match for a keyword in the first 2Kb of the server header and body response. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
