@@ -42,6 +42,12 @@ type HealthMonitor struct {
 	// Health monitor for FTPS. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	FtpsMonitor *HealthMonitorFtp `json:"ftps_monitor,omitempty"`
 
+	// Health monitor for HTTP2. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	Http2Monitor *HealthMonitorHTTP `json:"http2_monitor,omitempty"`
+
+	// Health monitor for HTTP2S. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	HTTP2SMonitor *HealthMonitorHTTP `json:"http2s_monitor,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition.
 	HTTPMonitor *HealthMonitorHTTP `json:"http_monitor,omitempty"`
 
