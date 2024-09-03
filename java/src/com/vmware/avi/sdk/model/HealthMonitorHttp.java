@@ -27,11 +27,20 @@ public class HealthMonitorHttp  {
     @JsonProperty("exact_http_request")
     private Boolean exactHttpRequest = false;
 
+    @JsonProperty("http_headers")
+    private List<String> httpHeaders;
+
+    @JsonProperty("http_method")
+    private String httpMethod;
+
     @JsonProperty("http_request")
     private String httpRequest = "GET / HTTP/1.0";
 
     @JsonProperty("http_request_body")
     private String httpRequestBody;
+
+    @JsonProperty("http_request_header_path")
+    private String httpRequestHeaderPath;
 
     @JsonProperty("http_response")
     private String httpResponse;
@@ -102,6 +111,83 @@ public class HealthMonitorHttp  {
     public void setExactHttpRequest(Boolean  exactHttpRequest) {
         this.exactHttpRequest = exactHttpRequest;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * For http2 and http2s health monitor, send an http request to the server.
+     * Extended with additional headers or information when exact request is marked false.
+     * For instance host  www.site.com connection  close.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return httpHeaders
+     */
+    public List<String> getHttpHeaders() {
+        return httpHeaders;
+    }
+
+    /**
+     * This is the setter method. this will set the httpHeaders
+     * For http2 and http2s health monitor, send an http request to the server.
+     * Extended with additional headers or information when exact request is marked false.
+     * For instance host  www.site.com connection  close.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return httpHeaders
+     */
+    public void setHttpHeaders(List<String>  httpHeaders) {
+        this.httpHeaders = httpHeaders;
+    }
+
+    /**
+     * This is the setter method this will set the httpHeaders
+     * For http2 and http2s health monitor, send an http request to the server.
+     * Extended with additional headers or information when exact request is marked false.
+     * For instance host  www.site.com connection  close.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return httpHeaders
+     */
+    public HealthMonitorHttp addHttpHeadersItem(String httpHeadersItem) {
+      if (this.httpHeaders == null) {
+        this.httpHeaders = new ArrayList<String>();
+      }
+      this.httpHeaders.add(httpHeadersItem);
+      return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Http method for http2 and http2s health monitor.
+     * Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE,
+     * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
+     * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, essentials edition(allowed values- http_method_get,http_method_post,http_method_head), basic
+     * edition(allowed values- http_method_get,http_method_post,http_method_head), enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return httpMethod
+     */
+    public String getHttpMethod() {
+        return httpMethod;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Http method for http2 and http2s health monitor.
+     * Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE,
+     * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
+     * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, essentials edition(allowed values- http_method_get,http_method_post,http_method_head), basic
+     * edition(allowed values- http_method_get,http_method_post,http_method_head), enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param httpMethod set the httpMethod.
+     */
+    public void setHttpMethod(String  httpMethod) {
+        this.httpMethod = httpMethod;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -151,6 +237,30 @@ public class HealthMonitorHttp  {
      */
     public void setHttpRequestBody(String  httpRequestBody) {
         this.httpRequestBody = httpRequestBody;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Http client request header path for http2 and http2s health monitor.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return httpRequestHeaderPath
+     */
+    public String getHttpRequestHeaderPath() {
+        return httpRequestHeaderPath;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Http client request header path for http2 and http2s health monitor.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param httpRequestHeaderPath set the httpRequestHeaderPath.
+     */
+    public void setHttpRequestHeaderPath(String  httpRequestHeaderPath) {
+        this.httpRequestHeaderPath = httpRequestHeaderPath;
     }
 
     /**
@@ -358,7 +468,10 @@ public class HealthMonitorHttp  {
   Objects.equals(this.exactHttpRequest, objHealthMonitorHttp.exactHttpRequest)&&
   Objects.equals(this.authType, objHealthMonitorHttp.authType)&&
   Objects.equals(this.httpRequestBody, objHealthMonitorHttp.httpRequestBody)&&
-  Objects.equals(this.responseSize, objHealthMonitorHttp.responseSize);
+  Objects.equals(this.responseSize, objHealthMonitorHttp.responseSize)&&
+  Objects.equals(this.httpMethod, objHealthMonitorHttp.httpMethod)&&
+  Objects.equals(this.httpRequestHeaderPath, objHealthMonitorHttp.httpRequestHeaderPath)&&
+  Objects.equals(this.httpHeaders, objHealthMonitorHttp.httpHeaders);
     }
 
     @Override
@@ -367,8 +480,11 @@ public class HealthMonitorHttp  {
       sb.append("class HealthMonitorHttp {\n");
                   sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
                         sb.append("    exactHttpRequest: ").append(toIndentedString(exactHttpRequest)).append("\n");
+                        sb.append("    httpHeaders: ").append(toIndentedString(httpHeaders)).append("\n");
+                        sb.append("    httpMethod: ").append(toIndentedString(httpMethod)).append("\n");
                         sb.append("    httpRequest: ").append(toIndentedString(httpRequest)).append("\n");
                         sb.append("    httpRequestBody: ").append(toIndentedString(httpRequestBody)).append("\n");
+                        sb.append("    httpRequestHeaderPath: ").append(toIndentedString(httpRequestHeaderPath)).append("\n");
                         sb.append("    httpResponse: ").append(toIndentedString(httpResponse)).append("\n");
                         sb.append("    httpResponseCode: ").append(toIndentedString(httpResponseCode)).append("\n");
                         sb.append("    maintenanceCode: ").append(toIndentedString(maintenanceCode)).append("\n");

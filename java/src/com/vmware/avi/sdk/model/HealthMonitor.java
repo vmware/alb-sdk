@@ -48,6 +48,12 @@ public class HealthMonitor extends AviRestResource  {
     @JsonProperty("ftps_monitor")
     private HealthMonitorFtp ftpsMonitor;
 
+    @JsonProperty("http2_monitor")
+    private HealthMonitorHttp http2Monitor;
+
+    @JsonProperty("http2s_monitor")
+    private HealthMonitorHttp http2sMonitor;
+
     @JsonProperty("http_monitor")
     private HealthMonitorHttp httpMonitor;
 
@@ -344,6 +350,54 @@ public class HealthMonitor extends AviRestResource  {
      */
     public void setFtpsMonitor(HealthMonitorFtp ftpsMonitor) {
         this.ftpsMonitor = ftpsMonitor;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Health monitor for http2.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return http2Monitor
+     */
+    public HealthMonitorHttp getHttp2Monitor() {
+        return http2Monitor;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Health monitor for http2.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param http2Monitor set the http2Monitor.
+     */
+    public void setHttp2Monitor(HealthMonitorHttp http2Monitor) {
+        this.http2Monitor = http2Monitor;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Health monitor for http2s.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return http2sMonitor
+     */
+    public HealthMonitorHttp getHttp2SMonitor() {
+        return http2sMonitor;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Health monitor for http2s.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param http2sMonitor set the http2sMonitor.
+     */
+    public void setHttp2SMonitor(HealthMonitorHttp http2sMonitor) {
+        this.http2sMonitor = http2sMonitor;
     }
 
     /**
@@ -1027,6 +1081,8 @@ public class HealthMonitor extends AviRestResource  {
   Objects.equals(this.ftpsMonitor, objHealthMonitor.ftpsMonitor)&&
   Objects.equals(this.ldapMonitor, objHealthMonitor.ldapMonitor)&&
   Objects.equals(this.ldapsMonitor, objHealthMonitor.ldapsMonitor)&&
+  Objects.equals(this.http2Monitor, objHealthMonitor.http2Monitor)&&
+  Objects.equals(this.http2sMonitor, objHealthMonitor.http2sMonitor)&&
   Objects.equals(this.isFederated, objHealthMonitor.isFederated)&&
   Objects.equals(this.description, objHealthMonitor.description)&&
   Objects.equals(this.tenantRef, objHealthMonitor.tenantRef)&&
@@ -1046,6 +1102,8 @@ public class HealthMonitor extends AviRestResource  {
                         sb.append("    failedChecks: ").append(toIndentedString(failedChecks)).append("\n");
                         sb.append("    ftpMonitor: ").append(toIndentedString(ftpMonitor)).append("\n");
                         sb.append("    ftpsMonitor: ").append(toIndentedString(ftpsMonitor)).append("\n");
+                        sb.append("    http2Monitor: ").append(toIndentedString(http2Monitor)).append("\n");
+                        sb.append("    http2sMonitor: ").append(toIndentedString(http2sMonitor)).append("\n");
                         sb.append("    httpMonitor: ").append(toIndentedString(httpMonitor)).append("\n");
                         sb.append("    httpsMonitor: ").append(toIndentedString(httpsMonitor)).append("\n");
                         sb.append("    imapMonitor: ").append(toIndentedString(imapMonitor)).append("\n");
