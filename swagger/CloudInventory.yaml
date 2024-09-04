@@ -970,7 +970,7 @@ definitions:
                 description: "Default prefix for all automatically created objects in this cloud. This prefix can be overridden by the SE-Group template. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             openstack_configuration:
-                description: " Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: " Field deprecated in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/OpenStackConfiguration'
             prefer_static_routes:
                 description: "Prefer static routes over interface routes during VirtualService placement. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."

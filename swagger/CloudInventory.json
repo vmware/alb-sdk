@@ -1353,7 +1353,7 @@
                     "type": "string"
                 },
                 "openstack_configuration": {
-                    "description": " Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": " Field deprecated in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/OpenStackConfiguration"
                 },
                 "prefer_static_routes": {
