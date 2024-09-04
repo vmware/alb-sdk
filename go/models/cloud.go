@@ -106,7 +106,7 @@ type Cloud struct {
 	// Default prefix for all automatically created objects in this cloud. This prefix can be overridden by the SE-Group template. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ObjNamePrefix *string `json:"obj_name_prefix,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	//  Field deprecated in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	OpenstackConfiguration *OpenStackConfiguration `json:"openstack_configuration,omitempty"`
 
 	// Prefer static routes over interface routes during VirtualService placement. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
