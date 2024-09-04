@@ -934,8 +934,8 @@ public class Cloud extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Field deprecated in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return openstackConfiguration
      */
     public OpenStackConfiguration getOpenstackConfiguration() {
@@ -944,8 +944,8 @@ public class Cloud extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
+     * Field deprecated in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param openstackConfiguration set the openstackConfiguration.
      */
     public void setOpenstackConfiguration(OpenStackConfiguration openstackConfiguration) {
