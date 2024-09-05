@@ -123,7 +123,7 @@ type ServiceEngineGroup struct {
 	// Deactivate filtering of packets to KNI interface. To be used under surveillance of Avi Support. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	DeactivateKniFilteringAtDispatcher *bool `json:"deactivate_kni_filtering_at_dispatcher,omitempty"`
 
-	// Dedicate the core that handles packet receive/transmit from the network to just the dispatching function. Don't use it for TCP/IP and SSL functions. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Dedicate the core that handles packet receive/transmit from the network to just the dispatching function. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	DedicatedDispatcherCore *bool `json:"dedicated_dispatcher_core,omitempty"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
