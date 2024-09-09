@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "30.2.1",
+        "version": "30.2.2",
         "title": "Avi CloudInventory Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -828,7 +828,7 @@
                     "type": "string"
                 },
                 "datacenter_managed_object_id": {
-                    "description": "Managed object id of the datacenter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Managed object id of the datacenter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "deactivate_vm_discovery": {
