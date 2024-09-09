@@ -467,6 +467,36 @@ definitions:
             type:
                 description: "Process Type. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
+    JournalTask:
+        type: object
+        properties:
+            duration:
+                description: "Time taken to complete task in seconds. Field introduced in 31.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            end_time:
+                description: "Time at which execution of task was completed. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            messages:
+                description: "Details of executed task. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            reason:
+                description: "Reason for the status of the executed task. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            start_time:
+                description: "Time at which execution of task was started. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            status:
+                description: "Status of the executed task. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
+            task_description:
+                description: "Description of the executed task. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            task_name:
+                description: "Name of the executed task. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
     TaskJournal:
         type: object
         required:
@@ -502,6 +532,11 @@ definitions:
             summary:
                 description: "Summary of Journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/JournalSummary'
+            tasks:
+                description: "List of all the tasks executed with details. For example, details of tasks to be executed for upgrade filecopy. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/JournalTask'
             tenant_ref:
                 description: "Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string

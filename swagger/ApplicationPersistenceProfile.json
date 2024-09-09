@@ -621,7 +621,7 @@
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
-                "diameter_app_cookie_persistence_profile": {
+                "diameter_app_persistence_profile": {
                     "description": "Specifies the Diameter Persistence profile parameters. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DiameterAVPPersistenceProfile"
                 },
@@ -653,7 +653,7 @@
                     "type": "string"
                 },
                 "persistence_type": {
-                    "description": "Method used to persist clients to the same server for a duration of time or a session. Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS, PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE), Basic edition(Allowed values- PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE), Enterprise with Cloud Services edition.",
+                    "description": "Method used to persist clients to the same server for a duration of time or a session. Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS, PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE, PERSISTENCE_TYPE_APP_DIAMETER. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE), Basic edition(Allowed values- PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE), Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS"
                 },
@@ -714,7 +714,7 @@
             "type": "object",
             "properties": {
                 "avp_key_type": {
-                    "description": "AvpKey type. Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID, SUBSCRIPTION_ID. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "AvpKey type. Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SESSION_ID"
                 },
