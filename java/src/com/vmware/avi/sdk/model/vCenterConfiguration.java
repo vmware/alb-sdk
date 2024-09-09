@@ -112,7 +112,7 @@ public class vCenterConfiguration  {
      * This is the getter method this will return the attribute value.
      * Managed object id of the datacenter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datacenterManagedObjectId
      */
@@ -124,7 +124,7 @@ public class vCenterConfiguration  {
      * This is the setter method to the attribute.
      * Managed object id of the datacenter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param datacenterManagedObjectId set the datacenterManagedObjectId.
      */

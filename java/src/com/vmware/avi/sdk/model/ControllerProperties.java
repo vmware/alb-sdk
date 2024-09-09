@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerProperties extends AviRestResource  {
     @JsonProperty("alert_manager_use_evms")
-    private Boolean alertManagerUseEvms = false;
+    private Boolean alertManagerUseEvms = true;
 
     @JsonProperty("allow_admin_network_updates")
     private Boolean allowAdminNetworkUpdates = false;
@@ -371,7 +371,7 @@ public class ControllerProperties extends AviRestResource  {
      * Enable to use event manager as source of eventsdisable to use log manager as source of events.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return alertManagerUseEvms
      */
     public Boolean getAlertManagerUseEvms() {
@@ -383,7 +383,7 @@ public class ControllerProperties extends AviRestResource  {
      * Enable to use event manager as source of eventsdisable to use log manager as source of events.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param alertManagerUseEvms set the alertManagerUseEvms.
      */
     public void setAlertManagerUseEvms(Boolean  alertManagerUseEvms) {
