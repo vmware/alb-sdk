@@ -37,6 +37,9 @@ type TaskJournal struct {
 	// Required: true
 	Summary *JournalSummary `json:"summary"`
 
+	// List of all the tasks executed with details. For example, details of tasks to be executed for upgrade filecopy. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	Tasks []*JournalTask `json:"tasks,omitempty"`
+
 	// Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 

@@ -11,7 +11,7 @@ type DiameterLog struct {
 	// Field to identify which application the message is applicable for. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	ApplicationID *uint32 `json:"application_id,omitempty"`
 
-	// AvpKey type. Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID, SUBSCRIPTION_ID. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// AvpKey type. Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	AvpKeyType *string `json:"avp_key_type,omitempty"`
 
 	// Field to indicate command associated with message. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.

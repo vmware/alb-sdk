@@ -22,7 +22,7 @@ type ApplicationPersistenceProfile struct {
 	Description *string `json:"description,omitempty"`
 
 	// Specifies the Diameter Persistence profile parameters. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	DiameterAppCookiePersistenceProfile *DiameterAVPPersistenceProfile `json:"diameter_app_cookie_persistence_profile,omitempty"`
+	DiameterAppPersistenceProfile *DiameterAVPPersistenceProfile `json:"diameter_app_persistence_profile,omitempty"`
 
 	// Specifies the custom HTTP Header Persistence profile parameters. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	HdrPersistenceProfile *HdrPersistenceProfile `json:"hdr_persistence_profile,omitempty"`
@@ -43,7 +43,7 @@ type ApplicationPersistenceProfile struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// Method used to persist clients to the same server for a duration of time or a session. Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS, PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE), Basic edition(Allowed values- PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE), Enterprise with Cloud Services edition.
+	// Method used to persist clients to the same server for a duration of time or a session. Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS, PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE, PERSISTENCE_TYPE_APP_DIAMETER. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE), Basic edition(Allowed values- PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE), Enterprise with Cloud Services edition.
 	// Required: true
 	PersistenceType *string `json:"persistence_type"`
 

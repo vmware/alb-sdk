@@ -8,7 +8,7 @@ package models
 // swagger:model DiameterAVPPersistenceProfile
 type DiameterAVPPersistenceProfile struct {
 
-	// AvpKey type. Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID, SUBSCRIPTION_ID. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// AvpKey type. Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	AvpKeyType *string `json:"avp_key_type,omitempty"`
 
 	// The maximum lifetime of diameter cookie. No value or 'zero' indicates no timeout. Field introduced in 31.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.

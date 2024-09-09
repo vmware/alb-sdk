@@ -12,6 +12,9 @@ type WebappUT struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
+	// Cloud of the WebappUT object-level0. It is a reference to an object of type Cloud. Field introduced in 30.2.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	CloudRef *string `json:"cloud_ref,omitempty"`
+
 	// Protobuf versioning for config pbs. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 

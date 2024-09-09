@@ -81,6 +81,9 @@ type SystemConfiguration struct {
 	// Users can specify and update the size/volume limit of RekeyLimit in sshd_config.If nothing is specified, the default setting will be default. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	RekeyVolumeLimit *string `json:"rekey_volume_limit,omitempty"`
 
+	// FQDN of SDDC Manager in VCF responsible for management of this ALB Controller Cluster. Field introduced in 22.1.6,31.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	SddcmanagerFqdn *string `json:"sddcmanager_fqdn,omitempty"`
+
 	// Configure Secure Channel properties. Field introduced in 18.1.4, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SecureChannelConfiguration *SecureChannelConfiguration `json:"secure_channel_configuration,omitempty"`
 
