@@ -32,7 +32,7 @@ public class DiameterAVPPersistenceProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Avpkey type.
-     * Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID, SUBSCRIPTION_ID.
+     * Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID.
      * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SESSION_ID".
@@ -45,7 +45,7 @@ public class DiameterAVPPersistenceProfile  {
     /**
      * This is the setter method to the attribute.
      * Avpkey type.
-     * Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID, SUBSCRIPTION_ID.
+     * Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID.
      * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SESSION_ID".

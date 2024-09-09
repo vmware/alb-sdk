@@ -87,6 +87,9 @@ public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("rekey_volume_limit")
     private String rekeyVolumeLimit = "default";
 
+    @JsonProperty("sddcmanager_fqdn")
+    private String sddcmanagerFqdn;
+
     @JsonProperty("secure_channel_configuration")
     private SecureChannelConfiguration secureChannelConfiguration;
 
@@ -639,6 +642,30 @@ public class SystemConfiguration extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Fqdn of sddc manager in vcf responsible for management of this alb controller cluster.
+     * Field introduced in 22.1.6,31.1.1.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sddcmanagerFqdn
+     */
+    public String getSddcmanagerFqdn() {
+        return sddcmanagerFqdn;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Fqdn of sddc manager in vcf responsible for management of this alb controller cluster.
+     * Field introduced in 22.1.6,31.1.1.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sddcmanagerFqdn set the sddcmanagerFqdn.
+     */
+    public void setSddcmanagerFqdn(String  sddcmanagerFqdn) {
+        this.sddcmanagerFqdn = sddcmanagerFqdn;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Configure secure channel properties.
      * Field introduced in 18.1.4, 18.2.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -932,6 +959,7 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.kexAlgorithmExclude, objSystemConfiguration.kexAlgorithmExclude)&&
   Objects.equals(this.rekeyVolumeLimit, objSystemConfiguration.rekeyVolumeLimit)&&
   Objects.equals(this.rekeyTimeLimit, objSystemConfiguration.rekeyTimeLimit)&&
+  Objects.equals(this.sddcmanagerFqdn, objSystemConfiguration.sddcmanagerFqdn)&&
   Objects.equals(this.enableHostHeaderCheck, objSystemConfiguration.enableHostHeaderCheck)&&
   Objects.equals(this.trustedHostProfilesRefs, objSystemConfiguration.trustedHostProfilesRefs)&&
   Objects.equals(this.enableTelemetry, objSystemConfiguration.enableTelemetry)&&
@@ -964,6 +992,7 @@ public class SystemConfiguration extends AviRestResource  {
                         sb.append("    proxyConfiguration: ").append(toIndentedString(proxyConfiguration)).append("\n");
                         sb.append("    rekeyTimeLimit: ").append(toIndentedString(rekeyTimeLimit)).append("\n");
                         sb.append("    rekeyVolumeLimit: ").append(toIndentedString(rekeyVolumeLimit)).append("\n");
+                        sb.append("    sddcmanagerFqdn: ").append(toIndentedString(sddcmanagerFqdn)).append("\n");
                         sb.append("    secureChannelConfiguration: ").append(toIndentedString(secureChannelConfiguration)).append("\n");
                         sb.append("    snmpConfiguration: ").append(toIndentedString(snmpConfiguration)).append("\n");
                         sb.append("    sshCiphers: ").append(toIndentedString(sshCiphers)).append("\n");

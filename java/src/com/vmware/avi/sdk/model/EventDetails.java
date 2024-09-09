@@ -624,6 +624,9 @@ public class EventDetails  {
     @JsonProperty("system_report_event_details")
     private SystemReport systemReportEventDetails;
 
+    @JsonProperty("task_journal_event_details")
+    private TaskJournal taskJournalEventDetails;
+
     @JsonProperty("tech_support_event")
     private TechSupportEvent techSupportEvent;
 
@@ -4880,6 +4883,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Task journal event details.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return taskJournalEventDetails
+     */
+    public TaskJournal getTaskJournalEventDetails() {
+        return taskJournalEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Task journal event details.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param taskJournalEventDetails set the taskJournalEventDetails.
+     */
+    public void setTaskJournalEventDetails(TaskJournal taskJournalEventDetails) {
+        this.taskJournalEventDetails = taskJournalEventDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -5754,7 +5781,8 @@ public class EventDetails  {
   Objects.equals(this.fileobjectDetails, objEventDetails.fileobjectDetails)&&
   Objects.equals(this.systemReportEventDetails, objEventDetails.systemReportEventDetails)&&
   Objects.equals(this.diskCleanupEventDetails, objEventDetails.diskCleanupEventDetails)&&
-  Objects.equals(this.uberEventDetails, objEventDetails.uberEventDetails);
+  Objects.equals(this.uberEventDetails, objEventDetails.uberEventDetails)&&
+  Objects.equals(this.taskJournalEventDetails, objEventDetails.taskJournalEventDetails);
     }
 
     @Override
@@ -5962,6 +5990,7 @@ public class EventDetails  {
                         sb.append("    switchoverFailDetails: ").append(toIndentedString(switchoverFailDetails)).append("\n");
                         sb.append("    syncServicesInfo: ").append(toIndentedString(syncServicesInfo)).append("\n");
                         sb.append("    systemReportEventDetails: ").append(toIndentedString(systemReportEventDetails)).append("\n");
+                        sb.append("    taskJournalEventDetails: ").append(toIndentedString(taskJournalEventDetails)).append("\n");
                         sb.append("    techSupportEvent: ").append(toIndentedString(techSupportEvent)).append("\n");
                         sb.append("    tencentInfo: ").append(toIndentedString(tencentInfo)).append("\n");
                         sb.append("    uberEventDetails: ").append(toIndentedString(uberEventDetails)).append("\n");

@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WebappUT extends AviRestResource  {
+    @JsonProperty("cloud_ref")
+    private String cloudRef;
+
     @JsonProperty("default_first_int")
     private Integer defaultFirstInt = 1;
 
@@ -73,6 +76,32 @@ public class WebappUT extends AviRestResource  {
     private String uuid;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Cloud of the webapput object-level0.
+     * It is a reference to an object of type cloud.
+     * Field introduced in 30.2.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return cloudRef
+     */
+    public String getCloudRef() {
+        return cloudRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Cloud of the webapput object-level0.
+     * It is a reference to an object of type cloud.
+     * Field introduced in 30.2.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param cloudRef set the cloudRef.
+     */
+    public void setCloudRef(String  cloudRef) {
+        this.cloudRef = cloudRef;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -549,14 +578,16 @@ public class WebappUT extends AviRestResource  {
   Objects.equals(this.defaultString, objWebappUT.defaultString)&&
   Objects.equals(this.defaultFirstInt, objWebappUT.defaultFirstInt)&&
   Objects.equals(this.defaultSecondInt, objWebappUT.defaultSecondInt)&&
-  Objects.equals(this.defaultThirdInt, objWebappUT.defaultThirdInt);
+  Objects.equals(this.defaultThirdInt, objWebappUT.defaultThirdInt)&&
+  Objects.equals(this.cloudRef, objWebappUT.cloudRef);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class WebappUT {\n");
-                  sb.append("    defaultFirstInt: ").append(toIndentedString(defaultFirstInt)).append("\n");
+                  sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+                        sb.append("    defaultFirstInt: ").append(toIndentedString(defaultFirstInt)).append("\n");
                         sb.append("    defaultSecondInt: ").append(toIndentedString(defaultSecondInt)).append("\n");
                         sb.append("    defaultString: ").append(toIndentedString(defaultString)).append("\n");
                         sb.append("    defaultThirdInt: ").append(toIndentedString(defaultThirdInt)).append("\n");

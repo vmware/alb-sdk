@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The ImageEvent is a POJO class extends AviRestResource that used for creating
- * ImageEvent.
+ * The JournalTask is a POJO class extends AviRestResource that used for creating
+ * JournalTask.
  *
  * @version 1.0
  * @since 
@@ -20,34 +20,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ImageEvent  {
+public class JournalTask  {
     @JsonProperty("duration")
     private Integer duration;
 
     @JsonProperty("end_time")
     private String endTime;
 
-    @JsonProperty("ip")
-    private IpAddr ip;
+    @JsonProperty("messages")
+    private List<String> messages;
 
-    @JsonProperty("message")
-    private String message;
+    @JsonProperty("reason")
+    private String reason;
 
     @JsonProperty("start_time")
     private String startTime;
 
     @JsonProperty("status")
-    private String status;
+    private Boolean status;
 
-    @JsonProperty("sub_tasks")
-    private List<String> subTasks;
+    @JsonProperty("task_description")
+    private String taskDescription;
+
+    @JsonProperty("task_name")
+    private String taskName;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Time taken to complete event in seconds.
-     * Field introduced in 21.1.3.
+     * Time taken to complete task in seconds.
+     * Field introduced in 31.1.1.
      * Unit is sec.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -59,8 +62,8 @@ public class ImageEvent  {
 
     /**
      * This is the setter method to the attribute.
-     * Time taken to complete event in seconds.
-     * Field introduced in 21.1.3.
+     * Time taken to complete task in seconds.
+     * Field introduced in 31.1.1.
      * Unit is sec.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -72,8 +75,8 @@ public class ImageEvent  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Task end time.
-     * Field introduced in 21.1.3.
+     * Time at which execution of task was completed.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endTime
@@ -84,8 +87,8 @@ public class ImageEvent  {
 
     /**
      * This is the setter method to the attribute.
-     * Task end time.
-     * Field introduced in 21.1.3.
+     * Time at which execution of task was completed.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endTime set the endTime.
@@ -93,59 +96,74 @@ public class ImageEvent  {
     public void setEndTime(String  endTime) {
         this.endTime = endTime;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Details of executed task.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return messages
+     */
+    public List<String> getMessages() {
+        return messages;
+    }
+
+    /**
+     * This is the setter method. this will set the messages
+     * Details of executed task.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return messages
+     */
+    public void setMessages(List<String>  messages) {
+        this.messages = messages;
+    }
+
+    /**
+     * This is the setter method this will set the messages
+     * Details of executed task.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return messages
+     */
+    public JournalTask addMessagesItem(String messagesItem) {
+      if (this.messages == null) {
+        this.messages = new ArrayList<String>();
+      }
+      this.messages.add(messagesItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ip of the node.
-     * Field introduced in 21.1.3.
+     * Reason for the status of the executed task.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return ip
+     * @return reason
      */
-    public IpAddr getIp() {
-        return ip;
+    public String getReason() {
+        return reason;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Ip of the node.
-     * Field introduced in 21.1.3.
+     * Reason for the status of the executed task.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param ip set the ip.
+     * @param reason set the reason.
      */
-    public void setIp(IpAddr ip) {
-        this.ip = ip;
+    public void setReason(String  reason) {
+        this.reason = reason;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Event message if any.
-     * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return message
-     */
-    public String getMessage() {
-        return message;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Event message if any.
-     * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param message set the message.
-     */
-    public void setMessage(String  message) {
-        this.message = message;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Task start time.
-     * Field introduced in 21.1.3.
+     * Time at which execution of task was started.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startTime
@@ -156,8 +174,8 @@ public class ImageEvent  {
 
     /**
      * This is the setter method to the attribute.
-     * Task start time.
-     * Field introduced in 21.1.3.
+     * Time at which execution of task was started.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startTime set the startTime.
@@ -168,71 +186,74 @@ public class ImageEvent  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Event status.
-     * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
-     * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
-     * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
-     * Field introduced in 21.1.3.
+     * Status of the executed task.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
-    public String getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Event status.
-     * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
-     * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
-     * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
-     * Field introduced in 21.1.3.
+     * Status of the executed task.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */
-    public void setStatus(String  status) {
+    public void setStatus(Boolean  status) {
         this.status = status;
     }
+
     /**
      * This is the getter method this will return the attribute value.
-     * Sub tasks executed on each node.
-     * Field introduced in 21.1.3.
+     * Description of the executed task.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return subTasks
+     * @return taskDescription
      */
-    public List<String> getSubTasks() {
-        return subTasks;
+    public String getTaskDescription() {
+        return taskDescription;
     }
 
     /**
-     * This is the setter method. this will set the subTasks
-     * Sub tasks executed on each node.
-     * Field introduced in 21.1.3.
+     * This is the setter method to the attribute.
+     * Description of the executed task.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return subTasks
+     * @param taskDescription set the taskDescription.
      */
-    public void setSubTasks(List<String>  subTasks) {
-        this.subTasks = subTasks;
+    public void setTaskDescription(String  taskDescription) {
+        this.taskDescription = taskDescription;
     }
 
     /**
-     * This is the setter method this will set the subTasks
-     * Sub tasks executed on each node.
-     * Field introduced in 21.1.3.
+     * This is the getter method this will return the attribute value.
+     * Name of the executed task.
+     * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return subTasks
+     * @return taskName
      */
-    public ImageEvent addSubTasksItem(String subTasksItem) {
-      if (this.subTasks == null) {
-        this.subTasks = new ArrayList<String>();
-      }
-      this.subTasks.add(subTasksItem);
-      return this;
+    public String getTaskName() {
+        return taskName;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Name of the executed task.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param taskName set the taskName.
+     */
+    public void setTaskName(String  taskName) {
+        this.taskName = taskName;
     }
 
 
@@ -244,27 +265,29 @@ public class ImageEvent  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      ImageEvent objImageEvent = (ImageEvent) o;
-      return   Objects.equals(this.ip, objImageEvent.ip)&&
-  Objects.equals(this.startTime, objImageEvent.startTime)&&
-  Objects.equals(this.endTime, objImageEvent.endTime)&&
-  Objects.equals(this.duration, objImageEvent.duration)&&
-  Objects.equals(this.status, objImageEvent.status)&&
-  Objects.equals(this.message, objImageEvent.message)&&
-  Objects.equals(this.subTasks, objImageEvent.subTasks);
+      JournalTask objJournalTask = (JournalTask) o;
+      return   Objects.equals(this.taskName, objJournalTask.taskName)&&
+  Objects.equals(this.taskDescription, objJournalTask.taskDescription)&&
+  Objects.equals(this.status, objJournalTask.status)&&
+  Objects.equals(this.reason, objJournalTask.reason)&&
+  Objects.equals(this.startTime, objJournalTask.startTime)&&
+  Objects.equals(this.endTime, objJournalTask.endTime)&&
+  Objects.equals(this.duration, objJournalTask.duration)&&
+  Objects.equals(this.messages, objJournalTask.messages);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class ImageEvent {\n");
+      sb.append("class JournalTask {\n");
                   sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
                         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-                        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
-                        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+                        sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
+                        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
                         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
                         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-                        sb.append("    subTasks: ").append(toIndentedString(subTasks)).append("\n");
+                        sb.append("    taskDescription: ").append(toIndentedString(taskDescription)).append("\n");
+                        sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
