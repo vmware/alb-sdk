@@ -69,7 +69,7 @@ type ControllerProperties struct {
 	// Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	CloudReconcileInterval *uint32 `json:"cloud_reconcile_interval,omitempty"`
 
-	// Period for cluster ip gratuitous arp job. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Period for cluster ip gratuitous arp job. Allowed values are 1-1440. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClusterIPGratuitousArpPeriod *uint32 `json:"cluster_ip_gratuitous_arp_period,omitempty"`
 
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
@@ -116,6 +116,9 @@ type ControllerProperties struct {
 
 	// Enable/Disable Memory Balancer. Field introduced in 17.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableMemoryBalancer *bool `json:"enable_memory_balancer,omitempty"`
+
+	// When set to true, Avi Controller will connect to Dynamic Config Streaming Agent on NSX Manager to get live updates. If it cannot connect, it will fallback to using REST APIs based periodic polling. Dynamic streaming is supported from NSX version 4.2.1 onwards. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EnableNsxStreamingAgent *bool `json:"enable_nsx_streaming_agent,omitempty"`
 
 	// Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits threshold limit. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	EnablePerProcessStop *bool `json:"enable_per_process_stop,omitempty"`
@@ -269,6 +272,9 @@ type ControllerProperties struct {
 
 	// Number of days for SSL Certificate expiry warning. Unit is DAYS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslCertificateExpiryWarningDays []int64 `json:"ssl_certificate_expiry_warning_days,omitempty,omitempty"`
+
+	// Configure statecache behavior for Config, SE, ResMgr. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	StatecacheProperties *SCProperties `json:"statecache_properties,omitempty"`
 
 	// Time in minutes to wait between cleanup of SystemReports. Allowed values are 15-300. Field introduced in 22.1.6, 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	SystemReportCleanupInterval *uint32 `json:"system_report_cleanup_interval,omitempty"`
