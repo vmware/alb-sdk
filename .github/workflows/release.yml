@@ -101,7 +101,7 @@ jobs:
           mkdir dist
           if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
             ./create_sdk_pip_packages.sh sdk
-            ./create_sdk_pkgs.sh
+            # ./create_sdk_pkgs.sh
           fi
           if [[ ${{ steps.publish_target.outputs.TAG_NAME }} == "test-"* ]]; then
             echo "Test tag found. Skipping python assets upload to public repo."
