@@ -124,6 +124,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("enable_memory_balancer")
     private Boolean enableMemoryBalancer = true;
 
+    @JsonProperty("enable_nsx_streaming_agent")
+    private Boolean enableNsxStreamingAgent = true;
+
     @JsonProperty("enable_per_process_stop")
     private Boolean enablePerProcessStop = false;
 
@@ -276,6 +279,9 @@ public class ControllerProperties extends AviRestResource  {
 
     @JsonProperty("ssl_certificate_expiry_warning_days")
     private List<Integer> sslCertificateExpiryWarningDays;
+
+    @JsonProperty("statecache_properties")
+    private SCProperties statecacheProperties;
 
     @JsonProperty("system_report_cleanup_interval")
     private Integer systemReportCleanupInterval = 60;
@@ -838,6 +844,7 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Period for cluster ip gratuitous arp job.
+     * Allowed values are 1-1440.
      * Unit is min.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
@@ -850,6 +857,7 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Period for cluster ip gratuitous arp job.
+     * Allowed values are 1-1440.
      * Unit is min.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
@@ -1213,6 +1221,34 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setEnableMemoryBalancer(Boolean  enableMemoryBalancer) {
         this.enableMemoryBalancer = enableMemoryBalancer;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * When set to true, avi controller will connect to dynamic config streaming agent on nsx manager to get live updates.
+     * If it cannot connect, it will fallback to using rest apis based periodic polling.
+     * Dynamic streaming is supported from nsx version 4.2.1 onwards.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return enableNsxStreamingAgent
+     */
+    public Boolean getEnableNsxStreamingAgent() {
+        return enableNsxStreamingAgent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * When set to true, avi controller will connect to dynamic config streaming agent on nsx manager to get live updates.
+     * If it cannot connect, it will fallback to using rest apis based periodic polling.
+     * Dynamic streaming is supported from nsx version 4.2.1 onwards.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param enableNsxStreamingAgent set the enableNsxStreamingAgent.
+     */
+    public void setEnableNsxStreamingAgent(Boolean  enableNsxStreamingAgent) {
+        this.enableNsxStreamingAgent = enableNsxStreamingAgent;
     }
 
     /**
@@ -2522,6 +2558,30 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Configure statecache behavior for config, se, resmgr.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return statecacheProperties
+     */
+    public SCProperties getStatecacheProperties() {
+        return statecacheProperties;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Configure statecache behavior for config, se, resmgr.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param statecacheProperties set the statecacheProperties.
+     */
+    public void setStatecacheProperties(SCProperties statecacheProperties) {
+        this.statecacheProperties = statecacheProperties;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Time in minutes to wait between cleanup of systemreports.
      * Allowed values are 15-300.
      * Field introduced in 22.1.6, 30.2.1.
@@ -3344,7 +3404,9 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.eventManagerProcessingTimeThreshold, objControllerProperties.eventManagerProcessingTimeThreshold)&&
   Objects.equals(this.eventManagerMaxSubscribers, objControllerProperties.eventManagerMaxSubscribers)&&
   Objects.equals(this.eventManagerMaxGoroutines, objControllerProperties.eventManagerMaxGoroutines)&&
-  Objects.equals(this.alertManagerUseEvms, objControllerProperties.alertManagerUseEvms);
+  Objects.equals(this.alertManagerUseEvms, objControllerProperties.alertManagerUseEvms)&&
+  Objects.equals(this.enableNsxStreamingAgent, objControllerProperties.enableNsxStreamingAgent)&&
+  Objects.equals(this.statecacheProperties, objControllerProperties.statecacheProperties);
     }
 
     @Override
@@ -3385,6 +3447,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    editSystemLimits: ").append(toIndentedString(editSystemLimits)).append("\n");
                         sb.append("    enableApiSharding: ").append(toIndentedString(enableApiSharding)).append("\n");
                         sb.append("    enableMemoryBalancer: ").append(toIndentedString(enableMemoryBalancer)).append("\n");
+                        sb.append("    enableNsxStreamingAgent: ").append(toIndentedString(enableNsxStreamingAgent)).append("\n");
                         sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
                         sb.append("    enableResmgrLogCachePrint: ").append(toIndentedString(enableResmgrLogCachePrint)).append("\n");
                         sb.append("    eventManagerMaxGoroutines: ").append(toIndentedString(eventManagerMaxGoroutines)).append("\n");
@@ -3436,6 +3499,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    skopeoRetryLimit: ").append(toIndentedString(skopeoRetryLimit)).append("\n");
                         sb.append("    softMinMemPerSeLimit: ").append(toIndentedString(softMinMemPerSeLimit)).append("\n");
                         sb.append("    sslCertificateExpiryWarningDays: ").append(toIndentedString(sslCertificateExpiryWarningDays)).append("\n");
+                        sb.append("    statecacheProperties: ").append(toIndentedString(statecacheProperties)).append("\n");
                         sb.append("    systemReportCleanupInterval: ").append(toIndentedString(systemReportCleanupInterval)).append("\n");
                         sb.append("    systemReportLimit: ").append(toIndentedString(systemReportLimit)).append("\n");
                         sb.append("    unresponsiveSeReboot: ").append(toIndentedString(unresponsiveSeReboot)).append("\n");
