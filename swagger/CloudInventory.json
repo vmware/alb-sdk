@@ -1591,6 +1591,10 @@
                     "description": "Cloud Id. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
+                "nsxt_streaming_server_status": {
+                    "description": "If integration with NSX-T streaming service is enabled, this field will contain the state of connection. Applicable to NSX clouds only. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/NsxtStreamingServerStatus"
+                },
                 "reason": {
                     "description": "Reason message for the current state. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
@@ -1629,6 +1633,21 @@
                 "name": {
                     "description": "Content Library name. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                }
+            }
+        },
+        "CorfuTimestamp": {
+            "type": "object",
+            "properties": {
+                "epoch": {
+                    "description": "unix time since epoch. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint64"
+                },
+                "sequence": {
+                    "description": "CorfuDB log sequence number. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint64"
                 }
             }
         },
@@ -2648,6 +2667,35 @@
                 "vpc_mode": {
                     "description": "VPC Mode. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean"
+                }
+            }
+        },
+        "NsxtStreamingServerStatus": {
+            "type": "object",
+            "properties": {
+                "cursor": {
+                    "description": "Timestamp (unix time since epoch) of last message received from NSX-T streaming service. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/CorfuTimestamp"
+                },
+                "last_update_err": {
+                    "description": "Error encountered while processing updates fromstreaming agent. This will be empty if the last update was successful. This message should also indicate if the failure was in full-sync or delta-sync processing. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "last_update_time": {
+                    "description": "Human readable timestamp of last successful update done in Avi. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "nsxt_manager_url": {
+                    "description": "Hostname or IP of NSX-T manager as given in cloud config. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "State of the connection to NSX-T manager streaming service gRPC client. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "uuid": {
+                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 }
             }
         },
