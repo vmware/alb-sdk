@@ -204,6 +204,9 @@ type ServiceEngineGroup struct {
 	// Enable TX ring support in pcap mode of operation. TSO feature is not supported with TX Ring enabled. Deprecated from 18.2.8, instead use pcap_tx_mode. Requires SE Reboot. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnablePcapTxRing *bool `json:"enable_pcap_tx_ring,omitempty"`
 
+	// This knob enables the Service Engine to use QAT offloads (if the host CPU is capable, and the QAT device is exposed). Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EnableQat *bool `json:"enable_qat,omitempty"`
+
 	// End local ephemeral port number for outbound connections. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	EphemeralPortrangeEnd *uint32 `json:"ephemeral_portrange_end,omitempty"`
 
