@@ -210,6 +210,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("enable_pcap_tx_ring")
     private Boolean enablePcapTxRing;
 
+    @JsonProperty("enable_qat")
+    private Boolean enableQat = false;
+
     @JsonProperty("ephemeral_portrange_end")
     private Integer ephemeralPortrangeEnd;
 
@@ -2600,6 +2603,30 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setEnablePcapTxRing(Boolean  enablePcapTxRing) {
         this.enablePcapTxRing = enablePcapTxRing;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This knob enables the service engine to use qat offloads (if the host cpu is capable, and the qat device is exposed).
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enableQat
+     */
+    public Boolean getEnableQat() {
+        return enableQat;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This knob enables the service engine to use qat offloads (if the host cpu is capable, and the qat device is exposed).
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enableQat set the enableQat.
+     */
+    public void setEnableQat(Boolean  enableQat) {
+        this.enableQat = enableQat;
     }
 
     /**
@@ -8931,7 +8958,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.multicastEnable, objServiceEngineGroup.multicastEnable)&&
   Objects.equals(this.maxNumHttpSessionsToStore, objServiceEngineGroup.maxNumHttpSessionsToStore)&&
   Objects.equals(this.gveEnabled, objServiceEngineGroup.gveEnabled)&&
-  Objects.equals(this.wafUseJitForPcre, objServiceEngineGroup.wafUseJitForPcre);
+  Objects.equals(this.wafUseJitForPcre, objServiceEngineGroup.wafUseJitForPcre)&&
+  Objects.equals(this.enableQat, objServiceEngineGroup.enableQat);
     }
 
     @Override
@@ -9001,6 +9029,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    enableHsmPriming: ").append(toIndentedString(enableHsmPriming)).append("\n");
                         sb.append("    enableMultiLb: ").append(toIndentedString(enableMultiLb)).append("\n");
                         sb.append("    enablePcapTxRing: ").append(toIndentedString(enablePcapTxRing)).append("\n");
+                        sb.append("    enableQat: ").append(toIndentedString(enableQat)).append("\n");
                         sb.append("    ephemeralPortrangeEnd: ").append(toIndentedString(ephemeralPortrangeEnd)).append("\n");
                         sb.append("    ephemeralPortrangeStart: ").append(toIndentedString(ephemeralPortrangeStart)).append("\n");
                         sb.append("    extraConfigMultiplier: ").append(toIndentedString(extraConfigMultiplier)).append("\n");

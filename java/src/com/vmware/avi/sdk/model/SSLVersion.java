@@ -28,10 +28,9 @@ public class SSLVersion  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enum options - SSL_VERSION_SSLV3, SSL_VERSION_TLS1, SSL_VERSION_TLS1_1, SSL_VERSION_TLS1_2, SSL_VERSION_TLS1_3.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values-
-     * ssl_version_sslv3,ssl_version_tls1,ssl_version_tls1_1,ssl_version_tls1_2), basic edition(allowed values-
-     * ssl_version_sslv3,ssl_version_tls1,ssl_version_tls1_1,ssl_version_tls1_2), enterprise with cloud services edition.
+     * Enum options - SSL_VERSION_TLS1, SSL_VERSION_TLS1_1, SSL_VERSION_TLS1_2, SSL_VERSION_TLS1_3.
+     * Allowed in enterprise edition with any value, essentials edition(allowed values- ssl_version_tls1,ssl_version_tls1_1,ssl_version_tls1_2), basic
+     * edition(allowed values- ssl_version_tls1,ssl_version_tls1_1,ssl_version_tls1_2), enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_VERSION_TLS1_1".
      * @return type
      */
@@ -41,10 +40,9 @@ public class SSLVersion  {
 
     /**
      * This is the setter method to the attribute.
-     * Enum options - SSL_VERSION_SSLV3, SSL_VERSION_TLS1, SSL_VERSION_TLS1_1, SSL_VERSION_TLS1_2, SSL_VERSION_TLS1_3.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values-
-     * ssl_version_sslv3,ssl_version_tls1,ssl_version_tls1_1,ssl_version_tls1_2), basic edition(allowed values-
-     * ssl_version_sslv3,ssl_version_tls1,ssl_version_tls1_1,ssl_version_tls1_2), enterprise with cloud services edition.
+     * Enum options - SSL_VERSION_TLS1, SSL_VERSION_TLS1_1, SSL_VERSION_TLS1_2, SSL_VERSION_TLS1_3.
+     * Allowed in enterprise edition with any value, essentials edition(allowed values- ssl_version_tls1,ssl_version_tls1_1,ssl_version_tls1_2), basic
+     * edition(allowed values- ssl_version_tls1,ssl_version_tls1_1,ssl_version_tls1_2), enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_VERSION_TLS1_1".
      * @param type set the type.
      */
