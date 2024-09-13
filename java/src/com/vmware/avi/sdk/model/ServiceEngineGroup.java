@@ -522,6 +522,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("placement_mode")
     private String placementMode = "PLACEMENT_MODE_AUTO";
 
+    @JsonProperty("pre_upgrade_se_available_mem_threshold")
+    private Integer preUpgradeSeAvailableMemThreshold = 0;
+
     @JsonProperty("realtime_se_metrics")
     private MetricsRealTimeUpdate realtimeSeMetrics;
 
@@ -5372,6 +5375,34 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Available memory threshold on se in mb, to get qualified for upgrade operation.
+     * Adjusting this knob will override the internal value of available memory threshold for se, thereby qualifying it for upgrade operation.
+     * '0' is a special auto value, which will indicate that memory threshold is calculated based on total memory size of the se.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @return preUpgradeSeAvailableMemThreshold
+     */
+    public Integer getPreUpgradeSeAvailableMemThreshold() {
+        return preUpgradeSeAvailableMemThreshold;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Available memory threshold on se in mb, to get qualified for upgrade operation.
+     * Adjusting this knob will override the internal value of available memory threshold for se, thereby qualifying it for upgrade operation.
+     * '0' is a special auto value, which will indicate that memory threshold is calculated based on total memory size of the se.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @param preUpgradeSeAvailableMemThreshold set the preUpgradeSeAvailableMemThreshold.
+     */
+    public void setPreUpgradeSeAvailableMemThreshold(Integer  preUpgradeSeAvailableMemThreshold) {
+        this.preUpgradeSeAvailableMemThreshold = preUpgradeSeAvailableMemThreshold;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Enable or deactivate real time se metrics.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -8959,7 +8990,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.maxNumHttpSessionsToStore, objServiceEngineGroup.maxNumHttpSessionsToStore)&&
   Objects.equals(this.gveEnabled, objServiceEngineGroup.gveEnabled)&&
   Objects.equals(this.wafUseJitForPcre, objServiceEngineGroup.wafUseJitForPcre)&&
-  Objects.equals(this.enableQat, objServiceEngineGroup.enableQat);
+  Objects.equals(this.enableQat, objServiceEngineGroup.enableQat)&&
+  Objects.equals(this.preUpgradeSeAvailableMemThreshold, objServiceEngineGroup.preUpgradeSeAvailableMemThreshold);
     }
 
     @Override
@@ -9133,6 +9165,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    perApp: ").append(toIndentedString(perApp)).append("\n");
                         sb.append("    perVsAdmissionControl: ").append(toIndentedString(perVsAdmissionControl)).append("\n");
                         sb.append("    placementMode: ").append(toIndentedString(placementMode)).append("\n");
+                        sb.append("    preUpgradeSeAvailableMemThreshold: ").append(toIndentedString(preUpgradeSeAvailableMemThreshold)).append("\n");
                         sb.append("    realtimeSeMetrics: ").append(toIndentedString(realtimeSeMetrics)).append("\n");
                         sb.append("    rebootOnPanic: ").append(toIndentedString(rebootOnPanic)).append("\n");
                         sb.append("    replayVrfRoutesInterval: ").append(toIndentedString(replayVrfRoutesInterval)).append("\n");

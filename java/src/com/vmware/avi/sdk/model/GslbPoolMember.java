@@ -57,6 +57,9 @@ public class GslbPoolMember  {
     @JsonProperty("resolve_fqdn_to_v6")
     private Boolean resolveFqdnToV6 = false;
 
+    @JsonProperty("srv_rdata")
+    private GslbServiceSrvRdata srvRdata;
+
     @JsonProperty("vs_uuid")
     private String vsUuid;
 
@@ -160,6 +163,7 @@ public class GslbPoolMember  {
      * The fqdn is resolved to an ip address by the controller.
      * Dns service shall health monitor the resolved ip address while it will return the fqdn(cname) in the dns response.if the user has configured an
      * ip address (in addition to the fqdn), then the ip address will get overwritten whenever periodic fqdn refresh is done by the controller.
+     * For gslb service of type srv, this field is treated as target of srv rdata.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fqdn
@@ -174,6 +178,7 @@ public class GslbPoolMember  {
      * The fqdn is resolved to an ip address by the controller.
      * Dns service shall health monitor the resolved ip address while it will return the fqdn(cname) in the dns response.if the user has configured an
      * ip address (in addition to the fqdn), then the ip address will get overwritten whenever periodic fqdn refresh is done by the controller.
+     * For gslb service of type srv, this field is treated as target of srv rdata.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fqdn set the fqdn.
@@ -382,6 +387,30 @@ public class GslbPoolMember  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Srv resource record data for the gslb service member member.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return srvRdata
+     */
+    public GslbServiceSrvRdata getSrvRdata() {
+        return srvRdata;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Srv resource record data for the gslb service member member.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param srvRdata set the srvRdata.
+     */
+    public void setSrvRdata(GslbServiceSrvRdata srvRdata) {
+        this.srvRdata = srvRdata;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Select local virtual service in the specified controller cluster belonging to this gslb service.
      * The virtual service may have multiple ip addresses and fqdns.
      * User will have to choose ip address or fqdn and configure it in the respective field.
@@ -428,7 +457,8 @@ public class GslbPoolMember  {
   Objects.equals(this.hostname, objGslbPoolMember.hostname)&&
   Objects.equals(this.resolveFqdnToV6, objGslbPoolMember.resolveFqdnToV6)&&
   Objects.equals(this.description, objGslbPoolMember.description)&&
-  Objects.equals(this.preferenceOrder, objGslbPoolMember.preferenceOrder);
+  Objects.equals(this.preferenceOrder, objGslbPoolMember.preferenceOrder)&&
+  Objects.equals(this.srvRdata, objGslbPoolMember.srvRdata);
     }
 
     @Override
@@ -447,6 +477,7 @@ public class GslbPoolMember  {
                         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
                         sb.append("    ratio: ").append(toIndentedString(ratio)).append("\n");
                         sb.append("    resolveFqdnToV6: ").append(toIndentedString(resolveFqdnToV6)).append("\n");
+                        sb.append("    srvRdata: ").append(toIndentedString(srvRdata)).append("\n");
                         sb.append("    vsUuid: ").append(toIndentedString(vsUuid)).append("\n");
                   sb.append("}");
       return sb.toString();

@@ -72,8 +72,14 @@ public class GslbService extends AviRestResource  {
     @JsonProperty("pool_algorithm")
     private String poolAlgorithm = "GSLB_SERVICE_ALGORITHM_PRIORITY";
 
+    @JsonProperty("record_type")
+    private String recordType = "GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME";
+
     @JsonProperty("resolve_cname")
     private Boolean resolveCname = false;
+
+    @JsonProperty("resolve_srv")
+    private Boolean resolveSrv;
 
     @JsonProperty("site_persistence_enabled")
     private Boolean sitePersistenceEnabled = false;
@@ -594,6 +600,32 @@ public class GslbService extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Field to specify the type of gslb service.
+     * Enum options - GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME, GSLB_SERVICE_RECORD_TYPE_SRV.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME".
+     * @return recordType
+     */
+    public String getRecordType() {
+        return recordType;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Field to specify the type of gslb service.
+     * Enum options - GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME, GSLB_SERVICE_RECORD_TYPE_SRV.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME".
+     * @param recordType set the recordType.
+     */
+    public void setRecordType(String  recordType) {
+        this.recordType = recordType;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * This field indicates that for a cname query, respond with resolved cnames in the additional section with a records.
      * Field introduced in 18.2.5.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -614,6 +646,30 @@ public class GslbService extends AviRestResource  {
      */
     public void setResolveCname(Boolean  resolveCname) {
         this.resolveCname = resolveCname;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * If enabled, provide the srv target's resolved ip in the response srv gslb service.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return resolveSrv
+     */
+    public Boolean getResolveSrv() {
+        return resolveSrv;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If enabled, provide the srv target's resolved ip in the response srv gslb service.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param resolveSrv set the resolveSrv.
+     */
+    public void setResolveSrv(Boolean  resolveSrv) {
+        this.resolveSrv = resolveSrv;
     }
 
     /**
@@ -841,7 +897,9 @@ public class GslbService extends AviRestResource  {
   Objects.equals(this.createdBy, objGslbService.createdBy)&&
   Objects.equals(this.description, objGslbService.description)&&
   Objects.equals(this.tenantRef, objGslbService.tenantRef)&&
-  Objects.equals(this.topologyPolicyEnabled, objGslbService.topologyPolicyEnabled);
+  Objects.equals(this.topologyPolicyEnabled, objGslbService.topologyPolicyEnabled)&&
+  Objects.equals(this.recordType, objGslbService.recordType)&&
+  Objects.equals(this.resolveSrv, objGslbService.resolveSrv);
     }
 
     @Override
@@ -865,7 +923,9 @@ public class GslbService extends AviRestResource  {
                         sb.append("    numDnsIp: ").append(toIndentedString(numDnsIp)).append("\n");
                         sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
                         sb.append("    poolAlgorithm: ").append(toIndentedString(poolAlgorithm)).append("\n");
+                        sb.append("    recordType: ").append(toIndentedString(recordType)).append("\n");
                         sb.append("    resolveCname: ").append(toIndentedString(resolveCname)).append("\n");
+                        sb.append("    resolveSrv: ").append(toIndentedString(resolveSrv)).append("\n");
                         sb.append("    sitePersistenceEnabled: ").append(toIndentedString(sitePersistenceEnabled)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                         sb.append("    topologyPolicyEnabled: ").append(toIndentedString(topologyPolicyEnabled)).append("\n");
