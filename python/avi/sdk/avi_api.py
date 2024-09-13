@@ -1140,7 +1140,7 @@ class ApiSession(Session):
 
     def is_ipv6_address(self, controller_ip):
         try:
-            logger.info('Verifing IPV6 Controller IP %s', controller_ip)
+            logger.info('Verifing Controller IP %s', controller_ip)
             ip = ipaddress.ip_address(controller_ip)
             return ip.version == self.IPV6
         except ValueError as ve:
