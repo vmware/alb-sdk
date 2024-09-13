@@ -527,7 +527,7 @@ definitions:
                 type: boolean
                 default: True
             fqdn:
-                description: "The pool member is configured with a fully qualified domain name.  The FQDN is resolved to an IP address by the controller. DNS service shall health monitor the resolved IP address while it will return the fqdn(cname) in the DNS response.If the user has configured an IP address (in addition to the FQDN), then the IP address will get overwritten whenever periodic FQDN refresh is done by the controller. . Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The pool member is configured with a fully qualified domain name.  The FQDN is resolved to an IP address by the controller. DNS service shall health monitor the resolved IP address while it will return the fqdn(cname) in the DNS response.If the user has configured an IP address (in addition to the FQDN), then the IP address will get overwritten whenever periodic FQDN refresh is done by the controller. For GSLB Service of type SRV, this field is treated as target of SRV rdata. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             hostname:
                 description: "Hostname to be used as host header for http health monitors and as TLS server name for https health monitors.(By default, the fqdn of the GSLB pool member or GSLB service is used.) Note  this field is not used as http host header when exact_http_request is set in the health monitor. . Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -554,6 +554,9 @@ definitions:
             resolve_fqdn_to_v6:
                 description: "This field indicates if the fqdn should be resolved to a v6 or a v4 address family. . Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
+            srv_rdata:
+                description: "SRV resource record data for the GSLB service member member. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/GslbServiceSrvRdata'
             vs_uuid:
                 description: "Select local virtual service in the specified controller cluster belonging to this GSLB service. The virtual service may have multiple IP addresses and FQDNs.  User will have to choose IP address or FQDN and configure it in the respective field. . Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -638,8 +641,15 @@ definitions:
                 description: "The load balancing algorithm will pick a GSLB pool within the GSLB service list of available pools. Enum options - GSLB_SERVICE_ALGORITHM_PRIORITY, GSLB_SERVICE_ALGORITHM_GEO. Field introduced in 17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "GSLB_SERVICE_ALGORITHM_PRIORITY"
+            record_type:
+                description: "Field to specify the type of GSLB service. Enum options - GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME, GSLB_SERVICE_RECORD_TYPE_SRV. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME"
             resolve_cname:
                 description: "This field indicates that for a CNAME query, respond with resolved CNAMEs in the additional section with A records. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            resolve_srv:
+                description: "If enabled, provide the SRV target's resolved IP in the response SRV GSLB service. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: boolean
             site_persistence_enabled:
                 description: "Enable site-persistence for the GslbService. . Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -701,6 +711,25 @@ definitions:
                 description: "Response from DNS service towards the client when the GSLB service is DOWN. Enum options - GSLB_SERVICE_DOWN_RESPONSE_NONE, GSLB_SERVICE_DOWN_RESPONSE_ALL_RECORDS, GSLB_SERVICE_DOWN_RESPONSE_FALLBACK_IP, GSLB_SERVICE_DOWN_RESPONSE_EMPTY, GSLB_SERVICE_DOWN_RESPONSE_CNAME. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "GSLB_SERVICE_DOWN_RESPONSE_NONE"
+    GslbServiceSrvRdata:
+        type: object
+        required:
+            -   port
+            -   priority
+            -   weight
+        properties:
+            port:
+                description: "Service port. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            priority:
+                description: "Priority of the target hosting the service, low value implies higher priority for this service record. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            weight:
+                description: "Relative weight for service records with same priority, high value implies higher preference for this service record. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
     IpAddr:
         type: object
         required:

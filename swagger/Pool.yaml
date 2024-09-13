@@ -1723,6 +1723,25 @@ definitions:
             tag:
                 description: "Location tag string - example  USEast. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    GslbServiceSrvRdata:
+        type: object
+        required:
+            -   port
+            -   priority
+            -   weight
+        properties:
+            port:
+                description: "Service port. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            priority:
+                description: "Priority of the target hosting the service, low value implies higher priority for this service record. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            weight:
+                description: "Relative weight for service records with same priority, high value implies higher preference for this service record. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
     HorizonProfile:
         type: object
         properties:
@@ -2425,6 +2444,9 @@ definitions:
             server_node:
                 description: "Hostname of the node where the server VM or container resides. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            srv_rdata:
+                description: "SRV record parameters for GSLB Service member. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/GslbServiceSrvRdata'
             static:
                 description: "If statically learned. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
