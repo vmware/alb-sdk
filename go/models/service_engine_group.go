@@ -520,6 +520,9 @@ type ServiceEngineGroup struct {
 	// If placement mode is 'Auto', Virtual Services are automatically placed on Service Engines. Enum options - PLACEMENT_MODE_AUTO. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	PlacementMode *string `json:"placement_mode,omitempty"`
 
+	// Available memory threshold on SE in MB, to get qualified for upgrade operation. Adjusting this knob will override the internal value of available memory threshold for SE, thereby qualifying it for upgrade operation. '0' is a special auto value, which will indicate that memory threshold is calculated based on total memory size of the SE. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	PreUpgradeSeAvailableMemThreshold *uint32 `json:"pre_upgrade_se_available_mem_threshold,omitempty"`
+
 	// Enable or deactivate real time SE metrics. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	RealtimeSeMetrics *MetricsRealTimeUpdate `json:"realtime_se_metrics,omitempty"`
 

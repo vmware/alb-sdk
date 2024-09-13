@@ -20,7 +20,7 @@ type GslbPoolMember struct {
 	// Enable or Disable member to decide if this address should be provided in DNS responses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Enabled *bool `json:"enabled,omitempty"`
 
-	// The pool member is configured with a fully qualified domain name.  The FQDN is resolved to an IP address by the controller. DNS service shall health monitor the resolved IP address while it will return the fqdn(cname) in the DNS response.If the user has configured an IP address (in addition to the FQDN), then the IP address will get overwritten whenever periodic FQDN refresh is done by the controller. . Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// The pool member is configured with a fully qualified domain name.  The FQDN is resolved to an IP address by the controller. DNS service shall health monitor the resolved IP address while it will return the fqdn(cname) in the DNS response.If the user has configured an IP address (in addition to the FQDN), then the IP address will get overwritten whenever periodic FQDN refresh is done by the controller. For GSLB Service of type SRV, this field is treated as target of SRV rdata. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Fqdn *string `json:"fqdn,omitempty"`
 
 	// Hostname to be used as host header for http health monitors and as TLS server name for https health monitors.(By default, the fqdn of the GSLB pool member or GSLB service is used.) Note  this field is not used as http host header when exact_http_request is set in the health monitor. . Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -43,6 +43,9 @@ type GslbPoolMember struct {
 
 	// This field indicates if the fqdn should be resolved to a v6 or a v4 address family. . Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResolveFqdnToV6 *bool `json:"resolve_fqdn_to_v6,omitempty"`
+
+	// SRV resource record data for the GSLB service member member. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SrvRdata *GslbServiceSrvRdata `json:"srv_rdata,omitempty"`
 
 	// Select local virtual service in the specified controller cluster belonging to this GSLB service. The virtual service may have multiple IP addresses and FQDNs.  User will have to choose IP address or FQDN and configure it in the respective field. . Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsUUID *string `json:"vs_uuid,omitempty"`

@@ -69,6 +69,9 @@ type Server struct {
 	// Hostname of the node where the server VM or container resides. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServerNode *string `json:"server_node,omitempty"`
 
+	// SRV record parameters for GSLB Service member. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	SrvRdata *GslbServiceSrvRdata `json:"srv_rdata,omitempty"`
+
 	// If statically learned. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Static *bool `json:"static,omitempty"`
 
