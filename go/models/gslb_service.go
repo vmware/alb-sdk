@@ -101,6 +101,9 @@ type GslbService struct {
 	// UUID of the GSLB service. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 
+	// VRF name of the DNS VS to which this GS is bound to. In case it is bound to multiple DNS VSes on the se SE, this field will be inherited from the first DNS VS in the configuration order. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	VrfUUIDForGs *string `json:"vrf_uuid_for_gs,omitempty"`
+
 	// Enable wild-card match of fqdn  if an exact match is not found in the DNS table, the longest match is chosen by wild-carding the fqdn in the DNS request. Default is false. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	WildcardMatch *bool `json:"wildcard_match,omitempty"`
 }

@@ -39,6 +39,9 @@ type Gslb struct {
 	// This is the max number of file versions that will be retained for a file referenced by the federated FileObject. Subsequent uploads of file will result in the file rotation of the older version and the latest version retained. Example  When a file Upload is done for the first time, there will be a v1 version. Subsequent uploads will get mapped to v1, v2 and v3 versions. On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained. Allowed values are 1-5. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	FileobjectMaxFileVersions *uint32 `json:"fileobject_max_file_versions,omitempty"`
 
+	// If this knob is enabled, GSLB Service member FQDN will be resolved by the service engines hosting the GSLB service. Each service engine will resolve and consume the resolved IP addresses locally. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	GsMemberFqdnResolutionOnSe *bool `json:"gs_member_fqdn_resolution_on_se,omitempty"`
+
 	// This field indicates that this object is replicated across GSLB federation. Field introduced in 17.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	IsFederated *bool `json:"is_federated,omitempty"`
 

@@ -261,6 +261,9 @@ type ControllerProperties struct {
 	// SSL Certificates in the admin tenant can be used in non-admin tenants. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SharedSslCertificates *bool `json:"shared_ssl_certificates,omitempty"`
 
+	// Skip API Performance collection for requests going through the Apiserver. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SkipBeegoPerfCollection *bool `json:"skip_beego_perf_collection,omitempty"`
+
 	// Time interval (in seconds) between retires for skopeo commands. Field deprecated in 31.1.1. Field introduced in 30.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	SkopeoRetryInterval *uint32 `json:"skopeo_retry_interval,omitempty"`
 
