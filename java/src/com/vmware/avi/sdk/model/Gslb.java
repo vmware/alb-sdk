@@ -45,6 +45,9 @@ public class Gslb extends AviRestResource  {
     @JsonProperty("fileobject_max_file_versions")
     private Integer fileobjectMaxFileVersions = 3;
 
+    @JsonProperty("gs_member_fqdn_resolution_on_se")
+    private Boolean gsMemberFqdnResolutionOnSe;
+
     @JsonProperty("is_federated")
     private Boolean isFederated = true;
 
@@ -313,6 +316,32 @@ public class Gslb extends AviRestResource  {
      */
     public void setFileobjectMaxFileVersions(Integer  fileobjectMaxFileVersions) {
         this.fileobjectMaxFileVersions = fileobjectMaxFileVersions;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * If this knob is enabled, gslb service member fqdn will be resolved by the service engines hosting the gslb service.
+     * Each service engine will resolve and consume the resolved ip addresses locally.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return gsMemberFqdnResolutionOnSe
+     */
+    public Boolean getGsMemberFqdnResolutionOnSe() {
+        return gsMemberFqdnResolutionOnSe;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If this knob is enabled, gslb service member fqdn will be resolved by the service engines hosting the gslb service.
+     * Each service engine will resolve and consume the resolved ip addresses locally.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param gsMemberFqdnResolutionOnSe set the gsMemberFqdnResolutionOnSe.
+     */
+    public void setGsMemberFqdnResolutionOnSe(Boolean  gsMemberFqdnResolutionOnSe) {
+        this.gsMemberFqdnResolutionOnSe = gsMemberFqdnResolutionOnSe;
     }
 
     /**
@@ -685,7 +714,8 @@ public class Gslb extends AviRestResource  {
   Objects.equals(this.tenantRef, objGslb.tenantRef)&&
   Objects.equals(this.tenantScoped, objGslb.tenantScoped)&&
   Objects.equals(this.enableConfigByMembers, objGslb.enableConfigByMembers)&&
-  Objects.equals(this.fileobjectMaxFileVersions, objGslb.fileobjectMaxFileVersions);
+  Objects.equals(this.fileobjectMaxFileVersions, objGslb.fileobjectMaxFileVersions)&&
+  Objects.equals(this.gsMemberFqdnResolutionOnSe, objGslb.gsMemberFqdnResolutionOnSe);
     }
 
     @Override
@@ -700,6 +730,7 @@ public class Gslb extends AviRestResource  {
                         sb.append("    enableConfigByMembers: ").append(toIndentedString(enableConfigByMembers)).append("\n");
                         sb.append("    errorResyncInterval: ").append(toIndentedString(errorResyncInterval)).append("\n");
                         sb.append("    fileobjectMaxFileVersions: ").append(toIndentedString(fileobjectMaxFileVersions)).append("\n");
+                        sb.append("    gsMemberFqdnResolutionOnSe: ").append(toIndentedString(gsMemberFqdnResolutionOnSe)).append("\n");
                         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
                         sb.append("    leaderClusterUuid: ").append(toIndentedString(leaderClusterUuid)).append("\n");
                         sb.append("    maintenanceMode: ").append(toIndentedString(maintenanceMode)).append("\n");

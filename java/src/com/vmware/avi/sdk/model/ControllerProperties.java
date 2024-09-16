@@ -268,6 +268,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("shared_ssl_certificates")
     private Boolean sharedSslCertificates = false;
 
+    @JsonProperty("skip_beego_perf_collection")
+    private Boolean skipBeegoPerfCollection = false;
+
     @JsonProperty("skopeo_retry_interval")
     private Integer skopeoRetryInterval;
 
@@ -2443,6 +2446,30 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Skip api performance collection for requests going through the apiserver.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return skipBeegoPerfCollection
+     */
+    public Boolean getSkipBeegoPerfCollection() {
+        return skipBeegoPerfCollection;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Skip api performance collection for requests going through the apiserver.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param skipBeegoPerfCollection set the skipBeegoPerfCollection.
+     */
+    public void setSkipBeegoPerfCollection(Boolean  skipBeegoPerfCollection) {
+        this.skipBeegoPerfCollection = skipBeegoPerfCollection;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Time interval (in seconds) between retires for skopeo commands.
      * Field deprecated in 31.1.1.
      * Field introduced in 30.1.1.
@@ -3406,7 +3433,8 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.eventManagerMaxGoroutines, objControllerProperties.eventManagerMaxGoroutines)&&
   Objects.equals(this.alertManagerUseEvms, objControllerProperties.alertManagerUseEvms)&&
   Objects.equals(this.enableNsxStreamingAgent, objControllerProperties.enableNsxStreamingAgent)&&
-  Objects.equals(this.statecacheProperties, objControllerProperties.statecacheProperties);
+  Objects.equals(this.statecacheProperties, objControllerProperties.statecacheProperties)&&
+  Objects.equals(this.skipBeegoPerfCollection, objControllerProperties.skipBeegoPerfCollection);
     }
 
     @Override
@@ -3495,6 +3523,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    seupgradeFabricPoolSize: ").append(toIndentedString(seupgradeFabricPoolSize)).append("\n");
                         sb.append("    seupgradeSegroupMinDeadTimeout: ").append(toIndentedString(seupgradeSegroupMinDeadTimeout)).append("\n");
                         sb.append("    sharedSslCertificates: ").append(toIndentedString(sharedSslCertificates)).append("\n");
+                        sb.append("    skipBeegoPerfCollection: ").append(toIndentedString(skipBeegoPerfCollection)).append("\n");
                         sb.append("    skopeoRetryInterval: ").append(toIndentedString(skopeoRetryInterval)).append("\n");
                         sb.append("    skopeoRetryLimit: ").append(toIndentedString(skopeoRetryLimit)).append("\n");
                         sb.append("    softMinMemPerSeLimit: ").append(toIndentedString(softMinMemPerSeLimit)).append("\n");
