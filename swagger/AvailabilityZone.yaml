@@ -438,17 +438,17 @@ definitions:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
+            az_clusters:
+                description: "Group of clusters belongs to the AZ. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/AZCluster'
             az_datastore:
                 description: "Datastores associated with the AZ. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AZDatastore'
             cloud_ref:
                 description: "Availability zone belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            cluster_ids:
-                description: "List of Managed Object IDs of clusters belong to this AZ. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
             configpb_attributes:
                 description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
@@ -464,9 +464,6 @@ definitions:
                 type: string
             uuid:
                 description: "Availability zone config UUID. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            vcenter_ref:
-                description: "Vcenter belongs to the AZ. It is a reference to an object of type VCenterServer. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             vcenter_refs:
                 description: "Group of VCenter list belong to availabilty zone. It is a reference to an object of type VCenterServer. Field deprecated in 31.1.1. Field introduced in 20.1.1. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -487,6 +484,17 @@ definitions:
                 items:
                     $ref: "#/definitions/AvailabilityZone"
             next:
+                type: string
+    AZCluster:
+        type: object
+        properties:
+            cluster_ids:
+                description: "Managed Object Id of clusters belongs to the AZ. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            vcenter_ref:
+                description: "Vcenter Id of the clusters. It is a reference to an object of type VCenterServer. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
     AZDatastore:
         type: object

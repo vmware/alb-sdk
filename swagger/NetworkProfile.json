@@ -840,6 +840,10 @@
         "TCPProxyProfile": {
             "type": "object",
             "properties": {
+                "ack_on_push": {
+                    "description": "Controls whether we immediately send ack when incoming packet has PUSH flag marked. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
                 "aggressive_congestion_avoidance": {
                     "description": "Controls the our congestion window to send, normally it's 1 mss, If this option is turned on, we use 10 msses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
