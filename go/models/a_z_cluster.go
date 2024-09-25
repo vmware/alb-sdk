@@ -1,0 +1,16 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
+package models
+
+// This file is auto-generated.
+
+// AZCluster a z cluster
+// swagger:model AZCluster
+type AZCluster struct {
+
+	// Managed Object Id of clusters belongs to the AZ. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	ClusterIds []string `json:"cluster_ids,omitempty"`
+
+	// Vcenter Id of the clusters. It is a reference to an object of type VCenterServer. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	VcenterRef *string `json:"vcenter_ref,omitempty"`
+}

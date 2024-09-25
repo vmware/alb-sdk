@@ -8,6 +8,9 @@ package models
 // swagger:model TCPProxyProfile
 type TCPProxyProfile struct {
 
+	// Controls whether we immediately send ack when incoming packet has PUSH flag marked. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	AckOnPush *bool `json:"ack_on_push,omitempty"`
+
 	// Controls the our congestion window to send, normally it's 1 mss, If this option is turned on, we use 10 msses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	AggressiveCongestionAvoidance *bool `json:"aggressive_congestion_avoidance,omitempty"`
 
