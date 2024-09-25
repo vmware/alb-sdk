@@ -163,7 +163,7 @@ public class GslbPoolMember  {
      * The fqdn is resolved to an ip address by the controller.
      * Dns service shall health monitor the resolved ip address while it will return the fqdn(cname) in the dns response.if the user has configured an
      * ip address (in addition to the fqdn), then the ip address will get overwritten whenever periodic fqdn refresh is done by the controller.
-     * For gslb service of type srv, this field is treated as target of srv rdata.
+     * For gslb service of type srv, this field is treated as target of srv record data as defined in srv record specification.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fqdn
@@ -178,7 +178,7 @@ public class GslbPoolMember  {
      * The fqdn is resolved to an ip address by the controller.
      * Dns service shall health monitor the resolved ip address while it will return the fqdn(cname) in the dns response.if the user has configured an
      * ip address (in addition to the fqdn), then the ip address will get overwritten whenever periodic fqdn refresh is done by the controller.
-     * For gslb service of type srv, this field is treated as target of srv rdata.
+     * For gslb service of type srv, this field is treated as target of srv record data as defined in srv record specification.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fqdn set the fqdn.

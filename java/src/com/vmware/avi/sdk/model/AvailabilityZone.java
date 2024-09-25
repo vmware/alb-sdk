@@ -21,14 +21,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AvailabilityZone extends AviRestResource  {
+    @JsonProperty("az_clusters")
+    private List<AZCluster> azClusters;
+
     @JsonProperty("az_datastore")
     private AZDatastore azDatastore;
 
     @JsonProperty("cloud_ref")
     private String cloudRef;
-
-    @JsonProperty("cluster_ids")
-    private List<String> clusterIds;
 
     @JsonProperty("name")
     private String name;
@@ -42,13 +42,49 @@ public class AvailabilityZone extends AviRestResource  {
     @JsonProperty("uuid")
     private String uuid;
 
-    @JsonProperty("vcenter_ref")
-    private String vcenterRef;
-
     @JsonProperty("vcenter_refs")
     private List<String> vcenterRefs;
 
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Group of clusters belongs to the az.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return azClusters
+     */
+    public List<AZCluster> getAzClusters() {
+        return azClusters;
+    }
+
+    /**
+     * This is the setter method. this will set the azClusters
+     * Group of clusters belongs to the az.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return azClusters
+     */
+    public void setAzClusters(List<AZCluster>  azClusters) {
+        this.azClusters = azClusters;
+    }
+
+    /**
+     * This is the setter method this will set the azClusters
+     * Group of clusters belongs to the az.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return azClusters
+     */
+    public AvailabilityZone addAzClustersItem(AZCluster azClustersItem) {
+      if (this.azClusters == null) {
+        this.azClusters = new ArrayList<AZCluster>();
+      }
+      this.azClusters.add(azClustersItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -98,45 +134,6 @@ public class AvailabilityZone extends AviRestResource  {
      */
     public void setCloudRef(String  cloudRef) {
         this.cloudRef = cloudRef;
-    }
-    /**
-     * This is the getter method this will return the attribute value.
-     * List of managed object ids of clusters belong to this az.
-     * Field introduced in 31.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return clusterIds
-     */
-    public List<String> getClusterIds() {
-        return clusterIds;
-    }
-
-    /**
-     * This is the setter method. this will set the clusterIds
-     * List of managed object ids of clusters belong to this az.
-     * Field introduced in 31.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return clusterIds
-     */
-    public void setClusterIds(List<String>  clusterIds) {
-        this.clusterIds = clusterIds;
-    }
-
-    /**
-     * This is the setter method this will set the clusterIds
-     * List of managed object ids of clusters belong to this az.
-     * Field introduced in 31.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return clusterIds
-     */
-    public AvailabilityZone addClusterIdsItem(String clusterIdsItem) {
-      if (this.clusterIds == null) {
-        this.clusterIds = new ArrayList<String>();
-      }
-      this.clusterIds.add(clusterIdsItem);
-      return this;
     }
 
     /**
@@ -229,32 +226,6 @@ public class AvailabilityZone extends AviRestResource  {
     public void setUuid(String  uuid) {
         this.uuid = uuid;
     }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Vcenter belongs to the az.
-     * It is a reference to an object of type vcenterserver.
-     * Field introduced in 31.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return vcenterRef
-     */
-    public String getVcenterRef() {
-        return vcenterRef;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Vcenter belongs to the az.
-     * It is a reference to an object of type vcenterserver.
-     * Field introduced in 31.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param vcenterRef set the vcenterRef.
-     */
-    public void setVcenterRef(String  vcenterRef) {
-        this.vcenterRef = vcenterRef;
-    }
     /**
      * This is the getter method this will return the attribute value.
      * Group of vcenter list belong to availabilty zone.
@@ -316,8 +287,7 @@ public class AvailabilityZone extends AviRestResource  {
   Objects.equals(this.vcenterRefs, objAvailabilityZone.vcenterRefs)&&
   Objects.equals(this.tenantRef, objAvailabilityZone.tenantRef)&&
   Objects.equals(this.cloudRef, objAvailabilityZone.cloudRef)&&
-  Objects.equals(this.vcenterRef, objAvailabilityZone.vcenterRef)&&
-  Objects.equals(this.clusterIds, objAvailabilityZone.clusterIds)&&
+  Objects.equals(this.azClusters, objAvailabilityZone.azClusters)&&
   Objects.equals(this.azDatastore, objAvailabilityZone.azDatastore);
     }
 
@@ -325,13 +295,12 @@ public class AvailabilityZone extends AviRestResource  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class AvailabilityZone {\n");
-                  sb.append("    azDatastore: ").append(toIndentedString(azDatastore)).append("\n");
+                  sb.append("    azClusters: ").append(toIndentedString(azClusters)).append("\n");
+                        sb.append("    azDatastore: ").append(toIndentedString(azDatastore)).append("\n");
                         sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
-                        sb.append("    clusterIds: ").append(toIndentedString(clusterIds)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-                        sb.append("    vcenterRef: ").append(toIndentedString(vcenterRef)).append("\n");
                         sb.append("    vcenterRefs: ").append(toIndentedString(vcenterRefs)).append("\n");
                   sb.append("}");
       return sb.toString();

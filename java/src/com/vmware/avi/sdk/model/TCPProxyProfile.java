@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TCPProxyProfile  {
+    @JsonProperty("ack_on_push")
+    private Boolean ackOnPush = false;
+
     @JsonProperty("aggressive_congestion_avoidance")
     private Boolean aggressiveCongestionAvoidance = false;
 
@@ -85,6 +88,30 @@ public class TCPProxyProfile  {
     private Boolean useInterfaceMtu = true;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Controls whether we immediately send ack when incoming packet has push flag marked.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return ackOnPush
+     */
+    public Boolean getAckOnPush() {
+        return ackOnPush;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Controls whether we immediately send ack when incoming packet has push flag marked.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param ackOnPush set the ackOnPush.
+     */
+    public void setAckOnPush(Boolean  ackOnPush) {
+        this.ackOnPush = ackOnPush;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -660,14 +687,16 @@ public class TCPProxyProfile  {
   Objects.equals(this.congestionRecoveryScalingFactor, objTCPProxyProfile.congestionRecoveryScalingFactor)&&
   Objects.equals(this.reassemblyQueueSize, objTCPProxyProfile.reassemblyQueueSize)&&
   Objects.equals(this.keepaliveInHalfcloseState, objTCPProxyProfile.keepaliveInHalfcloseState)&&
-  Objects.equals(this.autoWindowGrowth, objTCPProxyProfile.autoWindowGrowth);
+  Objects.equals(this.autoWindowGrowth, objTCPProxyProfile.autoWindowGrowth)&&
+  Objects.equals(this.ackOnPush, objTCPProxyProfile.ackOnPush);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class TCPProxyProfile {\n");
-                  sb.append("    aggressiveCongestionAvoidance: ").append(toIndentedString(aggressiveCongestionAvoidance)).append("\n");
+                  sb.append("    ackOnPush: ").append(toIndentedString(ackOnPush)).append("\n");
+                        sb.append("    aggressiveCongestionAvoidance: ").append(toIndentedString(aggressiveCongestionAvoidance)).append("\n");
                         sb.append("    autoWindowGrowth: ").append(toIndentedString(autoWindowGrowth)).append("\n");
                         sb.append("    automatic: ").append(toIndentedString(automatic)).append("\n");
                         sb.append("    ccAlgo: ").append(toIndentedString(ccAlgo)).append("\n");

@@ -79,7 +79,7 @@ public class GslbService extends AviRestResource  {
     private Boolean resolveCname = false;
 
     @JsonProperty("resolve_srv")
-    private Boolean resolveSrv;
+    private Boolean resolveSrv = false;
 
     @JsonProperty("site_persistence_enabled")
     private Boolean sitePersistenceEnabled = false;
@@ -653,7 +653,7 @@ public class GslbService extends AviRestResource  {
      * If enabled, provide the srv target's resolved ip in the response srv gslb service.
      * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return resolveSrv
      */
     public Boolean getResolveSrv() {
@@ -665,7 +665,7 @@ public class GslbService extends AviRestResource  {
      * If enabled, provide the srv target's resolved ip in the response srv gslb service.
      * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param resolveSrv set the resolveSrv.
      */
     public void setResolveSrv(Boolean  resolveSrv) {

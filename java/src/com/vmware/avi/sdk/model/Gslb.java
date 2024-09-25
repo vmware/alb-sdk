@@ -46,7 +46,7 @@ public class Gslb extends AviRestResource  {
     private Integer fileobjectMaxFileVersions = 3;
 
     @JsonProperty("gs_member_fqdn_resolution_on_se")
-    private Boolean gsMemberFqdnResolutionOnSe;
+    private Boolean gsMemberFqdnResolutionOnSe = false;
 
     @JsonProperty("is_federated")
     private Boolean isFederated = true;
@@ -324,7 +324,7 @@ public class Gslb extends AviRestResource  {
      * Each service engine will resolve and consume the resolved ip addresses locally.
      * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return gsMemberFqdnResolutionOnSe
      */
     public Boolean getGsMemberFqdnResolutionOnSe() {
@@ -337,7 +337,7 @@ public class Gslb extends AviRestResource  {
      * Each service engine will resolve and consume the resolved ip addresses locally.
      * Field introduced in 31.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param gsMemberFqdnResolutionOnSe set the gsMemberFqdnResolutionOnSe.
      */
     public void setGsMemberFqdnResolutionOnSe(Boolean  gsMemberFqdnResolutionOnSe) {
