@@ -22,7 +22,7 @@ It is also possible to create multiple clones of the source object by specifying
 
 ## Object types
 
-The script can clone a Virtual Service, handling the various changes needed due to differences between source and target clouds. See the *Examples* below for various scenarios that have been tested. When cloning a VS, the script can also modify VS parameters such as *ecmp_scaleout* (`-ecmp true|false`), *enable_rhi* (`-rhi true|false`) and VS/Pool placement networks that may need to change when cloning to a different cloud type.
+The script can clone a Virtual Service, handling the various changes needed due to differences between source and target clouds. See the *Examples* below for various scenarios that have been tested. When cloning a VS, the script can also modify VS parameters such as *ecmp_scaleout* (`-ecmp true|false`), *enable_rhi* (`-rhi true|false`) and VS/Pool placement networks that may need to change when cloning to a different cloud type. The cloned Virtual Service will be created in a disabled state by default.
 
 The script can also clone a GSLB Service within the same Controller.
 
@@ -92,17 +92,21 @@ When using Avi Internal IPAM for auto-allocation, it may be necessary in some cl
 The optional `-flags` parameter is used to invoke workarounds or special handling in certain uncommon use cases/scenarios. Multiple flags can be specified (comma-separated). Current flags are:
 
 |Flag|Meaning|
----|---|
-disablelearning|Disables WAF learning in a cloned WAF Policy and/or PSM Group.
-dep20|Removes deprecated HTTP/2 support flag from Application Profile. Use when cloning from pre-20.1 to post-20.1.
-adminssl|Indicates that the target Controller supports the ability for a non-admin tenant to use an SSL certificate in the admin tenant and that cloning the certificate to the non-admin tenant is not desired.
-reuseds|Indicates that DataScripts can be re-used rather than cloned.
+|---|---|
+|disablelearning|Disables WAF learning in a cloned WAF Policy and/or PSM Group.|
+|dep20|Removes deprecated HTTP/2 support flag from Application Profile. Use when cloning from pre-20.1 to post-20.1.|
+|adminssl|Indicates that the target Controller supports the ability for a non-admin tenant to use an SSL certificate in the admin tenant and that cloning the certificate to the non-admin tenant is not desired.|
+|reuseds|Indicates that DataScripts can be re-used rather than cloned.|
 
 ## Examples
 
 ### Cloning a VS and its child objects within a tenant
 
 > clone_vs.py -c controller.acme.com vs example cloned-example -v 10.10.10.2
+
+### Cloning a VS and its child objects within a tenant, immediately enabling the cloned Virtual Service
+
+> clone_vs.py -c controller.acme.com vs example cloned-example -v 10.10.10.2 -e
 
 ### Cloning a VS and its child objects within a tenant to a different Service Engine Group
 
@@ -332,3 +336,8 @@ Changelog:
 * Add support for cloning VS with OAuth2 SSO configuration
 * Add support for cloning VS with service-level network/application profile overrides
 * Add support for cloning DNS VS with Topology Policies
+
+2.0.8:
+
+* Add support for cloning L4 Virtual Service with service_pool_select configuration
+* Add support for cloning L4 Virtual Service with L4 PolicySet

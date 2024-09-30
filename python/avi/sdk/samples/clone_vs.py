@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 7]
+AVICLONE_VERSION = [2, 0, 8]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -788,6 +788,41 @@ class AviClone:
 
         return created_objs, warnings
 
+    def _processobject_l4policyset(self, obj, force_clone):
+        """
+        Performs l4-specific manipulations on the cloned
+        object such as ip groups in the policy rules
+        """
+
+        logger.debug('Running _process_l4policyset')
+
+        new_l4policyset_name = obj['name']
+
+        created_objs = []
+        warnings = []
+
+        try:
+            for policy_type in ['l4_connection_policy']:
+                policy_obj = obj.get(policy_type, {})
+                if policy_obj:
+                    logger.debug('Processing %s', policy_type)
+                    new_objs, new_warnings = self._process_policy_rules(
+                        new_l4policyset_name,
+                        p_obj=policy_obj,
+                        force_clone=force_clone)
+                    created_objs.extend(new_objs)
+                    warnings.extend(new_warnings)
+
+        except Exception as ex:
+            # If an exception occurred, delete any intermediate objects we
+            # have created
+
+            self.delete_objects(created_objs)
+
+            raise
+
+        return created_objs, warnings
+
     def _processobject_authprofile(self, obj, force_clone):
         """
         Performs authprofile-specific manipulations on the cloned
@@ -1062,7 +1097,7 @@ class AviClone:
 
     def _process_policy_rules(self, new_policy_name, p_obj, force_clone):
         """
-        Process the network/DNS/HTTP policy rules
+        Process the network/DNS/HTTP/L4 policy rules
         """
 
         logger.debug('Running _process_policy_rules')
@@ -1105,7 +1140,13 @@ class AviClone:
                             warnings.extend(new_warnings)
 
                 if 'switching_action' in rule:
-                    switching_action = rule.get('switching_action', {})
+                    switching_action = rule['switching_action']
+                elif 'select_pool' in rule.get('action', {}):
+                    switching_action = rule['action']['select_pool']
+                else:
+                    switching_action = None
+
+                if switching_action:
                     pool_ref = switching_action.get('pool_ref', None)
 
                     if pool_ref:
@@ -2437,6 +2478,63 @@ class AviClone:
                 created_objs.append(ps_obj)
                 created_objs.extend(ps_created_objs)
                 warnings.extend(ps_warnings)
+
+            # Clone any Pools/Pool Groups referenced in Service Pool config
+
+            service_pools = v_obj.get('service_pool_select', [])
+            for service_pool in service_pools:
+                sp_port = str(service_pool['service_port'])
+                if 'service_pool_ref' in service_pool:
+                    sp_path = service_pool['service_pool_ref'].split('/api/')[1]
+                    sp_name = '-'.join([new_vs_name, sp_port, 'pool'])
+
+                    sp_obj, sp_created_objs, sp_warnings = self.clone_object(
+                        old_name=sp_path, new_name=sp_name,
+                        force_clone=force_clone, force_unique_name=True)
+
+                    created_objs.append(sp_obj)
+                    created_objs.extend(sp_created_objs)
+                    warnings.extend(sp_warnings)
+
+                    # Update the pool with the cloned pool
+
+                    service_pool['service_pool_ref'] = sp_obj['url']
+
+                if 'service_pool_group_ref' in service_pool:
+                    spg_path = service_pool['service_pool_group_ref'].split(
+                        '/api/')[1]
+                    spg_name = '-'.join([new_vs_name, sp_port, 'poolgroup'])
+
+                    spg_obj, spg_created_objs, spg_warnings = self.clone_object(
+                        old_name=spg_path, new_name=spg_name,
+                        force_clone=force_clone, force_unique_name=True)
+
+                    created_objs.append(spg_obj)
+                    created_objs.extend(spg_created_objs)
+                    warnings.extend(spg_warnings)
+
+                    # Update the pool group with the cloned pool group
+
+                    service_pool['service_pool_group_ref'] = spg_obj['url']
+
+            # Clone L4 policy referenced in the VS
+
+            if 'l4_policies' in v_obj:
+                for polset in v_obj['l4_policies']:
+                    ps_path = polset['l4_policy_set_ref'].split('/api/')[1]
+                    ps_name = '-'.join([new_vs_name,
+                                        (c_obj['name']
+                                         if self.oc_obj is None
+                                         else self.oc_obj['name']),
+                                        'L4-Policy-Set'])
+                    ps_obj, ps_created_objs, ps_warnings = self.clone_object(
+                        old_name=ps_path, new_name=ps_name,
+                        force_clone=force_clone, force_unique_name=True)
+
+                    polset['l4_policy_set_ref'] = ps_obj['url']
+                    created_objs.append(ps_obj)
+                    created_objs.extend(ps_created_objs)
+                    warnings.extend(ps_warnings)
 
             # Clone network security policy referenced in the VS
 
