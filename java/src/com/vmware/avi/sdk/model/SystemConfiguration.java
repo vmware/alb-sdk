@@ -51,9 +51,6 @@ public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("enable_host_header_check")
     private Boolean enableHostHeaderCheck = false;
 
-    @JsonProperty("enable_telemetry")
-    private Boolean enableTelemetry = true;
-
     @JsonProperty("fips_mode")
     private Boolean fipsMode = false;
 
@@ -101,6 +98,9 @@ public class SystemConfiguration extends AviRestResource  {
 
     @JsonProperty("ssh_hmacs")
     private List<String> sshHmacs;
+
+    @JsonProperty("telemetry_configuration")
+    private TelemetryConfiguration telemetryConfiguration;
 
     @JsonProperty("trusted_host_profiles_refs")
     private List<String> trustedHostProfilesRefs;
@@ -368,30 +368,6 @@ public class SystemConfiguration extends AviRestResource  {
      */
     public void setEnableHostHeaderCheck(Boolean  enableHostHeaderCheck) {
         this.enableHostHeaderCheck = enableHostHeaderCheck;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Enables sending anonymous operational metrics to avi.
-     * Field introduced in 31.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
-     * @return enableTelemetry
-     */
-    public Boolean getEnableTelemetry() {
-        return enableTelemetry;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Enables sending anonymous operational metrics to avi.
-     * Field introduced in 31.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
-     * @param enableTelemetry set the enableTelemetry.
-     */
-    public void setEnableTelemetry(Boolean  enableTelemetry) {
-        this.enableTelemetry = enableTelemetry;
     }
 
     /**
@@ -785,6 +761,30 @@ public class SystemConfiguration extends AviRestResource  {
       this.sshHmacs.add(sshHmacsItem);
       return this;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Telemetry configuration.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return telemetryConfiguration
+     */
+    public TelemetryConfiguration getTelemetryConfiguration() {
+        return telemetryConfiguration;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Telemetry configuration.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param telemetryConfiguration set the telemetryConfiguration.
+     */
+    public void setTelemetryConfiguration(TelemetryConfiguration telemetryConfiguration) {
+        this.telemetryConfiguration = telemetryConfiguration;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Trusted host profiles for host header validation.
@@ -962,7 +962,7 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.sddcmanagerFqdn, objSystemConfiguration.sddcmanagerFqdn)&&
   Objects.equals(this.enableHostHeaderCheck, objSystemConfiguration.enableHostHeaderCheck)&&
   Objects.equals(this.trustedHostProfilesRefs, objSystemConfiguration.trustedHostProfilesRefs)&&
-  Objects.equals(this.enableTelemetry, objSystemConfiguration.enableTelemetry)&&
+  Objects.equals(this.telemetryConfiguration, objSystemConfiguration.telemetryConfiguration)&&
   Objects.equals(this.truststorePkiprofileRef, objSystemConfiguration.truststorePkiprofileRef);
     }
 
@@ -980,7 +980,6 @@ public class SystemConfiguration extends AviRestResource  {
                         sb.append("    emailConfiguration: ").append(toIndentedString(emailConfiguration)).append("\n");
                         sb.append("    enableCors: ").append(toIndentedString(enableCors)).append("\n");
                         sb.append("    enableHostHeaderCheck: ").append(toIndentedString(enableHostHeaderCheck)).append("\n");
-                        sb.append("    enableTelemetry: ").append(toIndentedString(enableTelemetry)).append("\n");
                         sb.append("    fipsMode: ").append(toIndentedString(fipsMode)).append("\n");
                         sb.append("    globalTenantConfig: ").append(toIndentedString(globalTenantConfig)).append("\n");
                         sb.append("    hostKeyAlgorithmExclude: ").append(toIndentedString(hostKeyAlgorithmExclude)).append("\n");
@@ -997,6 +996,7 @@ public class SystemConfiguration extends AviRestResource  {
                         sb.append("    snmpConfiguration: ").append(toIndentedString(snmpConfiguration)).append("\n");
                         sb.append("    sshCiphers: ").append(toIndentedString(sshCiphers)).append("\n");
                         sb.append("    sshHmacs: ").append(toIndentedString(sshHmacs)).append("\n");
+                        sb.append("    telemetryConfiguration: ").append(toIndentedString(telemetryConfiguration)).append("\n");
                         sb.append("    trustedHostProfilesRefs: ").append(toIndentedString(trustedHostProfilesRefs)).append("\n");
                         sb.append("    truststorePkiprofileRef: ").append(toIndentedString(truststorePkiprofileRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

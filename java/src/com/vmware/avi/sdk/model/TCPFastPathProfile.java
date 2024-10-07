@@ -30,6 +30,9 @@ public class TCPFastPathProfile  {
     @JsonProperty("session_idle_timeout")
     private Integer sessionIdleTimeout = 300;
 
+    @JsonProperty("tcp_fastpath_options")
+    private TCPOptions tcpFastpathOptions;
+
 
 
     /**
@@ -110,6 +113,30 @@ public class TCPFastPathProfile  {
         this.sessionIdleTimeout = sessionIdleTimeout;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Tcp_fast_path network profile options.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tcpFastpathOptions
+     */
+    public TCPOptions getTcpFastpathOptions() {
+        return tcpFastpathOptions;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tcp_fast_path network profile options.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param tcpFastpathOptions set the tcpFastpathOptions.
+     */
+    public void setTcpFastpathOptions(TCPOptions tcpFastpathOptions) {
+        this.tcpFastpathOptions = tcpFastpathOptions;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -122,7 +149,8 @@ public class TCPFastPathProfile  {
       TCPFastPathProfile objTCPFastPathProfile = (TCPFastPathProfile) o;
       return   Objects.equals(this.sessionIdleTimeout, objTCPFastPathProfile.sessionIdleTimeout)&&
   Objects.equals(this.enableSynProtection, objTCPFastPathProfile.enableSynProtection)&&
-  Objects.equals(this.dsrProfile, objTCPFastPathProfile.dsrProfile);
+  Objects.equals(this.dsrProfile, objTCPFastPathProfile.dsrProfile)&&
+  Objects.equals(this.tcpFastpathOptions, objTCPFastPathProfile.tcpFastpathOptions);
     }
 
     @Override
@@ -132,6 +160,7 @@ public class TCPFastPathProfile  {
                   sb.append("    dsrProfile: ").append(toIndentedString(dsrProfile)).append("\n");
                         sb.append("    enableSynProtection: ").append(toIndentedString(enableSynProtection)).append("\n");
                         sb.append("    sessionIdleTimeout: ").append(toIndentedString(sessionIdleTimeout)).append("\n");
+                        sb.append("    tcpFastpathOptions: ").append(toIndentedString(tcpFastpathOptions)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
