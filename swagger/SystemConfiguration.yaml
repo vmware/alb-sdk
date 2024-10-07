@@ -809,10 +809,6 @@ definitions:
             enable_host_header_check:
                 description: "Host Header check. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: boolean
-            enable_telemetry:
-                description: "Enables sending anonymous operational metrics to AVI. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                type: boolean
-                default: True
             fips_mode:
                 description: "FIPS mode current state. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
@@ -867,6 +863,9 @@ definitions:
                 type: array
                 items:
                     type: string
+            telemetry_configuration:
+                description: "Telemetry configuration. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/TelemetryConfiguration'
             trusted_host_profiles_refs:
                 description: "Trusted Host Profiles for host header validation. Only function when enable_host_header_check is set to true. It is a reference to an object of type TrustedHostProfile. Field introduced in 31.1.1. Maximum of 20 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
@@ -918,6 +917,32 @@ definitions:
                 type: string
             to_emails:
                 description: "Alerts are sent to the comma separated list of  email recipients. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    TelemetryConfiguration:
+        type: object
+        properties:
+            enable:
+                description: "Enables VMware Customer Experience Improvement Program ( CEIP ). Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
+            url:
+                description: "The FQDN or IP address of the Telemetry Server. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "https://portal.avipulse.vmware.com"
+    TelemetryConfigurationApiResponse:
+        type: object
+        required:
+            - count
+            - results
+        properties:
+            count:
+                type: integer
+                format: int32
+            results:
+                type: array
+                items:
+                    $ref: "#/definitions/TelemetryConfiguration"
+            next:
                 type: string
     TenantConfiguration:
         type: object

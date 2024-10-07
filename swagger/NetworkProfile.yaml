@@ -603,6 +603,15 @@ definitions:
                 type: integer
                 default: 300
                 format: int32
+            tcp_fastpath_options:
+                description: "TCP_Fast_PATH Network profile options. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/TCPOptions'
+    TCPOptions:
+        type: object
+        properties:
+            strip_sack:
+                description: "Remove the SACK TCP option from header. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
     TCPProxyProfile:
         type: object
         properties:
