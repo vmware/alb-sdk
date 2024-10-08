@@ -41,6 +41,9 @@ type ControllerSizingLimits struct {
 	// Maximum number of virtualservices with realtime metrics enabled. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumVirtualservicesRtMetrics *int32 `json:"num_virtualservices_rt_metrics,omitempty"`
 
+	// Number of virtualservices with both real-time metrics and WAF enabled together. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	NumVirtualservicesRtmetricsWaf *int32 `json:"num_virtualservices_rtmetrics_waf,omitempty"`
+
 	// Maximum number of vrfcontexts. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumVrfs *int32 `json:"num_vrfs,omitempty"`
 
