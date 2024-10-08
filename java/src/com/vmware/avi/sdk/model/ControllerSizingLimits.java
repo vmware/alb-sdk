@@ -54,6 +54,9 @@ public class ControllerSizingLimits  {
     @JsonProperty("num_virtualservices_rt_metrics")
     private Integer numVirtualservicesRtMetrics;
 
+    @JsonProperty("num_virtualservices_rtmetrics_waf")
+    private Integer numVirtualservicesRtmetricsWaf;
+
     @JsonProperty("num_vrfs")
     private Integer numVrfs;
 
@@ -345,6 +348,30 @@ public class ControllerSizingLimits  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Number of virtualservices with both real-time metrics and waf enabled together.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numVirtualservicesRtmetricsWaf
+     */
+    public Integer getNumVirtualservicesRtmetricsWaf() {
+        return numVirtualservicesRtmetricsWaf;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of virtualservices with both real-time metrics and waf enabled together.
+     * Field introduced in 31.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numVirtualservicesRtmetricsWaf set the numVirtualservicesRtmetricsWaf.
+     */
+    public void setNumVirtualservicesRtmetricsWaf(Integer  numVirtualservicesRtmetricsWaf) {
+        this.numVirtualservicesRtmetricsWaf = numVirtualservicesRtmetricsWaf;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Maximum number of vrfcontexts.
      * Field introduced in 20.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -413,6 +440,7 @@ public class ControllerSizingLimits  {
   Objects.equals(this.numWafVirtualservices, objControllerSizingLimits.numWafVirtualservices)&&
   Objects.equals(this.numPoolRtMetrics, objControllerSizingLimits.numPoolRtMetrics)&&
   Objects.equals(this.numSeRtMetrics, objControllerSizingLimits.numSeRtMetrics)&&
+  Objects.equals(this.numVirtualservicesRtmetricsWaf, objControllerSizingLimits.numVirtualservicesRtmetricsWaf)&&
   Objects.equals(this.controllerSizingCloudLimits, objControllerSizingLimits.controllerSizingCloudLimits);
     }
 
@@ -431,6 +459,7 @@ public class ControllerSizingLimits  {
                         sb.append("    numTenants: ").append(toIndentedString(numTenants)).append("\n");
                         sb.append("    numVirtualservices: ").append(toIndentedString(numVirtualservices)).append("\n");
                         sb.append("    numVirtualservicesRtMetrics: ").append(toIndentedString(numVirtualservicesRtMetrics)).append("\n");
+                        sb.append("    numVirtualservicesRtmetricsWaf: ").append(toIndentedString(numVirtualservicesRtmetricsWaf)).append("\n");
                         sb.append("    numVrfs: ").append(toIndentedString(numVrfs)).append("\n");
                         sb.append("    numWafVirtualservices: ").append(toIndentedString(numWafVirtualservices)).append("\n");
                   sb.append("}");

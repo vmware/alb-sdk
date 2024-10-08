@@ -39,6 +39,9 @@ public class TCPProxyProfile  {
     @JsonProperty("congestion_recovery_scaling_factor")
     private Integer congestionRecoveryScalingFactor = 2;
 
+    @JsonProperty("delayed_ack_timer_delay")
+    private Integer delayedAckTimerDelay = 100;
+
     @JsonProperty("idle_connection_timeout")
     private Integer idleConnectionTimeout = 600;
 
@@ -231,6 +234,36 @@ public class TCPProxyProfile  {
      */
     public void setCongestionRecoveryScalingFactor(Integer  congestionRecoveryScalingFactor) {
         this.congestionRecoveryScalingFactor = congestionRecoveryScalingFactor;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The time in milliseconds for delayed timer to kick in.
+     * Allowed values are 0-500.
+     * Special values are 0 - disable delayed ack.
+     * Field introduced in 31.1.1.
+     * Unit is milliseconds.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+     * @return delayedAckTimerDelay
+     */
+    public Integer getDelayedAckTimerDelay() {
+        return delayedAckTimerDelay;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The time in milliseconds for delayed timer to kick in.
+     * Allowed values are 0-500.
+     * Special values are 0 - disable delayed ack.
+     * Field introduced in 31.1.1.
+     * Unit is milliseconds.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+     * @param delayedAckTimerDelay set the delayedAckTimerDelay.
+     */
+    public void setDelayedAckTimerDelay(Integer  delayedAckTimerDelay) {
+        this.delayedAckTimerDelay = delayedAckTimerDelay;
     }
 
     /**
@@ -688,7 +721,8 @@ public class TCPProxyProfile  {
   Objects.equals(this.reassemblyQueueSize, objTCPProxyProfile.reassemblyQueueSize)&&
   Objects.equals(this.keepaliveInHalfcloseState, objTCPProxyProfile.keepaliveInHalfcloseState)&&
   Objects.equals(this.autoWindowGrowth, objTCPProxyProfile.autoWindowGrowth)&&
-  Objects.equals(this.ackOnPush, objTCPProxyProfile.ackOnPush);
+  Objects.equals(this.ackOnPush, objTCPProxyProfile.ackOnPush)&&
+  Objects.equals(this.delayedAckTimerDelay, objTCPProxyProfile.delayedAckTimerDelay);
     }
 
     @Override
@@ -701,6 +735,7 @@ public class TCPProxyProfile  {
                         sb.append("    automatic: ").append(toIndentedString(automatic)).append("\n");
                         sb.append("    ccAlgo: ").append(toIndentedString(ccAlgo)).append("\n");
                         sb.append("    congestionRecoveryScalingFactor: ").append(toIndentedString(congestionRecoveryScalingFactor)).append("\n");
+                        sb.append("    delayedAckTimerDelay: ").append(toIndentedString(delayedAckTimerDelay)).append("\n");
                         sb.append("    idleConnectionTimeout: ").append(toIndentedString(idleConnectionTimeout)).append("\n");
                         sb.append("    idleConnectionType: ").append(toIndentedString(idleConnectionType)).append("\n");
                         sb.append("    ignoreTimeWait: ").append(toIndentedString(ignoreTimeWait)).append("\n");
