@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NsxtConfiguration  {
     @JsonProperty("automate_dfw_objects")
-    private Boolean automateDfwObjects = true;
+    private Boolean automateDfwObjects = false;
 
     @JsonProperty("automate_dfw_rules")
     private Boolean automateDfwRules = false;
@@ -64,7 +64,7 @@ public class NsxtConfiguration  {
      * Automatically create/delete dfw objects such as nsgroups and nsservices in nsx-t manager.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return automateDfwObjects
      */
     public Boolean getAutomateDfwObjects() {
@@ -76,7 +76,7 @@ public class NsxtConfiguration  {
      * Automatically create/delete dfw objects such as nsgroups and nsservices in nsx-t manager.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param automateDfwObjects set the automateDfwObjects.
      */
     public void setAutomateDfwObjects(Boolean  automateDfwObjects) {
