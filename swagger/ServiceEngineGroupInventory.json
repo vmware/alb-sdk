@@ -1916,9 +1916,8 @@
             "type": "object",
             "properties": {
                 "objsync_cpu_limit": {
-                    "description": "SE CPU limit for InterSE Object Distribution. Allowed values are 15-80. Field introduced in 20.1.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SE CPU limit for InterSE Object Distribution. Allowed values are 0-100. Special values are 0- No Restriction.. Field introduced in 20.1.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "default": 30,
                     "format": "uint32"
                 },
                 "objsync_hub_elect_interval": {
