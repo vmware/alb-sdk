@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 8]
+AVICLONE_VERSION = [2, 0, 9]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -530,10 +530,16 @@ class AviClone:
                              if 'ip' in server else None)
                 if self.server_map and server_ip:
                     for map_spec in self.server_map:
-                        if server_ip == map_spec[0]:
+                        if server_ip == map_spec[0] and len(map_spec) > 1:
                             server['ip']['addr'] = map_spec[1]
-                            logger.debug('Mapped %s to %s', server_ip,
-                                         map_spec[1])
+                            if len(map_spec) > 2:
+                                server['hostname'] = map_spec[2]
+                                logger.debug('Mapped server %s to %s:%s',
+                                             server_ip,
+                                             map_spec[2], map_spec[1])
+                            else:
+                                logger.debug('Mapped server %s to %s',
+                                             server_ip, map_spec[1])
             obj.pop('networks', None)
 
             if self.pool_placement:
@@ -2744,9 +2750,11 @@ if __name__ == '__main__':
                         help='The optional new VRF for the cloned Virtual Servicse/Pools',
                         metavar='other_vrf')
     parser.add_argument('-map', '--mapservers',
-                        help='List of server IP address pairs to match '
-                        'and replace in a pool. Format as '
-                        'match1,replace1;match2,replace2;...')
+                        help='List of server IP addresses to match '
+                        'and replace in a pool. Optionally also remap the '
+                        'server name. Format as '
+                        'match_ip1,replace_ip1{,replace_name1};'
+                        'match_ip2,replace_ip2{,replace_name2};...')
     parser.add_argument('-ppn', '--poolplacement',
                         help='List of pool placement networks '
                         'and replace in a pool. Format as '
