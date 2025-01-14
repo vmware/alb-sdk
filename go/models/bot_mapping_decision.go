@@ -8,9 +8,9 @@ package models
 // swagger:model BotMappingDecision
 type BotMappingDecision struct {
 
-	// The name of the Bot Mapping that made the decision. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// The name of the Bot Mapping that made the decision. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MappingName *string `json:"mapping_name,omitempty"`
 
-	// The name of the Bot Mapping Rule that made the decision. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// The name of the Bot Mapping Rule that made the decision. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MappingRuleName *string `json:"mapping_rule_name,omitempty"`
 }

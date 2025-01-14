@@ -8,6 +8,6 @@ package models
 // swagger:model GslbIpAddr
 type GslbIPAddr struct {
 
-	// Public IP address of the pool member. Field introduced in 17.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Public IP address of the pool member. Field introduced in 17.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IP *IPAddr `json:"ip,omitempty"`
 }

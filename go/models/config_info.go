@@ -8,15 +8,15 @@ package models
 // swagger:model ConfigInfo
 type ConfigInfo struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Queue []*VersionInfo `json:"queue,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ReaderCount *uint32 `json:"reader_count,omitempty"`
 
-	//  Enum options - REPL_NONE, REPL_ENABLED, REPL_DISABLED. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Enum options - REPL_NONE, REPL_ENABLED, REPL_DISABLED. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	State *string `json:"state,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WriterCount *uint32 `json:"writer_count,omitempty"`
 }

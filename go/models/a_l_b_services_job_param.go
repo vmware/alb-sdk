@@ -8,9 +8,9 @@ package models
 // swagger:model ALBServicesJobParam
 type ALBServicesJobParam struct {
 
-	// Parameter name. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Parameter name. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Key *string `json:"key,omitempty"`
 
-	// Parameter value. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Parameter value. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Value *string `json:"value,omitempty"`
 }

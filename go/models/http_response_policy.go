@@ -8,6 +8,6 @@ package models
 // swagger:model HTTPResponsePolicy
 type HTTPResponsePolicy struct {
 
-	// Add rules to the HTTP response policy. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Add rules to the HTTP response policy. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Rules []*HTTPResponseRule `json:"rules,omitempty"`
 }

@@ -8,9 +8,9 @@ package models
 // swagger:model VcenterClusters
 type VcenterClusters struct {
 
-	//  It is a reference to an object of type VIMgrClusterRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  It is a reference to an object of type VIMgrClusterRuntime. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClusterRefs []string `json:"cluster_refs,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Include *bool `json:"include,omitempty"`
 }

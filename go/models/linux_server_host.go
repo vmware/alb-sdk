@@ -8,16 +8,16 @@ package models
 // swagger:model LinuxServerHost
 type LinuxServerHost struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HostAttr []*HostAttributes `json:"host_attr,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	HostIP *IPAddr `json:"host_ip"`
 
-	// Node's availability zone. ServiceEngines belonging to the availability zone will be rebooted during a manual DR failover. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Node's availability zone. ServiceEngines belonging to the availability zone will be rebooted during a manual DR failover. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NodeAvailabilityZone *string `json:"node_availability_zone,omitempty"`
 
-	// The SE Group association for the SE. If None, then 'Default-Group' SEGroup is associated with the SE. It is a reference to an object of type ServiceEngineGroup. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// The SE Group association for the SE. If None, then 'Default-Group' SEGroup is associated with the SE. It is a reference to an object of type ServiceEngineGroup. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeGroupRef *string `json:"se_group_ref,omitempty"`
 }

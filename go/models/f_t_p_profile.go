@@ -8,9 +8,9 @@ package models
 // swagger:model FTPProfile
 type FTPProfile struct {
 
-	// Deactivate active FTP mode. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Deactivate active FTP mode. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DeactivateActive *bool `json:"deactivate_active,omitempty"`
 
-	// Deactivate passive FTP mode. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Deactivate passive FTP mode. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DeactivatePassive *bool `json:"deactivate_passive,omitempty"`
 }

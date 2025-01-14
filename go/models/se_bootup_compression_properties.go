@@ -8,21 +8,21 @@ package models
 // swagger:model SeBootupCompressionProperties
 type SeBootupCompressionProperties struct {
 
-	// Number of buffers to use for compression output. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of buffers to use for compression output. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BufNum *int32 `json:"buf_num,omitempty"`
 
-	// Size of each buffer used for compression output, this should ideally be a multiple of pagesize. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Size of each buffer used for compression output, this should ideally be a multiple of pagesize. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BufSize *int32 `json:"buf_size,omitempty"`
 
-	// hash size used by compression, rounded to the last power of 2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// hash size used by compression, rounded to the last power of 2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HashSize *int32 `json:"hash_size,omitempty"`
 
-	// Level of compression to apply on content selected for aggressive compression. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Level of compression to apply on content selected for aggressive compression. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LevelAggressive *int32 `json:"level_aggressive,omitempty"`
 
-	// Level of compression to apply on content selected for normal compression. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Level of compression to apply on content selected for normal compression. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LevelNormal *int32 `json:"level_normal,omitempty"`
 
-	// window size used by compression, rounded to the last power of 2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// window size used by compression, rounded to the last power of 2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WindowSize *int32 `json:"window_size,omitempty"`
 }

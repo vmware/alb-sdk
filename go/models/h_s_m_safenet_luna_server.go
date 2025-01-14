@@ -8,21 +8,21 @@ package models
 // swagger:model HSMSafenetLunaServer
 type HSMSafenetLunaServer struct {
 
-	//  Field introduced in 16.5.2,17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Field introduced in 16.5.2,17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Index *uint32 `json:"index"`
 
-	// Password of the partition assigned to this client. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Password of the partition assigned to this client. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PartitionPasswd *string `json:"partition_passwd,omitempty"`
 
-	// Serial number of the partition assigned to this client. Field introduced in 16.5.2,17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Serial number of the partition assigned to this client. Field introduced in 16.5.2,17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PartitionSerialNumber *string `json:"partition_serial_number,omitempty"`
 
-	// IP address of the Thales Luna HSM device. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// IP address of the Thales Luna HSM device. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	RemoteIP *string `json:"remote_ip"`
 
-	// CA certificate of the server. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// CA certificate of the server. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	ServerCert *string `json:"server_cert"`
 }

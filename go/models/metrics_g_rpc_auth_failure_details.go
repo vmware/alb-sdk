@@ -8,6 +8,6 @@ package models
 // swagger:model MetricsGRPCAuthFailureDetails
 type MetricsGRPCAuthFailureDetails struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Peer *string `json:"peer,omitempty"`
 }

@@ -8,9 +8,9 @@ package models
 // swagger:model SamlMetadataUpdateFailedDetails
 type SamlMetadataUpdateFailedDetails struct {
 
-	// Name of Auth Profile. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of Auth Profile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// Reason for Update Failure. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Reason for Update Failure. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 }

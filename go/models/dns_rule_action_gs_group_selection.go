@@ -8,7 +8,7 @@ package models
 // swagger:model DnsRuleActionGsGroupSelection
 type DNSRuleActionGsGroupSelection struct {
 
-	// GSLB Service group name. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// GSLB Service group name. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	GroupName *string `json:"group_name"`
 }
