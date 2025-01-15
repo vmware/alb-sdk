@@ -8,8 +8,16 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show securechannelavailablelocalips <key>\n```\n"
+        "description": "Avi SecureChannelAvailableLocalIPs object api\n```\n- show securechannelavailablelocalips <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
     },
+    "tags": [
+        {
+            "name": "SecureChannelAvailableLocalIPs"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/securechannelavailablelocalips": {
             "get": {
+                "tags": [
+                    "SecureChannelAvailableLocalIPs"
+                ],
+                "description": "/securechannelavailablelocalips",
+                "operationId": "GET /securechannelavailablelocalips",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "SecureChannelAvailableLocalIPs"
+                ],
+                "description": "/securechannelavailablelocalips",
+                "operationId": "POST /securechannelavailablelocalips",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/securechannelavailablelocalips/{uuid}": {
             "get": {
+                "tags": [
+                    "SecureChannelAvailableLocalIPs"
+                ],
+                "description": "/securechannelavailablelocalips/{uuid}",
+                "operationId": "GET /securechannelavailablelocalips/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +301,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "SecureChannelAvailableLocalIPs"
+                ],
+                "description": "/securechannelavailablelocalips/{uuid}",
+                "operationId": "PUT /securechannelavailablelocalips/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +383,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "SecureChannelAvailableLocalIPs"
+                ],
+                "description": "/securechannelavailablelocalips/{uuid}",
+                "operationId": "PATCH /securechannelavailablelocalips/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +465,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "SecureChannelAvailableLocalIPs"
+                ],
+                "description": "/securechannelavailablelocalips/{uuid}",
+                "operationId": "DELETE /securechannelavailablelocalips/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -514,12 +552,12 @@
                     "type": "string"
                 },
                 "end": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "free_ips": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "integer"
@@ -527,11 +565,11 @@
                     "format": "uint32"
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "start": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
@@ -541,7 +579,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

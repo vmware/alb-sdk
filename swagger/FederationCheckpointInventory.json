@@ -8,8 +8,16 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show federationcheckpointinventory <key>\n```\n"
+        "description": "Avi FederationCheckpointInventory object api\n```\n- show federationcheckpointinventory <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
     },
+    "tags": [
+        {
+            "name": "FederationCheckpointInventory"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/federationcheckpoint-inventory": {
             "get": {
+                "tags": [
+                    "FederationCheckpointInventory"
+                ],
+                "description": "/federationcheckpoint-inventory",
+                "operationId": "GET /federationcheckpoint-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "FederationCheckpointInventory"
+                ],
+                "description": "/federationcheckpoint-inventory",
+                "operationId": "POST /federationcheckpoint-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/federationcheckpoint-inventory/{uuid}": {
             "get": {
+                "tags": [
+                    "FederationCheckpointInventory"
+                ],
+                "description": "/federationcheckpoint-inventory/{uuid}",
+                "operationId": "GET /federationcheckpoint-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +301,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "FederationCheckpointInventory"
+                ],
+                "description": "/federationcheckpoint-inventory/{uuid}",
+                "operationId": "PUT /federationcheckpoint-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +383,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "FederationCheckpointInventory"
+                ],
+                "description": "/federationcheckpoint-inventory/{uuid}",
+                "operationId": "PATCH /federationcheckpoint-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +465,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "FederationCheckpointInventory"
+                ],
+                "description": "/federationcheckpoint-inventory/{uuid}",
+                "operationId": "DELETE /federationcheckpoint-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +540,11 @@
         },
         "/federationcheckpoint": {
             "get": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint",
+                "operationId": "GET /federationcheckpoint",
                 "consumes": [
                     "application/json"
                 ],
@@ -601,6 +644,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint",
+                "operationId": "POST /federationcheckpoint",
                 "consumes": [
                     "application/json"
                 ],
@@ -666,6 +714,11 @@
         },
         "/federationcheckpoint/{uuid}": {
             "get": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint/{uuid}",
+                "operationId": "GET /federationcheckpoint/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -760,6 +813,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint/{uuid}",
+                "operationId": "PUT /federationcheckpoint/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -837,6 +895,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint/{uuid}",
+                "operationId": "PATCH /federationcheckpoint/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -914,6 +977,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint/{uuid}",
+                "operationId": "DELETE /federationcheckpoint/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -988,7 +1056,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -1007,28 +1075,28 @@
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "date": {
-                    "description": "Date when the checkpoint was created. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Date when the checkpoint was created. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "description": {
-                    "description": "Description for this checkpoint. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Description for this checkpoint. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "is_federated": {
-                    "description": "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "name": {
-                    "description": "Name of the Checkpoint. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the Checkpoint. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -1037,7 +1105,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the Checkpoint. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the Checkpoint. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1073,7 +1141,7 @@
                     "type": "string"
                 },
                 "config": {
-                    "description": "Configuration summary of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Configuration summary of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/FederationCheckpoint"
                 },
                 "url": {
@@ -1082,7 +1150,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
