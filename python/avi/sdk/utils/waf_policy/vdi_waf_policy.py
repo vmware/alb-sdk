@@ -9,7 +9,7 @@ import sys
 
 from avi.sdk.avi_api import ApiSession
 
-API_VERSION = "20.1.1"
+API_VERSION = "22.1.2"
 SYSTEM_WAF_POLICY_VDI='System-WAF-Policy-VDI'
 
 logger = logging.getLogger(__name__)
@@ -35,7 +35,7 @@ def add_allowlist_rule(waf_policy_obj):
         "name": "allowlist-start-with-ice",
         "description": "WAF will buffer the whole request body first and then release to backend. With VDI, client wants to stream data between client and server for some URLs like /ice/..., we should allow these URLs",
         "actions": [
-            "WAF_POLICY_WHITELIST_ACTION_ALLOW"
+            "WAF_POLICY_ALLOWLIST_ACTION_BYPASS"
         ],
         "match": {
             "path": {
@@ -48,17 +48,17 @@ def add_allowlist_rule(waf_policy_obj):
         }
     }
     index = 0
-    waf_policy_obj.setdefault("whitelist", {}).setdefault("rules", [])
-    for rule in waf_policy_obj["whitelist"]["rules"][:]:
+    waf_policy_obj.setdefault("allowlist", {}).setdefault("rules", [])
+    for rule in waf_policy_obj["allowlist"]["rules"][:]:
         if rule["name"] == "allowlist-start-with-ice":
-            waf_policy_obj["whitelist"]["rules"].remove(rule)
+            waf_policy_obj["allowlist"]["rules"].remove(rule)
         if rule["index"]>index:
             index = rule["index"]
     allowlist_rule["index"] = index+1
-    waf_policy_obj["whitelist"]["rules"].append(allowlist_rule)
+    waf_policy_obj["allowlist"]["rules"].append(allowlist_rule)
 
 def get_id_from_group(group):
-    pattern = re.compile("[^\d]*(?P<group_id>\d\d\d)")
+    pattern = re.compile(r"[^\d]*(?P<group_id>\d\d\d)")
     match = pattern.match(group["name"])
     assert match, "can not extract group id from group '{}'".format(group["name"])
     groupid = int(match.group("group_id"))

@@ -87,8 +87,8 @@ def _verify_required_fields_in_auth_params(auth_params):
     """
     logger = logging.getLogger(auth_params.get('logger_name', ''))
     missing_req_params = []
-    if 'server' not in auth_params:
-        missing_req_params.append('server')
+    if 'server' not in auth_params and 'server6' not in auth_params:
+        missing_req_params.append('server and server6')
     if 'username' not in auth_params:
         missing_req_params.append('username')
     if 'password' not in auth_params:
@@ -120,38 +120,79 @@ def _get_ips_by_host(auth_params, record_name, ip_type='V4_V6'):
     """
     Function to return ips for a given record name.
     """
-    username = auth_params.get('username')
-    password = auth_params.get('password')
-    server = auth_params.get('server')
-    wapi_version = auth_params.get('wapi_version')
+    username = auth_params.get('username',None)
+    password = auth_params.get('password',None)
+    server = auth_params.get('server',None)
+    server6 = auth_params.get('server6',None)
+    wapi_version = auth_params.get('wapi_version',None)
     dns_view = auth_params.get('dns_view', 'default')
     logger = logging.getLogger(auth_params.get('logger_name', ''))
 
-    rest_url = 'https://' + server + '/wapi/' + wapi_version + \
-            '/record:host?name=' + record_name + '&view=' + dns_view
+    rest_url = 'https://' + server + '/wapi/' + wapi_version + '/record:host?name=' + record_name + '&view=' + dns_view if server else None
+    rest_url6 = 'https://[' + server6 + ']/wapi/' + wapi_version + '/record:host?name=' + record_name + '&view=' + dns_view if server6 else None
     ipaddrs = []
     try:
-        r = requests.get(url=rest_url, auth=(username, password), verify=False)
-        _check_and_raise_auth_error(r)
-        logger.info("record_name[%s], GET req[%s] status_code[%s]" % (record_name, rest_url, r.status_code))
-        r_json = r.json()
-        err_msg = str(r.status_code)
-        if r.status_code == 200:
-            if len(r_json) > 0:
-                if ip_type == 'V4_ONLY' or ip_type == 'V4_V6':
-                    if 'ipv4addrs' in r_json[0] and len(r_json[0]['ipv4addrs']) > 0:
-                        for ipv4addr in r_json[0]['ipv4addrs']:
-                            ipaddrs.append(ipv4addr['ipv4addr'])
-                if ip_type == 'V6_ONLY' or ip_type == 'V4_V6':
-                    if 'ipv6addrs' in r_json[0] and len(r_json[0]['ipv6addrs']) > 0:
-                        for ipv6addr in r_json[0]['ipv6addrs']:
-                            ipaddrs.append(ipv6addr['ipv6addr'])
-                return ipaddrs
+        if server6:
+            r6 = requests.get(url=rest_url6, auth=(username, password), verify=False)
+            logger.info("record_name[%s], GET req[%s] status_code[%s]" % (record_name, rest_url6, r6.status_code))
+            r6_json = r6.json()
+            err_msg = str(r6.status_code)
+            if r6.status_code == 200:
+                if len(r6_json) > 0:
+                    if ip_type == 'V4_ONLY' or ip_type == 'V4_V6':
+                        if 'ipv4addrs' in r6_json[0] and len(r6_json[0]['ipv4addrs']) > 0:
+                            for ipv4addr in r6_json[0]['ipv4addrs']:
+                                ipaddrs.append(ipv4addr['ipv4addr'])
+                    if ip_type == 'V6_ONLY' or ip_type == 'V4_V6':
+                        if 'ipv6addrs' in r6_json[0] and len(r6_json[0]['ipv6addrs']) > 0:
+                            for ipv6addr in r6_json[0]['ipv6addrs']:
+                                ipaddrs.append(ipv6addr['ipv6addr'])
+                    return ipaddrs
+                else:
+                    err_msg += ": No host records found!"
+            elif server:
+                r = requests.get(url=rest_url, auth=(username, password), verify=False)
+                logger.info("record_name[%s], GET req[%s] status_code[%s]" % (record_name, rest_url, r.status_code))
+                r_json = r.json()
+                err_msg = str(r.status_code)
+                if r.status_code == 200:
+                    if len(r_json) > 0:
+                        if ip_type == 'V4_ONLY' or ip_type == 'V4_V6':
+                            if 'ipv4addrs' in r_json[0] and len(r_json[0]['ipv4addrs']) > 0:
+                                for ipv4addr in r_json[0]['ipv4addrs']:
+                                    ipaddrs.append(ipv4addr['ipv4addr'])
+                        if ip_type == 'V6_ONLY' or ip_type == 'V4_V6':
+                            if 'ipv6addrs' in r_json[0] and len(r_json[0]['ipv6addrs']) > 0:
+                                for ipv6addr in r_json[0]['ipv6addrs']:
+                                    ipaddrs.append(ipv6addr['ipv6addr'])
+                        return ipaddrs
+                    else:
+                        err_msg += ": No host records found!"
             else:
-                err_msg += ": No host records found!"
-        else:
-            err_msg += ' : '  + r_json['text'] if 'text' in r_json else ''
-            raise CustomDnsGeneralException(err_msg)
+                err_msg += ' : '  + r6_json['text'] if 'text' in r6_json else ''
+                raise CustomDnsGeneralException(err_msg)
+        elif server:
+            r = requests.get(url=rest_url, auth=(username, password), verify=False)
+            _check_and_raise_auth_error(r)
+            logger.info("record_name[%s], GET req[%s] status_code[%s]" % (record_name, rest_url, r.status_code))
+            r_json = r.json()
+            err_msg = str(r.status_code)
+            if r.status_code == 200:
+                if len(r_json) > 0:
+                    if ip_type == 'V4_ONLY' or ip_type == 'V4_V6':
+                        if 'ipv4addrs' in r_json[0] and len(r_json[0]['ipv4addrs']) > 0:
+                            for ipv4addr in r_json[0]['ipv4addrs']:
+                                ipaddrs.append(ipv4addr['ipv4addr'])
+                    if ip_type == 'V6_ONLY' or ip_type == 'V4_V6':
+                        if 'ipv6addrs' in r_json[0] and len(r_json[0]['ipv6addrs']) > 0:
+                            for ipv6addr in r_json[0]['ipv6addrs']:
+                                ipaddrs.append(ipv6addr['ipv6addr'])
+                    return ipaddrs
+                else:
+                    err_msg += ": No host records found!"
+            else:
+                err_msg += ' : '  + r_json['text'] if 'text' in r_json else ''
+                raise CustomDnsGeneralException(err_msg)
     except CustomDnsAuthenticationErrorException as e:
         raise
     except Exception as e:
@@ -163,40 +204,79 @@ def _create_dns_record(auth_params, record_name, ips):
     """
     Function to create a DNS record.
     """
-    username = auth_params.get('username')
-    password = auth_params.get('password')
-    server = auth_params.get('server')
-    wapi_version = auth_params.get('wapi_version')
+    username = auth_params.get('username',None)
+    password = auth_params.get('password',None)
+    server = auth_params.get('server',None)
+    server6 = auth_params.get('server6',None)
+    wapi_version = auth_params.get('wapi_version',None)
     dns_view = auth_params.get('dns_view', 'default')
     
     logger = logging.getLogger(auth_params.get('logger_name', ''))
     ipv4addrs, ipv6addrs = _build_ipvxaddrs_objects(ips)
-    rest_url = 'https://' + server + '/wapi/' + wapi_version + '/record:host?_return_fields=ipv4addrs,ipv6addrs'
+    rest_url = 'https://' + server + '/wapi/' + wapi_version + '/record:host?_return_fields=ipv4addrs,ipv6addrs' if server else None
+    rest_url6 = 'https://[' + server6 + ']/wapi/' + wapi_version + '/record:host?_return_fields=ipv4addrs,ipv6addrs' if server6 else None
     payload = json.dumps({'name': record_name,'view': dns_view, 'ipv4addrs': ipv4addrs, 'ipv6addrs': ipv6addrs })
     
     try:
-        r = requests.post(url=rest_url, auth=(username, password),
+        if server6:
+            r6 = requests.post(url=rest_url6, auth=(username, password),
                     verify=False, data=payload)
-        _check_and_raise_auth_error(r)
-        logger.info("record_name[%s], POST req[%s %s] status_code[%s]" % (record_name, rest_url, payload, r.status_code))
-        r_json = r.json()
-        if r.status_code == 200 or r.status_code == 201:
-            return
-        elif r.text and 'already exists' in r_json['text']:
-            host_ips = _get_ips_by_host(auth_params, record_name)
-            logger.info("record_name[%s], record ips on infoblox[%s]" %(record_name, host_ips))
-            if set(ips['v4_ips']).issubset(set(host_ips)) and set(ips['v6_ips']).issubset(set(host_ips)):
-                logger.info("record name[%s] for ipv4addrs %s and ipv6addrs %s already exists."%
-                            (record_name, ips['v4_ips'], ips['v6_ips']))
-            else:
-                raise CustomDnsRecordAlreadyExistsException(r_json['text'])
+            _check_and_raise_auth_error(r6)
+            logger.info("record_name[%s], POST req[%s %s] status_code[%s]" % (record_name, rest_url6, payload, r6.status_code))
+            r6_json = r6.json()
+            if r6.status_code == 200 or r6.status_code == 201:
+                return
+            elif r6.text and 'already exists' in r6_json['text']:
+                host_ips = _get_ips_by_host(auth_params, record_name)
+                logger.info("record_name[%s], record ips on infoblox[%s]" %(record_name, host_ips))
+                if set(ips['v4_ips']).issubset(set(host_ips)) and set(ips['v6_ips']).issubset(set(host_ips)):
+                    logger.info("record name[%s] for ipv4addrs %s and ipv6addrs %s already exists."%
+                                (record_name, ips['v4_ips'], ips['v6_ips']))
+                else:
+                    raise CustomDnsRecordAlreadyExistsException(r6_json['text'])
+            elif server:
+                r = requests.post(url=rest_url, auth=(username, password),
+                            verify=False, data=payload)
+                _check_and_raise_auth_error(r)
+                logger.info("record_name[%s], POST req[%s %s] status_code[%s]" % (record_name, rest_url, payload, r.status_code))
+                r_json = r.json()
+                if r.status_code == 200 or r.status_code == 201:
+                    return
+                elif r.text and 'already exists' in r_json['text']:
+                    host_ips = _get_ips_by_host(auth_params, record_name)
+                    logger.info("record_name[%s], record ips on infoblox[%s]" %(record_name, host_ips))
+                    if set(ips['v4_ips']).issubset(set(host_ips)) and set(ips['v6_ips']).issubset(set(host_ips)):
+                        logger.info("record name[%s] for ipv4addrs %s and ipv6addrs %s already exists."%
+                                    (record_name, ips['v4_ips'], ips['v6_ips']))
+                    else:
+                        raise CustomDnsRecordAlreadyExistsException(r_json['text'])
+        elif server:
+            r = requests.post(url=rest_url, auth=(username, password),
+                        verify=False, data=payload)
+            _check_and_raise_auth_error(r)
+            logger.info("record_name[%s], POST req[%s %s] status_code[%s]" % (record_name, rest_url, payload, r.status_code))
+            r_json = r.json()
+            if r.status_code == 200 or r.status_code == 201:
+                return
+            elif r.text and 'already exists' in r_json['text']:
+                host_ips = _get_ips_by_host(auth_params, record_name)
+                logger.info("record_name[%s], record ips on infoblox[%s]" %(record_name, host_ips))
+                if set(ips['v4_ips']).issubset(set(host_ips)) and set(ips['v6_ips']).issubset(set(host_ips)):
+                    logger.info("record name[%s] for ipv4addrs %s and ipv6addrs %s already exists."%
+                                (record_name, ips['v4_ips'], ips['v6_ips']))
+                else:
+                    raise CustomDnsRecordAlreadyExistsException(r_json['text'])
     except CustomDnsAuthenticationErrorException as e:
         raise
     except CustomDnsRecordAlreadyExistsException as e:
         raise CustomDnsRecordAlreadyExistsException("record[%s] reason[%s]" %(record_name, str(e)))
     except Exception as e:
-        logger.error("Error creating dns record %s on Infoblox, req[%s %s] rsp[%s]" %
-                        (record_name, rest_url, payload, str(e)))
+        if server6:
+            logger.error("Error creating dns record %s on Infoblox, req[%s %s] rsp[%s]" %
+                            (record_name, rest_url6, payload, str(e)))
+        elif server:
+            logger.error("Error creating dns record %s on Infoblox, req[%s %s] rsp[%s]" %
+                            (record_name, rest_url, payload, str(e)))
         raise CustomDnsGeneralException("Error creating dns record %s on Infoblox, reason[%s]" %(record_name, str(e)))
 
 
@@ -204,10 +284,11 @@ def _update_dns_record(auth_params, record_name, ips):
     """
     Function to update a given DNS record.
     """
-    username = auth_params.get('username')
-    password = auth_params.get('password')
-    server = auth_params.get('server')
-    wapi_version = auth_params.get('wapi_version')
+    username = auth_params.get('username',None)
+    password = auth_params.get('password',None)
+    server = auth_params.get('server',None)
+    server6 = auth_params.get('server6',None)
+    wapi_version = auth_params.get('wapi_version',None)
     dns_view = auth_params.get('dns_view', 'default')
     
     logger = logging.getLogger(auth_params.get('logger_name', ''))
@@ -216,88 +297,217 @@ def _update_dns_record(auth_params, record_name, ips):
 
     # Get the reference of the dns record
     host_ref = None
-    rest_url = 'https://' + server + '/wapi/' + wapi_version + '/record:host?name=' + record_name
+    rest_url = 'https://' + server + '/wapi/' + wapi_version + '/record:host?name=' + record_name if server else None
+    rest_url6 = 'https://[' + server6 + ']/wapi/' + wapi_version + '/record:host?name=' + record_name if server6 else None
     try:
-        r = requests.get(url=rest_url, auth=(username, password), verify=False)
-        _check_and_raise_auth_error(r)
-        logger.info("record_name[%s], GET req[%s] status_code[%s]" % (record_name, rest_url, r.status_code))
-        r_json = r.json()
-        if r.status_code == 200:
-            host_ref = r_json[0]['_ref'] if len(r_json) > 0 and r_json[0]['_ref'] else None
-        else:
-            err_msg = str(r.status_code) + (' : '  + r_json['text'] if 'text' in r_json else '')
-            raise CustomDnsGeneralException(err_msg)
+        if server6:
+            r6 = requests.get(url=rest_url6, auth=(username, password), verify=False)
+            _check_and_raise_auth_error(r6)
+            logger.info("record_name[%s], GET req[%s] status_code[%s]" % (record_name, rest_url6, r6.status_code))
+            r6_json = r6.json()
+            if r6.status_code == 200:
+                host_ref = r6_json[0]['_ref'] if len(r6_json) > 0 and r6_json[0]['_ref'] else None
+                # Raise an error message if the record not found
+                if not host_ref:
+                    err_msg = "record[%s] not found!" % record_name
+                    logger.error(err_msg)
+                    raise CustomDnsRecordNotFoundException(err_msg)
+
+                rest_url6 = 'https://[' + server6 + ']/wapi/' + wapi_version + '/' + host_ref + '?_return_fields=ipv4addrs,ipv6addrs'
+                try:
+                    r6 = requests.put(url=rest_url6, auth=(username, password),
+                                verify=False, data=payload)
+                    _check_and_raise_auth_error(r6)
+                    logger.info("record_name[%s], PUT req[%s %s] status_code[%s]" % (record_name, rest_url6, payload, r6.status_code))
+                    r6_json = r6.json()
+                    if r6.status_code == 200 or r6.status_code == 201:
+                        return
+                    elif 'text' in r6_json:
+                        raise CustomDnsGeneralException(r6_json['text'])
+                except CustomDnsAuthenticationErrorException as e:
+                    raise
+                except Exception as e:
+                    logger.error("Error updating dns record %s on Infoblox, req[%s %s] rsp[%s]" %
+                                    (record_name, rest_url6, payload, str(e)))
+                    raise CustomDnsGeneralException("Error updating dns record %s on Infoblox, reason[%s]" %(record_name, str(e)))
+            elif server:
+                r = requests.get(url=rest_url, auth=(username, password), verify=False)
+                _check_and_raise_auth_error(r)
+                logger.info("record_name[%s], GET req[%s] status_code[%s]" % (record_name, rest_url, r.status_code))
+                r_json = r.json()
+                if r.status_code == 200:
+                    host_ref = r_json[0]['_ref'] if len(r_json) > 0 and r_json[0]['_ref'] else None
+                    # Raise an error message if the record not found
+                    if not host_ref:
+                        err_msg = "record[%s] not found!" % record_name
+                        logger.error(err_msg)
+                        raise CustomDnsRecordNotFoundException(err_msg)
+
+                    rest_url = 'https://' + server + '/wapi/' + wapi_version + '/' + host_ref + '?_return_fields=ipv4addrs,ipv6addrs'
+                    try:
+                        r = requests.put(url=rest_url, auth=(username, password),
+                                    verify=False, data=payload)
+                        _check_and_raise_auth_error(r)
+                        logger.info("record_name[%s], PUT req[%s %s] status_code[%s]" % (record_name, rest_url, payload, r.status_code))
+                        r_json = r.json()
+                        if r.status_code == 200 or r.status_code == 201:
+                            return
+                        elif 'text' in r_json:
+                            raise CustomDnsGeneralException(r_json['text'])
+                    except CustomDnsAuthenticationErrorException as e:
+                        raise
+                    except Exception as e:
+                        logger.error("Error updating dns record %s on Infoblox, req[%s %s] rsp[%s]" %
+                                        (record_name, rest_url, payload, str(e)))
+                        raise CustomDnsGeneralException("Error updating dns record %s on Infoblox, reason[%s]" %(record_name, str(e)))
+                else:
+                    err_msg = str(r.status_code) + (' : '  + r_json['text'] if 'text' in r_json else '')
+                    raise CustomDnsGeneralException(err_msg)
+            else:
+                err_msg = str(r6.status_code) + (' : '  + r6_json['text'] if 'text' in r6_json else '')
+                raise CustomDnsGeneralException(err_msg)
+        elif server:
+            r = requests.get(url=rest_url, auth=(username, password), verify=False)
+            _check_and_raise_auth_error(r)
+            logger.info("record_name[%s], GET req[%s] status_code[%s]" % (record_name, rest_url, r.status_code))
+            r_json = r.json()
+            if r.status_code == 200:
+                host_ref = r_json[0]['_ref'] if len(r_json) > 0 and r_json[0]['_ref'] else None
+                # Raise an error message if the record not found
+                if not host_ref:
+                    err_msg = "record[%s] not found!" % record_name
+                    logger.error(err_msg)
+                    raise CustomDnsRecordNotFoundException(err_msg)
+
+                rest_url = 'https://' + server + '/wapi/' + wapi_version + '/' + host_ref + '?_return_fields=ipv4addrs,ipv6addrs'
+                try:
+                    r = requests.put(url=rest_url, auth=(username, password),
+                                verify=False, data=payload)
+                    _check_and_raise_auth_error(r)
+                    logger.info("record_name[%s], PUT req[%s %s] status_code[%s]" % (record_name, rest_url, payload, r.status_code))
+                    r_json = r.json()
+                    if r.status_code == 200 or r.status_code == 201:
+                        return
+                    elif 'text' in r_json:
+                        raise CustomDnsGeneralException(r_json['text'])
+                except CustomDnsAuthenticationErrorException as e:
+                    raise
+                except Exception as e:
+                    logger.error("Error updating dns record %s on Infoblox, req[%s %s] rsp[%s]" %
+                                    (record_name, rest_url, payload, str(e)))
+                    raise CustomDnsGeneralException("Error updating dns record %s on Infoblox, reason[%s]" %(record_name, str(e)))
+            else:
+                err_msg = str(r.status_code) + (' : '  + r_json['text'] if 'text' in r_json else '')
+                raise CustomDnsGeneralException(err_msg)
     except CustomDnsAuthenticationErrorException as e:
         raise
     except Exception as e:
         logger.error("Error retrieving the record[%s] reason[%s]" % (record_name, str(e)))
         raise CustomDnsGeneralException("Error retrieving the record[%s] reason[%s]" % (record_name, str(e)))
-    
-    # Raise an error message if the record not found
-    if not host_ref:
-        err_msg = "record[%s] not found!" % record_name
-        logger.error(err_msg)
-        raise CustomDnsRecordNotFoundException(err_msg)
-
-    rest_url = 'https://' + server + '/wapi/' + wapi_version + '/' + host_ref + '?_return_fields=ipv4addrs,ipv6addrs'
-    try:
-        r = requests.put(url=rest_url, auth=(username, password),
-                    verify=False, data=payload)
-        _check_and_raise_auth_error(r)
-        logger.info("record_name[%s], PUT req[%s %s] status_code[%s]" % (record_name, rest_url, payload, r.status_code))
-        r_json = r.json()
-        if r.status_code == 200 or r.status_code == 201:
-            return
-        elif 'text' in r_json:
-            raise CustomDnsGeneralException(r_json['text'])
-    except CustomDnsAuthenticationErrorException as e:
-        raise
-    except Exception as e:
-        logger.error("Error updating dns record %s on Infoblox, req[%s %s] rsp[%s]" %
-                        (record_name, rest_url, payload, str(e)))
-        raise CustomDnsGeneralException("Error updating dns record %s on Infoblox, reason[%s]" %(record_name, str(e)))
 
 
 def _delete_dns_record(auth_params, record_name):
     """
     Function to delete a given DNS record.
     """
-    username = auth_params.get('username')
-    password = auth_params.get('password')
-    server = auth_params.get('server')
-    wapi_version = auth_params.get('wapi_version')
+    username = auth_params.get('username',None)
+    password = auth_params.get('password',None)
+    server = auth_params.get('server',None)
+    server6 = auth_params.get('server6',None)
+    wapi_version = auth_params.get('wapi_version',None)
     dns_view = auth_params.get('dns_view', 'default')
     
     logger = logging.getLogger(auth_params.get('logger_name', ''))
-    rest_url = 'https://' + server + '/wapi/' + wapi_version +'/record:host?name=' + record_name
+    rest_url = 'https://' + server + '/wapi/' + wapi_version +'/record:host?name=' + record_name + '&view=' + dns_view if server else None
+    rest_url6 = 'https://[' + server6 + ']/wapi/' + wapi_version +'/record:host?name=' + record_name + '&view=' + dns_view if server6 else None
 
     try:
-        # Get the reference of the dns record
-        r = requests.get(url=rest_url, auth=(username, password), verify=False)
-        _check_and_raise_auth_error(r)
-        logger.info("record_name[%s], GET req[%s] status_code[%s]" % (record_name, rest_url, r.status_code))
-        r_json = r.json()
-        host_ref = None
-        err_msg = "record[%s] not found!" % record_name
-        if r.status_code == 200:
-            host_ref = r_json[0]['_ref'] if len(r_json) > 0 and r_json[0]['_ref'] else None
-            if not host_ref:
-                logger.info(err_msg)
-                return
-            
-            # Delete the record
-            rest_url = 'https://' + server + '/wapi/' + \
-                wapi_version + '/' + host_ref
-            r = requests.delete(url=rest_url, auth=(username, password), verify=False)
+        if server6:
+            # Get the reference of the dns record
+            r6 = requests.get(url=rest_url6, auth=(username, password), verify=False)
+            _check_and_raise_auth_error(r6)
+            logger.info("record_name[%s], GET req[%s] status_code[%s]" % (record_name, rest_url6, r6.status_code))
+            r6_json = r6.json()
+            host_ref = None
+            err_msg = "record[%s] not found!" % record_name
+            if r6.status_code == 200:
+                host_ref = r6_json[0]['_ref'] if len(r6_json) > 0 and r6_json[0]['_ref'] else None
+                if not host_ref:
+                    logger.info(err_msg)
+                    return
+                
+                # Delete the record
+                rest_url6 = 'https://[' + server6 + ']/wapi/' + \
+                    wapi_version + '/' + host_ref
+                r6 = requests.delete(url=rest_url6, auth=(username, password), verify=False)
+                _check_and_raise_auth_error(r6)
+                logger.info("record_name[%s], DELETE req[%s] status_code[%s]" % (record_name, rest_url6, r6.status_code))
+                r6_json = r6.json()
+                if r6.status_code == 200:
+                    return
+                else:
+                    if 'text' in r6_json:
+                        err_msg = str(r6.status_code) + BeautifulSoup(r6.text, 'html.parser').text
+                    logger.error(err_msg)
+                    raise CustomDnsGeneralException(err_msg)
+            elif server:
+                r = requests.get(url=rest_url, auth=(username, password), verify=False)
+                _check_and_raise_auth_error(r)
+                logger.info("record_name[%s], GET req[%s] status_code[%s]" % (record_name, rest_url, r.status_code))
+                r_json = r.json()
+                host_ref = None
+                err_msg = "record[%s] not found!" % record_name
+                if r.status_code == 200:
+                    host_ref = r_json[0]['_ref'] if len(r_json) > 0 and r_json[0]['_ref'] else None
+                    if not host_ref:
+                        logger.info(err_msg)
+                        return
+                    
+                    # Delete the record
+                    rest_url = 'https://' + server + '/wapi/' + \
+                        wapi_version + '/' + host_ref
+                    r = requests.delete(url=rest_url, auth=(username, password), verify=False)
+                    _check_and_raise_auth_error(r)
+                    logger.info("record_name[%s], DELETE req[%s] status_code[%s]" % (record_name, rest_url, r.status_code))
+                    r_json = r.json()
+                    if r.status_code == 200:
+                        return
+                if 'text' in r_json:
+                    err_msg = str(r.status_code) + BeautifulSoup(r.text, 'html.parser').text
+                logger.error(err_msg)
+                raise CustomDnsGeneralException(err_msg)
+            else:
+                if 'text' in r6_json:
+                    err_msg = str(r6.status_code) + BeautifulSoup(r6.text, 'html.parser').text
+                logger.error(err_msg)
+                raise CustomDnsGeneralException(err_msg)
+        elif server:
+            # Get the reference of the dns record
+            r = requests.get(url=rest_url, auth=(username, password), verify=False)
             _check_and_raise_auth_error(r)
-            logger.info("record_name[%s], DELETE req[%s] status_code[%s]" % (record_name, rest_url, r.status_code))
+            logger.info("record_name[%s], GET req[%s] status_code[%s]" % (record_name, rest_url, r.status_code))
             r_json = r.json()
+            host_ref = None
+            err_msg = "record[%s] not found!" % record_name
             if r.status_code == 200:
-                return
-        if 'text' in r_json:
-            err_msg = str(r.status_code) + BeautifulSoup(r.text, 'html.parser').text
-        logger.error(err_msg)
-        raise CustomDnsGeneralException(err_msg)
+                host_ref = r_json[0]['_ref'] if len(r_json) > 0 and r_json[0]['_ref'] else None
+                if not host_ref:
+                    logger.info(err_msg)
+                    return
+                
+                # Delete the record
+                rest_url = 'https://' + server + '/wapi/' + \
+                    wapi_version + '/' + host_ref
+                r = requests.delete(url=rest_url, auth=(username, password), verify=False)
+                _check_and_raise_auth_error(r)
+                logger.info("record_name[%s], DELETE req[%s] status_code[%s]" % (record_name, rest_url, r.status_code))
+                r_json = r.json()
+                if r.status_code == 200:
+                    return
+            if 'text' in r_json:
+                err_msg = str(r.status_code) + BeautifulSoup(r.text, 'html.parser').text
+            logger.error(err_msg)
+            raise CustomDnsGeneralException(err_msg)
     except CustomDnsAuthenticationErrorException as e:
         raise
     except Exception as e:
@@ -315,7 +525,8 @@ def TestLogin(auth_params):
             Parameters required for authentication. These are script parameters provided while 
             creating a Custom DNS profile.
             Eg: auth_params can have following keys
-            server: Server ip address of the custom DNS provider
+            server: Server IPv4 address of the custom DNS provider
+            server6: Server IPv6 address of the custom DNS provider
             username: self explanatory
             password: self explanatory 
             logger_name: logger name   
@@ -334,22 +545,32 @@ def TestLogin(auth_params):
     tmp_auth_params['password'] = '<sensitive>'
     logger.info("Inside F[TestLogin] auth_params[%s]", tmp_auth_params)
     server = auth_params.get('server', None)
+    server6 = auth_params.get('server6', None)
     username = auth_params.get('username', None)
     password = auth_params.get('password', None)
     wapi_version = auth_params.get('wapi_version', None)
   
-    if not server or not username or not password or not wapi_version:
+    if not (server or server6) or not username or not password or not wapi_version:
         raise CustomDnsGeneralException("F[TestLogin] all credentials are not provided")
+    schema_url = 'https://' + server + '/wapi/' + wapi_version + '/?_schema' if server else None
+    schema_url6 = 'https://[' + server6 + ']/wapi/' + wapi_version + '/?_schema' if server6 else None
+    auth = (username, password)
     try:
-        schema_url = 'https://' + server + \
-            '/wapi/' + wapi_version + '/?_schema'
-        auth = (username, password)
-        r = requests.get(
-            url=schema_url, auth=auth, verify=False, timeout=30)
-        logger.info("F[TestLogin] req[%s] status_code[%s]" % (schema_url, r.status_code))
-        if r.status_code == 200:
+        r = None
+        r6 = None
+        if server:
+            r = requests.get(url=schema_url, auth=auth, verify=False, timeout=30)
+            logger.info("F[TestLogin] req[%s] status_code[%s]" % (schema_url, r.status_code))
+        if server6:
+            r6 = requests.get(url=schema_url6, auth=auth, verify=False, timeout=30)
+            logger.info("F[TestLogin] req[%s] status_code[%s]" % (schema_url6, r6.status_code))
+        if (not r or r.status_code == 200) and (not r6 or r6.status_code == 200):
             return True
-        _check_and_raise_auth_error(r)
+        else:
+            if server:
+                _check_and_raise_auth_error(r)
+            if server6:
+                _check_and_raise_auth_error(r6)
     except CustomDnsAuthenticationErrorException as e:
         raise
     except Exception as e:

@@ -20,7 +20,7 @@ from avi.sdk.avi_api import ApiSession
 from avi.sdk.utils.api_utils import ApiUtils
 from avi.sdk.samples.common import get_sample_ssl_params
 import traceback
-from datetime import datetime
+from datetime import datetime, timezone
 
 log = get_root_logger(__name__, logfile_path='/opt/avi/log/sdkautoscale.log',
                       level=logging.DEBUG,
@@ -189,7 +189,7 @@ class AnalyticsAutoScaler(object):
         try:
             if not self.api:
                 self.setupApiSession()
-            now = datetime.utcnow()
+            now = datetime.now(timezone.utc).replace(tzinfo=None)
             vs_obj = self.api.get_object_by_name('virtualservice', self.vs_name)
             if self.checkIfAutoScaleCooldown(vs_obj, now):
                 return
