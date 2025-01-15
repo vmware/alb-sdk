@@ -8,21 +8,21 @@ package models
 // swagger:model SeDiscontinuousTimeChangeEventDetails
 type SeDiscontinuousTimeChangeEventDetails struct {
 
-	// Relative time drift between SE and controller in terms of microseconds. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Relative time drift between SE and controller in terms of microseconds. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DriftTime *int64 `json:"drift_time,omitempty"`
 
-	// Time stamp before the discontinuous jump in time. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Time stamp before the discontinuous jump in time. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FromTime *string `json:"from_time,omitempty"`
 
-	// System Peer and Candidate NTP Servers active at the point of time jump. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// System Peer and Candidate NTP Servers active at the point of time jump. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NtpServers *string `json:"ntp_servers,omitempty"`
 
-	// Name of the SE responsible for this event. It is a reference to an object of type ServiceEngine. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the SE responsible for this event. It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeName *string `json:"se_name,omitempty"`
 
-	// UUID of the SE responsible for this event. It is a reference to an object of type ServiceEngine. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// UUID of the SE responsible for this event. It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeRef *string `json:"se_ref,omitempty"`
 
-	// Time stamp to which the time has discontinuously jumped. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Time stamp to which the time has discontinuously jumped. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ToTime *string `json:"to_time,omitempty"`
 }

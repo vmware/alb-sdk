@@ -8,9 +8,9 @@ package models
 // swagger:model OmittedWafLogStats
 type OmittedWafLogStats struct {
 
-	// The total count of omitted match element logs in all rules. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// The total count of omitted match element logs in all rules. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MatchElements *uint32 `json:"match_elements,omitempty"`
 
-	// The total count of omitted rule logs. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// The total count of omitted rule logs. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Rules *uint32 `json:"rules,omitempty"`
 }

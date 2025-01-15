@@ -8,19 +8,19 @@ package models
 // swagger:model HTTPSecurityAction
 type HttpsecurityAction struct {
 
-	// Type of the security action to perform. Enum options - HTTP_SECURITY_ACTION_CLOSE_CONN, HTTP_SECURITY_ACTION_SEND_RESPONSE, HTTP_SECURITY_ACTION_ALLOW, HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS, HTTP_SECURITY_ACTION_RATE_LIMIT, HTTP_SECURITY_ACTION_REQUEST_CHECK_ICAP. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HTTP_SECURITY_ACTION_CLOSE_CONN,HTTP_SECURITY_ACTION_SEND_RESPONSE,HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS), Basic edition(Allowed values- HTTP_SECURITY_ACTION_CLOSE_CONN,HTTP_SECURITY_ACTION_SEND_RESPONSE,HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS), Enterprise with Cloud Services edition.
+	// Type of the security action to perform. Enum options - HTTP_SECURITY_ACTION_CLOSE_CONN, HTTP_SECURITY_ACTION_SEND_RESPONSE, HTTP_SECURITY_ACTION_ALLOW, HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS, HTTP_SECURITY_ACTION_RATE_LIMIT, HTTP_SECURITY_ACTION_REQUEST_CHECK_ICAP. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- HTTP_SECURITY_ACTION_CLOSE_CONN,HTTP_SECURITY_ACTION_SEND_RESPONSE,HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS), Basic (Allowed values- HTTP_SECURITY_ACTION_CLOSE_CONN,HTTP_SECURITY_ACTION_SEND_RESPONSE,HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS) edition.
 	// Required: true
 	Action *string `json:"action"`
 
-	// File to be used for generating HTTP local response. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// File to be used for generating HTTP local response. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	File *HTTPLocalFile `json:"file,omitempty"`
 
-	// Secure SSL/TLS port to redirect the HTTP request to. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Secure SSL/TLS port to redirect the HTTP request to. Allowed values are 1-65535. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	HTTPSPort *uint32 `json:"https_port,omitempty"`
 
-	// Rate limiting configuration for this action. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Rate limiting configuration for this action. Field introduced in 18.2.9. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	RateProfile *HttpsecurityActionRateProfile `json:"rate_profile,omitempty"`
 
-	// HTTP status code to use for local response. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// HTTP status code to use for local response. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StatusCode *string `json:"status_code,omitempty"`
 }

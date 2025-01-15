@@ -8,21 +8,24 @@ package models
 // swagger:model SeRateLimiters
 type SeRateLimiters struct {
 
-	// Rate limiter for ARP packets in pps. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate limiter for ARP packets in pps. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ArpRl *uint32 `json:"arp_rl,omitempty"`
 
-	// Default Rate limiter in pps. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Default Rate limiter in pps. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DefaultRl *uint32 `json:"default_rl,omitempty"`
 
-	// Rate limiter for number of flow probes in pps. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate limiter for number of flow probes in pps. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FlowProbeRl *uint32 `json:"flow_probe_rl,omitempty"`
 
-	// Rate limiter for ICMP requests in pps. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate limiter for ICMP requests in pps. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IcmpRl *uint32 `json:"icmp_rl,omitempty"`
 
-	// Rate limiter for ICMP response in pps. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate limiter for ICMP response in pps. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IcmpRspRl *uint32 `json:"icmp_rsp_rl,omitempty"`
 
-	// Rate limiter for number RST pkts sent in pps. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate limiter for ND packets in pps. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	NdRl *uint32 `json:"nd_rl,omitempty"`
+
+	// Rate limiter for number RST pkts sent in pps. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RstRl *uint32 `json:"rst_rl,omitempty"`
 }

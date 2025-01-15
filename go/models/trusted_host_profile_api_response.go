@@ -4,9 +4,9 @@ package models
 
 // This file is auto-generated.
 
-// CloudConfigAPIResponse cloud config Api response
-// swagger:model CloudConfigApiResponse
-type CloudConfigAPIResponse struct {
+// TrustedHostProfileAPIResponse trusted host profile Api response
+// swagger:model TrustedHostProfileApiResponse
+type TrustedHostProfileAPIResponse struct {
 
 	// count
 	// Required: true
@@ -17,5 +17,5 @@ type CloudConfigAPIResponse struct {
 
 	// results
 	// Required: true
-	Results []*CloudConfig `json:"results,omitempty"`
+	Results []*TrustedHostProfile `json:"results,omitempty"`
 }

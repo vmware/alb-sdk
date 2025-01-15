@@ -8,12 +8,12 @@ package models
 // swagger:model AzureServicePrincipalCredentials
 type AzureServicePrincipalCredentials struct {
 
-	// Application Id created for Avi Controller. Required for application id based authentication only. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Application Id created for Avi Controller. Required for application id based authentication only. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ApplicationID *string `json:"application_id,omitempty"`
 
-	// Authentication token created for the Avi Controller application. Required for application id based authentication only. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Authentication token created for the Avi Controller application. Required for application id based authentication only. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AuthenticationToken *string `json:"authentication_token,omitempty"`
 
-	// Tenant ID for the subscription. Required for application id based authentication only. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Tenant ID for the subscription. Required for application id based authentication only. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantID *string `json:"tenant_id,omitempty"`
 }

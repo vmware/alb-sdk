@@ -8,11 +8,11 @@ package models
 // swagger:model VSDataScripts
 type VSDataScripts struct {
 
-	// Index of the virtual service datascript collection. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Index of the virtual service datascript collection. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Index *int32 `json:"index"`
 
-	// UUID of the virtual service datascript collection. It is a reference to an object of type VSDataScriptSet. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// UUID of the virtual service datascript collection. It is a reference to an object of type VSDataScriptSet. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	VsDatascriptSetRef *string `json:"vs_datascript_set_ref"`
 }

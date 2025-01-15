@@ -8,12 +8,12 @@ package models
 // swagger:model VcenterTagEventDetails
 type VcenterTagEventDetails struct {
 
-	// Cloud id. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Cloud id. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	CcID *string `json:"cc_id,omitempty"`
 
-	// Failure reason. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Failure reason. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ErrorString *string `json:"error_string,omitempty"`
 
-	// SEVM object id. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// SEVM object id. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	VMID *string `json:"vm_id,omitempty"`
 }

@@ -8,21 +8,21 @@ package models
 // swagger:model IpamDnsOpenstackProfile
 type IPAMDNSOpenstackProfile struct {
 
-	// Keystone's hostname or IP address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Keystone's hostname or IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	KeystoneHost *string `json:"keystone_host,omitempty"`
 
-	// The password Avi Vantage will use when authenticating to Keystone. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// The password Avi will use when authenticating to Keystone. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Password *string `json:"password,omitempty"`
 
-	// Region name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Region name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Region *string `json:"region,omitempty"`
 
-	// OpenStack tenant name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// OpenStack tenant name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Tenant *string `json:"tenant,omitempty"`
 
-	// The username Avi Vantage will use when authenticating to Keystone. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// The username Avi will use when authenticating to Keystone. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Username *string `json:"username,omitempty"`
 
-	// Network to be used for VIP allocation. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Network to be used for VIP allocation. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VipNetworkName *string `json:"vip_network_name,omitempty"`
 }

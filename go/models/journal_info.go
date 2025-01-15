@@ -8,13 +8,13 @@ package models
 // swagger:model JournalInfo
 type JournalInfo struct {
 
-	// Details of run for each version. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Details of run for each version. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Actions []*JournalAction `json:"actions,omitempty"`
 
-	// Number of objects to be processed. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Number of objects to be processed. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	TotalObjects *uint32 `json:"total_objects"`
 
-	// List of versions to be migrated. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// List of versions to be migrated. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Versions []string `json:"versions,omitempty"`
 }

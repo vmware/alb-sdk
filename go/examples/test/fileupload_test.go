@@ -11,7 +11,7 @@ import (
 	"testing"
 )
 
-//Open given file as a file pointer
+// Open given file as a file pointer
 func mustOpen(f string) *os.File {
 	r, err := os.Open(f)
 	if err != nil {

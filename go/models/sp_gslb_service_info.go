@@ -8,9 +8,9 @@ package models
 // swagger:model SpGslbServiceInfo
 type SpGslbServiceInfo struct {
 
-	// FQDNs associated with the GSLB service. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// FQDNs associated with the GSLB service. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Fqdns []string `json:"fqdns,omitempty"`
 
-	// GSLB service uuid associated with the site persistence pool. It is a reference to an object of type GslbService. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// GSLB service uuid associated with the site persistence pool. It is a reference to an object of type GslbService. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	GsRef *string `json:"gs_ref,omitempty"`
 }

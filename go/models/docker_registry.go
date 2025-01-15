@@ -8,18 +8,18 @@ package models
 // swagger:model DockerRegistry
 type DockerRegistry struct {
 
-	// Openshift integrated registry config. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Openshift integrated registry config. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OshiftRegistry *OshiftDockerRegistryMetaData `json:"oshift_registry,omitempty"`
 
-	// Password for docker registry. Authorized 'regular user' password if registry is Openshift integrated registry. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Password for docker registry. Authorized 'regular user' password if registry is Openshift integrated registry. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Password *string `json:"password,omitempty"`
 
-	// Set if docker registry is private. Avi controller will not attempt to push SE image to the registry, unless se_repository_push is set. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Set if docker registry is private. Avi controller will not attempt to push SE image to the registry, unless se_repository_push is set. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Private *bool `json:"private,omitempty"`
 
-	// Avi ServiceEngine repository name. For private registry, it's registry port/repository, for public registry, it's registry/repository, for openshift registry, it's registry port/namespace/repo. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Avi ServiceEngine repository name. For private registry, it's registry port/repository, for public registry, it's registry/repository, for openshift registry, it's registry port/namespace/repo. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Registry *string `json:"registry,omitempty"`
 
-	// Username for docker registry. Authorized 'regular user' if registry is Openshift integrated registry. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Username for docker registry. Authorized 'regular user' if registry is Openshift integrated registry. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Username *string `json:"username,omitempty"`
 }

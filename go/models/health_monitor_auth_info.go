@@ -8,11 +8,11 @@ package models
 // swagger:model HealthMonitorAuthInfo
 type HealthMonitorAuthInfo struct {
 
-	// Password for server authentication. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Password for server authentication. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Password *string `json:"password"`
 
-	// Username for server authentication. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Username for server authentication. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Username *string `json:"username"`
 }

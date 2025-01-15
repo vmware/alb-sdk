@@ -8,6 +8,6 @@ package models
 // swagger:model SSLKeyECParams
 type SSLKeyECParams struct {
 
-	//  Enum options - SSL_KEY_EC_CURVE_SECP256R1, SSL_KEY_EC_CURVE_SECP384R1, SSL_KEY_EC_CURVE_SECP521R1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Enum options - SSL_KEY_EC_CURVE_SECP256R1, SSL_KEY_EC_CURVE_SECP384R1, SSL_KEY_EC_CURVE_SECP521R1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Curve *string `json:"curve,omitempty"`
 }

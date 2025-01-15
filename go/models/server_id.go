@@ -8,14 +8,14 @@ package models
 // swagger:model ServerId
 type ServerID struct {
 
-	// This is the external cloud uuid of the Pool server. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// This is the external cloud uuid of the Pool server. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ExternalUUID *string `json:"external_uuid,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	IP *IPAddr `json:"ip"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Port *uint32 `json:"port"`
 }
