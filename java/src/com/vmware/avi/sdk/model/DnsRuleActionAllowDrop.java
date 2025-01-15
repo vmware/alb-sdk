@@ -33,7 +33,7 @@ public class DnsRuleActionAllowDrop  {
      * This is the getter method this will return the attribute value.
      * Allow the dns query.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return allow
      */
@@ -45,7 +45,7 @@ public class DnsRuleActionAllowDrop  {
      * This is the setter method to the attribute.
      * Allow the dns query.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param allow set the allow.
      */
@@ -57,7 +57,7 @@ public class DnsRuleActionAllowDrop  {
      * This is the getter method this will return the attribute value.
      * Reset the tcp connection of the dns query, if allow is set to false to drop the query.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return resetConn
      */
@@ -69,7 +69,7 @@ public class DnsRuleActionAllowDrop  {
      * This is the setter method to the attribute.
      * Reset the tcp connection of the dns query, if allow is set to false to drop the query.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param resetConn set the resetConn.
      */

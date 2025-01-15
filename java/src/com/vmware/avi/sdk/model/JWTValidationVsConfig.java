@@ -37,7 +37,7 @@ public class JWTValidationVsConfig  {
      * Uniquely identifies a resource server.
      * This is used to validate against the aud claim.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return audience
      */
@@ -50,7 +50,7 @@ public class JWTValidationVsConfig  {
      * Uniquely identifies a resource server.
      * This is used to validate against the aud claim.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param audience set the audience.
      */
@@ -63,7 +63,7 @@ public class JWTValidationVsConfig  {
      * Defines where to look for jwt in the request.
      * Enum options - JWT_LOCATION_AUTHORIZATION_HEADER, JWT_LOCATION_QUERY_PARAM.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "JWT_LOCATION_AUTHORIZATION_HEADER".
      * @return jwtLocation
      */
@@ -76,7 +76,7 @@ public class JWTValidationVsConfig  {
      * Defines where to look for jwt in the request.
      * Enum options - JWT_LOCATION_AUTHORIZATION_HEADER, JWT_LOCATION_QUERY_PARAM.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "JWT_LOCATION_AUTHORIZATION_HEADER".
      * @param jwtLocation set the jwtLocation.
      */
@@ -88,7 +88,7 @@ public class JWTValidationVsConfig  {
      * This is the getter method this will return the attribute value.
      * Name by which the jwt can be identified if the token is sent as a query param in the request url.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return jwtName
      */
@@ -100,7 +100,7 @@ public class JWTValidationVsConfig  {
      * This is the setter method to the attribute.
      * Name by which the jwt can be identified if the token is sent as a query param in the request url.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param jwtName set the jwtName.
      */

@@ -185,7 +185,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Sync frequency in seconds with frameworks.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return appSyncFrequency
      */
@@ -196,7 +196,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Sync frequency in seconds with frameworks.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param appSyncFrequency set the appSyncFrequency.
      */
@@ -208,7 +208,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Auto assign fqdn to a virtual service if a valid fqdn is not configured.
      * Field introduced in 17.2.8.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return autoAssignFqdn
      */
@@ -220,7 +220,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Auto assign fqdn to a virtual service if a valid fqdn is not configured.
      * Field introduced in 17.2.8.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param autoAssignFqdn set the autoAssignFqdn.
      */
@@ -231,7 +231,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Avi linux bridge subnet on openshift/k8s nodes.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return aviBridgeSubnet
      */
@@ -242,7 +242,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Avi linux bridge subnet on openshift/k8s nodes.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param aviBridgeSubnet set the aviBridgeSubnet.
      */
@@ -254,7 +254,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Uuid of the ucp ca tls cert and key.
      * It is a reference to an object of type sslkeyandcertificate.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return caTlsKeyAndCertificateRef
      */
@@ -266,7 +266,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Uuid of the ucp ca tls cert and key.
      * It is a reference to an object of type sslkeyandcertificate.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param caTlsKeyAndCertificateRef set the caTlsKeyAndCertificateRef.
      */
@@ -279,7 +279,7 @@ public class OShiftK8SConfiguration  {
      * Uuid of the client tls cert and key instead of service account token.
      * One of client certificate or token is required.
      * It is a reference to an object of type sslkeyandcertificate.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientTlsKeyAndCertificateRef
      */
@@ -292,7 +292,7 @@ public class OShiftK8SConfiguration  {
      * Uuid of the client tls cert and key instead of service account token.
      * One of client certificate or token is required.
      * It is a reference to an object of type sslkeyandcertificate.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientTlsKeyAndCertificateRef set the clientTlsKeyAndCertificateRef.
      */
@@ -306,7 +306,7 @@ public class OShiftK8SConfiguration  {
      * In order to use more than one openshift/k8s cloud on this controller, cluster_tag has to be unique across these clouds.
      * Changing cluster_tag is disruptive as all virtual services in the cloud will be recreated.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterTag
      */
@@ -320,7 +320,7 @@ public class OShiftK8SConfiguration  {
      * In order to use more than one openshift/k8s cloud on this controller, cluster_tag has to be unique across these clouds.
      * Changing cluster_tag is disruptive as all virtual services in the cloud will be recreated.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterTag set the clusterTag.
      */
@@ -332,7 +332,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Perform container port matching to create a http virtualservice instead of a tcp/udp virtualservice.
      * By default, ports 80, 8080, 443, 8443 are considered http.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return containerPortMatchHttpService
      */
@@ -344,7 +344,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Perform container port matching to create a http virtualservice instead of a tcp/udp virtualservice.
      * By default, ports 80, 8080, 443, 8443 are considered http.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param containerPortMatchHttpService set the containerPortMatchHttpService.
      */
@@ -357,7 +357,7 @@ public class OShiftK8SConfiguration  {
      * Directory to mount to check for core dumps on service engines.
      * This will be mapped read only to /var/crash on any new service engines.
      * This is a disruptive change.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/systemd/coredump".
      * @return coredumpDirectory
      */
@@ -370,7 +370,7 @@ public class OShiftK8SConfiguration  {
      * Directory to mount to check for core dumps on service engines.
      * This will be mapped read only to /var/crash on any new service engines.
      * This is a disruptive change.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/systemd/coredump".
      * @param coredumpDirectory set the coredumpDirectory.
      */
@@ -382,7 +382,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * If there is no explicit east_west_placement field in virtualservice configuration, treat service as a east-west service; default services such a
      * openshift api server do not have virtualservice configuration.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return defaultServiceAsEastWestService
      */
@@ -394,7 +394,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * If there is no explicit east_west_placement field in virtualservice configuration, treat service as a east-west service; default services such a
      * openshift api server do not have virtualservice configuration.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param defaultServiceAsEastWestService set the defaultServiceAsEastWestService.
      */
@@ -405,7 +405,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Disable auto service sync for back end services.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disableAutoBackendServiceSync
      */
@@ -416,7 +416,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Disable auto service sync for back end services.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disableAutoBackendServiceSync set the disableAutoBackendServiceSync.
      */
@@ -427,7 +427,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Disable auto service sync for front end services.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disableAutoFrontendServiceSync
      */
@@ -438,7 +438,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Disable auto service sync for front end services.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disableAutoFrontendServiceSync set the disableAutoFrontendServiceSync.
      */
@@ -450,7 +450,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Disable auto sync for gslb services.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disableAutoGsSync
      */
@@ -462,7 +462,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Disable auto sync for gslb services.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disableAutoGsSync set the disableAutoGsSync.
      */
@@ -473,7 +473,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Disable se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disableAutoSeCreation
      */
@@ -484,7 +484,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Disable se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disableAutoSeCreation set the disableAutoSeCreation.
      */
@@ -496,7 +496,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Host docker server unix socket endpoint.
      * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "/var/run/docker.sock".
      * @return dockerEndpoint
      */
@@ -508,7 +508,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Host docker server unix socket endpoint.
      * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "/var/run/docker.sock".
      * @param dockerEndpoint set the dockerEndpoint.
      */
@@ -519,7 +519,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Docker registry for serviceengine image.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dockerRegistrySe
      */
@@ -530,7 +530,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Docker registry for serviceengine image.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dockerRegistrySe set the dockerRegistrySe.
      */
@@ -541,7 +541,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Match against this prefix when placing east-west vss on ses.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return eastWestPlacementSubnet
      */
@@ -552,7 +552,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Match against this prefix when placing east-west vss on ses.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param eastWestPlacementSubnet set the eastWestPlacementSubnet.
      */
@@ -563,7 +563,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable kubernetes event subscription.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableEventSubscription
      */
@@ -574,7 +574,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Enable kubernetes event subscription.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableEventSubscription set the enableEventSubscription.
      */
@@ -588,7 +588,7 @@ public class OShiftK8SConfiguration  {
      * The default state is to enable this behavior.
      * Note  toggling this knob only affects any new routes/ingresses, existing routes/ingresses present in avi will continue to function as-is.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableRouteIngressHardening
      */
@@ -602,7 +602,7 @@ public class OShiftK8SConfiguration  {
      * The default state is to enable this behavior.
      * Note  toggling this knob only affects any new routes/ingresses, existing routes/ingresses present in avi will continue to function as-is.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableRouteIngressHardening set the enableRouteIngressHardening.
      */
@@ -613,7 +613,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable proxy arp from host interface for front end  proxies.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return feproxyVipsEnableProxyArp
      */
@@ -624,7 +624,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Enable proxy arp from host interface for front end  proxies.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param feproxyVipsEnableProxyArp set the feproxyVipsEnableProxyArp.
      */
@@ -635,7 +635,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
      * Defaults to 80, 8080, 443 and 8443.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpContainerPorts
      */
@@ -647,7 +647,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method. this will set the httpContainerPorts
      * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
      * Defaults to 80, 8080, 443 and 8443.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpContainerPorts
      */
@@ -659,7 +659,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method this will set the httpContainerPorts
      * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
      * Defaults to 80, 8080, 443 and 8443.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpContainerPorts
      */
@@ -674,7 +674,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Do not sync applications only for ingress that have these exclude attributes configured.
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ingExcludeAttributes
      */
@@ -686,7 +686,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method. this will set the ingExcludeAttributes
      * Do not sync applications only for ingress that have these exclude attributes configured.
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ingExcludeAttributes
      */
@@ -698,7 +698,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method this will set the ingExcludeAttributes
      * Do not sync applications only for ingress that have these exclude attributes configured.
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ingExcludeAttributes
      */
@@ -715,7 +715,7 @@ public class OShiftK8SConfiguration  {
      * Default values are populated for this field if not provided.
      * The default value are  'attribute'  'kubernetes.io/ingress.class', 'value' 'avi'.
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ingIncludeAttributes
      */
@@ -729,7 +729,7 @@ public class OShiftK8SConfiguration  {
      * Default values are populated for this field if not provided.
      * The default value are  'attribute'  'kubernetes.io/ingress.class', 'value' 'avi'.
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ingIncludeAttributes
      */
@@ -743,7 +743,7 @@ public class OShiftK8SConfiguration  {
      * Default values are populated for this field if not provided.
      * The default value are  'attribute'  'kubernetes.io/ingress.class', 'value' 'avi'.
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ingIncludeAttributes
      */
@@ -758,7 +758,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Perform layer4 (tcp/udp) health monitoring even for layer7 (http) pools.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return l4HealthMonitoring
      */
@@ -769,7 +769,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Perform layer4 (tcp/udp) health monitoring even for layer7 (http) pools.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param l4HealthMonitoring set the l4HealthMonitoring.
      */
@@ -781,7 +781,7 @@ public class OShiftK8SConfiguration  {
      * List of openshift/kubernetes master nodes; in case of a load balanced openshift/k8s cluster, use virtual ip of the cluster.
      * Each node is of the form node 8443 or http //node 8080.
      * If scheme is not provided, https is assumed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return masterNodes
      */
@@ -794,7 +794,7 @@ public class OShiftK8SConfiguration  {
      * List of openshift/kubernetes master nodes; in case of a load balanced openshift/k8s cluster, use virtual ip of the cluster.
      * Each node is of the form node 8443 or http //node 8080.
      * If scheme is not provided, https is assumed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return masterNodes
      */
@@ -807,7 +807,7 @@ public class OShiftK8SConfiguration  {
      * List of openshift/kubernetes master nodes; in case of a load balanced openshift/k8s cluster, use virtual ip of the cluster.
      * Each node is of the form node 8443 or http //node 8080.
      * If scheme is not provided, https is assumed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return masterNodes
      */
@@ -823,7 +823,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Openshift/k8s node label to be used as openshift/k8s node's availability zone in a dual availability zone deployment.
      * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodeAvailabilityZoneLabel
      */
@@ -835,7 +835,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Openshift/k8s node label to be used as openshift/k8s node's availability zone in a dual availability zone deployment.
      * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nodeAvailabilityZoneLabel set the nodeAvailabilityZoneLabel.
      */
@@ -847,7 +847,7 @@ public class OShiftK8SConfiguration  {
      * Syncing of applications is disabled only for namespaces/projects that have these exclude attributes configured.
      * If there are apps synced already for these namespaces, they will be removed from avi.
      * Field introduced in 17.1.9,17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsExcludeAttributes
      */
@@ -860,7 +860,7 @@ public class OShiftK8SConfiguration  {
      * Syncing of applications is disabled only for namespaces/projects that have these exclude attributes configured.
      * If there are apps synced already for these namespaces, they will be removed from avi.
      * Field introduced in 17.1.9,17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsExcludeAttributes
      */
@@ -873,7 +873,7 @@ public class OShiftK8SConfiguration  {
      * Syncing of applications is disabled only for namespaces/projects that have these exclude attributes configured.
      * If there are apps synced already for these namespaces, they will be removed from avi.
      * Field introduced in 17.1.9,17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsExcludeAttributes
      */
@@ -888,7 +888,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Sync applications only for namespaces/projects that have these include attributes configured.
      * Field introduced in 17.1.9,17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsIncludeAttributes
      */
@@ -900,7 +900,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method. this will set the nsIncludeAttributes
      * Sync applications only for namespaces/projects that have these include attributes configured.
      * Field introduced in 17.1.9,17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsIncludeAttributes
      */
@@ -912,7 +912,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method this will set the nsIncludeAttributes
      * Sync applications only for namespaces/projects that have these include attributes configured.
      * Field introduced in 17.1.9,17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsIncludeAttributes
      */
@@ -930,7 +930,7 @@ public class OShiftK8SConfiguration  {
      * Sharding is done by hashing on the namespace of the ingress/route object.
      * This knob is valid only if shared_virtualservice_namespace flag is set.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return numShards
      */
@@ -944,7 +944,7 @@ public class OShiftK8SConfiguration  {
      * Sharding is done by hashing on the namespace of the ingress/route object.
      * This knob is valid only if shared_virtualservice_namespace flag is set.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param numShards set the numShards.
      */
@@ -956,7 +956,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Override service ports with well known ports (80/443) for http/https route/ingress virtualservices.
      * Field introduced in 17.2.12,18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return overrideServicePorts
      */
@@ -968,7 +968,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Override service ports with well known ports (80/443) for http/https route/ingress virtualservices.
      * Field introduced in 17.2.12,18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param overrideServicePorts set the overrideServicePorts.
      */
@@ -982,7 +982,7 @@ public class OShiftK8SConfiguration  {
      * This could be used in scenarios where host based volumes are ephemeral.
      * Refer https //kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims for more details on the usage of this field.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return persistentVolumeClaim
      */
@@ -996,7 +996,7 @@ public class OShiftK8SConfiguration  {
      * This could be used in scenarios where host based volumes are ephemeral.
      * Refer https //kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims for more details on the usage of this field.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param persistentVolumeClaim set the persistentVolumeClaim.
      */
@@ -1015,7 +1015,7 @@ public class OShiftK8SConfiguration  {
      * Handling north-south traffic originating from with in the node when the default gateway for outgoing traffic of vs is configured.4.
      * Handling the container/pod traffic by adding the routes in the container/pod.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return routes
      */
@@ -1035,7 +1035,7 @@ public class OShiftK8SConfiguration  {
      * Handling north-south traffic originating from with in the node when the default gateway for outgoing traffic of vs is configured.4.
      * Handling the container/pod traffic by adding the routes in the container/pod.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return routes
      */
@@ -1055,7 +1055,7 @@ public class OShiftK8SConfiguration  {
      * Handling north-south traffic originating from with in the node when the default gateway for outgoing traffic of vs is configured.4.
      * Handling the container/pod traffic by adding the routes in the container/pod.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return routes
      */
@@ -1072,7 +1072,7 @@ public class OShiftK8SConfiguration  {
      * Cluster uses overlay based sdn.
      * Enable this flag if cluster uses a overlay based sdn for openshift, flannel, weave, nuage.
      * Disable for routed mode.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return sdnOverlay
      */
@@ -1085,7 +1085,7 @@ public class OShiftK8SConfiguration  {
      * Cluster uses overlay based sdn.
      * Enable this flag if cluster uses a overlay based sdn for openshift, flannel, weave, nuage.
      * Disable for routed mode.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param sdnOverlay set the sdnOverlay.
      */
@@ -1097,7 +1097,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Use ssh/pod for se deployment.
      * Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SE_CREATE_POD".
      * @return seDeploymentMethod
      */
@@ -1109,7 +1109,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Use ssh/pod for se deployment.
      * Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SE_CREATE_POD".
      * @param seDeploymentMethod set the seDeploymentMethod.
      */
@@ -1119,7 +1119,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Exclude hosts with attributes for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seExcludeAttributes
      */
@@ -1130,7 +1130,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method. this will set the seExcludeAttributes
      * Exclude hosts with attributes for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seExcludeAttributes
      */
@@ -1141,7 +1141,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method this will set the seExcludeAttributes
      * Exclude hosts with attributes for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seExcludeAttributes
      */
@@ -1158,7 +1158,7 @@ public class OShiftK8SConfiguration  {
      * Openshift/k8s secret name to be used for private docker repos when deploying se as a pod.
      * Reference link  https //kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/.
      * Field introduced in 17.2.13,18.1.3,18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seImagePullSecret
      */
@@ -1171,7 +1171,7 @@ public class OShiftK8SConfiguration  {
      * Openshift/k8s secret name to be used for private docker repos when deploying se as a pod.
      * Reference link  https //kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/.
      * Field introduced in 17.2.13,18.1.3,18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seImagePullSecret set the seImagePullSecret.
      */
@@ -1181,7 +1181,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Create ses just on hosts with include attributes.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seIncludeAttributes
      */
@@ -1192,7 +1192,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method. this will set the seIncludeAttributes
      * Create ses just on hosts with include attributes.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seIncludeAttributes
      */
@@ -1203,7 +1203,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method this will set the seIncludeAttributes
      * Create ses just on hosts with include attributes.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seIncludeAttributes
      */
@@ -1223,7 +1223,7 @@ public class OShiftK8SConfiguration  {
      * Setting this value is a disruptive operation and assumes the namespace exists in kubernetes.
      * 'default' namespace is picked if this field is unset.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default".
      * @return seNamespace
      */
@@ -1239,7 +1239,7 @@ public class OShiftK8SConfiguration  {
      * Setting this value is a disruptive operation and assumes the namespace exists in kubernetes.
      * 'default' namespace is picked if this field is unset.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default".
      * @param seNamespace set the seNamespace.
      */
@@ -1250,7 +1250,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Match se pod tolerations against taints of openshift/k8s nodes https //kubernetes.io/docs/concepts/configuration/taint-and-toleration/.
      * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sePodTolerations
      */
@@ -1262,7 +1262,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method. this will set the sePodTolerations
      * Match se pod tolerations against taints of openshift/k8s nodes https //kubernetes.io/docs/concepts/configuration/taint-and-toleration/.
      * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sePodTolerations
      */
@@ -1274,7 +1274,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method this will set the sePodTolerations
      * Match se pod tolerations against taints of openshift/k8s nodes https //kubernetes.io/docs/concepts/configuration/taint-and-toleration/.
      * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sePodTolerations
      */
@@ -1293,7 +1293,7 @@ public class OShiftK8SConfiguration  {
      * If the priority class doesn't exist while assigning this field, the se pods may not start.
      * If empty no priority class will be used for deploying se pods (default behaviour).
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sePriorityClass
      */
@@ -1308,7 +1308,7 @@ public class OShiftK8SConfiguration  {
      * If the priority class doesn't exist while assigning this field, the se pods may not start.
      * If empty no priority class will be used for deploying se pods (default behaviour).
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sePriorityClass set the sePriorityClass.
      */
@@ -1320,7 +1320,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Restart serviceengines by batch on serviceenginegroup updates (cpu, memory..etc).
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return seRestartBatchSize
      */
@@ -1332,7 +1332,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Restart serviceengines by batch on serviceenginegroup updates (cpu, memory..etc).
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param seRestartBatchSize set the seRestartBatchSize.
      */
@@ -1344,7 +1344,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Restart serviceengines forcely if virtualservices failed to migrate to another se.
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return seRestartForce
      */
@@ -1356,7 +1356,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Restart serviceengines forcely if virtualservices failed to migrate to another se.
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param seRestartForce set the seRestartForce.
      */
@@ -1367,7 +1367,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Host volume to be used as a disk for avi se, this is a disruptive change.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/avi".
      * @return seVolume
      */
@@ -1378,7 +1378,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Host volume to be used as a disk for avi se, this is a disruptive change.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/avi".
      * @param seVolume set the seVolume.
      */
@@ -1393,7 +1393,7 @@ public class OShiftK8SConfiguration  {
      * Enabling this would exclude egress services from 'disable_auto_backend_service_sync' (if set) behaviour.
      * Note  access credentials must have cluster-admin role privileges.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return secureEgressMode
      */
@@ -1408,7 +1408,7 @@ public class OShiftK8SConfiguration  {
      * Enabling this would exclude egress services from 'disable_auto_backend_service_sync' (if set) behaviour.
      * Note  access credentials must have cluster-admin role privileges.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param secureEgressMode set the secureEgressMode.
      */
@@ -1420,7 +1420,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Authorization token for service account instead of client certificate.
      * One of client certificate or token is required.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceAccountToken
      */
@@ -1432,7 +1432,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Authorization token for service account instead of client certificate.
      * One of client certificate or token is required.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceAccountToken set the serviceAccountToken.
      */
@@ -1445,7 +1445,7 @@ public class OShiftK8SConfiguration  {
      * Prefix to be used for shard vs name when num_shards knob is non zero.
      * Format for shard vs name will be <shard_prefix>-<idx>-cloudname-segroupname.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return shardPrefix
      */
@@ -1458,7 +1458,7 @@ public class OShiftK8SConfiguration  {
      * Prefix to be used for shard vs name when num_shards knob is non zero.
      * Format for shard vs name will be <shard_prefix>-<idx>-cloudname-segroupname.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param shardPrefix set the shardPrefix.
      */
@@ -1471,7 +1471,7 @@ public class OShiftK8SConfiguration  {
      * Projects/namespaces use a shared virtualservice for http/https routes and ingress objects unless overriden by the avi_virtualservice
      * dedicated|shared annotation.
      * Field introduced in 17.1.9,17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return sharedVirtualserviceNamespace
      */
@@ -1484,7 +1484,7 @@ public class OShiftK8SConfiguration  {
      * Projects/namespaces use a shared virtualservice for http/https routes and ingress objects unless overriden by the avi_virtualservice
      * dedicated|shared annotation.
      * Field introduced in 17.1.9,17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param sharedVirtualserviceNamespace set the sharedVirtualserviceNamespace.
      */
@@ -1497,7 +1497,7 @@ public class OShiftK8SConfiguration  {
      * Cloud connector user uuid for ssh to hosts.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sshUserRef
      */
@@ -1510,7 +1510,7 @@ public class OShiftK8SConfiguration  {
      * Cloud connector user uuid for ssh to hosts.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sshUserRef set the sshUserRef.
      */
@@ -1522,7 +1522,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Allow the not_ready_addresses in the kubernetes endpoint object to be added as servers in the avi pool object.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return syncNotReadyAddresses
      */
@@ -1534,7 +1534,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Allow the not_ready_addresses in the kubernetes endpoint object to be added as servers in the avi pool object.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param syncNotReadyAddresses set the syncNotReadyAddresses.
      */
@@ -1545,7 +1545,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * If true, use controller generated se docker image via fileservice, else use docker repository image as defined by docker_registry_se.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useControllerImage
      */
@@ -1556,7 +1556,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * If true, use controller generated se docker image via fileservice, else use docker repository image as defined by docker_registry_se.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useControllerImage set the useControllerImage.
      */
@@ -1569,7 +1569,7 @@ public class OShiftK8SConfiguration  {
      * Use openshift/kubernetes resource definition and annotations as single-source-of-truth.
      * Any changes made in avi controller via ui or cli will be overridden by values provided in annotations.
      * Field introduced in 17.2.13, 18.1.4, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useResourceDefinitionAsSsot
      */
@@ -1582,7 +1582,7 @@ public class OShiftK8SConfiguration  {
      * Use openshift/kubernetes resource definition and annotations as single-source-of-truth.
      * Any changes made in avi controller via ui or cli will be overridden by values provided in annotations.
      * Field introduced in 17.2.13, 18.1.4, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useResourceDefinitionAsSsot set the useResourceDefinitionAsSsot.
      */
@@ -1594,7 +1594,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Enable virtualservice placement on service engines on nodes with scheduling disabled.
      * When false, service engines are disabled on nodes where scheduling is disabled.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useSchedulingDisabledNodes
      */
@@ -1606,7 +1606,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Enable virtualservice placement on service engines on nodes with scheduling disabled.
      * When false, service engines are disabled on nodes where scheduling is disabled.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useSchedulingDisabledNodes set the useSchedulingDisabledNodes.
      */
@@ -1617,7 +1617,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Use cluster ip of service as vip for east-west services; this option requires that kube proxy is disabled on all nodes.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useServiceClusterIpAsEwVip
      */
@@ -1628,7 +1628,7 @@ public class OShiftK8SConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Use cluster ip of service as vip for east-west services; this option requires that kube proxy is disabled on all nodes.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useServiceClusterIpAsEwVip set the useServiceClusterIpAsEwVip.
      */
@@ -1640,7 +1640,7 @@ public class OShiftK8SConfiguration  {
      * This is the getter method this will return the attribute value.
      * Virtualservice default gateway if multiple nics are present in the host.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipDefaultGateway
      */
@@ -1652,7 +1652,7 @@ public class OShiftK8SConfiguration  {
      * This is the setter method to the attribute.
      * Virtualservice default gateway if multiple nics are present in the host.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipDefaultGateway set the vipDefaultGateway.
      */

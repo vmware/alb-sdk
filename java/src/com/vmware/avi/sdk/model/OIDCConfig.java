@@ -36,7 +36,7 @@ public class OIDCConfig  {
      * This is the getter method this will return the attribute value.
      * Adds openid as one of the scopes enabling openid connect flow.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oidcEnable
      */
@@ -48,7 +48,7 @@ public class OIDCConfig  {
      * This is the setter method to the attribute.
      * Adds openid as one of the scopes enabling openid connect flow.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param oidcEnable set the oidcEnable.
      */
@@ -60,7 +60,7 @@ public class OIDCConfig  {
      * This is the getter method this will return the attribute value.
      * Fetch profile information by enabling profile scope.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return profile
      */
@@ -72,7 +72,7 @@ public class OIDCConfig  {
      * This is the setter method to the attribute.
      * Fetch profile information by enabling profile scope.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param profile set the profile.
      */
@@ -84,7 +84,7 @@ public class OIDCConfig  {
      * This is the getter method this will return the attribute value.
      * Fetch profile information from userinfo endpoint.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userinfo
      */
@@ -96,7 +96,7 @@ public class OIDCConfig  {
      * This is the setter method to the attribute.
      * Fetch profile information from userinfo endpoint.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userinfo set the userinfo.
      */

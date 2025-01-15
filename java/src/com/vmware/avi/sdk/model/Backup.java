@@ -54,7 +54,7 @@ public class Backup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Backupconfiguration information.
      * It is a reference to an object of type backupconfiguration.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return backupConfigRef
      */
@@ -66,7 +66,7 @@ public class Backup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Backupconfiguration information.
      * It is a reference to an object of type backupconfiguration.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param backupConfigRef set the backupConfigRef.
      */
@@ -77,7 +77,7 @@ public class Backup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * The file name of backup.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fileName
      */
@@ -88,7 +88,7 @@ public class Backup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * The file name of backup.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fileName set the fileName.
      */
@@ -99,7 +99,7 @@ public class Backup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Url to download the backup file.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return localFileUrl
      */
@@ -110,7 +110,7 @@ public class Backup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Url to download the backup file.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param localFileUrl set the localFileUrl.
      */
@@ -121,7 +121,7 @@ public class Backup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Url to download the backup file.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteFileUrl
      */
@@ -132,7 +132,7 @@ public class Backup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Url to download the backup file.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param remoteFileUrl set the remoteFileUrl.
      */
@@ -144,7 +144,7 @@ public class Backup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Scheduler information.
      * It is a reference to an object of type scheduler.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return schedulerRef
      */
@@ -156,7 +156,7 @@ public class Backup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Scheduler information.
      * It is a reference to an object of type scheduler.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param schedulerRef set the schedulerRef.
      */
@@ -167,7 +167,7 @@ public class Backup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -178,7 +178,7 @@ public class Backup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -189,7 +189,7 @@ public class Backup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Unix timestamp of when the backup file is created.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return timestamp
      */
@@ -200,7 +200,7 @@ public class Backup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Unix timestamp of when the backup file is created.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param timestamp set the timestamp.
      */
@@ -227,7 +227,7 @@ public class Backup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -237,7 +237,7 @@ public class Backup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

@@ -33,7 +33,7 @@ public class SEBandwidthLimit  {
      * This is the getter method this will return the attribute value.
      * Total number of service engines for bandwidth based licenses.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return count
      */
@@ -45,7 +45,7 @@ public class SEBandwidthLimit  {
      * This is the setter method to the attribute.
      * Total number of service engines for bandwidth based licenses.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param count set the count.
      */
@@ -58,7 +58,7 @@ public class SEBandwidthLimit  {
      * Maximum bandwidth allowed by each service engine.
      * Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -71,7 +71,7 @@ public class SEBandwidthLimit  {
      * Maximum bandwidth allowed by each service engine.
      * Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */

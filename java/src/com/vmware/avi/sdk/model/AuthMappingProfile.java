@@ -48,7 +48,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Description for the authmappingprofile.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -60,7 +60,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Description for the authmappingprofile.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -72,7 +72,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * Rules list for tenant or role mapping.
      * Field introduced in 22.1.1.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */
@@ -85,7 +85,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * Rules list for tenant or role mapping.
      * Field introduced in 22.1.1.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */
@@ -98,7 +98,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * Rules list for tenant or role mapping.
      * Field introduced in 22.1.1.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */
@@ -114,7 +114,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the authmappingprofile.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -126,7 +126,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the authmappingprofile.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -139,7 +139,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * Tenant ref for the auth mapping profile.
      * It is a reference to an object of type tenant.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -152,7 +152,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * Tenant ref for the auth mapping profile.
      * It is a reference to an object of type tenant.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -165,7 +165,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * Type of the auth profile for which these rules can be linked.
      * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -178,7 +178,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * Type of the auth profile for which these rules can be linked.
      * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */
@@ -207,7 +207,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the authmappingprofile.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -219,7 +219,7 @@ public class AuthMappingProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the authmappingprofile.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

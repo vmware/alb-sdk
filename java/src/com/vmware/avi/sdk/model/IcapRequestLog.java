@@ -85,7 +85,7 @@ public class IcapRequestLog  {
      * Denotes whether the content was processed by icap server and an action was taken.
      * Enum options - ICAP_DISABLED, ICAP_PASSED, ICAP_MODIFIED, ICAP_BLOCKED, ICAP_FAILED.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return action
      */
@@ -98,7 +98,7 @@ public class IcapRequestLog  {
      * Denotes whether the content was processed by icap server and an action was taken.
      * Enum options - ICAP_DISABLED, ICAP_PASSED, ICAP_MODIFIED, ICAP_BLOCKED, ICAP_FAILED.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param action set the action.
      */
@@ -110,7 +110,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * Complete request body from client was sent to the icap server.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return completeBodySent
      */
@@ -122,7 +122,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * Complete request body from client was sent to the icap server.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param completeBodySent set the completeBodySent.
      */
@@ -137,7 +137,7 @@ public class IcapRequestLog  {
      * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
      * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpMethod
      */
@@ -152,7 +152,7 @@ public class IcapRequestLog  {
      * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
      * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpMethod set the httpMethod.
      */
@@ -165,7 +165,7 @@ public class IcapRequestLog  {
      * The http response code received from the icap server.
      * Http response code is only available if content is blocked.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpResponseCode
      */
@@ -178,7 +178,7 @@ public class IcapRequestLog  {
      * The http response code received from the icap server.
      * Http response code is only available if content is blocked.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpResponseCode set the httpResponseCode.
      */
@@ -190,7 +190,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * The absolute icap uri of the request.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return icapAbsoluteUri
      */
@@ -202,7 +202,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * The absolute icap uri of the request.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param icapAbsoluteUri set the icapAbsoluteUri.
      */
@@ -214,7 +214,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * Icap response headers received from icap server.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return icapHeadersReceivedFromServer
      */
@@ -226,7 +226,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * Icap response headers received from icap server.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param icapHeadersReceivedFromServer set the icapHeadersReceivedFromServer.
      */
@@ -238,7 +238,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * Icap request headers sent to icap server.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return icapHeadersSentToServer
      */
@@ -250,7 +250,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * Icap request headers sent to icap server.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param icapHeadersSentToServer set the icapHeadersSentToServer.
      */
@@ -263,7 +263,7 @@ public class IcapRequestLog  {
      * The icap method of the request.
      * Enum options - ICAP_METHOD_REQMOD, ICAP_METHOD_RESPMOD.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return icapMethod
      */
@@ -276,7 +276,7 @@ public class IcapRequestLog  {
      * The icap method of the request.
      * Enum options - ICAP_METHOD_REQMOD, ICAP_METHOD_RESPMOD.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param icapMethod set the icapMethod.
      */
@@ -288,7 +288,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * The response code received from the icap server.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return icapResponseCode
      */
@@ -300,7 +300,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * The response code received from the icap server.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param icapResponseCode set the icapResponseCode.
      */
@@ -312,7 +312,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * Icap server ip for this connection.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return icapServerIp
      */
@@ -324,7 +324,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * Icap server ip for this connection.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param icapServerIp set the icapServerIp.
      */
@@ -336,7 +336,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * Icap server port for this connection.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return icapServerPort
      */
@@ -348,7 +348,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * Icap server port for this connection.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param icapServerPort set the icapServerPort.
      */
@@ -362,7 +362,7 @@ public class IcapRequestLog  {
      * This is the time taken from 1st byte of icap request sent to last byte of icap response received.
      * Field introduced in 20.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return latency
      */
@@ -376,7 +376,7 @@ public class IcapRequestLog  {
      * This is the time taken from 1st byte of icap request sent to last byte of icap response received.
      * Field introduced in 20.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param latency set the latency.
      */
@@ -388,7 +388,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * Content-length of the modified content from icap server.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return modifiedContentLength
      */
@@ -400,7 +400,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * Content-length of the modified content from icap server.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param modifiedContentLength set the modifiedContentLength.
      */
@@ -412,7 +412,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * Icap log specific to nsx defender.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxDefenderLog
      */
@@ -424,7 +424,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * Icap log specific to nsx defender.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxDefenderLog set the nsxDefenderLog.
      */
@@ -436,7 +436,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * Icap log specific to opswat.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return opswatLog
      */
@@ -448,7 +448,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * Icap log specific to opswat.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param opswatLog set the opswatLog.
      */
@@ -460,7 +460,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * The name of the pool that was used for the request.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolName
      */
@@ -472,7 +472,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * The name of the pool that was used for the request.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolName set the poolName.
      */
@@ -484,7 +484,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * The uuid of the pool that was used for the request.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolUuid
      */
@@ -496,7 +496,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * The uuid of the pool that was used for the request.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolUuid set the poolUuid.
      */
@@ -508,7 +508,7 @@ public class IcapRequestLog  {
      * This is the getter method this will return the attribute value.
      * Source port for this connection.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sourcePort
      */
@@ -520,7 +520,7 @@ public class IcapRequestLog  {
      * This is the setter method to the attribute.
      * Source port for this connection.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sourcePort set the sourcePort.
      */
@@ -533,7 +533,7 @@ public class IcapRequestLog  {
      * Selected icap vendor for the request.
      * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vendor
      */
@@ -546,7 +546,7 @@ public class IcapRequestLog  {
      * Selected icap vendor for the request.
      * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vendor set the vendor.
      */

@@ -63,7 +63,7 @@ public class DnsRequest  {
      * This is the getter method this will return the attribute value.
      * Number of additional records.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return additionalRecordsCount
      */
@@ -75,7 +75,7 @@ public class DnsRequest  {
      * This is the setter method to the attribute.
      * Number of additional records.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param additionalRecordsCount set the additionalRecordsCount.
      */
@@ -87,7 +87,7 @@ public class DnsRequest  {
      * This is the getter method this will return the attribute value.
      * Number of answer records in the client dns request.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return answerRecordsCount
      */
@@ -99,7 +99,7 @@ public class DnsRequest  {
      * This is the setter method to the attribute.
      * Number of answer records in the client dns request.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param answerRecordsCount set the answerRecordsCount.
      */
@@ -111,7 +111,7 @@ public class DnsRequest  {
      * This is the getter method this will return the attribute value.
      * Flag indicating client understands ad bit and is interested in the value of ad bit in the response.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authenticData
      */
@@ -123,7 +123,7 @@ public class DnsRequest  {
      * This is the setter method to the attribute.
      * Flag indicating client understands ad bit and is interested in the value of ad bit in the response.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param authenticData set the authenticData.
      */
@@ -135,7 +135,7 @@ public class DnsRequest  {
      * This is the getter method this will return the attribute value.
      * Flag indicating client does not want dnssec validation of the response.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return checkingDisabled
      */
@@ -147,7 +147,7 @@ public class DnsRequest  {
      * This is the setter method to the attribute.
      * Flag indicating client does not want dnssec validation of the response.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param checkingDisabled set the checkingDisabled.
      */
@@ -159,7 +159,7 @@ public class DnsRequest  {
      * This is the getter method this will return the attribute value.
      * Geo location of client.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientLocation
      */
@@ -171,7 +171,7 @@ public class DnsRequest  {
      * This is the setter method to the attribute.
      * Geo location of client.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientLocation set the clientLocation.
      */
@@ -183,7 +183,7 @@ public class DnsRequest  {
      * This is the getter method this will return the attribute value.
      * Id of the dns request.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return identifier
      */
@@ -195,7 +195,7 @@ public class DnsRequest  {
      * This is the setter method to the attribute.
      * Id of the dns request.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param identifier set the identifier.
      */
@@ -207,7 +207,7 @@ public class DnsRequest  {
      * This is the getter method this will return the attribute value.
      * Number of nameserver records in the client dns request.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nameserverRecordsCount
      */
@@ -219,7 +219,7 @@ public class DnsRequest  {
      * This is the setter method to the attribute.
      * Number of nameserver records in the client dns request.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nameserverRecordsCount set the nameserverRecordsCount.
      */
@@ -233,7 +233,7 @@ public class DnsRequest  {
      * Query, notify, etc.
      * Enum options - DNS_OPCODE_QUERY, DNS_OPCODE_IQUERY, DNS_OPCODE_STATUS, DNS_OPCODE_NOTIFY, DNS_OPCODE_UPDATE.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return opcode
      */
@@ -247,7 +247,7 @@ public class DnsRequest  {
      * Query, notify, etc.
      * Enum options - DNS_OPCODE_QUERY, DNS_OPCODE_IQUERY, DNS_OPCODE_STATUS, DNS_OPCODE_NOTIFY, DNS_OPCODE_UPDATE.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param opcode set the opcode.
      */
@@ -259,7 +259,7 @@ public class DnsRequest  {
      * This is the getter method this will return the attribute value.
      * Opt resource records in the request.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return optRecord
      */
@@ -271,7 +271,7 @@ public class DnsRequest  {
      * This is the setter method to the attribute.
      * Opt resource records in the request.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param optRecord set the optRecord.
      */
@@ -283,7 +283,7 @@ public class DnsRequest  {
      * This is the getter method this will return the attribute value.
      * Flag indicating request is a client query (false) or server response (true).
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return queryOrResponse
      */
@@ -295,7 +295,7 @@ public class DnsRequest  {
      * This is the setter method to the attribute.
      * Flag indicating request is a client query (false) or server response (true).
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param queryOrResponse set the queryOrResponse.
      */
@@ -307,7 +307,7 @@ public class DnsRequest  {
      * This is the getter method this will return the attribute value.
      * Number of questions in the client dns request.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return questionCount
      */
@@ -319,7 +319,7 @@ public class DnsRequest  {
      * This is the setter method to the attribute.
      * Number of questions in the client dns request.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param questionCount set the questionCount.
      */
@@ -331,7 +331,7 @@ public class DnsRequest  {
      * This is the getter method this will return the attribute value.
      * Flag indicating client request for recursive resolution.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return recursionDesired
      */
@@ -343,7 +343,7 @@ public class DnsRequest  {
      * This is the setter method to the attribute.
      * Flag indicating client request for recursive resolution.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param recursionDesired set the recursionDesired.
      */

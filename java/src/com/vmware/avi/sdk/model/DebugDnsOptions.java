@@ -33,7 +33,7 @@ public class DebugDnsOptions  {
      * This field filters the fqdn for dns debug.
      * Field introduced in 18.2.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return domainName
      */
@@ -46,7 +46,7 @@ public class DebugDnsOptions  {
      * This field filters the fqdn for dns debug.
      * Field introduced in 18.2.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return domainName
      */
@@ -59,7 +59,7 @@ public class DebugDnsOptions  {
      * This field filters the fqdn for dns debug.
      * Field introduced in 18.2.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return domainName
      */
@@ -75,7 +75,7 @@ public class DebugDnsOptions  {
      * This field filters the gslb service for dns debug.
      * Field introduced in 18.2.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gslbServiceName
      */
@@ -88,7 +88,7 @@ public class DebugDnsOptions  {
      * This field filters the gslb service for dns debug.
      * Field introduced in 18.2.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gslbServiceName
      */
@@ -101,7 +101,7 @@ public class DebugDnsOptions  {
      * This field filters the gslb service for dns debug.
      * Field introduced in 18.2.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gslbServiceName
      */

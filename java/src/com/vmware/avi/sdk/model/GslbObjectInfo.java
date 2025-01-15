@@ -39,7 +39,7 @@ public class GslbObjectInfo  {
      * This is the getter method this will return the attribute value.
      * Indicates the object uuid.
      * Field introduced in 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return obj
      */
@@ -51,7 +51,7 @@ public class GslbObjectInfo  {
      * This is the setter method to the attribute.
      * Indicates the object uuid.
      * Field introduced in 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param obj set the obj.
      */
@@ -63,7 +63,7 @@ public class GslbObjectInfo  {
      * This is the getter method this will return the attribute value.
      * Indicates the object uuid.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objectUuid
      */
@@ -75,7 +75,7 @@ public class GslbObjectInfo  {
      * This is the setter method to the attribute.
      * Indicates the object uuid.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objectUuid set the objectUuid.
      */
@@ -87,7 +87,7 @@ public class GslbObjectInfo  {
      * This is the getter method this will return the attribute value.
      * Indicates the object type gslb, gslbservice or gslbgeodbprofile.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pbName
      */
@@ -99,7 +99,7 @@ public class GslbObjectInfo  {
      * This is the setter method to the attribute.
      * Indicates the object type gslb, gslbservice or gslbgeodbprofile.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pbName set the pbName.
      */
@@ -113,7 +113,7 @@ public class GslbObjectInfo  {
      * This is used in vs-mgr to push just the uuid or uuid + protobuf to the se-agent.
      * Enum options - GSLB_OBJECT_CHANGED, GSLB_OBJECT_UNCHANGED, GSLB_OBJECT_DELETE.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return state
      */
@@ -127,7 +127,7 @@ public class GslbObjectInfo  {
      * This is used in vs-mgr to push just the uuid or uuid + protobuf to the se-agent.
      * Enum options - GSLB_OBJECT_CHANGED, GSLB_OBJECT_UNCHANGED, GSLB_OBJECT_DELETE.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param state set the state.
      */

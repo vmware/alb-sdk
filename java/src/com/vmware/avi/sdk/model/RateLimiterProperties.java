@@ -34,7 +34,7 @@ public class RateLimiterProperties  {
      * Number of stages in msf rate limiter.
      * Allowed values are 1-2.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return msfNumStages
      */
@@ -47,7 +47,7 @@ public class RateLimiterProperties  {
      * Number of stages in msf rate limiter.
      * Allowed values are 1-2.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param msfNumStages set the msfNumStages.
      */
@@ -59,7 +59,7 @@ public class RateLimiterProperties  {
      * This is the getter method this will return the attribute value.
      * Each stage size in msf rate limiter.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
      * @return msfStageSize
      */
@@ -71,7 +71,7 @@ public class RateLimiterProperties  {
      * This is the setter method to the attribute.
      * Each stage size in msf rate limiter.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
      * @param msfStageSize set the msfStageSize.
      */

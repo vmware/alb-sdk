@@ -39,7 +39,7 @@ public class DnsOptRecord  {
      * This is the getter method this will return the attribute value.
      * Flag indicating client is dnssec aware.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnssecOk
      */
@@ -51,7 +51,7 @@ public class DnsOptRecord  {
      * This is the setter method to the attribute.
      * Flag indicating client is dnssec aware.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dnssecOk set the dnssecOk.
      */
@@ -62,7 +62,7 @@ public class DnsOptRecord  {
      * This is the getter method this will return the attribute value.
      * Edns options.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return options
      */
@@ -74,7 +74,7 @@ public class DnsOptRecord  {
      * This is the setter method. this will set the options
      * Edns options.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return options
      */
@@ -86,7 +86,7 @@ public class DnsOptRecord  {
      * This is the setter method this will set the options
      * Edns options.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return options
      */
@@ -102,7 +102,7 @@ public class DnsOptRecord  {
      * This is the getter method this will return the attribute value.
      * Client requestor's udp payload size.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return udpPayloadSize
      */
@@ -114,7 +114,7 @@ public class DnsOptRecord  {
      * This is the setter method to the attribute.
      * Client requestor's udp payload size.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param udpPayloadSize set the udpPayloadSize.
      */
@@ -126,7 +126,7 @@ public class DnsOptRecord  {
      * This is the getter method this will return the attribute value.
      * Edns version.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return version
      */
@@ -138,7 +138,7 @@ public class DnsOptRecord  {
      * This is the setter method to the attribute.
      * Edns version.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param version set the version.
      */

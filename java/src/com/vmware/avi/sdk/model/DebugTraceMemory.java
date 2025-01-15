@@ -32,7 +32,7 @@ public class DebugTraceMemory  {
      * This is the getter method this will return the attribute value.
      * Memory type to be traced for se_malloc and se_free.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return traceMallocTypes
      */
@@ -44,7 +44,7 @@ public class DebugTraceMemory  {
      * This is the setter method. this will set the traceMallocTypes
      * Memory type to be traced for se_malloc and se_free.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return traceMallocTypes
      */
@@ -56,7 +56,7 @@ public class DebugTraceMemory  {
      * This is the setter method this will set the traceMallocTypes
      * Memory type to be traced for se_malloc and se_free.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return traceMallocTypes
      */
@@ -71,7 +71,7 @@ public class DebugTraceMemory  {
      * This is the getter method this will return the attribute value.
      * Memory type to be traced for se_shm_malloc and se_shm_free.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return traceShmMallocTypes
      */
@@ -83,7 +83,7 @@ public class DebugTraceMemory  {
      * This is the setter method. this will set the traceShmMallocTypes
      * Memory type to be traced for se_shm_malloc and se_shm_free.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return traceShmMallocTypes
      */
@@ -95,7 +95,7 @@ public class DebugTraceMemory  {
      * This is the setter method this will set the traceShmMallocTypes
      * Memory type to be traced for se_shm_malloc and se_shm_free.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return traceShmMallocTypes
      */

@@ -39,7 +39,7 @@ public class CloneServer  {
      * This is the getter method this will return the attribute value.
      * Ip address of the clone server.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddress
      */
@@ -51,7 +51,7 @@ public class CloneServer  {
      * This is the setter method to the attribute.
      * Ip address of the clone server.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipAddress set the ipAddress.
      */
@@ -63,7 +63,7 @@ public class CloneServer  {
      * This is the getter method this will return the attribute value.
      * Mac address of the clone server.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mac
      */
@@ -75,7 +75,7 @@ public class CloneServer  {
      * This is the setter method to the attribute.
      * Mac address of the clone server.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mac set the mac.
      */
@@ -88,7 +88,7 @@ public class CloneServer  {
      * Network to clone the traffic to.
      * It is a reference to an object of type network.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkRef
      */
@@ -101,7 +101,7 @@ public class CloneServer  {
      * Network to clone the traffic to.
      * It is a reference to an object of type network.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkRef set the networkRef.
      */
@@ -113,7 +113,7 @@ public class CloneServer  {
      * This is the getter method this will return the attribute value.
      * Subnet of the network to clone the traffic to.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet
      */
@@ -125,7 +125,7 @@ public class CloneServer  {
      * This is the setter method to the attribute.
      * Subnet of the network to clone the traffic to.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subnet set the subnet.
      */

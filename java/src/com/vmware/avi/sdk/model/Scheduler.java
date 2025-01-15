@@ -66,7 +66,7 @@ public class Scheduler extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Backup configuration to be executed by this scheduler.
      * It is a reference to an object of type backupconfiguration.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return backupConfigRef
      */
@@ -78,7 +78,7 @@ public class Scheduler extends AviRestResource  {
      * This is the setter method to the attribute.
      * Backup configuration to be executed by this scheduler.
      * It is a reference to an object of type backupconfiguration.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param backupConfigRef set the backupConfigRef.
      */
@@ -88,7 +88,7 @@ public class Scheduler extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enabled
      */
@@ -98,7 +98,7 @@ public class Scheduler extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enabled set the enabled.
      */
@@ -109,7 +109,7 @@ public class Scheduler extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Scheduler end date and time.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endDateTime
      */
@@ -120,7 +120,7 @@ public class Scheduler extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Scheduler end date and time.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endDateTime set the endDateTime.
      */
@@ -132,7 +132,7 @@ public class Scheduler extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Frequency at which custom scheduler will run.
      * Allowed values are 0-60.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return frequency
      */
@@ -144,7 +144,7 @@ public class Scheduler extends AviRestResource  {
      * This is the setter method to the attribute.
      * Frequency at which custom scheduler will run.
      * Allowed values are 0-60.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param frequency set the frequency.
      */
@@ -157,7 +157,7 @@ public class Scheduler extends AviRestResource  {
      * Unit at which custom scheduler will run.
      * Enum options - SCHEDULER_FREQUENCY_UNIT_MIN, SCHEDULER_FREQUENCY_UNIT_HOUR, SCHEDULER_FREQUENCY_UNIT_DAY, SCHEDULER_FREQUENCY_UNIT_WEEK,
      * SCHEDULER_FREQUENCY_UNIT_MONTH.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return frequencyUnit
      */
@@ -170,7 +170,7 @@ public class Scheduler extends AviRestResource  {
      * Unit at which custom scheduler will run.
      * Enum options - SCHEDULER_FREQUENCY_UNIT_MIN, SCHEDULER_FREQUENCY_UNIT_HOUR, SCHEDULER_FREQUENCY_UNIT_DAY, SCHEDULER_FREQUENCY_UNIT_WEEK,
      * SCHEDULER_FREQUENCY_UNIT_MONTH.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param frequencyUnit set the frequencyUnit.
      */
@@ -181,7 +181,7 @@ public class Scheduler extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of scheduler.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -192,7 +192,7 @@ public class Scheduler extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Name of scheduler.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -204,7 +204,7 @@ public class Scheduler extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Scheduler run mode.
      * Enum options - RUN_MODE_PERIODIC, RUN_MODE_AT, RUN_MODE_NOW.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return runMode
      */
@@ -216,7 +216,7 @@ public class Scheduler extends AviRestResource  {
      * This is the setter method to the attribute.
      * Scheduler run mode.
      * Enum options - RUN_MODE_PERIODIC, RUN_MODE_AT, RUN_MODE_NOW.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param runMode set the runMode.
      */
@@ -228,7 +228,7 @@ public class Scheduler extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Control script to be executed by this scheduler.
      * It is a reference to an object of type alertscriptconfig.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return runScriptRef
      */
@@ -240,7 +240,7 @@ public class Scheduler extends AviRestResource  {
      * This is the setter method to the attribute.
      * Control script to be executed by this scheduler.
      * It is a reference to an object of type alertscriptconfig.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param runScriptRef set the runScriptRef.
      */
@@ -252,7 +252,7 @@ public class Scheduler extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Define scheduler action.
      * Enum options - SCHEDULER_ACTION_RUN_A_SCRIPT, SCHEDULER_ACTION_BACKUP.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SCHEDULER_ACTION_BACKUP".
      * @return schedulerAction
      */
@@ -264,7 +264,7 @@ public class Scheduler extends AviRestResource  {
      * This is the setter method to the attribute.
      * Define scheduler action.
      * Enum options - SCHEDULER_ACTION_RUN_A_SCRIPT, SCHEDULER_ACTION_BACKUP.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SCHEDULER_ACTION_BACKUP".
      * @param schedulerAction set the schedulerAction.
      */
@@ -275,7 +275,7 @@ public class Scheduler extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Scheduler start date and time.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startDateTime
      */
@@ -286,7 +286,7 @@ public class Scheduler extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Scheduler start date and time.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startDateTime set the startDateTime.
      */
@@ -297,7 +297,7 @@ public class Scheduler extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -308,7 +308,7 @@ public class Scheduler extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -335,7 +335,7 @@ public class Scheduler extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -345,7 +345,7 @@ public class Scheduler extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

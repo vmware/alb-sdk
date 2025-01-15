@@ -29,7 +29,7 @@ public class GCPVIPILB  {
      * This is the getter method this will return the attribute value.
      * Google cloud router names to advertise byoip.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudRouterNames
      */
@@ -41,7 +41,7 @@ public class GCPVIPILB  {
      * This is the setter method. this will set the cloudRouterNames
      * Google cloud router names to advertise byoip.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudRouterNames
      */
@@ -53,7 +53,7 @@ public class GCPVIPILB  {
      * This is the setter method this will set the cloudRouterNames
      * Google cloud router names to advertise byoip.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudRouterNames
      */

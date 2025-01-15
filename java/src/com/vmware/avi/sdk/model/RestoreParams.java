@@ -46,7 +46,7 @@ public class RestoreParams  {
      * This is the getter method this will return the attribute value.
      * This flag is set to allow migration across version during controller restore operations.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableMigration
      */
@@ -58,7 +58,7 @@ public class RestoreParams  {
      * This is the setter method to the attribute.
      * This flag is set to allow migration across version during controller restore operations.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableMigration set the enableMigration.
      */
@@ -70,7 +70,7 @@ public class RestoreParams  {
      * This is the getter method this will return the attribute value.
      * Requested config file path.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return file
      */
@@ -82,7 +82,7 @@ public class RestoreParams  {
      * This is the setter method to the attribute.
      * Requested config file path.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param file set the file.
      */
@@ -94,7 +94,7 @@ public class RestoreParams  {
      * This is the getter method this will return the attribute value.
      * The passphrase with which the configuration was exported.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return passphrase
      */
@@ -106,7 +106,7 @@ public class RestoreParams  {
      * This is the setter method to the attribute.
      * The passphrase with which the configuration was exported.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param passphrase set the passphrase.
      */
@@ -118,7 +118,7 @@ public class RestoreParams  {
      * This is the getter method this will return the attribute value.
      * This flag is set to run the pre-checks without the subsequent restore operations.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return prechecksOnly
      */
@@ -130,7 +130,7 @@ public class RestoreParams  {
      * This is the setter method to the attribute.
      * This flag is set to run the pre-checks without the subsequent restore operations.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param prechecksOnly set the prechecksOnly.
      */
@@ -142,7 +142,7 @@ public class RestoreParams  {
      * This is the getter method this will return the attribute value.
      * This flag allows you to bypass the warning prechecks.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return skipWarnings
      */
@@ -154,7 +154,7 @@ public class RestoreParams  {
      * This is the setter method to the attribute.
      * This flag allows you to bypass the warning prechecks.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param skipWarnings set the skipWarnings.
      */
@@ -167,7 +167,7 @@ public class RestoreParams  {
      * Type of the file.
      * Enum options - JSON, BUNDLE.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "JSON".
      * @return type
      */
@@ -180,7 +180,7 @@ public class RestoreParams  {
      * Type of the file.
      * Enum options - JSON, BUNDLE.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "JSON".
      * @param type set the type.
      */

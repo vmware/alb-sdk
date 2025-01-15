@@ -31,7 +31,7 @@ public class VcenterDatastore  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datastoreName
      */
@@ -41,7 +41,7 @@ public class VcenterDatastore  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param datastoreName set the datastoreName.
      */
@@ -53,7 +53,7 @@ public class VcenterDatastore  {
      * This is the getter method this will return the attribute value.
      * Will be used by default, if not set fallback to datastore_name.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return managedObjectId
      */
@@ -65,7 +65,7 @@ public class VcenterDatastore  {
      * This is the setter method to the attribute.
      * Will be used by default, if not set fallback to datastore_name.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param managedObjectId set the managedObjectId.
      */

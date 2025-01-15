@@ -45,7 +45,7 @@ public class ALBServicesUser  {
      * This is the getter method this will return the attribute value.
      * Id of primary account of the portal user.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return accountId
      */
@@ -57,7 +57,7 @@ public class ALBServicesUser  {
      * This is the setter method to the attribute.
      * Id of primary account of the portal user.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param accountId set the accountId.
      */
@@ -69,7 +69,7 @@ public class ALBServicesUser  {
      * This is the getter method this will return the attribute value.
      * Name of primary account of the portal user.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return accountName
      */
@@ -81,7 +81,7 @@ public class ALBServicesUser  {
      * This is the setter method to the attribute.
      * Name of primary account of the portal user.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param accountName set the accountName.
      */
@@ -93,7 +93,7 @@ public class ALBServicesUser  {
      * This is the getter method this will return the attribute value.
      * Email id of the portal user.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return email
      */
@@ -105,7 +105,7 @@ public class ALBServicesUser  {
      * This is the setter method to the attribute.
      * Email id of the portal user.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param email set the email.
      */
@@ -116,7 +116,7 @@ public class ALBServicesUser  {
      * This is the getter method this will return the attribute value.
      * Information about all the accounts managed by user in the customer portal.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return managedAccounts
      */
@@ -128,7 +128,7 @@ public class ALBServicesUser  {
      * This is the setter method. this will set the managedAccounts
      * Information about all the accounts managed by user in the customer portal.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return managedAccounts
      */
@@ -140,7 +140,7 @@ public class ALBServicesUser  {
      * This is the setter method this will set the managedAccounts
      * Information about all the accounts managed by user in the customer portal.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return managedAccounts
      */
@@ -156,7 +156,7 @@ public class ALBServicesUser  {
      * This is the getter method this will return the attribute value.
      * Name of the portal user.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -168,7 +168,7 @@ public class ALBServicesUser  {
      * This is the setter method to the attribute.
      * Name of the portal user.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -180,7 +180,7 @@ public class ALBServicesUser  {
      * This is the getter method this will return the attribute value.
      * Phone number of the user.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return phone
      */
@@ -192,7 +192,7 @@ public class ALBServicesUser  {
      * This is the setter method to the attribute.
      * Phone number of the user.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param phone set the phone.
      */

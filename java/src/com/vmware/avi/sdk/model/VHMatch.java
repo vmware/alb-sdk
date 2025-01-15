@@ -33,7 +33,7 @@ public class VHMatch  {
      * This is the getter method this will return the attribute value.
      * Host/domain name match configuration.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return host
      */
@@ -45,7 +45,7 @@ public class VHMatch  {
      * This is the setter method to the attribute.
      * Host/domain name match configuration.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param host set the host.
      */
@@ -58,7 +58,7 @@ public class VHMatch  {
      * At least one rule must be configured.
      * Field introduced in 22.1.3.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -72,7 +72,7 @@ public class VHMatch  {
      * At least one rule must be configured.
      * Field introduced in 22.1.3.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -86,7 +86,7 @@ public class VHMatch  {
      * At least one rule must be configured.
      * Field introduced in 22.1.3.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */

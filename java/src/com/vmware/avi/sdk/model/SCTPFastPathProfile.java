@@ -34,7 +34,7 @@ public class SCTPFastPathProfile  {
      * When enabled, avi will complete the 4-way handshake with the client before forwarding any packets to the server.
      * This will protect the server from init chunks flood and half open connections.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableInitChunkProtection
      */
@@ -47,7 +47,7 @@ public class SCTPFastPathProfile  {
      * When enabled, avi will complete the 4-way handshake with the client before forwarding any packets to the server.
      * This will protect the server from init chunks flood and half open connections.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableInitChunkProtection set the enableInitChunkProtection.
      */
@@ -62,7 +62,7 @@ public class SCTPFastPathProfile  {
      * Allowed values are 0-247483647.
      * Field introduced in 22.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return idleTimeout
      */
@@ -77,7 +77,7 @@ public class SCTPFastPathProfile  {
      * Allowed values are 0-247483647.
      * Field introduced in 22.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param idleTimeout set the idleTimeout.
      */

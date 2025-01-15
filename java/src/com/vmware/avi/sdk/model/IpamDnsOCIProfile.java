@@ -43,7 +43,7 @@ public class IpamDnsOCIProfile  {
      * Credentials to access oracle cloud.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 18.2.1,18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudCredentialsRef
      */
@@ -56,7 +56,7 @@ public class IpamDnsOCIProfile  {
      * Credentials to access oracle cloud.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 18.2.1,18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudCredentialsRef set the cloudCredentialsRef.
      */
@@ -68,7 +68,7 @@ public class IpamDnsOCIProfile  {
      * This is the getter method this will return the attribute value.
      * Region in which oracle cloud resource resides.
      * Field introduced in 18.2.1,18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return region
      */
@@ -80,7 +80,7 @@ public class IpamDnsOCIProfile  {
      * This is the setter method to the attribute.
      * Region in which oracle cloud resource resides.
      * Field introduced in 18.2.1,18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param region set the region.
      */
@@ -92,7 +92,7 @@ public class IpamDnsOCIProfile  {
      * This is the getter method this will return the attribute value.
      * Oracle cloud id for tenant aka root compartment.
      * Field introduced in 18.2.1,18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenancy
      */
@@ -104,7 +104,7 @@ public class IpamDnsOCIProfile  {
      * This is the setter method to the attribute.
      * Oracle cloud id for tenant aka root compartment.
      * Field introduced in 18.2.1,18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenancy set the tenancy.
      */
@@ -116,7 +116,7 @@ public class IpamDnsOCIProfile  {
      * This is the getter method this will return the attribute value.
      * Oracle cloud compartment id in which vcn resides.
      * Field introduced in 18.2.1,18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcnCompartmentId
      */
@@ -128,7 +128,7 @@ public class IpamDnsOCIProfile  {
      * This is the setter method to the attribute.
      * Oracle cloud compartment id in which vcn resides.
      * Field introduced in 18.2.1,18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcnCompartmentId set the vcnCompartmentId.
      */
@@ -140,7 +140,7 @@ public class IpamDnsOCIProfile  {
      * This is the getter method this will return the attribute value.
      * Virtual cloud network id where virtual ip will belong.
      * Field introduced in 18.2.1,18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcnId
      */
@@ -152,7 +152,7 @@ public class IpamDnsOCIProfile  {
      * This is the setter method to the attribute.
      * Virtual cloud network id where virtual ip will belong.
      * Field introduced in 18.2.1,18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcnId set the vcnId.
      */

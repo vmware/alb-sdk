@@ -36,7 +36,7 @@ public class IcapViolation  {
      * This is the getter method this will return the attribute value.
      * The file that icap server has identified as containing a violation.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fileName
      */
@@ -48,7 +48,7 @@ public class IcapViolation  {
      * This is the setter method to the attribute.
      * The file that icap server has identified as containing a violation.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fileName set the fileName.
      */
@@ -61,7 +61,7 @@ public class IcapViolation  {
      * Action taken by icap server in response to this threat.
      * Enum options - ICAP_FILE_NOT_REPAIRED, ICAP_FILE_REPAIRED, ICAP_VIOLATING_SECTION_REMOVED.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resolution
      */
@@ -74,7 +74,7 @@ public class IcapViolation  {
      * Action taken by icap server in response to this threat.
      * Enum options - ICAP_FILE_NOT_REPAIRED, ICAP_FILE_REPAIRED, ICAP_VIOLATING_SECTION_REMOVED.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resolution set the resolution.
      */
@@ -86,7 +86,7 @@ public class IcapViolation  {
      * This is the getter method this will return the attribute value.
      * The name of the threat.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return threatName
      */
@@ -98,7 +98,7 @@ public class IcapViolation  {
      * This is the setter method to the attribute.
      * The name of the threat.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param threatName set the threatName.
      */

@@ -47,7 +47,7 @@ public class SeUpgradeParams extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * This field is used to disable scale-in/scale out operations during upgrade operations.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disruptive
      */
@@ -58,7 +58,7 @@ public class SeUpgradeParams extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * This field is used to disable scale-in/scale out operations during upgrade operations.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disruptive set the disruptive.
      */
@@ -70,7 +70,7 @@ public class SeUpgradeParams extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Upgrade system with patch upgrade.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return patch
      */
@@ -82,7 +82,7 @@ public class SeUpgradeParams extends AviRestResource  {
      * This is the setter method to the attribute.
      * Upgrade system with patch upgrade.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param patch set the patch.
      */
@@ -93,7 +93,7 @@ public class SeUpgradeParams extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Rollback system with patch upgrade.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return patchRollback
      */
@@ -104,7 +104,7 @@ public class SeUpgradeParams extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Rollback system with patch upgrade.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param patchRollback set the patchRollback.
      */
@@ -115,7 +115,7 @@ public class SeUpgradeParams extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is used in rollback operations.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return rollback
      */
@@ -126,7 +126,7 @@ public class SeUpgradeParams extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is used in rollback operations.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param rollback set the rollback.
      */
@@ -137,7 +137,7 @@ public class SeUpgradeParams extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type serviceenginegroup.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupRefs
      */
@@ -149,7 +149,7 @@ public class SeUpgradeParams extends AviRestResource  {
      * This is the setter method. this will set the seGroupRefs
      * It is a reference to an object of type serviceenginegroup.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupRefs
      */
@@ -161,7 +161,7 @@ public class SeUpgradeParams extends AviRestResource  {
      * This is the setter method this will set the seGroupRefs
      * It is a reference to an object of type serviceenginegroup.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupRefs
      */
@@ -178,7 +178,7 @@ public class SeUpgradeParams extends AviRestResource  {
      * When set to true, if there is any failure during the se upgrade, upgrade will be suspended for this se group and manual intervention would be
      * needed to resume the upgrade.
      * Field introduced in 17.1.4.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return suspendOnFailure
      */
@@ -191,7 +191,7 @@ public class SeUpgradeParams extends AviRestResource  {
      * When set to true, if there is any failure during the se upgrade, upgrade will be suspended for this se group and manual intervention would be
      * needed to resume the upgrade.
      * Field introduced in 17.1.4.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param suspendOnFailure set the suspendOnFailure.
      */
@@ -201,7 +201,7 @@ public class SeUpgradeParams extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -211,7 +211,7 @@ public class SeUpgradeParams extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

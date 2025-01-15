@@ -34,7 +34,7 @@ public class OpenStackHypervisorProperties  {
      * Hypervisor type.
      * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hypervisor
      */
@@ -47,7 +47,7 @@ public class OpenStackHypervisorProperties  {
      * Hypervisor type.
      * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hypervisor set the hypervisor.
      */
@@ -58,7 +58,7 @@ public class OpenStackHypervisorProperties  {
      * This is the getter method this will return the attribute value.
      * Custom properties to be associated with the se image in glance for this hypervisor type.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return imageProperties
      */
@@ -70,7 +70,7 @@ public class OpenStackHypervisorProperties  {
      * This is the setter method. this will set the imageProperties
      * Custom properties to be associated with the se image in glance for this hypervisor type.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return imageProperties
      */
@@ -82,7 +82,7 @@ public class OpenStackHypervisorProperties  {
      * This is the setter method this will set the imageProperties
      * Custom properties to be associated with the se image in glance for this hypervisor type.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return imageProperties
      */

@@ -47,7 +47,7 @@ public class ConfigUserLogin  {
     /**
      * This is the getter method this will return the attribute value.
      * Client ip.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientIp
      */
@@ -58,7 +58,7 @@ public class ConfigUserLogin  {
     /**
      * This is the setter method to the attribute.
      * Client ip.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientIp set the clientIp.
      */
@@ -70,7 +70,7 @@ public class ConfigUserLogin  {
      * This is the getter method this will return the attribute value.
      * Type of client used to login ui, cli, others(api).
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientType
      */
@@ -82,7 +82,7 @@ public class ConfigUserLogin  {
      * This is the setter method to the attribute.
      * Type of client used to login ui, cli, others(api).
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientType set the clientType.
      */
@@ -93,7 +93,7 @@ public class ConfigUserLogin  {
     /**
      * This is the getter method this will return the attribute value.
      * Error message if authentication failed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorMessage
      */
@@ -104,7 +104,7 @@ public class ConfigUserLogin  {
     /**
      * This is the setter method to the attribute.
      * Error message if authentication failed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorMessage set the errorMessage.
      */
@@ -116,7 +116,7 @@ public class ConfigUserLogin  {
      * This is the getter method this will return the attribute value.
      * Local user.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return local
      */
@@ -128,7 +128,7 @@ public class ConfigUserLogin  {
      * This is the setter method to the attribute.
      * Local user.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param local set the local.
      */
@@ -140,7 +140,7 @@ public class ConfigUserLogin  {
      * This is the getter method this will return the attribute value.
      * Additional attributes from login handler.
      * Field introduced in 18.1.4,18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteAttributes
      */
@@ -152,7 +152,7 @@ public class ConfigUserLogin  {
      * This is the setter method to the attribute.
      * Additional attributes from login handler.
      * Field introduced in 18.1.4,18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param remoteAttributes set the remoteAttributes.
      */
@@ -163,7 +163,7 @@ public class ConfigUserLogin  {
     /**
      * This is the getter method this will return the attribute value.
      * Status.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -174,7 +174,7 @@ public class ConfigUserLogin  {
     /**
      * This is the setter method to the attribute.
      * Status.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */
@@ -185,7 +185,7 @@ public class ConfigUserLogin  {
     /**
      * This is the getter method this will return the attribute value.
      * Request user.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return user
      */
@@ -196,7 +196,7 @@ public class ConfigUserLogin  {
     /**
      * This is the setter method to the attribute.
      * Request user.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param user set the user.
      */

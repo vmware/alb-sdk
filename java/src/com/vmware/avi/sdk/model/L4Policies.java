@@ -33,7 +33,7 @@ public class L4Policies  {
      * This is the getter method this will return the attribute value.
      * Index of the virtual service l4 policy set.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -45,7 +45,7 @@ public class L4Policies  {
      * This is the setter method to the attribute.
      * Index of the virtual service l4 policy set.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */
@@ -58,7 +58,7 @@ public class L4Policies  {
      * Id of the virtual service l4 policy set.
      * It is a reference to an object of type l4policyset.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return l4PolicySetRef
      */
@@ -71,7 +71,7 @@ public class L4Policies  {
      * Id of the virtual service l4 policy set.
      * It is a reference to an object of type l4policyset.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param l4PolicySetRef set the l4PolicySetRef.
      */

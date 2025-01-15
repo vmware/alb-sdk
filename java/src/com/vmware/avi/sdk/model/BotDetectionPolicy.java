@@ -69,7 +69,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Allow the user to skip botmanagement for selected requests.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowList
      */
@@ -81,7 +81,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Allow the user to skip botmanagement for selected requests.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param allowList set the allowList.
      */
@@ -93,7 +93,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The client behavior configuration used in this policy.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientBehaviorDetector
      */
@@ -105,7 +105,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * The client behavior configuration used in this policy.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientBehaviorDetector set the clientBehaviorDetector.
      */
@@ -117,7 +117,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Human-readable description of this bot detection policy.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -129,7 +129,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Human-readable description of this bot detection policy.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -141,7 +141,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The ip location configuration used in this policy.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipLocationDetector
      */
@@ -153,7 +153,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * The ip location configuration used in this policy.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipLocationDetector set the ipLocationDetector.
      */
@@ -165,7 +165,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The ip reputation configuration used in this policy.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipReputationDetector
      */
@@ -177,7 +177,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * The ip reputation configuration used in this policy.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipReputationDetector set the ipReputationDetector.
      */
@@ -189,7 +189,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The name of this bot detection policy.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -201,7 +201,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * The name of this bot detection policy.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -214,7 +214,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * System-defined rules for classification.
      * It is a reference to an object of type botmapping.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return systemBotMappingRef
      */
@@ -227,7 +227,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * System-defined rules for classification.
      * It is a reference to an object of type botmapping.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param systemBotMappingRef set the systemBotMappingRef.
      */
@@ -240,7 +240,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * The installation provides an updated ruleset for consolidating the results of different decider phases.
      * It is a reference to an object of type botconfigconsolidator.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return systemConsolidatorRef
      */
@@ -253,7 +253,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * The installation provides an updated ruleset for consolidating the results of different decider phases.
      * It is a reference to an object of type botconfigconsolidator.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param systemConsolidatorRef set the systemConsolidatorRef.
      */
@@ -266,7 +266,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * The unique identifier of the tenant to which this policy belongs.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -279,7 +279,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * The unique identifier of the tenant to which this policy belongs.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -308,7 +308,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The user-agent configuration used in this policy.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userAgentDetector
      */
@@ -320,7 +320,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * The user-agent configuration used in this policy.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userAgentDetector set the userAgentDetector.
      */
@@ -335,7 +335,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * If a rule matches, processing terminates and the system-defined rules will not run.
      * It is a reference to an object of type botmapping.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userBotMappingRef
      */
@@ -350,7 +350,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * If a rule matches, processing terminates and the system-defined rules will not run.
      * It is a reference to an object of type botmapping.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userBotMappingRef set the userBotMappingRef.
      */
@@ -365,7 +365,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * If it successfully sets a consolidation, the system consolidator will not change it.
      * It is a reference to an object of type botconfigconsolidator.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userConsolidatorRef
      */
@@ -380,7 +380,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * If it successfully sets a consolidation, the system consolidator will not change it.
      * It is a reference to an object of type botconfigconsolidator.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userConsolidatorRef set the userConsolidatorRef.
      */
@@ -392,7 +392,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * A unique identifier to this bot detection policy.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -404,7 +404,7 @@ public class BotDetectionPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * A unique identifier to this bot detection policy.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

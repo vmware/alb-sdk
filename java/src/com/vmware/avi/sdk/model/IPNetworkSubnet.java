@@ -21,8 +21,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IPNetworkSubnet  {
+    @JsonProperty("ipv6_range")
+    private IpAddrRange ipv6Range;
+
     @JsonProperty("network_ref")
     private String networkRef;
+
+    @JsonProperty("range")
+    private IpAddrRange range;
 
     @JsonProperty("subnet")
     private IpAddrPrefix subnet;
@@ -40,10 +46,34 @@ public class IPNetworkSubnet  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Ipv6 reserved range of ips for virtualservice ip allocation with infoblox as the ipam provider.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return ipv6Range
+     */
+    public IpAddrRange getIpv6Range() {
+        return ipv6Range;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Ipv6 reserved range of ips for virtualservice ip allocation with infoblox as the ipam provider.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param ipv6Range set the ipv6Range.
+     */
+    public void setIpv6Range(IpAddrRange ipv6Range) {
+        this.ipv6Range = ipv6Range;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Network for virtualservice ip allocation with vantage as the ipam provider.
      * Network should be created before this is configured.
      * It is a reference to an object of type network.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkRef
      */
@@ -56,7 +86,7 @@ public class IPNetworkSubnet  {
      * Network for virtualservice ip allocation with vantage as the ipam provider.
      * Network should be created before this is configured.
      * It is a reference to an object of type network.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkRef set the networkRef.
      */
@@ -66,9 +96,33 @@ public class IPNetworkSubnet  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Ipv4 reserved range of ips for virtualservice ip allocation with infoblox as the ipam provider.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return range
+     */
+    public IpAddrRange getRange() {
+        return range;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Ipv4 reserved range of ips for virtualservice ip allocation with infoblox as the ipam provider.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param range set the range.
+     */
+    public void setRange(IpAddrRange range) {
+        this.range = range;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Subnet for virtualservice ip allocation with vantage or infoblox as the ipam provider.
      * Only one of subnet or subnet_uuid configuration is allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet
      */
@@ -80,7 +134,7 @@ public class IPNetworkSubnet  {
      * This is the setter method to the attribute.
      * Subnet for virtualservice ip allocation with vantage or infoblox as the ipam provider.
      * Only one of subnet or subnet_uuid configuration is allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subnet set the subnet.
      */
@@ -93,7 +147,7 @@ public class IPNetworkSubnet  {
      * Subnet for virtualservice ipv6 allocation with vantage or infoblox as the ipam provider.
      * Only one of subnet or subnet_uuid configuration is allowed.
      * Field introduced in 18.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet6
      */
@@ -106,7 +160,7 @@ public class IPNetworkSubnet  {
      * Subnet for virtualservice ipv6 allocation with vantage or infoblox as the ipam provider.
      * Only one of subnet or subnet_uuid configuration is allowed.
      * Field introduced in 18.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subnet6 set the subnet6.
      */
@@ -119,7 +173,7 @@ public class IPNetworkSubnet  {
      * Subnet uuid or name or prefix for virtualservice ipv6 allocation with aws or openstack as the ipam provider.
      * Only one of subnet or subnet_uuid configuration is allowed.
      * Field introduced in 18.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet6Uuid
      */
@@ -132,7 +186,7 @@ public class IPNetworkSubnet  {
      * Subnet uuid or name or prefix for virtualservice ipv6 allocation with aws or openstack as the ipam provider.
      * Only one of subnet or subnet_uuid configuration is allowed.
      * Field introduced in 18.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subnet6Uuid set the subnet6Uuid.
      */
@@ -144,7 +198,7 @@ public class IPNetworkSubnet  {
      * This is the getter method this will return the attribute value.
      * Subnet uuid or name or prefix for virtualservice ip allocation with aws or openstack as the ipam provider.
      * Only one of subnet or subnet_uuid configuration is allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnetUuid
      */
@@ -156,7 +210,7 @@ public class IPNetworkSubnet  {
      * This is the setter method to the attribute.
      * Subnet uuid or name or prefix for virtualservice ip allocation with aws or openstack as the ipam provider.
      * Only one of subnet or subnet_uuid configuration is allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subnetUuid set the subnetUuid.
      */
@@ -178,14 +232,18 @@ public class IPNetworkSubnet  {
   Objects.equals(this.subnet, objIPNetworkSubnet.subnet)&&
   Objects.equals(this.subnetUuid, objIPNetworkSubnet.subnetUuid)&&
   Objects.equals(this.subnet6, objIPNetworkSubnet.subnet6)&&
-  Objects.equals(this.subnet6Uuid, objIPNetworkSubnet.subnet6Uuid);
+  Objects.equals(this.subnet6Uuid, objIPNetworkSubnet.subnet6Uuid)&&
+  Objects.equals(this.range, objIPNetworkSubnet.range)&&
+  Objects.equals(this.ipv6Range, objIPNetworkSubnet.ipv6Range);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class IPNetworkSubnet {\n");
-                  sb.append("    networkRef: ").append(toIndentedString(networkRef)).append("\n");
+                  sb.append("    ipv6Range: ").append(toIndentedString(ipv6Range)).append("\n");
+                        sb.append("    networkRef: ").append(toIndentedString(networkRef)).append("\n");
+                        sb.append("    range: ").append(toIndentedString(range)).append("\n");
                         sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
                         sb.append("    subnet6: ").append(toIndentedString(subnet6)).append("\n");
                         sb.append("    subnet6Uuid: ").append(toIndentedString(subnet6Uuid)).append("\n");

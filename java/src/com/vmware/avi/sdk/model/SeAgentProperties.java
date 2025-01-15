@@ -129,7 +129,7 @@ public class SeAgentProperties  {
      * This is the getter method this will return the attribute value.
      * Aggressive count of hb misses for se health check failure.
      * Allowed values are 1-1000.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return controllerEchoMissAggressiveLimit
      */
@@ -141,7 +141,7 @@ public class SeAgentProperties  {
      * This is the setter method to the attribute.
      * Aggressive count of hb misses for se health check failure.
      * Allowed values are 1-1000.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param controllerEchoMissAggressiveLimit set the controllerEchoMissAggressiveLimit.
      */
@@ -153,7 +153,7 @@ public class SeAgentProperties  {
      * This is the getter method this will return the attribute value.
      * Count of hb misses for se health check failure.
      * Allowed values are 1-1000.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return controllerEchoMissLimit
      */
@@ -165,7 +165,7 @@ public class SeAgentProperties  {
      * This is the setter method to the attribute.
      * Count of hb misses for se health check failure.
      * Allowed values are 1-1000.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param controllerEchoMissLimit set the controllerEchoMissLimit.
      */
@@ -177,7 +177,7 @@ public class SeAgentProperties  {
      * This is the getter method this will return the attribute value.
      * Aggressive timeout used for se health check.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @return controllerEchoRpcAggressiveTimeout
      */
@@ -189,7 +189,7 @@ public class SeAgentProperties  {
      * This is the setter method to the attribute.
      * Aggressive timeout used for se health check.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @param controllerEchoRpcAggressiveTimeout set the controllerEchoRpcAggressiveTimeout.
      */
@@ -201,7 +201,7 @@ public class SeAgentProperties  {
      * This is the getter method this will return the attribute value.
      * Timeout used for se health check.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @return controllerEchoRpcTimeout
      */
@@ -213,7 +213,7 @@ public class SeAgentProperties  {
      * This is the setter method to the attribute.
      * Timeout used for se health check.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @param controllerEchoRpcTimeout set the controllerEchoRpcTimeout.
      */
@@ -224,7 +224,7 @@ public class SeAgentProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Allowed values are 1-20.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 6.
      * @return controllerHeartbeatMissLimit
      */
@@ -235,7 +235,7 @@ public class SeAgentProperties  {
     /**
      * This is the setter method to the attribute.
      * Allowed values are 1-20.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 6.
      * @param controllerHeartbeatMissLimit set the controllerHeartbeatMissLimit.
      */
@@ -247,7 +247,7 @@ public class SeAgentProperties  {
      * This is the getter method this will return the attribute value.
      * Allowed values are 1-60.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 12.
      * @return controllerHeartbeatTimeoutSec
      */
@@ -259,7 +259,7 @@ public class SeAgentProperties  {
      * This is the setter method to the attribute.
      * Allowed values are 1-60.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 12.
      * @param controllerHeartbeatTimeoutSec set the controllerHeartbeatTimeoutSec.
      */
@@ -270,7 +270,7 @@ public class SeAgentProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return controllerRegistrationTimeoutSec
      */
@@ -281,7 +281,7 @@ public class SeAgentProperties  {
     /**
      * This is the setter method to the attribute.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param controllerRegistrationTimeoutSec set the controllerRegistrationTimeoutSec.
      */
@@ -292,7 +292,7 @@ public class SeAgentProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return controllerRpcTimeout
      */
@@ -303,7 +303,7 @@ public class SeAgentProperties  {
     /**
      * This is the setter method to the attribute.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param controllerRpcTimeout set the controllerRpcTimeout.
      */
@@ -314,7 +314,7 @@ public class SeAgentProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return cpustatsInterval
      */
@@ -325,7 +325,7 @@ public class SeAgentProperties  {
     /**
      * This is the setter method to the attribute.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param cpustatsInterval set the cpustatsInterval.
      */
@@ -338,7 +338,7 @@ public class SeAgentProperties  {
      * Max time to wait for ctrl registration before assert.
      * Allowed values are 1-1000.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 150.
      * @return ctrlRegPendingMaxWaitTime
      */
@@ -351,7 +351,7 @@ public class SeAgentProperties  {
      * Max time to wait for ctrl registration before assert.
      * Allowed values are 1-1000.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 150.
      * @param ctrlRegPendingMaxWaitTime set the ctrlRegPendingMaxWaitTime.
      */
@@ -361,7 +361,7 @@ public class SeAgentProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return debugMode
      */
@@ -371,7 +371,7 @@ public class SeAgentProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param debugMode set the debugMode.
      */
@@ -385,7 +385,7 @@ public class SeAgentProperties  {
      * Use dp_aggressive_deq_interval_msec in serviceenginegroup instead.
      * Allowed values are 1-1000.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return dpAggressiveDeqIntervalMsec
      */
@@ -399,7 +399,7 @@ public class SeAgentProperties  {
      * Use dp_aggressive_deq_interval_msec in serviceenginegroup instead.
      * Allowed values are 1-1000.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param dpAggressiveDeqIntervalMsec set the dpAggressiveDeqIntervalMsec.
      */
@@ -413,7 +413,7 @@ public class SeAgentProperties  {
      * Use dp_aggressive_enq_interval_msec in serviceenginegroup instead.
      * Allowed values are 1-1000.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return dpAggressiveEnqIntervalMsec
      */
@@ -427,7 +427,7 @@ public class SeAgentProperties  {
      * Use dp_aggressive_enq_interval_msec in serviceenginegroup instead.
      * Allowed values are 1-1000.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param dpAggressiveEnqIntervalMsec set the dpAggressiveEnqIntervalMsec.
      */
@@ -437,7 +437,7 @@ public class SeAgentProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return dpBatchSize
      */
@@ -447,7 +447,7 @@ public class SeAgentProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param dpBatchSize set the dpBatchSize.
      */
@@ -461,7 +461,7 @@ public class SeAgentProperties  {
      * Use dp_deq_interval_msec in serviceenginegroup instead.
      * Allowed values are 1-1000.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return dpDeqIntervalMsec
      */
@@ -475,7 +475,7 @@ public class SeAgentProperties  {
      * Use dp_deq_interval_msec in serviceenginegroup instead.
      * Allowed values are 1-1000.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param dpDeqIntervalMsec set the dpDeqIntervalMsec.
      */
@@ -489,7 +489,7 @@ public class SeAgentProperties  {
      * Use dp_enq_interval_msec in serviceenginegroup instead.
      * Allowed values are 1-1000.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return dpEnqIntervalMsec
      */
@@ -503,7 +503,7 @@ public class SeAgentProperties  {
      * Use dp_enq_interval_msec in serviceenginegroup instead.
      * Allowed values are 1-1000.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param dpEnqIntervalMsec set the dpEnqIntervalMsec.
      */
@@ -514,7 +514,7 @@ public class SeAgentProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return dpMaxWaitRspTimeSec
      */
@@ -525,7 +525,7 @@ public class SeAgentProperties  {
     /**
      * This is the setter method to the attribute.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param dpMaxWaitRspTimeSec set the dpMaxWaitRspTimeSec.
      */
@@ -537,7 +537,7 @@ public class SeAgentProperties  {
      * This is the getter method this will return the attribute value.
      * Max time to wait for dp registration before assert.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 75.
      * @return dpRegPendingMaxWaitTime
      */
@@ -549,7 +549,7 @@ public class SeAgentProperties  {
      * This is the setter method to the attribute.
      * Max time to wait for dp registration before assert.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 75.
      * @param dpRegPendingMaxWaitTime set the dpRegPendingMaxWaitTime.
      */
@@ -560,7 +560,7 @@ public class SeAgentProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return headlessTimeoutSec
      */
@@ -571,7 +571,7 @@ public class SeAgentProperties  {
     /**
      * This is the setter method to the attribute.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param headlessTimeoutSec set the headlessTimeoutSec.
      */
@@ -583,7 +583,7 @@ public class SeAgentProperties  {
      * This is the getter method this will return the attribute value.
      * Deprecated in 21.1.3.
      * Use config in serviceenginegroup instead.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return ignoreDockerMacChange
      */
@@ -595,7 +595,7 @@ public class SeAgentProperties  {
      * This is the setter method to the attribute.
      * Deprecated in 21.1.3.
      * Use config in serviceenginegroup instead.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param ignoreDockerMacChange set the ignoreDockerMacChange.
      */
@@ -611,7 +611,7 @@ public class SeAgentProperties  {
      * Allowed values are 1-1000.
      * Field introduced in 17.2.13, 18.1.3, 18.2.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return nsHelperDeqIntervalMsec
      */
@@ -627,7 +627,7 @@ public class SeAgentProperties  {
      * Allowed values are 1-1000.
      * Field introduced in 17.2.13, 18.1.3, 18.2.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param nsHelperDeqIntervalMsec set the nsHelperDeqIntervalMsec.
      */
@@ -642,7 +642,7 @@ public class SeAgentProperties  {
      * Use sdb_flush_interval serviceenginegroup instead.
      * Allowed values are 1-10000.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return sdbFlushInterval
      */
@@ -657,7 +657,7 @@ public class SeAgentProperties  {
      * Use sdb_flush_interval serviceenginegroup instead.
      * Allowed values are 1-10000.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param sdbFlushInterval set the sdbFlushInterval.
      */
@@ -671,7 +671,7 @@ public class SeAgentProperties  {
      * Deprecated in 21.1.1.
      * Use sdb_pipeline_size serviceenginegroup instead.
      * Allowed values are 1-10000.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return sdbPipelineSize
      */
@@ -685,7 +685,7 @@ public class SeAgentProperties  {
      * Deprecated in 21.1.1.
      * Use sdb_pipeline_size serviceenginegroup instead.
      * Allowed values are 1-10000.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param sdbPipelineSize set the sdbPipelineSize.
      */
@@ -699,7 +699,7 @@ public class SeAgentProperties  {
      * Deprecated in 21.1.1.
      * Use sdb_scan_count serviceenginegroup instead.
      * Allowed values are 1-1000.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @return sdbScanCount
      */
@@ -713,7 +713,7 @@ public class SeAgentProperties  {
      * Deprecated in 21.1.1.
      * Use sdb_scan_count serviceenginegroup instead.
      * Allowed values are 1-1000.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @param sdbScanCount set the sdbScanCount.
      */
@@ -725,7 +725,7 @@ public class SeAgentProperties  {
      * This is the getter method this will return the attribute value.
      * Internal flag used to decide if se restart is needed,when the se-group is changed.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return seGrpChangeDisruptive
      */
@@ -737,7 +737,7 @@ public class SeAgentProperties  {
      * This is the setter method to the attribute.
      * Internal flag used to decide if se restart is needed,when the se-group is changed.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param seGrpChangeDisruptive set the seGrpChangeDisruptive.
      */
@@ -749,7 +749,7 @@ public class SeAgentProperties  {
      * This is the getter method this will return the attribute value.
      * Seagent properties for state cache functionality.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seagentStatecacheProperties
      */
@@ -761,7 +761,7 @@ public class SeAgentProperties  {
      * This is the setter method to the attribute.
      * Seagent properties for state cache functionality.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seagentStatecacheProperties set the seagentStatecacheProperties.
      */
@@ -777,7 +777,7 @@ public class SeAgentProperties  {
      * Allowed values are 10-600.
      * Field introduced in 17.2.13, 18.1.3, 18.2.1.
      * Unit is seconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return sendSeReadyTimeout
      */
@@ -793,7 +793,7 @@ public class SeAgentProperties  {
      * Allowed values are 10-600.
      * Field introduced in 17.2.13, 18.1.3, 18.2.1.
      * Unit is seconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param sendSeReadyTimeout set the sendSeReadyTimeout.
      */
@@ -807,7 +807,7 @@ public class SeAgentProperties  {
      * Allowed values are 1-10000.
      * Field introduced in 18.2.1, 17.2.14, 18.1.5.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return statesFlushInterval
      */
@@ -821,7 +821,7 @@ public class SeAgentProperties  {
      * Allowed values are 1-10000.
      * Field introduced in 18.2.1, 17.2.14, 18.1.5.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param statesFlushInterval set the statesFlushInterval.
      */
@@ -836,7 +836,7 @@ public class SeAgentProperties  {
      * Use vnic_dhcp_ip_check_interval instead.
      * Allowed values are 1-1000.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 6.
      * @return vnicDhcpIpCheckInterval
      */
@@ -851,7 +851,7 @@ public class SeAgentProperties  {
      * Use vnic_dhcp_ip_check_interval instead.
      * Allowed values are 1-1000.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 6.
      * @param vnicDhcpIpCheckInterval set the vnicDhcpIpCheckInterval.
      */
@@ -864,7 +864,7 @@ public class SeAgentProperties  {
      * Dhcp ip max retries.
      * Deprecated in 21.1.1.
      * Use vnic_dhcp_ip_max_retries serviceenginegroup instead.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return vnicDhcpIpMaxRetries
      */
@@ -877,7 +877,7 @@ public class SeAgentProperties  {
      * Dhcp ip max retries.
      * Deprecated in 21.1.1.
      * Use vnic_dhcp_ip_max_retries serviceenginegroup instead.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param vnicDhcpIpMaxRetries set the vnicDhcpIpMaxRetries.
      */
@@ -891,7 +891,7 @@ public class SeAgentProperties  {
      * Deprecated in 21.1.1.
      * Use vnic_ip_delete_interval serviceenginegroup instead.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return vnicIpDeleteInterval
      */
@@ -905,7 +905,7 @@ public class SeAgentProperties  {
      * Deprecated in 21.1.1.
      * Use vnic_ip_delete_interval serviceenginegroup instead.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param vnicIpDeleteInterval set the vnicIpDeleteInterval.
      */
@@ -919,7 +919,7 @@ public class SeAgentProperties  {
      * Deprecated in 21.1.1.
      * Use vnic_probe_interval serviceenginegroup instead.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return vnicProbeInterval
      */
@@ -933,7 +933,7 @@ public class SeAgentProperties  {
      * Deprecated in 21.1.1.
      * Use vnic_probe_interval serviceenginegroup instead.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param vnicProbeInterval set the vnicProbeInterval.
      */
@@ -947,7 +947,7 @@ public class SeAgentProperties  {
      * Use vnic_rpc_retry_interval serviceenginegroup instead.
      * Field introduced in 18.2.6.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return vnicRpcRetryInterval
      */
@@ -961,7 +961,7 @@ public class SeAgentProperties  {
      * Use vnic_rpc_retry_interval serviceenginegroup instead.
      * Field introduced in 18.2.6.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param vnicRpcRetryInterval set the vnicRpcRetryInterval.
      */
@@ -976,7 +976,7 @@ public class SeAgentProperties  {
      * Use vnicdb_cmd_history_size serviceenginegroup instead.
      * Allowed values are 0-65535.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 256.
      * @return vnicdbCmdHistorySize
      */
@@ -991,7 +991,7 @@ public class SeAgentProperties  {
      * Use vnicdb_cmd_history_size serviceenginegroup instead.
      * Allowed values are 0-65535.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 256.
      * @param vnicdbCmdHistorySize set the vnicdbCmdHistorySize.
      */

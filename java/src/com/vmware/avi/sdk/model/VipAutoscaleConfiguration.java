@@ -29,7 +29,7 @@ public class VipAutoscaleConfiguration  {
      * This is the getter method this will return the attribute value.
      * This is the list of az+subnet in which vips will be spawned.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */
@@ -41,7 +41,7 @@ public class VipAutoscaleConfiguration  {
      * This is the setter method. this will set the zones
      * This is the list of az+subnet in which vips will be spawned.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */
@@ -53,7 +53,7 @@ public class VipAutoscaleConfiguration  {
      * This is the setter method this will set the zones
      * This is the list of az+subnet in which vips will be spawned.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */

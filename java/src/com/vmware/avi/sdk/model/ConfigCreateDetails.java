@@ -55,7 +55,7 @@ public class ConfigCreateDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientIp
      */
@@ -65,7 +65,7 @@ public class ConfigCreateDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientIp set the clientIp.
      */
@@ -76,7 +76,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Error message if request failed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorMessage
      */
@@ -87,7 +87,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the setter method to the attribute.
      * Error message if request failed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorMessage set the errorMessage.
      */
@@ -98,7 +98,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Api path.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return path
      */
@@ -109,7 +109,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the setter method to the attribute.
      * Api path.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param path set the path.
      */
@@ -120,7 +120,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Request data if request failed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return requestData
      */
@@ -131,7 +131,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the setter method to the attribute.
      * Request data if request failed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param requestData set the requestData.
      */
@@ -142,7 +142,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Data of the created resource.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceData
      */
@@ -153,7 +153,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the setter method to the attribute.
      * Data of the created resource.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourceData set the resourceData.
      */
@@ -164,7 +164,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the created resource.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceName
      */
@@ -175,7 +175,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the setter method to the attribute.
      * Name of the created resource.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourceName set the resourceName.
      */
@@ -186,7 +186,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Config type of the created resource.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceType
      */
@@ -197,7 +197,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the setter method to the attribute.
      * Config type of the created resource.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourceType set the resourceType.
      */
@@ -208,7 +208,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Status.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -219,7 +219,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the setter method to the attribute.
      * Status.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */
@@ -230,7 +230,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Request user.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return user
      */
@@ -241,7 +241,7 @@ public class ConfigCreateDetails  {
     /**
      * This is the setter method to the attribute.
      * Request user.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param user set the user.
      */
@@ -251,7 +251,7 @@ public class ConfigCreateDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userAgent
      */
@@ -261,7 +261,7 @@ public class ConfigCreateDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userAgent set the userAgent.
      */

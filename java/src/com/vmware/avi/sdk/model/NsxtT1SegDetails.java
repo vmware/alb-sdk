@@ -36,7 +36,7 @@ public class NsxtT1SegDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t cloud id.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -48,7 +48,7 @@ public class NsxtT1SegDetails  {
      * This is the setter method to the attribute.
      * Nsx-t cloud id.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -60,7 +60,7 @@ public class NsxtT1SegDetails  {
      * This is the getter method this will return the attribute value.
      * Error message.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -72,7 +72,7 @@ public class NsxtT1SegDetails  {
      * This is the setter method to the attribute.
      * Error message.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */
@@ -83,7 +83,7 @@ public class NsxtT1SegDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t tier1(s) segment(s).
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return t1seg
      */
@@ -95,7 +95,7 @@ public class NsxtT1SegDetails  {
      * This is the setter method. this will set the t1seg
      * Nsx-t tier1(s) segment(s).
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return t1seg
      */
@@ -107,7 +107,7 @@ public class NsxtT1SegDetails  {
      * This is the setter method this will set the t1seg
      * Nsx-t tier1(s) segment(s).
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return t1seg
      */

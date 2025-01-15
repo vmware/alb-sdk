@@ -49,7 +49,7 @@ public class Cluster extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -59,7 +59,7 @@ public class Cluster extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -70,7 +70,7 @@ public class Cluster extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Minimum of 1 items required.
      * Maximum of 7 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodes
      */
@@ -82,7 +82,7 @@ public class Cluster extends AviRestResource  {
      * This is the setter method. this will set the nodes
      * Minimum of 1 items required.
      * Maximum of 7 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodes
      */
@@ -94,7 +94,7 @@ public class Cluster extends AviRestResource  {
      * This is the setter method this will set the nodes
      * Minimum of 1 items required.
      * Maximum of 7 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodes
      */
@@ -109,7 +109,7 @@ public class Cluster extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Re-join cluster nodes automatically in the event one of the node is reset to factory.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return rejoinNodesAutomatically
      */
@@ -120,7 +120,7 @@ public class Cluster extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Re-join cluster nodes automatically in the event one of the node is reset to factory.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param rejoinNodesAutomatically set the rejoinNodesAutomatically.
      */
@@ -131,7 +131,7 @@ public class Cluster extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -142,7 +142,7 @@ public class Cluster extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -169,7 +169,7 @@ public class Cluster extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -179,7 +179,7 @@ public class Cluster extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -189,9 +189,8 @@ public class Cluster extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * A v4 virtual ip address.
-     * This v4 ip address will be dynamically reconfigured so that it always is the ip of the cluster leader.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * A v4 virtual ip address for the cluster that always points to the v4 ip of the leader node in cluster.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return virtualIp
      */
@@ -201,9 +200,8 @@ public class Cluster extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * A v4 virtual ip address.
-     * This v4 ip address will be dynamically reconfigured so that it always is the ip of the cluster leader.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * A v4 virtual ip address for the cluster that always points to the v4 ip of the leader node in cluster.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param virtualIp set the virtualIp.
      */
@@ -213,10 +211,9 @@ public class Cluster extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * A v6 virtual ip address.
-     * This v6 ip address will be dynamically reconfigured so that it always is the ip of the cluster leader.
+     * A v6 virtual ip address for the cluster that always points to the v6 ip of the leader node in cluster.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return virtualIp6
      */
@@ -226,10 +223,9 @@ public class Cluster extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * A v6 virtual ip address.
-     * This v6 ip address will be dynamically reconfigured so that it always is the ip of the cluster leader.
+     * A v6 virtual ip address for the cluster that always points to the v6 ip of the leader node in cluster.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param virtualIp6 set the virtualIp6.
      */

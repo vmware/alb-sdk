@@ -36,7 +36,7 @@ public class SecurityMgrDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Dynamically adapt configuration parameters for application learning feature.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableAdaptiveConfig
      */
@@ -48,7 +48,7 @@ public class SecurityMgrDebugFilter  {
      * This is the setter method to the attribute.
      * Dynamically adapt configuration parameters for application learning feature.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableAdaptiveConfig set the enableAdaptiveConfig.
      */
@@ -61,7 +61,7 @@ public class SecurityMgrDebugFilter  {
      * Uuid of the entity.
      * It is a reference to an object of type virtualservice.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return entityRef
      */
@@ -74,7 +74,7 @@ public class SecurityMgrDebugFilter  {
      * Uuid of the entity.
      * It is a reference to an object of type virtualservice.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param entityRef set the entityRef.
      */
@@ -87,7 +87,7 @@ public class SecurityMgrDebugFilter  {
      * Dynamically update the multiplier for rule id generation in psm programming for learning feature.
      * Allowed values are 10-100000.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return psmRuleIdMultiplier
      */
@@ -100,7 +100,7 @@ public class SecurityMgrDebugFilter  {
      * Dynamically update the multiplier for rule id generation in psm programming for learning feature.
      * Allowed values are 10-100000.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param psmRuleIdMultiplier set the psmRuleIdMultiplier.
      */

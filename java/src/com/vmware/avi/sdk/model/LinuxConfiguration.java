@@ -35,7 +35,7 @@ public class LinuxConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Banner displayed before login to ssh, and ui.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return banner
      */
@@ -46,7 +46,7 @@ public class LinuxConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Banner displayed before login to ssh, and ui.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param banner set the banner.
      */
@@ -59,7 +59,7 @@ public class LinuxConfiguration  {
      * Enforce cis benchmark recommendations for avi controller and service engines.
      * The enforcement is as per cis dil 1.0.1 level 2, for applicable controls.
      * Field introduced in 17.2.8.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return cisMode
      */
@@ -72,7 +72,7 @@ public class LinuxConfiguration  {
      * Enforce cis benchmark recommendations for avi controller and service engines.
      * The enforcement is as per cis dil 1.0.1 level 2, for applicable controls.
      * Field introduced in 17.2.8.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param cisMode set the cisMode.
      */
@@ -83,7 +83,7 @@ public class LinuxConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Message of the day, shown to users on login via the command line interface, web interface, or ssh.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return motd
      */
@@ -94,7 +94,7 @@ public class LinuxConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Message of the day, shown to users on login via the command line interface, web interface, or ssh.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param motd set the motd.
      */

@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The SSLCacheFilter is a POJO class extends AviRestResource that used for creating
- * SSLCacheFilter.
+ * The GslbObjInfo is a POJO class extends AviRestResource that used for creating
+ * GslbObjInfo.
  *
  * @version 1.0
  * @since 
@@ -20,34 +20,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class SSLCacheFilter  {
-    @JsonProperty("ssl_session_id")
-    private String sslSessionId;
+public class GslbObjInfo  {
+    @JsonProperty("repl_state")
+    private CfgState replState;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Hexadecimal representation of the ssl session id.
-     * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * The config replication info to se(es) and peer sites.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return sslSessionId
+     * @return replState
      */
-    public String getSslSessionId() {
-        return sslSessionId;
+    public CfgState getReplState() {
+        return replState;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Hexadecimal representation of the ssl session id.
-     * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * The config replication info to se(es) and peer sites.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param sslSessionId set the sslSessionId.
+     * @param replState set the replState.
      */
-    public void setSslSessionId(String  sslSessionId) {
-        this.sslSessionId = sslSessionId;
+    public void setReplState(CfgState replState) {
+        this.replState = replState;
     }
 
 
@@ -59,15 +59,15 @@ public class SSLCacheFilter  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      SSLCacheFilter objSSLCacheFilter = (SSLCacheFilter) o;
-      return   Objects.equals(this.sslSessionId, objSSLCacheFilter.sslSessionId);
+      GslbObjInfo objGslbObjInfo = (GslbObjInfo) o;
+      return   Objects.equals(this.replState, objGslbObjInfo.replState);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class SSLCacheFilter {\n");
-                  sb.append("    sslSessionId: ").append(toIndentedString(sslSessionId)).append("\n");
+      sb.append("class GslbObjInfo {\n");
+                  sb.append("    replState: ").append(toIndentedString(replState)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

@@ -32,9 +32,8 @@ public class AppSignatureConfig  {
      * Allowed values are 1440-10080.
      * Field introduced in 20.1.4.
      * Unit is min.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
-     * Special default for essentials edition is 1440, basic edition is 1440, enterprise is 1440.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Special default for essentials edition is 1440, basic edition is 1440, enterprise edition is 1440.
      * @return appSignatureSyncInterval
      */
     public Integer getAppSignatureSyncInterval() {
@@ -47,9 +46,8 @@ public class AppSignatureConfig  {
      * Allowed values are 1440-10080.
      * Field introduced in 20.1.4.
      * Unit is min.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
-     * Special default for essentials edition is 1440, basic edition is 1440, enterprise is 1440.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Special default for essentials edition is 1440, basic edition is 1440, enterprise edition is 1440.
      * @param appSignatureSyncInterval set the appSignatureSyncInterval.
      */
     public void setAppSignatureSyncInterval(Integer  appSignatureSyncInterval) {

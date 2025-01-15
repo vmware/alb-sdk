@@ -30,7 +30,7 @@ public class L4RuleAction  {
      * This is the getter method this will return the attribute value.
      * Indicates pool or pool-group selection on rule match.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return selectPool
      */
@@ -42,7 +42,7 @@ public class L4RuleAction  {
      * This is the setter method to the attribute.
      * Indicates pool or pool-group selection on rule match.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param selectPool set the selectPool.
      */

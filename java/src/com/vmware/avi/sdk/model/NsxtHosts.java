@@ -32,7 +32,7 @@ public class NsxtHosts  {
      * This is the getter method this will return the attribute value.
      * List of transport nodes.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostIds
      */
@@ -44,7 +44,7 @@ public class NsxtHosts  {
      * This is the setter method. this will set the hostIds
      * List of transport nodes.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostIds
      */
@@ -56,7 +56,7 @@ public class NsxtHosts  {
      * This is the setter method this will set the hostIds
      * List of transport nodes.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostIds
      */
@@ -72,7 +72,7 @@ public class NsxtHosts  {
      * This is the getter method this will return the attribute value.
      * Include or exclude.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return include
      */
@@ -84,7 +84,7 @@ public class NsxtHosts  {
      * This is the setter method to the attribute.
      * Include or exclude.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param include set the include.
      */

@@ -44,7 +44,7 @@ public class PlacementScopeConfig  {
      * This is the getter method this will return the attribute value.
      * Cluster vsphere ha configuration.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusters
      */
@@ -56,7 +56,7 @@ public class PlacementScopeConfig  {
      * This is the setter method. this will set the clusters
      * Cluster vsphere ha configuration.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusters
      */
@@ -68,7 +68,7 @@ public class PlacementScopeConfig  {
      * This is the setter method this will set the clusters
      * Cluster vsphere ha configuration.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusters
      */
@@ -84,7 +84,7 @@ public class PlacementScopeConfig  {
      * This is the getter method this will return the attribute value.
      * List of transport node clusters include or exclude.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtClusters
      */
@@ -96,7 +96,7 @@ public class PlacementScopeConfig  {
      * This is the setter method to the attribute.
      * List of transport node clusters include or exclude.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtClusters set the nsxtClusters.
      */
@@ -108,7 +108,7 @@ public class PlacementScopeConfig  {
      * This is the getter method this will return the attribute value.
      * List of shared datastores to include or exclude.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtDatastores
      */
@@ -120,7 +120,7 @@ public class PlacementScopeConfig  {
      * This is the setter method to the attribute.
      * List of shared datastores to include or exclude.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtDatastores set the nsxtDatastores.
      */
@@ -132,7 +132,7 @@ public class PlacementScopeConfig  {
      * This is the getter method this will return the attribute value.
      * List of transport nodes include or exclude.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtHosts
      */
@@ -144,7 +144,7 @@ public class PlacementScopeConfig  {
      * This is the setter method to the attribute.
      * List of transport nodes include or exclude.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtHosts set the nsxtHosts.
      */
@@ -156,7 +156,7 @@ public class PlacementScopeConfig  {
      * This is the getter method this will return the attribute value.
      * Folder to place all the service engine virtual machines in vcenter.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterFolder
      */
@@ -168,7 +168,7 @@ public class PlacementScopeConfig  {
      * This is the setter method to the attribute.
      * Folder to place all the service engine virtual machines in vcenter.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterFolder set the vcenterFolder.
      */
@@ -181,7 +181,7 @@ public class PlacementScopeConfig  {
      * Vcenter server configuration.
      * It is a reference to an object of type vcenterserver.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterRef
      */
@@ -194,7 +194,7 @@ public class PlacementScopeConfig  {
      * Vcenter server configuration.
      * It is a reference to an object of type vcenterserver.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterRef set the vcenterRef.
      */

@@ -42,7 +42,7 @@ public class SeHmEventGSDetails  {
      * This is the getter method this will return the attribute value.
      * Gslbservice name.
      * It is a reference to an object of type gslbservice.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gslbService
      */
@@ -54,7 +54,7 @@ public class SeHmEventGSDetails  {
      * This is the setter method to the attribute.
      * Gslbservice name.
      * It is a reference to an object of type gslbservice.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gslbService set the gslbService.
      */
@@ -65,7 +65,7 @@ public class SeHmEventGSDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Ha compromised reason.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return haReason
      */
@@ -76,7 +76,7 @@ public class SeHmEventGSDetails  {
     /**
      * This is the setter method to the attribute.
      * Ha compromised reason.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param haReason set the haReason.
      */
@@ -87,7 +87,7 @@ public class SeHmEventGSDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Reason gslb service is down.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -98,7 +98,7 @@ public class SeHmEventGSDetails  {
     /**
      * This is the setter method to the attribute.
      * Reason gslb service is down.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -109,7 +109,7 @@ public class SeHmEventGSDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Service engine name.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seName
      */
@@ -120,7 +120,7 @@ public class SeHmEventGSDetails  {
     /**
      * This is the setter method to the attribute.
      * Service engine name.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seName set the seName.
      */
@@ -131,7 +131,7 @@ public class SeHmEventGSDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Uuid of the event generator.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return srcUuid
      */
@@ -142,7 +142,7 @@ public class SeHmEventGSDetails  {
     /**
      * This is the setter method to the attribute.
      * Uuid of the event generator.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param srcUuid set the srcUuid.
      */

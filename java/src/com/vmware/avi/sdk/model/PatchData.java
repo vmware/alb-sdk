@@ -36,7 +36,7 @@ public class PatchData  {
      * This is the getter method this will return the attribute value.
      * Image path of current patch image.
      * Field introduced in 18.2.10, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patchImagePath
      */
@@ -48,7 +48,7 @@ public class PatchData  {
      * This is the setter method to the attribute.
      * Image path of current patch image.
      * Field introduced in 18.2.10, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param patchImagePath set the patchImagePath.
      */
@@ -61,7 +61,7 @@ public class PatchData  {
      * Image uuid for identifying the patch.
      * It is a reference to an object of type image.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patchImageRef
      */
@@ -74,7 +74,7 @@ public class PatchData  {
      * Image uuid for identifying the patch.
      * It is a reference to an object of type image.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param patchImageRef set the patchImageRef.
      */
@@ -86,7 +86,7 @@ public class PatchData  {
      * This is the getter method this will return the attribute value.
      * Patch version.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patchVersion
      */
@@ -98,7 +98,7 @@ public class PatchData  {
      * This is the setter method to the attribute.
      * Patch version.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param patchVersion set the patchVersion.
      */

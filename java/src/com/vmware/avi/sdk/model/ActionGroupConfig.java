@@ -63,7 +63,7 @@ public class ActionGroupConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Reference of the action script configuration to be used.
      * It is a reference to an object of type alertscriptconfig.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return actionScriptConfigRef
      */
@@ -75,7 +75,7 @@ public class ActionGroupConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Reference of the action script configuration to be used.
      * It is a reference to an object of type alertscriptconfig.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param actionScriptConfigRef set the actionScriptConfigRef.
      */
@@ -86,8 +86,8 @@ public class ActionGroupConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Trigger notification to autoscale manager.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return autoscaleTriggerNotification
      */
@@ -98,8 +98,8 @@ public class ActionGroupConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Trigger notification to autoscale manager.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param autoscaleTriggerNotification set the autoscaleTriggerNotification.
      */
@@ -109,7 +109,7 @@ public class ActionGroupConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -119,7 +119,7 @@ public class ActionGroupConfig extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -131,7 +131,7 @@ public class ActionGroupConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Select the email notification configuration to use when sending alerts via email.
      * It is a reference to an object of type alertemailconfig.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return emailConfigRef
      */
@@ -143,7 +143,7 @@ public class ActionGroupConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Select the email notification configuration to use when sending alerts via email.
      * It is a reference to an object of type alertemailconfig.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param emailConfigRef set the emailConfigRef.
      */
@@ -154,8 +154,8 @@ public class ActionGroupConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Generate alert only to external destinations.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return externalOnly
      */
@@ -166,8 +166,8 @@ public class ActionGroupConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Generate alert only to external destinations.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param externalOnly set the externalOnly.
      */
@@ -179,7 +179,7 @@ public class ActionGroupConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * When an alert is generated, mark its priority via the alert level.
      * Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ALERT_LOW".
      * @return level
      */
@@ -191,7 +191,7 @@ public class ActionGroupConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * When an alert is generated, mark its priority via the alert level.
      * Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ALERT_LOW".
      * @param level set the level.
      */
@@ -201,7 +201,7 @@ public class ActionGroupConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -211,7 +211,7 @@ public class ActionGroupConfig extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -223,7 +223,7 @@ public class ActionGroupConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Select the snmp trap notification to use when sending alerts via snmp trap.
      * It is a reference to an object of type snmptrapprofile.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return snmpTrapProfileRef
      */
@@ -235,7 +235,7 @@ public class ActionGroupConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Select the snmp trap notification to use when sending alerts via snmp trap.
      * It is a reference to an object of type snmptrapprofile.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param snmpTrapProfileRef set the snmpTrapProfileRef.
      */
@@ -247,7 +247,7 @@ public class ActionGroupConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Select the syslog notification configuration to use when sending alerts via syslog.
      * It is a reference to an object of type alertsyslogconfig.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return syslogConfigRef
      */
@@ -259,7 +259,7 @@ public class ActionGroupConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Select the syslog notification configuration to use when sending alerts via syslog.
      * It is a reference to an object of type alertsyslogconfig.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param syslogConfigRef set the syslogConfigRef.
      */
@@ -270,7 +270,7 @@ public class ActionGroupConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -281,7 +281,7 @@ public class ActionGroupConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -308,7 +308,7 @@ public class ActionGroupConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -318,7 +318,7 @@ public class ActionGroupConfig extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

@@ -49,7 +49,7 @@ public class CaptureTCPFlags  {
      * Logical operation based filter criteria.
      * Enum options - OR, AND.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "OR".
      * @return filterOp
      */
@@ -62,7 +62,7 @@ public class CaptureTCPFlags  {
      * Logical operation based filter criteria.
      * Enum options - OR, AND.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "OR".
      * @param filterOp set the filterOp.
      */
@@ -75,7 +75,7 @@ public class CaptureTCPFlags  {
      * Match criteria.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
      * @return matchOperation
      */
@@ -88,7 +88,7 @@ public class CaptureTCPFlags  {
      * Match criteria.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
      * @param matchOperation set the matchOperation.
      */
@@ -100,7 +100,7 @@ public class CaptureTCPFlags  {
      * This is the getter method this will return the attribute value.
      * Tcp ack flag filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tcpAck
      */
@@ -112,7 +112,7 @@ public class CaptureTCPFlags  {
      * This is the setter method to the attribute.
      * Tcp ack flag filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tcpAck set the tcpAck.
      */
@@ -124,7 +124,7 @@ public class CaptureTCPFlags  {
      * This is the getter method this will return the attribute value.
      * Tcp fin flag filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tcpFin
      */
@@ -136,7 +136,7 @@ public class CaptureTCPFlags  {
      * This is the setter method to the attribute.
      * Tcp fin flag filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tcpFin set the tcpFin.
      */
@@ -148,7 +148,7 @@ public class CaptureTCPFlags  {
      * This is the getter method this will return the attribute value.
      * Tcp push flag filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tcpPush
      */
@@ -160,7 +160,7 @@ public class CaptureTCPFlags  {
      * This is the setter method to the attribute.
      * Tcp push flag filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tcpPush set the tcpPush.
      */
@@ -172,7 +172,7 @@ public class CaptureTCPFlags  {
      * This is the getter method this will return the attribute value.
      * Tcp rst flag filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tcpRst
      */
@@ -184,7 +184,7 @@ public class CaptureTCPFlags  {
      * This is the setter method to the attribute.
      * Tcp rst flag filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tcpRst set the tcpRst.
      */
@@ -196,7 +196,7 @@ public class CaptureTCPFlags  {
      * This is the getter method this will return the attribute value.
      * Tcp syn flag filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tcpSyn
      */
@@ -208,7 +208,7 @@ public class CaptureTCPFlags  {
      * This is the setter method to the attribute.
      * Tcp syn flag filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tcpSyn set the tcpSyn.
      */
