@@ -8,8 +8,16 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show vcenter networks\n```\n"
+        "description": "Avi VIPGNameInfo object api\n```\n- show vcenter networks\n```\n\nAPI permission: PERMISSION_CLOUD\n"
     },
+    "tags": [
+        {
+            "name": "VIPGNameInfo"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/vimgrvcenternetworks": {
             "get": {
+                "tags": [
+                    "VIPGNameInfo"
+                ],
+                "description": "/vimgrvcenternetworks",
+                "operationId": "GET /vimgrvcenternetworks",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VIPGNameInfo"
+                ],
+                "description": "/vimgrvcenternetworks",
+                "operationId": "POST /vimgrvcenternetworks",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/vimgrvcenternetworks/{uuid}": {
             "get": {
+                "tags": [
+                    "VIPGNameInfo"
+                ],
+                "description": "/vimgrvcenternetworks/{uuid}",
+                "operationId": "GET /vimgrvcenternetworks/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +301,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VIPGNameInfo"
+                ],
+                "description": "/vimgrvcenternetworks/{uuid}",
+                "operationId": "PUT /vimgrvcenternetworks/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +383,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VIPGNameInfo"
+                ],
+                "description": "/vimgrvcenternetworks/{uuid}",
+                "operationId": "PATCH /vimgrvcenternetworks/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +465,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VIPGNameInfo"
+                ],
+                "description": "/vimgrvcenternetworks/{uuid}",
+                "operationId": "DELETE /vimgrvcenternetworks/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -515,15 +553,15 @@
                     "type": "string"
                 },
                 "managed_object_id": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -532,7 +570,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

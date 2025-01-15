@@ -8,8 +8,16 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show vinfra cluster <key>\n```\n"
+        "description": "Avi VIMgrClusterRuntime object api\n```\n- show vinfra cluster <key>\n```\n\nAPI permission: PERMISSION_CLOUD\n"
     },
+    "tags": [
+        {
+            "name": "VIMgrClusterRuntime"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/vimgrclusterruntime": {
             "get": {
+                "tags": [
+                    "VIMgrClusterRuntime"
+                ],
+                "description": "/vimgrclusterruntime",
+                "operationId": "GET /vimgrclusterruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VIMgrClusterRuntime"
+                ],
+                "description": "/vimgrclusterruntime",
+                "operationId": "POST /vimgrclusterruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -273,6 +291,11 @@
         },
         "/vimgrclusterruntime/{uuid}": {
             "get": {
+                "tags": [
+                    "VIMgrClusterRuntime"
+                ],
+                "description": "/vimgrclusterruntime/{uuid}",
+                "operationId": "GET /vimgrclusterruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +390,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VIMgrClusterRuntime"
+                ],
+                "description": "/vimgrclusterruntime/{uuid}",
+                "operationId": "PUT /vimgrclusterruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +472,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VIMgrClusterRuntime"
+                ],
+                "description": "/vimgrclusterruntime/{uuid}",
+                "operationId": "PATCH /vimgrclusterruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +554,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VIMgrClusterRuntime"
+                ],
+                "description": "/vimgrclusterruntime/{uuid}",
+                "operationId": "DELETE /vimgrclusterruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -605,38 +643,38 @@
                     "type": "string"
                 },
                 "cloud_ref": {
-                    "description": " It is a reference to an object of type Cloud. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "datacenter_managed_object_id": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "datacenter_uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "host_refs": {
-                    "description": " It is a reference to an object of type VIMgrHostRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type VIMgrHostRuntime. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "managed_object_id": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -645,7 +683,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
