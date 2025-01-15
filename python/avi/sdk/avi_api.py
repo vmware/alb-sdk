@@ -8,7 +8,6 @@ import json
 import logging
 import time
 import ipaddress
-import socket
 
 if sys.version_info < (3, 5):
     from urlparse import urlparse
@@ -147,7 +146,7 @@ class AviCredentials(object):
     controller = ''
     username = ''
     password = ''
-    api_version = '18.2.6'
+    api_version = '20.1.1'
     tenant = None
     tenant_uuid = None
     token = None
@@ -181,7 +180,7 @@ class AviCredentials(object):
         if m.params['password']:
             self.password = m.params['password']
         if (m.params['api_version'] and
-                (m.params['api_version'] != '18.2.6')):
+                (m.params['api_version'] != '20.1.1')):
             self.api_version = m.params['api_version']
         if m.params['tenant']:
             self.tenant = m.params['tenant']
@@ -1128,7 +1127,8 @@ class ApiSession(Session):
                                "for session ID: %s %s",
                                session, e)
                 pass
-            del session_cache[key]
+            if session_cache.get(key):
+                del session_cache[key]
             logger.debug("Cleaned inactive session : %s", key)
 
     def delete_session(self):
@@ -1139,7 +1139,7 @@ class ApiSession(Session):
 
     def is_ipv6_address(self, controller_ip):
         try:
-            logger.info('Verifing IPV6 Controller IP %s', controller_ip)
+            logger.info('Verifing Controller IP %s', controller_ip)
             ip = ipaddress.ip_address(controller_ip)
             return ip.version == self.IPV6
         except ValueError as ve:
