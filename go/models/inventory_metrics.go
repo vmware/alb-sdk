@@ -8,9 +8,9 @@ package models
 // swagger:model InventoryMetrics
 type InventoryMetrics struct {
 
-	// Metric data. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Metric data. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Data *InventoryMetricsData `json:"data,omitempty"`
 
-	//  Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	//  Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Headers *InventoryMetricsHeaders `json:"headers,omitempty"`
 }

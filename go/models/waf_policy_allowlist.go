@@ -8,6 +8,6 @@ package models
 // swagger:model WafPolicyAllowlist
 type WafPolicyAllowlist struct {
 
-	// Rules to bypass WAF. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Rules to bypass WAF. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Rules []*WafPolicyAllowlistRule `json:"rules,omitempty"`
 }

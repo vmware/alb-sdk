@@ -8,7 +8,7 @@ package models
 // swagger:model DnsClientPortMatch
 type DNSClientPortMatch struct {
 
-	// Port number to match against client port number in request. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Port number to match against client port number in request. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	ClientPorts *PortMatchGeneric `json:"client_ports"`
 }

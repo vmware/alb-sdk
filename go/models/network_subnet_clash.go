@@ -8,10 +8,10 @@ package models
 // swagger:model NetworkSubnetClash
 type NetworkSubnetClash struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	IPNw *string `json:"ip_nw"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Networks []string `json:"networks,omitempty"`
 }

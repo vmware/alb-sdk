@@ -8,9 +8,9 @@ package models
 // swagger:model FailActionHTTPLocalResponse
 type FailActionHTTPLocalResponse struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	File *HTTPLocalFile `json:"file,omitempty"`
 
-	//  Enum options - FAIL_HTTP_STATUS_CODE_200, FAIL_HTTP_STATUS_CODE_503. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Enum options - FAIL_HTTP_STATUS_CODE_200, FAIL_HTTP_STATUS_CODE_503. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StatusCode *string `json:"status_code,omitempty"`
 }

@@ -8,11 +8,11 @@ package models
 // swagger:model HTTPStatusRange
 type HttpstatusRange struct {
 
-	// Starting HTTP response status code. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Starting HTTP response status code. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Begin *int32 `json:"begin"`
 
-	// Ending HTTP response status code. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Ending HTTP response status code. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	End *int32 `json:"end"`
 }

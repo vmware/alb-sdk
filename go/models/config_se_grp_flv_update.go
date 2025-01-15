@@ -8,21 +8,21 @@ package models
 // swagger:model ConfigSeGrpFlvUpdate
 type ConfigSeGrpFlvUpdate struct {
 
-	// New Flavor Name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// New Flavor Name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NewFlv *string `json:"new_flv,omitempty"`
 
-	// Old Flavor Name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Old Flavor Name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OldFlv *string `json:"old_flv,omitempty"`
 
-	// SE Group Name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// SE Group Name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeGroupName *string `json:"se_group_name,omitempty"`
 
-	// SE Group UUID. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// SE Group UUID. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeGroupUUID *string `json:"se_group_uuid,omitempty"`
 
-	// Tenant Name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Tenant Name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantName *string `json:"tenant_name,omitempty"`
 
-	// Tenant UUID. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Tenant UUID. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantUUID *string `json:"tenant_uuid,omitempty"`
 }

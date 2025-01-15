@@ -8,30 +8,30 @@ package models
 // swagger:model BuildInfo
 type BuildInfo struct {
 
-	// Build number for easy identification. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Build number for easy identification. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BuildNo *int32 `json:"build_no,omitempty"`
 
-	// Date when the package created. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Date when the package created. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Date *string `json:"date,omitempty"`
 
-	// Min version of the image. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Min version of the image. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MinVersion *string `json:"min_version,omitempty"`
 
-	// Patch version of the image. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Patch version of the image. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PatchVersion *string `json:"patch_version,omitempty"`
 
-	// Product type. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Product type. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Product *string `json:"product,omitempty"`
 
-	// Product Name. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Product Name. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProductName *string `json:"product_name,omitempty"`
 
-	// Remote reference of the container image. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Remote reference of the container image. Field deprecated in 31.1.1. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	RemoteImageRef *string `json:"remote_image_ref,omitempty"`
 
-	// Tag related to the package. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Tag related to the package. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Tag *string `json:"tag,omitempty"`
 
-	// Major version of the image. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Major version of the image. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Version *string `json:"version,omitempty"`
 }

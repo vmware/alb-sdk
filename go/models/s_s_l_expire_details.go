@@ -8,9 +8,9 @@ package models
 // swagger:model SSLExpireDetails
 type SSLExpireDetails struct {
 
-	// Number of days until certificate is expired. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of days until certificate is expired. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DaysLeft *uint32 `json:"days_left,omitempty"`
 
-	// Name of SSL Certificate. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of SSL Certificate. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 }

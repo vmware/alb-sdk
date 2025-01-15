@@ -8,9 +8,9 @@ package models
 // swagger:model NsxtT1Seg
 type NsxtT1Seg struct {
 
-	// NSX-T Segment. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// NSX-T Segment. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Segment *string `json:"segment,omitempty"`
 
-	// NSX-T Tier1. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// NSX-T Tier1. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Tier1 *string `json:"tier1,omitempty"`
 }

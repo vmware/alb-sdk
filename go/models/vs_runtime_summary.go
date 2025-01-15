@@ -8,12 +8,12 @@ package models
 // swagger:model VsRuntimeSummary
 type VsRuntimeSummary struct {
 
-	//  Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	//  Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	OperStatus *OperationalStatus `json:"oper_status,omitempty"`
 
-	//  Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	//  Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	PercentSesUp *int32 `json:"percent_ses_up,omitempty"`
 
-	// Vip summary of the virtual service. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Vip summary of the virtual service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	VipSummary *VipSummary `json:"vip_summary,omitempty"`
 }

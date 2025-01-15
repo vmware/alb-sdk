@@ -8,11 +8,11 @@ package models
 // swagger:model VHMatchRule
 type VHMatchRule struct {
 
-	// Match criteria for selecting the virtual service. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Match criteria for selecting the virtual service. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	Matches *MatchTarget `json:"matches"`
 
-	// Name for the match rule. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Name for the match rule. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 }

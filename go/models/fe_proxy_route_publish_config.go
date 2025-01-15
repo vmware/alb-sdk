@@ -8,15 +8,15 @@ package models
 // swagger:model FeProxyRoutePublishConfig
 type FeProxyRoutePublishConfig struct {
 
-	// Publish ECMP route to upstream router for VIP. Enum options - FE_PROXY_ROUTE_PUBLISH_NONE, FE_PROXY_ROUTE_PUBLISH_QUAGGA_WEBAPP. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Publish ECMP route to upstream router for VIP. Enum options - FE_PROXY_ROUTE_PUBLISH_NONE, FE_PROXY_ROUTE_PUBLISH_QUAGGA_WEBAPP. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Mode *string `json:"mode,omitempty"`
 
-	// Listener port for publisher. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Listener port for publisher. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PublisherPort *uint32 `json:"publisher_port,omitempty"`
 
-	// Subnet for publisher. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Subnet for publisher. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Subnet *uint32 `json:"subnet,omitempty"`
 
-	// Token for tracking changes. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Token for tracking changes. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Token *string `json:"token,omitempty"`
 }

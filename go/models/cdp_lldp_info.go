@@ -8,21 +8,21 @@ package models
 // swagger:model CdpLldpInfo
 type CdpLldpInfo struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Chassis *string `json:"chassis,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Device *string `json:"device,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Mgmtaddr *string `json:"mgmtaddr,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Port *string `json:"port,omitempty"`
 
-	//  Enum options - CDP, LLDP, NOT_APPLICABLE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Enum options - CDP, LLDP, NOT_APPLICABLE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SwitchInfoType *string `json:"switch_info_type,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SystemName *string `json:"system_name,omitempty"`
 }

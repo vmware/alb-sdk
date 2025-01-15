@@ -8,18 +8,18 @@ package models
 // swagger:model HealthMonitorSmtp
 type HealthMonitorSMTP struct {
 
-	// Sender domain name. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Sender domain name. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Domainname *string `json:"domainname,omitempty"`
 
-	// Mail data. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Mail data. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MailData *string `json:"mail_data,omitempty"`
 
-	// Mail recipients. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Mail recipients. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	RecipientsIds []string `json:"recipients_ids,omitempty"`
 
-	// Mail sender. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Mail sender. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SenderID *string `json:"sender_id,omitempty"`
 
-	// SSL attributes for SMTPS monitor. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// SSL attributes for SMTPS monitor. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SslAttributes *HealthMonitorSSlattributes `json:"ssl_attributes,omitempty"`
 }

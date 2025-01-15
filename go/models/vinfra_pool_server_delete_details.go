@@ -8,10 +8,10 @@ package models
 // swagger:model VinfraPoolServerDeleteDetails
 type VinfraPoolServerDeleteDetails struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	PoolName *string `json:"pool_name"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServerIP []string `json:"server_ip,omitempty"`
 }
