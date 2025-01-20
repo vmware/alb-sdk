@@ -32956,6 +32956,397 @@ paths:
             type: string
         '404':
           description: not found
+  /gslbcrmruntime:
+    get:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime
+      operationId: GET /gslbcrmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntimeApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime
+      operationId: POST /gslbcrmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbCRMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbCRMRuntime'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntime'
+        '401':
+          description: log in failed
+  /gslbcrmruntime/{uuid}:
+    get:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}
+      operationId: GET /gslbcrmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntime'
+        '401':
+          description: log in failed
+    put:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}
+      operationId: PUT /gslbcrmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbCRMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbCRMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntime'
+        '401':
+          description: log in failed
+    patch:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}
+      operationId: PATCH /gslbcrmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbCRMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbCRMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntime'
+        '401':
+          description: log in failed
+    delete:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}
+      operationId: DELETE /gslbcrmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: not found
   /gslbsmruntime:
     get:
       tags:
@@ -33688,397 +34079,6 @@ paths:
       - GslbHSMRuntime
       description: /gslbhsmruntime/{uuid}
       operationId: DELETE /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
-        '404':
-          description: not found
-  /gslbcrmruntime:
-    get:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime
-      operationId: GET /gslbcrmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntimeApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime
-      operationId: POST /gslbcrmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbCRMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbCRMRuntime'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntime'
-        '401':
-          description: log in failed
-  /gslbcrmruntime/{uuid}:
-    get:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}
-      operationId: GET /gslbcrmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntime'
-        '401':
-          description: log in failed
-    put:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}
-      operationId: PUT /gslbcrmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbCRMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbCRMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntime'
-        '401':
-          description: log in failed
-    patch:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}
-      operationId: PATCH /gslbcrmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbCRMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbCRMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntime'
-        '401':
-          description: log in failed
-    delete:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}
-      operationId: DELETE /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -74473,56 +74473,6 @@ paths:
         '401':
           description: log in failed
   /fileobject/{uuid}/['']/:
-    patch:
-      tags:
-      - FileObject
-      description: /fileobject/{uuid}/['']/
-      operationId: PATCH /fileobject/{uuid}/['']/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
     put:
       tags:
       - FileObject
@@ -74567,6 +74517,56 @@ paths:
           type: object
           additionalProperties:
             type: string
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+    patch:
+      tags:
+      - FileObject
+      description: /fileobject/{uuid}/['']/
+      operationId: PATCH /fileobject/{uuid}/['']/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -80477,56 +80477,6 @@ paths:
         '401':
           description: log in failed
   /cloud/{uuid}/gc/:
-    patch:
-      tags:
-      - Cloud
-      description: /cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
     put:
       tags:
       - Cloud
@@ -80571,6 +80521,56 @@ paths:
           type: object
           additionalProperties:
             type: string
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+    patch:
+      tags:
+      - Cloud
+      description: /cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -86008,11 +86008,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -86037,18 +86037,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -89690,11 +89690,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -89719,18 +89719,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -94526,11 +94526,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -94555,18 +94555,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -95000,11 +95000,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -95029,18 +95029,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -101984,11 +101984,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -102013,18 +102013,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -112281,11 +112281,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -112310,18 +112310,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -112787,14 +112787,6 @@ definitions:
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: boolean
-      max_version_count:
-        description: This field indicates that how many versionsneeds to be present
-          for a given FileObject.This includes both parent or child FileObject. Field
-          introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with
-          Cloud Services edition.
-        type: integer
-        default: 3
-        format: uint64
       name:
         description: Name of the file object. Field introduced in 20.1.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
@@ -118259,11 +118251,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -118288,18 +118280,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -128523,11 +128515,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -128552,18 +128544,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -129130,11 +129122,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -129159,18 +129151,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -131885,11 +131877,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -131914,18 +131906,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -135125,11 +135117,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -135154,18 +135146,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -135522,11 +135514,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -135551,18 +135543,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -135949,11 +135941,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -135978,18 +135970,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -136362,11 +136354,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -136391,18 +136383,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -136789,11 +136781,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -136818,18 +136810,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -143176,11 +143168,11 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
-          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
-          SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
-          SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY,
+          SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE,
+          SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH, SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE,
+          SYSERR_MC_SE_UNREACHABLE_ERR, SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
           SYSERR_MC_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SE_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_ROLLBACK_INFO_ERR,
           SYSERR_MC_CONTROLLER_ROLLBACK_NOT_POSSIBLE, SYSERR_MC_SYSTEM_ROLLBACK_NOT_POSSIBLE,
           SYSERR_MC_IMAGE_INVALID_ERR, SYSERR_MC_ACTIVE_VERSIONS_ERR, SYSERR_MC_BACKUP_ERR,
@@ -143205,18 +143197,18 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE_ERR, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION_ERR,
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
-          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_VS_NOT_FOUND,
-          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
-          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
-          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
-          SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
-          SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
-          SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
-          SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION, SYSERR_ERR_PAGE_PROFILE_NO_PAGES,
-          SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND, SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED,
-          SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG, SYSERR_SNI_PARENT_UNCONFIGURED,
-          SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND, SYSERR_VSDS_NOT_FOUND,
-          SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
+          SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
+          SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND,
+          SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND,
+          SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND,
+          SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED, SYSERR_CONNPOOL_MODULE_INIT_FAILED,
+          SYSERR_LBACTION_MODULE_INIT_FAILED, SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL,
+          SYSERR_SSL_PROFILE_NOT_FOUND, SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND,
+          SYSERR_SET_CIPHER_LIST_FAILED, SYSERR_SET_CIPHER_SUITES_FAILED, SYSERR_WRONG_TLS_VERSION,
+          SYSERR_ERR_PAGE_PROFILE_NO_PAGES, SYSERR_ERR_PAGE_PROFILE_NOT_FOUND, SYSERR_ERR_PAGE_NOT_FOUND,
+          SYSERR_ERR_PAGE_REDIRECT_NOT_CONFIGURED, SYSERR_HM_NOT_FOUND, SYSERR_HTTPS_HM_MISSING_CONFIG,
+          SYSERR_SNI_PARENT_UNCONFIGURED, SYSERR_SNI_PARENT_NOT_FOUND, SYSERR_HTTP_POLICYSET_NOT_FOUND,
+          SYSERR_VSDS_NOT_FOUND, SYSERR_MULTIPLE_SP_POOLS_CONFIGURED, SYSERR_L4SSL_VS_INVALID_CLIENT_CERT,
           SYSERR_CR_PROFILE_NOT_FOUND, SYSERR_POOL_NOT_FOUND, SYSERR_LISTEN_PORTS_CFG_FAILED,
           SYSERR_STRGRP_NOT_FOUND, SYSERR_SSOPOLICY_NULL, SYSERR_SSOPOLICY_NO_AUTHN_POLICY,
           SYSERR_SSOPOLICY_NO_AUTH_PROFILE, SYSERR_AUTHPROFILE_NULL, SYSERR_SSOPOLICY_INVALID_AUTH_TYPE,
@@ -143295,10 +143287,10 @@ definitions:
         default: true
       url:
         description: The FQDN or IP address of the Telemetry Server. Field introduced
-          in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
-          edition.
+          in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
         type: string
-        default: https://portal.avipulse.vmware.com
+        default: https://telemetry.pulse.broadcom.com
   TelemetryConfigurationApiResponse:
     type: object
     required:
