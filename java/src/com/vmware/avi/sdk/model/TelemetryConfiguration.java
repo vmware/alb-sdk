@@ -56,8 +56,8 @@ public class TelemetryConfiguration  {
      * This is the getter method this will return the attribute value.
      * The fqdn or ip address of the telemetry server.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "https://portal.avipulse.vmware.com".
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "https://telemetry.pulse.broadcom.com".
      * @return url
      */
     public String getUrl() {
@@ -68,8 +68,8 @@ public class TelemetryConfiguration  {
     * This is the setter method. this will set the url
     * The fqdn or ip address of the telemetry server.
     * Field introduced in 31.1.1.
-    * Allowed with any value in enterprise, enterprise with cloud services edition.
-    * Default value when not specified in API or module is interpreted by Avi Controller as "https://portal.avipulse.vmware.com".
+    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+    * Default value when not specified in API or module is interpreted by Avi Controller as "https://telemetry.pulse.broadcom.com".
     * @return url
     */
    public void setUrl(String  url) {
