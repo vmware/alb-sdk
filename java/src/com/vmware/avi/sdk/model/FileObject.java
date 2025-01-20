@@ -54,9 +54,6 @@ public class FileObject extends AviRestResource  {
     @JsonProperty("is_federated")
     private Boolean isFederated = false;
 
-    @JsonProperty("max_version_count")
-    private Integer maxVersionCount = 3;
-
     @JsonProperty("name")
     private String name;
 
@@ -398,30 +395,6 @@ public class FileObject extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * This field indicates that how many versionsneeds to be present for a given fileobject.this includes both parent or child fileobject.
-     * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
-     * @return maxVersionCount
-     */
-    public Integer getMaxVersionCount() {
-        return maxVersionCount;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * This field indicates that how many versionsneeds to be present for a given fileobject.this includes both parent or child fileobject.
-     * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
-     * @param maxVersionCount set the maxVersionCount.
-     */
-    public void setMaxVersionCount(Integer  maxVersionCount) {
-        this.maxVersionCount = maxVersionCount;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Name of the file object.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -690,7 +663,6 @@ public class FileObject extends AviRestResource  {
   Objects.equals(this.childRefs, objFileObject.childRefs)&&
   Objects.equals(this.events, objFileObject.events)&&
   Objects.equals(this.hasParent, objFileObject.hasParent)&&
-  Objects.equals(this.maxVersionCount, objFileObject.maxVersionCount)&&
   Objects.equals(this.gslbGeodbFormat, objFileObject.gslbGeodbFormat);
     }
 
@@ -709,7 +681,6 @@ public class FileObject extends AviRestResource  {
                         sb.append("    gslbGeodbFormat: ").append(toIndentedString(gslbGeodbFormat)).append("\n");
                         sb.append("    hasParent: ").append(toIndentedString(hasParent)).append("\n");
                         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
-                        sb.append("    maxVersionCount: ").append(toIndentedString(maxVersionCount)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    path: ").append(toIndentedString(path)).append("\n");
                         sb.append("    readOnly: ").append(toIndentedString(readOnly)).append("\n");
