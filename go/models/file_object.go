@@ -48,9 +48,6 @@ type FileObject struct {
 	// This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IsFederated *bool `json:"is_federated,omitempty"`
 
-	// This field indicates that how many versionsneeds to be present for a given FileObject.This includes both parent or child FileObject. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	MaxVersionCount *uint64 `json:"max_version_count,omitempty"`
-
 	// Name of the file object. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
