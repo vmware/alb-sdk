@@ -472,6 +472,11 @@ func (avisess *AviSession) initiateSession() error {
 		cred["password"] = avisess.password
 	}
 
+	if _, exists := avisess.user_headers["Authorization"]; exists || avisess.CSP_ACCESS_TOKEN != "" {
+		return nil
+	}
+	// Do not add any additional session related logic after this line!
+
 	rerror := avisess.Post("login", cred, res)
 	if rerror != nil {
 		glog.Errorf("response error: %v ", rerror)
@@ -759,15 +764,19 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 	if tenant == "" {
 		tenant = avisess.tenant
 	}
+
 	if !strings.HasSuffix(url, "login") && avisess.csrfToken != "" {
 		req.Header["X-CSRFToken"] = []string{avisess.csrfToken}
 		req.AddCookie(&http.Cookie{Name: "csrftoken", Value: avisess.csrfToken})
 	}
+
 	if tenant != "" {
 		req.Header.Set("X-Avi-Tenant", tenant)
 	}
 
-	if !strings.HasSuffix(url, "login") && avisess.sessionid != "" {
+	_, exists := req.Header["Authorization"]
+
+	if !strings.HasSuffix(url, "login") && avisess.sessionid != "" && !exists {
 		req.AddCookie(&http.Cookie{Name: "sessionid", Value: avisess.sessionid})
 		req.AddCookie(&http.Cookie{Name: "avi-sessionid", Value: avisess.sessionid})
 	}
@@ -867,7 +876,8 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 		if uri == "login" {
 			avisess.collectCookiesFromResp(resp)
 		}
-		if resp.StatusCode == 401 && uri != "login" {
+		_, exists := req.Header["Authorization"]
+		if resp.StatusCode == 401 && uri != "login" && !exists {
 			resp.Body.Close()
 			glog.Infof("Retrying url %s; retry %d due to Status Code %d", url, retry, resp.StatusCode)
 			err := avisess.initiateSession()
