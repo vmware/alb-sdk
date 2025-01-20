@@ -36,7 +36,7 @@ public class NsxtTier1SegmentConfig  {
      * This is the getter method this will return the attribute value.
      * Avi controller creates and manages logical segments for a tier-1 lr.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return automatic
      */
@@ -48,7 +48,7 @@ public class NsxtTier1SegmentConfig  {
      * This is the setter method to the attribute.
      * Avi controller creates and manages logical segments for a tier-1 lr.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param automatic set the automatic.
      */
@@ -60,7 +60,7 @@ public class NsxtTier1SegmentConfig  {
      * This is the getter method this will return the attribute value.
      * Avi admin selects an available logical segment (created by nsx-t admin) associated with a tier-1 lr.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return manual
      */
@@ -72,7 +72,7 @@ public class NsxtTier1SegmentConfig  {
      * This is the setter method to the attribute.
      * Avi admin selects an available logical segment (created by nsx-t admin) associated with a tier-1 lr.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param manual set the manual.
      */
@@ -85,8 +85,8 @@ public class NsxtTier1SegmentConfig  {
      * Config mode for selecting the placement logical segments for avi serviceengine data path.
      * Enum options - TIER1_SEGMENT_MANUAL, TIER1_SEGMENT_AUTOMATIC.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, basic edition(allowed values- tier1_segment_manual), essentials, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed in basic (allowed values- tier1_segment_manual) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "TIER1_SEGMENT_MANUAL".
      * @return segmentConfigMode
      */
@@ -99,8 +99,8 @@ public class NsxtTier1SegmentConfig  {
      * Config mode for selecting the placement logical segments for avi serviceengine data path.
      * Enum options - TIER1_SEGMENT_MANUAL, TIER1_SEGMENT_AUTOMATIC.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, basic edition(allowed values- tier1_segment_manual), essentials, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed in basic (allowed values- tier1_segment_manual) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "TIER1_SEGMENT_MANUAL".
      * @param segmentConfigMode set the segmentConfigMode.
      */

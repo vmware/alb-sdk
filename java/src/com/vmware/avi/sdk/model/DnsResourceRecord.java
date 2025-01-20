@@ -72,7 +72,7 @@ public class DnsResourceRecord  {
      * This is the getter method this will return the attribute value.
      * Ipv6 address of the requested fqdn.
      * Field introduced in 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addr6IpStr
      */
@@ -84,7 +84,7 @@ public class DnsResourceRecord  {
      * This is the setter method to the attribute.
      * Ipv6 address of the requested fqdn.
      * Field introduced in 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param addr6IpStr set the addr6IpStr.
      */
@@ -95,7 +95,7 @@ public class DnsResourceRecord  {
     /**
      * This is the getter method this will return the attribute value.
      * Ipv4 address of the requested fqdn.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addrIp
      */
@@ -106,7 +106,7 @@ public class DnsResourceRecord  {
     /**
      * This is the setter method to the attribute.
      * Ipv4 address of the requested fqdn.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param addrIp set the addrIp.
      */
@@ -117,7 +117,7 @@ public class DnsResourceRecord  {
     /**
      * This is the getter method this will return the attribute value.
      * Canonical (real) name of the requested fqdn.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cname
      */
@@ -128,7 +128,7 @@ public class DnsResourceRecord  {
     /**
      * This is the setter method to the attribute.
      * Canonical (real) name of the requested fqdn.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cname set the cname.
      */
@@ -139,7 +139,7 @@ public class DnsResourceRecord  {
     /**
      * This is the getter method this will return the attribute value.
      * Class of the data in the resource record.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dclass
      */
@@ -150,7 +150,7 @@ public class DnsResourceRecord  {
     /**
      * This is the setter method to the attribute.
      * Class of the data in the resource record.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dclass set the dclass.
      */
@@ -162,7 +162,7 @@ public class DnsResourceRecord  {
      * This is the getter method this will return the attribute value.
      * Geo location of member.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return location
      */
@@ -174,7 +174,7 @@ public class DnsResourceRecord  {
      * This is the setter method to the attribute.
      * Geo location of member.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param location set the location.
      */
@@ -186,7 +186,7 @@ public class DnsResourceRecord  {
      * This is the getter method this will return the attribute value.
      * Fully qualified domain name of a mail server in the mx record.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mailServer
      */
@@ -198,7 +198,7 @@ public class DnsResourceRecord  {
      * This is the setter method to the attribute.
      * Fully qualified domain name of a mail server in the mx record.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mailServer set the mailServer.
      */
@@ -209,7 +209,7 @@ public class DnsResourceRecord  {
     /**
      * This is the getter method this will return the attribute value.
      * Domain name of the resource record.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -220,7 +220,7 @@ public class DnsResourceRecord  {
     /**
      * This is the setter method to the attribute.
      * Domain name of the resource record.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -231,7 +231,7 @@ public class DnsResourceRecord  {
     /**
      * This is the getter method this will return the attribute value.
      * Domain name of the name server that is authoritative for the requested fqdn.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsname
      */
@@ -242,7 +242,7 @@ public class DnsResourceRecord  {
     /**
      * This is the setter method to the attribute.
      * Domain name of the name server that is authoritative for the requested fqdn.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsname set the nsname.
      */
@@ -253,7 +253,7 @@ public class DnsResourceRecord  {
     /**
      * This is the getter method this will return the attribute value.
      * Service port.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -264,7 +264,7 @@ public class DnsResourceRecord  {
     /**
      * This is the setter method to the attribute.
      * Service port.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */
@@ -276,7 +276,7 @@ public class DnsResourceRecord  {
      * This is the getter method this will return the attribute value.
      * The priority field identifies which mail server should be preferred.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return priority
      */
@@ -288,7 +288,7 @@ public class DnsResourceRecord  {
      * This is the setter method to the attribute.
      * The priority field identifies which mail server should be preferred.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param priority set the priority.
      */
@@ -299,7 +299,7 @@ public class DnsResourceRecord  {
     /**
      * This is the getter method this will return the attribute value.
      * Site controller cluster name - applicable only for avi vs gslb member.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return siteName
      */
@@ -310,7 +310,7 @@ public class DnsResourceRecord  {
     /**
      * This is the setter method to the attribute.
      * Site controller cluster name - applicable only for avi vs gslb member.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param siteName set the siteName.
      */
@@ -322,7 +322,7 @@ public class DnsResourceRecord  {
      * This is the getter method this will return the attribute value.
      * Text resource record.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return textRdata
      */
@@ -334,7 +334,7 @@ public class DnsResourceRecord  {
      * This is the setter method to the attribute.
      * Text resource record.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param textRdata set the textRdata.
      */
@@ -345,7 +345,7 @@ public class DnsResourceRecord  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of seconds the resource record can be cached.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ttl
      */
@@ -356,7 +356,7 @@ public class DnsResourceRecord  {
     /**
      * This is the setter method to the attribute.
      * Number of seconds the resource record can be cached.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ttl set the ttl.
      */
@@ -370,7 +370,7 @@ public class DnsResourceRecord  {
      * Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
      * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
      * DNS_RECORD_ANY.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -384,7 +384,7 @@ public class DnsResourceRecord  {
      * Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
      * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
      * DNS_RECORD_ANY.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */
@@ -395,7 +395,7 @@ public class DnsResourceRecord  {
     /**
      * This is the getter method this will return the attribute value.
      * Virtual service name - applicable only for avi vs gslb member.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsName
      */
@@ -406,7 +406,7 @@ public class DnsResourceRecord  {
     /**
      * This is the setter method to the attribute.
      * Virtual service name - applicable only for avi vs gslb member.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsName set the vsName.
      */

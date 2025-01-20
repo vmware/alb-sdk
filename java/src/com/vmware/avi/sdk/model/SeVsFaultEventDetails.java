@@ -38,7 +38,7 @@ public class SeVsFaultEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the object responsible for the fault.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return faultObject
      */
@@ -49,7 +49,7 @@ public class SeVsFaultEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Name of the object responsible for the fault.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param faultObject set the faultObject.
      */
@@ -60,7 +60,7 @@ public class SeVsFaultEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Reason for the fault.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return faultReason
      */
@@ -71,7 +71,7 @@ public class SeVsFaultEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Reason for the fault.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param faultReason set the faultReason.
      */
@@ -83,7 +83,7 @@ public class SeVsFaultEventDetails  {
      * This is the getter method this will return the attribute value.
      * Se uuid.
      * It is a reference to an object of type serviceengine.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceEngine
      */
@@ -95,7 +95,7 @@ public class SeVsFaultEventDetails  {
      * This is the setter method to the attribute.
      * Se uuid.
      * It is a reference to an object of type serviceengine.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceEngine set the serviceEngine.
      */
@@ -107,7 +107,7 @@ public class SeVsFaultEventDetails  {
      * This is the getter method this will return the attribute value.
      * Vs name.
      * It is a reference to an object of type virtualservice.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return virtualService
      */
@@ -119,7 +119,7 @@ public class SeVsFaultEventDetails  {
      * This is the setter method to the attribute.
      * Vs name.
      * It is a reference to an object of type virtualservice.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param virtualService set the virtualService.
      */

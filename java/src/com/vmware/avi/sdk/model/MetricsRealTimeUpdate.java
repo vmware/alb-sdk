@@ -35,7 +35,7 @@ public class MetricsRealTimeUpdate  {
      * 0 for infinite.
      * Special values are 0 - infinite.
      * Unit is min.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return duration
      */
@@ -49,7 +49,7 @@ public class MetricsRealTimeUpdate  {
      * 0 for infinite.
      * Special values are 0 - infinite.
      * Unit is min.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param duration set the duration.
      */
@@ -61,7 +61,7 @@ public class MetricsRealTimeUpdate  {
      * This is the getter method this will return the attribute value.
      * Enables real time metrics collection.
      * When deactivated, 6 hour view is the most granular the system will track.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enabled
      */
@@ -73,7 +73,7 @@ public class MetricsRealTimeUpdate  {
      * This is the setter method to the attribute.
      * Enables real time metrics collection.
      * When deactivated, 6 hour view is the most granular the system will track.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enabled set the enabled.
      */

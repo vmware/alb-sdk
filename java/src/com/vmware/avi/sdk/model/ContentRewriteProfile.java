@@ -34,7 +34,7 @@ public class ContentRewriteProfile  {
      * Rewrite only content types listed in this string group.
      * Content types not present in this list are not rewritten.
      * It is a reference to an object of type stringgroup.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rewritableContentRef
      */
@@ -47,7 +47,7 @@ public class ContentRewriteProfile  {
      * Rewrite only content types listed in this string group.
      * Content types not present in this list are not rewritten.
      * It is a reference to an object of type stringgroup.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rewritableContentRef set the rewritableContentRef.
      */
@@ -59,7 +59,7 @@ public class ContentRewriteProfile  {
      * Content rewrite rules to be enabled on theresponse body.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rspRewriteRules
      */
@@ -72,7 +72,7 @@ public class ContentRewriteProfile  {
      * Content rewrite rules to be enabled on theresponse body.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rspRewriteRules
      */
@@ -85,7 +85,7 @@ public class ContentRewriteProfile  {
      * Content rewrite rules to be enabled on theresponse body.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rspRewriteRules
      */

@@ -36,7 +36,7 @@ public class BOTLimits  {
      * This is the getter method this will return the attribute value.
      * Maximum number of rules to control which requests undergo bot detection.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowRules
      */
@@ -48,7 +48,7 @@ public class BOTLimits  {
      * This is the setter method to the attribute.
      * Maximum number of rules to control which requests undergo bot detection.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param allowRules set the allowRules.
      */
@@ -60,7 +60,7 @@ public class BOTLimits  {
      * This is the getter method this will return the attribute value.
      * Maximum number of configurable http header(s).
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrs
      */
@@ -72,7 +72,7 @@ public class BOTLimits  {
      * This is the setter method to the attribute.
      * Maximum number of configurable http header(s).
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hdrs set the hdrs.
      */
@@ -84,7 +84,7 @@ public class BOTLimits  {
      * This is the getter method this will return the attribute value.
      * Maximum number of rules in a botmapping object.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */
@@ -96,7 +96,7 @@ public class BOTLimits  {
      * This is the setter method to the attribute.
      * Maximum number of rules in a botmapping object.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mappingRules set the mappingRules.
      */

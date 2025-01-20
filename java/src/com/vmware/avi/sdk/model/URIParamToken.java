@@ -40,7 +40,7 @@ public class URIParamToken  {
      * Index of the ending token in the incoming uri.
      * Allowed values are 0-65534.
      * Special values are 65535 - end of string.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endIndex
      */
@@ -53,7 +53,7 @@ public class URIParamToken  {
      * Index of the ending token in the incoming uri.
      * Allowed values are 0-65534.
      * Special values are 65535 - end of string.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endIndex set the endIndex.
      */
@@ -64,7 +64,7 @@ public class URIParamToken  {
     /**
      * This is the getter method this will return the attribute value.
      * Index of the starting token in the incoming uri.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startIndex
      */
@@ -75,7 +75,7 @@ public class URIParamToken  {
     /**
      * This is the setter method to the attribute.
      * Index of the starting token in the incoming uri.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startIndex set the startIndex.
      */
@@ -86,7 +86,7 @@ public class URIParamToken  {
     /**
      * This is the getter method this will return the attribute value.
      * Constant string to use as a token.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return strValue
      */
@@ -97,7 +97,7 @@ public class URIParamToken  {
     /**
      * This is the setter method to the attribute.
      * Constant string to use as a token.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param strValue set the strValue.
      */
@@ -110,7 +110,7 @@ public class URIParamToken  {
      * Token type for constructing the uri.
      * Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX,
      * URI_TOKEN_TYPE_REGEX_QUERY.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -123,7 +123,7 @@ public class URIParamToken  {
      * Token type for constructing the uri.
      * Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX,
      * URI_TOKEN_TYPE_REGEX_QUERY.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */

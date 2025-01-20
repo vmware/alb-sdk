@@ -77,7 +77,7 @@ public class AwsConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Aws access key id.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return accessKeyId
      */
@@ -88,7 +88,7 @@ public class AwsConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Aws access key id.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param accessKeyId set the accessKeyId.
      */
@@ -102,7 +102,7 @@ public class AwsConfiguration  {
      * Allowed values are 60-1800.
      * Field introduced in 17.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
      * @return asgPollInterval
      */
@@ -116,7 +116,7 @@ public class AwsConfiguration  {
      * Allowed values are 60-1800.
      * Field introduced in 17.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
      * @param asgPollInterval set the asgPollInterval.
      */
@@ -128,7 +128,7 @@ public class AwsConfiguration  {
      * This is the getter method this will return the attribute value.
      * Ebs encryption mode and the master key to be used for encrypting se ami, volumes, and snapshots.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ebsEncryption
      */
@@ -140,7 +140,7 @@ public class AwsConfiguration  {
      * This is the setter method to the attribute.
      * Ebs encryption mode and the master key to be used for encrypting se ami, volumes, and snapshots.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ebsEncryption set the ebsEncryption.
      */
@@ -151,7 +151,7 @@ public class AwsConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Free unused elastic ip addresses.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return freeElasticips
      */
@@ -162,7 +162,7 @@ public class AwsConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Free unused elastic ip addresses.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param freeElasticips set the freeElasticips.
      */
@@ -173,7 +173,7 @@ public class AwsConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Iam assume role for cross-account access.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return iamAssumeRole
      */
@@ -184,7 +184,7 @@ public class AwsConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Iam assume role for cross-account access.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param iamAssumeRole set the iamAssumeRole.
      */
@@ -196,7 +196,7 @@ public class AwsConfiguration  {
      * This is the getter method this will return the attribute value.
      * If enabled and the virtual service is not floating ip capable, vip will be published to both private and public zones.
      * Field introduced in 17.2.10.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return publishVipToPublicZone
      */
@@ -208,7 +208,7 @@ public class AwsConfiguration  {
      * This is the setter method to the attribute.
      * If enabled and the virtual service is not floating ip capable, vip will be published to both private and public zones.
      * Field introduced in 17.2.10.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param publishVipToPublicZone set the publishVipToPublicZone.
      */
@@ -219,7 +219,7 @@ public class AwsConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Aws region.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "us-west-1".
      * @return region
      */
@@ -230,7 +230,7 @@ public class AwsConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Aws region.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "us-west-1".
      * @param region set the region.
      */
@@ -241,7 +241,7 @@ public class AwsConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * If enabled, create/update dns entries in amazon route 53 zones.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return route53Integration
      */
@@ -252,7 +252,7 @@ public class AwsConfiguration  {
     /**
      * This is the setter method to the attribute.
      * If enabled, create/update dns entries in amazon route 53 zones.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param route53Integration set the route53Integration.
      */
@@ -265,7 +265,7 @@ public class AwsConfiguration  {
      * S3 encryption mode and the master key to be used for encrypting s3 buckets during se ami upload.
      * Only sse-kms mode is supported.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return s3Encryption
      */
@@ -278,7 +278,7 @@ public class AwsConfiguration  {
      * S3 encryption mode and the master key to be used for encrypting s3 buckets during se ami upload.
      * Only sse-kms mode is supported.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param s3Encryption set the s3Encryption.
      */
@@ -289,7 +289,7 @@ public class AwsConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Aws secret access key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return secretAccessKey
      */
@@ -300,7 +300,7 @@ public class AwsConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Aws secret access key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param secretAccessKey set the secretAccessKey.
      */
@@ -312,7 +312,7 @@ public class AwsConfiguration  {
      * This is the getter method this will return the attribute value.
      * Server side encryption to be used for encrypting sqs queues.
      * Field introduced in 17.2.8.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sqsEncryption
      */
@@ -324,7 +324,7 @@ public class AwsConfiguration  {
      * This is the setter method to the attribute.
      * Server side encryption to be used for encrypting sqs queues.
      * Field introduced in 17.2.8.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sqsEncryption set the sqsEncryption.
      */
@@ -338,7 +338,7 @@ public class AwsConfiguration  {
      * Allowed values are 1-172800.
      * Field introduced in 17.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return ttl
      */
@@ -352,7 +352,7 @@ public class AwsConfiguration  {
      * Allowed values are 1-172800.
      * Field introduced in 17.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param ttl set the ttl.
      */
@@ -363,7 +363,7 @@ public class AwsConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Use iam roles instead of access and secret key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useIamRoles
      */
@@ -374,7 +374,7 @@ public class AwsConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Use iam roles instead of access and secret key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useIamRoles set the useIamRoles.
      */
@@ -386,7 +386,7 @@ public class AwsConfiguration  {
      * This is the getter method this will return the attribute value.
      * Use sns/sqs based notifications for monitoring auto scaling groups.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useSnsSqs
      */
@@ -398,7 +398,7 @@ public class AwsConfiguration  {
      * This is the setter method to the attribute.
      * Use sns/sqs based notifications for monitoring auto scaling groups.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useSnsSqs set the useSnsSqs.
      */
@@ -409,7 +409,7 @@ public class AwsConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vpc name.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vpc
      */
@@ -420,7 +420,7 @@ public class AwsConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vpc name.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vpc set the vpc.
      */
@@ -431,7 +431,7 @@ public class AwsConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vpc id.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vpcId
      */
@@ -442,7 +442,7 @@ public class AwsConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vpc id.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vpcId set the vpcId.
      */
@@ -451,7 +451,7 @@ public class AwsConfiguration  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */
@@ -461,7 +461,7 @@ public class AwsConfiguration  {
 
     /**
      * This is the setter method. this will set the zones
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */
@@ -471,7 +471,7 @@ public class AwsConfiguration  {
 
     /**
      * This is the setter method this will set the zones
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */

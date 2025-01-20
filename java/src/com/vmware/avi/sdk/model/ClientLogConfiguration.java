@@ -41,9 +41,9 @@ public class ClientLogConfiguration  {
      * By default, this flag is enabled, which means that avi ses collect significant logs and forward them to controller for further processing.
      * For example, these logs correspond to error conditions such as when the response code for a request is 500.
      * Users can deactivate this flag to turn off default significant log collection.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise is true.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
      * @return enableSignificantLogCollection
      */
     public Boolean getEnableSignificantLogCollection() {
@@ -56,9 +56,9 @@ public class ClientLogConfiguration  {
      * By default, this flag is enabled, which means that avi ses collect significant logs and forward them to controller for further processing.
      * For example, these logs correspond to error conditions such as when the response code for a request is 500.
      * Users can deactivate this flag to turn off default significant log collection.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise is true.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
      * @param enableSignificantLogCollection set the enableSignificantLogCollection.
      */
     public void setEnableSignificantLogCollection(Boolean  enableSignificantLogCollection) {
@@ -72,7 +72,7 @@ public class ClientLogConfiguration  {
      * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
      * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND".
      * @return filteredLogProcessing
      */
@@ -87,7 +87,7 @@ public class ClientLogConfiguration  {
      * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
      * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND".
      * @param filteredLogProcessing set the filteredLogProcessing.
      */
@@ -101,7 +101,7 @@ public class ClientLogConfiguration  {
      * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
      * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND".
      * @return nonSignificantLogProcessing
      */
@@ -115,7 +115,7 @@ public class ClientLogConfiguration  {
      * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
      * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND".
      * @param nonSignificantLogProcessing set the nonSignificantLogProcessing.
      */
@@ -129,7 +129,7 @@ public class ClientLogConfiguration  {
      * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
      * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND".
      * @return significantLogProcessing
      */
@@ -143,7 +143,7 @@ public class ClientLogConfiguration  {
      * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
      * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND".
      * @param significantLogProcessing set the significantLogProcessing.
      */

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AppLearningParams  {
     @JsonProperty("enable_learn_from_bots")
-    private Boolean enableLearnFromBots = true;
+    private Boolean enableLearnFromBots = false;
 
     @JsonProperty("enable_per_uri_learning")
     private Boolean enablePerUriLearning = true;
@@ -58,8 +58,8 @@ public class AppLearningParams  {
      * If this is set to true, waf will only learn from clients which match the learn_from_bots specification.
      * The settings learn_from_authenticated_requests and trusted_ip_groups always take precedence.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableLearnFromBots
      */
     public Boolean getEnableLearnFromBots() {
@@ -71,8 +71,8 @@ public class AppLearningParams  {
      * If this is set to true, waf will only learn from clients which match the learn_from_bots specification.
      * The settings learn_from_authenticated_requests and trusted_ip_groups always take precedence.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableLearnFromBots set the enableLearnFromBots.
      */
     public void setEnableLearnFromBots(Boolean  enableLearnFromBots) {
@@ -83,7 +83,7 @@ public class AppLearningParams  {
      * This is the getter method this will return the attribute value.
      * Learn the params per uri path.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enablePerUriLearning
      */
@@ -95,7 +95,7 @@ public class AppLearningParams  {
      * This is the setter method to the attribute.
      * Learn the params per uri path.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enablePerUriLearning set the enablePerUriLearning.
      */
@@ -108,7 +108,7 @@ public class AppLearningParams  {
      * If true, learning will only be performed on requests from clients who have passed the authentication process configured in the virtual service's
      * auth profile.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return learnFromAuthenticatedClientsOnly
      */
@@ -121,7 +121,7 @@ public class AppLearningParams  {
      * If true, learning will only be performed on requests from clients who have passed the authentication process configured in the virtual service's
      * auth profile.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param learnFromAuthenticatedClientsOnly set the learnFromAuthenticatedClientsOnly.
      */
@@ -134,7 +134,7 @@ public class AppLearningParams  {
      * If bot detection is active for this virtual service, learning will only be performed on requests from clients within the configured bot
      * classification types.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return learnFromBots
      */
@@ -147,7 +147,7 @@ public class AppLearningParams  {
      * If bot detection is active for this virtual service, learning will only be performed on requests from clients within the configured bot
      * classification types.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param learnFromBots set the learnFromBots.
      */
@@ -160,7 +160,7 @@ public class AppLearningParams  {
      * Maximum number of params programmed for an application.
      * Allowed values are 10-1000.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return maxParams
      */
@@ -173,7 +173,7 @@ public class AppLearningParams  {
      * Maximum number of params programmed for an application.
      * Allowed values are 10-1000.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param maxParams set the maxParams.
      */
@@ -186,7 +186,7 @@ public class AppLearningParams  {
      * Maximum number of uri paths programmed for an application.
      * Allowed values are 10-10000.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
      * @return maxUris
      */
@@ -199,7 +199,7 @@ public class AppLearningParams  {
      * Maximum number of uri paths programmed for an application.
      * Allowed values are 10-10000.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
      * @param maxUris set the maxUris.
      */
@@ -211,7 +211,7 @@ public class AppLearningParams  {
      * This is the getter method this will return the attribute value.
      * Minimum number of occurances required for a param to qualify for learning.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @return minHitsToLearn
      */
@@ -223,7 +223,7 @@ public class AppLearningParams  {
      * This is the setter method to the attribute.
      * Minimum number of occurances required for a param to qualify for learning.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @param minHitsToLearn set the minHitsToLearn.
      */
@@ -237,7 +237,7 @@ public class AppLearningParams  {
      * Allowed values are 1-100.
      * Field introduced in 18.2.3.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return samplingPercent
      */
@@ -251,7 +251,7 @@ public class AppLearningParams  {
      * Allowed values are 1-100.
      * Field introduced in 18.2.3.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param samplingPercent set the samplingPercent.
      */
@@ -264,7 +264,7 @@ public class AppLearningParams  {
      * If configured, learning will only be performed on requests from client ips within the configured ip address group.
      * It is a reference to an object of type ipaddrgroup.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return trustedIpgroupRef
      */
@@ -277,7 +277,7 @@ public class AppLearningParams  {
      * If configured, learning will only be performed on requests from client ips within the configured ip address group.
      * It is a reference to an object of type ipaddrgroup.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param trustedIpgroupRef set the trustedIpgroupRef.
      */
@@ -291,7 +291,7 @@ public class AppLearningParams  {
      * Allowed values are 1-60.
      * Field introduced in 18.2.3.
      * Unit is min.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return updateInterval
      */
@@ -305,7 +305,7 @@ public class AppLearningParams  {
      * Allowed values are 1-60.
      * Field introduced in 18.2.3.
      * Unit is min.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param updateInterval set the updateInterval.
      */

@@ -57,7 +57,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Destination of the file to be saved.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return destinationDir
      */
@@ -69,7 +69,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the setter method to the attribute.
      * Destination of the file to be saved.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param destinationDir set the destinationDir.
      */
@@ -81,7 +81,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Software / crs/ inventory.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fileType
      */
@@ -93,7 +93,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the setter method to the attribute.
      * Software / crs/ inventory.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fileType set the fileType.
      */
@@ -105,7 +105,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * File uri on the cloud bucket.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fileUri
      */
@@ -117,7 +117,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the setter method to the attribute.
      * File uri on the cloud bucket.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fileUri set the fileUri.
      */
@@ -129,8 +129,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Download's success / failure message.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return message
      */
     public String getMessage() {
@@ -141,8 +140,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the setter method to the attribute.
      * Download's success / failure message.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param message set the message.
      */
     public void setMessage(String  message) {
@@ -153,8 +151,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Metadata of the file from pulse.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return metadata
      */
     public ALBServicesFileDownloadMetadata getMetadata() {
@@ -165,8 +162,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the setter method to the attribute.
      * Metadata of the file from pulse.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param metadata set the metadata.
      */
     public void setMetadata(ALBServicesFileDownloadMetadata metadata) {
@@ -177,7 +173,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The name of the file with which it is saved to the disk.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -189,7 +185,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the setter method to the attribute.
      * The name of the file with which it is saved to the disk.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -202,10 +198,9 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * Status of file download.
      * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
      * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
-     * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+     * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return status
      */
     public String getStatus() {
@@ -217,10 +212,9 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * Status of file download.
      * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
      * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
-     * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+     * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param status set the status.
      */
     public void setStatus(String  status) {
@@ -232,7 +226,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * Tenant uuid associated with the object.
      * It is a reference to an object of type tenant.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -245,7 +239,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * Tenant uuid associated with the object.
      * It is a reference to an object of type tenant.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -274,7 +268,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Unique id of the object.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -286,7 +280,7 @@ public class ALBServicesFileDownload extends AviRestResource  {
      * This is the setter method to the attribute.
      * Unique id of the object.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

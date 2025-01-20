@@ -37,7 +37,7 @@ public class AzureUserPassCredentials  {
      * Password for azure subscription.
      * Required only if username is provided.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return password
      */
@@ -50,7 +50,7 @@ public class AzureUserPassCredentials  {
      * Password for azure subscription.
      * Required only if username is provided.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param password set the password.
      */
@@ -63,7 +63,7 @@ public class AzureUserPassCredentials  {
      * Tenant or the active directory associated with the subscription.
      * Required for user name password authentication.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantName
      */
@@ -76,7 +76,7 @@ public class AzureUserPassCredentials  {
      * Tenant or the active directory associated with the subscription.
      * Required for user name password authentication.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantName set the tenantName.
      */
@@ -89,7 +89,7 @@ public class AzureUserPassCredentials  {
      * Username for azure subscription.
      * Required only for username password based authentication.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return username
      */
@@ -102,7 +102,7 @@ public class AzureUserPassCredentials  {
      * Username for azure subscription.
      * Required only for username password based authentication.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param username set the username.
      */

@@ -34,7 +34,7 @@ public class PGDeploymentRule  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "health.health_score_value".
      * @return metricId
      */
@@ -44,7 +44,7 @@ public class PGDeploymentRule  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "health.health_score_value".
      * @param metricId set the metricId.
      */
@@ -55,7 +55,7 @@ public class PGDeploymentRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - CO_EQ, CO_GT, CO_GE, CO_LT, CO_LE, CO_NE.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "CO_GE".
      * @return operator
      */
@@ -66,7 +66,7 @@ public class PGDeploymentRule  {
     /**
      * This is the setter method to the attribute.
      * Enum options - CO_EQ, CO_GT, CO_GE, CO_LT, CO_LE, CO_NE.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "CO_GE".
      * @param operator set the operator.
      */
@@ -78,7 +78,7 @@ public class PGDeploymentRule  {
      * This is the getter method this will return the attribute value.
      * Metric threshold that is used as the pass fail.
      * If it is not provided then it will simply compare it with current pool vs new pool.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return threshold
      */
@@ -90,7 +90,7 @@ public class PGDeploymentRule  {
      * This is the setter method to the attribute.
      * Metric threshold that is used as the pass fail.
      * If it is not provided then it will simply compare it with current pool vs new pool.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param threshold set the threshold.
      */

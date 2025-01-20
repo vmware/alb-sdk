@@ -35,7 +35,7 @@ public class MetricsDbSyncFailureEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the node responsible for this event.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodeName
      */
@@ -46,7 +46,7 @@ public class MetricsDbSyncFailureEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Name of the node responsible for this event.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nodeName set the nodeName.
      */
@@ -57,7 +57,7 @@ public class MetricsDbSyncFailureEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the process responsible for this event.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return processName
      */
@@ -68,7 +68,7 @@ public class MetricsDbSyncFailureEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Name of the process responsible for this event.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param processName set the processName.
      */
@@ -79,7 +79,7 @@ public class MetricsDbSyncFailureEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Timestamp at which this event occurred.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return timestamp
      */
@@ -90,7 +90,7 @@ public class MetricsDbSyncFailureEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Timestamp at which this event occurred.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param timestamp set the timestamp.
      */

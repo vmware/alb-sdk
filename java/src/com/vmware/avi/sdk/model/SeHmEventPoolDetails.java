@@ -47,7 +47,7 @@ public class SeHmEventPoolDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Ha compromised reason.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return haReason
      */
@@ -58,7 +58,7 @@ public class SeHmEventPoolDetails  {
     /**
      * This is the setter method to the attribute.
      * Ha compromised reason.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param haReason set the haReason.
      */
@@ -69,7 +69,7 @@ public class SeHmEventPoolDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Percentage of servers up.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return percentServersUp
      */
@@ -80,7 +80,7 @@ public class SeHmEventPoolDetails  {
     /**
      * This is the setter method to the attribute.
      * Percentage of servers up.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param percentServersUp set the percentServersUp.
      */
@@ -92,7 +92,7 @@ public class SeHmEventPoolDetails  {
      * This is the getter method this will return the attribute value.
      * Pool name.
      * It is a reference to an object of type pool.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pool
      */
@@ -104,7 +104,7 @@ public class SeHmEventPoolDetails  {
      * This is the setter method to the attribute.
      * Pool name.
      * It is a reference to an object of type pool.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pool set the pool.
      */
@@ -115,7 +115,7 @@ public class SeHmEventPoolDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Service engine.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seName
      */
@@ -126,7 +126,7 @@ public class SeHmEventPoolDetails  {
     /**
      * This is the setter method to the attribute.
      * Service engine.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seName set the seName.
      */
@@ -137,7 +137,7 @@ public class SeHmEventPoolDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Server details.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return server
      */
@@ -148,7 +148,7 @@ public class SeHmEventPoolDetails  {
     /**
      * This is the setter method to the attribute.
      * Server details.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param server set the server.
      */
@@ -159,7 +159,7 @@ public class SeHmEventPoolDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Uuid of the event generator.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return srcUuid
      */
@@ -170,7 +170,7 @@ public class SeHmEventPoolDetails  {
     /**
      * This is the setter method to the attribute.
      * Uuid of the event generator.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param srcUuid set the srcUuid.
      */
@@ -182,7 +182,7 @@ public class SeHmEventPoolDetails  {
      * This is the getter method this will return the attribute value.
      * Virtual service name.
      * It is a reference to an object of type virtualservice.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return virtualService
      */
@@ -194,7 +194,7 @@ public class SeHmEventPoolDetails  {
      * This is the setter method to the attribute.
      * Virtual service name.
      * It is a reference to an object of type virtualservice.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param virtualService set the virtualService.
      */

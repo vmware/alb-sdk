@@ -54,7 +54,7 @@ public class HTTP2ApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Enables automatic conversion of preload links specified in the 'link' response header fields into server push requests.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableHttp2ServerPush
      */
@@ -66,7 +66,7 @@ public class HTTP2ApplicationProfile  {
      * This is the setter method to the attribute.
      * Enables automatic conversion of preload links specified in the 'link' response header fields into server push requests.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableHttp2ServerPush set the enableHttp2ServerPush.
      */
@@ -80,7 +80,7 @@ public class HTTP2ApplicationProfile  {
      * Allowed values are 64-32768.
      * Field introduced in 18.2.10, 20.1.1.
      * Unit is kb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @return http2InitialWindowSize
      */
@@ -94,7 +94,7 @@ public class HTTP2ApplicationProfile  {
      * Allowed values are 64-32768.
      * Field introduced in 18.2.10, 20.1.1.
      * Unit is kb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @param http2InitialWindowSize set the http2InitialWindowSize.
      */
@@ -107,7 +107,7 @@ public class HTTP2ApplicationProfile  {
      * Maximum number of concurrent push streams over a client side http/2 connection.
      * Allowed values are 1-256.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return maxHttp2ConcurrentPushesPerConnection
      */
@@ -120,7 +120,7 @@ public class HTTP2ApplicationProfile  {
      * Maximum number of concurrent push streams over a client side http/2 connection.
      * Allowed values are 1-256.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param maxHttp2ConcurrentPushesPerConnection set the maxHttp2ConcurrentPushesPerConnection.
      */
@@ -133,7 +133,7 @@ public class HTTP2ApplicationProfile  {
      * Maximum number of concurrent streams over a client side http/2 connection.
      * Allowed values are 1-256.
      * Field introduced in 18.2.10, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @return maxHttp2ConcurrentStreamsPerConnection
      */
@@ -146,7 +146,7 @@ public class HTTP2ApplicationProfile  {
      * Maximum number of concurrent streams over a client side http/2 connection.
      * Allowed values are 1-256.
      * Field introduced in 18.2.10, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @param maxHttp2ConcurrentStreamsPerConnection set the maxHttp2ConcurrentStreamsPerConnection.
      */
@@ -161,7 +161,7 @@ public class HTTP2ApplicationProfile  {
      * Allowed values are 0-10000.
      * Special values are 0- unlimited control frames on a client side http/2 connection.
      * Field introduced in 18.2.10, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @return maxHttp2ControlFramesPerConnection
      */
@@ -176,7 +176,7 @@ public class HTTP2ApplicationProfile  {
      * Allowed values are 0-10000.
      * Special values are 0- unlimited control frames on a client side http/2 connection.
      * Field introduced in 18.2.10, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @param maxHttp2ControlFramesPerConnection set the maxHttp2ControlFramesPerConnection.
      */
@@ -191,7 +191,7 @@ public class HTTP2ApplicationProfile  {
      * Allowed values are 0-10000.
      * Special values are 0- unlimited empty data frames over a client side http/2 connection.
      * Field introduced in 18.2.10, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @return maxHttp2EmptyDataFramesPerConnection
      */
@@ -206,7 +206,7 @@ public class HTTP2ApplicationProfile  {
      * Allowed values are 0-10000.
      * Special values are 0- unlimited empty data frames over a client side http/2 connection.
      * Field introduced in 18.2.10, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @param maxHttp2EmptyDataFramesPerConnection set the maxHttp2EmptyDataFramesPerConnection.
      */
@@ -221,7 +221,7 @@ public class HTTP2ApplicationProfile  {
      * Allowed values are 1-8192.
      * Field introduced in 18.2.10, 20.1.1.
      * Unit is bytes.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
      * @return maxHttp2HeaderFieldSize
      */
@@ -236,7 +236,7 @@ public class HTTP2ApplicationProfile  {
      * Allowed values are 1-8192.
      * Field introduced in 18.2.10, 20.1.1.
      * Unit is bytes.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
      * @param maxHttp2HeaderFieldSize set the maxHttp2HeaderFieldSize.
      */
@@ -251,7 +251,7 @@ public class HTTP2ApplicationProfile  {
      * Allowed values are 0-10000.
      * Special values are 0- unlimited frames can be queued on a client side http/2 connection.
      * Field introduced in 18.2.10, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @return maxHttp2QueuedFramesToClientPerConnection
      */
@@ -266,7 +266,7 @@ public class HTTP2ApplicationProfile  {
      * Allowed values are 0-10000.
      * Special values are 0- unlimited frames can be queued on a client side http/2 connection.
      * Field introduced in 18.2.10, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @param maxHttp2QueuedFramesToClientPerConnection set the maxHttp2QueuedFramesToClientPerConnection.
      */
@@ -280,7 +280,7 @@ public class HTTP2ApplicationProfile  {
      * Allowed values are 0-10000.
      * Special values are 0- unlimited requests on a client side http/2 connection.
      * Field introduced in 18.2.10, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @return maxHttp2RequestsPerConnection
      */
@@ -294,7 +294,7 @@ public class HTTP2ApplicationProfile  {
      * Allowed values are 0-10000.
      * Special values are 0- unlimited requests on a client side http/2 connection.
      * Field introduced in 18.2.10, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @param maxHttp2RequestsPerConnection set the maxHttp2RequestsPerConnection.
      */

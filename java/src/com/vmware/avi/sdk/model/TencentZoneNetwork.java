@@ -33,7 +33,7 @@ public class TencentZoneNetwork  {
      * This is the getter method this will return the attribute value.
      * Availability zone.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availabilityZone
      */
@@ -45,7 +45,7 @@ public class TencentZoneNetwork  {
      * This is the setter method to the attribute.
      * Availability zone.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param availabilityZone set the availabilityZone.
      */
@@ -59,7 +59,7 @@ public class TencentZoneNetwork  {
      * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
      * allocation.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableSubnetId
      */
@@ -73,7 +73,7 @@ public class TencentZoneNetwork  {
      * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
      * allocation.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param usableSubnetId set the usableSubnetId.
      */

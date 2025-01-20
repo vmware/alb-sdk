@@ -33,7 +33,7 @@ public class InfobloxSubnet  {
      * This is the getter method this will return the attribute value.
      * Ipv4 subnet to use for infoblox allocation.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet
      */
@@ -45,7 +45,7 @@ public class InfobloxSubnet  {
      * This is the setter method to the attribute.
      * Ipv4 subnet to use for infoblox allocation.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subnet set the subnet.
      */
@@ -57,7 +57,7 @@ public class InfobloxSubnet  {
      * This is the getter method this will return the attribute value.
      * Ipv6 subnet to use for infoblox allocation.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet6
      */
@@ -69,7 +69,7 @@ public class InfobloxSubnet  {
      * This is the setter method to the attribute.
      * Ipv6 subnet to use for infoblox allocation.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subnet6 set the subnet6.
      */

@@ -37,7 +37,7 @@ public class DbAppLearningInfo  {
      * Application uuid.
      * Combination of virtualservice uuid and waf policy uuid.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return appId
      */
@@ -50,7 +50,7 @@ public class DbAppLearningInfo  {
      * Application uuid.
      * Combination of virtualservice uuid and waf policy uuid.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param appId set the appId.
      */
@@ -61,7 +61,7 @@ public class DbAppLearningInfo  {
      * This is the getter method this will return the attribute value.
      * Information about various uris under a application.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriInfo
      */
@@ -73,7 +73,7 @@ public class DbAppLearningInfo  {
      * This is the setter method. this will set the uriInfo
      * Information about various uris under a application.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriInfo
      */
@@ -85,7 +85,7 @@ public class DbAppLearningInfo  {
      * This is the setter method this will set the uriInfo
      * Information about various uris under a application.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriInfo
      */
@@ -101,7 +101,7 @@ public class DbAppLearningInfo  {
      * This is the getter method this will return the attribute value.
      * Virtualserivce uuid.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -113,7 +113,7 @@ public class DbAppLearningInfo  {
      * This is the setter method to the attribute.
      * Virtualserivce uuid.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsUuid set the vsUuid.
      */

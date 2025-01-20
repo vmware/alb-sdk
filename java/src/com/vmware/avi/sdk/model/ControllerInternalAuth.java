@@ -31,7 +31,7 @@ public class ControllerInternalAuth  {
      * Field introduced in 20.1.6.
      * Minimum of 1 items required.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return symmetricJwksKeys
      */
@@ -45,7 +45,7 @@ public class ControllerInternalAuth  {
      * Field introduced in 20.1.6.
      * Minimum of 1 items required.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return symmetricJwksKeys
      */
@@ -59,7 +59,7 @@ public class ControllerInternalAuth  {
      * Field introduced in 20.1.6.
      * Minimum of 1 items required.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return symmetricJwksKeys
      */

@@ -32,7 +32,7 @@ public class AuthenticationPolicy  {
      * This is the getter method this will return the attribute value.
      * Add rules to apply auth profile to specific targets.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authnRules
      */
@@ -44,7 +44,7 @@ public class AuthenticationPolicy  {
      * This is the setter method. this will set the authnRules
      * Add rules to apply auth profile to specific targets.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authnRules
      */
@@ -56,7 +56,7 @@ public class AuthenticationPolicy  {
      * This is the setter method this will set the authnRules
      * Add rules to apply auth profile to specific targets.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authnRules
      */
@@ -73,7 +73,7 @@ public class AuthenticationPolicy  {
      * Auth profile to use for validating users.
      * It is a reference to an object of type authprofile.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return defaultAuthProfileRef
      */
@@ -86,7 +86,7 @@ public class AuthenticationPolicy  {
      * Auth profile to use for validating users.
      * It is a reference to an object of type authprofile.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param defaultAuthProfileRef set the defaultAuthProfileRef.
      */

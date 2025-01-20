@@ -37,7 +37,7 @@ public class TrueClientIPConfig  {
      * Denotes the end from which to count the ips in the specified header value.
      * Enum options - LEFT, RIGHT.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LEFT".
      * @return direction
      */
@@ -50,7 +50,7 @@ public class TrueClientIPConfig  {
      * Denotes the end from which to count the ips in the specified header value.
      * Enum options - LEFT, RIGHT.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LEFT".
      * @param direction set the direction.
      */
@@ -59,12 +59,11 @@ public class TrueClientIPConfig  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Headers to derive client ip from.
-     * The header value needs to be a comma-separated list of ip addresses.
+     * Http headers to derive client ip from.
      * If none specified and use_true_client_ip is set to true, it will use x-forwarded-for header, if present.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return headers
      */
@@ -74,12 +73,11 @@ public class TrueClientIPConfig  {
 
     /**
      * This is the setter method. this will set the headers
-     * Headers to derive client ip from.
-     * The header value needs to be a comma-separated list of ip addresses.
+     * Http headers to derive client ip from.
      * If none specified and use_true_client_ip is set to true, it will use x-forwarded-for header, if present.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return headers
      */
@@ -89,12 +87,11 @@ public class TrueClientIPConfig  {
 
     /**
      * This is the setter method this will set the headers
-     * Headers to derive client ip from.
-     * The header value needs to be a comma-separated list of ip addresses.
+     * Http headers to derive client ip from.
      * If none specified and use_true_client_ip is set to true, it will use x-forwarded-for header, if present.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return headers
      */
@@ -113,7 +110,7 @@ public class TrueClientIPConfig  {
      * used.
      * Allowed values are 1-1000.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return indexInHeader
      */
@@ -128,7 +125,7 @@ public class TrueClientIPConfig  {
      * used.
      * Allowed values are 1-1000.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param indexInHeader set the indexInHeader.
      */

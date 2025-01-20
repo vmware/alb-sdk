@@ -39,7 +39,7 @@ public class DnsSrvRdata  {
      * This is the getter method this will return the attribute value.
      * Service port.
      * Allowed values are 0-65535.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -51,7 +51,7 @@ public class DnsSrvRdata  {
      * This is the setter method to the attribute.
      * Service port.
      * Allowed values are 0-65535.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */
@@ -63,7 +63,7 @@ public class DnsSrvRdata  {
      * This is the getter method this will return the attribute value.
      * Priority of the target hosting the service, low value implies higher priority for this service record.
      * Allowed values are 0-65535.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return priority
      */
@@ -75,7 +75,7 @@ public class DnsSrvRdata  {
      * This is the setter method to the attribute.
      * Priority of the target hosting the service, low value implies higher priority for this service record.
      * Allowed values are 0-65535.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param priority set the priority.
      */
@@ -87,7 +87,7 @@ public class DnsSrvRdata  {
      * This is the getter method this will return the attribute value.
      * Canonical hostname, of the machine hosting the service, with no trailing period.
      * 'default.host' is valid but not 'default.host.'.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default.host".
      * @return target
      */
@@ -99,7 +99,7 @@ public class DnsSrvRdata  {
      * This is the setter method to the attribute.
      * Canonical hostname, of the machine hosting the service, with no trailing period.
      * 'default.host' is valid but not 'default.host.'.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default.host".
      * @param target set the target.
      */
@@ -111,7 +111,7 @@ public class DnsSrvRdata  {
      * This is the getter method this will return the attribute value.
      * Relative weight for service records with same priority, high value implies higher preference for this service record.
      * Allowed values are 0-65535.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return weight
      */
@@ -123,7 +123,7 @@ public class DnsSrvRdata  {
      * This is the setter method to the attribute.
      * Relative weight for service records with same priority, high value implies higher preference for this service record.
      * Allowed values are 0-65535.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param weight set the weight.
      */

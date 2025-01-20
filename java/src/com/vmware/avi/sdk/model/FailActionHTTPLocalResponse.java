@@ -31,7 +31,7 @@ public class FailActionHTTPLocalResponse  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return file
      */
@@ -41,7 +41,7 @@ public class FailActionHTTPLocalResponse  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param file set the file.
      */
@@ -52,7 +52,7 @@ public class FailActionHTTPLocalResponse  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - FAIL_HTTP_STATUS_CODE_200, FAIL_HTTP_STATUS_CODE_503.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "FAIL_HTTP_STATUS_CODE_503".
      * @return statusCode
      */
@@ -63,7 +63,7 @@ public class FailActionHTTPLocalResponse  {
     /**
      * This is the setter method to the attribute.
      * Enum options - FAIL_HTTP_STATUS_CODE_200, FAIL_HTTP_STATUS_CODE_503.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "FAIL_HTTP_STATUS_CODE_503".
      * @param statusCode set the statusCode.
      */

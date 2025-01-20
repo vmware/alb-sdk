@@ -42,7 +42,7 @@ public class CaptureTCPFilter  {
      * This is the getter method this will return the attribute value.
      * Destination port range filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dstPortRange
      */
@@ -54,7 +54,7 @@ public class CaptureTCPFilter  {
      * This is the setter method to the attribute.
      * Destination port range filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dstPortRange set the dstPortRange.
      */
@@ -65,9 +65,9 @@ public class CaptureTCPFilter  {
     /**
      * This is the getter method this will return the attribute value.
      * Ethernet proto filter.
-     * Enum options - ETH_TYPE_IPV4.
+     * Enum options - ETH_TYPE_IPV4, ETH_TYPE_IPV6.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ETH_TYPE_IPV4".
      * @return ethProto
      */
@@ -78,9 +78,9 @@ public class CaptureTCPFilter  {
     /**
      * This is the setter method to the attribute.
      * Ethernet proto filter.
-     * Enum options - ETH_TYPE_IPV4.
+     * Enum options - ETH_TYPE_IPV4, ETH_TYPE_IPV6.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ETH_TYPE_IPV4".
      * @param ethProto set the ethProto.
      */
@@ -93,7 +93,7 @@ public class CaptureTCPFilter  {
      * Per packet ip filter for service engine pcap.
      * Matches with source and destination address.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostIp
      */
@@ -106,7 +106,7 @@ public class CaptureTCPFilter  {
      * Per packet ip filter for service engine pcap.
      * Matches with source and destination address.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostIp set the hostIp.
      */
@@ -118,7 +118,7 @@ public class CaptureTCPFilter  {
      * This is the getter method this will return the attribute value.
      * Source port range filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return srcPortRange
      */
@@ -130,7 +130,7 @@ public class CaptureTCPFilter  {
      * This is the setter method to the attribute.
      * Source port range filter.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param srcPortRange set the srcPortRange.
      */
@@ -143,7 +143,7 @@ public class CaptureTCPFilter  {
      * Tcp flags filter.
      * Or'ed internally and and'ed amongst each other.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tcpflag
      */
@@ -156,7 +156,7 @@ public class CaptureTCPFilter  {
      * Tcp flags filter.
      * Or'ed internally and and'ed amongst each other.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tcpflag set the tcpflag.
      */

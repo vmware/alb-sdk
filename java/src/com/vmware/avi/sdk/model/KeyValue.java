@@ -32,7 +32,7 @@ public class KeyValue  {
     /**
      * This is the getter method this will return the attribute value.
      * Key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return key
      */
@@ -43,7 +43,7 @@ public class KeyValue  {
     /**
      * This is the setter method to the attribute.
      * Key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param key set the key.
      */
@@ -54,7 +54,7 @@ public class KeyValue  {
     /**
      * This is the getter method this will return the attribute value.
      * Value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -65,7 +65,7 @@ public class KeyValue  {
     /**
      * This is the setter method to the attribute.
      * Value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

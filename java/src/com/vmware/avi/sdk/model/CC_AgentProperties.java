@@ -59,7 +59,7 @@ public class CC_AgentProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum polls to check for async jobs to finish.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return asyncRetries
      */
@@ -70,7 +70,7 @@ public class CC_AgentProperties  {
     /**
      * This is the setter method to the attribute.
      * Maximum polls to check for async jobs to finish.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param asyncRetries set the asyncRetries.
      */
@@ -82,7 +82,7 @@ public class CC_AgentProperties  {
      * This is the getter method this will return the attribute value.
      * Delay between each async job status poll check.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return asyncRetriesDelay
      */
@@ -94,7 +94,7 @@ public class CC_AgentProperties  {
      * This is the setter method to the attribute.
      * Delay between each async job status poll check.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param asyncRetriesDelay set the asyncRetriesDelay.
      */
@@ -107,7 +107,7 @@ public class CC_AgentProperties  {
      * Discovery poll target duration; a scale factor of 1+ is computed with the actual discovery (actual/target) and used to tweak slow and fast poll
      * intervals.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return pollDurationTarget
      */
@@ -120,7 +120,7 @@ public class CC_AgentProperties  {
      * Discovery poll target duration; a scale factor of 1+ is computed with the actual discovery (actual/target) and used to tweak slow and fast poll
      * intervals.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param pollDurationTarget set the pollDurationTarget.
      */
@@ -132,7 +132,7 @@ public class CC_AgentProperties  {
      * This is the getter method this will return the attribute value.
      * Fast poll interval.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return pollFastTarget
      */
@@ -144,7 +144,7 @@ public class CC_AgentProperties  {
      * This is the setter method to the attribute.
      * Fast poll interval.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param pollFastTarget set the pollFastTarget.
      */
@@ -156,7 +156,7 @@ public class CC_AgentProperties  {
      * This is the getter method this will return the attribute value.
      * Slow poll interval.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 240.
      * @return pollSlowTarget
      */
@@ -168,7 +168,7 @@ public class CC_AgentProperties  {
      * This is the setter method to the attribute.
      * Slow poll interval.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 240.
      * @param pollSlowTarget set the pollSlowTarget.
      */
@@ -182,7 +182,7 @@ public class CC_AgentProperties  {
      * Allowed values are 60-3600.
      * Field introduced in 22.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return vcenterHostPingInterval
      */
@@ -196,7 +196,7 @@ public class CC_AgentProperties  {
      * Allowed values are 60-3600.
      * Field introduced in 22.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param vcenterHostPingInterval set the vcenterHostPingInterval.
      */
@@ -209,7 +209,7 @@ public class CC_AgentProperties  {
      * Batch size of vcenter inventory updates.
      * Allowed values are 1-500.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return vcenterInventoryMaxObjectUpdates
      */
@@ -222,7 +222,7 @@ public class CC_AgentProperties  {
      * Batch size of vcenter inventory updates.
      * Allowed values are 1-500.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param vcenterInventoryMaxObjectUpdates set the vcenterInventoryMaxObjectUpdates.
      */
@@ -235,7 +235,7 @@ public class CC_AgentProperties  {
      * Max datastore processing go routines for vcenter datastore updates.
      * Allowed values are 1-40.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return vcenterMaxDatastoreGoRoutines
      */
@@ -248,7 +248,7 @@ public class CC_AgentProperties  {
      * Max datastore processing go routines for vcenter datastore updates.
      * Allowed values are 1-40.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param vcenterMaxDatastoreGoRoutines set the vcenterMaxDatastoreGoRoutines.
      */
@@ -262,7 +262,7 @@ public class CC_AgentProperties  {
      * Allowed values are 60-3600.
      * Field introduced in 22.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
      * @return vcenterReconcileInterval
      */
@@ -276,7 +276,7 @@ public class CC_AgentProperties  {
      * Allowed values are 60-3600.
      * Field introduced in 22.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
      * @param vcenterReconcileInterval set the vcenterReconcileInterval.
      */
@@ -287,7 +287,7 @@ public class CC_AgentProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum polls to check for vnics to be attached to vm.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return vnicRetries
      */
@@ -298,7 +298,7 @@ public class CC_AgentProperties  {
     /**
      * This is the setter method to the attribute.
      * Maximum polls to check for vnics to be attached to vm.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param vnicRetries set the vnicRetries.
      */
@@ -310,7 +310,7 @@ public class CC_AgentProperties  {
      * This is the getter method this will return the attribute value.
      * Delay between each vnic status poll check.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return vnicRetriesDelay
      */
@@ -322,7 +322,7 @@ public class CC_AgentProperties  {
      * This is the setter method to the attribute.
      * Delay between each vnic status poll check.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param vnicRetriesDelay set the vnicRetriesDelay.
      */

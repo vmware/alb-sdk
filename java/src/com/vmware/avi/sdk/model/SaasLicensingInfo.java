@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SaasLicensingInfo  {
+    @JsonProperty("enable_notional_reserve")
+    private Boolean enableNotionalReserve = true;
+
     @JsonProperty("max_service_units")
     private Float maxServiceUnits = 0.0f;
 
@@ -31,11 +34,35 @@ public class SaasLicensingInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Enable relaxed reservation norm allowing up to 2x free units( normally constrained to free license units ) to be reserved by upcoming se’s.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return enableNotionalReserve
+     */
+    public Boolean getEnableNotionalReserve() {
+        return enableNotionalReserve;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable relaxed reservation norm allowing up to 2x free units( normally constrained to free license units ) to be reserved by upcoming se’s.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param enableNotionalReserve set the enableNotionalReserve.
+     */
+    public void setEnableNotionalReserve(Boolean  enableNotionalReserve) {
+        this.enableNotionalReserve = enableNotionalReserve;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Maximum service units limit for controller.
      * Allowed values are 0-100000.
      * Special values are 0 - infinite.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @return maxServiceUnits
      */
@@ -49,7 +76,7 @@ public class SaasLicensingInfo  {
      * Allowed values are 0-100000.
      * Special values are 0 - infinite.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @param maxServiceUnits set the maxServiceUnits.
      */
@@ -62,7 +89,7 @@ public class SaasLicensingInfo  {
      * Minimum service units that always remain reserved on controller.
      * Allowed values are 0-1000.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @return reserveServiceUnits
      */
@@ -75,7 +102,7 @@ public class SaasLicensingInfo  {
      * Minimum service units that always remain reserved on controller.
      * Allowed values are 0-1000.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @param reserveServiceUnits set the reserveServiceUnits.
      */
@@ -94,14 +121,16 @@ public class SaasLicensingInfo  {
       }
       SaasLicensingInfo objSaasLicensingInfo = (SaasLicensingInfo) o;
       return   Objects.equals(this.reserveServiceUnits, objSaasLicensingInfo.reserveServiceUnits)&&
-  Objects.equals(this.maxServiceUnits, objSaasLicensingInfo.maxServiceUnits);
+  Objects.equals(this.maxServiceUnits, objSaasLicensingInfo.maxServiceUnits)&&
+  Objects.equals(this.enableNotionalReserve, objSaasLicensingInfo.enableNotionalReserve);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class SaasLicensingInfo {\n");
-                  sb.append("    maxServiceUnits: ").append(toIndentedString(maxServiceUnits)).append("\n");
+                  sb.append("    enableNotionalReserve: ").append(toIndentedString(enableNotionalReserve)).append("\n");
+                        sb.append("    maxServiceUnits: ").append(toIndentedString(maxServiceUnits)).append("\n");
                         sb.append("    reserveServiceUnits: ").append(toIndentedString(reserveServiceUnits)).append("\n");
                   sb.append("}");
       return sb.toString();

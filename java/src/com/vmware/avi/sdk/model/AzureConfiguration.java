@@ -62,7 +62,7 @@ public class AzureConfiguration  {
      * This is the getter method this will return the attribute value.
      * Availability zones to be used in azure.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availabilityZones
      */
@@ -74,7 +74,7 @@ public class AzureConfiguration  {
      * This is the setter method. this will set the availabilityZones
      * Availability zones to be used in azure.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availabilityZones
      */
@@ -86,7 +86,7 @@ public class AzureConfiguration  {
      * This is the setter method this will set the availabilityZones
      * Availability zones to be used in azure.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availabilityZones
      */
@@ -103,7 +103,7 @@ public class AzureConfiguration  {
      * Credentials to access azure cloud.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudCredentialsRef
      */
@@ -116,7 +116,7 @@ public class AzureConfiguration  {
      * Credentials to access azure cloud.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudCredentialsRef set the cloudCredentialsRef.
      */
@@ -128,7 +128,7 @@ public class AzureConfiguration  {
      * This is the getter method this will return the attribute value.
      * Disks encryption set resource-id (des_id) to encrypt se image and managed disk using customer-managed-keys.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return desId
      */
@@ -140,7 +140,7 @@ public class AzureConfiguration  {
      * This is the setter method to the attribute.
      * Disks encryption set resource-id (des_id) to encrypt se image and managed disk using customer-managed-keys.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param desId set the desId.
      */
@@ -152,7 +152,7 @@ public class AzureConfiguration  {
      * This is the getter method this will return the attribute value.
      * Azure location where this cloud will be located.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return location
      */
@@ -164,7 +164,7 @@ public class AzureConfiguration  {
      * This is the setter method to the attribute.
      * Azure location where this cloud will be located.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param location set the location.
      */
@@ -177,7 +177,7 @@ public class AzureConfiguration  {
      * Field introduced in 17.2.1.
      * Minimum of 1 items required.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkInfo
      */
@@ -191,7 +191,7 @@ public class AzureConfiguration  {
      * Field introduced in 17.2.1.
      * Minimum of 1 items required.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkInfo
      */
@@ -205,7 +205,7 @@ public class AzureConfiguration  {
      * Field introduced in 17.2.1.
      * Minimum of 1 items required.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkInfo
      */
@@ -222,7 +222,7 @@ public class AzureConfiguration  {
      * Azure resource group dedicated for avi controller.
      * Avi controller will create all its resources in this resource group.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceGroup
      */
@@ -235,7 +235,7 @@ public class AzureConfiguration  {
      * Azure resource group dedicated for avi controller.
      * Avi controller will create all its resources in this resource group.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourceGroup set the resourceGroup.
      */
@@ -249,7 +249,7 @@ public class AzureConfiguration  {
      * Must include the resource group name.
      * Format '<resource-group> <storage-account-name>'.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seStorageAccount
      */
@@ -263,7 +263,7 @@ public class AzureConfiguration  {
      * Must include the resource group name.
      * Format '<resource-group> <storage-account-name>'.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seStorageAccount set the seStorageAccount.
      */
@@ -275,7 +275,7 @@ public class AzureConfiguration  {
      * This is the getter method this will return the attribute value.
      * Subscription id for the azure subscription.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subscriptionId
      */
@@ -287,7 +287,7 @@ public class AzureConfiguration  {
      * This is the setter method to the attribute.
      * Subscription id for the azure subscription.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subscriptionId set the subscriptionId.
      */
@@ -299,7 +299,7 @@ public class AzureConfiguration  {
      * This is the getter method this will return the attribute value.
      * Azure is the dns provider.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useAzureDns
      */
@@ -311,7 +311,7 @@ public class AzureConfiguration  {
      * This is the setter method to the attribute.
      * Azure is the dns provider.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useAzureDns set the useAzureDns.
      */
@@ -324,7 +324,7 @@ public class AzureConfiguration  {
      * Use azure's enhanced ha features.
      * This needs a public ip to be associated with the vip.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useEnhancedHa
      */
@@ -337,7 +337,7 @@ public class AzureConfiguration  {
      * Use azure's enhanced ha features.
      * This needs a public ip to be associated with the vip.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useEnhancedHa set the useEnhancedHa.
      */
@@ -349,7 +349,7 @@ public class AzureConfiguration  {
      * This is the getter method this will return the attribute value.
      * Use azure managed disks for se storage.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return useManagedDisks
      */
@@ -361,7 +361,7 @@ public class AzureConfiguration  {
      * This is the setter method to the attribute.
      * Use azure managed disks for se storage.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param useManagedDisks set the useManagedDisks.
      */
@@ -374,7 +374,7 @@ public class AzureConfiguration  {
      * Use standard sku azure load balancer.
      * By default standard sku load balancer is used.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return useStandardAlb
      */
@@ -387,7 +387,7 @@ public class AzureConfiguration  {
      * Use standard sku azure load balancer.
      * By default standard sku load balancer is used.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param useStandardAlb set the useStandardAlb.
      */

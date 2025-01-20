@@ -33,7 +33,7 @@ public class TenantLabel  {
      * This is the getter method this will return the attribute value.
      * Label key string.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return key
      */
@@ -45,7 +45,7 @@ public class TenantLabel  {
      * This is the setter method to the attribute.
      * Label key string.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param key set the key.
      */
@@ -57,7 +57,7 @@ public class TenantLabel  {
      * This is the getter method this will return the attribute value.
      * Label value string.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -69,7 +69,7 @@ public class TenantLabel  {
      * This is the setter method to the attribute.
      * Label value string.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

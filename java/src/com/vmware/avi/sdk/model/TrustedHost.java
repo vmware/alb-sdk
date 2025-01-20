@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The ConnectionClearFilter is a POJO class extends AviRestResource that used for creating
- * ConnectionClearFilter.
+ * The TrustedHost is a POJO class extends AviRestResource that used for creating
+ * TrustedHost.
  *
  * @version 1.0
  * @since 
@@ -20,9 +20,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ConnectionClearFilter  {
-    @JsonProperty("ip_addr")
-    private String ipAddr;
+public class TrustedHost  {
+    @JsonProperty("host")
+    private IpAddr host;
 
     @JsonProperty("port")
     private Integer port;
@@ -31,30 +31,34 @@ public class ConnectionClearFilter  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ip address in dotted decimal notation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Any valid ipv4, ipv6, or domain address.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return ipAddr
+     * @return host
      */
-    public String getIpAddr() {
-        return ipAddr;
+    public IpAddr getHost() {
+        return host;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Ip address in dotted decimal notation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Any valid ipv4, ipv6, or domain address.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param ipAddr set the ipAddr.
+     * @param host set the host.
      */
-    public void setIpAddr(String  ipAddr) {
-        this.ipAddr = ipAddr;
+    public void setHost(IpAddr host) {
+        this.host = host;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Port number.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Optionally specify the port number.
+     * Allowed values are 1-65535.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -64,8 +68,10 @@ public class ConnectionClearFilter  {
 
     /**
      * This is the setter method to the attribute.
-     * Port number.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Optionally specify the port number.
+     * Allowed values are 1-65535.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */
@@ -82,16 +88,16 @@ public class ConnectionClearFilter  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      ConnectionClearFilter objConnectionClearFilter = (ConnectionClearFilter) o;
-      return   Objects.equals(this.ipAddr, objConnectionClearFilter.ipAddr)&&
-  Objects.equals(this.port, objConnectionClearFilter.port);
+      TrustedHost objTrustedHost = (TrustedHost) o;
+      return   Objects.equals(this.host, objTrustedHost.host)&&
+  Objects.equals(this.port, objTrustedHost.port);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class ConnectionClearFilter {\n");
-                  sb.append("    ipAddr: ").append(toIndentedString(ipAddr)).append("\n");
+      sb.append("class TrustedHost {\n");
+                  sb.append("    host: ").append(toIndentedString(host)).append("\n");
                         sb.append("    port: ").append(toIndentedString(port)).append("\n");
                   sb.append("}");
       return sb.toString();

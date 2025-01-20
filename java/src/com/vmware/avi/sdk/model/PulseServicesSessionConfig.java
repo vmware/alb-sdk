@@ -29,7 +29,7 @@ public class PulseServicesSessionConfig  {
      * This is the getter method this will return the attribute value.
      * Session headers.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sessionHeaders
      */
@@ -41,7 +41,7 @@ public class PulseServicesSessionConfig  {
      * This is the setter method. this will set the sessionHeaders
      * Session headers.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sessionHeaders
      */
@@ -53,7 +53,7 @@ public class PulseServicesSessionConfig  {
      * This is the setter method this will set the sessionHeaders
      * Session headers.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sessionHeaders
      */

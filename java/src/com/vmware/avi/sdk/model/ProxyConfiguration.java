@@ -38,7 +38,7 @@ public class ProxyConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Proxy hostname or ip address.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return host
      */
@@ -49,7 +49,7 @@ public class ProxyConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Proxy hostname or ip address.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param host set the host.
      */
@@ -60,7 +60,7 @@ public class ProxyConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Password for proxy.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return password
      */
@@ -71,7 +71,7 @@ public class ProxyConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Password for proxy.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param password set the password.
      */
@@ -82,7 +82,7 @@ public class ProxyConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Proxy port.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -93,7 +93,7 @@ public class ProxyConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Proxy port.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */
@@ -104,7 +104,7 @@ public class ProxyConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Username for proxy.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return username
      */
@@ -115,7 +115,7 @@ public class ProxyConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Username for proxy.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param username set the username.
      */

@@ -33,7 +33,7 @@ public class OmittedWafLogStats  {
      * This is the getter method this will return the attribute value.
      * The total count of omitted match element logs in all rules.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return matchElements
      */
@@ -45,7 +45,7 @@ public class OmittedWafLogStats  {
      * This is the setter method to the attribute.
      * The total count of omitted match element logs in all rules.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param matchElements set the matchElements.
      */
@@ -57,7 +57,7 @@ public class OmittedWafLogStats  {
      * This is the getter method this will return the attribute value.
      * The total count of omitted rule logs.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return rules
      */
@@ -69,7 +69,7 @@ public class OmittedWafLogStats  {
      * This is the setter method to the attribute.
      * The total count of omitted rule logs.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param rules set the rules.
      */

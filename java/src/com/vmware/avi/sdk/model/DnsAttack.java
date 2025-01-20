@@ -43,7 +43,7 @@ public class DnsAttack  {
      * The dns attack vector.
      * Enum options - DNS_REFLECTION, DNS_NXDOMAIN, DNS_AMPLIFICATION_EGRESS.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attackVector
      */
@@ -56,7 +56,7 @@ public class DnsAttack  {
      * The dns attack vector.
      * Enum options - DNS_REFLECTION, DNS_NXDOMAIN, DNS_AMPLIFICATION_EGRESS.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param attackVector set the attackVector.
      */
@@ -68,7 +68,7 @@ public class DnsAttack  {
      * This is the getter method this will return the attribute value.
      * Enable or disable the mitigation of the attack vector.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enabled
      */
@@ -80,7 +80,7 @@ public class DnsAttack  {
      * This is the setter method to the attribute.
      * Enable or disable the mitigation of the attack vector.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enabled set the enabled.
      */
@@ -95,7 +95,7 @@ public class DnsAttack  {
      * Special values are 0- blocked for ever.
      * Field introduced in 18.2.1.
      * Unit is min.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return maxMitigationAge
      */
@@ -110,7 +110,7 @@ public class DnsAttack  {
      * Special values are 0- blocked for ever.
      * Field introduced in 18.2.1.
      * Unit is min.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param maxMitigationAge set the maxMitigationAge.
      */
@@ -122,7 +122,7 @@ public class DnsAttack  {
      * This is the getter method this will return the attribute value.
      * Mitigation action to perform for this dns attack vector.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mitigationAction
      */
@@ -134,7 +134,7 @@ public class DnsAttack  {
      * This is the setter method to the attribute.
      * Mitigation action to perform for this dns attack vector.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mitigationAction set the mitigationAction.
      */
@@ -146,7 +146,7 @@ public class DnsAttack  {
      * This is the getter method this will return the attribute value.
      * Threshold, in terms of dns packet per second, for the dns attack vector.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return threshold
      */
@@ -158,7 +158,7 @@ public class DnsAttack  {
      * This is the setter method to the attribute.
      * Threshold, in terms of dns packet per second, for the dns attack vector.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param threshold set the threshold.
      */

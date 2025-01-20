@@ -40,7 +40,7 @@ public class IpAddrMatch  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address(es).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addrs
      */
@@ -51,7 +51,7 @@ public class IpAddrMatch  {
     /**
      * This is the setter method. this will set the addrs
      * Ip address(es).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addrs
      */
@@ -62,7 +62,7 @@ public class IpAddrMatch  {
     /**
      * This is the setter method this will set the addrs
      * Ip address(es).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addrs
      */
@@ -77,7 +77,7 @@ public class IpAddrMatch  {
      * This is the getter method this will return the attribute value.
      * Uuid of ip address group(s).
      * It is a reference to an object of type ipaddrgroup.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return groupRefs
      */
@@ -89,7 +89,7 @@ public class IpAddrMatch  {
      * This is the setter method. this will set the groupRefs
      * Uuid of ip address group(s).
      * It is a reference to an object of type ipaddrgroup.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return groupRefs
      */
@@ -101,7 +101,7 @@ public class IpAddrMatch  {
      * This is the setter method this will set the groupRefs
      * Uuid of ip address group(s).
      * It is a reference to an object of type ipaddrgroup.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return groupRefs
      */
@@ -117,7 +117,7 @@ public class IpAddrMatch  {
      * This is the getter method this will return the attribute value.
      * Criterion to use for ip address matching the http request.
      * Enum options - IS_IN, IS_NOT_IN.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchCriteria
      */
@@ -129,7 +129,7 @@ public class IpAddrMatch  {
      * This is the setter method to the attribute.
      * Criterion to use for ip address matching the http request.
      * Enum options - IS_IN, IS_NOT_IN.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matchCriteria set the matchCriteria.
      */
@@ -139,7 +139,7 @@ public class IpAddrMatch  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address prefix(es).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prefixes
      */
@@ -150,7 +150,7 @@ public class IpAddrMatch  {
     /**
      * This is the setter method. this will set the prefixes
      * Ip address prefix(es).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prefixes
      */
@@ -161,7 +161,7 @@ public class IpAddrMatch  {
     /**
      * This is the setter method this will set the prefixes
      * Ip address prefix(es).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prefixes
      */
@@ -175,7 +175,7 @@ public class IpAddrMatch  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address range(s).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -186,7 +186,7 @@ public class IpAddrMatch  {
     /**
      * This is the setter method. this will set the ranges
      * Ip address range(s).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -197,7 +197,7 @@ public class IpAddrMatch  {
     /**
      * This is the setter method this will set the ranges
      * Ip address range(s).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */

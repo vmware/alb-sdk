@@ -38,7 +38,7 @@ public class CaseConfig  {
      * This is the getter method this will return the attribute value.
      * Additional emails to get notified when the case gets created.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return additionalEmails
      */
@@ -50,7 +50,7 @@ public class CaseConfig  {
      * This is the setter method. this will set the additionalEmails
      * Additional emails to get notified when the case gets created.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return additionalEmails
      */
@@ -62,7 +62,7 @@ public class CaseConfig  {
      * This is the setter method this will set the additionalEmails
      * Additional emails to get notified when the case gets created.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return additionalEmails
      */
@@ -78,8 +78,8 @@ public class CaseConfig  {
      * This is the getter method this will return the attribute value.
      * Enable pro-active support case creation when a controller failure occurs.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableAutoCaseCreationOnControllerFailure
      */
@@ -91,8 +91,8 @@ public class CaseConfig  {
      * This is the setter method to the attribute.
      * Enable pro-active support case creation when a controller failure occurs.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableAutoCaseCreationOnControllerFailure set the enableAutoCaseCreationOnControllerFailure.
      */
@@ -104,8 +104,8 @@ public class CaseConfig  {
      * This is the getter method this will return the attribute value.
      * Enable pro-active support case creation when a service engine failure occurs.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableAutoCaseCreationOnSeFailure
      */
@@ -117,8 +117,8 @@ public class CaseConfig  {
      * This is the setter method to the attribute.
      * Enable pro-active support case creation when a service engine failure occurs.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableAutoCaseCreationOnSeFailure set the enableAutoCaseCreationOnSeFailure.
      */
@@ -130,9 +130,9 @@ public class CaseConfig  {
      * This is the getter method this will return the attribute value.
      * Enable cleanup of successfully attached files to support case.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise is true.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
      * @return enableCleanupOfAttachedFiles
      */
     public Boolean getEnableCleanupOfAttachedFiles() {
@@ -143,9 +143,9 @@ public class CaseConfig  {
      * This is the setter method to the attribute.
      * Enable cleanup of successfully attached files to support case.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise is true.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
      * @param enableCleanupOfAttachedFiles set the enableCleanupOfAttachedFiles.
      */
     public void setEnableCleanupOfAttachedFiles(Boolean  enableCleanupOfAttachedFiles) {

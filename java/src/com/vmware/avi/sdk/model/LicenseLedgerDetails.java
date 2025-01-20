@@ -41,7 +41,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maintain information about reservation against cookie.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return escrowInfos
      */
@@ -53,7 +53,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the setter method. this will set the escrowInfos
      * Maintain information about reservation against cookie.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return escrowInfos
      */
@@ -65,7 +65,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the setter method this will set the escrowInfos
      * Maintain information about reservation against cookie.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return escrowInfos
      */
@@ -80,7 +80,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maintain information about consumed licenses against se_uuid.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seInfos
      */
@@ -92,7 +92,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the setter method. this will set the seInfos
      * Maintain information about consumed licenses against se_uuid.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seInfos
      */
@@ -104,7 +104,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the setter method this will set the seInfos
      * Maintain information about consumed licenses against se_uuid.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seInfos
      */
@@ -119,7 +119,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * License usage per tier.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tierUsages
      */
@@ -131,7 +131,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the setter method. this will set the tierUsages
      * License usage per tier.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tierUsages
      */
@@ -143,7 +143,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the setter method this will set the tierUsages
      * License usage per tier.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tierUsages
      */
@@ -176,7 +176,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid for reference.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -188,7 +188,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid for reference.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

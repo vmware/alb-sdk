@@ -42,7 +42,7 @@ public class WafRuleGroup  {
      * This is the getter method this will return the attribute value.
      * Enable or disable waf rule group.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enable
      */
@@ -54,7 +54,7 @@ public class WafRuleGroup  {
      * This is the setter method to the attribute.
      * Enable or disable waf rule group.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enable set the enable.
      */
@@ -67,7 +67,7 @@ public class WafRuleGroup  {
      * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
      * If there are multiple excludelist entries, it will be 'logical or' of them.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return excludeList
      */
@@ -81,7 +81,7 @@ public class WafRuleGroup  {
      * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
      * If there are multiple excludelist entries, it will be 'logical or' of them.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return excludeList
      */
@@ -95,7 +95,7 @@ public class WafRuleGroup  {
      * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
      * If there are multiple excludelist entries, it will be 'logical or' of them.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return excludeList
      */
@@ -110,7 +110,7 @@ public class WafRuleGroup  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -121,7 +121,7 @@ public class WafRuleGroup  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */
@@ -132,7 +132,7 @@ public class WafRuleGroup  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -143,7 +143,7 @@ public class WafRuleGroup  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -154,7 +154,7 @@ public class WafRuleGroup  {
      * This is the getter method this will return the attribute value.
      * Rules as per modsec language.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -166,7 +166,7 @@ public class WafRuleGroup  {
      * This is the setter method. this will set the rules
      * Rules as per modsec language.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -178,7 +178,7 @@ public class WafRuleGroup  {
      * This is the setter method this will set the rules
      * Rules as per modsec language.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */

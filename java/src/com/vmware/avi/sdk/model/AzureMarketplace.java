@@ -54,7 +54,7 @@ public class AzureMarketplace  {
      * This is the getter method this will return the attribute value.
      * Azure cloud id.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -66,7 +66,7 @@ public class AzureMarketplace  {
      * This is the setter method to the attribute.
      * Azure cloud id.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -78,7 +78,7 @@ public class AzureMarketplace  {
      * This is the getter method this will return the attribute value.
      * Avi azure marketplace offer name.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return offer
      */
@@ -90,7 +90,7 @@ public class AzureMarketplace  {
      * This is the setter method to the attribute.
      * Avi azure marketplace offer name.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param offer set the offer.
      */
@@ -102,7 +102,7 @@ public class AzureMarketplace  {
      * This is the getter method this will return the attribute value.
      * Avi azure marketplace publisher name.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return publisher
      */
@@ -114,7 +114,7 @@ public class AzureMarketplace  {
      * This is the setter method to the attribute.
      * Avi azure marketplace publisher name.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param publisher set the publisher.
      */
@@ -126,7 +126,7 @@ public class AzureMarketplace  {
      * This is the getter method this will return the attribute value.
      * Azure marketplace license term failure status.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -138,7 +138,7 @@ public class AzureMarketplace  {
      * This is the setter method to the attribute.
      * Azure marketplace license term failure status.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -150,7 +150,7 @@ public class AzureMarketplace  {
      * This is the getter method this will return the attribute value.
      * Azure resource group name.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceGroup
      */
@@ -162,7 +162,7 @@ public class AzureMarketplace  {
      * This is the setter method to the attribute.
      * Azure resource group name.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourceGroup set the resourceGroup.
      */
@@ -173,7 +173,7 @@ public class AzureMarketplace  {
      * This is the getter method this will return the attribute value.
      * Avi azure marketplace skus list.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return skus
      */
@@ -185,7 +185,7 @@ public class AzureMarketplace  {
      * This is the setter method. this will set the skus
      * Avi azure marketplace skus list.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return skus
      */
@@ -197,7 +197,7 @@ public class AzureMarketplace  {
      * This is the setter method this will set the skus
      * Avi azure marketplace skus list.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return skus
      */
@@ -213,7 +213,7 @@ public class AzureMarketplace  {
      * This is the getter method this will return the attribute value.
      * Azure marketplace license term acceptance status.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -225,7 +225,7 @@ public class AzureMarketplace  {
      * This is the setter method to the attribute.
      * Azure marketplace license term acceptance status.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */
@@ -237,7 +237,7 @@ public class AzureMarketplace  {
      * This is the getter method this will return the attribute value.
      * Azure subscription id.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subscriptionId
      */
@@ -249,7 +249,7 @@ public class AzureMarketplace  {
      * This is the setter method to the attribute.
      * Azure subscription id.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subscriptionId set the subscriptionId.
      */
@@ -261,7 +261,7 @@ public class AzureMarketplace  {
      * This is the getter method this will return the attribute value.
      * Azure vnet id.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vnetId
      */
@@ -273,7 +273,7 @@ public class AzureMarketplace  {
      * This is the setter method to the attribute.
      * Azure vnet id.
      * Field introduced in 18.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vnetId set the vnetId.
      */

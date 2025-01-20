@@ -49,7 +49,7 @@ public class HTTPRedirectAction  {
      * Add a query string to the redirect uri.
      * If keep_query is set, concatenates the add_string to the query of the incoming request.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addString
      */
@@ -62,7 +62,7 @@ public class HTTPRedirectAction  {
      * Add a query string to the redirect uri.
      * If keep_query is set, concatenates the add_string to the query of the incoming request.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param addString set the addString.
      */
@@ -73,7 +73,7 @@ public class HTTPRedirectAction  {
     /**
      * This is the getter method this will return the attribute value.
      * Host config.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return host
      */
@@ -84,7 +84,7 @@ public class HTTPRedirectAction  {
     /**
      * This is the setter method to the attribute.
      * Host config.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param host set the host.
      */
@@ -95,7 +95,7 @@ public class HTTPRedirectAction  {
     /**
      * This is the getter method this will return the attribute value.
      * Keep or drop the query of the incoming request uri in the redirected uri.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return keepQuery
      */
@@ -106,7 +106,7 @@ public class HTTPRedirectAction  {
     /**
      * This is the setter method to the attribute.
      * Keep or drop the query of the incoming request uri in the redirected uri.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param keepQuery set the keepQuery.
      */
@@ -117,7 +117,7 @@ public class HTTPRedirectAction  {
     /**
      * This is the getter method this will return the attribute value.
      * Path config.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return path
      */
@@ -128,7 +128,7 @@ public class HTTPRedirectAction  {
     /**
      * This is the setter method to the attribute.
      * Path config.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param path set the path.
      */
@@ -140,7 +140,7 @@ public class HTTPRedirectAction  {
      * This is the getter method this will return the attribute value.
      * Port to which redirect the request.
      * Allowed values are 1-65535.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -152,7 +152,7 @@ public class HTTPRedirectAction  {
      * This is the setter method to the attribute.
      * Port to which redirect the request.
      * Allowed values are 1-65535.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */
@@ -164,7 +164,7 @@ public class HTTPRedirectAction  {
      * This is the getter method this will return the attribute value.
      * Protocol type.
      * Enum options - HTTP, HTTPS.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return protocol
      */
@@ -176,7 +176,7 @@ public class HTTPRedirectAction  {
      * This is the setter method to the attribute.
      * Protocol type.
      * Enum options - HTTP, HTTPS.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param protocol set the protocol.
      */
@@ -188,7 +188,7 @@ public class HTTPRedirectAction  {
      * This is the getter method this will return the attribute value.
      * Http redirect status code.
      * Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_REDIRECT_STATUS_CODE_302".
      * @return statusCode
      */
@@ -200,7 +200,7 @@ public class HTTPRedirectAction  {
      * This is the setter method to the attribute.
      * Http redirect status code.
      * Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_REDIRECT_STATUS_CODE_302".
      * @param statusCode set the statusCode.
      */

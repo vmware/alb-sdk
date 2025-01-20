@@ -32,7 +32,7 @@ public class HSMThalesRFS  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address of the rfs server from where to sync the thales encrypted private key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -43,7 +43,7 @@ public class HSMThalesRFS  {
     /**
      * This is the setter method to the attribute.
      * Ip address of the rfs server from where to sync the thales encrypted private key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -55,7 +55,7 @@ public class HSMThalesRFS  {
      * This is the getter method this will return the attribute value.
      * Port at which the rfs server accepts the sync request from clients for thales encrypted private key.
      * Allowed values are 1-65535.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 9004.
      * @return port
      */
@@ -67,7 +67,7 @@ public class HSMThalesRFS  {
      * This is the setter method to the attribute.
      * Port at which the rfs server accepts the sync request from clients for thales encrypted private key.
      * Allowed values are 1-65535.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 9004.
      * @param port set the port.
      */

@@ -30,8 +30,7 @@ public class InventoryConfiguration  {
      * This is the getter method this will return the attribute value.
      * Names, ip's of vs, pool(poolgroup) servers would be searchable on cloud console.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableSearchInfo
      */
@@ -43,8 +42,7 @@ public class InventoryConfiguration  {
      * This is the setter method to the attribute.
      * Names, ip's of vs, pool(poolgroup) servers would be searchable on cloud console.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableSearchInfo set the enableSearchInfo.
      */

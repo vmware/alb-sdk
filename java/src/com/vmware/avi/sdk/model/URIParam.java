@@ -32,7 +32,7 @@ public class URIParam  {
      * This is the getter method this will return the attribute value.
      * Token config either for the uri components or a constant string.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tokens
      */
@@ -44,7 +44,7 @@ public class URIParam  {
      * This is the setter method. this will set the tokens
      * Token config either for the uri components or a constant string.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tokens
      */
@@ -56,7 +56,7 @@ public class URIParam  {
      * This is the setter method this will set the tokens
      * Token config either for the uri components or a constant string.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tokens
      */
@@ -72,7 +72,7 @@ public class URIParam  {
      * This is the getter method this will return the attribute value.
      * Uri param type.
      * Enum options - URI_PARAM_TYPE_TOKENIZED.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -84,7 +84,7 @@ public class URIParam  {
      * This is the setter method to the attribute.
      * Uri param type.
      * Enum options - URI_PARAM_TYPE_TOKENIZED.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */

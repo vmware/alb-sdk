@@ -58,7 +58,7 @@ public class NuageSDNController  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nuageOrganization
      */
@@ -68,7 +68,7 @@ public class NuageSDNController  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nuageOrganization set the nuageOrganization.
      */
@@ -78,7 +78,7 @@ public class NuageSDNController  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nuagePassword
      */
@@ -88,7 +88,7 @@ public class NuageSDNController  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nuagePassword set the nuagePassword.
      */
@@ -98,7 +98,7 @@ public class NuageSDNController  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8443.
      * @return nuagePort
      */
@@ -108,7 +108,7 @@ public class NuageSDNController  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8443.
      * @param nuagePort set the nuagePort.
      */
@@ -118,7 +118,7 @@ public class NuageSDNController  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nuageUsername
      */
@@ -128,7 +128,7 @@ public class NuageSDNController  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nuageUsername set the nuageUsername.
      */
@@ -139,7 +139,7 @@ public class NuageSDNController  {
     /**
      * This is the getter method this will return the attribute value.
      * Nuage vsd host name or ip address.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nuageVsdHost
      */
@@ -150,7 +150,7 @@ public class NuageSDNController  {
     /**
      * This is the setter method to the attribute.
      * Nuage vsd host name or ip address.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nuageVsdHost set the nuageVsdHost.
      */
@@ -161,7 +161,7 @@ public class NuageSDNController  {
     /**
      * This is the getter method this will return the attribute value.
      * Domain to be used for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDomain
      */
@@ -172,7 +172,7 @@ public class NuageSDNController  {
     /**
      * This is the setter method to the attribute.
      * Domain to be used for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seDomain set the seDomain.
      */
@@ -183,7 +183,7 @@ public class NuageSDNController  {
     /**
      * This is the getter method this will return the attribute value.
      * Enterprise to be used for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seEnterprise
      */
@@ -194,7 +194,7 @@ public class NuageSDNController  {
     /**
      * This is the setter method to the attribute.
      * Enterprise to be used for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seEnterprise set the seEnterprise.
      */
@@ -205,7 +205,7 @@ public class NuageSDNController  {
     /**
      * This is the getter method this will return the attribute value.
      * Network to be used for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seNetwork
      */
@@ -216,7 +216,7 @@ public class NuageSDNController  {
     /**
      * This is the setter method to the attribute.
      * Network to be used for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seNetwork set the seNetwork.
      */
@@ -227,7 +227,7 @@ public class NuageSDNController  {
     /**
      * This is the getter method this will return the attribute value.
      * Policy group to be used for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sePolicyGroup
      */
@@ -238,7 +238,7 @@ public class NuageSDNController  {
     /**
      * This is the setter method to the attribute.
      * Policy group to be used for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sePolicyGroup set the sePolicyGroup.
      */
@@ -249,7 +249,7 @@ public class NuageSDNController  {
     /**
      * This is the getter method this will return the attribute value.
      * User to be used for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seUser
      */
@@ -260,7 +260,7 @@ public class NuageSDNController  {
     /**
      * This is the setter method to the attribute.
      * User to be used for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seUser set the seUser.
      */
@@ -271,7 +271,7 @@ public class NuageSDNController  {
     /**
      * This is the getter method this will return the attribute value.
      * Zone to be used for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seZone
      */
@@ -282,7 +282,7 @@ public class NuageSDNController  {
     /**
      * This is the setter method to the attribute.
      * Zone to be used for se creation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seZone set the seZone.
      */

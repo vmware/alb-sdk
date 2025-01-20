@@ -38,7 +38,7 @@ public class SeHBEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Hb request/response not received.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return hbType
      */
@@ -49,7 +49,7 @@ public class SeHBEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Hb request/response not received.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param hbType set the hbType.
      */
@@ -62,7 +62,7 @@ public class SeHBEventDetails  {
      * Uuid of the se with which heartbeat failed.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteSeRef
      */
@@ -75,7 +75,7 @@ public class SeHBEventDetails  {
      * Uuid of the se with which heartbeat failed.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param remoteSeRef set the remoteSeRef.
      */
@@ -88,7 +88,7 @@ public class SeHBEventDetails  {
      * Uuid of the se reporting this event.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reportingSeRef
      */
@@ -101,7 +101,7 @@ public class SeHBEventDetails  {
      * Uuid of the se reporting this event.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reportingSeRef set the reportingSeRef.
      */
@@ -113,7 +113,7 @@ public class SeHBEventDetails  {
      * This is the getter method this will return the attribute value.
      * Uuid of the virtual service which is placed on reporting-se and remote-se.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -125,7 +125,7 @@ public class SeHBEventDetails  {
      * This is the setter method to the attribute.
      * Uuid of the virtual service which is placed on reporting-se and remote-se.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsUuid set the vsUuid.
      */
