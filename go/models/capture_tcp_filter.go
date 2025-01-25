@@ -11,7 +11,7 @@ type CaptureTCPFilter struct {
 	// Destination Port range filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	DstPortRange *DestinationPortAddr `json:"dst_port_range,omitempty"`
 
-	// Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Ethernet Proto filter. Enum options - ETH_TYPE_IPV4, ETH_TYPE_IPV6. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	EthProto *string `json:"eth_proto,omitempty"`
 
 	// Per packet IP filter for Service Engine PCAP. Matches with source and destination address. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.

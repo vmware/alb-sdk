@@ -8,6 +8,9 @@ package models
 // swagger:model TCPProxyProfile
 type TCPProxyProfile struct {
 
+	// Controls whether we immediately send ack when incoming packet has PUSH flag marked. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	AckOnPush *bool `json:"ack_on_push,omitempty"`
+
 	// Controls the our congestion window to send, normally it's 1 mss, If this option is turned on, we use 10 msses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	AggressiveCongestionAvoidance *bool `json:"aggressive_congestion_avoidance,omitempty"`
 
@@ -22,6 +25,9 @@ type TCPProxyProfile struct {
 
 	// Congestion window scaling factor after recovery. Allowed values are 0-8. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CongestionRecoveryScalingFactor *uint32 `json:"congestion_recovery_scaling_factor,omitempty"`
+
+	// The time in milliseconds for delayed timer to kick in. Allowed values are 0-500. Special values are 0 - Disable Delayed Ack. Field introduced in 31.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DelayedAckTimerDelay *uint32 `json:"delayed_ack_timer_delay,omitempty"`
 
 	// The duration for keepalive probes or session idle timeout. Max value is 14400 seconds, min is 5.  Set to 0 to allow infinite idle time. Allowed values are 5-14400. Special values are 0 - infinite. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	IDLEConnectionTimeout *int32 `json:"idle_connection_timeout,omitempty"`

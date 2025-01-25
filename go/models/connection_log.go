@@ -56,6 +56,9 @@ type ConnectionLog struct {
 	// Required: true
 	ConnectionEnded *bool `json:"connection_ended"`
 
+	// Diameter related logging information. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DiameterLog *DiameterLog `json:"diameter_log,omitempty"`
+
 	//  Enum options - DNS_ENTRY_PASS_THROUGH, DNS_ENTRY_GSLB, DNS_ENTRY_VIRTUALSERVICE, DNS_ENTRY_STATIC, DNS_ENTRY_POLICY, DNS_ENTRY_LOCAL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSEtype *string `json:"dns_etype,omitempty"`
 

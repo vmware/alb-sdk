@@ -13,7 +13,7 @@ type CloudInventory struct {
 	LastModified *string `json:"_last_modified,omitempty"`
 
 	// Configuration summary of the cloud. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	Config *CloudConfig `json:"config,omitempty"`
+	Config *Cloud `json:"config,omitempty"`
 
 	//  Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	Mvrf *CloudMvrf `json:"mvrf,omitempty"`

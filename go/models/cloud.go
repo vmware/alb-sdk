@@ -84,10 +84,10 @@ type Cloud struct {
 	// Cloud metrics collector polling interval in seconds. Field introduced in 22.1.1. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	MetricsPollingInterval *uint32 `json:"metrics_polling_interval,omitempty"`
 
-	// Enable IPv4 on the Management interface of the ServiceEngine. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Enable IPv4 on the Management interface of the ServiceEngine. Defaults to dhcp if no static config on Network present. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	MgmtIPV4Enabled *bool `json:"mgmt_ip_v4_enabled,omitempty"`
 
-	// Enable IPv6 on the Management interface of the ServiceEngine. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Enable IPv6 on the Management interface of the ServiceEngine. Defaults to autocfg if no static config on Network present. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	MgmtIPV6Enabled *bool `json:"mgmt_ip_v6_enabled,omitempty"`
 
 	// MTU setting for the cloud. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -106,7 +106,7 @@ type Cloud struct {
 	// Default prefix for all automatically created objects in this cloud. This prefix can be overridden by the SE-Group template. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ObjNamePrefix *string `json:"obj_name_prefix,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	//  Field deprecated in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	OpenstackConfiguration *OpenStackConfiguration `json:"openstack_configuration,omitempty"`
 
 	// Prefer static routes over interface routes during VirtualService placement. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.

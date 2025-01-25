@@ -20,7 +20,7 @@ type CaptureFilters struct {
 	// Destination Port range filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	DstPortStart *uint32 `json:"dst_port_start,omitempty"`
 
-	// Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Ethernet Proto filter. Enum options - ETH_TYPE_IPV4, ETH_TYPE_IPV6. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	EthProto *string `json:"eth_proto,omitempty"`
 
 	// IP Proto filter. Support for TCP only for now. Enum options - IP_TYPE_TCP. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.

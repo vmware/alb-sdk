@@ -14,11 +14,20 @@ type HealthMonitorHTTP struct {
 	// Use the exact http_request *string as specified by user, without any automatic insert of headers like Host header. Field introduced in 17.1.6,17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ExactHTTPRequest *bool `json:"exact_http_request,omitempty"`
 
+	// For HTTP2 and HTTP2S health monitor, send an HTTP request to the server. Extended with additional headers or information when exact request is marked false. For instance Host  www.site.com Connection  Close. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	HTTPHeaders []string `json:"http_headers,omitempty"`
+
+	// HTTP method for HTTP2 and HTTP2S health monitor. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_POST,HTTP_METHOD_HEAD), Basic edition(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_POST,HTTP_METHOD_HEAD), Enterprise with Cloud Services edition.
+	HTTPMethod *string `json:"http_method,omitempty"`
+
 	// Send an HTTP request to the server.  The default GET / HTTP/1.0 may be extended with additional headers or information.  For instance, GET /index.htm HTTP/1.1 Host  www.site.com Connection  Close. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	HTTPRequest *string `json:"http_request,omitempty"`
 
 	// HTTP request body. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	HTTPRequestBody *string `json:"http_request_body,omitempty"`
+
+	// HTTP client request header path for HTTP2 and HTTP2S health monitor. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	HTTPRequestHeaderPath *string `json:"http_request_header_path,omitempty"`
 
 	// Match for a keyword in the first 2Kb of the server header and body response. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	HTTPResponse *string `json:"http_response,omitempty"`

@@ -240,7 +240,7 @@ type VirtualService struct {
 	// The SSO Policy attached to the virtualservice. It is a reference to an object of type SSOPolicy. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	SsoPolicyRef *string `json:"sso_policy_ref,omitempty"`
 
-	// List of static DNS records applied to this Virtual Service. These are static entries and no health monitoring is performed against the IP addresses. Maximum of 1000 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// List of static DNS records applied to this Virtual Service. These are static entries and no health monitoring is performed against the IP addresses. Maximum of 2000 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	StaticDNSRecords []*DNSRecord `json:"static_dns_records,omitempty"`
 
 	//  It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.

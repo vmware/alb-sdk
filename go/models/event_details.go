@@ -611,8 +611,17 @@ type EventDetails struct {
 	// System Report event details. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	SystemReportEventDetails *SystemReport `json:"system_report_event_details,omitempty"`
 
+	// task journal event details. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	TaskJournalEventDetails *TaskJournal `json:"task_journal_event_details,omitempty"`
+
+	//  Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	TechSupportEvent *TechSupportEvent `json:"tech_support_event,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	TencentInfo *TencentSetup `json:"tencent_info,omitempty"`
+
+	// Uber event details, for testing only. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	UberEventDetails *LogMgrUberEventDetails `json:"uber_event_details,omitempty"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	UnbindVsSeDetails *RmUnbindVsSeEventDetails `json:"unbind_vs_se_details,omitempty"`
@@ -691,4 +700,7 @@ type EventDetails struct {
 
 	// Details for Primary Switchover status. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	VsSwitchoverDetails *VsSwitchoverEventDetails `json:"vs_switchover_details,omitempty"`
+
+	//  Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	WarningEventDetails *WarningEventDetails `json:"warning_event_details,omitempty"`
 }

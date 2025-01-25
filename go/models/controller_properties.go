@@ -12,6 +12,9 @@ type ControllerProperties struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
+	// Enable to use event manager as source of eventsDisable to use log manager as source of events. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	AlertManagerUseEvms *bool `json:"alert_manager_use_evms,omitempty"`
+
 	// Allow non-admin tenants to update admin VrfContext and Network objects. Field introduced in 18.2.7, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllowAdminNetworkUpdates *bool `json:"allow_admin_network_updates,omitempty"`
 
@@ -57,16 +60,16 @@ type ControllerProperties struct {
 	// Period for sessions cleanup job. Field introduced in 18.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CleanupSessionsTimeoutPeriod *uint32 `json:"cleanup_sessions_timeout_period,omitempty"`
 
-	// Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	CloudDiscoveryInterval *uint32 `json:"cloud_discovery_interval,omitempty"`
 
 	// Enable/Disable periodic reconcile for all the clouds. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudReconcile *bool `json:"cloud_reconcile,omitempty"`
 
-	// Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	CloudReconcileInterval *uint32 `json:"cloud_reconcile_interval,omitempty"`
 
-	// Period for cluster ip gratuitous arp job. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Period for cluster ip gratuitous arp job. Allowed values are 1-1440. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClusterIPGratuitousArpPeriod *uint32 `json:"cluster_ip_gratuitous_arp_period,omitempty"`
 
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
@@ -113,6 +116,9 @@ type ControllerProperties struct {
 
 	// Enable/Disable Memory Balancer. Field introduced in 17.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableMemoryBalancer *bool `json:"enable_memory_balancer,omitempty"`
+
+	// When set to true, Avi Controller will connect to Dynamic Config Streaming Agent on NSX Manager to get live updates. If it cannot connect, it will fallback to using REST APIs based periodic polling. Dynamic streaming is supported from NSX version 4.2.1 onwards. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EnableNsxStreamingAgent *bool `json:"enable_nsx_streaming_agent,omitempty"`
 
 	// Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits threshold limit. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	EnablePerProcessStop *bool `json:"enable_per_process_stop,omitempty"`
@@ -255,10 +261,13 @@ type ControllerProperties struct {
 	// SSL Certificates in the admin tenant can be used in non-admin tenants. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SharedSslCertificates *bool `json:"shared_ssl_certificates,omitempty"`
 
-	// Time interval (in seconds) between retires for skopeo commands. Field introduced in 30.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Skip API Performance collection for requests going through the Apiserver. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SkipBeegoPerfCollection *bool `json:"skip_beego_perf_collection,omitempty"`
+
+	// Time interval (in seconds) between retires for skopeo commands. Field deprecated in 31.1.1. Field introduced in 30.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	SkopeoRetryInterval *uint32 `json:"skopeo_retry_interval,omitempty"`
 
-	// Number of times to try skopeo commands for remote image registries. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Number of times to try skopeo commands for remote image registries. Field deprecated in 31.1.1. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	SkopeoRetryLimit *uint32 `json:"skopeo_retry_limit,omitempty"`
 
 	// Soft Limit on the minimum SE Memory that an SE needs to have on SE Register. Field introduced in 30.1.1. Unit is MB. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
@@ -266,6 +275,9 @@ type ControllerProperties struct {
 
 	// Number of days for SSL Certificate expiry warning. Unit is DAYS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslCertificateExpiryWarningDays []int64 `json:"ssl_certificate_expiry_warning_days,omitempty,omitempty"`
+
+	// Configure statecache behavior for Config, SE, ResMgr. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	StatecacheProperties *SCProperties `json:"statecache_properties,omitempty"`
 
 	// Time in minutes to wait between cleanup of SystemReports. Allowed values are 15-300. Field introduced in 22.1.6, 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	SystemReportCleanupInterval *uint32 `json:"system_report_cleanup_interval,omitempty"`

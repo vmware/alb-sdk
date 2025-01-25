@@ -26,6 +26,9 @@ type UpgradeReadinessCheckObj struct {
 	// Image uuid for identifying the next patch. It is a reference to an object of type Image. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	PatchImageRef *string `json:"patch_image_ref,omitempty"`
 
+	// Checks progress which holds value between 0-100. Allowed values are 0-100. Field introduced in 31.1.1. Unit is PERCENT. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	Progress *uint32 `json:"progress,omitempty"`
+
 	// Time at which execution of upgrade readiness checks was started. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	StartTime *string `json:"start_time,omitempty"`
 
@@ -35,6 +38,6 @@ type UpgradeReadinessCheckObj struct {
 	// Total no. of checks. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	TotalChecks *int32 `json:"total_checks,omitempty"`
 
-	// Upgrade operations along with type requested such as UpgradeSystem UpgradeController etc. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Upgrade operations along with type requested such as UpgradeSystem UpgradeController etc. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	UpgradeOps *string `json:"upgrade_ops,omitempty"`
 }

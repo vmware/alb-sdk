@@ -16,4 +16,7 @@ type TCPFastPathProfile struct {
 
 	// The amount of time (in sec) for which a connection needs to be idle before it is eligible to be deleted. Allowed values are 5-14400. Special values are 0 - infinite. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SessionIDLETimeout *int32 `json:"session_idle_timeout,omitempty"`
+
+	// TCP_Fast_PATH Network profile options. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	TCPFastpathOptions *TCPOptions `json:"tcp_fastpath_options,omitempty"`
 }

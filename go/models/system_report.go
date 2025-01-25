@@ -21,6 +21,9 @@ type SystemReport struct {
 	// Indicates whether this report is downloadable as an archive. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	Downloadable *bool `json:"downloadable,omitempty"`
 
+	// Dry-run report. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DryrunInfo *DryrunInfo `json:"dryrun_info,omitempty"`
+
 	// List of events associated with the report. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	Events []*ReportEvent `json:"events,omitempty"`
 
@@ -29,6 +32,9 @@ type SystemReport struct {
 
 	// Name of the report derived from operation in a readable format. Ex  upgrade_system_1a5c. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
+
+	// Nature of operation. Ex  Controller Upgrade, System Patch, etc. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	Operation *string `json:"operation,omitempty"`
 
 	// Readiness state of the system. Ex  Upgrade Pre-check Results. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	ReadinessReports []*ReportDetail `json:"readiness_reports,omitempty"`
@@ -47,6 +53,9 @@ type SystemReport struct {
 
 	// Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
+
+	// Type of report. Pre-Checks, Dry-run or an upgrade operation. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	Type *string `json:"type,omitempty"`
 
 	// url
 	// Read Only: true

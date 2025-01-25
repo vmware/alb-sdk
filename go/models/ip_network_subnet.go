@@ -8,8 +8,14 @@ package models
 // swagger:model IPNetworkSubnet
 type IPNetworkSubnet struct {
 
+	// IPv6 reserved range of IPs for VirtualService IP allocation with Infoblox as the IPAM provider. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	IPV6Range *IPAddrRange `json:"ipv6_range,omitempty"`
+
 	// Network for VirtualService IP allocation with Vantage as the IPAM provider. Network should be created before this is configured. It is a reference to an object of type Network. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	NetworkRef *string `json:"network_ref,omitempty"`
+
+	// IPv4 reserved range of IPs for VirtualService IP allocation with Infoblox as the IPAM provider. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	Range *IPAddrRange `json:"range,omitempty"`
 
 	// Subnet for VirtualService IP allocation with Vantage or Infoblox as the IPAM provider. Only one of subnet or subnet_uuid configuration is allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Subnet *IPAddrPrefix `json:"subnet,omitempty"`

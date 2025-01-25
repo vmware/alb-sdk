@@ -27,7 +27,7 @@ type IPAMDNSInfobloxProfile struct {
 	// Required: true
 	Password *string `json:"password"`
 
-	// url of the profile writen to /etc/hosts for HA between IPv6 and IPv4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	// url of the profile writen to /etc/hosts for HA between IPv6 and IPv4. Field deprecated in 31.1.1. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	ProfileURL *string `json:"profile_url,omitempty"`
 
 	// Subnets to use for Infoblox IP allocation. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.

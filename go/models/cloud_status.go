@@ -11,6 +11,9 @@ type CloudStatus struct {
 	// Cloud Id. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CcID *string `json:"cc_id,omitempty"`
 
+	// If integration with NSX-T streaming service is enabled, this field will contain the state of connection. Applicable to NSX clouds only. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	NsxtStreamingServerStatus *NsxtStreamingServerStatus `json:"nsxt_streaming_server_status,omitempty"`
+
 	// Reason message for the current state. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 

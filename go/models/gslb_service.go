@@ -70,8 +70,14 @@ type GslbService struct {
 	// The load balancing algorithm will pick a GSLB pool within the GSLB service list of available pools. Enum options - GSLB_SERVICE_ALGORITHM_PRIORITY, GSLB_SERVICE_ALGORITHM_GEO. Field introduced in 17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	PoolAlgorithm *string `json:"pool_algorithm,omitempty"`
 
+	// Field to specify the type of GSLB service. Enum options - GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME, GSLB_SERVICE_RECORD_TYPE_SRV. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	RecordType *string `json:"record_type,omitempty"`
+
 	// This field indicates that for a CNAME query, respond with resolved CNAMEs in the additional section with A records. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResolveCname *bool `json:"resolve_cname,omitempty"`
+
+	// If enabled, provide the SRV target's resolved IP in the response SRV GSLB service. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	ResolveSrv *bool `json:"resolve_srv,omitempty"`
 
 	// Enable site-persistence for the GslbService. . Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SitePersistenceEnabled *bool `json:"site_persistence_enabled,omitempty"`
@@ -94,6 +100,9 @@ type GslbService struct {
 
 	// UUID of the GSLB service. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
+
+	// VRF name of the DNS VS to which this GS is bound to. In case it is bound to multiple DNS VSes on the se SE, this field will be inherited from the first DNS VS in the configuration order. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	VrfUUIDForGs *string `json:"vrf_uuid_for_gs,omitempty"`
 
 	// Enable wild-card match of fqdn  if an exact match is not found in the DNS table, the longest match is chosen by wild-carding the fqdn in the DNS request. Default is false. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	WildcardMatch *bool `json:"wildcard_match,omitempty"`
