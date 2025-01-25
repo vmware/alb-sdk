@@ -840,6 +840,7 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 		return nil, errorResult
 	}
 	retryReq := false
+	clientApiTimedOut := false // adding this flag to skip logins for client timeouts.
 	resp, err := avisess.client.Do(req)
 	if err != nil {
 		// retry until controller status check limits.
@@ -850,6 +851,7 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 		}
 		debug(dump, dumpErr)
 		retryReq = true
+		clientApiTimedOut = true
 	}
 	if resp != nil && resp.StatusCode == 500 {
 		if _, err = avisess.fetchBody(verb, uri, resp); err != nil {
@@ -893,7 +895,7 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 				glog.Errorf("restRequest Error during checking controller state. Error: %s", err)
 				return httpResp, err
 			}
-			if uri != "login" {
+			if uri != "login" && !clientApiTimedOut {
 				if err := avisess.initiateSession(); err != nil {
 					if resp != nil && resp.Body != nil {
 						glog.Infof("Body is not nil, close it.")
