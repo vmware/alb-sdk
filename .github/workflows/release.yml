@@ -9,7 +9,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -17,7 +17,7 @@ jobs:
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
+          java-version: 11
           server-id: ossrh
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
@@ -35,13 +35,13 @@ jobs:
         run: |
           echo "::set-output name=PUBLISH_ALL_TARGET::true"
           echo "::set-output name=TAG_NAME::${{ github.event.release.tag_name }}"
+          echo "::set-output name=PUBLISH_MIGRATION_TARGET::true"
+          echo "::set-output name=PUBLISH_SDK_TARGET::true"
           if [[ ${{ github.event.release.tag_name }} == *"migration-tool"* ]]; then
-            echo "::set-output name=PUBLISH_MIGRATION_TARGET::true"
             echo "::set-output name=PUBLISH_SDK_TARGET::false"
             echo "::set-output name=PUBLISH_ALL_TARGET::false"
           elif [[ ${{ github.event.release.tag_name }} == *"java-sdk"* ]] || [[ ${{ github.event.release.tag_name }} == *"python-sdk"* ]]; then
             echo "::set-output name=PUBLISH_MIGRATION_TARGET::false"
-            echo "::set-output name=PUBLISH_SDK_TARGET::true"
             echo "::set-output name=PUBLISH_ALL_TARGET::false"
           fi
 
@@ -75,7 +75,8 @@ jobs:
             mvn clean install -Dgpg.skip=true
           else
             echo "Normal tag found. Uploading java assets to public repo."
-            mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
+            mvn clean install -Dgpg.skip=true -DskipTests
+            # mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
           fi
           cd ..
           ls java/target/
@@ -100,24 +101,21 @@ jobs:
           mkdir dist
           if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
             ./create_sdk_pip_packages.sh sdk
-          elif [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
-            ./create_sdk_pip_packages.sh migrationtools
+            # ./create_sdk_pkgs.sh
           fi
           if [[ ${{ steps.publish_target.outputs.TAG_NAME }} == "test-"* ]]; then
             echo "Test tag found. Skipping python assets upload to public repo."
           else
             echo "Normal tag found. Uploading python assets to public repo."
+            # echo "Skipping uploading python-sdk artifacts on Pypi."
             ./create_sdk_pypi.sh sdk
           fi
-          ./create_sdk_pkgs.sh
           echo "AVI VERSION=== $AVI_VERSION"
           ls dist/
-          if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
-            mv dist/avimigrationtools-$AVI_VERSION.tar.gz ../avimigrationtools-$AVI_VERSION.tar.gz
-          elif [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
+          if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
             mv dist/avisdk-$AVI_VERSION.tar.gz ../avisdk-$AVI_VERSION.tar.gz
             #mv dist/python-avisdk_0_all.deb ../avisdk-$AVI_VERSION.deb
-            mv dist/avisdk-$AVI_VERSION-1.noarch.rpm ../avisdk-$AVI_VERSION.rpm
+            # mv dist/avisdk-$AVI_VERSION-1.noarch.rpm ../avisdk-$AVI_VERSION.rpm
           fi
         env:
           TWINE_USERNAME: __token__
@@ -141,16 +139,16 @@ jobs:
           asset_name: pip-package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
           asset_content_type: application/gzip
 
-      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET == 'true'
-        name: Upload Avi Migration Tools pip package
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        with:
-          upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
-          asset_name: pip-package-avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
-          asset_content_type: application/gzip
+      # - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET == 'true'
+      #   name: Upload Avi Migration Tools pip package
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.github_token }}
+      #   with:
+      #     upload_url: ${{ steps.update_release.outputs.upload_url }}
+      #     asset_path: avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
+      #     asset_name: pip-package-avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
+      #     asset_content_type: application/gzip
 
       #- name: Upload Avi API SDK debian package
       #  uses: actions/upload-release-asset@v1
@@ -205,4 +203,3 @@ jobs:
           asset_path: avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-sources.jar
           asset_name: Java-avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javasources.jar
           asset_content_type: application/java-archive
-
