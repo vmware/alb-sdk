@@ -231,6 +231,9 @@ type ServiceEngineGroup struct {
 	// Timeout in seconds that SE waits for a grpc channel to connect to server, before it retries. Allowed values are 5-45. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	GrpcChannelConnectTimeout *uint32 `json:"grpc_channel_connect_timeout,omitempty"`
 
+	// Deploys Google Virtual Ethernet (gve) - gVNIC for all supported intances types in GCP. Applies only to newly created SE's. Field introduced in 30.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	GveEnabled *bool `json:"gve_enabled,omitempty"`
+
 	// High Availability mode for all the Virtual Services using this Service Engine group. Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HA_MODE_LEGACY_ACTIVE_STANDBY), Basic edition(Allowed values- HA_MODE_LEGACY_ACTIVE_STANDBY), Enterprise with Cloud Services edition. Special default for Essentials edition is HA_MODE_LEGACY_ACTIVE_STANDBY, Basic edition is HA_MODE_LEGACY_ACTIVE_STANDBY, Enterprise is HA_MODE_SHARED.
 	HaMode *string `json:"ha_mode,omitempty"`
 
