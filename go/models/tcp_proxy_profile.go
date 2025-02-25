@@ -26,6 +26,9 @@ type TCPProxyProfile struct {
 	// Congestion window scaling factor after recovery. Allowed values are 0-8. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CongestionRecoveryScalingFactor *uint32 `json:"congestion_recovery_scaling_factor,omitempty"`
 
+	// Determines if delayed ack mode is enabledTrue  Unconditionally use delayed ackFalse  Don't use delayed ack. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	DelayedAckMode *bool `json:"delayed_ack_mode,omitempty"`
+
 	// The time in milliseconds for delayed timer to kick in. Allowed values are 0-500. Special values are 0 - Disable Delayed Ack. Field introduced in 31.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DelayedAckTimerDelay *uint32 `json:"delayed_ack_timer_delay,omitempty"`
 
