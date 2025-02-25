@@ -23,6 +23,9 @@ type TCPProxyProfile struct {
 	// Congestion window scaling factor after recovery. Allowed values are 0-8. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CongestionRecoveryScalingFactor *uint32 `json:"congestion_recovery_scaling_factor,omitempty"`
 
+	// Determines if delayed ack mode is enabledTrue  Unconditionally use delayed ackFalse  Don't use delayed ack. Field introduced in 30.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DelayedAckMode *bool `json:"delayed_ack_mode,omitempty"`
+
 	// The duration for keepalive probes or session idle timeout. Max value is 14400 seconds, min is 5.  Set to 0 to allow infinite idle time. Allowed values are 5-14400. Special values are 0 - infinite. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	IDLEConnectionTimeout *int32 `json:"idle_connection_timeout,omitempty"`
 
