@@ -238,7 +238,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer grpcChannelConnectTimeout = 15;
 
     @JsonProperty("gve_enabled")
-    private Boolean gveEnabled = true;
+    private Boolean gveEnabled = false;
 
     @JsonProperty("ha_mode")
     private String haMode;
@@ -2829,7 +2829,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Applies only to newly created se's.
      * Field introduced in 30.2.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return gveEnabled
      */
     public Boolean getGveEnabled() {
@@ -2842,7 +2842,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Applies only to newly created se's.
      * Field introduced in 30.2.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param gveEnabled set the gveEnabled.
      */
     public void setGveEnabled(Boolean  gveEnabled) {
