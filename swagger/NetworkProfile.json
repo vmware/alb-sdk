@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.1.2",
         "title": "Avi NetworkProfile Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -914,6 +914,10 @@
                     "type": "integer",
                     "default": 2,
                     "format": "uint32"
+                },
+                "delayed_ack_mode": {
+                    "description": "Determines if delayed ack mode is enabledTrue  Unconditionally use delayed ackFalse  Don't use delayed ack. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 },
                 "delayed_ack_timer_delay": {
                     "description": "The time in milliseconds for delayed timer to kick in. Allowed values are 0-500. Special values are 0 - Disable Delayed Ack. Field introduced in 31.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",

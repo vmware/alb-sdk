@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.1.2",
         "title": "Avi Alert Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -538,13 +538,13 @@
                 }
             }
         },
-        "/gslbsmruntime": {
+        "/gslbhsmruntime": {
             "get": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbHSMRuntime"
                 ],
-                "description": "/gslbsmruntime",
-                "operationId": "GET /gslbsmruntime",
+                "description": "/gslbhsmruntime",
+                "operationId": "GET /gslbhsmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -635,7 +635,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntimeApiResponse"
+                            "$ref": "#/definitions/GslbHSMRuntimeApiResponse"
                         }
                     },
                     "401": {
@@ -645,10 +645,10 @@
             },
             "post": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbHSMRuntime"
                 ],
-                "description": "/gslbsmruntime",
-                "operationId": "POST /gslbsmruntime",
+                "description": "/gslbhsmruntime",
+                "operationId": "POST /gslbhsmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -687,10 +687,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbSMRuntime object creation",
+                        "description": "GslbHSMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbHSMRuntime"
                         }
                     }
                 ],
@@ -703,7 +703,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbHSMRuntime"
                         }
                     },
                     "401": {
@@ -712,13 +712,13 @@
                 }
             }
         },
-        "/gslbsmruntime/{uuid}": {
+        "/gslbhsmruntime/{uuid}": {
             "get": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbHSMRuntime"
                 ],
-                "description": "/gslbsmruntime/{uuid}",
-                "operationId": "GET /gslbsmruntime/{uuid}",
+                "description": "/gslbhsmruntime/{uuid}",
+                "operationId": "GET /gslbhsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -804,7 +804,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbHSMRuntime"
                         }
                     },
                     "401": {
@@ -814,10 +814,10 @@
             },
             "put": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbHSMRuntime"
                 ],
-                "description": "/gslbsmruntime/{uuid}",
-                "operationId": "PUT /gslbsmruntime/{uuid}",
+                "description": "/gslbhsmruntime/{uuid}",
+                "operationId": "PUT /gslbhsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -863,10 +863,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbSMRuntime object creation",
+                        "description": "GslbHSMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbHSMRuntime"
                         }
                     },
                     {
@@ -886,7 +886,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbHSMRuntime"
                         }
                     },
                     "401": {
@@ -896,10 +896,10 @@
             },
             "patch": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbHSMRuntime"
                 ],
-                "description": "/gslbsmruntime/{uuid}",
-                "operationId": "PATCH /gslbsmruntime/{uuid}",
+                "description": "/gslbhsmruntime/{uuid}",
+                "operationId": "PATCH /gslbhsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -945,10 +945,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbSMRuntime object creation",
+                        "description": "GslbHSMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbHSMRuntime"
                         }
                     },
                     {
@@ -968,7 +968,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbHSMRuntime"
                         }
                     },
                     "401": {
@@ -978,522 +978,10 @@
             },
             "delete": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbHSMRuntime"
                 ],
-                "description": "/gslbsmruntime/{uuid}",
-                "operationId": "DELETE /gslbsmruntime/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "name",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "object deleted",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "404": {
-                        "description": "not found"
-                    }
-                }
-            }
-        },
-        "/taskjournal": {
-            "get": {
-                "tags": [
-                    "TaskJournal"
-                ],
-                "description": "/taskjournal",
-                "operationId": "GET /taskjournal",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "refers_to",
-                        "in": "query",
-                        "description": "Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid",
-                        "type": "string"
-                    },
-                    {
-                        "name": "referred_by",
-                        "in": "query",
-                        "description": "Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid",
-                        "type": "string"
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "include_name",
-                        "in": "query",
-                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "skip_default",
-                        "in": "query",
-                        "description": "Default values are not set.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "join_subresources",
-                        "in": "query",
-                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "X-Avi-Tenant",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/TaskJournalApiResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "TaskJournal"
-                ],
-                "description": "/taskjournal",
-                "operationId": "POST /taskjournal",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "X-Avi-Tenant",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "TaskJournal object creation",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/TaskJournal"
-                        }
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/TaskJournal"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            }
-        },
-        "/taskjournal/{uuid}": {
-            "get": {
-                "tags": [
-                    "TaskJournal"
-                ],
-                "description": "/taskjournal/{uuid}",
-                "operationId": "GET /taskjournal/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "X-Avi-Tenant",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "name": "uuid",
-                        "in": "path",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "include_name",
-                        "in": "query",
-                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "skip_default",
-                        "in": "query",
-                        "description": "Default values are not set.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "join_subresources",
-                        "in": "query",
-                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/TaskJournal"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "TaskJournal"
-                ],
-                "description": "/taskjournal/{uuid}",
-                "operationId": "PUT /taskjournal/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "name",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "TaskJournal object creation",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/TaskJournal"
-                        }
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/TaskJournal"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
-            "patch": {
-                "tags": [
-                    "TaskJournal"
-                ],
-                "description": "/taskjournal/{uuid}",
-                "operationId": "PATCH /taskjournal/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "name",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "TaskJournal object creation",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/TaskJournal"
-                        }
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/TaskJournal"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "TaskJournal"
-                ],
-                "description": "/taskjournal/{uuid}",
-                "operationId": "DELETE /taskjournal/{uuid}",
+                "description": "/gslbhsmruntime/{uuid}",
+                "operationId": "DELETE /gslbhsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -2074,13 +1562,13 @@
                 }
             }
         },
-        "/vsgs": {
+        "/debugvirtualservice": {
             "get": {
                 "tags": [
-                    "VsGs"
+                    "DebugVirtualService"
                 ],
-                "description": "/vsgs",
-                "operationId": "GET /vsgs",
+                "description": "/debugvirtualservice",
+                "operationId": "GET /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -2171,7 +1659,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VsGsApiResponse"
+                            "$ref": "#/definitions/DebugVirtualServiceApiResponse"
                         }
                     },
                     "401": {
@@ -2181,10 +1669,10 @@
             },
             "post": {
                 "tags": [
-                    "VsGs"
+                    "DebugVirtualService"
                 ],
-                "description": "/vsgs",
-                "operationId": "POST /vsgs",
+                "description": "/debugvirtualservice",
+                "operationId": "POST /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -2223,10 +1711,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VsGs object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VsGs"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     }
                 ],
@@ -2239,7 +1727,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VsGs"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -2248,13 +1736,13 @@
                 }
             }
         },
-        "/vsgs/{uuid}": {
+        "/debugvirtualservice/{uuid}": {
             "get": {
                 "tags": [
-                    "VsGs"
+                    "DebugVirtualService"
                 ],
-                "description": "/vsgs/{uuid}",
-                "operationId": "GET /vsgs/{uuid}",
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "GET /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -2340,7 +1828,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VsGs"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -2350,10 +1838,10 @@
             },
             "put": {
                 "tags": [
-                    "VsGs"
+                    "DebugVirtualService"
                 ],
-                "description": "/vsgs/{uuid}",
-                "operationId": "PUT /vsgs/{uuid}",
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "PUT /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -2399,10 +1887,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VsGs object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VsGs"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     {
@@ -2422,7 +1910,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VsGs"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -2432,10 +1920,10 @@
             },
             "patch": {
                 "tags": [
-                    "VsGs"
+                    "DebugVirtualService"
                 ],
-                "description": "/vsgs/{uuid}",
-                "operationId": "PATCH /vsgs/{uuid}",
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "PATCH /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -2481,10 +1969,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VsGs object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VsGs"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     {
@@ -2504,7 +1992,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VsGs"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -2514,10 +2002,10 @@
             },
             "delete": {
                 "tags": [
-                    "VsGs"
+                    "DebugVirtualService"
                 ],
-                "description": "/vsgs/{uuid}",
-                "operationId": "DELETE /vsgs/{uuid}",
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "DELETE /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -3098,13 +2586,13 @@
                 }
             }
         },
-        "/systemreport": {
+        "/virtualservice": {
             "get": {
                 "tags": [
-                    "SystemReport"
+                    "VirtualService"
                 ],
-                "description": "/systemreport",
-                "operationId": "GET /systemreport",
+                "description": "/virtualservice",
+                "operationId": "GET /virtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -3195,7 +2683,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReportApiResponse"
+                            "$ref": "#/definitions/VirtualServiceApiResponse"
                         }
                     },
                     "401": {
@@ -3205,10 +2693,10 @@
             },
             "post": {
                 "tags": [
-                    "SystemReport"
+                    "VirtualService"
                 ],
-                "description": "/systemreport",
-                "operationId": "POST /systemreport",
+                "description": "/virtualservice",
+                "operationId": "POST /virtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -3247,10 +2735,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "SystemReport object creation",
+                        "description": "VirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     }
                 ],
@@ -3263,7 +2751,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     },
                     "401": {
@@ -3272,13 +2760,13 @@
                 }
             }
         },
-        "/systemreport/{uuid}": {
+        "/virtualservice/{uuid}": {
             "get": {
                 "tags": [
-                    "SystemReport"
+                    "VirtualService"
                 ],
-                "description": "/systemreport/{uuid}",
-                "operationId": "GET /systemreport/{uuid}",
+                "description": "/virtualservice/{uuid}",
+                "operationId": "GET /virtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -3364,7 +2852,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     },
                     "401": {
@@ -3374,10 +2862,10 @@
             },
             "put": {
                 "tags": [
-                    "SystemReport"
+                    "VirtualService"
                 ],
-                "description": "/systemreport/{uuid}",
-                "operationId": "PUT /systemreport/{uuid}",
+                "description": "/virtualservice/{uuid}",
+                "operationId": "PUT /virtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -3423,10 +2911,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "SystemReport object creation",
+                        "description": "VirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     },
                     {
@@ -3446,7 +2934,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     },
                     "401": {
@@ -3456,10 +2944,10 @@
             },
             "patch": {
                 "tags": [
-                    "SystemReport"
+                    "VirtualService"
                 ],
-                "description": "/systemreport/{uuid}",
-                "operationId": "PATCH /systemreport/{uuid}",
+                "description": "/virtualservice/{uuid}",
+                "operationId": "PATCH /virtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -3505,10 +2993,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "SystemReport object creation",
+                        "description": "VirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     },
                     {
@@ -3528,7 +3016,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     },
                     "401": {
@@ -3538,10 +3026,10 @@
             },
             "delete": {
                 "tags": [
-                    "SystemReport"
+                    "VirtualService"
                 ],
-                "description": "/systemreport/{uuid}",
-                "operationId": "DELETE /systemreport/{uuid}",
+                "description": "/virtualservice/{uuid}",
+                "operationId": "DELETE /virtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -4634,13 +4122,13 @@
                 }
             }
         },
-        "/virtualservice": {
+        "/vsgs": {
             "get": {
                 "tags": [
-                    "VirtualService"
+                    "VsGs"
                 ],
-                "description": "/virtualservice",
-                "operationId": "GET /virtualservice",
+                "description": "/vsgs",
+                "operationId": "GET /vsgs",
                 "consumes": [
                     "application/json"
                 ],
@@ -4731,7 +4219,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VirtualServiceApiResponse"
+                            "$ref": "#/definitions/VsGsApiResponse"
                         }
                     },
                     "401": {
@@ -4741,10 +4229,10 @@
             },
             "post": {
                 "tags": [
-                    "VirtualService"
+                    "VsGs"
                 ],
-                "description": "/virtualservice",
-                "operationId": "POST /virtualservice",
+                "description": "/vsgs",
+                "operationId": "POST /vsgs",
                 "consumes": [
                     "application/json"
                 ],
@@ -4783,10 +4271,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VirtualService object creation",
+                        "description": "VsGs object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/VsGs"
                         }
                     }
                 ],
@@ -4799,7 +4287,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/VsGs"
                         }
                     },
                     "401": {
@@ -4808,13 +4296,13 @@
                 }
             }
         },
-        "/virtualservice/{uuid}": {
+        "/vsgs/{uuid}": {
             "get": {
                 "tags": [
-                    "VirtualService"
+                    "VsGs"
                 ],
-                "description": "/virtualservice/{uuid}",
-                "operationId": "GET /virtualservice/{uuid}",
+                "description": "/vsgs/{uuid}",
+                "operationId": "GET /vsgs/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -4900,7 +4388,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/VsGs"
                         }
                     },
                     "401": {
@@ -4910,10 +4398,10 @@
             },
             "put": {
                 "tags": [
-                    "VirtualService"
+                    "VsGs"
                 ],
-                "description": "/virtualservice/{uuid}",
-                "operationId": "PUT /virtualservice/{uuid}",
+                "description": "/vsgs/{uuid}",
+                "operationId": "PUT /vsgs/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -4959,10 +4447,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VirtualService object creation",
+                        "description": "VsGs object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/VsGs"
                         }
                     },
                     {
@@ -4982,7 +4470,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/VsGs"
                         }
                     },
                     "401": {
@@ -4992,10 +4480,10 @@
             },
             "patch": {
                 "tags": [
-                    "VirtualService"
+                    "VsGs"
                 ],
-                "description": "/virtualservice/{uuid}",
-                "operationId": "PATCH /virtualservice/{uuid}",
+                "description": "/vsgs/{uuid}",
+                "operationId": "PATCH /vsgs/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -5041,10 +4529,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VirtualService object creation",
+                        "description": "VsGs object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/VsGs"
                         }
                     },
                     {
@@ -5064,7 +4552,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/VsGs"
                         }
                     },
                     "401": {
@@ -5074,10 +4562,10 @@
             },
             "delete": {
                 "tags": [
-                    "VirtualService"
+                    "VsGs"
                 ],
-                "description": "/virtualservice/{uuid}",
-                "operationId": "DELETE /virtualservice/{uuid}",
+                "description": "/vsgs/{uuid}",
+                "operationId": "DELETE /vsgs/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -5146,13 +4634,13 @@
                 }
             }
         },
-        "/debugvirtualservice": {
+        "/gslbsmruntime": {
             "get": {
                 "tags": [
-                    "DebugVirtualService"
+                    "GslbSMRuntime"
                 ],
-                "description": "/debugvirtualservice",
-                "operationId": "GET /debugvirtualservice",
+                "description": "/gslbsmruntime",
+                "operationId": "GET /gslbsmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -5243,7 +4731,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualServiceApiResponse"
+                            "$ref": "#/definitions/GslbSMRuntimeApiResponse"
                         }
                     },
                     "401": {
@@ -5253,10 +4741,10 @@
             },
             "post": {
                 "tags": [
-                    "DebugVirtualService"
+                    "GslbSMRuntime"
                 ],
-                "description": "/debugvirtualservice",
-                "operationId": "POST /debugvirtualservice",
+                "description": "/gslbsmruntime",
+                "operationId": "POST /gslbsmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -5295,10 +4783,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "GslbSMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     }
                 ],
@@ -5311,7 +4799,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     "401": {
@@ -5320,13 +4808,13 @@
                 }
             }
         },
-        "/debugvirtualservice/{uuid}": {
+        "/gslbsmruntime/{uuid}": {
             "get": {
                 "tags": [
-                    "DebugVirtualService"
+                    "GslbSMRuntime"
                 ],
-                "description": "/debugvirtualservice/{uuid}",
-                "operationId": "GET /debugvirtualservice/{uuid}",
+                "description": "/gslbsmruntime/{uuid}",
+                "operationId": "GET /gslbsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -5412,7 +4900,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     "401": {
@@ -5422,10 +4910,10 @@
             },
             "put": {
                 "tags": [
-                    "DebugVirtualService"
+                    "GslbSMRuntime"
                 ],
-                "description": "/debugvirtualservice/{uuid}",
-                "operationId": "PUT /debugvirtualservice/{uuid}",
+                "description": "/gslbsmruntime/{uuid}",
+                "operationId": "PUT /gslbsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -5471,10 +4959,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "GslbSMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     {
@@ -5494,7 +4982,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     "401": {
@@ -5504,10 +4992,10 @@
             },
             "patch": {
                 "tags": [
-                    "DebugVirtualService"
+                    "GslbSMRuntime"
                 ],
-                "description": "/debugvirtualservice/{uuid}",
-                "operationId": "PATCH /debugvirtualservice/{uuid}",
+                "description": "/gslbsmruntime/{uuid}",
+                "operationId": "PATCH /gslbsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -5553,10 +5041,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "GslbSMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     {
@@ -5576,7 +5064,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     "401": {
@@ -5586,10 +5074,10 @@
             },
             "delete": {
                 "tags": [
-                    "DebugVirtualService"
+                    "GslbSMRuntime"
                 ],
-                "description": "/debugvirtualservice/{uuid}",
-                "operationId": "DELETE /debugvirtualservice/{uuid}",
+                "description": "/gslbsmruntime/{uuid}",
+                "operationId": "DELETE /gslbsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -5658,13 +5146,13 @@
                 }
             }
         },
-        "/gslbhsmruntime": {
+        "/systemreport": {
             "get": {
                 "tags": [
-                    "GslbHSMRuntime"
+                    "SystemReport"
                 ],
-                "description": "/gslbhsmruntime",
-                "operationId": "GET /gslbhsmruntime",
+                "description": "/systemreport",
+                "operationId": "GET /systemreport",
                 "consumes": [
                     "application/json"
                 ],
@@ -5755,7 +5243,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbHSMRuntimeApiResponse"
+                            "$ref": "#/definitions/SystemReportApiResponse"
                         }
                     },
                     "401": {
@@ -5765,10 +5253,10 @@
             },
             "post": {
                 "tags": [
-                    "GslbHSMRuntime"
+                    "SystemReport"
                 ],
-                "description": "/gslbhsmruntime",
-                "operationId": "POST /gslbhsmruntime",
+                "description": "/systemreport",
+                "operationId": "POST /systemreport",
                 "consumes": [
                     "application/json"
                 ],
@@ -5807,10 +5295,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbHSMRuntime object creation",
+                        "description": "SystemReport object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbHSMRuntime"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     }
                 ],
@@ -5823,7 +5311,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbHSMRuntime"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     "401": {
@@ -5832,13 +5320,13 @@
                 }
             }
         },
-        "/gslbhsmruntime/{uuid}": {
+        "/systemreport/{uuid}": {
             "get": {
                 "tags": [
-                    "GslbHSMRuntime"
+                    "SystemReport"
                 ],
-                "description": "/gslbhsmruntime/{uuid}",
-                "operationId": "GET /gslbhsmruntime/{uuid}",
+                "description": "/systemreport/{uuid}",
+                "operationId": "GET /systemreport/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -5924,7 +5412,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbHSMRuntime"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     "401": {
@@ -5934,10 +5422,10 @@
             },
             "put": {
                 "tags": [
-                    "GslbHSMRuntime"
+                    "SystemReport"
                 ],
-                "description": "/gslbhsmruntime/{uuid}",
-                "operationId": "PUT /gslbhsmruntime/{uuid}",
+                "description": "/systemreport/{uuid}",
+                "operationId": "PUT /systemreport/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -5983,10 +5471,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbHSMRuntime object creation",
+                        "description": "SystemReport object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbHSMRuntime"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     {
@@ -6006,7 +5494,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbHSMRuntime"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     "401": {
@@ -6016,10 +5504,10 @@
             },
             "patch": {
                 "tags": [
-                    "GslbHSMRuntime"
+                    "SystemReport"
                 ],
-                "description": "/gslbhsmruntime/{uuid}",
-                "operationId": "PATCH /gslbhsmruntime/{uuid}",
+                "description": "/systemreport/{uuid}",
+                "operationId": "PATCH /systemreport/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6065,10 +5553,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbHSMRuntime object creation",
+                        "description": "SystemReport object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbHSMRuntime"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     {
@@ -6088,7 +5576,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbHSMRuntime"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     "401": {
@@ -6098,10 +5586,522 @@
             },
             "delete": {
                 "tags": [
-                    "GslbHSMRuntime"
+                    "SystemReport"
                 ],
-                "description": "/gslbhsmruntime/{uuid}",
-                "operationId": "DELETE /gslbhsmruntime/{uuid}",
+                "description": "/systemreport/{uuid}",
+                "operationId": "DELETE /systemreport/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "object deleted",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/taskjournal": {
+            "get": {
+                "tags": [
+                    "TaskJournal"
+                ],
+                "description": "/taskjournal",
+                "operationId": "GET /taskjournal",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "refers_to",
+                        "in": "query",
+                        "description": "Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid",
+                        "type": "string"
+                    },
+                    {
+                        "name": "referred_by",
+                        "in": "query",
+                        "description": "Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid",
+                        "type": "string"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "include_name",
+                        "in": "query",
+                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "skip_default",
+                        "in": "query",
+                        "description": "Default values are not set.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "join_subresources",
+                        "in": "query",
+                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Avi-Tenant",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/TaskJournalApiResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "TaskJournal"
+                ],
+                "description": "/taskjournal",
+                "operationId": "POST /taskjournal",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "X-Avi-Tenant",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "TaskJournal object creation",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/TaskJournal"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/TaskJournal"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
+        },
+        "/taskjournal/{uuid}": {
+            "get": {
+                "tags": [
+                    "TaskJournal"
+                ],
+                "description": "/taskjournal/{uuid}",
+                "operationId": "GET /taskjournal/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Avi-Tenant",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "include_name",
+                        "in": "query",
+                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "skip_default",
+                        "in": "query",
+                        "description": "Default values are not set.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "join_subresources",
+                        "in": "query",
+                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/TaskJournal"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "TaskJournal"
+                ],
+                "description": "/taskjournal/{uuid}",
+                "operationId": "PUT /taskjournal/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "TaskJournal object creation",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/TaskJournal"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/TaskJournal"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "TaskJournal"
+                ],
+                "description": "/taskjournal/{uuid}",
+                "operationId": "PATCH /taskjournal/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "TaskJournal object creation",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/TaskJournal"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/TaskJournal"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "TaskJournal"
+                ],
+                "description": "/taskjournal/{uuid}",
+                "operationId": "DELETE /taskjournal/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
