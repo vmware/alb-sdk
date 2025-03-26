@@ -1175,7 +1175,7 @@ public class Pool extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Do round robin load load balancing at se level instead of the default per core load balancing.
+     * Do load balancing at se level instead of the default per core load balancing.
      * Field introduced in 21.1.5, 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -1187,7 +1187,7 @@ public class Pool extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Do round robin load load balancing at se level instead of the default per core load balancing.
+     * Do load balancing at se level instead of the default per core load balancing.
      * Field introduced in 21.1.5, 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
