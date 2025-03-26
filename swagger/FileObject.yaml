@@ -5,14 +5,14 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi FileObject Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi FileObject object api
         ```
         - upload fileobject file
         - configure fileobject <key>
@@ -20,7 +20,11 @@ info:
         - show fileobject
         ```
 
-
+        API permission: PERMISSION_FILE_OBJECT
+tags:
+  - name: FileObject
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -29,6 +33,10 @@ basePath: /api
 paths:
     /fileobject:
         get:
+            tags:
+                - FileObject
+            description: /fileobject
+            operationId: GET /fileobject
             consumes:
                 -   application/json
             produces:
@@ -88,13 +96,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FileObjectApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - FileObject
+            description: /fileobject
+            operationId: POST /fileobject
             consumes:
                 -   application/json
             produces:
@@ -129,14 +141,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FileObject"
-                401:
+                "401":
                     description: log in failed
     /fileobject/{uuid}:
         get:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}
+            operationId: GET /fileobject/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -193,13 +209,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FileObject"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}
+            operationId: PUT /fileobject/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -244,13 +266,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FileObject"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}
+            operationId: PATCH /fileobject/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -295,13 +323,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FileObject"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}
+            operationId: DELETE /fileobject/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -340,16 +374,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
     /fileobject/{uuid}/federated_info/:
         get:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}/federated_info/
+            operationId: GET /fileobject/{uuid}/federated_info/
             consumes:
                 -   application/json
             produces:
@@ -383,14 +421,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /fileobject/{uuid}/['']/:
         patch:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}/['']/
+            operationId: PATCH /fileobject/{uuid}/['']/
             consumes:
                 -   application/json
             produces:
@@ -424,13 +468,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}/['']/
+            operationId: PUT /fileobject/{uuid}/['']/
             consumes:
                 -   application/json
             produces:
@@ -472,18 +522,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
 definitions:
     ConfigPbAttributes:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: uint32
@@ -491,34 +543,34 @@ definitions:
         type: object
         properties:
             common_name:
-                description: "Common name of the issuer in the Certificate Revocation list. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Common name of the issuer in the Certificate Revocation list. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             distinguished_name:
-                description: "Distinguished name of the issuer in the Certificate Revocation list. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Distinguished name of the issuer in the Certificate Revocation list. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             etag:
-                description: "Cached etag to optimize the download of the CRL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Cached etag to optimize the download of the CRL. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             fingerprint:
-                description: "Fingerprint of the CRL. Used to avoid configuring duplicates. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Fingerprint of the CRL. Used to avoid configuring duplicates. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             last_refreshed:
-                description: "Last time CRL was refreshed by the system. This is an internal field used by the system. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Last time CRL was refreshed by the system. This is an internal field used by the system. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             last_update:
-                description: "The date when this CRL was last issued. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The date when this CRL was last issued. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             next_update:
-                description: "The date when a newer CRL will be available. Also conveys the date after which the CRL should be considered obsolete. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The date when a newer CRL will be available. Also conveys the date after which the CRL should be considered obsolete. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             server_url:
-                description: "URL of a server that issues the Certificate Revocation list. If this is configured, CRL will be periodically downloaded either based on the configured update interval or the next update interval in the CRL. CRL itself is stored in the body. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "URL of a server that issues the Certificate Revocation list. If this is configured, CRL will be periodically downloaded either based on the configured update interval or the next update interval in the CRL. CRL itself is stored in the body. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             text:
-                description: "Certificate Revocation list in plain text for readability. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Certificate Revocation list in plain text for readability. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             update_interval:
-                description: "Interval in minutes to check for CRL update. If not specified, interval will be 1 day. Allowed values are 30-525600. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Interval in minutes to check for CRL update. If not specified, interval will be 1 day. Allowed values are 30-525600. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1440
                 format: int32
@@ -533,60 +585,76 @@ definitions:
                 readOnly: True
                 type: string
             checksum:
-                description: "SHA1 checksum of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "SHA1 checksum of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            child_refs:
+                description: "AVI internal formatted/converted files. It is a reference to an object of type FileObject. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
             compressed:
-                description: "This field indicates whether the file is gzip-compressed. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "This field indicates whether the file is gzip-compressed. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             created:
-                description: "Timestamp of creation for the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Timestamp of creation for the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             crl_info:
-                description: "This field contains Certificate Revocation List metadata. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "This field contains Certificate Revocation List metadata. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CRL'
             description:
-                description: "Description of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Description of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            events:
+                description: "List of all FileObject events. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/FileObjectEventMap'
             expires_at:
-                description: "Timestamp when the file will be no longer needed and can be removed by the system. If this is set, a garbage collector process will try to remove the file after this time. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Timestamp when the file will be no longer needed and can be removed by the system. If this is set, a garbage collector process will try to remove the file after this time. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            gslb_geodb_format:
+                description: "This field indicates the file format of GSLB geodb file type. Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            has_parent:
+                description: "This field indicates if the the given FileObjecthas a parent FileObject or not. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: boolean
             is_federated:
-                description: "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             name:
-                description: "Name of the file object. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the file object. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             path:
-                description: "Path to the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Path to the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             read_only:
-                description: "Enforce Read-Only on the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enforce Read-Only on the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             restrict_download:
-                description: "Flag to allow/restrict download of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Flag to allow/restrict download of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             size:
-                description: "Size of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Size of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             tenant_ref:
-                description: "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: "Type of the file. Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- OTHER_FILE_TYPES), Basic edition(Allowed values- OTHER_FILE_TYPES), Enterprise with Cloud Services edition."
+                description: "Type of the file. Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA, IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- OTHER_FILE_TYPES), Basic (Allowed values- OTHER_FILE_TYPES) edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             version:
-                description: "Version of the file. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Version of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     FileObjectApiResponse:
         type: object
@@ -602,4 +670,34 @@ definitions:
                 items:
                     $ref: "#/definitions/FileObject"
             next:
+                type: string
+    FileObjectEvent:
+        type: object
+        properties:
+            duration:
+                description: "Time taken to complete the event in seconds. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            end_time:
+                description: "End time of the event. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            message:
+                description: "Event message if any. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            start_time:
+                description: "Start time of the event. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            status:
+                description: "Event status. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+    FileObjectEventMap:
+        type: object
+        properties:
+            task_event:
+                description: "Actual event informations. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/FileObjectEvent'
+            task_name:
+                description: "Name of the event task. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string

@@ -5,19 +5,23 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi VIMgrVMRuntime Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi VIMgrVMRuntime object api
         ```
         - show vinfra virtualmachine <key>
         ```
 
-
+        API permission: PERMISSION_CLOUD
+tags:
+  - name: VIMgrVMRuntime
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /vimgrvmruntime:
         get:
+            tags:
+                - VIMgrVMRuntime
+            description: /vimgrvmruntime
+            operationId: GET /vimgrvmruntime
             consumes:
                 -   application/json
             produces:
@@ -148,13 +156,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrVMRuntimeApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VIMgrVMRuntime
+            description: /vimgrvmruntime
+            operationId: POST /vimgrvmruntime
             consumes:
                 -   application/json
             produces:
@@ -189,14 +201,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrVMRuntime"
-                401:
+                "401":
                     description: log in failed
     /vimgrvmruntime/{uuid}:
         get:
+            tags:
+                - VIMgrVMRuntime
+            description: /vimgrvmruntime/{uuid}
+            operationId: GET /vimgrvmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -253,13 +269,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrVMRuntime"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - VIMgrVMRuntime
+            description: /vimgrvmruntime/{uuid}
+            operationId: PUT /vimgrvmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -304,13 +326,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrVMRuntime"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - VIMgrVMRuntime
+            description: /vimgrvmruntime/{uuid}
+            operationId: PATCH /vimgrvmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -355,13 +383,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrVMRuntime"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - VIMgrVMRuntime
+            description: /vimgrvmruntime/{uuid}
+            operationId: DELETE /vimgrvmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -400,12 +434,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -415,13 +449,13 @@ definitions:
             -   name
         properties:
             name:
-                description: "FloatingIp subnet name if available, else uuid. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "FloatingIp subnet name if available, else uuid. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             prefix:
-                description: "FloatingIp subnet prefix. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "FloatingIp subnet prefix. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             uuid:
-                description: "FloatingIp subnet uuid. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "FloatingIp subnet uuid. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     IpAddr:
         type: object
@@ -430,10 +464,10 @@ definitions:
             -   type
         properties:
             addr:
-                description: "IP address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - V4, DNS, V6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - V4, DNS, V6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     IpAddrPrefix:
         type: object
@@ -442,10 +476,10 @@ definitions:
             -   mask
         properties:
             ip_addr:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             mask:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     VIMgrGuestNicRuntime:
@@ -455,40 +489,40 @@ definitions:
             -   type
         properties:
             avi_internal_network:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             connected:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             del_pending:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             guest_ip:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VIMgrIPSubnetRuntime'
             label:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "Unknown"
             mac_addr:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             mgmt_vnic:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             network_name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             network_uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             os_port_uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     VIMgrIPSubnetRuntime:
         type: object
@@ -496,40 +530,40 @@ definitions:
             -   prefix
         properties:
             fip_available:
-                description: "If true, capable of floating/elastic IP association. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "If true, capable of floating/elastic IP association. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             fip_subnet_uuids:
-                description: "If fip_available is True, this is list of supported FIP subnets, possibly empty if Cloud does not support such a network list. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "If fip_available is True, this is list of supported FIP subnets, possibly empty if Cloud does not support such a network list. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             floatingip_subnets:
-                description: "If fip_available is True, the list of associated FloatingIP subnets, possibly empty if unsupported or implictly defined by the Cloud. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "If fip_available is True, the list of associated FloatingIP subnets, possibly empty if unsupported or implictly defined by the Cloud. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/FloatingIpSubnet'
             ip_subnet:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             prefix:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             primary:
-                description: "True if prefix is primary IP on interface, else false. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "True if prefix is primary IP on interface, else false. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             ref_count:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             se_ref_count:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     VIMgrVMRuntime:
         type: object
@@ -543,118 +577,118 @@ definitions:
                 readOnly: True
                 type: string
             availability_zone:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             cloud_ref:
-                description: " It is a reference to an object of type Cloud. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             connection_state:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             controller_cluster_uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             controller_ip_addr:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             controller_vm:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             cpu_reservation:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int64
             cpu_shares:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             creation_in_progress:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             guest_nic:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VIMgrGuestNicRuntime'
             host:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             init_vnics:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             managed_object_id:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             mem_shares:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             memory:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int64
             memory_reservation:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int64
             name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             num_cpu:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             ovf_avisetype_field:
-                description: " Field introduced in 17.1.1,17.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Field introduced in 17.1.1,17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             powerstate:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             se_ver:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vcenter_datacenter_uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vcenter_rm_cookie:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vcenter_se_type:
-                description: " Enum options - VIMGR_SE_NETWORK_ADMIN, VIMGR_SE_UNIFIED_ADMIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - VIMGR_SE_NETWORK_ADMIN, VIMGR_SE_UNIFIED_ADMIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vcenter_template_vm:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             vcenter_vAppName:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vcenter_vAppVendor:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vcenter_vm_type:
-                description: " Enum options - VMTYPE_SE_VM, VMTYPE_POOL_SRVR. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - VMTYPE_SE_VM, VMTYPE_POOL_SRVR. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vcenter_vnic_discovered:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             vm_lb_weight:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     VIMgrVMRuntimeApiResponse:

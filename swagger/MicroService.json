@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi MicroService Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure microservice <key>\n- show microservice <key>\n```\n"
+        "description": "Avi MicroService object api\n```\n- configure microservice <key>\n- show microservice <key>\n```\n\nAPI permission: PERMISSION_MICROSERVICE\n"
     },
+    "tags": [
+        {
+            "name": "MicroService"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/microservice": {
             "get": {
+                "tags": [
+                    "MicroService"
+                ],
+                "description": "/microservice",
+                "operationId": "GET /microservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "MicroService"
+                ],
+                "description": "/microservice",
+                "operationId": "POST /microservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/microservice/{uuid}": {
             "get": {
+                "tags": [
+                    "MicroService"
+                ],
+                "description": "/microservice/{uuid}",
+                "operationId": "GET /microservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -274,10 +297,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "MicroService"
+                ],
+                "description": "/microservice/{uuid}",
+                "operationId": "PUT /microservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -351,10 +382,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "MicroService"
+                ],
+                "description": "/microservice/{uuid}",
+                "operationId": "PATCH /microservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -428,10 +467,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "MicroService"
+                ],
+                "description": "/microservice/{uuid}",
+                "operationId": "DELETE /microservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -495,13 +542,18 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/microservice/{uuid}/runtime/internal/": {
             "get": {
+                "tags": [
+                    "MicroService"
+                ],
+                "description": "/microservice/{uuid}/runtime/internal/",
+                "operationId": "GET /microservice/{uuid}/runtime/internal/",
                 "consumes": [
                     "application/json"
                 ],
@@ -559,12 +611,20 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/microservice/{uuid}/runtime/detail/": {
             "get": {
+                "tags": [
+                    "MicroService"
+                ],
+                "description": "/microservice/{uuid}/runtime/detail/",
+                "operationId": "GET /microservice/{uuid}/runtime/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -622,6 +682,9 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             }
@@ -632,7 +695,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -647,11 +710,11 @@
             ],
             "properties": {
                 "addr": {
-                    "description": "IP address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - V4, DNS, V6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - V4, DNS, V6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -670,46 +733,46 @@
                     "type": "string"
                 },
                 "application_name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cloud_config_cksum": {
-                    "description": "Checksum of cloud configuration for Microservice. Internally set by cloud connector. Field introduced in 17.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Checksum of cloud configuration for Microservice. Internally set by cloud connector. Field introduced in 17.2.8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "containers": {
-                    "description": "The list of containers for this microservice. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The list of containers for this microservice. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/MicroServiceContainer"
                     }
                 },
                 "created_by": {
-                    "description": "Creator name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Creator name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "description": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ip_list": {
-                    "description": "Flag to indicate if container IP list is provided by cloud connectorThis is applicable for overlay cases. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Flag to indicate if container IP list is provided by cloud connectorThis is applicable for overlay cases. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "orchestrator_name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -718,7 +781,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -752,24 +815,24 @@
             ],
             "properties": {
                 "container_id": {
-                    "description": "ID of the container. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "ID of the container. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "host": {
-                    "description": "ID or name of the host where the container is. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "ID or name of the host where the container is. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ip": {
-                    "description": "IP Address of the container. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP Address of the container. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "port": {
-                    "description": "Port nunber of the instance. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Port nunber of the instance. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "task_id": {
-                    "description": "Marathon Task ID of the instance. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Marathon Task ID of the instance. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

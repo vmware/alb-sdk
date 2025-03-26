@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi SecureChannelToken Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show securechanneltoken <key>\n```\n"
+        "description": "Avi SecureChannelToken object api\n```\n- show securechanneltoken <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
     },
+    "tags": [
+        {
+            "name": "SecureChannelToken"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/securechanneltoken": {
             "get": {
+                "tags": [
+                    "SecureChannelToken"
+                ],
+                "description": "/securechanneltoken",
+                "operationId": "GET /securechanneltoken",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "SecureChannelToken"
+                ],
+                "description": "/securechanneltoken",
+                "operationId": "POST /securechanneltoken",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/securechanneltoken/{uuid}": {
             "get": {
+                "tags": [
+                    "SecureChannelToken"
+                ],
+                "description": "/securechanneltoken/{uuid}",
+                "operationId": "GET /securechanneltoken/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -274,10 +297,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "SecureChannelToken"
+                ],
+                "description": "/securechanneltoken/{uuid}",
+                "operationId": "PUT /securechanneltoken/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -351,10 +382,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "SecureChannelToken"
+                ],
+                "description": "/securechanneltoken/{uuid}",
+                "operationId": "PATCH /securechanneltoken/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -428,10 +467,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "SecureChannelToken"
+                ],
+                "description": "/securechanneltoken/{uuid}",
+                "operationId": "DELETE /securechanneltoken/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -495,7 +542,7 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
@@ -506,11 +553,11 @@
             "type": "object",
             "properties": {
                 "key": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "val": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -527,23 +574,23 @@
                     "type": "string"
                 },
                 "expiry_time": {
-                    "description": "Expiry time for auth_token. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Expiry time for auth_token. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "in_use": {
-                    "description": "Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "metadata": {
-                    "description": "Metadata associated with auth_token. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Metadata associated with auth_token. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SecureChannelMetadata"
                     }
                 },
                 "name": {
-                    "description": "Auth_token used for SE/controller authorization. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Auth_token used for SE/controller authorization. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -552,7 +599,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "Auth_token used for SE/controller authorization. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Auth_token used for SE/controller authorization. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

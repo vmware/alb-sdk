@@ -5,20 +5,24 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi ActionGroupConfig Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi ActionGroupConfig object api
         ```
         - configure actiongroupconfig <key>
         - show actiongroupconfig <key>
         ```
 
-
+        API permission: PERMISSION_ACTIONGROUPCONFIG
+tags:
+  - name: ActionGroupConfig
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /actiongroupconfig:
         get:
+            tags:
+                - ActionGroupConfig
+            description: /actiongroupconfig
+            operationId: GET /actiongroupconfig
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ActionGroupConfigApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ActionGroupConfig
+            description: /actiongroupconfig
+            operationId: POST /actiongroupconfig
             consumes:
                 -   application/json
             produces:
@@ -127,14 +139,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ActionGroupConfig"
-                401:
+                "401":
                     description: log in failed
     /actiongroupconfig/{uuid}:
         get:
+            tags:
+                - ActionGroupConfig
+            description: /actiongroupconfig/{uuid}
+            operationId: GET /actiongroupconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -191,13 +207,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ActionGroupConfig"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - ActionGroupConfig
+            description: /actiongroupconfig/{uuid}
+            operationId: PUT /actiongroupconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +264,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ActionGroupConfig"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - ActionGroupConfig
+            description: /actiongroupconfig/{uuid}
+            operationId: PATCH /actiongroupconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +321,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ActionGroupConfig"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - ActionGroupConfig
+            description: /actiongroupconfig/{uuid}
+            operationId: DELETE /actiongroupconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -338,12 +372,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -359,45 +393,45 @@ definitions:
                 readOnly: True
                 type: string
             action_script_config_ref:
-                description: "reference of the action script configuration to be used. It is a reference to an object of type AlertScriptConfig. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "reference of the action script configuration to be used. It is a reference to an object of type AlertScriptConfig. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             autoscale_trigger_notification:
-                description: "Trigger Notification to AutoScale Manager. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition."
+                description: "Trigger Notification to AutoScale Manager. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
                 type: boolean
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             description:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             email_config_ref:
-                description: "Select the Email Notification configuration to use when sending alerts via email. It is a reference to an object of type AlertEmailConfig. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Select the Email Notification configuration to use when sending alerts via email. It is a reference to an object of type AlertEmailConfig. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             external_only:
-                description: "Generate Alert only to external destinations. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition."
+                description: "Generate Alert only to external destinations. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
                 type: boolean
             level:
-                description: "When an alert is generated, mark its priority via the Alert Level. Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "When an alert is generated, mark its priority via the Alert Level. Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "ALERT_LOW"
             name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             snmp_trap_profile_ref:
-                description: "Select the SNMP Trap Notification to use when sending alerts via SNMP Trap. It is a reference to an object of type SnmpTrapProfile. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Select the SNMP Trap Notification to use when sending alerts via SNMP Trap. It is a reference to an object of type SnmpTrapProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             syslog_config_ref:
-                description: "Select the Syslog Notification configuration to use when sending alerts via Syslog. It is a reference to an object of type AlertSyslogConfig. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Select the Syslog Notification configuration to use when sending alerts via Syslog. It is a reference to an object of type AlertSyslogConfig. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ActionGroupConfigApiResponse:
         type: object
@@ -418,7 +452,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: uint32

@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi WafPolicy Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure wafpolicy <key>\n- show wafpolicy <key>\n- updatecrsrules virtualservice <key>\n```\n"
+        "description": "Avi WafPolicy object api\n```\n- configure wafpolicy <key>\n- show wafpolicy <key>\n- updatecrsrules virtualservice <key>\n```\n\nAPI permission: PERMISSION_WAFPOLICY\n"
     },
+    "tags": [
+        {
+            "name": "WafPolicy"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/wafpolicy": {
             "get": {
+                "tags": [
+                    "WafPolicy"
+                ],
+                "description": "/wafpolicy",
+                "operationId": "GET /wafpolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "WafPolicy"
+                ],
+                "description": "/wafpolicy",
+                "operationId": "POST /wafpolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/wafpolicy/{uuid}": {
             "get": {
+                "tags": [
+                    "WafPolicy"
+                ],
+                "description": "/wafpolicy/{uuid}",
+                "operationId": "GET /wafpolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -274,10 +297,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "WafPolicy"
+                ],
+                "description": "/wafpolicy/{uuid}",
+                "operationId": "PUT /wafpolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -351,10 +382,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "WafPolicy"
+                ],
+                "description": "/wafpolicy/{uuid}",
+                "operationId": "PATCH /wafpolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -428,10 +467,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "WafPolicy"
+                ],
+                "description": "/wafpolicy/{uuid}",
+                "operationId": "DELETE /wafpolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -495,13 +542,18 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/wafpolicy/{uuid}/update-crs-rules": {
             "put": {
+                "tags": [
+                    "WafPolicy"
+                ],
+                "description": "/wafpolicy/{uuid}/update-crs-rules",
+                "operationId": "PUT /wafpolicy/{uuid}/update-crs-rules",
                 "consumes": [
                     "application/json"
                 ],
@@ -568,6 +620,9 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             }
@@ -578,25 +633,25 @@
             "type": "object",
             "properties": {
                 "confid_high_value": {
-                    "description": "Confidence threshold for label CONFIDENCE_HIGH. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Confidence threshold for label CONFIDENCE_HIGH. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 9500,
                     "format": "uint32"
                 },
                 "confid_low_value": {
-                    "description": "Confidence threshold for label CONFIDENCE_LOW. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Confidence threshold for label CONFIDENCE_LOW. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 7500,
                     "format": "uint32"
                 },
                 "confid_probable_value": {
-                    "description": "Confidence threshold for label CONFIDENCE_PROBABLE. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Confidence threshold for label CONFIDENCE_PROBABLE. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 9000,
                     "format": "uint32"
                 },
                 "confid_very_high_value": {
-                    "description": "Confidence threshold for label CONFIDENCE_VERY_HIGH. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Confidence threshold for label CONFIDENCE_VERY_HIGH. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 9999,
                     "format": "uint32"
@@ -607,53 +662,52 @@
             "type": "object",
             "properties": {
                 "enable_learn_from_bots": {
-                    "description": "If this is set to true, WAF will only learn from clients which match the learn_from_bots specification. The settings learn_from_authenticated_requests and trusted_ip_groups always take precedence. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "boolean",
-                    "default": true
+                    "description": "If this is set to true, WAF will only learn from clients which match the learn_from_bots specification. The settings learn_from_authenticated_requests and trusted_ip_groups always take precedence. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 },
                 "enable_per_uri_learning": {
-                    "description": "Learn the params per URI path. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Learn the params per URI path. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "learn_from_authenticated_clients_only": {
-                    "description": "If true, learning will only be performed on requests from clients who have passed the authentication process configured in the Virtual Service's Auth Profile. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "If true, learning will only be performed on requests from clients who have passed the authentication process configured in the Virtual Service's Auth Profile. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "learn_from_bots": {
-                    "description": "If Bot detection is active for this Virtual Service, learning will only be performed on requests from clients within the configured bot classification types. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "If Bot detection is active for this Virtual Service, learning will only be performed on requests from clients within the configured bot classification types. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/BotDetectionMatch"
                 },
                 "max_params": {
-                    "description": "Maximum number of params programmed for an application. Allowed values are 10-1000. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of params programmed for an application. Allowed values are 10-1000. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
                     "format": "uint32"
                 },
                 "max_uris": {
-                    "description": "Maximum number of URI paths programmed for an application. Allowed values are 10-10000. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of URI paths programmed for an application. Allowed values are 10-10000. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 500,
                     "format": "uint32"
                 },
                 "min_hits_to_learn": {
-                    "description": "Minimum number of occurances required for a Param to qualify for learning. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Minimum number of occurances required for a Param to qualify for learning. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10000,
                     "format": "uint64"
                 },
                 "sampling_percent": {
-                    "description": "Percent of the requests subjected to Application learning. Allowed values are 1-100. Field introduced in 18.2.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Percent of the requests subjected to Application learning. Allowed values are 1-100. Field introduced in 18.2.3. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
                 },
                 "trusted_ipgroup_ref": {
-                    "description": "If configured, learning will only be performed on requests from client IPs within the configured IP Address Group. It is a reference to an object of type IpAddrGroup. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "If configured, learning will only be performed on requests from client IPs within the configured IP Address Group. It is a reference to an object of type IpAddrGroup. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "update_interval": {
-                    "description": "Frequency with which SE publishes Application learning data to controller. Allowed values are 1-60. Field introduced in 18.2.3. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Frequency with which SE publishes Application learning data to controller. Allowed values are 1-60. Field introduced in 18.2.3. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
                     "format": "uint32"
@@ -667,11 +721,11 @@
             ],
             "properties": {
                 "type": {
-                    "description": "One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT, USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT, USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "user_defined_type": {
-                    "description": "If 'type' has BotClassificationTypes value 'USER_DEFINED', this is the user-defined value. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "If 'type' has BotClassificationTypes value 'USER_DEFINED', this is the user-defined value. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -683,14 +737,14 @@
             ],
             "properties": {
                 "classifications": {
-                    "description": "Bot classification types. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Bot classification types. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/BotClassification"
                     }
                 },
                 "match_operation": {
-                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -699,7 +753,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -714,20 +768,20 @@
             ],
             "properties": {
                 "match_case": {
-                    "description": "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "INSENSITIVE"
                 },
                 "match_criteria": {
-                    "description": "Criterion to use for matching the cookie in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Criterion to use for matching the cookie in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "Name of the cookie. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the cookie. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "value": {
-                    "description": "String value in the cookie. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "String value in the cookie. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -741,15 +795,15 @@
             ],
             "properties": {
                 "attribute": {
-                    "description": "The Geo data type to match on. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The Geo data type to match on. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "match_operation": {
-                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "The values to match. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The values to match. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -765,20 +819,27 @@
             ],
             "properties": {
                 "hdr": {
-                    "description": "Name of the HTTP header whose value is to be matched. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the HTTP header whose value is to be matched. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "match_case": {
-                    "description": "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "INSENSITIVE"
                 },
                 "match_criteria": {
-                    "description": "Criterion to use for matching headers in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Criterion to use for matching headers in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
+                "string_group_refs": {
+                    "description": "UUID of the string group(s). It is a reference to an object of type StringGroup. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "value": {
-                    "description": "String values to match in the HTTP header. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "String values to match in the HTTP header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -793,16 +854,16 @@
             ],
             "properties": {
                 "match_case": {
-                    "description": "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "INSENSITIVE"
                 },
                 "match_criteria": {
-                    "description": "Criterion to use for the host header value match. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Criterion to use for the host header value match. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "value": {
-                    "description": "String value(s) in the host header. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "String value(s) in the host header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -817,11 +878,11 @@
             ],
             "properties": {
                 "match_criteria": {
-                    "description": "Criterion to use for HTTP version matching the version used in the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Criterion to use for HTTP version matching the version used in the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "versions": {
-                    "description": "HTTP protocol version. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Minimum of 1 items required. Maximum of 8 items allowed. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- ONE_ZERO,ONE_ONE), Basic edition(Allowed values- ONE_ZERO,ONE_ONE), Enterprise with Cloud Services edition.",
+                    "description": "HTTP protocol version. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Minimum of 1 items required. Maximum of 8 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- ONE_ZERO,ONE_ONE), Basic (Allowed values- ONE_ZERO,ONE_ONE) edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -837,11 +898,11 @@
             ],
             "properties": {
                 "addr": {
-                    "description": "IP address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - V4, DNS, V6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - V4, DNS, V6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -853,32 +914,32 @@
             ],
             "properties": {
                 "addrs": {
-                    "description": "IP address(es). Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP address(es). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddr"
                     }
                 },
                 "group_refs": {
-                    "description": "UUID of IP address group(s). It is a reference to an object of type IpAddrGroup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of IP address group(s). It is a reference to an object of type IpAddrGroup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "match_criteria": {
-                    "description": "Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "prefixes": {
-                    "description": "IP address prefix(es). Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP address prefix(es). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddrPrefix"
                     }
                 },
                 "ranges": {
-                    "description": "IP address range(s). Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP address range(s). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddrRange"
@@ -894,11 +955,11 @@
             ],
             "properties": {
                 "ip_addr": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "mask": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -912,11 +973,11 @@
             ],
             "properties": {
                 "begin": {
-                    "description": "Starting IP address of the range. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Starting IP address of the range. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "end": {
-                    "description": "Ending IP address of the range. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Ending IP address of the range. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 }
             }
@@ -928,11 +989,11 @@
             ],
             "properties": {
                 "match_operation": {
-                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "reputation_types": {
-                    "description": "IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -947,11 +1008,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "value": {
-                    "description": "Value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Value. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -960,69 +1021,69 @@
             "type": "object",
             "properties": {
                 "bot_detection_result": {
-                    "description": "Configure the bot classification result. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Configure the bot classification result. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/BotDetectionMatch"
                 },
                 "client_ip": {
-                    "description": "Configure client ip addresses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure client ip addresses. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddrMatch"
                 },
                 "cookie": {
-                    "description": "Configure HTTP cookie(s). Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure HTTP cookie(s). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/CookieMatch"
                 },
                 "geo_matches": {
-                    "description": "Configure the geo information. Field introduced in 21.1.1. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Configure the geo information. Field introduced in 21.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/GeoMatch"
                     }
                 },
                 "hdrs": {
-                    "description": "Configure HTTP header(s). All configured headers must match. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure HTTP header(s). All configured headers must match. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/HdrMatch"
                     }
                 },
                 "host_hdr": {
-                    "description": "Configure the host header. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure the host header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HostHdrMatch"
                 },
                 "ip_reputation_type": {
-                    "description": "Configure IP reputation. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Configure IP reputation. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IPReputationTypeMatch"
                 },
                 "method": {
-                    "description": "Configure HTTP methods. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure HTTP methods. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/MethodMatch"
                 },
                 "path": {
-                    "description": "Configure request paths. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure request paths. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/PathMatch"
                 },
                 "protocol": {
-                    "description": "Configure the type of HTTP protocol. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure the type of HTTP protocol. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ProtocolMatch"
                 },
                 "query": {
-                    "description": "Configure request query. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure request query. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/QueryMatch"
                 },
                 "source_ip": {
-                    "description": "Configure source ip addresses. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Configure source ip addresses. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddrMatch"
                 },
                 "tls_fingerprint_match": {
-                    "description": "Configure the TLS fingerprint. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Configure the TLS fingerprint. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TlsFingerprintMatch"
                 },
                 "version": {
-                    "description": "Configure versions of the HTTP protocol. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure versions of the HTTP protocol. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HTTPVersionMatch"
                 },
                 "vs_port": {
-                    "description": "Configure virtual service ports. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure virtual service ports. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/PortMatch"
                 }
             }
@@ -1034,11 +1095,11 @@
             ],
             "properties": {
                 "match_criteria": {
-                    "description": "Criterion to use for HTTP method matching the method in the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Criterion to use for HTTP method matching the method in the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "methods": {
-                    "description": "Configure HTTP method(s). Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Minimum of 1 items required. Maximum of 16 items allowed. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS), Basic edition(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS), Enterprise with Cloud Services edition.",
+                    "description": "Configure HTTP method(s). Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Minimum of 1 items required. Maximum of 16 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS), Basic (Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1053,29 +1114,29 @@
             ],
             "properties": {
                 "match_case": {
-                    "description": "Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "INSENSITIVE"
                 },
                 "match_criteria": {
-                    "description": "Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL), Basic edition(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL), Enterprise with Cloud Services edition.",
+                    "description": "Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL), Basic (Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition.",
                     "type": "string",
                     "default": "CONTAINS"
                 },
                 "match_decoded_string": {
-                    "description": "Match against the decoded URI path. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match against the decoded URI path. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "match_str": {
-                    "description": "String values. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "String values. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "string_group_refs": {
-                    "description": "UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1090,11 +1151,11 @@
             ],
             "properties": {
                 "match_criteria": {
-                    "description": "Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ports": {
-                    "description": "Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "integer"
@@ -1111,11 +1172,11 @@
             ],
             "properties": {
                 "match_criteria": {
-                    "description": "Criterion to use for protocol matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Criterion to use for protocol matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "protocols": {
-                    "description": "HTTP or HTTPS protocol. Enum options - HTTP, HTTPS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "HTTP or HTTPS protocol. Enum options - HTTP, HTTPS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1127,28 +1188,28 @@
             ],
             "properties": {
                 "match_case": {
-                    "description": "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "INSENSITIVE"
                 },
                 "match_criteria": {
-                    "description": "Criterion to use for matching the query in HTTP request URI. Enum options - QUERY_MATCH_CONTAINS, QUERY_MATCH_DOES_NOT_CONTAIN, QUERY_MATCH_EXISTS, QUERY_MATCH_DOES_NOT_EXIST, QUERY_MATCH_BEGINS_WITH, QUERY_MATCH_DOES_NOT_BEGIN_WITH, QUERY_MATCH_ENDS_WITH, QUERY_MATCH_DOES_NOT_END_WITH, QUERY_MATCH_EQUALS, QUERY_MATCH_DOES_NOT_EQUAL, QUERY_MATCH_REGEX_MATCH, QUERY_MATCH_REGEX_DOES_NOT_MATCH. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Criterion to use for matching the query in HTTP request URI. Enum options - QUERY_MATCH_CONTAINS, QUERY_MATCH_DOES_NOT_CONTAIN, QUERY_MATCH_EXISTS, QUERY_MATCH_DOES_NOT_EXIST, QUERY_MATCH_BEGINS_WITH, QUERY_MATCH_DOES_NOT_BEGIN_WITH, QUERY_MATCH_ENDS_WITH, QUERY_MATCH_DOES_NOT_END_WITH, QUERY_MATCH_EQUALS, QUERY_MATCH_DOES_NOT_EQUAL, QUERY_MATCH_REGEX_MATCH, QUERY_MATCH_REGEX_DOES_NOT_MATCH. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "match_decoded_string": {
-                    "description": "Match against the decoded URI query. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match against the decoded URI query. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "match_str": {
-                    "description": "String value(s). Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "String value(s). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "string_group_refs": {
-                    "description": "UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1163,11 +1224,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1182,18 +1243,18 @@
             ],
             "properties": {
                 "fingerprints": {
-                    "description": "The list of fingerprints. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The list of fingerprints. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "match_operation": {
-                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "string_group_refs": {
-                    "description": "UUIDs of the string groups. It is a reference to an object of type StringGroup. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "UUIDs of the string groups. It is a reference to an object of type StringGroup. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1208,30 +1269,30 @@
             ],
             "properties": {
                 "provider_ref": {
-                    "description": "The external provide for the rules. It is a reference to an object of type WafApplicationSignatureProvider. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The external provide for the rules. It is a reference to an object of type WafApplicationSignatureProvider. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "resolved_rules": {
-                    "description": "A resolved version of the active application specific rules together with the overrides. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "A resolved version of the active application specific rules together with the overrides. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafRule"
                     }
                 },
                 "rule_overrides": {
-                    "description": "Override attributes of application signature rules. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Override attributes of application signature rules. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafRuleOverrides"
                     }
                 },
                 "ruleset_version": {
-                    "description": "The version in use of the provided ruleset. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The version in use of the provided ruleset. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string"
                 },
                 "selected_applications": {
-                    "description": "List of applications for which we use the rules from the WafApplicationSignatureProvider. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "List of applications for which we use the rules from the WafApplicationSignatureProvider. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1243,27 +1304,27 @@
             "type": "object",
             "properties": {
                 "client_subnet": {
-                    "description": "Client IP Subnet to exclude for WAF rules. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Client IP Subnet to exclude for WAF rules. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddrPrefix"
                 },
                 "description": {
-                    "description": "Free-text comment about this exclusion. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Free-text comment about this exclusion. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "match_element": {
-                    "description": "The match_element can be 'ARGS xxx', 'ARGS_GET xxx', 'ARGS_POST xxx', 'ARGS_NAMES xxx', 'FILES xxx', 'QUERY_STRING', 'REQUEST_BASENAME', 'REQUEST_BODY', 'REQUEST_URI', 'REQUEST_URI_RAW', 'REQUEST_COOKIES xxx', 'REQUEST_COOKIES_NAMES xxx', 'REQUEST_HEADERS xxx', 'REQUEST_HEADERS_NAMES xxx', 'RESPONSE_HEADERS xxx' or XML xxx. These match_elements in the HTTP Transaction (if present) will be excluded when executing WAF Rules. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The match_element can be 'ARGS xxx', 'ARGS_GET xxx', 'ARGS_POST xxx', 'ARGS_NAMES xxx', 'FILES xxx', 'QUERY_STRING', 'REQUEST_BASENAME', 'REQUEST_BODY', 'REQUEST_URI', 'REQUEST_URI_RAW', 'REQUEST_COOKIES xxx', 'REQUEST_COOKIES_NAMES xxx', 'REQUEST_HEADERS xxx', 'REQUEST_HEADERS_NAMES xxx', 'RESPONSE_HEADERS xxx' or XML xxx. These match_elements in the HTTP Transaction (if present) will be excluded when executing WAF Rules. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "match_element_criteria": {
-                    "description": "Criteria for match_element matching. Field introduced in 18.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Criteria for match_element matching. Field introduced in 18.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/WafExclusionType"
                 },
                 "uri_match_criteria": {
-                    "description": "Criteria for URI matching. Field introduced in 17.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Criteria for URI matching. Field introduced in 17.2.8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/WafExclusionType"
                 },
                 "uri_path": {
-                    "description": "URI Path to exclude for WAF rules. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "URI Path to exclude for WAF rules. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1276,12 +1337,12 @@
             ],
             "properties": {
                 "match_case": {
-                    "description": "Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. Field introduced in 17.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. Field introduced in 17.2.8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SENSITIVE"
                 },
                 "match_op": {
-                    "description": "String Operation to use for matching the Exclusion. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Field introduced in 17.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "String Operation to use for matching the Exclusion. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Field introduced in 17.2.8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "EQUALS"
                 }
@@ -1301,133 +1362,133 @@
                     "type": "string"
                 },
                 "allow_mode_delegation": {
-                    "description": "Allow Rules to overwrite the policy mode. This must be set if the policy mode is set to enforcement. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Allow Rules to overwrite the policy mode. This must be set if the policy mode is set to enforcement. Field introduced in 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "allowlist": {
-                    "description": "A set of rules which describe conditions under which the request will bypass the WAF. This will be processed in the request header phase before any other WAF related code. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "A set of rules which describe conditions under which the request will bypass the WAF. This will be processed in the request header phase before any other WAF related code. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/WafPolicyAllowlist"
                 },
                 "application_signatures": {
-                    "description": "Application Specific Signatures. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Application Specific Signatures. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/WafApplicationSignatures"
                 },
                 "auto_update_crs": {
-                    "description": "If this flag is set, the system will try to keep the CRS version used in this policy up-to-date. If a newer CRS object is available on this controller, the system will issue the CRS upgrade process for this WAF Policy. It will not update polices if the current CRS version is CRS-VERSION-NOT-APPLICABLE. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "If this flag is set, the system will try to keep the CRS version used in this policy up-to-date. If a newer CRS object is available on this controller, the system will issue the CRS upgrade process for this WAF Policy. It will not update polices if the current CRS version is CRS-VERSION-NOT-APPLICABLE. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "bypass_static_extensions": {
-                    "description": "Enable the functionality to bypass WAF for static file extensions. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Enable the functionality to bypass WAF for static file extensions. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "confidence_override": {
-                    "description": "Configure thresholds for confidence labels. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure thresholds for confidence labels. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/AppLearningConfidenceOverride"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "created_by": {
-                    "description": "Creator name. Field introduced in 17.2.4. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Creator name. Field introduced in 17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "crs_overrides": {
-                    "description": "Override attributes for CRS rules. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Override attributes for CRS rules. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafRuleGroupOverrides"
                     }
                 },
                 "description": {
-                    "description": " Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "enable_app_learning": {
-                    "description": "Enable Application Learning for this WAF policy. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable Application Learning for this WAF policy. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "enable_auto_rule_updates": {
-                    "description": "Enable Application Learning based rule updates on the WAF Profile. Rules will be programmed in dedicated WAF learning group. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable Application Learning based rule updates on the WAF Profile. Rules will be programmed in dedicated WAF learning group. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "enable_regex_learning": {
-                    "description": "Enable dynamic regex generation for positive security model rules. This is an experimental feature and shouldn't be used in production. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable dynamic regex generation for positive security model rules. This is an experimental feature and shouldn't be used in production. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "failure_mode": {
-                    "description": "WAF Policy failure mode. This can be 'Open' or 'Closed'. Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "WAF Policy failure mode. This can be 'Open' or 'Closed'. Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED. Field introduced in 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "WAF_FAILURE_MODE_OPEN"
                 },
                 "geo_db_ref": {
-                    "description": "Geo Location Mapping Database used by this WafPolicy. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Geo Location Mapping Database used by this WafPolicy. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "learning_params": {
-                    "description": "Parameters for tuning Application learning. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Parameters for tuning Application learning. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/AppLearningParams"
                 },
                 "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RoleFilterMatchLabel"
                     }
                 },
                 "min_confidence": {
-                    "description": "Minimum confidence label required for auto rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Minimum confidence label required for auto rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "CONFIDENCE_VERY_HIGH"
                 },
                 "mode": {
-                    "description": "WAF Policy mode. This can be detection or enforcement. It can be overwritten by rules if allow_mode_delegation is set. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "WAF Policy mode. This can be detection or enforcement. It can be overwritten by rules if allow_mode_delegation is set. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "WAF_MODE_DETECTION_ONLY"
                 },
                 "name": {
-                    "description": " Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "paranoia_level": {
-                    "description": "WAF Ruleset paranoia  mode. This is used to select Rules based on the paranoia-level tag. Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "WAF Ruleset paranoia  mode. This is used to select Rules based on the paranoia-level tag. Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "WAF_PARANOIA_LEVEL_LOW"
                 },
                 "positive_security_model": {
-                    "description": "The Positive Security Model. This is used to describe how the request or parts of the request should look like. It is executed in the Request Body Phase of Avi WAF. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The Positive Security Model. This is used to describe how the request or parts of the request should look like. It is executed in the Request Body Phase of Avi WAF. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/WafPositiveSecurityModel"
                 },
                 "post_crs_groups": {
-                    "description": "WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be enforced after the CRS groups. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be enforced after the CRS groups. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafRuleGroup"
                     }
                 },
                 "pre_crs_groups": {
-                    "description": "WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be  enforced before the CRS groups. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be  enforced before the CRS groups. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafRuleGroup"
                     }
                 },
                 "required_data_files": {
-                    "description": "The data files and types referred in this WAF policy. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The data files and types referred in this WAF policy. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafPolicyRequiredDataFile"
                     }
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "updated_crs_rules_in_detection_mode": {
-                    "description": "While updating CRS, the system will make sure that new rules are added in DETECTION mode. It only has an effect if the Policy is in ENFORCEMENT mode. In this case, the update will set new rules into DETECTION mode by adding crs_overrides for the new rules. If this flag is not set or if the policy mode is DETECTION, rules will be added without new crs_overrides. This option is used for the auto_update_crs workflow as well as for the UI based CRS update workflow. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "While updating CRS, the system will make sure that new rules are added in DETECTION mode. It only has an effect if the Policy is in ENFORCEMENT mode. In this case, the update will set new rules into DETECTION mode by adding crs_overrides for the new rules. If this flag is not set or if the policy mode is DETECTION, rules will be added without new crs_overrides. This option is used for the auto_update_crs workflow as well as for the UI based CRS update workflow. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
@@ -1437,15 +1498,15 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "waf_crs_ref": {
-                    "description": "WAF core ruleset used for the CRS part of this Policy. It is a reference to an object of type WafCRS. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "WAF core ruleset used for the CRS part of this Policy. It is a reference to an object of type WafCRS. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "waf_profile_ref": {
-                    "description": "WAF Profile for WAF policy. It is a reference to an object of type WafProfile. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "WAF Profile for WAF policy. It is a reference to an object of type WafProfile. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1476,7 +1537,7 @@
             "type": "object",
             "properties": {
                 "rules": {
-                    "description": "Rules to bypass WAF. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Rules to bypass WAF. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafPolicyAllowlistRule"
@@ -1493,36 +1554,36 @@
             ],
             "properties": {
                 "actions": {
-                    "description": "Actions to be performed upon successful matching. Enum options - WAF_POLICY_ALLOWLIST_ACTION_BYPASS, WAF_POLICY_ALLOWLIST_ACTION_DETECTION_MODE, WAF_POLICY_ALLOWLIST_ACTION_CONTINUE. Field introduced in 20.1.3. Minimum of 1 items required. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Actions to be performed upon successful matching. Enum options - WAF_POLICY_ALLOWLIST_ACTION_BYPASS, WAF_POLICY_ALLOWLIST_ACTION_DETECTION_MODE, WAF_POLICY_ALLOWLIST_ACTION_CONTINUE. Field introduced in 20.1.3. Minimum of 1 items required. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "description": {
-                    "description": "Description of this rule. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Description of this rule. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "enable": {
-                    "description": "Enable or deactivate the rule. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Enable or deactivate the rule. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "index": {
-                    "description": "Rules are processed in order of this index field. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Rules are processed in order of this index field. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "match": {
-                    "description": "Match criteria describing requests to which this rule should be applied. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match criteria describing requests to which this rule should be applied. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/MatchTarget"
                 },
                 "name": {
-                    "description": "A name describing the rule in a short form. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "A name describing the rule in a short form. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "sampling_percent": {
-                    "description": "Percentage of traffic that is sampled. Allowed values are 0-100. Field introduced in 20.1.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Percentage of traffic that is sampled. Allowed values are 0-100. Field introduced in 20.1.3. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
                     "format": "uint32"
@@ -1536,11 +1597,11 @@
             ],
             "properties": {
                 "commit": {
-                    "description": "Set this to true if you want to update the policy. The default value of false will only analyse what would be changed if this flag would be set to true. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Set this to true if you want to update the policy. The default value of false will only analyse what would be changed if this flag would be set to true. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "waf_crs_ref": {
-                    "description": "CRS object to which this policy should be updated to. To disable CRS for this policy, the special CRS object CRS-VERSION-NOT-APPLICABLE can be used. It is a reference to an object of type WafCRS. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "CRS object to which this policy should be updated to. To disable CRS for this policy, the special CRS object CRS-VERSION-NOT-APPLICABLE can be used. It is a reference to an object of type WafCRS. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1549,11 +1610,11 @@
             "type": "object",
             "properties": {
                 "name": {
-                    "description": "Name of the data file. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Name of the data file. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": "Type of the data file. Enum options - WAF_DATAFILE_PM_FROM_FILE, WAF_DATAFILE_DTD, WAF_DATAFILE_XSD, WAF_DATAFILE_IP_MATCH_FROM_FILE. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Type of the data file. Enum options - WAF_DATAFILE_PM_FROM_FILE, WAF_DATAFILE_DTD, WAF_DATAFILE_XSD, WAF_DATAFILE_IP_MATCH_FROM_FILE. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1562,7 +1623,7 @@
             "type": "object",
             "properties": {
                 "group_refs": {
-                    "description": "These groups should be used to separate different levels of concern. The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts. It is a reference to an object of type WafPolicyPSMGroup. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "These groups should be used to separate different levels of concern. The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts. It is a reference to an object of type WafPolicyPSMGroup. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1579,53 +1640,53 @@
             ],
             "properties": {
                 "enable": {
-                    "description": "Enable or disable WAF Rule Group. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable or disable WAF Rule Group. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "exclude_list": {
-                    "description": "Exclude list for the WAF rule. The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria. If there are multiple excludelist entries, it will be 'logical or' of them. Field introduced in 17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Exclude list for the WAF rule. The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria. If there are multiple excludelist entries, it will be 'logical or' of them. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafExcludeListEntry"
                     }
                 },
                 "index": {
-                    "description": " Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "is_sensitive": {
-                    "description": "The rule field is sensitive and will not be displayed. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The rule field is sensitive and will not be displayed. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "mode": {
-                    "description": "WAF Rule mode. This can be detection or enforcement. If this is not set, the Policy mode is used. This only takes effect if the policy allows delegation. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "WAF Rule mode. This can be detection or enforcement. If this is not set, the Policy mode is used. This only takes effect if the policy allows delegation. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "User-friendly optional name for a rule. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "User-friendly optional name for a rule. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "paranoia_level": {
-                    "description": "WAF rule paranoia level. This field is informative, like rule_id and tags, it is generated by the system from the rule text. This field is filled for CRS rules. Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "WAF rule paranoia level. This field is informative, like rule_id and tags, it is generated by the system from the rule text. This field is filled for CRS rules. Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "phase": {
-                    "description": "The execution phase where this rule will be executed. Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY, WAF_PHASE_LOGGING. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The execution phase where this rule will be executed. Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY, WAF_PHASE_LOGGING. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string"
                 },
                 "rule": {
-                    "description": "Rule as per Modsec language. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rule as per Modsec language. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "rule_id": {
-                    "description": "Identifier (id) for a rule per Modsec language. All SecRule and SecAction directives require an id. It is extracted from the id action in a Modsec rule. Rules within a single WAF Policy are required to have unique rule_ids. Field introduced in 17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Identifier (id) for a rule per Modsec language. All SecRule and SecAction directives require an id. It is extracted from the id action in a Modsec rule. Rules within a single WAF Policy are required to have unique rule_ids. Field introduced in 17.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tags": {
-                    "description": "Tags for WAF rule as per Modsec language. They are extracted from the tag action in a ModSec rule. Field introduced in 18.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Tags for WAF rule as per Modsec language. They are extracted from the tag action in a ModSec rule. Field introduced in 18.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1642,28 +1703,28 @@
             ],
             "properties": {
                 "enable": {
-                    "description": "Enable or disable WAF Rule Group. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable or disable WAF Rule Group. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "exclude_list": {
-                    "description": "Exclude list for the WAF rule group. The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria. If there are multiple excludelist entries, it will be 'logical or' of them. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Exclude list for the WAF rule group. The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria. If there are multiple excludelist entries, it will be 'logical or' of them. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafExcludeListEntry"
                     }
                 },
                 "index": {
-                    "description": " Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "name": {
-                    "description": " Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "rules": {
-                    "description": "Rules as per Modsec language. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rules as per Modsec language. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafRule"
@@ -1678,26 +1739,26 @@
             ],
             "properties": {
                 "enable": {
-                    "description": "Override the enable flag for this group. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Override the enable flag for this group. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_list": {
-                    "description": "Replace the exclude list for this group. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Replace the exclude list for this group. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafExcludeListEntry"
                     }
                 },
                 "mode": {
-                    "description": "Override the waf mode for this group.. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Override the waf mode for this group.. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "The name of the group where attributes or rules are overridden. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The name of the group where attributes or rules are overridden. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "rule_overrides": {
-                    "description": "Rule specific overrides. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Rule specific overrides. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafRuleOverrides"
@@ -1712,22 +1773,22 @@
             ],
             "properties": {
                 "enable": {
-                    "description": "Override the enable flag for this rule. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Override the enable flag for this rule. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_list": {
-                    "description": "Replace the exclude list for this rule. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Replace the exclude list for this rule. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafExcludeListEntry"
                     }
                 },
                 "mode": {
-                    "description": "Override the waf mode for this rule. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Override the waf mode for this rule. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "rule_id": {
-                    "description": "The rule_id of the rule where attributes are overridden. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The rule_id of the rule where attributes are overridden. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

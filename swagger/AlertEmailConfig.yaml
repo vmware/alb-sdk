@@ -5,21 +5,25 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi AlertEmailConfig Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi AlertEmailConfig object api
         ```
         - configure alertemailconfig <key>
         - show alertemailconfig <key>
         - test alerttestemail <key>
         ```
 
-
+        API permission: PERMISSION_ALERTEMAILCONFIG
+tags:
+  - name: AlertEmailConfig
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -28,6 +32,10 @@ basePath: /api
 paths:
     /alertemailconfig:
         get:
+            tags:
+                - AlertEmailConfig
+            description: /alertemailconfig
+            operationId: GET /alertemailconfig
             consumes:
                 -   application/json
             produces:
@@ -87,13 +95,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertEmailConfigApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - AlertEmailConfig
+            description: /alertemailconfig
+            operationId: POST /alertemailconfig
             consumes:
                 -   application/json
             produces:
@@ -128,14 +140,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertEmailConfig"
-                401:
+                "401":
                     description: log in failed
     /alertemailconfig/{uuid}:
         get:
+            tags:
+                - AlertEmailConfig
+            description: /alertemailconfig/{uuid}
+            operationId: GET /alertemailconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -192,13 +208,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertEmailConfig"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - AlertEmailConfig
+            description: /alertemailconfig/{uuid}
+            operationId: PUT /alertemailconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -243,13 +265,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertEmailConfig"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - AlertEmailConfig
+            description: /alertemailconfig/{uuid}
+            operationId: PATCH /alertemailconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -294,13 +322,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertEmailConfig"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - AlertEmailConfig
+            description: /alertemailconfig/{uuid}
+            operationId: DELETE /alertemailconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -339,15 +373,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
     /alertemailconfig/{uuid}/testemail:
         post:
+            tags:
+                - AlertEmailConfig
+            description: /alertemailconfig/{uuid}/testemail
+            operationId: POST /alertemailconfig/{uuid}/testemail
             consumes:
                 -   application/json
             produces:
@@ -387,12 +425,14 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
 
 definitions:
     AlertEmailConfig:
@@ -406,29 +446,29 @@ definitions:
                 readOnly: True
                 type: string
             cc_emails:
-                description: "Alerts are copied to the comma separated list of  email recipients. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Alerts are copied to the comma separated list of  email recipients. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             description:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "A user-friendly name of the email notification service. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "A user-friendly name of the email notification service. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             to_emails:
-                description: "Alerts are sent to the comma separated list of  email recipients. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Alerts are sent to the comma separated list of  email recipients. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     AlertEmailConfigApiResponse:
         type: object
@@ -452,19 +492,19 @@ definitions:
             -   text
         properties:
             subject:
-                description: "The Subject line of the originating email from  Avi Controller. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The Subject line of the originating email from  Avi Controller. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             text:
-                description: "The email context. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The email context. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ConfigPbAttributes:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: uint32

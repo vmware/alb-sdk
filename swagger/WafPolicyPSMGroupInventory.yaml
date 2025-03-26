@@ -5,19 +5,23 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi WafPolicyPSMGroupInventory Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi WafPolicyPSMGroupInventory object api
         ```
         - show wafpolicypsmgroupinventory <key>
         ```
 
-
+        API permission: PERMISSION_WAFPOLICYPSMGROUP
+tags:
+  - name: WafPolicyPSMGroupInventory
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /wafpolicypsmgroup-inventory:
         get:
+            tags:
+                - WafPolicyPSMGroupInventory
+            description: /wafpolicypsmgroup-inventory
+            operationId: GET /wafpolicypsmgroup-inventory
             consumes:
                 -   application/json
             produces:
@@ -85,55 +93,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicyPSMGroupInventoryApiResponse"
-                401:
-                    description: log in failed
-        post:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: WafPolicyPSMGroupInventory object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/WafPolicyPSMGroupInventory"
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/WafPolicyPSMGroupInventory"
-                401:
+                "401":
                     description: log in failed
     /wafpolicypsmgroup-inventory/{uuid}:
         get:
+            tags:
+                - WafPolicyPSMGroupInventory
+            description: /wafpolicypsmgroup-inventory/{uuid}
+            operationId: GET /wafpolicypsmgroup-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -190,159 +161,14 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicyPSMGroupInventory"
-                401:
+                "401":
                     description: log in failed
-        put:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: WafPolicyPSMGroupInventory object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/WafPolicyPSMGroupInventory"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/WafPolicyPSMGroupInventory"
-                401:
-                    description: log in failed
-        patch:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: WafPolicyPSMGroupInventory object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/WafPolicyPSMGroupInventory"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/WafPolicyPSMGroupInventory"
-                401:
-                    description: log in failed
-        delete:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                204:
-                    description: object deleted
-                    schema:
-                        type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -350,26 +176,26 @@ definitions:
         type: object
         properties:
             ref:
-                description: "UUID of the Virtual Service. It is a reference to an object of type VirtualService. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "UUID of the Virtual Service. It is a reference to an object of type VirtualService. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     WafPolicyPSMGroupConfig:
         type: object
         properties:
             enable:
-                description: "Enable or disable this WAF rule group. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable or disable this WAF rule group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             name:
-                description: "User defined name of the group. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "User defined name of the group. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: "Tenant that Waf Policy PSM Group belongs to. It is a reference to an object of type Tenant. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Tenant that Waf Policy PSM Group belongs to. It is a reference to an object of type Tenant. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             url:
-                description: "URL of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "URL of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             uuid:
-                description: "UUID of Waf Policy PSM Group. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "UUID of Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     WafPolicyPSMGroupConfigApiResponse:
         type: object
@@ -394,17 +220,17 @@ definitions:
                 readOnly: True
                 type: string
             config:
-                description: "Configuration summary of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Configuration summary of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WafPolicyPSMGroupConfig'
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "UUID of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             virtualservices_refs:
-                description: "Virtual services references. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Virtual services references. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VsRefs'

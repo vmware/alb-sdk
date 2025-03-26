@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi VIMgrHostRuntime Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show vinfra host <key>\n- vinfra makehostaccessible  <key>\n- show vinfra quarantinedhost\n```\n"
+        "description": "Avi VIMgrHostRuntime object api\n```\n- show vinfra host <key>\n- vinfra makehostaccessible  <key>\n- show vinfra quarantinedhost\n```\n\nAPI permission: PERMISSION_CLOUD\n"
     },
+    "tags": [
+        {
+            "name": "VIMgrHostRuntime"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/vimgrhostruntime": {
             "get": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime",
+                "operationId": "GET /vimgrhostruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime",
+                "operationId": "POST /vimgrhostruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -273,6 +291,11 @@
         },
         "/vimgrhostruntime/{uuid}": {
             "get": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime/{uuid}",
+                "operationId": "GET /vimgrhostruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -363,10 +386,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime/{uuid}",
+                "operationId": "PUT /vimgrhostruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -440,10 +471,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime/{uuid}",
+                "operationId": "PATCH /vimgrhostruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -517,10 +556,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime/{uuid}",
+                "operationId": "DELETE /vimgrhostruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -584,13 +631,18 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/vimgrhostruntime/{uuid}/accessible": {
             "post": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime/{uuid}/accessible",
+                "operationId": "POST /vimgrhostruntime/{uuid}/accessible",
                 "consumes": [
                     "application/json"
                 ],
@@ -660,12 +712,20 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/vimgrhostruntime/getquarantinedhosts": {
             "post": {
+                "tags": [
+                    "VIMgrHostRuntime"
+                ],
+                "description": "/vimgrhostruntime/getquarantinedhosts",
+                "operationId": "POST /vimgrhostruntime/getquarantinedhosts",
                 "consumes": [
                     "application/json"
                 ],
@@ -735,27 +795,27 @@
             "type": "object",
             "properties": {
                 "chassis": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "device": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "mgmtaddr": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "port": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "switch_info_type": {
-                    "description": " Enum options - CDP, LLDP, NOT_APPLICABLE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - CDP, LLDP, NOT_APPLICABLE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "system_name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -764,7 +824,7 @@
             "type": "object",
             "properties": {
                 "cloud_uuid": {
-                    "description": "Vcenter cloud id. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Vcenter cloud id. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -783,116 +843,116 @@
                     "type": "string"
                 },
                 "cloud_ref": {
-                    "description": " It is a reference to an object of type Cloud. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cluster_name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cluster_uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cntlr_accessible": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "connection_state": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "connected"
                 },
                 "cpu_hz": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "maintenance_mode": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "managed_object_id": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "mem": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "mgmt_portgroup": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "network_uuids": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "num_cpu_cores": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_cpu_packages": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_cpu_threads": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "pnics": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/CdpLldpInfo"
                     }
                 },
                 "powerstate": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "quarantine_start_ts": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "quarantined": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "quarantined_periods": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "int32"
                 },
                 "se_fail_cnt": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "se_success_cnt": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -901,11 +961,11 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vm_refs": {
-                    "description": " It is a reference to an object of type VIMgrVMRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type VIMgrVMRuntime. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"

@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi CloudConnectorUser Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure cloudconnectoruser <key>\n- show cloudconnectoruser <key>\n- test cloudconnectoruser <key>\n```\n"
+        "description": "Avi CloudConnectorUser object api\n```\n- configure cloudconnectoruser <key>\n- show cloudconnectoruser <key>\n- test cloudconnectoruser <key>\n```\n\nAPI permission: PERMISSION_USER_CREDENTIAL\n"
     },
+    "tags": [
+        {
+            "name": "CloudConnectorUser"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/cloudconnectoruser": {
             "get": {
+                "tags": [
+                    "CloudConnectorUser"
+                ],
+                "description": "/cloudconnectoruser",
+                "operationId": "GET /cloudconnectoruser",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "CloudConnectorUser"
+                ],
+                "description": "/cloudconnectoruser",
+                "operationId": "POST /cloudconnectoruser",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/cloudconnectoruser/{uuid}": {
             "get": {
+                "tags": [
+                    "CloudConnectorUser"
+                ],
+                "description": "/cloudconnectoruser/{uuid}",
+                "operationId": "GET /cloudconnectoruser/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -274,10 +297,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "CloudConnectorUser"
+                ],
+                "description": "/cloudconnectoruser/{uuid}",
+                "operationId": "PUT /cloudconnectoruser/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -351,10 +382,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "CloudConnectorUser"
+                ],
+                "description": "/cloudconnectoruser/{uuid}",
+                "operationId": "PATCH /cloudconnectoruser/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -428,10 +467,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "CloudConnectorUser"
+                ],
+                "description": "/cloudconnectoruser/{uuid}",
+                "operationId": "DELETE /cloudconnectoruser/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -495,13 +542,18 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/cloudconnectoruser/{uuid}/test": {
             "post": {
+                "tags": [
+                    "CloudConnectorUser"
+                ],
+                "description": "/cloudconnectoruser/{uuid}/test",
+                "operationId": "POST /cloudconnectoruser/{uuid}/test",
                 "consumes": [
                     "application/json"
                 ],
@@ -568,6 +620,9 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             }
@@ -578,15 +633,15 @@
             "type": "object",
             "properties": {
                 "application_id": {
-                    "description": "Application Id created for Avi Controller. Required for application id based authentication only. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Application Id created for Avi Controller. Required for application id based authentication only. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "authentication_token": {
-                    "description": "Authentication token created for the Avi Controller application. Required for application id based authentication only. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Authentication token created for the Avi Controller application. Required for application id based authentication only. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_id": {
-                    "description": "Tenant ID for the subscription. Required for application id based authentication only. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Tenant ID for the subscription. Required for application id based authentication only. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -595,15 +650,15 @@
             "type": "object",
             "properties": {
                 "password": {
-                    "description": "Password for Azure subscription. Required only if username is provided. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Password for Azure subscription. Required only if username is provided. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_name": {
-                    "description": "Tenant or the active directory associated with the subscription. Required for user name password authentication. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Tenant or the active directory associated with the subscription. Required for user name password authentication. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "username": {
-                    "description": "Username for Azure subscription. Required only for username password based authentication. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Username for Azure subscription. Required only for username password based authentication. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -620,51 +675,51 @@
                     "type": "string"
                 },
                 "azure_serviceprincipal": {
-                    "description": " Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": " Field introduced in 17.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/AzureServicePrincipalCredentials"
                 },
                 "azure_userpass": {
-                    "description": " Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": " Field introduced in 17.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/AzureUserPassCredentials"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "gcp_credentials": {
-                    "description": "Credentials for Google Cloud Platform. Field introduced in 18.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Credentials for Google Cloud Platform. Field introduced in 18.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/GCPCredentials"
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "nsxt_credentials": {
-                    "description": "Credentials to talk to NSX-T manager. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Credentials to talk to NSX-T manager. Field introduced in 20.1.1. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/NsxtCredentials"
                 },
                 "oci_credentials": {
-                    "description": "Credentials for Oracle Cloud Infrastructure. Field introduced in 18.2.1,18.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Credentials for Oracle Cloud Infrastructure. Field deprecated in 31.1.1. Field introduced in 18.2.1,18.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/OCICredentials"
                 },
                 "password": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "private_key": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "public_key": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tencent_credentials": {
-                    "description": "Credentials for Tencent Cloud. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Credentials for Tencent Cloud. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TencentCredentials"
                 },
                 "url": {
@@ -673,11 +728,11 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_credentials": {
-                    "description": "Credentials to talk to VCenter. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Credentials to talk to VCenter. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/VCenterCredentials"
                 }
             }
@@ -708,7 +763,7 @@
             "type": "object",
             "properties": {
                 "host": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -717,7 +772,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -728,7 +783,7 @@
             "type": "object",
             "properties": {
                 "service_account_keyfile_data": {
-                    "description": "Google Cloud Platform Service Account keyfile data in JSON format. Field introduced in 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Google Cloud Platform Service Account keyfile data in JSON format. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -737,11 +792,11 @@
             "type": "object",
             "properties": {
                 "password": {
-                    "description": "Password to talk to Nsx-t manager. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Password to talk to Nsx-t manager. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "username": {
-                    "description": "Username to talk to Nsx-t manager. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Username to talk to Nsx-t manager. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -750,19 +805,19 @@
             "type": "object",
             "properties": {
                 "fingerprint": {
-                    "description": "API key with respect to the Public Key. Field introduced in 18.2.1,18.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "API key with respect to the Public Key. Field introduced in 18.2.1,18.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "key_content": {
-                    "description": "Private Key file (pem file) content. Field introduced in 18.2.1,18.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Private Key file (pem file) content. Field introduced in 18.2.1,18.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "pass_phrase": {
-                    "description": "Pass phrase for the key. Field introduced in 18.2.1,18.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Pass phrase for the key. Field introduced in 18.2.1,18.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "user": {
-                    "description": "Oracle Cloud Id for the User. Field introduced in 18.2.1,18.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Oracle Cloud Id for the User. Field introduced in 18.2.1,18.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -775,11 +830,11 @@
             ],
             "properties": {
                 "secret_id": {
-                    "description": "Tencent secret ID. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Tencent secret ID. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "secret_key": {
-                    "description": "Tencent secret key. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Tencent secret key. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -788,11 +843,11 @@
             "type": "object",
             "properties": {
                 "password": {
-                    "description": "Password to talk to VCenter server. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Password to talk to VCenter server. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "username": {
-                    "description": "Username to talk to VCenter server. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Username to talk to VCenter server. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

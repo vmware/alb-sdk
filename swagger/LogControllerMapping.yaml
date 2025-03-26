@@ -5,19 +5,23 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi LogControllerMapping Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi LogControllerMapping object api
         ```
         - show logcontrollermapping
         ```
 
-
+        API permission: PERMISSION_CONTROLLER
+tags:
+  - name: LogControllerMapping
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /logcontroller:
         get:
+            tags:
+                - LogControllerMapping
+            description: /logcontroller
+            operationId: GET /logcontroller
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/LogControllerMappingApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - LogControllerMapping
+            description: /logcontroller
+            operationId: POST /logcontroller
             consumes:
                 -   application/json
             produces:
@@ -126,14 +138,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/LogControllerMapping"
-                401:
+                "401":
                     description: log in failed
     /logcontroller/{uuid}:
         get:
+            tags:
+                - LogControllerMapping
+            description: /logcontroller/{uuid}
+            operationId: GET /logcontroller/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -190,13 +206,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/LogControllerMapping"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - LogControllerMapping
+            description: /logcontroller/{uuid}
+            operationId: PUT /logcontroller/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +263,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/LogControllerMapping"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - LogControllerMapping
+            description: /logcontroller/{uuid}
+            operationId: PATCH /logcontroller/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +320,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/LogControllerMapping"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - LogControllerMapping
+            description: /logcontroller/{uuid}
+            operationId: DELETE /logcontroller/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -337,12 +371,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -356,37 +390,37 @@ definitions:
                 readOnly: True
                 type: string
             controller_ip:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             metrics_mgr_port:
-                description: " Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "METRICS_MGR_PORT_0"
             node_uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             prev_controller_ip:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             prev_metrics_mgr_port:
-                description: " Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "METRICS_MGR_PORT_0"
             static_mapping:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vs_uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     LogControllerMappingApiResponse:
         type: object

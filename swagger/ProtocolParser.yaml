@@ -5,20 +5,24 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi ProtocolParser Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi ProtocolParser object api
         ```
         - configure protocolparser <key>
         - show protocolparser <key>
         ```
 
-
+        API permission: PERMISSION_PROTOCOLPARSER
+tags:
+  - name: ProtocolParser
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /protocolparser:
         get:
+            tags:
+                - ProtocolParser
+            description: /protocolparser
+            operationId: GET /protocolparser
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ProtocolParserApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ProtocolParser
+            description: /protocolparser
+            operationId: POST /protocolparser
             consumes:
                 -   application/json
             produces:
@@ -127,14 +139,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ProtocolParser"
-                401:
+                "401":
                     description: log in failed
     /protocolparser/{uuid}:
         get:
+            tags:
+                - ProtocolParser
+            description: /protocolparser/{uuid}
+            operationId: GET /protocolparser/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -191,13 +207,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ProtocolParser"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - ProtocolParser
+            description: /protocolparser/{uuid}
+            operationId: PUT /protocolparser/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +264,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ProtocolParser"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - ProtocolParser
+            description: /protocolparser/{uuid}
+            operationId: PATCH /protocolparser/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +321,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ProtocolParser"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - ProtocolParser
+            description: /protocolparser/{uuid}
+            operationId: DELETE /protocolparser/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -338,12 +372,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -351,7 +385,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: uint32
@@ -361,10 +395,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Value. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ProtocolParser:
         type: object
@@ -377,31 +411,31 @@ definitions:
                 readOnly: True
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             description:
-                description: "Description of the protocol parser. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Description of the protocol parser. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             markers:
-                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
             name:
-                description: "Name of the protocol parser. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the protocol parser. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             parser_code:
-                description: "Command script provided inline. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Command script provided inline. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: "Tenant UUID of the protocol parser. It is a reference to an object of type Tenant. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Tenant UUID of the protocol parser. It is a reference to an object of type Tenant. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the protocol parser. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID of the protocol parser. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ProtocolParserApiResponse:
         type: object
@@ -424,10 +458,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string

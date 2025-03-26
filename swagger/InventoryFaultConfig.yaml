@@ -5,20 +5,24 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi InventoryFaultConfig Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi InventoryFaultConfig object api
         ```
         - configure inventoryfaultconfig
         - show inventoryfaultconfig
         ```
 
-
+        API permission: PERMISSION_CONTROLLER
+tags:
+  - name: InventoryFaultConfig
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /inventoryfaultconfig:
         get:
+            tags:
+                - InventoryFaultConfig
+            description: /inventoryfaultconfig
+            operationId: GET /inventoryfaultconfig
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/InventoryFaultConfigApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - InventoryFaultConfig
+            description: /inventoryfaultconfig
+            operationId: POST /inventoryfaultconfig
             consumes:
                 -   application/json
             produces:
@@ -127,14 +139,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/InventoryFaultConfig"
-                401:
+                "401":
                     description: log in failed
     /inventoryfaultconfig/{uuid}:
         get:
+            tags:
+                - InventoryFaultConfig
+            description: /inventoryfaultconfig/{uuid}
+            operationId: GET /inventoryfaultconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -191,13 +207,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/InventoryFaultConfig"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - InventoryFaultConfig
+            description: /inventoryfaultconfig/{uuid}
+            operationId: PUT /inventoryfaultconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +264,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/InventoryFaultConfig"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - InventoryFaultConfig
+            description: /inventoryfaultconfig/{uuid}
+            operationId: PATCH /inventoryfaultconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +321,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/InventoryFaultConfig"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - InventoryFaultConfig
+            description: /inventoryfaultconfig/{uuid}
+            operationId: DELETE /inventoryfaultconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -338,12 +372,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -351,7 +385,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: uint32
@@ -359,27 +393,27 @@ definitions:
         type: object
         properties:
             backup_scheduler_faults:
-                description: "Enable backup scheduler faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable backup scheduler faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             cluster_faults:
-                description: "Enable cluster faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable cluster faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             deprecated_api_version_faults:
-                description: "Enable deprecated api version faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable deprecated api version faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             license_faults:
-                description: "Enable license faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable license faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             migration_faults:
-                description: "Enable DB migration faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable DB migration faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             sslprofile_faults:
-                description: "Enable SSL Profile faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable SSL Profile faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
     InventoryFaultConfig:
@@ -390,29 +424,29 @@ definitions:
                 readOnly: True
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             controller_faults:
-                description: "Configure controller faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Configure controller faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ControllerFaults'
             name:
-                description: "Name. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Name. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             serviceengine_faults:
-                description: "Configure serviceengine faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Configure serviceengine faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServiceengineFaults'
             tenant_ref:
-                description: "Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID Auto generated. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "UUID Auto generated. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             virtualservice_faults:
-                description: "Configure VirtualService faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Configure VirtualService faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VirtualserviceFaults'
     InventoryFaultConfigApiResponse:
         type: object
@@ -433,33 +467,33 @@ definitions:
         type: object
         properties:
             debug_faults:
-                description: "Enable debug faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable debug faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
     VirtualserviceFaults:
         type: object
         properties:
             debug_faults:
-                description: "Enable debug faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable debug faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             pool_server_faults:
-                description: "Enable pool server faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable pool server faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             scaleout_faults:
-                description: "Enable VS scaleout and scalein faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable VS scaleout and scalein faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             shared_vip_faults:
-                description: "Enable shared vip faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable shared vip faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             ssl_cert_expiry_faults:
-                description: "Enable SSL certificate expiry faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable SSL certificate expiry faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             ssl_cert_status_faults:
-                description: "Enable SSL certificate status faults. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable SSL certificate status faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True

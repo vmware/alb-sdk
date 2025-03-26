@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi CloudRuntime Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show cloudruntime\n```\n"
+        "description": "Avi CloudRuntime object api\n```\n- show cloudruntime\n```\n\nAPI permission: PERMISSION_CLOUD\n"
     },
+    "tags": [
+        {
+            "name": "CloudRuntime"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/cloudruntime": {
             "get": {
+                "tags": [
+                    "CloudRuntime"
+                ],
+                "description": "/cloudruntime",
+                "operationId": "GET /cloudruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "CloudRuntime"
+                ],
+                "description": "/cloudruntime",
+                "operationId": "POST /cloudruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/cloudruntime/{uuid}": {
             "get": {
+                "tags": [
+                    "CloudRuntime"
+                ],
+                "description": "/cloudruntime/{uuid}",
+                "operationId": "GET /cloudruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -274,10 +297,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "CloudRuntime"
+                ],
+                "description": "/cloudruntime/{uuid}",
+                "operationId": "PUT /cloudruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -351,10 +382,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "CloudRuntime"
+                ],
+                "description": "/cloudruntime/{uuid}",
+                "operationId": "PATCH /cloudruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -428,10 +467,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "CloudRuntime"
+                ],
+                "description": "/cloudruntime/{uuid}",
+                "operationId": "DELETE /cloudruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -495,7 +542,7 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
@@ -514,15 +561,15 @@
                     "type": "string"
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "network_sync_complete": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -531,7 +578,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

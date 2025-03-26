@@ -5,20 +5,24 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi MicroServiceGroup Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi MicroServiceGroup object api
         ```
         - configure microservicegroup <key>
         - show microservicegroup <key>
         ```
 
-
+        API permission: PERMISSION_MICROSERVICEGROUP
+tags:
+  - name: MicroServiceGroup
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /microservicegroup:
         get:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup
+            operationId: GET /microservicegroup
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup
+            operationId: POST /microservicegroup
             consumes:
                 -   application/json
             produces:
@@ -127,14 +139,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-                401:
+                "401":
                     description: log in failed
     /microservicegroup/{uuid}:
         get:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}
+            operationId: GET /microservicegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -191,13 +207,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}
+            operationId: PUT /microservicegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +264,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}
+            operationId: PATCH /microservicegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +321,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}
+            operationId: DELETE /microservicegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -338,16 +372,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
     /microservicegroup/{uuid}/runtime/detail/:
         get:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}/runtime/detail/
+            operationId: GET /microservicegroup/{uuid}/runtime/detail/
             consumes:
                 -   application/json
             produces:
@@ -381,18 +419,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
 definitions:
     ConfigPbAttributes:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: uint32
@@ -406,31 +446,31 @@ definitions:
                 readOnly: True
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             created_by:
-                description: "Creator name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Creator name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             description:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "Name of the MicroService group. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the MicroService group. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             service_refs:
-                description: "Configure MicroService(es). It is a reference to an object of type MicroService. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configure MicroService(es). It is a reference to an object of type MicroService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the MicroService group. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID of the MicroService group. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     MicroServiceGroupApiResponse:
         type: object

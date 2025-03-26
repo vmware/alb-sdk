@@ -5,19 +5,23 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi SecureChannelAvailableLocalIPs Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi SecureChannelAvailableLocalIPs object api
         ```
         - show securechannelavailablelocalips <key>
         ```
 
-
+        API permission: PERMISSION_CONTROLLER
+tags:
+  - name: SecureChannelAvailableLocalIPs
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /securechannelavailablelocalips:
         get:
+            tags:
+                - SecureChannelAvailableLocalIPs
+            description: /securechannelavailablelocalips
+            operationId: GET /securechannelavailablelocalips
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecureChannelAvailableLocalIPsApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - SecureChannelAvailableLocalIPs
+            description: /securechannelavailablelocalips
+            operationId: POST /securechannelavailablelocalips
             consumes:
                 -   application/json
             produces:
@@ -126,14 +138,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecureChannelAvailableLocalIPs"
-                401:
+                "401":
                     description: log in failed
     /securechannelavailablelocalips/{uuid}:
         get:
+            tags:
+                - SecureChannelAvailableLocalIPs
+            description: /securechannelavailablelocalips/{uuid}
+            operationId: GET /securechannelavailablelocalips/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -190,13 +206,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecureChannelAvailableLocalIPs"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - SecureChannelAvailableLocalIPs
+            description: /securechannelavailablelocalips/{uuid}
+            operationId: PUT /securechannelavailablelocalips/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +263,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecureChannelAvailableLocalIPs"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - SecureChannelAvailableLocalIPs
+            description: /securechannelavailablelocalips/{uuid}
+            operationId: PATCH /securechannelavailablelocalips/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +320,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecureChannelAvailableLocalIPs"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - SecureChannelAvailableLocalIPs
+            description: /securechannelavailablelocalips/{uuid}
+            operationId: DELETE /securechannelavailablelocalips/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -337,12 +371,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -356,20 +390,20 @@ definitions:
                 readOnly: True
                 type: string
             end:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             free_ips:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: integer
                 format: uint32
             name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             start:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             url:
@@ -377,7 +411,7 @@ definitions:
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     SecureChannelAvailableLocalIPsApiResponse:
         type: object

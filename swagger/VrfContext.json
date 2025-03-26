@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi VrfContext Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure vrfcontext <key>\n- show vrfcontext <key>\n```\n"
+        "description": "Avi VrfContext object api\n```\n- configure vrfcontext <key>\n- show vrfcontext <key>\n```\n\nAPI permission: PERMISSION_VRFCONTEXT\n"
     },
+    "tags": [
+        {
+            "name": "VrfContext"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/vrfcontext": {
             "get": {
+                "tags": [
+                    "VrfContext"
+                ],
+                "description": "/vrfcontext",
+                "operationId": "GET /vrfcontext",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VrfContext"
+                ],
+                "description": "/vrfcontext",
+                "operationId": "POST /vrfcontext",
                 "consumes": [
                     "application/json"
                 ],
@@ -273,6 +291,11 @@
         },
         "/vrfcontext/{uuid}": {
             "get": {
+                "tags": [
+                    "VrfContext"
+                ],
+                "description": "/vrfcontext/{uuid}",
+                "operationId": "GET /vrfcontext/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -363,10 +386,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "VrfContext"
+                ],
+                "description": "/vrfcontext/{uuid}",
+                "operationId": "PUT /vrfcontext/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -440,10 +471,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "VrfContext"
+                ],
+                "description": "/vrfcontext/{uuid}",
+                "operationId": "PATCH /vrfcontext/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -517,10 +556,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "VrfContext"
+                ],
+                "description": "/vrfcontext/{uuid}",
+                "operationId": "DELETE /vrfcontext/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -584,7 +631,7 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
@@ -595,19 +642,19 @@
             "type": "object",
             "properties": {
                 "minrx": {
-                    "description": "Default required minimum receive interval (in ms) used in BFD. Allowed values are 500-4000000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Default required minimum receive interval (in ms) used in BFD. Allowed values are 500-4000000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
                     "format": "uint32"
                 },
                 "mintx": {
-                    "description": "Default desired minimum transmit interval (in ms) used in BFD. Allowed values are 500-4000000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Default desired minimum transmit interval (in ms) used in BFD. Allowed values are 500-4000000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
                     "format": "uint32"
                 },
                 "multi": {
-                    "description": "Default detection multiplier used in BFD. Allowed values are 3-255. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Default detection multiplier used in BFD. Allowed values are 3-255. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3,
                     "format": "uint32"
@@ -618,91 +665,91 @@
             "type": "object",
             "properties": {
                 "advertise_snat_ip": {
-                    "description": "Advertise SNAT IP to this Peer. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Advertise SNAT IP to this Peer. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "advertise_vip": {
-                    "description": "Advertise VIP to this Peer. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Advertise VIP to this Peer. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "advertisement_interval": {
-                    "description": "Advertisement interval for this Peer. Allowed values are 1-60. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Advertisement interval for this Peer. Allowed values are 1-60. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
                     "format": "uint32"
                 },
                 "bfd": {
-                    "description": "Enable Bi-Directional Forward Detection. Only async mode supported. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable Bi-Directional Forward Detection. Only async mode supported. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "connect_timer": {
-                    "description": "Connect timer for this Peer. Allowed values are 1-120. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Connect timer for this Peer. Allowed values are 1-120. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "uint32"
                 },
                 "ebgp_multihop": {
-                    "description": "TTL for multihop ebgp Peer. Allowed values are 0-255. Field introduced in 17.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "TTL for multihop ebgp Peer. Allowed values are 0-255. Field introduced in 17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "hold_time": {
-                    "description": "Hold time for this Peer. Allowed values are 3-7200. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Hold time for this Peer. Allowed values are 3-7200. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "ibgp_local_as_override": {
-                    "description": "Override the profile level local_as with the peer level remote_as. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Override the profile level local_as with the peer level remote_as. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "keepalive_interval": {
-                    "description": "Keepalive interval for this Peer. Allowed values are 0-3600. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Keepalive interval for this Peer. Allowed values are 0-3600. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "label": {
-                    "description": "Label used to enable learning and/or advertisement of routes to this peer. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Label used to enable learning and/or advertisement of routes to this peer. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "local_as": {
-                    "description": "Local AS to use for this ebgp peer. If specified, this will override the local AS configured at the VRF level. Allowed values are 1-4294967295. Field introduced in 17.1.6,17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Local AS to use for this ebgp peer. If specified, this will override the local AS configured at the VRF level. Allowed values are 1-4294967295. Field introduced in 17.1.6,17.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "md5_secret": {
-                    "description": "Peer Autonomous System Md5 Digest Secret Key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Peer Autonomous System Md5 Digest Secret Key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "network_ref": {
-                    "description": "Network providing reachability for Peer. It is a reference to an object of type Network. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Network providing reachability for Peer. It is a reference to an object of type Network. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "peer_ip": {
-                    "description": "IP Address of the BGP Peer. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP Address of the BGP Peer. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "peer_ip6": {
-                    "description": "IPv6 Address of the BGP Peer. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IPv6 Address of the BGP Peer. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "remote_as": {
-                    "description": "Peer Autonomous System ID. Allowed values are 1-4294967295. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Peer Autonomous System ID. Allowed values are 1-4294967295. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "shutdown": {
-                    "description": "Shutdown the BGP peer. Field introduced in 17.2.4. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Shutdown the BGP peer. Field introduced in 17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "subnet": {
-                    "description": "Subnet providing reachability for Peer. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Subnet providing reachability for Peer. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddrPrefix"
                 },
                 "subnet6": {
-                    "description": "IPv6 subnet providing reachability for Peer. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IPv6 subnet providing reachability for Peer. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddrPrefix"
                 }
             }
@@ -715,72 +762,72 @@
             ],
             "properties": {
                 "community": {
-                    "description": "Community string either in aa nn format where aa, nn is within [1,65535] or local-AS|no-advertise|no-export|internet. Field introduced in 17.1.2. Maximum of 16 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Community string either in aa nn format where aa, nn is within [1,65535] or local-AS|no-advertise|no-export|internet. Field introduced in 17.1.2. Maximum of 16 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "hold_time": {
-                    "description": "Hold time for Peers. Allowed values are 3-7200. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Hold time for Peers. Allowed values are 3-7200. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 180,
                     "format": "uint32"
                 },
                 "ibgp": {
-                    "description": "BGP peer type. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "BGP peer type. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "ip_communities": {
-                    "description": "Communities per IP address range. Field introduced in 17.1.3. Maximum of 1024 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Communities per IP address range. Field introduced in 17.1.3. Maximum of 1024 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpCommunity"
                     }
                 },
                 "keepalive_interval": {
-                    "description": "Keepalive interval for Peers. Allowed values are 0-3600. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Keepalive interval for Peers. Allowed values are 0-3600. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
                     "format": "uint32"
                 },
                 "local_as": {
-                    "description": "Local Autonomous System ID. Allowed values are 1-4294967295. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Local Autonomous System ID. Allowed values are 1-4294967295. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "local_preference": {
-                    "description": "LOCAL_PREF to be used for routes advertised. Applicable only over iBGP. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "LOCAL_PREF to be used for routes advertised. Applicable only over iBGP. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "num_as_path_prepend": {
-                    "description": "Number of times the local AS should be prepended additionally. Allowed values are 1-10. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Number of times the local AS should be prepended additionally. Allowed values are 1-10. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "peers": {
-                    "description": "BGP Peers. Maximum of 128 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "BGP Peers. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/BgpPeer"
                     }
                 },
                 "routing_options": {
-                    "description": "Learning and advertising options for BGP peers. Field introduced in 20.1.1. Maximum of 128 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Learning and advertising options for BGP peers. Field introduced in 20.1.1. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/BgpRoutingOptions"
                     }
                 },
                 "send_community": {
-                    "description": "Send community attribute to all peers. Field introduced in 17.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Send community attribute to all peers. Field introduced in 17.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "shutdown": {
-                    "description": "Shutdown the bgp. Field introduced in 17.2.4. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Shutdown the bgp. Field introduced in 17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 }
             }
@@ -792,27 +839,27 @@
             ],
             "properties": {
                 "advertise_default_route": {
-                    "description": "Advertise self as default router to the BGP peer. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Advertise self as default router to the BGP peer. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "advertise_learned_routes": {
-                    "description": "Advertise the learned routes to the BGP peer. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Advertise the learned routes to the BGP peer. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "label": {
-                    "description": "Features are applied to peers matching this label. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Features are applied to peers matching this label. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "learn_only_default_route": {
-                    "description": "Learn only default route from the BGP peer. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Learn only default route from the BGP peer. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "learn_routes": {
-                    "description": "Learn routes from the BGP peer. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Learn routes from the BGP peer. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "max_learn_limit": {
-                    "description": "Maximum number of routes that can be learned from a BGP peer. Allowed values are 50-250. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of routes that can be learned from a BGP peer. Allowed values are 50-250. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
                     "format": "uint32"
@@ -823,7 +870,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -837,7 +884,7 @@
             ],
             "properties": {
                 "flag": {
-                    "description": " Enum options - DEBUG_VRF_BGP, DEBUG_VRF_QUAGGA, DEBUG_VRF_ALL, DEBUG_VRF_NONE. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - DEBUG_VRF_BGP, DEBUG_VRF_QUAGGA, DEBUG_VRF_ALL, DEBUG_VRF_NONE. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -846,19 +893,19 @@
             "type": "object",
             "properties": {
                 "command_buffer_interval": {
-                    "description": "Vrf config command buffer process interval. Allowed values are 1-4. Field introduced in 17.2.13,18.1.5,18.2.1. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Vrf config command buffer process interval. Allowed values are 1-4. Field introduced in 17.2.13,18.1.5,18.2.1. Unit is SECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
                     "format": "uint32"
                 },
                 "command_buffer_size": {
-                    "description": "Vrf config command buffer size. Allowed values are 1-32768. Field introduced in 17.2.13,18.1.5,18.2.1. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Vrf config command buffer size. Allowed values are 1-32768. Field introduced in 17.2.13,18.1.5,18.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 32768,
                     "format": "uint32"
                 },
                 "flags": {
-                    "description": " Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/DebugVrf"
@@ -873,29 +920,29 @@
             ],
             "properties": {
                 "gateway_ip": {
-                    "description": "IP address of next hop gateway to be monitored. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP address of next hop gateway to be monitored. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "gateway_monitor_fail_threshold": {
-                    "description": "The number of consecutive failed gateway health checks before a gateway is marked down. Allowed values are 3-50. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The number of consecutive failed gateway health checks before a gateway is marked down. Allowed values are 3-50. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "uint32"
                 },
                 "gateway_monitor_interval": {
-                    "description": "The interval between two ping requests sent by the gateway monitor in milliseconds. If a value is not specified, requests are sent every second. Allowed values are 100-60000. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The interval between two ping requests sent by the gateway monitor in milliseconds. If a value is not specified, requests are sent every second. Allowed values are 100-60000. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
                     "format": "uint32"
                 },
                 "gateway_monitor_success_threshold": {
-                    "description": "The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 15,
                     "format": "uint32"
                 },
                 "subnet": {
-                    "description": "Subnet providing reachability for Multi-hop Gateway. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Subnet providing reachability for Multi-hop Gateway. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddrPrefix"
                 }
             }
@@ -904,23 +951,23 @@
             "type": "object",
             "properties": {
                 "disable_gateway_monitor": {
-                    "description": "Disable the gateway monitor for default gateway. They are monitored by default. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Disable the gateway monitor for default gateway. They are monitored by default. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "gateway_monitor_failure_threshold": {
-                    "description": "The number of consecutive failed gateway health checks before a gateway is marked down. Allowed values are 3-50. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The number of consecutive failed gateway health checks before a gateway is marked down. Allowed values are 3-50. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "uint32"
                 },
                 "gateway_monitor_interval": {
-                    "description": "The interval between two ping requests sent by the gateway monitor in milliseconds. If a value is not specified, requests are sent every second. Allowed values are 100-60000. Field introduced in 17.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The interval between two ping requests sent by the gateway monitor in milliseconds. If a value is not specified, requests are sent every second. Allowed values are 100-60000. Field introduced in 17.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
                     "format": "uint32"
                 },
                 "gateway_monitor_success_threshold": {
-                    "description": "The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 15,
                     "format": "uint32"
@@ -935,11 +982,11 @@
             ],
             "properties": {
                 "addr": {
-                    "description": "IP address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - V4, DNS, V6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - V4, DNS, V6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -952,11 +999,11 @@
             ],
             "properties": {
                 "ip_addr": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "mask": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -969,18 +1016,18 @@
             ],
             "properties": {
                 "community": {
-                    "description": "Community string either in aa nn format where aa, nn is within [1,65535] or local-AS|no-advertise|no-export|internet. Field introduced in 17.1.3. Minimum of 1 items required. Maximum of 16 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Community string either in aa nn format where aa, nn is within [1,65535] or local-AS|no-advertise|no-export|internet. Field introduced in 17.1.3. Minimum of 1 items required. Maximum of 16 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "ip_begin": {
-                    "description": "Beginning of IP address range. Field introduced in 17.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Beginning of IP address range. Field introduced in 17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "ip_end": {
-                    "description": "End of IP address range. Optional if ip_begin is the only IP address in specified IP range. Field introduced in 17.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "End of IP address range. Optional if ip_begin is the only IP address in specified IP range. Field introduced in 17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 }
             }
@@ -992,11 +1039,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "value": {
-                    "description": "Value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Value. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1008,11 +1055,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1029,30 +1076,30 @@
             ],
             "properties": {
                 "disable_gateway_monitor": {
-                    "description": "Disable the gateway monitor for default gateway. They are monitored by default. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Disable the gateway monitor for default gateway. They are monitored by default. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "if_name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "labels": {
-                    "description": "Labels associated with this route. Field introduced in 20.1.1. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Labels associated with this route. Field introduced in 20.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/KeyValue"
                     }
                 },
                 "next_hop": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "prefix": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddrPrefix"
                 },
                 "route_id": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1069,76 +1116,76 @@
                     "type": "string"
                 },
                 "attrs": {
-                    "description": "Key/value vrfcontext attributes. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Key/value vrfcontext attributes. Field introduced in 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/KeyValue"
                     }
                 },
                 "bfd_profile": {
-                    "description": "BFD configuration profile. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "BFD configuration profile. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/BfdProfile"
                 },
                 "bgp_profile": {
-                    "description": "Bgp Local and Peer Info. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Bgp Local and Peer Info. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/BgpProfile"
                 },
                 "cloud_ref": {
-                    "description": " It is a reference to an object of type Cloud. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "debugvrfcontext": {
-                    "description": "Configure debug flags for VRF. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure debug flags for VRF. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DebugVrfContext"
                 },
                 "description": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "gateway_mon": {
-                    "description": "Configure ping based heartbeat check for gateway in service engines of vrf. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Configure ping based heartbeat check for gateway in service engines of vrf. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/GatewayMonitor"
                     }
                 },
                 "internal_gateway_monitor": {
-                    "description": "Configure ping based heartbeat check for all default gateways in service engines of vrf. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure ping based heartbeat check for all default gateways in service engines of vrf. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/InternalGatewayMonitor"
                 },
                 "lldp_enable": {
-                    "description": "Enable LLDP. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- true), Basic edition(Allowed values- true), Enterprise with Cloud Services edition.",
+                    "description": "Enable LLDP. Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- true), Basic (Allowed values- true) edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RoleFilterMatchLabel"
                     }
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "static_routes": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/StaticRoute"
                     }
                 },
                 "system_default": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -1147,7 +1194,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

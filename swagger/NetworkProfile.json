@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi NetworkProfile Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure networkprofile <key>\n- show networkprofile <key>\n```\n"
+        "description": "Avi NetworkProfile object api\n```\n- configure networkprofile <key>\n- show networkprofile <key>\n```\n\nAPI permission: PERMISSION_NETWORKPROFILE\n"
     },
+    "tags": [
+        {
+            "name": "NetworkProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/networkprofile": {
             "get": {
+                "tags": [
+                    "NetworkProfile"
+                ],
+                "description": "/networkprofile",
+                "operationId": "GET /networkprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "NetworkProfile"
+                ],
+                "description": "/networkprofile",
+                "operationId": "POST /networkprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/networkprofile/{uuid}": {
             "get": {
+                "tags": [
+                    "NetworkProfile"
+                ],
+                "description": "/networkprofile/{uuid}",
+                "operationId": "GET /networkprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -274,10 +297,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "NetworkProfile"
+                ],
+                "description": "/networkprofile/{uuid}",
+                "operationId": "PUT /networkprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -351,10 +382,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "NetworkProfile"
+                ],
+                "description": "/networkprofile/{uuid}",
+                "operationId": "PATCH /networkprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -428,10 +467,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "NetworkProfile"
+                ],
+                "description": "/networkprofile/{uuid}",
+                "operationId": "DELETE /networkprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -495,13 +542,18 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/networkprofile/{uuid}/runtime/internal/": {
             "get": {
+                "tags": [
+                    "NetworkProfile"
+                ],
+                "description": "/networkprofile/{uuid}/runtime/internal/",
+                "operationId": "GET /networkprofile/{uuid}/runtime/internal/",
                 "consumes": [
                     "application/json"
                 ],
@@ -559,6 +611,9 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             }
@@ -569,7 +624,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -584,12 +639,12 @@
             ],
             "properties": {
                 "dsr_encap_type": {
-                    "description": "Encapsulation type to use when DSR is L3. Enum options - ENCAP_IPINIP, ENCAP_GRE. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Encapsulation type to use when DSR is L3. Enum options - ENCAP_IPINIP, ENCAP_GRE. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "ENCAP_IPINIP"
                 },
                 "dsr_type": {
-                    "description": "DSR type L2/L3. Enum options - DSR_TYPE_L2, DSR_TYPE_L3. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "DSR type L2/L3. Enum options - DSR_TYPE_L2, DSR_TYPE_L3. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "DSR_TYPE_L3"
                 }
@@ -602,11 +657,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "value": {
-                    "description": "Value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Value. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -624,34 +679,34 @@
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "connection_mirror": {
-                    "description": "When enabled, Avi mirrors all TCP fastpath connections to standby. Applicable only in Legacy HA Mode. Field introduced in 18.1.3,18.2.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic, Enterprise with Cloud Services edition.",
+                    "description": "When enabled, Avi mirrors all TCP fastpath connections to standby. Applicable only in Legacy HA Mode. Field introduced in 18.1.3,18.2.1. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false) edition.",
                     "type": "boolean"
                 },
                 "description": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RoleFilterMatchLabel"
                     }
                 },
                 "name": {
-                    "description": "The name of the network profile. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The name of the network profile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "profile": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/NetworkProfileUnion"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -660,7 +715,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the network profile. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the network profile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -694,32 +749,32 @@
             ],
             "properties": {
                 "sctp_fast_path_profile": {
-                    "description": "Configure SCTP FastPath network profile. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Configure SCTP FastPath network profile. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SCTPFastPathProfile"
                 },
                 "sctp_proxy_profile": {
-                    "description": "Configure SCTP Proxy network profile. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Configure SCTP Proxy network profile. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SCTPProxyProfile"
                 },
                 "tcp_fast_path_profile": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TCPFastPathProfile"
                 },
                 "tcp_proxy_profile": {
-                    "description": " Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TCPProxyProfile"
                 },
                 "type": {
-                    "description": "Configure one of either proxy or fast path profiles. Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY, PROTOCOL_TYPE_SCTP_PROXY, PROTOCOL_TYPE_SCTP_FAST_PATH. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- PROTOCOL_TYPE_TCP_FAST_PATH,PROTOCOL_TYPE_UDP_FAST_PATH), Basic edition(Allowed values- PROTOCOL_TYPE_TCP_PROXY,PROTOCOL_TYPE_TCP_FAST_PATH,PROTOCOL_TYPE_UDP_FAST_PATH), Enterprise with Cloud Services edition.",
+                    "description": "Configure one of either proxy or fast path profiles. Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY, PROTOCOL_TYPE_SCTP_PROXY, PROTOCOL_TYPE_SCTP_FAST_PATH. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- PROTOCOL_TYPE_TCP_FAST_PATH,PROTOCOL_TYPE_UDP_FAST_PATH), Basic (Allowed values- PROTOCOL_TYPE_TCP_PROXY,PROTOCOL_TYPE_TCP_FAST_PATH,PROTOCOL_TYPE_UDP_FAST_PATH) edition.",
                     "type": "string",
                     "default": "PROTOCOL_TYPE_TCP_PROXY"
                 },
                 "udp_fast_path_profile": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/UDPFastPathProfile"
                 },
                 "udp_proxy_profile": {
-                    "description": "Configure UDP Proxy network profile. Field introduced in 17.2.8, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Configure UDP Proxy network profile. Field introduced in 17.2.8, 18.1.3, 18.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/UDPProxyProfile"
                 }
             }
@@ -731,11 +786,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -747,11 +802,11 @@
             "type": "object",
             "properties": {
                 "enable_init_chunk_protection": {
-                    "description": "When enabled, Avi will complete the 4-way handshake with the client before forwarding any packets to the server.  This will protect the server from INIT chunks flood and half open connections. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "When enabled, Avi will complete the 4-way handshake with the client before forwarding any packets to the server.  This will protect the server from INIT chunks flood and half open connections. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "idle_timeout": {
-                    "description": "SCTP autoclose timeout. 0 means autoclose deactivated. Allowed values are 0-247483647. Field introduced in 22.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SCTP autoclose timeout. 0 means autoclose deactivated. Allowed values are 0-247483647. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -761,48 +816,48 @@
             "type": "object",
             "properties": {
                 "cookie_expiration_timeout": {
-                    "description": "SCTP cookie expiration timeout. Allowed values are 60-3600. Field introduced in 22.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SCTP cookie expiration timeout. Allowed values are 60-3600. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
                     "format": "int32"
                 },
                 "heartbeat_interval": {
-                    "description": "SCTP heartbeat interval. Allowed values are 30-247483647. Field introduced in 22.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SCTP heartbeat interval. Allowed values are 30-247483647. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
                     "format": "int32"
                 },
                 "idle_timeout": {
-                    "description": "SCTP autoclose timeout. 0 means autoclose deactivated. Allowed values are 0-247483647. Field introduced in 22.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SCTP autoclose timeout. 0 means autoclose deactivated. Allowed values are 0-247483647. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "max_retransmissions_association": {
-                    "description": "SCTP maximum retransmissions for association. Allowed values are 1-247483647. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SCTP maximum retransmissions for association. Allowed values are 1-247483647. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "int32"
                 },
                 "max_retransmissions_init_chunks": {
-                    "description": "SCTP maximum retransmissions for INIT chunks. Allowed values are 1-247483647. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SCTP maximum retransmissions for INIT chunks. Allowed values are 1-247483647. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
                     "format": "int32"
                 },
                 "number_of_streams": {
-                    "description": "Number of incoming SCTP Streams. Allowed values are 1-100. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Number of incoming SCTP Streams. Allowed values are 1-100. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "int32"
                 },
                 "receive_window": {
-                    "description": "SCTP send and receive buffer size. Allowed values are 2-65536. Field introduced in 22.1.3. Unit is KB. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SCTP send and receive buffer size. Allowed values are 2-65536. Field introduced in 22.1.3. Unit is KB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1024,
                     "format": "int32"
                 },
                 "reset_timeout": {
-                    "description": "SCTP reset/shutdown guard timeout. 0 means 5 times RTO max. Allowed values are 0-247483647. Field introduced in 22.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SCTP reset/shutdown guard timeout. 0 means 5 times RTO max. Allowed values are 0-247483647. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -812,130 +867,157 @@
             "type": "object",
             "properties": {
                 "dsr_profile": {
-                    "description": "DSR profile information. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "DSR profile information. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DsrProfile"
                 },
                 "enable_syn_protection": {
-                    "description": "When enabled, Avi will complete the 3-way handshake with the client before forwarding any packets to the server.  This will protect the server from SYN flood and half open SYN connections. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.",
+                    "description": "When enabled, Avi will complete the 3-way handshake with the client before forwarding any packets to the server.  This will protect the server from SYN flood and half open SYN connections. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
                     "type": "boolean"
                 },
                 "session_idle_timeout": {
-                    "description": "The amount of time (in sec) for which a connection needs to be idle before it is eligible to be deleted. Allowed values are 5-14400. Special values are 0 - infinite. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The amount of time (in sec) for which a connection needs to be idle before it is eligible to be deleted. Allowed values are 5-14400. Special values are 0 - infinite. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300,
                     "format": "int32"
+                },
+                "tcp_fastpath_options": {
+                    "description": "TCP_Fast_PATH Network profile options. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/TCPOptions"
+                }
+            }
+        },
+        "TCPOptions": {
+            "type": "object",
+            "properties": {
+                "strip_sack": {
+                    "description": "Remove the SACK TCP option from header. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 }
             }
         },
         "TCPProxyProfile": {
             "type": "object",
             "properties": {
+                "ack_on_push": {
+                    "description": "Controls whether we immediately send ack when incoming packet has PUSH flag marked. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
                 "aggressive_congestion_avoidance": {
-                    "description": "Controls the our congestion window to send, normally it's 1 mss, If this option is turned on, we use 10 msses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Controls the our congestion window to send, normally it's 1 mss, If this option is turned on, we use 10 msses. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "auto_window_growth": {
-                    "description": "Controls whether the windows are static or supports autogrowth. Maximum that it can grow to is limited to 4MB. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Controls whether the windows are static or supports autogrowth. Maximum that it can grow to is limited to 4MB. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "automatic": {
-                    "description": "Dynamically pick the relevant parameters for connections. Allowed in Enterprise edition with any value, Basic edition(Allowed values- true), Essentials, Enterprise with Cloud Services edition.",
+                    "description": "Dynamically pick the relevant parameters for connections. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- true) edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "cc_algo": {
-                    "description": "Controls the congestion control algorithm we use. Enum options - CC_ALGO_NEW_RENO, CC_ALGO_CUBIC, CC_ALGO_HTCP. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Controls the congestion control algorithm we use. Enum options - CC_ALGO_NEW_RENO, CC_ALGO_CUBIC, CC_ALGO_HTCP. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "CC_ALGO_NEW_RENO"
                 },
                 "congestion_recovery_scaling_factor": {
-                    "description": "Congestion window scaling factor after recovery. Allowed values are 0-8. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Congestion window scaling factor after recovery. Allowed values are 0-8. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
                     "format": "uint32"
                 },
+                "delayed_ack_mode": {
+                    "description": "Determines if delayed ack mode is enabledTrue  Unconditionally use delayed ackFalse  Don't use delayed ack. Field introduced in 30.2.3, 31.1.2, 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "delayed_ack_timer_delay": {
+                    "description": "The time in milliseconds for delayed timer to kick in. Allowed values are 0-500. Special values are 0 - Disable Delayed Ack. Field introduced in 31.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 100,
+                    "format": "uint32"
+                },
                 "idle_connection_timeout": {
-                    "description": "The duration for keepalive probes or session idle timeout. Max value is 14400 seconds, min is 5.  Set to 0 to allow infinite idle time. Allowed values are 5-14400. Special values are 0 - infinite. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The duration for keepalive probes or session idle timeout. Max value is 14400 seconds, min is 5.  Set to 0 to allow infinite idle time. Allowed values are 5-14400. Special values are 0 - infinite. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 600,
                     "format": "int32"
                 },
                 "idle_connection_type": {
-                    "description": "Controls the behavior of idle connections. Enum options - KEEP_ALIVE, CLOSE_IDLE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Controls the behavior of idle connections. Enum options - KEEP_ALIVE, CLOSE_IDLE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "KEEP_ALIVE"
                 },
                 "ignore_time_wait": {
-                    "description": "A new SYN is accepted from the same 4-tuple even if there is already a connection in TIME_WAIT state.  This is equivalent of setting Time Wait Delay to 0. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "A new SYN is accepted from the same 4-tuple even if there is already a connection in TIME_WAIT state.  This is equivalent of setting Time Wait Delay to 0. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "ip_dscp": {
-                    "description": "Controls the value of the Differentiated Services Code Point field inserted in the IP header.  This has two options   Set to a specific value, or Pass Through, which uses the incoming DSCP value. Allowed values are 0-63. Special values are MAX - Passthrough. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Controls the value of the Differentiated Services Code Point field inserted in the IP header.  This has two options   Set to a specific value, or Pass Through, which uses the incoming DSCP value. Allowed values are 0-63. Special values are MAX - Passthrough. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "keepalive_in_halfclose_state": {
-                    "description": "Controls whether to keep the connection alive with keepalive messages in the TCP half close state. The interval for sending keepalive messages is 30s. If a timeout is already configured in the network profile, this will not override it. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Controls whether to keep the connection alive with keepalive messages in the TCP half close state. The interval for sending keepalive messages is 30s. If a timeout is already configured in the network profile, this will not override it. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "max_retransmissions": {
-                    "description": "The number of attempts at retransmit before closing the connection. Allowed values are 3-8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The number of attempts at retransmit before closing the connection. Allowed values are 3-8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
                     "format": "int32"
                 },
                 "max_segment_size": {
-                    "description": "Maximum TCP segment size. Allowed values are 512-9000. Special values are 0 - Use Interface MTU. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum TCP segment size. Allowed values are 512-9000. Special values are 0 - Use Interface MTU. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "max_syn_retransmissions": {
-                    "description": "The maximum number of attempts at retransmitting a SYN packet before giving up. Allowed values are 3-8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The maximum number of attempts at retransmitting a SYN packet before giving up. Allowed values are 3-8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
                     "format": "int32"
                 },
                 "min_rexmt_timeout": {
-                    "description": "The minimum wait time (in millisec) to retransmit packet. Allowed values are 50-5000. Field introduced in 17.2.8. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The minimum wait time (in millisec) to retransmit packet. Allowed values are 50-5000. Field introduced in 17.2.8. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "nagles_algorithm": {
-                    "description": "Consolidates small data packets to send clients fewer but larger packets.  Adversely affects real time protocols such as telnet or SSH. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Consolidates small data packets to send clients fewer but larger packets.  Adversely affects real time protocols such as telnet or SSH. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "reassembly_queue_size": {
-                    "description": "Maximum number of TCP segments that can be queued for reassembly. Configuring this to 0 disables the feature and provides unlimited queuing. Field introduced in 17.2.13, 18.1.4, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of TCP segments that can be queued for reassembly. Configuring this to 0 disables the feature and provides unlimited queuing. Field introduced in 17.2.13, 18.1.4, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "receive_window": {
-                    "description": "Size of the receive window. Allowed values are 2-65536. Unit is KB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Size of the receive window. Allowed values are 2-65536. Unit is KB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 64,
                     "format": "int32"
                 },
                 "reorder_threshold": {
-                    "description": "Controls the number of duplicate acks required to trigger retransmission. Setting a higher value reduces retransmission caused by packet reordering. A larger value is recommended in public cloud environments where packet reordering is quite common. The default value is 8 in public cloud platforms (AWS, Azure, GCP), and 3 in other environments. Allowed values are 1-100. Field introduced in 17.2.7. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Controls the number of duplicate acks required to trigger retransmission. Setting a higher value reduces retransmission caused by packet reordering. A larger value is recommended in public cloud environments where packet reordering is quite common. The default value is 8 in public cloud platforms (AWS, Azure, GCP), and 3 in other environments. Allowed values are 1-100. Field introduced in 17.2.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "slow_start_scaling_factor": {
-                    "description": "Congestion window scaling factor during slow start. Allowed values are 0-8. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Congestion window scaling factor during slow start. Allowed values are 0-8. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
                 },
                 "time_wait_delay": {
-                    "description": "The time (in millisec) to wait before closing a connection in the TIME_WAIT state. Allowed values are 500-2000. Special values are 0 - immediate. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The time (in millisec) to wait before closing a connection in the TIME_WAIT state. Allowed values are 500-2000. Special values are 0 - immediate. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2000,
                     "format": "int32"
                 },
                 "use_interface_mtu": {
-                    "description": "Use the interface MTU to calculate the TCP max segment size. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Use the interface MTU to calculate the TCP max segment size. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 }
@@ -945,21 +1027,21 @@
             "type": "object",
             "properties": {
                 "dsr_profile": {
-                    "description": "DSR profile information. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "DSR profile information. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DsrProfile"
                 },
                 "per_pkt_loadbalance": {
-                    "description": "When enabled, every UDP packet is considered a new transaction and may be load balanced to a different server.  When disabled, packets from the same client source IP and port are sent to the same server. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.",
+                    "description": "When enabled, every UDP packet is considered a new transaction and may be load balanced to a different server.  When disabled, packets from the same client source IP and port are sent to the same server. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
                     "type": "boolean"
                 },
                 "session_idle_timeout": {
-                    "description": "The amount of time (in sec) for which a flow needs to be idle before it is deleted. Allowed values are 2-3600. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The amount of time (in sec) for which a flow needs to be idle before it is deleted. Allowed values are 2-3600. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "int32"
                 },
                 "snat": {
-                    "description": "When disabled, Source NAT will not be performed for all client UDP packets. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "When disabled, Source NAT will not be performed for all client UDP packets. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 }
@@ -969,7 +1051,7 @@
             "type": "object",
             "properties": {
                 "session_idle_timeout": {
-                    "description": "The amount of time (in sec) for which a flow needs to be idle before it is deleted. Allowed values are 2-3600. Field introduced in 17.2.8, 18.1.3, 18.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The amount of time (in sec) for which a flow needs to be idle before it is deleted. Allowed values are 2-3600. Field introduced in 17.2.8, 18.1.3, 18.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "int32"

@@ -5,19 +5,23 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi FederationCheckpointInventory Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi FederationCheckpointInventory object api
         ```
         - show federationcheckpointinventory <key>
         ```
 
-
+        API permission: PERMISSION_CONTROLLER
+tags:
+  - name: FederationCheckpointInventory
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /federationcheckpoint-inventory:
         get:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory
+            operationId: GET /federationcheckpoint-inventory
             consumes:
                 -   application/json
             produces:
@@ -85,55 +93,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventoryApiResponse"
-                401:
-                    description: log in failed
-        post:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: FederationCheckpointInventory object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/FederationCheckpointInventory"
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/FederationCheckpointInventory"
-                401:
+                "401":
                     description: log in failed
     /federationcheckpoint-inventory/{uuid}:
         get:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory/{uuid}
+            operationId: GET /federationcheckpoint-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -190,163 +161,22 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventory"
-                401:
+                "401":
                     description: log in failed
-        put:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: FederationCheckpointInventory object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/FederationCheckpointInventory"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/FederationCheckpointInventory"
-                401:
-                    description: log in failed
-        patch:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: FederationCheckpointInventory object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/FederationCheckpointInventory"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/FederationCheckpointInventory"
-                401:
-                    description: log in failed
-        delete:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                204:
-                    description: object deleted
-                    schema:
-                        type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
     /federationcheckpoint:
         get:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint
+            operationId: GET /federationcheckpoint
             consumes:
                 -   application/json
             produces:
@@ -406,13 +236,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint
+            operationId: POST /federationcheckpoint
             consumes:
                 -   application/json
             produces:
@@ -447,14 +281,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-                401:
+                "401":
                     description: log in failed
     /federationcheckpoint/{uuid}:
         get:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint/{uuid}
+            operationId: GET /federationcheckpoint/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -511,13 +349,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint/{uuid}
+            operationId: PUT /federationcheckpoint/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -562,13 +406,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint/{uuid}
+            operationId: PATCH /federationcheckpoint/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -613,13 +463,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint/{uuid}
+            operationId: DELETE /federationcheckpoint/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -658,12 +514,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -671,7 +527,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: uint32
@@ -685,30 +541,30 @@ definitions:
                 readOnly: True
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             date:
-                description: "Date when the checkpoint was created. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Date when the checkpoint was created. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             description:
-                description: "Description for this checkpoint. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Description for this checkpoint. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             is_federated:
-                description: "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             name:
-                description: "Name of the Checkpoint. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the Checkpoint. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the Checkpoint. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID of the Checkpoint. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     FederationCheckpointApiResponse:
         type: object
@@ -733,14 +589,14 @@ definitions:
                 readOnly: True
                 type: string
             config:
-                description: "Configuration summary of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Configuration summary of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/FederationCheckpoint'
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "UUID of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     FederationCheckpointInventoryApiResponse:
         type: object

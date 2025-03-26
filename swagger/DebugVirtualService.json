@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi DebugVirtualService Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- debug virtualservice <key>\n- show debug virtualservice <key>\n```\n"
+        "description": "Avi DebugVirtualService object api\n```\n- debug virtualservice <key>\n- show debug virtualservice <key>\n```\n\nAPI permission: PERMISSION_TRAFFIC_CAPTURE\n"
     },
+    "tags": [
+        {
+            "name": "DebugVirtualService"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/debugvirtualservice": {
             "get": {
+                "tags": [
+                    "DebugVirtualService"
+                ],
+                "description": "/debugvirtualservice",
+                "operationId": "GET /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "DebugVirtualService"
+                ],
+                "description": "/debugvirtualservice",
+                "operationId": "POST /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -273,6 +291,11 @@
         },
         "/debugvirtualservice/{uuid}": {
             "get": {
+                "tags": [
+                    "DebugVirtualService"
+                ],
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "GET /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -363,10 +386,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "DebugVirtualService"
+                ],
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "PUT /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -440,10 +471,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "DebugVirtualService"
+                ],
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "PATCH /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -517,10 +556,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "DebugVirtualService"
+                ],
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "DELETE /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -584,7 +631,7 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
@@ -595,12 +642,12 @@
             "type": "object",
             "properties": {
                 "absolute_size": {
-                    "description": "Maximum size in MB. Set 0 for avi default size. Allowed values are 100-512000. Special values are 0 - AVI_DEFAULT. Field introduced in 18.2.8. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum size in MB. Set 0 for avi default size. Allowed values are 100-512000. Special values are 0 - AVI_DEFAULT. Field introduced in 18.2.8. Unit is MB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "percentage_size": {
-                    "description": "Limits capture to percentage of free disk space. Set 0 for avi default size. Allowed values are 0-75. Field introduced in 18.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Limits capture to percentage of free disk space. Set 0 for avi default size. Allowed values are 0-75. Field introduced in 18.2.8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 }
@@ -610,55 +657,55 @@
             "type": "object",
             "properties": {
                 "capture_ip": {
-                    "description": "Per packet IP filter. Matches with source and destination address. Curently not applicable for DebugServiceEngine. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Per packet IP filter. Matches with source and destination address. Curently not applicable for DebugServiceEngine. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DebugIpAddr"
                 },
                 "capture_ipc": {
-                    "description": "Capture filter for SE IPC. Not applicable for Debug Virtual Service. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Capture filter for SE IPC. Not applicable for Debug Virtual Service. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/CaptureIPC"
                 },
                 "dst_port_end": {
-                    "description": "Destination Port range filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Destination Port range filter. Allowed values are 1-65535. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "dst_port_start": {
-                    "description": "Destination Port range filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Destination Port range filter. Allowed values are 1-65535. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "eth_proto": {
-                    "description": "Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Ethernet Proto filter. Enum options - ETH_TYPE_IPV4, ETH_TYPE_IPV6. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ip_proto": {
-                    "description": "IP Proto filter. Support for TCP only for now. Enum options - IP_TYPE_TCP. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP Proto filter. Support for TCP only for now. Enum options - IP_TYPE_TCP. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "src_port": {
-                    "description": "Source Port filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Source Port filter. Allowed values are 1-65535. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "src_port_range_end": {
-                    "description": "Source Port range end filter. If specified, the source port filter will be a range. The filter range will be between src_port and src_port_range_end. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Source Port range end filter. If specified, the source port filter will be a range. The filter range will be between src_port and src_port_range_end. Allowed values are 1-65535. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "tcp_ack": {
-                    "description": "TCP ACK flag filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "TCP ACK flag filter. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tcp_fin": {
-                    "description": "TCP FIN flag filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "TCP FIN flag filter. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tcp_push": {
-                    "description": "TCP PUSH flag filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "TCP PUSH flag filter. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tcp_syn": {
-                    "description": "TCP SYN flag filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "TCP SYN flag filter. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 }
             }
@@ -667,51 +714,51 @@
             "type": "object",
             "properties": {
                 "flow_del_probe": {
-                    "description": "Flow del probe filter for SE IPC. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Flow del probe filter for SE IPC. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "flow_mirror_add": {
-                    "description": "Flow mirror add filter for SE IPC. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Flow mirror add filter for SE IPC. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "flow_mirror_all": {
-                    "description": "Filter for all flow mirror SE IPC. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Filter for all flow mirror SE IPC. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "flow_mirror_del": {
-                    "description": "Flow mirror del filter for SE IPC. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Flow mirror del filter for SE IPC. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "flow_probe": {
-                    "description": "Flow probe filter for SE IPC. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Flow probe filter for SE IPC. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "flow_probe_all": {
-                    "description": "Filter for all flow probe SE IPC. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Filter for all flow probe SE IPC. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "ipc_batched": {
-                    "description": "IPC batched filter for SE IPC. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IPC batched filter for SE IPC. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "ipc_rx_req": {
-                    "description": "Filter for incoming IPC request. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Filter for incoming IPC request. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "ipc_rx_res": {
-                    "description": "Filter for incoming IPC response. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Filter for incoming IPC response. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "ipc_tx_req": {
-                    "description": "Filter for outgoing IPC request. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Filter for outgoing IPC request. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "ipc_tx_res": {
-                    "description": "Filter for outgoing IPC response. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Filter for outgoing IPC response. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "vs_hb": {
-                    "description": "Vs heart beat filter for SE IPC. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Vs heart beat filter for SE IPC. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 }
             }
@@ -720,7 +767,7 @@
             "type": "object",
             "properties": {
                 "capture_tcp_filters": {
-                    "description": "TCP Params filter. And'ed internally and Or'ed amongst each other. . Field introduced in 30.2.1. Maximum of 20 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "TCP Params filter. And'ed internally and Or'ed amongst each other. . Field introduced in 30.2.1. Maximum of 20 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/CaptureTCPFilter"
@@ -732,24 +779,24 @@
             "type": "object",
             "properties": {
                 "dst_port_range": {
-                    "description": "Destination Port range filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Destination Port range filter. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DestinationPortAddr"
                 },
                 "eth_proto": {
-                    "description": "Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Ethernet Proto filter. Enum options - ETH_TYPE_IPV4, ETH_TYPE_IPV6. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "ETH_TYPE_IPV4"
                 },
                 "host_ip": {
-                    "description": "Per packet IP filter for Service Engine PCAP. Matches with source and destination address. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Per packet IP filter for Service Engine PCAP. Matches with source and destination address. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DebugIpAddr"
                 },
                 "src_port_range": {
-                    "description": "Source Port range filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Source Port range filter. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SourcePortAddr"
                 },
                 "tcpflag": {
-                    "description": "TCP flags filter. Or'ed internally and And'ed amongst each other. . Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "TCP flags filter. Or'ed internally and And'ed amongst each other. . Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/CaptureTCPFlags"
                 }
             }
@@ -758,33 +805,33 @@
             "type": "object",
             "properties": {
                 "filter_op": {
-                    "description": "Logical operation based filter criteria. Enum options - OR, AND. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Logical operation based filter criteria. Enum options - OR, AND. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "OR"
                 },
                 "match_operation": {
-                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "IS_IN"
                 },
                 "tcp_ack": {
-                    "description": "TCP ACK flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "TCP ACK flag filter. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tcp_fin": {
-                    "description": "TCP FIN flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "TCP FIN flag filter. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tcp_push": {
-                    "description": "TCP PUSH flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "TCP PUSH flag filter. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tcp_rst": {
-                    "description": "TCP RST flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "TCP RST flag filter. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tcp_syn": {
-                    "description": "TCP SYN flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "TCP SYN flag filter. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 }
             }
@@ -793,14 +840,14 @@
             "type": "object",
             "properties": {
                 "domain_name": {
-                    "description": "This field filters the FQDN for Dns debug. Field introduced in 18.2.1. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "This field filters the FQDN for Dns debug. Field introduced in 18.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "gslb_service_name": {
-                    "description": "This field filters the Gslb service for Dns debug. Field introduced in 18.2.1. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "This field filters the Gslb service for Dns debug. Field introduced in 18.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -812,26 +859,26 @@
             "type": "object",
             "properties": {
                 "addrs": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddr"
                     }
                 },
                 "match_operation": {
-                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "IS_IN"
                 },
                 "prefixes": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddrPrefix"
                     }
                 },
                 "ranges": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddrRange"
@@ -851,67 +898,67 @@
                     "type": "string"
                 },
                 "capture": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "capture_filters": {
-                    "description": "Per packet capture filters for Debug Virtual Service. Applies to both frontend and backend packets. Field introduced in 18.2.7. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Per packet capture filters for Debug Virtual Service. Applies to both frontend and backend packets. Field introduced in 18.2.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/CaptureFilters"
                 },
                 "capture_params": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DebugVirtualServiceCapture"
                 },
                 "capture_pkt_filter": {
-                    "description": "Per packet capture filters for Debug Virtual Service. Applies to both frontend and backend packets. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Per packet capture filters for Debug Virtual Service. Applies to both frontend and backend packets. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/CapturePacketFilter"
                 },
                 "cloud_ref": {
-                    "description": " It is a reference to an object of type Cloud. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "debug_hm": {
-                    "description": "This option controls the capture of Health Monitor flows. Enum options - DEBUG_VS_HM_NONE, DEBUG_VS_HM_ONLY, DEBUG_VS_HM_INCLUDE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "This option controls the capture of Health Monitor flows. Enum options - DEBUG_VS_HM_NONE, DEBUG_VS_HM_ONLY, DEBUG_VS_HM_INCLUDE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "DEBUG_VS_HM_NONE"
                 },
                 "debug_ip": {
-                    "description": "Filters all packets of a complete transaction (client and server side), based on client ip. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Filters all packets of a complete transaction (client and server side), based on client ip. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DebugIpAddr"
                 },
                 "dns_options": {
-                    "description": "Dns debug options. Field introduced in 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Dns debug options. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DebugDnsOptions"
                 },
                 "flags": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/DebugVsDataplane"
                     }
                 },
                 "latency_audit_filters": {
-                    "description": "Deprecated in 22.1.1. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Deprecated in 22.1.1. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/CaptureFilters"
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "objsync": {
-                    "description": "Object sync debug options. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Object sync debug options. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DebugVirtualServiceObjSync"
                 },
                 "resync_flows": {
-                    "description": "This option re-synchronizes flows between Active-Standby service engines for all the virtual services placed on them. It should be used with caution because as it can cause a flood between Active-Standby. Field introduced in 18.1.3,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "This option re-synchronizes flows between Active-Standby service engines for all the virtual services placed on them. It should be used with caution because as it can cause a flood between Active-Standby. Field introduced in 18.1.3,18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "se_params": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DebugVirtualServiceSeParams"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -920,7 +967,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -951,36 +998,36 @@
             "type": "object",
             "properties": {
                 "capture_file_size": {
-                    "description": "Maximum allowed size of PCAP Capture File per SE. Max(absolute_size, percentage_size) will be final value. Set both to 0 for avi default size. DOS, IPC and DROP pcaps not applicaple. Field introduced in 18.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum allowed size of PCAP Capture File per SE. Max(absolute_size, percentage_size) will be final value. Set both to 0 for avi default size. DOS, IPC and DROP pcaps not applicaple. Field introduced in 18.2.8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/CaptureFileSize"
                 },
                 "duration": {
-                    "description": "Number of minutes to capture packets. Use 0 to capture until manually stopped. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Number of minutes to capture packets. Use 0 to capture until manually stopped. Special values are 0 - infinite. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "enable_ssl_session_key_capture": {
-                    "description": "Enable SSL session key capture. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable SSL session key capture. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "file_count": {
-                    "description": "Number of files to maintain for SE pcap file rotation.file count set to 1 indicates no rotate. Allowed values are 1-10. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Number of files to maintain for SE pcap file rotation.file count set to 1 indicates no rotate. Allowed values are 1-10. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
                     "format": "uint32"
                 },
                 "num_pkts": {
-                    "description": "Total number of packets to capture. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total number of packets to capture. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "pcap_ng": {
-                    "description": "Enable PcapNg for packet capture. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable PcapNg for packet capture. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "pkt_size": {
-                    "description": "Number of bytes of each packet to capture. Use 0 to capture the entire packet. Allowed values are 64-1514. Special values are 0 - full capture. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Number of bytes of each packet to capture. Use 0 to capture the entire packet. Allowed values are 64-1514. Special values are 0 - full capture. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 128,
                     "format": "uint32"
@@ -991,7 +1038,7 @@
             "type": "object",
             "properties": {
                 "trigger_initial_sync": {
-                    "description": "Triggers Initial Sync on all the SEs of this VS. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Triggers Initial Sync on all the SEs of this VS. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 }
             }
@@ -1000,7 +1047,7 @@
             "type": "object",
             "properties": {
                 "se_refs": {
-                    "description": " It is a reference to an object of type ServiceEngine. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1015,7 +1062,7 @@
             ],
             "properties": {
                 "flag": {
-                    "description": " Enum options - DEBUG_VS_TCP_CONNECTION, DEBUG_VS_TCP_PKT, DEBUG_VS_TCP_APP, DEBUG_VS_TCP_APP_PKT, DEBUG_VS_TCP_RETRANSMIT, DEBUG_VS_TCP_TIMER, DEBUG_VS_TCP_CONN_ERROR, DEBUG_VS_TCP_PKT_ERROR, DEBUG_VS_TCP_REXMT, DEBUG_VS_TCP_ALL, DEBUG_VS_CREDIT, DEBUG_VS_PROXY_CONNECTION, DEBUG_VS_PROXY_PKT, DEBUG_VS_PROXY_ERR, DEBUG_VS_UDP, DEBUG_VS_UDP_PKT, DEBUG_VS_HM, DEBUG_VS_HM_ERR, DEBUG_VS_HM_PKT, DEBUG_VS_HTTP_CORE, DEBUG_VS_HTTP_ALL, DEBUG_VS_CONFIG, DEBUG_VS_EVENTS, DEBUG_VS_HTTP_RULES, DEBUG_VS_HM_EXT, DEBUG_VS_SSL, DEBUG_VS_WAF, DEBUG_VS_DNS, DEBUG_VS_PAA, DEBUG_VS_AUTH, DEBUG_VS_BOT, DEBUG_VS_DATASCRIPT, DEBUG_VS_LBACTION, DEBUG_VS_CONTENT_REWRITE, DEBUG_VS_CONNPOOL, DEBUG_VS_WAF_MEMORY, DEBUG_VS_SCTP_PKT, DEBUG_VS_SCTP_PKT_DETAIL, DEBUG_VS_ALL, DEBUG_VS_ERROR, DEBUG_VS_NONE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - DEBUG_VS_TCP_CONNECTION, DEBUG_VS_TCP_PKT, DEBUG_VS_TCP_APP, DEBUG_VS_TCP_APP_PKT, DEBUG_VS_TCP_RETRANSMIT, DEBUG_VS_TCP_TIMER, DEBUG_VS_TCP_CONN_ERROR, DEBUG_VS_TCP_PKT_ERROR, DEBUG_VS_TCP_REXMT, DEBUG_VS_TCP_ALL, DEBUG_VS_CREDIT, DEBUG_VS_PROXY_CONNECTION, DEBUG_VS_PROXY_PKT, DEBUG_VS_PROXY_ERR, DEBUG_VS_UDP, DEBUG_VS_UDP_PKT, DEBUG_VS_HM, DEBUG_VS_HM_ERR, DEBUG_VS_HM_PKT, DEBUG_VS_HTTP_CORE, DEBUG_VS_HTTP_ALL, DEBUG_VS_CONFIG, DEBUG_VS_EVENTS, DEBUG_VS_HTTP_RULES, DEBUG_VS_HM_EXT, DEBUG_VS_SSL, DEBUG_VS_WAF, DEBUG_VS_DNS, DEBUG_VS_PAA, DEBUG_VS_AUTH, DEBUG_VS_BOT, DEBUG_VS_DATASCRIPT, DEBUG_VS_LBACTION, DEBUG_VS_CONTENT_REWRITE, DEBUG_VS_CONNPOOL, DEBUG_VS_WAF_MEMORY, DEBUG_VS_SCTP_PKT, DEBUG_VS_SCTP_PKT_DETAIL, DEBUG_VS_ALL, DEBUG_VS_ERROR, DEBUG_VS_NONE, DEBUG_VS_WAF_RULE_METRICS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1024,17 +1071,17 @@
             "type": "object",
             "properties": {
                 "dst_port_end": {
-                    "description": "TCP/UDP port range end (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "TCP/UDP port range end (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "dst_port_start": {
-                    "description": "TCP/UDP port range start (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "TCP/UDP port range start (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "match_operation": {
-                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "IS_IN"
                 }
@@ -1048,11 +1095,11 @@
             ],
             "properties": {
                 "addr": {
-                    "description": "IP address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - V4, DNS, V6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - V4, DNS, V6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1065,11 +1112,11 @@
             ],
             "properties": {
                 "ip_addr": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "mask": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -1083,11 +1130,11 @@
             ],
             "properties": {
                 "begin": {
-                    "description": "Starting IP address of the range. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Starting IP address of the range. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "end": {
-                    "description": "Ending IP address of the range. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Ending IP address of the range. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 }
             }
@@ -1096,17 +1143,17 @@
             "type": "object",
             "properties": {
                 "match_operation": {
-                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "IS_IN"
                 },
                 "src_port_end": {
-                    "description": "TCP/UDP port range end (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "TCP/UDP port range end (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "src_port_start": {
-                    "description": "TCP/UDP port range start (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "TCP/UDP port range start (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 }

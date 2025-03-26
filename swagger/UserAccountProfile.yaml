@@ -5,20 +5,24 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi UserAccountProfile Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi UserAccountProfile object api
         ```
         - configure useraccountprofile <key>
         - show useraccountprofile <key>
         ```
 
-
+        API permission: PERMISSION_USER
+tags:
+  - name: UserAccountProfile
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /useraccountprofile:
         get:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile
+            operationId: GET /useraccountprofile
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile
+            operationId: POST /useraccountprofile
             consumes:
                 -   application/json
             produces:
@@ -127,14 +139,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-                401:
+                "401":
                     description: log in failed
     /useraccountprofile/{uuid}:
         get:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile/{uuid}
+            operationId: GET /useraccountprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -191,13 +207,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile/{uuid}
+            operationId: PUT /useraccountprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +264,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile/{uuid}
+            operationId: PATCH /useraccountprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +321,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile/{uuid}
+            operationId: DELETE /useraccountprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -338,12 +372,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -351,7 +385,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: uint32
@@ -365,45 +399,45 @@ definitions:
                 readOnly: True
                 type: string
             account_lock_timeout:
-                description: "Lock timeout period (in minutes). Default is 30 minutes. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Lock timeout period (in minutes). Default is 30 minutes. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 30
                 format: uint32
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             credentials_timeout_threshold:
-                description: "The time period after which credentials expire. Default is 180 days. Unit is DAYS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The time period after which credentials expire. Default is 180 days. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 180
                 format: uint32
             login_failure_count_expiry_window:
-                description: "The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps. Special values are 0 - Do not reset login_failure_counts on the basis of time.. Field introduced in 22.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps. Special values are 0 - Do not reset login_failure_counts on the basis of time.. Field introduced in 22.1.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             max_concurrent_sessions:
-                description: "Maximum number of concurrent sessions allowed. There are unlimited sessions by default. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Maximum number of concurrent sessions allowed. There are unlimited sessions by default. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             max_login_failure_count:
-                description: "Number of login attempts before lockout. Default is 3 attempts. Allowed values are 3-20. Special values are 0- Unlimited login attempts allowed.. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of login attempts before lockout. Default is 3 attempts. Allowed values are 3-20. Special values are 0- Unlimited login attempts allowed.. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 3
                 format: uint32
             max_password_history_count:
-                description: "Maximum number of passwords to be maintained in the password history. Default is 4 passwords. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Maximum number of passwords to be maintained in the password history. Default is 4 passwords. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 4
                 format: uint32
             name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     UserAccountProfileApiResponse:
         type: object

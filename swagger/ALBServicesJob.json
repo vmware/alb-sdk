@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi ALBServicesJob Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure albservicesjob <key>\n- show albservicesjob <key>\n```\n"
+        "description": "Avi ALBServicesJob object api\n```\n- configure albservicesjob <key>\n- show albservicesjob <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
     },
+    "tags": [
+        {
+            "name": "ALBServicesJob"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/albservicesjob": {
             "get": {
+                "tags": [
+                    "ALBServicesJob"
+                ],
+                "description": "/albservicesjob",
+                "operationId": "GET /albservicesjob",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ALBServicesJob"
+                ],
+                "description": "/albservicesjob",
+                "operationId": "POST /albservicesjob",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/albservicesjob/{uuid}": {
             "get": {
+                "tags": [
+                    "ALBServicesJob"
+                ],
+                "description": "/albservicesjob/{uuid}",
+                "operationId": "GET /albservicesjob/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -274,10 +297,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "ALBServicesJob"
+                ],
+                "description": "/albservicesjob/{uuid}",
+                "operationId": "PUT /albservicesjob/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -351,10 +382,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "ALBServicesJob"
+                ],
+                "description": "/albservicesjob/{uuid}",
+                "operationId": "PATCH /albservicesjob/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -428,10 +467,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "ALBServicesJob"
+                ],
+                "description": "/albservicesjob/{uuid}",
+                "operationId": "DELETE /albservicesjob/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -495,7 +542,7 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
@@ -515,59 +562,59 @@
                     "type": "string"
                 },
                 "command": {
-                    "description": "The command to be triggered by the albservicesjob. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The command to be triggered by the albservicesjob. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "end_time": {
-                    "description": "Time at which the albservicesjob ended. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Time at which the albservicesjob ended. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "name": {
-                    "description": "The name of the albservicesjob. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The name of the albservicesjob. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "params": {
-                    "description": "Job params. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Job params. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ALBServicesJobParam"
                     }
                 },
                 "pulse_job_id": {
-                    "description": "A unique identifier for this job entry on the Pulse Cloud Services. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "A unique identifier for this job entry on the Pulse Cloud Services. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "pulse_sync_status": {
-                    "description": "Status of sync to Pulse Cloud Services(result uploads/state updates). Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Status of sync to Pulse Cloud Services(result uploads/state updates). Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "result": {
-                    "description": "Job result. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Job result. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "start_time": {
-                    "description": "Time at which the albservicesjob started. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Time at which the albservicesjob started. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "status": {
-                    "description": "The status of the albservicesjob. Enum options - UNDETERMINED, PENDING, IN_PROGRESS, COMPLETED, FAILED, NOT_ENABLED. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The status of the albservicesjob. Enum options - UNDETERMINED, PENDING, IN_PROGRESS, COMPLETED, FAILED, NOT_ENABLED. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "PENDING"
                 },
                 "status_update_time": {
-                    "description": "Time at which the status of albservicesjob updated. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Time at which the status of albservicesjob updated. Field introduced in 22.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "tenant_ref": {
-                    "description": "The unique identifier of the tenant to which this albservicesjob belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The unique identifier of the tenant to which this albservicesjob belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "token": {
-                    "description": "Job token. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Job token. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -576,7 +623,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "A unique identifier for this albservicesjob entry. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "A unique identifier for this albservicesjob entry. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -607,11 +654,11 @@
             "type": "object",
             "properties": {
                 "key": {
-                    "description": "Parameter name. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Parameter name. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "value": {
-                    "description": "Parameter value. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Parameter value. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -620,7 +667,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -635,12 +682,12 @@
             ],
             "properties": {
                 "secs": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "usecs": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 }

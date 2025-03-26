@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi HealthMonitor Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure healthmonitor <key>\n- show healthmonitor <key>\n```\n\nExamples\n- **healthmonitor_example**: To create a basic HTTP health monitor that uses GET / to determine if the service is alive\n  ```json\n    {'name': 'http-hmon', 'send_interval': 10, 'receive_timeout': 4, 'failed_checks': 3, 'type': 'HEALTH_MONITOR_HTTP', 'http_monitor': {'http_request': 'GET / HTTP/1.0'}}\n  ```\n"
+        "description": "Avi HealthMonitor object api\n```\n- configure healthmonitor <key>\n- show healthmonitor <key>\n```\n\nExamples\n- **healthmonitor_example**: To create a basic HTTP health monitor that uses GET / to determine if the service is alive\n  ```json\n    {'name': 'http-hmon', 'send_interval': 10, 'receive_timeout': 4, 'failed_checks': 3, 'type': 'HEALTH_MONITOR_HTTP', 'http_monitor': {'http_request': 'GET / HTTP/1.0'}}\n  ```\nAPI permission: PERMISSION_HEALTHMONITOR\n"
     },
+    "tags": [
+        {
+            "name": "HealthMonitor"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/healthmonitor": {
             "get": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor",
+                "operationId": "GET /healthmonitor",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor",
+                "operationId": "POST /healthmonitor",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/healthmonitor/{uuid}": {
             "get": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor/{uuid}",
+                "operationId": "GET /healthmonitor/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -274,10 +297,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor/{uuid}",
+                "operationId": "PUT /healthmonitor/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -351,10 +382,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor/{uuid}",
+                "operationId": "PATCH /healthmonitor/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -428,10 +467,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor/{uuid}",
+                "operationId": "DELETE /healthmonitor/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -495,13 +542,18 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/healthmonitor/{uuid}/federated_info/": {
             "get": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor/{uuid}/federated_info/",
+                "operationId": "GET /healthmonitor/{uuid}/federated_info/",
                 "consumes": [
                     "application/json"
                 ],
@@ -559,6 +611,9 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             }
@@ -569,7 +624,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -589,151 +644,159 @@
                     "type": "string"
                 },
                 "allow_duplicate_monitors": {
-                    "description": "By default, multiple instances of the same healthmonitor to the same server are suppressed intelligently. In rare cases, the monitor may have specific constructs that go beyond the server keys (ip, port, etc.) during which such suppression is not desired. Use this knob to allow duplicates. Field introduced in 18.2.8. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- true), Basic edition(Allowed values- true), Enterprise with Cloud Services edition.",
+                    "description": "By default, multiple instances of the same healthmonitor to the same server are suppressed intelligently. In rare cases, the monitor may have specific constructs that go beyond the server keys (ip, port, etc.) during which such suppression is not desired. Use this knob to allow duplicates. Field introduced in 18.2.8. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- true), Basic (Allowed values- true) edition.",
                     "type": "boolean"
                 },
                 "authentication": {
-                    "description": "Authentication information for username/password. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Authentication information for username/password. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorAuthInfo"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "description": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "disable_quickstart": {
-                    "description": "During addition of a server or healthmonitors or during bootup, Avi performs sequential health checks rather than waiting for send-interval to kick in, to mark the server up as soon as possible. This knob may be used to turn this feature off. Field introduced in 18.2.7. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.",
+                    "description": "During addition of a server or healthmonitors or during bootup, Avi performs sequential health checks rather than waiting for send-interval to kick in, to mark the server up as soon as possible. This knob may be used to turn this feature off. Field introduced in 18.2.7. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
                     "type": "boolean"
                 },
                 "dns_monitor": {
-                    "description": " Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorDNS"
                 },
                 "external_monitor": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorExternal"
                 },
                 "failed_checks": {
-                    "description": "Number of continuous failed health checks before the server is marked down. Allowed values are 1-50. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Number of continuous failed health checks before the server is marked down. Allowed values are 1-50. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
                     "format": "int32"
                 },
                 "ftp_monitor": {
-                    "description": "Health monitor for FTP. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for FTP. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorFtp"
                 },
                 "ftps_monitor": {
-                    "description": "Health monitor for FTPS. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for FTPS. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorFtp"
                 },
+                "http2_monitor": {
+                    "description": "Health monitor for HTTP2. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/HealthMonitorHttp"
+                },
+                "http2s_monitor": {
+                    "description": "Health monitor for HTTP2S. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/HealthMonitorHttp"
+                },
                 "http_monitor": {
-                    "description": " Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorHttp"
                 },
                 "https_monitor": {
-                    "description": " Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorHttp"
                 },
                 "imap_monitor": {
-                    "description": "Health monitor for IMAP. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for IMAP. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorImap"
                 },
                 "imaps_monitor": {
-                    "description": "Health monitor for IMAPS. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for IMAPS. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorImap"
                 },
                 "is_federated": {
-                    "description": "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.  If the field is set to true, then the object is replicated across the federation.  . Field introduced in 17.1.3. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.",
+                    "description": "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.  If the field is set to true, then the object is replicated across the federation.  . Field introduced in 17.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
                     "type": "boolean"
                 },
                 "ldap_monitor": {
-                    "description": "Health monitor for LDAP. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for LDAP. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorLdap"
                 },
                 "ldaps_monitor": {
-                    "description": "Health monitor for LDAPS. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for LDAPS. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorLdap"
                 },
                 "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RoleFilterMatchLabel"
                     }
                 },
                 "monitor_port": {
-                    "description": "Use this port instead of the port defined for the server in the Pool. If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the Pool. Allowed values are 1-65535. Special values are 0 - Use server port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Use this port instead of the port defined for the server in the Pool. If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the Pool. Allowed values are 1-65535. Special values are 0 - Use server port. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "name": {
-                    "description": "A user friendly name for this health monitor. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "A user friendly name for this health monitor. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "pop3_monitor": {
-                    "description": "Health monitor for POP3. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for POP3. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorPop3"
                 },
                 "pop3s_monitor": {
-                    "description": "Health monitor for POP3S. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for POP3S. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorPop3"
                 },
                 "radius_monitor": {
-                    "description": "Health monitor for Radius. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for Radius. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorRadius"
                 },
                 "receive_timeout": {
-                    "description": "A valid response from the server is expected within the receive timeout window.  This timeout must be less than the send interval.  If server status is regularly flapping up and down, consider increasing this value. Allowed values are 1-2400. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "A valid response from the server is expected within the receive timeout window.  This timeout must be less than the send interval.  If server status is regularly flapping up and down, consider increasing this value. Allowed values are 1-2400. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4,
                     "format": "int32"
                 },
                 "sctp_monitor": {
-                    "description": "Health monitor for SCTP. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for SCTP. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorSctp"
                 },
                 "send_interval": {
-                    "description": "Frequency, in seconds, that monitors are sent to a server. Allowed values are 1-3600. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Frequency, in seconds, that monitors are sent to a server. Allowed values are 1-3600. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "int32"
                 },
                 "sip_monitor": {
-                    "description": "Health monitor for SIP. Field introduced in 17.2.8, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for SIP. Field introduced in 17.2.8, 18.1.3, 18.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorSIP"
                 },
                 "smtp_monitor": {
-                    "description": "Health monitor for SMTP. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for SMTP. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorSmtp"
                 },
                 "smtps_monitor": {
-                    "description": "Health monitor for SMTPS. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor for SMTPS. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorSmtp"
                 },
                 "successful_checks": {
-                    "description": "Number of continuous successful health checks before server is marked up. Allowed values are 1-50. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Number of continuous successful health checks before server is marked up. Allowed values are 1-50. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
                     "format": "int32"
                 },
                 "tcp_monitor": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorTcp"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": "Type of the health monitor. Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP, HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS, HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS, HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS, HEALTH_MONITOR_SCTP. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP), Basic edition(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP,HEALTH_MONITOR_HTTP,HEALTH_MONITOR_HTTPS), Enterprise with Cloud Services edition.",
+                    "description": "Type of the health monitor. Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP, HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS, HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS, HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS, HEALTH_MONITOR_SCTP, HEALTH_MONITOR_HTTP2, HEALTH_MONITOR_HTTP2S. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP), Basic (Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP,HEALTH_MONITOR_HTTP,HEALTH_MONITOR_HTTPS) edition.",
                     "type": "string"
                 },
                 "udp_monitor": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorUdp"
                 },
                 "url": {
@@ -742,7 +805,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the health monitor. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the health monitor. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -777,11 +840,11 @@
             ],
             "properties": {
                 "password": {
-                    "description": "Password for server authentication. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Password for server authentication. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "username": {
-                    "description": "Username for server authentication. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Username for server authentication. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -793,26 +856,26 @@
             ],
             "properties": {
                 "qtype": {
-                    "description": "  Query_Type  Response has atleast one answer of which      the resource record type matches the query type   Any_Type  Response should contain atleast one answer  AnyThing  An empty answer is enough. Enum options - DNS_QUERY_TYPE, DNS_ANY_TYPE, DNS_ANY_THING. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "  Query_Type  Response has atleast one answer of which      the resource record type matches the query type   Any_Type  Response should contain atleast one answer  AnyThing  An empty answer is enough. Enum options - DNS_QUERY_TYPE, DNS_ANY_TYPE, DNS_ANY_THING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "DNS_QUERY_TYPE"
                 },
                 "query_name": {
-                    "description": "The DNS monitor will query the DNS server for the fully qualified name in this field. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The DNS monitor will query the DNS server for the fully qualified name in this field. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "rcode": {
-                    "description": "When No Error is selected, a DNS query will be marked failed is any error code is returned by the server.  With Any selected, the monitor ignores error code in the responses. Enum options - RCODE_NO_ERROR, RCODE_ANYTHING. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "When No Error is selected, a DNS query will be marked failed is any error code is returned by the server.  With Any selected, the monitor ignores error code in the responses. Enum options - RCODE_NO_ERROR, RCODE_ANYTHING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "RCODE_NO_ERROR"
                 },
                 "record_type": {
-                    "description": "Resource record type used in the healthmonitor DNS query, only A or AAAA type supported. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Resource record type used in the healthmonitor DNS query, only A or AAAA type supported. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "DNS_RECORD_A"
                 },
                 "response_string": {
-                    "description": "The resource record of the queried DNS server's response for the Request Name must include the IP address defined in this field. . Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The resource record of the queried DNS server's response for the Request Name must include the IP address defined in this field. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -824,19 +887,19 @@
             ],
             "properties": {
                 "command_code": {
-                    "description": "Command script provided inline. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Command script provided inline. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "command_parameters": {
-                    "description": "Optional arguments to feed into the script. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Optional arguments to feed into the script. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "command_path": {
-                    "description": "Path of external health monitor script. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Path of external health monitor script. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "command_variables": {
-                    "description": "Environment variables to be fed into the script. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Environment variables to be fed into the script. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -849,16 +912,16 @@
             ],
             "properties": {
                 "filename": {
-                    "description": "Filename to download with full path. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Filename to download with full path. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "mode": {
-                    "description": "FTP data transfer process mode. Enum options - FTP_PASSIVE_MODE, FTP_PORT_MODE. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "FTP data transfer process mode. Enum options - FTP_PASSIVE_MODE, FTP_PORT_MODE. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "FTP_PASSIVE_MODE"
                 },
                 "ssl_attributes": {
-                    "description": "SSL attributes for FTPS monitor. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SSL attributes for FTPS monitor. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorSSLAttributes"
                 }
             }
@@ -867,35 +930,50 @@
             "type": "object",
             "properties": {
                 "auth_type": {
-                    "description": "Type of the authentication method. Enum options - AUTH_BASIC, AUTH_NTLM. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Type of the authentication method. Enum options - AUTH_BASIC, AUTH_NTLM. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "exact_http_request": {
-                    "description": "Use the exact http_request string as specified by user, without any automatic insert of headers like Host header. Field introduced in 17.1.6,17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Use the exact http_request string as specified by user, without any automatic insert of headers like Host header. Field introduced in 17.1.6,17.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
+                "http_headers": {
+                    "description": "For HTTP2 and HTTP2S health monitor, send an HTTP request to the server. Extended with additional headers or information when exact request is marked false. For instance Host  www.site.com Connection  Close. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "http_method": {
+                    "description": "HTTP method for HTTP2 and HTTP2S health monitor. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- HTTP_METHOD_GET,HTTP_METHOD_POST,HTTP_METHOD_HEAD), Basic (Allowed values- HTTP_METHOD_GET,HTTP_METHOD_POST,HTTP_METHOD_HEAD) edition.",
+                    "type": "string"
+                },
                 "http_request": {
-                    "description": "Send an HTTP request to the server.  The default GET / HTTP/1.0 may be extended with additional headers or information.  For instance, GET /index.htm HTTP/1.1 Host  www.site.com Connection  Close. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Send an HTTP request to the server.  The default GET / HTTP/1.0 may be extended with additional headers or information.  For instance, GET /index.htm HTTP/1.1 Host  www.site.com Connection  Close. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "GET / HTTP/1.0"
                 },
                 "http_request_body": {
-                    "description": "HTTP request body. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "HTTP request body. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "http_request_header_path": {
+                    "description": "HTTP client request header path for HTTP2 and HTTP2S health monitor. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "http_response": {
-                    "description": "Match for a keyword in the first 2Kb of the server header and body response. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Match for a keyword in the first 2Kb of the server header and body response. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "http_response_code": {
-                    "description": "List of HTTP response codes to match as successful.  Default is 2xx. Enum options - HTTP_ANY, HTTP_1XX, HTTP_2XX, HTTP_3XX, HTTP_4XX, HTTP_5XX. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "List of HTTP response codes to match as successful.  Default is 2xx. Enum options - HTTP_ANY, HTTP_1XX, HTTP_2XX, HTTP_3XX, HTTP_4XX, HTTP_5XX. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "maintenance_code": {
-                    "description": "Match or look for this HTTP response code indicating server maintenance.  A successful match results in the server being marked down. Allowed values are 101-599. Maximum of 4 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match or look for this HTTP response code indicating server maintenance.  A successful match results in the server being marked down. Allowed values are 101-599. Maximum of 4 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "integer"
@@ -903,16 +981,16 @@
                     "format": "uint32"
                 },
                 "maintenance_response": {
-                    "description": "Match or look for this keyword in the first 2KB of server header and body response indicating server maintenance.  A successful match results in the server being marked down. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match or look for this keyword in the first 2KB of server header and body response indicating server maintenance.  A successful match results in the server being marked down. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "response_size": {
-                    "description": "Expected http/https response page size. Allowed values are 2048-16384. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Expected http/https response page size. Allowed values are 2048-16384. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "ssl_attributes": {
-                    "description": "SSL attributes for HTTPS health monitor. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "SSL attributes for HTTPS health monitor. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorSSLAttributes"
                 }
             }
@@ -921,11 +999,11 @@
             "type": "object",
             "properties": {
                 "folder": {
-                    "description": "Folder to access. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Folder to access. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ssl_attributes": {
-                    "description": "SSL attributes for IMAPS monitor. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SSL attributes for IMAPS monitor. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorSSLAttributes"
                 }
             }
@@ -937,23 +1015,23 @@
             ],
             "properties": {
                 "attributes": {
-                    "description": "Attributes which will be retrieved. commas can be used to delimit more than one attributes (example- cn,address,email). Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Attributes which will be retrieved. commas can be used to delimit more than one attributes (example- cn,address,email). Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "base_dn": {
-                    "description": "DN(Distinguished Name) of a directory entry. which will be starting point of the search. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "DN(Distinguished Name) of a directory entry. which will be starting point of the search. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "filter": {
-                    "description": "Filter to search entries in specified scope. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Filter to search entries in specified scope. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "scope": {
-                    "description": "Search scope which can be base, one, sub. Enum options - LDAP_BASE_MODE, LDAP_ONE_MODE, LDAP_SUB_MODE. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Search scope which can be base, one, sub. Enum options - LDAP_BASE_MODE, LDAP_ONE_MODE, LDAP_SUB_MODE. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ssl_attributes": {
-                    "description": "SSL attributes for LDAPS monitor. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SSL attributes for LDAPS monitor. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorSSLAttributes"
                 }
             }
@@ -962,7 +1040,7 @@
             "type": "object",
             "properties": {
                 "ssl_attributes": {
-                    "description": "SSL attributes for POP3S monitor. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SSL attributes for POP3S monitor. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorSSLAttributes"
                 }
             }
@@ -976,15 +1054,15 @@
             ],
             "properties": {
                 "password": {
-                    "description": "Radius monitor will query Radius server with this password. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Radius monitor will query Radius server with this password. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "shared_secret": {
-                    "description": "Radius monitor will query Radius server with this shared secret. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Radius monitor will query Radius server with this shared secret. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "username": {
-                    "description": "Radius monitor will query Radius server with this username. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Radius monitor will query Radius server with this username. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -993,11 +1071,11 @@
             "type": "object",
             "properties": {
                 "sctp_request": {
-                    "description": "Request data to send after completing the SCTP handshake. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Request data to send after completing the SCTP handshake. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "sctp_response": {
-                    "description": "Match for the desired keyword in the first 2Kb of the server's SCTP response. If this field is left blank, no server response is required. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match for the desired keyword in the first 2Kb of the server's SCTP response. If this field is left blank, no server response is required. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1006,17 +1084,17 @@
             "type": "object",
             "properties": {
                 "sip_monitor_transport": {
-                    "description": "Specify the transport protocol TCP or UDP, to be used for SIP health monitor. The default transport is UDP. Enum options - SIP_UDP_PROTO, SIP_TCP_PROTO. Field introduced in 17.2.14, 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Specify the transport protocol TCP or UDP, to be used for SIP health monitor. The default transport is UDP. Enum options - SIP_UDP_PROTO, SIP_TCP_PROTO. Field introduced in 17.2.14, 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SIP_UDP_PROTO"
                 },
                 "sip_request_code": {
-                    "description": "Specify the SIP request to be sent to the server. By default, SIP OPTIONS request will be sent. Enum options - SIP_OPTIONS. Field introduced in 17.2.8, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Specify the SIP request to be sent to the server. By default, SIP OPTIONS request will be sent. Enum options - SIP_OPTIONS. Field introduced in 17.2.8, 18.1.3, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SIP_OPTIONS"
                 },
                 "sip_response": {
-                    "description": "Match for a keyword in the first 2KB of the server header and body response. By default, it matches for SIP/2.0. Field introduced in 17.2.8, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Match for a keyword in the first 2KB of the server header and body response. By default, it matches for SIP/2.0. Field introduced in 17.2.8, 18.1.3, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SIP/2.0"
                 }
@@ -1026,26 +1104,26 @@
             "type": "object",
             "properties": {
                 "domainname": {
-                    "description": "Sender domain name. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Sender domain name. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "mail_data": {
-                    "description": "Mail data. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Mail data. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "recipients_ids": {
-                    "description": "Mail recipients. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Mail recipients. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "sender_id": {
-                    "description": "Mail sender. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Mail sender. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ssl_attributes": {
-                    "description": "SSL attributes for SMTPS monitor. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SSL attributes for SMTPS monitor. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HealthMonitorSSLAttributes"
                 }
             }
@@ -1057,20 +1135,24 @@
             ],
             "properties": {
                 "pki_profile_ref": {
-                    "description": "PKI profile used to validate the SSL certificate presented by a server. It is a reference to an object of type PKIProfile. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "PKI profile used to validate the SSL certificate presented by a server. It is a reference to an object of type PKIProfile. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "server_name": {
-                    "description": "Fully qualified DNS hostname which will be used in the TLS SNI extension in server connections indicating SNI is enabled. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Fully qualified DNS hostname which will be used in the TLS SNI extension in server connections indicating SNI is enabled. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ssl_key_and_certificate_ref": {
-                    "description": "Service engines will present this SSL certificate to the server. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Service engines will present this SSL certificate to the server. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ssl_profile_ref": {
-                    "description": "SSL profile defines ciphers and SSL versions to be used for healthmonitor traffic to the back-end servers. It is a reference to an object of type SSLProfile. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "SSL profile defines ciphers and SSL versions to be used for healthmonitor traffic to the back-end servers. It is a reference to an object of type SSLProfile. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                },
+                "use_pool_sni_server_name": {
+                    "description": "Use the SNI server name configured in the Pool. This will override the server_name configured in the Health Monitor. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 }
             }
         },
@@ -1078,19 +1160,19 @@
             "type": "object",
             "properties": {
                 "maintenance_response": {
-                    "description": "Match or look for this keyword in the first 2KB of server's response indicating server maintenance.  A successful match results in the server being marked down. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match or look for this keyword in the first 2KB of server's response indicating server maintenance.  A successful match results in the server being marked down. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tcp_half_open": {
-                    "description": "Configure TCP health monitor to use half-open TCP connections to monitor the health of backend servers thereby avoiding consumption of a full fledged server side connection and the overhead and logs associated with it.  This method is light-weight as it makes use of listener in server's kernel layer to measure the health and a child socket or user thread is not created on the server side. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.",
+                    "description": "Configure TCP health monitor to use half-open TCP connections to monitor the health of backend servers thereby avoiding consumption of a full fledged server side connection and the overhead and logs associated with it.  This method is light-weight as it makes use of listener in server's kernel layer to measure the health and a child socket or user thread is not created on the server side. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
                     "type": "boolean"
                 },
                 "tcp_request": {
-                    "description": "Request data to send after completing the TCP handshake. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Request data to send after completing the TCP handshake. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tcp_response": {
-                    "description": "Match for the desired keyword in the first 2Kb of the server's TCP response. If this field is left blank, no server response is required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Match for the desired keyword in the first 2Kb of the server's TCP response. If this field is left blank, no server response is required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1099,15 +1181,15 @@
             "type": "object",
             "properties": {
                 "maintenance_response": {
-                    "description": "Match or look for this keyword in the first 2KB of server's response indicating server maintenance.  A successful match results in the server being marked down. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Match or look for this keyword in the first 2KB of server's response indicating server maintenance.  A successful match results in the server being marked down. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "udp_request": {
-                    "description": "Send UDP request. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Send UDP request. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "udp_response": {
-                    "description": "Match for keyword in the UDP response. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Match for keyword in the UDP response. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1119,11 +1201,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"

@@ -5,19 +5,23 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi NetworkInventory Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi NetworkInventory object api
         ```
         - show networkinventory <key>
         ```
 
-
+        API permission: PERMISSION_NETWORK
+tags:
+  - name: NetworkInventory
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /network-inventory:
         get:
+            tags:
+                - NetworkInventory
+            description: /network-inventory
+            operationId: GET /network-inventory
             consumes:
                 -   application/json
             produces:
@@ -85,55 +93,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkInventoryApiResponse"
-                401:
-                    description: log in failed
-        post:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: NetworkInventory object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/NetworkInventory"
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/NetworkInventory"
-                401:
+                "401":
                     description: log in failed
     /network-inventory/{uuid}:
         get:
+            tags:
+                - NetworkInventory
+            description: /network-inventory/{uuid}
+            operationId: GET /network-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -190,484 +161,22 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkInventory"
-                401:
+                "401":
                     description: log in failed
-        put:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: NetworkInventory object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/NetworkInventory"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/NetworkInventory"
-                401:
-                    description: log in failed
-        patch:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: NetworkInventory object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/NetworkInventory"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/NetworkInventory"
-                401:
-                    description: log in failed
-        delete:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                204:
-                    description: object deleted
-                    schema:
-                        type: string
-                404:
-                    description: not found
-
-
-    /networkruntime:
-        get:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: refers_to
-                    in: query
-                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
-                    type: string
-                -   name: referred_by
-                    in: query
-                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/NetworkRuntimeApiResponse"
-                401:
-                    description: log in failed
-        post:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: NetworkRuntime object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/NetworkRuntime"
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/NetworkRuntime"
-                401:
-                    description: log in failed
-    /networkruntime/{uuid}:
-        get:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: uuid
-                    in: path
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/NetworkRuntime"
-                401:
-                    description: log in failed
-        put:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: NetworkRuntime object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/NetworkRuntime"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/NetworkRuntime"
-                401:
-                    description: log in failed
-        patch:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: NetworkRuntime object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/NetworkRuntime"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/NetworkRuntime"
-                401:
-                    description: log in failed
-        delete:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                204:
-                    description: object deleted
-                    schema:
-                        type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
     /vimgrnwruntime:
         get:
+            tags:
+                - VIMgrNWRuntime
+            description: /vimgrnwruntime
+            operationId: GET /vimgrnwruntime
             consumes:
                 -   application/json
             produces:
@@ -727,13 +236,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrNWRuntimeApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VIMgrNWRuntime
+            description: /vimgrnwruntime
+            operationId: POST /vimgrnwruntime
             consumes:
                 -   application/json
             produces:
@@ -768,14 +281,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrNWRuntime"
-                401:
+                "401":
                     description: log in failed
     /vimgrnwruntime/{uuid}:
         get:
+            tags:
+                - VIMgrNWRuntime
+            description: /vimgrnwruntime/{uuid}
+            operationId: GET /vimgrnwruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -832,13 +349,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrNWRuntime"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - VIMgrNWRuntime
+            description: /vimgrnwruntime/{uuid}
+            operationId: PUT /vimgrnwruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -883,13 +406,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrNWRuntime"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - VIMgrNWRuntime
+            description: /vimgrnwruntime/{uuid}
+            operationId: PATCH /vimgrnwruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -934,13 +463,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrNWRuntime"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - VIMgrNWRuntime
+            description: /vimgrnwruntime/{uuid}
+            operationId: DELETE /vimgrnwruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -979,12 +514,363 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
+
+
+    /networkruntime:
+        get:
+            tags:
+                - NetworkRuntime
+            description: /networkruntime
+            operationId: GET /networkruntime
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: refers_to
+                    in: query
+                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
+                    type: string
+                -   name: referred_by
+                    in: query
+                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/NetworkRuntimeApiResponse"
+                "401":
+                    description: log in failed
+        post:
+            tags:
+                - NetworkRuntime
+            description: /networkruntime
+            operationId: POST /networkruntime
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: NetworkRuntime object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/NetworkRuntime"
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/NetworkRuntime"
+                "401":
+                    description: log in failed
+    /networkruntime/{uuid}:
+        get:
+            tags:
+                - NetworkRuntime
+            description: /networkruntime/{uuid}
+            operationId: GET /networkruntime/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: uuid
+                    in: path
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/NetworkRuntime"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        put:
+            tags:
+                - NetworkRuntime
+            description: /networkruntime/{uuid}
+            operationId: PUT /networkruntime/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: NetworkRuntime object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/NetworkRuntime"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/NetworkRuntime"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        patch:
+            tags:
+                - NetworkRuntime
+            description: /networkruntime/{uuid}
+            operationId: PATCH /networkruntime/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: NetworkRuntime object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/NetworkRuntime"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/NetworkRuntime"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        delete:
+            tags:
+                - NetworkRuntime
+            description: /networkruntime/{uuid}
+            operationId: DELETE /networkruntime/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "204":
+                    description: object deleted
+                    schema:
+                        type: string
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -994,13 +880,13 @@ definitions:
             -   name
         properties:
             name:
-                description: "FloatingIp subnet name if available, else uuid. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "FloatingIp subnet name if available, else uuid. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             prefix:
-                description: "FloatingIp subnet prefix. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "FloatingIp subnet prefix. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             uuid:
-                description: "FloatingIp subnet uuid. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "FloatingIp subnet uuid. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     IpAddr:
         type: object
@@ -1009,10 +895,10 @@ definitions:
             -   type
         properties:
             addr:
-                description: "IP address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - V4, DNS, V6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - V4, DNS, V6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     IpAddrPrefix:
         type: object
@@ -1021,10 +907,10 @@ definitions:
             -   mask
         properties:
             ip_addr:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             mask:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     IpAllocInfo:
@@ -1035,13 +921,13 @@ definitions:
             -   se_uuid
         properties:
             ip:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             mac:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             se_uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     NetworkConfig:
         type: object
@@ -1049,44 +935,44 @@ definitions:
             -   name
         properties:
             cloud_ref:
-                description: " It is a reference to an object of type Cloud. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Cloud. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             dhcp_enabled:
-                description: "Select the IP address management scheme for this Network. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Select the IP address management scheme for this Network. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             exclude_discovered_subnets:
-                description: "When selected, excludes all discovered subnets in this network from consideration for virtual service placement. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "When selected, excludes all discovered subnets in this network from consideration for virtual service placement. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             ip6_autocfg_enabled:
-                description: "Enable IPv6 auto configuration. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Enable IPv6 auto configuration. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             name:
-                description: "Name of the network. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Name of the network. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             synced_from_se:
-                description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: " Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             url:
-                description: "URL of the Network. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "URL of the Network. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             uuid:
-                description: "UUID of the network. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "UUID of the network. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             vcenter_dvs:
-                description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: " Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             vimgrnw_ref:
-                description: " It is a reference to an object of type VIMgrNWRuntime. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type VIMgrNWRuntime. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             vrf_context_ref:
-                description: " It is a reference to an object of type VrfContext. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type VrfContext. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     NetworkConfigApiResponse:
         type: object
@@ -1111,20 +997,20 @@ definitions:
                 readOnly: True
                 type: string
             config:
-                description: "Configuration summary of the network. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Configuration summary of the network. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/NetworkConfig'
             discovery:
-                description: "Configuration summary of the service engine group. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Configuration summary of the service engine group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VIMgrNWRuntime'
             runtime:
-                description: "Runtime summary of the network. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Runtime summary of the network. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/NetworkRuntime'
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the network. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "UUID of the network. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     NetworkInventoryApiResponse:
         type: object
@@ -1151,27 +1037,27 @@ definitions:
                 readOnly: True
                 type: string
             name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             obj_uuids:
-                description: "Objects using static IPs in this network. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Objects using static IPs in this network. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             subnet_runtime:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/SubnetRuntime'
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     NetworkRuntimeApiResponse:
         type: object
@@ -1194,32 +1080,32 @@ definitions:
             -   ip
         properties:
             ip:
-                description: "IP address. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "IP address. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             obj_info:
-                description: "Object metadata. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Object metadata. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             obj_uuid:
-                description: "Object which this IP address is allocated to. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Object which this IP address is allocated to. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     StaticIpRangeRuntime:
         type: object
         properties:
             allocated_ips:
-                description: "Allocated IPs. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Allocated IPs. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/StaticIpAllocInfo'
             free_ip_count:
-                description: "Free IP count. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Free IP count. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             total_ip_count:
-                description: "Total IP count. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Total IP count. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             type:
-                description: "Object type (VIP only, Service Engine only, or both) which is using this IP group. Enum options - STATIC_IPS_FOR_SE, STATIC_IPS_FOR_VIP, STATIC_IPS_FOR_VIP_AND_SE. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Object type (VIP only, Service Engine only, or both) which is using this IP group. Enum options - STATIC_IPS_FOR_SE, STATIC_IPS_FOR_VIP, STATIC_IPS_FOR_VIP_AND_SE. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
                 default: "STATIC_IPS_FOR_VIP_AND_SE"
     SubnetRuntime:
@@ -1228,12 +1114,12 @@ definitions:
             -   prefix
         properties:
             ip_range_runtimes:
-                description: "Static IP range runtime. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Static IP range runtime. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/StaticIpRangeRuntime'
             prefix:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
     VIMgrIPSubnetRuntime:
         type: object
@@ -1241,40 +1127,40 @@ definitions:
             -   prefix
         properties:
             fip_available:
-                description: "If true, capable of floating/elastic IP association. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "If true, capable of floating/elastic IP association. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             fip_subnet_uuids:
-                description: "If fip_available is True, this is list of supported FIP subnets, possibly empty if Cloud does not support such a network list. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "If fip_available is True, this is list of supported FIP subnets, possibly empty if Cloud does not support such a network list. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             floatingip_subnets:
-                description: "If fip_available is True, the list of associated FloatingIP subnets, possibly empty if unsupported or implictly defined by the Cloud. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "If fip_available is True, the list of associated FloatingIP subnets, possibly empty if unsupported or implictly defined by the Cloud. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/FloatingIpSubnet'
             ip_subnet:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             prefix:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             primary:
-                description: "True if prefix is primary IP on interface, else false. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "True if prefix is primary IP on interface, else false. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             ref_count:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             se_ref_count:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     VIMgrNWRuntime:
         type: object
@@ -1288,84 +1174,84 @@ definitions:
                 readOnly: True
                 type: string
             auto_expand:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             availability_zone:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             cloud_ref:
-                description: " It is a reference to an object of type Cloud. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             datacenter_uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             dvs:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             host_refs:
-                description: " It is a reference to an object of type VIMgrHostRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type VIMgrHostRuntime. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             interested_nw:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             ip_subnet:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VIMgrIPSubnetRuntime'
             logical_switch_id:
-                description: "UUID of NSX-T segment spanning multiple VDS with vCenter cloud. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "UUID of NSX-T segment spanning multiple VDS with vCenter cloud. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             managed_object_id:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             MgmtNW:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             num_ports:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             switch_name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vlan:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             vlan_range:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VlanRange'
             vm_refs:
-                description: " It is a reference to an object of type VIMgrVMRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type VIMgrVMRuntime. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             vrf_context_ref:
-                description: " It is a reference to an object of type VrfContext. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type VrfContext. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     VIMgrNWRuntimeApiResponse:
         type: object
@@ -1389,10 +1275,10 @@ definitions:
             -   start
         properties:
             end:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             start:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32

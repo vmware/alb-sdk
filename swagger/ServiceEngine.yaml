@@ -5,14 +5,14 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi ServiceEngine Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi ServiceEngine object api
         ```
         - configure serviceengine <key>
         - show serviceengine <key>
@@ -23,7 +23,11 @@ info:
         - clear serviceengine <key>
         ```
 
-
+        API permission: PERMISSION_SERVICEENGINE
+tags:
+  - name: ServiceEngine
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -32,6 +36,10 @@ basePath: /api
 paths:
     /serviceengine:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine
+            operationId: GET /serviceengine
             consumes:
                 -   application/json
             produces:
@@ -154,13 +162,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine
+            operationId: POST /serviceengine
             consumes:
                 -   application/json
             produces:
@@ -195,14 +207,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngine"
-                401:
+                "401":
                     description: log in failed
     /serviceengine/{uuid}:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}
+            operationId: GET /serviceengine/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -259,13 +275,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngine"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}
+            operationId: PUT /serviceengine/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -310,13 +332,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngine"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}
+            operationId: PATCH /serviceengine/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -361,13 +389,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngine"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}
+            operationId: DELETE /serviceengine/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -406,15 +440,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
     /serviceengine/{uuid}/reboot:
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/reboot
+            operationId: POST /serviceengine/{uuid}/reboot
             consumes:
                 -   application/json
             produces:
@@ -456,14 +494,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/forcedelete:
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/forcedelete
+            operationId: POST /serviceengine/{uuid}/forcedelete
             consumes:
                 -   application/json
             produces:
@@ -505,14 +549,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/switchover:
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/switchover
+            operationId: POST /serviceengine/{uuid}/switchover
             consumes:
                 -   application/json
             produces:
@@ -554,14 +604,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/clear:
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/clear
+            operationId: POST /serviceengine/clear
             consumes:
                 -   application/json
             produces:
@@ -598,15 +654,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
     /serviceengine/{uuid}/runtime/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/runtime/
+            operationId: GET /serviceengine/{uuid}/runtime/
             consumes:
                 -   application/json
             produces:
@@ -640,14 +700,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/runtime/detail/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/runtime/detail/
+            operationId: GET /serviceengine/{uuid}/runtime/detail/
             consumes:
                 -   application/json
             produces:
@@ -681,14 +747,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/internal/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/internal/
+            operationId: GET /serviceengine/{uuid}/internal/
             consumes:
                 -   application/json
             produces:
@@ -722,14 +794,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/ipstat/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/ipstat/
+            operationId: GET /serviceengine/{uuid}/ipstat/
             consumes:
                 -   application/json
             produces:
@@ -763,14 +841,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/arpstat/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/arpstat/
+            operationId: GET /serviceengine/{uuid}/arpstat/
             consumes:
                 -   application/json
             produces:
@@ -804,14 +888,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/icmpstat/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/icmpstat/
+            operationId: GET /serviceengine/{uuid}/icmpstat/
             consumes:
                 -   application/json
             produces:
@@ -845,14 +935,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/mbufstats/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/mbufstats/
+            operationId: GET /serviceengine/{uuid}/mbufstats/
             consumes:
                 -   application/json
             produces:
@@ -886,14 +982,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/mallocstats/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/mallocstats/
+            operationId: GET /serviceengine/{uuid}/mallocstats/
             consumes:
                 -   application/json
             produces:
@@ -927,14 +1029,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/shmallocstats/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/shmallocstats/
+            operationId: GET /serviceengine/{uuid}/shmallocstats/
             consumes:
                 -   application/json
             produces:
@@ -968,14 +1076,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/seassertstats/dp/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/seassertstats/dp/
+            operationId: GET /serviceengine/{uuid}/seassertstats/dp/
             consumes:
                 -   application/json
             produces:
@@ -1009,14 +1123,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/seassertstats/ag/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/seassertstats/ag/
+            operationId: GET /serviceengine/{uuid}/seassertstats/ag/
             consumes:
                 -   application/json
             produces:
@@ -1050,14 +1170,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/sevshbstats/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/sevshbstats/
+            operationId: GET /serviceengine/{uuid}/sevshbstats/
             consumes:
                 -   application/json
             produces:
@@ -1091,14 +1217,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/sevssplacement/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/sevssplacement/
+            operationId: GET /serviceengine/{uuid}/sevssplacement/
             consumes:
                 -   application/json
             produces:
@@ -1132,14 +1264,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/cpu/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/cpu/
+            operationId: GET /serviceengine/{uuid}/cpu/
             consumes:
                 -   application/json
             produces:
@@ -1173,14 +1311,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/cpu/detail/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/cpu/detail/
+            operationId: GET /serviceengine/{uuid}/cpu/detail/
             consumes:
                 -   application/json
             produces:
@@ -1214,14 +1358,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/meminfo/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/meminfo/
+            operationId: GET /serviceengine/{uuid}/meminfo/
             consumes:
                 -   application/json
             produces:
@@ -1255,14 +1405,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/interface/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/interface/
+            operationId: GET /serviceengine/{uuid}/interface/
             consumes:
                 -   application/json
             produces:
@@ -1296,14 +1452,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/bgp/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/bgp/
+            operationId: GET /serviceengine/{uuid}/bgp/
             consumes:
                 -   application/json
             produces:
@@ -1337,14 +1499,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/bgp/debug/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/bgp/debug/
+            operationId: GET /serviceengine/{uuid}/bgp/debug/
             consumes:
                 -   application/json
             produces:
@@ -1378,14 +1546,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/bgp/advertised_routes/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/bgp/advertised_routes/
+            operationId: GET /serviceengine/{uuid}/bgp/advertised_routes/
             consumes:
                 -   application/json
             produces:
@@ -1419,14 +1593,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/bgp/peer_status/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/bgp/peer_status/
+            operationId: GET /serviceengine/{uuid}/bgp/peer_status/
             consumes:
                 -   application/json
             produces:
@@ -1460,14 +1640,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/bgp/peer_info/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/bgp/peer_info/
+            operationId: GET /serviceengine/{uuid}/bgp/peer_info/
             consumes:
                 -   application/json
             produces:
@@ -1501,14 +1687,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/bgp/running_config/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/bgp/running_config/
+            operationId: GET /serviceengine/{uuid}/bgp/running_config/
             consumes:
                 -   application/json
             produces:
@@ -1542,14 +1734,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/bgp/peer_state/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/bgp/peer_state/
+            operationId: GET /serviceengine/{uuid}/bgp/peer_state/
             consumes:
                 -   application/json
             produces:
@@ -1583,14 +1781,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/bfd/running_config/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/bfd/running_config/
+            operationId: GET /serviceengine/{uuid}/bfd/running_config/
             consumes:
                 -   application/json
             produces:
@@ -1624,14 +1828,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/bfd/session_status/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/bfd/session_status/
+            operationId: GET /serviceengine/{uuid}/bfd/session_status/
             consumes:
                 -   application/json
             produces:
@@ -1665,14 +1875,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/interfacesummary/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/interfacesummary/
+            operationId: GET /serviceengine/{uuid}/interfacesummary/
             consumes:
                 -   application/json
             produces:
@@ -1706,14 +1922,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/interface/lacp/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/interface/lacp/
+            operationId: GET /serviceengine/{uuid}/interface/lacp/
             consumes:
                 -   application/json
             produces:
@@ -1747,14 +1969,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/lldp/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/lldp/
+            operationId: GET /serviceengine/{uuid}/lldp/
             consumes:
                 -   application/json
             produces:
@@ -1788,14 +2016,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/route/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/route/
+            operationId: GET /serviceengine/{uuid}/route/
             consumes:
                 -   application/json
             produces:
@@ -1829,14 +2063,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/ip6route/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/ip6route/
+            operationId: GET /serviceengine/{uuid}/ip6route/
             consumes:
                 -   application/json
             produces:
@@ -1870,14 +2110,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/arptable/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/arptable/
+            operationId: GET /serviceengine/{uuid}/arptable/
             consumes:
                 -   application/json
             produces:
@@ -1911,14 +2157,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/httpstats/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/httpstats/
+            operationId: GET /serviceengine/{uuid}/httpstats/
             consumes:
                 -   application/json
             produces:
@@ -1952,14 +2204,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/seruminsertionstats/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/seruminsertionstats/
+            operationId: GET /serviceengine/{uuid}/seruminsertionstats/
             consumes:
                 -   application/json
             produces:
@@ -1993,14 +2251,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/selogstats/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/selogstats/
+            operationId: GET /serviceengine/{uuid}/selogstats/
             consumes:
                 -   application/json
             produces:
@@ -2034,14 +2298,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/seauthstats/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/seauthstats/
+            operationId: GET /serviceengine/{uuid}/seauthstats/
             consumes:
                 -   application/json
             produces:
@@ -2075,14 +2345,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/vnicdb/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/vnicdb/
+            operationId: GET /serviceengine/{uuid}/vnicdb/
             consumes:
                 -   application/json
             produces:
@@ -2116,14 +2392,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/vnicdbhistory/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/vnicdbhistory/
+            operationId: GET /serviceengine/{uuid}/vnicdbhistory/
             consumes:
                 -   application/json
             produces:
@@ -2157,14 +2439,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/graphdb/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/graphdb/
+            operationId: GET /serviceengine/{uuid}/graphdb/
             consumes:
                 -   application/json
             produces:
@@ -2198,14 +2486,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/seagent/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/seagent/
+            operationId: GET /serviceengine/{uuid}/seagent/
             consumes:
                 -   application/json
             produces:
@@ -2239,14 +2533,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/resourcemap/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/resourcemap/
+            operationId: GET /serviceengine/{uuid}/resourcemap/
             consumes:
                 -   application/json
             produces:
@@ -2280,14 +2580,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/consistenthash/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/consistenthash/
+            operationId: GET /serviceengine/{uuid}/consistenthash/
             consumes:
                 -   application/json
             produces:
@@ -2321,14 +2627,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/appmap/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/appmap/
+            operationId: GET /serviceengine/{uuid}/appmap/
             consumes:
                 -   application/json
             produces:
@@ -2362,14 +2674,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/shardclientevents/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/shardclientevents/
+            operationId: GET /serviceengine/{uuid}/shardclientevents/
             consumes:
                 -   application/json
             produces:
@@ -2403,14 +2721,67 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
+    /serviceengine/{uuid}/qatinfo/:
+        get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/qatinfo/
+            operationId: GET /serviceengine/{uuid}/qatinfo/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/rteringstat/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/rteringstat/
+            operationId: GET /serviceengine/{uuid}/rteringstat/
             consumes:
                 -   application/json
             produces:
@@ -2444,14 +2815,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/sehmprobedisable/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/sehmprobedisable/
+            operationId: GET /serviceengine/{uuid}/sehmprobedisable/
             consumes:
                 -   application/json
             produces:
@@ -2485,14 +2862,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/flowtablestat/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/flowtablestat/
+            operationId: GET /serviceengine/{uuid}/flowtablestat/
             consumes:
                 -   application/json
             produces:
@@ -2526,14 +2909,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/flowtable/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/flowtable/
+            operationId: GET /serviceengine/{uuid}/flowtable/
             consumes:
                 -   application/json
             produces:
@@ -2567,14 +2956,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/vshash/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/vshash/
+            operationId: GET /serviceengine/{uuid}/vshash/
             consumes:
                 -   application/json
             produces:
@@ -2608,14 +3003,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/flowtable_remote/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/flowtable_remote/
+            operationId: GET /serviceengine/{uuid}/flowtable_remote/
             consumes:
                 -   application/json
             produces:
@@ -2649,14 +3050,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/tcp-flows/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/tcp-flows/
+            operationId: GET /serviceengine/{uuid}/tcp-flows/
             consumes:
                 -   application/json
             produces:
@@ -2690,14 +3097,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/sctp-flows/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/sctp-flows/
+            operationId: GET /serviceengine/{uuid}/sctp-flows/
             consumes:
                 -   application/json
             produces:
@@ -2731,14 +3144,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/tcp-flows/detail/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/tcp-flows/detail/
+            operationId: GET /serviceengine/{uuid}/tcp-flows/detail/
             consumes:
                 -   application/json
             produces:
@@ -2772,14 +3191,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/sctp-flows/detail/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/sctp-flows/detail/
+            operationId: GET /serviceengine/{uuid}/sctp-flows/detail/
             consumes:
                 -   application/json
             produces:
@@ -2813,14 +3238,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/metrics/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/metrics/
+            operationId: GET /serviceengine/{uuid}/metrics/
             consumes:
                 -   application/json
             produces:
@@ -2854,14 +3285,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/metrics/detail/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/metrics/detail/
+            operationId: GET /serviceengine/{uuid}/metrics/detail/
             consumes:
                 -   application/json
             produces:
@@ -2895,14 +3332,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/metrics/debug/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/metrics/debug/
+            operationId: GET /serviceengine/{uuid}/metrics/debug/
             consumes:
                 -   application/json
             produces:
@@ -2936,14 +3379,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/metrics/debug/summary/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/metrics/debug/summary/
+            operationId: GET /serviceengine/{uuid}/metrics/debug/summary/
             consumes:
                 -   application/json
             produces:
@@ -2977,14 +3426,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/dosstat/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/dosstat/
+            operationId: GET /serviceengine/{uuid}/dosstat/
             consumes:
                 -   application/json
             produces:
@@ -3018,14 +3473,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/memdist/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/memdist/
+            operationId: GET /serviceengine/{uuid}/memdist/
             consumes:
                 -   application/json
             produces:
@@ -3059,14 +3520,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/faultinject/exhaust_mbuf/clear:
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/faultinject/exhaust_mbuf/clear
+            operationId: POST /serviceengine/{uuid}/faultinject/exhaust_mbuf/clear
             consumes:
                 -   application/json
             produces:
@@ -3106,14 +3573,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/faultinject/exhaust_mcl/clear:
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/faultinject/exhaust_mcl/clear
+            operationId: POST /serviceengine/{uuid}/faultinject/exhaust_mcl/clear
             consumes:
                 -   application/json
             produces:
@@ -3153,14 +3626,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/faultinject/exhaust_mcl_small/clear:
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/faultinject/exhaust_mcl_small/clear
+            operationId: POST /serviceengine/{uuid}/faultinject/exhaust_mcl_small/clear
             consumes:
                 -   application/json
             produces:
@@ -3200,14 +3679,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/faultinject/exhaust_conn/clear:
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/faultinject/exhaust_conn/clear
+            operationId: POST /serviceengine/{uuid}/faultinject/exhaust_conn/clear
             consumes:
                 -   application/json
             produces:
@@ -3247,14 +3732,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/faultinject/exhaust_shm_conn/clear:
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/faultinject/exhaust_shm_conn/clear
+            operationId: POST /serviceengine/{uuid}/faultinject/exhaust_shm_conn/clear
             consumes:
                 -   application/json
             produces:
@@ -3294,14 +3785,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/faultinject/exhaust_cfg/clear:
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/faultinject/exhaust_cfg/clear
+            operationId: POST /serviceengine/{uuid}/faultinject/exhaust_cfg/clear
             consumes:
                 -   application/json
             produces:
@@ -3341,14 +3838,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/faultinject/exhaust_shm_cfg/clear:
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/faultinject/exhaust_shm_cfg/clear
+            operationId: POST /serviceengine/{uuid}/faultinject/exhaust_shm_cfg/clear
             consumes:
                 -   application/json
             produces:
@@ -3388,14 +3891,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/faultinject/sefault/clear:
         post:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/faultinject/sefault/clear
+            operationId: POST /serviceengine/{uuid}/faultinject/sefault/clear
             consumes:
                 -   application/json
             produces:
@@ -3435,14 +3944,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/placement/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/placement/
+            operationId: GET /serviceengine/{uuid}/placement/
             consumes:
                 -   application/json
             produces:
@@ -3476,14 +3991,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/reservedvs/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/reservedvs/
+            operationId: GET /serviceengine/{uuid}/reservedvs/
             consumes:
                 -   application/json
             produces:
@@ -3517,14 +4038,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/microservice/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/microservice/
+            operationId: GET /serviceengine/{uuid}/microservice/
             consumes:
                 -   application/json
             produces:
@@ -3558,14 +4085,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/ndtable/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/ndtable/
+            operationId: GET /serviceengine/{uuid}/ndtable/
             consumes:
                 -   application/json
             produces:
@@ -3599,14 +4132,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/ip6stat/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/ip6stat/
+            operationId: GET /serviceengine/{uuid}/ip6stat/
             consumes:
                 -   application/json
             produces:
@@ -3640,14 +4179,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/icmp6stat/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/icmp6stat/
+            operationId: GET /serviceengine/{uuid}/icmp6stat/
             consumes:
                 -   application/json
             produces:
@@ -3681,14 +4226,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/natstat/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/natstat/
+            operationId: GET /serviceengine/{uuid}/natstat/
             consumes:
                 -   application/json
             produces:
@@ -3722,14 +4273,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/nat-flows/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/nat-flows/
+            operationId: GET /serviceengine/{uuid}/nat-flows/
             consumes:
                 -   application/json
             produces:
@@ -3763,14 +4320,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/network-service/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/network-service/
+            operationId: GET /serviceengine/{uuid}/network-service/
             consumes:
                 -   application/json
             produces:
@@ -3804,14 +4367,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/natpolicystats/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/natpolicystats/
+            operationId: GET /serviceengine/{uuid}/natpolicystats/
             consumes:
                 -   application/json
             produces:
@@ -3845,14 +4414,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/vrf-ip-info/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/vrf-ip-info/
+            operationId: GET /serviceengine/{uuid}/vrf-ip-info/
             consumes:
                 -   application/json
             produces:
@@ -3886,14 +4461,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/ratelimiting/rl/internal/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/ratelimiting/rl/internal/
+            operationId: GET /serviceengine/{uuid}/ratelimiting/rl/internal/
             consumes:
                 -   application/json
             produces:
@@ -3927,14 +4508,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/ratelimiting/msf/internal/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/ratelimiting/msf/internal/
+            operationId: GET /serviceengine/{uuid}/ratelimiting/msf/internal/
             consumes:
                 -   application/json
             produces:
@@ -3968,14 +4555,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/routestat/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/routestat/
+            operationId: GET /serviceengine/{uuid}/routestat/
             consumes:
                 -   application/json
             produces:
@@ -4009,14 +4602,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/route-flows/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/route-flows/
+            operationId: GET /serviceengine/{uuid}/route-flows/
             consumes:
                 -   application/json
             produces:
@@ -4050,14 +4649,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/objsync/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/objsync/
+            operationId: GET /serviceengine/{uuid}/objsync/
             consumes:
                 -   application/json
             produces:
@@ -4091,14 +4696,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/resolverdb/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/resolverdb/
+            operationId: GET /serviceengine/{uuid}/resolverdb/
             consumes:
                 -   application/json
             produces:
@@ -4132,14 +4743,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/resolverdbsummary/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/resolverdbsummary/
+            operationId: GET /serviceengine/{uuid}/resolverdbsummary/
             consumes:
                 -   application/json
             produces:
@@ -4173,14 +4790,67 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
+    /serviceengine/{uuid}/seagent_sedatastore_download_fail_obj_list/:
+        get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/seagent_sedatastore_download_fail_obj_list/
+            operationId: GET /serviceengine/{uuid}/seagent_sedatastore_download_fail_obj_list/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/botuacacheruntime/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/botuacacheruntime/
+            operationId: GET /serviceengine/{uuid}/botuacacheruntime/
             consumes:
                 -   application/json
             produces:
@@ -4214,14 +4884,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/botuacachestatsruntime/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/botuacachestatsruntime/
+            operationId: GET /serviceengine/{uuid}/botuacachestatsruntime/
             consumes:
                 -   application/json
             produces:
@@ -4255,14 +4931,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/placement/summary/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/placement/summary/
+            operationId: GET /serviceengine/{uuid}/placement/summary/
             consumes:
                 -   application/json
             produces:
@@ -4296,14 +4978,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/placement/detail/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/placement/detail/
+            operationId: GET /serviceengine/{uuid}/placement/detail/
             consumes:
                 -   application/json
             produces:
@@ -4337,14 +5025,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/adaptiveevents/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/adaptiveevents/
+            operationId: GET /serviceengine/{uuid}/adaptiveevents/
             consumes:
                 -   application/json
             produces:
@@ -4378,14 +5072,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/dpmetrics/:
         get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/dpmetrics/
+            operationId: GET /serviceengine/{uuid}/dpmetrics/
             consumes:
                 -   application/json
             produces:
@@ -4419,24 +5119,261 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
+    /serviceengine/{uuid}/objsync_stats/:
+        get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/objsync_stats/
+            operationId: GET /serviceengine/{uuid}/objsync_stats/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+    /serviceengine/{uuid}/diameter/connections/:
+        get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/diameter/connections/
+            operationId: GET /serviceengine/{uuid}/diameter/connections/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+    /serviceengine/{uuid}/dump_objsync_stats/:
+        get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/dump_objsync_stats/
+            operationId: GET /serviceengine/{uuid}/dump_objsync_stats/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+    /serviceengine/{uuid}/qatstats/:
+        get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/qatstats/
+            operationId: GET /serviceengine/{uuid}/qatstats/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+    /serviceengine/{uuid}/flowtablestat6/:
+        get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/flowtablestat6/
+            operationId: GET /serviceengine/{uuid}/flowtablestat6/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
 definitions:
     ArpTableFilter:
         type: object
         properties:
             ip_address:
-                description: "IP address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
     DispatcherTableDumpClear:
         type: object
         properties:
             se_uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     IpAddr:
         type: object
@@ -4445,10 +5382,10 @@ definitions:
             -   type
         properties:
             addr:
-                description: "IP address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - V4, DNS, V6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - V4, DNS, V6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     IpAddrPrefix:
         type: object
@@ -4457,10 +5394,10 @@ definitions:
             -   mask
         properties:
             ip_addr:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             mask:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     MemberInterface:
@@ -4469,13 +5406,13 @@ definitions:
             -   if_name
         properties:
             active:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             if_name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             mac_address:
-                description: " Field introduced in 17.1.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Field introduced in 17.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     SEFaultInjectExhaustParam:
         type: object
@@ -4483,34 +5420,34 @@ definitions:
             -   num
         properties:
             leak:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             num:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
     SEFaultInjectSeParam:
         type: object
         properties:
             core:
-                description: "Inject fault in specific core. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Inject fault in specific core. Field introduced in 18.1.5,18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1000
                 format: uint32
             obj_names:
-                description: "Inject Fault on Objects. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Inject Fault on Objects. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             random_core:
-                description: "Inject fault in random no of cores. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Inject fault in random no of cores. Field introduced in 18.1.5,18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             se_agent_fault:
-                description: "Set se-agent fault type. Enum options - SE_AGENT_FAULT_DISABLED, SE_AGENT_PRE_PROCESS_FAULT, SE_AGENT_POST_PROCESS_FAULT, SE_AGENT_DP_RESPONSE_FAULT, SE_AGENT_RANDOM_PROCESS_FAULT. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Set se-agent fault type. Enum options - SE_AGENT_FAULT_DISABLED, SE_AGENT_PRE_PROCESS_FAULT, SE_AGENT_POST_PROCESS_FAULT, SE_AGENT_DP_RESPONSE_FAULT, SE_AGENT_RANDOM_PROCESS_FAULT. Field introduced in 18.1.5,18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "SE_AGENT_FAULT_DISABLED"
             se_dp_fault:
-                description: "Set se-dp fault type. Enum options - SE_DP_FAULT_DISABLED. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Set se-dp fault type. Enum options - SE_DP_FAULT_DISABLED. Field introduced in 18.1.5,18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "SE_DP_FAULT_DISABLED"
     SeResources:
@@ -4521,33 +5458,37 @@ definitions:
             -   num_vcpus
         properties:
             cores_per_socket:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             disk:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             hyper_threading:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             hypervisor_mode:
-                description: "Indicates that the SE is running on a Virtual Machine. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Indicates that the SE is running on a Virtual Machine. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             memory:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_datapath_processes:
-                description: "Indicates the number of active datapath processes. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Indicates the number of active datapath processes. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             num_vcpus:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
+            qat_mode:
+                description: "Usage of Intel QAT for crypto offloads. Enum options - QAT_OFF, QAT_SW_ACCELERATION, QAT_HW_OFFLOAD. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+                default: "QAT_OFF"
             sockets:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     ServiceEngine:
@@ -4558,67 +5499,67 @@ definitions:
                 readOnly: True
                 type: string
             availability_zone:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             cloud_ref:
-                description: " It is a reference to an object of type Cloud. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             container_mode:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             container_type:
-                description: " Enum options - CONTAINER_TYPE_BRIDGE, CONTAINER_TYPE_HOST, CONTAINER_TYPE_HOST_DPDK. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - CONTAINER_TYPE_BRIDGE, CONTAINER_TYPE_HOST, CONTAINER_TYPE_HOST_DPDK. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "CONTAINER_TYPE_HOST"
             controller_created:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             controller_ip:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             data_vnics:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/vNIC'
             enable_state:
-                description: "inorder to disable SE set this field appropriately. Enum options - SE_STATE_ENABLED, SE_STATE_DISABLED_FOR_PLACEMENT, SE_STATE_DISABLED, SE_STATE_DISABLED_FORCE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "inorder to disable SE set this field appropriately. Enum options - SE_STATE_ENABLED, SE_STATE_DISABLED_FOR_PLACEMENT, SE_STATE_DISABLED, SE_STATE_DISABLED_FORCE, SE_STATE_DISABLED_WITH_SCALEIN, SE_STATE_DISABLED_NO_TRAFFIC, SE_STATE_DISABLED_FORCE_WITH_MIGRATE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "SE_STATE_ENABLED"
             flavor:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             host_ref:
-                description: " It is a reference to an object of type VIMgrHostRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type VIMgrHostRuntime. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             hypervisor:
-                description: " Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             mgmt_vnic:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/vNIC'
             name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "VM name unknown"
             nsxt_no_hotplug:
-                description: "If set to true, controller does not hotplugg the vNICs. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "If set to true, controller does not hotplugg the vNICs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             resources:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SeResources'
             se_group_ref:
-                description: " It is a reference to an object of type ServiceEngineGroup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type ServiceEngineGroup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ServiceEngineApiResponse:
         type: object
@@ -4641,32 +5582,32 @@ definitions:
             -   if_name
         properties:
             dhcp_enabled:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enabled:
-                description: "Enable the interface. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enable the interface. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             if_name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             ip6_autocfg_enabled:
-                description: "Enable IPv6 auto configuration. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enable IPv6 auto configuration. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             is_mgmt:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             vlan_id:
-                description: "VLAN ID. Allowed values are 0-4096. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "VLAN ID. Allowed values are 0-4096. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             vnic_networks:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/vNICNetwork'
             vrf_ref:
-                description: " It is a reference to an object of type VrfContext. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type VrfContext. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     vNIC:
         type: object
@@ -4674,117 +5615,117 @@ definitions:
             -   mac_address
         properties:
             adapter:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             aggregator_chgd:
-                description: " Field introduced in 17.2.7. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Field introduced in 17.2.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             can_se_dp_takeover:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             connected:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             del_pending:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             delete_vnic:
-                description: "Delete this VNIC. Please confirm dp_deletion_done before removing the VNIC from the cloud. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Delete this VNIC. Please confirm dp_deletion_done before removing the VNIC from the cloud. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             dhcp_enabled:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             dp_deletion_done:
-                description: "The VNIC has been cleaned up in the datapath. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The VNIC has been cleaned up in the datapath. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enabled:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             if_name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             ip6_autocfg_enabled:
-                description: "Enable IPv6 auto configuration. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enable IPv6 auto configuration. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             is_asm:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             is_avi_internal_network:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             is_hsm:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             is_mgmt:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             is_portchannel:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             link_up:
-                description: "The link is operationally up. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The link is operationally up. Field introduced in 18.2.8, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             linux_name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             mac_address:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             members:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/MemberInterface'
             mtu:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1500
                 format: int32
             network_name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             network_ref:
-                description: " It is a reference to an object of type Network. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Network. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             num_rx_descriptors:
-                description: "User defined value for RX descriptor ring size, expressed as power of 2. Setting a value of 0 implies the default value for that environment. (Tech-Preview, vCenter only). Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "User defined value for RX descriptor ring size, expressed as power of 2. Setting a value of 0 implies the default value for that environment. (Tech-Preview, vCenter only). Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             num_tx_descriptors:
-                description: "User defined value for TX descriptor ring size, expressed as power of 2. Setting a value of 0 implies the default value for that environment. (Tech-Preview, vCenter only). Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "User defined value for TX descriptor ring size, expressed as power of 2. Setting a value of 0 implies the default value for that environment. (Tech-Preview, vCenter only). Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             pci_id:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             port_uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vlan_id:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             vlan_interfaces:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VlanInterface'
             vnic_networks:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/vNICNetwork'
             vrf_id:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             vrf_ref:
-                description: " It is a reference to an object of type VrfContext. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type VrfContext. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     vNICNetwork:
         type: object
@@ -4793,12 +5734,12 @@ definitions:
             -   mode
         properties:
             ctlr_alloc:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             ip:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             mode:
-                description: " Enum options - DHCP, STATIC, VIP, DOCKER_HOST, MODE_MANUAL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - DHCP, STATIC, VIP, DOCKER_HOST, MODE_MANUAL. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "DHCP"

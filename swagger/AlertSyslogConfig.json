@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi AlertSyslogConfig Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure alertsyslogconfig <key>\n- show alertsyslogconfig <key>\n- test alerttestsyslog <key>\n```\n"
+        "description": "Avi AlertSyslogConfig object api\n```\n- configure alertsyslogconfig <key>\n- show alertsyslogconfig <key>\n- test alerttestsyslog <key>\n```\n\nAPI permission: PERMISSION_ALERTSYSLOGCONFIG\n"
     },
+    "tags": [
+        {
+            "name": "AlertSyslogConfig"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/alertsyslogconfig": {
             "get": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig",
+                "operationId": "GET /alertsyslogconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig",
+                "operationId": "POST /alertsyslogconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/alertsyslogconfig/{uuid}": {
             "get": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig/{uuid}",
+                "operationId": "GET /alertsyslogconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -274,10 +297,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig/{uuid}",
+                "operationId": "PUT /alertsyslogconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -351,10 +382,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig/{uuid}",
+                "operationId": "PATCH /alertsyslogconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -428,10 +467,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig/{uuid}",
+                "operationId": "DELETE /alertsyslogconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -495,13 +542,18 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/alertsyslogconfig/{uuid}/testsyslog": {
             "post": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig/{uuid}/testsyslog",
+                "operationId": "POST /alertsyslogconfig/{uuid}/testsyslog",
                 "consumes": [
                     "application/json"
                 ],
@@ -568,6 +620,9 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             }
@@ -586,30 +641,30 @@
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "description": {
-                    "description": "User defined description for alert syslog config. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "User defined description for alert syslog config. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "A user-friendly name of the syslog notification. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "A user-friendly name of the syslog notification. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "sender_hostname": {
-                    "description": "User defined sender hostname in syslog message. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "User defined sender hostname in syslog message. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "syslog_servers": {
-                    "description": "The list of syslog servers. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The list of syslog servers. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AlertSyslogServer"
                     }
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -618,7 +673,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -653,42 +708,42 @@
             ],
             "properties": {
                 "anon_auth": {
-                    "description": "Enable anonymous authentication of Syslog Serverwhich will disable server certificate authentication. Field introduced in 17.2.17, 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable anonymous authentication of Syslog Serverwhich will disable server certificate authentication. Field introduced in 17.2.17, 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "format": {
-                    "description": "Syslog output format - legacy, RFC 5424, JSON. Enum options - SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, SYSLOG_RFC5425_ENHANCED. Field introduced in 17.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Syslog output format - legacy, RFC 5424, JSON. Enum options - SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, SYSLOG_RFC5425_ENHANCED. Field introduced in 17.2.8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SYSLOG_LEGACY"
                 },
                 "pkiprofile_ref": {
-                    "description": "Select the PKIProfile containing a CA or list of CA chainswhich will validate the certificate of the syslog server. It is a reference to an object of type PKIProfile. Field introduced in 17.2.17, 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Select the PKIProfile containing a CA or list of CA chainswhich will validate the certificate of the syslog server. It is a reference to an object of type PKIProfile. Field introduced in 17.2.17, 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ssl_key_and_certificate_ref": {
-                    "description": "Select a certificate and key which will be used to authenticate to the syslog server. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 17.2.17, 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Select a certificate and key which will be used to authenticate to the syslog server. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 17.2.17, 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "strict_cert_verify": {
-                    "description": "strict verificiation of certificate given by the server. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "strict verificiation of certificate given by the server. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "syslog_server": {
-                    "description": "The destination Syslog server IP(v4/v6) address or FQDN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The destination Syslog server IP(v4/v6) address or FQDN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "syslog_server_port": {
-                    "description": "The destination Syslog server's service port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The destination Syslog server's service port. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 514,
                     "format": "uint32"
                 },
                 "tls_enable": {
-                    "description": "Enable TLS to the syslog server. Field introduced in 17.2.16, 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable TLS to the syslog server. Field introduced in 17.2.16, 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "udp": {
-                    "description": "Network protocol to establish syslog session. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Network protocol to establish syslog session. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 }
@@ -701,11 +756,11 @@
             ],
             "properties": {
                 "text": {
-                    "description": "The contents of the Syslog message/SNMP Trap contents. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The contents of the Syslog message/SNMP Trap contents. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -714,7 +769,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"

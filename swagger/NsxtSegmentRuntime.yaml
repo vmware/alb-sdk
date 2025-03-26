@@ -5,19 +5,23 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi NsxtSegmentRuntime Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi NsxtSegmentRuntime object api
         ```
         - show nsxt segment <key>
         ```
 
-
+        API permission: PERMISSION_CLOUD
+tags:
+  - name: NsxtSegmentRuntime
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /nsxtsegmentruntime:
         get:
+            tags:
+                - NsxtSegmentRuntime
+            description: /nsxtsegmentruntime
+            operationId: GET /nsxtsegmentruntime
             consumes:
                 -   application/json
             produces:
@@ -148,13 +156,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NsxtSegmentRuntimeApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - NsxtSegmentRuntime
+            description: /nsxtsegmentruntime
+            operationId: POST /nsxtsegmentruntime
             consumes:
                 -   application/json
             produces:
@@ -189,14 +201,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NsxtSegmentRuntime"
-                401:
+                "401":
                     description: log in failed
     /nsxtsegmentruntime/{uuid}:
         get:
+            tags:
+                - NsxtSegmentRuntime
+            description: /nsxtsegmentruntime/{uuid}
+            operationId: GET /nsxtsegmentruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -253,13 +269,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NsxtSegmentRuntime"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - NsxtSegmentRuntime
+            description: /nsxtsegmentruntime/{uuid}
+            operationId: PUT /nsxtsegmentruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -304,13 +326,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NsxtSegmentRuntime"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - NsxtSegmentRuntime
+            description: /nsxtsegmentruntime/{uuid}
+            operationId: PATCH /nsxtsegmentruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -355,13 +383,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NsxtSegmentRuntime"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - NsxtSegmentRuntime
+            description: /nsxtsegmentruntime/{uuid}
+            operationId: DELETE /nsxtsegmentruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -400,12 +434,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -417,78 +451,78 @@ definitions:
                 readOnly: True
                 type: string
             cloud_ref:
-                description: "Nsxt segment belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Nsxt segment belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             dhcp6_ranges:
-                description: "V6 DHCP ranges configured in Nsxt. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "V6 DHCP ranges configured in Nsxt. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             dhcp_enabled:
-                description: "IP address management scheme for this Segment associated network. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "IP address management scheme for this Segment associated network. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             dhcp_ranges:
-                description: "DHCP ranges configured in Nsxt. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "DHCP ranges configured in Nsxt. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             name:
-                description: "Segment object name. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Segment object name. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             nw_name:
-                description: "Network Name. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Network Name. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             nw_ref:
-                description: "Corresponding network object in Avi. It is a reference to an object of type Network. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Corresponding network object in Avi. It is a reference to an object of type Network. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             opaque_network_id:
-                description: "Opaque network Id. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Opaque network Id. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             origin_id:
-                description: "Origin ID applicable to security only cloud. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Origin ID applicable to security only cloud. Field introduced in 22.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             security_only_nsxt:
-                description: "Nsxt segment belongs to Security only cloud. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Nsxt segment belongs to Security only cloud. Field introduced in 22.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             segment_gw:
-                description: "Segment Gateway. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Segment Gateway. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             segment_gw6:
-                description: "V6 segment Gateway. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "V6 segment Gateway. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             segment_id:
-                description: "Segment Id. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Segment Id. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             segname:
-                description: "Segment name. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Segment name. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             subnet:
-                description: "Segment Cidr. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Segment Cidr. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             subnet6:
-                description: "V6 Segment Cidr. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "V6 Segment Cidr. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: "Nsxt segment belongs to tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Nsxt segment belongs to tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tier1_id:
-                description: "Tier1 router Id. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Tier1 router Id. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "Uuid. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Uuid. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vlan_ids:
-                description: "Segment Vlan ids. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Segment Vlan ids. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             vrf_context_ref:
-                description: "Corresponding vrf context object in Avi. It is a reference to an object of type VrfContext. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Corresponding vrf context object in Avi. It is a reference to an object of type VrfContext. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     NsxtSegmentRuntimeApiResponse:
         type: object
