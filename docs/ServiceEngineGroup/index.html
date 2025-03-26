@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure serviceenginegroup <key> - show serviceenginegroup <key> - redistribute serviceenginegroup <key> - clear serviceenginegroup <key> ```  Examples - **serviceenginegroup_example_1**: To create a SE group that is suitable for a production application with a HA policy of shared active/active with a minimum scale out of 2 SE   ```json     {'name': 'production-group', 'min_scaleout_per_vs': 2, 'ha_mode': 'HA_MODE_SHARED_PAIR'}   ```  - **serviceenginegroup_example_2**: To create a SE group that is of best effort category suitable for test deployments   ```json     {'name': 'test-group', 'max_se': 8, 'ha_mode': 'HA_MODE_SHARED', 'buffer_se': 0}   ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 30.2.2</div>
+    <div class="app-desc">Version: 30.2.3</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -368,6 +368,7 @@ font-style: italic;
     "se_dp_log_nf_enqueue_percent" : "",
     "se_l3_encap_ipc" : "",
     "vs_se_scaleout_additional_wait_time" : "",
+    "gve_enabled" : true,
     "active_standby" : true,
     "service_ip6_subnets" : [ "" ],
     "se_kni_burst_factor" : "",
@@ -860,6 +861,7 @@ font-style: italic;
   "se_dp_log_nf_enqueue_percent" : "",
   "se_l3_encap_ipc" : "",
   "vs_se_scaleout_additional_wait_time" : "",
+  "gve_enabled" : true,
   "active_standby" : true,
   "service_ip6_subnets" : [ "" ],
   "se_kni_burst_factor" : "",
@@ -1423,6 +1425,7 @@ font-style: italic;
   "se_dp_log_nf_enqueue_percent" : "",
   "se_l3_encap_ipc" : "",
   "vs_se_scaleout_additional_wait_time" : "",
+  "gve_enabled" : true,
   "active_standby" : true,
   "service_ip6_subnets" : [ "" ],
   "se_kni_burst_factor" : "",
@@ -1926,6 +1929,7 @@ font-style: italic;
   "se_dp_log_nf_enqueue_percent" : "",
   "se_l3_encap_ipc" : "",
   "vs_se_scaleout_additional_wait_time" : "",
+  "gve_enabled" : true,
   "active_standby" : true,
   "service_ip6_subnets" : [ "" ],
   "se_kni_burst_factor" : "",
@@ -2585,6 +2589,7 @@ font-style: italic;
   "se_dp_log_nf_enqueue_percent" : "",
   "se_l3_encap_ipc" : "",
   "vs_se_scaleout_additional_wait_time" : "",
+  "gve_enabled" : true,
   "active_standby" : true,
   "service_ip6_subnets" : [ "" ],
   "se_kni_burst_factor" : "",
@@ -3462,6 +3467,7 @@ font-style: italic;
 <div class="param">gcp_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#GCPSeGroupConfig">GCPSeGroupConfig</a></span> Google Cloud Platform, Service Engine Group Configuration. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">gratarp_permanent_periodicity (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> GratArp periodicity for VIP-IP. Allowed values are 5-30. Field introduced in 18.2.3. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">grpc_channel_connect_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Timeout in seconds that SE waits for a grpc channel to connect to server, before it retries. Allowed values are 5-45. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">gve_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Deploys Google Virtual Ethernet (gve) - gVNIC for all supported intances types in GCP. Applies only to newly created SE&#39;s. Field introduced in 30.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ha_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> High Availability mode for all the Virtual Services using this Service Engine group. Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HA_MODE_LEGACY_ACTIVE_STANDBY), Basic edition(Allowed values- HA_MODE_LEGACY_ACTIVE_STANDBY), Enterprise with Cloud Services edition. Special default for Essentials edition is HA_MODE_LEGACY_ACTIVE_STANDBY, Basic edition is HA_MODE_LEGACY_ACTIVE_STANDBY, Enterprise is HA_MODE_SHARED. </div>
 <div class="param">handle_per_pkt_attack (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Configuration to handle per packet attack handling.For example, DNS Reflection Attack is a type of attack where a response packet is sent to the DNS VS.This configuration tells if such packets should be dropped without further processing. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">hardwaresecuritymodulegroup_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type HardwareSecurityModuleGroup. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
