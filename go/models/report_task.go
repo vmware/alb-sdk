@@ -8,16 +8,16 @@ package models
 // swagger:model ReportTask
 type ReportTask struct {
 
-	// Name for the Task journal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Name for the Task journal. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
-	// Reason in case of failure. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Reason in case of failure. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 
-	// Copy of journal summary for immediate visibility. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Copy of journal summary for immediate visibility. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Summary *JournalSummary `json:"summary,omitempty"`
 
-	// Journal reference for the task. It is a reference to an object of type TaskJournal. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Journal reference for the task. It is a reference to an object of type TaskJournal. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	TaskJournalRef *string `json:"task_journal_ref,omitempty"`
 }

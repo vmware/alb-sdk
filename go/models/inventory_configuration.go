@@ -8,6 +8,6 @@ package models
 // swagger:model InventoryConfiguration
 type InventoryConfiguration struct {
 
-	// Names, IP's of VS, Pool(PoolGroup) servers would be searchable on Cloud console. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	// Names, IP's of VS, Pool(PoolGroup) servers would be searchable on Cloud console. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableSearchInfo *bool `json:"enable_search_info,omitempty"`
 }

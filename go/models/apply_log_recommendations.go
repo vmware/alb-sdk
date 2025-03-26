@@ -8,6 +8,6 @@ package models
 // swagger:model ApplyLogRecommendations
 type ApplyLogRecommendations struct {
 
-	// Describe the actions we want to perform. Field introduced in 21.1.3. Minimum of 1 items required. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Describe the actions we want to perform. Field introduced in 21.1.3. Minimum of 1 items required. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Actions []*Action `json:"actions,omitempty"`
 }

@@ -8,9 +8,9 @@ package models
 // swagger:model FileObjectDetails
 type FileObjectDetails struct {
 
-	// Name of file object. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Name of file object. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// URL. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// URL. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	URL *string `json:"url,omitempty"`
 }

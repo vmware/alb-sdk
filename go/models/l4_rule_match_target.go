@@ -8,12 +8,12 @@ package models
 // swagger:model L4RuleMatchTarget
 type L4RuleMatchTarget struct {
 
-	// IP addresses to match against client IP. Field introduced in 17.2.7. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// IP addresses to match against client IP. Field introduced in 17.2.7. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ClientIP *IPAddrMatch `json:"client_ip,omitempty"`
 
-	// Port number to match against Virtual Service listner port. Field introduced in 17.2.7. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Port number to match against Virtual Service listner port. Field introduced in 17.2.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Port *L4RulePortMatch `json:"port,omitempty"`
 
-	// TCP/UDP/ICMP protocol to match against transport protocol. Field introduced in 17.2.7. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// TCP/UDP/ICMP protocol to match against transport protocol. Field introduced in 17.2.7. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Protocol *L4RuleProtocolMatch `json:"protocol,omitempty"`
 }

@@ -8,12 +8,12 @@ package models
 // swagger:model CentralLicenseRefreshDetails
 type CentralLicenseRefreshDetails struct {
 
-	// Message. Field introduced in 21.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Message. Field introduced in 21.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Message *string `json:"message,omitempty"`
 
-	// Service units. Field introduced in 21.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Service units. Field introduced in 21.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ServiceUnits *float64 `json:"service_units,omitempty"`
 
-	// Tenant uuid. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Tenant uuid. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	TenantUUID *string `json:"tenant_uuid,omitempty"`
 }

@@ -8,10 +8,10 @@ package models
 // swagger:model DosThresholdProfile
 type DosThresholdProfile struct {
 
-	// Attack type, min and max values for DoS attack detection. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Attack type, min and max values for DoS attack detection. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ThreshInfo []*DosThreshold `json:"thresh_info,omitempty"`
 
-	// Timer value in seconds to collect DoS attack metrics based on threshold on the Service Engine for this Virtual Service. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Timer value in seconds to collect DoS attack metrics based on threshold on the Service Engine for this Virtual Service. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	ThreshPeriod *int32 `json:"thresh_period"`
 }

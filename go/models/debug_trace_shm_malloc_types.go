@@ -8,6 +8,6 @@ package models
 // swagger:model DebugTraceShmMallocTypes
 type DebugTraceShmMallocTypes struct {
 
-	// Memory type to be traced for se_shmalloc and se_shmfree. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Memory type to be traced for se_shmalloc and se_shmfree. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ShmMallocTypeIndex *uint32 `json:"shm_malloc_type_index,omitempty"`
 }

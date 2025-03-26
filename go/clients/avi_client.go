@@ -60,8 +60,11 @@ type AviClient struct {
 	Generic                         *GenericClient
 	GeoDB                           *GeoDBClient
 	Gslb                            *GslbClient
+	GslbCRMRuntime                  *GslbCRMRuntimeClient
 	GslbGeoDbProfile                *GslbGeoDbProfileClient
+	GslbHSMRuntime                  *GslbHSMRuntimeClient
 	GslbInventory                   *GslbInventoryClient
+	GslbSMRuntime                   *GslbSMRuntimeClient
 	GslbService                     *GslbServiceClient
 	GslbServiceInventory            *GslbServiceInventoryClient
 	HTTPPolicySet                   *HTTPPolicySetClient
@@ -79,6 +82,7 @@ type AviClient struct {
 	LabelGroup                      *LabelGroupClient
 	LicenseLedgerDetails            *LicenseLedgerDetailsClient
 	LicenseStatus                   *LicenseStatusClient
+	LocalWorkerFdsVersion           *LocalWorkerFdsVersionClient
 	LogControllerMapping            *LogControllerMappingClient
 	MemoryBalancerRequest           *MemoryBalancerRequestClient
 	MicroService                    *MicroServiceClient
@@ -99,6 +103,7 @@ type AviClient struct {
 	PoolInventory                   *PoolInventoryClient
 	PriorityLabels                  *PriorityLabelsClient
 	ProtocolParser                  *ProtocolParserClient
+	RetentionPolicy                 *RetentionPolicyClient
 	Role                            *RoleClient
 	SCPoolServerStateInfo           *SCPoolServerStateInfoClient
 	SCVsStateInfo                   *SCVsStateInfoClient
@@ -134,6 +139,7 @@ type AviClient struct {
 	TestSeDatastoreLevel3           *TestSeDatastoreLevel3Client
 	TrafficCloneProfile             *TrafficCloneProfileClient
 	TrustedHostProfile              *TrustedHostProfileClient
+	UpgradeProfile                  *UpgradeProfileClient
 	UpgradeStatusInfo               *UpgradeStatusInfoClient
 	UpgradeStatusSummary            *UpgradeStatusSummaryClient
 	User                            *UserClient
@@ -222,8 +228,11 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.Generic = NewGenericClient(aviSession)
 	aviClient.GeoDB = NewGeoDBClient(aviSession)
 	aviClient.Gslb = NewGslbClient(aviSession)
+	aviClient.GslbCRMRuntime = NewGslbCRMRuntimeClient(aviSession)
 	aviClient.GslbGeoDbProfile = NewGslbGeoDbProfileClient(aviSession)
+	aviClient.GslbHSMRuntime = NewGslbHSMRuntimeClient(aviSession)
 	aviClient.GslbInventory = NewGslbInventoryClient(aviSession)
+	aviClient.GslbSMRuntime = NewGslbSMRuntimeClient(aviSession)
 	aviClient.GslbService = NewGslbServiceClient(aviSession)
 	aviClient.GslbServiceInventory = NewGslbServiceInventoryClient(aviSession)
 	aviClient.HTTPPolicySet = NewHTTPPolicySetClient(aviSession)
@@ -241,6 +250,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.LabelGroup = NewLabelGroupClient(aviSession)
 	aviClient.LicenseLedgerDetails = NewLicenseLedgerDetailsClient(aviSession)
 	aviClient.LicenseStatus = NewLicenseStatusClient(aviSession)
+	aviClient.LocalWorkerFdsVersion = NewLocalWorkerFdsVersionClient(aviSession)
 	aviClient.LogControllerMapping = NewLogControllerMappingClient(aviSession)
 	aviClient.MemoryBalancerRequest = NewMemoryBalancerRequestClient(aviSession)
 	aviClient.MicroService = NewMicroServiceClient(aviSession)
@@ -261,6 +271,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.PoolInventory = NewPoolInventoryClient(aviSession)
 	aviClient.PriorityLabels = NewPriorityLabelsClient(aviSession)
 	aviClient.ProtocolParser = NewProtocolParserClient(aviSession)
+	aviClient.RetentionPolicy = NewRetentionPolicyClient(aviSession)
 	aviClient.Role = NewRoleClient(aviSession)
 	aviClient.SCPoolServerStateInfo = NewSCPoolServerStateInfoClient(aviSession)
 	aviClient.SCVsStateInfo = NewSCVsStateInfoClient(aviSession)
@@ -296,6 +307,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.TestSeDatastoreLevel3 = NewTestSeDatastoreLevel3Client(aviSession)
 	aviClient.TrafficCloneProfile = NewTrafficCloneProfileClient(aviSession)
 	aviClient.TrustedHostProfile = NewTrustedHostProfileClient(aviSession)
+	aviClient.UpgradeProfile = NewUpgradeProfileClient(aviSession)
 	aviClient.UpgradeStatusInfo = NewUpgradeStatusInfoClient(aviSession)
 	aviClient.UpgradeStatusSummary = NewUpgradeStatusSummaryClient(aviSession)
 	aviClient.User = NewUserClient(aviSession)
