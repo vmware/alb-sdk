@@ -3166,9 +3166,15 @@
                     "format": "uint32"
                 },
                 "graceful_disable_timeout": {
-                    "description": "Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-7200. Special values are 0 - Immediate, -1 - Infinite. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Not used anymore .graceful_disable_timeout_sec is introduced . Allowed values are 1-7200. Special values are 0 - Immediate, -1 - Infinite. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
+                    "format": "int32"
+                },
+                "graceful_disable_timeout_sec": {
+                    "description": "Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-432000. Special values are 0 - Immediate, -1 - Infinite. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 60,
                     "format": "int32"
                 },
                 "graceful_hm_down_disable_timeout": {
