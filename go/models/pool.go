@@ -87,8 +87,11 @@ type Pool struct {
 	// Periodicity of feedback for fewest tasks server selection algorithm. Allowed values are 1-300. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FewestTasksFeedbackDelay *uint32 `json:"fewest_tasks_feedback_delay,omitempty"`
 
-	// Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-7200. Special values are 0 - Immediate, -1 - Infinite. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Not used anymore .graceful_disable_timeout_sec is introduced . Allowed values are 1-7200. Special values are 0 - Immediate, -1 - Infinite. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GracefulDisableTimeout *int32 `json:"graceful_disable_timeout,omitempty"`
+
+	// Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-432000. Special values are 0 - Immediate, -1 - Infinite. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	GracefulDisableTimeoutSec *int32 `json:"graceful_disable_timeout_sec,omitempty"`
 
 	// Time interval for gracefully closing the connections on server, When health monitoring marks the server down. Allowed values are 1-432000. Special values are 0 - Immediate, -1 - Infinite. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	GracefulHmDownDisableTimeout *int32 `json:"graceful_hm_down_disable_timeout,omitempty"`
