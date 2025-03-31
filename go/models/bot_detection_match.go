@@ -8,10 +8,10 @@ package models
 // swagger:model BotDetectionMatch
 type BotDetectionMatch struct {
 
-	// Bot classification types. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Bot classification types. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Classifications []*BotClassification `json:"classifications,omitempty"`
 
-	// Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	MatchOperation *string `json:"match_operation"`
 }

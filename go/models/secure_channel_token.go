@@ -12,16 +12,16 @@ type SecureChannelToken struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Expiry time for auth_token. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Expiry time for auth_token. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ExpiryTime *float64 `json:"expiry_time,omitempty"`
 
-	// Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	InUse *bool `json:"in_use,omitempty"`
 
-	// Metadata associated with auth_token. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Metadata associated with auth_token. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Metadata []*SecureChannelMetadata `json:"metadata,omitempty"`
 
-	// Auth_token used for SE/controller authorization. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Auth_token used for SE/controller authorization. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
@@ -29,6 +29,6 @@ type SecureChannelToken struct {
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// Auth_token used for SE/controller authorization. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Auth_token used for SE/controller authorization. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

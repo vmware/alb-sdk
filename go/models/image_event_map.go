@@ -8,12 +8,12 @@ package models
 // swagger:model ImageEventMap
 type ImageEventMap struct {
 
-	// List of all events node wise. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// List of all events node wise. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	NodesEvents []*ImageEvent `json:"nodes_events,omitempty"`
 
-	// List of all events node wise. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// List of all events node wise. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SubEvents []*ImageEvent `json:"sub_events,omitempty"`
 
-	// Name representing the task. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Name representing the task. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	TaskName *string `json:"task_name,omitempty"`
 }

@@ -296,6 +296,9 @@ type AviSession struct {
 
 	// Defines the protocol to be used by the session
 	scheme string
+
+	// Sets the proxy url to be used by the session
+	proxyURL string
 }
 
 const DEFAULT_AVI_VERSION = "18.2.6"
@@ -364,11 +367,22 @@ func NewAviSession(host string, username string, options ...func(*AviSession) er
 	if avisess.client == nil {
 		// create default transport object
 		if avisess.transport == nil {
-			avisess.transport = &http.Transport{
-				TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+			if avisess.proxyURL != "" {
+				proxyURL, err := url.Parse(avisess.proxyURL)
+				if err != nil {
+					glog.Errorf("Error parsing proxy URL: %v", err)
+					return nil, err
+				}
+				avisess.transport = &http.Transport{
+					TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+					Proxy:           http.ProxyURL(proxyURL),
+				}
+			} else {
+				avisess.transport = &http.Transport{
+					TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+				}
 			}
 		}
-
 		// attach transport object to client
 		avisess.client = &http.Client{
 			Transport: avisess.transport,
@@ -561,6 +575,18 @@ func SetTenant(tenant string) func(*AviSession) error {
 
 func (avisess *AviSession) setTenant(tenant string) error {
 	avisess.tenant = tenant
+	return nil
+}
+
+// SetProxyUrl - Use this for NewAviSession option argument for setting proxyUrl
+func SetProxyURL(proxyURL string) func(*AviSession) error {
+	return func(sess *AviSession) error {
+		return sess.setProxyURL(proxyURL)
+	}
+}
+
+func (avisess *AviSession) setProxyURL(proxyURL string) error {
+	avisess.proxyURL = proxyURL
 	return nil
 }
 
@@ -759,8 +785,11 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 		}
 	}
 
+	if _, exists := req.Header["X-Avi-Version"]; !exists {
+		req.Header.Set("X-Avi-Version", avisess.version)
+	}
+
 	//req.Header.Set("Accept", "application/json")
-	req.Header.Set("X-Avi-Version", avisess.version)
 	if tenant == "" {
 		tenant = avisess.tenant
 	}
@@ -1350,6 +1379,17 @@ func (avisess *AviSession) GetCollectionRaw(uri string, options ...ApiOptionsPar
 
 // GetCollection performs a collection API call and unmarshals the results into objList, which should be an array type
 func (avisess *AviSession) GetCollection(uri string, objList interface{}, options ...ApiOptionsParams) error {
+	var mergedSlice, slice []interface{}
+	var mergedData []byte
+	opts, err := getOptions(options)
+	if err != nil {
+		return err
+	}
+	if opts.cloud != "" {
+		uri = uri + "?cloud_ref.name=" + url.QueryEscape(opts.cloud)
+	} else if opts.cloudUUID != "" {
+		uri = uri + "?cloud_ref.uuid=" + url.QueryEscape(opts.cloudUUID)
+	}
 	result, err := avisess.GetCollectionRaw(uri, options...)
 	if err != nil {
 		return err
@@ -1357,7 +1397,27 @@ func (avisess *AviSession) GetCollection(uri string, objList interface{}, option
 	if result.Count == 0 {
 		return nil
 	}
-	return json.Unmarshal(result.Results, &objList)
+	if opts.params["page"] != "" || opts.params["page_size"] != "" {
+		return json.Unmarshal(result.Results, &objList)
+	}
+	for result.Next != "" {
+		if err := json.Unmarshal(result.Results, &slice); err != nil {
+			return err
+		}
+		mergedSlice = append(mergedSlice, slice...)
+		uri = result.Next
+		result, _ = avisess.GetCollectionRaw(uri, options...)
+	}
+	if result.Next == "" {
+		if err := json.Unmarshal(result.Results, &slice); err != nil {
+			return nil
+		}
+		mergedSlice = append(mergedSlice, slice...)
+	}
+	if mergedData, err = json.Marshal(mergedSlice); err != nil {
+		return err
+	}
+	return json.Unmarshal(mergedData, &objList)
 }
 
 // GetRaw performs a GET API call and returns raw data
@@ -1544,10 +1604,9 @@ func (avisess *AviSession) GetUri(obj string, options ...ApiOptionsParams) (stri
 	if opts.name == "" {
 		return "", errors.New("Name not specified")
 	}
-
 	uri := "api/" + obj + "?name=" + url.QueryEscape(opts.name)
 	if opts.cloud != "" {
-		uri = uri + "&cloud=" + url.QueryEscape(opts.cloud)
+		uri = uri + "&cloud_ref.name=" + url.QueryEscape(opts.cloud)
 	} else if opts.cloudUUID != "" {
 		uri = uri + "&cloud_ref.uuid=" + url.QueryEscape(opts.cloudUUID)
 	}

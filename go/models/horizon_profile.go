@@ -8,9 +8,9 @@ package models
 // swagger:model HorizonProfile
 type HorizonProfile struct {
 
-	// Horizon blast port of the UAG server. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Horizon blast port of the UAG server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	BlastPort *uint32 `json:"blast_port,omitempty"`
 
-	// Horizon pcoip port of the UAG server. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Horizon pcoip port of the UAG server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	PcoipPort *uint32 `json:"pcoip_port,omitempty"`
 }

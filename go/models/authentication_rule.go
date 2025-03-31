@@ -8,21 +8,21 @@ package models
 // swagger:model AuthenticationRule
 type AuthenticationRule struct {
 
-	// Enable or disable authentication for matched targets. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Enable or disable authentication for matched targets. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Action *AuthenticationAction `json:"action,omitempty"`
 
-	// Enable or disable the rule. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Enable or disable the rule. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Enable *bool `json:"enable"`
 
-	// Index of the rule. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Index of the rule. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Index *int32 `json:"index"`
 
-	// Add match criteria to the rule. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Add match criteria to the rule. Field introduced in 18.2.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Match *AuthenticationMatch `json:"match,omitempty"`
 
-	// Name of the rule. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the rule. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 }

@@ -8,18 +8,18 @@ package models
 // swagger:model SeHmEventGSDetails
 type SeHmEventGSDetails struct {
 
-	// GslbService name. It is a reference to an object of type GslbService. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// GslbService name. It is a reference to an object of type GslbService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GslbService *string `json:"gslb_service,omitempty"`
 
-	// HA Compromised reason. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// HA Compromised reason. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HaReason *string `json:"ha_reason,omitempty"`
 
-	// Reason Gslb Service is down. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Reason Gslb Service is down. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 
-	// Service Engine name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Service Engine name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeName *string `json:"se_name,omitempty"`
 
-	// UUID of the event generator. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// UUID of the event generator. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SrcUUID *string `json:"src_uuid,omitempty"`
 }

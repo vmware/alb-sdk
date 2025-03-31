@@ -8,9 +8,9 @@ package models
 // swagger:model ClusterServiceFailedEvent
 type ClusterServiceFailedEvent struct {
 
-	// Name of controller node. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of controller node. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NodeName *string `json:"node_name,omitempty"`
 
-	// Name of the controller service. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the controller service. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServiceName *string `json:"service_name,omitempty"`
 }

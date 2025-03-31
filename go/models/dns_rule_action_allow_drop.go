@@ -8,9 +8,9 @@ package models
 // swagger:model DnsRuleActionAllowDrop
 type DNSRuleActionAllowDrop struct {
 
-	// Allow the DNS query. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Allow the DNS query. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Allow *bool `json:"allow,omitempty"`
 
-	// Reset the TCP connection of the DNS query, if allow is set to false to drop the query. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Reset the TCP connection of the DNS query, if allow is set to false to drop the query. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResetConn *bool `json:"reset_conn,omitempty"`
 }
