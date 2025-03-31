@@ -512,9 +512,6 @@ type EventDetails struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SePoolLbDetails *SePoolLbEventDetails `json:"se_pool_lb_details,omitempty"`
 
-	// Details about the process that crashed on a specific SE. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	SeProcessCrashedDetails *SeProcessCrashedDetails `json:"se_process_crashed_details,omitempty"`
-
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeReconcileDetails *SeReconcileDetails `json:"se_reconcile_details,omitempty"`
 
