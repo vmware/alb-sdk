@@ -1894,7 +1894,7 @@
                     "default": "LEFT"
                 },
                 "headers": {
-                    "description": "Headers to derive client IP from. The header value needs to be a comma-separated list of IP addresses. If none specified and use_true_client_ip is set to true, it will use X-Forwarded-For header, if present. Field introduced in 21.1.3. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "HTTP Headers to derive client IP from. If none specified and use_true_client_ip is set to true, it will use X-Forwarded-For header, if present. Field introduced in 21.1.3. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
