@@ -237,6 +237,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("grpc_channel_connect_timeout")
     private Integer grpcChannelConnectTimeout = 15;
 
+    @JsonProperty("gve_enabled")
+    private Boolean gveEnabled = false;
+
     @JsonProperty("ha_mode")
     private String haMode;
 
@@ -2818,6 +2821,32 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setGrpcChannelConnectTimeout(Integer  grpcChannelConnectTimeout) {
         this.grpcChannelConnectTimeout = grpcChannelConnectTimeout;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Deploys google virtual ethernet (gve) - gvnic for all supported intances types in gcp.
+     * Applies only to newly created se's.
+     * Field introduced in 30.2.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return gveEnabled
+     */
+    public Boolean getGveEnabled() {
+        return gveEnabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Deploys google virtual ethernet (gve) - gvnic for all supported intances types in gcp.
+     * Applies only to newly created se's.
+     * Field introduced in 30.2.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param gveEnabled set the gveEnabled.
+     */
+    public void setGveEnabled(Boolean  gveEnabled) {
+        this.gveEnabled = gveEnabled;
     }
 
     /**
@@ -8871,7 +8900,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.metricsCollectionMode, objServiceEngineGroup.metricsCollectionMode)&&
   Objects.equals(this.seDebugTraceSz, objServiceEngineGroup.seDebugTraceSz)&&
   Objects.equals(this.multicastEnable, objServiceEngineGroup.multicastEnable)&&
-  Objects.equals(this.maxNumHttpSessionsToStore, objServiceEngineGroup.maxNumHttpSessionsToStore);
+  Objects.equals(this.maxNumHttpSessionsToStore, objServiceEngineGroup.maxNumHttpSessionsToStore)&&
+  Objects.equals(this.gveEnabled, objServiceEngineGroup.gveEnabled);
     }
 
     @Override
@@ -8950,6 +8980,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    gcpConfig: ").append(toIndentedString(gcpConfig)).append("\n");
                         sb.append("    gratarpPermanentPeriodicity: ").append(toIndentedString(gratarpPermanentPeriodicity)).append("\n");
                         sb.append("    grpcChannelConnectTimeout: ").append(toIndentedString(grpcChannelConnectTimeout)).append("\n");
+                        sb.append("    gveEnabled: ").append(toIndentedString(gveEnabled)).append("\n");
                         sb.append("    haMode: ").append(toIndentedString(haMode)).append("\n");
                         sb.append("    handlePerPktAttack: ").append(toIndentedString(handlePerPktAttack)).append("\n");
                         sb.append("    hardwaresecuritymodulegroupRef: ").append(toIndentedString(hardwaresecuritymodulegroupRef)).append("\n");
