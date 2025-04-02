@@ -42,7 +42,7 @@ public class SnmpV3UserParams  {
      * This is the getter method this will return the attribute value.
      * Snmp v3 authentication passphrase.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "avinetworks".
      * @return authPassphrase
      */
@@ -54,7 +54,7 @@ public class SnmpV3UserParams  {
      * This is the setter method to the attribute.
      * Snmp v3 authentication passphrase.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "avinetworks".
      * @param authPassphrase set the authPassphrase.
      */
@@ -67,7 +67,7 @@ public class SnmpV3UserParams  {
      * Snmp v3 user authentication type.
      * Enum options - SNMP_V3_AUTH_MD5, SNMP_V3_AUTH_SHA, SNMP_V3_AUTH_SHA_224, SNMP_V3_AUTH_SHA_256, SNMP_V3_AUTH_SHA_384, SNMP_V3_AUTH_SHA_512.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_V3_AUTH_MD5".
      * @return authType
      */
@@ -80,7 +80,7 @@ public class SnmpV3UserParams  {
      * Snmp v3 user authentication type.
      * Enum options - SNMP_V3_AUTH_MD5, SNMP_V3_AUTH_SHA, SNMP_V3_AUTH_SHA_224, SNMP_V3_AUTH_SHA_256, SNMP_V3_AUTH_SHA_384, SNMP_V3_AUTH_SHA_512.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_V3_AUTH_MD5".
      * @param authType set the authType.
      */
@@ -92,7 +92,7 @@ public class SnmpV3UserParams  {
      * This is the getter method this will return the attribute value.
      * Snmp v3 privacy passphrase.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "avinetworks".
      * @return privPassphrase
      */
@@ -104,7 +104,7 @@ public class SnmpV3UserParams  {
      * This is the setter method to the attribute.
      * Snmp v3 privacy passphrase.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "avinetworks".
      * @param privPassphrase set the privPassphrase.
      */
@@ -117,7 +117,7 @@ public class SnmpV3UserParams  {
      * Snmp v3 privacy setting.
      * Enum options - SNMP_V3_PRIV_DES, SNMP_V3_PRIV_AES.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_V3_PRIV_DES".
      * @return privType
      */
@@ -130,7 +130,7 @@ public class SnmpV3UserParams  {
      * Snmp v3 privacy setting.
      * Enum options - SNMP_V3_PRIV_DES, SNMP_V3_PRIV_AES.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_V3_PRIV_DES".
      * @param privType set the privType.
      */
@@ -142,7 +142,7 @@ public class SnmpV3UserParams  {
      * This is the getter method this will return the attribute value.
      * Snmp username to be used by snmp clients for performing snmp walk.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return username
      */
@@ -154,7 +154,7 @@ public class SnmpV3UserParams  {
      * This is the setter method to the attribute.
      * Snmp username to be used by snmp clients for performing snmp walk.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param username set the username.
      */

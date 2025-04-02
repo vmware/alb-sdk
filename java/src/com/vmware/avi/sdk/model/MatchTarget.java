@@ -72,7 +72,7 @@ public class MatchTarget  {
      * This is the getter method this will return the attribute value.
      * Configure the bot classification result.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return botDetectionResult
      */
@@ -84,7 +84,7 @@ public class MatchTarget  {
      * This is the setter method to the attribute.
      * Configure the bot classification result.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param botDetectionResult set the botDetectionResult.
      */
@@ -95,7 +95,7 @@ public class MatchTarget  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure client ip addresses.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientIp
      */
@@ -106,7 +106,7 @@ public class MatchTarget  {
     /**
      * This is the setter method to the attribute.
      * Configure client ip addresses.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientIp set the clientIp.
      */
@@ -117,7 +117,7 @@ public class MatchTarget  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure http cookie(s).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cookie
      */
@@ -128,7 +128,7 @@ public class MatchTarget  {
     /**
      * This is the setter method to the attribute.
      * Configure http cookie(s).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cookie set the cookie.
      */
@@ -140,7 +140,7 @@ public class MatchTarget  {
      * Configure the geo information.
      * Field introduced in 21.1.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoMatches
      */
@@ -153,7 +153,7 @@ public class MatchTarget  {
      * Configure the geo information.
      * Field introduced in 21.1.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoMatches
      */
@@ -166,7 +166,7 @@ public class MatchTarget  {
      * Configure the geo information.
      * Field introduced in 21.1.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoMatches
      */
@@ -181,7 +181,7 @@ public class MatchTarget  {
      * This is the getter method this will return the attribute value.
      * Configure http header(s).
      * All configured headers must match.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrs
      */
@@ -193,7 +193,7 @@ public class MatchTarget  {
      * This is the setter method. this will set the hdrs
      * Configure http header(s).
      * All configured headers must match.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrs
      */
@@ -205,7 +205,7 @@ public class MatchTarget  {
      * This is the setter method this will set the hdrs
      * Configure http header(s).
      * All configured headers must match.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrs
      */
@@ -220,7 +220,7 @@ public class MatchTarget  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure the host header.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostHdr
      */
@@ -231,7 +231,7 @@ public class MatchTarget  {
     /**
      * This is the setter method to the attribute.
      * Configure the host header.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostHdr set the hostHdr.
      */
@@ -243,7 +243,7 @@ public class MatchTarget  {
      * This is the getter method this will return the attribute value.
      * Configure ip reputation.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipReputationType
      */
@@ -255,7 +255,7 @@ public class MatchTarget  {
      * This is the setter method to the attribute.
      * Configure ip reputation.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipReputationType set the ipReputationType.
      */
@@ -266,7 +266,7 @@ public class MatchTarget  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure http methods.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return method
      */
@@ -277,7 +277,7 @@ public class MatchTarget  {
     /**
      * This is the setter method to the attribute.
      * Configure http methods.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param method set the method.
      */
@@ -288,7 +288,7 @@ public class MatchTarget  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure request paths.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return path
      */
@@ -299,7 +299,7 @@ public class MatchTarget  {
     /**
      * This is the setter method to the attribute.
      * Configure request paths.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param path set the path.
      */
@@ -310,7 +310,7 @@ public class MatchTarget  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure the type of http protocol.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return protocol
      */
@@ -321,7 +321,7 @@ public class MatchTarget  {
     /**
      * This is the setter method to the attribute.
      * Configure the type of http protocol.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param protocol set the protocol.
      */
@@ -332,7 +332,7 @@ public class MatchTarget  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure request query.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return query
      */
@@ -343,7 +343,7 @@ public class MatchTarget  {
     /**
      * This is the setter method to the attribute.
      * Configure request query.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param query set the query.
      */
@@ -355,7 +355,7 @@ public class MatchTarget  {
      * This is the getter method this will return the attribute value.
      * Configure source ip addresses.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sourceIp
      */
@@ -367,7 +367,7 @@ public class MatchTarget  {
      * This is the setter method to the attribute.
      * Configure source ip addresses.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sourceIp set the sourceIp.
      */
@@ -379,7 +379,7 @@ public class MatchTarget  {
      * This is the getter method this will return the attribute value.
      * Configure the tls fingerprint.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tlsFingerprintMatch
      */
@@ -391,7 +391,7 @@ public class MatchTarget  {
      * This is the setter method to the attribute.
      * Configure the tls fingerprint.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tlsFingerprintMatch set the tlsFingerprintMatch.
      */
@@ -402,7 +402,7 @@ public class MatchTarget  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure versions of the http protocol.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return version
      */
@@ -413,7 +413,7 @@ public class MatchTarget  {
     /**
      * This is the setter method to the attribute.
      * Configure versions of the http protocol.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param version set the version.
      */
@@ -424,7 +424,7 @@ public class MatchTarget  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure virtual service ports.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsPort
      */
@@ -435,7 +435,7 @@ public class MatchTarget  {
     /**
      * This is the setter method to the attribute.
      * Configure virtual service ports.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsPort set the vsPort.
      */

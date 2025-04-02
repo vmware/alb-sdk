@@ -39,7 +39,7 @@ public class DnsRuleActionResponse  {
      * This is the getter method this will return the attribute value.
      * Dns response is authoritative.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return authoritative
      */
@@ -51,7 +51,7 @@ public class DnsRuleActionResponse  {
      * This is the setter method to the attribute.
      * Dns response is authoritative.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param authoritative set the authoritative.
      */
@@ -65,7 +65,7 @@ public class DnsRuleActionResponse  {
      * Enum options - DNS_RCODE_NOERROR, DNS_RCODE_FORMERR, DNS_RCODE_SERVFAIL, DNS_RCODE_NXDOMAIN, DNS_RCODE_NOTIMP, DNS_RCODE_REFUSED,
      * DNS_RCODE_YXDOMAIN, DNS_RCODE_YXRRSET, DNS_RCODE_NXRRSET, DNS_RCODE_NOTAUTH, DNS_RCODE_NOTZONE.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RCODE_NOERROR".
      * @return rcode
      */
@@ -79,7 +79,7 @@ public class DnsRuleActionResponse  {
      * Enum options - DNS_RCODE_NOERROR, DNS_RCODE_FORMERR, DNS_RCODE_SERVFAIL, DNS_RCODE_NXDOMAIN, DNS_RCODE_NOTIMP, DNS_RCODE_REFUSED,
      * DNS_RCODE_YXDOMAIN, DNS_RCODE_YXRRSET, DNS_RCODE_NXRRSET, DNS_RCODE_NOTAUTH, DNS_RCODE_NOTZONE.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RCODE_NOERROR".
      * @param rcode set the rcode.
      */
@@ -90,7 +90,7 @@ public class DnsRuleActionResponse  {
      * This is the getter method this will return the attribute value.
      * Dns resource record sets - (resource record set share the dns domain name, type, and class).
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceRecordSets
      */
@@ -102,7 +102,7 @@ public class DnsRuleActionResponse  {
      * This is the setter method. this will set the resourceRecordSets
      * Dns resource record sets - (resource record set share the dns domain name, type, and class).
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceRecordSets
      */
@@ -114,7 +114,7 @@ public class DnsRuleActionResponse  {
      * This is the setter method this will set the resourceRecordSets
      * Dns resource record sets - (resource record set share the dns domain name, type, and class).
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceRecordSets
      */
@@ -130,7 +130,7 @@ public class DnsRuleActionResponse  {
      * This is the getter method this will return the attribute value.
      * Dns response is truncated.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return truncation
      */
@@ -142,7 +142,7 @@ public class DnsRuleActionResponse  {
      * This is the setter method to the attribute.
      * Dns response is truncated.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param truncation set the truncation.
      */

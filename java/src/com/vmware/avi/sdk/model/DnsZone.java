@@ -38,7 +38,7 @@ public class DnsZone  {
      * This field is used in soa records as rname (rfc 1035).
      * If not configured, it is inherited from the dns service profile.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return adminEmail
      */
@@ -52,7 +52,7 @@ public class DnsZone  {
      * This field is used in soa records as rname (rfc 1035).
      * If not configured, it is inherited from the dns service profile.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param adminEmail set the adminEmail.
      */
@@ -66,7 +66,7 @@ public class DnsZone  {
      * Queries for fqdns that are sub domains of this domain and do not have any dns record in avi are dropped or nxdomain response sent.
      * For domains which are present, soa parameters are sent in answer section of response if query type is soa.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return domainName
      */
@@ -80,7 +80,7 @@ public class DnsZone  {
      * Queries for fqdns that are sub domains of this domain and do not have any dns record in avi are dropped or nxdomain response sent.
      * For domains which are present, soa parameters are sent in answer section of response if query type is soa.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param domainName set the domainName.
      */
@@ -95,7 +95,7 @@ public class DnsZone  {
      * If not configured, it is inherited from the dns service profile.
      * If even that is not configured, the domain name is used instead.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nameServer
      */
@@ -110,7 +110,7 @@ public class DnsZone  {
      * If not configured, it is inherited from the dns service profile.
      * If even that is not configured, the domain name is used instead.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nameServer set the nameServer.
      */

@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WebappUT extends AviRestResource  {
+    @JsonProperty("cloud_ref")
+    private String cloudRef;
+
     @JsonProperty("default_first_int")
     private Integer defaultFirstInt = 1;
 
@@ -76,9 +79,35 @@ public class WebappUT extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Cloud of the webapput object-level0.
+     * It is a reference to an object of type cloud.
+     * Field introduced in 30.2.2.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return cloudRef
+     */
+    public String getCloudRef() {
+        return cloudRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Cloud of the webapput object-level0.
+     * It is a reference to an object of type cloud.
+     * Field introduced in 30.2.2.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param cloudRef set the cloudRef.
+     */
+    public void setCloudRef(String  cloudRef) {
+        this.cloudRef = cloudRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Default uint64 field.
      * Field introduced in 30.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return defaultFirstInt
      */
@@ -90,7 +119,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method to the attribute.
      * Default uint64 field.
      * Field introduced in 30.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param defaultFirstInt set the defaultFirstInt.
      */
@@ -102,7 +131,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Default int64 field.
      * Field introduced in 30.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return defaultSecondInt
      */
@@ -114,7 +143,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method to the attribute.
      * Default int64 field.
      * Field introduced in 30.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param defaultSecondInt set the defaultSecondInt.
      */
@@ -126,7 +155,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Default string field.
      * Field introduced in 30.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default string".
      * @return defaultString
      */
@@ -138,7 +167,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method to the attribute.
      * Default string field.
      * Field introduced in 30.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default string".
      * @param defaultString set the defaultString.
      */
@@ -150,7 +179,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Default int32 field.
      * Field introduced in 30.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @return defaultThirdInt
      */
@@ -162,7 +191,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method to the attribute.
      * Default int32 field.
      * Field introduced in 30.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @param defaultThirdInt set the defaultThirdInt.
      */
@@ -174,7 +203,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Optional message for nested f_mandatory test cases defined at level1.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mandatoryTest
      */
@@ -186,7 +215,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method to the attribute.
      * Optional message for nested f_mandatory test cases defined at level1.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mandatoryTest set the mandatoryTest.
      */
@@ -197,7 +226,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Repeated message for nested f_mandatory test cases-level1.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mandatoryTests
      */
@@ -209,7 +238,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method. this will set the mandatoryTests
      * Repeated message for nested f_mandatory test cases-level1.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mandatoryTests
      */
@@ -221,7 +250,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method this will set the mandatoryTests
      * Repeated message for nested f_mandatory test cases-level1.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mandatoryTests
      */
@@ -237,7 +266,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the webapput object-level0.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -249,7 +278,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the webapput object-level0.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -261,7 +290,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Optional message for nested f_sensitive test cases defined at level1.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sensitiveTest
      */
@@ -273,7 +302,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method to the attribute.
      * Optional message for nested f_sensitive test cases defined at level1.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sensitiveTest set the sensitiveTest.
      */
@@ -284,7 +313,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Repeated message for nested f_sensitive test cases-level1.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sensitiveTests
      */
@@ -296,7 +325,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method. this will set the sensitiveTests
      * Repeated message for nested f_sensitive test cases-level1.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sensitiveTests
      */
@@ -308,7 +337,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method this will set the sensitiveTests
      * Repeated message for nested f_sensitive test cases-level1.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sensitiveTests
      */
@@ -324,7 +353,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Optional bool for nested skip_optional_check test cases-level1.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return skipOptionalCheckTests
      */
@@ -336,7 +365,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method to the attribute.
      * Optional bool for nested skip_optional_check test cases-level1.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param skipOptionalCheckTests set the skipOptionalCheckTests.
      */
@@ -348,7 +377,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Optional message for nested  max string length test cases.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return stringLengthTest
      */
@@ -360,7 +389,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method to the attribute.
      * Optional message for nested  max string length test cases.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param stringLengthTest set the stringLengthTest.
      */
@@ -371,7 +400,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Repeated message for nested  max string length test cases.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return stringLengthTests
      */
@@ -383,7 +412,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method. this will set the stringLengthTests
      * Repeated message for nested  max string length test cases.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return stringLengthTests
      */
@@ -395,7 +424,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method this will set the stringLengthTests
      * Repeated message for nested  max string length test cases.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return stringLengthTests
      */
@@ -412,7 +441,7 @@ public class WebappUT extends AviRestResource  {
      * Tenant of the webapput object-level0.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -425,7 +454,7 @@ public class WebappUT extends AviRestResource  {
      * Tenant of the webapput object-level0.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -438,7 +467,7 @@ public class WebappUT extends AviRestResource  {
      * The string for sensitive (secret) field.
      * Object-level0.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return testSensitiveString
      */
@@ -451,7 +480,7 @@ public class WebappUT extends AviRestResource  {
      * The string for sensitive (secret) field.
      * Object-level0.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param testSensitiveString set the testSensitiveString.
      */
@@ -463,7 +492,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The maximum string length.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return testString
      */
@@ -475,7 +504,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method to the attribute.
      * The maximum string length.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param testString set the testString.
      */
@@ -504,7 +533,7 @@ public class WebappUT extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the webapput object-level0.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -516,7 +545,7 @@ public class WebappUT extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the webapput object-level0.
      * Field introduced in 21.1.5, 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -549,14 +578,16 @@ public class WebappUT extends AviRestResource  {
   Objects.equals(this.defaultString, objWebappUT.defaultString)&&
   Objects.equals(this.defaultFirstInt, objWebappUT.defaultFirstInt)&&
   Objects.equals(this.defaultSecondInt, objWebappUT.defaultSecondInt)&&
-  Objects.equals(this.defaultThirdInt, objWebappUT.defaultThirdInt);
+  Objects.equals(this.defaultThirdInt, objWebappUT.defaultThirdInt)&&
+  Objects.equals(this.cloudRef, objWebappUT.cloudRef);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class WebappUT {\n");
-                  sb.append("    defaultFirstInt: ").append(toIndentedString(defaultFirstInt)).append("\n");
+                  sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+                        sb.append("    defaultFirstInt: ").append(toIndentedString(defaultFirstInt)).append("\n");
                         sb.append("    defaultSecondInt: ").append(toIndentedString(defaultSecondInt)).append("\n");
                         sb.append("    defaultString: ").append(toIndentedString(defaultString)).append("\n");
                         sb.append("    defaultThirdInt: ").append(toIndentedString(defaultThirdInt)).append("\n");

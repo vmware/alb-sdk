@@ -38,7 +38,7 @@ public class SysTestEmailParams  {
     /**
      * This is the getter method this will return the attribute value.
      * Alerts are copied to the comma separated list of  email recipients.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccEmails
      */
@@ -49,7 +49,7 @@ public class SysTestEmailParams  {
     /**
      * This is the setter method to the attribute.
      * Alerts are copied to the comma separated list of  email recipients.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccEmails set the ccEmails.
      */
@@ -60,7 +60,7 @@ public class SysTestEmailParams  {
     /**
      * This is the getter method this will return the attribute value.
      * The subject line of the originating email from  avi controller.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subject
      */
@@ -71,7 +71,7 @@ public class SysTestEmailParams  {
     /**
      * This is the setter method to the attribute.
      * The subject line of the originating email from  avi controller.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subject set the subject.
      */
@@ -82,7 +82,7 @@ public class SysTestEmailParams  {
     /**
      * This is the getter method this will return the attribute value.
      * The email context.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return text
      */
@@ -93,7 +93,7 @@ public class SysTestEmailParams  {
     /**
      * This is the setter method to the attribute.
      * The email context.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param text set the text.
      */
@@ -104,7 +104,7 @@ public class SysTestEmailParams  {
     /**
      * This is the getter method this will return the attribute value.
      * Alerts are sent to the comma separated list of  email recipients.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return toEmails
      */
@@ -115,7 +115,7 @@ public class SysTestEmailParams  {
     /**
      * This is the setter method to the attribute.
      * Alerts are sent to the comma separated list of  email recipients.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param toEmails set the toEmails.
      */

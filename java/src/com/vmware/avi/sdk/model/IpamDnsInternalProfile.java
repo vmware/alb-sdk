@@ -37,7 +37,7 @@ public class IpamDnsInternalProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * List of service domains.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsServiceDomain
      */
@@ -48,7 +48,7 @@ public class IpamDnsInternalProfile  {
     /**
      * This is the setter method. this will set the dnsServiceDomain
      * List of service domains.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsServiceDomain
      */
@@ -59,7 +59,7 @@ public class IpamDnsInternalProfile  {
     /**
      * This is the setter method this will set the dnsServiceDomain
      * List of service domains.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsServiceDomain
      */
@@ -75,7 +75,7 @@ public class IpamDnsInternalProfile  {
      * This is the getter method this will return the attribute value.
      * Avi virtualservice to be used for serving dns records.
      * It is a reference to an object of type virtualservice.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsVirtualserviceRef
      */
@@ -87,7 +87,7 @@ public class IpamDnsInternalProfile  {
      * This is the setter method to the attribute.
      * Avi virtualservice to be used for serving dns records.
      * It is a reference to an object of type virtualservice.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dnsVirtualserviceRef set the dnsVirtualserviceRef.
      */
@@ -100,8 +100,8 @@ public class IpamDnsInternalProfile  {
      * Default ttl for all records, overridden by ttl value for each service domain configured in dnsservicedomain.
      * Allowed values are 1-604800.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 30), basic edition(allowed values- 30), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 30), basic (allowed values- 30) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return ttl
      */
@@ -114,8 +114,8 @@ public class IpamDnsInternalProfile  {
      * Default ttl for all records, overridden by ttl value for each service domain configured in dnsservicedomain.
      * Allowed values are 1-604800.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 30), basic edition(allowed values- 30), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 30), basic (allowed values- 30) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param ttl set the ttl.
      */
@@ -128,8 +128,7 @@ public class IpamDnsInternalProfile  {
      * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
      * allocation.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableNetworks
      */
@@ -143,8 +142,7 @@ public class IpamDnsInternalProfile  {
      * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
      * allocation.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableNetworks
      */
@@ -158,8 +156,7 @@ public class IpamDnsInternalProfile  {
      * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
      * allocation.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableNetworks
      */

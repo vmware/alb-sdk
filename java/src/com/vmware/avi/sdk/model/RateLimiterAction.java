@@ -38,7 +38,7 @@ public class RateLimiterAction  {
     /**
      * This is the getter method this will return the attribute value.
      * File to be used for http local response rate limit action.
-     * Allowed in enterprise edition with any value, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return file
      */
@@ -49,7 +49,7 @@ public class RateLimiterAction  {
     /**
      * This is the setter method to the attribute.
      * File to be used for http local response rate limit action.
-     * Allowed in enterprise edition with any value, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param file set the file.
      */
@@ -60,7 +60,7 @@ public class RateLimiterAction  {
     /**
      * This is the getter method this will return the attribute value.
      * Parameters for http redirect rate limit action.
-     * Allowed in enterprise edition with any value, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return redirect
      */
@@ -71,7 +71,7 @@ public class RateLimiterAction  {
     /**
      * This is the setter method to the attribute.
      * Parameters for http redirect rate limit action.
-     * Allowed in enterprise edition with any value, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param redirect set the redirect.
      */
@@ -84,8 +84,8 @@ public class RateLimiterAction  {
      * Http status code for local response rate limit action.
      * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
      * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
-     * Allowed in enterprise edition with any value, basic edition(allowed values- http_local_response_status_code_429), essentials, enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed in basic (allowed values- http_local_response_status_code_429) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_LOCAL_RESPONSE_STATUS_CODE_429".
      * @return statusCode
      */
@@ -98,8 +98,8 @@ public class RateLimiterAction  {
      * Http status code for local response rate limit action.
      * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
      * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
-     * Allowed in enterprise edition with any value, basic edition(allowed values- http_local_response_status_code_429), essentials, enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed in basic (allowed values- http_local_response_status_code_429) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_LOCAL_RESPONSE_STATUS_CODE_429".
      * @param statusCode set the statusCode.
      */
@@ -111,8 +111,8 @@ public class RateLimiterAction  {
      * This is the getter method this will return the attribute value.
      * Type of action to be enforced upon hitting the rate limit.
      * Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT.
-     * Allowed in enterprise edition with any value, basic edition(allowed values- rl_action_none,rl_action_drop_conn), essentials, enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed in basic (allowed values- rl_action_none,rl_action_drop_conn) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "RL_ACTION_NONE".
      * @return type
      */
@@ -124,8 +124,8 @@ public class RateLimiterAction  {
      * This is the setter method to the attribute.
      * Type of action to be enforced upon hitting the rate limit.
      * Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT.
-     * Allowed in enterprise edition with any value, basic edition(allowed values- rl_action_none,rl_action_drop_conn), essentials, enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed in basic (allowed values- rl_action_none,rl_action_drop_conn) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "RL_ACTION_NONE".
      * @param type set the type.
      */

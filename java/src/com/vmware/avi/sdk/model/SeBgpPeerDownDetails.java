@@ -36,7 +36,7 @@ public class SeBgpPeerDownDetails  {
      * This is the getter method this will return the attribute value.
      * Message specific to the down condition.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return message
      */
@@ -48,7 +48,7 @@ public class SeBgpPeerDownDetails  {
      * This is the setter method to the attribute.
      * Message specific to the down condition.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param message set the message.
      */
@@ -60,7 +60,7 @@ public class SeBgpPeerDownDetails  {
      * This is the getter method this will return the attribute value.
      * Ip address of bgp peer.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return peerIp
      */
@@ -72,7 +72,7 @@ public class SeBgpPeerDownDetails  {
      * This is the setter method to the attribute.
      * Ip address of bgp peer.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param peerIp set the peerIp.
      */
@@ -84,7 +84,7 @@ public class SeBgpPeerDownDetails  {
      * This is the getter method this will return the attribute value.
      * Name of virtual routing context in which bgp is configured.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vrfName
      */
@@ -96,7 +96,7 @@ public class SeBgpPeerDownDetails  {
      * This is the setter method to the attribute.
      * Name of virtual routing context in which bgp is configured.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vrfName set the vrfName.
      */

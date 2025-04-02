@@ -45,7 +45,7 @@ public class ControllerSite extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Ip address or a dns resolvable, fully qualified domain name of the site controller cluster.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return address
      */
@@ -57,7 +57,7 @@ public class ControllerSite extends AviRestResource  {
      * This is the setter method to the attribute.
      * Ip address or a dns resolvable, fully qualified domain name of the site controller cluster.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param address set the address.
      */
@@ -69,7 +69,7 @@ public class ControllerSite extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name for the site controller cluster.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -81,7 +81,7 @@ public class ControllerSite extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name for the site controller cluster.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -94,7 +94,7 @@ public class ControllerSite extends AviRestResource  {
      * The controller site cluster's rest api port number.
      * Allowed values are 1-65535.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 443.
      * @return port
      */
@@ -107,7 +107,7 @@ public class ControllerSite extends AviRestResource  {
      * The controller site cluster's rest api port number.
      * Allowed values are 1-65535.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 443.
      * @param port set the port.
      */
@@ -120,7 +120,7 @@ public class ControllerSite extends AviRestResource  {
      * Reference for the tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -133,7 +133,7 @@ public class ControllerSite extends AviRestResource  {
      * Reference for the tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -162,7 +162,7 @@ public class ControllerSite extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Reference for the site controller cluster.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -174,7 +174,7 @@ public class ControllerSite extends AviRestResource  {
      * This is the setter method to the attribute.
      * Reference for the site controller cluster.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

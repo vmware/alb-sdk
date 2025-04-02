@@ -35,7 +35,7 @@ public class AuthTacacsPlusAttributeValuePair  {
     /**
      * This is the getter method this will return the attribute value.
      * Mandatory.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mandatory
      */
@@ -46,7 +46,7 @@ public class AuthTacacsPlusAttributeValuePair  {
     /**
      * This is the setter method to the attribute.
      * Mandatory.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mandatory set the mandatory.
      */
@@ -57,7 +57,7 @@ public class AuthTacacsPlusAttributeValuePair  {
     /**
      * This is the getter method this will return the attribute value.
      * Attribute name.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -68,7 +68,7 @@ public class AuthTacacsPlusAttributeValuePair  {
     /**
      * This is the setter method to the attribute.
      * Attribute name.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -79,7 +79,7 @@ public class AuthTacacsPlusAttributeValuePair  {
     /**
      * This is the getter method this will return the attribute value.
      * Attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -90,7 +90,7 @@ public class AuthTacacsPlusAttributeValuePair  {
     /**
      * This is the setter method to the attribute.
      * Attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

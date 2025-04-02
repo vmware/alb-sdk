@@ -48,7 +48,7 @@ public class InventoryFaultConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Configure controller faults.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerFaults
      */
@@ -60,7 +60,7 @@ public class InventoryFaultConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Configure controller faults.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerFaults set the controllerFaults.
      */
@@ -72,7 +72,7 @@ public class InventoryFaultConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -84,7 +84,7 @@ public class InventoryFaultConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -96,7 +96,7 @@ public class InventoryFaultConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Configure serviceengine faults.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceengineFaults
      */
@@ -108,7 +108,7 @@ public class InventoryFaultConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Configure serviceengine faults.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceengineFaults set the serviceengineFaults.
      */
@@ -121,7 +121,7 @@ public class InventoryFaultConfig extends AviRestResource  {
      * Tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -134,7 +134,7 @@ public class InventoryFaultConfig extends AviRestResource  {
      * Tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -163,7 +163,7 @@ public class InventoryFaultConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid auto generated.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -175,7 +175,7 @@ public class InventoryFaultConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid auto generated.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -187,7 +187,7 @@ public class InventoryFaultConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Configure virtualservice faults.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return virtualserviceFaults
      */
@@ -199,7 +199,7 @@ public class InventoryFaultConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Configure virtualservice faults.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param virtualserviceFaults set the virtualserviceFaults.
      */

@@ -33,7 +33,7 @@ public class VHMatchRule  {
      * This is the getter method this will return the attribute value.
      * Match criteria for selecting the virtual service.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matches
      */
@@ -45,7 +45,7 @@ public class VHMatchRule  {
      * This is the setter method to the attribute.
      * Match criteria for selecting the virtual service.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matches set the matches.
      */
@@ -57,7 +57,7 @@ public class VHMatchRule  {
      * This is the getter method this will return the attribute value.
      * Name for the match rule.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -69,7 +69,7 @@ public class VHMatchRule  {
      * This is the setter method to the attribute.
      * Name for the match rule.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

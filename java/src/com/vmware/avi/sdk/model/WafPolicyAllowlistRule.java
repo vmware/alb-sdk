@@ -50,7 +50,7 @@ public class WafPolicyAllowlistRule  {
      * Field introduced in 20.1.3.
      * Minimum of 1 items required.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return actions
      */
@@ -65,7 +65,7 @@ public class WafPolicyAllowlistRule  {
      * Field introduced in 20.1.3.
      * Minimum of 1 items required.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return actions
      */
@@ -80,7 +80,7 @@ public class WafPolicyAllowlistRule  {
      * Field introduced in 20.1.3.
      * Minimum of 1 items required.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return actions
      */
@@ -96,7 +96,7 @@ public class WafPolicyAllowlistRule  {
      * This is the getter method this will return the attribute value.
      * Description of this rule.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -108,7 +108,7 @@ public class WafPolicyAllowlistRule  {
      * This is the setter method to the attribute.
      * Description of this rule.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -120,7 +120,7 @@ public class WafPolicyAllowlistRule  {
      * This is the getter method this will return the attribute value.
      * Enable or deactivate the rule.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enable
      */
@@ -132,7 +132,7 @@ public class WafPolicyAllowlistRule  {
      * This is the setter method to the attribute.
      * Enable or deactivate the rule.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enable set the enable.
      */
@@ -144,7 +144,7 @@ public class WafPolicyAllowlistRule  {
      * This is the getter method this will return the attribute value.
      * Rules are processed in order of this index field.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -156,7 +156,7 @@ public class WafPolicyAllowlistRule  {
      * This is the setter method to the attribute.
      * Rules are processed in order of this index field.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */
@@ -168,7 +168,7 @@ public class WafPolicyAllowlistRule  {
      * This is the getter method this will return the attribute value.
      * Match criteria describing requests to which this rule should be applied.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return match
      */
@@ -180,7 +180,7 @@ public class WafPolicyAllowlistRule  {
      * This is the setter method to the attribute.
      * Match criteria describing requests to which this rule should be applied.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param match set the match.
      */
@@ -192,7 +192,7 @@ public class WafPolicyAllowlistRule  {
      * This is the getter method this will return the attribute value.
      * A name describing the rule in a short form.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -204,7 +204,7 @@ public class WafPolicyAllowlistRule  {
      * This is the setter method to the attribute.
      * A name describing the rule in a short form.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -218,7 +218,7 @@ public class WafPolicyAllowlistRule  {
      * Allowed values are 0-100.
      * Field introduced in 20.1.3.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return samplingPercent
      */
@@ -232,7 +232,7 @@ public class WafPolicyAllowlistRule  {
      * Allowed values are 0-100.
      * Field introduced in 20.1.3.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param samplingPercent set the samplingPercent.
      */

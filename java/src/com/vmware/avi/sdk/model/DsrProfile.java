@@ -34,7 +34,7 @@ public class DsrProfile  {
      * Encapsulation type to use when dsr is l3.
      * Enum options - ENCAP_IPINIP, ENCAP_GRE.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ENCAP_IPINIP".
      * @return dsrEncapType
      */
@@ -47,7 +47,7 @@ public class DsrProfile  {
      * Encapsulation type to use when dsr is l3.
      * Enum options - ENCAP_IPINIP, ENCAP_GRE.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ENCAP_IPINIP".
      * @param dsrEncapType set the dsrEncapType.
      */
@@ -60,7 +60,7 @@ public class DsrProfile  {
      * Dsr type l2/l3.
      * Enum options - DSR_TYPE_L2, DSR_TYPE_L3.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "DSR_TYPE_L3".
      * @return dsrType
      */
@@ -73,7 +73,7 @@ public class DsrProfile  {
      * Dsr type l2/l3.
      * Enum options - DSR_TYPE_L2, DSR_TYPE_L3.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "DSR_TYPE_L3".
      * @param dsrType set the dsrType.
      */

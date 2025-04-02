@@ -81,7 +81,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Url of authorization server.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authorizationEndpoint
      */
@@ -93,7 +93,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Url of authorization server.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param authorizationEndpoint set the authorizationEndpoint.
      */
@@ -105,7 +105,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Logout uri of idp server.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endSessionEndpoint
      */
@@ -117,7 +117,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Logout uri of idp server.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endSessionEndpoint set the endSessionEndpoint.
      */
@@ -129,7 +129,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Instance uuid of the csp service.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return instanceId
      */
@@ -141,7 +141,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Instance uuid of the csp service.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param instanceId set the instanceId.
      */
@@ -153,7 +153,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Url of token introspection server.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return introspectionEndpoint
      */
@@ -165,7 +165,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Url of token introspection server.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param introspectionEndpoint set the introspectionEndpoint.
      */
@@ -177,7 +177,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Uniquely identifiable name of the token issuer.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return issuer
      */
@@ -189,7 +189,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Uniquely identifiable name of the token issuer.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param issuer set the issuer.
      */
@@ -203,7 +203,7 @@ public class OAuthProfile  {
      * Allowed values are 0-1440.
      * Field introduced in 21.1.3.
      * Unit is min.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return jwksTimeout
      */
@@ -217,7 +217,7 @@ public class OAuthProfile  {
      * Allowed values are 0-1440.
      * Field introduced in 21.1.3.
      * Unit is min.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param jwksTimeout set the jwksTimeout.
      */
@@ -229,7 +229,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Jwks url of the endpoint that hosts the public keys that can be used to verify any jwt issued by the authorization server.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return jwksUri
      */
@@ -241,7 +241,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Jwks url of the endpoint that hosts the public keys that can be used to verify any jwt issued by the authorization server.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param jwksUri set the jwksUri.
      */
@@ -253,7 +253,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Oauth app settings for controller authentication.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oauthControllerSettings
      */
@@ -265,7 +265,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Oauth app settings for controller authentication.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param oauthControllerSettings set the oauthControllerSettings.
      */
@@ -278,7 +278,7 @@ public class OAuthProfile  {
      * Type of oauth profile which defines the usage type.
      * Enum options - CLIENT_OAUTH, CONTROLLER_OAUTH.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "CLIENT_OAUTH".
      * @return oauthProfileType
      */
@@ -291,7 +291,7 @@ public class OAuthProfile  {
      * Type of oauth profile which defines the usage type.
      * Enum options - CLIENT_OAUTH, CONTROLLER_OAUTH.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "CLIENT_OAUTH".
      * @param oauthProfileType set the oauthProfileType.
      */
@@ -304,7 +304,7 @@ public class OAuthProfile  {
      * Type of oauth provider when using controller oauth as oauth profile type.
      * Enum options - OAUTH_CSP.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oauthProvider
      */
@@ -317,7 +317,7 @@ public class OAuthProfile  {
      * Type of oauth provider when using controller oauth as oauth profile type.
      * Enum options - OAUTH_CSP.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param oauthProvider set the oauthProvider.
      */
@@ -331,7 +331,7 @@ public class OAuthProfile  {
      * Allowed values are 0-32768000.
      * Field introduced in 21.1.3.
      * Unit is bytes.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 102400.
      * @return oauthRespBufferSz
      */
@@ -345,7 +345,7 @@ public class OAuthProfile  {
      * Allowed values are 0-32768000.
      * Field introduced in 21.1.3.
      * Unit is bytes.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 102400.
      * @param oauthRespBufferSz set the oauthRespBufferSz.
      */
@@ -357,7 +357,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Organization id for oauth.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return orgId
      */
@@ -369,7 +369,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Organization id for oauth.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param orgId set the orgId.
      */
@@ -382,7 +382,7 @@ public class OAuthProfile  {
      * Pool object to interface with authorization server endpoints.
      * It is a reference to an object of type pool.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolRef
      */
@@ -395,7 +395,7 @@ public class OAuthProfile  {
      * Pool object to interface with authorization server endpoints.
      * It is a reference to an object of type pool.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolRef set the poolRef.
      */
@@ -407,7 +407,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Redirect uri specified in the request to authorization server.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return redirectUri
      */
@@ -419,7 +419,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Redirect uri specified in the request to authorization server.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param redirectUri set the redirectUri.
      */
@@ -431,7 +431,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Uuid value of csp service.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceId
      */
@@ -443,7 +443,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Uuid value of csp service.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceId set the serviceId.
      */
@@ -455,7 +455,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Name of the csp service.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceName
      */
@@ -467,7 +467,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Name of the csp service.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceName set the serviceName.
      */
@@ -479,7 +479,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Url of token exchange server.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tokenEndpoint
      */
@@ -491,7 +491,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Url of token exchange server.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tokenEndpoint set the tokenEndpoint.
      */
@@ -503,7 +503,7 @@ public class OAuthProfile  {
      * This is the getter method this will return the attribute value.
      * Url of the userinfo endpoint.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userinfoEndpoint
      */
@@ -515,7 +515,7 @@ public class OAuthProfile  {
      * This is the setter method to the attribute.
      * Url of the userinfo endpoint.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userinfoEndpoint set the userinfoEndpoint.
      */

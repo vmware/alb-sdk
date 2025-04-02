@@ -43,7 +43,7 @@ public class TimeTrackerProperties  {
      * Audit tcp connection establishment time on server-side.
      * Enum options - TT_AUDIT_OFF, TT_AUDIT_ON, TT_AUDIT_ON_WITH_SIG.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return beConnEstAuditMode
      */
@@ -56,7 +56,7 @@ public class TimeTrackerProperties  {
      * Audit tcp connection establishment time on server-side.
      * Enum options - TT_AUDIT_OFF, TT_AUDIT_ON, TT_AUDIT_ON_WITH_SIG.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param beConnEstAuditMode set the beConnEstAuditMode.
      */
@@ -69,7 +69,7 @@ public class TimeTrackerProperties  {
      * Maximum threshold for tcp connection establishment time on server-side.
      * Field introduced in 22.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return beConnEstThreshold
      */
@@ -82,7 +82,7 @@ public class TimeTrackerProperties  {
      * Maximum threshold for tcp connection establishment time on server-side.
      * Field introduced in 22.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param beConnEstThreshold set the beConnEstThreshold.
      */
@@ -95,7 +95,7 @@ public class TimeTrackerProperties  {
      * Audit tcp connection establishment time on client-side.
      * Enum options - TT_AUDIT_OFF, TT_AUDIT_ON, TT_AUDIT_ON_WITH_SIG.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return feConnEstAuditMode
      */
@@ -108,7 +108,7 @@ public class TimeTrackerProperties  {
      * Audit tcp connection establishment time on client-side.
      * Enum options - TT_AUDIT_OFF, TT_AUDIT_ON, TT_AUDIT_ON_WITH_SIG.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param feConnEstAuditMode set the feConnEstAuditMode.
      */
@@ -121,7 +121,7 @@ public class TimeTrackerProperties  {
      * Maximum threshold for tcp connection establishment time on client-side.
      * Field introduced in 22.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return feConnEstThreshold
      */
@@ -134,7 +134,7 @@ public class TimeTrackerProperties  {
      * Maximum threshold for tcp connection establishment time on client-side.
      * Field introduced in 22.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param feConnEstThreshold set the feConnEstThreshold.
      */
@@ -146,7 +146,7 @@ public class TimeTrackerProperties  {
      * This is the getter method this will return the attribute value.
      * Add significance if ingress latency from dispatcher to proxy is breached on any flow.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ingressSigLog
      */
@@ -158,7 +158,7 @@ public class TimeTrackerProperties  {
      * This is the setter method to the attribute.
      * Add significance if ingress latency from dispatcher to proxy is breached on any flow.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ingressSigLog set the ingressSigLog.
      */

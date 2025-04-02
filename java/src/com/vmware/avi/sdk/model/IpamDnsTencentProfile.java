@@ -43,7 +43,7 @@ public class IpamDnsTencentProfile  {
      * Credentials to access tencent cloud.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudCredentialsRef
      */
@@ -56,7 +56,7 @@ public class IpamDnsTencentProfile  {
      * Credentials to access tencent cloud.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudCredentialsRef set the cloudCredentialsRef.
      */
@@ -68,7 +68,7 @@ public class IpamDnsTencentProfile  {
      * This is the getter method this will return the attribute value.
      * Vpc region.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return region
      */
@@ -80,7 +80,7 @@ public class IpamDnsTencentProfile  {
      * This is the setter method to the attribute.
      * Vpc region.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param region set the region.
      */
@@ -93,7 +93,7 @@ public class IpamDnsTencentProfile  {
      * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
      * allocation.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableSubnetIds
      */
@@ -107,7 +107,7 @@ public class IpamDnsTencentProfile  {
      * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
      * allocation.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableSubnetIds
      */
@@ -121,7 +121,7 @@ public class IpamDnsTencentProfile  {
      * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
      * allocation.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableSubnetIds
      */
@@ -137,7 +137,7 @@ public class IpamDnsTencentProfile  {
      * This is the getter method this will return the attribute value.
      * Vpc id.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vpcId
      */
@@ -149,7 +149,7 @@ public class IpamDnsTencentProfile  {
      * This is the setter method to the attribute.
      * Vpc id.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vpcId set the vpcId.
      */
@@ -160,7 +160,7 @@ public class IpamDnsTencentProfile  {
      * This is the getter method this will return the attribute value.
      * Network configuration for virtual ip per az.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */
@@ -172,7 +172,7 @@ public class IpamDnsTencentProfile  {
      * This is the setter method. this will set the zones
      * Network configuration for virtual ip per az.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */
@@ -184,7 +184,7 @@ public class IpamDnsTencentProfile  {
      * This is the setter method this will set the zones
      * Network configuration for virtual ip per az.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */

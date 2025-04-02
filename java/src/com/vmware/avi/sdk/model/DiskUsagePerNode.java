@@ -33,7 +33,7 @@ public class DiskUsagePerNode  {
      * This is the getter method this will return the attribute value.
      * Identifies the disk usage of the node.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return diskInfo
      */
@@ -45,7 +45,7 @@ public class DiskUsagePerNode  {
      * This is the setter method to the attribute.
      * Identifies the disk usage of the node.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param diskInfo set the diskInfo.
      */
@@ -57,7 +57,7 @@ public class DiskUsagePerNode  {
      * This is the getter method this will return the attribute value.
      * Identifies the name of the node.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -69,7 +69,7 @@ public class DiskUsagePerNode  {
      * This is the setter method to the attribute.
      * Identifies the name of the node.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

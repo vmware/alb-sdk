@@ -31,7 +31,7 @@ public class MetricsApiSrvDebugFilter  {
      * Uuid of the entity.
      * It is a reference to an object of type virtualservice.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return entityRef
      */
@@ -44,7 +44,7 @@ public class MetricsApiSrvDebugFilter  {
      * Uuid of the entity.
      * It is a reference to an object of type virtualservice.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param entityRef set the entityRef.
      */

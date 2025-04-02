@@ -36,7 +36,7 @@ public class OauthSubRequestLog  {
      * This is the getter method this will return the attribute value.
      * Error code.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorCode
      */
@@ -48,7 +48,7 @@ public class OauthSubRequestLog  {
      * This is the setter method to the attribute.
      * Error code.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorCode set the errorCode.
      */
@@ -60,7 +60,7 @@ public class OauthSubRequestLog  {
      * This is the getter method this will return the attribute value.
      * Error description.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorDescription
      */
@@ -72,7 +72,7 @@ public class OauthSubRequestLog  {
      * This is the setter method to the attribute.
      * Error description.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorDescription set the errorDescription.
      */
@@ -84,7 +84,7 @@ public class OauthSubRequestLog  {
      * This is the getter method this will return the attribute value.
      * Subrequest info related to the oauth flow.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subRequestLog
      */
@@ -96,7 +96,7 @@ public class OauthSubRequestLog  {
      * This is the setter method to the attribute.
      * Subrequest info related to the oauth flow.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subRequestLog set the subRequestLog.
      */

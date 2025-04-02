@@ -44,7 +44,7 @@ public class CloudInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Cloudconnectoragent properties specific to this cloud type.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccaProps
      */
@@ -55,7 +55,7 @@ public class CloudInfo  {
     /**
      * This is the setter method to the attribute.
      * Cloudconnectoragent properties specific to this cloud type.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccaProps set the ccaProps.
      */
@@ -66,7 +66,7 @@ public class CloudInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Controller properties specific to this cloud type.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerProps
      */
@@ -77,7 +77,7 @@ public class CloudInfo  {
     /**
      * This is the setter method to the attribute.
      * Controller properties specific to this cloud type.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerProps set the controllerProps.
      */
@@ -87,7 +87,7 @@ public class CloudInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Flavor properties specific to this cloud type.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flavorProps
      */
@@ -98,7 +98,7 @@ public class CloudInfo  {
     /**
      * This is the setter method. this will set the flavorProps
      * Flavor properties specific to this cloud type.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flavorProps
      */
@@ -109,7 +109,7 @@ public class CloudInfo  {
     /**
      * This is the setter method this will set the flavorProps
      * Flavor properties specific to this cloud type.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flavorProps
      */
@@ -123,7 +123,7 @@ public class CloudInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flavorRegexFilter
      */
@@ -133,7 +133,7 @@ public class CloudInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param flavorRegexFilter set the flavorRegexFilter.
      */
@@ -144,7 +144,7 @@ public class CloudInfo  {
      * This is the getter method this will return the attribute value.
      * Supported hypervisors.
      * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return htypes
      */
@@ -156,7 +156,7 @@ public class CloudInfo  {
      * This is the setter method. this will set the htypes
      * Supported hypervisors.
      * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return htypes
      */
@@ -168,7 +168,7 @@ public class CloudInfo  {
      * This is the setter method this will set the htypes
      * Supported hypervisors.
      * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return htypes
      */
@@ -185,7 +185,7 @@ public class CloudInfo  {
      * Cloud type.
      * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
      * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vtype
      */
@@ -198,7 +198,7 @@ public class CloudInfo  {
      * Cloud type.
      * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
      * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vtype set the vtype.
      */
