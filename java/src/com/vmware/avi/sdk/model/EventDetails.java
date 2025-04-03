@@ -525,9 +525,6 @@ public class EventDetails  {
     @JsonProperty("se_pool_lb_details")
     private SePoolLbEventDetails sePoolLbDetails;
 
-    @JsonProperty("se_process_crashed_details")
-    private SeProcessCrashedDetails seProcessCrashedDetails;
-
     @JsonProperty("se_reconcile_details")
     private SeReconcileDetails seReconcileDetails;
 
@@ -4199,30 +4196,6 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Details about the process that crashed on a specific se.
-     * Field introduced in 31.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return seProcessCrashedDetails
-     */
-    public SeProcessCrashedDetails getSeProcessCrashedDetails() {
-        return seProcessCrashedDetails;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Details about the process that crashed on a specific se.
-     * Field introduced in 31.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param seProcessCrashedDetails set the seProcessCrashedDetails.
-     */
-    public void setSeProcessCrashedDetails(SeProcessCrashedDetails seProcessCrashedDetails) {
-        this.seProcessCrashedDetails = seProcessCrashedDetails;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seReconcileDetails
@@ -5729,8 +5702,7 @@ public class EventDetails  {
   Objects.equals(this.fileobjectDetails, objEventDetails.fileobjectDetails)&&
   Objects.equals(this.systemReportEventDetails, objEventDetails.systemReportEventDetails)&&
   Objects.equals(this.diskCleanupEventDetails, objEventDetails.diskCleanupEventDetails)&&
-  Objects.equals(this.uberEventDetails, objEventDetails.uberEventDetails)&&
-  Objects.equals(this.seProcessCrashedDetails, objEventDetails.seProcessCrashedDetails);
+  Objects.equals(this.uberEventDetails, objEventDetails.uberEventDetails);
     }
 
     @Override
@@ -5905,7 +5877,6 @@ public class EventDetails  {
                         sb.append("    seObjsyncPeerDownDetails: ").append(toIndentedString(seObjsyncPeerDownDetails)).append("\n");
                         sb.append("    sePersistenceDetails: ").append(toIndentedString(sePersistenceDetails)).append("\n");
                         sb.append("    sePoolLbDetails: ").append(toIndentedString(sePoolLbDetails)).append("\n");
-                        sb.append("    seProcessCrashedDetails: ").append(toIndentedString(seProcessCrashedDetails)).append("\n");
                         sb.append("    seReconcileDetails: ").append(toIndentedString(seReconcileDetails)).append("\n");
                         sb.append("    seThreshEventDetails: ").append(toIndentedString(seThreshEventDetails)).append("\n");
                         sb.append("    seVnicDownEventDetails: ").append(toIndentedString(seVnicDownEventDetails)).append("\n");
