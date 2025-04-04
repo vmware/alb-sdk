@@ -893,12 +893,14 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 				glog.Errorf("restRequest Error during checking controller state. Error: %s", err)
 				return httpResp, err
 			}
-			if err := avisess.initiateSession(); err != nil {
-				if resp != nil && resp.Body != nil {
-					glog.Infof("Body is not nil, close it.")
-					resp.Body.Close()
+			if uri != "login" {
+				if err := avisess.initiateSession(); err != nil {
+					if resp != nil && resp.Body != nil {
+						glog.Infof("Body is not nil, close it.")
+						resp.Body.Close()
+					}
+					return nil, err
 				}
-				return nil, err
 			}
 			return avisess.restRequest(verb, uri, payload, tenant, errorResult, retry+1)
 		} else {
