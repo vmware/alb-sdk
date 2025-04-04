@@ -427,9 +427,9 @@ public class VsVip extends AviRestResource  {
      * This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is
      * set.
      * This is only used when fip is used for vs on azure cloud.
+     * Field deprecated in 30.2.3.
      * Field introduced in 18.2.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return useStandardAlb
      */
     public Boolean getUseStandardAlb() {
@@ -441,9 +441,9 @@ public class VsVip extends AviRestResource  {
      * This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is
      * set.
      * This is only used when fip is used for vs on azure cloud.
+     * Field deprecated in 30.2.3.
      * Field introduced in 18.2.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param useStandardAlb set the useStandardAlb.
      */
     public void setUseStandardAlb(Boolean  useStandardAlb) {
