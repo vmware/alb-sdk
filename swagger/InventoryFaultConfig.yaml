@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '30.2.3'
+    version: '30.2.4'
     title: Avi InventoryFaultConfig Object API
     contact:
         name: Avi Networks Inc.
