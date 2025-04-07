@@ -763,9 +763,7 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 		req.Header["X-CSRFToken"] = []string{avisess.csrfToken}
 		req.AddCookie(&http.Cookie{Name: "csrftoken", Value: avisess.csrfToken})
 	}
-	if avisess.prefix != "" {
-		req.Header.Set("Referer", avisess.prefix)
-	}
+
 	if tenant != "" {
 		req.Header.Set("X-Avi-Tenant", tenant)
 	}
