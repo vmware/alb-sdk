@@ -32798,518 +32798,6 @@
                 }
             }
         },
-        "/gslbcrmruntime": {
-            "get": {
-                "tags": [
-                    "GslbCRMRuntime"
-                ],
-                "description": "/gslbcrmruntime",
-                "operationId": "GET /gslbcrmruntime",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "refers_to",
-                        "in": "query",
-                        "description": "Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid",
-                        "type": "string"
-                    },
-                    {
-                        "name": "referred_by",
-                        "in": "query",
-                        "description": "Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid",
-                        "type": "string"
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "include_name",
-                        "in": "query",
-                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "skip_default",
-                        "in": "query",
-                        "description": "Default values are not set.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "join_subresources",
-                        "in": "query",
-                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "X-Avi-Tenant",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntimeApiResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "GslbCRMRuntime"
-                ],
-                "description": "/gslbcrmruntime",
-                "operationId": "POST /gslbcrmruntime",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "X-Avi-Tenant",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "GslbCRMRuntime object creation",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            }
-        },
-        "/gslbcrmruntime/{uuid}": {
-            "get": {
-                "tags": [
-                    "GslbCRMRuntime"
-                ],
-                "description": "/gslbcrmruntime/{uuid}",
-                "operationId": "GET /gslbcrmruntime/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "X-Avi-Tenant",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "name": "uuid",
-                        "in": "path",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "include_name",
-                        "in": "query",
-                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "skip_default",
-                        "in": "query",
-                        "description": "Default values are not set.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "join_subresources",
-                        "in": "query",
-                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "GslbCRMRuntime"
-                ],
-                "description": "/gslbcrmruntime/{uuid}",
-                "operationId": "PUT /gslbcrmruntime/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "name",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "GslbCRMRuntime object creation",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
-            "patch": {
-                "tags": [
-                    "GslbCRMRuntime"
-                ],
-                "description": "/gslbcrmruntime/{uuid}",
-                "operationId": "PATCH /gslbcrmruntime/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "name",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "GslbCRMRuntime object creation",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "GslbCRMRuntime"
-                ],
-                "description": "/gslbcrmruntime/{uuid}",
-                "operationId": "DELETE /gslbcrmruntime/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "name",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "object deleted",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "404": {
-                        "description": "not found"
-                    }
-                }
-            }
-        },
         "/gslbhsmruntime": {
             "get": {
                 "tags": [
@@ -33754,6 +33242,518 @@
                 ],
                 "description": "/gslbhsmruntime/{uuid}",
                 "operationId": "DELETE /gslbhsmruntime/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "object deleted",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/gslbcrmruntime": {
+            "get": {
+                "tags": [
+                    "GslbCRMRuntime"
+                ],
+                "description": "/gslbcrmruntime",
+                "operationId": "GET /gslbcrmruntime",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "refers_to",
+                        "in": "query",
+                        "description": "Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid",
+                        "type": "string"
+                    },
+                    {
+                        "name": "referred_by",
+                        "in": "query",
+                        "description": "Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid",
+                        "type": "string"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "include_name",
+                        "in": "query",
+                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "skip_default",
+                        "in": "query",
+                        "description": "Default values are not set.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "join_subresources",
+                        "in": "query",
+                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Avi-Tenant",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntimeApiResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "GslbCRMRuntime"
+                ],
+                "description": "/gslbcrmruntime",
+                "operationId": "POST /gslbcrmruntime",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "X-Avi-Tenant",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "GslbCRMRuntime object creation",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
+        },
+        "/gslbcrmruntime/{uuid}": {
+            "get": {
+                "tags": [
+                    "GslbCRMRuntime"
+                ],
+                "description": "/gslbcrmruntime/{uuid}",
+                "operationId": "GET /gslbcrmruntime/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Avi-Tenant",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "include_name",
+                        "in": "query",
+                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "skip_default",
+                        "in": "query",
+                        "description": "Default values are not set.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "join_subresources",
+                        "in": "query",
+                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "GslbCRMRuntime"
+                ],
+                "description": "/gslbcrmruntime/{uuid}",
+                "operationId": "PUT /gslbcrmruntime/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "GslbCRMRuntime object creation",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "GslbCRMRuntime"
+                ],
+                "description": "/gslbcrmruntime/{uuid}",
+                "operationId": "PATCH /gslbcrmruntime/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "GslbCRMRuntime object creation",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "GslbCRMRuntime"
+                ],
+                "description": "/gslbcrmruntime/{uuid}",
+                "operationId": "DELETE /gslbcrmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -83647,13 +83647,13 @@
                 }
             }
         },
-        "/upgradestatusinfo": {
+        "/debugvirtualservice": {
             "get": {
                 "tags": [
-                    "UpgradeStatusSummary"
+                    "DebugVirtualService"
                 ],
-                "description": "/upgradestatusinfo",
-                "operationId": "GET /upgradestatusinfo",
+                "description": "/debugvirtualservice",
+                "operationId": "GET /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -83733,6 +83733,95 @@
                         "type": "string",
                         "required": false,
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "name": "cloud_uuid",
+                        "in": "query",
+                        "description": "Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_uuid=cloud-xyz.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "cloud_ref.name",
+                        "in": "query",
+                        "description": "Filter to get objects that belongs to a specific cloud usings its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "cloud_ref.uuid",
+                        "in": "query",
+                        "description": "Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_ref.uuid=cloud_uuid.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "name.contains",
+                        "in": "query",
+                        "description": "Filter to get objects with name that contains the parameter. This is a case sensitive search. Eg. name.contains=pool-.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "name.icontains",
+                        "in": "query",
+                        "description": "Filter to get objects with name that contains the parameter. This is a case insensitive search. Eg. name.icontains=pool-.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "name.in",
+                        "in": "query",
+                        "description": "Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. name.in=pool-1,pool-12.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "uuid.in",
+                        "in": "query",
+                        "description": "Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. uuid.in=<uuid-1>,<uuid-2>.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Filter to get objects that contains the search string as value for any of its fields. Eg. search=LEAST_CONN. The search filter can also be used to search under a specific field. This is achieved by sending the parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "isearch",
+                        "in": "query",
+                        "description": "Filter to get objects that contains case insensitive search string. Eg. isearch=(name,Vs-Pool-).",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "limit_by",
+                        "in": "query",
+                        "description": "Filter to limit the number of objects in the response data. Eg. limit_by=3.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "exclude",
+                        "in": "query",
+                        "description": "Filter to exclude the uuid(s) contained in the parameter. Eg. uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Parameter to sort the results with respect to a field. Eg. sort=name.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "page_size",
+                        "in": "query",
+                        "description": "Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.",
+                        "type": "string",
+                        "required": false
                     }
                 ],
                 "security": [
@@ -83744,7 +83833,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummaryApiResponse"
+                            "$ref": "#/definitions/DebugVirtualServiceApiResponse"
                         }
                     },
                     "401": {
@@ -83754,10 +83843,10 @@
             },
             "post": {
                 "tags": [
-                    "UpgradeStatusSummary"
+                    "DebugVirtualService"
                 ],
-                "description": "/upgradestatusinfo",
-                "operationId": "POST /upgradestatusinfo",
+                "description": "/debugvirtualservice",
+                "operationId": "POST /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -83796,10 +83885,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusSummary object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     }
                 ],
@@ -83812,7 +83901,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -83821,13 +83910,13 @@
                 }
             }
         },
-        "/upgradestatusinfo/{uuid}": {
+        "/debugvirtualservice/{uuid}": {
             "get": {
                 "tags": [
-                    "UpgradeStatusSummary"
+                    "DebugVirtualService"
                 ],
-                "description": "/upgradestatusinfo/{uuid}",
-                "operationId": "GET /upgradestatusinfo/{uuid}",
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "GET /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -83913,7 +84002,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -83923,10 +84012,10 @@
             },
             "put": {
                 "tags": [
-                    "UpgradeStatusSummary"
+                    "DebugVirtualService"
                 ],
-                "description": "/upgradestatusinfo/{uuid}",
-                "operationId": "PUT /upgradestatusinfo/{uuid}",
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "PUT /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -83972,10 +84061,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusSummary object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     {
@@ -83995,7 +84084,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -84005,10 +84094,10 @@
             },
             "patch": {
                 "tags": [
-                    "UpgradeStatusSummary"
+                    "DebugVirtualService"
                 ],
-                "description": "/upgradestatusinfo/{uuid}",
-                "operationId": "PATCH /upgradestatusinfo/{uuid}",
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "PATCH /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -84054,10 +84143,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusSummary object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     {
@@ -84077,7 +84166,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -84087,10 +84176,10 @@
             },
             "delete": {
                 "tags": [
-                    "UpgradeStatusSummary"
+                    "DebugVirtualService"
                 ],
-                "description": "/upgradestatusinfo/{uuid}",
-                "operationId": "DELETE /upgradestatusinfo/{uuid}",
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "DELETE /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -89269,13 +89358,13 @@
                 }
             }
         },
-        "/debugvirtualservice": {
+        "/upgradestatusinfo": {
             "get": {
                 "tags": [
-                    "DebugVirtualService"
+                    "UpgradeStatusSummary"
                 ],
-                "description": "/debugvirtualservice",
-                "operationId": "GET /debugvirtualservice",
+                "description": "/upgradestatusinfo",
+                "operationId": "GET /upgradestatusinfo",
                 "consumes": [
                     "application/json"
                 ],
@@ -89355,95 +89444,6 @@
                         "type": "string",
                         "required": false,
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "name": "cloud_uuid",
-                        "in": "query",
-                        "description": "Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_uuid=cloud-xyz.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "cloud_ref.name",
-                        "in": "query",
-                        "description": "Filter to get objects that belongs to a specific cloud usings its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "cloud_ref.uuid",
-                        "in": "query",
-                        "description": "Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_ref.uuid=cloud_uuid.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "name.contains",
-                        "in": "query",
-                        "description": "Filter to get objects with name that contains the parameter. This is a case sensitive search. Eg. name.contains=pool-.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "name.icontains",
-                        "in": "query",
-                        "description": "Filter to get objects with name that contains the parameter. This is a case insensitive search. Eg. name.icontains=pool-.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "name.in",
-                        "in": "query",
-                        "description": "Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. name.in=pool-1,pool-12.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "uuid.in",
-                        "in": "query",
-                        "description": "Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. uuid.in=<uuid-1>,<uuid-2>.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "search",
-                        "in": "query",
-                        "description": "Filter to get objects that contains the search string as value for any of its fields. Eg. search=LEAST_CONN. The search filter can also be used to search under a specific field. This is achieved by sending the parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "isearch",
-                        "in": "query",
-                        "description": "Filter to get objects that contains case insensitive search string. Eg. isearch=(name,Vs-Pool-).",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "limit_by",
-                        "in": "query",
-                        "description": "Filter to limit the number of objects in the response data. Eg. limit_by=3.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "exclude",
-                        "in": "query",
-                        "description": "Filter to exclude the uuid(s) contained in the parameter. Eg. uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "sort",
-                        "in": "query",
-                        "description": "Parameter to sort the results with respect to a field. Eg. sort=name.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "page_size",
-                        "in": "query",
-                        "description": "Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.",
-                        "type": "string",
-                        "required": false
                     }
                 ],
                 "security": [
@@ -89455,7 +89455,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualServiceApiResponse"
+                            "$ref": "#/definitions/UpgradeStatusSummaryApiResponse"
                         }
                     },
                     "401": {
@@ -89465,10 +89465,10 @@
             },
             "post": {
                 "tags": [
-                    "DebugVirtualService"
+                    "UpgradeStatusSummary"
                 ],
-                "description": "/debugvirtualservice",
-                "operationId": "POST /debugvirtualservice",
+                "description": "/upgradestatusinfo",
+                "operationId": "POST /upgradestatusinfo",
                 "consumes": [
                     "application/json"
                 ],
@@ -89507,10 +89507,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "UpgradeStatusSummary object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     }
                 ],
@@ -89523,7 +89523,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     },
                     "401": {
@@ -89532,13 +89532,13 @@
                 }
             }
         },
-        "/debugvirtualservice/{uuid}": {
+        "/upgradestatusinfo/{uuid}": {
             "get": {
                 "tags": [
-                    "DebugVirtualService"
+                    "UpgradeStatusSummary"
                 ],
-                "description": "/debugvirtualservice/{uuid}",
-                "operationId": "GET /debugvirtualservice/{uuid}",
+                "description": "/upgradestatusinfo/{uuid}",
+                "operationId": "GET /upgradestatusinfo/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -89624,7 +89624,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     },
                     "401": {
@@ -89634,10 +89634,10 @@
             },
             "put": {
                 "tags": [
-                    "DebugVirtualService"
+                    "UpgradeStatusSummary"
                 ],
-                "description": "/debugvirtualservice/{uuid}",
-                "operationId": "PUT /debugvirtualservice/{uuid}",
+                "description": "/upgradestatusinfo/{uuid}",
+                "operationId": "PUT /upgradestatusinfo/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -89683,10 +89683,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "UpgradeStatusSummary object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     },
                     {
@@ -89706,7 +89706,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     },
                     "401": {
@@ -89716,10 +89716,10 @@
             },
             "patch": {
                 "tags": [
-                    "DebugVirtualService"
+                    "UpgradeStatusSummary"
                 ],
-                "description": "/debugvirtualservice/{uuid}",
-                "operationId": "PATCH /debugvirtualservice/{uuid}",
+                "description": "/upgradestatusinfo/{uuid}",
+                "operationId": "PATCH /upgradestatusinfo/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -89765,10 +89765,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "UpgradeStatusSummary object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     },
                     {
@@ -89788,7 +89788,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     },
                     "401": {
@@ -89798,10 +89798,10 @@
             },
             "delete": {
                 "tags": [
-                    "DebugVirtualService"
+                    "UpgradeStatusSummary"
                 ],
-                "description": "/debugvirtualservice/{uuid}",
-                "operationId": "DELETE /debugvirtualservice/{uuid}",
+                "description": "/upgradestatusinfo/{uuid}",
+                "operationId": "DELETE /upgradestatusinfo/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -93523,72 +93523,6 @@
             }
         },
         "/fileobject/{uuid}/['']/": {
-            "patch": {
-                "tags": [
-                    "FileObject"
-                ],
-                "description": "/fileobject/{uuid}/['']/",
-                "operationId": "PATCH /fileobject/{uuid}/['']/",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
             "put": {
                 "tags": [
                     "FileObject"
@@ -93641,6 +93575,72 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "FileObject"
+                ],
+                "description": "/fileobject/{uuid}/['']/",
+                "operationId": "PATCH /fileobject/{uuid}/['']/",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
                     },
                     {
                         "in": "path",
