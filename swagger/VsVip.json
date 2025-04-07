@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "30.2.3",
+        "version": "30.2.4",
         "title": "Avi VsVip Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -1015,7 +1015,7 @@
                     "type": "string"
                 },
                 "use_standard_alb": {
-                    "description": "This overrides the cloud level default and needs to match the SE Group value in which it will be used if the SE Group use_standard_alb value is set. This is only used when FIP is used for VS on Azure Cloud. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "This overrides the cloud level default and needs to match the SE Group value in which it will be used if the SE Group use_standard_alb value is set. This is only used when FIP is used for VS on Azure Cloud. Field deprecated in 30.2.3. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "uuid": {
