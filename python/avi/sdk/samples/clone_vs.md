@@ -72,20 +72,18 @@ Specify the VIP as a subnet/mask. This must match an auto-allocation subnet in I
 
 If the source VIP was auto-allocated, the target can simply inherit the auto-allocation network:
 
-> -v auto (or -v *)
-
-(Note: On Linux/Unix/Mac systems, use the `auto` option as `*` would need to be escaped to prevent it being treated as a filename glob)
+> -v *
 
 ### Specifying public/elastic/floating IP for clouds that support this (e.g. public clouds, OpenStack)
 
-Separate the public/floating IP using a `;`. A static public/floating IP can be specified explicitly, or to auto-allocate a public IP, use the `auto` keyword:
+Separate the public/floating IP using a `;`. A static public/floating IP can be specified explicitly, or o auto-allocate a public IP, use the `auto` keyword:
 
 > -v 10.10.10.0/24;203.0.113.100
 > -v 10.10.10.0/24;auto
 
 ### Avi Internal IPAM
 
-When using Avi Internal IPAM for auto-allocation, it may be necessary in some clouds (e.g. NSX-T Cloud) to supply the `-int` parameter to ensure the VsVip is populated with all the correct fields. Other clouds (e.g. vCenter Cloud) are more forgiving and generally work without specifying this parameter if there is only a single IPAM subnet specified.
+When using Avi Internal IPAM for auto-allocation, it may be necessary in some clouds (e.g. NSX-T Cloud) to supply the `-int` parameter to ensure the VsVip is populated with all the correct fields. Other clouds (e.g. vCenter Cloud) are more forgiving and usually work without specifying this parameter.
 
 ## Special flags
 
@@ -214,17 +212,17 @@ If cloning a Virtual Service between Controllers or to a different tenant, the d
 
 A WAF Policy and its referenced PSM groups can be forced cloned using the -fc flag. This supports the scenarios where the cloned VS should have its own WAF Policy rather than sharing the same WAF policy (including the case where learning is enabled).
 
-In this case, if learning is enabled in the source WAF Policy, it will remain enabled in the cloned WAF Policy resulting in independent learning for the cloned VS.
+In this case, if learning is enabled in the source WAF Policy, it will remain enabled in the cloned WAF Policy resulting in indepdent learning for the cloned VS.
 
 The below example clones a VS and forces cloning of the WAF Policy and any PSM groups also.
 
-> clone_vs.py -c controller1.acme.com -fc vs-wafpolicy,positive-security-model vs example cloned-example -v auto
+> clone_vs.py -c controller1.acme.com -fc vs-wafpolicy,positive-security-model vs example cloned-example -v *
 
 ### Disabling learning in the cloned WAF Policy
 
 It may desirable to disable learning for the cloned WAF Policy and its referenced PSM groups, for example if the source Virtual Service was used for learning and the cloned Virtual Service will be an instance of the same application, but independent learning is not desired. This can be achieved with the option  `-flags disablelearning`:
 
-> clone_vs.py -c controller1.acme.com -fc vs-wafpolicy,positive-security-model -flags disablelearning vs example cloned-example -v auto
+> clone_vs.py -c controller1.acme.com -fc vs-wafpolicy,positive-security-model -flags disablelearning vs example cloned-example -v *
 
 This flag can also be used when cloning a WAF Policy individually:
 
@@ -302,33 +300,3 @@ Changelog:
 2.0.2:
 
 * Added support for flexibly handling specification of pool placement networks for cloned pools
-
-2.0.3:
-
-* Added some additional reference handling for less-common DataScript and WAF Profile configurations
-
-2.0.4:
-
-* Fixed VRF handling for cloning to/from NSX-T Cloud in certain scenarios
-
-2.0.5:
-
-* Fixed VRF handling with manual VsVip
-
-2.0.6:
-
-* Changed handling of Pool and PoolGroup references in VsDataScriptSet
-  * Will now try to preserve the names of Pools and PoolGroups when cloning a VsDataScriptSet if possible (e.g. when cloning to a different tenant/Controller)
-  * If name preservation is not possible, unique names will now be generated from the old Pool/PoolGroup name (previous behaviour was to generate names based on VsDataScript name)
-  * Will generate a warning that DataScript code changes may be needed, for example because a Pool or PoolGroup name could not be preserved
-* Changed handling of PoolGroup cloning
-  * Will now try to preserve the names of Pools when cloning a PoolGroup if possible (e.g. when cloning to a different tenant/Controller)
-  * If name preservation is not possible, unique names will now be generated from the old Pool name (previous behaviour was to generate names based on PoolGroup name)
-
-2.0.7:
-
-* Add support for cloning HealthMonitors with SSL attributes or authentication attributes (authentication attributes must be manually re-entered)
-* Add support for cloning AuthProfiles for OAuth2
-* Add support for cloning VS with OAuth2 SSO configuration
-* Add support for cloning VS with service-level network/application profile overrides
-* Add support for cloning DNS VS with Topology Policies

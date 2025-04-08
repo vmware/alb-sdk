@@ -7,23 +7,12 @@ __metaclass__ = type
 
 from avi.sdk.avi_api import ApiSession, \
     sessionDict, APIError, AviCredentials
-import os
 import sys
-import copy
-import json
 import logging
 import time
 
-if sys.version_info < (3, 5):
-    from urlparse import urlparse
-else:
-    from urllib.parse import urlparse
-
-from datetime import datetime, timedelta
 from requests import ConnectionError
-from requests import Response
 from requests.exceptions import ChunkedEncodingError
-from requests.sessions import Session
 from ssl import SSLError
 
 logger = logging.getLogger(__name__)
