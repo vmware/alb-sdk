@@ -4,11 +4,12 @@ package test
 
 import (
 	"fmt"
-	"github.com/vmware/alb-sdk/go/clients"
-	"github.com/vmware/alb-sdk/go/session"
 	"log"
 	"os"
 	"testing"
+
+	"github.com/vmware/alb-sdk/go/clients"
+	"github.com/vmware/alb-sdk/go/session"
 )
 
 // Open given file as a file pointer
@@ -34,7 +35,7 @@ func TestFileUpload(t *testing.T) {
 	}
 
 	uri := "hsmpackages?hsmtype=safenet"
-	local_file := "/mnt/files/hsm/safenet_pkg/6.1/safenet.tar"
+	local_file := "/mnt/files/hsm/safenet_pkg/7.3/safenet.tar"
 	local_file_ptr := mustOpen(local_file)
 	err = aviClient.AviSession.PostMultipartRequest("POST", uri, local_file_ptr)
 	if err != nil {
@@ -55,7 +56,7 @@ func TestFileObjectUpload(t *testing.T) {
 		t.Fail()
 	}
 
-	local_file := "/mnt/files/hsm/safenet_pkg/6.1/safenet.tar"
+	local_file := "/mnt/files/hsm/safenet_pkg/7.3/safenet.tar"
 	local_file_ptr := mustOpen(local_file)
 	fileParams := make(map[string]string)
 	fileParams["name"] = "TestHsmPackage"
