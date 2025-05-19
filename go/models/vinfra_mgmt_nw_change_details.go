@@ -8,15 +8,15 @@ package models
 // swagger:model VinfraMgmtNwChangeDetails
 type VinfraMgmtNwChangeDetails struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	ExistingNw *string `json:"existing_nw"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	NewNw *string `json:"new_nw"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Vcenter *string `json:"vcenter"`
 }

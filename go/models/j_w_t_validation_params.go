@@ -8,7 +8,6 @@ package models
 // swagger:model JWTValidationParams
 type JWTValidationParams struct {
 
-	// Audience parameter used for validation using JWT token. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	// Required: true
-	Audience *string `json:"audience"`
+	// Audience parameter used for validation using JWT token. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	Audience *string `json:"audience,omitempty"`
 }

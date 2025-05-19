@@ -8,15 +8,15 @@ package models
 // swagger:model DnsOptRecord
 type DNSOptRecord struct {
 
-	// Flag indicating client is DNSSEC aware. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Flag indicating client is DNSSEC aware. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DnssecOk *bool `json:"dnssec_ok,omitempty"`
 
-	// EDNS options. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// EDNS options. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Options []*DNSEdnsOption `json:"options,omitempty"`
 
-	// Client requestor's UDP payload size. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Client requestor's UDP payload size. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UDPPayloadSize *uint32 `json:"udp_payload_size,omitempty"`
 
-	// EDNS version. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// EDNS version. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Version *uint32 `json:"version,omitempty"`
 }

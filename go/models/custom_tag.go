@@ -8,10 +8,10 @@ package models
 // swagger:model CustomTag
 type CustomTag struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	TagKey *string `json:"tag_key"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TagVal *string `json:"tag_val,omitempty"`
 }

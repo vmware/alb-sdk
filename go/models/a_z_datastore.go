@@ -8,9 +8,9 @@ package models
 // swagger:model AZDatastore
 type AZDatastore struct {
 
-	// List of Managed object id of datastores. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// List of Managed object id of datastores. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DsIds []string `json:"ds_ids,omitempty"`
 
-	// Include or exclude the datastores from the list. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Include or exclude the datastores from the list. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Include *bool `json:"include,omitempty"`
 }

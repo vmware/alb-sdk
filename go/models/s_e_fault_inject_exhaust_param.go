@@ -8,10 +8,10 @@ package models
 // swagger:model SEFaultInjectExhaustParam
 type SEFaultInjectExhaustParam struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Leak *bool `json:"leak,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Num *uint64 `json:"num"`
 }

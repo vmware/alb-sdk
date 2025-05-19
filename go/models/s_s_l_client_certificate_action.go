@@ -8,9 +8,9 @@ package models
 // swagger:model SSLClientCertificateAction
 type SSLClientCertificateAction struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloseConnection *bool `json:"close_connection,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Headers []*SSLClientRequestHeader `json:"headers,omitempty"`
 }

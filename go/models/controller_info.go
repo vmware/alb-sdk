@@ -8,6 +8,6 @@ package models
 // swagger:model ControllerInfo
 type ControllerInfo struct {
 
-	// Total controller memory usage in GBs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Total controller memory usage in GBs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	CurrentControllerMemUsage *float64 `json:"current_controller_mem_usage,omitempty"`
 }

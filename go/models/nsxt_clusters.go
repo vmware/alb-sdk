@@ -8,9 +8,9 @@ package models
 // swagger:model NsxtClusters
 type NsxtClusters struct {
 
-	// List of transport node clusters. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	// List of transport node clusters. Field introduced in 20.1.6. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.
 	ClusterIds []string `json:"cluster_ids,omitempty"`
 
-	// Include or Exclude. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	// Include or Exclude. Field introduced in 20.1.6. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.
 	Include *bool `json:"include,omitempty"`
 }

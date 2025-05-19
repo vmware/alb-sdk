@@ -8,12 +8,12 @@ package models
 // swagger:model UserRole
 type UserRole struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllTenants *bool `json:"all_tenants,omitempty"`
 
-	//  It is a reference to an object of type Role. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  It is a reference to an object of type Role. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RoleRef *string `json:"role_ref,omitempty"`
 
-	//  It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 }

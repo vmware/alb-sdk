@@ -8,15 +8,15 @@ package models
 // swagger:model GslbDnsInfo
 type GslbDNSInfo struct {
 
-	// This field indicates that atleast one DNS is active at the site. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// This field indicates that atleast one DNS is active at the site. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSActive *bool `json:"dns_active,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSVsStates []*GslbPerDNSState `json:"dns_vs_states,omitempty"`
 
-	// This field encapsulates the Gs-status edge-triggered framework. . Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// This field encapsulates the Gs-status edge-triggered framework. . Field deprecated in 31.1.1. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GsStatus *GslbDNSGsStatus `json:"gs_status,omitempty"`
 
-	// This field is used to track the retry attempts for SE download errors. . Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// This field is used to track the retry attempts for SE download errors. . Field deprecated in 31.1.1. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RetryCount *uint32 `json:"retry_count,omitempty"`
 }

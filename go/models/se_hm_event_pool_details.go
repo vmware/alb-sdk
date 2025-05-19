@@ -8,24 +8,24 @@ package models
 // swagger:model SeHmEventPoolDetails
 type SeHmEventPoolDetails struct {
 
-	// HA Compromised reason. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// HA Compromised reason. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HaReason *string `json:"ha_reason,omitempty"`
 
-	// Percentage of servers up. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Percentage of servers up. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PercentServersUp *string `json:"percent_servers_up,omitempty"`
 
-	// Pool name. It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Pool name. It is a reference to an object of type Pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Pool *string `json:"pool,omitempty"`
 
-	// Service Engine. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Service Engine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeName *string `json:"se_name,omitempty"`
 
-	// Server details. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Server details. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Server *SeHmEventServerDetails `json:"server,omitempty"`
 
-	// UUID of the event generator. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// UUID of the event generator. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SrcUUID *string `json:"src_uuid,omitempty"`
 
-	// Virtual service name. It is a reference to an object of type VirtualService. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Virtual service name. It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VirtualService *string `json:"virtual_service,omitempty"`
 }

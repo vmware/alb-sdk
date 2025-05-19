@@ -8,7 +8,7 @@ package models
 // swagger:model InventoryMetricsData
 type InventoryMetricsData struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Value *float64 `json:"value"`
 }

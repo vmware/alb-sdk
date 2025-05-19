@@ -8,9 +8,9 @@ package models
 // swagger:model NsxtSIServiceDetails
 type NsxtSIServiceDetails struct {
 
-	// Error message. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Error message. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ErrorString *string `json:"error_string,omitempty"`
 
-	// NSX-T ServiceInsertion service name. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// NSX-T ServiceInsertion service name. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Service *string `json:"service,omitempty"`
 }

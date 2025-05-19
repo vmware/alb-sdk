@@ -1,5 +1,5 @@
 module github.com/vmware/alb-sdk
 
-go 1.22.2
+go 1.23.2
 
 require github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
