@@ -165,6 +165,12 @@ type ControllerProperties struct {
 	// Ignore the vrf_context filter for /networksubnetlist API. Field introduced in 22.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	IgnoreVrfInNetworksubnetlist *bool `json:"ignore_vrf_in_networksubnetlist,omitempty"`
 
+	// Additional buffer space (up to 10 GB) to be allocated to store logs on a controller. Allowed values are 0-10000. Field introduced in 31.2.1. Unit is MB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LogRecordsAdditionalBufferSpace *uint32 `json:"log_records_additional_buffer_space,omitempty"`
+
+	// Frequency (in seconds) to clean up log files on Controller node. By default, 600 seconds. Allowed values are 1-100000. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LogRecordsPurgeInterval *uint32 `json:"log_records_purge_interval,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxDeadSeInGrp *uint32 `json:"max_dead_se_in_grp,omitempty"`
 
