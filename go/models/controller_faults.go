@@ -25,4 +25,7 @@ type ControllerFaults struct {
 
 	// Enable SSL Profile faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SslprofileFaults *bool `json:"sslprofile_faults,omitempty"`
+
+	// Enable system limits faults. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SystemLimitsFaults *bool `json:"system_limits_faults,omitempty"`
 }

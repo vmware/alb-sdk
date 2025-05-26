@@ -23,6 +23,9 @@ type JournalTask struct {
 	// Time at which execution of task was started. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	StartTime *string `json:"start_time,omitempty"`
 
+	// State of the Journal Task. Enum options - TASK_STATE_SUCCESS, TASK_STATE_WARNING, TASK_STATE_ERROR. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	State *string `json:"state,omitempty"`
+
 	// Status of the executed task. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Status *bool `json:"status,omitempty"`
 

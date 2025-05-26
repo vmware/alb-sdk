@@ -49,4 +49,7 @@ type TaskJournal struct {
 
 	// UUID Identifier for the task journal. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
+
+	// List of warnings in the process. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	Warnings []*JournalError `json:"warnings,omitempty"`
 }

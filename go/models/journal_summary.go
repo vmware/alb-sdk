@@ -26,10 +26,16 @@ type JournalSummary struct {
 	// Start time of the process. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	StartTime *string `json:"start_time,omitempty"`
 
+	// State of the Journal Summary. Enum options - TASK_STATE_SUCCESS, TASK_STATE_WARNING, TASK_STATE_ERROR. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	State *string `json:"state,omitempty"`
+
 	// Status of the process. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Status *string `json:"status,omitempty"`
 
 	// Process Type. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	Type *string `json:"type"`
+
+	// Number of warnings in the process. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	WarningCount *uint32 `json:"warning_count,omitempty"`
 }
