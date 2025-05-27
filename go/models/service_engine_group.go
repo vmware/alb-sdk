@@ -893,6 +893,9 @@ type ServiceEngineGroup struct {
 	// During SE upgrade in a legacy active/standby segroup, Time to wait for the new primary SE to accept flows before marking the switchover done. Field introduced in 17.2.13,18.1.4,18.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsSwitchoverTimeout *uint32 `json:"vs_switchover_timeout,omitempty"`
 
+	// vSphere VM Storage Policy UUID to be associated to the Service Engine in vCenter cloud. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	VsphereStoragePolicyID *string `json:"vsphere_storage_policy_id,omitempty"`
+
 	// Parameters to place Virtual Services on only a subset of the cores of an SE. Field introduced in 17.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VssPlacement *VssPlacement `json:"vss_placement,omitempty"`
 

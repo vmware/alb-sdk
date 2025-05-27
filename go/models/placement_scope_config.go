@@ -26,4 +26,7 @@ type PlacementScopeConfig struct {
 	// VCenter server configuration. It is a reference to an object of type VCenterServer. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	VcenterRef *string `json:"vcenter_ref"`
+
+	// vSphere VM Storage Policy UUID to be associated to the Service Engine in NSXT Cloud. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	VsphereStoragePolicyID *string `json:"vsphere_storage_policy_id,omitempty"`
 }
