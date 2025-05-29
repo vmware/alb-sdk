@@ -24,6 +24,9 @@ type Image struct {
 	// It references the controller-patch associated with the Uber image. It is a reference to an object of type Image. Field introduced in 18.2.8, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerPatchRef *string `json:"controller_patch_ref,omitempty"`
 
+	// Dry-run package details. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	DryrunInfo *PackageDetails `json:"dryrun_info,omitempty"`
+
 	// Time taken to upload the image in seconds. Field introduced in 21.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Duration *uint32 `json:"duration,omitempty"`
 
