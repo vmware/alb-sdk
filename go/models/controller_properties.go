@@ -39,6 +39,9 @@ type ControllerProperties struct {
 	// Period for archive and retention framework job. Allowed values are 1-240. Field introduced in 31.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ArchiveRetentionFrameworkPeriod *uint32 `json:"archive_retention_framework_period,omitempty"`
 
+	// Time in seconds to wait before starting async certificate chaining. Allowed values are 0-120. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AsyncCertChainingInterval *uint32 `json:"async_cert_chaining_interval,omitempty"`
+
 	// Period for which asynchronous patch requests are queued. Allowed values are 30-120. Special values are 0 - Deactivated. Field introduced in 18.2.11, 20.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	AsyncPatchMergePeriod *uint32 `json:"async_patch_merge_period,omitempty"`
 

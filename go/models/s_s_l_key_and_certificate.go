@@ -55,6 +55,9 @@ type SSLKeyAndCertificate struct {
 	// It Specifies whether the object has to be replicated to the GSLB followers. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	IsFederated *bool `json:"is_federated,omitempty"`
 
+	// Common Name (CN) of the certificate issuer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	IssCn *string `json:"iss_cn,omitempty"`
+
 	// Private key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Key *string `json:"key,omitempty"`
 
@@ -91,6 +94,9 @@ type SSLKeyAndCertificate struct {
 
 	//  Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Status *string `json:"status,omitempty"`
+
+	// Common Name (CN) of the certificate subject. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SubjCn *string `json:"subj_cn,omitempty"`
 
 	//  It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`

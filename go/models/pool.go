@@ -96,6 +96,9 @@ type Pool struct {
 	// Time interval for gracefully closing the connections on server, When health monitoring marks the server down. Allowed values are 1-432000. Special values are 0 - Immediate, -1 - Infinite. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	GracefulHmDownDisableTimeout *int32 `json:"graceful_hm_down_disable_timeout,omitempty"`
 
+	// Specifies the pool type (GENERIC/PRIVATE/PUBLIC). The public IPs of the members can be specified in seperate pool of type PUBLIC.This would allow features like health monitoring to be enabled independantly for the public IPs.This is only applicable for GSLB pools. Enum options - GSLB_POOL_TYPE_GENERIC, GSLB_POOL_TYPE_PRIVATE, GSLB_POOL_TYPE_PUBLIC. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	GslbPoolType *string `json:"gslb_pool_type,omitempty"`
+
 	// Indicates if the pool is a site-persistence pool. . Field introduced in 17.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Read Only: true
 	GslbSpEnabled *bool `json:"gslb_sp_enabled,omitempty"`
