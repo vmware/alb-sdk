@@ -344,6 +344,7 @@ font-style: italic;
   "next" : "aeiou",
   "count" : 123,
   "results" : [ {
+    "sdb_key_timeout" : "",
     "se_rum_sampling_res_interval" : "",
     "se_log_buffer_conn_blocking_dequeue" : true,
     "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
@@ -837,6 +838,7 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "sdb_key_timeout" : "",
   "se_rum_sampling_res_interval" : "",
   "se_log_buffer_conn_blocking_dequeue" : true,
   "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
@@ -1401,6 +1403,7 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "sdb_key_timeout" : "",
   "se_rum_sampling_res_interval" : "",
   "se_log_buffer_conn_blocking_dequeue" : true,
   "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
@@ -1905,6 +1908,7 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "sdb_key_timeout" : "",
   "se_rum_sampling_res_interval" : "",
   "se_log_buffer_conn_blocking_dequeue" : true,
   "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
@@ -2565,6 +2569,7 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "sdb_key_timeout" : "",
   "se_rum_sampling_res_interval" : "",
   "se_log_buffer_conn_blocking_dequeue" : true,
   "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
@@ -3567,6 +3572,7 @@ font-style: italic;
 <div class="param">replay_vrf_routes_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Routes in VRF are replayed at the specified interval. This should be increased if there are large number of routes. Allowed values are 0-3000. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">resync_time_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time interval to re-sync SE&#39;s time with wall clock time. Allowed values are 8-600000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">sdb_flush_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> SDB pipeline flush interval. Allowed values are 1-10000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">sdb_key_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The time in seconds controller redis server persists the key. Allowed values are 60-600. Field introduced in 30.2.4. Unit is SECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">sdb_pipeline_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> SDB pipeline size. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">sdb_scan_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> SDB scan count. Allowed values are 1-1000. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">se_bandwidth_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Select the SE bandwidth for the bandwidth license. Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SE_BANDWIDTH_UNLIMITED), Basic edition(Allowed values- SE_BANDWIDTH_UNLIMITED), Enterprise with Cloud Services edition. </div>
