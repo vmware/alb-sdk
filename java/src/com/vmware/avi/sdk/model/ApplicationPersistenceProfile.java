@@ -48,6 +48,9 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     @JsonProperty("persistence_type")
     private String persistenceType = "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS";
 
+    @JsonProperty("persistence_update_interval")
+    private Integer persistenceUpdateInterval;
+
     @JsonProperty("server_hm_down_recovery")
     private String serverHmDownRecovery = "HM_DOWN_PICK_NEW_SERVER";
 
@@ -294,6 +297,36 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Interval in minutes at which refreshed persistence entries are synced to peer ses.
+     * If not set, it willsync at an interval of timeout/2.
+     * Allowed values are 1-30.
+     * Field introduced in 30.2.4.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return persistenceUpdateInterval
+     */
+    public Integer getPersistenceUpdateInterval() {
+        return persistenceUpdateInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Interval in minutes at which refreshed persistence entries are synced to peer ses.
+     * If not set, it willsync at an interval of timeout/2.
+     * Allowed values are 1-30.
+     * Field introduced in 30.2.4.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param persistenceUpdateInterval set the persistenceUpdateInterval.
+     */
+    public void setPersistenceUpdateInterval(Integer  persistenceUpdateInterval) {
+        this.persistenceUpdateInterval = persistenceUpdateInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Specifies behavior when a persistent server has been marked down by a health monitor.
      * Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER.
      * Allowed in enterprise edition with any value, essentials edition(allowed values- hm_down_pick_new_server), basic edition(allowed values-
@@ -400,7 +433,8 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
   Objects.equals(this.markers, objApplicationPersistenceProfile.markers)&&
   Objects.equals(this.isFederated, objApplicationPersistenceProfile.isFederated)&&
   Objects.equals(this.description, objApplicationPersistenceProfile.description)&&
-  Objects.equals(this.tenantRef, objApplicationPersistenceProfile.tenantRef);
+  Objects.equals(this.tenantRef, objApplicationPersistenceProfile.tenantRef)&&
+  Objects.equals(this.persistenceUpdateInterval, objApplicationPersistenceProfile.persistenceUpdateInterval);
     }
 
     @Override
@@ -416,6 +450,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    persistenceType: ").append(toIndentedString(persistenceType)).append("\n");
+                        sb.append("    persistenceUpdateInterval: ").append(toIndentedString(persistenceUpdateInterval)).append("\n");
                         sb.append("    serverHmDownRecovery: ").append(toIndentedString(serverHmDownRecovery)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
