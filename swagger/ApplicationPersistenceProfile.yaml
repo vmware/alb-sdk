@@ -482,6 +482,10 @@ definitions:
                 description: "Method used to persist clients to the same server for a duration of time or a session. Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS, PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE, PERSISTENCE_TYPE_APP_DIAMETER. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE), Basic (Allowed values- PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE) edition."
                 type: string
                 default: "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS"
+            persistence_update_interval:
+                description: "Interval in minutes at which refreshed persistence entries are synced to peer SEs. If not set, it willsync at an interval of timeout/2. Allowed values are 1-30. Field introduced in 31.1.2. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
             server_hm_down_recovery:
                 description: "Specifies behavior when a persistent server has been marked down by a health monitor. Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- HM_DOWN_PICK_NEW_SERVER), Basic (Allowed values- HM_DOWN_PICK_NEW_SERVER) edition."
                 type: string
