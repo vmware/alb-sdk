@@ -541,6 +541,9 @@ type ServiceEngineGroup struct {
 	// SDB pipeline flush interval. Allowed values are 1-10000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SdbFlushInterval *uint32 `json:"sdb_flush_interval,omitempty"`
 
+	// The time in seconds controller redis server persists the key. Allowed values are 60-600. Field introduced in 31.1.2. Unit is SECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SdbKeyTimeout *uint32 `json:"sdb_key_timeout,omitempty"`
+
 	// SDB pipeline size. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SdbPipelineSize *uint32 `json:"sdb_pipeline_size,omitempty"`
 
