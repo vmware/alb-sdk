@@ -32956,12 +32956,12 @@ paths:
             type: string
         '404':
           description: not found
-  /gslbcrmruntime:
+  /gslbsmruntime:
     get:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime
-      operationId: GET /gslbcrmruntime
+      - GslbSMRuntime
+      description: /gslbsmruntime
+      operationId: GET /gslbsmruntime
       consumes:
       - application/json
       produces:
@@ -33038,14 +33038,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntimeApiResponse'
+            $ref: '#/definitions/GslbSMRuntimeApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime
-      operationId: POST /gslbcrmruntime
+      - GslbSMRuntime
+      description: /gslbsmruntime
+      operationId: POST /gslbsmruntime
       consumes:
       - application/json
       produces:
@@ -33079,25 +33079,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbCRMRuntime object creation
+        description: GslbSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbCRMRuntime'
+          $ref: '#/definitions/GslbSMRuntime'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntime'
+            $ref: '#/definitions/GslbSMRuntime'
         '401':
           description: log in failed
-  /gslbcrmruntime/{uuid}:
+  /gslbsmruntime/{uuid}:
     get:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}
-      operationId: GET /gslbcrmruntime/{uuid}
+      - GslbSMRuntime
+      description: /gslbsmruntime/{uuid}
+      operationId: GET /gslbsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -33167,14 +33167,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntime'
+            $ref: '#/definitions/GslbSMRuntime'
         '401':
           description: log in failed
     put:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}
-      operationId: PUT /gslbcrmruntime/{uuid}
+      - GslbSMRuntime
+      description: /gslbsmruntime/{uuid}
+      operationId: PUT /gslbsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -33213,10 +33213,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbCRMRuntime object creation
+        description: GslbSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbCRMRuntime'
+          $ref: '#/definitions/GslbSMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -33228,14 +33228,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntime'
+            $ref: '#/definitions/GslbSMRuntime'
         '401':
           description: log in failed
     patch:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}
-      operationId: PATCH /gslbcrmruntime/{uuid}
+      - GslbSMRuntime
+      description: /gslbsmruntime/{uuid}
+      operationId: PATCH /gslbsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -33274,10 +33274,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbCRMRuntime object creation
+        description: GslbSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbCRMRuntime'
+          $ref: '#/definitions/GslbSMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -33289,14 +33289,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntime'
+            $ref: '#/definitions/GslbSMRuntime'
         '401':
           description: log in failed
     delete:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}
-      operationId: DELETE /gslbcrmruntime/{uuid}
+      - GslbSMRuntime
+      description: /gslbsmruntime/{uuid}
+      operationId: DELETE /gslbsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -33738,12 +33738,12 @@ paths:
             type: string
         '404':
           description: not found
-  /gslbsmruntime:
+  /gslbcrmruntime:
     get:
       tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime
-      operationId: GET /gslbsmruntime
+      - GslbCRMRuntime
+      description: /gslbcrmruntime
+      operationId: GET /gslbcrmruntime
       consumes:
       - application/json
       produces:
@@ -33820,14 +33820,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbSMRuntimeApiResponse'
+            $ref: '#/definitions/GslbCRMRuntimeApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime
-      operationId: POST /gslbsmruntime
+      - GslbCRMRuntime
+      description: /gslbcrmruntime
+      operationId: POST /gslbcrmruntime
       consumes:
       - application/json
       produces:
@@ -33861,25 +33861,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbSMRuntime object creation
+        description: GslbCRMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbSMRuntime'
+          $ref: '#/definitions/GslbCRMRuntime'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbSMRuntime'
+            $ref: '#/definitions/GslbCRMRuntime'
         '401':
           description: log in failed
-  /gslbsmruntime/{uuid}:
+  /gslbcrmruntime/{uuid}:
     get:
       tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime/{uuid}
-      operationId: GET /gslbsmruntime/{uuid}
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}
+      operationId: GET /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -33949,14 +33949,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbSMRuntime'
+            $ref: '#/definitions/GslbCRMRuntime'
         '401':
           description: log in failed
     put:
       tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime/{uuid}
-      operationId: PUT /gslbsmruntime/{uuid}
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}
+      operationId: PUT /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -33995,10 +33995,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbSMRuntime object creation
+        description: GslbCRMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbSMRuntime'
+          $ref: '#/definitions/GslbCRMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -34010,14 +34010,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbSMRuntime'
+            $ref: '#/definitions/GslbCRMRuntime'
         '401':
           description: log in failed
     patch:
       tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime/{uuid}
-      operationId: PATCH /gslbsmruntime/{uuid}
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}
+      operationId: PATCH /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -34056,10 +34056,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbSMRuntime object creation
+        description: GslbCRMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbSMRuntime'
+          $ref: '#/definitions/GslbCRMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -34071,14 +34071,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbSMRuntime'
+            $ref: '#/definitions/GslbCRMRuntime'
         '401':
           description: log in failed
     delete:
       tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime/{uuid}
-      operationId: DELETE /gslbsmruntime/{uuid}
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}
+      operationId: DELETE /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -74473,6 +74473,56 @@ paths:
         '401':
           description: log in failed
   /fileobject/{uuid}/['']/:
+    patch:
+      tags:
+      - FileObject
+      description: /fileobject/{uuid}/['']/
+      operationId: PATCH /fileobject/{uuid}/['']/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
     put:
       tags:
       - FileObject
@@ -74517,56 +74567,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-    patch:
-      tags:
-      - FileObject
-      description: /fileobject/{uuid}/['']/
-      operationId: PATCH /fileobject/{uuid}/['']/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -80477,6 +80477,56 @@ paths:
         '401':
           description: log in failed
   /cloud/{uuid}/gc/:
+    patch:
+      tags:
+      - Cloud
+      description: /cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
     put:
       tags:
       - Cloud
@@ -80521,56 +80571,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-    patch:
-      tags:
-      - Cloud
-      description: /cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -86013,9 +86013,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -86044,10 +86044,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -89697,9 +89697,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -89728,10 +89728,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -94535,9 +94535,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -94566,10 +94566,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -95012,9 +95012,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -95043,10 +95043,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -102006,9 +102006,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -102037,10 +102037,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -112305,9 +112305,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -112336,10 +112336,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -118278,9 +118278,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -118309,10 +118309,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -128544,9 +128544,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -128575,10 +128575,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -129153,9 +129153,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -129184,10 +129184,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -131910,9 +131910,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -131941,10 +131941,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -135152,9 +135152,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -135183,10 +135183,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -135551,9 +135551,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -135582,10 +135582,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -135980,9 +135980,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -136011,10 +136011,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -136395,9 +136395,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -136426,10 +136426,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -136824,9 +136824,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -136855,10 +136855,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
@@ -143220,9 +143220,9 @@ definitions:
           SYSERR_CHECK_CLUSTER_SINGLE_NODE, SYSERR_CONTROLLER_SE_SECURE_CHANNEL_CERTIFICATE_VALIDATION,
           SYSERR_CHECK_DRYRUN_CAPABILITY, SYSERR_CHECK_DRYRUN_FIPS_MODE, SYSERR_CHECK_CONFIG_BUNDLE,
           SYSERR_CHECK_ROLLBACK_FIPS_MODE, SYSERR_CHECK_TIME_SYNC, SYSERR_CHECK_ROLLBACK_SYSTEM,
-          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_MC_UPGRADE_LICENSE_ERR,
-          SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR, SYSERR_MC_CLUSTER_INPROGRESS_ERR,
-          SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
+          SYSERR_CHECK_LICENSE_CONSUMPTION, SYSERR_CHECK_LINUX_INFRA_HEALTH, SYSERR_CHECK_GSLBSERVICE_DISRUPTION,
+          SYSERR_MC_UPGRADE_LICENSE_ERR, SYSERR_MC_UPGRADE_CLUSTER_NOT_READY, SYSERR_MC_DISK_INSUFFICIENT_ERR,
+          SYSERR_MC_CLUSTER_INPROGRESS_ERR, SYSERR_MC_SEGROUP_INPROGRESS_ERR, SYSERR_MC_UPGRADE_INCOMPATIBLE_IMAGE_AND_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_FROM_TO_IMAGE, SYSERR_MC_UPGRADE_INCOMPATIBLE_PATCH,
           SYSERR_MC_UPGRADE_INCOMPATIBLE_SE_GROUP_IMAGE, SYSERR_MC_SE_UNREACHABLE_ERR,
           SYSERR_MC_SE_GROUP_CLOUD_NOT_READY_ERR, SYSERR_MC_UPGRADE_VS_DISRUPTED_ERR,
@@ -143251,10 +143251,10 @@ definitions:
           SYSERR_CHECK_DRYRUN_CAPABILITY_ERR, SYSERR_CHECK_SE_AVAILABLE_MEMORY, SYSERR_CHECK_SE_AVAILABLE_MEMORY_ERR,
           SYSERR_CHECK_DRYRUN_FIPS_MODE_ERR, SYSERR_CHECK_CONFIG_BUNDLE_ERR, SYSERR_CHECK_ROLLBACK_FIPS_ERR,
           SYSERR_MC_CHECK_TIME_SYNC_ERR, SYSERR_CHECK_ROLLBACK_SYSTEM_ERR, SYSERR_MC_CHECK_LICENSE_CONSUMPTION_ERR,
-          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_VS_NOT_FOUND, SYSERR_DEFAULT_POOL_NOT_FOUND,
-          SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE, SYSERR_APP_PROFILE_NOT_FOUND,
-          SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS, SYSERR_WRONG_VS_TYPE,
-          SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
+          SYSERR_MC_LINUX_INFRA_HEALTH_ERR, SYSERR_GSLBSERVICE_DISRUPTED_ERR, SYSERR_VS_NOT_FOUND,
+          SYSERR_DEFAULT_POOL_NOT_FOUND, SYSERR_PROXY_POOL_NOT_FOUND, SYSERR_MISSING_APPLICATION_PROFILE,
+          SYSERR_APP_PROFILE_NOT_FOUND, SYSERR_WAF_POLICY_NOT_FOUND, SYSERR_DUPLICATE_VS,
+          SYSERR_WRONG_VS_TYPE, SYSERR_POOL_IN_PG_NOT_FOUND, SYSERR_PG_IN_PG, SYSERR_LB_MODULE_INIT_FAILED,
           SYSERR_CONNPOOL_MODULE_INIT_FAILED, SYSERR_LBACTION_MODULE_INIT_FAILED,
           SYSERR_PG_NOT_FOUND, SYSERR_DUPLICATE_POOL, SYSERR_SSL_PROFILE_NOT_FOUND,
           SYSERR_PKI_PROFILE_NOT_FOUND, SYSERR_SSL_CERTKEY_NOT_FOUND, SYSERR_SET_CIPHER_LIST_FAILED,
