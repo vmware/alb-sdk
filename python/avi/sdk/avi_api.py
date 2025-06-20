@@ -222,7 +222,7 @@ class ApiSession(Session):
                  port=None, timeout=60, api_version=None,
                  retry_conxn_errors=True, data_log=False,
                  avi_credentials=None, session_id=None, csrftoken=None,
-                 lazy_authentication=False, max_api_retries=None, csp_host=CSP_HOST, csp_token=None, user_hdrs={}, ssl_cert=None, ssl_key=None):
+                 lazy_authentication=False, max_api_retries=None, csp_host=CSP_HOST, csp_token=None, user_hdrs=None, ssl_cert=None, ssl_key=None):
         """
          ApiSession takes ownership of avi_credentials and may update the
          information inside it.
@@ -268,7 +268,7 @@ class ApiSession(Session):
         self.verify = verify
         self.retry_conxn_errors = retry_conxn_errors
         self.remote_api_version = {}
-        self.user_hdrs = user_hdrs
+        self.user_hdrs = user_hdrs if user_hdrs else {}
         self.data_log = data_log
         self.num_session_retries = 0
         self.num_api_retries = 0
