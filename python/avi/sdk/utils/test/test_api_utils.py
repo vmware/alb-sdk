@@ -28,7 +28,7 @@ class Test(unittest.TestCase):
             'inline_health_monitor': True,
             'default_server_port': 80,
             'request_queue_depth': 128,
-            'graceful_disable_timeout': 1,
+            'graceful_disable_timeout_sec': 60,
             'server_count': 0,
             'sni_enabled': True,
             'request_queue_enabled': False,
@@ -62,7 +62,7 @@ class Test(unittest.TestCase):
             'inline_health_monitor': True,
             'default_server_port': 80,
             'request_queue_depth': 128,
-            'graceful_disable_timeout': 1,
+            'graceful_disable_timeout_sec': 60,
             'server_count': 0,
             'sni_enabled': True,
             'request_queue_enabled': False,
@@ -125,7 +125,7 @@ class Test(unittest.TestCase):
             'inline_health_monitor': True,
             'default_server_port': 80,
             'request_queue_depth': 128,
-            'graceful_disable_timeout': 1,
+            'graceful_disable_timeout_sec': 60,
             'server_count': 0,
             'sni_enabled': True,
             'request_queue_enabled': False,
@@ -157,7 +157,7 @@ class Test(unittest.TestCase):
             'inline_health_monitor': True,
             'default_server_port': 80,
             'request_queue_depth': 128,
-            'graceful_disable_timeout': 1,
+            'graceful_disable_timeout_sec': 60,
             'server_count': 0,
             'sni_enabled': True,
             'request_queue_enabled': False,
@@ -284,7 +284,7 @@ class Test(unittest.TestCase):
                              'type': 'V4', 'addr': '10.90.64.0'},
                           'mask': 24}],
                       'network_ref': 'https://10.10.25.42/api/network/dvportgroup-53975-10.10.2.10#PG-964'}],
-                 'enabled': True, 'nw_ref': 'https://10.10.25.42/api/vimgrnwruntime/dvportgroup-53975-10.10.2.10#PG-964', 'verify_network': False, 'static': False, 'resolve_server_by_dns': False, 'external_uuid': 'vm-4230615e-bc0b-3d33-3929-1c7328575993', 'vm_ref': 'https://10.10.25.42/api/vimgrvmruntime/vm-4230615e-bc0b-3d33-3929-1c7328575993#grastogi-server6'}, {'hostname': 'grastogi-server6', 'ratio': 1, 'ip': {'type': 'V4', 'addr': '10.90.64.61'}, 'discovered_networks': [{'subnet': [{'ip_addr': {'type': 'V4', 'addr': '10.90.64.0'}, 'mask': 24}], 'network_ref': 'https://10.10.25.42/api/network/dvportgroup-53975-10.10.2.10#PG-964'}], 'enabled': True, 'nw_ref': 'https://10.10.25.42/api/vimgrnwruntime/dvportgroup-53975-10.10.2.10#PG-964', 'verify_network': False, 'static': False, 'resolve_server_by_dns': False, 'external_uuid': 'vm-4230615e-bc0b-3d33-3929-1c7328575993', 'vm_ref': 'https://10.10.25.42/api/vimgrvmruntime/vm-4230615e-bc0b-3d33-3929-1c7328575993#grastogi-server6'}, {'hostname': 'grastogi-server6', 'ratio': 1, 'ip': {'type': 'V4', 'addr': '10.90.64.65'}, 'discovered_networks': [{'subnet': [{'ip_addr': {'type': 'V4', 'addr': '10.90.64.0'}, 'mask': 24}], 'network_ref': 'https://10.10.25.42/api/network/dvportgroup-53975-10.10.2.10#PG-964'}], 'enabled': True, 'verify_network': False, 'static': False, 'resolve_server_by_dns': False}], 'fewest_tasks_feedback_delay': 10, '_last_modified': '1473292763246107', 'cloud_ref': 'https://10.10.25.42/api/cloud/cloud-e0696a58-8b72-4026-923c-9a87c38a2489#Default-Cloud', 'vrf_ref': 'https://10.10.25.42/api/vrfcontext/vrfcontext-33dfbcd7-867c-4e3e-acf7-96bf679d5a0d#global', 'inline_health_monitor': True, 'default_server_port': 8000, 'request_queue_depth': 128, 'graceful_disable_timeout': 1, 'sni_enabled': True, 'server_count': 3, 'uuid': 'pool-09201181-747e-41ea-872d-e9a7df71b726', 'request_queue_enabled': False, 'name': 'p1', 'max_concurrent_connections_per_server': 0, 'url': 'https://10.10.25.42/api/pool/pool-09201181-747e-41ea-872d-e9a7df71b726#p1',
+                 'enabled': True, 'nw_ref': 'https://10.10.25.42/api/vimgrnwruntime/dvportgroup-53975-10.10.2.10#PG-964', 'verify_network': False, 'static': False, 'resolve_server_by_dns': False, 'external_uuid': 'vm-4230615e-bc0b-3d33-3929-1c7328575993', 'vm_ref': 'https://10.10.25.42/api/vimgrvmruntime/vm-4230615e-bc0b-3d33-3929-1c7328575993#grastogi-server6'}, {'hostname': 'grastogi-server6', 'ratio': 1, 'ip': {'type': 'V4', 'addr': '10.90.64.61'}, 'discovered_networks': [{'subnet': [{'ip_addr': {'type': 'V4', 'addr': '10.90.64.0'}, 'mask': 24}], 'network_ref': 'https://10.10.25.42/api/network/dvportgroup-53975-10.10.2.10#PG-964'}], 'enabled': True, 'nw_ref': 'https://10.10.25.42/api/vimgrnwruntime/dvportgroup-53975-10.10.2.10#PG-964', 'verify_network': False, 'static': False, 'resolve_server_by_dns': False, 'external_uuid': 'vm-4230615e-bc0b-3d33-3929-1c7328575993', 'vm_ref': 'https://10.10.25.42/api/vimgrvmruntime/vm-4230615e-bc0b-3d33-3929-1c7328575993#grastogi-server6'}, {'hostname': 'grastogi-server6', 'ratio': 1, 'ip': {'type': 'V4', 'addr': '10.90.64.65'}, 'discovered_networks': [{'subnet': [{'ip_addr': {'type': 'V4', 'addr': '10.90.64.0'}, 'mask': 24}], 'network_ref': 'https://10.10.25.42/api/network/dvportgroup-53975-10.10.2.10#PG-964'}], 'enabled': True, 'verify_network': False, 'static': False, 'resolve_server_by_dns': False}], 'fewest_tasks_feedback_delay': 10, '_last_modified': '1473292763246107', 'cloud_ref': 'https://10.10.25.42/api/cloud/cloud-e0696a58-8b72-4026-923c-9a87c38a2489#Default-Cloud', 'vrf_ref': 'https://10.10.25.42/api/vrfcontext/vrfcontext-33dfbcd7-867c-4e3e-acf7-96bf679d5a0d#global', 'inline_health_monitor': True, 'default_server_port': 8000, 'request_queue_depth': 128, 'graceful_disable_timeout_sec': 60, 'sni_enabled': True, 'server_count': 3, 'uuid': 'pool-09201181-747e-41ea-872d-e9a7df71b726', 'request_queue_enabled': False, 'name': 'p1', 'max_concurrent_connections_per_server': 0, 'url': 'https://10.10.25.42/api/pool/pool-09201181-747e-41ea-872d-e9a7df71b726#p1',
             'enabled': True,
             'connection_ramp_duration': 10}
 
@@ -302,7 +302,7 @@ class Test(unittest.TestCase):
                      {'subnet': [
                          {'mask': 24,
                           'ip_addr': {
-                              'type': 'V4', 'addr': '10.90.64.0'}}], 'network_ref': 'https://10.10.25.42/api/network/dvportgroup-53975-10.10.2.10'}], 'enabled': True, 'nw_ref': 'https://10.10.25.42/api/vimgrnwruntime/dvportgroup-53975-10.10.2.10', 'verify_network': False, 'static': False, 'resolve_server_by_dns': False, 'external_uuid': 'vm-4230615e-bc0b-3d33-3929-1c7328575993', 'vm_ref': 'https://10.10.25.42/api/vimgrvmruntime/vm-4230615e-bc0b-3d33-3929-1c7328575993'}, {'hostname': 'grastogi-server6', 'ratio': 1, 'ip': {'type': 'V4', 'addr': '10.90.64.61'}, 'discovered_networks': [{'subnet': [{'mask': 24, 'ip_addr': {'type': 'V4', 'addr': '10.90.64.0'}}], 'network_ref': 'https://10.10.25.42/api/network/dvportgroup-53975-10.10.2.10'}], 'enabled': True, 'nw_ref': 'https://10.10.25.42/api/vimgrnwruntime/dvportgroup-53975-10.10.2.10', 'verify_network': False, 'static': False, 'resolve_server_by_dns': False, 'external_uuid': 'vm-4230615e-bc0b-3d33-3929-1c7328575993', 'vm_ref': 'https://10.10.25.42/api/vimgrvmruntime/vm-4230615e-bc0b-3d33-3929-1c7328575993'}, {'hostname': 'grastogi-server6', 'ratio': 1, 'ip': {'type': 'V4', 'addr': '10.90.64.65'}, 'discovered_networks': [{'subnet': [{'mask': 24, 'ip_addr': {'type': 'V4', 'addr': '10.90.64.0'}}], 'network_ref': 'https://10.10.25.42/api/network/dvportgroup-53975-10.10.2.10'}], 'enabled': True, 'nw_ref': 'https://10.10.25.42/api/vimgrnwruntime/dvportgroup-53975-10.10.2.10', 'verify_network': False, 'static': False, 'resolve_server_by_dns': False, 'external_uuid': 'vm-4230615e-bc0b-3d33-3929-1c7328575993', 'vm_ref': 'https://10.10.25.42/api/vimgrvmruntime/vm-4230615e-bc0b-3d33-3929-1c7328575993'}], 'fewest_tasks_feedback_delay': 10, 'cloud_ref': 'https://10.10.25.42/api/cloud/cloud-e0696a58-8b72-4026-923c-9a87c38a2489', 'vrf_ref': 'https://10.10.25.42/api/vrfcontext/vrfcontext-33dfbcd7-867c-4e3e-acf7-96bf679d5a0d', 'inline_health_monitor': True, 'default_server_port': 8000, 'request_queue_depth': 128, 'graceful_disable_timeout': 1, 'sni_enabled': True, 'server_count': 3, 'uuid': 'pool-09201181-747e-41ea-872d-e9a7df71b726', 'request_queue_enabled': False, 'name': 'p1', 'max_concurrent_connections_per_server': 0,
+                              'type': 'V4', 'addr': '10.90.64.0'}}], 'network_ref': 'https://10.10.25.42/api/network/dvportgroup-53975-10.10.2.10'}], 'enabled': True, 'nw_ref': 'https://10.10.25.42/api/vimgrnwruntime/dvportgroup-53975-10.10.2.10', 'verify_network': False, 'static': False, 'resolve_server_by_dns': False, 'external_uuid': 'vm-4230615e-bc0b-3d33-3929-1c7328575993', 'vm_ref': 'https://10.10.25.42/api/vimgrvmruntime/vm-4230615e-bc0b-3d33-3929-1c7328575993'}, {'hostname': 'grastogi-server6', 'ratio': 1, 'ip': {'type': 'V4', 'addr': '10.90.64.61'}, 'discovered_networks': [{'subnet': [{'mask': 24, 'ip_addr': {'type': 'V4', 'addr': '10.90.64.0'}}], 'network_ref': 'https://10.10.25.42/api/network/dvportgroup-53975-10.10.2.10'}], 'enabled': True, 'nw_ref': 'https://10.10.25.42/api/vimgrnwruntime/dvportgroup-53975-10.10.2.10', 'verify_network': False, 'static': False, 'resolve_server_by_dns': False, 'external_uuid': 'vm-4230615e-bc0b-3d33-3929-1c7328575993', 'vm_ref': 'https://10.10.25.42/api/vimgrvmruntime/vm-4230615e-bc0b-3d33-3929-1c7328575993'}, {'hostname': 'grastogi-server6', 'ratio': 1, 'ip': {'type': 'V4', 'addr': '10.90.64.65'}, 'discovered_networks': [{'subnet': [{'mask': 24, 'ip_addr': {'type': 'V4', 'addr': '10.90.64.0'}}], 'network_ref': 'https://10.10.25.42/api/network/dvportgroup-53975-10.10.2.10'}], 'enabled': True, 'nw_ref': 'https://10.10.25.42/api/vimgrnwruntime/dvportgroup-53975-10.10.2.10', 'verify_network': False, 'static': False, 'resolve_server_by_dns': False, 'external_uuid': 'vm-4230615e-bc0b-3d33-3929-1c7328575993', 'vm_ref': 'https://10.10.25.42/api/vimgrvmruntime/vm-4230615e-bc0b-3d33-3929-1c7328575993'}], 'fewest_tasks_feedback_delay': 10, 'cloud_ref': 'https://10.10.25.42/api/cloud/cloud-e0696a58-8b72-4026-923c-9a87c38a2489', 'vrf_ref': 'https://10.10.25.42/api/vrfcontext/vrfcontext-33dfbcd7-867c-4e3e-acf7-96bf679d5a0d', 'inline_health_monitor': True, 'default_server_port': 8000, 'request_queue_depth': 128, 'graceful_disable_timeout_sec': 60, 'sni_enabled': True, 'server_count': 3, 'uuid': 'pool-09201181-747e-41ea-872d-e9a7df71b726', 'request_queue_enabled': False, 'name': 'p1', 'max_concurrent_connections_per_server': 0,
                         'url': 'https://10.10.25.42/api/pool/pool-09201181-747e-41ea-872d-e9a7df71b726',
                         'enabled': True,
                         'connection_ramp_duration': 10}
