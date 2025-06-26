@@ -31,5 +31,4 @@ as a dependency-free npm module.
 
 The alb-sdk project team welcomes contributions from the community. Before you start working with alb-sdk, please read our Developer Certificate of Origin. All contributions to this repository must be signed as described on that page. Your signature certifies that you wrote the patch or have the right to pass it on as an open-source patch.
 
-
-**Note**:  Migrationtools will be released separately as part of AVI release process. Going forward, we will release the AVI migration tools as a standalone release and not part of the SDK starting with the 30.2.x releases.
+**Note**: Migrationtools will be released separately as part of AVI release process names as ACT(AVI Conversion Tools). Going forward, we will release the AVI migration tools as a standalone release and not part of the SDK starting with the 30.2.x releases.
