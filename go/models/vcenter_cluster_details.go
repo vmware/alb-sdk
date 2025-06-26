@@ -8,18 +8,18 @@ package models
 // swagger:model VcenterClusterDetails
 type VcenterClusterDetails struct {
 
-	// Cloud Id. Field introduced in 20.1.7, 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Cloud Id. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	CcID *string `json:"cc_id,omitempty"`
 
-	// Cluster name in vCenter. Field introduced in 20.1.7, 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Cluster name in vCenter. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Cluster *string `json:"cluster,omitempty"`
 
-	// Error message. Field introduced in 20.1.7, 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Error message. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ErrorString *string `json:"error_string,omitempty"`
 
-	// Hosts in vCenter Cluster. Field introduced in 20.1.7, 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Hosts in vCenter Cluster. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Hosts []string `json:"hosts,omitempty"`
 
-	// VC url. Field introduced in 20.1.7, 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// VC url. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	VcURL *string `json:"vc_url,omitempty"`
 }

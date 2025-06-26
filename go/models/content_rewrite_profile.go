@@ -8,9 +8,9 @@ package models
 // swagger:model ContentRewriteProfile
 type ContentRewriteProfile struct {
 
-	// Rewrite only content types listed in this *string group. Content types not present in this list are not rewritten. It is a reference to an object of type StringGroup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rewrite only content types listed in this *string group. Content types not present in this list are not rewritten. It is a reference to an object of type StringGroup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RewritableContentRef *string `json:"rewritable_content_ref,omitempty"`
 
-	// Content Rewrite rules to be enabled on theresponse body. Field introduced in 21.1.3. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Content Rewrite rules to be enabled on theresponse body. Field introduced in 21.1.3. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	RspRewriteRules []*RspContentRewriteRule `json:"rsp_rewrite_rules,omitempty"`
 }

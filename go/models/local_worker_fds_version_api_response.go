@@ -4,9 +4,9 @@ package models
 
 // This file is auto-generated.
 
-// FederationCheckpointAPIResponse federation checkpoint Api response
-// swagger:model FederationCheckpointApiResponse
-type FederationCheckpointAPIResponse struct {
+// LocalWorkerFdsVersionAPIResponse local worker fds version Api response
+// swagger:model LocalWorkerFdsVersionApiResponse
+type LocalWorkerFdsVersionAPIResponse struct {
 
 	// count
 	// Required: true
@@ -17,5 +17,5 @@ type FederationCheckpointAPIResponse struct {
 
 	// results
 	// Required: true
-	Results []*FederationCheckpoint `json:"results,omitempty"`
+	Results []*LocalWorkerFdsVersion `json:"results,omitempty"`
 }

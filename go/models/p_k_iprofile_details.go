@@ -8,9 +8,9 @@ package models
 // swagger:model PKIProfileDetails
 type PKIprofileDetails struct {
 
-	// CRL list. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// CRL list. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Crls *string `json:"crls,omitempty"`
 
-	// Name of PKIProfile. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of PKIProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 }

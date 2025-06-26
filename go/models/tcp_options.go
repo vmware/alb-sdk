@@ -8,6 +8,6 @@ package models
 // swagger:model TCPOptions
 type TCPOptions struct {
 
-	// Remove the SACK TCP option from header. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Remove the SACK TCP option from header. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	StripSack *bool `json:"strip_sack,omitempty"`
 }

@@ -8,16 +8,16 @@ package models
 // swagger:model ApplicationPerformanceScoreData
 type ApplicationPerformanceScoreData struct {
 
-	// Reason for the Health Score. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Reason for the Health Score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Reason *string `json:"reason"`
 
-	// Attribute that is dominating the health score. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ReasonAttr *string `json:"reason_attr,omitempty"`
 
-	//  It is a reference to an object of type Application. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  It is a reference to an object of type Application. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Ref *string `json:"ref,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VirtualservicePerformanceScores []*VirtualServicePerformanceScore `json:"virtualservice_performance_scores,omitempty"`
 }

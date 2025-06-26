@@ -8,6 +8,6 @@ package models
 // swagger:model UserAgentDBConfig
 type UserAgentDBConfig struct {
 
-	// Batch query limit. Allowed values are 1-500. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 500), Basic edition(Allowed values- 500), Enterprise with Cloud Services edition.
+	// Batch query limit. Allowed values are 1-500. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 500), Basic (Allowed values- 500) edition.
 	AllowedBatchSize *uint32 `json:"allowed_batch_size,omitempty"`
 }

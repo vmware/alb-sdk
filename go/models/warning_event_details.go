@@ -8,9 +8,9 @@ package models
 // swagger:model WarningEventDetails
 type WarningEventDetails struct {
 
-	// Event data. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Event data. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EventData *string `json:"event_data,omitempty"`
 
-	// Warning message. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Warning message. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WarningMessage *string `json:"warning_message,omitempty"`
 }

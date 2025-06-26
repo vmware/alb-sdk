@@ -8,23 +8,23 @@ package models
 // swagger:model AuthorizationRule
 type AuthorizationRule struct {
 
-	// Authorization action when rule is matched. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Authorization action when rule is matched. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Action *AuthorizationAction `json:"action"`
 
-	// Enable or disable the rule. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Enable or disable the rule. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Enable *bool `json:"enable"`
 
-	// Index of the Authorization Policy rule. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Index of the Authorization Policy rule. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Index *int32 `json:"index"`
 
-	// Authorization match criteria for the rule. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Authorization match criteria for the rule. Field introduced in 18.2.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	Match *AuthorizationMatch `json:"match"`
 
-	// Name of the rule. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the rule. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 }

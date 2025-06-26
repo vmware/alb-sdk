@@ -8,6 +8,6 @@ package models
 // swagger:model VcenterQuarantinedHostParams
 type VcenterQuarantinedHostParams struct {
 
-	// Vcenter cloud id. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Vcenter cloud id. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	CloudUUID *string `json:"cloud_uuid,omitempty"`
 }

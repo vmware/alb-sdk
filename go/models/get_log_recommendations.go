@@ -8,6 +8,6 @@ package models
 // swagger:model GetLogRecommendations
 type GetLogRecommendations struct {
 
-	// Describe the recommendation we want to get. Field introduced in 21.1.3. Minimum of 1 items required. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Describe the recommendation we want to get. Field introduced in 21.1.3. Minimum of 1 items required. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Requests []*RecommendationRequest `json:"requests,omitempty"`
 }

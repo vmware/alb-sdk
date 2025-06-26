@@ -8,15 +8,15 @@ package models
 // swagger:model ControllerDiscontinuousTimeChangeEventDetails
 type ControllerDiscontinuousTimeChangeEventDetails struct {
 
-	// Time stamp before the discontinuous jump in time. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Time stamp before the discontinuous jump in time. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FromTime *string `json:"from_time,omitempty"`
 
-	// Name of the Controller responsible for this event. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the Controller responsible for this event. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NodeName *string `json:"node_name,omitempty"`
 
-	// System Peer and Candidate NTP Servers active at the point of time jump. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// System Peer and Candidate NTP Servers active at the point of time jump. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NtpServers *string `json:"ntp_servers,omitempty"`
 
-	// Time stamp to which the time has discontinuously jumped. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Time stamp to which the time has discontinuously jumped. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ToTime *string `json:"to_time,omitempty"`
 }

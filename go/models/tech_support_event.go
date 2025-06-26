@@ -8,9 +8,9 @@ package models
 // swagger:model TechSupportEvent
 type TechSupportEvent struct {
 
-	// Techsupport status object. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Techsupport status object. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	TechSupportStatus *TechSupportStatus `json:"tech_support_status,omitempty"`
 
-	// tenant under techsupport invoked. Field introduced in 31.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// tenant under techsupport invoked. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Tenant *string `json:"tenant,omitempty"`
 }

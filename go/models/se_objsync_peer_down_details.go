@@ -8,7 +8,7 @@ package models
 // swagger:model SeObjsyncPeerDownDetails
 type SeObjsyncPeerDownDetails struct {
 
-	// Objsync peer SE UUIDs. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Objsync peer SE UUIDs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	PeerSeUuids *string `json:"peer_se_uuids"`
 }
