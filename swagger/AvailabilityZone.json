@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi AvailabilityZone Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure availabilityzone <key>\n- show availabilityzone <key>\n```\n"
+        "description": "Avi AvailabilityZone object api\n```\n- configure availabilityzone <key>\n- show availabilityzone <key>\n```\n\nAPI permission: PERMISSION_CLOUD\n"
     },
+    "tags": [
+        {
+            "name": "AvailabilityZone"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/availabilityzone": {
             "get": {
+                "tags": [
+                    "AvailabilityZone"
+                ],
+                "description": "/availabilityzone",
+                "operationId": "GET /availabilityzone",
                 "consumes": [
                     "application/json"
                 ],
@@ -183,6 +196,13 @@
                         "required": false
                     },
                     {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Parameter to specify the desired page number. The page starts from 1 and default is 1.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
                         "name": "page_size",
                         "in": "query",
                         "description": "Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.",
@@ -208,6 +228,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "AvailabilityZone"
+                ],
+                "description": "/availabilityzone",
+                "operationId": "POST /availabilityzone",
                 "consumes": [
                     "application/json"
                 ],
@@ -273,6 +298,11 @@
         },
         "/availabilityzone/{uuid}": {
             "get": {
+                "tags": [
+                    "AvailabilityZone"
+                ],
+                "description": "/availabilityzone/{uuid}/{uuid}",
+                "operationId": "GET /availabilityzone/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -363,10 +393,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "AvailabilityZone"
+                ],
+                "description": "/availabilityzone/{uuid}/{uuid}",
+                "operationId": "PUT /availabilityzone/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -440,10 +478,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "AvailabilityZone"
+                ],
+                "description": "/availabilityzone/{uuid}/{uuid}",
+                "operationId": "PATCH /availabilityzone/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -517,10 +563,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "AvailabilityZone"
+                ],
+                "description": "/availabilityzone/{uuid}/{uuid}",
+                "operationId": "DELETE /availabilityzone/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -584,7 +638,7 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
@@ -602,20 +656,31 @@
                     "readOnly": true,
                     "type": "string"
                 },
+                "az_clusters": {
+                    "description": "Group of clusters belongs to the AZ. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AZCluster"
+                    }
+                },
+                "az_datastore": {
+                    "description": "Datastores associated with the AZ. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/AZDatastore"
+                },
                 "cloud_ref": {
-                    "description": "Availability zone belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Availability zone belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "name": {
-                    "description": "Availabilty zone where VCenter list belongs to. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Availabilty zone where VCenter list belongs to. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "Availabilityzone belongs to tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Availabilityzone belongs to tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -624,11 +689,11 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "Availability zone config UUID. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Availability zone config UUID. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_refs": {
-                    "description": "Group of VCenter list belong to availabilty zone. It is a reference to an object of type VCenterServer. Field introduced in 20.1.1. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Group of VCenter list belong to availabilty zone. It is a reference to an object of type VCenterServer. Field deprecated in 31.1.1. Field introduced in 20.1.1. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -658,11 +723,43 @@
                 }
             }
         },
+        "AZCluster": {
+            "type": "object",
+            "properties": {
+                "cluster_ids": {
+                    "description": "Managed Object Id of clusters belongs to the AZ. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "vcenter_ref": {
+                    "description": "Vcenter Id of the clusters. It is a reference to an object of type VCenterServer. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "AZDatastore": {
+            "type": "object",
+            "properties": {
+                "ds_ids": {
+                    "description": "List of Managed object id of datastores. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "include": {
+                    "description": "Include or exclude the datastores from the list. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                }
+            }
+        },
         "ConfigPbAttributes": {
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"

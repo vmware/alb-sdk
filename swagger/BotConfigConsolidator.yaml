@@ -5,20 +5,24 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi BotConfigConsolidator Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi BotConfigConsolidator object api
         ```
         - configure botconfigconsolidator <key>
         - show botconfigconsolidator <key>
         ```
 
-
+        API permission: PERMISSION_BOTDETECTIONPOLICY
+tags:
+  - name: BotConfigConsolidator
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /botconfigconsolidator:
         get:
+            tags:
+                - BotConfigConsolidator
+            description: /botconfigconsolidator
+            operationId: GET /botconfigconsolidator
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotConfigConsolidatorApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - BotConfigConsolidator
+            description: /botconfigconsolidator
+            operationId: POST /botconfigconsolidator
             consumes:
                 -   application/json
             produces:
@@ -127,14 +139,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotConfigConsolidator"
-                401:
+                "401":
                     description: log in failed
     /botconfigconsolidator/{uuid}:
         get:
+            tags:
+                - BotConfigConsolidator
+            description: /botconfigconsolidator/{uuid}/{uuid}
+            operationId: GET /botconfigconsolidator/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -191,13 +207,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotConfigConsolidator"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - BotConfigConsolidator
+            description: /botconfigconsolidator/{uuid}/{uuid}
+            operationId: PUT /botconfigconsolidator/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +264,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotConfigConsolidator"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - BotConfigConsolidator
+            description: /botconfigconsolidator/{uuid}/{uuid}
+            operationId: PATCH /botconfigconsolidator/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +321,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotConfigConsolidator"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - BotConfigConsolidator
+            description: /botconfigconsolidator/{uuid}/{uuid}
+            operationId: DELETE /botconfigconsolidator/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -338,12 +372,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -356,24 +390,27 @@ definitions:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
+            configpb_attributes:
+                description: "Protobuf versioning for config pbs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ConfigPbAttributes'
             description:
-                description: "Human-readable description of this consolidator. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Human-readable description of this consolidator. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "The name of this consolidator. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The name of this consolidator. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             script:
-                description: "Script that consolidates results from all Bot decision components. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Script that consolidates results from all Bot decision components. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: "The unique identifier of the tenant to which this consolidator belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The unique identifier of the tenant to which this consolidator belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "A unique identifier for this consolidator. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "A unique identifier for this consolidator. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     BotConfigConsolidatorApiResponse:
         type: object
@@ -390,3 +427,11 @@ definitions:
                     $ref: "#/definitions/BotConfigConsolidator"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object
+        properties:
+            version:
+                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1
+                format: uint32

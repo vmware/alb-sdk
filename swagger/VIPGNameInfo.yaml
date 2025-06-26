@@ -5,19 +5,23 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi VIPGNameInfo Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi VIPGNameInfo object api
         ```
         - show vcenter networks
         ```
 
-
+        API permission: PERMISSION_CLOUD
+tags:
+  - name: VIPGNameInfo
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /vimgrvcenternetworks:
         get:
+            tags:
+                - VIPGNameInfo
+            description: /vimgrvcenternetworks
+            operationId: GET /vimgrvcenternetworks
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIPGNameInfoApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VIPGNameInfo
+            description: /vimgrvcenternetworks
+            operationId: POST /vimgrvcenternetworks
             consumes:
                 -   application/json
             produces:
@@ -126,14 +138,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIPGNameInfo"
-                401:
+                "401":
                     description: log in failed
     /vimgrvcenternetworks/{uuid}:
         get:
+            tags:
+                - VIPGNameInfo
+            description: /vimgrvcenternetworks/{uuid}/{uuid}
+            operationId: GET /vimgrvcenternetworks/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -190,13 +206,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIPGNameInfo"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - VIPGNameInfo
+            description: /vimgrvcenternetworks/{uuid}/{uuid}
+            operationId: PUT /vimgrvcenternetworks/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +263,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIPGNameInfo"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - VIPGNameInfo
+            description: /vimgrvcenternetworks/{uuid}/{uuid}
+            operationId: PATCH /vimgrvcenternetworks/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +320,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIPGNameInfo"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - VIPGNameInfo
+            description: /vimgrvcenternetworks/{uuid}/{uuid}
+            operationId: DELETE /vimgrvcenternetworks/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -337,12 +371,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -357,20 +391,20 @@ definitions:
                 readOnly: True
                 type: string
             managed_object_id:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     VIPGNameInfoApiResponse:
         type: object

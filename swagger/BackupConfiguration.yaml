@@ -5,20 +5,24 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi BackupConfiguration Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi BackupConfiguration object api
         ```
         - show backupconfiguration <key>
         - configure backupconfiguration <key>
         ```
 
-
+        API permission: PERMISSION_CONTROLLER
+tags:
+  - name: BackupConfiguration
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /backupconfiguration:
         get:
+            tags:
+                - BackupConfiguration
+            description: /backupconfiguration
+            operationId: GET /backupconfiguration
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BackupConfigurationApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - BackupConfiguration
+            description: /backupconfiguration
+            operationId: POST /backupconfiguration
             consumes:
                 -   application/json
             produces:
@@ -127,14 +139,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BackupConfiguration"
-                401:
+                "401":
                     description: log in failed
     /backupconfiguration/{uuid}:
         get:
+            tags:
+                - BackupConfiguration
+            description: /backupconfiguration/{uuid}/{uuid}
+            operationId: GET /backupconfiguration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -191,13 +207,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BackupConfiguration"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - BackupConfiguration
+            description: /backupconfiguration/{uuid}/{uuid}
+            operationId: PUT /backupconfiguration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +264,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BackupConfiguration"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - BackupConfiguration
+            description: /backupconfiguration/{uuid}/{uuid}
+            operationId: PATCH /backupconfiguration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +321,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BackupConfiguration"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - BackupConfiguration
+            description: /backupconfiguration/{uuid}/{uuid}
+            operationId: DELETE /backupconfiguration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -338,12 +372,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -357,68 +391,71 @@ definitions:
                 readOnly: True
                 type: string
             aws_access_key:
-                description: "AWS Access Key ID. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "AWS Access Key ID. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             aws_bucket_id:
-                description: "AWS bucket. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "AWS bucket. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             aws_bucket_region:
-                description: "The name of the AWS region associated with the bucket. Field introduced in 21.1.5, 22.1.1, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The name of the AWS region associated with the bucket. Field introduced in 21.1.5, 22.1.1, 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             aws_secret_access:
-                description: "AWS Secret Access Key. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "AWS Secret Access Key. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             backup_file_prefix:
-                description: "Prefix of the exported configuration file. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Prefix of the exported configuration file. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             backup_passphrase:
-                description: "Default passphrase to encrypt sensitive fields for configuration export and periodic backup. The same passphrase must be provided to import the configuration. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Default passphrase to encrypt sensitive fields for configuration export and periodic backup. The same passphrase must be provided to import the configuration. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            bundle_mode:
+                description: "By default, JSON Backups are generated. When this flag is enabled, bundle backups will be generated. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: boolean
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             maximum_backups_stored:
-                description: "Rotate the backup files based on this count. Allowed values are 1-20. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rotate the backup files based on this count. Allowed values are 1-20. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 4
                 format: uint32
             name:
-                description: "Name of backup configuration. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of backup configuration. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             remote_directory:
-                description: "Directory at remote destination with write permission for ssh user. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Directory at remote destination with write permission for ssh user. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             remote_file_transfer_protocol:
-                description: "Remote file transfer protocol type. Enum options - SCP, SFTP. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Basic edition(Allowed values- SCP,SFTP), Enterprise with Cloud Services edition."
+                description: "Remote file transfer protocol type. Enum options - SCP, SFTP. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- SCP,SFTP) edition."
                 type: string
                 default: "SCP"
             remote_hostname:
-                description: "Remote Destination. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Remote Destination. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             s3_bucket_folder:
-                description: "The folder name in s3 bucket where backup will be stored. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The folder name in s3 bucket where backup will be stored. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             save_local:
-                description: "Local Backup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Local Backup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             ssh_user_ref:
-                description: "Access Credentials for remote destination. It is a reference to an object of type CloudConnectorUser. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Access Credentials for remote destination. It is a reference to an object of type CloudConnectorUser. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             upload_to_remote_host:
-                description: "Remote Backup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Remote Backup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             upload_to_s3:
-                description: "Cloud Backup. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Cloud Backup. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     BackupConfigurationApiResponse:
         type: object
@@ -439,7 +476,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: uint32

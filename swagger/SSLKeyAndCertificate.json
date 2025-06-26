@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi SSLKeyAndCertificate Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure sslkeyandcertificate <key>\n- show sslkeyandcertificate <key>\n- delete sslkeyandcertificate <key>\n- renew sslkeyandcertificate <key>\n```\n\nExamples\n- **sslkeyandcertificate_example_1**: To generate a self-signed certificate\n  ```json\n    {'name': 'mycert', 'common_name': 'ACME Company', 'organization': 'ACME Company', 'locality': 'Sunnyvale', 'state': 'CA', 'country': 'US', 'self_signed': True, 'key_params': {'algorithm': 'SSL_KEY_ALGORITHM_RSA', 'rsa_params': {'key_size': 'SSL_KEY_1024_BITS'}}}\n  ```\n\n- **sslkeyandcertificate_example_2**: To generate a CA-signed certificate use the following sample. This will provide a Certificate Signing Request that you will have to use to get a CA-siged certificate\n  ```json\n    {'name': 'mycert2', 'common_name': 'ACME Company', 'organization': 'ACME Company', 'locality': 'Sunnyvale', 'state': 'CA', 'country': 'US', 'key_params': {'algorithm': 'SSL_KEY_ALGORITHM_RSA', 'rsa_params': {'key_size': 'SSL_KEY_1024_BITS'}}}\n  ```\n\n- **sslkeyandcertificate_example_3**: To import a CA-signed certificate\n  ```json\n    {'certificate': '\\n-----BEGIN CERTIFICATE-----\\nMIICmTCCAgKgAwIBAgIJAKfrg8i8iZZqMA0GCSqGSIb3DQEBCwUAMFAxCzAJBgNV\\nBAYTAlVTMQswCQYDVQQIDAJDQTEVMBMGA1UECgwMQWNtZSBDb21wYW55MR0wGwYD\\nVQQDDBRTeXN0ZW0gQWRtaW5pc3RyYXRvcjAeFw0xNTAxMTkwNzEyNThaFw0xNjAx\\nMTkwNzEyNThaMFAxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJDQTEVMBMGA1UECgwM\\nQWNtZSBDb21wYW55MR0wGwYDVQQDDBRTeXN0ZW0gQWRtaW5pc3RyYXRvcjCBnzAN\\nBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAtT9psNKi/4oImbB4aIJLjJDPwTIAIrQP\\nLoC4R/GHrBCByRYVfoyxFrHJU9WSg9KTqxc6Ph6/zK2hoR+MchQStMP+K5W+4HcR\\nSW+1MJdMwRhm+egxH7hYwnrfsaQoo0GBPVb48deBB/yKTLj7trdGqWTD5oyZqr/B\\nk+kR0kXGzx8CAwEAAaN7MHkwCQYDVR0TBAIwADAsBglghkgBhvhCAQ0EHxYdT3Bl\\nblNTTCBHZW5lcmF0ZWQgQ2VydGlmaWNhdGUwHQYDVR0OBBYEFNhre4joManxHL+F\\nDWzYSVblWVdlMB8GA1UdIwQYMBaAFNhre4joManxHL+FDWzYSVblWVdlMA0GCSqG\\nSIb3DQEBCwUAA4GBAINlLdqGJW2Enow2ft+FRMZdo2qwOovuF4smNIFoXmSoywhW\\n7dyeAkeCyUjZrbqFRNsCf969aUSIE8pARjSnT9P4otOvIMCaIN215F0nzKKZbsIL\\nK4pA6A0h5GSd+aqol6P2vAWzLNE+kUbrE/PcZu9pozWp0GdoiAEu+BnqwWrC\\n-----END CERTIFICATE-----\\n'}\n  ```\n\n- **sslkeyandcertificate_example_4**: To import both key and certificate, use the following sample.\n  ```json\n    {'name': 'mycert3', 'key': '\\n-----BEGIN RSA PRIVATE KEY-----\\nProc-Type: 4,ENCRYPTED\\nDEK-Info: AES-256-CBC,23E2D6132285630DB8D67E25E465F0A6\\n\\n9sM1JGQHgo+rwuZ5L9piE7EGpp2fvY9QC8GgxEcdfw9OHfcj7CHRCCfXAUsxfBOe\\nTh1aGNH9mCmZ72LdrA9cnS/fwISClUoQe0tmVWRTagQptOZfW20HvHI37HGaZ2s1\\nMsqvOaqfQ1ZHa0U6WtzBw5/6PqL9LgDUGoQFSEtMHD06nuYoaynpfDk3eoftFwrx\\n0U3u0O5lc0a0VqwSvJynSYO1yaxoTzTEDZws4Cf1scLi/Wx5aBQHb5I3k6Dr1Ipm\\n59NCpKxjUI+XFUVMszVyQM6+dUUZ0rRU17f2toZFsGTdQ9M1vJLS1J7Ya2pAhlmm\\nX7fzy1NywL5kk+jRPWXRNrSKZg+qnutPSPD1689oDNqu4fwycbC+jZ7zJYXB/vio\\nagS3/UI8d2Lxs69IPFxwP0lhYuUiSEGfLwDwqEuRZNbvaZpwtp2kC6sf7xlKbQF7\\n24lz/LiL5t7xFsLuruOyWfb1fUwLjTZm4O6y8SI9JTSixPm4NCLGclcaTh33harN\\nQhsTf0+qMbovgAUv6myfnI4ajPCcu+Kwn2jMjUjWEFf3oj9A1NUfiT4SqiLcZ4AU\\nsvR8kHs0+rUVDiZ8kFXH0HQ+LI7itVCRoCooq3uqpqeZ5J8L+hZEeILjGCVNQluU\\nlTcEbAry3WibKzsk2bWARe0v+7i/r09EuwSzJ8+H2BOkrxmTr+WgC2RKBMKV+gLc\\nu3rxjeddL6hc0qgo2EN/Hp38FrVBwFLrDYHsBVRwdN6OsDW0OP67EJXikMD+qe2+\\nuUcXr00Sno+Wcgbm17m9SghESxXBj1N5eok6MSUZxbNlFNhxu4qbpiBDKZOrJ2e/\\nn8rxlg9XmJAQPfhY1EKbX7WFiaSa0y4tvbD2tWZfw8Yt97PRSVxumRWg5pbqRr1i\\nl7QTNWfIwk25xtIW5q4WnHjuVynurnREYdlTVd/vBsQcrgV0vaPVYEq+iFzkZBOy\\na0Z0001SHqsQE6ThC2+7ap855EKPpU7HxXqOAEas9z4C9HGgPogSFKT9H5MrDY2C\\nynuoU44hQ/qmR5TAfjO8OnBeLlAlPk0VpEAaOX5V7t8PWhhkAz3QRbQAPbDQ5BQx\\naGnBmi4/12h4EywHUdacj4/9uvUPVd1E476mxePfsDr+E3wtYqUWBzgHtoDxJ9Qn\\nSAL5hU3GrL3mEQQ1RK8kITANVXmlFa56XZXqGuYKxUfGGDGhLTE/VYh13I37hVZH\\nQ825Y+WqZRiRsRvV9W/Wq8H5I2+QU1flB1+kqpoVTxDhzJ15dOetZDTYXqjs6gMS\\nQpr/dYub0yR0zwmV1EKpuqchoYcwHpG4gsX42NRCfcdYoIxoa1Drr/xX4L0si40z\\npY00CT/YuCAJFxbhpzlqKnZz3okj8vzPocT8mjFZcajnyOtaWyILnrBKO/93tkEF\\nYednFMpQ2xdlq5bebhrZhYkf6XS21N8t1ETropoOX19Eh33yJUHh/rJ67I1ccRvZ\\neSI1LDB18B6+k2BdYCfjEhc33WgqUmoHEjxLYEdN0N0qr4ZG2JznQ9R7h/SQusGo\\nwG1rwolI5lxqX/M53KXoBoH1UcZp1yg/8qG2e8Ntx41a6j79oPh7YkXvJYHDh/xt\\n-----END RSA PRIVATE KEY-----\\n', 'certificate': '\\n-----BEGIN CERTIFICATE-----\\nMIIE+DCCAuCgAwIBAgICEAAwDQYJKoZIhvcNAQELBQAwQTELMAkGA1UEBhMCVVMx\\nEzARBgNVBAgMCkNhbGlmb3JuaWExHTAbBgNVBAMMFEdyZWcgSW50ZXJtZWRpYXRl\\nIENBMB4XDTE2MDIxMTE2MjYyNFoXDTE3MDIyMDE2MjYyNFowPDELMAkGA1UEBhMC\\nVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExGDAWBgNVBAMMD3d3dy5leGFtcGxlLmNv\\nbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM47ljnydqleK3Yapr//\\nAEqEdPuduGiqgEcY1qjx1vPwO/TU3iqNIJEUEcu/uvHxXqOmsXGUG9+/xMfsV/Lx\\nQAqhneXA2fxZtODmnCWq0SldPQi0mD63ir3jFqI+slS+n9ao20krBBYKpgqjstxh\\nbSez59h6Aoup8vM226gieMfw9Fac7govovJFQZ+lYywGbe2hzP3vftEoyO8itwdB\\novxXk/fmQSDfDPRGSJ4eSve2o8lP9xRRiyqkRKoNQ3UaJRK9L9JSvzdjbvVmUD5S\\n4le7sa6N7VgT73OiUFdwndCQNHN95+BMhGibNury7IXVg+yC94WUmp5L1UX8PixZ\\nv78CAwEAAaOB/jCB+zAJBgNVHRMEAjAAMBEGCWCGSAGG+EIBAQQEAwIGQDAzBglg\\nhkgBhvhCAQ0EJhYkT3BlblNTTCBHZW5lcmF0ZWQgU2VydmVyIENlcnRpZmljYXRl\\nMB0GA1UdDgQWBBSqF2GsfFBj6SkSpRjG9oK1cqvm2jBiBgNVHSMEWzBZgBQGr+y3\\nQMSnVEKwnT9quMhAYExFEaE9pDswOTELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNh\\nbGlmb3JuaWExFTATBgNVBAMMDEdyZWcgUm9vdCBDQYICEAAwDgYDVR0PAQH/BAQD\\nAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMA0GCSqGSIb3DQEBCwUAA4ICAQAudoCP\\nRNq/keBcTcL19UYo8X4tRwm350U5ccKwiKb8caEE2Crh3dyNyKDN3+ZKl8i8OwWN\\nx9PpTJANlmWYuOvhjLtvnkGidcxhCmVEpEms2h3+zrRIXijIENqhWpKzcQus7R6F\\nmMxW/KPt0rY80rfrZ2ReCkuhBEZzgL5udYL+AEYkvf7oGD/W18nDCUKEsm8T45jI\\ndBVs7PeFaEJSAlDW8T3OekV8CETvafwBx4UK9kHo7+mfZSHCiGhzodF3WGzPnLFs\\nB4OptAHfXUjIAEZ9pxdr8C/tXU9dVyQVdHjISKQdtWUBoHSwmZnIuEtWADfRjMi8\\ne2Le1qiC0IBMc7JAVZXZ1lbs7A5mKgsUy+1rRUVEkVgmgDfr1BcsstOeXpNcQS4K\\nebKterF/ZDmVYJdUD6o91xfAAy1onn1mzKhIfqMeCZEcz4nvuaLM2h5HsIOJPgLL\\n5LnaQxl+6cNx1u3+X1crPv0k1hs9yqn72LmD65ZqBpamiwJudSpu1RCPCAdNzzcO\\n9v2I8JlXhl0IKRXoAZX+VK1PJmZJ8giRTI+92XOWJlryyknm9Znp1djibZAbLnpI\\nrorY/feSmoZFEKUv74n7XrgbveEWjMbkZQHrNNPW0VZ3uXM30E81Wt6fCyyX5GO3\\ndTPtEDPf9zp/r0AHZKU+4Bg2ZAkrNMltCAjXSg==\\n-----END CERTIFICATE-----\\n', 'key_passphrase': 'avi123'}\n  ```\n"
+        "description": "Avi SSLKeyAndCertificate object api\n```\n- configure sslkeyandcertificate <key>\n- show sslkeyandcertificate <key>\n- delete sslkeyandcertificate <key>\n- renew sslkeyandcertificate <key>\n- update-chain sslkeyandcertificate <key>\n```\n\nExamples\n- **sslkeyandcertificate_example_1**: To generate a self-signed certificate\n  ```json\n    {'name': 'mycert', 'common_name': 'ACME Company', 'organization': 'ACME Company', 'locality': 'Sunnyvale', 'state': 'CA', 'country': 'US', 'self_signed': True, 'key_params': {'algorithm': 'SSL_KEY_ALGORITHM_RSA', 'rsa_params': {'key_size': 'SSL_KEY_1024_BITS'}}}\n  ```\n- **sslkeyandcertificate_example_2**: To generate a CA-signed certificate use the following sample. This will provide a Certificate Signing Request that you will have to use to get a CA-siged certificate\n  ```json\n    {'name': 'mycert2', 'common_name': 'ACME Company', 'organization': 'ACME Company', 'locality': 'Sunnyvale', 'state': 'CA', 'country': 'US', 'key_params': {'algorithm': 'SSL_KEY_ALGORITHM_RSA', 'rsa_params': {'key_size': 'SSL_KEY_1024_BITS'}}}\n  ```\n- **sslkeyandcertificate_example_3**: To import a CA-signed certificate\n  ```json\n    {'certificate': '\\n-----BEGIN CERTIFICATE-----\\nMIICmTCCAgKgAwIBAgIJAKfrg8i8iZZqMA0GCSqGSIb3DQEBCwUAMFAxCzAJBgNV\\nBAYTAlVTMQswCQYDVQQIDAJDQTEVMBMGA1UECgwMQWNtZSBDb21wYW55MR0wGwYD\\nVQQDDBRTeXN0ZW0gQWRtaW5pc3RyYXRvcjAeFw0xNTAxMTkwNzEyNThaFw0xNjAx\\nMTkwNzEyNThaMFAxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJDQTEVMBMGA1UECgwM\\nQWNtZSBDb21wYW55MR0wGwYDVQQDDBRTeXN0ZW0gQWRtaW5pc3RyYXRvcjCBnzAN\\nBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAtT9psNKi/4oImbB4aIJLjJDPwTIAIrQP\\nLoC4R/GHrBCByRYVfoyxFrHJU9WSg9KTqxc6Ph6/zK2hoR+MchQStMP+K5W+4HcR\\nSW+1MJdMwRhm+egxH7hYwnrfsaQoo0GBPVb48deBB/yKTLj7trdGqWTD5oyZqr/B\\nk+kR0kXGzx8CAwEAAaN7MHkwCQYDVR0TBAIwADAsBglghkgBhvhCAQ0EHxYdT3Bl\\nblNTTCBHZW5lcmF0ZWQgQ2VydGlmaWNhdGUwHQYDVR0OBBYEFNhre4joManxHL+F\\nDWzYSVblWVdlMB8GA1UdIwQYMBaAFNhre4joManxHL+FDWzYSVblWVdlMA0GCSqG\\nSIb3DQEBCwUAA4GBAINlLdqGJW2Enow2ft+FRMZdo2qwOovuF4smNIFoXmSoywhW\\n7dyeAkeCyUjZrbqFRNsCf969aUSIE8pARjSnT9P4otOvIMCaIN215F0nzKKZbsIL\\nK4pA6A0h5GSd+aqol6P2vAWzLNE+kUbrE/PcZu9pozWp0GdoiAEu+BnqwWrC\\n-----END CERTIFICATE-----\\n'}\n  ```\n- **sslkeyandcertificate_example_4**: To import both key and certificate, use the following sample.\n  ```json\n    {'name': 'mycert3', 'key': '\\n-----BEGIN RSA PRIVATE KEY-----\\nProc-Type: 4,ENCRYPTED\\nDEK-Info: AES-256-CBC,23E2D6132285630DB8D67E25E465F0A6\\n\\n9sM1JGQHgo+rwuZ5L9piE7EGpp2fvY9QC8GgxEcdfw9OHfcj7CHRCCfXAUsxfBOe\\nTh1aGNH9mCmZ72LdrA9cnS/fwISClUoQe0tmVWRTagQptOZfW20HvHI37HGaZ2s1\\nMsqvOaqfQ1ZHa0U6WtzBw5/6PqL9LgDUGoQFSEtMHD06nuYoaynpfDk3eoftFwrx\\n0U3u0O5lc0a0VqwSvJynSYO1yaxoTzTEDZws4Cf1scLi/Wx5aBQHb5I3k6Dr1Ipm\\n59NCpKxjUI+XFUVMszVyQM6+dUUZ0rRU17f2toZFsGTdQ9M1vJLS1J7Ya2pAhlmm\\nX7fzy1NywL5kk+jRPWXRNrSKZg+qnutPSPD1689oDNqu4fwycbC+jZ7zJYXB/vio\\nagS3/UI8d2Lxs69IPFxwP0lhYuUiSEGfLwDwqEuRZNbvaZpwtp2kC6sf7xlKbQF7\\n24lz/LiL5t7xFsLuruOyWfb1fUwLjTZm4O6y8SI9JTSixPm4NCLGclcaTh33harN\\nQhsTf0+qMbovgAUv6myfnI4ajPCcu+Kwn2jMjUjWEFf3oj9A1NUfiT4SqiLcZ4AU\\nsvR8kHs0+rUVDiZ8kFXH0HQ+LI7itVCRoCooq3uqpqeZ5J8L+hZEeILjGCVNQluU\\nlTcEbAry3WibKzsk2bWARe0v+7i/r09EuwSzJ8+H2BOkrxmTr+WgC2RKBMKV+gLc\\nu3rxjeddL6hc0qgo2EN/Hp38FrVBwFLrDYHsBVRwdN6OsDW0OP67EJXikMD+qe2+\\nuUcXr00Sno+Wcgbm17m9SghESxXBj1N5eok6MSUZxbNlFNhxu4qbpiBDKZOrJ2e/\\nn8rxlg9XmJAQPfhY1EKbX7WFiaSa0y4tvbD2tWZfw8Yt97PRSVxumRWg5pbqRr1i\\nl7QTNWfIwk25xtIW5q4WnHjuVynurnREYdlTVd/vBsQcrgV0vaPVYEq+iFzkZBOy\\na0Z0001SHqsQE6ThC2+7ap855EKPpU7HxXqOAEas9z4C9HGgPogSFKT9H5MrDY2C\\nynuoU44hQ/qmR5TAfjO8OnBeLlAlPk0VpEAaOX5V7t8PWhhkAz3QRbQAPbDQ5BQx\\naGnBmi4/12h4EywHUdacj4/9uvUPVd1E476mxePfsDr+E3wtYqUWBzgHtoDxJ9Qn\\nSAL5hU3GrL3mEQQ1RK8kITANVXmlFa56XZXqGuYKxUfGGDGhLTE/VYh13I37hVZH\\nQ825Y+WqZRiRsRvV9W/Wq8H5I2+QU1flB1+kqpoVTxDhzJ15dOetZDTYXqjs6gMS\\nQpr/dYub0yR0zwmV1EKpuqchoYcwHpG4gsX42NRCfcdYoIxoa1Drr/xX4L0si40z\\npY00CT/YuCAJFxbhpzlqKnZz3okj8vzPocT8mjFZcajnyOtaWyILnrBKO/93tkEF\\nYednFMpQ2xdlq5bebhrZhYkf6XS21N8t1ETropoOX19Eh33yJUHh/rJ67I1ccRvZ\\neSI1LDB18B6+k2BdYCfjEhc33WgqUmoHEjxLYEdN0N0qr4ZG2JznQ9R7h/SQusGo\\nwG1rwolI5lxqX/M53KXoBoH1UcZp1yg/8qG2e8Ntx41a6j79oPh7YkXvJYHDh/xt\\n-----END RSA PRIVATE KEY-----\\n', 'certificate': '\\n-----BEGIN CERTIFICATE-----\\nMIIE+DCCAuCgAwIBAgICEAAwDQYJKoZIhvcNAQELBQAwQTELMAkGA1UEBhMCVVMx\\nEzARBgNVBAgMCkNhbGlmb3JuaWExHTAbBgNVBAMMFEdyZWcgSW50ZXJtZWRpYXRl\\nIENBMB4XDTE2MDIxMTE2MjYyNFoXDTE3MDIyMDE2MjYyNFowPDELMAkGA1UEBhMC\\nVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExGDAWBgNVBAMMD3d3dy5leGFtcGxlLmNv\\nbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM47ljnydqleK3Yapr//\\nAEqEdPuduGiqgEcY1qjx1vPwO/TU3iqNIJEUEcu/uvHxXqOmsXGUG9+/xMfsV/Lx\\nQAqhneXA2fxZtODmnCWq0SldPQi0mD63ir3jFqI+slS+n9ao20krBBYKpgqjstxh\\nbSez59h6Aoup8vM226gieMfw9Fac7govovJFQZ+lYywGbe2hzP3vftEoyO8itwdB\\novxXk/fmQSDfDPRGSJ4eSve2o8lP9xRRiyqkRKoNQ3UaJRK9L9JSvzdjbvVmUD5S\\n4le7sa6N7VgT73OiUFdwndCQNHN95+BMhGibNury7IXVg+yC94WUmp5L1UX8PixZ\\nv78CAwEAAaOB/jCB+zAJBgNVHRMEAjAAMBEGCWCGSAGG+EIBAQQEAwIGQDAzBglg\\nhkgBhvhCAQ0EJhYkT3BlblNTTCBHZW5lcmF0ZWQgU2VydmVyIENlcnRpZmljYXRl\\nMB0GA1UdDgQWBBSqF2GsfFBj6SkSpRjG9oK1cqvm2jBiBgNVHSMEWzBZgBQGr+y3\\nQMSnVEKwnT9quMhAYExFEaE9pDswOTELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNh\\nbGlmb3JuaWExFTATBgNVBAMMDEdyZWcgUm9vdCBDQYICEAAwDgYDVR0PAQH/BAQD\\nAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMA0GCSqGSIb3DQEBCwUAA4ICAQAudoCP\\nRNq/keBcTcL19UYo8X4tRwm350U5ccKwiKb8caEE2Crh3dyNyKDN3+ZKl8i8OwWN\\nx9PpTJANlmWYuOvhjLtvnkGidcxhCmVEpEms2h3+zrRIXijIENqhWpKzcQus7R6F\\nmMxW/KPt0rY80rfrZ2ReCkuhBEZzgL5udYL+AEYkvf7oGD/W18nDCUKEsm8T45jI\\ndBVs7PeFaEJSAlDW8T3OekV8CETvafwBx4UK9kHo7+mfZSHCiGhzodF3WGzPnLFs\\nB4OptAHfXUjIAEZ9pxdr8C/tXU9dVyQVdHjISKQdtWUBoHSwmZnIuEtWADfRjMi8\\ne2Le1qiC0IBMc7JAVZXZ1lbs7A5mKgsUy+1rRUVEkVgmgDfr1BcsstOeXpNcQS4K\\nebKterF/ZDmVYJdUD6o91xfAAy1onn1mzKhIfqMeCZEcz4nvuaLM2h5HsIOJPgLL\\n5LnaQxl+6cNx1u3+X1crPv0k1hs9yqn72LmD65ZqBpamiwJudSpu1RCPCAdNzzcO\\n9v2I8JlXhl0IKRXoAZX+VK1PJmZJ8giRTI+92XOWJlryyknm9Znp1djibZAbLnpI\\nrorY/feSmoZFEKUv74n7XrgbveEWjMbkZQHrNNPW0VZ3uXM30E81Wt6fCyyX5GO3\\ndTPtEDPf9zp/r0AHZKU+4Bg2ZAkrNMltCAjXSg==\\n-----END CERTIFICATE-----\\n', 'key_passphrase': 'avi123'}\n  ```\nAPI permission: PERMISSION_SSLKEYANDCERTIFICATE\n"
     },
+    "tags": [
+        {
+            "name": "SSLKeyAndCertificate"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/sslkeyandcertificate": {
             "get": {
+                "tags": [
+                    "SSLKeyAndCertificate"
+                ],
+                "description": "/sslkeyandcertificate",
+                "operationId": "GET /sslkeyandcertificate",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "SSLKeyAndCertificate"
+                ],
+                "description": "/sslkeyandcertificate",
+                "operationId": "POST /sslkeyandcertificate",
                 "consumes": [
                     "application/json"
                 ],
@@ -184,6 +202,11 @@
         },
         "/sslkeyandcertificate/{uuid}": {
             "get": {
+                "tags": [
+                    "SSLKeyAndCertificate"
+                ],
+                "description": "/sslkeyandcertificate/{uuid}/{uuid}",
+                "operationId": "GET /sslkeyandcertificate/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -274,10 +297,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "SSLKeyAndCertificate"
+                ],
+                "description": "/sslkeyandcertificate/{uuid}/{uuid}",
+                "operationId": "PUT /sslkeyandcertificate/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -351,10 +382,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "SSLKeyAndCertificate"
+                ],
+                "description": "/sslkeyandcertificate/{uuid}/{uuid}",
+                "operationId": "PATCH /sslkeyandcertificate/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -428,10 +467,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "SSLKeyAndCertificate"
+                ],
+                "description": "/sslkeyandcertificate/{uuid}/{uuid}",
+                "operationId": "DELETE /sslkeyandcertificate/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -495,13 +542,18 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/sslkeyandcertificate/{uuid}/renew": {
             "post": {
+                "tags": [
+                    "SSLKeyAndCertificate"
+                ],
+                "description": "/sslkeyandcertificate/{uuid}/renew",
+                "operationId": "POST /sslkeyandcertificate/{uuid}/renew",
                 "consumes": [
                     "application/json"
                 ],
@@ -571,12 +623,103 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
+                    }
+                }
+            }
+        },
+        "/sslkeyandcertificate/{uuid}/update-chain": {
+            "post": {
+                "tags": [
+                    "SSLKeyAndCertificate"
+                ],
+                "description": "/sslkeyandcertificate/{uuid}/update-chain",
+                "operationId": "POST /sslkeyandcertificate/{uuid}/update-chain",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "empty",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/sslkeyandcertificate/{uuid}/federated_info/": {
             "get": {
+                "tags": [
+                    "SSLKeyAndCertificate"
+                ],
+                "description": "/sslkeyandcertificate/{uuid}/federated_info/",
+                "operationId": "GET /sslkeyandcertificate/{uuid}/federated_info/",
                 "consumes": [
                     "application/json"
                 ],
@@ -634,6 +777,9 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             }
@@ -644,11 +790,11 @@
             "type": "object",
             "properties": {
                 "ca_ref": {
-                    "description": " It is a reference to an object of type SSLKeyAndCertificate. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type SSLKeyAndCertificate. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -657,7 +803,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -671,19 +817,19 @@
             ],
             "properties": {
                 "is_dynamic": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_sensitive": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "value": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -695,11 +841,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "value": {
-                    "description": "Value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Value. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -708,37 +854,37 @@
             "type": "object",
             "properties": {
                 "failed_ocsp_jobs_retry_interval": {
-                    "description": "Describes the Time Interval after which the next OCSP job needs to be scheduled in case of the OCSP job failures. Allowed values are 60-86400. Field introduced in 20.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Describes the Time Interval after which the next OCSP job needs to be scheduled in case of the OCSP job failures. Allowed values are 60-86400. Field introduced in 20.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3600,
                     "format": "uint32"
                 },
                 "max_tries": {
-                    "description": "Maximum number of times the failed OCSP jobs can be scheduled. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of times the failed OCSP jobs can be scheduled. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "uint32"
                 },
                 "ocsp_req_interval": {
-                    "description": "Interval between the OCSP queries. Allowed values are 60-31536000. Field introduced in 20.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Interval between the OCSP queries. Allowed values are 60-31536000. Field introduced in 20.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 86400,
                     "format": "uint32"
                 },
                 "ocsp_resp_timeout": {
-                    "description": "Time in seconds that the system waits for a reply from the OCSP responder before dropping the connection. Field introduced in 20.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Time in seconds that the system waits for a reply from the OCSP responder before dropping the connection. Field introduced in 20.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "responder_url_lists": {
-                    "description": "List of Responder URLs configured by user to do failover/override the AIA extension contained in the OCSP responder's SSL/TLS certificate. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "List of Responder URLs configured by user to do failover/override the AIA extension contained in the OCSP responder's SSL/TLS certificate. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "url_action": {
-                    "description": "Describes the type of action to take with the Responder URLs. Enum options - OCSP_RESPONDER_URL_FAILOVER, OCSP_RESPONDER_URL_OVERRIDE. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Describes the type of action to take with the Responder URLs. Enum options - OCSP_RESPONDER_URL_FAILOVER, OCSP_RESPONDER_URL_OVERRIDE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "OCSP_RESPONDER_URL_FAILOVER"
                 }
@@ -753,37 +899,37 @@
             ],
             "properties": {
                 "cert_status": {
-                    "description": "Revocation status of the certificate. Enum options - OCSP_CERTSTATUS_GOOD, OCSP_CERTSTATUS_REVOKED, OCSP_CERTSTATUS_UNKNOWN. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Revocation status of the certificate. Enum options - OCSP_CERTSTATUS_GOOD, OCSP_CERTSTATUS_REVOKED, OCSP_CERTSTATUS_UNKNOWN. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string"
                 },
                 "next_update": {
-                    "description": "The time at or before which newer information will be available about the status of the certificate. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The time at or before which newer information will be available about the status of the certificate. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string"
                 },
                 "ocsp_resp_from_responder_url": {
-                    "description": "The OCSP Responder URL from which the response is received. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The OCSP Responder URL from which the response is received. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string"
                 },
                 "ocsp_response": {
-                    "description": "Signed OCSP response received from the CA's OCSP Responder. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Signed OCSP response received from the CA's OCSP Responder. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string"
                 },
                 "revocation_reason": {
-                    "description": "The reason for the revocation of the certificate. Enum options - OCSP_REVOCATION_REASON_UNSPECIFIED, OCSP_REVOCATION_REASON_KEY_COMPROMISE, OCSP_REVOCATION_REASON_CA_COMPROMISE, OCSP_REVOCATION_REASON_AFFILIATION_CHANGED, OCSP_REVOCATION_REASON_SUPERSEDED, OCSP_REVOCATION_REASON_CESSATION_OF_OPERATION, OCSP_REVOCATION_REASON_CERTIFICATE_HOLD, OCSP_REVOCATION_REASON_REMOVE_FROM_CRL, OCSP_REVOCATION_REASON_PRIVILEGE_WITHDRAWN, OCSP_REVOCATION_REASON_AA_COMPROMISE. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The reason for the revocation of the certificate. Enum options - OCSP_REVOCATION_REASON_UNSPECIFIED, OCSP_REVOCATION_REASON_KEY_COMPROMISE, OCSP_REVOCATION_REASON_CA_COMPROMISE, OCSP_REVOCATION_REASON_AFFILIATION_CHANGED, OCSP_REVOCATION_REASON_SUPERSEDED, OCSP_REVOCATION_REASON_CESSATION_OF_OPERATION, OCSP_REVOCATION_REASON_CERTIFICATE_HOLD, OCSP_REVOCATION_REASON_REMOVE_FROM_CRL, OCSP_REVOCATION_REASON_PRIVILEGE_WITHDRAWN, OCSP_REVOCATION_REASON_AA_COMPROMISE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string"
                 },
                 "revocation_time": {
-                    "description": "ISO 8601 compatible timestamp at which the certificate was revoked or placed on hold. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "ISO 8601 compatible timestamp at which the certificate was revoked or placed on hold. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string"
                 },
                 "this_update": {
-                    "description": "The most recent time at which the status being indicated is known by the OCSP Responder to have been correct. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "The most recent time at which the status being indicated is known by the OCSP Responder to have been correct. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string"
                 }
@@ -796,11 +942,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -812,85 +958,85 @@
             "type": "object",
             "properties": {
                 "certificate": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "certificate_signing_request": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "chain_verified": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "days_until_expire": {
-                    "description": "Valid range  1-3650. Allowed values are 1-3650. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Valid range  1-3650. Allowed values are 1-3650. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 365,
                     "format": "int32"
                 },
                 "expiry_status": {
-                    "description": " Enum options - SSL_CERTIFICATE_GOOD, SSL_CERTIFICATE_EXPIRY_WARNING, SSL_CERTIFICATE_EXPIRED. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - SSL_CERTIFICATE_GOOD, SSL_CERTIFICATE_EXPIRY_WARNING, SSL_CERTIFICATE_EXPIRED. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SSL_CERTIFICATE_GOOD"
                 },
                 "fingerprint": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "issuer": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SSLCertificateDescription"
                 },
                 "key_params": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SSLKeyParams"
                 },
                 "not_after": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "not_before": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "public_key": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "self_signed": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "serial_number": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "signature": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "signature_algorithm": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "subject": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SSLCertificateDescription"
                 },
                 "subject_alt_names": {
-                    "description": "subjectAltName that provides additional subject identities. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "subjectAltName that provides additional subject identities. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "text": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -899,35 +1045,35 @@
             "type": "object",
             "properties": {
                 "common_name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "country": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "distinguished_name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "email_address": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "locality": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "organization": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "organization_unit": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "state": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -945,107 +1091,107 @@
                     "type": "string"
                 },
                 "ca_certs": {
-                    "description": "CA certificates in certificate chain. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "CA certificates in certificate chain. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/CertificateAuthority"
                     }
                 },
                 "certificate": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SSLCertificate"
                 },
                 "certificate_base64": {
-                    "description": "States if the certificate is base64 encoded. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "States if the certificate is base64 encoded. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "certificate_management_profile_ref": {
-                    "description": " It is a reference to an object of type CertificateManagementProfile. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type CertificateManagementProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "created_by": {
-                    "description": "Creator name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Creator name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "dynamic_params": {
-                    "description": "Dynamic parameters needed for certificate management profile. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Dynamic parameters needed for certificate management profile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/CustomParams"
                     }
                 },
                 "enable_ocsp_stapling": {
-                    "description": "Enables OCSP Stapling. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.",
+                    "description": "Enables OCSP Stapling. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
                     "type": "boolean"
                 },
                 "enckey_base64": {
-                    "description": "Encrypted private key corresponding to the private key (e.g. those generated by an HSM such as Thales nShield). Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Encrypted private key corresponding to the private key (e.g. those generated by an HSM such as Thales nShield). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "enckey_name": {
-                    "description": "Name of the encrypted private key (e.g. those generated by an HSM such as Thales nShield). Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the encrypted private key (e.g. those generated by an HSM such as Thales nShield). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "format": {
-                    "description": "Format of the Key/Certificate file. Enum options - SSL_PEM, SSL_PKCS12. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Format of the Key/Certificate file. Enum options - SSL_PEM, SSL_PKCS12. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SSL_PEM"
                 },
                 "hardwaresecuritymodulegroup_ref": {
-                    "description": " It is a reference to an object of type HardwareSecurityModuleGroup. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type HardwareSecurityModuleGroup. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "import_key_to_hsm": {
-                    "description": "Flag to enable Private key import to HSM while importing the certificate. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Flag to enable Private key import to HSM while importing the certificate. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_federated": {
-                    "description": "It Specifies whether the object has to be replicated to the GSLB followers. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "It Specifies whether the object has to be replicated to the GSLB followers. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "key": {
-                    "description": "Private key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Private key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "key_base64": {
-                    "description": "States if the private key is base64 encoded. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "States if the private key is base64 encoded. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "key_params": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SSLKeyParams"
                 },
                 "key_passphrase": {
-                    "description": "Passphrase used to encrypt the private key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Passphrase used to encrypt the private key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RoleFilterMatchLabel"
                     }
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ocsp_config": {
-                    "description": "Configuration related to OCSP. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Configuration related to OCSP. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/OCSPConfig"
                 },
                 "ocsp_error_status": {
-                    "description": "Error reported during OCSP status query. Enum options - OCSP_ERR_CERTSTATUS_GOOD, OCSP_ERR_CERTSTATUS_REVOKED, OCSP_ERR_CERTSTATUS_UNKNOWN, OCSP_ERR_CERTSTATUS_SERVERFAIL_ERR, OCSP_ERR_CERTSTATUS_JOBDB, OCSP_ERR_CERTSTATUS_DISABLED, OCSP_ERR_CERTSTATUS_GETCERT, OCSP_ERR_CERTSTATUS_NONVSCERT, OCSP_ERR_CERTSTATUS_SELFSIGNED, OCSP_ERR_CERTSTATUS_CERTFINISH, OCSP_ERR_CERTSTATUS_CACERT, OCSP_ERR_CERTSTATUS_REQUEST, OCSP_ERR_CERTSTATUS_ISSUER_REVOKED, OCSP_ERR_CERTSTATUS_PARSE_CERT, OCSP_ERR_CERTSTATUS_HTTP_REQ, OCSP_ERR_CERTSTATUS_URL_LIST, OCSP_ERR_CERTSTATUS_HTTP_SEND, OCSP_ERR_CERTSTATUS_HTTP_RECV, OCSP_ERR_CERTSTATUS_HTTP_RESP. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- OCSP_ERR_CERTSTATUS_DISABLED), Basic edition(Allowed values- OCSP_ERR_CERTSTATUS_DISABLED), Enterprise with Cloud Services edition.",
+                    "description": "Error reported during OCSP status query. Enum options - OCSP_ERR_CERTSTATUS_GOOD, OCSP_ERR_CERTSTATUS_REVOKED, OCSP_ERR_CERTSTATUS_UNKNOWN, OCSP_ERR_CERTSTATUS_SERVERFAIL_ERR, OCSP_ERR_CERTSTATUS_JOBDB, OCSP_ERR_CERTSTATUS_DISABLED, OCSP_ERR_CERTSTATUS_GETCERT, OCSP_ERR_CERTSTATUS_NONVSCERT, OCSP_ERR_CERTSTATUS_SELFSIGNED, OCSP_ERR_CERTSTATUS_CERTFINISH, OCSP_ERR_CERTSTATUS_CACERT, OCSP_ERR_CERTSTATUS_REQUEST, OCSP_ERR_CERTSTATUS_ISSUER_REVOKED, OCSP_ERR_CERTSTATUS_PARSE_CERT, OCSP_ERR_CERTSTATUS_HTTP_REQ, OCSP_ERR_CERTSTATUS_URL_LIST, OCSP_ERR_CERTSTATUS_HTTP_SEND, OCSP_ERR_CERTSTATUS_HTTP_RECV, OCSP_ERR_CERTSTATUS_HTTP_RESP. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- OCSP_ERR_CERTSTATUS_DISABLED), Basic (Allowed values- OCSP_ERR_CERTSTATUS_DISABLED) edition.",
                     "readOnly": true,
                     "type": "string",
                     "default": "OCSP_ERR_CERTSTATUS_DISABLED"
                 },
                 "ocsp_responder_url_list_from_certs": {
-                    "description": "This is an Internal field to store the OCSP Responder URLs contained in the certificate. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "This is an Internal field to store the OCSP Responder URLs contained in the certificate. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "array",
                     "items": {
@@ -1053,21 +1199,21 @@
                     }
                 },
                 "ocsp_response_info": {
-                    "description": "Information related to OCSP response. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Information related to OCSP response. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "$ref": "#/definitions/OCSPResponseInfo"
                 },
                 "status": {
-                    "description": " Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SSL_CERTIFICATE_FINISHED"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -1076,7 +1222,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1107,7 +1253,7 @@
             "type": "object",
             "properties": {
                 "curve": {
-                    "description": " Enum options - SSL_KEY_EC_CURVE_SECP256R1, SSL_KEY_EC_CURVE_SECP384R1, SSL_KEY_EC_CURVE_SECP521R1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - SSL_KEY_EC_CURVE_SECP256R1, SSL_KEY_EC_CURVE_SECP384R1, SSL_KEY_EC_CURVE_SECP521R1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SSL_KEY_EC_CURVE_SECP256R1"
                 }
@@ -1120,16 +1266,16 @@
             ],
             "properties": {
                 "algorithm": {
-                    "description": " Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SSL_KEY_ALGORITHM_RSA"
                 },
                 "ec_params": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SSLKeyECParams"
                 },
                 "rsa_params": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SSLKeyRSAParams"
                 }
             }
@@ -1138,13 +1284,13 @@
             "type": "object",
             "properties": {
                 "exponent": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 65537,
                     "format": "uint32"
                 },
                 "key_size": {
-                    "description": " Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SSL_KEY_2048_BITS"
                 }
