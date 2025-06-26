@@ -95,10 +95,13 @@ public class WafPolicy extends AviRestResource  {
     private String tenantRef;
 
     @JsonProperty("updated_crs_rules_in_detection_mode")
-    private Boolean updatedCrsRulesInDetectionMode = true;
+    private Boolean updatedCrsRulesInDetectionMode;
 
     @JsonProperty("url")
     private String url = "url";
+
+    @JsonProperty("use_evaluation_mode_on_crs_update")
+    private Boolean useEvaluationModeOnCrsUpdate = true;
 
     @JsonProperty("uuid")
     private String uuid;
@@ -116,7 +119,7 @@ public class WafPolicy extends AviRestResource  {
      * Allow rules to overwrite the policy mode.
      * This must be set if the policy mode is set to enforcement.
      * Field introduced in 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return allowModeDelegation
      */
@@ -129,7 +132,7 @@ public class WafPolicy extends AviRestResource  {
      * Allow rules to overwrite the policy mode.
      * This must be set if the policy mode is set to enforcement.
      * Field introduced in 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param allowModeDelegation set the allowModeDelegation.
      */
@@ -142,7 +145,7 @@ public class WafPolicy extends AviRestResource  {
      * A set of rules which describe conditions under which the request will bypass the waf.
      * This will be processed in the request header phase before any other waf related code.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowlist
      */
@@ -155,7 +158,7 @@ public class WafPolicy extends AviRestResource  {
      * A set of rules which describe conditions under which the request will bypass the waf.
      * This will be processed in the request header phase before any other waf related code.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param allowlist set the allowlist.
      */
@@ -167,7 +170,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Application specific signatures.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return applicationSignatures
      */
@@ -179,7 +182,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Application specific signatures.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param applicationSignatures set the applicationSignatures.
      */
@@ -193,7 +196,7 @@ public class WafPolicy extends AviRestResource  {
      * If a newer crs object is available on this controller, the system will issue the crs upgrade process for this waf policy.
      * It will not update polices if the current crs version is crs-version-not-applicable.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return autoUpdateCrs
      */
@@ -207,7 +210,7 @@ public class WafPolicy extends AviRestResource  {
      * If a newer crs object is available on this controller, the system will issue the crs upgrade process for this waf policy.
      * It will not update polices if the current crs version is crs-version-not-applicable.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param autoUpdateCrs set the autoUpdateCrs.
      */
@@ -219,7 +222,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable the functionality to bypass waf for static file extensions.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return bypassStaticExtensions
      */
@@ -231,7 +234,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable the functionality to bypass waf for static file extensions.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param bypassStaticExtensions set the bypassStaticExtensions.
      */
@@ -243,7 +246,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Configure thresholds for confidence labels.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return confidenceOverride
      */
@@ -255,7 +258,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Configure thresholds for confidence labels.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param confidenceOverride set the confidenceOverride.
      */
@@ -267,7 +270,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Creator name.
      * Field introduced in 17.2.4.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return createdBy
      */
@@ -279,7 +282,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Creator name.
      * Field introduced in 17.2.4.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param createdBy set the createdBy.
      */
@@ -290,7 +293,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Override attributes for crs rules.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crsOverrides
      */
@@ -302,7 +305,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method. this will set the crsOverrides
      * Override attributes for crs rules.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crsOverrides
      */
@@ -314,7 +317,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method this will set the crsOverrides
      * Override attributes for crs rules.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crsOverrides
      */
@@ -329,7 +332,7 @@ public class WafPolicy extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -340,7 +343,7 @@ public class WafPolicy extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -352,7 +355,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable application learning for this waf policy.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableAppLearning
      */
@@ -364,7 +367,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable application learning for this waf policy.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableAppLearning set the enableAppLearning.
      */
@@ -377,7 +380,7 @@ public class WafPolicy extends AviRestResource  {
      * Enable application learning based rule updates on the waf profile.
      * Rules will be programmed in dedicated waf learning group.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableAutoRuleUpdates
      */
@@ -390,7 +393,7 @@ public class WafPolicy extends AviRestResource  {
      * Enable application learning based rule updates on the waf profile.
      * Rules will be programmed in dedicated waf learning group.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableAutoRuleUpdates set the enableAutoRuleUpdates.
      */
@@ -403,7 +406,7 @@ public class WafPolicy extends AviRestResource  {
      * Enable dynamic regex generation for positive security model rules.
      * This is an experimental feature and shouldn't be used in production.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableRegexLearning
      */
@@ -416,7 +419,7 @@ public class WafPolicy extends AviRestResource  {
      * Enable dynamic regex generation for positive security model rules.
      * This is an experimental feature and shouldn't be used in production.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableRegexLearning set the enableRegexLearning.
      */
@@ -430,7 +433,7 @@ public class WafPolicy extends AviRestResource  {
      * This can be 'open' or 'closed'.
      * Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED.
      * Field introduced in 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_FAILURE_MODE_OPEN".
      * @return failureMode
      */
@@ -444,7 +447,7 @@ public class WafPolicy extends AviRestResource  {
      * This can be 'open' or 'closed'.
      * Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED.
      * Field introduced in 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_FAILURE_MODE_OPEN".
      * @param failureMode set the failureMode.
      */
@@ -457,7 +460,7 @@ public class WafPolicy extends AviRestResource  {
      * Geo location mapping database used by this wafpolicy.
      * It is a reference to an object of type geodb.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoDbRef
      */
@@ -470,7 +473,7 @@ public class WafPolicy extends AviRestResource  {
      * Geo location mapping database used by this wafpolicy.
      * It is a reference to an object of type geodb.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param geoDbRef set the geoDbRef.
      */
@@ -482,7 +485,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Parameters for tuning application learning.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return learningParams
      */
@@ -494,7 +497,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Parameters for tuning application learning.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param learningParams set the learningParams.
      */
@@ -505,8 +508,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -518,8 +520,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method. this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -531,8 +532,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -549,7 +549,7 @@ public class WafPolicy extends AviRestResource  {
      * Minimum confidence label required for auto rule updates.
      * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "CONFIDENCE_VERY_HIGH".
      * @return minConfidence
      */
@@ -562,7 +562,7 @@ public class WafPolicy extends AviRestResource  {
      * Minimum confidence label required for auto rule updates.
      * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "CONFIDENCE_VERY_HIGH".
      * @param minConfidence set the minConfidence.
      */
@@ -575,9 +575,9 @@ public class WafPolicy extends AviRestResource  {
      * Waf policy mode.
      * This can be detection or enforcement.
      * It can be overwritten by rules if allow_mode_delegation is set.
-     * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
+     * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_MODE_DETECTION_ONLY".
      * @return mode
      */
@@ -590,9 +590,9 @@ public class WafPolicy extends AviRestResource  {
      * Waf policy mode.
      * This can be detection or enforcement.
      * It can be overwritten by rules if allow_mode_delegation is set.
-     * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
+     * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_MODE_DETECTION_ONLY".
      * @param mode set the mode.
      */
@@ -603,7 +603,7 @@ public class WafPolicy extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -614,7 +614,7 @@ public class WafPolicy extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -628,7 +628,7 @@ public class WafPolicy extends AviRestResource  {
      * This is used to select rules based on the paranoia-level tag.
      * Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_PARANOIA_LEVEL_LOW".
      * @return paranoiaLevel
      */
@@ -642,7 +642,7 @@ public class WafPolicy extends AviRestResource  {
      * This is used to select rules based on the paranoia-level tag.
      * Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_PARANOIA_LEVEL_LOW".
      * @param paranoiaLevel set the paranoiaLevel.
      */
@@ -656,7 +656,7 @@ public class WafPolicy extends AviRestResource  {
      * This is used to describe how the request or parts of the request should look like.
      * It is executed in the request body phase of avi waf.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return positiveSecurityModel
      */
@@ -670,7 +670,7 @@ public class WafPolicy extends AviRestResource  {
      * This is used to describe how the request or parts of the request should look like.
      * It is executed in the request body phase of avi waf.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param positiveSecurityModel set the positiveSecurityModel.
      */
@@ -682,7 +682,7 @@ public class WafPolicy extends AviRestResource  {
      * Waf rules are categorized in to groups based on their characterization.
      * These groups are created by the user and will be enforced after the crs groups.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return postCrsGroups
      */
@@ -695,7 +695,7 @@ public class WafPolicy extends AviRestResource  {
      * Waf rules are categorized in to groups based on their characterization.
      * These groups are created by the user and will be enforced after the crs groups.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return postCrsGroups
      */
@@ -708,7 +708,7 @@ public class WafPolicy extends AviRestResource  {
      * Waf rules are categorized in to groups based on their characterization.
      * These groups are created by the user and will be enforced after the crs groups.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return postCrsGroups
      */
@@ -724,7 +724,7 @@ public class WafPolicy extends AviRestResource  {
      * Waf rules are categorized in to groups based on their characterization.
      * These groups are created by the user and will be  enforced before the crs groups.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return preCrsGroups
      */
@@ -737,7 +737,7 @@ public class WafPolicy extends AviRestResource  {
      * Waf rules are categorized in to groups based on their characterization.
      * These groups are created by the user and will be  enforced before the crs groups.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return preCrsGroups
      */
@@ -750,7 +750,7 @@ public class WafPolicy extends AviRestResource  {
      * Waf rules are categorized in to groups based on their characterization.
      * These groups are created by the user and will be  enforced before the crs groups.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return preCrsGroups
      */
@@ -766,7 +766,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -778,7 +778,7 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -788,14 +788,10 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * While updating crs, the system will make sure that new rules are added in detection mode.
-     * It only has an effect if the policy is in enforcement mode.
-     * In this case, the update will set new rules into detection mode by adding crs_overrides for the new rules.
-     * If this flag is not set or if the policy mode is detection, rules will be added without new crs_overrides.
-     * This option is used for the auto_update_crs workflow as well as for the ui based crs update workflow.
+     * The functionality of this flag was moved to the new use_evaluation_mode_on_crs_update flag.
+     * Field deprecated in 31.2.1.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * @return updatedCrsRulesInDetectionMode
      */
     public Boolean getUpdatedCrsRulesInDetectionMode() {
@@ -804,14 +800,10 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * While updating crs, the system will make sure that new rules are added in detection mode.
-     * It only has an effect if the policy is in enforcement mode.
-     * In this case, the update will set new rules into detection mode by adding crs_overrides for the new rules.
-     * If this flag is not set or if the policy mode is detection, rules will be added without new crs_overrides.
-     * This option is used for the auto_update_crs workflow as well as for the ui based crs update workflow.
+     * The functionality of this flag was moved to the new use_evaluation_mode_on_crs_update flag.
+     * Field deprecated in 31.2.1.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * @param updatedCrsRulesInDetectionMode set the updatedCrsRulesInDetectionMode.
      */
     public void setUpdatedCrsRulesInDetectionMode(Boolean  updatedCrsRulesInDetectionMode) {
@@ -837,8 +829,38 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * While updating crs, the system will make sure that new rules are added in evaluation mode.
+     * A crs update will set new rules into evaluation mode by adding crs_overrides for the new rules.
+     * If this flag is not set or if the old crs object was empty, the new rules will be added without crs_overrides.
+     * This option is used for the auto_update_crs workflow as well as for the ui based crs update workflow.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return useEvaluationModeOnCrsUpdate
+     */
+    public Boolean getUseEvaluationModeOnCrsUpdate() {
+        return useEvaluationModeOnCrsUpdate;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * While updating crs, the system will make sure that new rules are added in evaluation mode.
+     * A crs update will set new rules into evaluation mode by adding crs_overrides for the new rules.
+     * If this flag is not set or if the old crs object was empty, the new rules will be added without crs_overrides.
+     * This option is used for the auto_update_crs workflow as well as for the ui based crs update workflow.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param useEvaluationModeOnCrsUpdate set the useEvaluationModeOnCrsUpdate.
+     */
+    public void setUseEvaluationModeOnCrsUpdate(Boolean  useEvaluationModeOnCrsUpdate) {
+        this.useEvaluationModeOnCrsUpdate = useEvaluationModeOnCrsUpdate;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -849,7 +871,7 @@ public class WafPolicy extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -862,7 +884,7 @@ public class WafPolicy extends AviRestResource  {
      * Waf core ruleset used for the crs part of this policy.
      * It is a reference to an object of type wafcrs.
      * Field introduced in 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return wafCrsRef
      */
@@ -875,7 +897,7 @@ public class WafPolicy extends AviRestResource  {
      * Waf core ruleset used for the crs part of this policy.
      * It is a reference to an object of type wafcrs.
      * Field introduced in 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param wafCrsRef set the wafCrsRef.
      */
@@ -888,7 +910,7 @@ public class WafPolicy extends AviRestResource  {
      * Waf profile for waf policy.
      * It is a reference to an object of type wafprofile.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return wafProfileRef
      */
@@ -901,7 +923,7 @@ public class WafPolicy extends AviRestResource  {
      * Waf profile for waf policy.
      * It is a reference to an object of type wafprofile.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param wafProfileRef set the wafProfileRef.
      */
@@ -946,7 +968,8 @@ public class WafPolicy extends AviRestResource  {
   Objects.equals(this.crsOverrides, objWafPolicy.crsOverrides)&&
   Objects.equals(this.bypassStaticExtensions, objWafPolicy.bypassStaticExtensions)&&
   Objects.equals(this.autoUpdateCrs, objWafPolicy.autoUpdateCrs)&&
-  Objects.equals(this.updatedCrsRulesInDetectionMode, objWafPolicy.updatedCrsRulesInDetectionMode);
+  Objects.equals(this.updatedCrsRulesInDetectionMode, objWafPolicy.updatedCrsRulesInDetectionMode)&&
+  Objects.equals(this.useEvaluationModeOnCrsUpdate, objWafPolicy.useEvaluationModeOnCrsUpdate);
     }
 
     @Override
@@ -978,7 +1001,8 @@ public class WafPolicy extends AviRestResource  {
                         sb.append("    preCrsGroups: ").append(toIndentedString(preCrsGroups)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                         sb.append("    updatedCrsRulesInDetectionMode: ").append(toIndentedString(updatedCrsRulesInDetectionMode)).append("\n");
-                                    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+                                    sb.append("    useEvaluationModeOnCrsUpdate: ").append(toIndentedString(useEvaluationModeOnCrsUpdate)).append("\n");
+                        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    wafCrsRef: ").append(toIndentedString(wafCrsRef)).append("\n");
                         sb.append("    wafProfileRef: ").append(toIndentedString(wafProfileRef)).append("\n");
                   sb.append("}");

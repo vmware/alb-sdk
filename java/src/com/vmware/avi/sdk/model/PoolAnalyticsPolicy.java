@@ -22,7 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PoolAnalyticsPolicy  {
     @JsonProperty("enable_realtime_metrics")
-    private Boolean enableRealtimeMetrics = false;
+    private Boolean enableRealtimeMetrics;
+
+    @JsonProperty("metrics_realtime_update")
+    private MetricsRealTimeUpdate metricsRealtimeUpdate;
 
 
 
@@ -30,9 +33,9 @@ public class PoolAnalyticsPolicy  {
      * This is the getter method this will return the attribute value.
      * Enable real time metrics for server and pool metrics eg.
      * L4_server.xxx, l7_server.xxx.
+     * Field deprecated in 31.1.1.
      * Field introduced in 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return enableRealtimeMetrics
      */
     public Boolean getEnableRealtimeMetrics() {
@@ -43,13 +46,37 @@ public class PoolAnalyticsPolicy  {
      * This is the setter method to the attribute.
      * Enable real time metrics for server and pool metrics eg.
      * L4_server.xxx, l7_server.xxx.
+     * Field deprecated in 31.1.1.
      * Field introduced in 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param enableRealtimeMetrics set the enableRealtimeMetrics.
      */
     public void setEnableRealtimeMetrics(Boolean  enableRealtimeMetrics) {
         this.enableRealtimeMetrics = enableRealtimeMetrics;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable realtime metrics and its duration.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return metricsRealtimeUpdate
+     */
+    public MetricsRealTimeUpdate getMetricsRealtimeUpdate() {
+        return metricsRealtimeUpdate;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable realtime metrics and its duration.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param metricsRealtimeUpdate set the metricsRealtimeUpdate.
+     */
+    public void setMetricsRealtimeUpdate(MetricsRealTimeUpdate metricsRealtimeUpdate) {
+        this.metricsRealtimeUpdate = metricsRealtimeUpdate;
     }
 
 
@@ -62,7 +89,8 @@ public class PoolAnalyticsPolicy  {
           return false;
       }
       PoolAnalyticsPolicy objPoolAnalyticsPolicy = (PoolAnalyticsPolicy) o;
-      return   Objects.equals(this.enableRealtimeMetrics, objPoolAnalyticsPolicy.enableRealtimeMetrics);
+      return   Objects.equals(this.enableRealtimeMetrics, objPoolAnalyticsPolicy.enableRealtimeMetrics)&&
+  Objects.equals(this.metricsRealtimeUpdate, objPoolAnalyticsPolicy.metricsRealtimeUpdate);
     }
 
     @Override
@@ -70,6 +98,7 @@ public class PoolAnalyticsPolicy  {
       StringBuilder sb = new StringBuilder();
       sb.append("class PoolAnalyticsPolicy {\n");
                   sb.append("    enableRealtimeMetrics: ").append(toIndentedString(enableRealtimeMetrics)).append("\n");
+                        sb.append("    metricsRealtimeUpdate: ").append(toIndentedString(metricsRealtimeUpdate)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

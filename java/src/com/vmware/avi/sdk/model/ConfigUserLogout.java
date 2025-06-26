@@ -41,7 +41,7 @@ public class ConfigUserLogout  {
     /**
      * This is the getter method this will return the attribute value.
      * Client ip.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientIp
      */
@@ -52,7 +52,7 @@ public class ConfigUserLogout  {
     /**
      * This is the setter method to the attribute.
      * Client ip.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientIp set the clientIp.
      */
@@ -63,7 +63,7 @@ public class ConfigUserLogout  {
     /**
      * This is the getter method this will return the attribute value.
      * Error message if logging out failed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorMessage
      */
@@ -74,7 +74,7 @@ public class ConfigUserLogout  {
     /**
      * This is the setter method to the attribute.
      * Error message if logging out failed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorMessage set the errorMessage.
      */
@@ -86,7 +86,7 @@ public class ConfigUserLogout  {
      * This is the getter method this will return the attribute value.
      * Local user.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return local
      */
@@ -98,7 +98,7 @@ public class ConfigUserLogout  {
      * This is the setter method to the attribute.
      * Local user.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param local set the local.
      */
@@ -109,7 +109,7 @@ public class ConfigUserLogout  {
     /**
      * This is the getter method this will return the attribute value.
      * Status.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -120,7 +120,7 @@ public class ConfigUserLogout  {
     /**
      * This is the setter method to the attribute.
      * Status.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */
@@ -131,7 +131,7 @@ public class ConfigUserLogout  {
     /**
      * This is the getter method this will return the attribute value.
      * Request user.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return user
      */
@@ -142,7 +142,7 @@ public class ConfigUserLogout  {
     /**
      * This is the setter method to the attribute.
      * Request user.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param user set the user.
      */

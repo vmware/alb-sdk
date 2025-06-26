@@ -50,8 +50,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Available application names and the ruleset version, when the rules for an application changed the last time.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return availableApplications
      */
     public List<WafApplicationSignatureAppVersion> getAvailableApplications() {
@@ -62,8 +61,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method. this will set the availableApplications
      * Available application names and the ruleset version, when the rules for an application changed the last time.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return availableApplications
      */
     public void setAvailableApplications(List<WafApplicationSignatureAppVersion>  availableApplications) {
@@ -74,8 +72,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method this will set the availableApplications
      * Available application names and the ruleset version, when the rules for an application changed the last time.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return availableApplications
      */
     public WafApplicationSignatureProvider addAvailableApplicationsItem(WafApplicationSignatureAppVersion availableApplicationsItem) {
@@ -93,7 +90,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * Newer rules are rules where the rule id is not in the range of 2,000,000 to 2,080,000 or where the rule has a tag with a cve from 2013 or newer.
      * All other rules are ignored on rule import.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return filterRulesOnImport
      */
@@ -108,7 +105,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * Newer rules are rules where the rule id is not in the range of 2,000,000 to 2,080,000 or where the rule has a tag with a cve from 2013 or newer.
      * All other rules are ignored on rule import.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param filterRulesOnImport set the filterRulesOnImport.
      */
@@ -120,7 +117,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of application specific ruleset provider.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -132,7 +129,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of application specific ruleset provider.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -144,8 +141,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Version of signatures.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return rulesetVersion
      */
     public String getRulesetVersion() {
@@ -156,8 +152,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method to the attribute.
      * Version of signatures.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param rulesetVersion set the rulesetVersion.
      */
     public void setRulesetVersion(String  rulesetVersion) {
@@ -168,7 +163,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If this object is managed by the application signatures update service, this field contain the status of this syncronization.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceStatus
      */
@@ -180,7 +175,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method to the attribute.
      * If this object is managed by the application signatures update service, this field contain the status of this syncronization.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceStatus set the serviceStatus.
      */
@@ -192,7 +187,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -204,7 +199,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -232,7 +227,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -243,7 +238,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

@@ -21,8 +21,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ReplicationPolicy  {
-    @JsonProperty("checkpoint_ref")
-    private String checkpointRef;
+    @JsonProperty("checkpoint_uuid")
+    private String checkpointUuid;
 
     @JsonProperty("replication_mode")
     private String replicationMode = "REPLICATION_MODE_CONTINUOUS";
@@ -33,28 +33,26 @@ public class ReplicationPolicy  {
      * This is the getter method this will return the attribute value.
      * Leader's checkpoint.
      * Follower attempt to replicate configuration till this checkpoint.
-     * It is a reference to an object of type federationcheckpoint.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return checkpointRef
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * @return checkpointUuid
      */
-    public String getCheckpointRef() {
-        return checkpointRef;
+    public String getCheckpointUuid() {
+        return checkpointUuid;
     }
 
     /**
      * This is the setter method to the attribute.
      * Leader's checkpoint.
      * Follower attempt to replicate configuration till this checkpoint.
-     * It is a reference to an object of type federationcheckpoint.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param checkpointRef set the checkpointRef.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * @param checkpointUuid set the checkpointUuid.
      */
-    public void setCheckpointRef(String  checkpointRef) {
-        this.checkpointRef = checkpointRef;
+    public void setCheckpointUuid(String  checkpointUuid) {
+        this.checkpointUuid = checkpointUuid;
     }
 
     /**
@@ -62,7 +60,7 @@ public class ReplicationPolicy  {
      * Replication mode.
      * Enum options - REPLICATION_MODE_CONTINUOUS, REPLICATION_MODE_MANUAL, REPLICATION_MODE_ADAPTIVE.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "REPLICATION_MODE_CONTINUOUS".
      * @return replicationMode
      */
@@ -75,7 +73,7 @@ public class ReplicationPolicy  {
      * Replication mode.
      * Enum options - REPLICATION_MODE_CONTINUOUS, REPLICATION_MODE_MANUAL, REPLICATION_MODE_ADAPTIVE.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "REPLICATION_MODE_CONTINUOUS".
      * @param replicationMode set the replicationMode.
      */
@@ -94,14 +92,14 @@ public class ReplicationPolicy  {
       }
       ReplicationPolicy objReplicationPolicy = (ReplicationPolicy) o;
       return   Objects.equals(this.replicationMode, objReplicationPolicy.replicationMode)&&
-  Objects.equals(this.checkpointRef, objReplicationPolicy.checkpointRef);
+  Objects.equals(this.checkpointUuid, objReplicationPolicy.checkpointUuid);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class ReplicationPolicy {\n");
-                  sb.append("    checkpointRef: ").append(toIndentedString(checkpointRef)).append("\n");
+                  sb.append("    checkpointUuid: ").append(toIndentedString(checkpointUuid)).append("\n");
                         sb.append("    replicationMode: ").append(toIndentedString(replicationMode)).append("\n");
                   sb.append("}");
       return sb.toString();

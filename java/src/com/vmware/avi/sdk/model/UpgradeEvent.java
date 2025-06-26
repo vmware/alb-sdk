@@ -49,7 +49,7 @@ public class UpgradeEvent  {
      * Time taken to complete upgrade event in seconds.
      * Field introduced in 18.2.6.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return duration
      */
@@ -62,7 +62,7 @@ public class UpgradeEvent  {
      * Time taken to complete upgrade event in seconds.
      * Field introduced in 18.2.6.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param duration set the duration.
      */
@@ -74,7 +74,7 @@ public class UpgradeEvent  {
      * This is the getter method this will return the attribute value.
      * Task end time.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endTime
      */
@@ -86,7 +86,7 @@ public class UpgradeEvent  {
      * This is the setter method to the attribute.
      * Task end time.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endTime set the endTime.
      */
@@ -98,7 +98,7 @@ public class UpgradeEvent  {
      * This is the getter method this will return the attribute value.
      * Ip of the node.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -110,7 +110,7 @@ public class UpgradeEvent  {
      * This is the setter method to the attribute.
      * Ip of the node.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -122,7 +122,7 @@ public class UpgradeEvent  {
      * This is the getter method this will return the attribute value.
      * Upgrade event message if any.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return message
      */
@@ -134,7 +134,7 @@ public class UpgradeEvent  {
      * This is the setter method to the attribute.
      * Upgrade event message if any.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param message set the message.
      */
@@ -146,7 +146,7 @@ public class UpgradeEvent  {
      * This is the getter method this will return the attribute value.
      * Task start time.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startTime
      */
@@ -158,7 +158,7 @@ public class UpgradeEvent  {
      * This is the setter method to the attribute.
      * Task start time.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startTime set the startTime.
      */
@@ -170,7 +170,7 @@ public class UpgradeEvent  {
      * This is the getter method this will return the attribute value.
      * Upgrade event status.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return status
      */
@@ -182,7 +182,7 @@ public class UpgradeEvent  {
      * This is the setter method to the attribute.
      * Upgrade event status.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param status set the status.
      */
@@ -193,7 +193,7 @@ public class UpgradeEvent  {
      * This is the getter method this will return the attribute value.
      * Sub tasks executed on each node.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subTasks
      */
@@ -205,7 +205,7 @@ public class UpgradeEvent  {
      * This is the setter method. this will set the subTasks
      * Sub tasks executed on each node.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subTasks
      */
@@ -217,7 +217,7 @@ public class UpgradeEvent  {
      * This is the setter method this will set the subTasks
      * Sub tasks executed on each node.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subTasks
      */

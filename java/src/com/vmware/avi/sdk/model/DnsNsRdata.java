@@ -36,7 +36,7 @@ public class DnsNsRdata  {
      * This is the getter method this will return the attribute value.
      * Ipv6 address for name server.
      * Field introduced in 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip6Address
      */
@@ -48,7 +48,7 @@ public class DnsNsRdata  {
      * This is the setter method to the attribute.
      * Ipv6 address for name server.
      * Field introduced in 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip6Address set the ip6Address.
      */
@@ -60,7 +60,7 @@ public class DnsNsRdata  {
      * This is the getter method this will return the attribute value.
      * Ip address for name server.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddress
      */
@@ -72,7 +72,7 @@ public class DnsNsRdata  {
      * This is the setter method to the attribute.
      * Ip address for name server.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipAddress set the ipAddress.
      */
@@ -84,7 +84,7 @@ public class DnsNsRdata  {
      * This is the getter method this will return the attribute value.
      * Name server name.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsname
      */
@@ -96,7 +96,7 @@ public class DnsNsRdata  {
      * This is the setter method to the attribute.
      * Name server name.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsname set the nsname.
      */

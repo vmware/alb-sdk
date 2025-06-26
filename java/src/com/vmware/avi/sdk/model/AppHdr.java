@@ -35,7 +35,7 @@ public class AppHdr  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - SENSITIVE, INSENSITIVE.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrMatchCase
      */
@@ -46,7 +46,7 @@ public class AppHdr  {
     /**
      * This is the setter method to the attribute.
      * Enum options - SENSITIVE, INSENSITIVE.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hdrMatchCase set the hdrMatchCase.
      */
@@ -56,7 +56,7 @@ public class AppHdr  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrName
      */
@@ -66,7 +66,7 @@ public class AppHdr  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hdrName set the hdrName.
      */
@@ -78,10 +78,10 @@ public class AppHdr  {
      * This is the getter method this will return the attribute value.
      * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
      * REGEX_DOES_NOT_MATCH.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values-
-     * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), basic edition(allowed values-
-     * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values-
+     * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), basic (allowed values-
+     * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrStringOp
      */
@@ -93,10 +93,10 @@ public class AppHdr  {
      * This is the setter method to the attribute.
      * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
      * REGEX_DOES_NOT_MATCH.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values-
-     * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), basic edition(allowed values-
-     * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values-
+     * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal), basic (allowed values-
+     * begins_with,does_not_begin_with,contains,does_not_contain,ends_with,does_not_end_with,equals,does_not_equal) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hdrStringOp set the hdrStringOp.
      */

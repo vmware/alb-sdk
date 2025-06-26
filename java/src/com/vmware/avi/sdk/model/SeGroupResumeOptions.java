@@ -37,7 +37,7 @@ public class SeGroupResumeOptions  {
      * The error recovery action configured for a se group.
      * Enum options - ROLLBACK_UPGRADE_OPS_ON_ERROR, SUSPEND_UPGRADE_OPS_ON_ERROR, CONTINUE_UPGRADE_OPS_ON_ERROR.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SUSPEND_UPGRADE_OPS_ON_ERROR".
      * @return actionOnError
      */
@@ -50,7 +50,7 @@ public class SeGroupResumeOptions  {
      * The error recovery action configured for a se group.
      * Enum options - ROLLBACK_UPGRADE_OPS_ON_ERROR, SUSPEND_UPGRADE_OPS_ON_ERROR, CONTINUE_UPGRADE_OPS_ON_ERROR.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SUSPEND_UPGRADE_OPS_ON_ERROR".
      * @param actionOnError set the actionOnError.
      */
@@ -62,7 +62,7 @@ public class SeGroupResumeOptions  {
      * This is the getter method this will return the attribute value.
      * Allow disruptive mechanism.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disruptive
      */
@@ -74,7 +74,7 @@ public class SeGroupResumeOptions  {
      * This is the setter method to the attribute.
      * Allow disruptive mechanism.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disruptive set the disruptive.
      */
@@ -86,7 +86,7 @@ public class SeGroupResumeOptions  {
      * This is the getter method this will return the attribute value.
      * Skip upgrade on suspended se(s).
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return skipSuspended
      */
@@ -98,7 +98,7 @@ public class SeGroupResumeOptions  {
      * This is the setter method to the attribute.
      * Skip upgrade on suspended se(s).
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param skipSuspended set the skipSuspended.
      */

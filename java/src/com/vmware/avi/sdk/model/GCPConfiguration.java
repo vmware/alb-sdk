@@ -61,7 +61,7 @@ public class GCPConfiguration  {
      * Credentials to access google cloud platform apis.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudCredentialsRef
      */
@@ -74,7 +74,7 @@ public class GCPConfiguration  {
      * Credentials to access google cloud platform apis.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudCredentialsRef set the cloudCredentialsRef.
      */
@@ -86,7 +86,7 @@ public class GCPConfiguration  {
      * This is the getter method this will return the attribute value.
      * Encryption keys for google cloud services.
      * Field introduced in 18.2.10, 20.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return encryptionKeys
      */
@@ -98,7 +98,7 @@ public class GCPConfiguration  {
      * This is the setter method to the attribute.
      * Encryption keys for google cloud services.
      * Field introduced in 18.2.10, 20.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param encryptionKeys set the encryptionKeys.
      */
@@ -109,7 +109,7 @@ public class GCPConfiguration  {
      * This is the getter method this will return the attribute value.
      * Firewall rule network target tags which will be applied on service engines to allow ingress and egress traffic for service engines.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return firewallTargetTags
      */
@@ -121,7 +121,7 @@ public class GCPConfiguration  {
      * This is the setter method. this will set the firewallTargetTags
      * Firewall rule network target tags which will be applied on service engines to allow ingress and egress traffic for service engines.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return firewallTargetTags
      */
@@ -133,7 +133,7 @@ public class GCPConfiguration  {
      * This is the setter method this will set the firewallTargetTags
      * Firewall rule network target tags which will be applied on service engines to allow ingress and egress traffic for service engines.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return firewallTargetTags
      */
@@ -149,7 +149,7 @@ public class GCPConfiguration  {
      * This is the getter method this will return the attribute value.
      * Email of gcp service account to be associated to the service engines.
      * Field introduced in 20.1.7, 21.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gcpServiceAccountEmail
      */
@@ -161,7 +161,7 @@ public class GCPConfiguration  {
      * This is the setter method to the attribute.
      * Email of gcp service account to be associated to the service engines.
      * Field introduced in 20.1.7, 21.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gcpServiceAccountEmail set the gcpServiceAccountEmail.
      */
@@ -175,7 +175,7 @@ public class GCPConfiguration  {
      * This image will be deleted once the image is created in google compute images.
      * By default, a bucket will be created if this field is not specified.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gcsBucketName
      */
@@ -189,7 +189,7 @@ public class GCPConfiguration  {
      * This image will be deleted once the image is created in google compute images.
      * By default, a bucket will be created if this field is not specified.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gcsBucketName set the gcsBucketName.
      */
@@ -203,7 +203,7 @@ public class GCPConfiguration  {
      * This image will be deleted once the image is created in google compute images.
      * By default, service engine project id will be used.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gcsProjectId
      */
@@ -217,7 +217,7 @@ public class GCPConfiguration  {
      * This image will be deleted once the image is created in google compute images.
      * By default, service engine project id will be used.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gcsProjectId set the gcsProjectId.
      */
@@ -229,7 +229,7 @@ public class GCPConfiguration  {
      * This is the getter method this will return the attribute value.
      * Google cloud platform vpc network configuration for the service engines.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkConfig
      */
@@ -241,7 +241,7 @@ public class GCPConfiguration  {
      * This is the setter method to the attribute.
      * Google cloud platform vpc network configuration for the service engines.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkConfig set the networkConfig.
      */
@@ -253,7 +253,7 @@ public class GCPConfiguration  {
      * This is the getter method this will return the attribute value.
      * Google cloud platform region name where service engines will be spawned.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return regionName
      */
@@ -265,7 +265,7 @@ public class GCPConfiguration  {
      * This is the setter method to the attribute.
      * Google cloud platform region name where service engines will be spawned.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param regionName set the regionName.
      */
@@ -277,7 +277,7 @@ public class GCPConfiguration  {
      * This is the getter method this will return the attribute value.
      * Google cloud platform project id where service engines will be spawned.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seProjectId
      */
@@ -289,7 +289,7 @@ public class GCPConfiguration  {
      * This is the setter method to the attribute.
      * Google cloud platform project id where service engines will be spawned.
      * Field introduced in 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seProjectId set the seProjectId.
      */
@@ -301,7 +301,7 @@ public class GCPConfiguration  {
      * This is the getter method this will return the attribute value.
      * Vip allocation strategy defines how the vips will be created in google cloud.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipAllocationStrategy
      */
@@ -313,7 +313,7 @@ public class GCPConfiguration  {
      * This is the setter method to the attribute.
      * Vip allocation strategy defines how the vips will be created in google cloud.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipAllocationStrategy set the vipAllocationStrategy.
      */
@@ -325,7 +325,7 @@ public class GCPConfiguration  {
      * Google cloud platform zones where service engines will be distributed for ha.
      * Field introduced in 18.2.1.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */
@@ -338,7 +338,7 @@ public class GCPConfiguration  {
      * Google cloud platform zones where service engines will be distributed for ha.
      * Field introduced in 18.2.1.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */
@@ -351,7 +351,7 @@ public class GCPConfiguration  {
      * Google cloud platform zones where service engines will be distributed for ha.
      * Field introduced in 18.2.1.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */

@@ -32,7 +32,7 @@ public class AlertMetricThreshold  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - ALERT_OP_LT, ALERT_OP_LE, ALERT_OP_EQ, ALERT_OP_NE, ALERT_OP_GE, ALERT_OP_GT.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ALERT_OP_GT".
      * @return comparator
      */
@@ -43,7 +43,7 @@ public class AlertMetricThreshold  {
     /**
      * This is the setter method to the attribute.
      * Enum options - ALERT_OP_LT, ALERT_OP_LE, ALERT_OP_EQ, ALERT_OP_NE, ALERT_OP_GE, ALERT_OP_GT.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ALERT_OP_GT".
      * @param comparator set the comparator.
      */
@@ -54,7 +54,7 @@ public class AlertMetricThreshold  {
     /**
      * This is the getter method this will return the attribute value.
      * Metric threshold for comparison.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return threshold
      */
@@ -65,7 +65,7 @@ public class AlertMetricThreshold  {
     /**
      * This is the setter method to the attribute.
      * Metric threshold for comparison.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param threshold set the threshold.
      */

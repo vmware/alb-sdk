@@ -36,7 +36,7 @@ public class NatMatchTarget  {
      * This is the getter method this will return the attribute value.
      * Destination ip of the packet.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return destinationIp
      */
@@ -48,7 +48,7 @@ public class NatMatchTarget  {
      * This is the setter method to the attribute.
      * Destination ip of the packet.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param destinationIp set the destinationIp.
      */
@@ -60,7 +60,7 @@ public class NatMatchTarget  {
      * This is the getter method this will return the attribute value.
      * Services like port-matching and protocol.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return services
      */
@@ -72,7 +72,7 @@ public class NatMatchTarget  {
      * This is the setter method to the attribute.
      * Services like port-matching and protocol.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param services set the services.
      */
@@ -84,7 +84,7 @@ public class NatMatchTarget  {
      * This is the getter method this will return the attribute value.
      * Source ip of the packet.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sourceIp
      */
@@ -96,7 +96,7 @@ public class NatMatchTarget  {
      * This is the setter method to the attribute.
      * Source ip of the packet.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sourceIp set the sourceIp.
      */

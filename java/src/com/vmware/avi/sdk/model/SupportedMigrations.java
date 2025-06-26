@@ -42,6 +42,18 @@ public class SupportedMigrations  {
     @JsonProperty("controller_min_total_disk")
     private Integer controllerMinTotalDisk = 128;
 
+    @JsonProperty("dryrun_min_cores")
+    private Integer dryrunMinCores = 1;
+
+    @JsonProperty("dryrun_min_free_disk_size")
+    private Integer dryrunMinFreeDiskSize = 18;
+
+    @JsonProperty("dryrun_min_memory")
+    private Float dryrunMinMemory = 1.0f;
+
+    @JsonProperty("dryrun_total_memory_required")
+    private Float dryrunTotalMemoryRequired = 12.0f;
+
     @JsonProperty("max_active_versions")
     private Integer maxActiveVersions = 2;
 
@@ -84,7 +96,7 @@ public class SupportedMigrations  {
      * This is the getter method this will return the attribute value.
      * Minimum accepted api version.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return apiVersion
      */
@@ -96,7 +108,7 @@ public class SupportedMigrations  {
      * This is the setter method to the attribute.
      * Minimum accepted api version.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param apiVersion set the apiVersion.
      */
@@ -109,7 +121,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on controller host for this image installation.
      * Field introduced in 18.2.6.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return controllerHostMinFreeDiskSize
      */
@@ -122,7 +134,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on controller host for this image installation.
      * Field introduced in 18.2.6.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param controllerHostMinFreeDiskSize set the controllerHostMinFreeDiskSize.
      */
@@ -134,8 +146,7 @@ public class SupportedMigrations  {
      * This is the getter method this will return the attribute value.
      * Minimum number of cores required for controller.
      * Field introduced in 18.2.10, 20.1.2.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @return controllerMinCores
      */
@@ -147,8 +158,7 @@ public class SupportedMigrations  {
      * This is the setter method to the attribute.
      * Minimum number of cores required for controller.
      * Field introduced in 18.2.10, 20.1.2.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @param controllerMinCores set the controllerMinCores.
      */
@@ -160,7 +170,7 @@ public class SupportedMigrations  {
      * This is the getter method this will return the attribute value.
      * Minimum supported docker version required for controller.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "1.6.1".
      * @return controllerMinDockerVersion
      */
@@ -172,7 +182,7 @@ public class SupportedMigrations  {
      * This is the setter method to the attribute.
      * Minimum supported docker version required for controller.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "1.6.1".
      * @param controllerMinDockerVersion set the controllerMinDockerVersion.
      */
@@ -185,7 +195,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on controller for this image installation.
      * Field introduced in 18.2.6.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return controllerMinFreeDiskSize
      */
@@ -198,7 +208,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on controller for this image installation.
      * Field introduced in 18.2.6.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param controllerMinFreeDiskSize set the controllerMinFreeDiskSize.
      */
@@ -211,8 +221,7 @@ public class SupportedMigrations  {
      * Minimum memory required(in gb) for controller.
      * Field introduced in 18.2.10, 20.1.2.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 24.
      * @return controllerMinMemory
      */
@@ -225,8 +234,7 @@ public class SupportedMigrations  {
      * Minimum memory required(in gb) for controller.
      * Field introduced in 18.2.10, 20.1.2.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 24.
      * @param controllerMinMemory set the controllerMinMemory.
      */
@@ -239,8 +247,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) for controller.
      * Field introduced in 18.2.10, 20.1.2.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @return controllerMinTotalDisk
      */
@@ -253,8 +260,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) for controller.
      * Field introduced in 18.2.10, 20.1.2.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @param controllerMinTotalDisk set the controllerMinTotalDisk.
      */
@@ -264,9 +270,111 @@ public class SupportedMigrations  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Minimum cpu cores required to perform dryrun operation for this image.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @return dryrunMinCores
+     */
+    public Integer getDryrunMinCores() {
+        return dryrunMinCores;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Minimum cpu cores required to perform dryrun operation for this image.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @param dryrunMinCores set the dryrunMinCores.
+     */
+    public void setDryrunMinCores(Integer  dryrunMinCores) {
+        this.dryrunMinCores = dryrunMinCores;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Minimum free disk space required (in gb) to perform dryrun operation for this image.
+     * Field introduced in 31.1.1.
+     * Unit is gb.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 18.
+     * @return dryrunMinFreeDiskSize
+     */
+    public Integer getDryrunMinFreeDiskSize() {
+        return dryrunMinFreeDiskSize;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Minimum free disk space required (in gb) to perform dryrun operation for this image.
+     * Field introduced in 31.1.1.
+     * Unit is gb.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 18.
+     * @param dryrunMinFreeDiskSize set the dryrunMinFreeDiskSize.
+     */
+    public void setDryrunMinFreeDiskSize(Integer  dryrunMinFreeDiskSize) {
+        this.dryrunMinFreeDiskSize = dryrunMinFreeDiskSize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Minimum memory required to perform dryrun operation for this image.
+     * Field introduced in 31.1.1.
+     * Unit is gb.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
+     * @return dryrunMinMemory
+     */
+    public Float getDryrunMinMemory() {
+        return dryrunMinMemory;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Minimum memory required to perform dryrun operation for this image.
+     * Field introduced in 31.1.1.
+     * Unit is gb.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
+     * @param dryrunMinMemory set the dryrunMinMemory.
+     */
+    public void setDryrunMinMemory(Float  dryrunMinMemory) {
+        this.dryrunMinMemory = dryrunMinMemory;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total memory required to perform full upgrade dryrun operation for this image.
+     * Field introduced in 31.2.1.
+     * Unit is gb.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 12.0f.
+     * @return dryrunTotalMemoryRequired
+     */
+    public Float getDryrunTotalMemoryRequired() {
+        return dryrunTotalMemoryRequired;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total memory required to perform full upgrade dryrun operation for this image.
+     * Field introduced in 31.2.1.
+     * Unit is gb.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 12.0f.
+     * @param dryrunTotalMemoryRequired set the dryrunTotalMemoryRequired.
+     */
+    public void setDryrunTotalMemoryRequired(Float  dryrunTotalMemoryRequired) {
+        this.dryrunTotalMemoryRequired = dryrunTotalMemoryRequired;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Supported active versions for this image.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return maxActiveVersions
      */
@@ -278,7 +386,7 @@ public class SupportedMigrations  {
      * This is the setter method to the attribute.
      * Supported active versions for this image.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param maxActiveVersions set the maxActiveVersions.
      */
@@ -290,7 +398,7 @@ public class SupportedMigrations  {
      * This is the getter method this will return the attribute value.
      * Minimum supported api version.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return minSupportedApiVersion
      */
@@ -302,7 +410,7 @@ public class SupportedMigrations  {
      * This is the setter method to the attribute.
      * Minimum supported api version.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param minSupportedApiVersion set the minSupportedApiVersion.
      */
@@ -315,7 +423,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on podman controller host for this image installation.
      * Field introduced in 21.1.4.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 24.
      * @return podmanControllerHostMinFreeDiskSize
      */
@@ -328,7 +436,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on podman controller host for this image installation.
      * Field introduced in 21.1.4.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 24.
      * @param podmanControllerHostMinFreeDiskSize set the podmanControllerHostMinFreeDiskSize.
      */
@@ -341,7 +449,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on podman se host for this image installation.
      * Field introduced in 21.1.4.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 12.
      * @return podmanSeHostMinFreeDiskSize
      */
@@ -354,7 +462,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on podman se host for this image installation.
      * Field introduced in 21.1.4.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 12.
      * @param podmanSeHostMinFreeDiskSize set the podmanSeHostMinFreeDiskSize.
      */
@@ -367,7 +475,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on controller for rollback.
      * Field introduced in 18.2.6.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return rollbackControllerDiskSpace
      */
@@ -380,7 +488,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on controller for rollback.
      * Field introduced in 18.2.6.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param rollbackControllerDiskSpace set the rollbackControllerDiskSpace.
      */
@@ -393,7 +501,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on se for rollback.
      * Field introduced in 18.2.6.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return rollbackSeDiskSpace
      */
@@ -406,7 +514,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on se for rollback.
      * Field introduced in 18.2.6.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param rollbackSeDiskSpace set the rollbackSeDiskSpace.
      */
@@ -419,7 +527,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on se host for this image installation.
      * Field introduced in 18.2.6.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return seHostMinFreeDiskSize
      */
@@ -432,7 +540,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on se host for this image installation.
      * Field introduced in 18.2.6.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param seHostMinFreeDiskSize set the seHostMinFreeDiskSize.
      */
@@ -444,8 +552,7 @@ public class SupportedMigrations  {
      * This is the getter method this will return the attribute value.
      * Minimum  number of cores required for se.
      * Field introduced in 18.2.10, 20.1.2.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return seMinCores
      */
@@ -457,8 +564,7 @@ public class SupportedMigrations  {
      * This is the setter method to the attribute.
      * Minimum  number of cores required for se.
      * Field introduced in 18.2.10, 20.1.2.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param seMinCores set the seMinCores.
      */
@@ -471,7 +577,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on se for this image installation for non-fips mode(+1 gb for fips mode).
      * Field introduced in 18.2.6.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return seMinFreeDiskSize
      */
@@ -484,7 +590,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) on se for this image installation for non-fips mode(+1 gb for fips mode).
      * Field introduced in 18.2.6.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param seMinFreeDiskSize set the seMinFreeDiskSize.
      */
@@ -497,8 +603,7 @@ public class SupportedMigrations  {
      * Minimum  memory required(in gb) for se.
      * Field introduced in 18.2.10, 20.1.2.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return seMinMemory
      */
@@ -511,8 +616,7 @@ public class SupportedMigrations  {
      * Minimum  memory required(in gb) for se.
      * Field introduced in 18.2.10, 20.1.2.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param seMinMemory set the seMinMemory.
      */
@@ -525,8 +629,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) for se.
      * Field introduced in 18.2.10, 20.1.2.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return seMinTotalDisk
      */
@@ -539,8 +642,7 @@ public class SupportedMigrations  {
      * Minimum space required(in gb) for se.
      * Field introduced in 18.2.10, 20.1.2.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param seMinTotalDisk set the seMinTotalDisk.
      */
@@ -551,7 +653,7 @@ public class SupportedMigrations  {
      * This is the getter method this will return the attribute value.
      * Supported compatible versions for this image.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return versions
      */
@@ -563,7 +665,7 @@ public class SupportedMigrations  {
      * This is the setter method. this will set the versions
      * Supported compatible versions for this image.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return versions
      */
@@ -575,7 +677,7 @@ public class SupportedMigrations  {
      * This is the setter method this will set the versions
      * Supported compatible versions for this image.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return versions
      */
@@ -615,7 +717,11 @@ public class SupportedMigrations  {
   Objects.equals(this.controllerMinDockerVersion, objSupportedMigrations.controllerMinDockerVersion)&&
   Objects.equals(this.minSupportedApiVersion, objSupportedMigrations.minSupportedApiVersion)&&
   Objects.equals(this.podmanControllerHostMinFreeDiskSize, objSupportedMigrations.podmanControllerHostMinFreeDiskSize)&&
-  Objects.equals(this.podmanSeHostMinFreeDiskSize, objSupportedMigrations.podmanSeHostMinFreeDiskSize);
+  Objects.equals(this.podmanSeHostMinFreeDiskSize, objSupportedMigrations.podmanSeHostMinFreeDiskSize)&&
+  Objects.equals(this.dryrunMinCores, objSupportedMigrations.dryrunMinCores)&&
+  Objects.equals(this.dryrunMinMemory, objSupportedMigrations.dryrunMinMemory)&&
+  Objects.equals(this.dryrunMinFreeDiskSize, objSupportedMigrations.dryrunMinFreeDiskSize)&&
+  Objects.equals(this.dryrunTotalMemoryRequired, objSupportedMigrations.dryrunTotalMemoryRequired);
     }
 
     @Override
@@ -629,6 +735,10 @@ public class SupportedMigrations  {
                         sb.append("    controllerMinFreeDiskSize: ").append(toIndentedString(controllerMinFreeDiskSize)).append("\n");
                         sb.append("    controllerMinMemory: ").append(toIndentedString(controllerMinMemory)).append("\n");
                         sb.append("    controllerMinTotalDisk: ").append(toIndentedString(controllerMinTotalDisk)).append("\n");
+                        sb.append("    dryrunMinCores: ").append(toIndentedString(dryrunMinCores)).append("\n");
+                        sb.append("    dryrunMinFreeDiskSize: ").append(toIndentedString(dryrunMinFreeDiskSize)).append("\n");
+                        sb.append("    dryrunMinMemory: ").append(toIndentedString(dryrunMinMemory)).append("\n");
+                        sb.append("    dryrunTotalMemoryRequired: ").append(toIndentedString(dryrunTotalMemoryRequired)).append("\n");
                         sb.append("    maxActiveVersions: ").append(toIndentedString(maxActiveVersions)).append("\n");
                         sb.append("    minSupportedApiVersion: ").append(toIndentedString(minSupportedApiVersion)).append("\n");
                         sb.append("    podmanControllerHostMinFreeDiskSize: ").append(toIndentedString(podmanControllerHostMinFreeDiskSize)).append("\n");

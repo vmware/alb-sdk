@@ -45,7 +45,7 @@ public class ALBServicesFileDownloadMetadata  {
      * This is the getter method this will return the attribute value.
      * Checksum of the file.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return checksum
      */
@@ -57,7 +57,7 @@ public class ALBServicesFileDownloadMetadata  {
      * This is the setter method to the attribute.
      * Checksum of the file.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param checksum set the checksum.
      */
@@ -69,7 +69,7 @@ public class ALBServicesFileDownloadMetadata  {
      * This is the getter method this will return the attribute value.
      * Currently only md5 checksum type is supported.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return checksumType
      */
@@ -81,7 +81,7 @@ public class ALBServicesFileDownloadMetadata  {
      * This is the setter method to the attribute.
      * Currently only md5 checksum type is supported.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param checksumType set the checksumType.
      */
@@ -93,7 +93,7 @@ public class ALBServicesFileDownloadMetadata  {
      * This is the getter method this will return the attribute value.
      * Checksum size in bytes.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return chunkSize
      */
@@ -105,7 +105,7 @@ public class ALBServicesFileDownloadMetadata  {
      * This is the setter method to the attribute.
      * Checksum size in bytes.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param chunkSize set the chunkSize.
      */
@@ -117,7 +117,7 @@ public class ALBServicesFileDownloadMetadata  {
      * This is the getter method this will return the attribute value.
      * Whether the file can be downloaded in parts or not.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return isMultiPartDownload
      */
@@ -129,7 +129,7 @@ public class ALBServicesFileDownloadMetadata  {
      * This is the setter method to the attribute.
      * Whether the file can be downloaded in parts or not.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param isMultiPartDownload set the isMultiPartDownload.
      */
@@ -141,7 +141,7 @@ public class ALBServicesFileDownloadMetadata  {
      * This is the getter method this will return the attribute value.
      * Sigend url of the file from pulse.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return signedUrl
      */
@@ -153,7 +153,7 @@ public class ALBServicesFileDownloadMetadata  {
      * This is the setter method to the attribute.
      * Sigend url of the file from pulse.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param signedUrl set the signedUrl.
      */
@@ -165,7 +165,7 @@ public class ALBServicesFileDownloadMetadata  {
      * This is the getter method this will return the attribute value.
      * Total size of the file in bytes.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return totalSize
      */
@@ -177,7 +177,7 @@ public class ALBServicesFileDownloadMetadata  {
      * This is the setter method to the attribute.
      * Total size of the file in bytes.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param totalSize set the totalSize.
      */

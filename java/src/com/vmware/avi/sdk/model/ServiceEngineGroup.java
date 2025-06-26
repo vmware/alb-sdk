@@ -48,6 +48,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("archive_shm_limit")
     private Integer archiveShmLimit = 8;
 
+    @JsonProperty("arp_cache_timeout")
+    private Integer arpCacheTimeout = 1200;
+
     @JsonProperty("async_ssl")
     private Boolean asyncSsl = false;
 
@@ -210,6 +213,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("enable_pcap_tx_ring")
     private Boolean enablePcapTxRing;
 
+    @JsonProperty("enable_qat")
+    private Boolean enableQat = false;
+
     @JsonProperty("ephemeral_portrange_end")
     private Integer ephemeralPortrangeEnd;
 
@@ -236,6 +242,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("grpc_channel_connect_timeout")
     private Integer grpcChannelConnectTimeout = 15;
+
+    @JsonProperty("gve_enabled")
+    private Boolean gveEnabled = false;
 
     @JsonProperty("ha_mode")
     private String haMode;
@@ -293,6 +302,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("kni_allowed_server_ports")
     private List<KniPortRange> kniAllowedServerPorts;
+
+    @JsonProperty("kv_val_max_len")
+    private Integer kvValMaxLen = 4096;
 
     @JsonProperty("l7_conns_per_core")
     private Integer l7ConnsPerCore = 16384;
@@ -381,6 +393,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("max_memory_per_mempool")
     private Integer maxMemoryPerMempool = 64;
 
+    @JsonProperty("max_num_http_sessions_to_store")
+    private Integer maxNumHttpSessionsToStore = 50000;
+
     @JsonProperty("max_num_se_dps")
     private Integer maxNumSeDps;
 
@@ -444,6 +459,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("name")
     private String name;
 
+    @JsonProperty("nd6_cache_timeout")
+    private Integer nd6CacheTimeout = 86400;
+
     @JsonProperty("netlink_poller_threads")
     private Integer netlinkPollerThreads = 2;
 
@@ -476,6 +494,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("objsync_config")
     private ObjSyncConfig objsyncConfig;
+
+    @JsonProperty("objsync_mode")
+    private String objsyncMode = "OBJSYNC_ENABLED";
 
     @JsonProperty("objsync_port")
     private Integer objsyncPort = 4001;
@@ -513,6 +534,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("placement_mode")
     private String placementMode = "PLACEMENT_MODE_AUTO";
 
+    @JsonProperty("pre_upgrade_se_available_mem_threshold")
+    private Integer preUpgradeSeAvailableMemThreshold = 0;
+
     @JsonProperty("realtime_se_metrics")
     private MetricsRealTimeUpdate realtimeSeMetrics;
 
@@ -522,11 +546,17 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("replay_vrf_routes_interval")
     private Integer replayVrfRoutesInterval = 1000;
 
+    @JsonProperty("reserved_configuration")
+    private ReservedConfiguration reservedConfiguration;
+
     @JsonProperty("resync_time_interval")
     private Integer resyncTimeInterval = 65536;
 
     @JsonProperty("sdb_flush_interval")
     private Integer sdbFlushInterval = 100;
+
+    @JsonProperty("sdb_key_timeout")
+    private Integer sdbKeyTimeout = 60;
 
     @JsonProperty("sdb_pipeline_size")
     private Integer sdbPipelineSize = 100;
@@ -778,10 +808,10 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean useLegacyNetlink = false;
 
     @JsonProperty("use_objsync")
-    private Boolean useObjsync = false;
+    private Boolean useObjsync;
 
     @JsonProperty("use_standard_alb")
-    private Boolean useStandardAlb;
+    private Boolean useStandardAlb = true;
 
     @JsonProperty("user_agent_cache_config")
     private UserAgentCacheConfig userAgentCacheConfig;
@@ -867,6 +897,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("vs_switchover_timeout")
     private Integer vsSwitchoverTimeout = 300;
 
+    @JsonProperty("vsphere_storage_policies")
+    private List<VsphereStoragePolicy> vsphereStoragePolicies;
+
     @JsonProperty("vss_placement")
     private VssPlacement vssPlacement;
 
@@ -879,6 +912,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("waf_mempool_size")
     private Integer wafMempoolSize = 64;
 
+    @JsonProperty("waf_use_jit_for_pcre")
+    private Boolean wafUseJitForPcre = true;
+
 
 
     /**
@@ -887,7 +923,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Accelerated networking enables single root i/o virtualization (sr-iov) to a se vm.
      * This improves networking performance.
      * Field introduced in 17.2.14,18.1.5,18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return acceleratedNetworking
      */
@@ -901,7 +937,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Accelerated networking enables single root i/o virtualization (sr-iov) to a se vm.
      * This improves networking performance.
      * Field introduced in 17.2.14,18.1.5,18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param acceleratedNetworking set the acceleratedNetworking.
      */
@@ -912,7 +948,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Service engines in active/standby mode for ha failover.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return activeStandby
      */
@@ -923,7 +959,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Service engines in active/standby mode for ha failover.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param activeStandby set the activeStandby.
      */
@@ -934,8 +970,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable aggressive failover configuration for ha.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return aggressiveFailureDetection
      */
@@ -946,8 +982,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enable aggressive failover configuration for ha.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param aggressiveFailureDetection set the aggressiveFailureDetection.
      */
@@ -961,7 +997,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * In distributed placement, virtual services are placed on new ses until max_se limit is reached.
      * Once this limit is reached, virtual services are placed on ses with least load.
      * Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PLACEMENT_ALGO_PACKED".
      * @return algo
      */
@@ -975,7 +1011,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * In distributed placement, virtual services are placed on new ses until max_se limit is reached.
      * Once this limit is reached, virtual services are placed on ses with least load.
      * Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PLACEMENT_ALGO_PACKED".
      * @param algo set the algo.
      */
@@ -987,7 +1023,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Allow ses to be created using burst license.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowBurst
      */
@@ -999,7 +1035,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Allow ses to be created using burst license.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param allowBurst set the allowBurst.
      */
@@ -1015,9 +1051,9 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Special values are 0- disable.
      * Field introduced in 18.2.3.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-     * services edition.
-     * Special default for essentials edition is 0, basic edition is 0, enterprise is 10.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
+     * Special default for essentials edition is 0, basic edition is 0, enterprise edition is 10.
      * @return appCachePercent
      */
     public Integer getAppCachePercent() {
@@ -1032,9 +1068,9 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Special values are 0- disable.
      * Field introduced in 18.2.3.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-     * services edition.
-     * Special default for essentials edition is 0, basic edition is 0, enterprise is 10.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
+     * Special default for essentials edition is 0, basic edition is 0, enterprise edition is 10.
      * @param appCachePercent set the appCachePercent.
      */
     public void setAppCachePercent(Integer  appCachePercent) {
@@ -1048,7 +1084,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Special values are 0- disable.
      * Field introduced in 20.1.1.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return appCacheThreshold
      */
@@ -1063,7 +1099,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Special values are 0- disable.
      * Field introduced in 20.1.1.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param appCacheThreshold set the appCacheThreshold.
      */
@@ -1078,7 +1114,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0 - 10.
      * Field introduced in 18.2.3.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return appLearningMemoryPercent
      */
@@ -1093,7 +1129,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0 - 10.
      * Field introduced in 18.2.3.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param appLearningMemoryPercent set the appLearningMemoryPercent.
      */
@@ -1106,7 +1142,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Amount of se memory in gb until which shared memory is collected in core archive.
      * Field introduced in 17.1.3.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @return archiveShmLimit
      */
@@ -1119,7 +1155,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Amount of se memory in gb until which shared memory is collected in core archive.
      * Field introduced in 17.1.3.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @param archiveShmLimit set the archiveShmLimit.
      */
@@ -1129,9 +1165,37 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Timeout in seconds for idle arp entries.
+     * Allowed values are 0-86400.
+     * Field introduced in 31.2.1.
+     * Unit is sec.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1200.
+     * @return arpCacheTimeout
+     */
+    public Integer getArpCacheTimeout() {
+        return arpCacheTimeout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Timeout in seconds for idle arp entries.
+     * Allowed values are 0-86400.
+     * Field introduced in 31.2.1.
+     * Unit is sec.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1200.
+     * @param arpCacheTimeout set the arpCacheTimeout.
+     */
+    public void setArpCacheTimeout(Integer  arpCacheTimeout) {
+        this.arpCacheTimeout = arpCacheTimeout;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Ssl handshakes will be handled by dedicated ssl threads.requires se reboot.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return asyncSsl
      */
@@ -1142,8 +1206,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Ssl handshakes will be handled by dedicated ssl threads.requires se reboot.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param asyncSsl set the asyncSsl.
      */
@@ -1155,7 +1219,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Number of async ssl threads per se_dp.requires se reboot.
      * Allowed values are 1-16.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return asyncSslThreads
      */
@@ -1167,7 +1231,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Number of async ssl threads per se_dp.requires se reboot.
      * Allowed values are 1-16.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param asyncSslThreads set the asyncSslThreads.
      */
@@ -1179,8 +1243,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If set, virtual services will be automatically migrated when load on an se is less than minimum or more than maximum thresholds.
      * Only alerts are generated when the auto_rebalance is not set.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return autoRebalance
      */
@@ -1192,8 +1256,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * If set, virtual services will be automatically migrated when load on an se is less than minimum or more than maximum thresholds.
      * Only alerts are generated when the auto_rebalance is not set.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param autoRebalance set the autoRebalance.
      */
@@ -1204,7 +1268,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Capacities of se for auto rebalance for each criteria.
      * Field introduced in 17.2.4.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return autoRebalanceCapacityPerSe
      */
@@ -1216,7 +1280,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method. this will set the autoRebalanceCapacityPerSe
      * Capacities of se for auto rebalance for each criteria.
      * Field introduced in 17.2.4.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return autoRebalanceCapacityPerSe
      */
@@ -1228,7 +1292,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method this will set the autoRebalanceCapacityPerSe
      * Capacities of se for auto rebalance for each criteria.
      * Field introduced in 17.2.4.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return autoRebalanceCapacityPerSe
      */
@@ -1244,7 +1308,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Set of criteria for se auto rebalance.
      * Enum options - SE_AUTO_REBALANCE_CPU, SE_AUTO_REBALANCE_PPS, SE_AUTO_REBALANCE_MBPS, SE_AUTO_REBALANCE_OPEN_CONNS, SE_AUTO_REBALANCE_CPS.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return autoRebalanceCriteria
      */
@@ -1257,7 +1321,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Set of criteria for se auto rebalance.
      * Enum options - SE_AUTO_REBALANCE_CPU, SE_AUTO_REBALANCE_PPS, SE_AUTO_REBALANCE_MBPS, SE_AUTO_REBALANCE_OPEN_CONNS, SE_AUTO_REBALANCE_CPS.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return autoRebalanceCriteria
      */
@@ -1270,7 +1334,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Set of criteria for se auto rebalance.
      * Enum options - SE_AUTO_REBALANCE_CPU, SE_AUTO_REBALANCE_PPS, SE_AUTO_REBALANCE_MBPS, SE_AUTO_REBALANCE_OPEN_CONNS, SE_AUTO_REBALANCE_CPS.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return autoRebalanceCriteria
      */
@@ -1286,7 +1350,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Frequency of rebalance, if 'auto rebalance' is enabled.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return autoRebalanceInterval
      */
@@ -1298,7 +1362,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Frequency of rebalance, if 'auto rebalance' is enabled.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param autoRebalanceInterval set the autoRebalanceInterval.
      */
@@ -1310,8 +1374,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Redistribution of virtual services from the takeover se to the replacement se can cause momentary traffic loss.
      * If the auto-redistribute load option is left in its default off state, any desired rebalancing requires calls to rest api.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return autoRedistributeActiveStandbyLoad
      */
@@ -1323,8 +1387,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Redistribution of virtual services from the takeover se to the replacement se can cause momentary traffic loss.
      * If the auto-redistribute load option is left in its default off state, any desired rebalancing requires calls to rest api.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param autoRedistributeActiveStandbyLoad set the autoRedistributeActiveStandbyLoad.
      */
@@ -1336,7 +1400,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Availability zones for virtual service high availability.
      * It is a reference to an object of type availabilityzone.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availabilityZoneRefs
      */
@@ -1349,7 +1413,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Availability zones for virtual service high availability.
      * It is a reference to an object of type availabilityzone.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availabilityZoneRefs
      */
@@ -1362,7 +1426,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Availability zones for virtual service high availability.
      * It is a reference to an object of type availabilityzone.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availabilityZoneRefs
      */
@@ -1378,8 +1442,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Control if dispatcher core also handles tcp flows in baremetal se.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return baremetalDispatcherHandlesFlows
      */
@@ -1391,8 +1454,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Control if dispatcher core also handles tcp flows in baremetal se.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param baremetalDispatcherHandlesFlows set the baremetalDispatcherHandlesFlows.
      */
@@ -1404,7 +1466,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable bgp peer monitoring based failover.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return bgpPeerMonitorFailoverEnabled
      */
@@ -1416,7 +1478,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable bgp peer monitoring based failover.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param bgpPeerMonitorFailoverEnabled set the bgpPeerMonitorFailoverEnabled.
      */
@@ -1430,7 +1492,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 5-100.
      * Field introduced in 17.2.14,18.1.5,18.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return bgpStateUpdateInterval
      */
@@ -1444,7 +1506,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 5-100.
      * Field introduced in 17.2.14,18.1.5,18.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param bgpStateUpdateInterval set the bgpStateUpdateInterval.
      */
@@ -1455,7 +1517,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Excess service engine capacity provisioned for ha failover.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return bufferSe
      */
@@ -1466,7 +1528,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Excess service engine capacity provisioned for ha failover.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param bufferSe set the bufferSe.
      */
@@ -1477,7 +1539,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type cloud.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudRef
      */
@@ -1488,7 +1550,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type cloud.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudRef set the cloudRef.
      */
@@ -1500,7 +1562,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Compress ip rules into a single subnet based ip rule for each north-south ipam subnet configured in pcap mode in openshift/kubernetes node.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return compressIpRulesForEachNsSubnet
      */
@@ -1512,7 +1574,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Compress ip rules into a single subnet based ip rule for each north-south ipam subnet configured in pcap mode in openshift/kubernetes node.
      * Field introduced in 18.2.9, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param compressIpRulesForEachNsSubnet set the compressIpRulesForEachNsSubnet.
      */
@@ -1524,7 +1586,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable config debugs on all cores of se.
      * Field introduced in 17.2.13,18.1.5,18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return configDebugsOnAllCores
      */
@@ -1536,7 +1598,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable config debugs on all cores of se.
      * Field introduced in 17.2.13,18.1.5,18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param configDebugsOnAllCores set the configDebugsOnAllCores.
      */
@@ -1550,7 +1612,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This will come at the expense of memory used for http in-memory cache.
      * Allowed values are 10-90.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 50.
      * @return connectionMemoryPercentage
      */
@@ -1564,7 +1626,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This will come at the expense of memory used for http in-memory cache.
      * Allowed values are 10-90.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 50.
      * @param connectionMemoryPercentage set the connectionMemoryPercentage.
      */
@@ -1576,7 +1638,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Include shared memory for app cache in core file.requires se reboot.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return coreShmAppCache
      */
@@ -1588,7 +1650,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Include shared memory for app cache in core file.requires se reboot.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param coreShmAppCache set the coreShmAppCache.
      */
@@ -1600,7 +1662,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Include shared memory for app learning in core file.requires se reboot.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return coreShmAppLearning
      */
@@ -1612,7 +1674,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Include shared memory for app learning in core file.requires se reboot.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param coreShmAppLearning set the coreShmAppLearning.
      */
@@ -1622,7 +1684,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return cpuReserve
      */
@@ -1632,7 +1694,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param cpuReserve set the cpuReserve.
      */
@@ -1644,7 +1706,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Allocate all the cpu cores for the service engine virtual machines  on the same cpu socket.
      * Applicable only for vcenter cloud.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return cpuSocketAffinity
      */
@@ -1656,7 +1718,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Allocate all the cpu cores for the service engine virtual machines  on the same cpu socket.
      * Applicable only for vcenter cloud.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param cpuSocketAffinity set the cpuSocketAffinity.
      */
@@ -1667,7 +1729,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Custom security groups to be associated with data vnics for se instances in openstack and aws clouds.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return customSecuritygroupsData
      */
@@ -1679,7 +1741,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method. this will set the customSecuritygroupsData
      * Custom security groups to be associated with data vnics for se instances in openstack and aws clouds.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return customSecuritygroupsData
      */
@@ -1691,7 +1753,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method this will set the customSecuritygroupsData
      * Custom security groups to be associated with data vnics for se instances in openstack and aws clouds.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return customSecuritygroupsData
      */
@@ -1706,7 +1768,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Custom security groups to be associated with management vnic for se instances in openstack and aws clouds.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return customSecuritygroupsMgmt
      */
@@ -1718,7 +1780,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method. this will set the customSecuritygroupsMgmt
      * Custom security groups to be associated with management vnic for se instances in openstack and aws clouds.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return customSecuritygroupsMgmt
      */
@@ -1730,7 +1792,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method this will set the customSecuritygroupsMgmt
      * Custom security groups to be associated with management vnic for se instances in openstack and aws clouds.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return customSecuritygroupsMgmt
      */
@@ -1745,7 +1807,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Custom tag will be used to create the tags for se instance in aws.
      * Note this is not the same as the prefix for se name.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return customTag
      */
@@ -1757,7 +1819,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method. this will set the customTag
      * Custom tag will be used to create the tags for se instance in aws.
      * Note this is not the same as the prefix for se name.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return customTag
      */
@@ -1769,7 +1831,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method this will set the customTag
      * Custom tag will be used to create the tags for se instance in aws.
      * Note this is not the same as the prefix for se name.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return customTag
      */
@@ -1786,7 +1848,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Subnet used to spin up the data nic for service engines, used only for azure cloud.
      * Overrides the cloud level setting for service engine subnet.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dataNetworkId
      */
@@ -1799,7 +1861,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Subnet used to spin up the data nic for service engines, used only for azure cloud.
      * Overrides the cloud level setting for service engine subnet.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dataNetworkId set the dataNetworkId.
      */
@@ -1812,7 +1874,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Number of instructions before datascript times out.
      * Allowed values are 0-100000000.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000000.
      * @return datascriptTimeout
      */
@@ -1825,7 +1887,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Number of instructions before datascript times out.
      * Allowed values are 0-100000000.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000000.
      * @param datascriptTimeout set the datascriptTimeout.
      */
@@ -1837,7 +1899,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If activated, ipv6 address and route discovery are deactivated.requires se reboot.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return deactivateIpv6Discovery
      */
@@ -1849,7 +1911,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * If activated, ipv6 address and route discovery are deactivated.requires se reboot.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param deactivateIpv6Discovery set the deactivateIpv6Discovery.
      */
@@ -1862,7 +1924,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Deactivate filtering of packets to kni interface.
      * To be used under surveillance of avi support.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return deactivateKniFilteringAtDispatcher
      */
@@ -1875,7 +1937,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Deactivate filtering of packets to kni interface.
      * To be used under surveillance of avi support.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param deactivateKniFilteringAtDispatcher set the deactivateKniFilteringAtDispatcher.
      */
@@ -1886,8 +1948,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Dedicate the core that handles packet receive/transmit from the network to just the dispatching function.
-     * Don't use it for tcp/ip and ssl functions.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dedicatedDispatcherCore
      */
@@ -1898,8 +1959,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Dedicate the core that handles packet receive/transmit from the network to just the dispatching function.
-     * Don't use it for tcp/ip and ssl functions.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dedicatedDispatcherCore set the dedicatedDispatcherCore.
      */
@@ -1909,7 +1969,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -1919,7 +1979,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -1934,7 +1994,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Avi will only make use of custom security groups provided by user.
      * This option is supported for aws and openstack cloud types.
      * Field introduced in 17.2.13,18.1.4,18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disableAviSecuritygroups
      */
@@ -1949,7 +2009,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Avi will only make use of custom security groups provided by user.
      * This option is supported for aws and openstack cloud types.
      * Field introduced in 17.2.13,18.1.4,18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disableAviSecuritygroups set the disableAviSecuritygroups.
      */
@@ -1961,7 +2021,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Stop using tcp/udp and ip checksum offload features of nics.
      * Field introduced in 17.1.14, 17.2.5, 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disableCsumOffloads
      */
@@ -1973,7 +2033,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Stop using tcp/udp and ip checksum offload features of nics.
      * Field introduced in 17.1.14, 17.2.5, 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disableCsumOffloads set the disableCsumOffloads.
      */
@@ -1985,7 +2045,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Disable flow probes for scaled out vs'es.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disableFlowProbes
      */
@@ -1997,7 +2057,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Disable flow probes for scaled out vs'es.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disableFlowProbes set the disableFlowProbes.
      */
@@ -2011,7 +2071,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Gro can be enabled on nics that do not support lro (large receive offload) or do not gain performance boost from lro.
      * Gro is on by default on nics in a system with 8 vcpus or higher.
      * Field introduced in 17.2.5, 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return disableGro
      */
@@ -2025,7 +2085,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Gro can be enabled on nics that do not support lro (large receive offload) or do not gain performance boost from lro.
      * Gro is on by default on nics in a system with 8 vcpus or higher.
      * Field introduced in 17.2.5, 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param disableGro set the disableGro.
      */
@@ -2037,7 +2097,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If set, disable the config memory check done in service engine.
      * Field introduced in 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disableSeMemoryCheck
      */
@@ -2049,7 +2109,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * If set, disable the config memory check done in service engine.
      * Field introduced in 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disableSeMemoryCheck set the disableSeMemoryCheck.
      */
@@ -2062,7 +2122,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Disable tcp segmentation offload (tso) in dpdk poll-mode driver packet transmit path.
      * Tso is on by default on nics that support it.
      * Field introduced in 17.2.5, 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disableTso
      */
@@ -2075,7 +2135,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Disable tcp segmentation offload (tso) in dpdk poll-mode driver packet transmit path.
      * Tso is on by default on nics that support it.
      * Field introduced in 17.2.5, 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disableTso set the disableTso.
      */
@@ -2087,7 +2147,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Amount of disk space for each of the service engine virtual machines.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 15.
      * @return diskPerSe
      */
@@ -2099,7 +2159,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Amount of disk space for each of the service engine virtual machines.
      * Unit is gb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 15.
      * @param diskPerSe set the diskPerSe.
      */
@@ -2110,8 +2170,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Use both the active and standby service engines for virtual service placement in the legacy active standby ha mode.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return distributeLoadActiveStandby
      */
@@ -2122,8 +2182,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Use both the active and standby service engines for virtual service placement in the legacy active standby ha mode.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param distributeLoadActiveStandby set the distributeLoadActiveStandby.
      */
@@ -2137,8 +2197,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Deprecated from 18.2.8, instead use max_queues_per_vnic.
      * Field introduced in 17.2.8.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return distributeQueues
      */
@@ -2152,8 +2212,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Deprecated from 18.2.8, instead use max_queues_per_vnic.
      * Field introduced in 17.2.8.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param distributeQueues set the distributeQueues.
      */
@@ -2165,8 +2225,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Distributes vnic ownership among cores so multiple cores handle dispatcher duties.requires se reboot.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return distributeVnics
      */
@@ -2178,8 +2238,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Distributes vnic ownership among cores so multiple cores handle dispatcher duties.requires se reboot.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param distributeVnics set the distributeVnics.
      */
@@ -2192,7 +2252,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Timeout for downstream to become writable.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
      * @return downstreamSendTimeout
      */
@@ -2205,7 +2265,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Timeout for downstream to become writable.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
      * @param downstreamSendTimeout set the downstreamSendTimeout.
      */
@@ -2219,8 +2279,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return dpAggressiveDeqIntervalMsec
      */
@@ -2234,8 +2293,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param dpAggressiveDeqIntervalMsec set the dpAggressiveDeqIntervalMsec.
      */
@@ -2249,8 +2307,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return dpAggressiveEnqIntervalMsec
      */
@@ -2264,8 +2321,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param dpAggressiveEnqIntervalMsec set the dpAggressiveEnqIntervalMsec.
      */
@@ -2278,7 +2334,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Frequency of se - se hb messages when aggressive failure mode detection is enabled.
      * Field introduced in 20.1.3.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return dpAggressiveHbFrequency
      */
@@ -2291,7 +2347,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Frequency of se - se hb messages when aggressive failure mode detection is enabled.
      * Field introduced in 20.1.3.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param dpAggressiveHbFrequency set the dpAggressiveHbFrequency.
      */
@@ -2303,7 +2359,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Consecutive hb failures after which failure is reported to controller,when aggressive failure mode detection is enabled.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return dpAggressiveHbTimeoutCount
      */
@@ -2315,7 +2371,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Consecutive hb failures after which failure is reported to controller,when aggressive failure mode detection is enabled.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param dpAggressiveHbTimeoutCount set the dpAggressiveHbTimeoutCount.
      */
@@ -2329,8 +2385,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return dpDeqIntervalMsec
      */
@@ -2344,8 +2399,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param dpDeqIntervalMsec set the dpDeqIntervalMsec.
      */
@@ -2359,8 +2413,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return dpEnqIntervalMsec
      */
@@ -2374,8 +2427,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param dpEnqIntervalMsec set the dpEnqIntervalMsec.
      */
@@ -2388,7 +2440,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Frequency of se - se hb messages when aggressive failure mode detection is not enabled.
      * Field introduced in 20.1.3.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return dpHbFrequency
      */
@@ -2401,7 +2453,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Frequency of se - se hb messages when aggressive failure mode detection is not enabled.
      * Field introduced in 20.1.3.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param dpHbFrequency set the dpHbFrequency.
      */
@@ -2413,7 +2465,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Consecutive hb failures after which failure is reported to controller, when aggressive failure mode detection is not enabled.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return dpHbTimeoutCount
      */
@@ -2425,7 +2477,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Consecutive hb failures after which failure is reported to controller, when aggressive failure mode detection is not enabled.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param dpHbTimeoutCount set the dpHbTimeoutCount.
      */
@@ -2440,7 +2492,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-900.
      * Field introduced in 22.1.1.
      * Unit is microseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 50.
      * @return dpdkGroTimeoutInterval
      */
@@ -2455,7 +2507,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-900.
      * Field introduced in 22.1.1.
      * Unit is microseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 50.
      * @param dpdkGroTimeoutInterval set the dpdkGroTimeoutInterval.
      */
@@ -2467,7 +2519,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable gratarp for vip_ip.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableGratarpPermanent
      */
@@ -2479,7 +2531,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable gratarp for vip_ip.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableGratarpPermanent set the enableGratarpPermanent.
      */
@@ -2491,7 +2543,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable hsm luna engine logs.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableHsmLog
      */
@@ -2503,7 +2555,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable hsm luna engine logs.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableHsmLog set the enableHsmLog.
      */
@@ -2517,7 +2569,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enable hsm key priming.
      * If enabled, key handles on the hsm will be synced to se before processing client connections.
      * Field introduced in 17.2.7, 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableHsmPriming
      */
@@ -2531,7 +2583,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enable hsm key priming.
      * If enabled, key handles on the hsm will be synced to se before processing client connections.
      * Field introduced in 17.2.7, 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableHsmPriming set the enableHsmPriming.
      */
@@ -2544,7 +2596,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Applicable only for azure cloud with basic sku lb.
      * If set, additional azure lbs will be automatically created if resources in existing lb are exhausted.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableMultiLb
      */
@@ -2557,7 +2609,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Applicable only for azure cloud with basic sku lb.
      * If set, additional azure lbs will be automatically created if resources in existing lb are exhausted.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableMultiLb set the enableMultiLb.
      */
@@ -2572,7 +2624,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Deprecated from 18.2.8, instead use pcap_tx_mode.
      * Requires se reboot.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return enablePcapTxRing
      */
@@ -2587,7 +2639,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Deprecated from 18.2.8, instead use pcap_tx_mode.
      * Requires se reboot.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param enablePcapTxRing set the enablePcapTxRing.
      */
@@ -2597,9 +2649,35 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * This knob enables the service engine to use qat offloads (if the host cpu is capable, and the qat device is exposed).
+     * Requires se reboot.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enableQat
+     */
+    public Boolean getEnableQat() {
+        return enableQat;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This knob enables the service engine to use qat offloads (if the host cpu is capable, and the qat device is exposed).
+     * Requires se reboot.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enableQat set the enableQat.
+     */
+    public void setEnableQat(Boolean  enableQat) {
+        this.enableQat = enableQat;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * End local ephemeral port number for outbound connections.
      * Field introduced in 17.2.13, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ephemeralPortrangeEnd
      */
@@ -2611,7 +2689,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * End local ephemeral port number for outbound connections.
      * Field introduced in 17.2.13, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ephemeralPortrangeEnd set the ephemeralPortrangeEnd.
      */
@@ -2623,7 +2701,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Start local ephemeral port number for outbound connections.
      * Field introduced in 17.2.13, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ephemeralPortrangeStart
      */
@@ -2635,7 +2713,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Start local ephemeral port number for outbound connections.
      * Field introduced in 17.2.13, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ephemeralPortrangeStart set the ephemeralPortrangeStart.
      */
@@ -2646,7 +2724,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Multiplier for extra config to support large vs/pool config.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @return extraConfigMultiplier
      */
@@ -2657,7 +2735,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Multiplier for extra config to support large vs/pool config.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @param extraConfigMultiplier set the extraConfigMultiplier.
      */
@@ -2670,7 +2748,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Extra config memory to support large geo db configuration.
      * Field introduced in 17.1.1.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return extraSharedConfigMemory
      */
@@ -2683,7 +2761,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Extra config memory to support large geo db configuration.
      * Field introduced in 17.1.1.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param extraSharedConfigMemory set the extraSharedConfigMemory.
      */
@@ -2695,7 +2773,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum number of flow table entries that have not completed tcp three-way handshake yet.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return flowTableNewSynMaxEntries
      */
@@ -2707,7 +2785,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum number of flow table entries that have not completed tcp three-way handshake yet.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param flowTableNewSynMaxEntries set the flowTableNewSynMaxEntries.
      */
@@ -2719,7 +2797,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Number of entries in the free list.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
      * @return freeListSize
      */
@@ -2731,7 +2809,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Number of entries in the free list.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
      * @param freeListSize set the freeListSize.
      */
@@ -2743,7 +2821,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Google cloud platform, service engine group configuration.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gcpConfig
      */
@@ -2755,7 +2833,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Google cloud platform, service engine group configuration.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gcpConfig set the gcpConfig.
      */
@@ -2769,7 +2847,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 5-30.
      * Field introduced in 18.2.3.
      * Unit is min.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return gratarpPermanentPeriodicity
      */
@@ -2783,7 +2861,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 5-30.
      * Field introduced in 18.2.3.
      * Unit is min.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param gratarpPermanentPeriodicity set the gratarpPermanentPeriodicity.
      */
@@ -2796,7 +2874,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Timeout in seconds that se waits for a grpc channel to connect to server, before it retries.
      * Allowed values are 5-45.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 15.
      * @return grpcChannelConnectTimeout
      */
@@ -2809,7 +2887,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Timeout in seconds that se waits for a grpc channel to connect to server, before it retries.
      * Allowed values are 5-45.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 15.
      * @param grpcChannelConnectTimeout set the grpcChannelConnectTimeout.
      */
@@ -2819,11 +2897,37 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deploys google virtual ethernet (gve) - gvnic for all supported intances types in gcp.
+     * Applies only to newly created se's.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return gveEnabled
+     */
+    public Boolean getGveEnabled() {
+        return gveEnabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Deploys google virtual ethernet (gve) - gvnic for all supported intances types in gcp.
+     * Applies only to newly created se's.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param gveEnabled set the gveEnabled.
+     */
+    public void setGveEnabled(Boolean  gveEnabled) {
+        this.gveEnabled = gveEnabled;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * High availability mode for all the virtual services using this service engine group.
      * Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- ha_mode_legacy_active_standby), basic edition(allowed values-
-     * ha_mode_legacy_active_standby), enterprise with cloud services edition.
-     * Special default for essentials edition is ha_mode_legacy_active_standby, basic edition is ha_mode_legacy_active_standby, enterprise is
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- ha_mode_legacy_active_standby), basic (allowed values- ha_mode_legacy_active_standby) edition.
+     * Special default for essentials edition is ha_mode_legacy_active_standby, basic edition is ha_mode_legacy_active_standby, enterprise edition is
      * ha_mode_shared.
      * @return haMode
      */
@@ -2835,9 +2939,9 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * High availability mode for all the virtual services using this service engine group.
      * Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- ha_mode_legacy_active_standby), basic edition(allowed values-
-     * ha_mode_legacy_active_standby), enterprise with cloud services edition.
-     * Special default for essentials edition is ha_mode_legacy_active_standby, basic edition is ha_mode_legacy_active_standby, enterprise is
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- ha_mode_legacy_active_standby), basic (allowed values- ha_mode_legacy_active_standby) edition.
+     * Special default for essentials edition is ha_mode_legacy_active_standby, basic edition is ha_mode_legacy_active_standby, enterprise edition is
      * ha_mode_shared.
      * @param haMode set the haMode.
      */
@@ -2850,7 +2954,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Configuration to handle per packet attack handling.for example, dns reflection attack is a type of attack where a response packet is sent to the
      * dns vs.this configuration tells if such packets should be dropped without further processing.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return handlePerPktAttack
      */
@@ -2863,7 +2967,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Configuration to handle per packet attack handling.for example, dns reflection attack is a type of attack where a response packet is sent to the
      * dns vs.this configuration tells if such packets should be dropped without further processing.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param handlePerPktAttack set the handlePerPktAttack.
      */
@@ -2874,7 +2978,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type hardwaresecuritymodulegroup.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hardwaresecuritymodulegroupRef
      */
@@ -2885,7 +2989,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type hardwaresecuritymodulegroup.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hardwaresecuritymodulegroupRef set the hardwaresecuritymodulegroupRef.
      */
@@ -2899,7 +3003,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-100.
      * Field introduced in 18.1.2.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @return heapMinimumConfigMemory
      */
@@ -2913,7 +3017,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-100.
      * Field introduced in 18.1.2.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @param heapMinimumConfigMemory set the heapMinimumConfigMemory.
      */
@@ -2924,9 +3028,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable active health monitoring from the standby se for all placed virtual services.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise is true.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
      * @return hmOnStandby
      */
     public Boolean getHmOnStandby() {
@@ -2936,9 +3040,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enable active health monitoring from the standby se for all placed virtual services.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise is true.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
      * @param hmOnStandby set the hmOnStandby.
      */
     public void setHmOnStandby(Boolean  hmOnStandby) {
@@ -2955,7 +3059,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * A openshift/kubernetes namespace maybe annotated with a matching se group label as openshift.io/node-selector  apptype=prod.
      * When multiple se groups are used in a cloud with host attributes specified,just a single se group can exist as a match-all se group without a
      * host_attribute_key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostAttributeKey
      */
@@ -2973,7 +3077,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * A openshift/kubernetes namespace maybe annotated with a matching se group label as openshift.io/node-selector  apptype=prod.
      * When multiple se groups are used in a cloud with host attributes specified,just a single se group can exist as a match-all se group without a
      * host_attribute_key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostAttributeKey set the hostAttributeKey.
      */
@@ -2985,7 +3089,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Value of a (key, value) pair identifying a label for a set of nodes usually in container clouds.
      * Needs to be specified together with host_attribute_key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostAttributeValue
      */
@@ -2997,7 +3101,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Value of a (key, value) pair identifying a label for a set of nodes usually in container clouds.
      * Needs to be specified together with host_attribute_key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostAttributeValue set the hostAttributeValue.
      */
@@ -3010,7 +3114,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enable the host gateway monitor when service engine is deployed as docker container.
      * Disabled by default.
      * Field introduced in 17.2.4.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return hostGatewayMonitor
      */
@@ -3023,7 +3127,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enable the host gateway monitor when service engine is deployed as docker container.
      * Disabled by default.
      * Field introduced in 17.2.4.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param hostGatewayMonitor set the hostGatewayMonitor.
      */
@@ -3035,8 +3139,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable javascript console logs on the client browser when collecting client insights.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return httpRumConsoleLog
      */
@@ -3048,8 +3152,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable javascript console logs on the client browser when collecting client insights.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param httpRumConsoleLog set the httpRumConsoleLog.
      */
@@ -3061,8 +3165,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Minimum response size content length to sample for client insights.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 64), basic edition(allowed values- 64), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 64), basic (allowed values- 64) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @return httpRumMinContentLength
      */
@@ -3074,8 +3178,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Minimum response size content length to sample for client insights.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 64), basic edition(allowed values- 64), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 64), basic (allowed values- 64) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @param httpRumMinContentLength set the httpRumMinContentLength.
      */
@@ -3089,7 +3193,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * instance performing both dispatcher and proxy function.
      * Requires reboot.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return hybridRssMode
      */
@@ -3103,7 +3207,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * instance performing both dispatcher and proxy function.
      * Requires reboot.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param hybridRssMode set the hybridRssMode.
      */
@@ -3115,7 +3219,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Override default hypervisor.
      * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hypervisor
      */
@@ -3127,7 +3231,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Override default hypervisor.
      * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hypervisor set the hypervisor.
      */
@@ -3139,8 +3243,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Ignore docker mac change.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return ignoreDockerMacChange
      */
@@ -3152,8 +3255,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Ignore docker mac change.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param ignoreDockerMacChange set the ignoreDockerMacChange.
      */
@@ -3166,7 +3268,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Ignore rtt samples if it is above threshold.
      * Field introduced in 17.1.6,17.2.2.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
      * @return ignoreRttThreshold
      */
@@ -3179,7 +3281,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Ignore rtt samples if it is above threshold.
      * Field introduced in 17.1.6,17.2.2.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
      * @param ignoreRttThreshold set the ignoreRttThreshold.
      */
@@ -3192,7 +3294,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Program se security group ingress rules to allow vip data access from remote cidr type.
      * Enum options - SG_INGRESS_ACCESS_NONE, SG_INGRESS_ACCESS_ALL, SG_INGRESS_ACCESS_VPC.
      * Field introduced in 17.1.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SG_INGRESS_ACCESS_ALL".
      * @return ingressAccessData
      */
@@ -3205,7 +3307,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Program se security group ingress rules to allow vip data access from remote cidr type.
      * Enum options - SG_INGRESS_ACCESS_NONE, SG_INGRESS_ACCESS_ALL, SG_INGRESS_ACCESS_VPC.
      * Field introduced in 17.1.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SG_INGRESS_ACCESS_ALL".
      * @param ingressAccessData set the ingressAccessData.
      */
@@ -3218,7 +3320,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Program se security group ingress rules to allow ssh/icmp management access from remote cidr type.
      * Enum options - SG_INGRESS_ACCESS_NONE, SG_INGRESS_ACCESS_ALL, SG_INGRESS_ACCESS_VPC.
      * Field introduced in 17.1.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SG_INGRESS_ACCESS_ALL".
      * @return ingressAccessMgmt
      */
@@ -3231,7 +3333,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Program se security group ingress rules to allow ssh/icmp management access from remote cidr type.
      * Enum options - SG_INGRESS_ACCESS_NONE, SG_INGRESS_ACCESS_ALL, SG_INGRESS_ACCESS_VPC.
      * Field introduced in 17.1.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SG_INGRESS_ACCESS_ALL".
      * @param ingressAccessMgmt set the ingressAccessMgmt.
      */
@@ -3242,7 +3344,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Instance/flavor name for se instance.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return instanceFlavor
      */
@@ -3253,7 +3355,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Instance/flavor name for se instance.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param instanceFlavor set the instanceFlavor.
      */
@@ -3264,7 +3366,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Iptable rules.
      * Maximum of 128 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return iptables
      */
@@ -3276,7 +3378,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method. this will set the iptables
      * Iptable rules.
      * Maximum of 128 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return iptables
      */
@@ -3288,7 +3390,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method this will set the iptables
      * Iptable rules.
      * Maximum of 128 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return iptables
      */
@@ -3303,7 +3405,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Port ranges for any servers running in inband linuxserver clouds.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return kniAllowedServerPorts
      */
@@ -3315,7 +3417,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method. this will set the kniAllowedServerPorts
      * Port ranges for any servers running in inband linuxserver clouds.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return kniAllowedServerPorts
      */
@@ -3327,7 +3429,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method this will set the kniAllowedServerPorts
      * Port ranges for any servers running in inband linuxserver clouds.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return kniAllowedServerPorts
      */
@@ -3341,9 +3443,35 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Max length allowed for the value in a kv pair.
+     * Allowed values are 128,256,512,1024,2048,4096,8192.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
+     * @return kvValMaxLen
+     */
+    public Integer getKvValMaxLen() {
+        return kvValMaxLen;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Max length allowed for the value in a kv pair.
+     * Allowed values are 128,256,512,1024,2048,4096,8192.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
+     * @param kvValMaxLen set the kvValMaxLen.
+     */
+    public void setKvValMaxLen(Integer  kvValMaxLen) {
+        this.kvValMaxLen = kvValMaxLen;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Number of l7 connections that can be cached per core.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
      * @return l7ConnsPerCore
      */
@@ -3355,7 +3483,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Number of l7 connections that can be cached per core.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
      * @param l7ConnsPerCore set the l7ConnsPerCore.
      */
@@ -3367,7 +3495,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Number of reserved l7 listener connections per core.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 256.
      * @return l7ResvdListenConnsPerCore
      */
@@ -3379,7 +3507,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Number of reserved l7 listener connections per core.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 256.
      * @param l7ResvdListenConnsPerCore set the l7ResvdListenConnsPerCore.
      */
@@ -3391,7 +3519,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Labels associated with this se group.
      * Field introduced in 20.1.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -3404,7 +3532,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Labels associated with this se group.
      * Field introduced in 20.1.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -3417,7 +3545,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Labels associated with this se group.
      * Field introduced in 20.1.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -3434,7 +3562,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Number of requests to dispatch from the request.
      * Queue at a regular interval.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return lbactionNumRequestsToDispatch
      */
@@ -3447,7 +3575,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Number of requests to dispatch from the request.
      * Queue at a regular interval.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param lbactionNumRequestsToDispatch set the lbactionNumRequestsToDispatch.
      */
@@ -3459,7 +3587,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum retries per request in the request queue.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 22.
      * @return lbactionRqPerRequestMaxRetries
      */
@@ -3471,7 +3599,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum retries per request in the request queue.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 22.
      * @param lbactionRqPerRequestMaxRetries set the lbactionRqPerRequestMaxRetries.
      */
@@ -3482,7 +3610,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Select core with least load for new flow.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return leastLoadCoreSelection
      */
@@ -3493,7 +3621,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Select core with least load for new flow.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param leastLoadCoreSelection set the leastLoadCoreSelection.
      */
@@ -3507,7 +3635,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This field by default inherits the value from cloud.
      * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTier
      */
@@ -3521,7 +3649,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This field by default inherits the value from cloud.
      * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseTier set the licenseTier.
      */
@@ -3534,7 +3662,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * If no license type is specified then default license enforcement for the cloud type is chosen.
      * Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseType
      */
@@ -3547,7 +3675,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * If no license type is specified then default license enforcement for the cloud type is chosen.
      * Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseType set the licenseType.
      */
@@ -3559,7 +3687,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Flag to indicate if log files are compressed upon full on the service engine.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return logAgentCompressLogs
      */
@@ -3571,7 +3699,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Flag to indicate if log files are compressed upon full on the service engine.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param logAgentCompressLogs set the logAgentCompressLogs.
      */
@@ -3585,7 +3713,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This includes all other debugging logs.
      * Debug logs can also be explcitly enabled from the cli shell.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return logAgentDebugEnabled
      */
@@ -3599,7 +3727,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This includes all other debugging logs.
      * Debug logs can also be explcitly enabled from the cli shell.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param logAgentDebugEnabled set the logAgentDebugEnabled.
      */
@@ -3611,7 +3739,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum application log file size before rollover.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return logAgentFileSzAppl
      */
@@ -3623,7 +3751,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum application log file size before rollover.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param logAgentFileSzAppl set the logAgentFileSzAppl.
      */
@@ -3635,7 +3763,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum connection log file size before rollover.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return logAgentFileSzConn
      */
@@ -3647,7 +3775,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum connection log file size before rollover.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param logAgentFileSzConn set the logAgentFileSzConn.
      */
@@ -3659,7 +3787,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum debug log file size before rollover.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return logAgentFileSzDebug
      */
@@ -3671,7 +3799,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum debug log file size before rollover.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param logAgentFileSzDebug set the logAgentFileSzDebug.
      */
@@ -3683,7 +3811,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum event log file size before rollover.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return logAgentFileSzEvent
      */
@@ -3695,7 +3823,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum event log file size before rollover.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param logAgentFileSzEvent set the logAgentFileSzEvent.
      */
@@ -3708,7 +3836,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Minimum storage allocated for logs irrespective of memory and cores.
      * Field introduced in 21.1.1.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
      * @return logAgentLogStorageMinSz
      */
@@ -3721,7 +3849,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Minimum storage allocated for logs irrespective of memory and cores.
      * Field introduced in 21.1.1.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
      * @param logAgentLogStorageMinSz set the logAgentLogStorageMinSz.
      */
@@ -3733,7 +3861,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum concurrent rsync requests initiated from log-agent to the controller.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
      * @return logAgentMaxConcurrentRsync
      */
@@ -3745,7 +3873,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum concurrent rsync requests initiated from log-agent to the controller.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
      * @param logAgentMaxConcurrentRsync set the logAgentMaxConcurrentRsync.
      */
@@ -3757,7 +3885,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 110.
      * @return logAgentMaxStorageExcessPercent
      */
@@ -3769,7 +3897,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 110.
      * @param logAgentMaxStorageExcessPercent set the logAgentMaxStorageExcessPercent.
      */
@@ -3781,7 +3909,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum storage on the disk not allocated for logs on the service engine.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
      * @return logAgentMaxStorageIgnorePercent
      */
@@ -3793,7 +3921,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum storage on the disk not allocated for logs on the service engine.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
      * @param logAgentMaxStorageIgnorePercent set the logAgentMaxStorageIgnorePercent.
      */
@@ -3805,7 +3933,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Minimum storage allocated to any given virtualservice on the service engine.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return logAgentMinStoragePerVs
      */
@@ -3817,7 +3945,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Minimum storage allocated to any given virtualservice on the service engine.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param logAgentMinStoragePerVs set the logAgentMinStoragePerVs.
      */
@@ -3830,7 +3958,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return logAgentSleepInterval
      */
@@ -3843,7 +3971,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param logAgentSleepInterval set the logAgentSleepInterval.
      */
@@ -3856,7 +3984,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enable trace logs by default on service engine.
      * Configuration operations are logged along with other important logs by service engine.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return logAgentTraceEnabled
      */
@@ -3869,7 +3997,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enable trace logs by default on service engine.
      * Configuration operations are logged along with other important logs by service engine.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param logAgentTraceEnabled set the logAgentTraceEnabled.
      */
@@ -3882,7 +4010,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Timeout to purge unknown virtual service logs from the service engine.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
      * @return logAgentUnknownVsTimer
      */
@@ -3895,7 +4023,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Timeout to purge unknown virtual service logs from the service engine.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
      * @param logAgentUnknownVsTimer set the logAgentUnknownVsTimer.
      */
@@ -3908,7 +4036,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Maximum disk capacity (in mb) to be allocated to an se.
      * This is exclusively used for debug and log data.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @return logDisksz
      */
@@ -3921,7 +4049,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Maximum disk capacity (in mb) to be allocated to an se.
      * This is exclusively used for debug and log data.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @param logDisksz set the logDisksz.
      */
@@ -3933,8 +4061,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Se will log memory allocation related failure to the se_trace file, wherever available.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return logMallocFailure
      */
@@ -3946,8 +4074,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Se will log memory allocation related failure to the se_trace file, wherever available.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param logMallocFailure set the logMallocFailure.
      */
@@ -3959,7 +4087,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum number of file names in a log message.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @return logMessageMaxFileListSize
      */
@@ -3971,7 +4099,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum number of file names in a log message.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @param logMessageMaxFileListSize set the logMessageMaxFileListSize.
      */
@@ -3982,8 +4110,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.7.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -3995,8 +4122,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method. this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.7.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -4008,8 +4134,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.7.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -4027,7 +4152,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This helps control the cpu and memory use by external health monitors.
      * Special values are 0- value will be internally calculated based on cpu and memory.
      * Field introduced in 18.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxConcurrentExternalHm
      */
@@ -4041,7 +4166,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This helps control the cpu and memory use by external health monitors.
      * Special values are 0- value will be internally calculated based on cpu and memory.
      * Field introduced in 18.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxConcurrentExternalHm set the maxConcurrentExternalHm.
      */
@@ -4055,7 +4180,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * A new se may be created as part of this process.
      * Allowed values are 40-90.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 80.
      * @return maxCpuUsage
      */
@@ -4069,7 +4194,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * A new se may be created as part of this process.
      * Allowed values are 40-90.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 80.
      * @param maxCpuUsage set the maxCpuUsage.
      */
@@ -4082,7 +4207,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Max bytes that can be allocated in a single mempool.
      * Field introduced in 18.1.5.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @return maxMemoryPerMempool
      */
@@ -4095,7 +4220,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Max bytes that can be allocated in a single mempool.
      * Field introduced in 18.1.5.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @param maxMemoryPerMempool set the maxMemoryPerMempool.
      */
@@ -4105,13 +4230,43 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Maximum number of http session that will be created.
+     * Each session uses about 1kb in the key-value storage in shared memory.
+     * Setting this value too high can lead to exhaustion of shared memory and affect services.
+     * Allowed values are 1-2000000.
+     * Field introduced in 30.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 50000.
+     * @return maxNumHttpSessionsToStore
+     */
+    public Integer getMaxNumHttpSessionsToStore() {
+        return maxNumHttpSessionsToStore;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of http session that will be created.
+     * Each session uses about 1kb in the key-value storage in shared memory.
+     * Setting this value too high can lead to exhaustion of shared memory and affect services.
+     * Allowed values are 1-2000000.
+     * Field introduced in 30.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 50000.
+     * @param maxNumHttpSessionsToStore set the maxNumHttpSessionsToStore.
+     */
+    public void setMaxNumHttpSessionsToStore(Integer  maxNumHttpSessionsToStore) {
+        this.maxNumHttpSessionsToStore = maxNumHttpSessionsToStore;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Configures the maximum number of se_dp processes that handles traffic.
      * If not configured, defaults to the number of cpus on the se.
      * If decreased, it will only take effect after se reboot.
      * Allowed values are 1-128.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxNumSeDps
      */
@@ -4126,8 +4281,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * If decreased, it will only take effect after se reboot.
      * Allowed values are 1-128.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxNumSeDps set the maxNumSeDps.
      */
@@ -4140,7 +4295,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Applicable to azure platform only.
      * Maximum number of public ips per azure lb.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return maxPublicIpsPerLb
      */
@@ -4153,7 +4308,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Applicable to azure platform only.
      * Maximum number of public ips per azure lb.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param maxPublicIpsPerLb set the maxPublicIpsPerLb.
      */
@@ -4166,8 +4321,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Maximum number of queues per vnic setting to '0' utilises all queues that are distributed across dispatcher cores.
      * Allowed values are 0,1,2,4,8,16.
      * Field introduced in 18.2.7, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 1), basic edition(allowed values- 1), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 1), basic (allowed values- 1) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return maxQueuesPerVnic
      */
@@ -4180,8 +4335,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Maximum number of queues per vnic setting to '0' utilises all queues that are distributed across dispatcher cores.
      * Allowed values are 0,1,2,4,8,16.
      * Field introduced in 18.2.7, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 1), basic edition(allowed values- 1), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 1), basic (allowed values- 1) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param maxQueuesPerVnic set the maxQueuesPerVnic.
      */
@@ -4194,7 +4349,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Applicable to azure platform only.
      * Maximum number of rules per azure lb.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 150.
      * @return maxRulesPerLb
      */
@@ -4207,7 +4362,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Applicable to azure platform only.
      * Maximum number of rules per azure lb.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 150.
      * @param maxRulesPerLb set the maxRulesPerLb.
      */
@@ -4219,7 +4374,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum number of active service engines for the virtual service.
      * Allowed values are 1-64.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return maxScaleoutPerVs
      */
@@ -4231,7 +4386,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum number of active service engines for the virtual service.
      * Allowed values are 1-64.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param maxScaleoutPerVs set the maxScaleoutPerVs.
      */
@@ -4243,7 +4398,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum number of services engines in this group.
      * Allowed values are 0-1000.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return maxSe
      */
@@ -4255,7 +4410,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum number of services engines in this group.
      * Allowed values are 0-1000.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param maxSe set the maxSe.
      */
@@ -4270,7 +4425,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Allowed values are 1-17.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 17.
      * @return maxSkbFrags
      */
@@ -4285,7 +4440,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Allowed values are 1-17.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 17.
      * @param maxSkbFrags set the maxSkbFrags.
      */
@@ -4297,7 +4452,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum number of virtual services that can be placed on a single service engine.
      * Allowed values are 1-1000.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return maxVsPerSe
      */
@@ -4309,7 +4464,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum number of virtual services that can be placed on a single service engine.
      * Allowed values are 1-1000.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param maxVsPerSe set the maxVsPerSe.
      */
@@ -4319,7 +4474,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return memReserve
      */
@@ -4329,7 +4484,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param memReserve set the memReserve.
      */
@@ -4343,7 +4498,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-100.
      * Field introduced in 18.1.2.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 15.
      * @return memoryForConfigUpdate
      */
@@ -4357,7 +4512,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-100.
      * Field introduced in 18.1.2.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 15.
      * @param memoryForConfigUpdate set the memoryForConfigUpdate.
      */
@@ -4371,7 +4526,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Changes to this setting do not affect existing ses.
      * Allowed values are 2048-262144.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
      * @return memoryPerSe
      */
@@ -4385,7 +4540,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Changes to this setting do not affect existing ses.
      * Allowed values are 2048-262144.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
      * @param memoryPerSe set the memoryPerSe.
      */
@@ -4402,7 +4557,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-1.
      * Special values are 9- reset metrics collection state.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return metricsCollectionMode
      */
@@ -4419,7 +4574,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-1.
      * Special values are 9- reset metrics collection state.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param metricsCollectionMode set the metricsCollectionMode.
      */
@@ -4431,7 +4586,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Management network to use for avi service engines.
      * It is a reference to an object of type network.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtNetworkRef
      */
@@ -4443,7 +4598,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Management network to use for avi service engines.
      * It is a reference to an object of type network.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtNetworkRef set the mgmtNetworkRef.
      */
@@ -4454,7 +4609,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Management subnet to use for avi service engines.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtSubnet
      */
@@ -4465,7 +4620,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Management subnet to use for avi service engines.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtSubnet set the mgmtSubnet.
      */
@@ -4479,7 +4634,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * After consolidation, unused service engines may then be eligible for deletion.
      * Allowed values are 20-60.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return minCpuUsage
      */
@@ -4493,7 +4648,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * After consolidation, unused service engines may then be eligible for deletion.
      * Allowed values are 20-60.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param minCpuUsage set the minCpuUsage.
      */
@@ -4505,7 +4660,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Minimum number of active service engines for the virtual service.
      * Allowed values are 1-64.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return minScaleoutPerVs
      */
@@ -4517,7 +4672,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Minimum number of active service engines for the virtual service.
      * Allowed values are 1-64.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param minScaleoutPerVs set the minScaleoutPerVs.
      */
@@ -4530,7 +4685,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Minimum number of services engines in this group (relevant for se autorebalance only).
      * Allowed values are 0-1000.
      * Field introduced in 17.2.13,18.1.3,18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return minSe
      */
@@ -4543,7 +4698,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Minimum number of services engines in this group (relevant for se autorebalance only).
      * Allowed values are 0-1000.
      * Field introduced in 17.2.13,18.1.3,18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param minSe set the minSe.
      */
@@ -4557,7 +4712,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-100.
      * Field introduced in 18.1.2.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return minimumConnectionMemory
      */
@@ -4571,7 +4726,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-100.
      * Field introduced in 18.1.2.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param minimumConnectionMemory set the minimumConnectionMemory.
      */
@@ -4583,7 +4738,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * This knob enables the service engine to process multicast traffic(for vmware hypervisor).
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return multicastEnable
      */
@@ -4595,7 +4750,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * This knob enables the service engine to process multicast traffic(for vmware hypervisor).
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param multicastEnable set the multicastEnable.
      */
@@ -4608,7 +4763,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Number of threads to use for log streaming.
      * Allowed values are 1-100.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return nLogStreamingThreads
      */
@@ -4621,7 +4776,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Number of threads to use for log streaming.
      * Allowed values are 1-100.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param nLogStreamingThreads set the nLogStreamingThreads.
      */
@@ -4631,7 +4786,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -4641,7 +4796,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -4651,11 +4806,39 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Timeout in seconds for idle nd6 entries.
+     * Allowed values are 0-86400.
+     * Field introduced in 31.2.1.
+     * Unit is sec.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
+     * @return nd6CacheTimeout
+     */
+    public Integer getNd6CacheTimeout() {
+        return nd6CacheTimeout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Timeout in seconds for idle nd6 entries.
+     * Allowed values are 0-86400.
+     * Field introduced in 31.2.1.
+     * Unit is sec.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
+     * @param nd6CacheTimeout set the nd6CacheTimeout.
+     */
+    public void setNd6CacheTimeout(Integer  nd6CacheTimeout) {
+        this.nd6CacheTimeout = nd6CacheTimeout;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Number of threads to poll for netlink messages excluding the thread for default namespace.
      * Requires se reboot.
      * Allowed values are 1-32.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return netlinkPollerThreads
      */
@@ -4669,7 +4852,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Allowed values are 1-32.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param netlinkPollerThreads set the netlinkPollerThreads.
      */
@@ -4684,7 +4867,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-128.
      * Field introduced in 21.1.1.
      * Unit is mega_bytes.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return netlinkSockBufSize
      */
@@ -4699,7 +4882,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-128.
      * Field introduced in 21.1.1.
      * Unit is mega_bytes.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param netlinkSockBufSize set the netlinkSockBufSize.
      */
@@ -4711,7 +4894,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Free the connection stack.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return ngxFreeConnectionStack
      */
@@ -4723,7 +4906,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Free the connection stack.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param ngxFreeConnectionStack set the ngxFreeConnectionStack.
      */
@@ -4738,7 +4921,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Set it to zero (0) to deactivate throttling.
      * Field introduced in 17.1.3.
      * Unit is per_second.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return nonSignificantLogThrottle
      */
@@ -4753,7 +4936,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Set it to zero (0) to deactivate throttling.
      * Field introduced in 17.1.3.
      * Unit is per_second.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param nonSignificantLogThrottle set the nonSignificantLogThrottle.
      */
@@ -4767,8 +4950,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return nsHelperDeqIntervalMsec
      */
@@ -4782,8 +4964,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param nsHelperDeqIntervalMsec set the nsHelperDeqIntervalMsec.
      */
@@ -4796,8 +4977,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Toggle se ntp synchronization failure events generation.
      * Disabled by default.
      * Field introduced in 22.1.2.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return ntpSyncFailEvent
      */
@@ -4810,8 +4990,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Toggle se ntp synchronization failure events generation.
      * Disabled by default.
      * Field introduced in 22.1.2.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param ntpSyncFailEvent set the ntpSyncFailEvent.
      */
@@ -4827,8 +5006,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Special values are 0- disable.
      * Field introduced in 22.1.2.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return ntpSyncStatusInterval
      */
@@ -4844,8 +5022,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Special values are 0- disable.
      * Field introduced in 22.1.2.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param ntpSyncStatusInterval set the ntpSyncStatusInterval.
      */
@@ -4859,8 +5036,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * If set to 0, then number of dispatcher cores is deduced automatically.requires se reboot.
      * Allowed values are 0,1,2,4,8,16.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return numDispatcherCores
      */
@@ -4874,8 +5051,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * If set to 0, then number of dispatcher cores is deduced automatically.requires se reboot.
      * Allowed values are 0,1,2,4,8,16.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param numDispatcherCores set the numDispatcherCores.
      */
@@ -4888,7 +5065,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Number of queues to each dispatcher.
      * Allowed values are 1-2.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return numDispatcherQueues
      */
@@ -4901,7 +5078,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Number of queues to each dispatcher.
      * Allowed values are 1-2.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param numDispatcherQueues set the numDispatcherQueues.
      */
@@ -4912,7 +5089,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of changes in num flow cores sum to ignore.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @return numFlowCoresSumChangesToIgnore
      */
@@ -4923,7 +5100,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Number of changes in num flow cores sum to ignore.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @param numFlowCoresSumChangesToIgnore set the numFlowCoresSumChangesToIgnore.
      */
@@ -4935,7 +5112,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Configuration knobs for interse object distribution.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objsyncConfig
      */
@@ -4947,12 +5124,38 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Configuration knobs for interse object distribution.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objsyncConfig set the objsyncConfig.
      */
     public void setObjsyncConfig(ObjSyncConfig objsyncConfig) {
         this.objsyncConfig = objsyncConfig;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enables se-se object syncing.
+     * Enum options - OBJSYNC_DISABLED, OBJSYNC_ENABLED, OBJSYNC_AUTO.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "OBJSYNC_ENABLED".
+     * @return objsyncMode
+     */
+    public String getObjsyncMode() {
+        return objsyncMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enables se-se object syncing.
+     * Enum options - OBJSYNC_DISABLED, OBJSYNC_ENABLED, OBJSYNC_AUTO.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "OBJSYNC_ENABLED".
+     * @param objsyncMode set the objsyncMode.
+     */
+    public void setObjsyncMode(String  objsyncMode) {
+        this.objsyncMode = objsyncMode;
     }
 
     /**
@@ -4963,7 +5166,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Allowed values are 1024-65535.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4001.
      * @return objsyncPort
      */
@@ -4979,7 +5182,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Allowed values are 1024-65535.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4001.
      * @param objsyncPort set the objsyncPort.
      */
@@ -4990,7 +5193,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.1.1.
      * Maximum of 5 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return openstackAvailabilityZones
      */
@@ -5002,7 +5205,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method. this will set the openstackAvailabilityZones
      * Field introduced in 17.1.1.
      * Maximum of 5 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return openstackAvailabilityZones
      */
@@ -5014,7 +5217,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method this will set the openstackAvailabilityZones
      * Field introduced in 17.1.1.
      * Maximum of 5 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return openstackAvailabilityZones
      */
@@ -5029,7 +5232,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Avi management network name.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return openstackMgmtNetworkName
      */
@@ -5040,7 +5243,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Avi management network name.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param openstackMgmtNetworkName set the openstackMgmtNetworkName.
      */
@@ -5051,7 +5254,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Management network uuid.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return openstackMgmtNetworkUuid
      */
@@ -5062,7 +5265,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Management network uuid.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param openstackMgmtNetworkUuid set the openstackMgmtNetworkUuid.
      */
@@ -5074,7 +5277,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Amount of extra memory to be reserved for use by the operating system on a service engine.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return osReservedMemory
      */
@@ -5086,7 +5289,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Amount of extra memory to be reserved for use by the operating system on a service engine.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param osReservedMemory set the osReservedMemory.
      */
@@ -5098,7 +5301,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable path mtu discovery feature for ipv4.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return pathMtuDiscoveryV4
      */
@@ -5110,7 +5313,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable path mtu discovery feature for ipv4.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param pathMtuDiscoveryV4 set the pathMtuDiscoveryV4.
      */
@@ -5122,7 +5325,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable path mtu discovery feature for ipv6.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return pathMtuDiscoveryV6
      */
@@ -5134,7 +5337,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable path mtu discovery feature for ipv6.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param pathMtuDiscoveryV6 set the pathMtuDiscoveryV6.
      */
@@ -5148,7 +5351,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Enum options - PCAP_TX_AUTO, PCAP_TX_SOCKET, PCAP_TX_RING.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PCAP_TX_AUTO".
      * @return pcapTxMode
      */
@@ -5162,7 +5365,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Enum options - PCAP_TX_AUTO, PCAP_TX_SOCKET, PCAP_TX_RING.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PCAP_TX_AUTO".
      * @param pcapTxMode set the pcapTxMode.
      */
@@ -5178,7 +5381,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 10-100.
      * Field introduced in 20.1.3.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return pcapTxRingRdBalancingFactor
      */
@@ -5194,7 +5397,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 10-100.
      * Field introduced in 20.1.3.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param pcapTxRingRdBalancingFactor set the pcapTxRingRdBalancingFactor.
      */
@@ -5207,8 +5410,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Per-app se mode is designed for deploying dedicated load balancers per app (vs).
      * In this mode, each se is limited to a max of 2 vss.
      * Vcpus in per-app ses count towards licensing usage at 25% rate.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return perApp
      */
@@ -5221,8 +5424,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Per-app se mode is designed for deploying dedicated load balancers per app (vs).
      * In this mode, each se is limited to a max of 2 vss.
      * Vcpus in per-app ses count towards licensing usage at 25% rate.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param perApp set the perApp.
      */
@@ -5235,7 +5438,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enable/disable per vs level admission control.enabling this feature will cause the connection and packet throttling on a particular vs that has
      * high packet buffer consumption.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return perVsAdmissionControl
      */
@@ -5248,7 +5451,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enable/disable per vs level admission control.enabling this feature will cause the connection and packet throttling on a particular vs that has
      * high packet buffer consumption.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param perVsAdmissionControl set the perVsAdmissionControl.
      */
@@ -5260,7 +5463,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If placement mode is 'auto', virtual services are automatically placed on service engines.
      * Enum options - PLACEMENT_MODE_AUTO.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PLACEMENT_MODE_AUTO".
      * @return placementMode
      */
@@ -5272,7 +5475,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * If placement mode is 'auto', virtual services are automatically placed on service engines.
      * Enum options - PLACEMENT_MODE_AUTO.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PLACEMENT_MODE_AUTO".
      * @param placementMode set the placementMode.
      */
@@ -5282,8 +5485,36 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Available memory threshold on se in mb, to get qualified for upgrade operation.
+     * Adjusting this knob will override the internal value of available memory threshold for se, thereby qualifying it for upgrade operation.
+     * '0' is a special auto value, which will indicate that memory threshold is calculated based on total memory size of the se.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @return preUpgradeSeAvailableMemThreshold
+     */
+    public Integer getPreUpgradeSeAvailableMemThreshold() {
+        return preUpgradeSeAvailableMemThreshold;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Available memory threshold on se in mb, to get qualified for upgrade operation.
+     * Adjusting this knob will override the internal value of available memory threshold for se, thereby qualifying it for upgrade operation.
+     * '0' is a special auto value, which will indicate that memory threshold is calculated based on total memory size of the se.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @param preUpgradeSeAvailableMemThreshold set the preUpgradeSeAvailableMemThreshold.
+     */
+    public void setPreUpgradeSeAvailableMemThreshold(Integer  preUpgradeSeAvailableMemThreshold) {
+        this.preUpgradeSeAvailableMemThreshold = preUpgradeSeAvailableMemThreshold;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Enable or deactivate real time se metrics.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return realtimeSeMetrics
      */
@@ -5294,7 +5525,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enable or deactivate real time se metrics.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param realtimeSeMetrics set the realtimeSeMetrics.
      */
@@ -5306,7 +5537,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Reboot the vm or host on kernel panic.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return rebootOnPanic
      */
@@ -5318,7 +5549,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Reboot the vm or host on kernel panic.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param rebootOnPanic set the rebootOnPanic.
      */
@@ -5333,7 +5564,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-3000.
      * Field introduced in 22.1.3.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @return replayVrfRoutesInterval
      */
@@ -5348,7 +5579,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-3000.
      * Field introduced in 22.1.3.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @param replayVrfRoutesInterval set the replayVrfRoutesInterval.
      */
@@ -5358,11 +5589,35 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Reserved configuration used for internal configuration purposes.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return reservedConfiguration
+     */
+    public ReservedConfiguration getReservedConfiguration() {
+        return reservedConfiguration;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Reserved configuration used for internal configuration purposes.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param reservedConfiguration set the reservedConfiguration.
+     */
+    public void setReservedConfiguration(ReservedConfiguration reservedConfiguration) {
+        this.reservedConfiguration = reservedConfiguration;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Time interval to re-sync se's time with wall clock time.
      * Allowed values are 8-600000.
      * Field introduced in 20.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 65536.
      * @return resyncTimeInterval
      */
@@ -5376,7 +5631,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 8-600000.
      * Field introduced in 20.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 65536.
      * @param resyncTimeInterval set the resyncTimeInterval.
      */
@@ -5390,8 +5645,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-10000.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return sdbFlushInterval
      */
@@ -5405,8 +5659,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-10000.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param sdbFlushInterval set the sdbFlushInterval.
      */
@@ -5416,11 +5669,38 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * The time in seconds controller redis server persists the key.
+     * Allowed values are 60-600.
+     * Field introduced in 30.2.4.
+     * Unit is seconds.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+     * @return sdbKeyTimeout
+     */
+    public Integer getSdbKeyTimeout() {
+        return sdbKeyTimeout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The time in seconds controller redis server persists the key.
+     * Allowed values are 60-600.
+     * Field introduced in 30.2.4.
+     * Unit is seconds.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+     * @param sdbKeyTimeout set the sdbKeyTimeout.
+     */
+    public void setSdbKeyTimeout(Integer  sdbKeyTimeout) {
+        this.sdbKeyTimeout = sdbKeyTimeout;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Sdb pipeline size.
      * Allowed values are 1-10000.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return sdbPipelineSize
      */
@@ -5433,8 +5713,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Sdb pipeline size.
      * Allowed values are 1-10000.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param sdbPipelineSize set the sdbPipelineSize.
      */
@@ -5447,8 +5726,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Sdb scan count.
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @return sdbScanCount
      */
@@ -5461,8 +5739,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Sdb scan count.
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @param sdbScanCount set the sdbScanCount.
      */
@@ -5475,8 +5752,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Select the se bandwidth for the bandwidth license.
      * Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- se_bandwidth_unlimited), basic edition(allowed values-
-     * se_bandwidth_unlimited), enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- se_bandwidth_unlimited), basic (allowed values- se_bandwidth_unlimited) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seBandwidthType
      */
@@ -5489,8 +5766,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Select the se bandwidth for the bandwidth license.
      * Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- se_bandwidth_unlimited), basic edition(allowed values-
-     * se_bandwidth_unlimited), enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- se_bandwidth_unlimited), basic (allowed values- se_bandwidth_unlimited) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seBandwidthType set the seBandwidthType.
      */
@@ -5505,7 +5782,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Allowed values are 1,2,4,8,255.
      * Field introduced in 22.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @return seDebugTraceSz
      */
@@ -5520,7 +5797,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Allowed values are 1,2,4,8,255.
      * Field introduced in 22.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @param seDebugTraceSz set the seDebugTraceSz.
      */
@@ -5533,8 +5810,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Delay the cleanup of flowtable entry.
      * To be used under surveillance of avi support.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return seDelayedFlowDelete
      */
@@ -5547,8 +5824,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Delay the cleanup of flowtable entry.
      * To be used under surveillance of avi support.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param seDelayedFlowDelete set the seDelayedFlowDelete.
      */
@@ -5563,7 +5840,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * If this value is set to 0, controller will never delete any ses and administrator has to manually cleanup unused ses.
      * Allowed values are 0-525600.
      * Unit is min.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 120.
      * @return seDeprovisionDelay
      */
@@ -5578,7 +5855,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * If this value is set to 0, controller will never delete any ses and administrator has to manually cleanup unused ses.
      * Allowed values are 0-525600.
      * Unit is min.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 120.
      * @param seDeprovisionDelay set the seDeprovisionDelay.
      */
@@ -5588,7 +5865,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDosProfile
      */
@@ -5598,7 +5875,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seDosProfile set the seDosProfile.
      */
@@ -5611,7 +5888,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Internal only.
      * Used to simulate se - se hb failure.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seDpHmDrops
      */
@@ -5624,7 +5901,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Internal only.
      * Used to simulate se - se hb failure.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seDpHmDrops set the seDpHmDrops.
      */
@@ -5636,8 +5913,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Number of jiffies between polling interface state.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return seDpIfStatePollInterval
      */
@@ -5649,8 +5925,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Number of jiffies between polling interface state.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param seDpIfStatePollInterval set the seDpIfStatePollInterval.
      */
@@ -5666,7 +5941,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Supported for >= 8 cpus.
      * Requires se reboot.
      * Field introduced in 20.1.4.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return seDpIsolation
      */
@@ -5682,7 +5957,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Supported for >= 8 cpus.
      * Requires se reboot.
      * Field introduced in 20.1.4.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param seDpIsolation set the seDpIsolation.
      */
@@ -5699,7 +5974,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-8.
      * Special values are 0- auto.
      * Field introduced in 20.1.4.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seDpIsolationNumNonDpCpus
      */
@@ -5716,7 +5991,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-8.
      * Special values are 0- auto.
      * Field introduced in 20.1.4.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seDpIsolationNumNonDpCpus set the seDpIsolationNumNonDpCpus.
      */
@@ -5728,7 +6003,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 70.
      * @return seDpLogNfEnqueuePercent
      */
@@ -5740,7 +6015,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 70.
      * @param seDpLogNfEnqueuePercent set the seDpLogNfEnqueuePercent.
      */
@@ -5752,7 +6027,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 90.
      * @return seDpLogUdfEnqueuePercent
      */
@@ -5764,7 +6039,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 90.
      * @param seDpLogUdfEnqueuePercent set the seDpLogUdfEnqueuePercent.
      */
@@ -5778,7 +6053,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This version is reported by secondary se to primary se in heartbeat response messages.
      * Allowed values are 1-3.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @return seDpMaxHbVersion
      */
@@ -5792,7 +6067,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This version is reported by secondary se to primary se in heartbeat response messages.
      * Allowed values are 1-3.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @param seDpMaxHbVersion set the seDpMaxHbVersion.
      */
@@ -5804,7 +6079,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Time (in seconds) service engine waits for after generating a vnic transmit queue stall event before resetting thenic.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seDpVnicQueueStallEventSleep
      */
@@ -5816,7 +6091,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Time (in seconds) service engine waits for after generating a vnic transmit queue stall event before resetting thenic.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seDpVnicQueueStallEventSleep set the seDpVnicQueueStallEventSleep.
      */
@@ -5828,7 +6103,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Number of consecutive transmit failures to look for before generating a vnic transmit queue stall event.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @return seDpVnicQueueStallThreshold
      */
@@ -5840,7 +6115,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Number of consecutive transmit failures to look for before generating a vnic transmit queue stall event.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @param seDpVnicQueueStallThreshold set the seDpVnicQueueStallThreshold.
      */
@@ -5852,7 +6127,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Time (in milliseconds) to wait for network/nic recovery on detecting a transmit queue stall after which service engine resets the nic.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @return seDpVnicQueueStallTimeout
      */
@@ -5864,7 +6139,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Time (in milliseconds) to wait for network/nic recovery on detecting a transmit queue stall after which service engine resets the nic.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @param seDpVnicQueueStallTimeout set the seDpVnicQueueStallTimeout.
      */
@@ -5876,7 +6151,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Number of consecutive transmit queue stall events in se_dp_vnic_stall_se_restart_window to look for before restarting se.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @return seDpVnicRestartOnQueueStallCount
      */
@@ -5888,7 +6163,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Number of consecutive transmit queue stall events in se_dp_vnic_stall_se_restart_window to look for before restarting se.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @param seDpVnicRestartOnQueueStallCount set the seDpVnicRestartOnQueueStallCount.
      */
@@ -5900,7 +6175,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Window of time (in seconds) during which se_dp_vnic_restart_on_queue_stall_count number of consecutive stalls results in a se restart.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
      * @return seDpVnicStallSeRestartWindow
      */
@@ -5912,7 +6187,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Window of time (in seconds) during which se_dp_vnic_restart_on_queue_stall_count number of consecutive stalls results in a se restart.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
      * @param seDpVnicStallSeRestartWindow set the seDpVnicStallSeRestartWindow.
      */
@@ -5926,7 +6201,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * poll mode driver 2  don't use dpdk poll mode driver.requires se reboot.
      * Allowed values are 0-2.
      * Field introduced in 18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seDpdkPmd
      */
@@ -5940,7 +6215,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * poll mode driver 2  don't use dpdk poll mode driver.requires se reboot.
      * Allowed values are 0-2.
      * Field introduced in 18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seDpdkPmd set the seDpdkPmd.
      */
@@ -5952,8 +6227,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable core dump on assert.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return seDumpCoreOnAssert
      */
@@ -5965,8 +6239,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable core dump on assert.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param seDumpCoreOnAssert set the seDumpCoreOnAssert.
      */
@@ -5979,8 +6252,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Use this to emulate more/less cpus than is actually available.
      * One datapath process is started for each core.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seEmulatedCores
      */
@@ -5993,8 +6266,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Use this to emulate more/less cpus than is actually available.
      * One datapath process is started for each core.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seEmulatedCores set the seEmulatedCores.
      */
@@ -6007,7 +6280,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Flow probe retry count if no replies are received.requires se reboot.
      * Allowed values are 0-5.
      * Field introduced in 18.1.4, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return seFlowProbeRetries
      */
@@ -6020,7 +6293,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Flow probe retry count if no replies are received.requires se reboot.
      * Allowed values are 0-5.
      * Field introduced in 18.1.4, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param seFlowProbeRetries set the seFlowProbeRetries.
      */
@@ -6034,7 +6307,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 20-50.
      * Field introduced in 18.2.5.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 40.
      * @return seFlowProbeRetryTimer
      */
@@ -6048,7 +6321,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 20-50.
      * Field introduced in 18.2.5.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 40.
      * @param seFlowProbeRetryTimer set the seFlowProbeRetryTimer.
      */
@@ -6060,7 +6333,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Analytics policy for serviceenginegroup.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupAnalyticsPolicy
      */
@@ -6072,7 +6345,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Analytics policy for serviceenginegroup.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGroupAnalyticsPolicy set the seGroupAnalyticsPolicy.
      */
@@ -6088,7 +6361,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * For more details please refer to se placement kb.
      * Enum options - SE_CPU_HT_AUTO, SE_CPU_HT_SPARSE_DISPATCHER_PRIORITY, SE_CPU_HT_SPARSE_PROXY_PRIORITY, SE_CPU_HT_PACKED_CORES.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SE_CPU_HT_AUTO".
      * @return seHyperthreadedMode
      */
@@ -6104,7 +6377,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * For more details please refer to se placement kb.
      * Enum options - SE_CPU_HT_AUTO, SE_CPU_HT_SPARSE_DISPATCHER_PRIORITY, SE_CPU_HT_SPARSE_PROXY_PRIORITY, SE_CPU_HT_PACKED_CORES.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SE_CPU_HT_AUTO".
      * @param seHyperthreadedMode set the seHyperthreadedMode.
      */
@@ -6117,7 +6390,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Determines if se-se ipc messages are encapsulated in an ip header       0        automatically determine based on hypervisor type    1        use
      * ip encap unconditionally    ~[0,1]   don't use ip encaprequires se reboot.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seIpEncapIpc
      */
@@ -6130,7 +6403,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Determines if se-se ipc messages are encapsulated in an ip header       0        automatically determine based on hypervisor type    1        use
      * ip encap unconditionally    ~[0,1]   don't use ip encaprequires se reboot.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seIpEncapIpc set the seIpEncapIpc.
      */
@@ -6145,9 +6418,10 @@ public class ServiceEngineGroup extends AviRestResource  {
      * The factor takes the following values      0-default.
      * 1-doubles the burst size and kni resources.
      * 2-quadruples the burst size and kni resources.
-     * Allowed values are 0-2.
+     * 3-increases the burst size and kni resources by a factor of eight.
+     * Allowed values are 0-3.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seKniBurstFactor
      */
@@ -6162,9 +6436,10 @@ public class ServiceEngineGroup extends AviRestResource  {
      * The factor takes the following values      0-default.
      * 1-doubles the burst size and kni resources.
      * 2-quadruples the burst size and kni resources.
-     * Allowed values are 0-2.
+     * 3-increases the burst size and kni resources by a factor of eight.
+     * Allowed values are 0-3.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seKniBurstFactor set the seKniBurstFactor.
      */
@@ -6177,7 +6452,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Determines if se-se ipc messages use se interface ip instead of vip        0        automatically determine based on hypervisor type    1
      * use se interface ip unconditionally    ~[0,1]   don't use se interface iprequires se reboot.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seL3EncapIpc
      */
@@ -6190,7 +6465,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Determines if se-se ipc messages use se interface ip instead of vip        0        automatically determine based on hypervisor type    1
      * use se interface ip unconditionally    ~[0,1]   don't use se interface iprequires se reboot.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seL3EncapIpc set the seL3EncapIpc.
      */
@@ -6202,7 +6477,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Internal flag that blocks dataplane until all application logs are flushed to log-agent process.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return seLogBufferAppBlockingDequeue
      */
@@ -6214,7 +6489,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Internal flag that blocks dataplane until all application logs are flushed to log-agent process.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param seLogBufferAppBlockingDequeue set the seLogBufferAppBlockingDequeue.
      */
@@ -6226,7 +6501,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return seLogBufferConnBlockingDequeue
      */
@@ -6238,7 +6513,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param seLogBufferConnBlockingDequeue set the seLogBufferConnBlockingDequeue.
      */
@@ -6250,7 +6525,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return seLogBufferEventsBlockingDequeue
      */
@@ -6262,7 +6537,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param seLogBufferEventsBlockingDequeue set the seLogBufferEventsBlockingDequeue.
      */
@@ -6274,7 +6549,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable or disable large receive optimization for vnics.supported on vmxnet3.requires se reboot.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seLro
      */
@@ -6286,7 +6561,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable or disable large receive optimization for vnics.supported on vmxnet3.requires se reboot.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seLro set the seLro.
      */
@@ -6299,8 +6574,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * The retry count for the multi-producer enqueue before yielding the cpu.
      * To be used under surveillance of avi support.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 500), basic edition(allowed values- 500), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 500), basic (allowed values- 500) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
      * @return seMpRingRetryCount
      */
@@ -6313,8 +6588,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * The retry count for the multi-producer enqueue before yielding the cpu.
      * To be used under surveillance of avi support.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 500), basic edition(allowed values- 500), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 500), basic (allowed values- 500) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
      * @param seMpRingRetryCount set the seMpRingRetryCount.
      */
@@ -6327,7 +6602,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Mtu for the vnics of ses in the se group.
      * Allowed values are 512-9000.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seMtu
      */
@@ -6340,7 +6615,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Mtu for the vnics of ses in the se group.
      * Allowed values are 512-9000.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seMtu set the seMtu.
      */
@@ -6351,7 +6626,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Prefix to use for virtual machine name of service engines.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "Avi".
      * @return seNamePrefix
      */
@@ -6362,7 +6637,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Prefix to use for virtual machine name of service engines.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "Avi".
      * @param seNamePrefix set the seNamePrefix.
      */
@@ -6375,8 +6650,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Internal use only.
      * Used to artificially reduce the available number of packet buffers.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return sePacketBufferMax
      */
@@ -6389,8 +6663,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Internal use only.
      * Used to artificially reduce the available number of packet buffers.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param sePacketBufferMax set the sePacketBufferMax.
      */
@@ -6404,7 +6677,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Introduced to overcome an issue with hv_netvsc driver.
      * Lookahead mode attempts to ensure that application and kernel's view of the receive rings are consistent.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return sePcapLookahead
      */
@@ -6418,7 +6691,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Introduced to overcome an issue with hv_netvsc driver.
      * Lookahead mode attempts to ensure that application and kernel's view of the receive rings are consistent.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param sePcapLookahead set the sePcapLookahead.
      */
@@ -6431,7 +6704,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Max number of packets the pcap interface can hold and if the value is 0 the optimum value will be chosen.
      * The optimum value will be chosen based on se-memory, cloud type and number of interfaces.requires se reboot.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return sePcapPktCount
      */
@@ -6444,7 +6717,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Max number of packets the pcap interface can hold and if the value is 0 the optimum value will be chosen.
      * The optimum value will be chosen based on se-memory, cloud type and number of interfaces.requires se reboot.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param sePcapPktCount set the sePcapPktCount.
      */
@@ -6457,7 +6730,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Max size of each packet in the pcap interface.
      * Requires se reboot.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 69632.
      * @return sePcapPktSz
      */
@@ -6470,7 +6743,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Max size of each packet in the pcap interface.
      * Requires se reboot.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 69632.
      * @param sePcapPktSz set the sePcapPktSz.
      */
@@ -6484,7 +6757,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enabling this feature results in egress packets not being captured in host tcpdump.
      * Note   brief packet reordering or loss may occur upon toggle.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return sePcapQdiscBypass
      */
@@ -6498,7 +6771,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enabling this feature results in egress packets not being captured in host tcpdump.
      * Note   brief packet reordering or loss may occur upon toggle.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param sePcapQdiscBypass set the sePcapQdiscBypass.
      */
@@ -6515,7 +6788,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Special values are 0- disable.
      * Field introduced in 17.2.13, 18.1.3, 18.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return sePcapReinitFrequency
      */
@@ -6532,7 +6805,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Special values are 0- disable.
      * Field introduced in 17.2.13, 18.1.3, 18.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param sePcapReinitFrequency set the sePcapReinitFrequency.
      */
@@ -6547,7 +6820,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This value is checked every pcap_reinit_frequency interval.
      * Field introduced in 17.2.13, 18.1.3, 18.2.1.
      * Unit is metric_count.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return sePcapReinitThreshold
      */
@@ -6562,7 +6835,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This value is checked every pcap_reinit_frequency interval.
      * Field introduced in 17.2.13, 18.1.3, 18.2.1.
      * Unit is metric_count.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param sePcapReinitThreshold set the sePcapReinitThreshold.
      */
@@ -6574,7 +6847,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Tcp port on se where echo service will be run.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 7.
      * @return seProbePort
      */
@@ -6586,7 +6859,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Tcp port on se where echo service will be run.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 7.
      * @param seProbePort set the seProbePort.
      */
@@ -6598,7 +6871,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Rate limiter properties.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seRlProp
      */
@@ -6610,7 +6883,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Rate limiter properties.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seRlProp set the seRlProp.
      */
@@ -6623,7 +6896,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Minimum time to wait on server between taking sampleswhen sampling the navigation timing data from the end user client.
      * Field introduced in 18.2.6.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return seRumSamplingNavInterval
      */
@@ -6636,7 +6909,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Minimum time to wait on server between taking sampleswhen sampling the navigation timing data from the end user client.
      * Field introduced in 18.2.6.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param seRumSamplingNavInterval set the seRumSamplingNavInterval.
      */
@@ -6648,7 +6921,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Percentage of navigation timing data from the end user client, used for sampling to get client insights.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return seRumSamplingNavPercent
      */
@@ -6660,7 +6933,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Percentage of navigation timing data from the end user client, used for sampling to get client insights.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param seRumSamplingNavPercent set the seRumSamplingNavPercent.
      */
@@ -6673,7 +6946,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Minimum time to wait on server between taking sampleswhen sampling the resource timing data from the end user client.
      * Field introduced in 18.2.6.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return seRumSamplingResInterval
      */
@@ -6686,7 +6959,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Minimum time to wait on server between taking sampleswhen sampling the resource timing data from the end user client.
      * Field introduced in 18.2.6.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param seRumSamplingResInterval set the seRumSamplingResInterval.
      */
@@ -6698,7 +6971,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Percentage of resource timing data from the end user client used for sampling to get client insight.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return seRumSamplingResPercent
      */
@@ -6710,7 +6983,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Percentage of resource timing data from the end user client used for sampling to get client insight.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param seRumSamplingResPercent set the seRumSamplingResPercent.
      */
@@ -6722,7 +6995,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Sideband traffic will be handled by a dedicated core.requires se reboot.
      * Field introduced in 16.5.2, 17.1.9, 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return seSbDedicatedCore
      */
@@ -6734,7 +7007,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Sideband traffic will be handled by a dedicated core.requires se reboot.
      * Field introduced in 16.5.2, 17.1.9, 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param seSbDedicatedCore set the seSbDedicatedCore.
      */
@@ -6747,7 +7020,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Number of sideband threads per se.requires se reboot.
      * Allowed values are 1-128.
      * Field introduced in 16.5.2, 17.1.9, 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return seSbThreads
      */
@@ -6760,7 +7033,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Number of sideband threads per se.requires se reboot.
      * Allowed values are 1-128.
      * Field introduced in 16.5.2, 17.1.9, 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param seSbThreads set the seSbThreads.
      */
@@ -6772,8 +7045,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Multiplier for se threads based on vcpu.
      * Allowed values are 1-10.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 1), basic edition(allowed values- 1), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 1), basic (allowed values- 1) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return seThreadMultiplier
      */
@@ -6785,8 +7058,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Multiplier for se threads based on vcpu.
      * Allowed values are 1-10.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 1), basic edition(allowed values- 1), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 1), basic (allowed values- 1) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param seThreadMultiplier set the seThreadMultiplier.
      */
@@ -6798,8 +7071,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Time tracker properties for latency audit.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seTimeTrackerProps
      */
@@ -6811,8 +7083,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Time tracker properties for latency audit.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seTimeTrackerProps set the seTimeTrackerProps.
      */
@@ -6824,7 +7095,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Traceroute port range.
      * Field introduced in 17.2.8.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seTracertPortRange
      */
@@ -6836,7 +7107,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Traceroute port range.
      * Field introduced in 17.2.8.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seTracertPortRange set the seTracertPortRange.
      */
@@ -6852,8 +7123,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Tunnel mode can be enabled or disabled at run-time.
      * Allowed values are 0-2.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seTunnelMode
      */
@@ -6869,8 +7140,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Tunnel mode can be enabled or disabled at run-time.
      * Allowed values are 0-2.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 0), basic edition(allowed values- 0), enterprise with cloud
-     * services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seTunnelMode set the seTunnelMode.
      */
@@ -6882,7 +7153,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Udp port for tunneled packets from secondary to primary se in docker bridge mode.requires se reboot.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1550.
      * @return seTunnelUdpPort
      */
@@ -6894,7 +7165,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Udp port for tunneled packets from secondary to primary se in docker bridge mode.requires se reboot.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1550.
      * @param seTunnelUdpPort set the seTunnelUdpPort.
      */
@@ -6907,7 +7178,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Number of packets to batch for transmit to the nic.
      * Requires se reboot.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @return seTxBatchSize
      */
@@ -6920,7 +7191,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Number of packets to batch for transmit to the nic.
      * Requires se reboot.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @param seTxBatchSize set the seTxBatchSize.
      */
@@ -6934,8 +7205,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * To be used under surveillance of avi support.
      * Allowed values are 512-32768.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 2048), basic edition(allowed values- 2048), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 2048), basic (allowed values- 2048) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
      * @return seTxqThreshold
      */
@@ -6949,8 +7220,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * To be used under surveillance of avi support.
      * Allowed values are 512-32768.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 2048), basic edition(allowed values- 2048), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 2048), basic (allowed values- 2048) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
      * @param seTxqThreshold set the seTxqThreshold.
      */
@@ -6964,7 +7235,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * 1  use udp encap unconditionally.requires se reboot.
      * Allowed values are 0-1.
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seUdpEncapIpc
      */
@@ -6978,7 +7249,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * 1  use udp encap unconditionally.requires se reboot.
      * Allowed values are 0-1.
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seUdpEncapIpc set the seUdpEncapIpc.
      */
@@ -6992,7 +7263,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * don't use dpdk.
      * Allowed values are 0-2.
      * Field introduced in 18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seUseDpdk
      */
@@ -7006,7 +7277,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * don't use dpdk.
      * Allowed values are 0-2.
      * Field introduced in 18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seUseDpdk set the seUseDpdk.
      */
@@ -7022,7 +7293,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Special values are 0- disable.
      * Field introduced in 20.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seVnicTxSwQueueFlushFrequency
      */
@@ -7038,7 +7309,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Special values are 0- disable.
      * Field introduced in 20.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seVnicTxSwQueueFlushFrequency set the seVnicTxSwQueueFlushFrequency.
      */
@@ -7052,7 +7323,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Allowed values are 128-2048.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 256.
      * @return seVnicTxSwQueueSize
      */
@@ -7066,7 +7337,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Requires se reboot.
      * Allowed values are 128-2048.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 256.
      * @param seVnicTxSwQueueSize set the seVnicTxSwQueueSize.
      */
@@ -7079,7 +7350,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Maximum number of aggregated vs heartbeat packets to send in a batch.
      * Allowed values are 1-256.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @return seVsHbMaxPktsInBatch
      */
@@ -7092,7 +7363,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Maximum number of aggregated vs heartbeat packets to send in a batch.
      * Allowed values are 1-256.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @param seVsHbMaxPktsInBatch set the seVsHbMaxPktsInBatch.
      */
@@ -7105,7 +7376,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Maximum number of virtualservices for which heartbeat messages are aggregated in one packet.
      * Allowed values are 1-1024.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 256.
      * @return seVsHbMaxVsInPkt
      */
@@ -7118,7 +7389,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Maximum number of virtualservices for which heartbeat messages are aggregated in one packet.
      * Allowed values are 1-1024.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 256.
      * @param seVsHbMaxVsInPkt set the seVsHbMaxVsInPkt.
      */
@@ -7130,8 +7401,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable ses to elect a primary amongst themselves in the absence of a connectivity to controller.
      * Field introduced in 18.1.2.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return selfSeElection
      */
@@ -7143,8 +7414,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable ses to elect a primary amongst themselves in the absence of a connectivity to controller.
      * Field introduced in 18.1.2.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param selfSeElection set the selfSeElection.
      */
@@ -7158,8 +7429,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 10-600.
      * Field introduced in 21.1.1.
      * Unit is seconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return sendSeReadyTimeout
      */
@@ -7173,8 +7443,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 10-600.
      * Field introduced in 21.1.1.
      * Unit is seconds.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param sendSeReadyTimeout set the sendSeReadyTimeout.
      */
@@ -7187,7 +7456,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Required for vs group placement.
      * Field introduced in 18.1.1.
      * Maximum of 128 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceIp6Subnets
      */
@@ -7201,7 +7470,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Required for vs group placement.
      * Field introduced in 18.1.1.
      * Maximum of 128 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceIp6Subnets
      */
@@ -7215,7 +7484,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Required for vs group placement.
      * Field introduced in 18.1.1.
      * Maximum of 128 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceIp6Subnets
      */
@@ -7232,7 +7501,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Required for vs group placement.
      * Field introduced in 17.1.1.
      * Maximum of 128 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceIpSubnets
      */
@@ -7246,7 +7515,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Required for vs group placement.
      * Field introduced in 17.1.1.
      * Maximum of 128 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceIpSubnets
      */
@@ -7260,7 +7529,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Required for vs group placement.
      * Field introduced in 17.1.1.
      * Maximum of 128 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceIpSubnets
      */
@@ -7278,7 +7547,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-100.
      * Field introduced in 18.1.2.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return shmMinimumConfigMemory
      */
@@ -7292,7 +7561,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-100.
      * Field introduced in 18.1.2.
      * Unit is mb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param shmMinimumConfigMemory set the shmMinimumConfigMemory.
      */
@@ -7307,7 +7576,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Set it to zero (0) to deactivate throttling.
      * Field introduced in 17.1.3.
      * Unit is per_second.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return significantLogThrottle
      */
@@ -7322,7 +7591,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Set it to zero (0) to deactivate throttling.
      * Field introduced in 17.1.3.
      * Unit is per_second.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param significantLogThrottle set the significantLogThrottle.
      */
@@ -7335,7 +7604,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * (beta) preprocess ssl client hello for sni hostname extension.if set to true, this will apply sni child's ssl protocol(s), if they are different
      * from sni parent's allowed ssl protocol(s).
      * Field introduced in 17.2.12, 18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return sslPreprocessSniHostname
      */
@@ -7348,7 +7617,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * (beta) preprocess ssl client hello for sni hostname extension.if set to true, this will apply sni child's ssl protocol(s), if they are different
      * from sni parent's allowed ssl protocol(s).
      * Field introduced in 17.2.12, 18.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param sslPreprocessSniHostname set the sslPreprocessSniHostname.
      */
@@ -7360,7 +7629,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Number of ssl sessions that can be cached per vs.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
      * @return sslSessCachePerVs
      */
@@ -7372,7 +7641,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Number of ssl sessions that can be cached per vs.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
      * @param sslSessCachePerVs set the sslSessCachePerVs.
      */
@@ -7383,7 +7652,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -7394,7 +7663,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -7408,7 +7677,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-100.
      * Field introduced in 20.1.1.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return transientSharedMemoryMax
      */
@@ -7422,7 +7691,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-100.
      * Field introduced in 20.1.1.
      * Unit is percent.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param transientSharedMemoryMax set the transientSharedMemoryMax.
      */
@@ -7438,7 +7707,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Set it to zero (0) to deactivate throttling.
      * Field introduced in 17.1.3.
      * Unit is per_second.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return udfLogThrottle
      */
@@ -7454,7 +7723,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Set it to zero (0) to deactivate throttling.
      * Field introduced in 17.1.3.
      * Unit is per_second.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param udfLogThrottle set the udfLogThrottle.
      */
@@ -7467,7 +7736,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Timeout for backend connection.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
      * @return upstreamConnectTimeout
      */
@@ -7480,7 +7749,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Timeout for backend connection.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
      * @param upstreamConnectTimeout set the upstreamConnectTimeout.
      */
@@ -7492,7 +7761,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable upstream connection pool,.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return upstreamConnpoolEnable
      */
@@ -7504,7 +7773,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable upstream connection pool,.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param upstreamConnpoolEnable set the upstreamConnpoolEnable.
      */
@@ -7517,7 +7786,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Timeout for data to be received from backend.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
      * @return upstreamReadTimeout
      */
@@ -7530,7 +7799,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Timeout for data to be received from backend.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
      * @param upstreamReadTimeout set the upstreamReadTimeout.
      */
@@ -7543,8 +7812,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Timeout for upstream to become writable.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 3600000), basic edition(allowed values- 3600000), enterprise
-     * with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 3600000), basic (allowed values- 3600000) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
      * @return upstreamSendTimeout
      */
@@ -7557,8 +7826,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Timeout for upstream to become writable.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- 3600000), basic edition(allowed values- 3600000), enterprise
-     * with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- 3600000), basic (allowed values- 3600000) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
      * @param upstreamSendTimeout set the upstreamSendTimeout.
      */
@@ -7587,8 +7856,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If enabled, the datapath cpu utilization is consulted by the auto scale-out logic.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useDpUtilForScaleout
      */
@@ -7600,8 +7868,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * If enabled, the datapath cpu utilization is consulted by the auto scale-out logic.
      * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useDpUtilForScaleout set the useDpUtilForScaleout.
      */
@@ -7614,7 +7881,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enables the use of hyper-threaded cores on se.
      * Requires se reboot.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return useHyperthreadedCores
      */
@@ -7627,7 +7894,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Enables the use of hyper-threaded cores on se.
      * Requires se reboot.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param useHyperthreadedCores set the useHyperthreadedCores.
      */
@@ -7639,7 +7906,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable legacy model of netlink notifications.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useLegacyNetlink
      */
@@ -7651,7 +7918,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable legacy model of netlink notifications.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useLegacyNetlink set the useLegacyNetlink.
      */
@@ -7662,10 +7929,10 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable interse objsyc distribution framework.
+     * Deprecated, use objsync_mode instead.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return useObjsync
      */
     public Boolean getUseObjsync() {
@@ -7675,10 +7942,10 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enable interse objsyc distribution framework.
+     * Deprecated, use objsync_mode instead.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param useObjsync set the useObjsync.
      */
     public void setUseObjsync(Boolean  useObjsync) {
@@ -7691,8 +7958,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * By default cloud level flag is set.
      * If not set, it inherits/uses the use_standard_alb flag from the cloud.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return useStandardAlb
      */
     public Boolean getUseStandardAlb() {
@@ -7705,8 +7972,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * By default cloud level flag is set.
      * If not set, it inherits/uses the use_standard_alb flag from the cloud.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param useStandardAlb set the useStandardAlb.
      */
     public void setUseStandardAlb(Boolean  useStandardAlb) {
@@ -7717,7 +7984,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Configuration for user-agent cache used in bot management.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userAgentCacheConfig
      */
@@ -7729,7 +7996,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Configuration for user-agent cache used in bot management.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userAgentCacheConfig set the userAgentCacheConfig.
      */
@@ -7742,7 +8009,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Defines in seconds how long before an unused user-defined-metric is garbage collected.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return userDefinedMetricAge
      */
@@ -7755,7 +8022,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Defines in seconds how long before an unused user-defined-metric is garbage collected.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param userDefinedMetricAge set the userDefinedMetricAge.
      */
@@ -7765,7 +8032,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -7775,7 +8042,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -7785,7 +8052,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterClusters
      */
@@ -7795,7 +8062,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterClusters set the vcenterClusters.
      */
@@ -7806,7 +8073,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - VCENTER_DATASTORE_ANY, VCENTER_DATASTORE_LOCAL, VCENTER_DATASTORE_SHARED.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "VCENTER_DATASTORE_ANY".
      * @return vcenterDatastoreMode
      */
@@ -7817,7 +8084,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enum options - VCENTER_DATASTORE_ANY, VCENTER_DATASTORE_LOCAL, VCENTER_DATASTORE_SHARED.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "VCENTER_DATASTORE_ANY".
      * @param vcenterDatastoreMode set the vcenterDatastoreMode.
      */
@@ -7826,7 +8093,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterDatastores
      */
@@ -7836,7 +8103,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method. this will set the vcenterDatastores
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterDatastores
      */
@@ -7846,7 +8113,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method this will set the vcenterDatastores
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterDatastores
      */
@@ -7860,7 +8127,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return vcenterDatastoresInclude
      */
@@ -7870,7 +8137,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param vcenterDatastoresInclude set the vcenterDatastoresInclude.
      */
@@ -7881,7 +8148,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Folder to place all the service engine virtual machines in vcenter.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AviSeFolder".
      * @return vcenterFolder
      */
@@ -7892,7 +8159,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Folder to place all the service engine virtual machines in vcenter.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AviSeFolder".
      * @param vcenterFolder set the vcenterFolder.
      */
@@ -7902,7 +8169,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterHosts
      */
@@ -7912,7 +8179,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterHosts set the vcenterHosts.
      */
@@ -7924,7 +8191,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Parking port group to be used by 9 vnics at the time of se creation.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterParkingVnicPg
      */
@@ -7936,7 +8203,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Parking port group to be used by 9 vnics at the time of se creation.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterParkingVnicPg set the vcenterParkingVnicPg.
      */
@@ -7947,7 +8214,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Vcenter information for scoping at host/cluster level.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenters
      */
@@ -7959,7 +8226,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method. this will set the vcenters
      * Vcenter information for scoping at host/cluster level.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenters
      */
@@ -7971,7 +8238,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method this will set the vcenters
      * Vcenter information for scoping at host/cluster level.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenters
      */
@@ -7987,7 +8254,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Number of vcpus for each of the service engine virtual machines.
      * Changes to this setting do not affect existing ses.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return vcpusPerSe
      */
@@ -7999,7 +8266,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Number of vcpus for each of the service engine virtual machines.
      * Changes to this setting do not affect existing ses.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param vcpusPerSe set the vcpusPerSe.
      */
@@ -8011,7 +8278,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * When vip_asg is set, vip configuration will be managed by avi.user will be able to configure vip_asg or vips individually at the time of create.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipAsg
      */
@@ -8023,7 +8290,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * When vip_asg is set, vip configuration will be managed by avi.user will be able to configure vip_asg or vips individually at the time of create.
      * Field introduced in 17.2.12, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipAsg set the vipAsg.
      */
@@ -8037,8 +8304,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 6.
      * @return vnicDhcpIpCheckInterval
      */
@@ -8052,8 +8318,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 6.
      * @param vnicDhcpIpCheckInterval set the vnicDhcpIpCheckInterval.
      */
@@ -8065,8 +8330,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Dhcp ip max retries.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return vnicDhcpIpMaxRetries
      */
@@ -8078,8 +8342,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Dhcp ip max retries.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param vnicDhcpIpMaxRetries set the vnicDhcpIpMaxRetries.
      */
@@ -8092,8 +8355,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Wait interval before deleting ip.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return vnicIpDeleteInterval
      */
@@ -8106,8 +8368,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Wait interval before deleting ip.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param vnicIpDeleteInterval set the vnicIpDeleteInterval.
      */
@@ -8120,8 +8381,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Probe vnic interval.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return vnicProbeInterval
      */
@@ -8134,8 +8394,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Probe vnic interval.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param vnicProbeInterval set the vnicProbeInterval.
      */
@@ -8148,8 +8407,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Time interval for retrying the failed vnic rpc requests.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return vnicRpcRetryInterval
      */
@@ -8162,8 +8420,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Time interval for retrying the failed vnic rpc requests.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param vnicRpcRetryInterval set the vnicRpcRetryInterval.
      */
@@ -8176,8 +8433,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Size of vnicdb command history.
      * Allowed values are 0-65535.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 256.
      * @return vnicdbCmdHistorySize
      */
@@ -8190,8 +8446,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Size of vnicdb command history.
      * Allowed values are 0-65535.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 256.
      * @param vnicdbCmdHistorySize set the vnicdbCmdHistorySize.
      */
@@ -8202,9 +8457,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Ensure primary and secondary service engines are deployed on different physical hosts.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
-     * cloud services edition.
-     * Special default for essentials edition is true, basic edition is true, enterprise is true.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
+     * Special default for essentials edition is true, basic edition is true, enterprise edition is true.
      * @return vsHostRedundancy
      */
     public Boolean getVsHostRedundancy() {
@@ -8214,9 +8469,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Ensure primary and secondary service engines are deployed on different physical hosts.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- true), basic edition(allowed values- true), enterprise with
-     * cloud services edition.
-     * Special default for essentials edition is true, basic edition is true, enterprise is true.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
+     * Special default for essentials edition is true, basic edition is true, enterprise edition is true.
      * @param vsHostRedundancy set the vsHostRedundancy.
      */
     public void setVsHostRedundancy(Boolean  vsHostRedundancy) {
@@ -8227,7 +8482,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Time to wait for the scaled in se to drain existing flows before marking the scalein done.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return vsScaleinTimeout
      */
@@ -8239,7 +8494,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Time to wait for the scaled in se to drain existing flows before marking the scalein done.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param vsScaleinTimeout set the vsScaleinTimeout.
      */
@@ -8251,7 +8506,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * During se upgrade, time to wait for the scaled-in se to drain existing flows before marking the scalein done.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return vsScaleinTimeoutForUpgrade
      */
@@ -8263,7 +8518,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * During se upgrade, time to wait for the scaled-in se to drain existing flows before marking the scalein done.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param vsScaleinTimeoutForUpgrade set the vsScaleinTimeoutForUpgrade.
      */
@@ -8275,7 +8530,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Time to wait for the scaled out se to become ready before marking the scaleout done.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
      * @return vsScaleoutTimeout
      */
@@ -8287,7 +8542,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Time to wait for the scaled out se to become ready before marking the scaleout done.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
      * @param vsScaleoutTimeout set the vsScaleoutTimeout.
      */
@@ -8303,7 +8558,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-300.
      * Field introduced in 30.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return vsSePrimarySwitchoverAdditionalWaitTime
      */
@@ -8319,7 +8574,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-300.
      * Field introduced in 30.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param vsSePrimarySwitchoverAdditionalWaitTime set the vsSePrimarySwitchoverAdditionalWaitTime.
      */
@@ -8335,7 +8590,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-300.
      * Field introduced in 30.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return vsSeScaleinAdditionalWaitTime
      */
@@ -8351,7 +8606,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-300.
      * Field introduced in 30.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param vsSeScaleinAdditionalWaitTime set the vsSeScaleinAdditionalWaitTime.
      */
@@ -8367,7 +8622,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-300.
      * Field introduced in 18.1.5,18.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return vsSeScaleoutAdditionalWaitTime
      */
@@ -8383,7 +8638,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-300.
      * Field introduced in 18.1.5,18.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param vsSeScaleoutAdditionalWaitTime set the vsSeScaleoutAdditionalWaitTime.
      */
@@ -8397,7 +8652,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-90.
      * Field introduced in 18.1.5,18.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return vsSeScaleoutReadyTimeout
      */
@@ -8411,7 +8666,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 0-90.
      * Field introduced in 18.1.5,18.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param vsSeScaleoutReadyTimeout set the vsSeScaleoutReadyTimeout.
      */
@@ -8424,7 +8679,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * During se upgrade in a legacy active/standby segroup, time to wait for the new primary se to accept flows before marking the switchover done.
      * Field introduced in 17.2.13,18.1.4,18.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return vsSwitchoverTimeout
      */
@@ -8437,19 +8692,58 @@ public class ServiceEngineGroup extends AviRestResource  {
      * During se upgrade in a legacy active/standby segroup, time to wait for the new primary se to accept flows before marking the switchover done.
      * Field introduced in 17.2.13,18.1.4,18.2.1.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param vsSwitchoverTimeout set the vsSwitchoverTimeout.
      */
     public void setVsSwitchoverTimeout(Integer  vsSwitchoverTimeout) {
         this.vsSwitchoverTimeout = vsSwitchoverTimeout;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Vsphere vm storage policy uuid to be associated to the service engine.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vsphereStoragePolicies
+     */
+    public List<VsphereStoragePolicy> getVsphereStoragePolicies() {
+        return vsphereStoragePolicies;
+    }
+
+    /**
+     * This is the setter method. this will set the vsphereStoragePolicies
+     * Vsphere vm storage policy uuid to be associated to the service engine.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vsphereStoragePolicies
+     */
+    public void setVsphereStoragePolicies(List<VsphereStoragePolicy>  vsphereStoragePolicies) {
+        this.vsphereStoragePolicies = vsphereStoragePolicies;
+    }
+
+    /**
+     * This is the setter method this will set the vsphereStoragePolicies
+     * Vsphere vm storage policy uuid to be associated to the service engine.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vsphereStoragePolicies
+     */
+    public ServiceEngineGroup addVsphereStoragePoliciesItem(VsphereStoragePolicy vsphereStoragePoliciesItem) {
+      if (this.vsphereStoragePolicies == null) {
+        this.vsphereStoragePolicies = new ArrayList<VsphereStoragePolicy>();
+      }
+      this.vsphereStoragePolicies.add(vsphereStoragePoliciesItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
      * Parameters to place virtual services on only a subset of the cores of an se.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vssPlacement
      */
@@ -8461,7 +8755,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Parameters to place virtual services on only a subset of the cores of an se.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vssPlacement set the vssPlacement.
      */
@@ -8473,7 +8767,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If set, virtual services will be placed on only a subset of the cores of an se.
      * Field introduced in 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return vssPlacementEnabled
      */
@@ -8485,7 +8779,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * If set, virtual services will be placed on only a subset of the cores of an se.
      * Field introduced in 18.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param vssPlacementEnabled set the vssPlacementEnabled.
      */
@@ -8497,7 +8791,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable memory pool for waf.requires se reboot.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return wafMempool
      */
@@ -8509,7 +8803,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable memory pool for waf.requires se reboot.
      * Field introduced in 17.2.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param wafMempool set the wafMempool.
      */
@@ -8522,7 +8816,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Memory pool size used for waf.requires se reboot.
      * Field introduced in 17.2.3.
      * Unit is kb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @return wafMempoolSize
      */
@@ -8535,12 +8829,38 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Memory pool size used for waf.requires se reboot.
      * Field introduced in 17.2.3.
      * Unit is kb.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @param wafMempoolSize set the wafMempoolSize.
      */
     public void setWafMempoolSize(Integer  wafMempoolSize) {
         this.wafMempoolSize = wafMempoolSize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Use the jit compiler for pcre regular expressions in waf.
+     * Setting this to false will impact performance.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return wafUseJitForPcre
+     */
+    public Boolean getWafUseJitForPcre() {
+        return wafUseJitForPcre;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Use the jit compiler for pcre regular expressions in waf.
+     * Setting this to false will impact performance.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param wafUseJitForPcre set the wafUseJitForPcre.
+     */
+    public void setWafUseJitForPcre(Boolean  wafUseJitForPcre) {
+        this.wafUseJitForPcre = wafUseJitForPcre;
     }
 
 
@@ -8837,7 +9157,19 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.pathMtuDiscoveryV6, objServiceEngineGroup.pathMtuDiscoveryV6)&&
   Objects.equals(this.metricsCollectionMode, objServiceEngineGroup.metricsCollectionMode)&&
   Objects.equals(this.seDebugTraceSz, objServiceEngineGroup.seDebugTraceSz)&&
-  Objects.equals(this.multicastEnable, objServiceEngineGroup.multicastEnable);
+  Objects.equals(this.multicastEnable, objServiceEngineGroup.multicastEnable)&&
+  Objects.equals(this.maxNumHttpSessionsToStore, objServiceEngineGroup.maxNumHttpSessionsToStore)&&
+  Objects.equals(this.gveEnabled, objServiceEngineGroup.gveEnabled)&&
+  Objects.equals(this.wafUseJitForPcre, objServiceEngineGroup.wafUseJitForPcre)&&
+  Objects.equals(this.enableQat, objServiceEngineGroup.enableQat)&&
+  Objects.equals(this.preUpgradeSeAvailableMemThreshold, objServiceEngineGroup.preUpgradeSeAvailableMemThreshold)&&
+  Objects.equals(this.kvValMaxLen, objServiceEngineGroup.kvValMaxLen)&&
+  Objects.equals(this.arpCacheTimeout, objServiceEngineGroup.arpCacheTimeout)&&
+  Objects.equals(this.nd6CacheTimeout, objServiceEngineGroup.nd6CacheTimeout)&&
+  Objects.equals(this.objsyncMode, objServiceEngineGroup.objsyncMode)&&
+  Objects.equals(this.reservedConfiguration, objServiceEngineGroup.reservedConfiguration)&&
+  Objects.equals(this.vsphereStoragePolicies, objServiceEngineGroup.vsphereStoragePolicies)&&
+  Objects.equals(this.sdbKeyTimeout, objServiceEngineGroup.sdbKeyTimeout);
     }
 
     @Override
@@ -8853,6 +9185,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    appCacheThreshold: ").append(toIndentedString(appCacheThreshold)).append("\n");
                         sb.append("    appLearningMemoryPercent: ").append(toIndentedString(appLearningMemoryPercent)).append("\n");
                         sb.append("    archiveShmLimit: ").append(toIndentedString(archiveShmLimit)).append("\n");
+                        sb.append("    arpCacheTimeout: ").append(toIndentedString(arpCacheTimeout)).append("\n");
                         sb.append("    asyncSsl: ").append(toIndentedString(asyncSsl)).append("\n");
                         sb.append("    asyncSslThreads: ").append(toIndentedString(asyncSslThreads)).append("\n");
                         sb.append("    autoRebalance: ").append(toIndentedString(autoRebalance)).append("\n");
@@ -8907,6 +9240,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    enableHsmPriming: ").append(toIndentedString(enableHsmPriming)).append("\n");
                         sb.append("    enableMultiLb: ").append(toIndentedString(enableMultiLb)).append("\n");
                         sb.append("    enablePcapTxRing: ").append(toIndentedString(enablePcapTxRing)).append("\n");
+                        sb.append("    enableQat: ").append(toIndentedString(enableQat)).append("\n");
                         sb.append("    ephemeralPortrangeEnd: ").append(toIndentedString(ephemeralPortrangeEnd)).append("\n");
                         sb.append("    ephemeralPortrangeStart: ").append(toIndentedString(ephemeralPortrangeStart)).append("\n");
                         sb.append("    extraConfigMultiplier: ").append(toIndentedString(extraConfigMultiplier)).append("\n");
@@ -8916,6 +9250,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    gcpConfig: ").append(toIndentedString(gcpConfig)).append("\n");
                         sb.append("    gratarpPermanentPeriodicity: ").append(toIndentedString(gratarpPermanentPeriodicity)).append("\n");
                         sb.append("    grpcChannelConnectTimeout: ").append(toIndentedString(grpcChannelConnectTimeout)).append("\n");
+                        sb.append("    gveEnabled: ").append(toIndentedString(gveEnabled)).append("\n");
                         sb.append("    haMode: ").append(toIndentedString(haMode)).append("\n");
                         sb.append("    handlePerPktAttack: ").append(toIndentedString(handlePerPktAttack)).append("\n");
                         sb.append("    hardwaresecuritymodulegroupRef: ").append(toIndentedString(hardwaresecuritymodulegroupRef)).append("\n");
@@ -8935,6 +9270,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    instanceFlavor: ").append(toIndentedString(instanceFlavor)).append("\n");
                         sb.append("    iptables: ").append(toIndentedString(iptables)).append("\n");
                         sb.append("    kniAllowedServerPorts: ").append(toIndentedString(kniAllowedServerPorts)).append("\n");
+                        sb.append("    kvValMaxLen: ").append(toIndentedString(kvValMaxLen)).append("\n");
                         sb.append("    l7ConnsPerCore: ").append(toIndentedString(l7ConnsPerCore)).append("\n");
                         sb.append("    l7ResvdListenConnsPerCore: ").append(toIndentedString(l7ResvdListenConnsPerCore)).append("\n");
                         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
@@ -8964,6 +9300,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    maxConcurrentExternalHm: ").append(toIndentedString(maxConcurrentExternalHm)).append("\n");
                         sb.append("    maxCpuUsage: ").append(toIndentedString(maxCpuUsage)).append("\n");
                         sb.append("    maxMemoryPerMempool: ").append(toIndentedString(maxMemoryPerMempool)).append("\n");
+                        sb.append("    maxNumHttpSessionsToStore: ").append(toIndentedString(maxNumHttpSessionsToStore)).append("\n");
                         sb.append("    maxNumSeDps: ").append(toIndentedString(maxNumSeDps)).append("\n");
                         sb.append("    maxPublicIpsPerLb: ").append(toIndentedString(maxPublicIpsPerLb)).append("\n");
                         sb.append("    maxQueuesPerVnic: ").append(toIndentedString(maxQueuesPerVnic)).append("\n");
@@ -8985,6 +9322,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    multicastEnable: ").append(toIndentedString(multicastEnable)).append("\n");
                         sb.append("    nLogStreamingThreads: ").append(toIndentedString(nLogStreamingThreads)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    nd6CacheTimeout: ").append(toIndentedString(nd6CacheTimeout)).append("\n");
                         sb.append("    netlinkPollerThreads: ").append(toIndentedString(netlinkPollerThreads)).append("\n");
                         sb.append("    netlinkSockBufSize: ").append(toIndentedString(netlinkSockBufSize)).append("\n");
                         sb.append("    ngxFreeConnectionStack: ").append(toIndentedString(ngxFreeConnectionStack)).append("\n");
@@ -8996,6 +9334,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    numDispatcherQueues: ").append(toIndentedString(numDispatcherQueues)).append("\n");
                         sb.append("    numFlowCoresSumChangesToIgnore: ").append(toIndentedString(numFlowCoresSumChangesToIgnore)).append("\n");
                         sb.append("    objsyncConfig: ").append(toIndentedString(objsyncConfig)).append("\n");
+                        sb.append("    objsyncMode: ").append(toIndentedString(objsyncMode)).append("\n");
                         sb.append("    objsyncPort: ").append(toIndentedString(objsyncPort)).append("\n");
                         sb.append("    openstackAvailabilityZones: ").append(toIndentedString(openstackAvailabilityZones)).append("\n");
                         sb.append("    openstackMgmtNetworkName: ").append(toIndentedString(openstackMgmtNetworkName)).append("\n");
@@ -9008,11 +9347,14 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    perApp: ").append(toIndentedString(perApp)).append("\n");
                         sb.append("    perVsAdmissionControl: ").append(toIndentedString(perVsAdmissionControl)).append("\n");
                         sb.append("    placementMode: ").append(toIndentedString(placementMode)).append("\n");
+                        sb.append("    preUpgradeSeAvailableMemThreshold: ").append(toIndentedString(preUpgradeSeAvailableMemThreshold)).append("\n");
                         sb.append("    realtimeSeMetrics: ").append(toIndentedString(realtimeSeMetrics)).append("\n");
                         sb.append("    rebootOnPanic: ").append(toIndentedString(rebootOnPanic)).append("\n");
                         sb.append("    replayVrfRoutesInterval: ").append(toIndentedString(replayVrfRoutesInterval)).append("\n");
+                        sb.append("    reservedConfiguration: ").append(toIndentedString(reservedConfiguration)).append("\n");
                         sb.append("    resyncTimeInterval: ").append(toIndentedString(resyncTimeInterval)).append("\n");
                         sb.append("    sdbFlushInterval: ").append(toIndentedString(sdbFlushInterval)).append("\n");
+                        sb.append("    sdbKeyTimeout: ").append(toIndentedString(sdbKeyTimeout)).append("\n");
                         sb.append("    sdbPipelineSize: ").append(toIndentedString(sdbPipelineSize)).append("\n");
                         sb.append("    sdbScanCount: ").append(toIndentedString(sdbScanCount)).append("\n");
                         sb.append("    seBandwidthType: ").append(toIndentedString(seBandwidthType)).append("\n");
@@ -9125,10 +9467,12 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    vsSeScaleoutAdditionalWaitTime: ").append(toIndentedString(vsSeScaleoutAdditionalWaitTime)).append("\n");
                         sb.append("    vsSeScaleoutReadyTimeout: ").append(toIndentedString(vsSeScaleoutReadyTimeout)).append("\n");
                         sb.append("    vsSwitchoverTimeout: ").append(toIndentedString(vsSwitchoverTimeout)).append("\n");
+                        sb.append("    vsphereStoragePolicies: ").append(toIndentedString(vsphereStoragePolicies)).append("\n");
                         sb.append("    vssPlacement: ").append(toIndentedString(vssPlacement)).append("\n");
                         sb.append("    vssPlacementEnabled: ").append(toIndentedString(vssPlacementEnabled)).append("\n");
                         sb.append("    wafMempool: ").append(toIndentedString(wafMempool)).append("\n");
                         sb.append("    wafMempoolSize: ").append(toIndentedString(wafMempoolSize)).append("\n");
+                        sb.append("    wafUseJitForPcre: ").append(toIndentedString(wafUseJitForPcre)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

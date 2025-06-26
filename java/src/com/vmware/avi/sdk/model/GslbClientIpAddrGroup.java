@@ -38,7 +38,7 @@ public class GslbClientIpAddrGroup  {
      * This is the getter method this will return the attribute value.
      * Configure ip address(es).
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addrs
      */
@@ -50,7 +50,7 @@ public class GslbClientIpAddrGroup  {
      * This is the setter method. this will set the addrs
      * Configure ip address(es).
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addrs
      */
@@ -62,7 +62,7 @@ public class GslbClientIpAddrGroup  {
      * This is the setter method this will set the addrs
      * Configure ip address(es).
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addrs
      */
@@ -77,7 +77,7 @@ public class GslbClientIpAddrGroup  {
      * This is the getter method this will return the attribute value.
      * Configure ip address prefix(es).
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prefixes
      */
@@ -89,7 +89,7 @@ public class GslbClientIpAddrGroup  {
      * This is the setter method. this will set the prefixes
      * Configure ip address prefix(es).
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prefixes
      */
@@ -101,7 +101,7 @@ public class GslbClientIpAddrGroup  {
      * This is the setter method this will set the prefixes
      * Configure ip address prefix(es).
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prefixes
      */
@@ -116,7 +116,7 @@ public class GslbClientIpAddrGroup  {
      * This is the getter method this will return the attribute value.
      * Configure ip address range(s).
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -128,7 +128,7 @@ public class GslbClientIpAddrGroup  {
      * This is the setter method. this will set the ranges
      * Configure ip address range(s).
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -140,7 +140,7 @@ public class GslbClientIpAddrGroup  {
      * This is the setter method this will set the ranges
      * Configure ip address range(s).
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -157,7 +157,7 @@ public class GslbClientIpAddrGroup  {
      * Specify whether this client ip address range is public or private.
      * Enum options - GSLB_IP_PUBLIC, GSLB_IP_PRIVATE.
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_IP_PUBLIC".
      * @return type
      */
@@ -170,7 +170,7 @@ public class GslbClientIpAddrGroup  {
      * Specify whether this client ip address range is public or private.
      * Enum options - GSLB_IP_PUBLIC, GSLB_IP_PRIVATE.
      * Field introduced in 17.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_IP_PUBLIC".
      * @param type set the type.
      */

@@ -44,7 +44,7 @@ public class JournalError extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of error messages for this object.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return details
      */
@@ -56,7 +56,7 @@ public class JournalError extends AviRestResource  {
      * This is the setter method. this will set the details
      * List of error messages for this object.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return details
      */
@@ -68,7 +68,7 @@ public class JournalError extends AviRestResource  {
      * This is the setter method this will set the details
      * List of error messages for this object.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return details
      */
@@ -84,7 +84,7 @@ public class JournalError extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the object for which error was reported.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -96,7 +96,7 @@ public class JournalError extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the object for which error was reported.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -108,7 +108,7 @@ public class JournalError extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Object type on which the error was reported.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return object
      */
@@ -120,7 +120,7 @@ public class JournalError extends AviRestResource  {
      * This is the setter method to the attribute.
      * Object type on which the error was reported.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param object set the object.
      */
@@ -132,7 +132,7 @@ public class JournalError extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Tenant for which error was reported.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenant
      */
@@ -144,7 +144,7 @@ public class JournalError extends AviRestResource  {
      * This is the setter method to the attribute.
      * Tenant for which error was reported.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenant set the tenant.
      */
@@ -156,7 +156,7 @@ public class JournalError extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the object for which error was reported.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -168,7 +168,7 @@ public class JournalError extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the object for which error was reported.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -180,7 +180,7 @@ public class JournalError extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Version to which the migration failed.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return version
      */
@@ -192,7 +192,7 @@ public class JournalError extends AviRestResource  {
      * This is the setter method to the attribute.
      * Version to which the migration failed.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param version set the version.
      */

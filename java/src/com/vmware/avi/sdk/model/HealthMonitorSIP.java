@@ -38,7 +38,7 @@ public class HealthMonitorSIP  {
      * The default transport is udp.
      * Enum options - SIP_UDP_PROTO, SIP_TCP_PROTO.
      * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SIP_UDP_PROTO".
      * @return sipMonitorTransport
      */
@@ -52,7 +52,7 @@ public class HealthMonitorSIP  {
      * The default transport is udp.
      * Enum options - SIP_UDP_PROTO, SIP_TCP_PROTO.
      * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SIP_UDP_PROTO".
      * @param sipMonitorTransport set the sipMonitorTransport.
      */
@@ -66,7 +66,7 @@ public class HealthMonitorSIP  {
      * By default, sip options request will be sent.
      * Enum options - SIP_OPTIONS.
      * Field introduced in 17.2.8, 18.1.3, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SIP_OPTIONS".
      * @return sipRequestCode
      */
@@ -80,7 +80,7 @@ public class HealthMonitorSIP  {
      * By default, sip options request will be sent.
      * Enum options - SIP_OPTIONS.
      * Field introduced in 17.2.8, 18.1.3, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SIP_OPTIONS".
      * @param sipRequestCode set the sipRequestCode.
      */
@@ -93,7 +93,7 @@ public class HealthMonitorSIP  {
      * Match for a keyword in the first 2kb of the server header and body response.
      * By default, it matches for sip/2.0.
      * Field introduced in 17.2.8, 18.1.3, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SIP/2.0".
      * @return sipResponse
      */
@@ -106,7 +106,7 @@ public class HealthMonitorSIP  {
      * Match for a keyword in the first 2kb of the server header and body response.
      * By default, it matches for sip/2.0.
      * Field introduced in 17.2.8, 18.1.3, 18.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SIP/2.0".
      * @param sipResponse set the sipResponse.
      */

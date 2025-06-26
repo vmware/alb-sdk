@@ -90,9 +90,9 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the getter method this will return the attribute value.
      * Application type of the vs.
      * Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
-     * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
+     * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return appType
      */
@@ -104,9 +104,9 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the setter method to the attribute.
      * Application type of the vs.
      * Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
-     * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
+     * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param appType set the appType.
      */
@@ -117,7 +117,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * The site controller cluster uuid to which this member belongs.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterUuid
      */
@@ -128,7 +128,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method to the attribute.
      * The site controller cluster uuid to which this member belongs.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterUuid set the clusterUuid.
      */
@@ -139,7 +139,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Controller retrieved member status at the site.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerStatus
      */
@@ -150,7 +150,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method to the attribute.
      * Controller retrieved member status at the site.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerStatus set the controllerStatus.
      */
@@ -160,7 +160,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Dns computed member status from different sites.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datapathStatus
      */
@@ -171,7 +171,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method. this will set the datapathStatus
      * Dns computed member status from different sites.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datapathStatus
      */
@@ -182,7 +182,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method this will set the datapathStatus
      * Dns computed member status from different sites.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datapathStatus
      */
@@ -197,7 +197,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Fqdn address of the member.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fqdn
      */
@@ -208,7 +208,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method to the attribute.
      * Fqdn address of the member.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fqdn set the fqdn.
      */
@@ -218,7 +218,7 @@ public class GslbPoolMemberRuntimeInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gsName
      */
@@ -228,7 +228,7 @@ public class GslbPoolMemberRuntimeInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gsName set the gsName.
      */
@@ -239,7 +239,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * The gslb service to which this member belongs.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gsUuid
      */
@@ -250,7 +250,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method to the attribute.
      * The gslb service to which this member belongs.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gsUuid set the gsUuid.
      */
@@ -261,7 +261,7 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the getter method this will return the attribute value.
      * This field will provide information on origin(site name) of the health monitoring information.
      * Field introduced in 22.1.5.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return healthMonitorInfo
      */
@@ -273,7 +273,7 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the setter method. this will set the healthMonitorInfo
      * This field will provide information on origin(site name) of the health monitoring information.
      * Field introduced in 22.1.5.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return healthMonitorInfo
      */
@@ -285,7 +285,7 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the setter method this will set the healthMonitorInfo
      * This field will provide information on origin(site name) of the health monitoring information.
      * Field introduced in 22.1.5.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return healthMonitorInfo
      */
@@ -300,7 +300,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Gslb pool member's configured vip.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -311,7 +311,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method to the attribute.
      * Gslb pool member's configured vip.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -322,7 +322,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * This is an internal field that conveys the ip address from the controller to service engine in binary format.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipValueToSe
      */
@@ -333,7 +333,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method to the attribute.
      * This is an internal field that conveys the ip address from the controller to service engine in binary format.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipValueToSe set the ipValueToSe.
      */
@@ -344,7 +344,7 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the getter method this will return the attribute value.
      * This is an internal field that conveys the ipv6 address from the controller to service engine in binary format.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipv6ValueToSe
      */
@@ -356,7 +356,7 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the setter method. this will set the ipv6ValueToSe
      * This is an internal field that conveys the ipv6 address from the controller to service engine in binary format.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipv6ValueToSe
      */
@@ -368,7 +368,7 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the setter method this will set the ipv6ValueToSe
      * This is an internal field that conveys the ipv6 address from the controller to service engine in binary format.
      * Field introduced in 18.2.8, 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipv6ValueToSe
      */
@@ -382,7 +382,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Operational vips of the member  that can map to multiple vs ip addresses such as private, public and floating addresses.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return operIps
      */
@@ -393,7 +393,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method. this will set the operIps
      * Operational vips of the member  that can map to multiple vs ip addresses such as private, public and floating addresses.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return operIps
      */
@@ -404,7 +404,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method this will set the operIps
      * Operational vips of the member  that can map to multiple vs ip addresses such as private, public and floating addresses.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return operIps
      */
@@ -419,7 +419,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Gslb pool member's consolidated operational status.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return operStatus
      */
@@ -430,7 +430,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method to the attribute.
      * Gslb pool member's consolidated operational status.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param operStatus set the operStatus.
      */
@@ -440,7 +440,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Services configured on the virtual service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return services
      */
@@ -451,7 +451,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method. this will set the services
      * Services configured on the virtual service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return services
      */
@@ -462,7 +462,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method this will set the services
      * Services configured on the virtual service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return services
      */
@@ -477,7 +477,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * The site 's name is required for event-generation etc.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return siteName
      */
@@ -488,7 +488,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method to the attribute.
      * The site 's name is required for event-generation etc.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param siteName set the siteName.
      */
@@ -499,7 +499,7 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the getter method this will return the attribute value.
      * Site persistence pools associated with the vs.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return spPools
      */
@@ -511,7 +511,7 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the setter method. this will set the spPools
      * Site persistence pools associated with the vs.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return spPools
      */
@@ -523,7 +523,7 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the setter method this will set the spPools
      * Site persistence pools associated with the vs.
      * Field introduced in 17.2.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return spPools
      */
@@ -539,7 +539,7 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the getter method this will return the attribute value.
      * Describes the vip type  avi or third-party.
      * Enum options - NON_AVI_VIP, AVI_VIP.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipType
      */
@@ -551,7 +551,7 @@ public class GslbPoolMemberRuntimeInfo  {
      * This is the setter method to the attribute.
      * Describes the vip type  avi or third-party.
      * Enum options - NON_AVI_VIP, AVI_VIP.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipType set the vipType.
      */
@@ -562,7 +562,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Vs name belonging to this gslb service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsName
      */
@@ -573,7 +573,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method to the attribute.
      * Vs name belonging to this gslb service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsName set the vsName.
      */
@@ -584,7 +584,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Vs uuid belonging to this gslb service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -595,7 +595,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method to the attribute.
      * Vs uuid belonging to this gslb service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsUuid set the vsUuid.
      */
@@ -606,7 +606,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Front end l4 metrics of the virtual service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vserverL4Metrics
      */
@@ -617,7 +617,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method to the attribute.
      * Front end l4 metrics of the virtual service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vserverL4Metrics set the vserverL4Metrics.
      */
@@ -628,7 +628,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Front end l7 metrics of the virtual service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vserverL7Metrics
      */
@@ -639,7 +639,7 @@ public class GslbPoolMemberRuntimeInfo  {
     /**
      * This is the setter method to the attribute.
      * Front end l7 metrics of the virtual service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vserverL7Metrics set the vserverL7Metrics.
      */

@@ -58,7 +58,7 @@ public class IpamDnsAzureProfile  {
      * Service principal based credentials for azure.
      * Only one of azure_userpass or azure_serviceprincipal is allowed.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azureServiceprincipal
      */
@@ -71,7 +71,7 @@ public class IpamDnsAzureProfile  {
      * Service principal based credentials for azure.
      * Only one of azure_userpass or azure_serviceprincipal is allowed.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param azureServiceprincipal set the azureServiceprincipal.
      */
@@ -84,7 +84,7 @@ public class IpamDnsAzureProfile  {
      * User name password based credentials for azure.
      * Only one of azure_userpass or azure_serviceprincipal is allowed.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azureUserpass
      */
@@ -97,7 +97,7 @@ public class IpamDnsAzureProfile  {
      * User name password based credentials for azure.
      * Only one of azure_userpass or azure_serviceprincipal is allowed.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param azureUserpass set the azureUserpass.
      */
@@ -109,7 +109,7 @@ public class IpamDnsAzureProfile  {
      * Used for allocating egress service source ips.
      * Field introduced in 17.2.8.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return egressServiceSubnets
      */
@@ -122,7 +122,7 @@ public class IpamDnsAzureProfile  {
      * Used for allocating egress service source ips.
      * Field introduced in 17.2.8.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return egressServiceSubnets
      */
@@ -135,7 +135,7 @@ public class IpamDnsAzureProfile  {
      * Used for allocating egress service source ips.
      * Field introduced in 17.2.8.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return egressServiceSubnets
      */
@@ -152,7 +152,7 @@ public class IpamDnsAzureProfile  {
      * Azure resource group dedicated for avi controller.
      * Avi controller will create all its resources in this resource group.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceGroup
      */
@@ -165,7 +165,7 @@ public class IpamDnsAzureProfile  {
      * Azure resource group dedicated for avi controller.
      * Avi controller will create all its resources in this resource group.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourceGroup set the resourceGroup.
      */
@@ -177,7 +177,7 @@ public class IpamDnsAzureProfile  {
      * This is the getter method this will return the attribute value.
      * Subscription id for the azure subscription.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subscriptionId
      */
@@ -189,7 +189,7 @@ public class IpamDnsAzureProfile  {
      * This is the setter method to the attribute.
      * Subscription id for the azure subscription.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subscriptionId set the subscriptionId.
      */
@@ -200,7 +200,7 @@ public class IpamDnsAzureProfile  {
      * This is the getter method this will return the attribute value.
      * Usable domains to pick from azure dns.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableDomains
      */
@@ -212,7 +212,7 @@ public class IpamDnsAzureProfile  {
      * This is the setter method. this will set the usableDomains
      * Usable domains to pick from azure dns.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableDomains
      */
@@ -224,7 +224,7 @@ public class IpamDnsAzureProfile  {
      * This is the setter method this will set the usableDomains
      * Usable domains to pick from azure dns.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableDomains
      */
@@ -242,7 +242,7 @@ public class IpamDnsAzureProfile  {
      * allocation.
      * Field introduced in 17.2.1.
      * Maximum of 128 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableNetworkUuids
      */
@@ -257,7 +257,7 @@ public class IpamDnsAzureProfile  {
      * allocation.
      * Field introduced in 17.2.1.
      * Maximum of 128 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableNetworkUuids
      */
@@ -272,7 +272,7 @@ public class IpamDnsAzureProfile  {
      * allocation.
      * Field introduced in 17.2.1.
      * Maximum of 128 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableNetworkUuids
      */
@@ -289,7 +289,7 @@ public class IpamDnsAzureProfile  {
      * Use azure's enhanced ha features.
      * This needs a public ip to be associated with the vip.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useEnhancedHa
      */
@@ -302,7 +302,7 @@ public class IpamDnsAzureProfile  {
      * Use azure's enhanced ha features.
      * This needs a public ip to be associated with the vip.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useEnhancedHa set the useEnhancedHa.
      */
@@ -315,7 +315,7 @@ public class IpamDnsAzureProfile  {
      * Use standard sku azure load balancer.
      * By default basic sku load balancer is used.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useStandardAlb
      */
@@ -328,7 +328,7 @@ public class IpamDnsAzureProfile  {
      * Use standard sku azure load balancer.
      * By default basic sku load balancer is used.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useStandardAlb set the useStandardAlb.
      */
@@ -340,7 +340,7 @@ public class IpamDnsAzureProfile  {
      * Virtual networks where virtual ips will belong.
      * Field introduced in 17.2.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return virtualNetworkIds
      */
@@ -353,7 +353,7 @@ public class IpamDnsAzureProfile  {
      * Virtual networks where virtual ips will belong.
      * Field introduced in 17.2.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return virtualNetworkIds
      */
@@ -366,7 +366,7 @@ public class IpamDnsAzureProfile  {
      * Virtual networks where virtual ips will belong.
      * Field introduced in 17.2.1.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return virtualNetworkIds
      */

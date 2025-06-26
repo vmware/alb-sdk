@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The ConnectionClearFilter is a POJO class extends AviRestResource that used for creating
- * ConnectionClearFilter.
+ * The NsxtDFWServiceDetails is a POJO class extends AviRestResource that used for creating
+ * NsxtDFWServiceDetails.
  *
  * @version 1.0
  * @since 
@@ -20,57 +20,61 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ConnectionClearFilter  {
-    @JsonProperty("ip_addr")
-    private String ipAddr;
+public class NsxtDFWServiceDetails  {
+    @JsonProperty("error_string")
+    private String errorString;
 
-    @JsonProperty("port")
-    private Integer port;
+    @JsonProperty("service")
+    private String service;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ip address in dotted decimal notation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Error message.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return ipAddr
+     * @return errorString
      */
-    public String getIpAddr() {
-        return ipAddr;
+    public String getErrorString() {
+        return errorString;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Ip address in dotted decimal notation.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Error message.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param ipAddr set the ipAddr.
+     * @param errorString set the errorString.
      */
-    public void setIpAddr(String  ipAddr) {
-        this.ipAddr = ipAddr;
+    public void setErrorString(String  errorString) {
+        this.errorString = errorString;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Port number.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Nsx-t dfw service name.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return port
+     * @return service
      */
-    public Integer getPort() {
-        return port;
+    public String getService() {
+        return service;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Port number.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Nsx-t dfw service name.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param port set the port.
+     * @param service set the service.
      */
-    public void setPort(Integer  port) {
-        this.port = port;
+    public void setService(String  service) {
+        this.service = service;
     }
 
 
@@ -82,17 +86,17 @@ public class ConnectionClearFilter  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      ConnectionClearFilter objConnectionClearFilter = (ConnectionClearFilter) o;
-      return   Objects.equals(this.ipAddr, objConnectionClearFilter.ipAddr)&&
-  Objects.equals(this.port, objConnectionClearFilter.port);
+      NsxtDFWServiceDetails objNsxtDFWServiceDetails = (NsxtDFWServiceDetails) o;
+      return   Objects.equals(this.service, objNsxtDFWServiceDetails.service)&&
+  Objects.equals(this.errorString, objNsxtDFWServiceDetails.errorString);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class ConnectionClearFilter {\n");
-                  sb.append("    ipAddr: ").append(toIndentedString(ipAddr)).append("\n");
-                        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+      sb.append("class NsxtDFWServiceDetails {\n");
+                  sb.append("    errorString: ").append(toIndentedString(errorString)).append("\n");
+                        sb.append("    service: ").append(toIndentedString(service)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

@@ -53,9 +53,9 @@ public class ServiceEngineLimits  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum number of virtualservices per serviceengine, including east-west virtualservices.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return allVirtualservicesPerServiceengine
      */
     public Integer getAllVirtualservicesPerServiceengine() {
@@ -65,9 +65,9 @@ public class ServiceEngineLimits  {
     /**
      * This is the setter method to the attribute.
      * Maximum number of virtualservices per serviceengine, including east-west virtualservices.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param allVirtualservicesPerServiceengine set the allVirtualservicesPerServiceengine.
      */
     public void setAllVirtualservicesPerServiceengine(Integer  allVirtualservicesPerServiceengine) {
@@ -77,9 +77,9 @@ public class ServiceEngineLimits  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum number of east-west virtualservices per serviceengine, excluding north-south virtualservices.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return ewVirtualservicesPerServiceengine
      */
     public Integer getEwVirtualservicesPerServiceengine() {
@@ -89,9 +89,9 @@ public class ServiceEngineLimits  {
     /**
      * This is the setter method to the attribute.
      * Maximum number of east-west virtualservices per serviceengine, excluding north-south virtualservices.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param ewVirtualservicesPerServiceengine set the ewVirtualservicesPerServiceengine.
      */
     public void setEwVirtualservicesPerServiceengine(Integer  ewVirtualservicesPerServiceengine) {
@@ -101,9 +101,9 @@ public class ServiceEngineLimits  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum number of north-south virtualservices per serviceengine, excluding east-west virtualservices.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return nsVirtualservicesPerServiceengine
      */
     public Integer getNsVirtualservicesPerServiceengine() {
@@ -113,9 +113,9 @@ public class ServiceEngineLimits  {
     /**
      * This is the setter method to the attribute.
      * Maximum number of north-south virtualservices per serviceengine, excluding east-west virtualservices.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param nsVirtualservicesPerServiceengine set the nsVirtualservicesPerServiceengine.
      */
     public void setNsVirtualservicesPerServiceengine(Integer  nsVirtualservicesPerServiceengine) {
@@ -126,7 +126,7 @@ public class ServiceEngineLimits  {
      * This is the getter method this will return the attribute value.
      * Maximum number of logical interfaces (vlan, bond) per serviceengine.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numLogicalIntfPerSe
      */
@@ -138,7 +138,7 @@ public class ServiceEngineLimits  {
      * This is the setter method to the attribute.
      * Maximum number of logical interfaces (vlan, bond) per serviceengine.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numLogicalIntfPerSe set the numLogicalIntfPerSe.
      */
@@ -150,7 +150,7 @@ public class ServiceEngineLimits  {
      * This is the getter method this will return the attribute value.
      * Maximum number of physical interfaces per serviceengine.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numPhyIntfPerSe
      */
@@ -162,7 +162,7 @@ public class ServiceEngineLimits  {
      * This is the setter method to the attribute.
      * Maximum number of physical interfaces per serviceengine.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numPhyIntfPerSe set the numPhyIntfPerSe.
      */
@@ -174,7 +174,7 @@ public class ServiceEngineLimits  {
      * This is the getter method this will return the attribute value.
      * Maximum number of virtualservices with realtime metrics enabled.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numVirtualservicesRtMetrics
      */
@@ -186,7 +186,7 @@ public class ServiceEngineLimits  {
      * This is the setter method to the attribute.
      * Maximum number of virtualservices with realtime metrics enabled.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numVirtualservicesRtMetrics set the numVirtualservicesRtMetrics.
      */
@@ -198,7 +198,7 @@ public class ServiceEngineLimits  {
      * This is the getter method this will return the attribute value.
      * Maximum number of vlan interfaces per physical interface.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numVlanIntfPerPhyIntf
      */
@@ -210,7 +210,7 @@ public class ServiceEngineLimits  {
      * This is the setter method to the attribute.
      * Maximum number of vlan interfaces per physical interface.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numVlanIntfPerPhyIntf set the numVlanIntfPerPhyIntf.
      */
@@ -222,7 +222,7 @@ public class ServiceEngineLimits  {
      * This is the getter method this will return the attribute value.
      * Maximum number of vlan interfaces per serviceengine.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numVlanIntfPerSe
      */
@@ -234,7 +234,7 @@ public class ServiceEngineLimits  {
      * This is the setter method to the attribute.
      * Maximum number of vlan interfaces per serviceengine.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numVlanIntfPerSe set the numVlanIntfPerSe.
      */
@@ -245,7 +245,7 @@ public class ServiceEngineLimits  {
      * This is the getter method this will return the attribute value.
      * Serviceengine system limits specific to cloud type.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceengineCloudLimits
      */
@@ -257,7 +257,7 @@ public class ServiceEngineLimits  {
      * This is the setter method. this will set the serviceengineCloudLimits
      * Serviceengine system limits specific to cloud type.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceengineCloudLimits
      */
@@ -269,7 +269,7 @@ public class ServiceEngineLimits  {
      * This is the setter method this will set the serviceengineCloudLimits
      * Serviceengine system limits specific to cloud type.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceengineCloudLimits
      */

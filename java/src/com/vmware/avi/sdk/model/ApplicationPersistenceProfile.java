@@ -27,6 +27,9 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     @JsonProperty("description")
     private String description;
 
+    @JsonProperty("diameter_app_persistence_profile")
+    private DiameterAVPPersistenceProfile diameterAppPersistenceProfile;
+
     @JsonProperty("hdr_persistence_profile")
     private HdrPersistenceProfile hdrPersistenceProfile;
 
@@ -48,6 +51,9 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     @JsonProperty("persistence_type")
     private String persistenceType = "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS";
 
+    @JsonProperty("persistence_update_interval")
+    private Integer persistenceUpdateInterval;
+
     @JsonProperty("server_hm_down_recovery")
     private String serverHmDownRecovery = "HM_DOWN_PICK_NEW_SERVER";
 
@@ -65,7 +71,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Specifies the application cookie persistence profile parameters.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return appCookiePersistenceProfile
      */
@@ -76,7 +82,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Specifies the application cookie persistence profile parameters.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param appCookiePersistenceProfile set the appCookiePersistenceProfile.
      */
@@ -86,7 +92,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -96,7 +102,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -106,8 +112,32 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Specifies the diameter persistence profile parameters.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return diameterAppPersistenceProfile
+     */
+    public DiameterAVPPersistenceProfile getDiameterAppPersistenceProfile() {
+        return diameterAppPersistenceProfile;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Specifies the diameter persistence profile parameters.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param diameterAppPersistenceProfile set the diameterAppPersistenceProfile.
+     */
+    public void setDiameterAppPersistenceProfile(DiameterAVPPersistenceProfile diameterAppPersistenceProfile) {
+        this.diameterAppPersistenceProfile = diameterAppPersistenceProfile;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Specifies the custom http header persistence profile parameters.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrPersistenceProfile
      */
@@ -118,7 +148,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Specifies the custom http header persistence profile parameters.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hdrPersistenceProfile set the hdrPersistenceProfile.
      */
@@ -129,7 +159,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Specifies the http cookie persistence profile parameters.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpCookiePersistenceProfile
      */
@@ -140,7 +170,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Specifies the http cookie persistence profile parameters.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpCookiePersistenceProfile set the httpCookiePersistenceProfile.
      */
@@ -151,7 +181,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Specifies the client ip persistence profile parameters.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipPersistenceProfile
      */
@@ -162,7 +192,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Specifies the client ip persistence profile parameters.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipPersistenceProfile set the ipPersistenceProfile.
      */
@@ -176,7 +206,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
      * If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
      * If the field is set to true, then the object is replicated across the federation.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isFederated
      */
@@ -190,7 +220,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
      * If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
      * If the field is set to true, then the object is replicated across the federation.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isFederated set the isFederated.
      */
@@ -201,8 +231,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -214,8 +243,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
      * This is the setter method. this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -227,8 +255,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
      * This is the setter method this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -243,7 +270,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * A user-friendly name for the persistence profile.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -254,7 +281,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * A user-friendly name for the persistence profile.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -266,10 +293,10 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Method used to persist clients to the same server for a duration of time or a session.
      * Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS,
-     * PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values-
-     * persistence_type_client_ip_address,persistence_type_http_cookie), basic edition(allowed values-
-     * persistence_type_client_ip_address,persistence_type_http_cookie), enterprise with cloud services edition.
+     * PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE, PERSISTENCE_TYPE_APP_DIAMETER.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- persistence_type_client_ip_address,persistence_type_http_cookie), basic (allowed values-
+     * persistence_type_client_ip_address,persistence_type_http_cookie) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS".
      * @return persistenceType
      */
@@ -281,10 +308,10 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Method used to persist clients to the same server for a duration of time or a session.
      * Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS,
-     * PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values-
-     * persistence_type_client_ip_address,persistence_type_http_cookie), basic edition(allowed values-
-     * persistence_type_client_ip_address,persistence_type_http_cookie), enterprise with cloud services edition.
+     * PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE, PERSISTENCE_TYPE_APP_DIAMETER.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- persistence_type_client_ip_address,persistence_type_http_cookie), basic (allowed values-
+     * persistence_type_client_ip_address,persistence_type_http_cookie) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS".
      * @param persistenceType set the persistenceType.
      */
@@ -294,10 +321,40 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Interval in minutes at which refreshed persistence entries are synced to peer ses.
+     * If not set, it willsync at an interval of timeout/2.
+     * Allowed values are 1-30.
+     * Field introduced in 30.2.4.
+     * Unit is min.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return persistenceUpdateInterval
+     */
+    public Integer getPersistenceUpdateInterval() {
+        return persistenceUpdateInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Interval in minutes at which refreshed persistence entries are synced to peer ses.
+     * If not set, it willsync at an interval of timeout/2.
+     * Allowed values are 1-30.
+     * Field introduced in 30.2.4.
+     * Unit is min.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param persistenceUpdateInterval set the persistenceUpdateInterval.
+     */
+    public void setPersistenceUpdateInterval(Integer  persistenceUpdateInterval) {
+        this.persistenceUpdateInterval = persistenceUpdateInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Specifies behavior when a persistent server has been marked down by a health monitor.
      * Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- hm_down_pick_new_server), basic edition(allowed values-
-     * hm_down_pick_new_server), enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- hm_down_pick_new_server), basic (allowed values- hm_down_pick_new_server) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HM_DOWN_PICK_NEW_SERVER".
      * @return serverHmDownRecovery
      */
@@ -309,8 +366,8 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Specifies behavior when a persistent server has been marked down by a health monitor.
      * Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- hm_down_pick_new_server), basic edition(allowed values-
-     * hm_down_pick_new_server), enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- hm_down_pick_new_server), basic (allowed values- hm_down_pick_new_server) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HM_DOWN_PICK_NEW_SERVER".
      * @param serverHmDownRecovery set the serverHmDownRecovery.
      */
@@ -321,7 +378,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -332,7 +389,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -360,7 +417,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Uuid of the persistence profile.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -371,7 +428,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Uuid of the persistence profile.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -400,7 +457,9 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
   Objects.equals(this.markers, objApplicationPersistenceProfile.markers)&&
   Objects.equals(this.isFederated, objApplicationPersistenceProfile.isFederated)&&
   Objects.equals(this.description, objApplicationPersistenceProfile.description)&&
-  Objects.equals(this.tenantRef, objApplicationPersistenceProfile.tenantRef);
+  Objects.equals(this.tenantRef, objApplicationPersistenceProfile.tenantRef)&&
+  Objects.equals(this.diameterAppPersistenceProfile, objApplicationPersistenceProfile.diameterAppPersistenceProfile)&&
+  Objects.equals(this.persistenceUpdateInterval, objApplicationPersistenceProfile.persistenceUpdateInterval);
     }
 
     @Override
@@ -409,6 +468,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
       sb.append("class ApplicationPersistenceProfile {\n");
                   sb.append("    appCookiePersistenceProfile: ").append(toIndentedString(appCookiePersistenceProfile)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+                        sb.append("    diameterAppPersistenceProfile: ").append(toIndentedString(diameterAppPersistenceProfile)).append("\n");
                         sb.append("    hdrPersistenceProfile: ").append(toIndentedString(hdrPersistenceProfile)).append("\n");
                         sb.append("    httpCookiePersistenceProfile: ").append(toIndentedString(httpCookiePersistenceProfile)).append("\n");
                         sb.append("    ipPersistenceProfile: ").append(toIndentedString(ipPersistenceProfile)).append("\n");
@@ -416,6 +476,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    persistenceType: ").append(toIndentedString(persistenceType)).append("\n");
+                        sb.append("    persistenceUpdateInterval: ").append(toIndentedString(persistenceUpdateInterval)).append("\n");
                         sb.append("    serverHmDownRecovery: ").append(toIndentedString(serverHmDownRecovery)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

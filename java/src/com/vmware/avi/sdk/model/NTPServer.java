@@ -33,7 +33,7 @@ public class NTPServer  {
      * This is the getter method this will return the attribute value.
      * Key number from the list of trusted keys used to authenticate this server.
      * Allowed values are 1-65534.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return keyNumber
      */
@@ -45,7 +45,7 @@ public class NTPServer  {
      * This is the setter method to the attribute.
      * Key number from the list of trusted keys used to authenticate this server.
      * Allowed values are 1-65534.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param keyNumber set the keyNumber.
      */
@@ -56,7 +56,7 @@ public class NTPServer  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address of the ntp server.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return server
      */
@@ -67,7 +67,7 @@ public class NTPServer  {
     /**
      * This is the setter method to the attribute.
      * Ip address of the ntp server.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param server set the server.
      */

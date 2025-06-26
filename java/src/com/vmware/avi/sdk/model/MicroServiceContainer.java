@@ -41,7 +41,7 @@ public class MicroServiceContainer  {
     /**
      * This is the getter method this will return the attribute value.
      * Id of the container.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return containerId
      */
@@ -52,7 +52,7 @@ public class MicroServiceContainer  {
     /**
      * This is the setter method to the attribute.
      * Id of the container.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param containerId set the containerId.
      */
@@ -63,7 +63,7 @@ public class MicroServiceContainer  {
     /**
      * This is the getter method this will return the attribute value.
      * Id or name of the host where the container is.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return host
      */
@@ -74,7 +74,7 @@ public class MicroServiceContainer  {
     /**
      * This is the setter method to the attribute.
      * Id or name of the host where the container is.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param host set the host.
      */
@@ -85,7 +85,7 @@ public class MicroServiceContainer  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address of the container.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -96,7 +96,7 @@ public class MicroServiceContainer  {
     /**
      * This is the setter method to the attribute.
      * Ip address of the container.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -107,7 +107,7 @@ public class MicroServiceContainer  {
     /**
      * This is the getter method this will return the attribute value.
      * Port nunber of the instance.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -118,7 +118,7 @@ public class MicroServiceContainer  {
     /**
      * This is the setter method to the attribute.
      * Port nunber of the instance.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */
@@ -129,7 +129,7 @@ public class MicroServiceContainer  {
     /**
      * This is the getter method this will return the attribute value.
      * Marathon task id of the instance.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return taskId
      */
@@ -140,7 +140,7 @@ public class MicroServiceContainer  {
     /**
      * This is the setter method to the attribute.
      * Marathon task id of the instance.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param taskId set the taskId.
      */

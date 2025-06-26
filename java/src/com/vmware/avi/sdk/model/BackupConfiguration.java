@@ -39,6 +39,9 @@ public class BackupConfiguration extends AviRestResource  {
     @JsonProperty("backup_passphrase")
     private String backupPassphrase;
 
+    @JsonProperty("bundle_mode")
+    private Boolean bundleMode = false;
+
     @JsonProperty("maximum_backups_stored")
     private Integer maximumBackupsStored = 4;
 
@@ -84,7 +87,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Aws access key id.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return awsAccessKey
      */
@@ -96,7 +99,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * Aws access key id.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param awsAccessKey set the awsAccessKey.
      */
@@ -108,7 +111,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Aws bucket.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return awsBucketId
      */
@@ -120,7 +123,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * Aws bucket.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param awsBucketId set the awsBucketId.
      */
@@ -132,7 +135,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The name of the aws region associated with the bucket.
      * Field introduced in 21.1.5, 22.1.1, 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return awsBucketRegion
      */
@@ -144,7 +147,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * The name of the aws region associated with the bucket.
      * Field introduced in 21.1.5, 22.1.1, 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param awsBucketRegion set the awsBucketRegion.
      */
@@ -156,7 +159,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Aws secret access key.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return awsSecretAccess
      */
@@ -168,7 +171,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * Aws secret access key.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param awsSecretAccess set the awsSecretAccess.
      */
@@ -180,7 +183,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Prefix of the exported configuration file.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return backupFilePrefix
      */
@@ -192,7 +195,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * Prefix of the exported configuration file.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param backupFilePrefix set the backupFilePrefix.
      */
@@ -204,7 +207,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Default passphrase to encrypt sensitive fields for configuration export and periodic backup.
      * The same passphrase must be provided to import the configuration.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return backupPassphrase
      */
@@ -216,7 +219,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * Default passphrase to encrypt sensitive fields for configuration export and periodic backup.
      * The same passphrase must be provided to import the configuration.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param backupPassphrase set the backupPassphrase.
      */
@@ -226,9 +229,35 @@ public class BackupConfiguration extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * By default, json backups are generated.
+     * When this flag is enabled, bundle backups will be generated.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return bundleMode
+     */
+    public Boolean getBundleMode() {
+        return bundleMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * By default, json backups are generated.
+     * When this flag is enabled, bundle backups will be generated.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param bundleMode set the bundleMode.
+     */
+    public void setBundleMode(Boolean  bundleMode) {
+        this.bundleMode = bundleMode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Rotate the backup files based on this count.
      * Allowed values are 1-20.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return maximumBackupsStored
      */
@@ -240,7 +269,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * Rotate the backup files based on this count.
      * Allowed values are 1-20.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param maximumBackupsStored set the maximumBackupsStored.
      */
@@ -251,7 +280,7 @@ public class BackupConfiguration extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of backup configuration.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -262,7 +291,7 @@ public class BackupConfiguration extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Name of backup configuration.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -273,7 +302,7 @@ public class BackupConfiguration extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Directory at remote destination with write permission for ssh user.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteDirectory
      */
@@ -284,7 +313,7 @@ public class BackupConfiguration extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Directory at remote destination with write permission for ssh user.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param remoteDirectory set the remoteDirectory.
      */
@@ -297,7 +326,8 @@ public class BackupConfiguration extends AviRestResource  {
      * Remote file transfer protocol type.
      * Enum options - SCP, SFTP.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, basic edition(allowed values- scp,sftp), enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in basic (allowed values- scp,sftp) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SCP".
      * @return remoteFileTransferProtocol
      */
@@ -310,7 +340,8 @@ public class BackupConfiguration extends AviRestResource  {
      * Remote file transfer protocol type.
      * Enum options - SCP, SFTP.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, basic edition(allowed values- scp,sftp), enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in basic (allowed values- scp,sftp) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SCP".
      * @param remoteFileTransferProtocol set the remoteFileTransferProtocol.
      */
@@ -321,7 +352,7 @@ public class BackupConfiguration extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Remote destination.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteHostname
      */
@@ -332,7 +363,7 @@ public class BackupConfiguration extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Remote destination.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param remoteHostname set the remoteHostname.
      */
@@ -344,7 +375,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The folder name in s3 bucket where backup will be stored.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return s3BucketFolder
      */
@@ -356,7 +387,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * The folder name in s3 bucket where backup will be stored.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param s3BucketFolder set the s3BucketFolder.
      */
@@ -367,7 +398,7 @@ public class BackupConfiguration extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Local backup.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return saveLocal
      */
@@ -378,7 +409,7 @@ public class BackupConfiguration extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Local backup.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param saveLocal set the saveLocal.
      */
@@ -390,7 +421,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Access credentials for remote destination.
      * It is a reference to an object of type cloudconnectoruser.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sshUserRef
      */
@@ -402,7 +433,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * Access credentials for remote destination.
      * It is a reference to an object of type cloudconnectoruser.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sshUserRef set the sshUserRef.
      */
@@ -413,7 +444,7 @@ public class BackupConfiguration extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -424,7 +455,7 @@ public class BackupConfiguration extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -435,7 +466,7 @@ public class BackupConfiguration extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Remote backup.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uploadToRemoteHost
      */
@@ -446,7 +477,7 @@ public class BackupConfiguration extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Remote backup.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uploadToRemoteHost set the uploadToRemoteHost.
      */
@@ -458,7 +489,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Cloud backup.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uploadToS3
      */
@@ -470,7 +501,7 @@ public class BackupConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * Cloud backup.
      * Field introduced in 18.2.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uploadToS3 set the uploadToS3.
      */
@@ -497,7 +528,7 @@ public class BackupConfiguration extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -507,7 +538,7 @@ public class BackupConfiguration extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -542,6 +573,7 @@ public class BackupConfiguration extends AviRestResource  {
   Objects.equals(this.remoteFileTransferProtocol, objBackupConfiguration.remoteFileTransferProtocol)&&
   Objects.equals(this.awsBucketRegion, objBackupConfiguration.awsBucketRegion)&&
   Objects.equals(this.s3BucketFolder, objBackupConfiguration.s3BucketFolder)&&
+  Objects.equals(this.bundleMode, objBackupConfiguration.bundleMode)&&
   Objects.equals(this.tenantRef, objBackupConfiguration.tenantRef);
     }
 
@@ -555,6 +587,7 @@ public class BackupConfiguration extends AviRestResource  {
                         sb.append("    awsSecretAccess: ").append(toIndentedString(awsSecretAccess)).append("\n");
                         sb.append("    backupFilePrefix: ").append(toIndentedString(backupFilePrefix)).append("\n");
                         sb.append("    backupPassphrase: ").append(toIndentedString(backupPassphrase)).append("\n");
+                        sb.append("    bundleMode: ").append(toIndentedString(bundleMode)).append("\n");
                         sb.append("    maximumBackupsStored: ").append(toIndentedString(maximumBackupsStored)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    remoteDirectory: ").append(toIndentedString(remoteDirectory)).append("\n");

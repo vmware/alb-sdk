@@ -64,7 +64,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure ip address(es).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addrs
      */
@@ -75,7 +75,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method. this will set the addrs
      * Configure ip address(es).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addrs
      */
@@ -86,7 +86,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method this will set the addrs
      * Configure ip address(es).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addrs
      */
@@ -100,7 +100,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Populate the ip address ranges from the geo database for this country.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return countryCodes
      */
@@ -111,7 +111,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method. this will set the countryCodes
      * Populate the ip address ranges from the geo database for this country.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return countryCodes
      */
@@ -122,7 +122,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method this will set the countryCodes
      * Populate the ip address ranges from the geo database for this country.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return countryCodes
      */
@@ -136,7 +136,7 @@ public class IpAddrGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -146,7 +146,7 @@ public class IpAddrGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -156,7 +156,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure (ip address, port) tuple(s).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipPorts
      */
@@ -167,7 +167,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method. this will set the ipPorts
      * Configure (ip address, port) tuple(s).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipPorts
      */
@@ -178,7 +178,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method this will set the ipPorts
      * Configure (ip address, port) tuple(s).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipPorts
      */
@@ -193,7 +193,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Populate ip addresses from tasks of this marathon app.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return marathonAppName
      */
@@ -204,7 +204,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Populate ip addresses from tasks of this marathon app.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param marathonAppName set the marathonAppName.
      */
@@ -217,7 +217,7 @@ public class IpAddrGroup extends AviRestResource  {
      * Task port associated with marathon service port.
      * If marathon app has multiple service ports, this is required.
      * Else, the first task port is used.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return marathonServicePort
      */
@@ -230,7 +230,7 @@ public class IpAddrGroup extends AviRestResource  {
      * Task port associated with marathon service port.
      * If marathon app has multiple service ports, this is required.
      * Else, the first task port is used.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param marathonServicePort set the marathonServicePort.
      */
@@ -241,8 +241,7 @@ public class IpAddrGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -254,8 +253,7 @@ public class IpAddrGroup extends AviRestResource  {
      * This is the setter method. this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -267,8 +265,7 @@ public class IpAddrGroup extends AviRestResource  {
      * This is the setter method this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -283,7 +280,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the ip address group.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -294,7 +291,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Name of the ip address group.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -304,7 +301,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure ip address prefix(es).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prefixes
      */
@@ -315,7 +312,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method. this will set the prefixes
      * Configure ip address prefix(es).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prefixes
      */
@@ -326,7 +323,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method this will set the prefixes
      * Configure ip address prefix(es).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prefixes
      */
@@ -340,7 +337,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure ip address range(s).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -351,7 +348,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method. this will set the ranges
      * Configure ip address range(s).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -362,7 +359,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method this will set the ranges
      * Configure ip address range(s).
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -377,7 +374,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -388,7 +385,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -416,7 +413,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Uuid of the ip address group.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -427,7 +424,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Uuid of the ip address group.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

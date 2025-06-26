@@ -43,10 +43,10 @@ public class HTTPSecurityAction  {
      * Type of the security action to perform.
      * Enum options - HTTP_SECURITY_ACTION_CLOSE_CONN, HTTP_SECURITY_ACTION_SEND_RESPONSE, HTTP_SECURITY_ACTION_ALLOW,
      * HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS, HTTP_SECURITY_ACTION_RATE_LIMIT, HTTP_SECURITY_ACTION_REQUEST_CHECK_ICAP.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values-
-     * http_security_action_close_conn,http_security_action_send_response,http_security_action_redirect_to_https), basic edition(allowed values-
-     * http_security_action_close_conn,http_security_action_send_response,http_security_action_redirect_to_https), enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values-
+     * http_security_action_close_conn,http_security_action_send_response,http_security_action_redirect_to_https), basic (allowed values-
+     * http_security_action_close_conn,http_security_action_send_response,http_security_action_redirect_to_https) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return action
      */
@@ -59,10 +59,10 @@ public class HTTPSecurityAction  {
      * Type of the security action to perform.
      * Enum options - HTTP_SECURITY_ACTION_CLOSE_CONN, HTTP_SECURITY_ACTION_SEND_RESPONSE, HTTP_SECURITY_ACTION_ALLOW,
      * HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS, HTTP_SECURITY_ACTION_RATE_LIMIT, HTTP_SECURITY_ACTION_REQUEST_CHECK_ICAP.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values-
-     * http_security_action_close_conn,http_security_action_send_response,http_security_action_redirect_to_https), basic edition(allowed values-
-     * http_security_action_close_conn,http_security_action_send_response,http_security_action_redirect_to_https), enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values-
+     * http_security_action_close_conn,http_security_action_send_response,http_security_action_redirect_to_https), basic (allowed values-
+     * http_security_action_close_conn,http_security_action_send_response,http_security_action_redirect_to_https) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param action set the action.
      */
@@ -73,7 +73,7 @@ public class HTTPSecurityAction  {
     /**
      * This is the getter method this will return the attribute value.
      * File to be used for generating http local response.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return file
      */
@@ -84,7 +84,7 @@ public class HTTPSecurityAction  {
     /**
      * This is the setter method to the attribute.
      * File to be used for generating http local response.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param file set the file.
      */
@@ -96,7 +96,7 @@ public class HTTPSecurityAction  {
      * This is the getter method this will return the attribute value.
      * Secure ssl/tls port to redirect the http request to.
      * Allowed values are 1-65535.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpsPort
      */
@@ -108,7 +108,7 @@ public class HTTPSecurityAction  {
      * This is the setter method to the attribute.
      * Secure ssl/tls port to redirect the http request to.
      * Allowed values are 1-65535.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpsPort set the httpsPort.
      */
@@ -120,7 +120,7 @@ public class HTTPSecurityAction  {
      * This is the getter method this will return the attribute value.
      * Rate limiting configuration for this action.
      * Field introduced in 18.2.9.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rateProfile
      */
@@ -132,7 +132,7 @@ public class HTTPSecurityAction  {
      * This is the setter method to the attribute.
      * Rate limiting configuration for this action.
      * Field introduced in 18.2.9.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rateProfile set the rateProfile.
      */
@@ -145,7 +145,7 @@ public class HTTPSecurityAction  {
      * Http status code to use for local response.
      * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
      * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return statusCode
      */
@@ -158,7 +158,7 @@ public class HTTPSecurityAction  {
      * Http status code to use for local response.
      * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
      * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param statusCode set the statusCode.
      */

@@ -12,16 +12,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * FederationCheckpointApiResponse
+ * ApiRateLimitProfileApiResponse
  */
-public class FederationCheckpointApiResponse {
+public class ApiRateLimitProfileApiResponse {
   @JsonProperty("count")
   private Integer count = null;
 
   @JsonProperty("results")
-  private List<FederationCheckpoint> results = new ArrayList<FederationCheckpoint>();
+  private List<ApiRateLimitProfile> results = new ArrayList<ApiRateLimitProfile>();
 
-  public FederationCheckpointApiResponse count(Integer count) {
+  public ApiRateLimitProfileApiResponse count(Integer count) {
     this.count = count;
     return this;
   }
@@ -39,12 +39,12 @@ public class FederationCheckpointApiResponse {
     this.count = count;
   }
 
-  public FederationCheckpointApiResponse results(List<FederationCheckpoint> results) {
+  public ApiRateLimitProfileApiResponse results(List<ApiRateLimitProfile> results) {
     this.results = results;
     return this;
   }
 
-  public FederationCheckpointApiResponse addResultsItem(FederationCheckpoint resultsItem) {
+  public ApiRateLimitProfileApiResponse addResultsItem(ApiRateLimitProfile resultsItem) {
     this.results.add(resultsItem);
     return this;
   }
@@ -54,11 +54,11 @@ public class FederationCheckpointApiResponse {
    * @return results
   **/
   @Schema(required = true, description = "")
-  public List<FederationCheckpoint> getResults() {
+  public List<ApiRateLimitProfile> getResults() {
     return results;
   }
 
-  public void setResults(List<FederationCheckpoint> results) {
+  public void setResults(List<ApiRateLimitProfile> results) {
     this.results = results;
   }
 
@@ -70,9 +70,9 @@ public class FederationCheckpointApiResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FederationCheckpointApiResponse federationCheckpointApiResponse = (FederationCheckpointApiResponse) o;
-    return Objects.equals(this.count, federationCheckpointApiResponse.count) &&
-        Objects.equals(this.results, federationCheckpointApiResponse.results);
+    ApiRateLimitProfileApiResponse apiRateLimitProfileApiResponse = (ApiRateLimitProfileApiResponse) o;
+    return Objects.equals(this.count, apiRateLimitProfileApiResponse.count) &&
+        Objects.equals(this.results, apiRateLimitProfileApiResponse.results);
   }
 
   @Override
@@ -84,7 +84,7 @@ public class FederationCheckpointApiResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FederationCheckpointApiResponse {\n");
+    sb.append("class ApiRateLimitProfileApiResponse {\n");
     
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");

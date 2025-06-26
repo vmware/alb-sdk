@@ -68,9 +68,9 @@ public class PulseUserRegistration {
      * For generation of the jwt_token paste the related link
      * in Incognito window to prevent IdP from considering any existing valid login session
      * If your controller is running >= 21.1.3 and is in ENTERPRISE tier then visit URL
-     * :https://portal.avipulse.vmware.com/portal/controller/auth/ctrllogin
+     * :https://portal.pulse.broadcom.com/portal/controller/auth/ctrllogin
      * If your controller is running >= 21.1.3 and is in SAAS tier then visit URL
-     * :https://portal.avipulse.vmware.com/portal/controller/auth/ccctrllogin
+     * :https://portal.pulse.broadcom.com/portal/controller/auth/ccctrllogin
      * jwt_token is valid for 365 days.
      *
      */

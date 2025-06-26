@@ -33,7 +33,7 @@ public class GslbThirdPartySiteRuntime  {
      * This is the getter method this will return the attribute value.
      * This field will provide information on origin(site name) of the health monitoring information.
      * Field introduced in 22.1.5.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return healthMonitorInfo
      */
@@ -45,7 +45,7 @@ public class GslbThirdPartySiteRuntime  {
      * This is the setter method to the attribute.
      * This field will provide information on origin(site name) of the health monitoring information.
      * Field introduced in 22.1.5.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param healthMonitorInfo set the healthMonitorInfo.
      */
@@ -56,7 +56,7 @@ public class GslbThirdPartySiteRuntime  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return siteInfo
      */
@@ -67,7 +67,7 @@ public class GslbThirdPartySiteRuntime  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param siteInfo set the siteInfo.
      */
