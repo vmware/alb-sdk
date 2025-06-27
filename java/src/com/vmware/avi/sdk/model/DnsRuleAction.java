@@ -45,7 +45,7 @@ public class DnsRuleAction  {
      * This is the getter method this will return the attribute value.
      * Allow or drop the dns query.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allow
      */
@@ -57,7 +57,7 @@ public class DnsRuleAction  {
      * This is the setter method to the attribute.
      * Allow or drop the dns query.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param allow set the allow.
      */
@@ -69,7 +69,7 @@ public class DnsRuleAction  {
      * This is the getter method this will return the attribute value.
      * Rate limits the dns requests.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsRateLimiter
      */
@@ -81,7 +81,7 @@ public class DnsRuleAction  {
      * This is the setter method to the attribute.
      * Rate limits the dns requests.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dnsRateLimiter set the dnsRateLimiter.
      */
@@ -93,7 +93,7 @@ public class DnsRuleAction  {
      * This is the getter method this will return the attribute value.
      * Gslb service group to be selected.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gsGroupSelection
      */
@@ -105,7 +105,7 @@ public class DnsRuleAction  {
      * This is the setter method to the attribute.
      * Gslb service group to be selected.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gsGroupSelection set the gsGroupSelection.
      */
@@ -118,7 +118,7 @@ public class DnsRuleAction  {
      * Select a specific gslb site for the dns query.
      * This action should be used only when gslb services have been configured for the dns virtual service.
      * Field introduced in 17.1.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gslbSiteSelection
      */
@@ -131,7 +131,7 @@ public class DnsRuleAction  {
      * Select a specific gslb site for the dns query.
      * This action should be used only when gslb services have been configured for the dns virtual service.
      * Field introduced in 17.1.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gslbSiteSelection set the gslbSiteSelection.
      */
@@ -143,7 +143,7 @@ public class DnsRuleAction  {
      * This is the getter method this will return the attribute value.
      * Select a pool or pool group for the passthrough dns query which cannot be served locally but could be served by upstream servers.
      * Field introduced in 18.1.3, 17.2.12.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolSwitching
      */
@@ -155,7 +155,7 @@ public class DnsRuleAction  {
      * This is the setter method to the attribute.
      * Select a pool or pool group for the passthrough dns query which cannot be served locally but could be served by upstream servers.
      * Field introduced in 18.1.3, 17.2.12.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolSwitching set the poolSwitching.
      */
@@ -167,7 +167,7 @@ public class DnsRuleAction  {
      * This is the getter method this will return the attribute value.
      * Generate a response for the dns query.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return response
      */
@@ -179,7 +179,7 @@ public class DnsRuleAction  {
      * This is the setter method to the attribute.
      * Generate a response for the dns query.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param response set the response.
      */

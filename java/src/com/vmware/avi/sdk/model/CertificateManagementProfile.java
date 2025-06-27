@@ -47,8 +47,7 @@ public class CertificateManagementProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -60,8 +59,7 @@ public class CertificateManagementProfile extends AviRestResource  {
      * This is the setter method. this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -73,8 +71,7 @@ public class CertificateManagementProfile extends AviRestResource  {
      * This is the setter method this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -89,7 +86,7 @@ public class CertificateManagementProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the pki profile.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -100,7 +97,7 @@ public class CertificateManagementProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Name of the pki profile.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -113,7 +110,7 @@ public class CertificateManagementProfile extends AviRestResource  {
      * Alert script config object for certificate management profile.
      * It is a reference to an object of type alertscriptconfig.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return runScriptRef
      */
@@ -126,7 +123,7 @@ public class CertificateManagementProfile extends AviRestResource  {
      * Alert script config object for certificate management profile.
      * It is a reference to an object of type alertscriptconfig.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param runScriptRef set the runScriptRef.
      */
@@ -135,7 +132,7 @@ public class CertificateManagementProfile extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return scriptParams
      */
@@ -145,7 +142,7 @@ public class CertificateManagementProfile extends AviRestResource  {
 
     /**
      * This is the setter method. this will set the scriptParams
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return scriptParams
      */
@@ -155,7 +152,7 @@ public class CertificateManagementProfile extends AviRestResource  {
 
     /**
      * This is the setter method this will set the scriptParams
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return scriptParams
      */
@@ -170,7 +167,7 @@ public class CertificateManagementProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -181,7 +178,7 @@ public class CertificateManagementProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -208,7 +205,7 @@ public class CertificateManagementProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -218,7 +215,7 @@ public class CertificateManagementProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

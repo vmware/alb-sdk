@@ -33,7 +33,7 @@ public class FileObjectDetails  {
      * This is the getter method this will return the attribute value.
      * Name of file object.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -45,7 +45,7 @@ public class FileObjectDetails  {
      * This is the setter method to the attribute.
      * Name of file object.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -56,7 +56,7 @@ public class FileObjectDetails  {
      * This is the getter method this will return the attribute value.
      * Url.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return url
      */
@@ -68,7 +68,7 @@ public class FileObjectDetails  {
     * This is the setter method. this will set the url
     * Url.
     * Field introduced in 30.2.1.
-    * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+    * Allowed with any value in enterprise, enterprise with cloud services edition.
     * Default value when not specified in API or module is interpreted by Avi Controller as null.
     * @return url
     */

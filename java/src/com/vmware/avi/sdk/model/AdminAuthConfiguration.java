@@ -36,7 +36,7 @@ public class AdminAuthConfiguration  {
      * This is the getter method this will return the attribute value.
      * Allow any user created locally to login with local credentials.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return allowLocalUserLogin
      */
@@ -48,7 +48,7 @@ public class AdminAuthConfiguration  {
      * This is the setter method to the attribute.
      * Allow any user created locally to login with local credentials.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param allowLocalUserLogin set the allowLocalUserLogin.
      */
@@ -59,8 +59,7 @@ public class AdminAuthConfiguration  {
      * This is the getter method this will return the attribute value.
      * Remote auth configurations.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteAuthConfigurations
      */
@@ -72,8 +71,7 @@ public class AdminAuthConfiguration  {
      * This is the setter method. this will set the remoteAuthConfigurations
      * Remote auth configurations.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteAuthConfigurations
      */
@@ -85,8 +83,7 @@ public class AdminAuthConfiguration  {
      * This is the setter method this will set the remoteAuthConfigurations
      * Remote auth configurations.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteAuthConfigurations
      */
@@ -101,7 +98,7 @@ public class AdminAuthConfiguration  {
      * This is the getter method this will return the attribute value.
      * Service auth configurations.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceAuthConfigurations
      */
@@ -113,7 +110,7 @@ public class AdminAuthConfiguration  {
      * This is the setter method. this will set the serviceAuthConfigurations
      * Service auth configurations.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceAuthConfigurations
      */
@@ -125,7 +122,7 @@ public class AdminAuthConfiguration  {
      * This is the setter method this will set the serviceAuthConfigurations
      * Service auth configurations.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceAuthConfigurations
      */

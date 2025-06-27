@@ -47,8 +47,7 @@ public class GslbGeoDbFile  {
      * The checksum is internally computed.
      * It's value changes every time the file is uploaded/modified.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return checksum
      */
     public String getChecksum() {
@@ -61,8 +60,7 @@ public class GslbGeoDbFile  {
      * The checksum is internally computed.
      * It's value changes every time the file is uploaded/modified.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param checksum set the checksum.
      */
     public void setChecksum(String  checksum) {
@@ -75,8 +73,7 @@ public class GslbGeoDbFile  {
      * The user uploaded file will be retained while a corresponding internal file is generated to be consumed by various upstream (other sites) and
      * downstream (ses) entities.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return fileId
      */
     public String getFileId() {
@@ -89,8 +86,7 @@ public class GslbGeoDbFile  {
      * The user uploaded file will be retained while a corresponding internal file is generated to be consumed by various upstream (other sites) and
      * downstream (ses) entities.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param fileId set the fileId.
      */
     public void setFileId(String  fileId) {
@@ -104,8 +100,7 @@ public class GslbGeoDbFile  {
      * It's value changes every time the internal file is regenerated.
      * The internal file is regenerated whenever the original file is uploaded to the controller.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return fileIdChecksum
      */
     public String getFileIdChecksum() {
@@ -119,8 +114,7 @@ public class GslbGeoDbFile  {
      * It's value changes every time the internal file is regenerated.
      * The internal file is regenerated whenever the original file is uploaded to the controller.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param fileIdChecksum set the fileIdChecksum.
      */
     public void setFileIdChecksum(String  fileIdChecksum) {
@@ -131,7 +125,7 @@ public class GslbGeoDbFile  {
      * This is the getter method this will return the attribute value.
      * Geodb filename in the avi supported formats.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return filename
      */
@@ -143,7 +137,7 @@ public class GslbGeoDbFile  {
      * This is the setter method to the attribute.
      * Geodb filename in the avi supported formats.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param filename set the filename.
      */
@@ -157,7 +151,7 @@ public class GslbGeoDbFile  {
      * Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6,
      * GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_GEODB_FILE_FORMAT_AVI".
      * @return format
      */
@@ -171,7 +165,7 @@ public class GslbGeoDbFile  {
      * Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6,
      * GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_GEODB_FILE_FORMAT_AVI".
      * @param format set the format.
      */
@@ -185,8 +179,7 @@ public class GslbGeoDbFile  {
      * It is an internal generated timestamp.
      * This value is a constant for the lifetime of the file and does not change every time the file is uploaded.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return timestamp
      */
     public Integer getTimestamp() {
@@ -199,8 +192,7 @@ public class GslbGeoDbFile  {
      * It is an internal generated timestamp.
      * This value is a constant for the lifetime of the file and does not change every time the file is uploaded.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param timestamp set the timestamp.
      */
     public void setTimestamp(Integer  timestamp) {

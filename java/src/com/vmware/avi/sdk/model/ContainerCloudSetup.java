@@ -61,7 +61,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -71,7 +71,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -81,7 +81,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudAccess
      */
@@ -91,7 +91,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudAccess set the cloudAccess.
      */
@@ -100,7 +100,7 @@ public class ContainerCloudSetup  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return failedHosts
      */
@@ -110,7 +110,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method. this will set the failedHosts
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return failedHosts
      */
@@ -120,7 +120,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method this will set the failedHosts
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return failedHosts
      */
@@ -134,7 +134,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fleetEndpoint
      */
@@ -144,7 +144,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fleetEndpoint set the fleetEndpoint.
      */
@@ -153,7 +153,7 @@ public class ContainerCloudSetup  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
@@ -163,7 +163,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method. this will set the hosts
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
@@ -173,7 +173,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method this will set the hosts
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
@@ -186,7 +186,7 @@ public class ContainerCloudSetup  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return masterNodes
      */
@@ -196,7 +196,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method. this will set the masterNodes
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return masterNodes
      */
@@ -206,7 +206,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method this will set the masterNodes
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return masterNodes
      */
@@ -219,7 +219,7 @@ public class ContainerCloudSetup  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return missingHosts
      */
@@ -229,7 +229,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method. this will set the missingHosts
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return missingHosts
      */
@@ -239,7 +239,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method this will set the missingHosts
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return missingHosts
      */
@@ -252,7 +252,7 @@ public class ContainerCloudSetup  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return newHosts
      */
@@ -262,7 +262,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method. this will set the newHosts
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return newHosts
      */
@@ -272,7 +272,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method this will set the newHosts
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return newHosts
      */
@@ -286,7 +286,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -296,7 +296,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -306,7 +306,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDeployMethodAccess
      */
@@ -316,7 +316,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seDeployMethodAccess set the seDeployMethodAccess.
      */
@@ -326,7 +326,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seName
      */
@@ -336,7 +336,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seName set the seName.
      */
@@ -346,7 +346,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return version
      */
@@ -356,7 +356,7 @@ public class ContainerCloudSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param version set the version.
      */

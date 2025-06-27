@@ -33,7 +33,7 @@ public class ParamInURI  {
      * This is the getter method this will return the attribute value.
      * Param name in hitted signature rule match_element.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return paramName
      */
@@ -45,7 +45,7 @@ public class ParamInURI  {
      * This is the setter method to the attribute.
      * Param name in hitted signature rule match_element.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param paramName set the paramName.
      */
@@ -57,7 +57,7 @@ public class ParamInURI  {
      * This is the getter method this will return the attribute value.
      * Param value in hitted signature rule match_element.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -69,7 +69,7 @@ public class ParamInURI  {
      * This is the setter method to the attribute.
      * Param value in hitted signature rule match_element.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

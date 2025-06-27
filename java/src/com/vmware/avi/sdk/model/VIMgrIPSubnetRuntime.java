@@ -56,7 +56,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * If true, capable of floating/elastic ip association.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return fipAvailable
      */
@@ -67,7 +67,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * If true, capable of floating/elastic ip association.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param fipAvailable set the fipAvailable.
      */
@@ -77,7 +77,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * If fip_available is true, this is list of supported fip subnets, possibly empty if cloud does not support such a network list.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fipSubnetUuids
      */
@@ -88,7 +88,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
     /**
      * This is the setter method. this will set the fipSubnetUuids
      * If fip_available is true, this is list of supported fip subnets, possibly empty if cloud does not support such a network list.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fipSubnetUuids
      */
@@ -99,7 +99,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
     /**
      * This is the setter method this will set the fipSubnetUuids
      * If fip_available is true, this is list of supported fip subnets, possibly empty if cloud does not support such a network list.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fipSubnetUuids
      */
@@ -114,7 +114,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If fip_available is true, the list of associated floatingip subnets, possibly empty if unsupported or implictly defined by the cloud.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingipSubnets
      */
@@ -126,7 +126,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
      * This is the setter method. this will set the floatingipSubnets
      * If fip_available is true, the list of associated floatingip subnets, possibly empty if unsupported or implictly defined by the cloud.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingipSubnets
      */
@@ -138,7 +138,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
      * This is the setter method this will set the floatingipSubnets
      * If fip_available is true, the list of associated floatingip subnets, possibly empty if unsupported or implictly defined by the cloud.
      * Field introduced in 17.2.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingipSubnets
      */
@@ -152,7 +152,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipSubnet
      */
@@ -162,7 +162,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipSubnet set the ipSubnet.
      */
@@ -172,7 +172,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -182,7 +182,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -192,7 +192,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prefix
      */
@@ -202,7 +202,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param prefix set the prefix.
      */
@@ -213,7 +213,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * True if prefix is primary ip on interface, else false.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return primary
      */
@@ -224,7 +224,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * True if prefix is primary ip on interface, else false.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param primary set the primary.
      */
@@ -234,7 +234,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return refCount
      */
@@ -244,7 +244,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param refCount set the refCount.
      */
@@ -254,7 +254,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seRefCount
      */
@@ -264,7 +264,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seRefCount set the seRefCount.
      */
@@ -274,7 +274,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -284,7 +284,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

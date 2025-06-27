@@ -48,8 +48,8 @@ public class HTTPSwitchingAction  {
      * This is the getter method this will return the attribute value.
      * Content switching action type.
      * Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- http_switching_select_pool,http_switching_select_local), basic,
-     * enterprise with cloud services edition.
+     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- http_switching_select_pool,http_switching_select_local) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return action
      */
@@ -61,8 +61,8 @@ public class HTTPSwitchingAction  {
      * This is the setter method to the attribute.
      * Content switching action type.
      * Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- http_switching_select_pool,http_switching_select_local), basic,
-     * enterprise with cloud services edition.
+     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- http_switching_select_pool,http_switching_select_local) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param action set the action.
      */
@@ -73,7 +73,7 @@ public class HTTPSwitchingAction  {
     /**
      * This is the getter method this will return the attribute value.
      * File from which to serve local response to the request.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return file
      */
@@ -84,7 +84,7 @@ public class HTTPSwitchingAction  {
     /**
      * This is the setter method to the attribute.
      * File from which to serve local response to the request.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param file set the file.
      */
@@ -98,7 +98,7 @@ public class HTTPSwitchingAction  {
      * Use this to provide codes not available in the list within status_code.
      * Allowed values are 200-599.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return otherStatusCode
      */
@@ -112,7 +112,7 @@ public class HTTPSwitchingAction  {
      * Use this to provide codes not available in the list within status_code.
      * Allowed values are 200-599.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param otherStatusCode set the otherStatusCode.
      */
@@ -124,7 +124,7 @@ public class HTTPSwitchingAction  {
      * This is the getter method this will return the attribute value.
      * Uuid of the pool group to serve the request.
      * It is a reference to an object of type poolgroup.
-     * Allowed in enterprise edition with any value, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolGroupRef
      */
@@ -136,7 +136,7 @@ public class HTTPSwitchingAction  {
      * This is the setter method to the attribute.
      * Uuid of the pool group to serve the request.
      * It is a reference to an object of type poolgroup.
-     * Allowed in enterprise edition with any value, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolGroupRef set the poolGroupRef.
      */
@@ -148,7 +148,7 @@ public class HTTPSwitchingAction  {
      * This is the getter method this will return the attribute value.
      * Uuid of the pool of servers to serve the request.
      * It is a reference to an object of type pool.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolRef
      */
@@ -160,7 +160,7 @@ public class HTTPSwitchingAction  {
      * This is the setter method to the attribute.
      * Uuid of the pool of servers to serve the request.
      * It is a reference to an object of type pool.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolRef set the poolRef.
      */
@@ -171,7 +171,7 @@ public class HTTPSwitchingAction  {
     /**
      * This is the getter method this will return the attribute value.
      * Specific pool server to select.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return server
      */
@@ -182,7 +182,7 @@ public class HTTPSwitchingAction  {
     /**
      * This is the setter method to the attribute.
      * Specific pool server to select.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param server set the server.
      */
@@ -195,7 +195,7 @@ public class HTTPSwitchingAction  {
      * Http status code to use when serving local response.
      * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
      * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return statusCode
      */
@@ -208,7 +208,7 @@ public class HTTPSwitchingAction  {
      * Http status code to use when serving local response.
      * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
      * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param statusCode set the statusCode.
      */

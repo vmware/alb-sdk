@@ -63,7 +63,7 @@ public class LdapDirectorySettings  {
      * This is the getter method this will return the attribute value.
      * Ldap admin user dn.
      * Administrator credentials are required to search for users under user search dn or groups under group search dn.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return adminBindDn
      */
@@ -75,7 +75,7 @@ public class LdapDirectorySettings  {
      * This is the setter method to the attribute.
      * Ldap admin user dn.
      * Administrator credentials are required to search for users under user search dn or groups under group search dn.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param adminBindDn set the adminBindDn.
      */
@@ -86,7 +86,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the getter method this will return the attribute value.
      * Group filter is used to identify groups during search.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "(objectClass=*)".
      * @return groupFilter
      */
@@ -97,7 +97,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the setter method to the attribute.
      * Group filter is used to identify groups during search.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "(objectClass=*)".
      * @param groupFilter set the groupFilter.
      */
@@ -108,7 +108,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the getter method this will return the attribute value.
      * Ldap group attribute that identifies each of the group members.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "member".
      * @return groupMemberAttribute
      */
@@ -119,7 +119,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the setter method to the attribute.
      * Ldap group attribute that identifies each of the group members.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "member".
      * @param groupMemberAttribute set the groupMemberAttribute.
      */
@@ -130,7 +130,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the getter method this will return the attribute value.
      * Group member entries contain full dns instead of just user id attribute values.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return groupMemberIsFullDn
      */
@@ -141,7 +141,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the setter method to the attribute.
      * Group member entries contain full dns instead of just user id attribute values.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param groupMemberIsFullDn set the groupMemberIsFullDn.
      */
@@ -153,7 +153,7 @@ public class LdapDirectorySettings  {
      * This is the getter method this will return the attribute value.
      * Ldap group search dn is the root of search for a given group in the ldap directory.
      * Only matching groups present in this ldap directory sub-tree will be checked for user membership.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return groupSearchDn
      */
@@ -165,7 +165,7 @@ public class LdapDirectorySettings  {
      * This is the setter method to the attribute.
      * Ldap group search dn is the root of search for a given group in the ldap directory.
      * Only matching groups present in this ldap directory sub-tree will be checked for user membership.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param groupSearchDn set the groupSearchDn.
      */
@@ -177,7 +177,7 @@ public class LdapDirectorySettings  {
      * This is the getter method this will return the attribute value.
      * Ldap group search scope defines how deep to search for the group starting from the group search dn.
      * Enum options - AUTH_LDAP_SCOPE_BASE, AUTH_LDAP_SCOPE_ONE, AUTH_LDAP_SCOPE_SUBTREE.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SCOPE_SUBTREE".
      * @return groupSearchScope
      */
@@ -189,7 +189,7 @@ public class LdapDirectorySettings  {
      * This is the setter method to the attribute.
      * Ldap group search scope defines how deep to search for the group starting from the group search dn.
      * Enum options - AUTH_LDAP_SCOPE_BASE, AUTH_LDAP_SCOPE_ONE, AUTH_LDAP_SCOPE_SUBTREE.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SCOPE_SUBTREE".
      * @param groupSearchScope set the groupSearchScope.
      */
@@ -200,7 +200,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the getter method this will return the attribute value.
      * During user or group search, ignore searching referrals.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return ignoreReferrals
      */
@@ -211,7 +211,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the setter method to the attribute.
      * During user or group search, ignore searching referrals.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param ignoreReferrals set the ignoreReferrals.
      */
@@ -222,7 +222,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the getter method this will return the attribute value.
      * Ldap admin user password.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return password
      */
@@ -233,7 +233,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the setter method to the attribute.
      * Ldap admin user password.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param password set the password.
      */
@@ -243,7 +243,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the getter method this will return the attribute value.
      * Ldap user attributes to fetch on a successful user bind.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userAttributes
      */
@@ -254,7 +254,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the setter method. this will set the userAttributes
      * Ldap user attributes to fetch on a successful user bind.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userAttributes
      */
@@ -265,7 +265,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the setter method this will set the userAttributes
      * Ldap user attributes to fetch on a successful user bind.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userAttributes
      */
@@ -280,7 +280,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the getter method this will return the attribute value.
      * Ldap user id attribute is the login attribute that uniquely identifies a single user record.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userIdAttribute
      */
@@ -291,7 +291,7 @@ public class LdapDirectorySettings  {
     /**
      * This is the setter method to the attribute.
      * Ldap user id attribute is the login attribute that uniquely identifies a single user record.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userIdAttribute set the userIdAttribute.
      */
@@ -303,7 +303,7 @@ public class LdapDirectorySettings  {
      * This is the getter method this will return the attribute value.
      * Ldap user search dn is the root of search for a given user in the ldap directory.
      * Only user records present in this ldap directory sub-tree will be validated.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userSearchDn
      */
@@ -315,7 +315,7 @@ public class LdapDirectorySettings  {
      * This is the setter method to the attribute.
      * Ldap user search dn is the root of search for a given user in the ldap directory.
      * Only user records present in this ldap directory sub-tree will be validated.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userSearchDn set the userSearchDn.
      */
@@ -327,7 +327,7 @@ public class LdapDirectorySettings  {
      * This is the getter method this will return the attribute value.
      * Ldap user search scope defines how deep to search for the user starting from user search dn.
      * Enum options - AUTH_LDAP_SCOPE_BASE, AUTH_LDAP_SCOPE_ONE, AUTH_LDAP_SCOPE_SUBTREE.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SCOPE_ONE".
      * @return userSearchScope
      */
@@ -339,7 +339,7 @@ public class LdapDirectorySettings  {
      * This is the setter method to the attribute.
      * Ldap user search scope defines how deep to search for the user starting from user search dn.
      * Enum options - AUTH_LDAP_SCOPE_BASE, AUTH_LDAP_SCOPE_ONE, AUTH_LDAP_SCOPE_SUBTREE.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SCOPE_ONE".
      * @param userSearchScope set the userSearchScope.
      */

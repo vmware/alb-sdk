@@ -39,7 +39,7 @@ public class presnapshot  {
      * This is the getter method this will return the attribute value.
      * Fb gs snapshot data.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gssnapshot
      */
@@ -51,7 +51,7 @@ public class presnapshot  {
      * This is the setter method to the attribute.
      * Fb gs snapshot data.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gssnapshot set the gssnapshot.
      */
@@ -63,7 +63,7 @@ public class presnapshot  {
      * This is the getter method this will return the attribute value.
      * Fb pool snapshot data.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolsnapshot
      */
@@ -75,7 +75,7 @@ public class presnapshot  {
      * This is the setter method to the attribute.
      * Fb pool snapshot data.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolsnapshot set the poolsnapshot.
      */
@@ -87,7 +87,7 @@ public class presnapshot  {
      * This is the getter method this will return the attribute value.
      * Fb se snapshot data.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sesnapshot
      */
@@ -99,7 +99,7 @@ public class presnapshot  {
      * This is the setter method to the attribute.
      * Fb se snapshot data.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sesnapshot set the sesnapshot.
      */
@@ -111,7 +111,7 @@ public class presnapshot  {
      * This is the getter method this will return the attribute value.
      * Fb vs snapshot data.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vssnapshot
      */
@@ -123,7 +123,7 @@ public class presnapshot  {
      * This is the setter method to the attribute.
      * Fb vs snapshot data.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vssnapshot set the vssnapshot.
      */

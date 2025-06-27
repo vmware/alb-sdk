@@ -36,7 +36,7 @@ public class DiskUsage  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrDiskFree
      */
@@ -46,7 +46,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method. this will set the cntlrDiskFree
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrDiskFree
      */
@@ -56,7 +56,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method this will set the cntlrDiskFree
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrDiskFree
      */
@@ -69,7 +69,7 @@ public class DiskUsage  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrDiskUsage
      */
@@ -79,7 +79,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method. this will set the cntlrDiskUsage
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrDiskUsage
      */
@@ -89,7 +89,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method this will set the cntlrDiskUsage
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrDiskUsage
      */
@@ -102,7 +102,7 @@ public class DiskUsage  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiskFree
      */
@@ -112,7 +112,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method. this will set the seDiskFree
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiskFree
      */
@@ -122,7 +122,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method this will set the seDiskFree
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiskFree
      */
@@ -135,7 +135,7 @@ public class DiskUsage  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiskUsage
      */
@@ -145,7 +145,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method. this will set the seDiskUsage
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiskUsage
      */
@@ -155,7 +155,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method this will set the seDiskUsage
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiskUsage
      */

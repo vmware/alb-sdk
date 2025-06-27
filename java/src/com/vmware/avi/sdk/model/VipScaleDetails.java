@@ -40,7 +40,7 @@ public class VipScaleDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availabilityZone
      */
@@ -50,7 +50,7 @@ public class VipScaleDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param availabilityZone set the availabilityZone.
      */
@@ -60,7 +60,7 @@ public class VipScaleDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return error
      */
@@ -70,7 +70,7 @@ public class VipScaleDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param error set the error.
      */
@@ -80,7 +80,7 @@ public class VipScaleDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnetUuid
      */
@@ -90,7 +90,7 @@ public class VipScaleDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subnetUuid set the subnetUuid.
      */
@@ -100,7 +100,7 @@ public class VipScaleDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipId
      */
@@ -110,7 +110,7 @@ public class VipScaleDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipId set the vipId.
      */
@@ -120,7 +120,7 @@ public class VipScaleDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsvipUuid
      */
@@ -130,7 +130,7 @@ public class VipScaleDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsvipUuid set the vsvipUuid.
      */

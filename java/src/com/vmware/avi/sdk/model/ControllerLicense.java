@@ -89,7 +89,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of active burst core license in use.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return activeBurstResources
      */
@@ -101,7 +101,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the setter method. this will set the activeBurstResources
      * List of active burst core license in use.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return activeBurstResources
      */
@@ -113,7 +113,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the setter method this will set the activeBurstResources
      * List of active burst core license in use.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return activeBurstResources
      */
@@ -129,7 +129,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Total number of service engine cores for burst core based licenses.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return burstCores
      */
@@ -141,7 +141,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the setter method to the attribute.
      * Total number of service engine cores for burst core based licenses.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param burstCores set the burstCores.
      */
@@ -152,7 +152,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of service engine cores in non-container clouds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cores
      */
@@ -163,7 +163,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Number of service engine cores in non-container clouds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cores set the cores.
      */
@@ -173,7 +173,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return customerName
      */
@@ -183,7 +183,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param customerName set the customerName.
      */
@@ -194,7 +194,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return disableEnforcement
      */
@@ -205,7 +205,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param disableEnforcement set the disableEnforcement.
      */
@@ -216,7 +216,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of used or expired burst core licenses.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return expiredBurstResources
      */
@@ -228,7 +228,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the setter method. this will set the expiredBurstResources
      * List of used or expired burst core licenses.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return expiredBurstResources
      */
@@ -240,7 +240,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the setter method this will set the expiredBurstResources
      * List of used or expired burst core licenses.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return expiredBurstResources
      */
@@ -256,7 +256,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Flag used to track initialization.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return initialized
      */
@@ -268,7 +268,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the setter method to the attribute.
      * Flag used to track initialization.
      * Field introduced in 20.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param initialized set the initialized.
      */
@@ -279,7 +279,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseId
      */
@@ -290,7 +290,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseId set the licenseId.
      */
@@ -299,7 +299,7 @@ public class ControllerLicense extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTier
      */
@@ -309,7 +309,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the setter method. this will set the licenseTier
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTier
      */
@@ -319,7 +319,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the setter method this will set the licenseTier
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTier
      */
@@ -333,7 +333,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTiers
      */
@@ -344,7 +344,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the setter method. this will set the licenseTiers
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTiers
      */
@@ -355,7 +355,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the setter method this will set the licenseTiers
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTiers
      */
@@ -368,7 +368,7 @@ public class ControllerLicense extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenses
      */
@@ -378,7 +378,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the setter method. this will set the licenses
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenses
      */
@@ -388,7 +388,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the setter method this will set the licenses
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenses
      */
@@ -403,7 +403,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of service engines hosts in container clouds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxSes
      */
@@ -414,7 +414,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Number of service engines hosts in container clouds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxSes set the maxSes.
      */
@@ -424,7 +424,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -434,7 +434,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -445,7 +445,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Service engine bandwidth limits for bandwidth based licenses.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seBandwidthLimits
      */
@@ -457,7 +457,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the setter method. this will set the seBandwidthLimits
      * Service engine bandwidth limits for bandwidth based licenses.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seBandwidthLimits
      */
@@ -469,7 +469,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the setter method this will set the seBandwidthLimits
      * Service engine bandwidth limits for bandwidth based licenses.
      * Field introduced in 17.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seBandwidthLimits
      */
@@ -485,7 +485,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Number of vmware service cores after aggregating all other license types.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceCores
      */
@@ -497,7 +497,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the setter method to the attribute.
      * Number of vmware service cores after aggregating all other license types.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceCores set the serviceCores.
      */
@@ -508,7 +508,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of physical cpu sockets across service engines in no access and linux server clouds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sockets
      */
@@ -519,7 +519,7 @@ public class ControllerLicense extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Number of physical cpu sockets across service engines in no access and linux server clouds.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sockets set the sockets.
      */
@@ -529,7 +529,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startOn
      */
@@ -539,7 +539,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startOn set the startOn.
      */
@@ -551,7 +551,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Tenant uuid.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantUuid
      */
@@ -563,7 +563,7 @@ public class ControllerLicense extends AviRestResource  {
      * This is the setter method to the attribute.
      * Tenant uuid.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantUuid set the tenantUuid.
      */
@@ -590,7 +590,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -600,7 +600,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -610,7 +610,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return validUntil
      */
@@ -620,7 +620,7 @@ public class ControllerLicense extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param validUntil set the validUntil.
      */

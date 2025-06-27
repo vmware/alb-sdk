@@ -65,7 +65,7 @@ public class IpamDnsAwsProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Aws access key id.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return accessKeyId
      */
@@ -76,7 +76,7 @@ public class IpamDnsAwsProfile  {
     /**
      * This is the setter method to the attribute.
      * Aws access key id.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param accessKeyId set the accessKeyId.
      */
@@ -88,7 +88,7 @@ public class IpamDnsAwsProfile  {
      * A list of subnets used for source ip allocation for egress services in openshift/k8s on aws.
      * Field introduced in 18.2.3.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return egressServiceSubnets
      */
@@ -101,7 +101,7 @@ public class IpamDnsAwsProfile  {
      * A list of subnets used for source ip allocation for egress services in openshift/k8s on aws.
      * Field introduced in 18.2.3.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return egressServiceSubnets
      */
@@ -114,7 +114,7 @@ public class IpamDnsAwsProfile  {
      * A list of subnets used for source ip allocation for egress services in openshift/k8s on aws.
      * Field introduced in 18.2.3.
      * Maximum of 1 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return egressServiceSubnets
      */
@@ -130,7 +130,7 @@ public class IpamDnsAwsProfile  {
      * This is the getter method this will return the attribute value.
      * Iam assume role for cross-account access.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return iamAssumeRole
      */
@@ -142,7 +142,7 @@ public class IpamDnsAwsProfile  {
      * This is the setter method to the attribute.
      * Iam assume role for cross-account access.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param iamAssumeRole set the iamAssumeRole.
      */
@@ -155,7 +155,7 @@ public class IpamDnsAwsProfile  {
      * If enabled and the virtual service is not floating ip capable, vip will be published to both private and public zones.
      * This flag is applicable only for aws dns profile.
      * Field introduced in 17.2.10.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return publishVipToPublicZone
      */
@@ -168,7 +168,7 @@ public class IpamDnsAwsProfile  {
      * If enabled and the virtual service is not floating ip capable, vip will be published to both private and public zones.
      * This flag is applicable only for aws dns profile.
      * Field introduced in 17.2.10.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param publishVipToPublicZone set the publishVipToPublicZone.
      */
@@ -179,7 +179,7 @@ public class IpamDnsAwsProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Aws region.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return region
      */
@@ -190,7 +190,7 @@ public class IpamDnsAwsProfile  {
     /**
      * This is the setter method to the attribute.
      * Aws region.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param region set the region.
      */
@@ -201,7 +201,7 @@ public class IpamDnsAwsProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Aws secret access key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return secretAccessKey
      */
@@ -212,7 +212,7 @@ public class IpamDnsAwsProfile  {
     /**
      * This is the setter method to the attribute.
      * Aws secret access key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param secretAccessKey set the secretAccessKey.
      */
@@ -226,7 +226,7 @@ public class IpamDnsAwsProfile  {
      * Allowed values are 1-172800.
      * Field introduced in 17.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return ttl
      */
@@ -240,7 +240,7 @@ public class IpamDnsAwsProfile  {
      * Allowed values are 1-172800.
      * Field introduced in 17.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param ttl set the ttl.
      */
@@ -251,7 +251,7 @@ public class IpamDnsAwsProfile  {
      * This is the getter method this will return the attribute value.
      * Usable domains to pick from amazon route 53.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableDomains
      */
@@ -263,7 +263,7 @@ public class IpamDnsAwsProfile  {
      * This is the setter method. this will set the usableDomains
      * Usable domains to pick from amazon route 53.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableDomains
      */
@@ -275,7 +275,7 @@ public class IpamDnsAwsProfile  {
      * This is the setter method this will set the usableDomains
      * Usable domains to pick from amazon route 53.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableDomains
      */
@@ -292,7 +292,7 @@ public class IpamDnsAwsProfile  {
      * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
      * allocation.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableNetworkUuids
      */
@@ -306,7 +306,7 @@ public class IpamDnsAwsProfile  {
      * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
      * allocation.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableNetworkUuids
      */
@@ -320,7 +320,7 @@ public class IpamDnsAwsProfile  {
      * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
      * allocation.
      * Field introduced in 17.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usableNetworkUuids
      */
@@ -335,7 +335,7 @@ public class IpamDnsAwsProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Use iam roles instead of access and secret key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useIamRoles
      */
@@ -346,7 +346,7 @@ public class IpamDnsAwsProfile  {
     /**
      * This is the setter method to the attribute.
      * Use iam roles instead of access and secret key.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useIamRoles set the useIamRoles.
      */
@@ -357,7 +357,7 @@ public class IpamDnsAwsProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Vpc name.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vpc
      */
@@ -368,7 +368,7 @@ public class IpamDnsAwsProfile  {
     /**
      * This is the setter method to the attribute.
      * Vpc name.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vpc set the vpc.
      */
@@ -379,7 +379,7 @@ public class IpamDnsAwsProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Vpc id.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vpcId
      */
@@ -390,7 +390,7 @@ public class IpamDnsAwsProfile  {
     /**
      * This is the setter method to the attribute.
      * Vpc id.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vpcId set the vpcId.
      */
@@ -401,7 +401,7 @@ public class IpamDnsAwsProfile  {
      * This is the getter method this will return the attribute value.
      * Network configuration for virtual ip per az.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */
@@ -413,7 +413,7 @@ public class IpamDnsAwsProfile  {
      * This is the setter method. this will set the zones
      * Network configuration for virtual ip per az.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */
@@ -425,7 +425,7 @@ public class IpamDnsAwsProfile  {
      * This is the setter method this will set the zones
      * Network configuration for virtual ip per az.
      * Field introduced in 17.1.3.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zones
      */

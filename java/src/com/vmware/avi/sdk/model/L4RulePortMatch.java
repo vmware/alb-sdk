@@ -37,7 +37,7 @@ public class L4RulePortMatch  {
      * Criterion to use for virtual service port matching.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchCriteria
      */
@@ -50,7 +50,7 @@ public class L4RulePortMatch  {
      * Criterion to use for virtual service port matching.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matchCriteria set the matchCriteria.
      */
@@ -61,7 +61,7 @@ public class L4RulePortMatch  {
      * This is the getter method this will return the attribute value.
      * Range of tcp/udp port numbers of the virtual service.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return portRanges
      */
@@ -73,7 +73,7 @@ public class L4RulePortMatch  {
      * This is the setter method. this will set the portRanges
      * Range of tcp/udp port numbers of the virtual service.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return portRanges
      */
@@ -85,7 +85,7 @@ public class L4RulePortMatch  {
      * This is the setter method this will set the portRanges
      * Range of tcp/udp port numbers of the virtual service.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return portRanges
      */
@@ -101,7 +101,7 @@ public class L4RulePortMatch  {
      * Virtual service's listening port(s).
      * Allowed values are 1-65535.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ports
      */
@@ -114,7 +114,7 @@ public class L4RulePortMatch  {
      * Virtual service's listening port(s).
      * Allowed values are 1-65535.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ports
      */
@@ -127,7 +127,7 @@ public class L4RulePortMatch  {
      * Virtual service's listening port(s).
      * Allowed values are 1-65535.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ports
      */

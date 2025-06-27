@@ -43,7 +43,7 @@ public class SensitiveFieldRule  {
      * Action for the matched log field, for instance the matched field can be removed or masked off.
      * Enum options - LOG_FIELD_REMOVE, LOG_FIELD_MASKOFF.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_FIELD_REMOVE".
      * @return action
      */
@@ -56,7 +56,7 @@ public class SensitiveFieldRule  {
      * Action for the matched log field, for instance the matched field can be removed or masked off.
      * Enum options - LOG_FIELD_REMOVE, LOG_FIELD_MASKOFF.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_FIELD_REMOVE".
      * @param action set the action.
      */
@@ -68,7 +68,7 @@ public class SensitiveFieldRule  {
      * This is the getter method this will return the attribute value.
      * Enable rule to match the sensitive fields.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enabled
      */
@@ -80,7 +80,7 @@ public class SensitiveFieldRule  {
      * This is the setter method to the attribute.
      * Enable rule to match the sensitive fields.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enabled set the enabled.
      */
@@ -92,7 +92,7 @@ public class SensitiveFieldRule  {
      * This is the getter method this will return the attribute value.
      * Index of the rule.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -104,7 +104,7 @@ public class SensitiveFieldRule  {
      * This is the setter method to the attribute.
      * Index of the rule.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */
@@ -116,7 +116,7 @@ public class SensitiveFieldRule  {
      * This is the getter method this will return the attribute value.
      * Criterion to use for matching in the log.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return match
      */
@@ -128,7 +128,7 @@ public class SensitiveFieldRule  {
      * This is the setter method to the attribute.
      * Criterion to use for matching in the log.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param match set the match.
      */
@@ -140,7 +140,7 @@ public class SensitiveFieldRule  {
      * This is the getter method this will return the attribute value.
      * Name of the rule.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -152,7 +152,7 @@ public class SensitiveFieldRule  {
      * This is the setter method to the attribute.
      * Name of the rule.
      * Field introduced in 17.2.10, 18.1.2.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

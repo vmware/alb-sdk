@@ -49,7 +49,7 @@ public class ImageEvent  {
      * Time taken to complete event in seconds.
      * Field introduced in 21.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return duration
      */
@@ -62,7 +62,7 @@ public class ImageEvent  {
      * Time taken to complete event in seconds.
      * Field introduced in 21.1.3.
      * Unit is sec.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param duration set the duration.
      */
@@ -74,7 +74,7 @@ public class ImageEvent  {
      * This is the getter method this will return the attribute value.
      * Task end time.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endTime
      */
@@ -86,7 +86,7 @@ public class ImageEvent  {
      * This is the setter method to the attribute.
      * Task end time.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endTime set the endTime.
      */
@@ -98,7 +98,7 @@ public class ImageEvent  {
      * This is the getter method this will return the attribute value.
      * Ip of the node.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -110,7 +110,7 @@ public class ImageEvent  {
      * This is the setter method to the attribute.
      * Ip of the node.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -122,7 +122,7 @@ public class ImageEvent  {
      * This is the getter method this will return the attribute value.
      * Event message if any.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return message
      */
@@ -134,7 +134,7 @@ public class ImageEvent  {
      * This is the setter method to the attribute.
      * Event message if any.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param message set the message.
      */
@@ -146,7 +146,7 @@ public class ImageEvent  {
      * This is the getter method this will return the attribute value.
      * Task start time.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startTime
      */
@@ -158,7 +158,7 @@ public class ImageEvent  {
      * This is the setter method to the attribute.
      * Task start time.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startTime set the startTime.
      */
@@ -171,9 +171,9 @@ public class ImageEvent  {
      * Event status.
      * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
      * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
-     * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+     * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -186,9 +186,9 @@ public class ImageEvent  {
      * Event status.
      * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
      * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
-     * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+     * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */
@@ -199,7 +199,7 @@ public class ImageEvent  {
      * This is the getter method this will return the attribute value.
      * Sub tasks executed on each node.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subTasks
      */
@@ -211,7 +211,7 @@ public class ImageEvent  {
      * This is the setter method. this will set the subTasks
      * Sub tasks executed on each node.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subTasks
      */
@@ -223,7 +223,7 @@ public class ImageEvent  {
      * This is the setter method this will set the subTasks
      * Sub tasks executed on each node.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subTasks
      */

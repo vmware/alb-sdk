@@ -27,6 +27,9 @@ public class OIDCConfig  {
     @JsonProperty("profile")
     private Boolean profile = true;
 
+    @JsonProperty("userid_claim_name")
+    private String useridClaimName;
+
     @JsonProperty("userinfo")
     private Boolean userinfo;
 
@@ -36,7 +39,7 @@ public class OIDCConfig  {
      * This is the getter method this will return the attribute value.
      * Adds openid as one of the scopes enabling openid connect flow.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oidcEnable
      */
@@ -48,7 +51,7 @@ public class OIDCConfig  {
      * This is the setter method to the attribute.
      * Adds openid as one of the scopes enabling openid connect flow.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param oidcEnable set the oidcEnable.
      */
@@ -60,7 +63,7 @@ public class OIDCConfig  {
      * This is the getter method this will return the attribute value.
      * Fetch profile information by enabling profile scope.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return profile
      */
@@ -72,7 +75,7 @@ public class OIDCConfig  {
      * This is the setter method to the attribute.
      * Fetch profile information by enabling profile scope.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param profile set the profile.
      */
@@ -82,9 +85,33 @@ public class OIDCConfig  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Claim name from id token to be used as user id.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return useridClaimName
+     */
+    public String getUseridClaimName() {
+        return useridClaimName;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Claim name from id token to be used as user id.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param useridClaimName set the useridClaimName.
+     */
+    public void setUseridClaimName(String  useridClaimName) {
+        this.useridClaimName = useridClaimName;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Fetch profile information from userinfo endpoint.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userinfo
      */
@@ -96,7 +123,7 @@ public class OIDCConfig  {
      * This is the setter method to the attribute.
      * Fetch profile information from userinfo endpoint.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userinfo set the userinfo.
      */
@@ -116,7 +143,8 @@ public class OIDCConfig  {
       OIDCConfig objOIDCConfig = (OIDCConfig) o;
       return   Objects.equals(this.oidcEnable, objOIDCConfig.oidcEnable)&&
   Objects.equals(this.profile, objOIDCConfig.profile)&&
-  Objects.equals(this.userinfo, objOIDCConfig.userinfo);
+  Objects.equals(this.userinfo, objOIDCConfig.userinfo)&&
+  Objects.equals(this.useridClaimName, objOIDCConfig.useridClaimName);
     }
 
     @Override
@@ -125,6 +153,7 @@ public class OIDCConfig  {
       sb.append("class OIDCConfig {\n");
                   sb.append("    oidcEnable: ").append(toIndentedString(oidcEnable)).append("\n");
                         sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
+                        sb.append("    useridClaimName: ").append(toIndentedString(useridClaimName)).append("\n");
                         sb.append("    userinfo: ").append(toIndentedString(userinfo)).append("\n");
                   sb.append("}");
       return sb.toString();

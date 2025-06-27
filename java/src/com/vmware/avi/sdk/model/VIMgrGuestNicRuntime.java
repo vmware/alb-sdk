@@ -51,6 +51,9 @@ public class VIMgrGuestNicRuntime  {
     @JsonProperty("os_port_uuid")
     private String osPortUuid;
 
+    @JsonProperty("segment_port")
+    private String segmentPort;
+
     @JsonProperty("type")
     private String type;
 
@@ -58,7 +61,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return aviInternalNetwork
      */
@@ -68,7 +71,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param aviInternalNetwork set the aviInternalNetwork.
      */
@@ -78,7 +81,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connected
      */
@@ -88,7 +91,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connected set the connected.
      */
@@ -98,7 +101,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return delPending
      */
@@ -108,7 +111,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param delPending set the delPending.
      */
@@ -117,7 +120,7 @@ public class VIMgrGuestNicRuntime  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return guestIp
      */
@@ -127,7 +130,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method. this will set the guestIp
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return guestIp
      */
@@ -137,7 +140,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method this will set the guestIp
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return guestIp
      */
@@ -151,7 +154,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "Unknown".
      * @return label
      */
@@ -161,7 +164,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "Unknown".
      * @param label set the label.
      */
@@ -171,7 +174,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return macAddr
      */
@@ -181,7 +184,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param macAddr set the macAddr.
      */
@@ -191,7 +194,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtVnic
      */
@@ -201,7 +204,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtVnic set the mgmtVnic.
      */
@@ -211,7 +214,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkName
      */
@@ -221,7 +224,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkName set the networkName.
      */
@@ -231,7 +234,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkUuid
      */
@@ -241,7 +244,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkUuid set the networkUuid.
      */
@@ -251,7 +254,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return osPortUuid
      */
@@ -261,7 +264,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param osPortUuid set the osPortUuid.
      */
@@ -271,9 +274,33 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Segment port of the vnic assigned to se.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return segmentPort
+     */
+    public String getSegmentPort() {
+        return segmentPort;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Segment port of the vnic assigned to se.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param segmentPort set the segmentPort.
+     */
+    public void setSegmentPort(String  segmentPort) {
+        this.segmentPort = segmentPort;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
      * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -285,7 +312,7 @@ public class VIMgrGuestNicRuntime  {
      * This is the setter method to the attribute.
      * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
      * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */
@@ -313,6 +340,7 @@ public class VIMgrGuestNicRuntime  {
   Objects.equals(this.mgmtVnic, objVIMgrGuestNicRuntime.mgmtVnic)&&
   Objects.equals(this.connected, objVIMgrGuestNicRuntime.connected)&&
   Objects.equals(this.label, objVIMgrGuestNicRuntime.label)&&
+  Objects.equals(this.segmentPort, objVIMgrGuestNicRuntime.segmentPort)&&
   Objects.equals(this.osPortUuid, objVIMgrGuestNicRuntime.osPortUuid);
     }
 
@@ -330,6 +358,7 @@ public class VIMgrGuestNicRuntime  {
                         sb.append("    networkName: ").append(toIndentedString(networkName)).append("\n");
                         sb.append("    networkUuid: ").append(toIndentedString(networkUuid)).append("\n");
                         sb.append("    osPortUuid: ").append(toIndentedString(osPortUuid)).append("\n");
+                        sb.append("    segmentPort: ").append(toIndentedString(segmentPort)).append("\n");
                         sb.append("    type: ").append(toIndentedString(type)).append("\n");
                   sb.append("}");
       return sb.toString();

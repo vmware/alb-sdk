@@ -32,7 +32,7 @@ public class PerformanceLimits  {
     /**
      * This is the getter method this will return the attribute value.
      * The maximum number of concurrent client conections allowed to the virtual service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxConcurrentConnections
      */
@@ -43,7 +43,7 @@ public class PerformanceLimits  {
     /**
      * This is the setter method to the attribute.
      * The maximum number of concurrent client conections allowed to the virtual service.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxConcurrentConnections set the maxConcurrentConnections.
      */
@@ -54,7 +54,7 @@ public class PerformanceLimits  {
     /**
      * This is the getter method this will return the attribute value.
      * The maximum throughput per second for all clients allowed through the client side of the virtual service per se.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxThroughput
      */
@@ -65,7 +65,7 @@ public class PerformanceLimits  {
     /**
      * This is the setter method to the attribute.
      * The maximum throughput per second for all clients allowed through the client side of the virtual service per se.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxThroughput set the maxThroughput.
      */

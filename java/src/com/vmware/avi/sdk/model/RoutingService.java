@@ -66,7 +66,7 @@ public class RoutingService  {
      * This is the getter method this will return the attribute value.
      * Advertise reachability of backend server networks via adc through bgp for default gateway feature.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return advertiseBackendNetworks
      */
@@ -78,7 +78,7 @@ public class RoutingService  {
      * This is the setter method to the attribute.
      * Advertise reachability of backend server networks via adc through bgp for default gateway feature.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param advertiseBackendNetworks set the advertiseBackendNetworks.
      */
@@ -90,7 +90,7 @@ public class RoutingService  {
      * This is the getter method this will return the attribute value.
      * Enable auto gateway to save and use the same l2 path to send the return traffic.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableAutoGateway
      */
@@ -102,7 +102,7 @@ public class RoutingService  {
      * This is the setter method to the attribute.
      * Enable auto gateway to save and use the same l2 path to send the return traffic.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableAutoGateway set the enableAutoGateway.
      */
@@ -114,7 +114,7 @@ public class RoutingService  {
      * This is the getter method this will return the attribute value.
      * Service engine acts as default gateway for this service.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableRouting
      */
@@ -126,7 +126,7 @@ public class RoutingService  {
      * This is the setter method to the attribute.
      * Service engine acts as default gateway for this service.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableRouting set the enableRouting.
      */
@@ -138,7 +138,7 @@ public class RoutingService  {
      * This is the getter method this will return the attribute value.
      * Enable vip on all interfaces of this service.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableVipOnAllInterfaces
      */
@@ -150,7 +150,7 @@ public class RoutingService  {
      * This is the setter method to the attribute.
      * Enable vip on all interfaces of this service.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableVipOnAllInterfaces set the enableVipOnAllInterfaces.
      */
@@ -162,7 +162,7 @@ public class RoutingService  {
      * This is the getter method this will return the attribute value.
      * Use virtual mac address for interfaces on which floating interface ips are placed.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableVmac
      */
@@ -174,7 +174,7 @@ public class RoutingService  {
      * This is the setter method to the attribute.
      * Use virtual mac address for interfaces on which floating interface ips are placed.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableVmac set the enableVmac.
      */
@@ -186,7 +186,7 @@ public class RoutingService  {
      * Floating interface ips for the routingservice.
      * Field introduced in 18.2.5.
      * Maximum of 32 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIp
      */
@@ -199,7 +199,7 @@ public class RoutingService  {
      * Floating interface ips for the routingservice.
      * Field introduced in 18.2.5.
      * Maximum of 32 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIp
      */
@@ -212,7 +212,7 @@ public class RoutingService  {
      * Floating interface ips for the routingservice.
      * Field introduced in 18.2.5.
      * Maximum of 32 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIp
      */
@@ -228,7 +228,7 @@ public class RoutingService  {
      * Ipv6 floating interface ips for the routingservice.
      * Field introduced in 22.1.6, 30.2.1.
      * Maximum of 32 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIp6Addresses
      */
@@ -241,7 +241,7 @@ public class RoutingService  {
      * Ipv6 floating interface ips for the routingservice.
      * Field introduced in 22.1.6, 30.2.1.
      * Maximum of 32 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIp6Addresses
      */
@@ -254,7 +254,7 @@ public class RoutingService  {
      * Ipv6 floating interface ips for the routingservice.
      * Field introduced in 22.1.6, 30.2.1.
      * Maximum of 32 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIp6Addresses
      */
@@ -273,7 +273,7 @@ public class RoutingService  {
      * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
      * Field introduced in 22.1.6, 30.2.1.
      * Maximum of 32 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIp6Se2Addresses
      */
@@ -289,7 +289,7 @@ public class RoutingService  {
      * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
      * Field introduced in 22.1.6, 30.2.1.
      * Maximum of 32 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIp6Se2Addresses
      */
@@ -305,7 +305,7 @@ public class RoutingService  {
      * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
      * Field introduced in 22.1.6, 30.2.1.
      * Maximum of 32 items allowed.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIp6Se2Addresses
      */
@@ -323,7 +323,7 @@ public class RoutingService  {
      * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
      * Field introduced in 18.2.5.
      * Maximum of 32 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIpSe2
      */
@@ -338,7 +338,7 @@ public class RoutingService  {
      * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
      * Field introduced in 18.2.5.
      * Maximum of 32 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIpSe2
      */
@@ -353,7 +353,7 @@ public class RoutingService  {
      * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
      * Field introduced in 18.2.5.
      * Maximum of 32 items allowed.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIpSe2
      */
@@ -369,7 +369,7 @@ public class RoutingService  {
      * This is the getter method this will return the attribute value.
      * Routing service related flow profile information.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flowtableProfile
      */
@@ -381,7 +381,7 @@ public class RoutingService  {
      * This is the setter method to the attribute.
      * Routing service related flow profile information.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param flowtableProfile set the flowtableProfile.
      */
@@ -394,7 +394,7 @@ public class RoutingService  {
      * Enable graceful restart feature in routing service.
      * For example, bgp.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return gracefulRestart
      */
@@ -407,7 +407,7 @@ public class RoutingService  {
      * Enable graceful restart feature in routing service.
      * For example, bgp.
      * Field introduced in 18.2.6.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param gracefulRestart set the gracefulRestart.
      */
@@ -421,7 +421,7 @@ public class RoutingService  {
      * This is done in post-routing.
      * It is a reference to an object of type natpolicy.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return natPolicyRef
      */
@@ -435,7 +435,7 @@ public class RoutingService  {
      * This is done in post-routing.
      * It is a reference to an object of type natpolicy.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param natPolicyRef set the natPolicyRef.
      */
@@ -447,7 +447,7 @@ public class RoutingService  {
      * This is the getter method this will return the attribute value.
      * For ip routing feature, enabling this knob will fallback to routing through linux, by default routing is done via service engine data-path.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return routingByLinuxIpstack
      */
@@ -459,7 +459,7 @@ public class RoutingService  {
      * This is the setter method to the attribute.
      * For ip routing feature, enabling this knob will fallback to routing through linux, by default routing is done via service engine data-path.
      * Field introduced in 18.2.5.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param routingByLinuxIpstack set the routingByLinuxIpstack.
      */

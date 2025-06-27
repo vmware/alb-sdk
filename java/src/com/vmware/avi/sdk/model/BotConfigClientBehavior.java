@@ -38,8 +38,9 @@ public class BotConfigClientBehavior  {
     /**
      * This is the getter method this will return the attribute value.
      * Minimum percentage of bad requests for the client behavior component to identify as a bot.
+     * Allowed values are 1-100.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return badRequestPercent
      */
@@ -50,8 +51,9 @@ public class BotConfigClientBehavior  {
     /**
      * This is the setter method to the attribute.
      * Minimum percentage of bad requests for the client behavior component to identify as a bot.
+     * Allowed values are 1-100.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param badRequestPercent set the badRequestPercent.
      */
@@ -63,7 +65,7 @@ public class BotConfigClientBehavior  {
      * This is the getter method this will return the attribute value.
      * Whether client behavior based bot detection is enabled.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enabled
      */
@@ -75,7 +77,7 @@ public class BotConfigClientBehavior  {
      * This is the setter method to the attribute.
      * Whether client behavior based bot detection is enabled.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enabled set the enabled.
      */
@@ -86,8 +88,9 @@ public class BotConfigClientBehavior  {
     /**
      * This is the getter method this will return the attribute value.
      * Minimum requests for the client behavior component to make a decision.
+     * Allowed values are 2-1000.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @return minimumRequests
      */
@@ -98,8 +101,9 @@ public class BotConfigClientBehavior  {
     /**
      * This is the setter method to the attribute.
      * Minimum requests for the client behavior component to make a decision.
+     * Allowed values are 2-1000.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @param minimumRequests set the minimumRequests.
      */
@@ -109,9 +113,11 @@ public class BotConfigClientBehavior  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Minimum requests with a referer for the client behavior component to not identify as a bot.
+     * Minimum requests with a referer header for the client behavior component to not identify as a bot.
+     * Setting this to zero means the component never identifies a client as bot based on missing referer headers.
+     * Allowed values are 0-100.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return minimumRequestsWithReferer
      */
@@ -121,9 +127,11 @@ public class BotConfigClientBehavior  {
 
     /**
      * This is the setter method to the attribute.
-     * Minimum requests with a referer for the client behavior component to not identify as a bot.
+     * Minimum requests with a referer header for the client behavior component to not identify as a bot.
+     * Setting this to zero means the component never identifies a client as bot based on missing referer headers.
+     * Allowed values are 0-100.
      * Field introduced in 30.2.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param minimumRequestsWithReferer set the minimumRequestsWithReferer.
      */

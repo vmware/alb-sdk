@@ -38,7 +38,7 @@ public class ConnpoolFilter  {
     /**
      * This is the getter method this will return the attribute value.
      * Backend or se ip address.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddr
      */
@@ -49,7 +49,7 @@ public class ConnpoolFilter  {
     /**
      * This is the setter method to the attribute.
      * Backend or se ip address.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipAddr set the ipAddr.
      */
@@ -60,7 +60,7 @@ public class ConnpoolFilter  {
     /**
      * This is the getter method this will return the attribute value.
      * Backend or se ip address mask.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipMask
      */
@@ -71,7 +71,7 @@ public class ConnpoolFilter  {
     /**
      * This is the setter method to the attribute.
      * Backend or se ip address mask.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipMask set the ipMask.
      */
@@ -82,7 +82,7 @@ public class ConnpoolFilter  {
     /**
      * This is the getter method this will return the attribute value.
      * Backend or se port.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -93,7 +93,7 @@ public class ConnpoolFilter  {
     /**
      * This is the setter method to the attribute.
      * Backend or se port.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */
@@ -105,7 +105,7 @@ public class ConnpoolFilter  {
      * This is the getter method this will return the attribute value.
      * Cache type.
      * Enum options - CP_ALL, CP_FREE, CP_BIND, CP_CACHED.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -117,7 +117,7 @@ public class ConnpoolFilter  {
      * This is the setter method to the attribute.
      * Cache type.
      * Enum options - CP_ALL, CP_FREE, CP_BIND, CP_CACHED.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */

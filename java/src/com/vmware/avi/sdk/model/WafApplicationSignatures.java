@@ -40,7 +40,7 @@ public class WafApplicationSignatures  {
      * The external provide for the rules.
      * It is a reference to an object of type wafapplicationsignatureprovider.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return providerRef
      */
@@ -53,7 +53,7 @@ public class WafApplicationSignatures  {
      * The external provide for the rules.
      * It is a reference to an object of type wafapplicationsignatureprovider.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param providerRef set the providerRef.
      */
@@ -64,7 +64,7 @@ public class WafApplicationSignatures  {
      * This is the getter method this will return the attribute value.
      * Override attributes of application signature rules.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ruleOverrides
      */
@@ -76,7 +76,7 @@ public class WafApplicationSignatures  {
      * This is the setter method. this will set the ruleOverrides
      * Override attributes of application signature rules.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ruleOverrides
      */
@@ -88,7 +88,7 @@ public class WafApplicationSignatures  {
      * This is the setter method this will set the ruleOverrides
      * Override attributes of application signature rules.
      * Field introduced in 20.1.6.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ruleOverrides
      */
@@ -104,8 +104,7 @@ public class WafApplicationSignatures  {
      * This is the getter method this will return the attribute value.
      * The version in use of the provided ruleset.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return rulesetVersion
      */
     public String getRulesetVersion() {
@@ -116,8 +115,7 @@ public class WafApplicationSignatures  {
      * This is the setter method to the attribute.
      * The version in use of the provided ruleset.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
-     * edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param rulesetVersion set the rulesetVersion.
      */
     public void setRulesetVersion(String  rulesetVersion) {
@@ -127,7 +125,7 @@ public class WafApplicationSignatures  {
      * This is the getter method this will return the attribute value.
      * List of applications for which we use the rules from the wafapplicationsignatureprovider.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return selectedApplications
      */
@@ -139,7 +137,7 @@ public class WafApplicationSignatures  {
      * This is the setter method. this will set the selectedApplications
      * List of applications for which we use the rules from the wafapplicationsignatureprovider.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return selectedApplications
      */
@@ -151,7 +149,7 @@ public class WafApplicationSignatures  {
      * This is the setter method this will set the selectedApplications
      * List of applications for which we use the rules from the wafapplicationsignatureprovider.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return selectedApplications
      */

@@ -35,7 +35,7 @@ public class ImageEventMap  {
      * This is the getter method this will return the attribute value.
      * List of all events node wise.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodesEvents
      */
@@ -47,7 +47,7 @@ public class ImageEventMap  {
      * This is the setter method. this will set the nodesEvents
      * List of all events node wise.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodesEvents
      */
@@ -59,7 +59,7 @@ public class ImageEventMap  {
      * This is the setter method this will set the nodesEvents
      * List of all events node wise.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodesEvents
      */
@@ -74,7 +74,7 @@ public class ImageEventMap  {
      * This is the getter method this will return the attribute value.
      * List of all events node wise.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subEvents
      */
@@ -86,7 +86,7 @@ public class ImageEventMap  {
      * This is the setter method. this will set the subEvents
      * List of all events node wise.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subEvents
      */
@@ -98,7 +98,7 @@ public class ImageEventMap  {
      * This is the setter method this will set the subEvents
      * List of all events node wise.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subEvents
      */
@@ -114,7 +114,7 @@ public class ImageEventMap  {
      * This is the getter method this will return the attribute value.
      * Name representing the task.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return taskName
      */
@@ -126,7 +126,7 @@ public class ImageEventMap  {
      * This is the setter method to the attribute.
      * Name representing the task.
      * Field introduced in 21.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param taskName set the taskName.
      */

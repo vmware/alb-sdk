@@ -36,7 +36,7 @@ public class HTTP2PoolProperties  {
      * Allowed values are 0-10000.
      * Special values are 0- unlimited control frames on a server side http/2 connection.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxHttp2ControlFramesPerConnection
      */
@@ -51,7 +51,7 @@ public class HTTP2PoolProperties  {
      * Allowed values are 0-10000.
      * Special values are 0- unlimited control frames on a server side http/2 connection.
      * Field introduced in 21.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxHttp2ControlFramesPerConnection set the maxHttp2ControlFramesPerConnection.
      */
@@ -66,7 +66,7 @@ public class HTTP2PoolProperties  {
      * Allowed values are 1-8192.
      * Field introduced in 21.1.1.
      * Unit is bytes.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
      * @return maxHttp2HeaderFieldSize
      */
@@ -81,7 +81,7 @@ public class HTTP2PoolProperties  {
      * Allowed values are 1-8192.
      * Field introduced in 21.1.1.
      * Unit is bytes.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
      * @param maxHttp2HeaderFieldSize set the maxHttp2HeaderFieldSize.
      */

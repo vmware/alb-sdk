@@ -30,6 +30,12 @@ public class VersionInfo extends AviRestResource  {
     @JsonProperty("ops")
     private String ops;
 
+    @JsonProperty("reason")
+    private String reason;
+
+    @JsonProperty("status")
+    private Integer status;
+
     @JsonProperty("uuid")
     private String uuid;
 
@@ -39,7 +45,7 @@ public class VersionInfo extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Identifies the datastore table.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dsName
      */
@@ -51,7 +57,7 @@ public class VersionInfo extends AviRestResource  {
      * This is the setter method to the attribute.
      * Identifies the datastore table.
      * Field introduced in 17.2.7.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dsName set the dsName.
      */
@@ -61,7 +67,7 @@ public class VersionInfo extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -71,7 +77,7 @@ public class VersionInfo extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -82,7 +88,7 @@ public class VersionInfo extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - GSLB_NONE, GSLB_CREATE, GSLB_UPDATE, GSLB_DELETE, GSLB_PURGE, GSLB_DECL.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ops
      */
@@ -93,7 +99,7 @@ public class VersionInfo extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enum options - GSLB_NONE, GSLB_CREATE, GSLB_UPDATE, GSLB_DELETE, GSLB_PURGE, GSLB_DECL.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ops set the ops.
      */
@@ -103,7 +109,55 @@ public class VersionInfo extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Describes the reason for the object in this state.
+     * Field introduced in 30.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return reason
+     */
+    public String getReason() {
+        return reason;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Describes the reason for the object in this state.
+     * Field introduced in 30.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param reason set the reason.
+     */
+    public void setReason(String  reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Represents the state of the object.
+     * Field introduced in 30.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Represents the state of the object.
+     * Field introduced in 30.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param status set the status.
+     */
+    public void setStatus(Integer  status) {
+        this.status = status;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -113,7 +167,7 @@ public class VersionInfo extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -134,7 +188,9 @@ public class VersionInfo extends AviRestResource  {
       return   Objects.equals(this.uuid, objVersionInfo.uuid)&&
   Objects.equals(this.name, objVersionInfo.name)&&
   Objects.equals(this.ops, objVersionInfo.ops)&&
-  Objects.equals(this.dsName, objVersionInfo.dsName);
+  Objects.equals(this.dsName, objVersionInfo.dsName)&&
+  Objects.equals(this.reason, objVersionInfo.reason)&&
+  Objects.equals(this.status, objVersionInfo.status);
     }
 
     @Override
@@ -144,6 +200,8 @@ public class VersionInfo extends AviRestResource  {
                   sb.append("    dsName: ").append(toIndentedString(dsName)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    ops: ").append(toIndentedString(ops)).append("\n");
+                        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+                        sb.append("    status: ").append(toIndentedString(status)).append("\n");
                         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();
