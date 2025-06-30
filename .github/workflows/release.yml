@@ -138,17 +138,6 @@ jobs:
           asset_name: pip-package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
           asset_content_type: application/gzip
 
-      # - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET == 'true'
-      #   name: Upload Avi Migration Tools pip package
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.github_token }}
-      #   with:
-      #     upload_url: ${{ steps.update_release.outputs.upload_url }}
-      #     asset_path: avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
-      #     asset_name: pip-package-avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
-      #     asset_content_type: application/gzip
-
       #- name: Upload Avi API SDK debian package
       #  uses: actions/upload-release-asset@v1
       #  env:
@@ -159,16 +148,16 @@ jobs:
       #    asset_name: debian-package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}
       #    asset_content_type: application/vnd.debian.binary-package
 
-      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'python-sdk')
-        name: Upload Avi API SDK rpm package
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        with:
-          upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.rpm
-          asset_name: rpm--package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.rpm
-          asset_content_type: application/x-rpm
+      # - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'python-sdk')
+      #   name: Upload Avi API SDK rpm package
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.github_token }}
+      #   with:
+      #     upload_url: ${{ steps.update_release.outputs.upload_url }}
+      #     asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.rpm
+      #     asset_name: rpm--package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.rpm
+      #     asset_content_type: application/x-rpm
 
       - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
         name: Upload Avi API SDK Java package
