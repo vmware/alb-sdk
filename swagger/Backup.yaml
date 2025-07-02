@@ -5,19 +5,23 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi Backup Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi Backup object api
         ```
         - show backup <key>
         ```
 
-
+        API permission: PERMISSION_CONTROLLER
+tags:
+  - name: Backup
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /backup:
         get:
+            tags:
+                - Backup
+            description: /backup
+            operationId: GET /backup
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BackupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - Backup
+            description: /backup
+            operationId: POST /backup
             consumes:
                 -   application/json
             produces:
@@ -126,14 +138,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Backup"
-                401:
+                "401":
                     description: log in failed
     /backup/{uuid}:
         get:
+            tags:
+                - Backup
+            description: /backup/{uuid}/{uuid}
+            operationId: GET /backup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -190,13 +206,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Backup"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - Backup
+            description: /backup/{uuid}/{uuid}
+            operationId: PUT /backup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +263,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Backup"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - Backup
+            description: /backup/{uuid}/{uuid}
+            operationId: PATCH /backup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +320,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Backup"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - Backup
+            description: /backup/{uuid}/{uuid}
+            operationId: DELETE /backup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -337,12 +371,12 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
 definitions:
@@ -356,32 +390,32 @@ definitions:
                 readOnly: True
                 type: string
             backup_config_ref:
-                description: "BackupConfiguration Information. It is a reference to an object of type BackupConfiguration. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "BackupConfiguration Information. It is a reference to an object of type BackupConfiguration. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             file_name:
-                description: "The file name of backup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The file name of backup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             local_file_url:
-                description: "URL to download the backup file. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "URL to download the backup file. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             remote_file_url:
-                description: "URL to download the backup file. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "URL to download the backup file. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             scheduler_ref:
-                description: "Scheduler Information. It is a reference to an object of type Scheduler. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Scheduler Information. It is a reference to an object of type Scheduler. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             timestamp:
-                description: "Unix Timestamp of when the backup file is created. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Unix Timestamp of when the backup file is created. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     BackupApiResponse:
         type: object

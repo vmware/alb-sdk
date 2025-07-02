@@ -5,21 +5,25 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.1.1'
+    version: '31.2.1'
     title: Avi GeoDB Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        CLI
+        Avi GeoDB object api
         ```
         - configure geodb <key>
         - show geodb <key>
         - show geodb <key> data
         ```
 
-
+        API permission: PERMISSION_GEODB
+tags:
+  - name: GeoDB
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -28,6 +32,10 @@ basePath: /api
 paths:
     /geodb:
         get:
+            tags:
+                - GeoDB
+            description: /geodb
+            operationId: GET /geodb
             consumes:
                 -   application/json
             produces:
@@ -87,13 +95,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GeoDBApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - GeoDB
+            description: /geodb
+            operationId: POST /geodb
             consumes:
                 -   application/json
             produces:
@@ -128,14 +140,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GeoDB"
-                401:
+                "401":
                     description: log in failed
     /geodb/{uuid}:
         get:
+            tags:
+                - GeoDB
+            description: /geodb/{uuid}/{uuid}
+            operationId: GET /geodb/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -192,13 +208,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GeoDB"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         put:
+            tags:
+                - GeoDB
+            description: /geodb/{uuid}/{uuid}
+            operationId: PUT /geodb/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -243,13 +265,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GeoDB"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         patch:
+            tags:
+                - GeoDB
+            description: /geodb/{uuid}/{uuid}
+            operationId: PATCH /geodb/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -294,13 +322,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GeoDB"
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
         delete:
+            tags:
+                - GeoDB
+            description: /geodb/{uuid}/{uuid}
+            operationId: DELETE /geodb/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -339,16 +373,20 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                204:
+                "204":
                     description: object deleted
                     schema:
                         type: string
-                404:
-                    description: not found
+                "404":
+                    description: object not found
 
 
     /geodb/{uuid}/runtime/internal/:
         get:
+            tags:
+                - GeoDB
+            description: /geodb/{uuid}/runtime/internal/
+            operationId: GET /geodb/{uuid}/runtime/internal/
             consumes:
                 -   application/json
             produces:
@@ -382,12 +420,14 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
+                "404":
+                    description: object not found
 definitions:
     GeoDB:
         type: object
@@ -399,33 +439,33 @@ definitions:
                 readOnly: True
                 type: string
             description:
-                description: "Description. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Description. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             files:
-                description: "Geo Database files. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Geo Database files. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/GeoDBFile'
             is_federated:
-                description: "This field indicates that this object is replicated across GSLB federation. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "This field indicates that this object is replicated across GSLB federation. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             mappings:
-                description: "Custom mappings of geo values. All mappings which start with the prefix 'System-' (any case) are reserved for system default objects and may be overwritten. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Custom mappings of geo values. All mappings which start with the prefix 'System-' (any case) are reserved for system default objects and may be overwritten. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/GeoDBMapping'
             name:
-                description: "Geo Database name. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Geo Database name. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of this object. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "UUID of this object. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     GeoDBApiResponse:
         type: object
@@ -451,21 +491,21 @@ definitions:
             -   vendor
         properties:
             enabled:
-                description: "If set to false, this file is ignored. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "If set to false, this file is ignored. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             file_ref:
-                description: "The file object that contains the geo data. Must be of type 'GeoDB'. It is a reference to an object of type FileObject. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The file object that contains the geo data. Must be of type 'GeoDB'. It is a reference to an object of type FileObject. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             index:
-                description: "Priority of the file - larger number takes precedence. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Priority of the file - larger number takes precedence. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             name:
-                description: "Name of the file. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Name of the file. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             vendor:
-                description: "Source of the file data. Enum options - VENDOR_USER_DEFINED, VENDOR_AVI_DEFINED. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Source of the file data. Enum options - VENDOR_USER_DEFINED, VENDOR_AVI_DEFINED. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     GeoDBMapping:
         type: object
@@ -474,15 +514,15 @@ definitions:
             -   name
         properties:
             description:
-                description: "Description of the mapping. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Description of the mapping. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             elements:
-                description: "The set of mapping elements. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The set of mapping elements. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/GeoDBMappingElement'
             name:
-                description: "The unique name of the user mapping. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The unique name of the user mapping. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     GeoDBMappingElement:
         type: object
@@ -491,10 +531,10 @@ definitions:
             -   values
         properties:
             attribute:
-                description: "The attribute to map. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The attribute to map. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "The values to map. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The values to map. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string

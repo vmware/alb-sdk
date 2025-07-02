@@ -1,15 +1,23 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.1.1",
+        "version": "31.2.1",
         "title": "Avi PoolGroup Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure poolgroup <key>\n- show poolgroup <key>\n- clear poolgroup <key>\n```\n"
+        "description": "Avi PoolGroup object api\n```\n- configure poolgroup <key>\n- show poolgroup <key>\n- clear poolgroup <key>\n```\n\nAPI permission: PERMISSION_POOLGROUP\n"
     },
+    "tags": [
+        {
+            "name": "PoolGroup"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/poolgroup": {
             "get": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup",
+                "operationId": "GET /poolgroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -183,6 +196,13 @@
                         "required": false
                     },
                     {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Parameter to specify the desired page number. The page starts from 1 and default is 1.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
                         "name": "page_size",
                         "in": "query",
                         "description": "Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.",
@@ -208,6 +228,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup",
+                "operationId": "POST /poolgroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -273,6 +298,11 @@
         },
         "/poolgroup/{uuid}": {
             "get": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/{uuid}/{uuid}",
+                "operationId": "GET /poolgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -363,10 +393,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "put": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/{uuid}/{uuid}",
+                "operationId": "PUT /poolgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -440,10 +478,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "patch": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/{uuid}/{uuid}",
+                "operationId": "PATCH /poolgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -517,10 +563,18 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             },
             "delete": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/{uuid}/{uuid}",
+                "operationId": "DELETE /poolgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -584,13 +638,18 @@
                         }
                     },
                     "404": {
-                        "description": "not found"
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/poolgroup/clear": {
             "post": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/clear",
+                "operationId": "POST /poolgroup/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -659,6 +718,11 @@
         },
         "/poolgroup/{uuid}/runtime/detail/": {
             "get": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/{uuid}/runtime/detail/",
+                "operationId": "GET /poolgroup/{uuid}/runtime/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -716,12 +780,20 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             }
         },
         "/poolgroup/{uuid}/enable_primary_pool/clear": {
             "post": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/{uuid}/enable_primary_pool/clear",
+                "operationId": "POST /poolgroup/{uuid}/enable_primary_pool/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -788,6 +860,9 @@
                     },
                     "401": {
                         "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
                     }
                 }
             }
@@ -798,7 +873,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -812,15 +887,15 @@
             ],
             "properties": {
                 "local_rsp": {
-                    "description": "Local response to HTTP requests when pool experiences a failure. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Local response to HTTP requests when pool experiences a failure. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/FailActionHTTPLocalResponse"
                 },
                 "redirect": {
-                    "description": "URL to redirect HTTP requests to when pool experiences a failure. Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition.",
+                    "description": "URL to redirect HTTP requests to when pool experiences a failure. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/FailActionHTTPRedirect"
                 },
                 "type": {
-                    "description": "Enables a response to client when pool experiences a failure. By default TCP connection is closed. Enum options - FAIL_ACTION_HTTP_REDIRECT, FAIL_ACTION_HTTP_LOCAL_RSP, FAIL_ACTION_CLOSE_CONN, FAIL_ACTION_BACKUP_POOL. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- FAIL_ACTION_CLOSE_CONN), Basic edition(Allowed values- FAIL_ACTION_CLOSE_CONN,FAIL_ACTION_HTTP_REDIRECT), Enterprise with Cloud Services edition.",
+                    "description": "Enables a response to client when pool experiences a failure. By default TCP connection is closed. Enum options - FAIL_ACTION_HTTP_REDIRECT, FAIL_ACTION_HTTP_LOCAL_RSP, FAIL_ACTION_CLOSE_CONN, FAIL_ACTION_BACKUP_POOL. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- FAIL_ACTION_CLOSE_CONN), Basic (Allowed values- FAIL_ACTION_CLOSE_CONN,FAIL_ACTION_HTTP_REDIRECT) edition.",
                     "type": "string",
                     "default": "FAIL_ACTION_CLOSE_CONN"
                 }
@@ -833,7 +908,7 @@
             ],
             "properties": {
                 "backup_pool_ref": {
-                    "description": "Specifies the UUID of the Pool acting as backup pool. It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Specifies the UUID of the Pool acting as backup pool. It is a reference to an object of type Pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -842,11 +917,11 @@
             "type": "object",
             "properties": {
                 "file": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HTTPLocalFile"
                 },
                 "status_code": {
-                    "description": " Enum options - FAIL_HTTP_STATUS_CODE_200, FAIL_HTTP_STATUS_CODE_503. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - FAIL_HTTP_STATUS_CODE_200, FAIL_HTTP_STATUS_CODE_503. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "FAIL_HTTP_STATUS_CODE_503"
                 }
@@ -859,24 +934,24 @@
             ],
             "properties": {
                 "host": {
-                    "description": "The host to which the redirect request is sent. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The host to which the redirect request is sent. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "path": {
-                    "description": "Path configuration for the redirect request. If not set the path from the original request's URI is preserved in the redirect on pool failure. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Path configuration for the redirect request. If not set the path from the original request's URI is preserved in the redirect on pool failure. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "protocol": {
-                    "description": " Enum options - HTTP, HTTPS. Allowed in Enterprise edition with any value, Basic edition(Allowed values- HTTP), Essentials, Enterprise with Cloud Services edition. Special default for Basic edition is HTTP, Enterprise is HTTPS.",
+                    "description": " Enum options - HTTP, HTTPS. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- HTTP) edition. Special default for Basic edition is HTTP, Enterprise edition is HTTPS.",
                     "type": "string",
                     "default": "HTTPS"
                 },
                 "query": {
-                    "description": "Query configuration for the redirect request URI. If not set, the query from the original request's URI is preserved in the redirect on pool failure. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Query configuration for the redirect request URI. If not set, the query from the original request's URI is preserved in the redirect on pool failure. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "status_code": {
-                    "description": " Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307. Allowed in Enterprise edition with any value, Basic edition(Allowed values- HTTP_REDIRECT_STATUS_CODE_302), Essentials, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- HTTP_REDIRECT_STATUS_CODE_302) edition.",
                     "type": "string",
                     "default": "HTTP_REDIRECT_STATUS_CODE_302"
                 }
@@ -890,15 +965,15 @@
             ],
             "properties": {
                 "content_type": {
-                    "description": "Mime-type of the content in the file. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Mime-type of the content in the file. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "file_content": {
-                    "description": "File content to used in the local HTTP response body. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "File content to used in the local HTTP response body. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "file_length": {
-                    "description": "File content length. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "File content length. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 }
@@ -911,11 +986,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "value": {
-                    "description": "Value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Value. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -932,74 +1007,74 @@
                     "type": "string"
                 },
                 "cloud_config_cksum": {
-                    "description": "Checksum of cloud configuration for PoolGroup. Internally set by cloud connector. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Checksum of cloud configuration for PoolGroup. Internally set by cloud connector. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cloud_ref": {
-                    "description": " It is a reference to an object of type Cloud. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "created_by": {
-                    "description": "Name of the user who created the object. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the user who created the object. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "deactivate_primary_pool_on_down": {
-                    "description": "Deactivate primary pool for selection when down until it is activated by user via clear poolgroup command. Field introduced in 20.1.7, 21.1.2, 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Deactivate primary pool for selection when down until it is activated by user via clear poolgroup command. Field introduced in 20.1.7, 21.1.2, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "deployment_policy_ref": {
-                    "description": "When setup autoscale manager will automatically promote new pools into production when deployment goals are met. It is a reference to an object of type PoolGroupDeploymentPolicy. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "When setup autoscale manager will automatically promote new pools into production when deployment goals are met. It is a reference to an object of type PoolGroupDeploymentPolicy. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "description": {
-                    "description": "Description of Pool Group. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Description of Pool Group. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "fail_action": {
-                    "description": "Enable an action - Close Connection, HTTP Redirect, or Local HTTP Response - when a pool group failure happens. By default, a connection will be closed, in case the pool group experiences a failure. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Enable an action - Close Connection, HTTP Redirect, or Local HTTP Response - when a pool group failure happens. By default, a connection will be closed, in case the pool group experiences a failure. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/FailAction"
                 },
                 "implicit_priority_labels": {
-                    "description": "Whether an implicit set of priority labels is generated. Field introduced in 17.1.9,17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Whether an implicit set of priority labels is generated. Field introduced in 17.1.9,17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RoleFilterMatchLabel"
                     }
                 },
                 "members": {
-                    "description": "List of pool group members object of type PoolGroupMember. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "List of pool group members object of type PoolGroupMember. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/PoolGroupMember"
                     }
                 },
                 "min_servers": {
-                    "description": "The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition.",
+                    "description": "The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 0), Basic (Allowed values- 0) edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "name": {
-                    "description": "The name of the pool group. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The name of the pool group. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "priority_labels_ref": {
-                    "description": "UUID of the priority labels. If not provided, pool group member priority label will be interpreted as a number with a larger number considered higher priority. It is a reference to an object of type PriorityLabels. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the priority labels. If not provided, pool group member priority label will be interpreted as a number with a larger number considered higher priority. It is a reference to an object of type PriorityLabels. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "service_metadata": {
-                    "description": "Metadata pertaining to the service provided by this PoolGroup. In Openshift/Kubernetes environments, app metadata info is stored. Any user input to this field will be overwritten by Avi Vantage. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Metadata pertaining to the service provided by this PoolGroup. In Openshift/Kubernetes environments, app metadata info is stored. Any user input to this field will be overwritten by Avi Vantage. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -1008,7 +1083,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the pool group. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the pool group. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1042,19 +1117,19 @@
             ],
             "properties": {
                 "deployment_state": {
-                    "description": "Pool deployment state used with the PG deployment policy. Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Pool deployment state used with the PG deployment policy. Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "pool_ref": {
-                    "description": "UUID of the pool. It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the pool. It is a reference to an object of type Pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "priority_label": {
-                    "description": "All pools with same priority are treated similarly in a pool group. The higher the number, the higher the priority.A pool with a higher priority is selected, as long as the pool is eligible or an explicit policy chooses a different pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "All pools with same priority are treated similarly in a pool group. The higher the number, the higher the priority.A pool with a higher priority is selected, as long as the pool is eligible or an explicit policy chooses a different pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ratio": {
-                    "description": "Ratio of selecting eligible pools in the pool group. . Allowed values are 1-1000. Special values are 0 - Do not select this pool for new connections. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition.",
+                    "description": "Ratio of selecting eligible pools in the pool group. . Allowed values are 1-1000. Special values are 0 - Do not select this pool for new connections. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 1), Basic (Allowed values- 1) edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -1068,7 +1143,7 @@
             ],
             "properties": {
                 "pool_uuid": {
-                    "description": "Pool's ID. Field introduced in 20.1.7, 21.1.2, 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Pool's ID. Field introduced in 20.1.7, 21.1.2, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1080,11 +1155,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
