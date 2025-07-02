@@ -1027,6 +1027,10 @@
                         "$ref": "#/definitions/DebugSeDataplane"
                     }
                 },
+                "high_cpu_script_config": {
+                    "description": "Internal  Sustained CPU Data Collection config. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/DebugServiceEngineSustainedCpuSpike"
+                },
                 "mock_dl_fail_obj": {
                     "description": "Internal  Mark a specific Incoming Stream Object to be failed. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DebugServiceEngineSeDataStoreMockDlFail"
@@ -1117,6 +1121,58 @@
                 "object_type": {
                     "description": "Incoming Stream Response Object Type to be failed. Eg  'VirtualServiceSe', 'Pool', 'FileObject', etc. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
+                }
+            }
+        },
+        "DebugServiceEngineSustainedCpuSpike": {
+            "type": "object",
+            "properties": {
+                "cpu_filter": {
+                    "description": "cpu(s) filter for which high load will trigger debug data collection. Should be comma seperated with no space ( eg  0,1,4 ). Ranges can be given ( eg  2,4-6 ). Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "cpu_spike_percent": {
+                    "description": "Average Percent usage of CPU ( either total and/or percpu ) to be considered for CPU to be under high load. Allowed values are 0-100. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "dis_enable": {
+                    "description": "Toggle High CPU Trigger action. Set to true, to dis-enable High CPU Data Collection Script invocation. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "manual_start": {
+                    "description": "Invokes High CPU Data Collection on SE for duration of an hour. Alert  Operator will have to manually dis-enable this and manage SE disk-space!. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "pids": {
+                    "description": "List of process' pid(s) for which debug data should be recorded. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "format": "uint32"
+                },
+                "process_names": {
+                    "description": "List of process' name(s) for which debug data should be recorded. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sample_cooldown": {
+                    "description": "Interval between each such script invocation. Should be >= 60. Allowed values are 60-864000. Field introduced in 31.1.2. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "sample_duration": {
+                    "description": "Duration of debug data to be collected. Should be >= 11. Allowed values are 11-864000. Field introduced in 31.1.2. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "spike_duration": {
+                    "description": "Time Duration ( in seconds ) to be considered for CPU to be consistently under high load. Should be >= 60s. CPU usage data is collected every 5s. Allowed values are 60-864000. Field introduced in 31.1.2. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
                 }
             }
         },
