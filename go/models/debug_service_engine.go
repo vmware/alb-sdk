@@ -54,6 +54,9 @@ type DebugServiceEngine struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Flags []*DebugSeDataplane `json:"flags,omitempty"`
 
+	// Internal  Sustained CPU Data Collection config. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	HighCPUScriptConfig *DebugServiceEngineSustainedCPUSpike `json:"high_cpu_script_config,omitempty"`
+
 	// Internal  Mark a specific Incoming Stream Object to be failed. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MockDlFailObj *DebugServiceEngineSeDataStoreMockDlFail `json:"mock_dl_fail_obj,omitempty"`
 
