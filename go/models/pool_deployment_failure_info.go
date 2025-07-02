@@ -8,24 +8,24 @@ package models
 // swagger:model PoolDeploymentFailureInfo
 type PoolDeploymentFailureInfo struct {
 
-	// Curent in-service pool. It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Curent in-service pool. It is a reference to an object of type Pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CurrInServicePoolName *string `json:"curr_in_service_pool_name,omitempty"`
 
-	// Curent in service pool. It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Curent in service pool. It is a reference to an object of type Pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CurrInServicePoolRef *string `json:"curr_in_service_pool_ref,omitempty"`
 
-	// Operational traffic ratio for the pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Operational traffic ratio for the pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Ratio *uint32 `json:"ratio,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Results []*PGDeploymentRuleResult `json:"results,omitempty"`
 
-	// Pool's ID. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Pool's ID. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 
-	// Reason returned in webhook callback when configured. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Reason returned in webhook callback when configured. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WebhookReason *string `json:"webhook_reason,omitempty"`
 
-	// Result of webhook callback when configured. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Result of webhook callback when configured. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WebhookResult *bool `json:"webhook_result,omitempty"`
 }

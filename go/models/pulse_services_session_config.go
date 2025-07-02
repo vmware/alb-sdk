@@ -8,6 +8,6 @@ package models
 // swagger:model PulseServicesSessionConfig
 type PulseServicesSessionConfig struct {
 
-	// Session Headers. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Session Headers. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SessionHeaders []*SessionHeaders `json:"session_headers,omitempty"`
 }

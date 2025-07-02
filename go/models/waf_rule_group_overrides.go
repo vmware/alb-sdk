@@ -8,19 +8,19 @@ package models
 // swagger:model WafRuleGroupOverrides
 type WafRuleGroupOverrides struct {
 
-	// Override the enable flag for this group. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Override the enable flag for this group. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Enable *bool `json:"enable,omitempty"`
 
-	// Replace the exclude list for this group. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Replace the exclude list for this group. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ExcludeList []*WafExcludeListEntry `json:"exclude_list,omitempty"`
 
-	// Override the waf mode for this group.. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Override the waf mode for this group.. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Mode *string `json:"mode,omitempty"`
 
-	// The name of the group where attributes or rules are overridden. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// The name of the group where attributes or rules are overridden. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
-	// Rule specific overrides. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Rule specific overrides. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	RuleOverrides []*WafRuleOverrides `json:"rule_overrides,omitempty"`
 }

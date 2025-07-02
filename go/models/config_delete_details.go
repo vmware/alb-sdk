@@ -8,30 +8,30 @@ package models
 // swagger:model ConfigDeleteDetails
 type ConfigDeleteDetails struct {
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientIP *string `json:"client_ip,omitempty"`
 
-	// Error message if request failed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Error message if request failed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ErrorMessage *string `json:"error_message,omitempty"`
 
-	// API path. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// API path. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Path *string `json:"path,omitempty"`
 
-	// Deleted data of the resource. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Deleted data of the resource. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResourceData *string `json:"resource_data,omitempty"`
 
-	// Name of the deleted resource. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the deleted resource. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResourceName *string `json:"resource_name,omitempty"`
 
-	// Config type of the deleted resource. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Config type of the deleted resource. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResourceType *string `json:"resource_type,omitempty"`
 
-	// Status. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Status. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Status *string `json:"status,omitempty"`
 
-	// Request user. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Request user. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	User *string `json:"user,omitempty"`
 
-	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UserAgent *string `json:"user_agent,omitempty"`
 }

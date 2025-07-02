@@ -8,12 +8,15 @@ package models
 // swagger:model OIDCConfig
 type OIDCConfig struct {
 
-	// Adds openid as one of the scopes enabling OpenID Connect flow. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Adds openid as one of the scopes enabling OpenID Connect flow. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	OidcEnable *bool `json:"oidc_enable,omitempty"`
 
-	// Fetch profile information by enabling profile scope. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Fetch profile information by enabling profile scope. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Profile *bool `json:"profile,omitempty"`
 
-	// Fetch profile information from Userinfo Endpoint. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Claim name from id token to be used as User ID. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	UseridClaimName *string `json:"userid_claim_name,omitempty"`
+
+	// Fetch profile information from Userinfo Endpoint. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Userinfo *bool `json:"userinfo,omitempty"`
 }

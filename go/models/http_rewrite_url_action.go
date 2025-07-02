@@ -8,12 +8,12 @@ package models
 // swagger:model HTTPRewriteURLAction
 type HTTPRewriteURLAction struct {
 
-	// Host config. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Host config. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HostHdr *URIParam `json:"host_hdr,omitempty"`
 
-	// Path config. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Path config. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Path *URIParam `json:"path,omitempty"`
 
-	// Query config. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Query config. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Query *URIParamQuery `json:"query,omitempty"`
 }

@@ -8,15 +8,15 @@ package models
 // swagger:model FalsePositiveLearningConfig
 type FalsePositiveLearningConfig struct {
 
-	// Max number of applications supported to detect false positive. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Max number of applications supported to detect false positive. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MaxAppsSupported *uint64 `json:"max_apps_supported,omitempty"`
 
-	// Minimum monitor time required to automatically detect false positive. Unit is minutes. Field introduced in 22.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Minimum monitor time required to automatically detect false positive. Unit is minutes. Field introduced in 22.1.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MinMonitorTime *uint64 `json:"min_monitor_time,omitempty"`
 
-	// Minimum number of transactions in one application required to automatically detect false positive. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Minimum number of transactions in one application required to automatically detect false positive. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MinTransPerApplication *uint64 `json:"min_trans_per_application,omitempty"`
 
-	// Minimum number of transactions in one URI required to automatically detect false positive. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Minimum number of transactions in one URI required to automatically detect false positive. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MinTransPerURI *uint64 `json:"min_trans_per_uri,omitempty"`
 }

@@ -8,15 +8,15 @@ package models
 // swagger:model SeVnicUpEventDetails
 type SeVnicUpEventDetails struct {
 
-	// Vnic name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Vnic name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IfName *string `json:"if_name,omitempty"`
 
-	// Vnic linux name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Vnic linux name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LinuxName *string `json:"linux_name,omitempty"`
 
-	// Mac Address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Mac Address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Mac *string `json:"mac,omitempty"`
 
-	// UUID of the SE responsible for this event. It is a reference to an object of type ServiceEngine. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// UUID of the SE responsible for this event. It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeRef *string `json:"se_ref,omitempty"`
 }

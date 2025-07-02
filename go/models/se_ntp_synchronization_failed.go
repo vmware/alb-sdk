@@ -8,12 +8,12 @@ package models
 // swagger:model SeNtpSynchronizationFailed
 type SeNtpSynchronizationFailed struct {
 
-	// List of NTP Servers. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// List of NTP Servers. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	NtpServers *string `json:"ntp_servers,omitempty"`
 
-	// Name of the SE reporting this event. It is a reference to an object of type ServiceEngine. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Name of the SE reporting this event. It is a reference to an object of type ServiceEngine. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SeName *string `json:"se_name,omitempty"`
 
-	// UUID of the SE responsible for this event. It is a reference to an object of type ServiceEngine. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// UUID of the SE responsible for this event. It is a reference to an object of type ServiceEngine. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SeRef *string `json:"se_ref,omitempty"`
 }

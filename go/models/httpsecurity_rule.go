@@ -8,24 +8,24 @@ package models
 // swagger:model HTTPSecurityRule
 type HttpsecurityRule struct {
 
-	// Action to be performed upon successful matching. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Action to be performed upon successful matching. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Action *HttpsecurityAction `json:"action,omitempty"`
 
-	// Enable or disable the rule. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Enable or disable the rule. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Enable *bool `json:"enable"`
 
-	// Index of the rule. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Index of the rule. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Index *int32 `json:"index"`
 
-	// Log HTTP request upon rule match. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Log HTTP request upon rule match. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Log *bool `json:"log,omitempty"`
 
-	// Add match criteria to the rule. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Add match criteria to the rule. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Match *MatchTarget `json:"match,omitempty"`
 
-	// Name of the rule. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the rule. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 }
