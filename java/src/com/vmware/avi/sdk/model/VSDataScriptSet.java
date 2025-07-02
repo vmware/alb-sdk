@@ -60,6 +60,12 @@ public class VSDataScriptSet extends AviRestResource  {
     @JsonProperty("rate_limiters")
     private List<RateLimiter> rateLimiters;
 
+    @JsonProperty("snat_ip6s")
+    private List<IpAddr> snatIp6S;
+
+    @JsonProperty("snat_ips")
+    private List<IpAddr> snatIps;
+
     @JsonProperty("ssl_key_certificate_refs")
     private List<String> sslKeyCertificateRefs;
 
@@ -517,6 +523,90 @@ public class VSDataScriptSet extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
+     * Ipv6 address used by a vs-datascript in avi.l4.source_ip api.
+     * Field introduced in 31.2.1.
+     * Maximum of 8 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return snatIp6S
+     */
+    public List<IpAddr> getSnatIp6S() {
+        return snatIp6S;
+    }
+
+    /**
+     * This is the setter method. this will set the snatIp6S
+     * Ipv6 address used by a vs-datascript in avi.l4.source_ip api.
+     * Field introduced in 31.2.1.
+     * Maximum of 8 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return snatIp6S
+     */
+    public void setSnatIp6S(List<IpAddr>  snatIp6S) {
+        this.snatIp6S = snatIp6S;
+    }
+
+    /**
+     * This is the setter method this will set the snatIp6S
+     * Ipv6 address used by a vs-datascript in avi.l4.source_ip api.
+     * Field introduced in 31.2.1.
+     * Maximum of 8 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return snatIp6S
+     */
+    public VSDataScriptSet addSnatIp6SItem(IpAddr snatIp6SItem) {
+      if (this.snatIp6S == null) {
+        this.snatIp6S = new ArrayList<IpAddr>();
+      }
+      this.snatIp6S.add(snatIp6SItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ipv4 address used by a vs-datascript in avi.l4.source_ip api.
+     * Field introduced in 31.2.1.
+     * Maximum of 8 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return snatIps
+     */
+    public List<IpAddr> getSnatIps() {
+        return snatIps;
+    }
+
+    /**
+     * This is the setter method. this will set the snatIps
+     * Ipv4 address used by a vs-datascript in avi.l4.source_ip api.
+     * Field introduced in 31.2.1.
+     * Maximum of 8 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return snatIps
+     */
+    public void setSnatIps(List<IpAddr>  snatIps) {
+        this.snatIps = snatIps;
+    }
+
+    /**
+     * This is the setter method this will set the snatIps
+     * Ipv4 address used by a vs-datascript in avi.l4.source_ip api.
+     * Field introduced in 31.2.1.
+     * Maximum of 8 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return snatIps
+     */
+    public VSDataScriptSet addSnatIpsItem(IpAddr snatIpsItem) {
+      if (this.snatIps == null) {
+        this.snatIps = new ArrayList<IpAddr>();
+      }
+      this.snatIps.add(snatIpsItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
      * Uuids of sslkeyandcertificate objects that could be referred by vsdatascriptset objects.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 21.1.1.
@@ -721,6 +811,8 @@ public class VSDataScriptSet extends AviRestResource  {
   Objects.equals(this.protocolParserRefs, objVSDataScriptSet.protocolParserRefs)&&
   Objects.equals(this.ipReputationDbRef, objVSDataScriptSet.ipReputationDbRef)&&
   Objects.equals(this.markers, objVSDataScriptSet.markers)&&
+  Objects.equals(this.snatIps, objVSDataScriptSet.snatIps)&&
+  Objects.equals(this.snatIp6S, objVSDataScriptSet.snatIp6S)&&
   Objects.equals(this.description, objVSDataScriptSet.description)&&
   Objects.equals(this.tenantRef, objVSDataScriptSet.tenantRef)&&
   Objects.equals(this.rateLimiters, objVSDataScriptSet.rateLimiters)&&
@@ -747,6 +839,8 @@ public class VSDataScriptSet extends AviRestResource  {
                         sb.append("    poolRefs: ").append(toIndentedString(poolRefs)).append("\n");
                         sb.append("    protocolParserRefs: ").append(toIndentedString(protocolParserRefs)).append("\n");
                         sb.append("    rateLimiters: ").append(toIndentedString(rateLimiters)).append("\n");
+                        sb.append("    snatIp6S: ").append(toIndentedString(snatIp6S)).append("\n");
+                        sb.append("    snatIps: ").append(toIndentedString(snatIps)).append("\n");
                         sb.append("    sslKeyCertificateRefs: ").append(toIndentedString(sslKeyCertificateRefs)).append("\n");
                         sb.append("    sslProfileRefs: ").append(toIndentedString(sslProfileRefs)).append("\n");
                         sb.append("    stringGroupRefs: ").append(toIndentedString(stringGroupRefs)).append("\n");
