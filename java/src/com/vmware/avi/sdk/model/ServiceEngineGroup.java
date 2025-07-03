@@ -216,6 +216,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("enable_qat")
     private Boolean enableQat = false;
 
+    @JsonProperty("enable_quantum_entropy")
+    private Boolean enableQuantumEntropy = false;
+
     @JsonProperty("ephemeral_portrange_end")
     private Integer ephemeralPortrangeEnd;
 
@@ -2671,6 +2674,32 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setEnableQat(Boolean  enableQat) {
         this.enableQat = enableQat;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This knob enables the service engine to use the quantinium library to locally generate quantum-hardened randomness for the linux kernel prng.
+     * Requires se reboot.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enableQuantumEntropy
+     */
+    public Boolean getEnableQuantumEntropy() {
+        return enableQuantumEntropy;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This knob enables the service engine to use the quantinium library to locally generate quantum-hardened randomness for the linux kernel prng.
+     * Requires se reboot.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enableQuantumEntropy set the enableQuantumEntropy.
+     */
+    public void setEnableQuantumEntropy(Boolean  enableQuantumEntropy) {
+        this.enableQuantumEntropy = enableQuantumEntropy;
     }
 
     /**
@@ -9169,7 +9198,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.objsyncMode, objServiceEngineGroup.objsyncMode)&&
   Objects.equals(this.reservedConfiguration, objServiceEngineGroup.reservedConfiguration)&&
   Objects.equals(this.vsphereStoragePolicies, objServiceEngineGroup.vsphereStoragePolicies)&&
-  Objects.equals(this.sdbKeyTimeout, objServiceEngineGroup.sdbKeyTimeout);
+  Objects.equals(this.sdbKeyTimeout, objServiceEngineGroup.sdbKeyTimeout)&&
+  Objects.equals(this.enableQuantumEntropy, objServiceEngineGroup.enableQuantumEntropy);
     }
 
     @Override
@@ -9241,6 +9271,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    enableMultiLb: ").append(toIndentedString(enableMultiLb)).append("\n");
                         sb.append("    enablePcapTxRing: ").append(toIndentedString(enablePcapTxRing)).append("\n");
                         sb.append("    enableQat: ").append(toIndentedString(enableQat)).append("\n");
+                        sb.append("    enableQuantumEntropy: ").append(toIndentedString(enableQuantumEntropy)).append("\n");
                         sb.append("    ephemeralPortrangeEnd: ").append(toIndentedString(ephemeralPortrangeEnd)).append("\n");
                         sb.append("    ephemeralPortrangeStart: ").append(toIndentedString(ephemeralPortrangeStart)).append("\n");
                         sb.append("    extraConfigMultiplier: ").append(toIndentedString(extraConfigMultiplier)).append("\n");
