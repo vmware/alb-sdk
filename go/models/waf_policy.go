@@ -42,6 +42,9 @@ type WafPolicy struct {
 	//  Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
+	// Whether or not adaptive sampling should be enabled. If enabled, a varying percentage of requests will be subject to WAF processing in evaluation mode. The SE-group property max_cpu_load_adaptive_sampling limits the maximum load on the CPU allowed for adaptive sampling to take place. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	EnableAdaptiveSampling *bool `json:"enable_adaptive_sampling,omitempty"`
+
 	// Enable Application Learning for this WAF policy. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableAppLearning *bool `json:"enable_app_learning,omitempty"`
 

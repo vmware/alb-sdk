@@ -387,6 +387,9 @@ type ServiceEngineGroup struct {
 	// Maximum number of external health monitors that can run concurrently in a service engine. This helps control the CPU and memory use by external health monitors. Special values are 0- Value will be internally calculated based on cpu and memory. Field introduced in 18.2.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxConcurrentExternalHm *uint32 `json:"max_concurrent_external_hm,omitempty"`
 
+	// When adaptive sampling is enabled, specifies the max CPU load allowed for adaptive sampling. If the CPU load exceeds this value, no requests will be sampled. Allowed values are 1-100. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	MaxCPULoadAdaptiveSampling *uint32 `json:"max_cpu_load_adaptive_sampling,omitempty"`
+
 	// When CPU usage on an SE exceeds this threshold, Virtual Services hosted on this SE may be rebalanced to other SEs to reduce load. A new SE may be created as part of this process. Allowed values are 40-90. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxCPUUsage *int32 `json:"max_cpu_usage,omitempty"`
 
