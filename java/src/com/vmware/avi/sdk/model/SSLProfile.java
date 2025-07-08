@@ -28,6 +28,9 @@ public class SSLProfile extends AviRestResource  {
     @JsonProperty("accepted_versions")
     private List<SSLVersion> acceptedVersions;
 
+    @JsonProperty("allow_legacy_renegotiation")
+    private Boolean allowLegacyRenegotiation = false;
+
     @JsonProperty("cipher_enums")
     private List<String> cipherEnums;
 
@@ -149,6 +152,30 @@ public class SSLProfile extends AviRestResource  {
       }
       this.acceptedVersions.add(acceptedVersionsItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allow backend servers to use legacy renegotiation.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return allowLegacyRenegotiation
+     */
+    public Boolean getAllowLegacyRenegotiation() {
+        return allowLegacyRenegotiation;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allow backend servers to use legacy renegotiation.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param allowLegacyRenegotiation set the allowLegacyRenegotiation.
+     */
+    public void setAllowLegacyRenegotiation(Boolean  allowLegacyRenegotiation) {
+        this.allowLegacyRenegotiation = allowLegacyRenegotiation;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -706,7 +733,8 @@ public class SSLProfile extends AviRestResource  {
   Objects.equals(this.markers, objSSLProfile.markers)&&
   Objects.equals(this.isFederated, objSSLProfile.isFederated)&&
   Objects.equals(this.description, objSSLProfile.description)&&
-  Objects.equals(this.tenantRef, objSSLProfile.tenantRef);
+  Objects.equals(this.tenantRef, objSSLProfile.tenantRef)&&
+  Objects.equals(this.allowLegacyRenegotiation, objSSLProfile.allowLegacyRenegotiation);
     }
 
     @Override
@@ -715,6 +743,7 @@ public class SSLProfile extends AviRestResource  {
       sb.append("class SSLProfile {\n");
                   sb.append("    acceptedCiphers: ").append(toIndentedString(acceptedCiphers)).append("\n");
                         sb.append("    acceptedVersions: ").append(toIndentedString(acceptedVersions)).append("\n");
+                        sb.append("    allowLegacyRenegotiation: ").append(toIndentedString(allowLegacyRenegotiation)).append("\n");
                         sb.append("    cipherEnums: ").append(toIndentedString(cipherEnums)).append("\n");
                         sb.append("    ciphersuites: ").append(toIndentedString(ciphersuites)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");

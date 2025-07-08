@@ -49,6 +49,9 @@ public class WafPolicy extends AviRestResource  {
     @JsonProperty("description")
     private String description;
 
+    @JsonProperty("enable_adaptive_sampling")
+    private Boolean enableAdaptiveSampling = false;
+
     @JsonProperty("enable_app_learning")
     private Boolean enableAppLearning = false;
 
@@ -349,6 +352,34 @@ public class WafPolicy extends AviRestResource  {
      */
     public void setDescription(String  description) {
         this.description = description;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Whether or not adaptive sampling should be enabled.
+     * If enabled, a varying percentage of requests will be subject to waf processing in evaluation mode.
+     * The se-group property max_cpu_load_adaptive_sampling limits the maximum load on the cpu allowed for adaptive sampling to take place.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enableAdaptiveSampling
+     */
+    public Boolean getEnableAdaptiveSampling() {
+        return enableAdaptiveSampling;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Whether or not adaptive sampling should be enabled.
+     * If enabled, a varying percentage of requests will be subject to waf processing in evaluation mode.
+     * The se-group property max_cpu_load_adaptive_sampling limits the maximum load on the cpu allowed for adaptive sampling to take place.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enableAdaptiveSampling set the enableAdaptiveSampling.
+     */
+    public void setEnableAdaptiveSampling(Boolean  enableAdaptiveSampling) {
+        this.enableAdaptiveSampling = enableAdaptiveSampling;
     }
 
     /**
@@ -969,7 +1000,8 @@ public class WafPolicy extends AviRestResource  {
   Objects.equals(this.bypassStaticExtensions, objWafPolicy.bypassStaticExtensions)&&
   Objects.equals(this.autoUpdateCrs, objWafPolicy.autoUpdateCrs)&&
   Objects.equals(this.updatedCrsRulesInDetectionMode, objWafPolicy.updatedCrsRulesInDetectionMode)&&
-  Objects.equals(this.useEvaluationModeOnCrsUpdate, objWafPolicy.useEvaluationModeOnCrsUpdate);
+  Objects.equals(this.useEvaluationModeOnCrsUpdate, objWafPolicy.useEvaluationModeOnCrsUpdate)&&
+  Objects.equals(this.enableAdaptiveSampling, objWafPolicy.enableAdaptiveSampling);
     }
 
     @Override
@@ -985,6 +1017,7 @@ public class WafPolicy extends AviRestResource  {
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
                         sb.append("    crsOverrides: ").append(toIndentedString(crsOverrides)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+                        sb.append("    enableAdaptiveSampling: ").append(toIndentedString(enableAdaptiveSampling)).append("\n");
                         sb.append("    enableAppLearning: ").append(toIndentedString(enableAppLearning)).append("\n");
                         sb.append("    enableAutoRuleUpdates: ").append(toIndentedString(enableAutoRuleUpdates)).append("\n");
                         sb.append("    enableRegexLearning: ").append(toIndentedString(enableRegexLearning)).append("\n");
