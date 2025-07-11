@@ -144,6 +144,9 @@ type ServiceEngineGroup struct {
 	// Disable Generic Receive Offload (GRO) in DPDK poll-mode driver packet receive path.  GRO can be enabled on NICs that do not support LRO (Large Receive Offload) or do not gain performance boost from LRO. GRO is on by default on NICs in a system with 8 vCPUs or higher. Field introduced in 17.2.5, 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DisableGro *bool `json:"disable_gro,omitempty"`
 
+	// This knob enables the QAT offloads for TLS application data. (if the host CPU is capable, and the QAT device is exposed). Requires SE Reboot. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	DisableQatBulkCrypto *bool `json:"disable_qat_bulk_crypto,omitempty"`
+
 	// If set, disable the config memory check done in service engine. Field introduced in 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DisableSeMemoryCheck *bool `json:"disable_se_memory_check,omitempty"`
 
