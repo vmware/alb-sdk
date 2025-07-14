@@ -16,28 +16,30 @@
 	</licenses>
 	<developers>
 		<developer>
-			<name>Gaurav Rastogi</name>
-			<email>rastogiga@vmware.com</email>
-			<organization>VMWare</organization>
-			<organizationUrl>http://www.vmware.com</organizationUrl>
+			<name>Anurag Palsule</name>
+			<email>anurag.palsule@broadcom.com</email>
+			<organization>Broadcom</organization>
+			<organizationUrl>http://www.broadcom.com/</organizationUrl>
 		</developer>
 		<developer>
-			<name>Chaitanya Deshpande</name>
-			<email>deshpandech@vmware.com</email>
+			<name>Parikshit Manur</name>
+			<email>parikshit.manur@broadcom.com</email>
+			<organization>Broadcom</organization>
+			<organizationUrl>http://www.broadcom.com/</organizationUrl>
+		</developer>
+		<developer>
+			<name>Mayur Khachane</name>
+			<email>mayur.khachane@broadcom.com</email>
+			<organization>Broadcom</organization>
+			<organizationUrl>http://www.broadcom.com/</organizationUrl>
+		</developer>
+		<developer>
+			<name>Shardul Latkar</name>
+			<email>shardul.latkar@broadcom.com</email>
 			<organization>VMWare</organization>
-			<organizationUrl>http://www.vmware.com</organizationUrl>
+			<organizationUrl>http://www.broadcom.com/</organizationUrl>
 		</developer>
 	</developers>
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
 	<scm>
 		<connection>scm:git:git://github.com/vmware/alb-sdk.git</connection>
 		<developerConnection>scm:git://github.com/vmware/alb-sdk.git</developerConnection>
@@ -54,28 +56,27 @@
 	    </resources>
 		<plugins>
 			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.7</version>
+				<groupId>org.sonatype.central</groupId>
+				<artifactId>central-publishing-maven-plugin</artifactId>
+				<version>0.8.0</version>
 				<extensions>true</extensions>
 				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+					<publishingServerId>central</publishingServerId>
+					<autoPublish>true</autoPublish>
+					<tokenAuth>true</tokenAuth>
 				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
+				<version>3.13.0</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<release>8</release>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.2.1</version>
+				<version>3.3.1</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -88,7 +89,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version>
+				<version>3.6.3</version>
 				<configuration>
 					<additionalparam>-Xdoclint:none</additionalparam>
 				</configuration>
@@ -104,10 +105,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.5</version>
+				<version>3.2.4</version>
 				<configuration>
 					<gpgArguments>
-						<arg>--pinentry-mode</arg>
+						<arg>pinentry-mode</arg>
 						<arg>loopback</arg>
 					</gpgArguments>
 				</configuration>
@@ -120,17 +121,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.7</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

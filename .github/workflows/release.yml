@@ -13,19 +13,17 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Maven Central Repository
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v4
         with:
+          distribution: 'temurin'
           java-version: 11
-          server-id: ossrh
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_PASSWORD
           gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
       # Sets up python3
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.8
 
@@ -65,6 +63,8 @@ jobs:
 
       - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
         name: Publish JAVA
+        env:
+          MAVEN_CENTRAL_TOKEN: ${{ secrets.OSSRH_TOKEN }}
         run: |
           echo "Publish Java Version ${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}"
           echo "Publish AVI VERSION ${{ steps.get_sdk_version.outputs.AVI_VERSION }}"
@@ -75,7 +75,8 @@ jobs:
             mvn clean install -Dgpg.skip=true
           else
             echo "Normal tag found. Uploading java assets to public repo."
-            mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
+            # mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
+            mvn -B deploy -DskipTests
           fi
           cd ..
           ls java/target/
