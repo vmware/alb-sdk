@@ -108,7 +108,7 @@
 				<version>3.2.4</version>
 				<configuration>
 					<gpgArguments>
-						<arg>pinentry-mode</arg>
+						<arg>--pinentry-mode</arg>
 						<arg>loopback</arg>
 					</gpgArguments>
 				</configuration>
