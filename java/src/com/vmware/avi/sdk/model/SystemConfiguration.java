@@ -901,7 +901,6 @@ public class SystemConfiguration extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * The destination syslog server ip(v4/v6) address or fqdn.
-     * Provide in the format ip port.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -914,7 +913,6 @@ public class SystemConfiguration extends AviRestResource  {
     /**
      * This is the setter method. this will set the syslogServers
      * The destination syslog server ip(v4/v6) address or fqdn.
-     * Provide in the format ip port.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -927,7 +925,6 @@ public class SystemConfiguration extends AviRestResource  {
     /**
      * This is the setter method this will set the syslogServers
      * The destination syslog server ip(v4/v6) address or fqdn.
-     * Provide in the format ip port.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
