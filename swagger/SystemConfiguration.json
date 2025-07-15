@@ -1232,7 +1232,7 @@
                     "type": "boolean"
                 },
                 "syslog_servers": {
-                    "description": "The destination Syslog server IP(v4/v6) address or FQDN. Provide in the format IP port. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The destination Syslog server IP(v4/v6) address or FQDN. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddr"
