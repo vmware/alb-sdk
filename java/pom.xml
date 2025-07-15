@@ -63,7 +63,6 @@
 				<configuration>
 					<publishingServerId>central</publishingServerId>
 					<autoPublish>true</autoPublish>
-					<tokenAuth>true</tokenAuth>
 				</configuration>
 			</plugin>
 			<plugin>
