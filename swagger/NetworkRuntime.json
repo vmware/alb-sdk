@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "30.2.4",
+        "version": "30.2.5",
         "title": "Avi NetworkRuntime Object API",
         "contact": {
             "name": "Avi Networks Inc.",
