@@ -108,7 +108,7 @@ type SystemConfiguration struct {
 	// Ability to sync the syslog server config to SEs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SyncSyslogToSe *bool `json:"sync_syslog_to_se,omitempty"`
 
-	// The destination Syslog server IP(v4/v6) address or FQDN. Provide in the format IP port. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The destination Syslog server IP(v4/v6) address or FQDN. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SyslogServers []*IPAddr `json:"syslog_servers,omitempty"`
 
 	// Telemetry configuration. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
