@@ -5728,8 +5728,15 @@
         "ContentRewriteProfile": {
             "type": "object",
             "properties": {
+                "req_rewrite_rules": {
+                    "description": "Content Rewrite rules to be enabled on therequest body. Field introduced in 31.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ReqContentRewriteRule"
+                    }
+                },
                 "rewritable_content_ref": {
-                    "description": "Rewrite only content types listed in this string group. Content types not present in this list are not rewritten. It is a reference to an object of type StringGroup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rewrite only content types listed in this string group. Content types not present in this list are not rewritten. It is a reference to an object of type StringGroup. Field deprecated in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "rsp_rewrite_rules": {
@@ -7161,6 +7168,35 @@
                 }
             }
         },
+        "ReqContentRewriteRule": {
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "description": "Enable rewrite rule on request body. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "index": {
+                    "description": "Index of the request rewrite rule. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "Name of the request rewrite rule. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "pairs": {
+                    "description": "List of search-and-replace string pairs for the request body. For eg. Strings 'foo' and 'bar', where all searches of 'foo' in the request body will be replaced with 'bar'. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SearchReplacePair"
+                    }
+                },
+                "rewritable_content_ref": {
+                    "description": "Rewrite only content types listed in this string group. Content types not present in this list are not rewritten. It is a reference to an object of type StringGroup. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
         "RetryPlacementParams": {
             "type": "object",
             "required": [
@@ -7222,6 +7258,10 @@
                     "items": {
                         "$ref": "#/definitions/SearchReplacePair"
                     }
+                },
+                "rewritable_content_ref": {
+                    "description": "Rewrite only content types listed in this string group. Content types not present in this list are not rewritten. It is a reference to an object of type StringGroup. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 }
             }
         },
