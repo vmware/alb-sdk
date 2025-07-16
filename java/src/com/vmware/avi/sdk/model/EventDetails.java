@@ -669,6 +669,9 @@ public class EventDetails  {
     @JsonProperty("tech_support_event")
     private TechSupportEvent techSupportEvent;
 
+    @JsonProperty("tech_support_event_details")
+    private TechSupport techSupportEventDetails;
+
     @JsonProperty("tencent_info")
     private TencentSetup tencentInfo;
 
@@ -5267,6 +5270,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Techsupport event details.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return techSupportEventDetails
+     */
+    public TechSupport getTechSupportEventDetails() {
+        return techSupportEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Techsupport event details.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param techSupportEventDetails set the techSupportEventDetails.
+     */
+    public void setTechSupportEventDetails(TechSupport techSupportEventDetails) {
+        this.techSupportEventDetails = techSupportEventDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tencentInfo
@@ -6054,6 +6081,7 @@ public class EventDetails  {
   Objects.equals(this.apiVersionDeprecated, objEventDetails.apiVersionDeprecated)&&
   Objects.equals(this.asyncPatchState, objEventDetails.asyncPatchState)&&
   Objects.equals(this.techSupportEvent, objEventDetails.techSupportEvent)&&
+  Objects.equals(this.techSupportEventDetails, objEventDetails.techSupportEventDetails)&&
   Objects.equals(this.warningEventDetails, objEventDetails.warningEventDetails)&&
   Objects.equals(this.sslExpireDetails, objEventDetails.sslExpireDetails)&&
   Objects.equals(this.sslExportDetails, objEventDetails.sslExportDetails)&&
@@ -6423,6 +6451,7 @@ public class EventDetails  {
                         sb.append("    systemReportEventDetails: ").append(toIndentedString(systemReportEventDetails)).append("\n");
                         sb.append("    taskJournalEventDetails: ").append(toIndentedString(taskJournalEventDetails)).append("\n");
                         sb.append("    techSupportEvent: ").append(toIndentedString(techSupportEvent)).append("\n");
+                        sb.append("    techSupportEventDetails: ").append(toIndentedString(techSupportEventDetails)).append("\n");
                         sb.append("    tencentInfo: ").append(toIndentedString(tencentInfo)).append("\n");
                         sb.append("    uberEventDetails: ").append(toIndentedString(uberEventDetails)).append("\n");
                         sb.append("    unbindVsSeDetails: ").append(toIndentedString(unbindVsSeDetails)).append("\n");
