@@ -656,6 +656,9 @@ type EventDetails struct {
 	//  Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	TechSupportEvent *TechSupportEvent `json:"tech_support_event,omitempty"`
 
+	// TechSupport event details. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	TechSupportEventDetails *TechSupport `json:"tech_support_event_details,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TencentInfo *TencentSetup `json:"tencent_info,omitempty"`
 
