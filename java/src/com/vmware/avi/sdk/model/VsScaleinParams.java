@@ -31,6 +31,9 @@ public class VsScaleinParams extends AviRestResource  {
     @JsonProperty("scalein_primary")
     private Boolean scaleinPrimary;
 
+    @JsonIgnore
+    private String source;
+
     @JsonProperty("uuid")
     private String uuid;
 
@@ -103,6 +106,30 @@ public class VsScaleinParams extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Actuator which initiated this scalein.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return source
+     */
+    public String getSource() {
+        return source;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Actuator which initiated this scalein.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param source set the source.
+     */
+    public void setSource(String  source) {
+        this.source = source;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
@@ -157,7 +184,8 @@ public class VsScaleinParams extends AviRestResource  {
   Objects.equals(this.fromSeRef, objVsScaleinParams.fromSeRef)&&
   Objects.equals(this.scaleinPrimary, objVsScaleinParams.scaleinPrimary)&&
   Objects.equals(this.adminDown, objVsScaleinParams.adminDown)&&
-  Objects.equals(this.vipId, objVsScaleinParams.vipId);
+  Objects.equals(this.vipId, objVsScaleinParams.vipId)&&
+  Objects.equals(this.source, objVsScaleinParams.source);
     }
 
     @Override
@@ -167,6 +195,7 @@ public class VsScaleinParams extends AviRestResource  {
                   sb.append("    adminDown: ").append(toIndentedString(adminDown)).append("\n");
                         sb.append("    fromSeRef: ").append(toIndentedString(fromSeRef)).append("\n");
                         sb.append("    scaleinPrimary: ").append(toIndentedString(scaleinPrimary)).append("\n");
+                        sb.append("    source: ").append(toIndentedString(source)).append("\n");
                         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");
                   sb.append("}");
