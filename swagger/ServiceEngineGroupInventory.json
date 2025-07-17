@@ -1951,6 +1951,12 @@
                     },
                     "format": "uint64"
                 },
+                "auto_rebalance_cool_down_time": {
+                    "description": "The time in minutes controller waits before rebalancing the Vs again after a scalein/scaleout. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 15,
+                    "format": "uint32"
+                },
                 "auto_rebalance_criteria": {
                     "description": "Set of criteria for SE Auto Rebalance. Enum options - SE_AUTO_REBALANCE_CPU, SE_AUTO_REBALANCE_PPS, SE_AUTO_REBALANCE_MBPS, SE_AUTO_REBALANCE_OPEN_CONNS, SE_AUTO_REBALANCE_CPS. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -1958,11 +1964,19 @@
                         "type": "string"
                     }
                 },
+                "auto_rebalance_dry_run_enabled": {
+                    "description": "If enabled, the controller will not perform the rebalance actions.It will only generate the actions and update that in the debug api.This is useful for testing the rebalance logic without actually performing the actions. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
                 "auto_rebalance_interval": {
                     "description": "Frequency of rebalance, if 'Auto rebalance' is enabled. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300,
                     "format": "int32"
+                },
+                "auto_rebalance_raise_events_for_actions": {
+                    "description": "If enabled, the controller will raise events for rebalance actions. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 },
                 "auto_redistribute_active_standby_load": {
                     "description": "Redistribution of virtual services from the takeover SE to the replacement SE can cause momentary traffic loss. If the auto-redistribute load option is left in its default off state, any desired rebalancing requires calls to REST API. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",

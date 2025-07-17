@@ -8347,6 +8347,10 @@
                     "type": "integer",
                     "format": "uint32"
                 },
+                "source": {
+                    "description": "source from where this request has originated. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
                 "to_host_ref": {
                     "description": " It is a reference to an object of type VIMgrHostRuntime. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
@@ -8403,6 +8407,10 @@
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
+                "source": {
+                    "description": "actuator which initiated this scalein. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
                 "uuid": {
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
@@ -8427,6 +8435,10 @@
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
+                },
+                "source": {
+                    "description": "actuator which initiated this scaleout. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 },
                 "to_host_ref": {
                     "description": " It is a reference to an object of type VIMgrHostRuntime. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
