@@ -54,11 +54,20 @@ type ServiceEngineGroup struct {
 	// Capacities of SE for auto rebalance for each criteria. Field introduced in 17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoRebalanceCapacityPerSe []int64 `json:"auto_rebalance_capacity_per_se,omitempty,omitempty"`
 
+	// The time in minutes controller waits before rebalancing the Vs again after a scalein/scaleout. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AutoRebalanceCoolDownTime *uint32 `json:"auto_rebalance_cool_down_time,omitempty"`
+
 	// Set of criteria for SE Auto Rebalance. Enum options - SE_AUTO_REBALANCE_CPU, SE_AUTO_REBALANCE_PPS, SE_AUTO_REBALANCE_MBPS, SE_AUTO_REBALANCE_OPEN_CONNS, SE_AUTO_REBALANCE_CPS. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoRebalanceCriteria []string `json:"auto_rebalance_criteria,omitempty"`
 
+	// If enabled, the controller will not perform the rebalance actions.It will only generate the actions and update that in the debug api.This is useful for testing the rebalance logic without actually performing the actions. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AutoRebalanceDryRunEnabled *bool `json:"auto_rebalance_dry_run_enabled,omitempty"`
+
 	// Frequency of rebalance, if 'Auto rebalance' is enabled. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoRebalanceInterval *int32 `json:"auto_rebalance_interval,omitempty"`
+
+	// If enabled, the controller will raise events for rebalance actions. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AutoRebalanceRaiseEventsForActions *bool `json:"auto_rebalance_raise_events_for_actions,omitempty"`
 
 	// Redistribution of virtual services from the takeover SE to the replacement SE can cause momentary traffic loss. If the auto-redistribute load option is left in its default off state, any desired rebalancing requires calls to REST API. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
 	AutoRedistributeActiveStandbyLoad *bool `json:"auto_redistribute_active_standby_load,omitempty"`

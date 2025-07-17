@@ -458,6 +458,9 @@ type EventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SchedulerActionInfo *SchedulerActionDetails `json:"scheduler_action_info,omitempty"`
 
+	// Details about the SE Autoscaler actions generated. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SeAutoscalerEventDetails *SeAutoScalerEventDetails `json:"se_autoscaler_event_details,omitempty"`
+
 	//  Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeBgpPeerDownDetails *SeBgpPeerDownDetails `json:"se_bgp_peer_down_details,omitempty"`
 
