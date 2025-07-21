@@ -552,13 +552,14 @@
         "ArchivePolicy": {
             "type": "object",
             "properties": {
-                "source": {
+                "file_path": {
                     "description": "Specify a file path to add archive rule. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "threshold": {
                     "description": "Specify a threshold for file path in MB. Field introduced in 31.2.1. Unit is MB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
+                    "default": 128,
                     "format": "uint32"
                 }
             }
@@ -649,7 +650,7 @@
                 "no_of_techsupport_retentions": {
                     "description": "Number of techsupport to retain from techsupport cleanup policy. Allowed values are 1-5. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "default": 1,
+                    "default": 4,
                     "format": "uint32"
                 },
                 "simultaneous_invocations": {
