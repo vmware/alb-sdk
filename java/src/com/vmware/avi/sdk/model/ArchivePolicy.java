@@ -21,11 +21,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ArchivePolicy  {
-    @JsonProperty("source")
-    private String source;
+    @JsonProperty("file_path")
+    private String filePath;
 
     @JsonProperty("threshold")
-    private Integer threshold;
+    private Integer threshold = 128;
 
 
 
@@ -35,10 +35,10 @@ public class ArchivePolicy  {
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return source
+     * @return filePath
      */
-    public String getSource() {
-        return source;
+    public String getFilePath() {
+        return filePath;
     }
 
     /**
@@ -47,10 +47,10 @@ public class ArchivePolicy  {
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param source set the source.
+     * @param filePath set the filePath.
      */
-    public void setSource(String  source) {
-        this.source = source;
+    public void setFilePath(String  filePath) {
+        this.filePath = filePath;
     }
 
     /**
@@ -59,7 +59,7 @@ public class ArchivePolicy  {
      * Field introduced in 31.2.1.
      * Unit is mb.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @return threshold
      */
     public Integer getThreshold() {
@@ -72,7 +72,7 @@ public class ArchivePolicy  {
      * Field introduced in 31.2.1.
      * Unit is mb.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @param threshold set the threshold.
      */
     public void setThreshold(Integer  threshold) {
@@ -89,7 +89,7 @@ public class ArchivePolicy  {
           return false;
       }
       ArchivePolicy objArchivePolicy = (ArchivePolicy) o;
-      return   Objects.equals(this.source, objArchivePolicy.source)&&
+      return   Objects.equals(this.filePath, objArchivePolicy.filePath)&&
   Objects.equals(this.threshold, objArchivePolicy.threshold);
     }
 
@@ -97,7 +97,7 @@ public class ArchivePolicy  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class ArchivePolicy {\n");
-                  sb.append("    source: ").append(toIndentedString(source)).append("\n");
+                  sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
                         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
                   sb.append("}");
       return sb.toString();
