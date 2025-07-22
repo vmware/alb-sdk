@@ -21748,12 +21748,12 @@ paths:
                     description: not found
 
 
-    /gslbhsmruntime:
+    /gslbsmruntime:
         get:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime
-            operationId: GET /gslbhsmruntime
+                - GslbSMRuntime
+            description: /gslbsmruntime
+            operationId: GET /gslbsmruntime
             consumes:
                 -   application/json
             produces:
@@ -21816,14 +21816,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntimeApiResponse"
+                        $ref: "#/definitions/GslbSMRuntimeApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime
-            operationId: POST /gslbhsmruntime
+                - GslbSMRuntime
+            description: /gslbsmruntime
+            operationId: POST /gslbsmruntime
             consumes:
                 -   application/json
             produces:
@@ -21851,25 +21851,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbHSMRuntime object creation
+                    description: GslbSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 "401":
                     description: log in failed
-    /gslbhsmruntime/{uuid}:
+    /gslbsmruntime/{uuid}:
         get:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime/{uuid}
-            operationId: GET /gslbhsmruntime/{uuid}
+                - GslbSMRuntime
+            description: /gslbsmruntime/{uuid}
+            operationId: GET /gslbsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -21929,14 +21929,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 "401":
                     description: log in failed
         put:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime/{uuid}
-            operationId: PUT /gslbhsmruntime/{uuid}
+                - GslbSMRuntime
+            description: /gslbsmruntime/{uuid}
+            operationId: PUT /gslbsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -21969,10 +21969,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbHSMRuntime object creation
+                    description: GslbSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -21984,14 +21984,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 "401":
                     description: log in failed
         patch:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime/{uuid}
-            operationId: PATCH /gslbhsmruntime/{uuid}
+                - GslbSMRuntime
+            description: /gslbsmruntime/{uuid}
+            operationId: PATCH /gslbsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -22024,10 +22024,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbHSMRuntime object creation
+                    description: GslbSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -22039,14 +22039,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 "401":
                     description: log in failed
         delete:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime/{uuid}
-            operationId: DELETE /gslbhsmruntime/{uuid}
+                - GslbSMRuntime
+            description: /gslbsmruntime/{uuid}
+            operationId: DELETE /gslbsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -22438,12 +22438,12 @@ paths:
                     description: not found
 
 
-    /gslbsmruntime:
+    /gslbhsmruntime:
         get:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime
-            operationId: GET /gslbsmruntime
+                - GslbHSMRuntime
+            description: /gslbhsmruntime
+            operationId: GET /gslbhsmruntime
             consumes:
                 -   application/json
             produces:
@@ -22506,14 +22506,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntimeApiResponse"
+                        $ref: "#/definitions/GslbHSMRuntimeApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime
-            operationId: POST /gslbsmruntime
+                - GslbHSMRuntime
+            description: /gslbhsmruntime
+            operationId: POST /gslbhsmruntime
             consumes:
                 -   application/json
             produces:
@@ -22541,25 +22541,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbSMRuntime object creation
+                    description: GslbHSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 "401":
                     description: log in failed
-    /gslbsmruntime/{uuid}:
+    /gslbhsmruntime/{uuid}:
         get:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime/{uuid}
-            operationId: GET /gslbsmruntime/{uuid}
+                - GslbHSMRuntime
+            description: /gslbhsmruntime/{uuid}
+            operationId: GET /gslbhsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -22619,14 +22619,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 "401":
                     description: log in failed
         put:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime/{uuid}
-            operationId: PUT /gslbsmruntime/{uuid}
+                - GslbHSMRuntime
+            description: /gslbhsmruntime/{uuid}
+            operationId: PUT /gslbhsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -22659,10 +22659,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbSMRuntime object creation
+                    description: GslbHSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -22674,14 +22674,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 "401":
                     description: log in failed
         patch:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime/{uuid}
-            operationId: PATCH /gslbsmruntime/{uuid}
+                - GslbHSMRuntime
+            description: /gslbhsmruntime/{uuid}
+            operationId: PATCH /gslbhsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -22714,10 +22714,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbSMRuntime object creation
+                    description: GslbHSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -22729,14 +22729,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 "401":
                     description: log in failed
         delete:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime/{uuid}
-            operationId: DELETE /gslbsmruntime/{uuid}
+                - GslbHSMRuntime
+            description: /gslbhsmruntime/{uuid}
+            operationId: DELETE /gslbhsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -62880,50 +62880,6 @@ paths:
                 "401":
                     description: log in failed
     /fileobject/{uuid}/['']/:
-        patch:
-            tags:
-                - FileObject
-            description: /fileobject/{uuid}/['']/
-            operationId: PATCH /fileobject/{uuid}/['']/
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        type: string
-                "401":
-                    description: log in failed
         put:
             tags:
                 - FileObject
@@ -62962,6 +62918,50 @@ paths:
                         type: object
                         additionalProperties:
                             type: string
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
+                    description: log in failed
+        patch:
+            tags:
+                - FileObject
+            description: /fileobject/{uuid}/['']/
+            operationId: PATCH /fileobject/{uuid}/['']/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
