@@ -464,8 +464,18 @@ definitions:
                 items:
                     $ref: '#/definitions/AZCluster'
             az_datastore:
-                description: "Datastores associated with the AZ. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Group of datastores associated with the AZ. Field deprecated in 31.2.1. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AZDatastore'
+            az_datastores:
+                description: "Group of datastores associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/AZDatastore'
+            az_hosts:
+                description: "Group of hosts associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/AZHost'
             cloud_ref:
                 description: "Availability zone belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -509,12 +519,12 @@ definitions:
         type: object
         properties:
             cluster_ids:
-                description: "Managed Object Id of clusters belongs to the AZ. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "A list of Managed Object IDs (MOIDs) of vCenter clusters that are part of this Availability Zone. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             vcenter_ref:
-                description: "Vcenter Id of the clusters. It is a reference to an object of type VCenterServer. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "The UUID of the vCenter Server that manages the clusters associated with this AvailabilityZone. It is a reference to an object of type VCenterServer. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     AZDatastore:
         type: object
@@ -527,6 +537,20 @@ definitions:
             include:
                 description: "Include or exclude the datastores from the list. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
+            vcenter_ref:
+                description: "Vcenter Id of the datastores. It is a reference to an object of type VCenterServer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+    AZHost:
+        type: object
+        properties:
+            host_ids:
+                description: "A list of Managed Object IDs (MOIDs) of vCenter hosts that are part of this Availability Zone. Field introduced in 31.2.1. Minimum of 1 items required. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            vcenter_ref:
+                description: "The UUID of the vCenter Server that manages the hosts associated with this AvailabilityZone. It is a reference to an object of type VCenterServer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
     ConfigPbAttributes:
         type: object
         properties:

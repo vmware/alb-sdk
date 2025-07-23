@@ -683,6 +683,18 @@ definitions:
             username:
                 description: "Username for proxy. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    QuotaConfig:
+        type: object
+        properties:
+            limit:
+                description: "Maximum license service units allowed for consumption. -1 as Default is maximum value. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: -1
+                format: int64
+            reservation:
+                description: "Minimum license service units reserved for consumption. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
     RemoteAuthConfiguration:
         type: object
         required:
@@ -825,6 +837,10 @@ definitions:
             enable_host_header_check:
                 description: "Validates the host header against a list of trusted domains. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
+            enable_license_quota:
+                description: "Enable license quota for the system. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
             fips_mode:
                 description: "FIPS mode current state. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
@@ -840,6 +856,9 @@ definitions:
             legacy_ssl_support:
                 description: "Allow Outgoing Connections from Controller to Servers Using TLS 1.0/1.1. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
+            license_quota:
+                description: "License quota for the system. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/QuotaConfig'
             linux_configuration:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LinuxConfiguration'
@@ -980,6 +999,9 @@ definitions:
     TenantConfiguration:
         type: object
         properties:
+            license_quota:
+                description: "License quota for the tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/QuotaConfig'
             se_in_provider_context:
                 description: "Controls the ownership of ServiceEngines. Service Engines can either be exclusively owned by each tenant or owned by the administrator and shared by all tenants. When ServiceEngines are owned by the administrator, each tenant can have either read access or no access to their Service Engines. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean

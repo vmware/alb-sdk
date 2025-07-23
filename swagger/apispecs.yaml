@@ -31600,403 +31600,6 @@ paths:
           description: log in failed
         '404':
           description: object not found
-  /gslbhsmruntime:
-    get:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: GET /gslbhsmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: POST /gslbhsmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbHSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbHSMRuntime'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-  /gslbhsmruntime/{uuid}:
-    get:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: GET /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbHSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbHSMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbHSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbHSMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    delete:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
-        '404':
-          description: object not found
   /gslbsmruntime:
     get:
       tags:
@@ -32344,6 +31947,403 @@ paths:
       - GslbSMRuntime
       description: /gslbsmruntime/{uuid}/{uuid}
       operationId: DELETE /gslbsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: object not found
+  /gslbhsmruntime:
+    get:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: GET /gslbhsmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: POST /gslbhsmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbHSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbHSMRuntime'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+  /gslbhsmruntime/{uuid}:
+    get:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: GET /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbHSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbHSMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbHSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbHSMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -66447,6 +66447,488 @@ paths:
             type: string
         '404':
           description: object not found
+  /debugvirtualservice:
+    get:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice
+      operationId: GET /debugvirtualservice
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: cloud_uuid
+        in: query
+        description: Filter to get objects that belongs to a specific cloud using
+          its uuid. Eg. cloud_uuid=cloud-xyz.
+        type: string
+      - name: cloud_ref.name
+        in: query
+        description: Filter to get objects that belongs to a specific cloud usings
+          its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
+        type: string
+      - name: cloud_ref.uuid
+        in: query
+        description: Filter to get objects that belongs to a specific cloud using
+          its uuid. Eg. cloud_ref.uuid=cloud_uuid.
+        type: string
+        required: false
+      - name: name.contains
+        in: query
+        description: Filter to get objects with name that contains the parameter.
+          This is a case sensitive search. Eg. name.contains=pool-.
+        type: string
+        required: false
+      - name: name.icontains
+        in: query
+        description: Filter to get objects with name that contains the parameter.
+          This is a case insensitive search. Eg. name.icontains=pool-.
+        type: string
+        required: false
+      - name: name.in
+        in: query
+        description: Filter to get objects that have a uuid matching any of the values
+          in the parameter list. Each value for this parameter is to comma separated.
+          Eg. name.in=pool-1,pool-12.
+        type: string
+        required: false
+      - name: uuid.in
+        in: query
+        description: Filter to get objects that have a uuid matching any of the values
+          in the parameter list. Each value for this parameter is to comma separated.
+          Eg. uuid.in=<uuid-1>,<uuid-2>.
+        type: string
+        required: false
+      - name: search
+        in: query
+        description: Filter to get objects that contains the search string as value
+          for any of its fields. Eg. search=LEAST_CONN. The search filter can also
+          be used to search under a specific field. This is achieved by sending the
+          parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
+        type: string
+        required: false
+      - name: isearch
+        in: query
+        description: Filter to get objects that contains case insensitive search string.
+          Eg. isearch=(name,Vs-Pool-).
+        type: string
+        required: false
+      - name: limit_by
+        in: query
+        description: Filter to limit the number of objects in the response data. Eg.
+          limit_by=3.
+        type: string
+        required: false
+      - name: exclude
+        in: query
+        description: Filter to exclude the uuid(s) contained in the parameter. Eg.
+          uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
+        type: string
+        required: false
+      - name: sort
+        in: query
+        description: Parameter to sort the results with respect to a field. Eg. sort=name.
+        type: string
+        required: false
+      - name: page
+        in: query
+        description: Parameter to specify the desired page number. The page starts
+          from 1 and default is 1.
+        type: string
+        required: false
+      - name: page_size
+        in: query
+        description: Parameter to specify the maximum number of results to be returned
+          per page. The page_size can range from 1 to 200. Eg. page_size=5.
+        type: string
+        required: false
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualServiceApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice
+      operationId: POST /debugvirtualservice
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: DebugVirtualService object creation
+        required: true
+        schema:
+          $ref: '#/definitions/DebugVirtualService'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+  /debugvirtualservice/{uuid}:
+    get:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: GET /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: PUT /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: DebugVirtualService object creation
+        required: true
+        schema:
+          $ref: '#/definitions/DebugVirtualService'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: PATCH /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: DebugVirtualService object creation
+        required: true
+        schema:
+          $ref: '#/definitions/DebugVirtualService'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: DELETE /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: object not found
   /virtualservice:
     get:
       tags:
@@ -70344,488 +70826,6 @@ paths:
             type: string
         '401':
           description: log in failed
-        '404':
-          description: object not found
-  /debugvirtualservice:
-    get:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice
-      operationId: GET /debugvirtualservice
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: cloud_uuid
-        in: query
-        description: Filter to get objects that belongs to a specific cloud using
-          its uuid. Eg. cloud_uuid=cloud-xyz.
-        type: string
-      - name: cloud_ref.name
-        in: query
-        description: Filter to get objects that belongs to a specific cloud usings
-          its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
-        type: string
-      - name: cloud_ref.uuid
-        in: query
-        description: Filter to get objects that belongs to a specific cloud using
-          its uuid. Eg. cloud_ref.uuid=cloud_uuid.
-        type: string
-        required: false
-      - name: name.contains
-        in: query
-        description: Filter to get objects with name that contains the parameter.
-          This is a case sensitive search. Eg. name.contains=pool-.
-        type: string
-        required: false
-      - name: name.icontains
-        in: query
-        description: Filter to get objects with name that contains the parameter.
-          This is a case insensitive search. Eg. name.icontains=pool-.
-        type: string
-        required: false
-      - name: name.in
-        in: query
-        description: Filter to get objects that have a uuid matching any of the values
-          in the parameter list. Each value for this parameter is to comma separated.
-          Eg. name.in=pool-1,pool-12.
-        type: string
-        required: false
-      - name: uuid.in
-        in: query
-        description: Filter to get objects that have a uuid matching any of the values
-          in the parameter list. Each value for this parameter is to comma separated.
-          Eg. uuid.in=<uuid-1>,<uuid-2>.
-        type: string
-        required: false
-      - name: search
-        in: query
-        description: Filter to get objects that contains the search string as value
-          for any of its fields. Eg. search=LEAST_CONN. The search filter can also
-          be used to search under a specific field. This is achieved by sending the
-          parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
-        type: string
-        required: false
-      - name: isearch
-        in: query
-        description: Filter to get objects that contains case insensitive search string.
-          Eg. isearch=(name,Vs-Pool-).
-        type: string
-        required: false
-      - name: limit_by
-        in: query
-        description: Filter to limit the number of objects in the response data. Eg.
-          limit_by=3.
-        type: string
-        required: false
-      - name: exclude
-        in: query
-        description: Filter to exclude the uuid(s) contained in the parameter. Eg.
-          uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
-        type: string
-        required: false
-      - name: sort
-        in: query
-        description: Parameter to sort the results with respect to a field. Eg. sort=name.
-        type: string
-        required: false
-      - name: page
-        in: query
-        description: Parameter to specify the desired page number. The page starts
-          from 1 and default is 1.
-        type: string
-        required: false
-      - name: page_size
-        in: query
-        description: Parameter to specify the maximum number of results to be returned
-          per page. The page_size can range from 1 to 200. Eg. page_size=5.
-        type: string
-        required: false
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualServiceApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice
-      operationId: POST /debugvirtualservice
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: DebugVirtualService object creation
-        required: true
-        schema:
-          $ref: '#/definitions/DebugVirtualService'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-  /debugvirtualservice/{uuid}:
-    get:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: GET /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: PUT /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: DebugVirtualService object creation
-        required: true
-        schema:
-          $ref: '#/definitions/DebugVirtualService'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: PATCH /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: DebugVirtualService object creation
-        required: true
-        schema:
-          $ref: '#/definitions/DebugVirtualService'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    delete:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: DELETE /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
         '404':
           description: object not found
   /inventoryfaultconfig:
@@ -85916,7 +85916,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -89708,7 +89710,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -94597,7 +94601,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -95077,7 +95083,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -95791,40 +95799,41 @@ definitions:
           VIDCINFO, VIPGNAMEINFO, BACKUP, SECURITYMANAGERDATA, VSAPICEXTENSION, GSLBSITE,
           GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY,
           SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE,
-          RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, TCPSTATRUNTIME,
-          UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME, IPSTKQSTATSRUNTIME,
-          MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME,
-          L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME, SEAGENTGRAPHDBRUNTIME,
-          SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME, DISPATCHERSTATRUNTIME,
-          DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME, DISPATCHERREMOTETIMERLISTDUMPRUNTIME,
-          METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME, METRICSENTITYRUNTIME, PERSISTENCEINTERNAL,
-          HTTPPOLICYSETINTERNAL, DNSPOLICYINTERNAL, CONNECTIONDUMPRUNTIME, SHAREDDBSTATS,
-          SHAREDDBSTATSCLEAR, ICMPSTATRUNTIME, ROUTETABLERUNTIME, VIRTUALMACHINE,
-          POOLSERVER, SEVSLIST, MEMINFORUNTIME, RTERINGSTATRUNTIME, ALGOSTATRUNTIME,
-          HEALTHMONITORRUNTIME, CPUSTATRUNTIME, SEVM, HOST, PORTGROUP, CLUSTER, DATACENTER,
-          VCENTER, HTTPPOLICYSETSTATS, DNSPOLICYSTATS, METRICSSESTATS, RATELIMITERSTATRUNTIME,
-          NETWORKSECURITYPOLICYSTATS, TCPCONNRUNTIME, POOLSTATS, CONNPOOLINTERNAL,
-          CONNPOOLSTATS, VSHASHSHOWRUNTIME, SELOGSTATSRUNTIME, NETWORKSECURITYPOLICYDETAIL,
-          LICENSERUNTIME, SERVERRUNTIME, METRICSRUNTIMESUMMARY, METRICSRUNTIMEDETAIL,
-          DISPATCHERSEHMPROBETEMPDISABLERUNTIME, POOLDEBUG, VSLOGMGRMAP, SERUMINSERTIONSTATS,
-          HTTPCACHE, HTTPCACHESTATS, SEDOSSTATRUNTIME, VSDOSSTATRUNTIME, SERVERUPDATEREQ,
-          VSSCALEOUTLIST, SEMEMDISTRUNTIME, TCPCONNRUNTIMEDETAIL, SEUPGRADESTATUS,
-          SEUPGRADEPREVIEW, SEFAULTINJECTEXHAUSTM, SEFAULTINJECTEXHAUSTMCL, SEFAULTINJECTEXHAUSTMCLSMALL,
-          SEFAULTINJECTEXHAUSTCONN, SEHEADLESSONLINEREQ, SEUPGRADE, SEUPGRADESTATUSDETAIL,
-          SERESERVEDVS, SERESERVEDVSCLEAR, VSCANDIDATESEHOSTLIST, SEGROUPUPGRADE,
-          REBALANCE, SEGROUPREBALANCE, SEAUTHSTATSRUNTIME, AUTOSCALESTATE, VIRTUALSERVICEAUTHSTATS,
-          NETWORKSECURITYPOLICYDOS, KEYVALINTERNAL, KEYVALSUMMARYINTERNAL, SERVERSTATEUPDATEINFO,
-          CLTRACKINTERNAL, CLTRACKSUMMARYINTERNAL, MICROSERVICERUNTIME, SEMICROSERVICE,
-          VIRTUALSERVICEANALYSIS, CLIENTINTERNAL, CLIENTSUMMARYINTERNAL, MICROSERVICEGROUPRUNTIME,
-          BGPRUNTIME, REQUESTQUEUERUNTIME, MIGRATEALL, MIGRATEALLSTATUSSUMMARY, MIGRATEALLSTATUSDETAIL,
-          INTERFACESUMMARYRUNTIME, INTERFACELACPRUNTIME, DNSTABLE, GSLBSERVICEDETAIL,
-          GSLBSERVICEINTERNAL, GSLBSERVICEHMONSTAT, SETROLESREQUEST, TRAFFICCLONERUNTIME,
-          GEOLOCATIONINFO, SEVSHBSTATRUNTIME, GEODBINTERNAL, GSLBSITEINTERNAL, WAFSTATS,
-          USERDEFINEDDATASCRIPTCOUNTERS, LLDPRUNTIME, VSESSHARINGPOOL, NDTABLERUNTIME,
-          IP6STATRUNTIME, ICMP6STATRUNTIME, SEVSSPLACEMENT, L4POLICYSETSTATS, L4POLICYSETINTERNAL,
-          BGPDEBUGINFO, SHARD, CPUSTATRUNTIMEDETAIL, SEASSERTSTATRUNTIME, SEFAULTINJECTINFRA,
-          SEAGENTASSERTSTATRUNTIME, SEDATASTORESTATUS, DIFFQUEUESTATUS, IP6ROUTETABLERUNTIME,
-          SECURITYMGRSTATE, VIRTUALSERVICESESCALEOUTSTATUS, SHARDSERVERSTATUS, SEAGENTSHARDCLIENTRESOURCEMAP,
+          RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO,
+          TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME,
+          IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME,
+          L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
+          SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME,
+          DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME,
+          DISPATCHERREMOTETIMERLISTDUMPRUNTIME, METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME,
+          METRICSENTITYRUNTIME, PERSISTENCEINTERNAL, HTTPPOLICYSETINTERNAL, DNSPOLICYINTERNAL,
+          CONNECTIONDUMPRUNTIME, SHAREDDBSTATS, SHAREDDBSTATSCLEAR, ICMPSTATRUNTIME,
+          ROUTETABLERUNTIME, VIRTUALMACHINE, POOLSERVER, SEVSLIST, MEMINFORUNTIME,
+          RTERINGSTATRUNTIME, ALGOSTATRUNTIME, HEALTHMONITORRUNTIME, CPUSTATRUNTIME,
+          SEVM, HOST, PORTGROUP, CLUSTER, DATACENTER, VCENTER, HTTPPOLICYSETSTATS,
+          DNSPOLICYSTATS, METRICSSESTATS, RATELIMITERSTATRUNTIME, NETWORKSECURITYPOLICYSTATS,
+          TCPCONNRUNTIME, POOLSTATS, CONNPOOLINTERNAL, CONNPOOLSTATS, VSHASHSHOWRUNTIME,
+          SELOGSTATSRUNTIME, NETWORKSECURITYPOLICYDETAIL, LICENSERUNTIME, SERVERRUNTIME,
+          METRICSRUNTIMESUMMARY, METRICSRUNTIMEDETAIL, DISPATCHERSEHMPROBETEMPDISABLERUNTIME,
+          POOLDEBUG, VSLOGMGRMAP, SERUMINSERTIONSTATS, HTTPCACHE, HTTPCACHESTATS,
+          SEDOSSTATRUNTIME, VSDOSSTATRUNTIME, SERVERUPDATEREQ, VSSCALEOUTLIST, SEMEMDISTRUNTIME,
+          TCPCONNRUNTIMEDETAIL, SEUPGRADESTATUS, SEUPGRADEPREVIEW, SEFAULTINJECTEXHAUSTM,
+          SEFAULTINJECTEXHAUSTMCL, SEFAULTINJECTEXHAUSTMCLSMALL, SEFAULTINJECTEXHAUSTCONN,
+          SEHEADLESSONLINEREQ, SEUPGRADE, SEUPGRADESTATUSDETAIL, SERESERVEDVS, SERESERVEDVSCLEAR,
+          VSCANDIDATESEHOSTLIST, SEGROUPUPGRADE, REBALANCE, SEGROUPREBALANCE, SEAUTHSTATSRUNTIME,
+          AUTOSCALESTATE, VIRTUALSERVICEAUTHSTATS, NETWORKSECURITYPOLICYDOS, KEYVALINTERNAL,
+          KEYVALSUMMARYINTERNAL, SERVERSTATEUPDATEINFO, CLTRACKINTERNAL, CLTRACKSUMMARYINTERNAL,
+          MICROSERVICERUNTIME, SEMICROSERVICE, VIRTUALSERVICEANALYSIS, CLIENTINTERNAL,
+          CLIENTSUMMARYINTERNAL, MICROSERVICEGROUPRUNTIME, BGPRUNTIME, REQUESTQUEUERUNTIME,
+          MIGRATEALL, MIGRATEALLSTATUSSUMMARY, MIGRATEALLSTATUSDETAIL, INTERFACESUMMARYRUNTIME,
+          INTERFACELACPRUNTIME, DNSTABLE, GSLBSERVICEDETAIL, GSLBSERVICEINTERNAL,
+          GSLBSERVICEHMONSTAT, SETROLESREQUEST, TRAFFICCLONERUNTIME, GEOLOCATIONINFO,
+          SEVSHBSTATRUNTIME, GEODBINTERNAL, GSLBSITEINTERNAL, WAFSTATS, USERDEFINEDDATASCRIPTCOUNTERS,
+          LLDPRUNTIME, VSESSHARINGPOOL, NDTABLERUNTIME, IP6STATRUNTIME, ICMP6STATRUNTIME,
+          SEVSSPLACEMENT, L4POLICYSETSTATS, L4POLICYSETINTERNAL, BGPDEBUGINFO, SHARD,
+          CPUSTATRUNTIMEDETAIL, SEASSERTSTATRUNTIME, SEFAULTINJECTINFRA, SEAGENTASSERTSTATRUNTIME,
+          SEDATASTORESTATUS, DIFFQUEUESTATUS, IP6ROUTETABLERUNTIME, SECURITYMGRSTATE,
+          VIRTUALSERVICESESCALEOUTSTATUS, SHARDSERVERSTATUS, SEAGENTSHARDCLIENTRESOURCEMAP,
           SEAGENTCONSISTENTHASH, SEAGENTVNICDBHISTORY, SEAGENTSHARDCLIENTAPPMAP, SEAGENTSHARDCLIENTEVENTHISTORY,
           NATSTATRUNTIME, NATFLOWRUNTIME, SECUTIRYMGRRUNTIME, SSOPOLICYSTATS, SENETWORKSERVICERUNTIME,
           SEGEORUNTIME, NATPOLICYSTATS, SEFAULTRUNTIME, VIRTUALSERVICESCALEOUTSTATUS,
@@ -96121,40 +96130,41 @@ definitions:
           VIDCINFO, VIPGNAMEINFO, BACKUP, SECURITYMANAGERDATA, VSAPICEXTENSION, GSLBSITE,
           GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY,
           SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE,
-          RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, TCPSTATRUNTIME,
-          UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME, IPSTKQSTATSRUNTIME,
-          MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME,
-          L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME, SEAGENTGRAPHDBRUNTIME,
-          SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME, DISPATCHERSTATRUNTIME,
-          DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME, DISPATCHERREMOTETIMERLISTDUMPRUNTIME,
-          METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME, METRICSENTITYRUNTIME, PERSISTENCEINTERNAL,
-          HTTPPOLICYSETINTERNAL, DNSPOLICYINTERNAL, CONNECTIONDUMPRUNTIME, SHAREDDBSTATS,
-          SHAREDDBSTATSCLEAR, ICMPSTATRUNTIME, ROUTETABLERUNTIME, VIRTUALMACHINE,
-          POOLSERVER, SEVSLIST, MEMINFORUNTIME, RTERINGSTATRUNTIME, ALGOSTATRUNTIME,
-          HEALTHMONITORRUNTIME, CPUSTATRUNTIME, SEVM, HOST, PORTGROUP, CLUSTER, DATACENTER,
-          VCENTER, HTTPPOLICYSETSTATS, DNSPOLICYSTATS, METRICSSESTATS, RATELIMITERSTATRUNTIME,
-          NETWORKSECURITYPOLICYSTATS, TCPCONNRUNTIME, POOLSTATS, CONNPOOLINTERNAL,
-          CONNPOOLSTATS, VSHASHSHOWRUNTIME, SELOGSTATSRUNTIME, NETWORKSECURITYPOLICYDETAIL,
-          LICENSERUNTIME, SERVERRUNTIME, METRICSRUNTIMESUMMARY, METRICSRUNTIMEDETAIL,
-          DISPATCHERSEHMPROBETEMPDISABLERUNTIME, POOLDEBUG, VSLOGMGRMAP, SERUMINSERTIONSTATS,
-          HTTPCACHE, HTTPCACHESTATS, SEDOSSTATRUNTIME, VSDOSSTATRUNTIME, SERVERUPDATEREQ,
-          VSSCALEOUTLIST, SEMEMDISTRUNTIME, TCPCONNRUNTIMEDETAIL, SEUPGRADESTATUS,
-          SEUPGRADEPREVIEW, SEFAULTINJECTEXHAUSTM, SEFAULTINJECTEXHAUSTMCL, SEFAULTINJECTEXHAUSTMCLSMALL,
-          SEFAULTINJECTEXHAUSTCONN, SEHEADLESSONLINEREQ, SEUPGRADE, SEUPGRADESTATUSDETAIL,
-          SERESERVEDVS, SERESERVEDVSCLEAR, VSCANDIDATESEHOSTLIST, SEGROUPUPGRADE,
-          REBALANCE, SEGROUPREBALANCE, SEAUTHSTATSRUNTIME, AUTOSCALESTATE, VIRTUALSERVICEAUTHSTATS,
-          NETWORKSECURITYPOLICYDOS, KEYVALINTERNAL, KEYVALSUMMARYINTERNAL, SERVERSTATEUPDATEINFO,
-          CLTRACKINTERNAL, CLTRACKSUMMARYINTERNAL, MICROSERVICERUNTIME, SEMICROSERVICE,
-          VIRTUALSERVICEANALYSIS, CLIENTINTERNAL, CLIENTSUMMARYINTERNAL, MICROSERVICEGROUPRUNTIME,
-          BGPRUNTIME, REQUESTQUEUERUNTIME, MIGRATEALL, MIGRATEALLSTATUSSUMMARY, MIGRATEALLSTATUSDETAIL,
-          INTERFACESUMMARYRUNTIME, INTERFACELACPRUNTIME, DNSTABLE, GSLBSERVICEDETAIL,
-          GSLBSERVICEINTERNAL, GSLBSERVICEHMONSTAT, SETROLESREQUEST, TRAFFICCLONERUNTIME,
-          GEOLOCATIONINFO, SEVSHBSTATRUNTIME, GEODBINTERNAL, GSLBSITEINTERNAL, WAFSTATS,
-          USERDEFINEDDATASCRIPTCOUNTERS, LLDPRUNTIME, VSESSHARINGPOOL, NDTABLERUNTIME,
-          IP6STATRUNTIME, ICMP6STATRUNTIME, SEVSSPLACEMENT, L4POLICYSETSTATS, L4POLICYSETINTERNAL,
-          BGPDEBUGINFO, SHARD, CPUSTATRUNTIMEDETAIL, SEASSERTSTATRUNTIME, SEFAULTINJECTINFRA,
-          SEAGENTASSERTSTATRUNTIME, SEDATASTORESTATUS, DIFFQUEUESTATUS, IP6ROUTETABLERUNTIME,
-          SECURITYMGRSTATE, VIRTUALSERVICESESCALEOUTSTATUS, SHARDSERVERSTATUS, SEAGENTSHARDCLIENTRESOURCEMAP,
+          RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO,
+          TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME,
+          IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME,
+          L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
+          SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME,
+          DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME,
+          DISPATCHERREMOTETIMERLISTDUMPRUNTIME, METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME,
+          METRICSENTITYRUNTIME, PERSISTENCEINTERNAL, HTTPPOLICYSETINTERNAL, DNSPOLICYINTERNAL,
+          CONNECTIONDUMPRUNTIME, SHAREDDBSTATS, SHAREDDBSTATSCLEAR, ICMPSTATRUNTIME,
+          ROUTETABLERUNTIME, VIRTUALMACHINE, POOLSERVER, SEVSLIST, MEMINFORUNTIME,
+          RTERINGSTATRUNTIME, ALGOSTATRUNTIME, HEALTHMONITORRUNTIME, CPUSTATRUNTIME,
+          SEVM, HOST, PORTGROUP, CLUSTER, DATACENTER, VCENTER, HTTPPOLICYSETSTATS,
+          DNSPOLICYSTATS, METRICSSESTATS, RATELIMITERSTATRUNTIME, NETWORKSECURITYPOLICYSTATS,
+          TCPCONNRUNTIME, POOLSTATS, CONNPOOLINTERNAL, CONNPOOLSTATS, VSHASHSHOWRUNTIME,
+          SELOGSTATSRUNTIME, NETWORKSECURITYPOLICYDETAIL, LICENSERUNTIME, SERVERRUNTIME,
+          METRICSRUNTIMESUMMARY, METRICSRUNTIMEDETAIL, DISPATCHERSEHMPROBETEMPDISABLERUNTIME,
+          POOLDEBUG, VSLOGMGRMAP, SERUMINSERTIONSTATS, HTTPCACHE, HTTPCACHESTATS,
+          SEDOSSTATRUNTIME, VSDOSSTATRUNTIME, SERVERUPDATEREQ, VSSCALEOUTLIST, SEMEMDISTRUNTIME,
+          TCPCONNRUNTIMEDETAIL, SEUPGRADESTATUS, SEUPGRADEPREVIEW, SEFAULTINJECTEXHAUSTM,
+          SEFAULTINJECTEXHAUSTMCL, SEFAULTINJECTEXHAUSTMCLSMALL, SEFAULTINJECTEXHAUSTCONN,
+          SEHEADLESSONLINEREQ, SEUPGRADE, SEUPGRADESTATUSDETAIL, SERESERVEDVS, SERESERVEDVSCLEAR,
+          VSCANDIDATESEHOSTLIST, SEGROUPUPGRADE, REBALANCE, SEGROUPREBALANCE, SEAUTHSTATSRUNTIME,
+          AUTOSCALESTATE, VIRTUALSERVICEAUTHSTATS, NETWORKSECURITYPOLICYDOS, KEYVALINTERNAL,
+          KEYVALSUMMARYINTERNAL, SERVERSTATEUPDATEINFO, CLTRACKINTERNAL, CLTRACKSUMMARYINTERNAL,
+          MICROSERVICERUNTIME, SEMICROSERVICE, VIRTUALSERVICEANALYSIS, CLIENTINTERNAL,
+          CLIENTSUMMARYINTERNAL, MICROSERVICEGROUPRUNTIME, BGPRUNTIME, REQUESTQUEUERUNTIME,
+          MIGRATEALL, MIGRATEALLSTATUSSUMMARY, MIGRATEALLSTATUSDETAIL, INTERFACESUMMARYRUNTIME,
+          INTERFACELACPRUNTIME, DNSTABLE, GSLBSERVICEDETAIL, GSLBSERVICEINTERNAL,
+          GSLBSERVICEHMONSTAT, SETROLESREQUEST, TRAFFICCLONERUNTIME, GEOLOCATIONINFO,
+          SEVSHBSTATRUNTIME, GEODBINTERNAL, GSLBSITEINTERNAL, WAFSTATS, USERDEFINEDDATASCRIPTCOUNTERS,
+          LLDPRUNTIME, VSESSHARINGPOOL, NDTABLERUNTIME, IP6STATRUNTIME, ICMP6STATRUNTIME,
+          SEVSSPLACEMENT, L4POLICYSETSTATS, L4POLICYSETINTERNAL, BGPDEBUGINFO, SHARD,
+          CPUSTATRUNTIMEDETAIL, SEASSERTSTATRUNTIME, SEFAULTINJECTINFRA, SEAGENTASSERTSTATRUNTIME,
+          SEDATASTORESTATUS, DIFFQUEUESTATUS, IP6ROUTETABLERUNTIME, SECURITYMGRSTATE,
+          VIRTUALSERVICESESCALEOUTSTATUS, SHARDSERVERSTATUS, SEAGENTSHARDCLIENTRESOURCEMAP,
           SEAGENTCONSISTENTHASH, SEAGENTVNICDBHISTORY, SEAGENTSHARDCLIENTAPPMAP, SEAGENTSHARDCLIENTEVENTHISTORY,
           NATSTATRUNTIME, NATFLOWRUNTIME, SECUTIRYMGRRUNTIME, SSOPOLICYSTATS, SENETWORKSERVICERUNTIME,
           SEGEORUNTIME, NATPOLICYSTATS, SEFAULTRUNTIME, VIRTUALSERVICESCALEOUTSTATUS,
@@ -99919,9 +99929,23 @@ definitions:
         items:
           $ref: '#/definitions/AZCluster'
       az_datastore:
-        description: Datastores associated with the AZ. Field introduced in 31.1.1.
-          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        description: Group of datastores associated with the AZ. Field deprecated
+          in 31.2.1. Field introduced in 31.1.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
         $ref: '#/definitions/AZDatastore'
+      az_datastores:
+        description: Group of datastores associated with the AZ. Field introduced
+          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: array
+        items:
+          $ref: '#/definitions/AZDatastore'
+      az_hosts:
+        description: Group of hosts associated with the AZ. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/AZHost'
       cloud_ref:
         description: Availability zone belongs to cloud. It is a reference to an object
           of type Cloud. Field introduced in 20.1.1. Allowed with any value in Enterprise,
@@ -100235,16 +100259,17 @@ definitions:
     type: object
     properties:
       cluster_ids:
-        description: Managed Object Id of clusters belongs to the AZ. Field introduced
-          in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
-          edition.
+        description: A list of Managed Object IDs (MOIDs) of vCenter clusters that
+          are part of this Availability Zone. Field introduced in 31.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
         type: array
         items:
           type: string
       vcenter_ref:
-        description: Vcenter Id of the clusters. It is a reference to an object of
-          type VCenterServer. Field introduced in 31.1.1. Allowed with any value in
-          Enterprise, Enterprise with Cloud Services edition.
+        description: The UUID of the vCenter Server that manages the clusters associated
+          with this AvailabilityZone. It is a reference to an object of type VCenterServer.
+          Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
         type: string
   AZDatastore:
     type: object
@@ -100261,6 +100286,28 @@ definitions:
           in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
           edition.
         type: boolean
+      vcenter_ref:
+        description: Vcenter Id of the datastores. It is a reference to an object
+          of type VCenterServer. Field introduced in 31.2.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+  AZHost:
+    type: object
+    properties:
+      host_ids:
+        description: A list of Managed Object IDs (MOIDs) of vCenter hosts that are
+          part of this Availability Zone. Field introduced in 31.2.1. Minimum of 1
+          items required. Allowed with any value in Enterprise, Enterprise with Cloud
+          Services edition.
+        type: array
+        items:
+          type: string
+      vcenter_ref:
+        description: The UUID of the vCenter Server that manages the hosts associated
+          with this AvailabilityZone. It is a reference to an object of type VCenterServer.
+          Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
+        type: string
   AzureClusterInfo:
     type: object
     required:
@@ -102156,7 +102203,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -112472,40 +112521,41 @@ definitions:
           VIDCINFO, VIPGNAMEINFO, BACKUP, SECURITYMANAGERDATA, VSAPICEXTENSION, GSLBSITE,
           GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY,
           SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE,
-          RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, TCPSTATRUNTIME,
-          UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME, IPSTKQSTATSRUNTIME,
-          MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME,
-          L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME, SEAGENTGRAPHDBRUNTIME,
-          SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME, DISPATCHERSTATRUNTIME,
-          DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME, DISPATCHERREMOTETIMERLISTDUMPRUNTIME,
-          METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME, METRICSENTITYRUNTIME, PERSISTENCEINTERNAL,
-          HTTPPOLICYSETINTERNAL, DNSPOLICYINTERNAL, CONNECTIONDUMPRUNTIME, SHAREDDBSTATS,
-          SHAREDDBSTATSCLEAR, ICMPSTATRUNTIME, ROUTETABLERUNTIME, VIRTUALMACHINE,
-          POOLSERVER, SEVSLIST, MEMINFORUNTIME, RTERINGSTATRUNTIME, ALGOSTATRUNTIME,
-          HEALTHMONITORRUNTIME, CPUSTATRUNTIME, SEVM, HOST, PORTGROUP, CLUSTER, DATACENTER,
-          VCENTER, HTTPPOLICYSETSTATS, DNSPOLICYSTATS, METRICSSESTATS, RATELIMITERSTATRUNTIME,
-          NETWORKSECURITYPOLICYSTATS, TCPCONNRUNTIME, POOLSTATS, CONNPOOLINTERNAL,
-          CONNPOOLSTATS, VSHASHSHOWRUNTIME, SELOGSTATSRUNTIME, NETWORKSECURITYPOLICYDETAIL,
-          LICENSERUNTIME, SERVERRUNTIME, METRICSRUNTIMESUMMARY, METRICSRUNTIMEDETAIL,
-          DISPATCHERSEHMPROBETEMPDISABLERUNTIME, POOLDEBUG, VSLOGMGRMAP, SERUMINSERTIONSTATS,
-          HTTPCACHE, HTTPCACHESTATS, SEDOSSTATRUNTIME, VSDOSSTATRUNTIME, SERVERUPDATEREQ,
-          VSSCALEOUTLIST, SEMEMDISTRUNTIME, TCPCONNRUNTIMEDETAIL, SEUPGRADESTATUS,
-          SEUPGRADEPREVIEW, SEFAULTINJECTEXHAUSTM, SEFAULTINJECTEXHAUSTMCL, SEFAULTINJECTEXHAUSTMCLSMALL,
-          SEFAULTINJECTEXHAUSTCONN, SEHEADLESSONLINEREQ, SEUPGRADE, SEUPGRADESTATUSDETAIL,
-          SERESERVEDVS, SERESERVEDVSCLEAR, VSCANDIDATESEHOSTLIST, SEGROUPUPGRADE,
-          REBALANCE, SEGROUPREBALANCE, SEAUTHSTATSRUNTIME, AUTOSCALESTATE, VIRTUALSERVICEAUTHSTATS,
-          NETWORKSECURITYPOLICYDOS, KEYVALINTERNAL, KEYVALSUMMARYINTERNAL, SERVERSTATEUPDATEINFO,
-          CLTRACKINTERNAL, CLTRACKSUMMARYINTERNAL, MICROSERVICERUNTIME, SEMICROSERVICE,
-          VIRTUALSERVICEANALYSIS, CLIENTINTERNAL, CLIENTSUMMARYINTERNAL, MICROSERVICEGROUPRUNTIME,
-          BGPRUNTIME, REQUESTQUEUERUNTIME, MIGRATEALL, MIGRATEALLSTATUSSUMMARY, MIGRATEALLSTATUSDETAIL,
-          INTERFACESUMMARYRUNTIME, INTERFACELACPRUNTIME, DNSTABLE, GSLBSERVICEDETAIL,
-          GSLBSERVICEINTERNAL, GSLBSERVICEHMONSTAT, SETROLESREQUEST, TRAFFICCLONERUNTIME,
-          GEOLOCATIONINFO, SEVSHBSTATRUNTIME, GEODBINTERNAL, GSLBSITEINTERNAL, WAFSTATS,
-          USERDEFINEDDATASCRIPTCOUNTERS, LLDPRUNTIME, VSESSHARINGPOOL, NDTABLERUNTIME,
-          IP6STATRUNTIME, ICMP6STATRUNTIME, SEVSSPLACEMENT, L4POLICYSETSTATS, L4POLICYSETINTERNAL,
-          BGPDEBUGINFO, SHARD, CPUSTATRUNTIMEDETAIL, SEASSERTSTATRUNTIME, SEFAULTINJECTINFRA,
-          SEAGENTASSERTSTATRUNTIME, SEDATASTORESTATUS, DIFFQUEUESTATUS, IP6ROUTETABLERUNTIME,
-          SECURITYMGRSTATE, VIRTUALSERVICESESCALEOUTSTATUS, SHARDSERVERSTATUS, SEAGENTSHARDCLIENTRESOURCEMAP,
+          RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO,
+          TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME,
+          IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME,
+          L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
+          SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME,
+          DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME,
+          DISPATCHERREMOTETIMERLISTDUMPRUNTIME, METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME,
+          METRICSENTITYRUNTIME, PERSISTENCEINTERNAL, HTTPPOLICYSETINTERNAL, DNSPOLICYINTERNAL,
+          CONNECTIONDUMPRUNTIME, SHAREDDBSTATS, SHAREDDBSTATSCLEAR, ICMPSTATRUNTIME,
+          ROUTETABLERUNTIME, VIRTUALMACHINE, POOLSERVER, SEVSLIST, MEMINFORUNTIME,
+          RTERINGSTATRUNTIME, ALGOSTATRUNTIME, HEALTHMONITORRUNTIME, CPUSTATRUNTIME,
+          SEVM, HOST, PORTGROUP, CLUSTER, DATACENTER, VCENTER, HTTPPOLICYSETSTATS,
+          DNSPOLICYSTATS, METRICSSESTATS, RATELIMITERSTATRUNTIME, NETWORKSECURITYPOLICYSTATS,
+          TCPCONNRUNTIME, POOLSTATS, CONNPOOLINTERNAL, CONNPOOLSTATS, VSHASHSHOWRUNTIME,
+          SELOGSTATSRUNTIME, NETWORKSECURITYPOLICYDETAIL, LICENSERUNTIME, SERVERRUNTIME,
+          METRICSRUNTIMESUMMARY, METRICSRUNTIMEDETAIL, DISPATCHERSEHMPROBETEMPDISABLERUNTIME,
+          POOLDEBUG, VSLOGMGRMAP, SERUMINSERTIONSTATS, HTTPCACHE, HTTPCACHESTATS,
+          SEDOSSTATRUNTIME, VSDOSSTATRUNTIME, SERVERUPDATEREQ, VSSCALEOUTLIST, SEMEMDISTRUNTIME,
+          TCPCONNRUNTIMEDETAIL, SEUPGRADESTATUS, SEUPGRADEPREVIEW, SEFAULTINJECTEXHAUSTM,
+          SEFAULTINJECTEXHAUSTMCL, SEFAULTINJECTEXHAUSTMCLSMALL, SEFAULTINJECTEXHAUSTCONN,
+          SEHEADLESSONLINEREQ, SEUPGRADE, SEUPGRADESTATUSDETAIL, SERESERVEDVS, SERESERVEDVSCLEAR,
+          VSCANDIDATESEHOSTLIST, SEGROUPUPGRADE, REBALANCE, SEGROUPREBALANCE, SEAUTHSTATSRUNTIME,
+          AUTOSCALESTATE, VIRTUALSERVICEAUTHSTATS, NETWORKSECURITYPOLICYDOS, KEYVALINTERNAL,
+          KEYVALSUMMARYINTERNAL, SERVERSTATEUPDATEINFO, CLTRACKINTERNAL, CLTRACKSUMMARYINTERNAL,
+          MICROSERVICERUNTIME, SEMICROSERVICE, VIRTUALSERVICEANALYSIS, CLIENTINTERNAL,
+          CLIENTSUMMARYINTERNAL, MICROSERVICEGROUPRUNTIME, BGPRUNTIME, REQUESTQUEUERUNTIME,
+          MIGRATEALL, MIGRATEALLSTATUSSUMMARY, MIGRATEALLSTATUSDETAIL, INTERFACESUMMARYRUNTIME,
+          INTERFACELACPRUNTIME, DNSTABLE, GSLBSERVICEDETAIL, GSLBSERVICEINTERNAL,
+          GSLBSERVICEHMONSTAT, SETROLESREQUEST, TRAFFICCLONERUNTIME, GEOLOCATIONINFO,
+          SEVSHBSTATRUNTIME, GEODBINTERNAL, GSLBSITEINTERNAL, WAFSTATS, USERDEFINEDDATASCRIPTCOUNTERS,
+          LLDPRUNTIME, VSESSHARINGPOOL, NDTABLERUNTIME, IP6STATRUNTIME, ICMP6STATRUNTIME,
+          SEVSSPLACEMENT, L4POLICYSETSTATS, L4POLICYSETINTERNAL, BGPDEBUGINFO, SHARD,
+          CPUSTATRUNTIMEDETAIL, SEASSERTSTATRUNTIME, SEFAULTINJECTINFRA, SEAGENTASSERTSTATRUNTIME,
+          SEDATASTORESTATUS, DIFFQUEUESTATUS, IP6ROUTETABLERUNTIME, SECURITYMGRSTATE,
+          VIRTUALSERVICESESCALEOUTSTATUS, SHARDSERVERSTATUS, SEAGENTSHARDCLIENTRESOURCEMAP,
           SEAGENTCONSISTENTHASH, SEAGENTVNICDBHISTORY, SEAGENTSHARDCLIENTAPPMAP, SEAGENTSHARDCLIENTEVENTHISTORY,
           NATSTATRUNTIME, NATFLOWRUNTIME, SECUTIRYMGRRUNTIME, SSOPOLICYSTATS, SENETWORKSERVICERUNTIME,
           SEGEORUNTIME, NATPOLICYSTATS, SEFAULTRUNTIME, VIRTUALSERVICESCALEOUTSTATUS,
@@ -112705,7 +112755,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -118589,7 +118641,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -121192,6 +121246,12 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/LicenseInfo'
+      se_group_infos:
+        description: Maintain information about SE Group. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/SeGroupInfo'
       se_infos:
         description: Maintain information about consumed licenses against se_uuid.
           Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials,
@@ -121199,6 +121259,12 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/LicenseInfo'
+      tenant_infos:
+        description: Maintain information about Tenant. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/LicenseReservationInfo'
       tier_usages:
         description: License usage per tier. Field introduced in 20.1.1. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
@@ -121206,6 +121272,12 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/LicenseTierUsage'
+      total_licenses_reserved:
+        description: Total of max licenses reserved as per quota config of tenant/segroup.
+          Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
+        type: integer
+        format: int64
       url:
         description: url
         readOnly: true
@@ -121229,6 +121301,19 @@ definitions:
         items:
           $ref: '#/definitions/LicenseLedgerDetails'
       next:
+        type: string
+  LicenseReservationInfo:
+    type: object
+    properties:
+      reserved:
+        description: License Cores reserved by tenant/se group. Field introduced in
+          31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: integer
+        format: int64
+      uuid:
+        description: Uuid for tenant/se group. Field introduced in 31.2.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
   LicenseServiceUpdate:
     type: object
@@ -128194,7 +128279,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -128834,6 +128921,22 @@ definitions:
           Enterprise with Cloud Services edition.
         type: integer
         format: uint32
+  QuotaConfig:
+    type: object
+    properties:
+      limit:
+        description: Maximum license service units allowed for consumption. -1 as
+          Default is maximum value. Field introduced in 31.2.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        type: integer
+        default: -1
+        format: int64
+      reservation:
+        description: Minimum license service units reserved for consumption. Field
+          introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        type: integer
+        format: uint64
   RancherConfiguration:
     type: object
     properties:
@@ -129574,7 +129677,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -130226,7 +130331,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -131140,18 +131247,6 @@ definitions:
           \ Enterprise with Cloud Services edition."
         type: boolean
         default: true
-      max_service_units:
-        description: Maximum service units limit for controller. Allowed values are
-          0-100000. Special values are 0 - infinite. Field introduced in 21.1.3. Allowed
-          with any value in Enterprise, Enterprise with Cloud Services edition.
-        type: number
-        format: double
-      reserve_service_units:
-        description: Minimum service units that always remain reserved on controller.
-          Allowed values are 0-1000. Field introduced in 21.1.3. Allowed with any
-          value in Enterprise, Enterprise with Cloud Services edition.
-        type: number
-        format: double
   SaasLicensingStatus:
     type: object
     properties:
@@ -131648,40 +131743,41 @@ definitions:
           VIDCINFO, VIPGNAMEINFO, BACKUP, SECURITYMANAGERDATA, VSAPICEXTENSION, GSLBSITE,
           GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY,
           SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE,
-          RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, TCPSTATRUNTIME,
-          UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME, IPSTKQSTATSRUNTIME,
-          MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME,
-          L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME, SEAGENTGRAPHDBRUNTIME,
-          SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME, DISPATCHERSTATRUNTIME,
-          DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME, DISPATCHERREMOTETIMERLISTDUMPRUNTIME,
-          METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME, METRICSENTITYRUNTIME, PERSISTENCEINTERNAL,
-          HTTPPOLICYSETINTERNAL, DNSPOLICYINTERNAL, CONNECTIONDUMPRUNTIME, SHAREDDBSTATS,
-          SHAREDDBSTATSCLEAR, ICMPSTATRUNTIME, ROUTETABLERUNTIME, VIRTUALMACHINE,
-          POOLSERVER, SEVSLIST, MEMINFORUNTIME, RTERINGSTATRUNTIME, ALGOSTATRUNTIME,
-          HEALTHMONITORRUNTIME, CPUSTATRUNTIME, SEVM, HOST, PORTGROUP, CLUSTER, DATACENTER,
-          VCENTER, HTTPPOLICYSETSTATS, DNSPOLICYSTATS, METRICSSESTATS, RATELIMITERSTATRUNTIME,
-          NETWORKSECURITYPOLICYSTATS, TCPCONNRUNTIME, POOLSTATS, CONNPOOLINTERNAL,
-          CONNPOOLSTATS, VSHASHSHOWRUNTIME, SELOGSTATSRUNTIME, NETWORKSECURITYPOLICYDETAIL,
-          LICENSERUNTIME, SERVERRUNTIME, METRICSRUNTIMESUMMARY, METRICSRUNTIMEDETAIL,
-          DISPATCHERSEHMPROBETEMPDISABLERUNTIME, POOLDEBUG, VSLOGMGRMAP, SERUMINSERTIONSTATS,
-          HTTPCACHE, HTTPCACHESTATS, SEDOSSTATRUNTIME, VSDOSSTATRUNTIME, SERVERUPDATEREQ,
-          VSSCALEOUTLIST, SEMEMDISTRUNTIME, TCPCONNRUNTIMEDETAIL, SEUPGRADESTATUS,
-          SEUPGRADEPREVIEW, SEFAULTINJECTEXHAUSTM, SEFAULTINJECTEXHAUSTMCL, SEFAULTINJECTEXHAUSTMCLSMALL,
-          SEFAULTINJECTEXHAUSTCONN, SEHEADLESSONLINEREQ, SEUPGRADE, SEUPGRADESTATUSDETAIL,
-          SERESERVEDVS, SERESERVEDVSCLEAR, VSCANDIDATESEHOSTLIST, SEGROUPUPGRADE,
-          REBALANCE, SEGROUPREBALANCE, SEAUTHSTATSRUNTIME, AUTOSCALESTATE, VIRTUALSERVICEAUTHSTATS,
-          NETWORKSECURITYPOLICYDOS, KEYVALINTERNAL, KEYVALSUMMARYINTERNAL, SERVERSTATEUPDATEINFO,
-          CLTRACKINTERNAL, CLTRACKSUMMARYINTERNAL, MICROSERVICERUNTIME, SEMICROSERVICE,
-          VIRTUALSERVICEANALYSIS, CLIENTINTERNAL, CLIENTSUMMARYINTERNAL, MICROSERVICEGROUPRUNTIME,
-          BGPRUNTIME, REQUESTQUEUERUNTIME, MIGRATEALL, MIGRATEALLSTATUSSUMMARY, MIGRATEALLSTATUSDETAIL,
-          INTERFACESUMMARYRUNTIME, INTERFACELACPRUNTIME, DNSTABLE, GSLBSERVICEDETAIL,
-          GSLBSERVICEINTERNAL, GSLBSERVICEHMONSTAT, SETROLESREQUEST, TRAFFICCLONERUNTIME,
-          GEOLOCATIONINFO, SEVSHBSTATRUNTIME, GEODBINTERNAL, GSLBSITEINTERNAL, WAFSTATS,
-          USERDEFINEDDATASCRIPTCOUNTERS, LLDPRUNTIME, VSESSHARINGPOOL, NDTABLERUNTIME,
-          IP6STATRUNTIME, ICMP6STATRUNTIME, SEVSSPLACEMENT, L4POLICYSETSTATS, L4POLICYSETINTERNAL,
-          BGPDEBUGINFO, SHARD, CPUSTATRUNTIMEDETAIL, SEASSERTSTATRUNTIME, SEFAULTINJECTINFRA,
-          SEAGENTASSERTSTATRUNTIME, SEDATASTORESTATUS, DIFFQUEUESTATUS, IP6ROUTETABLERUNTIME,
-          SECURITYMGRSTATE, VIRTUALSERVICESESCALEOUTSTATUS, SHARDSERVERSTATUS, SEAGENTSHARDCLIENTRESOURCEMAP,
+          RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO,
+          TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME,
+          IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME,
+          L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
+          SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME,
+          DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME,
+          DISPATCHERREMOTETIMERLISTDUMPRUNTIME, METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME,
+          METRICSENTITYRUNTIME, PERSISTENCEINTERNAL, HTTPPOLICYSETINTERNAL, DNSPOLICYINTERNAL,
+          CONNECTIONDUMPRUNTIME, SHAREDDBSTATS, SHAREDDBSTATSCLEAR, ICMPSTATRUNTIME,
+          ROUTETABLERUNTIME, VIRTUALMACHINE, POOLSERVER, SEVSLIST, MEMINFORUNTIME,
+          RTERINGSTATRUNTIME, ALGOSTATRUNTIME, HEALTHMONITORRUNTIME, CPUSTATRUNTIME,
+          SEVM, HOST, PORTGROUP, CLUSTER, DATACENTER, VCENTER, HTTPPOLICYSETSTATS,
+          DNSPOLICYSTATS, METRICSSESTATS, RATELIMITERSTATRUNTIME, NETWORKSECURITYPOLICYSTATS,
+          TCPCONNRUNTIME, POOLSTATS, CONNPOOLINTERNAL, CONNPOOLSTATS, VSHASHSHOWRUNTIME,
+          SELOGSTATSRUNTIME, NETWORKSECURITYPOLICYDETAIL, LICENSERUNTIME, SERVERRUNTIME,
+          METRICSRUNTIMESUMMARY, METRICSRUNTIMEDETAIL, DISPATCHERSEHMPROBETEMPDISABLERUNTIME,
+          POOLDEBUG, VSLOGMGRMAP, SERUMINSERTIONSTATS, HTTPCACHE, HTTPCACHESTATS,
+          SEDOSSTATRUNTIME, VSDOSSTATRUNTIME, SERVERUPDATEREQ, VSSCALEOUTLIST, SEMEMDISTRUNTIME,
+          TCPCONNRUNTIMEDETAIL, SEUPGRADESTATUS, SEUPGRADEPREVIEW, SEFAULTINJECTEXHAUSTM,
+          SEFAULTINJECTEXHAUSTMCL, SEFAULTINJECTEXHAUSTMCLSMALL, SEFAULTINJECTEXHAUSTCONN,
+          SEHEADLESSONLINEREQ, SEUPGRADE, SEUPGRADESTATUSDETAIL, SERESERVEDVS, SERESERVEDVSCLEAR,
+          VSCANDIDATESEHOSTLIST, SEGROUPUPGRADE, REBALANCE, SEGROUPREBALANCE, SEAUTHSTATSRUNTIME,
+          AUTOSCALESTATE, VIRTUALSERVICEAUTHSTATS, NETWORKSECURITYPOLICYDOS, KEYVALINTERNAL,
+          KEYVALSUMMARYINTERNAL, SERVERSTATEUPDATEINFO, CLTRACKINTERNAL, CLTRACKSUMMARYINTERNAL,
+          MICROSERVICERUNTIME, SEMICROSERVICE, VIRTUALSERVICEANALYSIS, CLIENTINTERNAL,
+          CLIENTSUMMARYINTERNAL, MICROSERVICEGROUPRUNTIME, BGPRUNTIME, REQUESTQUEUERUNTIME,
+          MIGRATEALL, MIGRATEALLSTATUSSUMMARY, MIGRATEALLSTATUSDETAIL, INTERFACESUMMARYRUNTIME,
+          INTERFACELACPRUNTIME, DNSTABLE, GSLBSERVICEDETAIL, GSLBSERVICEINTERNAL,
+          GSLBSERVICEHMONSTAT, SETROLESREQUEST, TRAFFICCLONERUNTIME, GEOLOCATIONINFO,
+          SEVSHBSTATRUNTIME, GEODBINTERNAL, GSLBSITEINTERNAL, WAFSTATS, USERDEFINEDDATASCRIPTCOUNTERS,
+          LLDPRUNTIME, VSESSHARINGPOOL, NDTABLERUNTIME, IP6STATRUNTIME, ICMP6STATRUNTIME,
+          SEVSSPLACEMENT, L4POLICYSETSTATS, L4POLICYSETINTERNAL, BGPDEBUGINFO, SHARD,
+          CPUSTATRUNTIMEDETAIL, SEASSERTSTATRUNTIME, SEFAULTINJECTINFRA, SEAGENTASSERTSTATRUNTIME,
+          SEDATASTORESTATUS, DIFFQUEUESTATUS, IP6ROUTETABLERUNTIME, SECURITYMGRSTATE,
+          VIRTUALSERVICESESCALEOUTSTATUS, SHARDSERVERSTATUS, SEAGENTSHARDCLIENTRESOURCEMAP,
           SEAGENTCONSISTENTHASH, SEAGENTVNICDBHISTORY, SEAGENTSHARDCLIENTAPPMAP, SEAGENTSHARDCLIENTEVENTHISTORY,
           NATSTATRUNTIME, NATFLOWRUNTIME, SECUTIRYMGRRUNTIME, SSOPOLICYSTATS, SENETWORKSERVICERUNTIME,
           SEGEORUNTIME, NATPOLICYSTATS, SEFAULTRUNTIME, VIRTUALSERVICESCALEOUTSTATUS,
@@ -133021,7 +133117,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -133691,6 +133789,23 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/MetricsEventThreshold'
+  SeGroupInfo:
+    type: object
+    properties:
+      consumed:
+        description: License cores consumed by se group. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: number
+        format: double
+      escrow:
+        description: License cores reserved by se group. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: number
+        format: double
+      uuid:
+        description: Se group uuid for reference. Field introduced in 31.2.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
   SeHBEventDetails:
     type: object
     properties:
@@ -136282,7 +136397,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -136684,7 +136801,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -137116,7 +137235,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -137534,7 +137655,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -137966,7 +138089,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -139509,6 +139634,10 @@ definitions:
           in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: boolean
         default: true
+      license_quota:
+        description: License quota for the SE group. Field introduced in 31.2.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/QuotaConfig'
       license_tier:
         description: Specifies the license tier which would be used. This field by
           default inherits the value from cloud. Enum options - ENTERPRISE_16, ENTERPRISE,
@@ -141142,7 +141271,9 @@ definitions:
         type: boolean
       license_state:
         description: Indicates the License state of the SE. Enum options - LICENSE_STATE_INSUFFICIENT_RESOURCES,
-          LICENSE_STATE_LICENSED, LICENSE_STATE_AWAITING_RESPONSE, LICENSE_STATE_UNDETERMINED.
+          LICENSE_STATE_LICENSED, LICENSE_STATE_AWAITING_RESPONSE, LICENSE_STATE_UNDETERMINED,
+          LICENSE_STATE_SEGROUP_LIMIT_EXCEEDED, LICENSE_STATE_TENANT_LIMIT_EXCEEDED,
+          LICENSE_STATE_SYSTEM_LIMIT_EXCEEDED, LICENSE_STATE_RESERVATION_VIOLATION.
           Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
@@ -143846,6 +143977,11 @@ definitions:
           Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: boolean
+      enable_license_quota:
+        description: Enable license quota for the system. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: boolean
+        default: true
       fips_mode:
         description: FIPS mode current state. Field introduced in 20.1.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
@@ -143874,6 +144010,10 @@ definitions:
           1.0/1.1. Field introduced in 31.1.1. Allowed with any value in Enterprise,
           Enterprise with Cloud Services edition.
         type: boolean
+      license_quota:
+        description: License quota for the system. Field introduced in 31.2.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/QuotaConfig'
       linux_configuration:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -144662,7 +144802,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -145093,7 +145235,9 @@ definitions:
           SYSERR_LICENSE_TRANSACTION_INCORRECT_TIER, SYSERR_LICENSE_TRANSACTION_DATASTORE_ERROR,
           SYSERR_LICENSE_INVALID_TIER, SYSERR_TRIAL_OR_EVAL_LICENSE_ADDITION_NOT_ALLOWED,
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
-          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_SEAGENT_OBJ_INACTIVE,
+          SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
           SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
           SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
@@ -145682,6 +145826,10 @@ definitions:
   TenantConfiguration:
     type: object
     properties:
+      license_quota:
+        description: License quota for the tenant. Field introduced in 31.2.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/QuotaConfig'
       se_in_provider_context:
         description: Controls the ownership of ServiceEngines. Service Engines can
           either be exclusively owned by each tenant or owned by the administrator

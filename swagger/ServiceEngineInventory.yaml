@@ -569,7 +569,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             license_state:
-                description: "Indicates the License state of the SE. Enum options - LICENSE_STATE_INSUFFICIENT_RESOURCES, LICENSE_STATE_LICENSED, LICENSE_STATE_AWAITING_RESPONSE, LICENSE_STATE_UNDETERMINED. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Indicates the License state of the SE. Enum options - LICENSE_STATE_INSUFFICIENT_RESOURCES, LICENSE_STATE_LICENSED, LICENSE_STATE_AWAITING_RESPONSE, LICENSE_STATE_UNDETERMINED, LICENSE_STATE_SEGROUP_LIMIT_EXCEEDED, LICENSE_STATE_TENANT_LIMIT_EXCEEDED, LICENSE_STATE_SYSTEM_LIMIT_EXCEEDED, LICENSE_STATE_RESERVATION_VIOLATION. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "LICENSE_STATE_UNDETERMINED"
             licensed_service_cores:
