@@ -39,6 +39,12 @@
 			<organization>VMWare</organization>
 			<organizationUrl>http://www.broadcom.com/</organizationUrl>
 		</developer>
+		<developer>
+			<name>Gurunath Reddy Kambala</name>
+			<email>gurunath-reddy.kambala@broadcom.com</email>
+			<organization>VMWare</organization>
+			<organizationUrl>http://www.broadcom.com/</organizationUrl>
+		</developer>
 	</developers>
 	<scm>
 		<connection>scm:git:git://github.com/vmware/alb-sdk.git</connection>
@@ -97,6 +103,7 @@
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
+						<phase>package</phase>
 						<goals>
 							<goal>jar</goal>
 						</goals>
