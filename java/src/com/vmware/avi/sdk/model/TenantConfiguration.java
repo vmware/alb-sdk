@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TenantConfiguration  {
+    @JsonProperty("license_quota")
+    private QuotaConfig licenseQuota;
+
     @JsonProperty("se_in_provider_context")
     private Boolean seInProviderContext = true;
 
@@ -31,6 +34,30 @@ public class TenantConfiguration  {
     private Boolean tenantVrf = false;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * License quota for the tenant.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return licenseQuota
+     */
+    public QuotaConfig getLicenseQuota() {
+        return licenseQuota;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * License quota for the tenant.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param licenseQuota set the licenseQuota.
+     */
+    public void setLicenseQuota(QuotaConfig licenseQuota) {
+        this.licenseQuota = licenseQuota;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -114,14 +141,16 @@ public class TenantConfiguration  {
       TenantConfiguration objTenantConfiguration = (TenantConfiguration) o;
       return   Objects.equals(this.tenantVrf, objTenantConfiguration.tenantVrf)&&
   Objects.equals(this.seInProviderContext, objTenantConfiguration.seInProviderContext)&&
-  Objects.equals(this.tenantAccessToProviderSe, objTenantConfiguration.tenantAccessToProviderSe);
+  Objects.equals(this.tenantAccessToProviderSe, objTenantConfiguration.tenantAccessToProviderSe)&&
+  Objects.equals(this.licenseQuota, objTenantConfiguration.licenseQuota);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class TenantConfiguration {\n");
-                  sb.append("    seInProviderContext: ").append(toIndentedString(seInProviderContext)).append("\n");
+                  sb.append("    licenseQuota: ").append(toIndentedString(licenseQuota)).append("\n");
+                        sb.append("    seInProviderContext: ").append(toIndentedString(seInProviderContext)).append("\n");
                         sb.append("    tenantAccessToProviderSe: ").append(toIndentedString(tenantAccessToProviderSe)).append("\n");
                         sb.append("    tenantVrf: ").append(toIndentedString(tenantVrf)).append("\n");
                   sb.append("}");

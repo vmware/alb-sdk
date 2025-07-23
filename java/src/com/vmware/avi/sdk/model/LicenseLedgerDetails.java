@@ -24,11 +24,20 @@ public class LicenseLedgerDetails extends AviRestResource  {
     @JsonProperty("escrow_infos")
     private List<LicenseInfo> escrowInfos;
 
+    @JsonProperty("se_group_infos")
+    private List<SeGroupInfo> seGroupInfos;
+
     @JsonProperty("se_infos")
     private List<LicenseInfo> seInfos;
 
+    @JsonProperty("tenant_infos")
+    private List<LicenseReservationInfo> tenantInfos;
+
     @JsonProperty("tier_usages")
     private List<LicenseTierUsage> tierUsages;
+
+    @JsonProperty("total_licenses_reserved")
+    private Integer totalLicensesReserved;
 
     @JsonProperty("url")
     private String url = "url";
@@ -78,6 +87,45 @@ public class LicenseLedgerDetails extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
+     * Maintain information about se group.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seGroupInfos
+     */
+    public List<SeGroupInfo> getSeGroupInfos() {
+        return seGroupInfos;
+    }
+
+    /**
+     * This is the setter method. this will set the seGroupInfos
+     * Maintain information about se group.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seGroupInfos
+     */
+    public void setSeGroupInfos(List<SeGroupInfo>  seGroupInfos) {
+        this.seGroupInfos = seGroupInfos;
+    }
+
+    /**
+     * This is the setter method this will set the seGroupInfos
+     * Maintain information about se group.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seGroupInfos
+     */
+    public LicenseLedgerDetails addSeGroupInfosItem(SeGroupInfo seGroupInfosItem) {
+      if (this.seGroupInfos == null) {
+        this.seGroupInfos = new ArrayList<SeGroupInfo>();
+      }
+      this.seGroupInfos.add(seGroupInfosItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
      * Maintain information about consumed licenses against se_uuid.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -113,6 +161,45 @@ public class LicenseLedgerDetails extends AviRestResource  {
         this.seInfos = new ArrayList<LicenseInfo>();
       }
       this.seInfos.add(seInfosItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maintain information about tenant.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tenantInfos
+     */
+    public List<LicenseReservationInfo> getTenantInfos() {
+        return tenantInfos;
+    }
+
+    /**
+     * This is the setter method. this will set the tenantInfos
+     * Maintain information about tenant.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tenantInfos
+     */
+    public void setTenantInfos(List<LicenseReservationInfo>  tenantInfos) {
+        this.tenantInfos = tenantInfos;
+    }
+
+    /**
+     * This is the setter method this will set the tenantInfos
+     * Maintain information about tenant.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tenantInfos
+     */
+    public LicenseLedgerDetails addTenantInfosItem(LicenseReservationInfo tenantInfosItem) {
+      if (this.tenantInfos == null) {
+        this.tenantInfos = new ArrayList<LicenseReservationInfo>();
+      }
+      this.tenantInfos.add(tenantInfosItem);
       return this;
     }
     /**
@@ -153,6 +240,30 @@ public class LicenseLedgerDetails extends AviRestResource  {
       }
       this.tierUsages.add(tierUsagesItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total of max licenses reserved as per quota config of tenant/segroup.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return totalLicensesReserved
+     */
+    public Integer getTotalLicensesReserved() {
+        return totalLicensesReserved;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total of max licenses reserved as per quota config of tenant/segroup.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param totalLicensesReserved set the totalLicensesReserved.
+     */
+    public void setTotalLicensesReserved(Integer  totalLicensesReserved) {
+        this.totalLicensesReserved = totalLicensesReserved;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -209,7 +320,10 @@ public class LicenseLedgerDetails extends AviRestResource  {
       return   Objects.equals(this.uuid, objLicenseLedgerDetails.uuid)&&
   Objects.equals(this.tierUsages, objLicenseLedgerDetails.tierUsages)&&
   Objects.equals(this.escrowInfos, objLicenseLedgerDetails.escrowInfos)&&
-  Objects.equals(this.seInfos, objLicenseLedgerDetails.seInfos);
+  Objects.equals(this.seInfos, objLicenseLedgerDetails.seInfos)&&
+  Objects.equals(this.seGroupInfos, objLicenseLedgerDetails.seGroupInfos)&&
+  Objects.equals(this.tenantInfos, objLicenseLedgerDetails.tenantInfos)&&
+  Objects.equals(this.totalLicensesReserved, objLicenseLedgerDetails.totalLicensesReserved);
     }
 
     @Override
@@ -217,8 +331,11 @@ public class LicenseLedgerDetails extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class LicenseLedgerDetails {\n");
                   sb.append("    escrowInfos: ").append(toIndentedString(escrowInfos)).append("\n");
+                        sb.append("    seGroupInfos: ").append(toIndentedString(seGroupInfos)).append("\n");
                         sb.append("    seInfos: ").append(toIndentedString(seInfos)).append("\n");
+                        sb.append("    tenantInfos: ").append(toIndentedString(tenantInfos)).append("\n");
                         sb.append("    tierUsages: ").append(toIndentedString(tierUsages)).append("\n");
+                        sb.append("    totalLicensesReserved: ").append(toIndentedString(totalLicensesReserved)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();

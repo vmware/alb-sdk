@@ -339,6 +339,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("least_load_core_selection")
     private Boolean leastLoadCoreSelection = true;
 
+    @JsonProperty("license_quota")
+    private QuotaConfig licenseQuota;
+
     @JsonProperty("license_tier")
     private String licenseTier;
 
@@ -3775,6 +3778,30 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setLeastLoadCoreSelection(Boolean  leastLoadCoreSelection) {
         this.leastLoadCoreSelection = leastLoadCoreSelection;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * License quota for the se group.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return licenseQuota
+     */
+    public QuotaConfig getLicenseQuota() {
+        return licenseQuota;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * License quota for the se group.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param licenseQuota set the licenseQuota.
+     */
+    public void setLicenseQuota(QuotaConfig licenseQuota) {
+        this.licenseQuota = licenseQuota;
     }
 
     /**
@@ -9353,7 +9380,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.disableQatBulkCrypto, objServiceEngineGroup.disableQatBulkCrypto)&&
   Objects.equals(this.autoRebalanceCoolDownTime, objServiceEngineGroup.autoRebalanceCoolDownTime)&&
   Objects.equals(this.autoRebalanceRaiseEventsForActions, objServiceEngineGroup.autoRebalanceRaiseEventsForActions)&&
-  Objects.equals(this.autoRebalanceDryRunEnabled, objServiceEngineGroup.autoRebalanceDryRunEnabled);
+  Objects.equals(this.autoRebalanceDryRunEnabled, objServiceEngineGroup.autoRebalanceDryRunEnabled)&&
+  Objects.equals(this.licenseQuota, objServiceEngineGroup.licenseQuota);
     }
 
     @Override
@@ -9466,6 +9494,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    lbactionNumRequestsToDispatch: ").append(toIndentedString(lbactionNumRequestsToDispatch)).append("\n");
                         sb.append("    lbactionRqPerRequestMaxRetries: ").append(toIndentedString(lbactionRqPerRequestMaxRetries)).append("\n");
                         sb.append("    leastLoadCoreSelection: ").append(toIndentedString(leastLoadCoreSelection)).append("\n");
+                        sb.append("    licenseQuota: ").append(toIndentedString(licenseQuota)).append("\n");
                         sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
                         sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
                         sb.append("    logAgentCompressLogs: ").append(toIndentedString(logAgentCompressLogs)).append("\n");

@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The AZDatastore is a POJO class extends AviRestResource that used for creating
- * AZDatastore.
+ * The AZHost is a POJO class extends AviRestResource that used for creating
+ * AZHost.
  *
  * @version 1.0
  * @since 
@@ -20,12 +20,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class AZDatastore  {
-    @JsonProperty("ds_ids")
-    private List<String> dsIds;
-
-    @JsonProperty("include")
-    private Boolean include = false;
+public class AZHost  {
+    @JsonProperty("host_ids")
+    private List<String> hostIds;
 
     @JsonProperty("vcenter_ref")
     private String vcenterRef;
@@ -33,71 +30,50 @@ public class AZDatastore  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * List of managed object id of datastores.
-     * Field introduced in 31.1.1.
+     * A list of managed object ids (moids) of vcenter hosts that are part of this availability zone.
+     * Field introduced in 31.2.1.
+     * Minimum of 1 items required.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return dsIds
+     * @return hostIds
      */
-    public List<String> getDsIds() {
-        return dsIds;
+    public List<String> getHostIds() {
+        return hostIds;
     }
 
     /**
-     * This is the setter method. this will set the dsIds
-     * List of managed object id of datastores.
-     * Field introduced in 31.1.1.
+     * This is the setter method. this will set the hostIds
+     * A list of managed object ids (moids) of vcenter hosts that are part of this availability zone.
+     * Field introduced in 31.2.1.
+     * Minimum of 1 items required.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return dsIds
+     * @return hostIds
      */
-    public void setDsIds(List<String>  dsIds) {
-        this.dsIds = dsIds;
+    public void setHostIds(List<String>  hostIds) {
+        this.hostIds = hostIds;
     }
 
     /**
-     * This is the setter method this will set the dsIds
-     * List of managed object id of datastores.
-     * Field introduced in 31.1.1.
+     * This is the setter method this will set the hostIds
+     * A list of managed object ids (moids) of vcenter hosts that are part of this availability zone.
+     * Field introduced in 31.2.1.
+     * Minimum of 1 items required.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return dsIds
+     * @return hostIds
      */
-    public AZDatastore addDsIdsItem(String dsIdsItem) {
-      if (this.dsIds == null) {
-        this.dsIds = new ArrayList<String>();
+    public AZHost addHostIdsItem(String hostIdsItem) {
+      if (this.hostIds == null) {
+        this.hostIds = new ArrayList<String>();
       }
-      this.dsIds.add(dsIdsItem);
+      this.hostIds.add(hostIdsItem);
       return this;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Include or exclude the datastores from the list.
-     * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @return include
-     */
-    public Boolean getInclude() {
-        return include;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Include or exclude the datastores from the list.
-     * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @param include set the include.
-     */
-    public void setInclude(Boolean  include) {
-        this.include = include;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Vcenter id of the datastores.
+     * The uuid of the vcenter server that manages the hosts associated with this availabilityzone.
      * It is a reference to an object of type vcenterserver.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -110,7 +86,7 @@ public class AZDatastore  {
 
     /**
      * This is the setter method to the attribute.
-     * Vcenter id of the datastores.
+     * The uuid of the vcenter server that manages the hosts associated with this availabilityzone.
      * It is a reference to an object of type vcenterserver.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -130,18 +106,16 @@ public class AZDatastore  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      AZDatastore objAZDatastore = (AZDatastore) o;
-      return   Objects.equals(this.dsIds, objAZDatastore.dsIds)&&
-  Objects.equals(this.include, objAZDatastore.include)&&
-  Objects.equals(this.vcenterRef, objAZDatastore.vcenterRef);
+      AZHost objAZHost = (AZHost) o;
+      return   Objects.equals(this.vcenterRef, objAZHost.vcenterRef)&&
+  Objects.equals(this.hostIds, objAZHost.hostIds);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class AZDatastore {\n");
-                  sb.append("    dsIds: ").append(toIndentedString(dsIds)).append("\n");
-                        sb.append("    include: ").append(toIndentedString(include)).append("\n");
+      sb.append("class AZHost {\n");
+                  sb.append("    hostIds: ").append(toIndentedString(hostIds)).append("\n");
                         sb.append("    vcenterRef: ").append(toIndentedString(vcenterRef)).append("\n");
                   sb.append("}");
       return sb.toString();
