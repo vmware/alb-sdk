@@ -336,6 +336,9 @@ type ServiceEngineGroup struct {
 	// Select core with least load for new flow. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LeastLoadCoreSelection *bool `json:"least_load_core_selection,omitempty"`
 
+	// License quota for the SE group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LicenseQuota *QuotaConfig `json:"license_quota,omitempty"`
+
 	// Specifies the license tier which would be used. This field by default inherits the value from cloud. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES. Field introduced in 17.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LicenseTier *string `json:"license_tier,omitempty"`
 

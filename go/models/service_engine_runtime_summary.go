@@ -26,7 +26,7 @@ type ServiceEngineRuntimeSummary struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	InbandMgmt *bool `json:"inband_mgmt,omitempty"`
 
-	// Indicates the License state of the SE. Enum options - LICENSE_STATE_INSUFFICIENT_RESOURCES, LICENSE_STATE_LICENSED, LICENSE_STATE_AWAITING_RESPONSE, LICENSE_STATE_UNDETERMINED. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Indicates the License state of the SE. Enum options - LICENSE_STATE_INSUFFICIENT_RESOURCES, LICENSE_STATE_LICENSED, LICENSE_STATE_AWAITING_RESPONSE, LICENSE_STATE_UNDETERMINED, LICENSE_STATE_SEGROUP_LIMIT_EXCEEDED, LICENSE_STATE_TENANT_LIMIT_EXCEEDED, LICENSE_STATE_SYSTEM_LIMIT_EXCEEDED, LICENSE_STATE_RESERVATION_VIOLATION. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LicenseState *string `json:"license_state,omitempty"`
 
 	// Number of Service Cores assigned to the SE by License Manager. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
