@@ -222,9 +222,6 @@ type ServiceEngineGroup struct {
 	// This knob enables the Service Engine to use QAT offloads (if the host CPU is capable, and the QAT device is exposed). Requires SE Reboot. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EnableQat *bool `json:"enable_qat,omitempty"`
 
-	// This knob enables the Service Engine to use the Quantinium library to locally generate quantum-hardened randomness for the Linux kernel PRNG. Requires SE reboot. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	EnableQuantumEntropy *bool `json:"enable_quantum_entropy,omitempty"`
-
 	// End local ephemeral port number for outbound connections. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EphemeralPortrangeEnd *uint32 `json:"ephemeral_portrange_end,omitempty"`
 
