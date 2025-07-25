@@ -1778,6 +1778,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Set cpu shares for service engine virtual machines to high.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return cpuReserve
@@ -1788,6 +1789,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
+     * Set cpu shares for service engine virtual machines to high.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param cpuReserve set the cpuReserve.
