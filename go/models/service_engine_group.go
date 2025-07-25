@@ -108,7 +108,7 @@ type ServiceEngineGroup struct {
 	// Include shared memory for app learning in core file.Requires SE Reboot. Field introduced in 18.2.8, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CoreShmAppLearning *bool `json:"core_shm_app_learning,omitempty"`
 
-	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Set CPU shares for Service Engine Virtual Machines to High. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CPUReserve *bool `json:"cpu_reserve,omitempty"`
 
 	// Allocate all the CPU cores for the Service Engine Virtual Machines  on the same CPU socket. Applicable only for vCenter Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
