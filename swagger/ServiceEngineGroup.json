@@ -1853,7 +1853,7 @@
                     "type": "boolean"
                 },
                 "cpu_reserve": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Set CPU shares for Service Engine Virtual Machines to High. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "cpu_socket_affinity": {
