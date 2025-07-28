@@ -34,8 +34,9 @@ public class TechSupportEventParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Collect all events agnostic of duration, days and files.this flag will have higher precedence over duration, files and daysif flag is false then
-     * precedence given to duration passed while invocation.
+     * Collect all events agnostic of duration, days and files.
+     * This flag will have higher precedence over duration, files and days.
+     * If flag is false then precedence given to duration passed while invocation.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -47,8 +48,9 @@ public class TechSupportEventParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Collect all events agnostic of duration, days and files.this flag will have higher precedence over duration, files and daysif flag is false then
-     * precedence given to duration passed while invocation.
+     * Collect all events agnostic of duration, days and files.
+     * This flag will have higher precedence over duration, files and days.
+     * If flag is false then precedence given to duration passed while invocation.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -60,8 +62,10 @@ public class TechSupportEventParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Collect events for the specified number of past days.e.g.
-     * User specified 3, collect events for past 3 days.if have 20 files with 3 days old then collect on basis of specified number of files.
+     * Collect events for the specified number of past days.
+     * E.g.
+     * User specified 3, collect events for past 3 days.
+     * If have 20 files with 3 days old then collect on basis of specified number of files.
      * Allowed values are 1-5.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -74,8 +78,10 @@ public class TechSupportEventParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Collect events for the specified number of past days.e.g.
-     * User specified 3, collect events for past 3 days.if have 20 files with 3 days old then collect on basis of specified number of files.
+     * Collect events for the specified number of past days.
+     * E.g.
+     * User specified 3, collect events for past 3 days.
+     * If have 20 files with 3 days old then collect on basis of specified number of files.
      * Allowed values are 1-5.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -88,8 +94,10 @@ public class TechSupportEventParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Collect events for the specified number of files.e.g.
-     * User specified 5, collect atmost 5 events files.if have 10 files with 2 days old then collect only specified number of files.
+     * Collect events for the specified number of files.
+     * E.g.
+     * User specified 5, collect atmost 5 events files.
+     * If have 10 files with 2 days old then collect only specified number of files.
      * Allowed values are 1-10.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -102,8 +110,10 @@ public class TechSupportEventParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Collect events for the specified number of files.e.g.
-     * User specified 5, collect atmost 5 events files.if have 10 files with 2 days old then collect only specified number of files.
+     * Collect events for the specified number of files.
+     * E.g.
+     * User specified 5, collect atmost 5 events files.
+     * If have 10 files with 2 days old then collect only specified number of files.
      * Allowed values are 1-10.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.

@@ -112,7 +112,7 @@ public class TechSupportEventMap  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Duration of tech-support collection.
+     * Duration of techsupport collection.
      * Field introduced in 31.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -125,7 +125,7 @@ public class TechSupportEventMap  {
 
     /**
      * This is the setter method to the attribute.
-     * Duration of tech-support collection.
+     * Duration of techsupport collection.
      * Field introduced in 31.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -138,7 +138,7 @@ public class TechSupportEventMap  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * End timestamp of tech-support collection.
+     * End timestamp of techsupport collection.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -150,7 +150,7 @@ public class TechSupportEventMap  {
 
     /**
      * This is the setter method to the attribute.
-     * End timestamp of tech-support collection.
+     * End timestamp of techsupport collection.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -162,7 +162,7 @@ public class TechSupportEventMap  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Start timestamp of tech-support collection.
+     * Start timestamp of techsupport collection.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -174,7 +174,7 @@ public class TechSupportEventMap  {
 
     /**
      * This is the setter method to the attribute.
-     * Start timestamp of tech-support collection.
+     * Start timestamp of techsupport collection.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

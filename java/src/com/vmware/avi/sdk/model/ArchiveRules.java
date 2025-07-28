@@ -27,7 +27,8 @@ public class ArchiveRules  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Archive policy for file path to have specific threshold.tech-support will skip collection of file if file size is greater than threshold.
+     * Archive policy for file path to have specific threshold.
+     * Techsupport will skip collection of file if file size is greater than threshold.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -39,7 +40,8 @@ public class ArchiveRules  {
 
     /**
      * This is the setter method. this will set the rules
-     * Archive policy for file path to have specific threshold.tech-support will skip collection of file if file size is greater than threshold.
+     * Archive policy for file path to have specific threshold.
+     * Techsupport will skip collection of file if file size is greater than threshold.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -51,7 +53,8 @@ public class ArchiveRules  {
 
     /**
      * This is the setter method this will set the rules
-     * Archive policy for file path to have specific threshold.tech-support will skip collection of file if file size is greater than threshold.
+     * Archive policy for file path to have specific threshold.
+     * Techsupport will skip collection of file if file size is greater than threshold.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

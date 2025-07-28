@@ -24,9 +24,6 @@ public class TechSupportProfile extends AviRestResource  {
     @JsonProperty("archive_rules")
     private ArchiveRules archiveRules;
 
-    @JsonProperty("collect_customer_files")
-    private CollectCustomerFiles collectCustomerFiles;
-
     @JsonProperty("event_params")
     private TechSupportEventParams eventParams;
 
@@ -58,9 +55,10 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Defined policy for tech-support archive rules.these are predefined files which are exception for default file size thresholduser can add file
-     * path with custom threshold in allowed limits to be collected in bundlee.g.
-     * A file /var/sample.log is with size 450mb needs to be collected for each invocationuser should configure and add path in techsupportprofile.
+     * Define the policy for techsupport archive rules.
+     * These rules allow you to specify files that should be collected in the techsupport bundle, even if they exceed the default file size threshold.
+     * E.g.
+     * To ensure a 450mb file, such as /var/sample.log, is collected with every invocation, configure and add its path to the techsupportprofile.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -72,9 +70,10 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Defined policy for tech-support archive rules.these are predefined files which are exception for default file size thresholduser can add file
-     * path with custom threshold in allowed limits to be collected in bundlee.g.
-     * A file /var/sample.log is with size 450mb needs to be collected for each invocationuser should configure and add path in techsupportprofile.
+     * Define the policy for techsupport archive rules.
+     * These rules allow you to specify files that should be collected in the techsupport bundle, even if they exceed the default file size threshold.
+     * E.g.
+     * To ensure a 450mb file, such as /var/sample.log, is collected with every invocation, configure and add its path to the techsupportprofile.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -86,37 +85,8 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * A list of user-specified file paths for collectionthat are not part of the predefined yaml configuration.
-     * This is useful forcollecting logs from third-party applications or other custom files.e.g.
-     * A file located at /var/sample.log which is not a part of pre-define yamluser should configure this path as source in collect_customer_files so
-     * that subsequent collectioncollect this file, once user no longer needed this file they can remove from techsupportprofile.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return collectCustomerFiles
-     */
-    public CollectCustomerFiles getCollectCustomerFiles() {
-        return collectCustomerFiles;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * A list of user-specified file paths for collectionthat are not part of the predefined yaml configuration.
-     * This is useful forcollecting logs from third-party applications or other custom files.e.g.
-     * A file located at /var/sample.log which is not a part of pre-define yamluser should configure this path as source in collect_customer_files so
-     * that subsequent collectioncollect this file, once user no longer needed this file they can remove from techsupportprofile.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param collectCustomerFiles set the collectCustomerFiles.
-     */
-    public void setCollectCustomerFiles(CollectCustomerFiles collectCustomerFiles) {
-        this.collectCustomerFiles = collectCustomerFiles;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Specify this params to set threshold for event files.user provided parameters will take precedence over the profile parameters.
+     * Specify this params to set threshold for event files.
+     * User provided parameters will take precedence over the profile parameters.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -128,7 +98,8 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Specify this params to set threshold for event files.user provided parameters will take precedence over the profile parameters.
+     * Specify this params to set threshold for event files.
+     * User provided parameters will take precedence over the profile parameters.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -140,7 +111,8 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Max file size threshold to archive in tech-support collectionfiles above this threshold will not be collected and an warning will be flagged.
+     * Max file size threshold to archive in techsupport collection.
+     * Files above this threshold will not be collected and an warning will be flagged.
      * Allowed values are 128-512.
      * Field introduced in 31.2.1.
      * Unit is mb.
@@ -154,7 +126,8 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Max file size threshold to archive in tech-support collectionfiles above this threshold will not be collected and an warning will be flagged.
+     * Max file size threshold to archive in techsupport collection.
+     * Files above this threshold will not be collected and an warning will be flagged.
      * Allowed values are 128-512.
      * Field introduced in 31.2.1.
      * Unit is mb.
@@ -168,9 +141,10 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Max disk size in percent of total disk size reserved for the tech-support.the value is in percentage to make it agnostic of controller
-     * flavors.e.g.
-     * Small [disk=5 gb, ts space available = 500mb]large [ disk= 100gb, ts space available= 10gb]xl [disk=1tb, ts space available=100gb].
+     * Max disk size in percent of total disk size reserved for the techsupport.
+     * The value is in percentage to make it agnostic of controller flavors.
+     * E.g.
+     * Small [disk=5 gb, ts space available = 500mb] large [ disk= 100gb, ts space available= 10gb] xl [disk=1tb, ts space available=100gb].
      * Allowed values are 10-25.
      * Field introduced in 31.2.1.
      * Unit is percent.
@@ -184,9 +158,10 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Max disk size in percent of total disk size reserved for the tech-support.the value is in percentage to make it agnostic of controller
-     * flavors.e.g.
-     * Small [disk=5 gb, ts space available = 500mb]large [ disk= 100gb, ts space available= 10gb]xl [disk=1tb, ts space available=100gb].
+     * Max disk size in percent of total disk size reserved for the techsupport.
+     * The value is in percentage to make it agnostic of controller flavors.
+     * E.g.
+     * Small [disk=5 gb, ts space available = 500mb] large [ disk= 100gb, ts space available= 10gb] xl [disk=1tb, ts space available=100gb].
      * Allowed values are 10-25.
      * Field introduced in 31.2.1.
      * Unit is percent.
@@ -200,8 +175,10 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Min free disk required for the tech-support invocation.the value is in percentage to make it agnostic of controller flavors.e.g.
-     * Small [disk=5 gb, ts space available = 250mb]large [ disk= 100gb, ts space available= 5gb]xl [disk=1tb, ts space available=50gb].
+     * Min free disk required for the techsupport invocation.
+     * The value is in percentage to make it agnostic of controller flavors.
+     * E.g.
+     * Small [disk=5 gb, ts space available = 250mb] large [ disk= 100gb, ts space available= 5gb] xl [disk=1tb, ts space available=50gb].
      * Allowed values are 5-10.
      * Field introduced in 31.2.1.
      * Unit is percent.
@@ -215,8 +192,10 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Min free disk required for the tech-support invocation.the value is in percentage to make it agnostic of controller flavors.e.g.
-     * Small [disk=5 gb, ts space available = 250mb]large [ disk= 100gb, ts space available= 5gb]xl [disk=1tb, ts space available=50gb].
+     * Min free disk required for the techsupport invocation.
+     * The value is in percentage to make it agnostic of controller flavors.
+     * E.g.
+     * Small [disk=5 gb, ts space available = 250mb] large [ disk= 100gb, ts space available= 5gb] xl [disk=1tb, ts space available=50gb].
      * Allowed values are 5-10.
      * Field introduced in 31.2.1.
      * Unit is percent.
@@ -256,7 +235,7 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Number of simultaneous tech-support invocation allowed.
+     * Number of simultaneous techsupport invocation allowed.
      * Allowed values are 1-2.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -269,7 +248,7 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Number of simultaneous tech-support invocation allowed.
+     * Number of simultaneous techsupport invocation allowed.
      * Allowed values are 1-2.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -282,8 +261,9 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Generic timeout for tech-support task collection.this can be used for task, script executions etc.tweak the timeout value in cases of timeout
-     * observation in the logs.
+     * Generic timeout for techsupport task collection.
+     * This can be used for task, script executions etc.
+     * Tweak the timeout value in cases of timeout observation in the logs.
      * Field introduced in 31.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -296,8 +276,9 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Generic timeout for tech-support task collection.this can be used for task, script executions etc.tweak the timeout value in cases of timeout
-     * observation in the logs.
+     * Generic timeout for techsupport task collection.
+     * This can be used for task, script executions etc.
+     * Tweak the timeout value in cases of timeout observation in the logs.
      * Field introduced in 31.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -327,7 +308,7 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Uuid identifier for the tech-support profile.
+     * Uuid identifier for the techsupport profile.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -339,7 +320,7 @@ public class TechSupportProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Uuid identifier for the tech-support profile.
+     * Uuid identifier for the techsupport profile.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -367,7 +348,6 @@ public class TechSupportProfile extends AviRestResource  {
   Objects.equals(this.noOfTechsupportRetentions, objTechSupportProfile.noOfTechsupportRetentions)&&
   Objects.equals(this.eventParams, objTechSupportProfile.eventParams)&&
   Objects.equals(this.archiveRules, objTechSupportProfile.archiveRules)&&
-  Objects.equals(this.collectCustomerFiles, objTechSupportProfile.collectCustomerFiles)&&
   Objects.equals(this.taskTimeout, objTechSupportProfile.taskTimeout);
     }
 
@@ -376,7 +356,6 @@ public class TechSupportProfile extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class TechSupportProfile {\n");
                   sb.append("    archiveRules: ").append(toIndentedString(archiveRules)).append("\n");
-                        sb.append("    collectCustomerFiles: ").append(toIndentedString(collectCustomerFiles)).append("\n");
                         sb.append("    eventParams: ").append(toIndentedString(eventParams)).append("\n");
                         sb.append("    fileSizeThreshold: ").append(toIndentedString(fileSizeThreshold)).append("\n");
                         sb.append("    maxDiskSizePercent: ").append(toIndentedString(maxDiskSizePercent)).append("\n");

@@ -40,7 +40,7 @@ public class TechSupportMessage extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * 'tech-support status for the current invocation.'.
+     * 'techsupport status for the current invocation.'.
      * Field introduced in 18.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -52,7 +52,7 @@ public class TechSupportMessage extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * 'tech-support status for the current invocation.'.
+     * 'techsupport status for the current invocation.'.
      * Field introduced in 18.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -64,7 +64,7 @@ public class TechSupportMessage extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * 'tech-support status code for the current invocation.'.
+     * 'techsupport status code for the current invocation.'.
      * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
      * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
      * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
@@ -79,7 +79,7 @@ public class TechSupportMessage extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * 'tech-support status code for the current invocation.'.
+     * 'techsupport status code for the current invocation.'.
      * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
      * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
      * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
@@ -94,7 +94,7 @@ public class TechSupportMessage extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * 'tech-support object ref.'.
+     * 'techsupport object ref.'.
      * It is a reference to an object of type techsupport.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -107,7 +107,7 @@ public class TechSupportMessage extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * 'tech-support object ref.'.
+     * 'techsupport object ref.'.
      * It is a reference to an object of type techsupport.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -137,7 +137,7 @@ public class TechSupportMessage extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Uuid for tech-support message.
+     * Uuid for techsupport message.
      * Field deprecated in 31.2.1.
      * Field introduced in 18.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -149,7 +149,7 @@ public class TechSupportMessage extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Uuid for tech-support message.
+     * Uuid for techsupport message.
      * Field deprecated in 31.2.1.
      * Field introduced in 18.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.

@@ -58,7 +58,7 @@ public class TechSupportState  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Descriptive reason for the tech-support state-change.
+     * Descriptive reason for the techsupport state-change.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -70,7 +70,7 @@ public class TechSupportState  {
 
     /**
      * This is the setter method to the attribute.
-     * Descriptive reason for the tech-support state-change.
+     * Descriptive reason for the techsupport state-change.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
