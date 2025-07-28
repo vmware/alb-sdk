@@ -2077,6 +2077,9 @@ definitions:
                 description: "Determines if SE-SE IPC messages are encapsulated in an IP header       0        Automatically determine based on hypervisor type    1        Use IP encap unconditionally    ~[0,1]   Don't use IP encapRequires SE Reboot. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
+            se_kernel_rss:
+                description: "This knob enables kernel RSS. When enabled flowtable entry is added to every disp cpu. Should be used under supervision. Requires SE reboot. . Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
             se_kni_burst_factor:
                 description: "This knob controls the resource availability and burst size used between SE datapath and KNI. This helps in minimising packet drops when there is higher KNI traffic (non-VIP traffic from and to Linux). The factor takes the following values      0-default.     1-doubles the burst size and KNI resources.     2-quadruples the burst size and KNI resources.    3-Increases the burst size and KNI resources by a factor of eight. Allowed values are 0-3. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer

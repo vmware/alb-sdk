@@ -614,7 +614,7 @@
             "type": "object",
             "properties": {
                 "checks": {
-                    "description": "List of tech-support check exceptions. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "List of techsupport check exceptions. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/PreChecksInfo"
@@ -663,39 +663,39 @@
                     "type": "string"
                 },
                 "case_number": {
-                    "description": "'Customer case number for which this tech-upport is generated. ''Useful for connected portal and other use-cases.'. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "'Customer case number for which this techsupport is generated. ''Useful for connected portal and other use-cases.'. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "description": {
-                    "description": "User provided description to capture additional details and context regarding the tech-support invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "User provided description to capture additional details and context regarding the techsupport invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "duration": {
-                    "description": "Total time taken for tech-support collection. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Total time taken for techsupport collection. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "end_time": {
-                    "description": "End timestamp of tech-support collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "End timestamp of techsupport collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "errors": {
-                    "description": "Error logged during tech-support collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Error logged during techsupport collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "level": {
-                    "description": "Name of the tech-support level. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Name of the techsupport level. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "Name of tech-support invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Name of techsupport invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "node": {
-                    "description": "Cluster member node on which the tech-support tarball bundle is saved. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Cluster member node on which the techsupport tarball bundle is saved. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "obj_name": {
@@ -703,44 +703,44 @@
                     "type": "string"
                 },
                 "obj_uuid": {
-                    "description": "Tech-support collection object uuid specified for different objects such as SE/VS/Pool etc. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Techsupport collection object uuid specified for different objects such as SE/VS/Pool etc. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "output": {
-                    "description": "Tech-support collection output file path. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Techsupport collection output file path. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "params": {
-                    "description": "Tech-support params associated with latest tech-support collection.User passed params will have more preference. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Techsupport params associated with latest techsupport collection. User passed params will have more preference. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TechSupportParams"
                 },
                 "progress": {
-                    "description": "Tech-support collection progress which holds value between 0-100. Allowed values are 0-100. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Techsupport collection progress which holds value between 0-100. Allowed values are 0-100. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "size": {
-                    "description": "Size of collected tech-support tarball. Field introduced in 31.2.1. Unit is MB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Size of collected techsupport tarball. Field introduced in 31.2.1. Unit is MB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "start_time": {
-                    "description": "Start timestamp of tech-support collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Start timestamp of techsupport collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "state": {
-                    "description": "State of current/last tech-support invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "State of current/last techsupport invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TechSupportState"
                 },
                 "tasks": {
-                    "description": "Events performed for tech-support collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Events performed for techsupport collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/TechSupportEventMap"
                     }
                 },
                 "tasks_completed": {
-                    "description": "Completed set of tasks in the tech-support collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Completed set of tasks in the techsupport collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -749,11 +749,11 @@
                     "$ref": "#/definitions/ReadinessCheckObj"
                 },
                 "tenant_ref": {
-                    "description": "Tenant UUID associated with the tech-support. It is a reference to an object of type Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Tenant UUID associated with the techsupport. It is a reference to an object of type Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "total_tasks": {
-                    "description": "Total number of tasks in the tech-support collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Total number of tasks in the techsupport collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -763,11 +763,11 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID Identifier for the tech-support invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID Identifier for the techsupport invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "warnings": {
-                    "description": "Warning logged during tech-support collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Warning logged during techsupport collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -812,16 +812,16 @@
                     }
                 },
                 "duration": {
-                    "description": "Duration of tech-support collection. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Duration of techsupport collection. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "end_time": {
-                    "description": "End timestamp of tech-support collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "End timestamp of techsupport collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "start_time": {
-                    "description": "Start timestamp of tech-support collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Start timestamp of techsupport collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "status": {
@@ -845,17 +845,17 @@
             "type": "object",
             "properties": {
                 "collect_all_events": {
-                    "description": "Collect all events agnostic of duration, days and files.This flag will have higher precedence over duration, files and daysIf flag is false then precedence given to duration passed while invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Collect all events agnostic of duration, days and files. This flag will have higher precedence over duration, files and days. If flag is false then precedence given to duration passed while invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "days": {
-                    "description": "Collect events for the specified number of past days.e.g. User specified 3, collect events for past 3 days.If have 20 files with 3 days old then collect on basis of specified number of files. Allowed values are 1-5. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Collect events for the specified number of past days. e.g. User specified 3, collect events for past 3 days. If have 20 files with 3 days old then collect on basis of specified number of files. Allowed values are 1-5. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
                     "format": "uint32"
                 },
                 "files": {
-                    "description": "Collect events for the specified number of files.e.g. User specified 5, collect atmost 5 events files.If have 10 files with 2 days old then collect only specified number of files. Allowed values are 1-10. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Collect events for the specified number of files. e.g. User specified 5, collect atmost 5 events files. If have 10 files with 2 days old then collect only specified number of files. Allowed values are 1-10. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
                     "format": "uint32"
@@ -866,23 +866,23 @@
             "type": "object",
             "properties": {
                 "case_number": {
-                    "description": "'Customer case number for which this tech-support is generated. ''Useful for connected portal and other use-cases.'. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "'Customer case number for which this techsupport is generated. ''Useful for connected portal and other use-cases.'. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "description": {
-                    "description": "User provided description to capture additional details and context regarding the tech-support invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "User provided description to capture additional details and context regarding the techsupport invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "duration": {
-                    "description": "Collect events based on duration, specify one from choices [m, h, d, w].i.e. minutes, hours, days, weeks. e.g. 10m, 5h, 2d, 1we.g. show tech-support debuglogs duration 30m. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Collect events based on duration, specify one from choices [m, h, d, w]. i.e. minutes, hours, days, weeks. e.g. 10m, 5h, 2d, 1w. e.g. techsupport debuglogs duration 30m. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "event_params": {
-                    "description": "Specify this params to set threshold for all event files.User provided parameters will take precedence over the profile parameters. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Specify this params to set threshold for all event files. User provided parameters will take precedence over the profile parameters. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TechSupportEventParams"
                 },
                 "level": {
-                    "description": "Tech-support collection level. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Techsupport collection level. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
@@ -890,7 +890,7 @@
                     "type": "string"
                 },
                 "pattern": {
-                    "description": "Specify pattern to collect specific info in tech-support.User can specify error patterns to filter files based on pattern only. This way will reduce unnecessary collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Specify pattern to collect specific info in techsupport. User can specify error patterns to filter files based on pattern only. This way will reduce unnecessary collection. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "skip_warnings": {
@@ -898,15 +898,15 @@
                     "type": "boolean"
                 },
                 "slug": {
-                    "description": "Tech-support collection slug; Typically uuid of a vs, gslb etc. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Techsupport collection slug; Typically uuid of a vs, gslb etc. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "start_timestamp": {
-                    "description": "Start timestamp of tech-support collection. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Start timestamp of techsupport collection. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant": {
-                    "description": "X-Avi-Tenant of HTTP POST request for authentication.Always admin for now, can be override in the future. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "X-Avi-Tenant of HTTP POST request for authentication. Always admin for now, can be override in the future. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "uuid": {
@@ -923,7 +923,7 @@
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "reason": {
-                    "description": "Descriptive reason for the tech-support state-change. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Descriptive reason for the techsupport state-change. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "state": {
