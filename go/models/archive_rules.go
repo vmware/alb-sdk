@@ -8,6 +8,6 @@ package models
 // swagger:model ArchiveRules
 type ArchiveRules struct {
 
-	// Archive policy for file path to have specific threshold.Tech-support will skip collection of file if file size is greater than threshold. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Archive policy for file path to have specific threshold. Techsupport will skip collection of file if file size is greater than threshold. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Rules []*ArchivePolicy `json:"rules,omitempty"`
 }

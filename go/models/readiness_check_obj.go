@@ -8,7 +8,7 @@ package models
 // swagger:model ReadinessCheckObj
 type ReadinessCheckObj struct {
 
-	// List of tech-support check exceptions. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// List of techsupport check exceptions. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Checks []*PreChecksInfo `json:"checks,omitempty"`
 
 	// No. of checks completed. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
