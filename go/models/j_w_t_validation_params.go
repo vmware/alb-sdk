@@ -9,6 +9,5 @@ package models
 type JWTValidationParams struct {
 
 	// Audience parameter used for validation using JWT token. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	// Required: true
-	Audience *string `json:"audience"`
+	Audience *string `json:"audience,omitempty"`
 }
