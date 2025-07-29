@@ -153,9 +153,6 @@ type ServiceEngineGroup struct {
 	// Disable Generic Receive Offload (GRO) in DPDK poll-mode driver packet receive path.  GRO can be enabled on NICs that do not support LRO (Large Receive Offload) or do not gain performance boost from LRO. GRO is on by default on NICs in a system with 8 vCPUs or higher. Field introduced in 17.2.5, 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DisableGro *bool `json:"disable_gro,omitempty"`
 
-	// This knob enables the QAT offloads for TLS application data. (if the host CPU is capable, and the QAT device is exposed). Requires SE Reboot. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	DisableQatBulkCrypto *bool `json:"disable_qat_bulk_crypto,omitempty"`
-
 	// If set, disable the config memory check done in service engine. Field introduced in 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DisableSeMemoryCheck *bool `json:"disable_se_memory_check,omitempty"`
 
@@ -219,7 +216,7 @@ type ServiceEngineGroup struct {
 	// Enable TX ring support in pcap mode of operation. TSO feature is not supported with TX Ring enabled. Deprecated from 18.2.8, instead use pcap_tx_mode. Requires SE Reboot. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnablePcapTxRing *bool `json:"enable_pcap_tx_ring,omitempty"`
 
-	// This knob enables the Service Engine to use QAT offloads (if the host CPU is capable, and the QAT device is exposed). Requires SE Reboot. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// This knob enables the Service Engine to use QAT offloads (if the host CPU is capable, and the QAT device is exposed). Requires SE Reboot. Field deprecated in 31.2.1. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EnableQat *bool `json:"enable_qat,omitempty"`
 
 	// End local ephemeral port number for outbound connections. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -552,6 +549,9 @@ type ServiceEngineGroup struct {
 
 	// Available memory threshold on SE in MB, to get qualified for upgrade operation. Adjusting this knob will override the internal value of available memory threshold for SE, thereby qualifying it for upgrade operation. '0' is a special auto value, which will indicate that memory threshold is calculated based on total memory size of the SE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	PreUpgradeSeAvailableMemThreshold *uint32 `json:"pre_upgrade_se_available_mem_threshold,omitempty"`
+
+	// QAT configurations. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	QatConfig *QatConfig `json:"qat_config,omitempty"`
 
 	// Enable or deactivate real time SE metrics. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RealtimeSeMetrics *MetricsRealTimeUpdate `json:"realtime_se_metrics,omitempty"`
