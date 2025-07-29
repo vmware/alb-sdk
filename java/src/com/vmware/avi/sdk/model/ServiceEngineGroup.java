@@ -159,9 +159,6 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("disable_gro")
     private Boolean disableGro;
 
-    @JsonProperty("disable_qat_bulk_crypto")
-    private Boolean disableQatBulkCrypto = false;
-
     @JsonProperty("disable_se_memory_check")
     private Boolean disableSeMemoryCheck = false;
 
@@ -226,7 +223,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean enablePcapTxRing;
 
     @JsonProperty("enable_qat")
-    private Boolean enableQat = false;
+    private Boolean enableQat;
 
     @JsonProperty("ephemeral_portrange_end")
     private Integer ephemeralPortrangeEnd;
@@ -554,6 +551,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("pre_upgrade_se_available_mem_threshold")
     private Integer preUpgradeSeAvailableMemThreshold = 0;
+
+    @JsonProperty("qat_config")
+    private QatConfig qatConfig;
 
     @JsonProperty("realtime_se_metrics")
     private MetricsRealTimeUpdate realtimeSeMetrics;
@@ -2191,34 +2191,6 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * This knob enables the qat offloads for tls application data.
-     * (if the host cpu is capable, and the qat device is exposed).
-     * Requires se reboot.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @return disableQatBulkCrypto
-     */
-    public Boolean getDisableQatBulkCrypto() {
-        return disableQatBulkCrypto;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * This knob enables the qat offloads for tls application data.
-     * (if the host cpu is capable, and the qat device is exposed).
-     * Requires se reboot.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @param disableQatBulkCrypto set the disableQatBulkCrypto.
-     */
-    public void setDisableQatBulkCrypto(Boolean  disableQatBulkCrypto) {
-        this.disableQatBulkCrypto = disableQatBulkCrypto;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * If set, disable the config memory check done in service engine.
      * Field introduced in 18.1.2.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -2775,9 +2747,9 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * This knob enables the service engine to use qat offloads (if the host cpu is capable, and the qat device is exposed).
      * Requires se reboot.
+     * Field deprecated in 31.2.1.
      * Field introduced in 31.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableQat
      */
     public Boolean getEnableQat() {
@@ -2788,9 +2760,9 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * This knob enables the service engine to use qat offloads (if the host cpu is capable, and the qat device is exposed).
      * Requires se reboot.
+     * Field deprecated in 31.2.1.
      * Field introduced in 31.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableQat set the enableQat.
      */
     public void setEnableQat(Boolean  enableQat) {
@@ -5687,6 +5659,30 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setPreUpgradeSeAvailableMemThreshold(Integer  preUpgradeSeAvailableMemThreshold) {
         this.preUpgradeSeAvailableMemThreshold = preUpgradeSeAvailableMemThreshold;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Qat configurations.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return qatConfig
+     */
+    public QatConfig getQatConfig() {
+        return qatConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Qat configurations.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param qatConfig set the qatConfig.
+     */
+    public void setQatConfig(QatConfig qatConfig) {
+        this.qatConfig = qatConfig;
     }
 
     /**
@@ -9349,11 +9345,11 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.vsphereStoragePolicies, objServiceEngineGroup.vsphereStoragePolicies)&&
   Objects.equals(this.sdbKeyTimeout, objServiceEngineGroup.sdbKeyTimeout)&&
   Objects.equals(this.maxCpuLoadAdaptiveSampling, objServiceEngineGroup.maxCpuLoadAdaptiveSampling)&&
-  Objects.equals(this.disableQatBulkCrypto, objServiceEngineGroup.disableQatBulkCrypto)&&
   Objects.equals(this.autoRebalanceCoolDownTime, objServiceEngineGroup.autoRebalanceCoolDownTime)&&
   Objects.equals(this.autoRebalanceRaiseEventsForActions, objServiceEngineGroup.autoRebalanceRaiseEventsForActions)&&
   Objects.equals(this.autoRebalanceDryRunEnabled, objServiceEngineGroup.autoRebalanceDryRunEnabled)&&
-  Objects.equals(this.licenseQuota, objServiceEngineGroup.licenseQuota);
+  Objects.equals(this.licenseQuota, objServiceEngineGroup.licenseQuota)&&
+  Objects.equals(this.qatConfig, objServiceEngineGroup.qatConfig);
     }
 
     @Override
@@ -9406,7 +9402,6 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    disableCsumOffloads: ").append(toIndentedString(disableCsumOffloads)).append("\n");
                         sb.append("    disableFlowProbes: ").append(toIndentedString(disableFlowProbes)).append("\n");
                         sb.append("    disableGro: ").append(toIndentedString(disableGro)).append("\n");
-                        sb.append("    disableQatBulkCrypto: ").append(toIndentedString(disableQatBulkCrypto)).append("\n");
                         sb.append("    disableSeMemoryCheck: ").append(toIndentedString(disableSeMemoryCheck)).append("\n");
                         sb.append("    disableTso: ").append(toIndentedString(disableTso)).append("\n");
                         sb.append("    diskPerSe: ").append(toIndentedString(diskPerSe)).append("\n");
@@ -9538,6 +9533,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    perVsAdmissionControl: ").append(toIndentedString(perVsAdmissionControl)).append("\n");
                         sb.append("    placementMode: ").append(toIndentedString(placementMode)).append("\n");
                         sb.append("    preUpgradeSeAvailableMemThreshold: ").append(toIndentedString(preUpgradeSeAvailableMemThreshold)).append("\n");
+                        sb.append("    qatConfig: ").append(toIndentedString(qatConfig)).append("\n");
                         sb.append("    realtimeSeMetrics: ").append(toIndentedString(realtimeSeMetrics)).append("\n");
                         sb.append("    rebootOnPanic: ").append(toIndentedString(rebootOnPanic)).append("\n");
                         sb.append("    replayVrfRoutesInterval: ").append(toIndentedString(replayVrfRoutesInterval)).append("\n");
