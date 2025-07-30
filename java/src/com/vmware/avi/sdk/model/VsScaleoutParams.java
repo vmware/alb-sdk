@@ -28,6 +28,9 @@ public class VsScaleoutParams extends AviRestResource  {
     @JsonProperty("new_vcpus")
     private Integer newVcpus;
 
+    @JsonIgnore
+    private String source;
+
     @JsonProperty("to_host_ref")
     private String toHostRef;
 
@@ -83,6 +86,30 @@ public class VsScaleoutParams extends AviRestResource  {
      */
     public void setNewVcpus(Integer  newVcpus) {
         this.newVcpus = newVcpus;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Actuator which initiated this scaleout.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return source
+     */
+    public String getSource() {
+        return source;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Actuator which initiated this scaleout.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param source set the source.
+     */
+    public void setSource(String  source) {
+        this.source = source;
     }
 
     /**
@@ -207,7 +234,8 @@ public class VsScaleoutParams extends AviRestResource  {
   Objects.equals(this.toHostRef, objVsScaleoutParams.toHostRef)&&
   Objects.equals(this.adminUp, objVsScaleoutParams.adminUp)&&
   Objects.equals(this.newVcpus, objVsScaleoutParams.newVcpus)&&
-  Objects.equals(this.vipId, objVsScaleoutParams.vipId);
+  Objects.equals(this.vipId, objVsScaleoutParams.vipId)&&
+  Objects.equals(this.source, objVsScaleoutParams.source);
     }
 
     @Override
@@ -216,6 +244,7 @@ public class VsScaleoutParams extends AviRestResource  {
       sb.append("class VsScaleoutParams {\n");
                   sb.append("    adminUp: ").append(toIndentedString(adminUp)).append("\n");
                         sb.append("    newVcpus: ").append(toIndentedString(newVcpus)).append("\n");
+                        sb.append("    source: ").append(toIndentedString(source)).append("\n");
                         sb.append("    toHostRef: ").append(toIndentedString(toHostRef)).append("\n");
                         sb.append("    toNewSe: ").append(toIndentedString(toNewSe)).append("\n");
                         sb.append("    toSeRef: ").append(toIndentedString(toSeRef)).append("\n");

@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The LogManagerDebugFilter is a POJO class extends AviRestResource that used for creating
- * LogManagerDebugFilter.
+ * The LicenseReservationInfo is a POJO class extends AviRestResource that used for creating
+ * LicenseReservationInfo.
  *
  * @version 1.0
  * @since 
@@ -20,65 +20,61 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class LogManagerDebugFilter  {
-    @JsonProperty("entity_ref")
-    private String entityRef;
+public class LicenseReservationInfo extends AviRestResource  {
+    @JsonProperty("reserved")
+    private Integer reserved;
 
-    @JsonProperty("telemetry_trace_log_level")
-    private String telemetryTraceLogLevel;
+    @JsonProperty("uuid")
+    private String uuid;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Uuid of the entity.
-     * It is a reference to an object of type virtualservice.
-     * Field introduced in 21.1.1.
+     * License cores reserved by tenant/se group.
+     * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return entityRef
+     * @return reserved
      */
-    public String getEntityRef() {
-        return entityRef;
+    public Integer getReserved() {
+        return reserved;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Uuid of the entity.
-     * It is a reference to an object of type virtualservice.
-     * Field introduced in 21.1.1.
+     * License cores reserved by tenant/se group.
+     * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param entityRef set the entityRef.
+     * @param reserved set the reserved.
      */
-    public void setEntityRef(String  entityRef) {
-        this.entityRef = entityRef;
+    public void setReserved(Integer  reserved) {
+        this.reserved = reserved;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Set the log level for telemetry trace logs.
-     * Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG.
+     * Uuid for tenant/se group.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return telemetryTraceLogLevel
+     * @return uuid
      */
-    public String getTelemetryTraceLogLevel() {
-        return telemetryTraceLogLevel;
+    public String getUuid() {
+        return uuid;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Set the log level for telemetry trace logs.
-     * Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG.
+     * Uuid for tenant/se group.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param telemetryTraceLogLevel set the telemetryTraceLogLevel.
+     * @param uuid set the uuid.
      */
-    public void setTelemetryTraceLogLevel(String  telemetryTraceLogLevel) {
-        this.telemetryTraceLogLevel = telemetryTraceLogLevel;
+    public void setUuid(String  uuid) {
+        this.uuid = uuid;
     }
 
 
@@ -90,17 +86,17 @@ public class LogManagerDebugFilter  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      LogManagerDebugFilter objLogManagerDebugFilter = (LogManagerDebugFilter) o;
-      return   Objects.equals(this.entityRef, objLogManagerDebugFilter.entityRef)&&
-  Objects.equals(this.telemetryTraceLogLevel, objLogManagerDebugFilter.telemetryTraceLogLevel);
+      LicenseReservationInfo objLicenseReservationInfo = (LicenseReservationInfo) o;
+      return   Objects.equals(this.uuid, objLicenseReservationInfo.uuid)&&
+  Objects.equals(this.reserved, objLicenseReservationInfo.reserved);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class LogManagerDebugFilter {\n");
-                  sb.append("    entityRef: ").append(toIndentedString(entityRef)).append("\n");
-                        sb.append("    telemetryTraceLogLevel: ").append(toIndentedString(telemetryTraceLogLevel)).append("\n");
+      sb.append("class LicenseReservationInfo {\n");
+                  sb.append("    reserved: ").append(toIndentedString(reserved)).append("\n");
+                        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

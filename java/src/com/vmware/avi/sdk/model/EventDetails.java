@@ -471,6 +471,9 @@ public class EventDetails  {
     @JsonProperty("scheduler_action_info")
     private SchedulerActionDetails schedulerActionInfo;
 
+    @JsonProperty("se_autoscaler_event_details")
+    private SeAutoScalerEventDetails seAutoscalerEventDetails;
+
     @JsonProperty("se_bgp_peer_down_details")
     private SeBgpPeerDownDetails seBgpPeerDownDetails;
 
@@ -668,6 +671,9 @@ public class EventDetails  {
 
     @JsonProperty("tech_support_event")
     private TechSupportEvent techSupportEvent;
+
+    @JsonProperty("tech_support_event_details")
+    private TechSupport techSupportEventDetails;
 
     @JsonProperty("tencent_info")
     private TencentSetup tencentInfo;
@@ -3887,6 +3893,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Details about the se autoscaler actions generated.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seAutoscalerEventDetails
+     */
+    public SeAutoScalerEventDetails getSeAutoscalerEventDetails() {
+        return seAutoscalerEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Details about the se autoscaler actions generated.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param seAutoscalerEventDetails set the seAutoscalerEventDetails.
+     */
+    public void setSeAutoscalerEventDetails(SeAutoScalerEventDetails seAutoscalerEventDetails) {
+        this.seAutoscalerEventDetails = seAutoscalerEventDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -5267,6 +5297,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Techsupport event details.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return techSupportEventDetails
+     */
+    public TechSupport getTechSupportEventDetails() {
+        return techSupportEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Techsupport event details.
+     * Field introduced in 31.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param techSupportEventDetails set the techSupportEventDetails.
+     */
+    public void setTechSupportEventDetails(TechSupport techSupportEventDetails) {
+        this.techSupportEventDetails = techSupportEventDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tencentInfo
@@ -6054,6 +6108,7 @@ public class EventDetails  {
   Objects.equals(this.apiVersionDeprecated, objEventDetails.apiVersionDeprecated)&&
   Objects.equals(this.asyncPatchState, objEventDetails.asyncPatchState)&&
   Objects.equals(this.techSupportEvent, objEventDetails.techSupportEvent)&&
+  Objects.equals(this.techSupportEventDetails, objEventDetails.techSupportEventDetails)&&
   Objects.equals(this.warningEventDetails, objEventDetails.warningEventDetails)&&
   Objects.equals(this.sslExpireDetails, objEventDetails.sslExpireDetails)&&
   Objects.equals(this.sslExportDetails, objEventDetails.sslExportDetails)&&
@@ -6200,7 +6255,8 @@ public class EventDetails  {
   Objects.equals(this.postgresEventDetails, objEventDetails.postgresEventDetails)&&
   Objects.equals(this.systemLimitObjectCounts, objEventDetails.systemLimitObjectCounts)&&
   Objects.equals(this.usageMeteringEventDetails, objEventDetails.usageMeteringEventDetails)&&
-  Objects.equals(this.controlscriptDetails, objEventDetails.controlscriptDetails);
+  Objects.equals(this.controlscriptDetails, objEventDetails.controlscriptDetails)&&
+  Objects.equals(this.seAutoscalerEventDetails, objEventDetails.seAutoscalerEventDetails);
     }
 
     @Override
@@ -6357,6 +6413,7 @@ public class EventDetails  {
                         sb.append("    rebootSeDetails: ").append(toIndentedString(rebootSeDetails)).append("\n");
                         sb.append("    samlMetadataFailedEvents: ").append(toIndentedString(samlMetadataFailedEvents)).append("\n");
                         sb.append("    schedulerActionInfo: ").append(toIndentedString(schedulerActionInfo)).append("\n");
+                        sb.append("    seAutoscalerEventDetails: ").append(toIndentedString(seAutoscalerEventDetails)).append("\n");
                         sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
                         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");
                         sb.append("    seConfigSedatastoreDlFail: ").append(toIndentedString(seConfigSedatastoreDlFail)).append("\n");
@@ -6423,6 +6480,7 @@ public class EventDetails  {
                         sb.append("    systemReportEventDetails: ").append(toIndentedString(systemReportEventDetails)).append("\n");
                         sb.append("    taskJournalEventDetails: ").append(toIndentedString(taskJournalEventDetails)).append("\n");
                         sb.append("    techSupportEvent: ").append(toIndentedString(techSupportEvent)).append("\n");
+                        sb.append("    techSupportEventDetails: ").append(toIndentedString(techSupportEventDetails)).append("\n");
                         sb.append("    tencentInfo: ").append(toIndentedString(tencentInfo)).append("\n");
                         sb.append("    uberEventDetails: ").append(toIndentedString(uberEventDetails)).append("\n");
                         sb.append("    unbindVsSeDetails: ").append(toIndentedString(unbindVsSeDetails)).append("\n");

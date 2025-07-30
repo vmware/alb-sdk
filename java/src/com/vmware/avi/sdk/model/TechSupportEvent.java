@@ -21,60 +21,33 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TechSupportEvent  {
-    @JsonProperty("tech_support_status")
-    private TechSupportStatus techSupportStatus;
-
-    @JsonProperty("tenant")
-    private String tenant;
+    @JsonProperty("tech_support")
+    private TechSupport techSupport;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Techsupport status object.
+     * Techsupport object.
      * Field introduced in 31.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return techSupportStatus
+     * @return techSupport
      */
-    public TechSupportStatus getTechSupportStatus() {
-        return techSupportStatus;
+    public TechSupport getTechSupport() {
+        return techSupport;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Techsupport status object.
+     * Techsupport object.
      * Field introduced in 31.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param techSupportStatus set the techSupportStatus.
+     * @param techSupport set the techSupport.
      */
-    public void setTechSupportStatus(TechSupportStatus techSupportStatus) {
-        this.techSupportStatus = techSupportStatus;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Tenant under techsupport invoked.
-     * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return tenant
-     */
-    public String getTenant() {
-        return tenant;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Tenant under techsupport invoked.
-     * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param tenant set the tenant.
-     */
-    public void setTenant(String  tenant) {
-        this.tenant = tenant;
+    public void setTechSupport(TechSupport techSupport) {
+        this.techSupport = techSupport;
     }
 
 
@@ -87,16 +60,14 @@ public class TechSupportEvent  {
           return false;
       }
       TechSupportEvent objTechSupportEvent = (TechSupportEvent) o;
-      return   Objects.equals(this.techSupportStatus, objTechSupportEvent.techSupportStatus)&&
-  Objects.equals(this.tenant, objTechSupportEvent.tenant);
+      return   Objects.equals(this.techSupport, objTechSupportEvent.techSupport);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class TechSupportEvent {\n");
-                  sb.append("    techSupportStatus: ").append(toIndentedString(techSupportStatus)).append("\n");
-                        sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
+                  sb.append("    techSupport: ").append(toIndentedString(techSupport)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

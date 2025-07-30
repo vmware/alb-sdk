@@ -63,11 +63,20 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("auto_rebalance_capacity_per_se")
     private List<Integer> autoRebalanceCapacityPerSe;
 
+    @JsonProperty("auto_rebalance_cool_down_time")
+    private Integer autoRebalanceCoolDownTime = 15;
+
     @JsonProperty("auto_rebalance_criteria")
     private List<String> autoRebalanceCriteria;
 
+    @JsonProperty("auto_rebalance_dry_run_enabled")
+    private Boolean autoRebalanceDryRunEnabled = false;
+
     @JsonProperty("auto_rebalance_interval")
     private Integer autoRebalanceInterval = 300;
+
+    @JsonProperty("auto_rebalance_raise_events_for_actions")
+    private Boolean autoRebalanceRaiseEventsForActions = false;
 
     @JsonProperty("auto_redistribute_active_standby_load")
     private Boolean autoRedistributeActiveStandbyLoad = false;
@@ -214,7 +223,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean enablePcapTxRing;
 
     @JsonProperty("enable_qat")
-    private Boolean enableQat = false;
+    private Boolean enableQat;
 
     @JsonProperty("ephemeral_portrange_end")
     private Integer ephemeralPortrangeEnd;
@@ -324,6 +333,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("least_load_core_selection")
     private Boolean leastLoadCoreSelection = true;
 
+    @JsonProperty("license_quota")
+    private QuotaConfig licenseQuota;
+
     @JsonProperty("license_tier")
     private String licenseTier;
 
@@ -386,6 +398,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("max_concurrent_external_hm")
     private Integer maxConcurrentExternalHm;
+
+    @JsonProperty("max_cpu_load_adaptive_sampling")
+    private Integer maxCpuLoadAdaptiveSampling = 80;
 
     @JsonProperty("max_cpu_usage")
     private Integer maxCpuUsage = 80;
@@ -536,6 +551,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("pre_upgrade_se_available_mem_threshold")
     private Integer preUpgradeSeAvailableMemThreshold = 0;
+
+    @JsonProperty("qat_config")
+    private QatConfig qatConfig;
 
     @JsonProperty("realtime_se_metrics")
     private MetricsRealTimeUpdate realtimeSeMetrics;
@@ -1303,6 +1321,32 @@ public class ServiceEngineGroup extends AviRestResource  {
       this.autoRebalanceCapacityPerSe.add(autoRebalanceCapacityPerSeItem);
       return this;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The time in minutes controller waits before rebalancing the vs again after a scalein/scaleout.
+     * Field introduced in 31.2.1.
+     * Unit is min.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 15.
+     * @return autoRebalanceCoolDownTime
+     */
+    public Integer getAutoRebalanceCoolDownTime() {
+        return autoRebalanceCoolDownTime;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The time in minutes controller waits before rebalancing the vs again after a scalein/scaleout.
+     * Field introduced in 31.2.1.
+     * Unit is min.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 15.
+     * @param autoRebalanceCoolDownTime set the autoRebalanceCoolDownTime.
+     */
+    public void setAutoRebalanceCoolDownTime(Integer  autoRebalanceCoolDownTime) {
+        this.autoRebalanceCoolDownTime = autoRebalanceCoolDownTime;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Set of criteria for se auto rebalance.
@@ -1348,6 +1392,32 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * If enabled, the controller will not perform the rebalance actions.it will only generate the actions and update that in the debug api.this is
+     * useful for testing the rebalance logic without actually performing the actions.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return autoRebalanceDryRunEnabled
+     */
+    public Boolean getAutoRebalanceDryRunEnabled() {
+        return autoRebalanceDryRunEnabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If enabled, the controller will not perform the rebalance actions.it will only generate the actions and update that in the debug api.this is
+     * useful for testing the rebalance logic without actually performing the actions.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param autoRebalanceDryRunEnabled set the autoRebalanceDryRunEnabled.
+     */
+    public void setAutoRebalanceDryRunEnabled(Boolean  autoRebalanceDryRunEnabled) {
+        this.autoRebalanceDryRunEnabled = autoRebalanceDryRunEnabled;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Frequency of rebalance, if 'auto rebalance' is enabled.
      * Unit is sec.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -1368,6 +1438,30 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setAutoRebalanceInterval(Integer  autoRebalanceInterval) {
         this.autoRebalanceInterval = autoRebalanceInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * If enabled, the controller will raise events for rebalance actions.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return autoRebalanceRaiseEventsForActions
+     */
+    public Boolean getAutoRebalanceRaiseEventsForActions() {
+        return autoRebalanceRaiseEventsForActions;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If enabled, the controller will raise events for rebalance actions.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param autoRebalanceRaiseEventsForActions set the autoRebalanceRaiseEventsForActions.
+     */
+    public void setAutoRebalanceRaiseEventsForActions(Boolean  autoRebalanceRaiseEventsForActions) {
+        this.autoRebalanceRaiseEventsForActions = autoRebalanceRaiseEventsForActions;
     }
 
     /**
@@ -1684,6 +1778,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Set cpu shares for service engine virtual machines to high.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return cpuReserve
@@ -1694,6 +1789,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
+     * Set cpu shares for service engine virtual machines to high.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param cpuReserve set the cpuReserve.
@@ -2651,9 +2747,9 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * This knob enables the service engine to use qat offloads (if the host cpu is capable, and the qat device is exposed).
      * Requires se reboot.
+     * Field deprecated in 31.2.1.
      * Field introduced in 31.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableQat
      */
     public Boolean getEnableQat() {
@@ -2664,9 +2760,9 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * This knob enables the service engine to use qat offloads (if the host cpu is capable, and the qat device is exposed).
      * Requires se reboot.
+     * Field deprecated in 31.2.1.
      * Field introduced in 31.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableQat set the enableQat.
      */
     public void setEnableQat(Boolean  enableQat) {
@@ -3631,6 +3727,30 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * License quota for the se group.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return licenseQuota
+     */
+    public QuotaConfig getLicenseQuota() {
+        return licenseQuota;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * License quota for the se group.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param licenseQuota set the licenseQuota.
+     */
+    public void setLicenseQuota(QuotaConfig licenseQuota) {
+        this.licenseQuota = licenseQuota;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Specifies the license tier which would be used.
      * This field by default inherits the value from cloud.
      * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
@@ -4172,6 +4292,36 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setMaxConcurrentExternalHm(Integer  maxConcurrentExternalHm) {
         this.maxConcurrentExternalHm = maxConcurrentExternalHm;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * When adaptive sampling is enabled, specifies the max cpu load allowed for adaptive sampling.
+     * If the cpu load exceeds this value, no requests will be sampled.
+     * Allowed values are 1-100.
+     * Field introduced in 31.2.1.
+     * Unit is percent.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 80.
+     * @return maxCpuLoadAdaptiveSampling
+     */
+    public Integer getMaxCpuLoadAdaptiveSampling() {
+        return maxCpuLoadAdaptiveSampling;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * When adaptive sampling is enabled, specifies the max cpu load allowed for adaptive sampling.
+     * If the cpu load exceeds this value, no requests will be sampled.
+     * Allowed values are 1-100.
+     * Field introduced in 31.2.1.
+     * Unit is percent.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 80.
+     * @param maxCpuLoadAdaptiveSampling set the maxCpuLoadAdaptiveSampling.
+     */
+    public void setMaxCpuLoadAdaptiveSampling(Integer  maxCpuLoadAdaptiveSampling) {
+        this.maxCpuLoadAdaptiveSampling = maxCpuLoadAdaptiveSampling;
     }
 
     /**
@@ -5509,6 +5659,30 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setPreUpgradeSeAvailableMemThreshold(Integer  preUpgradeSeAvailableMemThreshold) {
         this.preUpgradeSeAvailableMemThreshold = preUpgradeSeAvailableMemThreshold;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Qat configurations.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return qatConfig
+     */
+    public QatConfig getQatConfig() {
+        return qatConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Qat configurations.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param qatConfig set the qatConfig.
+     */
+    public void setQatConfig(QatConfig qatConfig) {
+        this.qatConfig = qatConfig;
     }
 
     /**
@@ -9169,7 +9343,13 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.objsyncMode, objServiceEngineGroup.objsyncMode)&&
   Objects.equals(this.reservedConfiguration, objServiceEngineGroup.reservedConfiguration)&&
   Objects.equals(this.vsphereStoragePolicies, objServiceEngineGroup.vsphereStoragePolicies)&&
-  Objects.equals(this.sdbKeyTimeout, objServiceEngineGroup.sdbKeyTimeout);
+  Objects.equals(this.sdbKeyTimeout, objServiceEngineGroup.sdbKeyTimeout)&&
+  Objects.equals(this.maxCpuLoadAdaptiveSampling, objServiceEngineGroup.maxCpuLoadAdaptiveSampling)&&
+  Objects.equals(this.autoRebalanceCoolDownTime, objServiceEngineGroup.autoRebalanceCoolDownTime)&&
+  Objects.equals(this.autoRebalanceRaiseEventsForActions, objServiceEngineGroup.autoRebalanceRaiseEventsForActions)&&
+  Objects.equals(this.autoRebalanceDryRunEnabled, objServiceEngineGroup.autoRebalanceDryRunEnabled)&&
+  Objects.equals(this.licenseQuota, objServiceEngineGroup.licenseQuota)&&
+  Objects.equals(this.qatConfig, objServiceEngineGroup.qatConfig);
     }
 
     @Override
@@ -9190,8 +9370,11 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    asyncSslThreads: ").append(toIndentedString(asyncSslThreads)).append("\n");
                         sb.append("    autoRebalance: ").append(toIndentedString(autoRebalance)).append("\n");
                         sb.append("    autoRebalanceCapacityPerSe: ").append(toIndentedString(autoRebalanceCapacityPerSe)).append("\n");
+                        sb.append("    autoRebalanceCoolDownTime: ").append(toIndentedString(autoRebalanceCoolDownTime)).append("\n");
                         sb.append("    autoRebalanceCriteria: ").append(toIndentedString(autoRebalanceCriteria)).append("\n");
+                        sb.append("    autoRebalanceDryRunEnabled: ").append(toIndentedString(autoRebalanceDryRunEnabled)).append("\n");
                         sb.append("    autoRebalanceInterval: ").append(toIndentedString(autoRebalanceInterval)).append("\n");
+                        sb.append("    autoRebalanceRaiseEventsForActions: ").append(toIndentedString(autoRebalanceRaiseEventsForActions)).append("\n");
                         sb.append("    autoRedistributeActiveStandbyLoad: ").append(toIndentedString(autoRedistributeActiveStandbyLoad)).append("\n");
                         sb.append("    availabilityZoneRefs: ").append(toIndentedString(availabilityZoneRefs)).append("\n");
                         sb.append("    baremetalDispatcherHandlesFlows: ").append(toIndentedString(baremetalDispatcherHandlesFlows)).append("\n");
@@ -9277,6 +9460,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    lbactionNumRequestsToDispatch: ").append(toIndentedString(lbactionNumRequestsToDispatch)).append("\n");
                         sb.append("    lbactionRqPerRequestMaxRetries: ").append(toIndentedString(lbactionRqPerRequestMaxRetries)).append("\n");
                         sb.append("    leastLoadCoreSelection: ").append(toIndentedString(leastLoadCoreSelection)).append("\n");
+                        sb.append("    licenseQuota: ").append(toIndentedString(licenseQuota)).append("\n");
                         sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
                         sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
                         sb.append("    logAgentCompressLogs: ").append(toIndentedString(logAgentCompressLogs)).append("\n");
@@ -9298,6 +9482,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    logMessageMaxFileListSize: ").append(toIndentedString(logMessageMaxFileListSize)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    maxConcurrentExternalHm: ").append(toIndentedString(maxConcurrentExternalHm)).append("\n");
+                        sb.append("    maxCpuLoadAdaptiveSampling: ").append(toIndentedString(maxCpuLoadAdaptiveSampling)).append("\n");
                         sb.append("    maxCpuUsage: ").append(toIndentedString(maxCpuUsage)).append("\n");
                         sb.append("    maxMemoryPerMempool: ").append(toIndentedString(maxMemoryPerMempool)).append("\n");
                         sb.append("    maxNumHttpSessionsToStore: ").append(toIndentedString(maxNumHttpSessionsToStore)).append("\n");
@@ -9348,6 +9533,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    perVsAdmissionControl: ").append(toIndentedString(perVsAdmissionControl)).append("\n");
                         sb.append("    placementMode: ").append(toIndentedString(placementMode)).append("\n");
                         sb.append("    preUpgradeSeAvailableMemThreshold: ").append(toIndentedString(preUpgradeSeAvailableMemThreshold)).append("\n");
+                        sb.append("    qatConfig: ").append(toIndentedString(qatConfig)).append("\n");
                         sb.append("    realtimeSeMetrics: ").append(toIndentedString(realtimeSeMetrics)).append("\n");
                         sb.append("    rebootOnPanic: ").append(toIndentedString(rebootOnPanic)).append("\n");
                         sb.append("    replayVrfRoutesInterval: ").append(toIndentedString(replayVrfRoutesInterval)).append("\n");

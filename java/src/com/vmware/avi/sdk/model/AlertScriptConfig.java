@@ -36,6 +36,9 @@ public class AlertScriptConfig extends AviRestResource  {
     @JsonProperty("url")
     private String url = "url";
 
+    @JsonProperty("user_ref")
+    private String userRef;
+
     @JsonProperty("uuid")
     private String uuid;
 
@@ -152,6 +155,32 @@ public class AlertScriptConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Uuid of last editor user.
+     * It is a reference to an object of type user.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return userRef
+     */
+    public String getUserRef() {
+        return userRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Uuid of last editor user.
+     * It is a reference to an object of type user.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param userRef set the userRef.
+     */
+    public void setUserRef(String  userRef) {
+        this.userRef = userRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
@@ -184,7 +213,8 @@ public class AlertScriptConfig extends AviRestResource  {
   Objects.equals(this.name, objAlertScriptConfig.name)&&
   Objects.equals(this.actionScript, objAlertScriptConfig.actionScript)&&
   Objects.equals(this.tenantRef, objAlertScriptConfig.tenantRef)&&
-  Objects.equals(this.timeout, objAlertScriptConfig.timeout);
+  Objects.equals(this.timeout, objAlertScriptConfig.timeout)&&
+  Objects.equals(this.userRef, objAlertScriptConfig.userRef);
     }
 
     @Override
@@ -195,7 +225,8 @@ public class AlertScriptConfig extends AviRestResource  {
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
-                                    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+                                    sb.append("    userRef: ").append(toIndentedString(userRef)).append("\n");
+                        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

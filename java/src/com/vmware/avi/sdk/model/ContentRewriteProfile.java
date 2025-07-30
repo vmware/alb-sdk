@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ContentRewriteProfile  {
+    @JsonProperty("req_rewrite_rules")
+    private List<ReqContentRewriteRule> reqRewriteRules;
+
     @JsonProperty("rewritable_content_ref")
     private String rewritableContentRef;
 
@@ -28,14 +31,56 @@ public class ContentRewriteProfile  {
     private List<RspContentRewriteRule> rspRewriteRules;
 
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Content rewrite rules to be enabled on therequest body.
+     * Field introduced in 31.2.1.
+     * Maximum of 1 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return reqRewriteRules
+     */
+    public List<ReqContentRewriteRule> getReqRewriteRules() {
+        return reqRewriteRules;
+    }
+
+    /**
+     * This is the setter method. this will set the reqRewriteRules
+     * Content rewrite rules to be enabled on therequest body.
+     * Field introduced in 31.2.1.
+     * Maximum of 1 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return reqRewriteRules
+     */
+    public void setReqRewriteRules(List<ReqContentRewriteRule>  reqRewriteRules) {
+        this.reqRewriteRules = reqRewriteRules;
+    }
+
+    /**
+     * This is the setter method this will set the reqRewriteRules
+     * Content rewrite rules to be enabled on therequest body.
+     * Field introduced in 31.2.1.
+     * Maximum of 1 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return reqRewriteRules
+     */
+    public ContentRewriteProfile addReqRewriteRulesItem(ReqContentRewriteRule reqRewriteRulesItem) {
+      if (this.reqRewriteRules == null) {
+        this.reqRewriteRules = new ArrayList<ReqContentRewriteRule>();
+      }
+      this.reqRewriteRules.add(reqRewriteRulesItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
      * Rewrite only content types listed in this string group.
      * Content types not present in this list are not rewritten.
      * It is a reference to an object of type stringgroup.
+     * Field deprecated in 31.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rewritableContentRef
      */
     public String getRewritableContentRef() {
@@ -47,8 +92,8 @@ public class ContentRewriteProfile  {
      * Rewrite only content types listed in this string group.
      * Content types not present in this list are not rewritten.
      * It is a reference to an object of type stringgroup.
+     * Field deprecated in 31.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rewritableContentRef set the rewritableContentRef.
      */
     public void setRewritableContentRef(String  rewritableContentRef) {
@@ -108,14 +153,16 @@ public class ContentRewriteProfile  {
       }
       ContentRewriteProfile objContentRewriteProfile = (ContentRewriteProfile) o;
       return   Objects.equals(this.rewritableContentRef, objContentRewriteProfile.rewritableContentRef)&&
-  Objects.equals(this.rspRewriteRules, objContentRewriteProfile.rspRewriteRules);
+  Objects.equals(this.rspRewriteRules, objContentRewriteProfile.rspRewriteRules)&&
+  Objects.equals(this.reqRewriteRules, objContentRewriteProfile.reqRewriteRules);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class ContentRewriteProfile {\n");
-                  sb.append("    rewritableContentRef: ").append(toIndentedString(rewritableContentRef)).append("\n");
+                  sb.append("    reqRewriteRules: ").append(toIndentedString(reqRewriteRules)).append("\n");
+                        sb.append("    rewritableContentRef: ").append(toIndentedString(rewritableContentRef)).append("\n");
                         sb.append("    rspRewriteRules: ").append(toIndentedString(rspRewriteRules)).append("\n");
                   sb.append("}");
       return sb.toString();

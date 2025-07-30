@@ -25,10 +25,10 @@ public class SaasLicensingInfo  {
     private Boolean enableNotionalReserve = true;
 
     @JsonProperty("max_service_units")
-    private Float maxServiceUnits = 0.0f;
+    private Float maxServiceUnits;
 
     @JsonProperty("reserve_service_units")
-    private Float reserveServiceUnits = 0.0f;
+    private Float reserveServiceUnits;
 
 
 
@@ -58,12 +58,11 @@ public class SaasLicensingInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Maximum service units limit for controller.
+     * This field is deprecated.
      * Allowed values are 0-100000.
-     * Special values are 0 - infinite.
+     * Field deprecated in 31.2.1.
      * Field introduced in 21.1.3.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @return maxServiceUnits
      */
     public Float getMaxServiceUnits() {
@@ -72,12 +71,11 @@ public class SaasLicensingInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Maximum service units limit for controller.
+     * This field is deprecated.
      * Allowed values are 0-100000.
-     * Special values are 0 - infinite.
+     * Field deprecated in 31.2.1.
      * Field introduced in 21.1.3.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @param maxServiceUnits set the maxServiceUnits.
      */
     public void setMaxServiceUnits(Float  maxServiceUnits) {
@@ -86,11 +84,11 @@ public class SaasLicensingInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Minimum service units that always remain reserved on controller.
+     * This field is deprecated.
      * Allowed values are 0-1000.
+     * Field deprecated in 31.2.1.
      * Field introduced in 21.1.3.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @return reserveServiceUnits
      */
     public Float getReserveServiceUnits() {
@@ -99,11 +97,11 @@ public class SaasLicensingInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Minimum service units that always remain reserved on controller.
+     * This field is deprecated.
      * Allowed values are 0-1000.
+     * Field deprecated in 31.2.1.
      * Field introduced in 21.1.3.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @param reserveServiceUnits set the reserveServiceUnits.
      */
     public void setReserveServiceUnits(Float  reserveServiceUnits) {

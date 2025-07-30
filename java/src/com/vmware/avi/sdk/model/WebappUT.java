@@ -24,17 +24,23 @@ public class WebappUT extends AviRestResource  {
     @JsonProperty("cloud_ref")
     private String cloudRef;
 
+    @JsonProperty("default_fifth_int")
+    private Integer defaultFifthInt = 5;
+
     @JsonProperty("default_first_int")
     private Integer defaultFirstInt = 1;
 
+    @JsonProperty("default_fourth_int")
+    private Integer defaultFourthInt = 4;
+
     @JsonProperty("default_second_int")
-    private Integer defaultSecondInt = 2;
+    private Integer defaultSecondInt;
 
     @JsonProperty("default_string")
     private String defaultString = "default string";
 
     @JsonProperty("default_third_int")
-    private Integer defaultThirdInt = 3;
+    private Integer defaultThirdInt;
 
     @JsonProperty("mandatory_test")
     private L1FMandatoryTestCase mandatoryTest;
@@ -105,6 +111,30 @@ public class WebappUT extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Default int32 field.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @return defaultFifthInt
+     */
+    public Integer getDefaultFifthInt() {
+        return defaultFifthInt;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Default int32 field.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @param defaultFifthInt set the defaultFifthInt.
+     */
+    public void setDefaultFifthInt(Integer  defaultFifthInt) {
+        this.defaultFifthInt = defaultFifthInt;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Default uint64 field.
      * Field introduced in 30.1.2.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -129,10 +159,34 @@ public class WebappUT extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Default int32 field.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @return defaultFourthInt
+     */
+    public Integer getDefaultFourthInt() {
+        return defaultFourthInt;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Default int32 field.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @param defaultFourthInt set the defaultFourthInt.
+     */
+    public void setDefaultFourthInt(Integer  defaultFourthInt) {
+        this.defaultFourthInt = defaultFourthInt;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Default int64 field.
+     * Field deprecated in 31.1.1.
      * Field introduced in 30.1.2.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return defaultSecondInt
      */
     public Integer getDefaultSecondInt() {
@@ -142,9 +196,9 @@ public class WebappUT extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Default int64 field.
+     * Field deprecated in 31.1.1.
      * Field introduced in 30.1.2.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param defaultSecondInt set the defaultSecondInt.
      */
     public void setDefaultSecondInt(Integer  defaultSecondInt) {
@@ -178,9 +232,9 @@ public class WebappUT extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Default int32 field.
+     * Field deprecated in 31.1.1.
      * Field introduced in 30.1.2.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @return defaultThirdInt
      */
     public Integer getDefaultThirdInt() {
@@ -190,9 +244,9 @@ public class WebappUT extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Default int32 field.
+     * Field deprecated in 31.1.1.
      * Field introduced in 30.1.2.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @param defaultThirdInt set the defaultThirdInt.
      */
     public void setDefaultThirdInt(Integer  defaultThirdInt) {
@@ -579,7 +633,9 @@ public class WebappUT extends AviRestResource  {
   Objects.equals(this.defaultFirstInt, objWebappUT.defaultFirstInt)&&
   Objects.equals(this.defaultSecondInt, objWebappUT.defaultSecondInt)&&
   Objects.equals(this.defaultThirdInt, objWebappUT.defaultThirdInt)&&
-  Objects.equals(this.cloudRef, objWebappUT.cloudRef);
+  Objects.equals(this.cloudRef, objWebappUT.cloudRef)&&
+  Objects.equals(this.defaultFourthInt, objWebappUT.defaultFourthInt)&&
+  Objects.equals(this.defaultFifthInt, objWebappUT.defaultFifthInt);
     }
 
     @Override
@@ -587,7 +643,9 @@ public class WebappUT extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class WebappUT {\n");
                   sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+                        sb.append("    defaultFifthInt: ").append(toIndentedString(defaultFifthInt)).append("\n");
                         sb.append("    defaultFirstInt: ").append(toIndentedString(defaultFirstInt)).append("\n");
+                        sb.append("    defaultFourthInt: ").append(toIndentedString(defaultFourthInt)).append("\n");
                         sb.append("    defaultSecondInt: ").append(toIndentedString(defaultSecondInt)).append("\n");
                         sb.append("    defaultString: ").append(toIndentedString(defaultString)).append("\n");
                         sb.append("    defaultThirdInt: ").append(toIndentedString(defaultThirdInt)).append("\n");

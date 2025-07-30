@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The AZCluster is a POJO class extends AviRestResource that used for creating
- * AZCluster.
+ * The SeGroupInfo is a POJO class extends AviRestResource that used for creating
+ * SeGroupInfo.
  *
  * @version 1.0
  * @since 
@@ -20,78 +20,88 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class AZCluster  {
-    @JsonProperty("cluster_ids")
-    private List<String> clusterIds;
+public class SeGroupInfo extends AviRestResource  {
+    @JsonProperty("consumed")
+    private Float consumed;
 
-    @JsonProperty("vcenter_ref")
-    private String vcenterRef;
+    @JsonProperty("escrow")
+    private Float escrow;
+
+    @JsonProperty("uuid")
+    private String uuid;
 
 
-    /**
-     * This is the getter method this will return the attribute value.
-     * A list of managed object ids (moids) of vcenter clusters that are part of this availability zone.
-     * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return clusterIds
-     */
-    public List<String> getClusterIds() {
-        return clusterIds;
-    }
-
-    /**
-     * This is the setter method. this will set the clusterIds
-     * A list of managed object ids (moids) of vcenter clusters that are part of this availability zone.
-     * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return clusterIds
-     */
-    public void setClusterIds(List<String>  clusterIds) {
-        this.clusterIds = clusterIds;
-    }
-
-    /**
-     * This is the setter method this will set the clusterIds
-     * A list of managed object ids (moids) of vcenter clusters that are part of this availability zone.
-     * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return clusterIds
-     */
-    public AZCluster addClusterIdsItem(String clusterIdsItem) {
-      if (this.clusterIds == null) {
-        this.clusterIds = new ArrayList<String>();
-      }
-      this.clusterIds.add(clusterIdsItem);
-      return this;
-    }
 
     /**
      * This is the getter method this will return the attribute value.
-     * The uuid of the vcenter server that manages the clusters associated with this availabilityzone.
-     * It is a reference to an object of type vcenterserver.
-     * Field introduced in 31.1.1.
+     * License cores consumed by se group.
+     * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return vcenterRef
+     * @return consumed
      */
-    public String getVcenterRef() {
-        return vcenterRef;
+    public Float getConsumed() {
+        return consumed;
     }
 
     /**
      * This is the setter method to the attribute.
-     * The uuid of the vcenter server that manages the clusters associated with this availabilityzone.
-     * It is a reference to an object of type vcenterserver.
-     * Field introduced in 31.1.1.
+     * License cores consumed by se group.
+     * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param vcenterRef set the vcenterRef.
+     * @param consumed set the consumed.
      */
-    public void setVcenterRef(String  vcenterRef) {
-        this.vcenterRef = vcenterRef;
+    public void setConsumed(Float  consumed) {
+        this.consumed = consumed;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * License cores reserved by se group.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return escrow
+     */
+    public Float getEscrow() {
+        return escrow;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * License cores reserved by se group.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param escrow set the escrow.
+     */
+    public void setEscrow(Float  escrow) {
+        this.escrow = escrow;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Se group uuid for reference.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return uuid
+     */
+    public String getUuid() {
+        return uuid;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Se group uuid for reference.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param uuid set the uuid.
+     */
+    public void setUuid(String  uuid) {
+        this.uuid = uuid;
     }
 
 
@@ -103,17 +113,19 @@ public class AZCluster  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      AZCluster objAZCluster = (AZCluster) o;
-      return   Objects.equals(this.vcenterRef, objAZCluster.vcenterRef)&&
-  Objects.equals(this.clusterIds, objAZCluster.clusterIds);
+      SeGroupInfo objSeGroupInfo = (SeGroupInfo) o;
+      return   Objects.equals(this.uuid, objSeGroupInfo.uuid)&&
+  Objects.equals(this.consumed, objSeGroupInfo.consumed)&&
+  Objects.equals(this.escrow, objSeGroupInfo.escrow);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class AZCluster {\n");
-                  sb.append("    clusterIds: ").append(toIndentedString(clusterIds)).append("\n");
-                        sb.append("    vcenterRef: ").append(toIndentedString(vcenterRef)).append("\n");
+      sb.append("class SeGroupInfo {\n");
+                  sb.append("    consumed: ").append(toIndentedString(consumed)).append("\n");
+                        sb.append("    escrow: ").append(toIndentedString(escrow)).append("\n");
+                        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
