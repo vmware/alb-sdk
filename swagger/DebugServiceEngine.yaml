@@ -608,10 +608,10 @@ definitions:
                 type: integer
                 format: uint32
             log_level:
-                description: " Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             sub_module:
-                description: " Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG, EVENTMANAGER_DEBUG. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG, EVENTMANAGER_DEBUG, SHARD_ORCHESTRATOR_DEBUG, RUNNOTIFICATIONS_DEBUG, JOBMANAGER_DEBUG, DNS_MANAGER_DEBUG, SECURE_KEY_EXCHANGE_DEBUG, SE_DATASTORE_DEBUG, FEDERATED_DATASTORE_DEBUG, SHARD_SERVER_DEBUG, SE_GRPC_AUTH_SERVER_DEBUG, SE_CONTROLLER_INTF_DEBUG, CLUSTER_SERVICES_WATCHER_DEBUG, SEUPGRADE_PARENT_DEBUG, PORTALCONNECTOR_DEBUG, PROCESS_EVENT_FORWARDER_DEBUG, DIFF_COMPACTOR_DEBUG, RES_MGR_GO_DEBUG, PLACEMENT_ORCHESTRATOR_DEBUG, LICENSE_MGR_DEBUG, OCTAVIUS_DEBUG, GSLB_LOCAL_WORKER_DEBUG, GSLB_REMOTE_WORKER_DEBUG, IMAGE_MANAGER_DEBUG, STATEDIFF_SERVICE_DEBUG, REMOTE_TASK_MANAGER_DEBUG, REMOTE_TASK_MANAGER_CLIENT_DEBUG, AVISCP_SERVER_DEBUG, UPGRADE_PORTAL_DEBUG, AUTHSERVER_DEBUG, APISERVER_DEBUG, GSLBPORTAL_DEBUG, ANALYTICS_ENGINE_LOGRECEIVER_DEBUG, CLUSTIFY_DEBUG, IPGEOLOCATIONSERVER_DEBUG, SYSTEM_HEALTH_AGENT_DEBUG, SYSTEM_HEALTH_SERVICE_DEBUG, TECH_SUPPORT_HANDLER_DEBUG, SE_AUTOSCALER_DEBUG. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             trace_level:
                 description: " Enum options - TRACE_LEVEL_DISABLED, TRACE_LEVEL_ERROR, TRACE_LEVEL_DEBUG, TRACE_LEVEL_DEBUG_DETAIL. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -730,6 +730,9 @@ definitions:
                 type: array
                 items:
                     $ref: '#/definitions/DebugSeDataplane'
+            high_cpu_script_config:
+                description: "Internal  Sustained CPU Data Collection config. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/DebugServiceEngineSustainedCpuSpike'
             mock_dl_fail_obj:
                 description: "Internal  Mark a specific Incoming Stream Object to be failed. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DebugServiceEngineSeDataStoreMockDlFail'
@@ -796,6 +799,45 @@ definitions:
             object_type:
                 description: "Incoming Stream Response Object Type to be failed. Eg  'VirtualServiceSe', 'Pool', 'FileObject', etc. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
+    DebugServiceEngineSustainedCpuSpike:
+        type: object
+        properties:
+            cpu_filter:
+                description: "cpu(s) filter for which high load will trigger debug data collection. Should be comma seperated with no space ( eg  0,1,4 ). Ranges can be given ( eg  2,4-6 ). Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            cpu_spike_percent:
+                description: "Average Percent usage of CPU ( either total and/or percpu ) to be considered for CPU to be under high load. Allowed values are 0-100. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            dis_enable:
+                description: "Toggle High CPU Trigger action. Set to true, to dis-enable High CPU Data Collection Script invocation. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: boolean
+            manual_start:
+                description: "Invokes High CPU Data Collection on SE for duration of an hour. Alert  Operator will have to manually dis-enable this and manage SE disk-space!. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: boolean
+            pids:
+                description: "List of process' pid(s) for which debug data should be recorded. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: integer
+                format: uint32
+            process_names:
+                description: "List of process' name(s) for which debug data should be recorded. Field introduced in 31.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            sample_cooldown:
+                description: "Interval between each such script invocation. Should be >= 60. Allowed values are 60-864000. Field introduced in 31.1.2. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            sample_duration:
+                description: "Duration of debug data to be collected. Should be >= 11. Allowed values are 11-864000. Field introduced in 31.1.2. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            spike_duration:
+                description: "Time Duration ( in seconds ) to be considered for CPU to be consistently under high load. Should be >= 60s. CPU usage data is collected every 5s. Allowed values are 60-864000. Field introduced in 31.1.2. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
     DebugTraceMallocTypes:
         type: object
         properties:

@@ -576,6 +576,22 @@
                 }
             }
         },
+        "QuotaConfig": {
+            "type": "object",
+            "properties": {
+                "limit": {
+                    "description": "Maximum license service units allowed for consumption. -1 as Default is maximum value. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": -1,
+                    "format": "int64"
+                },
+                "reservation": {
+                    "description": "Minimum license service units reserved for consumption. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint64"
+                }
+            }
+        },
         "Tenant": {
             "type": "object",
             "required": [
@@ -666,6 +682,10 @@
         "TenantConfiguration": {
             "type": "object",
             "properties": {
+                "license_quota": {
+                    "description": "License quota for the tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/QuotaConfig"
+                },
                 "se_in_provider_context": {
                     "description": "Controls the ownership of ServiceEngines. Service Engines can either be exclusively owned by each tenant or owned by the administrator and shared by all tenants. When ServiceEngines are owned by the administrator, each tenant can have either read access or no access to their Service Engines. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",

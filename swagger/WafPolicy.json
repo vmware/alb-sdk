@@ -1419,10 +1419,20 @@
                     "description": "Enable dynamic regex generation for positive security model rules. This is an experimental feature and shouldn't be used in production. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
+                "enable_streaming": {
+                    "description": "If this is set, WAF will let requests be streamed to the backend servers. If not set, requests and responses will be buffered up to the configured maximum values. It can only be set if the WafPolicy is not set to enforcement mode. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
                 "failure_mode": {
                     "description": "WAF Policy failure mode. This can be 'Open' or 'Closed'. Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED. Field introduced in 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "WAF_FAILURE_MODE_OPEN"
+                },
+                "fixed_sampling_rate": {
+                    "description": "If sampling_mode is set to FIXED_SAMPLING, this value determines the percentage of requests choosen for WAF processing. Allowed values are 1-100. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 1,
+                    "format": "uint32"
                 },
                 "geo_db_ref": {
                     "description": "Geo Location Mapping Database used by this WafPolicy. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
@@ -1482,6 +1492,11 @@
                     "items": {
                         "$ref": "#/definitions/WafPolicyRequiredDataFile"
                     }
+                },
+                "sampling_mode": {
+                    "description": "If and how WAF should use sampling to restrict the number of requests checked. Enum options - WAF_SAMPLING_MODE_NO_SAMPLING, WAF_SAMPLING_MODE_ADAPTIVE_SAMPLING, WAF_SAMPLING_MODE_FIXED_SAMPLING. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "WAF_SAMPLING_MODE_NO_SAMPLING"
                 },
                 "tenant_ref": {
                     "description": " It is a reference to an object of type Tenant. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
