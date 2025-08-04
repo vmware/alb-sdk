@@ -49,9 +49,6 @@ public class WafPolicy extends AviRestResource  {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("enable_adaptive_sampling")
-    private Boolean enableAdaptiveSampling = false;
-
     @JsonProperty("enable_app_learning")
     private Boolean enableAppLearning = false;
 
@@ -61,8 +58,14 @@ public class WafPolicy extends AviRestResource  {
     @JsonIgnore
     private Boolean enableRegexLearning = false;
 
+    @JsonProperty("enable_streaming")
+    private Boolean enableStreaming = false;
+
     @JsonProperty("failure_mode")
     private String failureMode = "WAF_FAILURE_MODE_OPEN";
+
+    @JsonProperty("fixed_sampling_rate")
+    private Integer fixedSamplingRate = 1;
 
     @JsonProperty("geo_db_ref")
     private String geoDbRef;
@@ -93,6 +96,9 @@ public class WafPolicy extends AviRestResource  {
 
     @JsonProperty("pre_crs_groups")
     private List<WafRuleGroup> preCrsGroups;
+
+    @JsonProperty("sampling_mode")
+    private String samplingMode = "WAF_SAMPLING_MODE_NO_SAMPLING";
 
     @JsonProperty("tenant_ref")
     private String tenantRef;
@@ -356,34 +362,6 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Whether or not adaptive sampling should be enabled.
-     * If enabled, a varying percentage of requests will be subject to waf processing in evaluation mode.
-     * The se-group property max_cpu_load_adaptive_sampling limits the maximum load on the cpu allowed for adaptive sampling to take place.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @return enableAdaptiveSampling
-     */
-    public Boolean getEnableAdaptiveSampling() {
-        return enableAdaptiveSampling;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Whether or not adaptive sampling should be enabled.
-     * If enabled, a varying percentage of requests will be subject to waf processing in evaluation mode.
-     * The se-group property max_cpu_load_adaptive_sampling limits the maximum load on the cpu allowed for adaptive sampling to take place.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @param enableAdaptiveSampling set the enableAdaptiveSampling.
-     */
-    public void setEnableAdaptiveSampling(Boolean  enableAdaptiveSampling) {
-        this.enableAdaptiveSampling = enableAdaptiveSampling;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Enable application learning for this waf policy.
      * Field introduced in 18.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -460,6 +438,34 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * If this is set, waf will let requests be streamed to the backend servers.
+     * If not set, requests and responses will be buffered up to the configured maximum values.
+     * It can only be set if the wafpolicy is not set to enforcement mode.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enableStreaming
+     */
+    public Boolean getEnableStreaming() {
+        return enableStreaming;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If this is set, waf will let requests be streamed to the backend servers.
+     * If not set, requests and responses will be buffered up to the configured maximum values.
+     * It can only be set if the wafpolicy is not set to enforcement mode.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enableStreaming set the enableStreaming.
+     */
+    public void setEnableStreaming(Boolean  enableStreaming) {
+        this.enableStreaming = enableStreaming;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Waf policy failure mode.
      * This can be 'open' or 'closed'.
      * Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED.
@@ -484,6 +490,34 @@ public class WafPolicy extends AviRestResource  {
      */
     public void setFailureMode(String  failureMode) {
         this.failureMode = failureMode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * If sampling_mode is set to fixed_sampling, this value determines the percentage of requests choosen for waf processing.
+     * Allowed values are 1-100.
+     * Field introduced in 31.2.1.
+     * Unit is percent.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @return fixedSamplingRate
+     */
+    public Integer getFixedSamplingRate() {
+        return fixedSamplingRate;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If sampling_mode is set to fixed_sampling, this value determines the percentage of requests choosen for waf processing.
+     * Allowed values are 1-100.
+     * Field introduced in 31.2.1.
+     * Unit is percent.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @param fixedSamplingRate set the fixedSamplingRate.
+     */
+    public void setFixedSamplingRate(Integer  fixedSamplingRate) {
+        this.fixedSamplingRate = fixedSamplingRate;
     }
 
     /**
@@ -795,6 +829,32 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * If and how waf should use sampling to restrict the number of requests checked.
+     * Enum options - WAF_SAMPLING_MODE_NO_SAMPLING, WAF_SAMPLING_MODE_ADAPTIVE_SAMPLING, WAF_SAMPLING_MODE_FIXED_SAMPLING.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_SAMPLING_MODE_NO_SAMPLING".
+     * @return samplingMode
+     */
+    public String getSamplingMode() {
+        return samplingMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If and how waf should use sampling to restrict the number of requests checked.
+     * Enum options - WAF_SAMPLING_MODE_NO_SAMPLING, WAF_SAMPLING_MODE_ADAPTIVE_SAMPLING, WAF_SAMPLING_MODE_FIXED_SAMPLING.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_SAMPLING_MODE_NO_SAMPLING".
+     * @param samplingMode set the samplingMode.
+     */
+    public void setSamplingMode(String  samplingMode) {
+        this.samplingMode = samplingMode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
      * Field introduced in 17.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -1001,7 +1061,9 @@ public class WafPolicy extends AviRestResource  {
   Objects.equals(this.autoUpdateCrs, objWafPolicy.autoUpdateCrs)&&
   Objects.equals(this.updatedCrsRulesInDetectionMode, objWafPolicy.updatedCrsRulesInDetectionMode)&&
   Objects.equals(this.useEvaluationModeOnCrsUpdate, objWafPolicy.useEvaluationModeOnCrsUpdate)&&
-  Objects.equals(this.enableAdaptiveSampling, objWafPolicy.enableAdaptiveSampling);
+  Objects.equals(this.samplingMode, objWafPolicy.samplingMode)&&
+  Objects.equals(this.fixedSamplingRate, objWafPolicy.fixedSamplingRate)&&
+  Objects.equals(this.enableStreaming, objWafPolicy.enableStreaming);
     }
 
     @Override
@@ -1017,11 +1079,12 @@ public class WafPolicy extends AviRestResource  {
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
                         sb.append("    crsOverrides: ").append(toIndentedString(crsOverrides)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-                        sb.append("    enableAdaptiveSampling: ").append(toIndentedString(enableAdaptiveSampling)).append("\n");
                         sb.append("    enableAppLearning: ").append(toIndentedString(enableAppLearning)).append("\n");
                         sb.append("    enableAutoRuleUpdates: ").append(toIndentedString(enableAutoRuleUpdates)).append("\n");
                         sb.append("    enableRegexLearning: ").append(toIndentedString(enableRegexLearning)).append("\n");
+                        sb.append("    enableStreaming: ").append(toIndentedString(enableStreaming)).append("\n");
                         sb.append("    failureMode: ").append(toIndentedString(failureMode)).append("\n");
+                        sb.append("    fixedSamplingRate: ").append(toIndentedString(fixedSamplingRate)).append("\n");
                         sb.append("    geoDbRef: ").append(toIndentedString(geoDbRef)).append("\n");
                         sb.append("    learningParams: ").append(toIndentedString(learningParams)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
@@ -1032,6 +1095,7 @@ public class WafPolicy extends AviRestResource  {
                         sb.append("    positiveSecurityModel: ").append(toIndentedString(positiveSecurityModel)).append("\n");
                         sb.append("    postCrsGroups: ").append(toIndentedString(postCrsGroups)).append("\n");
                         sb.append("    preCrsGroups: ").append(toIndentedString(preCrsGroups)).append("\n");
+                        sb.append("    samplingMode: ").append(toIndentedString(samplingMode)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                         sb.append("    updatedCrsRulesInDetectionMode: ").append(toIndentedString(updatedCrsRulesInDetectionMode)).append("\n");
                                     sb.append("    useEvaluationModeOnCrsUpdate: ").append(toIndentedString(useEvaluationModeOnCrsUpdate)).append("\n");

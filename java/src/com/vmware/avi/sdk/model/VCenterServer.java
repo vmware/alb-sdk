@@ -99,7 +99,7 @@ public class VCenterServer extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Availabilty zone where vcenter list belongs to.
+     * Vcenter name.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -111,7 +111,7 @@ public class VCenterServer extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Availabilty zone where vcenter list belongs to.
+     * Vcenter name.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
