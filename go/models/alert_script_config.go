@@ -32,6 +32,9 @@ type AlertScriptConfig struct {
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
+	// Uuid of last editor user. It is a reference to an object of type User. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	UserRef *string `json:"user_ref,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

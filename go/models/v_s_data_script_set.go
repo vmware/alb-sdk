@@ -55,6 +55,12 @@ type VSDataScriptSet struct {
 	// The Rate Limit definitions needed for this DataScript. The name is composed of the Virtual Service name and the DataScript name. Field introduced in 18.2.9. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	RateLimiters []*RateLimiter `json:"rate_limiters,omitempty"`
 
+	// IPv6 address used by a VS-DataScript in avi.l4.source_ip api. Field introduced in 31.2.1. Maximum of 8 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SnatIP6S []*IPAddr `json:"snat_ip6s,omitempty"`
+
+	// IPv4 address used by a VS-DataScript in avi.l4.source_ip api. Field introduced in 31.2.1. Maximum of 8 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SnatIps []*IPAddr `json:"snat_ips,omitempty"`
+
 	// UUIDs of SSLKeyAndCertificate objects that could be referred by VSDataScriptSet objects. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SslKeyCertificateRefs []string `json:"ssl_key_certificate_refs,omitempty"`
 

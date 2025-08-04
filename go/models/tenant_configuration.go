@@ -8,6 +8,9 @@ package models
 // swagger:model TenantConfiguration
 type TenantConfiguration struct {
 
+	// License quota for the tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LicenseQuota *QuotaConfig `json:"license_quota,omitempty"`
+
 	// Controls the ownership of ServiceEngines. Service Engines can either be exclusively owned by each tenant or owned by the administrator and shared by all tenants. When ServiceEngines are owned by the administrator, each tenant can have either read access or no access to their Service Engines. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeInProviderContext *bool `json:"se_in_provider_context,omitempty"`
 

@@ -68,6 +68,12 @@ type ConnectionLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSIps []int64 `json:"dns_ips,omitempty,omitempty"`
 
+	// DNS policy or Topology policy name which resulted in a match. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	DNSPolicy *string `json:"dns_policy,omitempty"`
+
+	// DNS policy rule name which resulted in a match. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	DNSPolicyRuleName *string `json:"dns_policy_rule_name,omitempty"`
+
 	//  Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSQtype *string `json:"dns_qtype,omitempty"`
 
@@ -269,6 +275,9 @@ type ConnectionLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Timeouts *uint32 `json:"timeouts"`
+
+	// Topology policy rule name which resulted in a match. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	TopologyPolicyRuleName *string `json:"topology_policy_rule_name,omitempty"`
 
 	//  Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TotalBytes *uint64 `json:"total_bytes,omitempty"`

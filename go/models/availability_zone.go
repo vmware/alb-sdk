@@ -15,8 +15,14 @@ type AvailabilityZone struct {
 	// Group of clusters belongs to the AZ. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	AzClusters []*AZCluster `json:"az_clusters,omitempty"`
 
-	// Datastores associated with the AZ. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Group of datastores associated with the AZ. Field deprecated in 31.2.1. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	AzDatastore *AZDatastore `json:"az_datastore,omitempty"`
+
+	// Group of datastores associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AzDatastores []*AZDatastore `json:"az_datastores,omitempty"`
+
+	// Group of hosts associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AzHosts []*AZHost `json:"az_hosts,omitempty"`
 
 	// Availability zone belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudRef *string `json:"cloud_ref,omitempty"`
