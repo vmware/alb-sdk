@@ -1046,6 +1046,22 @@
         }
     },
     "definitions": {
+        "AutoTuneSendInterval": {
+            "type": "object",
+            "properties": {
+                "auto_tune_send_interval_timeout": {
+                    "description": "Time period to check if the send interval is valid. Allowed values are 100-3600. Field introduced in 30.2.5, 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 300,
+                    "format": "uint32"
+                },
+                "enabled": {
+                    "description": "Set the flag to enable auto tune send interval. Field introduced in 30.2.5, 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
         "ConfigPbAttributes": {
             "type": "object",
             "properties": {
@@ -1108,6 +1124,10 @@
                     "description": "Frequency with which messages are propagated to Vs Mgr. Value of 0 disables async behavior and RPC are sent inline. Allowed values are 0-5. Field introduced in 18.2.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
+                },
+                "auto_tune_send_interval": {
+                    "description": "Automatically set the send interval value based on the load. Field introduced in 30.2.5, 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/AutoTuneSendInterval"
                 },
                 "clear_on_max_retries": {
                     "description": "Max retries after which the remote site is treated as a fresh start. In fresh start all the configs are downloaded. Allowed values are 1-1024. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
