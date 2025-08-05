@@ -693,7 +693,7 @@
                     "$ref": "#/definitions/ContentLibConfig"
                 },
                 "name": {
-                    "description": "Availabilty zone where VCenter list belongs to. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "vCenter name. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {

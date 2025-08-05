@@ -2,17 +2,17 @@
     "swagger": "2.0",
     "info": {
         "version": "31.2.1",
-        "title": "Avi RateLimitConfiguration Object API",
+        "title": "Avi TechSupportProfile Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi RateLimitConfiguration object api\n```\n- configure ratelimitconfiguration <key>\n- show ratelimitconfiguration <key>\n```\n\nAPI permission: PERMISSION_ApiRateLimitProfile\n"
+        "description": "Avi TechSupportProfile object api\n```\n- configure techsupportprofile\n- show techsupportprofile\n```\n\nAPI permission: PERMISSION_TECHSUPPORTPROFILE\n"
     },
     "tags": [
         {
-            "name": "RateLimitConfiguration"
+            "name": "TechSupportProfile"
         }
     ],
     "schemes": [
@@ -26,13 +26,13 @@
     },
     "basePath": "/api",
     "paths": {
-        "/ratelimitconfiguration": {
+        "/techsupportprofile": {
             "get": {
                 "tags": [
-                    "RateLimitConfiguration"
+                    "TechSupportProfile"
                 ],
-                "description": "/ratelimitconfiguration",
-                "operationId": "GET /ratelimitconfiguration",
+                "description": "/techsupportprofile",
+                "operationId": "GET /techsupportprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -123,7 +123,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/RateLimitConfigurationApiResponse"
+                            "$ref": "#/definitions/TechSupportProfileApiResponse"
                         }
                     },
                     "401": {
@@ -133,10 +133,10 @@
             },
             "post": {
                 "tags": [
-                    "RateLimitConfiguration"
+                    "TechSupportProfile"
                 ],
-                "description": "/ratelimitconfiguration",
-                "operationId": "POST /ratelimitconfiguration",
+                "description": "/techsupportprofile",
+                "operationId": "POST /techsupportprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -175,10 +175,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "RateLimitConfiguration object creation",
+                        "description": "TechSupportProfile object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/RateLimitConfiguration"
+                            "$ref": "#/definitions/TechSupportProfile"
                         }
                     }
                 ],
@@ -191,7 +191,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/RateLimitConfiguration"
+                            "$ref": "#/definitions/TechSupportProfile"
                         }
                     },
                     "401": {
@@ -200,13 +200,13 @@
                 }
             }
         },
-        "/ratelimitconfiguration/{uuid}": {
+        "/techsupportprofile/{uuid}": {
             "get": {
                 "tags": [
-                    "RateLimitConfiguration"
+                    "TechSupportProfile"
                 ],
-                "description": "/ratelimitconfiguration/{uuid}/{uuid}",
-                "operationId": "GET /ratelimitconfiguration/{uuid}",
+                "description": "/techsupportprofile/{uuid}/{uuid}",
+                "operationId": "GET /techsupportprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -292,7 +292,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/RateLimitConfiguration"
+                            "$ref": "#/definitions/TechSupportProfile"
                         }
                     },
                     "401": {
@@ -305,10 +305,10 @@
             },
             "put": {
                 "tags": [
-                    "RateLimitConfiguration"
+                    "TechSupportProfile"
                 ],
-                "description": "/ratelimitconfiguration/{uuid}/{uuid}",
-                "operationId": "PUT /ratelimitconfiguration/{uuid}",
+                "description": "/techsupportprofile/{uuid}/{uuid}",
+                "operationId": "PUT /techsupportprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -354,10 +354,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "RateLimitConfiguration object creation",
+                        "description": "TechSupportProfile object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/RateLimitConfiguration"
+                            "$ref": "#/definitions/TechSupportProfile"
                         }
                     },
                     {
@@ -377,7 +377,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/RateLimitConfiguration"
+                            "$ref": "#/definitions/TechSupportProfile"
                         }
                     },
                     "401": {
@@ -390,10 +390,10 @@
             },
             "patch": {
                 "tags": [
-                    "RateLimitConfiguration"
+                    "TechSupportProfile"
                 ],
-                "description": "/ratelimitconfiguration/{uuid}/{uuid}",
-                "operationId": "PATCH /ratelimitconfiguration/{uuid}",
+                "description": "/techsupportprofile/{uuid}/{uuid}",
+                "operationId": "PATCH /techsupportprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -439,10 +439,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "RateLimitConfiguration object creation",
+                        "description": "TechSupportProfile object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/RateLimitConfiguration"
+                            "$ref": "#/definitions/TechSupportProfile"
                         }
                     },
                     {
@@ -462,7 +462,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/RateLimitConfiguration"
+                            "$ref": "#/definitions/TechSupportProfile"
                         }
                     },
                     "401": {
@@ -475,10 +475,10 @@
             },
             "delete": {
                 "tags": [
-                    "RateLimitConfiguration"
+                    "TechSupportProfile"
                 ],
-                "description": "/ratelimitconfiguration/{uuid}/{uuid}",
-                "operationId": "DELETE /ratelimitconfiguration/{uuid}",
+                "description": "/techsupportprofile/{uuid}/{uuid}",
+                "operationId": "DELETE /techsupportprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -549,71 +549,105 @@
         }
     },
     "definitions": {
-        "ConfigPbAttributes": {
+        "ArchivePolicy": {
             "type": "object",
             "properties": {
-                "version": {
-                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "file_path": {
+                    "description": "Specify a file path to add archive rule. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "threshold": {
+                    "description": "Specify a threshold for file path in MB. Field introduced in 31.2.1. Unit is MB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "default": 1,
+                    "default": 128,
                     "format": "uint32"
                 }
             }
         },
-        "RateLimitConfiguration": {
+        "ArchiveRules": {
             "type": "object",
-            "required": [
-                "name",
-                "resource",
-                "token_refill_rate"
-            ],
+            "properties": {
+                "rules": {
+                    "description": "Archive policy for file path to have specific threshold. Techsupport will skip collection of file if file size is greater than threshold. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ArchivePolicy"
+                    }
+                }
+            }
+        },
+        "TechSupportEventParams": {
+            "type": "object",
+            "properties": {
+                "collect_all_events": {
+                    "description": "Collect all events agnostic of duration, days and files. This flag will have higher precedence over duration, files and days. If flag is false then precedence given to duration passed while invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "days": {
+                    "description": "Collect events for the specified number of past days. e.g. User specified 3, collect events for past 3 days. If have 20 files with 3 days old then collect on basis of specified number of files. Allowed values are 1-5. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 2,
+                    "format": "uint32"
+                },
+                "files": {
+                    "description": "Collect events for the specified number of files. e.g. User specified 5, collect atmost 5 events files. If have 10 files with 2 days old then collect only specified number of files. Allowed values are 1-10. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 8,
+                    "format": "uint32"
+                }
+            }
+        },
+        "TechSupportProfile": {
+            "type": "object",
             "properties": {
                 "_last_modified": {
                     "description": "UNIX time since epoch in microseconds. Units(MICROSECONDS).",
                     "readOnly": true,
                     "type": "string"
                 },
-                "burst": {
-                    "description": "The maximum request per second(RPS) user intends to support for this category.This is not guaranteed as this will be the minimum of the RPS supported by the resources in the category and this value.If user doesn't provide then it will be minimum value of the resources in this category. Allowed values are 1-1000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                "archive_rules": {
+                    "description": "Define the policy for techsupport archive rules. These rules allow you to specify files that should be collected in the techsupport bundle, even if they exceed the default file size threshold. e.g. To ensure a 450MB file, such as /var/sample.log, is collected with every invocation, configure and add its path to the TechSupportProfile. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ArchiveRules"
+                },
+                "event_params": {
+                    "description": "Specify this params to set threshold for event files. User provided parameters will take precedence over the profile parameters. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/TechSupportEventParams"
+                },
+                "file_size_threshold": {
+                    "description": "Max file size threshold to archive in techsupport collection. files above this threshold will not be collected and an warning will be flagged. Allowed values are 128-512. Field introduced in 31.2.1. Unit is MB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 128,
+                    "format": "uint32"
+                },
+                "max_disk_size_percent": {
+                    "description": "Max disk size in percent of total disk size reserved for the techsupport. The value is in Percentage to make it agnostic of controller flavors. e.g. small [disk=5 GB, TS space available = 500MB] Large [ disk= 100Gb, TS Space available= 10GB] XL [disk=1TB, TS space available=100GB]. Allowed values are 10-25. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 10,
+                    "format": "uint32"
+                },
+                "min_free_disk_required": {
+                    "description": "Min free disk required for the techsupport invocation. The value is in Percentage to make it agnostic of controller flavors. e.g. small [disk=5 GB, TS space available = 250MB] Large [ disk= 100Gb, TS Space available= 5GB] XL [disk=1TB, TS space available=50GB]. Allowed values are 5-10. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 5,
+                    "format": "uint32"
+                },
+                "no_of_techsupport_retentions": {
+                    "description": "Number of techsupport to retain from techsupport cleanup policy. Allowed values are 1-5. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 4,
+                    "format": "uint32"
+                },
+                "simultaneous_invocations": {
+                    "description": "Number of simultaneous techsupport invocation allowed. Allowed values are 1-2. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
                 },
-                "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/ConfigPbAttributes"
-                },
-                "description": {
-                    "description": "Description for the Rate Limit Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "http_methods": {
-                    "description": "List of HTTP method(s) of the resources that need to be rate limited. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 31.2.1. Minimum of 1 items required. Maximum of 5 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "name": {
-                    "description": "Name of the Rate Limit Configuration(unique). Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "resource": {
-                    "description": "RateLimitResource which needs to be rate limited. Enum options - RATE_LIMIT_VIRTUALSERVICE, RATE_LIMIT_POOL, RATE_LIMIT_LOGIN, RATE_LIMIT_AUTHTOKEN, RATE_LIMIT_HEALTHMONITOR. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "tenant_ref": {
-                    "description": "Tenant ref for the auth Rate Limit Configuration. It is a reference to an object of type Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "token_refill_rate": {
-                    "description": "Token Refill Rate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/TokenRefillRate"
-                },
-                "type": {
-                    "description": "Type of the Rate Limiter, for now we only support api categorization based. Enum options - RATE_LIMITER_API_CATEGORY. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string",
-                    "default": "RATE_LIMITER_API_CATEGORY"
+                "task_timeout": {
+                    "description": "Generic timeout for techsupport task collection. This can be used for task, script executions etc. Tweak the timeout value in cases of timeout observation in the logs. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 180,
+                    "format": "uint32"
                 },
                 "url": {
                     "description": "url",
@@ -621,12 +655,12 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the Rate Limit Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID Identifier for the techsupport profile. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
         },
-        "RateLimitConfigurationApiResponse": {
+        "TechSupportProfileApiResponse": {
             "type": "object",
             "required": [
                 "count",
@@ -640,30 +674,11 @@
                 "results": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/RateLimitConfiguration"
+                        "$ref": "#/definitions/TechSupportProfile"
                     }
                 },
                 "next": {
                     "type": "string"
-                }
-            }
-        },
-        "TokenRefillRate": {
-            "type": "object",
-            "required": [
-                "refill_rate"
-            ],
-            "properties": {
-                "interval": {
-                    "description": "The time interval over which refill rate is defined. Enum options - PER_MINUTE_INTERVAL. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string",
-                    "default": "PER_MINUTE_INTERVAL"
-                },
-                "refill_rate": {
-                    "description": "The rate per refill interval at which tokens are added to the bucket. Allowed values are 1-100000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "default": 1,
-                    "format": "uint32"
                 }
             }
         }

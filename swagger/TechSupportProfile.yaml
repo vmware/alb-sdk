@@ -6,21 +6,21 @@
 swagger: '2.0'
 info:
     version: '31.2.1'
-    title: Avi AvailabilityZone Object API
+    title: Avi TechSupportProfile Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        Avi AvailabilityZone object api
+        Avi TechSupportProfile object api
         ```
-        - configure availabilityzone <key>
-        - show availabilityzone <key>
+        - configure techsupportprofile
+        - show techsupportprofile
         ```
 
-        API permission: PERMISSION_CLOUD
+        API permission: PERMISSION_TECHSUPPORTPROFILE
 tags:
-  - name: AvailabilityZone
+  - name: TechSupportProfile
 schemes:
   - https
 securityDefinitions:
@@ -29,12 +29,12 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /availabilityzone:
+    /techsupportprofile:
         get:
             tags:
-                - AvailabilityZone
-            description: /availabilityzone
-            operationId: GET /availabilityzone
+                - TechSupportProfile
+            description: /techsupportprofile
+            operationId: GET /techsupportprofile
             consumes:
                 -   application/json
             produces:
@@ -91,88 +91,20 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: cloud_uuid
-                    in: query
-                    description: Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_uuid=cloud-xyz.
-                    type: string
-                -   name: cloud_ref.name
-                    in: query
-                    description: Filter to get objects that belongs to a specific cloud usings its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
-                    type: string
-                -   name: cloud_ref.uuid
-                    in: query
-                    description: Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_ref.uuid=cloud_uuid.
-                    type: string
-                    required: false
-                -   name: name.contains
-                    in: query
-                    description: Filter to get objects with name that contains the parameter. This is a case sensitive search. Eg. name.contains=pool-.
-                    type: string
-                    required: false
-                -   name: name.icontains
-                    in: query
-                    description: Filter to get objects with name that contains the parameter. This is a case insensitive search. Eg. name.icontains=pool-.
-                    type: string
-                    required: false
-                -   name: name.in
-                    in: query
-                    description: Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. name.in=pool-1,pool-12.
-                    type: string
-                    required: false
-                -   name: uuid.in
-                    in: query
-                    description: Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. uuid.in=<uuid-1>,<uuid-2>.
-                    type: string
-                    required: false
-                -   name: search
-                    in: query
-                    description: Filter to get objects that contains the search string as value for any of its fields. Eg. search=LEAST_CONN. The search filter can also be used to search under a specific field. This is achieved by sending the parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
-                    type: string
-                    required: false
-                -   name: isearch
-                    in: query
-                    description: Filter to get objects that contains case insensitive search string. Eg. isearch=(name,Vs-Pool-).
-                    type: string
-                    required: false
-                -   name: limit_by
-                    in: query
-                    description: Filter to limit the number of objects in the response data. Eg. limit_by=3.
-                    type: string
-                    required: false
-                -   name: exclude
-                    in: query
-                    description: Filter to exclude the uuid(s) contained in the parameter. Eg. uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
-                    type: string
-                    required: false
-                -   name: sort
-                    in: query
-                    description: Parameter to sort the results with respect to a field. Eg. sort=name.
-                    type: string
-                    required: false
-                -   name: page
-                    in: query
-                    description: Parameter to specify the desired page number. The page starts from 1 and default is 1.
-                    type: string
-                    required: false
-                -   name: page_size
-                    in: query
-                    description: Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.
-                    type: string
-                    required: false
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/AvailabilityZoneApiResponse"
+                        $ref: "#/definitions/TechSupportProfileApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - AvailabilityZone
-            description: /availabilityzone
-            operationId: POST /availabilityzone
+                - TechSupportProfile
+            description: /techsupportprofile
+            operationId: POST /techsupportprofile
             consumes:
                 -   application/json
             produces:
@@ -200,25 +132,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: AvailabilityZone object creation
+                    description: TechSupportProfile object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/AvailabilityZone"
+                        $ref: "#/definitions/TechSupportProfile"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/AvailabilityZone"
+                        $ref: "#/definitions/TechSupportProfile"
                 "401":
                     description: log in failed
-    /availabilityzone/{uuid}:
+    /techsupportprofile/{uuid}:
         get:
             tags:
-                - AvailabilityZone
-            description: /availabilityzone/{uuid}/{uuid}
-            operationId: GET /availabilityzone/{uuid}
+                - TechSupportProfile
+            description: /techsupportprofile/{uuid}/{uuid}
+            operationId: GET /techsupportprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -278,16 +210,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/AvailabilityZone"
+                        $ref: "#/definitions/TechSupportProfile"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - AvailabilityZone
-            description: /availabilityzone/{uuid}/{uuid}
-            operationId: PUT /availabilityzone/{uuid}
+                - TechSupportProfile
+            description: /techsupportprofile/{uuid}/{uuid}
+            operationId: PUT /techsupportprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -320,10 +252,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: AvailabilityZone object creation
+                    description: TechSupportProfile object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/AvailabilityZone"
+                        $ref: "#/definitions/TechSupportProfile"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -335,16 +267,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/AvailabilityZone"
+                        $ref: "#/definitions/TechSupportProfile"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - AvailabilityZone
-            description: /availabilityzone/{uuid}/{uuid}
-            operationId: PATCH /availabilityzone/{uuid}
+                - TechSupportProfile
+            description: /techsupportprofile/{uuid}/{uuid}
+            operationId: PATCH /techsupportprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -377,10 +309,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: AvailabilityZone object creation
+                    description: TechSupportProfile object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/AvailabilityZone"
+                        $ref: "#/definitions/TechSupportProfile"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -392,16 +324,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/AvailabilityZone"
+                        $ref: "#/definitions/TechSupportProfile"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - AvailabilityZone
-            description: /availabilityzone/{uuid}/{uuid}
-            operationId: DELETE /availabilityzone/{uuid}
+                - TechSupportProfile
+            description: /techsupportprofile/{uuid}/{uuid}
+            operationId: DELETE /techsupportprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -449,58 +381,92 @@ paths:
 
 
 definitions:
-    AvailabilityZone:
+    ArchivePolicy:
         type: object
-        required:
-            -   name
+        properties:
+            file_path:
+                description: "Specify a file path to add archive rule. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            threshold:
+                description: "Specify a threshold for file path in MB. Field introduced in 31.2.1. Unit is MB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 128
+                format: uint32
+    ArchiveRules:
+        type: object
+        properties:
+            rules:
+                description: "Archive policy for file path to have specific threshold. Techsupport will skip collection of file if file size is greater than threshold. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/ArchivePolicy'
+    TechSupportEventParams:
+        type: object
+        properties:
+            collect_all_events:
+                description: "Collect all events agnostic of duration, days and files. This flag will have higher precedence over duration, files and days. If flag is false then precedence given to duration passed while invocation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: boolean
+            days:
+                description: "Collect events for the specified number of past days. e.g. User specified 3, collect events for past 3 days. If have 20 files with 3 days old then collect on basis of specified number of files. Allowed values are 1-5. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 2
+                format: uint32
+            files:
+                description: "Collect events for the specified number of files. e.g. User specified 5, collect atmost 5 events files. If have 10 files with 2 days old then collect only specified number of files. Allowed values are 1-10. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 8
+                format: uint32
+    TechSupportProfile:
+        type: object
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
-            az_clusters:
-                description: "Group of clusters belongs to the AZ. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/AZCluster'
-            az_datastore:
-                description: "Group of datastores associated with the AZ. Field deprecated in 31.2.1. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/AZDatastore'
-            az_datastores:
-                description: "Group of datastores associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/AZDatastore'
-            az_hosts:
-                description: "Group of hosts associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/AZHost'
-            cloud_ref:
-                description: "Availability zone belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/ConfigPbAttributes'
-            name:
-                description: "Availabilty zone where VCenter list belongs to. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            tenant_ref:
-                description: "Availabilityzone belongs to tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
+            archive_rules:
+                description: "Define the policy for techsupport archive rules. These rules allow you to specify files that should be collected in the techsupport bundle, even if they exceed the default file size threshold. e.g. To ensure a 450MB file, such as /var/sample.log, is collected with every invocation, configure and add its path to the TechSupportProfile. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ArchiveRules'
+            event_params:
+                description: "Specify this params to set threshold for event files. User provided parameters will take precedence over the profile parameters. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/TechSupportEventParams'
+            file_size_threshold:
+                description: "Max file size threshold to archive in techsupport collection. files above this threshold will not be collected and an warning will be flagged. Allowed values are 128-512. Field introduced in 31.2.1. Unit is MB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 128
+                format: uint32
+            max_disk_size_percent:
+                description: "Max disk size in percent of total disk size reserved for the techsupport. The value is in Percentage to make it agnostic of controller flavors. e.g. small [disk=5 GB, TS space available = 500MB] Large [ disk= 100Gb, TS Space available= 10GB] XL [disk=1TB, TS space available=100GB]. Allowed values are 10-25. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 10
+                format: uint32
+            min_free_disk_required:
+                description: "Min free disk required for the techsupport invocation. The value is in Percentage to make it agnostic of controller flavors. e.g. small [disk=5 GB, TS space available = 250MB] Large [ disk= 100Gb, TS Space available= 5GB] XL [disk=1TB, TS space available=50GB]. Allowed values are 5-10. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 5
+                format: uint32
+            no_of_techsupport_retentions:
+                description: "Number of techsupport to retain from techsupport cleanup policy. Allowed values are 1-5. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 4
+                format: uint32
+            simultaneous_invocations:
+                description: "Number of simultaneous techsupport invocation allowed. Allowed values are 1-2. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1
+                format: uint32
+            task_timeout:
+                description: "Generic timeout for techsupport task collection. This can be used for task, script executions etc. Tweak the timeout value in cases of timeout observation in the logs. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 180
+                format: uint32
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "Availability zone config UUID. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID Identifier for the techsupport profile. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
-            vcenter_refs:
-                description: "Group of VCenter list belong to availabilty zone. It is a reference to an object of type VCenterServer. Field deprecated in 31.1.1. Field introduced in 20.1.1. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
-    AvailabilityZoneApiResponse:
+    TechSupportProfileApiResponse:
         type: object
         required:
             - count
@@ -512,50 +478,6 @@ definitions:
             results:
                 type: array
                 items:
-                    $ref: "#/definitions/AvailabilityZone"
+                    $ref: "#/definitions/TechSupportProfile"
             next:
                 type: string
-    AZCluster:
-        type: object
-        properties:
-            cluster_ids:
-                description: "A list of Managed Object IDs (MOIDs) of vCenter clusters that are part of this Availability Zone. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
-            vcenter_ref:
-                description: "The UUID of the vCenter Server that manages the clusters associated with this AvailabilityZone. It is a reference to an object of type VCenterServer. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: string
-    AZDatastore:
-        type: object
-        properties:
-            ds_ids:
-                description: "List of Managed object id of datastores. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
-            include:
-                description: "Include or exclude the datastores from the list. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: boolean
-            vcenter_ref:
-                description: "Vcenter Id of the datastores. It is a reference to an object of type VCenterServer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: string
-    AZHost:
-        type: object
-        properties:
-            host_ids:
-                description: "A list of Managed Object IDs (MOIDs) of vCenter hosts that are part of this Availability Zone. Field introduced in 31.2.1. Minimum of 1 items required. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
-            vcenter_ref:
-                description: "The UUID of the vCenter Server that manages the hosts associated with this AvailabilityZone. It is a reference to an object of type VCenterServer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: string
-    ConfigPbAttributes:
-        type: object
-        properties:
-            version:
-                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
