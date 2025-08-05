@@ -17,6 +17,9 @@ type VsScaleinParams struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ScaleinPrimary *bool `json:"scalein_primary,omitempty"`
 
+	// actuator which initiated this scalein. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	Source *string `json:"source,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 

@@ -225,6 +225,9 @@ type ApplicationLog struct {
 	// Required: true
 	ReportTimestamp *uint64 `json:"report_timestamp"`
 
+	// Request body modified. Enum options - REQ_BODY_NOT_UPDATED, REQ_BODY_UPDATED_BY_CONTENT_REWRITE_PROFILE, REQ_BODY_UPDATE_SKIPPED_COMPRESSION. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	RequestBodyUpdated *string `json:"request_body_updated,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RequestContentType *string `json:"request_content_type,omitempty"`
 

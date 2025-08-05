@@ -15,6 +15,9 @@ type Gslb struct {
 	// Frequency with which messages are propagated to Vs Mgr. Value of 0 disables async behavior and RPC are sent inline. Allowed values are 0-5. Field introduced in 18.2.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AsyncInterval *uint32 `json:"async_interval,omitempty"`
 
+	// Automatically set the send interval value based on the load. Field introduced in 30.2.5, 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AutoTuneSendInterval *AutoTuneSendInterval `json:"auto_tune_send_interval,omitempty"`
+
 	// Max retries after which the remote site is treated as a fresh start. In fresh start all the configs are downloaded. Allowed values are 1-1024. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClearOnMaxRetries *uint32 `json:"clear_on_max_retries,omitempty"`
 

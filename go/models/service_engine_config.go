@@ -39,8 +39,8 @@ type ServiceEngineConfig struct {
 	UUID *string `json:"uuid,omitempty"`
 
 	//  Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	VsPerSeRefs []string `json:"vs_per_se_refs,omitempty"`
+	VirtualserviceRefs []string `json:"virtualservice_refs,omitempty"`
 
 	//  Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	VsRefs []string `json:"vs_refs,omitempty"`
+	VsPerSeRefs []string `json:"vs_per_se_refs,omitempty"`
 }

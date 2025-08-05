@@ -54,11 +54,20 @@ type ServiceEngineGroup struct {
 	// Capacities of SE for auto rebalance for each criteria. Field introduced in 17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoRebalanceCapacityPerSe []int64 `json:"auto_rebalance_capacity_per_se,omitempty,omitempty"`
 
+	// The time in minutes controller waits before rebalancing the Vs again after a scalein/scaleout. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AutoRebalanceCoolDownTime *uint32 `json:"auto_rebalance_cool_down_time,omitempty"`
+
 	// Set of criteria for SE Auto Rebalance. Enum options - SE_AUTO_REBALANCE_CPU, SE_AUTO_REBALANCE_PPS, SE_AUTO_REBALANCE_MBPS, SE_AUTO_REBALANCE_OPEN_CONNS, SE_AUTO_REBALANCE_CPS. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoRebalanceCriteria []string `json:"auto_rebalance_criteria,omitempty"`
 
+	// If enabled, the controller will not perform the rebalance actions.It will only generate the actions and update that in the debug api.This is useful for testing the rebalance logic without actually performing the actions. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AutoRebalanceDryRunEnabled *bool `json:"auto_rebalance_dry_run_enabled,omitempty"`
+
 	// Frequency of rebalance, if 'Auto rebalance' is enabled. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoRebalanceInterval *int32 `json:"auto_rebalance_interval,omitempty"`
+
+	// If enabled, the controller will raise events for rebalance actions. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AutoRebalanceRaiseEventsForActions *bool `json:"auto_rebalance_raise_events_for_actions,omitempty"`
 
 	// Redistribution of virtual services from the takeover SE to the replacement SE can cause momentary traffic loss. If the auto-redistribute load option is left in its default off state, any desired rebalancing requires calls to REST API. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
 	AutoRedistributeActiveStandbyLoad *bool `json:"auto_redistribute_active_standby_load,omitempty"`
@@ -99,7 +108,7 @@ type ServiceEngineGroup struct {
 	// Include shared memory for app learning in core file.Requires SE Reboot. Field introduced in 18.2.8, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CoreShmAppLearning *bool `json:"core_shm_app_learning,omitempty"`
 
-	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Set CPU shares for Service Engine Virtual Machines to High. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CPUReserve *bool `json:"cpu_reserve,omitempty"`
 
 	// Allocate all the CPU cores for the Service Engine Virtual Machines  on the same CPU socket. Applicable only for vCenter Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -143,6 +152,9 @@ type ServiceEngineGroup struct {
 
 	// Disable Generic Receive Offload (GRO) in DPDK poll-mode driver packet receive path.  GRO can be enabled on NICs that do not support LRO (Large Receive Offload) or do not gain performance boost from LRO. GRO is on by default on NICs in a system with 8 vCPUs or higher. Field introduced in 17.2.5, 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DisableGro *bool `json:"disable_gro,omitempty"`
+
+	// This knob enables the QAT offloads for TLS application data. (if the host CPU is capable, and the QAT device is exposed). Requires SE Reboot. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	DisableQatBulkCrypto *bool `json:"disable_qat_bulk_crypto,omitempty"`
 
 	// If set, disable the config memory check done in service engine. Field introduced in 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DisableSeMemoryCheck *bool `json:"disable_se_memory_check,omitempty"`
@@ -321,6 +333,9 @@ type ServiceEngineGroup struct {
 	// Select core with least load for new flow. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LeastLoadCoreSelection *bool `json:"least_load_core_selection,omitempty"`
 
+	// License quota for the SE group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LicenseQuota *QuotaConfig `json:"license_quota,omitempty"`
+
 	// Specifies the license tier which would be used. This field by default inherits the value from cloud. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES. Field introduced in 17.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LicenseTier *string `json:"license_tier,omitempty"`
 
@@ -383,6 +398,9 @@ type ServiceEngineGroup struct {
 
 	// Maximum number of external health monitors that can run concurrently in a service engine. This helps control the CPU and memory use by external health monitors. Special values are 0- Value will be internally calculated based on cpu and memory. Field introduced in 18.2.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxConcurrentExternalHm *uint32 `json:"max_concurrent_external_hm,omitempty"`
+
+	// When adaptive sampling is enabled, specifies the max CPU load allowed for adaptive sampling. If the CPU load exceeds this value, no requests will be sampled. Allowed values are 1-100. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	MaxCPULoadAdaptiveSampling *uint32 `json:"max_cpu_load_adaptive_sampling,omitempty"`
 
 	// When CPU usage on an SE exceeds this threshold, Virtual Services hosted on this SE may be rebalanced to other SEs to reduce load. A new SE may be created as part of this process. Allowed values are 40-90. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxCPUUsage *int32 `json:"max_cpu_usage,omitempty"`
@@ -636,6 +654,9 @@ type ServiceEngineGroup struct {
 
 	// Determines if SE-SE IPC messages are encapsulated in an IP header       0        Automatically determine based on hypervisor type    1        Use IP encap unconditionally    ~[0,1]   Don't use IP encapRequires SE Reboot. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SeIPEncapIpc *uint32 `json:"se_ip_encap_ipc,omitempty"`
+
+	// This knob enables kernel RSS. When enabled flowtable entry is added to every disp cpu. Should be used under supervision. Requires SE reboot. . Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SeKernelRss *bool `json:"se_kernel_rss,omitempty"`
 
 	// This knob controls the resource availability and burst size used between SE datapath and KNI. This helps in minimising packet drops when there is higher KNI traffic (non-VIP traffic from and to Linux). The factor takes the following values      0-default.     1-doubles the burst size and KNI resources.     2-quadruples the burst size and KNI resources.    3-Increases the burst size and KNI resources by a factor of eight. Allowed values are 0-3. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeKniBurstFactor *uint32 `json:"se_kni_burst_factor,omitempty"`

@@ -21,7 +21,7 @@ type VCenterServer struct {
 	// VCenter template to create Service Engine. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ContentLib *ContentLibConfig `json:"content_lib,omitempty"`
 
-	// Availabilty zone where VCenter list belongs to. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// vCenter name. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 

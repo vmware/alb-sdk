@@ -13,4 +13,7 @@ type AZDatastore struct {
 
 	// Include or exclude the datastores from the list. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Include *bool `json:"include,omitempty"`
+
+	// Vcenter Id of the datastores. It is a reference to an object of type VCenterServer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	VcenterRef *string `json:"vcenter_ref,omitempty"`
 }

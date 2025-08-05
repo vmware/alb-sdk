@@ -1228,8 +1228,11 @@ type AviCollectionResult struct {
 
 func removeSensitiveFields(data []byte) []byte {
 	dataString := string(data)
-	re := regexp.MustCompile(`"password":"([^\s]+?)","username":"([^\s]+?)"`)
-	updatedDataString := re.ReplaceAllString(dataString, "")
+	re := regexp.MustCompile(`("password"\s*:\s*)"[^"]*"`)
+	updatedDataString := re.ReplaceAllString(dataString, `${1}****"`)
+
+	re = regexp.MustCompile(`("username"\s*:\s*)"[^"]*"`)
+	updatedDataString = re.ReplaceAllString(updatedDataString, `${1}****"`)
 	return []byte(updatedDataString)
 }
 

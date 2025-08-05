@@ -48,6 +48,9 @@ type SystemConfiguration struct {
 	// Validates the host header against a list of trusted domains. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EnableHostHeaderCheck *bool `json:"enable_host_header_check,omitempty"`
 
+	// Enable license quota for the system. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	EnableLicenseQuota *bool `json:"enable_license_quota,omitempty"`
+
 	// FIPS mode current state. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FipsMode *bool `json:"fips_mode,omitempty"`
 
@@ -62,6 +65,9 @@ type SystemConfiguration struct {
 
 	// Allow Outgoing Connections from Controller to Servers Using TLS 1.0/1.1. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	LegacySslSupport *bool `json:"legacy_ssl_support,omitempty"`
+
+	// License quota for the system. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LicenseQuota *QuotaConfig `json:"license_quota,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LinuxConfiguration *LinuxConfiguration `json:"linux_configuration,omitempty"`
@@ -108,7 +114,7 @@ type SystemConfiguration struct {
 	// Ability to sync the syslog server config to SEs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SyncSyslogToSe *bool `json:"sync_syslog_to_se,omitempty"`
 
-	// The destination Syslog server IP(v4/v6) address or FQDN. Provide in the format IP port. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The destination Syslog server IP(v4/v6) address or FQDN. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SyslogServers []*IPAddr `json:"syslog_servers,omitempty"`
 
 	// Telemetry configuration. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
