@@ -20,6 +20,9 @@ type AppLearningParams struct {
 	// If Bot detection is active for this Virtual Service, learning will only be performed on requests from clients within the configured bot classification types. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	LearnFromBots *BotDetectionMatch `json:"learn_from_bots,omitempty"`
 
+	// When true, the WAF includes argument-less URIs in its learning process. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LearnFromUrlsWithoutArgs *bool `json:"learn_from_urls_without_args,omitempty"`
+
 	// Maximum number of params programmed for an application. Allowed values are 10-1000. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxParams *uint32 `json:"max_params,omitempty"`
 
