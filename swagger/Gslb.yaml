@@ -811,6 +811,9 @@ definitions:
                 description: "This field indicates that this object is replicated across GSLB federation. Field introduced in 17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
+            leader_change_info:
+                description: "This field has leader change configuration info including mode, leader designate sites and other configurations for auto leader change like max short probe failures. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/LeaderChangeInfo'
             leader_cluster_uuid:
                 description: "Mark this Site as leader of GSLB configuration. This site is the one among the Avi sites. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -1076,6 +1079,27 @@ definitions:
             end:
                 description: "Ending IP address of the range. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
+    LeaderChangeInfo:
+        type: object
+        properties:
+            enabled:
+                description: "Leader change mechanism can be disabled in the federation for administration purposes. This would effectively disable Gslb disaster recovery possibilities. The best practice is to change the mode (Auto to manual or vice-versa) rather than disabling the leader change mechanism. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
+            leader_candidates:
+                description: "Sites that can be the future Gslb Leader in federation. These sites should be enabled active follower sites.A site that is deactivated or passive or a third-party site cannot be a leader candidate. Field introduced in 31.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/SiteInfo'
+            leader_change_mode:
+                description: "Leader change mode, can be auto or manual. Enum options - GSLB_LC_MODE_MANUAL, GSLB_LC_MODE_AUTO. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+                default: "GSLB_LC_MODE_MANUAL"
+            max_unsuccessful_probes:
+                description: "Maximum number of probe failures before considering other site as down for auto leader change. Allowed values are 1-3600. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 15
+                format: uint32
     ReplicationPolicy:
         type: object
         properties:
@@ -1086,3 +1110,12 @@ definitions:
                 description: "Replication mode. Enum options - REPLICATION_MODE_CONTINUOUS, REPLICATION_MODE_MANUAL, REPLICATION_MODE_ADAPTIVE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "REPLICATION_MODE_CONTINUOUS"
+    SiteInfo:
+        type: object
+        properties:
+            cluster_id:
+                description: "Cluster_uuid of a member configured in gslb federation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            site_name:
+                description: "Site name of a member configured in gslb federation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string

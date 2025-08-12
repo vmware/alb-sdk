@@ -624,6 +624,9 @@ definitions:
                 description: "Enable or disable this rule. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
+            ignore_hit_action:
+                description: "If this is set, the hit action for this match will be WAF_ACTION_NO_OP. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: boolean
             index:
                 description: "Rule index, this is used to determine the order of the rules. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer

@@ -236,13 +236,13 @@
                 }
             }
         },
-        "/gslbcrmruntime": {
+        "/gslbsmruntime": {
             "get": {
                 "tags": [
-                    "GslbCRMRuntime"
+                    "GslbSMRuntime"
                 ],
-                "description": "/gslbcrmruntime",
-                "operationId": "GET /gslbcrmruntime",
+                "description": "/gslbsmruntime",
+                "operationId": "GET /gslbsmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -333,7 +333,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntimeApiResponse"
+                            "$ref": "#/definitions/GslbSMRuntimeApiResponse"
                         }
                     },
                     "401": {
@@ -343,10 +343,10 @@
             },
             "post": {
                 "tags": [
-                    "GslbCRMRuntime"
+                    "GslbSMRuntime"
                 ],
-                "description": "/gslbcrmruntime",
-                "operationId": "POST /gslbcrmruntime",
+                "description": "/gslbsmruntime",
+                "operationId": "POST /gslbsmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -385,10 +385,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbCRMRuntime object creation",
+                        "description": "GslbSMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     }
                 ],
@@ -401,7 +401,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     "401": {
@@ -410,13 +410,13 @@
                 }
             }
         },
-        "/gslbcrmruntime/{uuid}": {
+        "/gslbsmruntime/{uuid}": {
             "get": {
                 "tags": [
-                    "GslbCRMRuntime"
+                    "GslbSMRuntime"
                 ],
-                "description": "/gslbcrmruntime/{uuid}/{uuid}",
-                "operationId": "GET /gslbcrmruntime/{uuid}",
+                "description": "/gslbsmruntime/{uuid}/{uuid}",
+                "operationId": "GET /gslbsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,7 +502,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     "401": {
@@ -515,10 +515,10 @@
             },
             "put": {
                 "tags": [
-                    "GslbCRMRuntime"
+                    "GslbSMRuntime"
                 ],
-                "description": "/gslbcrmruntime/{uuid}/{uuid}",
-                "operationId": "PUT /gslbcrmruntime/{uuid}",
+                "description": "/gslbsmruntime/{uuid}/{uuid}",
+                "operationId": "PUT /gslbsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -564,10 +564,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbCRMRuntime object creation",
+                        "description": "GslbSMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     {
@@ -587,7 +587,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     "401": {
@@ -600,10 +600,10 @@
             },
             "patch": {
                 "tags": [
-                    "GslbCRMRuntime"
+                    "GslbSMRuntime"
                 ],
-                "description": "/gslbcrmruntime/{uuid}/{uuid}",
-                "operationId": "PATCH /gslbcrmruntime/{uuid}",
+                "description": "/gslbsmruntime/{uuid}/{uuid}",
+                "operationId": "PATCH /gslbsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -649,10 +649,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbCRMRuntime object creation",
+                        "description": "GslbSMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     {
@@ -672,7 +672,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     "401": {
@@ -685,10 +685,10 @@
             },
             "delete": {
                 "tags": [
-                    "GslbCRMRuntime"
+                    "GslbSMRuntime"
                 ],
-                "description": "/gslbcrmruntime/{uuid}/{uuid}",
-                "operationId": "DELETE /gslbcrmruntime/{uuid}",
+                "description": "/gslbsmruntime/{uuid}/{uuid}",
+                "operationId": "DELETE /gslbsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1278,13 +1278,13 @@
                 }
             }
         },
-        "/gslbsmruntime": {
+        "/gslbcrmruntime": {
             "get": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbCRMRuntime"
                 ],
-                "description": "/gslbsmruntime",
-                "operationId": "GET /gslbsmruntime",
+                "description": "/gslbcrmruntime",
+                "operationId": "GET /gslbcrmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -1375,7 +1375,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntimeApiResponse"
+                            "$ref": "#/definitions/GslbCRMRuntimeApiResponse"
                         }
                     },
                     "401": {
@@ -1385,10 +1385,10 @@
             },
             "post": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbCRMRuntime"
                 ],
-                "description": "/gslbsmruntime",
-                "operationId": "POST /gslbsmruntime",
+                "description": "/gslbcrmruntime",
+                "operationId": "POST /gslbcrmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -1427,10 +1427,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbSMRuntime object creation",
+                        "description": "GslbCRMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     }
                 ],
@@ -1443,7 +1443,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     },
                     "401": {
@@ -1452,13 +1452,13 @@
                 }
             }
         },
-        "/gslbsmruntime/{uuid}": {
+        "/gslbcrmruntime/{uuid}": {
             "get": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbCRMRuntime"
                 ],
-                "description": "/gslbsmruntime/{uuid}/{uuid}",
-                "operationId": "GET /gslbsmruntime/{uuid}",
+                "description": "/gslbcrmruntime/{uuid}/{uuid}",
+                "operationId": "GET /gslbcrmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1544,7 +1544,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     },
                     "401": {
@@ -1557,10 +1557,10 @@
             },
             "put": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbCRMRuntime"
                 ],
-                "description": "/gslbsmruntime/{uuid}/{uuid}",
-                "operationId": "PUT /gslbsmruntime/{uuid}",
+                "description": "/gslbcrmruntime/{uuid}/{uuid}",
+                "operationId": "PUT /gslbcrmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1606,10 +1606,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbSMRuntime object creation",
+                        "description": "GslbCRMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     },
                     {
@@ -1629,7 +1629,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     },
                     "401": {
@@ -1642,10 +1642,10 @@
             },
             "patch": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbCRMRuntime"
                 ],
-                "description": "/gslbsmruntime/{uuid}/{uuid}",
-                "operationId": "PATCH /gslbsmruntime/{uuid}",
+                "description": "/gslbcrmruntime/{uuid}/{uuid}",
+                "operationId": "PATCH /gslbcrmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1691,10 +1691,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbSMRuntime object creation",
+                        "description": "GslbCRMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     },
                     {
@@ -1714,7 +1714,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     },
                     "401": {
@@ -1727,10 +1727,10 @@
             },
             "delete": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbCRMRuntime"
                 ],
-                "description": "/gslbsmruntime/{uuid}/{uuid}",
-                "operationId": "DELETE /gslbsmruntime/{uuid}",
+                "description": "/gslbcrmruntime/{uuid}/{uuid}",
+                "operationId": "DELETE /gslbcrmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1881,6 +1881,25 @@
                 "obj_uuid": {
                     "description": "UUID of config object. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
+                }
+            }
+        },
+        "ControllerSize": {
+            "type": "object",
+            "properties": {
+                "flavor": {
+                    "description": "Controller flavor (E/S/M/L) for this controller size. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "min_cpus": {
+                    "description": "Minimum number of cpu cores required. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "min_memory": {
+                    "description": "Minimum memory required. Field introduced in 20.1.1. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
                 }
             }
         },
@@ -2902,6 +2921,10 @@
                         "$ref": "#/definitions/GslbPoolMemberRuntimeInfo"
                     }
                 },
+                "controller_size": {
+                    "description": "Controller size of peer controller. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ControllerSize"
+                },
                 "datapath_gsinfo": {
                     "description": "Controller retrieved GSLB service operational info based of dns datapath resolution. This information is generated only on those sites that have DNS-VS participating in GSLB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -2912,6 +2935,13 @@
                 "dns_info": {
                     "description": "DNS info at the site. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/GslbDnsInfo"
+                },
+                "edges": {
+                    "description": "This is used to identify the connection between the sitesIn a 3 site scenario A, B, C, if C is connected to A and BWhen C is responding to A HsResponse will contain (C, A), (C, B). Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SiteLink"
+                    }
                 },
                 "gap_table": {
                     "description": "GSLB application persistence profile state at member. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3455,6 +3485,10 @@
                     "description": "The site controller cluster UUID. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
+                "controller_size": {
+                    "description": "Possible controller size of peer controller. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ControllerSize"
+                },
                 "dns_configs": {
                     "description": "Sub domain configuration for the GSLB.  GSLB service's FQDN must be a match one of these subdomains. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -3947,6 +3981,32 @@
                     "items": {
                         "$ref": "#/definitions/ServerHealthMonitor"
                     }
+                }
+            }
+        },
+        "SiteInfo": {
+            "type": "object",
+            "properties": {
+                "cluster_id": {
+                    "description": "Cluster_uuid of a member configured in gslb federation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "site_name": {
+                    "description": "Site name of a member configured in gslb federation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "SiteLink": {
+            "type": "object",
+            "properties": {
+                "destination": {
+                    "description": "Destination site information (cluster_uuid, name). Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/SiteInfo"
+                },
+                "source": {
+                    "description": "Source site information (cluster_uuid, name). Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/SiteInfo"
                 }
             }
         },
