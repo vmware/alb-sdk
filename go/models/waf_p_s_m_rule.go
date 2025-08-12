@@ -14,6 +14,9 @@ type WafPSMRule struct {
 	// Enable or disable this rule. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Enable *bool `json:"enable,omitempty"`
 
+	// If this is set, the hit action for this match will be WAF_ACTION_NO_OP. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	IgnoreHitAction *bool `json:"ignore_hit_action,omitempty"`
+
 	// Rule index, this is used to determine the order of the rules. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Index *uint32 `json:"index"`

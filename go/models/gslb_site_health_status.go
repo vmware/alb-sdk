@@ -11,11 +11,17 @@ type GslbSiteHealthStatus struct {
 	// Controller retrieved GSLB service operational info based of virtual service state. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerGsinfo []*GslbPoolMemberRuntimeInfo `json:"controller_gsinfo,omitempty"`
 
+	// Controller size of peer controller. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ControllerSize *ControllerSize `json:"controller_size,omitempty"`
+
 	// Controller retrieved GSLB service operational info based of dns datapath resolution. This information is generated only on those sites that have DNS-VS participating in GSLB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DatapathGsinfo []*GslbPoolMemberRuntimeInfo `json:"datapath_gsinfo,omitempty"`
 
 	// DNS info at the site. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSInfo *GslbDNSInfo `json:"dns_info,omitempty"`
+
+	// This is used to identify the connection between the sitesIn a 3 site scenario A, B, C, if C is connected to A and BWhen C is responding to A HsResponse will contain (C, A), (C, B). Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	Edges []*SiteLink `json:"edges,omitempty"`
 
 	// GSLB application persistence profile state at member. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GapTable []*CfgState `json:"gap_table,omitempty"`
