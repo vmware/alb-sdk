@@ -236,13 +236,13 @@
                 }
             }
         },
-        "/gslbsmruntime": {
+        "/gslbcrmruntime": {
             "get": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbCRMRuntime"
                 ],
-                "description": "/gslbsmruntime",
-                "operationId": "GET /gslbsmruntime",
+                "description": "/gslbcrmruntime",
+                "operationId": "GET /gslbcrmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -333,7 +333,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntimeApiResponse"
+                            "$ref": "#/definitions/GslbCRMRuntimeApiResponse"
                         }
                     },
                     "401": {
@@ -343,10 +343,10 @@
             },
             "post": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbCRMRuntime"
                 ],
-                "description": "/gslbsmruntime",
-                "operationId": "POST /gslbsmruntime",
+                "description": "/gslbcrmruntime",
+                "operationId": "POST /gslbcrmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -385,10 +385,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbSMRuntime object creation",
+                        "description": "GslbCRMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     }
                 ],
@@ -401,7 +401,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     },
                     "401": {
@@ -410,13 +410,13 @@
                 }
             }
         },
-        "/gslbsmruntime/{uuid}": {
+        "/gslbcrmruntime/{uuid}": {
             "get": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbCRMRuntime"
                 ],
-                "description": "/gslbsmruntime/{uuid}/{uuid}",
-                "operationId": "GET /gslbsmruntime/{uuid}",
+                "description": "/gslbcrmruntime/{uuid}/{uuid}",
+                "operationId": "GET /gslbcrmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,7 +502,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     },
                     "401": {
@@ -515,10 +515,10 @@
             },
             "put": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbCRMRuntime"
                 ],
-                "description": "/gslbsmruntime/{uuid}/{uuid}",
-                "operationId": "PUT /gslbsmruntime/{uuid}",
+                "description": "/gslbcrmruntime/{uuid}/{uuid}",
+                "operationId": "PUT /gslbcrmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -564,10 +564,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbSMRuntime object creation",
+                        "description": "GslbCRMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     },
                     {
@@ -587,7 +587,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     },
                     "401": {
@@ -600,10 +600,10 @@
             },
             "patch": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbCRMRuntime"
                 ],
-                "description": "/gslbsmruntime/{uuid}/{uuid}",
-                "operationId": "PATCH /gslbsmruntime/{uuid}",
+                "description": "/gslbcrmruntime/{uuid}/{uuid}",
+                "operationId": "PATCH /gslbcrmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -649,10 +649,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbSMRuntime object creation",
+                        "description": "GslbCRMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     },
                     {
@@ -672,7 +672,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbSMRuntime"
+                            "$ref": "#/definitions/GslbCRMRuntime"
                         }
                     },
                     "401": {
@@ -685,10 +685,10 @@
             },
             "delete": {
                 "tags": [
-                    "GslbSMRuntime"
+                    "GslbCRMRuntime"
                 ],
-                "description": "/gslbsmruntime/{uuid}/{uuid}",
-                "operationId": "DELETE /gslbsmruntime/{uuid}",
+                "description": "/gslbcrmruntime/{uuid}/{uuid}",
+                "operationId": "DELETE /gslbcrmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1278,13 +1278,13 @@
                 }
             }
         },
-        "/gslbcrmruntime": {
+        "/gslbsmruntime": {
             "get": {
                 "tags": [
-                    "GslbCRMRuntime"
+                    "GslbSMRuntime"
                 ],
-                "description": "/gslbcrmruntime",
-                "operationId": "GET /gslbcrmruntime",
+                "description": "/gslbsmruntime",
+                "operationId": "GET /gslbsmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -1375,7 +1375,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntimeApiResponse"
+                            "$ref": "#/definitions/GslbSMRuntimeApiResponse"
                         }
                     },
                     "401": {
@@ -1385,10 +1385,10 @@
             },
             "post": {
                 "tags": [
-                    "GslbCRMRuntime"
+                    "GslbSMRuntime"
                 ],
-                "description": "/gslbcrmruntime",
-                "operationId": "POST /gslbcrmruntime",
+                "description": "/gslbsmruntime",
+                "operationId": "POST /gslbsmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -1427,10 +1427,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbCRMRuntime object creation",
+                        "description": "GslbSMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     }
                 ],
@@ -1443,7 +1443,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     "401": {
@@ -1452,13 +1452,13 @@
                 }
             }
         },
-        "/gslbcrmruntime/{uuid}": {
+        "/gslbsmruntime/{uuid}": {
             "get": {
                 "tags": [
-                    "GslbCRMRuntime"
+                    "GslbSMRuntime"
                 ],
-                "description": "/gslbcrmruntime/{uuid}/{uuid}",
-                "operationId": "GET /gslbcrmruntime/{uuid}",
+                "description": "/gslbsmruntime/{uuid}/{uuid}",
+                "operationId": "GET /gslbsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1544,7 +1544,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     "401": {
@@ -1557,10 +1557,10 @@
             },
             "put": {
                 "tags": [
-                    "GslbCRMRuntime"
+                    "GslbSMRuntime"
                 ],
-                "description": "/gslbcrmruntime/{uuid}/{uuid}",
-                "operationId": "PUT /gslbcrmruntime/{uuid}",
+                "description": "/gslbsmruntime/{uuid}/{uuid}",
+                "operationId": "PUT /gslbsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1606,10 +1606,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbCRMRuntime object creation",
+                        "description": "GslbSMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     {
@@ -1629,7 +1629,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     "401": {
@@ -1642,10 +1642,10 @@
             },
             "patch": {
                 "tags": [
-                    "GslbCRMRuntime"
+                    "GslbSMRuntime"
                 ],
-                "description": "/gslbcrmruntime/{uuid}/{uuid}",
-                "operationId": "PATCH /gslbcrmruntime/{uuid}",
+                "description": "/gslbsmruntime/{uuid}/{uuid}",
+                "operationId": "PATCH /gslbsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1691,10 +1691,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "GslbCRMRuntime object creation",
+                        "description": "GslbSMRuntime object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     {
@@ -1714,7 +1714,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
+                            "$ref": "#/definitions/GslbSMRuntime"
                         }
                     },
                     "401": {
@@ -1727,10 +1727,10 @@
             },
             "delete": {
                 "tags": [
-                    "GslbCRMRuntime"
+                    "GslbSMRuntime"
                 ],
-                "description": "/gslbcrmruntime/{uuid}/{uuid}",
-                "operationId": "DELETE /gslbcrmruntime/{uuid}",
+                "description": "/gslbsmruntime/{uuid}/{uuid}",
+                "operationId": "DELETE /gslbsmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
