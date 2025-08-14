@@ -118,6 +118,9 @@ type ConnectionLog struct {
 	// Required: true
 	Mss *uint32 `json:"mss"`
 
+	// SSl group negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	NamedGroup *string `json:"named_group,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NetworkSecurityPolicyRuleName *string `json:"network_security_policy_rule_name,omitempty"`
 
@@ -242,6 +245,9 @@ type ConnectionLog struct {
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServiceEngine *string `json:"service_engine,omitempty"`
+
+	// SSL signature algorithm negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SignatureAlgorithm *string `json:"signature_algorithm,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Significance *string `json:"significance,omitempty"`

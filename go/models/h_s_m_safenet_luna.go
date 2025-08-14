@@ -26,4 +26,7 @@ type HSMSafenetLuna struct {
 
 	// If enabled, dedicated network is used to communicate with HSM,else, the management network is used. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UseDedicatedNetwork *bool `json:"use_dedicated_network,omitempty"`
+
+	// If enabled, Thales Luna client will use legacy gem engine library, instead of a Luna provider. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	UseLegacyEngine *bool `json:"use_legacy_engine,omitempty"`
 }

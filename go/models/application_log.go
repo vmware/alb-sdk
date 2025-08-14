@@ -182,6 +182,9 @@ type ApplicationLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MicroserviceName *string `json:"microservice_name,omitempty"`
 
+	// SSl group negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	NamedGroup *string `json:"named_group,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NetworkSecurityPolicyRuleName *string `json:"network_security_policy_rule_name,omitempty"`
 
@@ -351,6 +354,9 @@ type ApplicationLog struct {
 
 	// If the HTTP Session module is enabled for the Virtual Service, this field will contain the session id created by the module. Later calls to the DataScript function avi.vs.set_session_id() overwrite the value of this field with the value supplied in the function call. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SessionID *string `json:"session_id,omitempty"`
+
+	// SSL signature algorithm negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SignatureAlgorithm *string `json:"signature_algorithm,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Significance *string `json:"significance,omitempty"`
