@@ -645,6 +645,10 @@ class ApiSession(Session):
         err = None
         api_hdrs = self._get_api_headers(tenant, tenant_uuid, timeout, headers,
                                          api_version)
+        certificate = self.avi_credentials.ssl_cert
+        key = self.avi_credentials.ssl_key
+        if certificate and key:
+            kwargs['cert'] = (certificate, key)
         if 'X-CSRFToken' in api_hdrs:
             cookies = {
                 'csrftoken': api_hdrs['X-CSRFToken'],
