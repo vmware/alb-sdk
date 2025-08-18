@@ -33,6 +33,9 @@ public class AppLearningParams  {
     @JsonProperty("learn_from_bots")
     private BotDetectionMatch learnFromBots;
 
+    @JsonProperty("learn_from_urls_without_args")
+    private Boolean learnFromUrlsWithoutArgs = false;
+
     @JsonProperty("max_params")
     private Integer maxParams = 100;
 
@@ -153,6 +156,30 @@ public class AppLearningParams  {
      */
     public void setLearnFromBots(BotDetectionMatch learnFromBots) {
         this.learnFromBots = learnFromBots;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * When true, the waf includes argument-less uris in its learning process.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return learnFromUrlsWithoutArgs
+     */
+    public Boolean getLearnFromUrlsWithoutArgs() {
+        return learnFromUrlsWithoutArgs;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * When true, the waf includes argument-less uris in its learning process.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param learnFromUrlsWithoutArgs set the learnFromUrlsWithoutArgs.
+     */
+    public void setLearnFromUrlsWithoutArgs(Boolean  learnFromUrlsWithoutArgs) {
+        this.learnFromUrlsWithoutArgs = learnFromUrlsWithoutArgs;
     }
 
     /**
@@ -332,7 +359,8 @@ public class AppLearningParams  {
   Objects.equals(this.learnFromAuthenticatedClientsOnly, objAppLearningParams.learnFromAuthenticatedClientsOnly)&&
   Objects.equals(this.trustedIpgroupRef, objAppLearningParams.trustedIpgroupRef)&&
   Objects.equals(this.learnFromBots, objAppLearningParams.learnFromBots)&&
-  Objects.equals(this.enableLearnFromBots, objAppLearningParams.enableLearnFromBots);
+  Objects.equals(this.enableLearnFromBots, objAppLearningParams.enableLearnFromBots)&&
+  Objects.equals(this.learnFromUrlsWithoutArgs, objAppLearningParams.learnFromUrlsWithoutArgs);
     }
 
     @Override
@@ -343,6 +371,7 @@ public class AppLearningParams  {
                         sb.append("    enablePerUriLearning: ").append(toIndentedString(enablePerUriLearning)).append("\n");
                         sb.append("    learnFromAuthenticatedClientsOnly: ").append(toIndentedString(learnFromAuthenticatedClientsOnly)).append("\n");
                         sb.append("    learnFromBots: ").append(toIndentedString(learnFromBots)).append("\n");
+                        sb.append("    learnFromUrlsWithoutArgs: ").append(toIndentedString(learnFromUrlsWithoutArgs)).append("\n");
                         sb.append("    maxParams: ").append(toIndentedString(maxParams)).append("\n");
                         sb.append("    maxUris: ").append(toIndentedString(maxUris)).append("\n");
                         sb.append("    minHitsToLearn: ").append(toIndentedString(minHitsToLearn)).append("\n");
