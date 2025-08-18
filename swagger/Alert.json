@@ -500,7 +500,7 @@
                 }
             }
         },
-        "/virtualservice": {
+        "/albservicesfileupload": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -592,7 +592,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VirtualServiceApiResponse"
+                            "$ref": "#/definitions/ALBServicesFileUploadApiResponse"
                         }
                     },
                     "401": {
@@ -639,10 +639,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VirtualService object creation",
+                        "description": "ALBServicesFileUpload object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     }
                 ],
@@ -655,7 +655,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -664,7 +664,7 @@
                 }
             }
         },
-        "/virtualservice/{uuid}": {
+        "/albservicesfileupload/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -751,7 +751,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -805,10 +805,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VirtualService object creation",
+                        "description": "ALBServicesFileUpload object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     {
@@ -828,7 +828,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -882,10 +882,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VirtualService object creation",
+                        "description": "ALBServicesFileUpload object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     {
@@ -905,7 +905,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -1464,7 +1464,7 @@
                 }
             }
         },
-        "/albservicesfileupload": {
+        "/upgradestatusinfo": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -1556,7 +1556,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUploadApiResponse"
+                            "$ref": "#/definitions/UpgradeStatusInfoApiResponse"
                         }
                     },
                     "401": {
@@ -1603,10 +1603,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ALBServicesFileUpload object creation",
+                        "description": "UpgradeStatusInfo object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     }
                 ],
@@ -1619,7 +1619,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -1628,7 +1628,7 @@
                 }
             }
         },
-        "/albservicesfileupload/{uuid}": {
+        "/upgradestatusinfo/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -1715,7 +1715,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -1769,10 +1769,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ALBServicesFileUpload object creation",
+                        "description": "UpgradeStatusInfo object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     {
@@ -1792,7 +1792,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -1846,10 +1846,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ALBServicesFileUpload object creation",
+                        "description": "UpgradeStatusInfo object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     {
@@ -1869,7 +1869,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -1946,7 +1946,7 @@
                 }
             }
         },
-        "/systemreport": {
+        "/virtualservice": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -2038,7 +2038,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReportApiResponse"
+                            "$ref": "#/definitions/VirtualServiceApiResponse"
                         }
                     },
                     "401": {
@@ -2085,10 +2085,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "SystemReport object creation",
+                        "description": "VirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     }
                 ],
@@ -2101,7 +2101,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     },
                     "401": {
@@ -2110,7 +2110,7 @@
                 }
             }
         },
-        "/systemreport/{uuid}": {
+        "/virtualservice/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -2197,7 +2197,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     },
                     "401": {
@@ -2251,10 +2251,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "SystemReport object creation",
+                        "description": "VirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     },
                     {
@@ -2274,7 +2274,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     },
                     "401": {
@@ -2328,10 +2328,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "SystemReport object creation",
+                        "description": "VirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     },
                     {
@@ -2351,7 +2351,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/VirtualService"
                         }
                     },
                     "401": {
@@ -2910,7 +2910,7 @@
                 }
             }
         },
-        "/upgradestatusinfo": {
+        "/systemreport": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -3002,7 +3002,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfoApiResponse"
+                            "$ref": "#/definitions/SystemReportApiResponse"
                         }
                     },
                     "401": {
@@ -3049,10 +3049,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusInfo object creation",
+                        "description": "SystemReport object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     }
                 ],
@@ -3065,7 +3065,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     "401": {
@@ -3074,7 +3074,7 @@
                 }
             }
         },
-        "/upgradestatusinfo/{uuid}": {
+        "/systemreport/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -3161,7 +3161,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     "401": {
@@ -3215,10 +3215,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusInfo object creation",
+                        "description": "SystemReport object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     {
@@ -3238,7 +3238,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     "401": {
@@ -3292,10 +3292,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusInfo object creation",
+                        "description": "SystemReport object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     {
@@ -3315,7 +3315,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     "401": {
