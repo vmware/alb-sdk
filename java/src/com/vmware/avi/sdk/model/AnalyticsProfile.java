@@ -105,6 +105,9 @@ public class AnalyticsProfile extends AviRestResource  {
     @JsonProperty("exclude_client_close_before_request_as_error")
     private Boolean excludeClientCloseBeforeRequestAsError = false;
 
+    @JsonProperty("exclude_conn_drop_client_small_window_as_error")
+    private Boolean excludeConnDropClientSmallWindowAsError = true;
+
     @JsonProperty("exclude_dns_policy_drop_as_significant")
     private Boolean excludeDnsPolicyDropAsSignificant = false;
 
@@ -1046,6 +1049,32 @@ public class AnalyticsProfile extends AviRestResource  {
      */
     public void setExcludeClientCloseBeforeRequestAsError(Boolean  excludeClientCloseBeforeRequestAsError) {
         this.excludeClientCloseBeforeRequestAsError = excludeClientCloseBeforeRequestAsError;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Exclude connection dropped by vs due to client advertises a very small window size from the errors.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return excludeConnDropClientSmallWindowAsError
+     */
+    public Boolean getExcludeConnDropClientSmallWindowAsError() {
+        return excludeConnDropClientSmallWindowAsError;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Exclude connection dropped by vs due to client advertises a very small window size from the errors.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param excludeConnDropClientSmallWindowAsError set the excludeConnDropClientSmallWindowAsError.
+     */
+    public void setExcludeConnDropClientSmallWindowAsError(Boolean  excludeConnDropClientSmallWindowAsError) {
+        this.excludeConnDropClientSmallWindowAsError = excludeConnDropClientSmallWindowAsError;
     }
 
     /**
@@ -2700,7 +2729,8 @@ public class AnalyticsProfile extends AviRestResource  {
   Objects.equals(this.enableOndemandMetrics, objAnalyticsProfile.enableOndemandMetrics)&&
   Objects.equals(this.markers, objAnalyticsProfile.markers)&&
   Objects.equals(this.latencyAuditProps, objAnalyticsProfile.latencyAuditProps)&&
-  Objects.equals(this.timeTrackerProps, objAnalyticsProfile.timeTrackerProps);
+  Objects.equals(this.timeTrackerProps, objAnalyticsProfile.timeTrackerProps)&&
+  Objects.equals(this.excludeConnDropClientSmallWindowAsError, objAnalyticsProfile.excludeConnDropClientSmallWindowAsError);
     }
 
     @Override
@@ -2735,6 +2765,7 @@ public class AnalyticsProfile extends AviRestResource  {
                         sb.append("    enableServerAnalytics: ").append(toIndentedString(enableServerAnalytics)).append("\n");
                         sb.append("    enableVsAnalytics: ").append(toIndentedString(enableVsAnalytics)).append("\n");
                         sb.append("    excludeClientCloseBeforeRequestAsError: ").append(toIndentedString(excludeClientCloseBeforeRequestAsError)).append("\n");
+                        sb.append("    excludeConnDropClientSmallWindowAsError: ").append(toIndentedString(excludeConnDropClientSmallWindowAsError)).append("\n");
                         sb.append("    excludeDnsPolicyDropAsSignificant: ").append(toIndentedString(excludeDnsPolicyDropAsSignificant)).append("\n");
                         sb.append("    excludeGsDownAsError: ").append(toIndentedString(excludeGsDownAsError)).append("\n");
                         sb.append("    excludeHttpErrorCodes: ").append(toIndentedString(excludeHttpErrorCodes)).append("\n");

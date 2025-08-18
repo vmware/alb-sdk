@@ -27,6 +27,9 @@ public class SSLKeyParams  {
     @JsonProperty("ec_params")
     private SSLKeyECParams ecParams;
 
+    @JsonProperty("mldsa_params")
+    private SSLKeyMldsaParams mldsaParams;
+
     @JsonProperty("rsa_params")
     private SSLKeyRSAParams rsaParams;
 
@@ -34,7 +37,7 @@ public class SSLKeyParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC.
+     * Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC, SSL_KEY_ALGORITHM_MLDSA.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_ALGORITHM_RSA".
      * @return algorithm
@@ -45,7 +48,7 @@ public class SSLKeyParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC.
+     * Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC, SSL_KEY_ALGORITHM_MLDSA.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_ALGORITHM_RSA".
      * @param algorithm set the algorithm.
@@ -72,6 +75,30 @@ public class SSLKeyParams  {
      */
     public void setEcParams(SSLKeyECParams ecParams) {
         this.ecParams = ecParams;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Mldsa keys.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mldsaParams
+     */
+    public SSLKeyMldsaParams getMldsaParams() {
+        return mldsaParams;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Mldsa keys.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param mldsaParams set the mldsaParams.
+     */
+    public void setMldsaParams(SSLKeyMldsaParams mldsaParams) {
+        this.mldsaParams = mldsaParams;
     }
 
     /**
@@ -106,7 +133,8 @@ public class SSLKeyParams  {
       SSLKeyParams objSSLKeyParams = (SSLKeyParams) o;
       return   Objects.equals(this.algorithm, objSSLKeyParams.algorithm)&&
   Objects.equals(this.rsaParams, objSSLKeyParams.rsaParams)&&
-  Objects.equals(this.ecParams, objSSLKeyParams.ecParams);
+  Objects.equals(this.ecParams, objSSLKeyParams.ecParams)&&
+  Objects.equals(this.mldsaParams, objSSLKeyParams.mldsaParams);
     }
 
     @Override
@@ -115,6 +143,7 @@ public class SSLKeyParams  {
       sb.append("class SSLKeyParams {\n");
                   sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
                         sb.append("    ecParams: ").append(toIndentedString(ecParams)).append("\n");
+                        sb.append("    mldsaParams: ").append(toIndentedString(mldsaParams)).append("\n");
                         sb.append("    rsaParams: ").append(toIndentedString(rsaParams)).append("\n");
                   sb.append("}");
       return sb.toString();

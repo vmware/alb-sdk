@@ -54,6 +54,9 @@ public class Gslb extends AviRestResource  {
     @JsonProperty("is_federated")
     private Boolean isFederated = true;
 
+    @JsonProperty("leader_change_info")
+    private LeaderChangeInfo leaderChangeInfo;
+
     @JsonProperty("leader_cluster_uuid")
     private String leaderClusterUuid;
 
@@ -396,6 +399,32 @@ public class Gslb extends AviRestResource  {
      */
     public void setIsFederated(Boolean  isFederated) {
         this.isFederated = isFederated;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This field has leader change configuration info including mode, leader designate sites and other configurations for auto leader change like max
+     * short probe failures.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return leaderChangeInfo
+     */
+    public LeaderChangeInfo getLeaderChangeInfo() {
+        return leaderChangeInfo;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This field has leader change configuration info including mode, leader designate sites and other configurations for auto leader change like max
+     * short probe failures.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param leaderChangeInfo set the leaderChangeInfo.
+     */
+    public void setLeaderChangeInfo(LeaderChangeInfo leaderChangeInfo) {
+        this.leaderChangeInfo = leaderChangeInfo;
     }
 
     /**
@@ -775,7 +804,8 @@ public class Gslb extends AviRestResource  {
   Objects.equals(this.fileobjectMaxFileVersions, objGslb.fileobjectMaxFileVersions)&&
   Objects.equals(this.gsMemberFqdnResolutionOnSe, objGslb.gsMemberFqdnResolutionOnSe)&&
   Objects.equals(this.shortProbeInterval, objGslb.shortProbeInterval)&&
-  Objects.equals(this.autoTuneSendInterval, objGslb.autoTuneSendInterval);
+  Objects.equals(this.autoTuneSendInterval, objGslb.autoTuneSendInterval)&&
+  Objects.equals(this.leaderChangeInfo, objGslb.leaderChangeInfo);
     }
 
     @Override
@@ -793,6 +823,7 @@ public class Gslb extends AviRestResource  {
                         sb.append("    fileobjectMaxFileVersions: ").append(toIndentedString(fileobjectMaxFileVersions)).append("\n");
                         sb.append("    gsMemberFqdnResolutionOnSe: ").append(toIndentedString(gsMemberFqdnResolutionOnSe)).append("\n");
                         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
+                        sb.append("    leaderChangeInfo: ").append(toIndentedString(leaderChangeInfo)).append("\n");
                         sb.append("    leaderClusterUuid: ").append(toIndentedString(leaderClusterUuid)).append("\n");
                         sb.append("    maintenanceMode: ").append(toIndentedString(maintenanceMode)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");

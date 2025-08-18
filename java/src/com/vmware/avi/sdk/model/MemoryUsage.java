@@ -24,6 +24,9 @@ public class MemoryUsage  {
     @JsonProperty("available")
     private Integer available;
 
+    @JsonProperty("effective_ctlr_mem_used_percent")
+    private Integer effectiveCtlrMemUsedPercent;
+
     @JsonProperty("free")
     private Integer free;
 
@@ -54,6 +57,30 @@ public class MemoryUsage  {
      */
     public void setAvailable(Integer  available) {
         this.available = available;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Effective total memory used by memory balancer to make decisions for stopping processes.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return effectiveCtlrMemUsedPercent
+     */
+    public Integer getEffectiveCtlrMemUsedPercent() {
+        return effectiveCtlrMemUsedPercent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Effective total memory used by memory balancer to make decisions for stopping processes.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param effectiveCtlrMemUsedPercent set the effectiveCtlrMemUsedPercent.
+     */
+    public void setEffectiveCtlrMemUsedPercent(Integer  effectiveCtlrMemUsedPercent) {
+        this.effectiveCtlrMemUsedPercent = effectiveCtlrMemUsedPercent;
     }
 
     /**
@@ -108,7 +135,8 @@ public class MemoryUsage  {
       MemoryUsage objMemoryUsage = (MemoryUsage) o;
       return   Objects.equals(this.total, objMemoryUsage.total)&&
   Objects.equals(this.free, objMemoryUsage.free)&&
-  Objects.equals(this.available, objMemoryUsage.available);
+  Objects.equals(this.available, objMemoryUsage.available)&&
+  Objects.equals(this.effectiveCtlrMemUsedPercent, objMemoryUsage.effectiveCtlrMemUsedPercent);
     }
 
     @Override
@@ -116,6 +144,7 @@ public class MemoryUsage  {
       StringBuilder sb = new StringBuilder();
       sb.append("class MemoryUsage {\n");
                   sb.append("    available: ").append(toIndentedString(available)).append("\n");
+                        sb.append("    effectiveCtlrMemUsedPercent: ").append(toIndentedString(effectiveCtlrMemUsedPercent)).append("\n");
                         sb.append("    free: ").append(toIndentedString(free)).append("\n");
                         sb.append("    total: ").append(toIndentedString(total)).append("\n");
                   sb.append("}");
