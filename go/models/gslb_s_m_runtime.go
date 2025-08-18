@@ -18,6 +18,9 @@ type GslbSMRuntime struct {
 	// The site controller cluster UUID. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ClusterUUID *string `json:"cluster_uuid,omitempty"`
 
+	// Possible controller size of peer controller. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ControllerSize *ControllerSize `json:"controller_size,omitempty"`
+
 	// Sub domain configuration for the GSLB.  GSLB service's FQDN must be a match one of these subdomains. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DNSConfigs []*DNSConfig `json:"dns_configs,omitempty"`
 

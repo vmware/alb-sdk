@@ -48,6 +48,9 @@ type Gslb struct {
 	// This field indicates that this object is replicated across GSLB federation. Field introduced in 17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IsFederated *bool `json:"is_federated,omitempty"`
 
+	// This field has leader change configuration info including mode, leader designate sites and other configurations for auto leader change like max short probe failures. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LeaderChangeInfo *LeaderChangeInfo `json:"leader_change_info,omitempty"`
+
 	// Mark this Site as leader of GSLB configuration. This site is the one among the Avi sites. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	LeaderClusterUUID *string `json:"leader_cluster_uuid"`

@@ -99,6 +99,9 @@ type AnalyticsProfile struct {
 	// Exclude client closed connection before an HTTP request could be completed from being classified as an error. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
 	ExcludeClientCloseBeforeRequestAsError *bool `json:"exclude_client_close_before_request_as_error,omitempty"`
 
+	// Exclude Connection dropped by VS due to client advertises a very small window size from the errors. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- true), Basic (Allowed values- true) edition.
+	ExcludeConnDropClientSmallWindowAsError *bool `json:"exclude_conn_drop_client_small_window_as_error,omitempty"`
+
 	// Exclude dns policy drops from the list of errors. Field introduced in 17.2.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
 	ExcludeDNSPolicyDropAsSignificant *bool `json:"exclude_dns_policy_drop_as_significant,omitempty"`
 
