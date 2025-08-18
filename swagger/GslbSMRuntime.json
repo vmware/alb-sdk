@@ -632,6 +632,25 @@
                 }
             }
         },
+        "ControllerSize": {
+            "type": "object",
+            "properties": {
+                "flavor": {
+                    "description": "Controller flavor (E/S/M/L) for this controller size. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "min_cpus": {
+                    "description": "Minimum number of cpu cores required. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "min_memory": {
+                    "description": "Minimum memory required. Field introduced in 20.1.1. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
         "DNSConfig": {
             "type": "object",
             "required": [
@@ -872,6 +891,10 @@
                 "cluster_uuid": {
                     "description": "The site controller cluster UUID. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
+                },
+                "controller_size": {
+                    "description": "Possible controller size of peer controller. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ControllerSize"
                 },
                 "dns_configs": {
                     "description": "Sub domain configuration for the GSLB.  GSLB service's FQDN must be a match one of these subdomains. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
