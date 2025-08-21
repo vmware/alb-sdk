@@ -309,6 +309,9 @@ public class VserverL7MetricsObj  {
     @JsonProperty("avg_waiting_time")
     private Float avgWaitingTime;
 
+    @JsonProperty("effective_sampling_rate")
+    private Float effectiveSamplingRate;
+
     @JsonProperty("max_concurrent_sessions")
     private Float maxConcurrentSessions;
 
@@ -411,6 +414,12 @@ public class VserverL7MetricsObj  {
     @JsonProperty("sum_http_params_count")
     private Float sumHttpParamsCount;
 
+    @JsonProperty("sum_num_optional_processing_admitted")
+    private Float sumNumOptionalProcessingAdmitted;
+
+    @JsonProperty("sum_num_optional_processing_refused")
+    private Float sumNumOptionalProcessingRefused;
+
     @JsonProperty("sum_num_page_load_time_bucket1")
     private Float sumNumPageLoadTimeBucket1;
 
@@ -419,6 +428,9 @@ public class VserverL7MetricsObj  {
 
     @JsonProperty("sum_num_rum_samples")
     private Float sumNumRumSamples;
+
+    @JsonProperty("sum_optional_cpu_usage")
+    private Float sumOptionalCpuUsage;
 
     @JsonProperty("sum_other_client_txn_latency")
     private Float sumOtherClientTxnLatency;
@@ -2759,6 +2771,30 @@ public class VserverL7MetricsObj  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * The effective sampling rate, i.e., the percentage of optional requests admitted.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return effectiveSamplingRate
+     */
+    public Float getEffectiveSamplingRate() {
+        return effectiveSamplingRate;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The effective sampling rate, i.e., the percentage of optional requests admitted.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param effectiveSamplingRate set the effectiveSamplingRate.
+     */
+    public void setEffectiveSamplingRate(Float  effectiveSamplingRate) {
+        this.effectiveSamplingRate = effectiveSamplingRate;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Maximum number of concurrent http sessions.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -3527,6 +3563,54 @@ public class VserverL7MetricsObj  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * The number of requests admitted for optional processing.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumNumOptionalProcessingAdmitted
+     */
+    public Float getSumNumOptionalProcessingAdmitted() {
+        return sumNumOptionalProcessingAdmitted;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The number of requests admitted for optional processing.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumNumOptionalProcessingAdmitted set the sumNumOptionalProcessingAdmitted.
+     */
+    public void setSumNumOptionalProcessingAdmitted(Float  sumNumOptionalProcessingAdmitted) {
+        this.sumNumOptionalProcessingAdmitted = sumNumOptionalProcessingAdmitted;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The number of requests refused for optional processing.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumNumOptionalProcessingRefused
+     */
+    public Float getSumNumOptionalProcessingRefused() {
+        return sumNumOptionalProcessingRefused;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The number of requests refused for optional processing.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumNumOptionalProcessingRefused set the sumNumOptionalProcessingRefused.
+     */
+    public void setSumNumOptionalProcessingRefused(Float  sumNumOptionalProcessingRefused) {
+        this.sumNumOptionalProcessingRefused = sumNumOptionalProcessingRefused;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Total samples that had satisfactory page load time.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -3589,6 +3673,30 @@ public class VserverL7MetricsObj  {
      */
     public void setSumNumRumSamples(Float  sumNumRumSamples) {
         this.sumNumRumSamples = sumNumRumSamples;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total cpu in microseconds used for optional processing.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumOptionalCpuUsage
+     */
+    public Float getSumOptionalCpuUsage() {
+        return sumOptionalCpuUsage;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total cpu in microseconds used for optional processing.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumOptionalCpuUsage set the sumOptionalCpuUsage.
+     */
+    public void setSumOptionalCpuUsage(Float  sumOptionalCpuUsage) {
+        this.sumOptionalCpuUsage = sumOptionalCpuUsage;
     }
 
     /**
@@ -4914,7 +5022,11 @@ public class VserverL7MetricsObj  {
   Objects.equals(this.sumReqsWithParams, objVserverL7MetricsObj.sumReqsWithParams)&&
   Objects.equals(this.avgParamsPerReq, objVserverL7MetricsObj.avgParamsPerReq)&&
   Objects.equals(this.avgTotalHttp2Requests, objVserverL7MetricsObj.avgTotalHttp2Requests)&&
-  Objects.equals(this.avgSslVerTls13, objVserverL7MetricsObj.avgSslVerTls13);
+  Objects.equals(this.avgSslVerTls13, objVserverL7MetricsObj.avgSslVerTls13)&&
+  Objects.equals(this.sumNumOptionalProcessingAdmitted, objVserverL7MetricsObj.sumNumOptionalProcessingAdmitted)&&
+  Objects.equals(this.sumNumOptionalProcessingRefused, objVserverL7MetricsObj.sumNumOptionalProcessingRefused)&&
+  Objects.equals(this.effectiveSamplingRate, objVserverL7MetricsObj.effectiveSamplingRate)&&
+  Objects.equals(this.sumOptionalCpuUsage, objVserverL7MetricsObj.sumOptionalCpuUsage);
     }
 
     @Override
@@ -5017,6 +5129,7 @@ public class VserverL7MetricsObj  {
                         sb.append("    avgWafRejectedResponseBodyPhase: ").append(toIndentedString(avgWafRejectedResponseBodyPhase)).append("\n");
                         sb.append("    avgWafRejectedResponseHeaderPhase: ").append(toIndentedString(avgWafRejectedResponseHeaderPhase)).append("\n");
                         sb.append("    avgWaitingTime: ").append(toIndentedString(avgWaitingTime)).append("\n");
+                        sb.append("    effectiveSamplingRate: ").append(toIndentedString(effectiveSamplingRate)).append("\n");
                         sb.append("    maxConcurrentSessions: ").append(toIndentedString(maxConcurrentSessions)).append("\n");
                         sb.append("    maxSslOpenSessions: ").append(toIndentedString(maxSslOpenSessions)).append("\n");
                         sb.append("    nodeObjId: ").append(toIndentedString(nodeObjId)).append("\n");
@@ -5051,9 +5164,12 @@ public class VserverL7MetricsObj  {
                         sb.append("    sumHttpHeadersBytes: ").append(toIndentedString(sumHttpHeadersBytes)).append("\n");
                         sb.append("    sumHttpHeadersCount: ").append(toIndentedString(sumHttpHeadersCount)).append("\n");
                         sb.append("    sumHttpParamsCount: ").append(toIndentedString(sumHttpParamsCount)).append("\n");
+                        sb.append("    sumNumOptionalProcessingAdmitted: ").append(toIndentedString(sumNumOptionalProcessingAdmitted)).append("\n");
+                        sb.append("    sumNumOptionalProcessingRefused: ").append(toIndentedString(sumNumOptionalProcessingRefused)).append("\n");
                         sb.append("    sumNumPageLoadTimeBucket1: ").append(toIndentedString(sumNumPageLoadTimeBucket1)).append("\n");
                         sb.append("    sumNumPageLoadTimeBucket2: ").append(toIndentedString(sumNumPageLoadTimeBucket2)).append("\n");
                         sb.append("    sumNumRumSamples: ").append(toIndentedString(sumNumRumSamples)).append("\n");
+                        sb.append("    sumOptionalCpuUsage: ").append(toIndentedString(sumOptionalCpuUsage)).append("\n");
                         sb.append("    sumOtherClientTxnLatency: ").append(toIndentedString(sumOtherClientTxnLatency)).append("\n");
                         sb.append("    sumOtherClientTxnLatencyBucket1: ").append(toIndentedString(sumOtherClientTxnLatencyBucket1)).append("\n");
                         sb.append("    sumOtherClientTxnLatencyBucket2: ").append(toIndentedString(sumOtherClientTxnLatencyBucket2)).append("\n");

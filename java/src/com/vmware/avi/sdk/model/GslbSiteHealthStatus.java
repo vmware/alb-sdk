@@ -24,11 +24,17 @@ public class GslbSiteHealthStatus  {
     @JsonProperty("controller_gsinfo")
     private List<GslbPoolMemberRuntimeInfo> controllerGsinfo;
 
+    @JsonProperty("controller_size")
+    private ControllerSize controllerSize;
+
     @JsonProperty("datapath_gsinfo")
     private List<GslbPoolMemberRuntimeInfo> datapathGsinfo;
 
     @JsonProperty("dns_info")
     private GslbDnsInfo dnsInfo;
+
+    @JsonProperty("edges")
+    private List<SiteLink> edges;
 
     @JsonProperty("gap_table")
     private List<CfgState> gapTable;
@@ -87,6 +93,30 @@ public class GslbSiteHealthStatus  {
       }
       this.controllerGsinfo.add(controllerGsinfoItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Controller size of peer controller.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return controllerSize
+     */
+    public ControllerSize getControllerSize() {
+        return controllerSize;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Controller size of peer controller.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param controllerSize set the controllerSize.
+     */
+    public void setControllerSize(ControllerSize controllerSize) {
+        this.controllerSize = controllerSize;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -148,6 +178,48 @@ public class GslbSiteHealthStatus  {
      */
     public void setDnsInfo(GslbDnsInfo dnsInfo) {
         this.dnsInfo = dnsInfo;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * This is used to identify the connection between the sitesin a 3 site scenario a, b, c, if c is connected to a and bwhen c is responding to a
+     * hsresponse will contain (c, a), (c, b).
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return edges
+     */
+    public List<SiteLink> getEdges() {
+        return edges;
+    }
+
+    /**
+     * This is the setter method. this will set the edges
+     * This is used to identify the connection between the sitesin a 3 site scenario a, b, c, if c is connected to a and bwhen c is responding to a
+     * hsresponse will contain (c, a), (c, b).
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return edges
+     */
+    public void setEdges(List<SiteLink>  edges) {
+        this.edges = edges;
+    }
+
+    /**
+     * This is the setter method this will set the edges
+     * This is used to identify the connection between the sitesin a 3 site scenario a, b, c, if c is connected to a and bwhen c is responding to a
+     * hsresponse will contain (c, a), (c, b).
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return edges
+     */
+    public GslbSiteHealthStatus addEdgesItem(SiteLink edgesItem) {
+      if (this.edges == null) {
+        this.edges = new ArrayList<SiteLink>();
+      }
+      this.edges.add(edgesItem);
+      return this;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -399,7 +471,9 @@ public class GslbSiteHealthStatus  {
   Objects.equals(this.ghmTable, objGslbSiteHealthStatus.ghmTable)&&
   Objects.equals(this.gsTable, objGslbSiteHealthStatus.gsTable)&&
   Objects.equals(this.geoTable, objGslbSiteHealthStatus.geoTable)&&
-  Objects.equals(this.gapTable, objGslbSiteHealthStatus.gapTable);
+  Objects.equals(this.gapTable, objGslbSiteHealthStatus.gapTable)&&
+  Objects.equals(this.edges, objGslbSiteHealthStatus.edges)&&
+  Objects.equals(this.controllerSize, objGslbSiteHealthStatus.controllerSize);
     }
 
     @Override
@@ -407,8 +481,10 @@ public class GslbSiteHealthStatus  {
       StringBuilder sb = new StringBuilder();
       sb.append("class GslbSiteHealthStatus {\n");
                   sb.append("    controllerGsinfo: ").append(toIndentedString(controllerGsinfo)).append("\n");
+                        sb.append("    controllerSize: ").append(toIndentedString(controllerSize)).append("\n");
                         sb.append("    datapathGsinfo: ").append(toIndentedString(datapathGsinfo)).append("\n");
                         sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
+                        sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
                         sb.append("    gapTable: ").append(toIndentedString(gapTable)).append("\n");
                         sb.append("    geoTable: ").append(toIndentedString(geoTable)).append("\n");
                         sb.append("    ghmTable: ").append(toIndentedString(ghmTable)).append("\n");

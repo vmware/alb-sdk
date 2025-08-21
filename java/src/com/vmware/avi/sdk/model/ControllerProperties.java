@@ -175,11 +175,20 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("ignore_vrf_in_networksubnetlist")
     private Boolean ignoreVrfInNetworksubnetlist = false;
 
-    @JsonProperty("log_records_additional_buffer_space")
-    private Integer logRecordsAdditionalBufferSpace = 0;
+    @JsonProperty("log_records_allocated_size")
+    private Integer logRecordsAllocatedSize;
+
+    @JsonProperty("log_records_allocation_percentage_for_events")
+    private Integer logRecordsAllocationPercentageForEvents = 20;
+
+    @JsonProperty("log_records_cleanup_target_percentage")
+    private Integer logRecordsCleanupTargetPercentage = 90;
+
+    @JsonProperty("log_records_frequent_cleanup_event_generation_threshold")
+    private Integer logRecordsFrequentCleanupEventGenerationThreshold = 2;
 
     @JsonProperty("log_records_purge_interval")
-    private Integer logRecordsPurgeInterval = 600;
+    private Integer logRecordsPurgeInterval = 300;
 
     @JsonProperty("max_dead_se_in_grp")
     private Integer maxDeadSeInGrp = 1;
@@ -1700,41 +1709,122 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Additional buffer space (up to 10 gb) to be allocated to store logs on a controller.
-     * Allowed values are 0-10000.
+     * Disk size to be allocated [1mb to 500gb] to store logs on a controller vm.
+     * Allowed values are 1000-500000000.
      * Field introduced in 31.2.1.
-     * Unit is mb.
+     * Unit is kb.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
-     * @return logRecordsAdditionalBufferSpace
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return logRecordsAllocatedSize
      */
-    public Integer getLogRecordsAdditionalBufferSpace() {
-        return logRecordsAdditionalBufferSpace;
+    public Integer getLogRecordsAllocatedSize() {
+        return logRecordsAllocatedSize;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Additional buffer space (up to 10 gb) to be allocated to store logs on a controller.
-     * Allowed values are 0-10000.
+     * Disk size to be allocated [1mb to 500gb] to store logs on a controller vm.
+     * Allowed values are 1000-500000000.
      * Field introduced in 31.2.1.
-     * Unit is mb.
+     * Unit is kb.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
-     * @param logRecordsAdditionalBufferSpace set the logRecordsAdditionalBufferSpace.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param logRecordsAllocatedSize set the logRecordsAllocatedSize.
      */
-    public void setLogRecordsAdditionalBufferSpace(Integer  logRecordsAdditionalBufferSpace) {
-        this.logRecordsAdditionalBufferSpace = logRecordsAdditionalBufferSpace;
+    public void setLogRecordsAllocatedSize(Integer  logRecordsAllocatedSize) {
+        this.logRecordsAllocatedSize = logRecordsAllocatedSize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Percentage of allocation (log_records_allocated_size)  for events on controller node.
+     * Allowed values are 10-50.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+     * @return logRecordsAllocationPercentageForEvents
+     */
+    public Integer getLogRecordsAllocationPercentageForEvents() {
+        return logRecordsAllocationPercentageForEvents;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Percentage of allocation (log_records_allocated_size)  for events on controller node.
+     * Allowed values are 10-50.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+     * @param logRecordsAllocationPercentageForEvents set the logRecordsAllocationPercentageForEvents.
+     */
+    public void setLogRecordsAllocationPercentageForEvents(Integer  logRecordsAllocationPercentageForEvents) {
+        this.logRecordsAllocationPercentageForEvents = logRecordsAllocationPercentageForEvents;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Target percentage of allocated disk quota to reduce log file consumption to when cleanup is triggered.
+     * When disk usage exceeds 100% of the allocated quota, cleanup will reduce consumption to this percentage of the allocation.
+     * Allowed values are 30-90.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 90.
+     * @return logRecordsCleanupTargetPercentage
+     */
+    public Integer getLogRecordsCleanupTargetPercentage() {
+        return logRecordsCleanupTargetPercentage;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Target percentage of allocated disk quota to reduce log file consumption to when cleanup is triggered.
+     * When disk usage exceeds 100% of the allocated quota, cleanup will reduce consumption to this percentage of the allocation.
+     * Allowed values are 30-90.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 90.
+     * @param logRecordsCleanupTargetPercentage set the logRecordsCleanupTargetPercentage.
+     */
+    public void setLogRecordsCleanupTargetPercentage(Integer  logRecordsCleanupTargetPercentage) {
+        this.logRecordsCleanupTargetPercentage = logRecordsCleanupTargetPercentage;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The threshold for raising an event on frequent cleanup of logs system.
+     * By default if two consecutive purger/ clean up runs find logs beyond allocated size then an event in raised.
+     * Allowed values are 2-100.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+     * @return logRecordsFrequentCleanupEventGenerationThreshold
+     */
+    public Integer getLogRecordsFrequentCleanupEventGenerationThreshold() {
+        return logRecordsFrequentCleanupEventGenerationThreshold;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The threshold for raising an event on frequent cleanup of logs system.
+     * By default if two consecutive purger/ clean up runs find logs beyond allocated size then an event in raised.
+     * Allowed values are 2-100.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+     * @param logRecordsFrequentCleanupEventGenerationThreshold set the logRecordsFrequentCleanupEventGenerationThreshold.
+     */
+    public void setLogRecordsFrequentCleanupEventGenerationThreshold(Integer  logRecordsFrequentCleanupEventGenerationThreshold) {
+        this.logRecordsFrequentCleanupEventGenerationThreshold = logRecordsFrequentCleanupEventGenerationThreshold;
     }
 
     /**
      * This is the getter method this will return the attribute value.
      * Frequency (in seconds) to clean up log files on controller node.
-     * By default, 600 seconds.
-     * Allowed values are 1-100000.
+     * Allowed values are 10-100000.
      * Field introduced in 31.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 600.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return logRecordsPurgeInterval
      */
     public Integer getLogRecordsPurgeInterval() {
@@ -1744,12 +1834,11 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Frequency (in seconds) to clean up log files on controller node.
-     * By default, 600 seconds.
-     * Allowed values are 1-100000.
+     * Allowed values are 10-100000.
      * Field introduced in 31.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 600.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param logRecordsPurgeInterval set the logRecordsPurgeInterval.
      */
     public void setLogRecordsPurgeInterval(Integer  logRecordsPurgeInterval) {
@@ -3628,9 +3717,12 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.archiveRetentionFrameworkPeriod, objControllerProperties.archiveRetentionFrameworkPeriod)&&
   Objects.equals(this.gslbFileobjectMaxVersionCount, objControllerProperties.gslbFileobjectMaxVersionCount)&&
   Objects.equals(this.telemetryInterval, objControllerProperties.telemetryInterval)&&
-  Objects.equals(this.logRecordsAdditionalBufferSpace, objControllerProperties.logRecordsAdditionalBufferSpace)&&
+  Objects.equals(this.logRecordsAllocatedSize, objControllerProperties.logRecordsAllocatedSize)&&
   Objects.equals(this.logRecordsPurgeInterval, objControllerProperties.logRecordsPurgeInterval)&&
-  Objects.equals(this.asyncCertChainingInterval, objControllerProperties.asyncCertChainingInterval);
+  Objects.equals(this.asyncCertChainingInterval, objControllerProperties.asyncCertChainingInterval)&&
+  Objects.equals(this.logRecordsFrequentCleanupEventGenerationThreshold, objControllerProperties.logRecordsFrequentCleanupEventGenerationThreshold)&&
+  Objects.equals(this.logRecordsCleanupTargetPercentage, objControllerProperties.logRecordsCleanupTargetPercentage)&&
+  Objects.equals(this.logRecordsAllocationPercentageForEvents, objControllerProperties.logRecordsAllocationPercentageForEvents);
     }
 
     @Override
@@ -3688,7 +3780,10 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    gslbPurgeBatchSize: ").append(toIndentedString(gslbPurgeBatchSize)).append("\n");
                         sb.append("    gslbPurgeSleepTimeMs: ").append(toIndentedString(gslbPurgeSleepTimeMs)).append("\n");
                         sb.append("    ignoreVrfInNetworksubnetlist: ").append(toIndentedString(ignoreVrfInNetworksubnetlist)).append("\n");
-                        sb.append("    logRecordsAdditionalBufferSpace: ").append(toIndentedString(logRecordsAdditionalBufferSpace)).append("\n");
+                        sb.append("    logRecordsAllocatedSize: ").append(toIndentedString(logRecordsAllocatedSize)).append("\n");
+                        sb.append("    logRecordsAllocationPercentageForEvents: ").append(toIndentedString(logRecordsAllocationPercentageForEvents)).append("\n");
+                        sb.append("    logRecordsCleanupTargetPercentage: ").append(toIndentedString(logRecordsCleanupTargetPercentage)).append("\n");
+                        sb.append("    logRecordsFrequentCleanupEventGenerationThreshold: ").append(toIndentedString(logRecordsFrequentCleanupEventGenerationThreshold)).append("\n");
                         sb.append("    logRecordsPurgeInterval: ").append(toIndentedString(logRecordsPurgeInterval)).append("\n");
                         sb.append("    maxDeadSeInGrp: ").append(toIndentedString(maxDeadSeInGrp)).append("\n");
                         sb.append("    maxPcapPerTenant: ").append(toIndentedString(maxPcapPerTenant)).append("\n");
