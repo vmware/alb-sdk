@@ -3676,6 +3676,10 @@ definitions:
                 description: "Average Waiting Time reported by client. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
+            effective_sampling_rate:
+                description: "The effective sampling rate, i.e., the percentage of optional requests admitted. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: number
+                format: double
             max_concurrent_sessions:
                 description: "Maximum number of concurrent HTTP sessions. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
@@ -3811,6 +3815,14 @@ definitions:
                 description: "Total number of HTTP request parameters. Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
+            sum_num_optional_processing_admitted:
+                description: "The number of requests admitted for optional processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: number
+                format: double
+            sum_num_optional_processing_refused:
+                description: "The number of requests refused for optional processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: number
+                format: double
             sum_num_page_load_time_bucket1:
                 description: "Total samples that had satisfactory page load time. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
@@ -3821,6 +3833,10 @@ definitions:
                 format: double
             sum_num_rum_samples:
                 description: "Total samples used for rum metrics. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                format: double
+            sum_optional_cpu_usage:
+                description: "Total CPU in microseconds used for optional processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_other_client_txn_latency:
