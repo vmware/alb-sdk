@@ -121,6 +121,7 @@
 					</gpgArguments>
 					<useAgent>false</useAgent>
 					<passphrase>${env.MAVEN_GPG_PASSPHRASE}</passphrase>
+					<defaultKeyring>false</defaultKeyring>
 				</configuration>
 				<executions>
 					<execution>
