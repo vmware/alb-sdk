@@ -119,6 +119,8 @@
 						<arg>--pinentry-mode</arg>
 						<arg>loopback</arg>
 					</gpgArguments>
+					<useAgent>false</useAgent>
+					<passphrase>${env.MAVEN_GPG_PASSPHRASE}</passphrase>
 				</configuration>
 				<executions>
 					<execution>
