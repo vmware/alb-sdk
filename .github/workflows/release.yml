@@ -81,7 +81,9 @@ jobs:
             echo "Normal tag found. Uploading java assets to public repo."
             # mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
             # mvn clean --batch-mode deploy -DskipTests -Denv.MAVEN_GPG_PASSPHRASE=${{ secrets.MAVEN_GPG_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
-            mvn clean -e --batch-mode deploy -DskipTests
+            cat /home/runner/.m2/settings.xml
+            #mvn clean -e --batch-mode deploy -DskipTests
+            
           fi
           cd ..
           ls java/target/
