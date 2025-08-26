@@ -76,15 +76,12 @@ jobs:
           echo "Publish Java Version ${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}"
           echo "Publish AVI VERSION ${{ steps.get_sdk_version.outputs.AVI_VERSION }}"
           cd java
-          #Comment below for beta release testing
-          #mvn versions:set -DnewVersion=${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}
+          mvn versions:set -DnewVersion=${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}
           if [[ ${{ steps.publish_target.outputs.TAG_NAME }} == "test-"* ]]; then
             echo "Test tag found. Skipping java assets upload to public repo."
             mvn clean install -Dgpg.skip=true
           else
             echo "Normal tag found. Uploading java assets to public repo."
-            # mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
-            # mvn clean --batch-mode deploy -DskipTests -Denv.MAVEN_GPG_PASSPHRASE=${{ secrets.MAVEN_GPG_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
             mvn clean -e --batch-mode deploy -DskipTests
             
           fi
