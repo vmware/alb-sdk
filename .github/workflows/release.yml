@@ -76,7 +76,7 @@ jobs:
           echo "Publish Java Version ${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}"
           echo "Publish AVI VERSION ${{ steps.get_sdk_version.outputs.AVI_VERSION }}"
           cd java
-          mvn versions:set -DnewVersion=${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}
+          #mvn versions:set -DnewVersion=${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}
           if [[ ${{ steps.publish_target.outputs.TAG_NAME }} == "test-"* ]]; then
             echo "Test tag found. Skipping java assets upload to public repo."
             mvn clean install -Dgpg.skip=true
