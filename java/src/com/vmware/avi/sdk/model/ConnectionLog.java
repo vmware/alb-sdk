@@ -123,9 +123,6 @@ public class ConnectionLog  {
     @JsonProperty("mss")
     private Integer mss = 1500;
 
-    @JsonProperty("named_group")
-    private String namedGroup;
-
     @JsonProperty("network_security_policy_rule_name")
     private String networkSecurityPolicyRuleName;
 
@@ -231,9 +228,6 @@ public class ConnectionLog  {
     @JsonProperty("service_engine")
     private String serviceEngine;
 
-    @JsonProperty("signature_algorithm")
-    private String signatureAlgorithm;
-
     @JsonProperty("significance")
     private String significance;
 
@@ -252,8 +246,14 @@ public class ConnectionLog  {
     @JsonProperty("ssl_cipher")
     private String sslCipher;
 
+    @JsonProperty("ssl_named_group")
+    private String sslNamedGroup;
+
     @JsonProperty("ssl_session_id")
     private String sslSessionId;
+
+    @JsonProperty("ssl_signature_algorithm")
+    private String sslSignatureAlgorithm;
 
     @JsonProperty("ssl_version")
     private String sslVersion;
@@ -1065,30 +1065,6 @@ public class ConnectionLog  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ssl group negotitaed during ssl handhshake.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return namedGroup
-     */
-    public String getNamedGroup() {
-        return namedGroup;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Ssl group negotitaed during ssl handhshake.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param namedGroup set the namedGroup.
-     */
-    public void setNamedGroup(String  namedGroup) {
-        this.namedGroup = namedGroup;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkSecurityPolicyRuleName
@@ -1825,30 +1801,6 @@ public class ConnectionLog  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ssl signature algorithm negotitaed during ssl handhshake.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return signatureAlgorithm
-     */
-    public String getSignatureAlgorithm() {
-        return signatureAlgorithm;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Ssl signature algorithm negotitaed during ssl handhshake.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param signatureAlgorithm set the signatureAlgorithm.
-     */
-    public void setSignatureAlgorithm(String  signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return significance
@@ -2009,6 +1961,30 @@ public class ConnectionLog  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Ssl group negotitaed during ssl handhshake.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sslNamedGroup
+     */
+    public String getSslNamedGroup() {
+        return sslNamedGroup;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Ssl group negotitaed during ssl handhshake.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sslNamedGroup set the sslNamedGroup.
+     */
+    public void setSslNamedGroup(String  sslNamedGroup) {
+        this.sslNamedGroup = sslNamedGroup;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslSessionId
@@ -2025,6 +2001,30 @@ public class ConnectionLog  {
      */
     public void setSslSessionId(String  sslSessionId) {
         this.sslSessionId = sslSessionId;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ssl signature algorithm negotitaed during ssl handhshake.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sslSignatureAlgorithm
+     */
+    public String getSslSignatureAlgorithm() {
+        return sslSignatureAlgorithm;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Ssl signature algorithm negotitaed during ssl handhshake.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sslSignatureAlgorithm set the sslSignatureAlgorithm.
+     */
+    public void setSslSignatureAlgorithm(String  sslSignatureAlgorithm) {
+        this.sslSignatureAlgorithm = sslSignatureAlgorithm;
     }
 
     /**
@@ -2444,8 +2444,8 @@ public class ConnectionLog  {
   Objects.equals(this.dnsPolicyRuleName, objConnectionLog.dnsPolicyRuleName)&&
   Objects.equals(this.topologyPolicyRuleName, objConnectionLog.topologyPolicyRuleName)&&
   Objects.equals(this.dnsPolicy, objConnectionLog.dnsPolicy)&&
-  Objects.equals(this.namedGroup, objConnectionLog.namedGroup)&&
-  Objects.equals(this.signatureAlgorithm, objConnectionLog.signatureAlgorithm);
+  Objects.equals(this.sslNamedGroup, objConnectionLog.sslNamedGroup)&&
+  Objects.equals(this.sslSignatureAlgorithm, objConnectionLog.sslSignatureAlgorithm);
     }
 
     @Override
@@ -2486,7 +2486,6 @@ public class ConnectionLog  {
                         sb.append("    microservice: ").append(toIndentedString(microservice)).append("\n");
                         sb.append("    microserviceName: ").append(toIndentedString(microserviceName)).append("\n");
                         sb.append("    mss: ").append(toIndentedString(mss)).append("\n");
-                        sb.append("    namedGroup: ").append(toIndentedString(namedGroup)).append("\n");
                         sb.append("    networkSecurityPolicyRuleName: ").append(toIndentedString(networkSecurityPolicyRuleName)).append("\n");
                         sb.append("    numSynRetransmit: ").append(toIndentedString(numSynRetransmit)).append("\n");
                         sb.append("    numTransaction: ").append(toIndentedString(numTransaction)).append("\n");
@@ -2522,14 +2521,15 @@ public class ConnectionLog  {
                         sb.append("    serverTxPkts: ").append(toIndentedString(serverTxPkts)).append("\n");
                         sb.append("    serverZeroWindowSizeEvents: ").append(toIndentedString(serverZeroWindowSizeEvents)).append("\n");
                         sb.append("    serviceEngine: ").append(toIndentedString(serviceEngine)).append("\n");
-                        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
                         sb.append("    significance: ").append(toIndentedString(significance)).append("\n");
                         sb.append("    significant: ").append(toIndentedString(significant)).append("\n");
                         sb.append("    significantLog: ").append(toIndentedString(significantLog)).append("\n");
                         sb.append("    sipLog: ").append(toIndentedString(sipLog)).append("\n");
                         sb.append("    sniHostname: ").append(toIndentedString(sniHostname)).append("\n");
                         sb.append("    sslCipher: ").append(toIndentedString(sslCipher)).append("\n");
+                        sb.append("    sslNamedGroup: ").append(toIndentedString(sslNamedGroup)).append("\n");
                         sb.append("    sslSessionId: ").append(toIndentedString(sslSessionId)).append("\n");
+                        sb.append("    sslSignatureAlgorithm: ").append(toIndentedString(sslSignatureAlgorithm)).append("\n");
                         sb.append("    sslVersion: ").append(toIndentedString(sslVersion)).append("\n");
                         sb.append("    startTimestamp: ").append(toIndentedString(startTimestamp)).append("\n");
                         sb.append("    timeouts: ").append(toIndentedString(timeouts)).append("\n");
