@@ -17,16 +17,16 @@ type PreChecksInfo struct {
 	// Additional details of the must check. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Details []string `json:"details,omitempty"`
 
-	// Time taken to complete must check in seconds. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Duration of the must check in seconds. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Duration *uint32 `json:"duration,omitempty"`
 
-	// Time at which execution of must check was completed. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// End time of the must check. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EndTime *string `json:"end_time,omitempty"`
 
-	// Error/Failure details of the must check. Field introduced in 22.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Error/Failure details of the must check. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ErrorDetails []string `json:"error_details,omitempty"`
 
-	// Time at which execution of must check was started. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Start time of the must check. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	StartTime *string `json:"start_time,omitempty"`
 
 	// The must check operations current fsm-state. Enum options - PRECHECK_FSM_STARTED, PRECHECK_FSM_IN_PROGRESS, PRECHECK_FSM_SUCCESS, PRECHECK_FSM_WARNING, PRECHECK_FSM_ERROR. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.

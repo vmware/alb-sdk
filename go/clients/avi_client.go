@@ -103,6 +103,8 @@ type AviClient struct {
 	PriorityLabels                  *PriorityLabelsClient
 	ProtocolParser                  *ProtocolParserClient
 	RateLimitConfiguration          *RateLimitConfigurationClient
+	Report                          *ReportClient
+	ReportProfile                   *ReportProfileClient
 	RetentionPolicy                 *RetentionPolicyClient
 	Role                            *RoleClient
 	SCPoolServerStateInfo           *SCPoolServerStateInfoClient
@@ -274,6 +276,8 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.PriorityLabels = NewPriorityLabelsClient(aviSession)
 	aviClient.ProtocolParser = NewProtocolParserClient(aviSession)
 	aviClient.RateLimitConfiguration = NewRateLimitConfigurationClient(aviSession)
+	aviClient.Report = NewReportClient(aviSession)
+	aviClient.ReportProfile = NewReportProfileClient(aviSession)
 	aviClient.RetentionPolicy = NewRetentionPolicyClient(aviSession)
 	aviClient.Role = NewRoleClient(aviSession)
 	aviClient.SCPoolServerStateInfo = NewSCPoolServerStateInfoClient(aviSession)
