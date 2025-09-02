@@ -50,7 +50,7 @@ public class ControllerProperties extends AviRestResource  {
     private Integer archiveRetentionFrameworkPeriod = 60;
 
     @JsonProperty("async_cert_chaining_interval")
-    private Integer asyncCertChainingInterval = 0;
+    private Integer asyncCertChainingInterval = 2;
 
     @JsonProperty("async_patch_merge_period")
     private Integer asyncPatchMergePeriod = 0;
@@ -624,7 +624,7 @@ public class ControllerProperties extends AviRestResource  {
      * Field introduced in 31.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return asyncCertChainingInterval
      */
     public Integer getAsyncCertChainingInterval() {
@@ -638,7 +638,7 @@ public class ControllerProperties extends AviRestResource  {
      * Field introduced in 31.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param asyncCertChainingInterval set the asyncCertChainingInterval.
      */
     public void setAsyncCertChainingInterval(Integer  asyncCertChainingInterval) {
