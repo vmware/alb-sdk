@@ -296,6 +296,9 @@ type VserverL7MetricsObj struct {
 	// Average Waiting Time reported by client. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaitingTime *float64 `json:"avg_waiting_time,omitempty"`
 
+	// The effective sampling rate, i.e., the percentage of optional requests admitted. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	EffectiveSamplingRate *float64 `json:"effective_sampling_rate,omitempty"`
+
 	// Maximum number of concurrent HTTP sessions. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxConcurrentSessions *float64 `json:"max_concurrent_sessions,omitempty"`
 
@@ -399,6 +402,12 @@ type VserverL7MetricsObj struct {
 	// Total number of HTTP request parameters. Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumHTTPParamsCount *float64 `json:"sum_http_params_count,omitempty"`
 
+	// The number of requests admitted for optional processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SumNumOptionalProcessingAdmitted *float64 `json:"sum_num_optional_processing_admitted,omitempty"`
+
+	// The number of requests refused for optional processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SumNumOptionalProcessingRefused *float64 `json:"sum_num_optional_processing_refused,omitempty"`
+
 	// Total samples that had satisfactory page load time. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumNumPageLoadTimeBucket1 *float64 `json:"sum_num_page_load_time_bucket1,omitempty"`
 
@@ -407,6 +416,9 @@ type VserverL7MetricsObj struct {
 
 	// Total samples used for rum metrics. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumNumRumSamples *float64 `json:"sum_num_rum_samples,omitempty"`
+
+	// Total CPU in microseconds used for optional processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SumOptionalCPUUsage *float64 `json:"sum_optional_cpu_usage,omitempty"`
 
 	// Total latency from responses to all the requests other than GET or POST. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumOtherClientTxnLatency *float64 `json:"sum_other_client_txn_latency,omitempty"`
