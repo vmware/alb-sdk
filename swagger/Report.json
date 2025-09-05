@@ -688,16 +688,16 @@
                     "description": "End time of the report generation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
+                "filename": {
+                    "description": "Name of the report artifact on reports repository. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
                 "name": {
                     "description": "Name of the report. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "node": {
                     "description": "Cluster member node on which the report is processed. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "path": {
-                    "description": "Path of the report artifacts on reports repository. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "pre_check": {

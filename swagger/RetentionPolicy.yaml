@@ -425,7 +425,7 @@ definitions:
                 readOnly: True
                 $ref: '#/definitions/RetentionAction'
             limit:
-                description: "Maximum number of objects allowed in the system. When the limit exceeds, action is invoked for the oldest objects. Allowed values are 1-100000. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Maximum number of objects allowed in the system. When the limit exceeds, action is invoked for the oldest objects. Allowed values are 1-100. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             model_name:

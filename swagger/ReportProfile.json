@@ -559,10 +559,10 @@
                     "format": "uint32"
                 },
                 "min_free_disk_required": {
-                    "description": "Minimum free disk required for report generation in GB. Allowed values are 1-100. Field introduced in 31.2.1. Unit is GB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "default": 5,
-                    "format": "uint32"
+                    "description": "Minimum free disk required for report generation in GB. Allowed values are 0.1-20. Field introduced in 31.2.1. Unit is GB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "default": 0.5,
+                    "format": "float"
                 },
                 "timeout": {
                     "description": "Timeout for report generation in seconds. Allowed values are 300-3600. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
