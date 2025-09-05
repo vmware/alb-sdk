@@ -337,7 +337,9 @@ info:
     \ profile\n```\n\nAPI permission: PERMISSION_UPGRADEPROFILE\nAvi Report object\
     \ api\n```\n- generate report application_security\n- generate report waf_pov\n\
     - show report\n- show report <key>\n- delete report <key>\n- show report <key>\
-    \ export\n```\n\nAPI permission: PERMISSION_REPORT\nAvi TestSeDatastoreLevel1\
+    \ export\n```\n\nAPI permission: PERMISSION_REPORT\nAvi ApplicationInsightsPolicy\
+    \ object api\n```\n- configure applicationinsightspolicy <key>\n- show applicationinsightspolicy\
+    \ <key>\n```\n\nAPI permission: PERMISSION_APPLICATIONINSIGHTSPOLICY\nAvi TestSeDatastoreLevel1\
     \ object api\n```\n- configure testsedatastorelevel1 <key>\n- show testsedatastorelevel1\
     \ <key>\n```\n\nAPI permission: PERMISSION_TESTSEDATASTORELEVEL1\nAvi WafPolicyPSMGroupInventory\
     \ object api\n```\n- show wafpolicypsmgroupinventory <key>\n```\n\nAPI permission:\
@@ -371,14 +373,17 @@ info:
     ```\n- show wafapplicationsignatureprovider <key>\n- configure wafapplicationsignatureprovider\
     \ <key>\n```\n\nAPI permission: PERMISSION_WAFPOLICY\nAvi SystemReport object\
     \ api\n```\n- show systemreport <key>\n- show systemreport <key> export\n- delete\
-    \ systemreport <key>\n```\n\nAPI permission: PERMISSION_SYSTEMREPORT\nAvi HealthMonitor\
-    \ object api\n```\n- configure healthmonitor <key>\n- show healthmonitor <key>\n\
-    ```\n\nExamples\n- **healthmonitor_example**: To create a basic HTTP health monitor\
-    \ that uses GET / to determine if the service is alive\n  ```json\n    {'name':\
-    \ 'http-hmon', 'send_interval': 10, 'receive_timeout': 4, 'failed_checks': 3,\
-    \ 'type': 'HEALTH_MONITOR_HTTP', 'http_monitor': {'http_request': 'GET / HTTP/1.0'}}\n\
-    \  ```\nAPI permission: PERMISSION_HEALTHMONITOR\nAvi NsxtSegmentRuntime object\
-    \ api\n```\n- show nsxt segment <key>\n```\n\nAPI permission: PERMISSION_CLOUD\n\
+    \ systemreport <key>\n```\n\nAPI permission: PERMISSION_SYSTEMREPORT\nAvi PositiveSecurityPolicy\
+    \ object api\n```\n- configure positivesecuritypolicy <key>\n- show positivesecuritypolicy\
+    \ <key>\n```\n\nAPI permission: PERMISSION_POSITIVESECURITYPOLICY\nAvi ApplicationInsightsState\
+    \ object api\n```\n- show applicationinsightsstate <key>\n```\n\nAPI permission:\
+    \ PERMISSION_APPLICATIONINSIGHTSSTATE\nAvi HealthMonitor object api\n```\n- configure\
+    \ healthmonitor <key>\n- show healthmonitor <key>\n```\n\nExamples\n- **healthmonitor_example**:\
+    \ To create a basic HTTP health monitor that uses GET / to determine if the service\
+    \ is alive\n  ```json\n    {'name': 'http-hmon', 'send_interval': 10, 'receive_timeout':\
+    \ 4, 'failed_checks': 3, 'type': 'HEALTH_MONITOR_HTTP', 'http_monitor': {'http_request':\
+    \ 'GET / HTTP/1.0'}}\n  ```\nAPI permission: PERMISSION_HEALTHMONITOR\nAvi NsxtSegmentRuntime\
+    \ object api\n```\n- show nsxt segment <key>\n```\n\nAPI permission: PERMISSION_CLOUD\n\
     Avi LocalWorkerFdsVersion object api\n```\n- show localworkerfdsversion\n```\n\
     \nAPI permission: PERMISSION_GSLB\nAvi GslbHSMRuntime object api\n```\n- show\
     \ gslbhsm <key>\n```\n\nAPI permission: PERMISSION_GSLB\nAvi StatediffOperation\
@@ -2539,6 +2544,21 @@ tags:
     API permission: PERMISSION_REPORT
 
     Contact Info: https://support.broadcom.com<br>Version: 31.3.1<br>BasePath: /api<br>'
+- name: ApplicationInsightsPolicy
+  description: 'Avi ApplicationInsightsPolicy object api
+
+    ```
+
+    - configure applicationinsightspolicy <key>
+
+    - show applicationinsightspolicy <key>
+
+    ```
+
+
+    API permission: PERMISSION_APPLICATIONINSIGHTSPOLICY
+
+    Contact Info: https://support.broadcom.com<br>Version: 31.3.1<br>BasePath: /api<br>'
 - name: TestSeDatastoreLevel1
   description: 'Avi TestSeDatastoreLevel1 object api
 
@@ -2759,6 +2779,34 @@ tags:
 
 
     API permission: PERMISSION_SYSTEMREPORT
+
+    Contact Info: https://support.broadcom.com<br>Version: 31.3.1<br>BasePath: /api<br>'
+- name: PositiveSecurityPolicy
+  description: 'Avi PositiveSecurityPolicy object api
+
+    ```
+
+    - configure positivesecuritypolicy <key>
+
+    - show positivesecuritypolicy <key>
+
+    ```
+
+
+    API permission: PERMISSION_POSITIVESECURITYPOLICY
+
+    Contact Info: https://support.broadcom.com<br>Version: 31.3.1<br>BasePath: /api<br>'
+- name: ApplicationInsightsState
+  description: 'Avi ApplicationInsightsState object api
+
+    ```
+
+    - show applicationinsightsstate <key>
+
+    ```
+
+
+    API permission: PERMISSION_APPLICATIONINSIGHTSSTATE
 
     Contact Info: https://support.broadcom.com<br>Version: 31.3.1<br>BasePath: /api<br>'
 - name: HealthMonitor
@@ -15475,6 +15523,403 @@ paths:
             type: string
         '404':
           description: object not found
+  /positivesecuritypolicy:
+    get:
+      tags:
+      - PositiveSecurityPolicy
+      description: /positivesecuritypolicy
+      operationId: GET /positivesecuritypolicy
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/PositiveSecurityPolicyApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - PositiveSecurityPolicy
+      description: /positivesecuritypolicy
+      operationId: POST /positivesecuritypolicy
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: PositiveSecurityPolicy object creation
+        required: true
+        schema:
+          $ref: '#/definitions/PositiveSecurityPolicy'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/PositiveSecurityPolicy'
+        '401':
+          description: log in failed
+  /positivesecuritypolicy/{uuid}:
+    get:
+      tags:
+      - PositiveSecurityPolicy
+      description: /positivesecuritypolicy/{uuid}/{uuid}
+      operationId: GET /positivesecuritypolicy/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/PositiveSecurityPolicy'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - PositiveSecurityPolicy
+      description: /positivesecuritypolicy/{uuid}/{uuid}
+      operationId: PUT /positivesecuritypolicy/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: PositiveSecurityPolicy object creation
+        required: true
+        schema:
+          $ref: '#/definitions/PositiveSecurityPolicy'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/PositiveSecurityPolicy'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - PositiveSecurityPolicy
+      description: /positivesecuritypolicy/{uuid}/{uuid}
+      operationId: PATCH /positivesecuritypolicy/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: PositiveSecurityPolicy object creation
+        required: true
+        schema:
+          $ref: '#/definitions/PositiveSecurityPolicy'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/PositiveSecurityPolicy'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - PositiveSecurityPolicy
+      description: /positivesecuritypolicy/{uuid}/{uuid}
+      operationId: DELETE /positivesecuritypolicy/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: object not found
   /serverautoscalepolicy:
     get:
       tags:
@@ -20375,6 +20820,403 @@ paths:
             type: string
         '401':
           description: log in failed
+        '404':
+          description: object not found
+  /applicationinsightspolicy:
+    get:
+      tags:
+      - ApplicationInsightsPolicy
+      description: /applicationinsightspolicy
+      operationId: GET /applicationinsightspolicy
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ApplicationInsightsPolicyApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - ApplicationInsightsPolicy
+      description: /applicationinsightspolicy
+      operationId: POST /applicationinsightspolicy
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: ApplicationInsightsPolicy object creation
+        required: true
+        schema:
+          $ref: '#/definitions/ApplicationInsightsPolicy'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ApplicationInsightsPolicy'
+        '401':
+          description: log in failed
+  /applicationinsightspolicy/{uuid}:
+    get:
+      tags:
+      - ApplicationInsightsPolicy
+      description: /applicationinsightspolicy/{uuid}/{uuid}
+      operationId: GET /applicationinsightspolicy/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ApplicationInsightsPolicy'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - ApplicationInsightsPolicy
+      description: /applicationinsightspolicy/{uuid}/{uuid}
+      operationId: PUT /applicationinsightspolicy/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: ApplicationInsightsPolicy object creation
+        required: true
+        schema:
+          $ref: '#/definitions/ApplicationInsightsPolicy'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ApplicationInsightsPolicy'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - ApplicationInsightsPolicy
+      description: /applicationinsightspolicy/{uuid}/{uuid}
+      operationId: PATCH /applicationinsightspolicy/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: ApplicationInsightsPolicy object creation
+        required: true
+        schema:
+          $ref: '#/definitions/ApplicationInsightsPolicy'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ApplicationInsightsPolicy'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - ApplicationInsightsPolicy
+      description: /applicationinsightspolicy/{uuid}/{uuid}
+      operationId: DELETE /applicationinsightspolicy/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
         '404':
           description: object not found
   /pool:
@@ -28719,6 +29561,403 @@ paths:
             type: string
         '404':
           description: object not found
+  /applicationinsightsstate:
+    get:
+      tags:
+      - ApplicationInsightsState
+      description: /applicationinsightsstate
+      operationId: GET /applicationinsightsstate
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ApplicationInsightsStateApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - ApplicationInsightsState
+      description: /applicationinsightsstate
+      operationId: POST /applicationinsightsstate
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: ApplicationInsightsState object creation
+        required: true
+        schema:
+          $ref: '#/definitions/ApplicationInsightsState'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ApplicationInsightsState'
+        '401':
+          description: log in failed
+  /applicationinsightsstate/{uuid}:
+    get:
+      tags:
+      - ApplicationInsightsState
+      description: /applicationinsightsstate/{uuid}/{uuid}
+      operationId: GET /applicationinsightsstate/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ApplicationInsightsState'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - ApplicationInsightsState
+      description: /applicationinsightsstate/{uuid}/{uuid}
+      operationId: PUT /applicationinsightsstate/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: ApplicationInsightsState object creation
+        required: true
+        schema:
+          $ref: '#/definitions/ApplicationInsightsState'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ApplicationInsightsState'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - ApplicationInsightsState
+      description: /applicationinsightsstate/{uuid}/{uuid}
+      operationId: PATCH /applicationinsightsstate/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: ApplicationInsightsState object creation
+        required: true
+        schema:
+          $ref: '#/definitions/ApplicationInsightsState'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ApplicationInsightsState'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - ApplicationInsightsState
+      description: /applicationinsightsstate/{uuid}/{uuid}
+      operationId: DELETE /applicationinsightsstate/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: object not found
   /pool-inventory:
     get:
       tags:
@@ -31642,403 +32881,6 @@ paths:
           description: log in failed
         '404':
           description: object not found
-  /gslbsmruntime:
-    get:
-      tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime
-      operationId: GET /gslbsmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbSMRuntimeApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime
-      operationId: POST /gslbsmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbSMRuntime'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbSMRuntime'
-        '401':
-          description: log in failed
-  /gslbsmruntime/{uuid}:
-    get:
-      tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime/{uuid}/{uuid}
-      operationId: GET /gslbsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbSMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbSMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    delete:
-      tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
-        '404':
-          description: object not found
   /gslbhsmruntime:
     get:
       tags:
@@ -32783,6 +33625,403 @@ paths:
       - GslbCRMRuntime
       description: /gslbcrmruntime/{uuid}/{uuid}
       operationId: DELETE /gslbcrmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: object not found
+  /gslbsmruntime:
+    get:
+      tags:
+      - GslbSMRuntime
+      description: /gslbsmruntime
+      operationId: GET /gslbsmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbSMRuntimeApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - GslbSMRuntime
+      description: /gslbsmruntime
+      operationId: POST /gslbsmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbSMRuntime'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbSMRuntime'
+        '401':
+          description: log in failed
+  /gslbsmruntime/{uuid}:
+    get:
+      tags:
+      - GslbSMRuntime
+      description: /gslbsmruntime/{uuid}/{uuid}
+      operationId: GET /gslbsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - GslbSMRuntime
+      description: /gslbsmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbSMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - GslbSMRuntime
+      description: /gslbsmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbSMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - GslbSMRuntime
+      description: /gslbsmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -74100,6 +75339,58 @@ paths:
         '404':
           description: object not found
   /fileobject/{uuid}/['']/:
+    patch:
+      tags:
+      - FileObject
+      description: /fileobject/{uuid}/['']/
+      operationId: PATCH /fileobject/{uuid}/['']/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
     put:
       tags:
       - FileObject
@@ -74144,58 +75435,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - FileObject
-      description: /fileobject/{uuid}/['']/
-      operationId: PATCH /fileobject/{uuid}/['']/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -81295,6 +82534,58 @@ paths:
         '404':
           description: object not found
   /cloud/{uuid}/gc/:
+    patch:
+      tags:
+      - Cloud
+      description: /cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
     put:
       tags:
       - Cloud
@@ -81339,58 +82630,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - Cloud
-      description: /cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -86713,13 +87952,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -86876,9 +88116,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -90509,13 +91749,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -90672,9 +91913,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -93512,76 +94753,72 @@ definitions:
     type: object
     properties:
       enable_learn_from_bots:
-        description: If this is set to true, WAF will only learn from clients which
-          match the learn_from_bots specification. The settings learn_from_authenticated_requests
-          and trusted_ip_groups always take precedence. Field introduced in 30.2.1.
-          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        description: '[Deprecated] If this is set to true, WAF will only learn from
+          clients which match the learn_from_bots specification. The settings learn_from_authenticated_requests
+          and trusted_ip_groups always take precedence. Field deprecated in 31.2.1.
+          Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.'
         type: boolean
       enable_per_uri_learning:
-        description: Learn the params per URI path. Field introduced in 18.2.3. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.
+        description: '[Deprecated] Learn the params per URI path. Field deprecated
+          in 31.2.1. Field introduced in 18.2.3. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
         type: boolean
-        default: true
       learn_from_authenticated_clients_only:
-        description: If true, learning will only be performed on requests from clients
-          who have passed the authentication process configured in the Virtual Service's
-          Auth Profile. Field introduced in 22.1.1. Allowed with any value in Enterprise,
-          Enterprise with Cloud Services edition.
+        description: '[Deprecated] If true, learning will only be performed on requests
+          from clients who have passed the authentication process configured in the
+          Virtual Service''s Auth Profile. Field deprecated in 31.2.1. Field introduced
+          in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.'
         type: boolean
       learn_from_bots:
-        description: If Bot detection is active for this Virtual Service, learning
-          will only be performed on requests from clients within the configured bot
-          classification types. Field introduced in 30.2.1. Allowed with any value
-          in Enterprise, Enterprise with Cloud Services edition.
+        description: '[Deprecated] If Bot detection is active for this Virtual Service,
+          learning will only be performed on requests from clients within the configured
+          bot classification types. Field deprecated in 31.2.1. Field introduced in
+          30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.'
         $ref: '#/definitions/BotDetectionMatch'
-      learn_from_urls_without_args:
-        description: When true, the WAF includes argument-less URIs in its learning
-          process. Field introduced in 31.2.1. Allowed with any value in Enterprise,
-          Enterprise with Cloud Services edition.
-        type: boolean
       max_params:
-        description: Maximum number of params programmed for an application. Allowed
-          values are 10-1000. Field introduced in 18.2.3. Allowed with any value in
-          Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        description: '[Deprecated] Maximum number of params programmed for an application.
+          Allowed values are 10-1000. Field deprecated in 31.2.1. Field introduced
+          in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
         type: integer
-        default: 100
         format: uint32
       max_uris:
-        description: Maximum number of URI paths programmed for an application. Allowed
-          values are 10-10000. Field introduced in 18.2.3. Allowed with any value
-          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        description: '[Deprecated] Maximum number of URI paths programmed for an application.
+          Allowed values are 10-10000. Field deprecated in 31.2.1. Field introduced
+          in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
         type: integer
-        default: 500
         format: uint32
       min_hits_to_learn:
-        description: Minimum number of occurances required for a Param to qualify
-          for learning. Field introduced in 18.2.5. Allowed with any value in Enterprise,
-          Essentials, Basic, Enterprise with Cloud Services edition.
+        description: '[Deprecated] Minimum number of occurances required for a Param
+          to qualify for learning. Field deprecated in 31.2.1. Field introduced in
+          18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
         type: integer
-        default: 10000
         format: uint64
       sampling_percent:
-        description: Percent of the requests subjected to Application learning. Allowed
-          values are 1-100. Field introduced in 18.2.3. Unit is PERCENT. Allowed with
-          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.
+        description: '[Deprecated] Percent of the requests subjected to Application
+          learning. Allowed values are 1-100. Field deprecated in 31.2.1. Field introduced
+          in 18.2.3. Unit is PERCENT. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.'
         type: integer
-        default: 1
         format: uint32
       trusted_ipgroup_ref:
-        description: If configured, learning will only be performed on requests from
-          client IPs within the configured IP Address Group. It is a reference to
-          an object of type IpAddrGroup. Field introduced in 22.1.1. Allowed with
-          any value in Enterprise, Enterprise with Cloud Services edition.
+        description: '[Deprecated] If configured, learning will only be performed
+          on requests from client IPs within the configured IP Address Group. It is
+          a reference to an object of type IpAddrGroup. Field deprecated in 31.2.1.
+          Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.'
         type: string
       update_interval:
-        description: Frequency with which SE publishes Application learning data to
-          controller. Allowed values are 1-60. Field introduced in 18.2.3. Unit is
-          MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+        description: '[Deprecated] Frequency with which SE publishes Application learning
+          data to controller. Allowed values are 1-60. Field deprecated in 31.2.1.
+          Field introduced in 18.2.3. Unit is MIN. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
         type: integer
-        default: 30
         format: uint32
   WafApplicationSignatures:
     type: object
@@ -93723,9 +94960,9 @@ definitions:
         type: boolean
         default: true
       confidence_override:
-        description: Configure thresholds for confidence labels. Field introduced
-          in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+        description: '[Deprecated] Configure thresholds for confidence labels. Field
+          deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.'
         $ref: '#/definitions/AppLearningConfidenceOverride'
       configpb_attributes:
         description: Protobuf versioning for config pbs. Field introduced in 21.1.1.
@@ -93747,22 +94984,21 @@ definitions:
           Essentials, Basic, Enterprise with Cloud Services edition.'
         type: string
       enable_app_learning:
-        description: Enable Application Learning for this WAF policy. Field introduced
-          in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+        description: '[Deprecated] Enable Application Learning for this WAF policy.
+          Field deprecated in 31.2.1. Field introduced in 18.2.3. Allowed with any
+          value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.'
         type: boolean
       enable_auto_rule_updates:
-        description: Enable Application Learning based rule updates on the WAF Profile.
-          Rules will be programmed in dedicated WAF learning group. Field introduced
-          in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+        description: '[Deprecated] Enable Application Learning based rule updates
+          on the WAF Profile.Rules will be programmed in dedicated WAF learning group.
+          Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any
+          value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.'
         type: boolean
-        default: true
       enable_regex_learning:
-        description: Enable dynamic regex generation for positive security model rules.
-          This is an experimental feature and shouldn't be used in production. Field
-          introduced in 20.1.1. Allowed with any value in Enterprise, Essentials,
-          Basic, Enterprise with Cloud Services edition.
+        description: '[Deprecated] Enable dynamic regex generation for positive security
+          model rules. This is an experimental feature and shouldn''t be used in production.
+          Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any
+          value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.'
         type: boolean
       enable_streaming:
         description: If this is set, WAF will let requests be streamed to the backend
@@ -93792,9 +95028,9 @@ definitions:
           with any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
       learning_params:
-        description: Parameters for tuning Application learning. Field introduced
-          in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+        description: '[Deprecated] Parameters for tuning Application learning. Field
+          deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.'
         $ref: '#/definitions/AppLearningParams'
       markers:
         description: List of labels to be used for granular RBAC. Field introduced
@@ -93804,12 +95040,12 @@ definitions:
         items:
           $ref: '#/definitions/RoleFilterMatchLabel'
       min_confidence:
-        description: Minimum confidence label required for auto rule updates. Enum
-          options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW,
-          CONFIDENCE_NONE. Field introduced in 20.1.1. Allowed with any value in Enterprise,
-          Essentials, Basic, Enterprise with Cloud Services edition.
+        description: '[Deprecated] Minimum confidence label required for auto rule
+          updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE,
+          CONFIDENCE_LOW, CONFIDENCE_NONE. Field deprecated in 31.2.1. Field introduced
+          in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
         type: string
-        default: CONFIDENCE_VERY_HIGH
       mode:
         description: WAF Policy mode. This can be detection or enforcement. It can
           be overwritten by rules if allow_mode_delegation is set. Enum options -
@@ -95538,13 +96774,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -95701,9 +96938,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -96022,13 +97259,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -96185,9 +97423,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -96653,6 +97891,7 @@ definitions:
           FEDERATIONCHECKPOINT, ICAPPROFILE, DYNAMICDNSRECORD, JWTSERVERPROFILE, GEODB,
           BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING,
           AVIFALSEPOSITIVEDETECTION, VSGS, WAFCRS, SYSTEMDEFAULTOBJECT, CSRFPOLICY,
+          APPLICATIONINSIGHTSPOLICY, APPLICATIONINSIGHTSSTATE, POSITIVESECURITYPOLICY,
           SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER, DEBUGVIRTUALSERVICE,
           SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE, CONTROLLERPROPERTIES,
           SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG, ALERTSYSLOGCONFIG, ALERTEMAILCONFIG,
@@ -96674,9 +97913,9 @@ definitions:
           GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY,
           SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE,
           RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO,
-          TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME,
-          IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME,
-          L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
+          REDISCOVERVCENTERPARAM, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME,
+          MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME,
+          CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
           SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME,
           DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME,
           DISPATCHERREMOTETIMERLISTDUMPRUNTIME, METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME,
@@ -96986,6 +98225,7 @@ definitions:
           FEDERATIONCHECKPOINT, ICAPPROFILE, DYNAMICDNSRECORD, JWTSERVERPROFILE, GEODB,
           BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING,
           AVIFALSEPOSITIVEDETECTION, VSGS, WAFCRS, SYSTEMDEFAULTOBJECT, CSRFPOLICY,
+          APPLICATIONINSIGHTSPOLICY, APPLICATIONINSIGHTSSTATE, POSITIVESECURITYPOLICY,
           SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER, DEBUGVIRTUALSERVICE,
           SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE, CONTROLLERPROPERTIES,
           SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG, ALERTSYSLOGCONFIG, ALERTEMAILCONFIG,
@@ -97007,9 +98247,9 @@ definitions:
           GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY,
           SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE,
           RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO,
-          TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME,
-          IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME,
-          L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
+          REDISCOVERVCENTERPARAM, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME,
+          MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME,
+          CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
           SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME,
           DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME,
           DISPATCHERREMOTETIMERLISTDUMPRUNTIME, METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME,
@@ -98660,6 +99900,173 @@ definitions:
           $ref: '#/definitions/Application'
       next:
         type: string
+  ApplicationInsightsParams:
+    type: object
+    properties:
+      enable_learn_from_bots:
+        description: If set to true, limit application learning only from clients
+          which match the learn_from_bots specification. The settings learn_from_authenticated_clients_only
+          and trusted_ip_groups always take precedence. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: boolean
+      enable_per_uri_learning:
+        description: If true, learns the params per URI path. Field introduced in
+          31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: boolean
+        default: true
+      learn_from_authenticated_clients_only:
+        description: Limit Application Learning only from Authenticated clients. Field
+          introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        type: boolean
+      learn_from_bots:
+        description: If Bot detection is active for this Virtual Service, learning
+          will only be performed on application data from clients within the configured
+          bot classification types. Field introduced in 31.2.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/BotDetectionMatch'
+      learn_from_urls_without_args:
+        description: When true, the WAF includes argument-less URIs in its learning
+          process. Field introduced in 31.2.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: boolean
+      trusted_ipgroup_ref:
+        description: Limits Application Learning from client IPs within the configured
+          IP Address Group. It is a reference to an object of type IpAddrGroup. Field
+          introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        type: string
+  ApplicationInsightsPolicy:
+    type: object
+    required:
+    - name
+    properties:
+      _last_modified:
+        description: UNIX time since epoch in microseconds. Units(MICROSECONDS).
+        readOnly: true
+        type: string
+      application_insights_params:
+        description: Application insights parameters to filter application learning
+          from clients. Field introduced in 31.2.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        $ref: '#/definitions/ApplicationInsightsParams'
+      application_sampling_config:
+        description: Application sampling configuration to control rate and volume
+          of data ingestion for Application Insights that the ServiceEngines are expected
+          to send to the controller. Field introduced in 31.2.1. Allowed with any
+          value in Enterprise, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/ApplicationSamplingConfig'
+      configpb_attributes:
+        description: Protobuf versioning for config pbs. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        $ref: '#/definitions/ConfigPbAttributes'
+      description:
+        description: Details of the Application Insights Configuration. Field introduced
+          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
+      enable_application_insights:
+        description: Enable Application Insights, formerly called learning for this
+          virtual service. Field introduced in 31.2.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: boolean
+      enable_application_sampling:
+        description: Enable Application Sampling. Field introduced in 31.2.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: boolean
+      name:
+        description: The name of the Application Insights Configuration. Field introduced
+          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
+      tenant_ref:
+        description: Details of the Tenant for the Application Insights Configuration.
+          It is a reference to an object of type Tenant. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      url:
+        description: url
+        readOnly: true
+        type: string
+      uuid:
+        description: UUID of the Application Insights Configuration. Field introduced
+          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
+  ApplicationInsightsPolicyApiResponse:
+    type: object
+    required:
+    - count
+    - results
+    properties:
+      count:
+        type: integer
+        format: int32
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/ApplicationInsightsPolicy'
+      next:
+        type: string
+  ApplicationInsightsState:
+    type: object
+    properties:
+      _last_modified:
+        description: UNIX time since epoch in microseconds. Units(MICROSECONDS).
+        readOnly: true
+        type: string
+      application_insights_uuid:
+        description: UUID of the Application Insights Policy. Field introduced in
+          31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
+      application_sampling_runtime:
+        description: Runtime application sampling configuration to control rate and
+          volume of data ingestion for Application Insights. Controller updates the
+          configuration based on the application traffic and the associated ServiceEngine
+          load. Field introduced in 31.2.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        $ref: '#/definitions/ApplicationSamplingRuntime'
+      configpb_attributes:
+        description: Protobuf versioning for config pbs. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        $ref: '#/definitions/ConfigPbAttributes'
+      name:
+        description: The name of the Application Insights State Configuration. Field
+          introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        type: string
+      tenant_ref:
+        description: Details of the Tenant for the Application Insights State. It
+          is a reference to an object of type Tenant. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      url:
+        description: url
+        readOnly: true
+        type: string
+      uuid:
+        description: UUID of the ApplicationInsightsState. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+  ApplicationInsightsStateApiResponse:
+    type: object
+    required:
+    - count
+    - results
+    properties:
+      count:
+        type: integer
+        format: int32
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/ApplicationInsightsState'
+      next:
+        type: string
   ApplicationLog:
     type: object
     required:
@@ -98930,6 +100337,15 @@ definitions:
         description: Logs for the JWT Validation process. Field introduced in 20.1.3.
           Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
         $ref: '#/definitions/JwtLog'
+      learning_status:
+        description: Indicate if this request is used for learning. If it is not used,
+          this field contains the reason for this decision. Enum options - NOT_ACTIVE,
+          LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING,
+          CLIENT_IS_NOT_AUTHENTICATED, CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
+          Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
+        type: string
+        default: NOT_ACTIVE
       log_id:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -99865,6 +101281,42 @@ definitions:
           $ref: '#/definitions/ApplicationProfile'
       next:
         type: string
+  ApplicationSamplingConfig:
+    type: object
+    properties:
+      max_sampling_percent:
+        description: Maximum percent of the application data subjected to Application
+          learning. Allowed values are 1-100. Field introduced in 31.2.1. Unit is
+          PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: integer
+        default: 1
+        format: uint32
+      min_update_interval:
+        description: Minimum periodicity at which ServiceEngine sends the application
+          data to the controller. Allowed values are 1-60. Field introduced in 31.2.1.
+          Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud
+          Services edition.
+        type: integer
+        default: 30
+        format: uint32
+  ApplicationSamplingRuntime:
+    type: object
+    properties:
+      current_sampling_percent:
+        description: Current sampling percent of the application data subjected to
+          application learning. Allowed values are 1-100. Field introduced in 31.2.1.
+          Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud
+          Services edition.
+        type: integer
+        format: uint32
+      current_update_interval:
+        description: Current periodicity at which ServiceEngine sends the application
+          data to the controller. Allowed values are 1-60. Field introduced in 31.2.1.
+          Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud
+          Services edition.
+        type: integer
+        format: uint32
   ApplyLogRecommendations:
     type: object
     properties:
@@ -103165,13 +104617,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -103328,9 +104781,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -105234,11 +106687,11 @@ definitions:
         format: uint32
       min_free_disk_required:
         description: Minimum free disk required for report generation in GB. Allowed
-          values are 1-100. Field introduced in 31.2.1. Unit is GB. Allowed with any
-          value in Enterprise, Enterprise with Cloud Services edition.
-        type: integer
-        default: 5
-        format: uint32
+          values are 0.1-20. Field introduced in 31.2.1. Unit is GB. Allowed with
+          any value in Enterprise, Enterprise with Cloud Services edition.
+        type: number
+        default: 0.5
+        format: float
       timeout:
         description: Timeout for report generation in seconds. Allowed values are
           300-3600. Field introduced in 31.2.1. Unit is SEC. Allowed with any value
@@ -108228,6 +109681,12 @@ definitions:
           Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
+      num_application_insights_virtualservices:
+        description: Maximum number of virtualservices configured with WAF. Field
+          introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        type: integer
+        format: int32
       num_clouds:
         description: Maximum number of clouds. Field introduced in 20.1.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
@@ -108243,6 +109702,12 @@ definitions:
       num_pool_rt_metrics:
         description: Maximum number of pools with realtime metrics enabled. Field
           introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        type: integer
+        format: int32
+      num_positive_security_virtualservices:
+        description: Maximum number of virtualservices configured with WAF. Field
+          introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with
           Cloud Services edition.
         type: integer
         format: int32
@@ -113459,6 +114924,7 @@ definitions:
           FEDERATIONCHECKPOINT, ICAPPROFILE, DYNAMICDNSRECORD, JWTSERVERPROFILE, GEODB,
           BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING,
           AVIFALSEPOSITIVEDETECTION, VSGS, WAFCRS, SYSTEMDEFAULTOBJECT, CSRFPOLICY,
+          APPLICATIONINSIGHTSPOLICY, APPLICATIONINSIGHTSSTATE, POSITIVESECURITYPOLICY,
           SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER, DEBUGVIRTUALSERVICE,
           SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE, CONTROLLERPROPERTIES,
           SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG, ALERTSYSLOGCONFIG, ALERTEMAILCONFIG,
@@ -113480,9 +114946,9 @@ definitions:
           GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY,
           SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE,
           RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO,
-          TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME,
-          IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME,
-          L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
+          REDISCOVERVCENTERPARAM, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME,
+          MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME,
+          CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
           SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME,
           DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME,
           DISPATCHERREMOTETIMERLISTDUMPRUNTIME, METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME,
@@ -113782,13 +115248,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -113945,9 +115412,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -119707,13 +121174,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -119870,9 +121338,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -123886,8 +125354,9 @@ definitions:
           AVG_RSA_PFS, EVAL_FN, SSL_PROTOCOL_INDICATOR, SUM_FIRST_N_DIVIDE_BY_SECLAST_RATE_EXCL_ERROR_RATE,
           SUBSTRACT_ALL_FROM_FIRST_WITH_FLOOR_ZERO, AVAILABLE_CAPACITY, CONNECTION_SATURATION,
           AVG_RSA_NON_PFS, SSL_HANDSHAKES_NONPFS, DYN_MEM_USAGE, FIRST_DIVIDE_BY_DIFFERENCE_OF_SECOND_AND_THIRD,
-          DIVIDE_BY_100, DIVIDE_FIRST_BY_SUM. Allowed with any value in Enterprise,
-          Essentials, Basic, Enterprise with Cloud Services edition.'
+          DIVIDE_BY_100, DIVIDE_FIRST_BY_SUM, AVG_POOL_METRICS_BITS_PER_SEC. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
         type: string
       exclude_derived_metric:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -126072,7 +127541,7 @@ definitions:
         $ref: '#/definitions/RetentionAction'
       limit:
         description: Maximum number of objects allowed in the system. When the limit
-          exceeds, action is invoked for the oldest objects. Allowed values are 1-100000.
+          exceeds, action is invoked for the oldest objects. Allowed values are 1-100.
           Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: integer
@@ -127498,8 +128967,10 @@ definitions:
           PERMISSION_CLOUD_API, PERMISSION_TASKJOURNAL, PERMISSION_TELEMETRY_API,
           PERMISSION_UPGRADEPROFILE, PERMISSION_RETENTIONPOLICY, PERMISSION_APIRATELIMITPROFILE,
           PERMISSION_TECHSUPPORTPROFILE, PERMISSION_TECHSUPPORTMESSAGE, PERMISSION_ALERTSCRIPTCONFIG,
-          PERMISSION_REPORT, PERMISSION_REPORTPROFILE. Allowed with any value in Enterprise,
-          Essentials, Basic, Enterprise with Cloud Services edition.'
+          PERMISSION_REPORT, PERMISSION_REPORTPROFILE, PERMISSION_APPLICATIONINSIGHTSPOLICY,
+          PERMISSION_APPLICATIONINSIGHTSSTATE, PERMISSION_POSITIVESECURITYPOLICY.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.'
         type: string
       subresource:
         description: Limits the scope of Write Access on the parent resource to modification
@@ -129120,6 +130591,110 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/PortRange'
+  PositiveSecurityParams:
+    type: object
+    properties:
+      confidence_override:
+        description: Configure thresholds for the confidence labels defined by AppLearningConfidenceLabel.
+          Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
+        $ref: '#/definitions/AppLearningConfidenceOverride'
+      max_params:
+        description: Maximum number of parameters per URI programmed for an application.
+          Allowed values are 10-1000. Field introduced in 31.2.1. Allowed with any
+          value in Enterprise, Enterprise with Cloud Services edition.
+        type: integer
+        default: 100
+        format: uint32
+      max_uris:
+        description: Maximum number of URIs programmed for an application. Allowed
+          values are 10-10000. Field introduced in 31.2.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        type: integer
+        default: 500
+        format: uint32
+      min_confidence:
+        description: Minimum confidence label required for positive security rule
+          updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE,
+          CONFIDENCE_LOW, CONFIDENCE_NONE. Field introduced in 31.2.1. Allowed with
+          any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+        default: CONFIDENCE_VERY_HIGH
+      min_hits_to_program:
+        description: Minimum number of occurances required for a Param to qualify
+          for programming into a PSM rule. Field introduced in 31.2.1. Allowed with
+          any value in Enterprise, Enterprise with Cloud Services edition.
+        type: integer
+        default: 10000
+        format: uint64
+  PositiveSecurityPolicy:
+    type: object
+    properties:
+      _last_modified:
+        description: UNIX time since epoch in microseconds. Units(MICROSECONDS).
+        readOnly: true
+        type: string
+      configpb_attributes:
+        description: Protobuf versioning for config pbs. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        $ref: '#/definitions/ConfigPbAttributes'
+      description:
+        description: Details of the Positive Security Configuration. Field introduced
+          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
+      enable_positive_security_rule_updates:
+        description: Enable Positive Security rule generation using the application
+          learning data Rules will be programmed in a dedicated learning group. Field
+          introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        type: boolean
+      enable_regex_programming:
+        description: Enable dynamic regex generation for positive security rules.
+          This is an experimental feature and shouldn't be used in production. Field
+          introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        type: boolean
+      name:
+        description: The name of the PositiveSecurity Configuration. Field introduced
+          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
+      positive_security_params:
+        description: Parameters for generating positive security rules. Field introduced
+          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        $ref: '#/definitions/PositiveSecurityParams'
+      tenant_ref:
+        description: Details of the tenant for positive security policy. It is a reference
+          to an object of type Tenant. Field introduced in 31.2.1. Allowed with any
+          value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      url:
+        description: url
+        readOnly: true
+        type: string
+      uuid:
+        description: UUID of the Positive Security Configuration. Field introduced
+          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
+  PositiveSecurityPolicyApiResponse:
+    type: object
+    required:
+    - count
+    - results
+    properties:
+      count:
+        type: integer
+        format: int32
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/PositiveSecurityPolicy'
+      next:
+        type: string
   PostgresEventInfo:
     type: object
     properties:
@@ -129364,13 +130939,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -129527,9 +131103,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -130532,17 +132108,17 @@ definitions:
         description: End time of the report generation. Field introduced in 31.2.1.
           Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
+      filename:
+        description: Name of the report artifact on reports repository. Field introduced
+          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
       name:
         description: Name of the report. Field introduced in 31.2.1. Allowed with
           any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
       node:
         description: Cluster member node on which the report is processed. Field introduced
-          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
-          edition.
-        type: string
-      path:
-        description: Path of the report artifacts on reports repository. Field introduced
           in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
           edition.
         type: string
@@ -130857,13 +132433,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -131020,9 +132597,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -131573,13 +133150,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -131736,9 +133314,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -132900,6 +134478,7 @@ definitions:
           FEDERATIONCHECKPOINT, ICAPPROFILE, DYNAMICDNSRECORD, JWTSERVERPROFILE, GEODB,
           BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING,
           AVIFALSEPOSITIVEDETECTION, VSGS, WAFCRS, SYSTEMDEFAULTOBJECT, CSRFPOLICY,
+          APPLICATIONINSIGHTSPOLICY, APPLICATIONINSIGHTSSTATE, POSITIVESECURITYPOLICY,
           SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER, DEBUGVIRTUALSERVICE,
           SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE, CONTROLLERPROPERTIES,
           SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG, ALERTSYSLOGCONFIG, ALERTEMAILCONFIG,
@@ -132921,9 +134500,9 @@ definitions:
           GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY,
           SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE,
           RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO,
-          TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME,
-          IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME,
-          L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
+          REDISCOVERVCENTERPARAM, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME,
+          MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME,
+          CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
           SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME,
           DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME,
           DISPATCHERREMOTETIMERLISTDUMPRUNTIME, METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME,
@@ -134363,13 +135942,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -134526,9 +136106,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -137647,13 +139227,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -137810,9 +139391,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -138053,13 +139634,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -138216,9 +139798,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -138489,13 +140071,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -138652,9 +140235,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -138911,13 +140494,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -139074,9 +140658,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -139347,13 +140931,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -139510,9 +141095,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -141584,8 +143169,8 @@ definitions:
       se_kernel_rss:
         description: This knob enables kernel RSS. When enabled flowtable entry is
           added to every disp cpu. Should be used under supervision. Requires SE reboot.
-          . Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials,
-          Basic, Enterprise with Cloud Services edition.
+          . Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
         type: boolean
       se_kni_burst_factor:
         description: This knob controls the resource availability and burst size used
@@ -145403,9 +146988,9 @@ definitions:
           WAF_RULE_METRICS_ENABLED_VS, SE_NUM_NS_VS, SE_NUM_EW_VS, SE_NUM_ALL_VS,
           SE_NUM_VS_RT_METRICS, SE_NUM_VLAN_PER_PHY_INTF, SE_NUM_VLAN_PER_SE, SE_NUM_PHY_INTF_PER_SE,
           SE_NUM_LOGICAL_INTF_PER_SE, SE_VRF_PER_SE, NUM_POOL_RT_METRICS, NUM_SE_RT_METRICS,
-          NUM_VIRTUALSERVICES_RTMETRICS_WAF, T1_LRS_PER_CLOUD. Field introduced in
-          31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
-          edition.
+          NUM_VIRTUALSERVICES_RTMETRICS_WAF, T1_LRS_PER_CLOUD, NUM_APPLICATION_INSIGHTS_VIRTUALSERVICES,
+          NUM_POSITIVE_SECURITY_VIRTUALSERVICES. Field introduced in 31.2.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
       limit_description:
         description: Description of the system limit. Field introduced in 31.2.1.
@@ -145893,13 +147478,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -146056,9 +147642,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -146525,13 +148111,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -146688,9 +148275,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -146960,13 +148547,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -147123,9 +148711,9 @@ definitions:
           SYSERR_WAF_ALLOWLIST_INIT_FAIL, SYSERR_WAF_POLICY_INIT_FAIL, SYSERR_WAF_INIT_CRS_OVERRIDE_FAIL,
           SYSERR_WAF_INIT_INSUFFICIENT_APP_LEARNING_MEMORY, SYSERR_BOT_INIT_FAIL,
           SYSERR_BOT_ALLOWLIST_INIT_FAIL, SYSERR_BOT_POLICY_NOT_FOUND, SYSERR_BIND_BOT_FAILURE,
-          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_POLICY_HASH_REMOVE,
-          SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION, SYSERR_POLICY_APPLOG_PROV,
-          SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
+          SYSERR_BOT_MAPPING_NOT_FOUND, SYSERR_BOT_CONSOLIDATOR_NOT_FOUND, SYSERR_APPLICATION_INSIGHTS_NOT_FOUND,
+          SYSERR_POLICY_HASH_REMOVE, SYSERR_POLICY_V4_TREE_CREATION, SYSERR_POLICY_V6_TREE_CREATION,
+          SYSERR_POLICY_APPLOG_PROV, SYSERR_POLICY_CLIENT_IP_GROUP_UUID, SYSERR_POLICY_PATH_MATCH_GROUP_UUID,
           SYSERR_POLICY_QUERY_MATCH_GROUP_UUID, SYSERR_POLICY_UNKOWN_MATCH_ACTION,
           SYSERR_POLICY_INVALID_HDR_ACTIONS, SYSERR_POLICY_RWH_COOKIE_OPER, SYSERR_POLICY_HASH_INSERT,
           SYSERR_SSL_CERT_NOT_PRESENT, SYSERR_SSL_CERT_KEY_NOT_PRESENT, SYSERR_SSL_CTX_CREATION_ERR,
@@ -151093,6 +152681,12 @@ definitions:
           an object of type AnalyticsProfile. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
+      application_insights_ref:
+        description: Application Insights Configuration for the Virtual Service to
+          learn application data. It is a reference to an object of type ApplicationInsightsPolicy.
+          Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
+        type: string
       application_profile_ref:
         description: Enable application layer specific features for the Virtual Service.
           It is a reference to an object of type ApplicationProfile. Allowed with
@@ -151390,6 +152984,12 @@ definitions:
           attributes such as load-balancing and persistence. It is a reference to
           an object of type Pool. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
+        type: string
+      positive_security_ref:
+        description: Positive Security Configuration for the Virtual Service to generate
+          rules from the application data. It is a reference to an object of type
+          PositiveSecurityPolicy. Field introduced in 31.2.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
         type: string
       remove_listening_port_on_vs_down:
         description: Remove listening port if VirtualService is down. Allowed with

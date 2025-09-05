@@ -462,48 +462,39 @@ definitions:
         type: object
         properties:
             enable_learn_from_bots:
-                description: "If this is set to true, WAF will only learn from clients which match the learn_from_bots specification. The settings learn_from_authenticated_requests and trusted_ip_groups always take precedence. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "[Deprecated] If this is set to true, WAF will only learn from clients which match the learn_from_bots specification. The settings learn_from_authenticated_requests and trusted_ip_groups always take precedence. Field deprecated in 31.2.1. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             enable_per_uri_learning:
-                description: "Learn the params per URI path. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "[Deprecated] Learn the params per URI path. Field deprecated in 31.2.1. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
-                default: True
             learn_from_authenticated_clients_only:
-                description: "If true, learning will only be performed on requests from clients who have passed the authentication process configured in the Virtual Service's Auth Profile. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "[Deprecated] If true, learning will only be performed on requests from clients who have passed the authentication process configured in the Virtual Service's Auth Profile. Field deprecated in 31.2.1. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             learn_from_bots:
-                description: "If Bot detection is active for this Virtual Service, learning will only be performed on requests from clients within the configured bot classification types. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "[Deprecated] If Bot detection is active for this Virtual Service, learning will only be performed on requests from clients within the configured bot classification types. Field deprecated in 31.2.1. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BotDetectionMatch'
-            learn_from_urls_without_args:
-                description: "When true, the WAF includes argument-less URIs in its learning process. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: boolean
             max_params:
-                description: "Maximum number of params programmed for an application. Allowed values are 10-1000. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "[Deprecated] Maximum number of params programmed for an application. Allowed values are 10-1000. Field deprecated in 31.2.1. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                default: 100
                 format: uint32
             max_uris:
-                description: "Maximum number of URI paths programmed for an application. Allowed values are 10-10000. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "[Deprecated] Maximum number of URI paths programmed for an application. Allowed values are 10-10000. Field deprecated in 31.2.1. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                default: 500
                 format: uint32
             min_hits_to_learn:
-                description: "Minimum number of occurances required for a Param to qualify for learning. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "[Deprecated] Minimum number of occurances required for a Param to qualify for learning. Field deprecated in 31.2.1. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                default: 10000
                 format: uint64
             sampling_percent:
-                description: "Percent of the requests subjected to Application learning. Allowed values are 1-100. Field introduced in 18.2.3. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "[Deprecated] Percent of the requests subjected to Application learning. Allowed values are 1-100. Field deprecated in 31.2.1. Field introduced in 18.2.3. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                default: 1
                 format: uint32
             trusted_ipgroup_ref:
-                description: "If configured, learning will only be performed on requests from client IPs within the configured IP Address Group. It is a reference to an object of type IpAddrGroup. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "[Deprecated] If configured, learning will only be performed on requests from client IPs within the configured IP Address Group. It is a reference to an object of type IpAddrGroup. Field deprecated in 31.2.1. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             update_interval:
-                description: "Frequency with which SE publishes Application learning data to controller. Allowed values are 1-60. Field introduced in 18.2.3. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "[Deprecated] Frequency with which SE publishes Application learning data to controller. Allowed values are 1-60. Field deprecated in 31.2.1. Field introduced in 18.2.3. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                default: 30
                 format: uint32
     BotClassification:
         type: object
@@ -985,7 +976,7 @@ definitions:
                 type: boolean
                 default: True
             confidence_override:
-                description: "Configure thresholds for confidence labels. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "[Deprecated] Configure thresholds for confidence labels. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AppLearningConfidenceOverride'
             configpb_attributes:
                 description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1002,14 +993,13 @@ definitions:
                 description: " Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             enable_app_learning:
-                description: "Enable Application Learning for this WAF policy. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "[Deprecated] Enable Application Learning for this WAF policy. Field deprecated in 31.2.1. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_auto_rule_updates:
-                description: "Enable Application Learning based rule updates on the WAF Profile. Rules will be programmed in dedicated WAF learning group. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "[Deprecated] Enable Application Learning based rule updates on the WAF Profile.Rules will be programmed in dedicated WAF learning group. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
-                default: True
             enable_regex_learning:
-                description: "Enable dynamic regex generation for positive security model rules. This is an experimental feature and shouldn't be used in production. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "[Deprecated] Enable dynamic regex generation for positive security model rules. This is an experimental feature and shouldn't be used in production. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_streaming:
                 description: "If this is set, WAF will let requests be streamed to the backend servers. If not set, requests and responses will be buffered up to the configured maximum values. It can only be set if the WafPolicy is not set to enforcement mode. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
@@ -1027,7 +1017,7 @@ definitions:
                 description: "Geo Location Mapping Database used by this WafPolicy. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             learning_params:
-                description: "Parameters for tuning Application learning. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "[Deprecated] Parameters for tuning Application learning. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AppLearningParams'
             markers:
                 description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1035,9 +1025,8 @@ definitions:
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
             min_confidence:
-                description: "Minimum confidence label required for auto rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "[Deprecated] Minimum confidence label required for auto rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-                default: "CONFIDENCE_VERY_HIGH"
             mode:
                 description: "WAF Policy mode. This can be detection or enforcement. It can be overwritten by rules if allow_mode_delegation is set. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string

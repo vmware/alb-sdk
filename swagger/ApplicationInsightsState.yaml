@@ -6,21 +6,20 @@
 swagger: '2.0'
 info:
     version: '31.3.1'
-    title: Avi Role Object API
+    title: Avi ApplicationInsightsState Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        Avi Role object api
+        Avi ApplicationInsightsState object api
         ```
-        - configure role <key>
-        - show role <key>
+        - show applicationinsightsstate <key>
         ```
 
-        API permission: PERMISSION_ROLE
+        API permission: PERMISSION_APPLICATIONINSIGHTSSTATE
 tags:
-  - name: Role
+  - name: ApplicationInsightsState
 schemes:
   - https
 securityDefinitions:
@@ -29,12 +28,12 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /role:
+    /applicationinsightsstate:
         get:
             tags:
-                - Role
-            description: /role
-            operationId: GET /role
+                - ApplicationInsightsState
+            description: /applicationinsightsstate
+            operationId: GET /applicationinsightsstate
             consumes:
                 -   application/json
             produces:
@@ -97,14 +96,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/RoleApiResponse"
+                        $ref: "#/definitions/ApplicationInsightsStateApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - Role
-            description: /role
-            operationId: POST /role
+                - ApplicationInsightsState
+            description: /applicationinsightsstate
+            operationId: POST /applicationinsightsstate
             consumes:
                 -   application/json
             produces:
@@ -132,25 +131,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Role object creation
+                    description: ApplicationInsightsState object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ApplicationInsightsState"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ApplicationInsightsState"
                 "401":
                     description: log in failed
-    /role/{uuid}:
+    /applicationinsightsstate/{uuid}:
         get:
             tags:
-                - Role
-            description: /role/{uuid}/{uuid}
-            operationId: GET /role/{uuid}
+                - ApplicationInsightsState
+            description: /applicationinsightsstate/{uuid}/{uuid}
+            operationId: GET /applicationinsightsstate/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -210,16 +209,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ApplicationInsightsState"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - Role
-            description: /role/{uuid}/{uuid}
-            operationId: PUT /role/{uuid}
+                - ApplicationInsightsState
+            description: /applicationinsightsstate/{uuid}/{uuid}
+            operationId: PUT /applicationinsightsstate/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -252,10 +251,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Role object creation
+                    description: ApplicationInsightsState object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ApplicationInsightsState"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -267,16 +266,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ApplicationInsightsState"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - Role
-            description: /role/{uuid}/{uuid}
-            operationId: PATCH /role/{uuid}
+                - ApplicationInsightsState
+            description: /applicationinsightsstate/{uuid}/{uuid}
+            operationId: PATCH /applicationinsightsstate/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -309,10 +308,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Role object creation
+                    description: ApplicationInsightsState object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ApplicationInsightsState"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -324,16 +323,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ApplicationInsightsState"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - Role
-            description: /role/{uuid}/{uuid}
-            operationId: DELETE /role/{uuid}
+                - ApplicationInsightsState
+            description: /applicationinsightsstate/{uuid}/{uuid}
+            operationId: DELETE /applicationinsightsstate/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -381,69 +380,36 @@ paths:
 
 
 definitions:
-    ConfigPbAttributes:
+    ApplicationInsightsState:
         type: object
-        properties:
-            version:
-                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
-    Permission:
-        type: object
-        required:
-            -   resource
-            -   type
-        properties:
-            resource:
-                description: " Enum options - PERMISSION_CONTROLLER, PERMISSION_INTERNAL, PERMISSION_VIRTUALSERVICE, PERMISSION_POOL, PERMISSION_HEALTHMONITOR, PERMISSION_NETWORKPROFILE, PERMISSION_APPLICATIONPROFILE, PERMISSION_HTTPPOLICYSET, PERMISSION_IPADDRGROUP, PERMISSION_STRINGGROUP, PERMISSION_SSLPROFILE, PERMISSION_SSLKEYANDCERTIFICATE, PERMISSION_NETWORKSECURITYPOLICY, PERMISSION_APPLICATIONPERSISTENCEPROFILE, PERMISSION_ANALYTICSPROFILE, PERMISSION_VSDATASCRIPTSET, PERMISSION_TENANT, PERMISSION_PKIPROFILE, PERMISSION_AUTHPROFILE, PERMISSION_CLOUD, PERMISSION_SERVICEENGINE, PERMISSION_SERVICEENGINEGROUP, PERMISSION_NETWORK, PERMISSION_SYSTEMCONFIGURATION, PERMISSION_VRFCONTEXT, PERMISSION_USER, PERMISSION_ROLE, PERMISSION_ALERT, PERMISSION_ALERTCONFIG, PERMISSION_ALERTEMAILCONFIG, PERMISSION_ALERTSYSLOGCONFIG, PERMISSION_ACTIONGROUPCONFIG, PERMISSION_SNMPTRAPPROFILE, PERMISSION_UPGRADE, PERMISSION_REBOOT, PERMISSION_TECHSUPPORT, PERMISSION_EXEMPT, PERMISSION_VIRTUALSERVICE_MAINTENANCE, PERMISSION_POOL_MAINTENANCE, PERMISSION_TRAFFIC_CAPTURE, PERMISSION_MICROSERVICEGROUP, PERMISSION_IPAMDNSPROVIDERPROFILE, PERMISSION_CERTIFICATEMANAGEMENTPROFILE, PERMISSION_POOLGROUP, PERMISSION_PRIORITYLABELS, PERMISSION_POOLGROUPDEPLOYMENTPOLICY, PERMISSION_GSLB, PERMISSION_GSLBSERVICE, PERMISSION_GSLBGEODBPROFILE, PERMISSION_DNSPOLICY, PERMISSION_TRAFFICCLONEPROFILE, PERMISSION_SE_TOKEN, PERMISSION_WAFPOLICY, PERMISSION_WAFPROFILE, PERMISSION_USER_CREDENTIAL, PERMISSION_AUTOSCALE, PERMISSION_CUSTOMIPAMDNSPROFILE, PERMISSION_ERRORPAGEPROFILE, PERMISSION_ERRORPAGEBODY, PERMISSION_L4POLICYSET, PERMISSION_MICROSERVICE, PERMISSION_HARDWARESECURITYMODULEGROUP, PERMISSION_SECURITYPOLICY, PERMISSION_WAFPOLICYPSMGROUP, PERMISSION_PINGACCESSAGENT, PERMISSION_NETWORKSERVICE, PERMISSION_NATPOLICY, PERMISSION_PROTOCOLPARSER, PERMISSION_SSOPOLICY, PERMISSION_CONTROLLERSITE, PERMISSION_IMAGE, PERMISSION_UPGRADE_OPS, PERMISSION_UPGRADE_SEGROUP_OPS, PERMISSION_TESTSEDATASTORELEVEL1, PERMISSION_TESTSEDATASTORELEVEL2, PERMISSION_TESTSEDATASTORELEVEL3, PERMISSION_FILE_OBJECT, PERMISSION_IPREPUTATIONDB, PERMISSION_ICAP, PERMISSION_GSLBSERVICE_GROUP, PERMISSION_JWTSERVERPROFILE, PERMISSION_GEODB, PERMISSION_BOTDETECTIONPOLICY, PERMISSION_JWTPROFILE, PERMISSION_LABELGROUP, PERMISSION_WAFCRS, PERMISSION_AUTHMAPPINGPROFILE, PERMISSION_ALBSERVICESCONFIG, PERMISSION_ALBSERVICESSTATUS, PERMISSION_ALBSERVICESREG, PERMISSION_LICENSING, PERMISSION_ALBSERVICESUSERINFO, PERMISSION_TENANT_SYSTEM_CONFIGURATION, PERMISSION_CSRFPOLICY, PERMISSION_SERVICEAUTHPROFILE, PERMISSION_SYSTEMREPORT, PERMISSION_CLOUD_API, PERMISSION_TASKJOURNAL, PERMISSION_TELEMETRY_API, PERMISSION_UPGRADEPROFILE, PERMISSION_RETENTIONPOLICY, PERMISSION_APIRATELIMITPROFILE, PERMISSION_TECHSUPPORTPROFILE, PERMISSION_TECHSUPPORTMESSAGE, PERMISSION_ALERTSCRIPTCONFIG, PERMISSION_REPORT, PERMISSION_REPORTPROFILE, PERMISSION_APPLICATIONINSIGHTSPOLICY, PERMISSION_APPLICATIONINSIGHTSSTATE, PERMISSION_POSITIVESECURITYPOLICY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            subresource:
-                description: "Limits the scope of Write Access on the parent resource to modification of only the specified subresources. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/SubResource'
-            type:
-                description: " Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-    Role:
-        type: object
-        required:
-            -   name
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
-            allow_unlabelled_access:
-                description: "Allow access to unlabelled objects. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: boolean
-                default: True
-            configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/ConfigPbAttributes'
-            filters:
-                description: "Filters for granular object access control based on object labels. Multiple filters are merged using the AND operator. If empty, all objects according to the privileges will be accessible to the user. Field introduced in 20.1.3. Maximum of 4 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/RoleFilter'
-            name:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+            application_insights_uuid:
+                description: "UUID of the Application Insights Policy. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
-            privileges:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/Permission'
+            application_sampling_runtime:
+                description: "Runtime application sampling configuration to control rate and volume of data ingestion for Application Insights. Controller updates the configuration based on the application traffic and the associated ServiceEngine load. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ApplicationSamplingRuntime'
+            configpb_attributes:
+                description: "Protobuf versioning for config pbs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ConfigPbAttributes'
+            name:
+                description: "The name of the Application Insights State Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Details of the Tenant for the Application Insights State. It is a reference to an object of type Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID of the ApplicationInsightsState. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
-    RoleApiResponse:
+    ApplicationInsightsStateApiResponse:
         type: object
         required:
             - count
@@ -455,49 +421,25 @@ definitions:
             results:
                 type: array
                 items:
-                    $ref: "#/definitions/Role"
+                    $ref: "#/definitions/ApplicationInsightsState"
             next:
                 type: string
-    RoleFilter:
-        type: object
-        required:
-            -   match_label
-        properties:
-            enabled:
-                description: "Enable this filter. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: boolean
-                default: True
-            match_label:
-                description: "Label key to match against objects for values. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/RoleFilterMatchLabel'
-            match_operation:
-                description: "Label match operation criteria. Enum options - ROLE_FILTER_EQUALS, ROLE_FILTER_DOES_NOT_EQUAL, ROLE_FILTER_GLOB_MATCH, ROLE_FILTER_GLOB_DOES_NOT_MATCH. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: string
-                default: "ROLE_FILTER_EQUALS"
-            name:
-                description: "Name for the filter. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: string
-    RoleFilterMatchLabel:
-        type: object
-        required:
-            -   key
-        properties:
-            key:
-                description: "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: string
-            values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
-    SubResource:
+    ApplicationSamplingRuntime:
         type: object
         properties:
-            exclude_subresources:
-                description: "Allows modification of all fields except for the specified subresources. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: boolean
-            subresources:
-                description: "Subresources user can modify. Each subresource specifies and individual field. I.e. SUBRESOURCE_POOL_ENABLED allows modification of the enabled field in the Pool object. Enum options - SUBRESOURCE_POOL_ENABLED, SUBRESOURCE_POOL_SERVERS, SUBRESOURCE_POOL_SERVER_ENABLED, SUBRESOURCE_VIRTUALSERVICE_ENABLED, SUBRESOURCE_VIRTUALSERVICE_AUTO_ALLOCATE_FLOATING_IP, SUBRESOURCE_GSLBSERVICE_ENABLED, SUBRESOURCE_GSLBSERVICE_GROUPS, SUBRESOURCE_GSLBSERVICE_GROUP_ENABLED, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBERS, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBER_ENABLED. Field introduced in 20.1.5. Minimum of 1 items required. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
+            current_sampling_percent:
+                description: "Current sampling percent of the application data subjected to application learning. Allowed values are 1-100. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            current_update_interval:
+                description: "Current periodicity at which ServiceEngine sends the application data to the controller. Allowed values are 1-60. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+    ConfigPbAttributes:
+        type: object
+        properties:
+            version:
+                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1
+                format: uint32
