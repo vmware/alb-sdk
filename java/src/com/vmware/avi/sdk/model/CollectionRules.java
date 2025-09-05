@@ -26,7 +26,7 @@ public class CollectionRules  {
     private Integer maxConcurrentWorkers = 1;
 
     @JsonProperty("min_free_disk_required")
-    private Integer minFreeDiskRequired = 5;
+    private Float minFreeDiskRequired = 0.5f;
 
     @JsonProperty("timeout")
     private Integer timeout = 1800;
@@ -62,28 +62,28 @@ public class CollectionRules  {
     /**
      * This is the getter method this will return the attribute value.
      * Minimum free disk required for report generation in gb.
-     * Allowed values are 1-100.
+     * Allowed values are 0.1-20.
      * Field introduced in 31.2.1.
      * Unit is gb.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.5f.
      * @return minFreeDiskRequired
      */
-    public Integer getMinFreeDiskRequired() {
+    public Float getMinFreeDiskRequired() {
         return minFreeDiskRequired;
     }
 
     /**
      * This is the setter method to the attribute.
      * Minimum free disk required for report generation in gb.
-     * Allowed values are 1-100.
+     * Allowed values are 0.1-20.
      * Field introduced in 31.2.1.
      * Unit is gb.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.5f.
      * @param minFreeDiskRequired set the minFreeDiskRequired.
      */
-    public void setMinFreeDiskRequired(Integer  minFreeDiskRequired) {
+    public void setMinFreeDiskRequired(Float  minFreeDiskRequired) {
         this.minFreeDiskRequired = minFreeDiskRequired;
     }
 
