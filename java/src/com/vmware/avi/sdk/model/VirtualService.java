@@ -36,6 +36,9 @@ public class VirtualService extends AviRestResource  {
     @JsonProperty("analytics_profile_ref")
     private String analyticsProfileRef;
 
+    @JsonProperty("application_insights_ref")
+    private String applicationInsightsRef;
+
     @JsonProperty("application_profile_ref")
     private String applicationProfileRef;
 
@@ -176,6 +179,9 @@ public class VirtualService extends AviRestResource  {
 
     @JsonProperty("pool_ref")
     private String poolRef;
+
+    @JsonProperty("positive_security_ref")
+    private String positiveSecurityRef;
 
     @JsonProperty("remove_listening_port_on_vs_down")
     private Boolean removeListeningPortOnVsDown = false;
@@ -438,6 +444,32 @@ public class VirtualService extends AviRestResource  {
      */
     public void setAnalyticsProfileRef(String  analyticsProfileRef) {
         this.analyticsProfileRef = analyticsProfileRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Application insights configuration for the virtual service to learn application data.
+     * It is a reference to an object of type applicationinsightspolicy.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return applicationInsightsRef
+     */
+    public String getApplicationInsightsRef() {
+        return applicationInsightsRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Application insights configuration for the virtual service to learn application data.
+     * It is a reference to an object of type applicationinsightspolicy.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param applicationInsightsRef set the applicationInsightsRef.
+     */
+    public void setApplicationInsightsRef(String  applicationInsightsRef) {
+        this.applicationInsightsRef = applicationInsightsRef;
     }
 
     /**
@@ -1701,6 +1733,32 @@ public class VirtualService extends AviRestResource  {
      */
     public void setPoolRef(String  poolRef) {
         this.poolRef = poolRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Positive security configuration for the virtual service to generate rules from the application data.
+     * It is a reference to an object of type positivesecuritypolicy.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return positiveSecurityRef
+     */
+    public String getPositiveSecurityRef() {
+        return positiveSecurityRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Positive security configuration for the virtual service to generate rules from the application data.
+     * It is a reference to an object of type positivesecuritypolicy.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param positiveSecurityRef set the positiveSecurityRef.
+     */
+    public void setPositiveSecurityRef(String  positiveSecurityRef) {
+        this.positiveSecurityRef = positiveSecurityRef;
     }
 
     /**
@@ -3019,7 +3077,9 @@ public class VirtualService extends AviRestResource  {
   Objects.equals(this.oauthVsConfig, objVirtualService.oauthVsConfig)&&
   Objects.equals(this.enableSession, objVirtualService.enableSession)&&
   Objects.equals(this.csrfPolicyRef, objVirtualService.csrfPolicyRef)&&
-  Objects.equals(this.snatIp6Addresses, objVirtualService.snatIp6Addresses);
+  Objects.equals(this.snatIp6Addresses, objVirtualService.snatIp6Addresses)&&
+  Objects.equals(this.applicationInsightsRef, objVirtualService.applicationInsightsRef)&&
+  Objects.equals(this.positiveSecurityRef, objVirtualService.positiveSecurityRef);
     }
 
     @Override
@@ -3031,6 +3091,7 @@ public class VirtualService extends AviRestResource  {
                         sb.append("    allowInvalidClientCert: ").append(toIndentedString(allowInvalidClientCert)).append("\n");
                         sb.append("    analyticsPolicy: ").append(toIndentedString(analyticsPolicy)).append("\n");
                         sb.append("    analyticsProfileRef: ").append(toIndentedString(analyticsProfileRef)).append("\n");
+                        sb.append("    applicationInsightsRef: ").append(toIndentedString(applicationInsightsRef)).append("\n");
                         sb.append("    applicationProfileRef: ").append(toIndentedString(applicationProfileRef)).append("\n");
                         sb.append("    azureAvailabilitySet: ").append(toIndentedString(azureAvailabilitySet)).append("\n");
                         sb.append("    bgpPeerLabels: ").append(toIndentedString(bgpPeerLabels)).append("\n");
@@ -3078,6 +3139,7 @@ public class VirtualService extends AviRestResource  {
                         sb.append("    performanceLimits: ").append(toIndentedString(performanceLimits)).append("\n");
                         sb.append("    poolGroupRef: ").append(toIndentedString(poolGroupRef)).append("\n");
                         sb.append("    poolRef: ").append(toIndentedString(poolRef)).append("\n");
+                        sb.append("    positiveSecurityRef: ").append(toIndentedString(positiveSecurityRef)).append("\n");
                         sb.append("    removeListeningPortOnVsDown: ").append(toIndentedString(removeListeningPortOnVsDown)).append("\n");
                         sb.append("    requestsRateLimit: ").append(toIndentedString(requestsRateLimit)).append("\n");
                         sb.append("    revokeVipRoute: ").append(toIndentedString(revokeVipRoute)).append("\n");

@@ -27,6 +27,9 @@ public class ControllerSizingLimits  {
     @JsonProperty("flavor")
     private String flavor;
 
+    @JsonProperty("num_application_insights_virtualservices")
+    private Integer numApplicationInsightsVirtualservices;
+
     @JsonProperty("num_clouds")
     private Integer numClouds;
 
@@ -35,6 +38,9 @@ public class ControllerSizingLimits  {
 
     @JsonProperty("num_pool_rt_metrics")
     private Integer numPoolRtMetrics;
+
+    @JsonProperty("num_positive_security_virtualservices")
+    private Integer numPositiveSecurityVirtualservices;
 
     @JsonProperty("num_se_rt_metrics")
     private Integer numSeRtMetrics;
@@ -132,6 +138,30 @@ public class ControllerSizingLimits  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Maximum number of virtualservices configured with waf.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numApplicationInsightsVirtualservices
+     */
+    public Integer getNumApplicationInsightsVirtualservices() {
+        return numApplicationInsightsVirtualservices;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of virtualservices configured with waf.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numApplicationInsightsVirtualservices set the numApplicationInsightsVirtualservices.
+     */
+    public void setNumApplicationInsightsVirtualservices(Integer  numApplicationInsightsVirtualservices) {
+        this.numApplicationInsightsVirtualservices = numApplicationInsightsVirtualservices;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Maximum number of clouds.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -200,6 +230,30 @@ public class ControllerSizingLimits  {
      */
     public void setNumPoolRtMetrics(Integer  numPoolRtMetrics) {
         this.numPoolRtMetrics = numPoolRtMetrics;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum number of virtualservices configured with waf.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numPositiveSecurityVirtualservices
+     */
+    public Integer getNumPositiveSecurityVirtualservices() {
+        return numPositiveSecurityVirtualservices;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of virtualservices configured with waf.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numPositiveSecurityVirtualservices set the numPositiveSecurityVirtualservices.
+     */
+    public void setNumPositiveSecurityVirtualservices(Integer  numPositiveSecurityVirtualservices) {
+        this.numPositiveSecurityVirtualservices = numPositiveSecurityVirtualservices;
     }
 
     /**
@@ -441,6 +495,8 @@ public class ControllerSizingLimits  {
   Objects.equals(this.numPoolRtMetrics, objControllerSizingLimits.numPoolRtMetrics)&&
   Objects.equals(this.numSeRtMetrics, objControllerSizingLimits.numSeRtMetrics)&&
   Objects.equals(this.numVirtualservicesRtmetricsWaf, objControllerSizingLimits.numVirtualservicesRtmetricsWaf)&&
+  Objects.equals(this.numApplicationInsightsVirtualservices, objControllerSizingLimits.numApplicationInsightsVirtualservices)&&
+  Objects.equals(this.numPositiveSecurityVirtualservices, objControllerSizingLimits.numPositiveSecurityVirtualservices)&&
   Objects.equals(this.controllerSizingCloudLimits, objControllerSizingLimits.controllerSizingCloudLimits);
     }
 
@@ -450,9 +506,11 @@ public class ControllerSizingLimits  {
       sb.append("class ControllerSizingLimits {\n");
                   sb.append("    controllerSizingCloudLimits: ").append(toIndentedString(controllerSizingCloudLimits)).append("\n");
                         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
+                        sb.append("    numApplicationInsightsVirtualservices: ").append(toIndentedString(numApplicationInsightsVirtualservices)).append("\n");
                         sb.append("    numClouds: ").append(toIndentedString(numClouds)).append("\n");
                         sb.append("    numEastWestVirtualservices: ").append(toIndentedString(numEastWestVirtualservices)).append("\n");
                         sb.append("    numPoolRtMetrics: ").append(toIndentedString(numPoolRtMetrics)).append("\n");
+                        sb.append("    numPositiveSecurityVirtualservices: ").append(toIndentedString(numPositiveSecurityVirtualservices)).append("\n");
                         sb.append("    numSeRtMetrics: ").append(toIndentedString(numSeRtMetrics)).append("\n");
                         sb.append("    numServers: ").append(toIndentedString(numServers)).append("\n");
                         sb.append("    numServiceengines: ").append(toIndentedString(numServiceengines)).append("\n");

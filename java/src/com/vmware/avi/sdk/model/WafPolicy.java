@@ -50,13 +50,13 @@ public class WafPolicy extends AviRestResource  {
     private String description;
 
     @JsonProperty("enable_app_learning")
-    private Boolean enableAppLearning = false;
+    private Boolean enableAppLearning;
 
     @JsonProperty("enable_auto_rule_updates")
-    private Boolean enableAutoRuleUpdates = true;
+    private Boolean enableAutoRuleUpdates;
 
     @JsonIgnore
-    private Boolean enableRegexLearning = false;
+    private Boolean enableRegexLearning;
 
     @JsonProperty("enable_streaming")
     private Boolean enableStreaming = false;
@@ -77,7 +77,7 @@ public class WafPolicy extends AviRestResource  {
     private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("min_confidence")
-    private String minConfidence = "CONFIDENCE_VERY_HIGH";
+    private String minConfidence;
 
     @JsonProperty("mode")
     private String mode = "WAF_MODE_DETECTION_ONLY";
@@ -253,10 +253,10 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Configure thresholds for confidence labels.
+     * [deprecated] configure thresholds for confidence labels.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return confidenceOverride
      */
     public AppLearningConfidenceOverride getConfidenceOverride() {
@@ -265,10 +265,10 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Configure thresholds for confidence labels.
+     * [deprecated] configure thresholds for confidence labels.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param confidenceOverride set the confidenceOverride.
      */
     public void setConfidenceOverride(AppLearningConfidenceOverride confidenceOverride) {
@@ -362,10 +362,10 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enable application learning for this waf policy.
+     * [deprecated] enable application learning for this waf policy.
+     * Field deprecated in 31.2.1.
      * Field introduced in 18.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableAppLearning
      */
     public Boolean getEnableAppLearning() {
@@ -374,10 +374,10 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Enable application learning for this waf policy.
+     * [deprecated] enable application learning for this waf policy.
+     * Field deprecated in 31.2.1.
      * Field introduced in 18.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableAppLearning set the enableAppLearning.
      */
     public void setEnableAppLearning(Boolean  enableAppLearning) {
@@ -386,11 +386,10 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enable application learning based rule updates on the waf profile.
-     * Rules will be programmed in dedicated waf learning group.
+     * [deprecated] enable application learning based rule updates on the waf profile.rules will be programmed in dedicated waf learning group.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableAutoRuleUpdates
      */
     public Boolean getEnableAutoRuleUpdates() {
@@ -399,11 +398,10 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Enable application learning based rule updates on the waf profile.
-     * Rules will be programmed in dedicated waf learning group.
+     * [deprecated] enable application learning based rule updates on the waf profile.rules will be programmed in dedicated waf learning group.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableAutoRuleUpdates set the enableAutoRuleUpdates.
      */
     public void setEnableAutoRuleUpdates(Boolean  enableAutoRuleUpdates) {
@@ -412,11 +410,11 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enable dynamic regex generation for positive security model rules.
+     * [deprecated] enable dynamic regex generation for positive security model rules.
      * This is an experimental feature and shouldn't be used in production.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableRegexLearning
      */
     public Boolean getEnableRegexLearning() {
@@ -425,11 +423,11 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Enable dynamic regex generation for positive security model rules.
+     * [deprecated] enable dynamic regex generation for positive security model rules.
      * This is an experimental feature and shouldn't be used in production.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableRegexLearning set the enableRegexLearning.
      */
     public void setEnableRegexLearning(Boolean  enableRegexLearning) {
@@ -548,10 +546,10 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Parameters for tuning application learning.
+     * [deprecated] parameters for tuning application learning.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return learningParams
      */
     public AppLearningParams getLearningParams() {
@@ -560,10 +558,10 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Parameters for tuning application learning.
+     * [deprecated] parameters for tuning application learning.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param learningParams set the learningParams.
      */
     public void setLearningParams(AppLearningParams learningParams) {
@@ -611,11 +609,11 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Minimum confidence label required for auto rule updates.
+     * [deprecated] minimum confidence label required for auto rule updates.
      * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "CONFIDENCE_VERY_HIGH".
      * @return minConfidence
      */
     public String getMinConfidence() {
@@ -624,11 +622,11 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Minimum confidence label required for auto rule updates.
+     * [deprecated] minimum confidence label required for auto rule updates.
      * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
+     * Field deprecated in 31.2.1.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "CONFIDENCE_VERY_HIGH".
      * @param minConfidence set the minConfidence.
      */
     public void setMinConfidence(String  minConfidence) {

@@ -168,6 +168,9 @@ public class ApplicationLog  {
     @JsonProperty("jwt_log")
     private JwtLog jwtLog;
 
+    @JsonProperty("learning_status")
+    private String learningStatus = "NOT_ACTIVE";
+
     @JsonProperty("log_id")
     private Integer logId;
 
@@ -1533,6 +1536,36 @@ public class ApplicationLog  {
      */
     public void setJwtLog(JwtLog jwtLog) {
         this.jwtLog = jwtLog;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Indicate if this request is used for learning.
+     * If it is not used, this field contains the reason for this decision.
+     * Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED,
+     * CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_ACTIVE".
+     * @return learningStatus
+     */
+    public String getLearningStatus() {
+        return learningStatus;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Indicate if this request is used for learning.
+     * If it is not used, this field contains the reason for this decision.
+     * Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED,
+     * CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_ACTIVE".
+     * @param learningStatus set the learningStatus.
+     */
+    public void setLearningStatus(String  learningStatus) {
+        this.learningStatus = learningStatus;
     }
 
     /**
@@ -3628,7 +3661,8 @@ public class ApplicationLog  {
   Objects.equals(this.vhMatchRule, objApplicationLog.vhMatchRule)&&
   Objects.equals(this.requestBodyUpdated, objApplicationLog.requestBodyUpdated)&&
   Objects.equals(this.sslNamedGroup, objApplicationLog.sslNamedGroup)&&
-  Objects.equals(this.sslSignatureAlgorithm, objApplicationLog.sslSignatureAlgorithm);
+  Objects.equals(this.sslSignatureAlgorithm, objApplicationLog.sslSignatureAlgorithm)&&
+  Objects.equals(this.learningStatus, objApplicationLog.learningStatus);
     }
 
     @Override
@@ -3684,6 +3718,7 @@ public class ApplicationLog  {
                         sb.append("    httpVersion: ").append(toIndentedString(httpVersion)).append("\n");
                         sb.append("    icapLog: ").append(toIndentedString(icapLog)).append("\n");
                         sb.append("    jwtLog: ").append(toIndentedString(jwtLog)).append("\n");
+                        sb.append("    learningStatus: ").append(toIndentedString(learningStatus)).append("\n");
                         sb.append("    logId: ").append(toIndentedString(logId)).append("\n");
                         sb.append("    maxIngressLatencyBe: ").append(toIndentedString(maxIngressLatencyBe)).append("\n");
                         sb.append("    maxIngressLatencyFe: ").append(toIndentedString(maxIngressLatencyFe)).append("\n");

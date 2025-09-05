@@ -27,14 +27,14 @@ public class Report extends AviRestResource  {
     @JsonProperty("end_time")
     private String endTime;
 
+    @JsonProperty("filename")
+    private String filename;
+
     @JsonProperty("name")
     private String name;
 
     @JsonProperty("node")
     private String node;
-
-    @JsonProperty("path")
-    private String path;
 
     @JsonProperty("pre_check")
     private ReadinessCheckObj preCheck;
@@ -120,6 +120,30 @@ public class Report extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Name of the report artifact on reports repository.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return filename
+     */
+    public String getFilename() {
+        return filename;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Name of the report artifact on reports repository.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param filename set the filename.
+     */
+    public void setFilename(String  filename) {
+        this.filename = filename;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Name of the report.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -164,30 +188,6 @@ public class Report extends AviRestResource  {
      */
     public void setNode(String  node) {
         this.node = node;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Path of the report artifacts on reports repository.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return path
-     */
-    public String getPath() {
-        return path;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Path of the report artifacts on reports repository.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param path set the path.
-     */
-    public void setPath(String  path) {
-        this.path = path;
     }
 
     /**
@@ -462,7 +462,7 @@ public class Report extends AviRestResource  {
   Objects.equals(this.name, objReport.name)&&
   Objects.equals(this.state, objReport.state)&&
   Objects.equals(this.node, objReport.node)&&
-  Objects.equals(this.path, objReport.path)&&
+  Objects.equals(this.filename, objReport.filename)&&
   Objects.equals(this.startTime, objReport.startTime)&&
   Objects.equals(this.endTime, objReport.endTime)&&
   Objects.equals(this.duration, objReport.duration)&&
@@ -480,9 +480,9 @@ public class Report extends AviRestResource  {
       sb.append("class Report {\n");
                   sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
                         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+                        sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    node: ").append(toIndentedString(node)).append("\n");
-                        sb.append("    path: ").append(toIndentedString(path)).append("\n");
                         sb.append("    preCheck: ").append(toIndentedString(preCheck)).append("\n");
                         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
                         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
