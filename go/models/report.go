@@ -18,14 +18,14 @@ type Report struct {
 	// End time of the report generation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EndTime *string `json:"end_time,omitempty"`
 
+	// Name of the report artifact on reports repository. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	Filename *string `json:"filename,omitempty"`
+
 	// Name of the report. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
 	// Cluster member node on which the report is processed. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Node *string `json:"node,omitempty"`
-
-	// Path of the report artifacts on reports repository. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	Path *string `json:"path,omitempty"`
 
 	// Pre-check details for the report generation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	PreCheck *ReadinessCheckObj `json:"pre_check,omitempty"`
