@@ -14,6 +14,9 @@ type ControllerSizingLimits struct {
 	// Controller flavor for this sizing limit. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Flavor *string `json:"flavor,omitempty"`
 
+	// Maximum number of virtualservices configured with WAF. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	NumApplicationInsightsVirtualservices *int32 `json:"num_application_insights_virtualservices,omitempty"`
+
 	// Maximum number of clouds. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumClouds *int32 `json:"num_clouds,omitempty"`
 
@@ -22,6 +25,9 @@ type ControllerSizingLimits struct {
 
 	// Maximum number of pools with realtime metrics enabled. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	NumPoolRtMetrics *int32 `json:"num_pool_rt_metrics,omitempty"`
+
+	// Maximum number of virtualservices configured with WAF. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	NumPositiveSecurityVirtualservices *int32 `json:"num_positive_security_virtualservices,omitempty"`
 
 	// Maximum number of Serviceengine with realtime metrics enabled. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	NumSeRtMetrics *int32 `json:"num_se_rt_metrics,omitempty"`

@@ -163,6 +163,9 @@ type ApplicationLog struct {
 	// Logs for the JWT Validation process. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	JwtLog *JwtLog `json:"jwt_log,omitempty"`
 
+	// Indicate if this request is used for learning. If it is not used, this field contains the reason for this decision. Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED, CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LearningStatus *string `json:"learning_status,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	LogID *uint32 `json:"log_id"`
