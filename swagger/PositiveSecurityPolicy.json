@@ -2,17 +2,17 @@
     "swagger": "2.0",
     "info": {
         "version": "31.2.1",
-        "title": "Avi Role Object API",
+        "title": "Avi PositiveSecurityPolicy Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi Role object api\n```\n- configure role <key>\n- show role <key>\n```\n\nAPI permission: PERMISSION_ROLE\n"
+        "description": "Avi PositiveSecurityPolicy object api\n```\n- configure positivesecuritypolicy <key>\n- show positivesecuritypolicy <key>\n```\n\nAPI permission: PERMISSION_POSITIVESECURITYPOLICY\n"
     },
     "tags": [
         {
-            "name": "Role"
+            "name": "PositiveSecurityPolicy"
         }
     ],
     "schemes": [
@@ -26,13 +26,13 @@
     },
     "basePath": "/api",
     "paths": {
-        "/role": {
+        "/positivesecuritypolicy": {
             "get": {
                 "tags": [
-                    "Role"
+                    "PositiveSecurityPolicy"
                 ],
-                "description": "/role",
-                "operationId": "GET /role",
+                "description": "/positivesecuritypolicy",
+                "operationId": "GET /positivesecuritypolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -123,7 +123,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/RoleApiResponse"
+                            "$ref": "#/definitions/PositiveSecurityPolicyApiResponse"
                         }
                     },
                     "401": {
@@ -133,10 +133,10 @@
             },
             "post": {
                 "tags": [
-                    "Role"
+                    "PositiveSecurityPolicy"
                 ],
-                "description": "/role",
-                "operationId": "POST /role",
+                "description": "/positivesecuritypolicy",
+                "operationId": "POST /positivesecuritypolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -175,10 +175,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Role object creation",
+                        "description": "PositiveSecurityPolicy object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/PositiveSecurityPolicy"
                         }
                     }
                 ],
@@ -191,7 +191,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/PositiveSecurityPolicy"
                         }
                     },
                     "401": {
@@ -200,13 +200,13 @@
                 }
             }
         },
-        "/role/{uuid}": {
+        "/positivesecuritypolicy/{uuid}": {
             "get": {
                 "tags": [
-                    "Role"
+                    "PositiveSecurityPolicy"
                 ],
-                "description": "/role/{uuid}/{uuid}",
-                "operationId": "GET /role/{uuid}",
+                "description": "/positivesecuritypolicy/{uuid}/{uuid}",
+                "operationId": "GET /positivesecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -292,7 +292,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/PositiveSecurityPolicy"
                         }
                     },
                     "401": {
@@ -305,10 +305,10 @@
             },
             "put": {
                 "tags": [
-                    "Role"
+                    "PositiveSecurityPolicy"
                 ],
-                "description": "/role/{uuid}/{uuid}",
-                "operationId": "PUT /role/{uuid}",
+                "description": "/positivesecuritypolicy/{uuid}/{uuid}",
+                "operationId": "PUT /positivesecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -354,10 +354,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Role object creation",
+                        "description": "PositiveSecurityPolicy object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/PositiveSecurityPolicy"
                         }
                     },
                     {
@@ -377,7 +377,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/PositiveSecurityPolicy"
                         }
                     },
                     "401": {
@@ -390,10 +390,10 @@
             },
             "patch": {
                 "tags": [
-                    "Role"
+                    "PositiveSecurityPolicy"
                 ],
-                "description": "/role/{uuid}/{uuid}",
-                "operationId": "PATCH /role/{uuid}",
+                "description": "/positivesecuritypolicy/{uuid}/{uuid}",
+                "operationId": "PATCH /positivesecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -439,10 +439,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Role object creation",
+                        "description": "PositiveSecurityPolicy object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/PositiveSecurityPolicy"
                         }
                     },
                     {
@@ -462,7 +462,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/PositiveSecurityPolicy"
                         }
                     },
                     "401": {
@@ -475,10 +475,10 @@
             },
             "delete": {
                 "tags": [
-                    "Role"
+                    "PositiveSecurityPolicy"
                 ],
-                "description": "/role/{uuid}/{uuid}",
-                "operationId": "DELETE /role/{uuid}",
+                "description": "/positivesecuritypolicy/{uuid}/{uuid}",
+                "operationId": "DELETE /positivesecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -549,6 +549,35 @@
         }
     },
     "definitions": {
+        "AppLearningConfidenceOverride": {
+            "type": "object",
+            "properties": {
+                "confid_high_value": {
+                    "description": "Confidence threshold for label CONFIDENCE_HIGH. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 9500,
+                    "format": "uint32"
+                },
+                "confid_low_value": {
+                    "description": "Confidence threshold for label CONFIDENCE_LOW. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 7500,
+                    "format": "uint32"
+                },
+                "confid_probable_value": {
+                    "description": "Confidence threshold for label CONFIDENCE_PROBABLE. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 9000,
+                    "format": "uint32"
+                },
+                "confid_very_high_value": {
+                    "description": "Confidence threshold for label CONFIDENCE_VERY_HIGH. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 9999,
+                    "format": "uint32"
+                }
+            }
+        },
         "ConfigPbAttributes": {
             "type": "object",
             "properties": {
@@ -560,67 +589,72 @@
                 }
             }
         },
-        "Permission": {
+        "PositiveSecurityParams": {
             "type": "object",
-            "required": [
-                "resource",
-                "type"
-            ],
             "properties": {
-                "resource": {
-                    "description": " Enum options - PERMISSION_CONTROLLER, PERMISSION_INTERNAL, PERMISSION_VIRTUALSERVICE, PERMISSION_POOL, PERMISSION_HEALTHMONITOR, PERMISSION_NETWORKPROFILE, PERMISSION_APPLICATIONPROFILE, PERMISSION_HTTPPOLICYSET, PERMISSION_IPADDRGROUP, PERMISSION_STRINGGROUP, PERMISSION_SSLPROFILE, PERMISSION_SSLKEYANDCERTIFICATE, PERMISSION_NETWORKSECURITYPOLICY, PERMISSION_APPLICATIONPERSISTENCEPROFILE, PERMISSION_ANALYTICSPROFILE, PERMISSION_VSDATASCRIPTSET, PERMISSION_TENANT, PERMISSION_PKIPROFILE, PERMISSION_AUTHPROFILE, PERMISSION_CLOUD, PERMISSION_SERVICEENGINE, PERMISSION_SERVICEENGINEGROUP, PERMISSION_NETWORK, PERMISSION_SYSTEMCONFIGURATION, PERMISSION_VRFCONTEXT, PERMISSION_USER, PERMISSION_ROLE, PERMISSION_ALERT, PERMISSION_ALERTCONFIG, PERMISSION_ALERTEMAILCONFIG, PERMISSION_ALERTSYSLOGCONFIG, PERMISSION_ACTIONGROUPCONFIG, PERMISSION_SNMPTRAPPROFILE, PERMISSION_UPGRADE, PERMISSION_REBOOT, PERMISSION_TECHSUPPORT, PERMISSION_EXEMPT, PERMISSION_VIRTUALSERVICE_MAINTENANCE, PERMISSION_POOL_MAINTENANCE, PERMISSION_TRAFFIC_CAPTURE, PERMISSION_MICROSERVICEGROUP, PERMISSION_IPAMDNSPROVIDERPROFILE, PERMISSION_CERTIFICATEMANAGEMENTPROFILE, PERMISSION_POOLGROUP, PERMISSION_PRIORITYLABELS, PERMISSION_POOLGROUPDEPLOYMENTPOLICY, PERMISSION_GSLB, PERMISSION_GSLBSERVICE, PERMISSION_GSLBGEODBPROFILE, PERMISSION_DNSPOLICY, PERMISSION_TRAFFICCLONEPROFILE, PERMISSION_SE_TOKEN, PERMISSION_WAFPOLICY, PERMISSION_WAFPROFILE, PERMISSION_USER_CREDENTIAL, PERMISSION_AUTOSCALE, PERMISSION_CUSTOMIPAMDNSPROFILE, PERMISSION_ERRORPAGEPROFILE, PERMISSION_ERRORPAGEBODY, PERMISSION_L4POLICYSET, PERMISSION_MICROSERVICE, PERMISSION_HARDWARESECURITYMODULEGROUP, PERMISSION_SECURITYPOLICY, PERMISSION_WAFPOLICYPSMGROUP, PERMISSION_PINGACCESSAGENT, PERMISSION_NETWORKSERVICE, PERMISSION_NATPOLICY, PERMISSION_PROTOCOLPARSER, PERMISSION_SSOPOLICY, PERMISSION_CONTROLLERSITE, PERMISSION_IMAGE, PERMISSION_UPGRADE_OPS, PERMISSION_UPGRADE_SEGROUP_OPS, PERMISSION_TESTSEDATASTORELEVEL1, PERMISSION_TESTSEDATASTORELEVEL2, PERMISSION_TESTSEDATASTORELEVEL3, PERMISSION_FILE_OBJECT, PERMISSION_IPREPUTATIONDB, PERMISSION_ICAP, PERMISSION_GSLBSERVICE_GROUP, PERMISSION_JWTSERVERPROFILE, PERMISSION_GEODB, PERMISSION_BOTDETECTIONPOLICY, PERMISSION_JWTPROFILE, PERMISSION_LABELGROUP, PERMISSION_WAFCRS, PERMISSION_AUTHMAPPINGPROFILE, PERMISSION_ALBSERVICESCONFIG, PERMISSION_ALBSERVICESSTATUS, PERMISSION_ALBSERVICESREG, PERMISSION_LICENSING, PERMISSION_ALBSERVICESUSERINFO, PERMISSION_TENANT_SYSTEM_CONFIGURATION, PERMISSION_CSRFPOLICY, PERMISSION_SERVICEAUTHPROFILE, PERMISSION_SYSTEMREPORT, PERMISSION_CLOUD_API, PERMISSION_TASKJOURNAL, PERMISSION_TELEMETRY_API, PERMISSION_UPGRADEPROFILE, PERMISSION_RETENTIONPOLICY, PERMISSION_APIRATELIMITPROFILE, PERMISSION_TECHSUPPORTPROFILE, PERMISSION_TECHSUPPORTMESSAGE, PERMISSION_ALERTSCRIPTCONFIG, PERMISSION_REPORT, PERMISSION_REPORTPROFILE, PERMISSION_APPLICATIONINSIGHTSPOLICY, PERMISSION_APPLICATIONINSIGHTSSTATE, PERMISSION_POSITIVESECURITYPOLICY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
+                "confidence_override": {
+                    "description": "Configure thresholds for the confidence labels defined by AppLearningConfidenceLabel. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/AppLearningConfidenceOverride"
                 },
-                "subresource": {
-                    "description": "Limits the scope of Write Access on the parent resource to modification of only the specified subresources. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/SubResource"
+                "max_params": {
+                    "description": "Maximum number of parameters per URI programmed for an application. Allowed values are 10-1000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 100,
+                    "format": "uint32"
                 },
-                "type": {
-                    "description": " Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
+                "max_uris": {
+                    "description": "Maximum number of URIs programmed for an application. Allowed values are 10-10000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 500,
+                    "format": "uint32"
+                },
+                "min_confidence": {
+                    "description": "Minimum confidence label required for positive security rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "CONFIDENCE_VERY_HIGH"
+                },
+                "min_hits_to_program": {
+                    "description": "Minimum number of occurances required for a Param to qualify for programming into a PSM rule. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 10000,
+                    "format": "uint64"
                 }
             }
         },
-        "Role": {
+        "PositiveSecurityPolicy": {
             "type": "object",
-            "required": [
-                "name"
-            ],
             "properties": {
                 "_last_modified": {
                     "description": "UNIX time since epoch in microseconds. Units(MICROSECONDS).",
                     "readOnly": true,
                     "type": "string"
                 },
-                "allow_unlabelled_access": {
-                    "description": "Allow access to unlabelled objects. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "boolean",
-                    "default": true
-                },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
-                "filters": {
-                    "description": "Filters for granular object access control based on object labels. Multiple filters are merged using the AND operator. If empty, all objects according to the privileges will be accessible to the user. Field introduced in 20.1.3. Maximum of 4 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/RoleFilter"
-                    }
-                },
-                "name": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "description": {
+                    "description": "Details of the Positive Security Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
-                "privileges": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Permission"
-                    }
+                "enable_positive_security_rule_updates": {
+                    "description": "Enable Positive Security rule generation using the application learning data Rules will be programmed in a dedicated learning group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "enable_regex_programming": {
+                    "description": "Enable dynamic regex generation for positive security rules. This is an experimental feature and shouldn't be used in production. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": "The name of the PositiveSecurity Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "positive_security_params": {
+                    "description": "Parameters for generating positive security rules. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/PositiveSecurityParams"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Details of the tenant for positive security policy. It is a reference to an object of type Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -629,12 +663,12 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the Positive Security Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
         },
-        "RoleApiResponse": {
+        "PositiveSecurityPolicyApiResponse": {
             "type": "object",
             "required": [
                 "count",
@@ -648,72 +682,11 @@
                 "results": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/Role"
+                        "$ref": "#/definitions/PositiveSecurityPolicy"
                     }
                 },
                 "next": {
                     "type": "string"
-                }
-            }
-        },
-        "RoleFilter": {
-            "type": "object",
-            "required": [
-                "match_label"
-            ],
-            "properties": {
-                "enabled": {
-                    "description": "Enable this filter. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "boolean",
-                    "default": true
-                },
-                "match_label": {
-                    "description": "Label key to match against objects for values. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/RoleFilterMatchLabel"
-                },
-                "match_operation": {
-                    "description": "Label match operation criteria. Enum options - ROLE_FILTER_EQUALS, ROLE_FILTER_DOES_NOT_EQUAL, ROLE_FILTER_GLOB_MATCH, ROLE_FILTER_GLOB_DOES_NOT_MATCH. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string",
-                    "default": "ROLE_FILTER_EQUALS"
-                },
-                "name": {
-                    "description": "Name for the filter. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                }
-            }
-        },
-        "RoleFilterMatchLabel": {
-            "type": "object",
-            "required": [
-                "key"
-            ],
-            "properties": {
-                "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
-        "SubResource": {
-            "type": "object",
-            "properties": {
-                "exclude_subresources": {
-                    "description": "Allows modification of all fields except for the specified subresources. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
-                "subresources": {
-                    "description": "Subresources user can modify. Each subresource specifies and individual field. I.e. SUBRESOURCE_POOL_ENABLED allows modification of the enabled field in the Pool object. Enum options - SUBRESOURCE_POOL_ENABLED, SUBRESOURCE_POOL_SERVERS, SUBRESOURCE_POOL_SERVER_ENABLED, SUBRESOURCE_VIRTUALSERVICE_ENABLED, SUBRESOURCE_VIRTUALSERVICE_AUTO_ALLOCATE_FLOATING_IP, SUBRESOURCE_GSLBSERVICE_ENABLED, SUBRESOURCE_GSLBSERVICE_GROUPS, SUBRESOURCE_GSLBSERVICE_GROUP_ENABLED, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBERS, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBER_ENABLED. Field introduced in 20.1.5. Minimum of 1 items required. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
                 }
             }
         }
