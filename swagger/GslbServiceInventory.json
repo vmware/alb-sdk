@@ -1552,7 +1552,7 @@
                     "format": "double"
                 },
                 "avg_total_connections": {
-                    "description": "Averaged rate bytes dropped per second. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Average rate of completed and policy-dropped connections per second. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
