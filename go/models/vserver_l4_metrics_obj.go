@@ -179,7 +179,7 @@ type VserverL4MetricsObj struct {
 	// Total syncs sent across all connections. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgSyns *float64 `json:"avg_syns,omitempty"`
 
-	// Averaged rate bytes dropped per second. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Average rate of completed and policy-dropped connections per second. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgTotalConnections *float64 `json:"avg_total_connections,omitempty"`
 
 	// Average network round trip time between client and virtual service. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
