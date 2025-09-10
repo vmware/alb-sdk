@@ -33,6 +33,7 @@ public class QuotaConfig  {
      * This is the getter method this will return the attribute value.
      * Maximum license service units allowed for consumption.
      * -1 as default is maximum value.
+     * Allowed values are -1-+4294967295.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as -1.
@@ -46,6 +47,7 @@ public class QuotaConfig  {
      * This is the setter method to the attribute.
      * Maximum license service units allowed for consumption.
      * -1 as default is maximum value.
+     * Allowed values are -1-+4294967295.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as -1.
