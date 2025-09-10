@@ -33,6 +33,9 @@ type Report struct {
 	// Percentage of tasks completed. Allowed values are 0-100. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Progress *uint32 `json:"progress,omitempty"`
 
+	// Request for the report generation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	Request *ReportGenerationRequest `json:"request,omitempty"`
+
 	// Start time of the report generation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	StartTime *string `json:"start_time,omitempty"`
 
