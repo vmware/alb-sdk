@@ -42,6 +42,9 @@ public class Report extends AviRestResource  {
     @JsonProperty("progress")
     private Integer progress = 0;
 
+    @JsonProperty("request")
+    private ReportGenerationRequest request;
+
     @JsonProperty("start_time")
     private String startTime;
 
@@ -240,6 +243,30 @@ public class Report extends AviRestResource  {
      */
     public void setProgress(Integer  progress) {
         this.progress = progress;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Request for the report generation.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return request
+     */
+    public ReportGenerationRequest getRequest() {
+        return request;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Request for the report generation.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param request set the request.
+     */
+    public void setRequest(ReportGenerationRequest request) {
+        this.request = request;
     }
 
     /**
@@ -471,6 +498,7 @@ public class Report extends AviRestResource  {
   Objects.equals(this.totalTasks, objReport.totalTasks)&&
   Objects.equals(this.tasksCompleted, objReport.tasksCompleted)&&
   Objects.equals(this.progress, objReport.progress)&&
+  Objects.equals(this.request, objReport.request)&&
   Objects.equals(this.tenantRef, objReport.tenantRef);
     }
 
@@ -485,6 +513,7 @@ public class Report extends AviRestResource  {
                         sb.append("    node: ").append(toIndentedString(node)).append("\n");
                         sb.append("    preCheck: ").append(toIndentedString(preCheck)).append("\n");
                         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
+                        sb.append("    request: ").append(toIndentedString(request)).append("\n");
                         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
                         sb.append("    state: ").append(toIndentedString(state)).append("\n");
                         sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
