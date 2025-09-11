@@ -32881,6 +32881,403 @@ paths:
           description: log in failed
         '404':
           description: object not found
+  /gslbhsmruntime:
+    get:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: GET /gslbhsmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: POST /gslbhsmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbHSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbHSMRuntime'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+  /gslbhsmruntime/{uuid}:
+    get:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: GET /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbHSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbHSMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbHSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbHSMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: object not found
   /gslbsmruntime:
     get:
       tags:
@@ -33625,403 +34022,6 @@ paths:
       - GslbCRMRuntime
       description: /gslbcrmruntime/{uuid}/{uuid}
       operationId: DELETE /gslbcrmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
-        '404':
-          description: object not found
-  /gslbhsmruntime:
-    get:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: GET /gslbhsmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: POST /gslbhsmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbHSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbHSMRuntime'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-  /gslbhsmruntime/{uuid}:
-    get:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: GET /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbHSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbHSMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbHSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbHSMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    delete:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -75339,6 +75339,58 @@ paths:
         '404':
           description: object not found
   /fileobject/{uuid}/['']/:
+    patch:
+      tags:
+      - FileObject
+      description: /fileobject/{uuid}/['']/
+      operationId: PATCH /fileobject/{uuid}/['']/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
     put:
       tags:
       - FileObject
@@ -75383,58 +75435,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - FileObject
-      description: /fileobject/{uuid}/['']/
-      operationId: PATCH /fileobject/{uuid}/['']/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -82534,6 +82534,58 @@ paths:
         '404':
           description: object not found
   /cloud/{uuid}/gc/:
+    patch:
+      tags:
+      - Cloud
+      description: /cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
     put:
       tags:
       - Cloud
@@ -82578,58 +82630,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - Cloud
-      description: /cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -87952,13 +87952,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -91750,13 +91751,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -96776,13 +96778,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -97261,13 +97264,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -104619,13 +104623,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -115251,13 +115256,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -115672,16 +115678,13 @@ definitions:
         type: string
   FileObject:
     type: object
-    required:
-    - name
-    - type
     properties:
       _last_modified:
         description: UNIX time since epoch in microseconds. Units(MICROSECONDS).
         readOnly: true
         type: string
       checksum:
-        description: SHA1 checksum of the file. Field introduced in 20.1.1. Allowed
+        description: SHA1 checksum of the file. . Field introduced in 20.1.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
@@ -115703,17 +115706,16 @@ definitions:
           Cloud Services edition.
         $ref: '#/definitions/ConfigPbAttributes'
       created:
-        description: Timestamp of creation for the file. Field introduced in 20.1.1.
+        description: Timestamp of creation for the file. . Field introduced in 20.1.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
       crl_info:
-        description: This field contains Certificate Revocation List metadata. Field
-          introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with
-          Cloud Services edition.
+        description: This field contains CRL metadata. . Field introduced in 30.2.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
         $ref: '#/definitions/CRL'
       description:
-        description: Description of the file. Field introduced in 20.1.1. Allowed
+        description: Description of the file. . Field introduced in 20.1.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
@@ -115724,14 +115726,16 @@ definitions:
         items:
           $ref: '#/definitions/FileObjectEventMap'
       expires_at:
-        description: Timestamp when the file will be no longer needed and can be removed
-          by the system. If this is set, a garbage collector process will try to remove
-          the file after this time. Field introduced in 20.1.1. Allowed with any value
-          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        description: Timestamp when the CRL contents are no longer valid and hence
+          CRL-file will be no longer needed and can be removed by the system. If this
+          is set, a garbage collector process shall remove the CRL-file after this
+          time. This field is applicable in the CRL context. Field introduced in 20.1.1.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
         type: string
       gslb_geodb_format:
-        description: This field indicates the file format of GSLB geodb file type.
-          Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY,
+        description: This field indicates the file format(Avi/Maxmind and v4/v6/v4-v6)
+          of GSLB geodb file type. . Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY,
           GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6,
           GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6. Field
           introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with
@@ -115739,25 +115743,26 @@ definitions:
         type: string
       has_parent:
         description: This field indicates if the the given FileObjecthas a parent
-          FileObject or not. Field introduced in 31.1.1. Allowed with any value in
-          Enterprise, Enterprise with Cloud Services edition.
+          FileObject or not. . Field introduced in 31.1.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
         type: boolean
       is_federated:
         description: This field describes the object's replication scope. If the field
           is set to false, then the object is visible within the controller-cluster
           and its associated service-engines. If the field is set to true, then the
-          object is replicated across the federation. Field introduced in 20.1.1.
+          object is replicated across the Gslb federation. Field introduced in 20.1.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: boolean
       name:
-        description: Name of the file object. Field introduced in 20.1.1. Allowed
+        description: Name of the file object. . Field introduced in 20.1.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
       path:
-        description: Path to the file. Field introduced in 20.1.1. Allowed with any
-          value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        description: Path to the file. . Field introduced in 20.1.1. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
         type: string
       read_only:
         description: Enforce Read-Only on the file. Field introduced in 20.1.1. Allowed
@@ -115770,8 +115775,9 @@ definitions:
           with Cloud Services edition.
         type: boolean
       size:
-        description: Size of the file. Field introduced in 20.1.1. Allowed with any
-          value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        description: Size of the file. . Field introduced in 20.1.1. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
         type: integer
         format: uint64
       tenant_ref:
@@ -115780,7 +115786,7 @@ definitions:
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       type:
-        description: Type of the file. Enum options - OTHER_FILE_TYPES, IP_REPUTATION,
+        description: Type of the file. . Enum options - OTHER_FILE_TYPES, IP_REPUTATION,
           GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA,
           IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS. Field introduced in 20.1.1. Allowed
           with any value in Enterprise, Enterprise with Cloud Services edition. Allowed
@@ -115796,7 +115802,7 @@ definitions:
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       version:
-        description: Version of the file. Field introduced in 20.1.1. Allowed with
+        description: Version of the file. . Field introduced in 20.1.1. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
@@ -115851,15 +115857,15 @@ definitions:
         type: integer
         format: uint32
       end_time:
-        description: End time of the event. Field introduced in 31.1.1. Allowed with
-          any value in Enterprise, Enterprise with Cloud Services edition.
+        description: End time of the event. . Field introduced in 31.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
       message:
         description: Event message if any. Field introduced in 31.1.1. Allowed with
           any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
       start_time:
-        description: Start time of the event. Field introduced in 31.1.1. Allowed
+        description: Start time of the event. . Field introduced in 31.1.1. Allowed
           with any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
       status:
@@ -121177,13 +121183,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -130942,13 +130949,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -132460,13 +132468,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -133242,13 +133251,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -136035,13 +136045,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -139321,13 +139332,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -139729,13 +139741,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -140167,13 +140180,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -140591,13 +140605,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -141029,13 +141044,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -147577,13 +147593,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -148211,13 +148228,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
@@ -148648,13 +148666,14 @@ definitions:
           SYSERR_TECH_SUPPORT_INPUT_INVALID_LEVEL, SYSERR_TECH_SUPPORT_INPUT_INVALID_SLUG,
           SYSERR_DATASCRIPT_FAILED, SYSERR_TECH_SUPPORT_COLLECTION_PREMATURELY_STOPPED,
           SYSERR_TECH_SUPPORT_V1_DEPRECATED, SYSERR_TECHSUPPORT_COLLECTION_STARTED,
-          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS,
-          SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS, SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED,
-          SYSERR_ALBSVC_CASE_ID_MISSING, SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE,
-          SYSERR_ALBSVC_REMOTE_SERVER_ERROR, SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED,
-          SYSERR_ALBSVC_CANNOT_READ_RESPONSE, SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED,
-          SYSERR_ALBSVC_SESSION_NOT_SET, SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED,
-          SYSERR_ALBSVC_HTTP_CLIENT_ERROR, SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
+          SYSERR_TECH_SUPPORT_V2_DEPRECATED, SYSERR_TECH_SUPPORT_FOLLOWER_NOT_SUPPORTED,
+          SYSERR_NET_PROF_NOT_FOUND, SYSERR_ALBSVC_FILE_UPLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_UPLOAD_SUCCESS,
+          SYSERR_ALBSVC_FILE_UPLOAD_FAILED, SYSERR_ALBSVC_FILE_UPLOAD_STARTED, SYSERR_ALBSVC_CASE_ID_MISSING,
+          SYSERR_ALBSVC_ASSET_ID_MISSING, SYSERR_ALBSVC_AUTH_FAILURE, SYSERR_ALBSVC_REMOTE_SERVER_ERROR,
+          SYSERR_ALBSVC_DISCONNECTED, SYSERR_ALBSVC_DEREGISTERED, SYSERR_ALBSVC_CANNOT_READ_RESPONSE,
+          SYSERR_ALBSVC_CONTROLLER_ALREADY_REGISTERED, SYSERR_ALBSVC_SESSION_NOT_SET,
+          SYSERR_ALBSVC_CLIENT_TIME_OUT, SYSERR_ALBSVC_CONNECTION_REFUSED, SYSERR_ALBSVC_HTTP_CLIENT_ERROR,
+          SYSERR_ALBSVC_RESOURCE_NOT_FOUND, SYSERR_ALBSVC_INVALID_QUERY_PARAM_VALUE,
           SYSERR_ALBSVC_INVALID_QUERY_PARAM, SYSERR_ALBSVC_FILE_UPLOAD_CONFLICT, SYSERR_ALBSVC_INTERNAL_ERROR,
           SYSERR_ALBSVC_PROXY_AUTH_FAILURE, SYSERR_ALBSVC_LOGIN_URL_NOT_FOUND, SYSERR_ALBSVC_PROXY_CONFIG_PARSE_FAILURE,
           SYSERR_ALBSVC_LOGIN_REQ_FAILED, SYSERR_ALBSVC_REGISTRATION_FAILED, SYSERR_ALBSVC_DATABASE_WRITE_ERROR,
