@@ -404,12 +404,12 @@ definitions:
         type: object
         properties:
             limit:
-                description: "Maximum license service units allowed for consumption. -1 as Default is maximum value. Allowed values are -1-+4294967295. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Maximum license service units allowed for consumption. -1 as Default is maximum value. Allowed values are -1-+65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 default: -1
                 format: int64
             reservation:
-                description: "Minimum license service units reserved for consumption. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Minimum license service units reserved for consumption. Allowed values are 0-65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
     Tenant:
