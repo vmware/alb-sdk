@@ -8,9 +8,9 @@ package models
 // swagger:model QuotaConfig
 type QuotaConfig struct {
 
-	// Maximum license service units allowed for consumption. -1 as Default is maximum value. Allowed values are -1-+4294967295. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum license service units allowed for consumption. -1 as Default is maximum value. Allowed values are -1-+65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Limit *int64 `json:"limit,omitempty"`
 
-	// Minimum license service units reserved for consumption. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Minimum license service units reserved for consumption. Allowed values are 0-65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Reservation *uint64 `json:"reservation,omitempty"`
 }
