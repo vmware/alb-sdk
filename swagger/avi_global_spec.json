@@ -155238,13 +155238,6 @@
                     "type": "string",
                     "default": "VS_TYPE_VH_SNI"
                 },
-                "vip": {
-                    "description": "List of Virtual Service IPs. While creating a 'Shared VS',please use vsvip_ref to point to the shared entities. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Vip"
-                    }
-                },
                 "vrf_context_ref": {
                     "description": "Virtual Routing Context that the Virtual Service is bound to. This is used to provide the isolation of the set of networks the application is attached to. It is a reference to an object of type VrfContext. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
