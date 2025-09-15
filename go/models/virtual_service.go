@@ -292,9 +292,6 @@ type VirtualService struct {
 	// Specify if the Virtual Hosting VS is of type SNI or Enhanced. Enum options - VS_TYPE_VH_SNI, VS_TYPE_VH_ENHANCED. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- VS_TYPE_VH_SNI,VS_TYPE_VH_ENHANCED) edition.
 	VhType *string `json:"vh_type,omitempty"`
 
-	// List of Virtual Service IPs. While creating a 'Shared VS',please use vsvip_ref to point to the shared entities. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Vip []*Vip `json:"vip,omitempty"`
-
 	// Virtual Routing Context that the Virtual Service is bound to. This is used to provide the isolation of the set of networks the application is attached to. It is a reference to an object of type VrfContext. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VrfContextRef *string `json:"vrf_context_ref,omitempty"`
 
