@@ -46,4 +46,7 @@ type AvailabilityZone struct {
 
 	// Group of VCenter list belong to availabilty zone. It is a reference to an object of type VCenterServer. Field deprecated in 31.1.1. Field introduced in 20.1.1. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterRefs []string `json:"vcenter_refs,omitempty"`
+
+	// VSphere Zone associated with the AZ. Field introduced in 31.3.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	VsphereZones []*VSphereZone `json:"vsphere_zones,omitempty"`
 }
