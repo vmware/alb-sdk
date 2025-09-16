@@ -543,12 +543,232 @@ definitions:
     LogManagerDebugFilter:
         type: object
         properties:
+            adf_protection_time_minutes:
+                description: "Delete protection time for ADF indices in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1380
+                format: uint32
+            batch_queue_buffer_size:
+                description: "Buffer size for batch queues. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 100
+                format: uint32
+            batch_worker_count:
+                description: "Number of workers for batch processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 8
+                format: uint32
+            bulk_payload_string_size:
+                description: "Size of bulk payload buffer. This is the max bulk payload size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 11000000
+                format: uint32
+            cache_cleanup_delay_ms:
+                description: "Cache cleanup delay in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 300000
+                format: uint32
+            client_index_op_timeout_seconds:
+                description: "Timeout for the client to create an index in seconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 2
+                format: uint32
+            db_notifn_chan_capacity:
+                description: "Database notification channel capacity. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1000
+                format: uint32
             entity_ref:
                 description: "UUID of the entity. It is a reference to an object of type Virtualservice. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
+            go_gc_percent:
+                description: "Go garbage collection percentage. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 50
+                format: uint32
+            incremental_timeout_buffer_ms:
+                description: "Incremental timeout buffer in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1000
+                format: uint32
+            index_cleaner_interval_minutes:
+                description: "Index cleaner interval in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 30
+                format: uint32
+            index_config_path:
+                description: "Base path for Search Engine Mappings and Settings. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+                default: "/var/lib/avi/indexer_configs"
+            index_retention_period_minutes:
+                description: "Index retention period in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1440
+                format: uint32
+            index_status_queue_buffer_size:
+                description: "Buffer size for index status queue. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 100
+                format: uint32
+            json_all_str_builder_size:
+                description: "Renderer configuration - JSON all string builder size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 2048
+                format: uint32
+            json_everything_str_builder_size:
+                description: "Renderer configuration - JSON everything string builder size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 512
+                format: uint32
+            json_str_builder_size:
+                description: "Renderer configuration - JSON string builder size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 16384
+                format: uint32
+            log_indexer_task_timeout_ms:
+                description: "Log indexer task timeout in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 60000
+                format: uint32
+            log_records_incremental_timeout_ms:
+                description: "Log records incremental timeout in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 2000
+                format: uint32
+            log_records_task_timeout_ms:
+                description: "Log records task timeout in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1000
+                format: uint32
+            max_batch_duration_ms:
+                description: "Maximum duration to wait for batching files to indexer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 500
+                format: uint32
+            max_batch_size:
+                description: "Maximum number of files in a batch to indexer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 10
+                format: uint32
+            max_files_per_index:
+                description: "Maximum number of files per index. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 2000
+                format: uint32
+            max_indices_events:
+                description: "Maximum number of indices for events. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 8
+                format: uint32
+            max_indices_per_vs:
+                description: "Maximum number of indices per VS. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 5
+                format: uint32
+            max_indices_system:
+                description: "Maximum number of indices for system. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 20
+                format: uint32
+            max_logs_per_index:
+                description: "Maximum number of logs per index. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 2000000
+                format: uint32
+            max_num_workers:
+                description: "Number of goroutines for indexer_worker. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 10
+                format: uint32
+            max_queue_size:
+                description: "Max number of index task requests taken by indexer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 20
+                format: uint32
+            max_size_per_index_mb:
+                description: "Maximum size per index in MB. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 400
+                format: uint32
+            nf_protection_time_minutes:
+                description: "Delete protection time for NF indices in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 30
+                format: uint32
+            opensearch_host:
+                description: "OpenSearch host. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+                default: "localhost"
+            opensearch_num_replicas:
+                description: "Number of replicas for OpenSearch. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            opensearch_num_shards:
+                description: "Number of shards for OpenSearch. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1
+                format: uint32
+            opensearch_port:
+                description: "OpenSearch port. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+                default: "9200"
+            query_queue_buffer_size:
+                description: "Buffer size for query queues. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 100
+                format: uint32
+            query_worker_count:
+                description: "Number of workers for query processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 8
+                format: uint32
+            records_status_queue_buffer_size:
+                description: "Buffer size for records status queue. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 100
+                format: uint32
+            records_status_worker_count:
+                description: "Number of workers for records status processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 8
+                format: uint32
+            reserved_1:
+                description: "Reserved field for future use. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            reserved_2:
+                description: "Reserved field for future use. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            reserved_3:
+                description: "Reserved field for future use. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            reserved_4:
+                description: "Reserved field for future use. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            search_query_timeout_ms:
+                description: "Search query timeout in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 15000
+                format: uint32
+            task_re_enqueue_wait_time_seconds:
+                description: "Wait time before re-enqueueing failed tasks in seconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1
+                format: uint32
             telemetry_trace_log_level:
                 description: "Set the log level for telemetry trace logs. Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
+            telemetry_trace_percentage:
+                description: "Telemetry trace percentage. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 100
+                format: uint32
+            udf_protection_time_minutes:
+                description: "Delete protection time for UDF indices in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 60
+                format: uint32
     MesosMetricsDebugFilter:
         type: object
         properties:
