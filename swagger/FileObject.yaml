@@ -576,16 +576,13 @@ definitions:
                 format: int32
     FileObject:
         type: object
-        required:
-            -   name
-            -   type
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
             checksum:
-                description: "SHA1 checksum of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "SHA1 checksum of the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             child_refs:
                 description: "AVI internal formatted/converted files. It is a reference to an object of type FileObject. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
@@ -599,13 +596,13 @@ definitions:
                 description: "Protobuf versioning for config pbs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             created:
-                description: "Timestamp of creation for the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Timestamp of creation for the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             crl_info:
-                description: "This field contains Certificate Revocation List metadata. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "This field contains CRL metadata. . Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CRL'
             description:
-                description: "Description of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Description of the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             events:
                 description: "List of all FileObject events. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
@@ -613,22 +610,22 @@ definitions:
                 items:
                     $ref: '#/definitions/FileObjectEventMap'
             expires_at:
-                description: "Timestamp when the file will be no longer needed and can be removed by the system. If this is set, a garbage collector process will try to remove the file after this time. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Timestamp when the CRL contents are no longer valid and hence CRL-file will be no longer needed and can be removed by the system. If this is set, a garbage collector process shall remove the CRL-file after this time. This field is applicable in the CRL context. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             gslb_geodb_format:
-                description: "This field indicates the file format of GSLB geodb file type. Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "This field indicates the file format(Avi/Maxmind and v4/v6/v4-v6) of GSLB geodb file type. . Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             has_parent:
-                description: "This field indicates if the the given FileObjecthas a parent FileObject or not. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "This field indicates if the the given FileObjecthas a parent FileObject or not. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             is_federated:
-                description: "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the Gslb federation. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             name:
-                description: "Name of the file object. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the file object. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             path:
-                description: "Path to the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Path to the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             read_only:
                 description: "Enforce Read-Only on the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -637,14 +634,14 @@ definitions:
                 description: "Flag to allow/restrict download of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             size:
-                description: "Size of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Size of the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             tenant_ref:
                 description: "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: "Type of the file. Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA, IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- OTHER_FILE_TYPES), Basic (Allowed values- OTHER_FILE_TYPES) edition."
+                description: "Type of the file. . Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA, IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- OTHER_FILE_TYPES), Basic (Allowed values- OTHER_FILE_TYPES) edition."
                 type: string
             url:
                 description: "url"
@@ -654,7 +651,7 @@ definitions:
                 description: "UUID of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             version:
-                description: "Version of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Version of the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     FileObjectApiResponse:
         type: object
@@ -679,13 +676,13 @@ definitions:
                 type: integer
                 format: uint32
             end_time:
-                description: "End time of the event. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "End time of the event. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             message:
                 description: "Event message if any. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             start_time:
-                description: "Start time of the event. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Start time of the event. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             status:
                 description: "Event status. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."

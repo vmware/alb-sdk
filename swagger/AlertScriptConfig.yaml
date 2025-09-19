@@ -18,7 +18,7 @@ info:
         - show alertscriptconfig <key>
         ```
 
-        API permission: PERMISSION_ALERTCONFIG
+        API permission: PERMISSION_ALERTSCRIPTCONFIG
 tags:
   - name: AlertScriptConfig
 schemes:
@@ -410,8 +410,8 @@ definitions:
                 description: "url"
                 readOnly: True
                 type: string
-            user_ref:
-                description: "Uuid of last editor user. It is a reference to an object of type User. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+            user_id:
+                description: "Uuid of last editor user. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             uuid:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
