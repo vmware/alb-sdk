@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.2.1'
+    version: '31.3.1'
     title: Avi AvailabilityZone Object API
     contact:
         name: Avi Networks Inc.
@@ -500,6 +500,11 @@ definitions:
                 type: array
                 items:
                     type: string
+            vsphere_zones:
+                description: "VSphere Zone associated with the AZ. Field introduced in 31.3.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/VSphereZone'
     AvailabilityZoneApiResponse:
         type: object
         required:
@@ -559,3 +564,12 @@ definitions:
                 type: integer
                 default: 1
                 format: uint32
+    VSphereZone:
+        type: object
+        properties:
+            vcenter_ref:
+                description: "The UUID of the vCenter Server where the vSphere zone belongs. It is a reference to an object of type VCenterServer. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            zone_name:
+                description: "Name of the vSphere zone in vCenter. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string

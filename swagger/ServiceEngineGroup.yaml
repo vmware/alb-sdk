@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.2.1'
+    version: '31.3.1'
     title: Avi ServiceEngineGroup Object API
     contact:
         name: Avi Networks Inc.
@@ -1130,12 +1130,12 @@ definitions:
         type: object
         properties:
             limit:
-                description: "Maximum license service units allowed for consumption. -1 as Default is maximum value. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Maximum license service units allowed for consumption. -1 as Default is maximum value. Allowed values are -1-+65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 default: -1
                 format: int64
             reservation:
-                description: "Minimum license service units reserved for consumption. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Minimum license service units reserved for consumption. Allowed values are 0-65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
     RateLimiterProperties:
@@ -2079,7 +2079,7 @@ definitions:
                 type: integer
                 format: uint32
             se_kernel_rss:
-                description: "This knob enables kernel RSS. When enabled flowtable entry is added to every disp cpu. Should be used under supervision. Requires SE reboot. . Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "This knob enables kernel RSS. When enabled flowtable entry is added to every disp cpu. Should be used under supervision. Requires SE reboot. . Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             se_kni_burst_factor:
                 description: "This knob controls the resource availability and burst size used between SE datapath and KNI. This helps in minimising packet drops when there is higher KNI traffic (non-VIP traffic from and to Linux). The factor takes the following values      0-default.     1-doubles the burst size and KNI resources.     2-quadruples the burst size and KNI resources.    3-Increases the burst size and KNI resources by a factor of eight. Allowed values are 0-3. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
