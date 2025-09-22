@@ -39,6 +39,7 @@ type AviClient struct {
 	BotIPReputationTypeMapping      *BotIPReputationTypeMappingClient
 	BotMapping                      *BotMappingClient
 	CSRFPolicy                      *CSRFPolicyClient
+	CertJwtStore                    *CertJwtStoreClient
 	CertificateManagementProfile    *CertificateManagementProfileClient
 	Cloud                           *CloudClient
 	CloudConnectorUser              *CloudConnectorUserClient
@@ -97,6 +98,7 @@ type AviClient struct {
 	NetworkService                  *NetworkServiceClient
 	NsxtSegmentRuntime              *NsxtSegmentRuntimeClient
 	PKIprofile                      *PKIprofileClient
+	PasswordPolicy                  *PasswordPolicyClient
 	Pool                            *PoolClient
 	PoolGroup                       *PoolGroupClient
 	PoolGroupDeploymentPolicy       *PoolGroupDeploymentPolicyClient
@@ -215,6 +217,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.BotIPReputationTypeMapping = NewBotIPReputationTypeMappingClient(aviSession)
 	aviClient.BotMapping = NewBotMappingClient(aviSession)
 	aviClient.CSRFPolicy = NewCSRFPolicyClient(aviSession)
+	aviClient.CertJwtStore = NewCertJwtStoreClient(aviSession)
 	aviClient.CertificateManagementProfile = NewCertificateManagementProfileClient(aviSession)
 	aviClient.Cloud = NewCloudClient(aviSession)
 	aviClient.CloudConnectorUser = NewCloudConnectorUserClient(aviSession)
@@ -273,6 +276,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.NetworkService = NewNetworkServiceClient(aviSession)
 	aviClient.NsxtSegmentRuntime = NewNsxtSegmentRuntimeClient(aviSession)
 	aviClient.PKIprofile = NewPKIprofileClient(aviSession)
+	aviClient.PasswordPolicy = NewPasswordPolicyClient(aviSession)
 	aviClient.Pool = NewPoolClient(aviSession)
 	aviClient.PoolGroup = NewPoolGroupClient(aviSession)
 	aviClient.PoolGroupDeploymentPolicy = NewPoolGroupDeploymentPolicyClient(aviSession)

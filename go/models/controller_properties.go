@@ -132,6 +132,9 @@ type ControllerProperties struct {
 	// Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EnableResmgrLogCachePrint *bool `json:"enable_resmgr_log_cache_print,omitempty"`
 
+	// Stated time duration beyond which Event manager disregards files whose modified timestamp from current time is later. Allowed values are 1-1800. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	EventManagerFileModifiedTsFilter *uint32 `json:"event_manager_file_modified_ts_filter,omitempty"`
+
 	// Maximum number of goroutines for event manager process. Allowed values are 1-64. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EventManagerMaxGoroutines *uint32 `json:"event_manager_max_goroutines,omitempty"`
 
