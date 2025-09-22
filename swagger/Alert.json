@@ -1464,7 +1464,7 @@
                 }
             }
         },
-        "/upgradestatusinfo": {
+        "/systemreport": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -1556,7 +1556,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfoApiResponse"
+                            "$ref": "#/definitions/SystemReportApiResponse"
                         }
                     },
                     "401": {
@@ -1603,10 +1603,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusInfo object creation",
+                        "description": "SystemReport object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     }
                 ],
@@ -1619,7 +1619,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     "401": {
@@ -1628,7 +1628,7 @@
                 }
             }
         },
-        "/upgradestatusinfo/{uuid}": {
+        "/systemreport/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -1715,7 +1715,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     "401": {
@@ -1769,10 +1769,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusInfo object creation",
+                        "description": "SystemReport object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     {
@@ -1792,7 +1792,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     "401": {
@@ -1846,10 +1846,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusInfo object creation",
+                        "description": "SystemReport object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     {
@@ -1869,7 +1869,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/SystemReport"
                         }
                     },
                     "401": {
@@ -2428,7 +2428,7 @@
                 }
             }
         },
-        "/systemreport": {
+        "/upgradestatusinfo": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -2520,7 +2520,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReportApiResponse"
+                            "$ref": "#/definitions/UpgradeStatusInfoApiResponse"
                         }
                     },
                     "401": {
@@ -2567,10 +2567,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "SystemReport object creation",
+                        "description": "UpgradeStatusInfo object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     }
                 ],
@@ -2583,7 +2583,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -2592,7 +2592,7 @@
                 }
             }
         },
-        "/systemreport/{uuid}": {
+        "/upgradestatusinfo/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -2679,7 +2679,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -2733,10 +2733,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "SystemReport object creation",
+                        "description": "UpgradeStatusInfo object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     {
@@ -2756,7 +2756,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -2810,10 +2810,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "SystemReport object creation",
+                        "description": "UpgradeStatusInfo object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     {
@@ -2833,7 +2833,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/SystemReport"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
