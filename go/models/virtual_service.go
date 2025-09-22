@@ -27,6 +27,9 @@ type VirtualService struct {
 	// Specifies settings related to analytics. It is a reference to an object of type AnalyticsProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AnalyticsProfileRef *string `json:"analytics_profile_ref,omitempty"`
 
+	// Application Insights Configuration for the Virtual Service to learn application data. It is a reference to an object of type ApplicationInsightsPolicy. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ApplicationInsightsRef *string `json:"application_insights_ref,omitempty"`
+
 	// Enable application layer specific features for the Virtual Service. It is a reference to an object of type ApplicationProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition. Special default for Essentials edition is System-L4-Application.
 	ApplicationProfileRef *string `json:"application_profile_ref,omitempty"`
 
@@ -179,6 +182,9 @@ type VirtualService struct {
 	// The pool is an object that contains destination servers and related attributes such as load-balancing and persistence. It is a reference to an object of type Pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PoolRef *string `json:"pool_ref,omitempty"`
 
+	// Positive Security Configuration for the Virtual Service to generate rules from the application data. It is a reference to an object of type PositiveSecurityPolicy. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	PositiveSecurityRef *string `json:"positive_security_ref,omitempty"`
+
 	// Remove listening port if VirtualService is down. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RemoveListeningPortOnVsDown *bool `json:"remove_listening_port_on_vs_down,omitempty"`
 
@@ -285,9 +291,6 @@ type VirtualService struct {
 
 	// Specify if the Virtual Hosting VS is of type SNI or Enhanced. Enum options - VS_TYPE_VH_SNI, VS_TYPE_VH_ENHANCED. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- VS_TYPE_VH_SNI,VS_TYPE_VH_ENHANCED) edition.
 	VhType *string `json:"vh_type,omitempty"`
-
-	// List of Virtual Service IPs. While creating a 'Shared VS',please use vsvip_ref to point to the shared entities. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Vip []*Vip `json:"vip,omitempty"`
 
 	// Virtual Routing Context that the Virtual Service is bound to. This is used to provide the isolation of the set of networks the application is attached to. It is a reference to an object of type VrfContext. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VrfContextRef *string `json:"vrf_context_ref,omitempty"`

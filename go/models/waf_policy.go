@@ -27,7 +27,7 @@ type WafPolicy struct {
 	// Enable the functionality to bypass WAF for static file extensions. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	BypassStaticExtensions *bool `json:"bypass_static_extensions,omitempty"`
 
-	// Configure thresholds for confidence labels. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// [Deprecated] Configure thresholds for confidence labels. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConfidenceOverride *AppLearningConfidenceOverride `json:"confidence_override,omitempty"`
 
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -42,13 +42,13 @@ type WafPolicy struct {
 	//  Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Enable Application Learning for this WAF policy. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// [Deprecated] Enable Application Learning for this WAF policy. Field deprecated in 31.2.1. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableAppLearning *bool `json:"enable_app_learning,omitempty"`
 
-	// Enable Application Learning based rule updates on the WAF Profile. Rules will be programmed in dedicated WAF learning group. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// [Deprecated] Enable Application Learning based rule updates on the WAF Profile.Rules will be programmed in dedicated WAF learning group. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableAutoRuleUpdates *bool `json:"enable_auto_rule_updates,omitempty"`
 
-	// Enable dynamic regex generation for positive security model rules. This is an experimental feature and shouldn't be used in production. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// [Deprecated] Enable dynamic regex generation for positive security model rules. This is an experimental feature and shouldn't be used in production. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableRegexLearning *bool `json:"enable_regex_learning,omitempty"`
 
 	// If this is set, WAF will let requests be streamed to the backend servers. If not set, requests and responses will be buffered up to the configured maximum values. It can only be set if the WafPolicy is not set to enforcement mode. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
@@ -63,13 +63,13 @@ type WafPolicy struct {
 	// Geo Location Mapping Database used by this WafPolicy. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	GeoDbRef *string `json:"geo_db_ref,omitempty"`
 
-	// Parameters for tuning Application learning. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// [Deprecated] Parameters for tuning Application learning. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LearningParams *AppLearningParams `json:"learning_params,omitempty"`
 
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
-	// Minimum confidence label required for auto rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// [Deprecated] Minimum confidence label required for auto rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MinConfidence *string `json:"min_confidence,omitempty"`
 
 	// WAF Policy mode. This can be detection or enforcement. It can be overwritten by rules if allow_mode_delegation is set. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

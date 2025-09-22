@@ -24,6 +24,8 @@ type AviClient struct {
 	AlertSyslogConfig               *AlertSyslogConfigClient
 	AnalyticsProfile                *AnalyticsProfileClient
 	Application                     *ApplicationClient
+	ApplicationInsightsPolicy       *ApplicationInsightsPolicyClient
+	ApplicationInsightsState        *ApplicationInsightsStateClient
 	ApplicationPersistenceProfile   *ApplicationPersistenceProfileClient
 	ApplicationProfile              *ApplicationProfileClient
 	AuthMappingProfile              *AuthMappingProfileClient
@@ -100,9 +102,12 @@ type AviClient struct {
 	PoolGroupDeploymentPolicy       *PoolGroupDeploymentPolicyClient
 	PoolGroupInventory              *PoolGroupInventoryClient
 	PoolInventory                   *PoolInventoryClient
+	PositiveSecurityPolicy          *PositiveSecurityPolicyClient
 	PriorityLabels                  *PriorityLabelsClient
 	ProtocolParser                  *ProtocolParserClient
 	RateLimitConfiguration          *RateLimitConfigurationClient
+	Report                          *ReportClient
+	ReportProfile                   *ReportProfileClient
 	RetentionPolicy                 *RetentionPolicyClient
 	Role                            *RoleClient
 	SCPoolServerStateInfo           *SCPoolServerStateInfoClient
@@ -195,6 +200,8 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.AlertSyslogConfig = NewAlertSyslogConfigClient(aviSession)
 	aviClient.AnalyticsProfile = NewAnalyticsProfileClient(aviSession)
 	aviClient.Application = NewApplicationClient(aviSession)
+	aviClient.ApplicationInsightsPolicy = NewApplicationInsightsPolicyClient(aviSession)
+	aviClient.ApplicationInsightsState = NewApplicationInsightsStateClient(aviSession)
 	aviClient.ApplicationPersistenceProfile = NewApplicationPersistenceProfileClient(aviSession)
 	aviClient.ApplicationProfile = NewApplicationProfileClient(aviSession)
 	aviClient.AuthMappingProfile = NewAuthMappingProfileClient(aviSession)
@@ -271,9 +278,12 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.PoolGroupDeploymentPolicy = NewPoolGroupDeploymentPolicyClient(aviSession)
 	aviClient.PoolGroupInventory = NewPoolGroupInventoryClient(aviSession)
 	aviClient.PoolInventory = NewPoolInventoryClient(aviSession)
+	aviClient.PositiveSecurityPolicy = NewPositiveSecurityPolicyClient(aviSession)
 	aviClient.PriorityLabels = NewPriorityLabelsClient(aviSession)
 	aviClient.ProtocolParser = NewProtocolParserClient(aviSession)
 	aviClient.RateLimitConfiguration = NewRateLimitConfigurationClient(aviSession)
+	aviClient.Report = NewReportClient(aviSession)
+	aviClient.ReportProfile = NewReportProfileClient(aviSession)
 	aviClient.RetentionPolicy = NewRetentionPolicyClient(aviSession)
 	aviClient.Role = NewRoleClient(aviSession)
 	aviClient.SCPoolServerStateInfo = NewSCPoolServerStateInfoClient(aviSession)

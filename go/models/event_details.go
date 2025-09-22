@@ -704,6 +704,9 @@ type EventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterNetworkLimit *VinfraVcenterNetworkLimit `json:"vcenter_network_limit,omitempty"`
 
+	// Details of non DRS clusters in vCenter. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	VcenterNonDrsClusterDetails *VcenterNonDrsClusterDetails `json:"vcenter_non_drs_cluster_details,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterObjDeleteDetails *VinfraVcenterObjDeleteDetails `json:"vcenter_obj_delete_details,omitempty"`
 

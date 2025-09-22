@@ -134,6 +134,15 @@ type VserverL7MetricsObj struct {
 	// Average SSL Sessions using Elliptic Curve DSA (ECDSA) certificates. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgSslAuthEcdsa *float64 `json:"avg_ssl_auth_ecdsa,omitempty"`
 
+	// Average SSL Sessions using mldsa44 certificate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AvgSslAuthMldsa44 *float64 `json:"avg_ssl_auth_mldsa44,omitempty"`
+
+	// Average SSL Sessions using mldsa65 certificate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AvgSslAuthMldsa65 *float64 `json:"avg_ssl_auth_mldsa65,omitempty"`
+
+	// Average SSL Sessions using mldsa87 certificate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AvgSslAuthMldsa87 *float64 `json:"avg_ssl_auth_mldsa87,omitempty"`
+
 	// Average SSL Sessions using RSA certificate. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgSslAuthRsa *float64 `json:"avg_ssl_auth_rsa,omitempty"`
 
