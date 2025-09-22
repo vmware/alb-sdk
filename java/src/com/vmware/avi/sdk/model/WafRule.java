@@ -174,7 +174,7 @@ public class WafRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Waf rule mode.
-     * This can be detection or enforcement.
+     * This can be either detection, enforcement or evaluation.
      * If this is not set, the policy mode is used.
      * This only takes effect if the policy allows delegation.
      * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.
@@ -190,7 +190,7 @@ public class WafRule  {
     /**
      * This is the setter method to the attribute.
      * Waf rule mode.
-     * This can be detection or enforcement.
+     * This can be either detection, enforcement or evaluation.
      * If this is not set, the policy mode is used.
      * This only takes effect if the policy allows delegation.
      * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.

@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The SiteInfo is a POJO class extends AviRestResource that used for creating
- * SiteInfo.
+ * The ReportParameter is a POJO class extends AviRestResource that used for creating
+ * ReportParameter.
  *
  * @version 1.0
  * @since 
@@ -20,59 +20,61 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class SiteInfo  {
-    @JsonProperty("cluster_id")
-    private String clusterId;
+public class ReportParameter  {
+    @JsonProperty("name")
+    private String name;
 
-    @JsonProperty("site_name")
-    private String siteName;
+    @JsonProperty("value")
+    private String value;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Cluster_uuid of a member configured in gslb federation.
+     * The name of the parameter.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return clusterId
+     * @return name
      */
-    public String getClusterId() {
-        return clusterId;
+    public String getName() {
+        return name;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Cluster_uuid of a member configured in gslb federation.
+     * The name of the parameter.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param clusterId set the clusterId.
+     * @param name set the name.
      */
-    public void setClusterId(String  clusterId) {
-        this.clusterId = clusterId;
+    public void setName(String  name) {
+        this.name = name;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Site name of a member configured in gslb federation.
+     * The value of the parameter.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return siteName
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return value
      */
-    public String getSiteName() {
-        return siteName;
+    public String getValue() {
+        return value;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Site name of a member configured in gslb federation.
+     * The value of the parameter.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param siteName set the siteName.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param value set the value.
      */
-    public void setSiteName(String  siteName) {
-        this.siteName = siteName;
+    public void setValue(String  value) {
+        this.value = value;
     }
 
 
@@ -84,17 +86,17 @@ public class SiteInfo  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      SiteInfo objSiteInfo = (SiteInfo) o;
-      return   Objects.equals(this.clusterId, objSiteInfo.clusterId)&&
-  Objects.equals(this.siteName, objSiteInfo.siteName);
+      ReportParameter objReportParameter = (ReportParameter) o;
+      return   Objects.equals(this.name, objReportParameter.name)&&
+  Objects.equals(this.value, objReportParameter.value);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class SiteInfo {\n");
-                  sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-                        sb.append("    siteName: ").append(toIndentedString(siteName)).append("\n");
+      sb.append("class ReportParameter {\n");
+                  sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    value: ").append(toIndentedString(value)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
