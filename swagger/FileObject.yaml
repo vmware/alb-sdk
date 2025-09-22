@@ -576,6 +576,9 @@ definitions:
                 format: int32
     FileObject:
         type: object
+        required:
+            -   name
+            -   type
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."

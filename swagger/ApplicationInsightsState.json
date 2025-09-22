@@ -8,7 +8,7 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi ApplicationInsightsState object api\n```\n- show applicationinsightsstate <key>\n```\n\nAPI permission: PERMISSION_APPLICATIONINSIGHTSSTATE\n"
+        "description": "Avi ApplicationInsightsState object api\n```\n- show applicationinsightsstate <key>\n```\n\nAPI permission: PERMISSION_APPLICATIONINSIGHTSPOLICY\n"
     },
     "tags": [
         {

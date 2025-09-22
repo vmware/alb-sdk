@@ -683,19 +683,7 @@ definitions:
                 default: "default"
     SePropertiesApiResponse:
         type: object
-        required:
-            - count
-            - results
-        properties:
-            count:
-                type: integer
-                format: int32
-            results:
-                type: array
-                items:
-                    $ref: "#/definitions/SeProperties"
-            next:
-                type: string
+        $ref: "#/definitions/SeProperties"
     SeRateLimiters:
         type: object
         properties:
