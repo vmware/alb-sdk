@@ -988,7 +988,7 @@ paths:
                     description: not found
 
 
-    /upgradestatusinfo:
+    /systemreport:
         get:
             consumes:
                 -   application/json
@@ -1052,7 +1052,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfoApiResponse"
+                        $ref: "#/definitions/SystemReportApiResponse"
                 401:
                     description: log in failed
         post:
@@ -1083,20 +1083,20 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: UpgradeStatusInfo object creation
+                    description: SystemReport object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/SystemReport"
             security:
                 - basicAuth: []
             responses:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/SystemReport"
                 401:
                     description: log in failed
-    /upgradestatusinfo/{uuid}:
+    /systemreport/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -1157,7 +1157,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/SystemReport"
                 401:
                     description: log in failed
         put:
@@ -1193,10 +1193,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: UpgradeStatusInfo object creation
+                    description: SystemReport object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/SystemReport"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1208,7 +1208,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/SystemReport"
                 401:
                     description: log in failed
         patch:
@@ -1244,10 +1244,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: UpgradeStatusInfo object creation
+                    description: SystemReport object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/SystemReport"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1259,7 +1259,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/SystemReport"
                 401:
                     description: log in failed
         delete:
@@ -1630,7 +1630,7 @@ paths:
                     description: not found
 
 
-    /systemreport:
+    /upgradestatusinfo:
         get:
             consumes:
                 -   application/json
@@ -1694,7 +1694,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/SystemReportApiResponse"
+                        $ref: "#/definitions/UpgradeStatusInfoApiResponse"
                 401:
                     description: log in failed
         post:
@@ -1725,20 +1725,20 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: SystemReport object creation
+                    description: UpgradeStatusInfo object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/SystemReport"
+                        $ref: "#/definitions/UpgradeStatusInfo"
             security:
                 - basicAuth: []
             responses:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/SystemReport"
+                        $ref: "#/definitions/UpgradeStatusInfo"
                 401:
                     description: log in failed
-    /systemreport/{uuid}:
+    /upgradestatusinfo/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -1799,7 +1799,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/SystemReport"
+                        $ref: "#/definitions/UpgradeStatusInfo"
                 401:
                     description: log in failed
         put:
@@ -1835,10 +1835,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: SystemReport object creation
+                    description: UpgradeStatusInfo object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/SystemReport"
+                        $ref: "#/definitions/UpgradeStatusInfo"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1850,7 +1850,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/SystemReport"
+                        $ref: "#/definitions/UpgradeStatusInfo"
                 401:
                     description: log in failed
         patch:
@@ -1886,10 +1886,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: SystemReport object creation
+                    description: UpgradeStatusInfo object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/SystemReport"
+                        $ref: "#/definitions/UpgradeStatusInfo"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1901,7 +1901,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/SystemReport"
+                        $ref: "#/definitions/UpgradeStatusInfo"
                 401:
                     description: log in failed
         delete:
