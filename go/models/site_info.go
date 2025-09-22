@@ -12,5 +12,6 @@ type SiteInfo struct {
 	ClusterID *string `json:"cluster_id,omitempty"`
 
 	// Site name of a member configured in gslb federation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Read Only: true
 	SiteName *string `json:"site_name,omitempty"`
 }

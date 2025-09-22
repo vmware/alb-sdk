@@ -27,9 +27,6 @@ type ApplicationInsightsPolicy struct {
 	// Enable Application Insights, formerly called learning for this virtual service. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EnableApplicationInsights *bool `json:"enable_application_insights,omitempty"`
 
-	// Enable Application Sampling. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	EnableApplicationSampling *bool `json:"enable_application_sampling,omitempty"`
-
 	// The name of the Application Insights Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
