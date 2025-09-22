@@ -8,6 +8,9 @@ package models
 // swagger:model EventInfo
 type EventInfo struct {
 
+	// Remote Site Watcher Agent ID. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AgentID *uint32 `json:"agent_id,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Msg []string `json:"msg,omitempty"`
 

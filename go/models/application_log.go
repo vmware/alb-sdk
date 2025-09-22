@@ -163,6 +163,9 @@ type ApplicationLog struct {
 	// Logs for the JWT Validation process. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	JwtLog *JwtLog `json:"jwt_log,omitempty"`
 
+	// Indicate if this request is used for learning. If it is not used, this field contains the reason for this decision. Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED, CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LearningStatus *string `json:"learning_status,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	LogID *uint32 `json:"log_id"`
@@ -181,9 +184,6 @@ type ApplicationLog struct {
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MicroserviceName *string `json:"microservice_name,omitempty"`
-
-	// SSl group negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	NamedGroup *string `json:"named_group,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NetworkSecurityPolicyRuleName *string `json:"network_security_policy_rule_name,omitempty"`
@@ -355,9 +355,6 @@ type ApplicationLog struct {
 	// If the HTTP Session module is enabled for the Virtual Service, this field will contain the session id created by the module. Later calls to the DataScript function avi.vs.set_session_id() overwrite the value of this field with the value supplied in the function call. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SessionID *string `json:"session_id,omitempty"`
 
-	// SSL signature algorithm negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	SignatureAlgorithm *string `json:"signature_algorithm,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Significance *string `json:"significance,omitempty"`
 
@@ -383,8 +380,14 @@ type ApplicationLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslCipher *string `json:"ssl_cipher,omitempty"`
 
+	// SSl group negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SslNamedGroup *string `json:"ssl_named_group,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslSessionID *string `json:"ssl_session_id,omitempty"`
+
+	// SSL signature algorithm negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SslSignatureAlgorithm *string `json:"ssl_signature_algorithm,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslVersion *string `json:"ssl_version,omitempty"`
