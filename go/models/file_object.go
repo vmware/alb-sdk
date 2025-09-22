@@ -49,7 +49,8 @@ type FileObject struct {
 	IsFederated *bool `json:"is_federated,omitempty"`
 
 	// Name of the file object. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Name *string `json:"name,omitempty"`
+	// Required: true
+	Name *string `json:"name"`
 
 	// Path to the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Path *string `json:"path,omitempty"`
@@ -67,7 +68,8 @@ type FileObject struct {
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// Type of the file. . Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA, IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- OTHER_FILE_TYPES), Basic (Allowed values- OTHER_FILE_TYPES) edition.
-	Type *string `json:"type,omitempty"`
+	// Required: true
+	Type *string `json:"type"`
 
 	// url
 	// Read Only: true

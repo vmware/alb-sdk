@@ -44,6 +44,9 @@ type EventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ApiserverRequestRatelimitEventInfo *RequestLimiterEventInfo `json:"apiserver_request_ratelimit_event_info,omitempty"`
 
+	// Application Insights Event Details. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AppInsightsDetails *AppInsightsDetails `json:"app_insights_details,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AppSignatureEventData *AppSignatureEventData `json:"app_signature_event_data,omitempty"`
 
