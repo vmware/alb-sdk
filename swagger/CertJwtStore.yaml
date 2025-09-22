@@ -6,21 +6,20 @@
 swagger: '2.0'
 info:
     version: '31.3.1'
-    title: Avi TrafficCloneProfile Object API
+    title: Avi CertJwtStore Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        Avi TrafficCloneProfile object api
+        Avi CertJwtStore object api
         ```
-        - configure trafficcloneprofile <key>
-        - show trafficcloneprofile <key>
+        - show certjwtstore <key>
         ```
 
-        API permission: PERMISSION_TRAFFICCLONEPROFILE
+        API permission: PERMISSION_EXEMPT
 tags:
-  - name: TrafficCloneProfile
+  - name: CertJwtStore
 schemes:
   - https
 securityDefinitions:
@@ -29,12 +28,12 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /trafficcloneprofile:
+    /certjwtstore:
         get:
             tags:
-                - TrafficCloneProfile
-            description: /trafficcloneprofile
-            operationId: GET /trafficcloneprofile
+                - CertJwtStore
+            description: /certjwtstore
+            operationId: GET /certjwtstore
             consumes:
                 -   application/json
             produces:
@@ -91,88 +90,20 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: cloud_uuid
-                    in: query
-                    description: Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_uuid=cloud-xyz.
-                    type: string
-                -   name: cloud_ref.name
-                    in: query
-                    description: Filter to get objects that belongs to a specific cloud usings its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
-                    type: string
-                -   name: cloud_ref.uuid
-                    in: query
-                    description: Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_ref.uuid=cloud_uuid.
-                    type: string
-                    required: false
-                -   name: name.contains
-                    in: query
-                    description: Filter to get objects with name that contains the parameter. This is a case sensitive search. Eg. name.contains=pool-.
-                    type: string
-                    required: false
-                -   name: name.icontains
-                    in: query
-                    description: Filter to get objects with name that contains the parameter. This is a case insensitive search. Eg. name.icontains=pool-.
-                    type: string
-                    required: false
-                -   name: name.in
-                    in: query
-                    description: Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. name.in=pool-1,pool-12.
-                    type: string
-                    required: false
-                -   name: uuid.in
-                    in: query
-                    description: Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. uuid.in=<uuid-1>,<uuid-2>.
-                    type: string
-                    required: false
-                -   name: search
-                    in: query
-                    description: Filter to get objects that contains the search string as value for any of its fields. Eg. search=LEAST_CONN. The search filter can also be used to search under a specific field. This is achieved by sending the parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
-                    type: string
-                    required: false
-                -   name: isearch
-                    in: query
-                    description: Filter to get objects that contains case insensitive search string. Eg. isearch=(name,Vs-Pool-).
-                    type: string
-                    required: false
-                -   name: limit_by
-                    in: query
-                    description: Filter to limit the number of objects in the response data. Eg. limit_by=3.
-                    type: string
-                    required: false
-                -   name: exclude
-                    in: query
-                    description: Filter to exclude the uuid(s) contained in the parameter. Eg. uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
-                    type: string
-                    required: false
-                -   name: sort
-                    in: query
-                    description: Parameter to sort the results with respect to a field. Eg. sort=name.
-                    type: string
-                    required: false
-                -   name: page
-                    in: query
-                    description: Parameter to specify the desired page number. The page starts from 1 and default is 1.
-                    type: string
-                    required: false
-                -   name: page_size
-                    in: query
-                    description: Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.
-                    type: string
-                    required: false
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/TrafficCloneProfileApiResponse"
+                        $ref: "#/definitions/CertJwtStoreApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - TrafficCloneProfile
-            description: /trafficcloneprofile
-            operationId: POST /trafficcloneprofile
+                - CertJwtStore
+            description: /certjwtstore
+            operationId: POST /certjwtstore
             consumes:
                 -   application/json
             produces:
@@ -200,25 +131,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: TrafficCloneProfile object creation
+                    description: CertJwtStore object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/TrafficCloneProfile"
+                        $ref: "#/definitions/CertJwtStore"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/TrafficCloneProfile"
+                        $ref: "#/definitions/CertJwtStore"
                 "401":
                     description: log in failed
-    /trafficcloneprofile/{uuid}:
+    /certjwtstore/{uuid}:
         get:
             tags:
-                - TrafficCloneProfile
-            description: /trafficcloneprofile/{uuid}/{uuid}
-            operationId: GET /trafficcloneprofile/{uuid}
+                - CertJwtStore
+            description: /certjwtstore/{uuid}/{uuid}
+            operationId: GET /certjwtstore/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -278,16 +209,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/TrafficCloneProfile"
+                        $ref: "#/definitions/CertJwtStore"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - TrafficCloneProfile
-            description: /trafficcloneprofile/{uuid}/{uuid}
-            operationId: PUT /trafficcloneprofile/{uuid}
+                - CertJwtStore
+            description: /certjwtstore/{uuid}/{uuid}
+            operationId: PUT /certjwtstore/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -320,10 +251,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: TrafficCloneProfile object creation
+                    description: CertJwtStore object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/TrafficCloneProfile"
+                        $ref: "#/definitions/CertJwtStore"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -335,16 +266,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/TrafficCloneProfile"
+                        $ref: "#/definitions/CertJwtStore"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - TrafficCloneProfile
-            description: /trafficcloneprofile/{uuid}/{uuid}
-            operationId: PATCH /trafficcloneprofile/{uuid}
+                - CertJwtStore
+            description: /certjwtstore/{uuid}/{uuid}
+            operationId: PATCH /certjwtstore/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -377,10 +308,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: TrafficCloneProfile object creation
+                    description: CertJwtStore object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/TrafficCloneProfile"
+                        $ref: "#/definitions/CertJwtStore"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -392,16 +323,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/TrafficCloneProfile"
+                        $ref: "#/definitions/CertJwtStore"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - TrafficCloneProfile
-            description: /trafficcloneprofile/{uuid}/{uuid}
-            operationId: DELETE /trafficcloneprofile/{uuid}
+                - CertJwtStore
+            description: /certjwtstore/{uuid}/{uuid}
+            operationId: DELETE /certjwtstore/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -449,123 +380,41 @@ paths:
 
 
 definitions:
-    CloneServer:
-        type: object
-        properties:
-            ip_address:
-                description: "IP Address of the Clone Server. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/IpAddr'
-            mac:
-                description: "MAC Address of the Clone Server. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            network_ref:
-                description: "Network to clone the traffic to. It is a reference to an object of type Network. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            subnet:
-                description: "Subnet of the network to clone the traffic to. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/IpAddrPrefix'
-    ConfigPbAttributes:
-        type: object
-        properties:
-            created_by:
-                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            version:
-                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
-    IpAddr:
+    CertJwtStore:
         type: object
         required:
-            -   addr
-            -   type
-        properties:
-            addr:
-                description: "IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            type:
-                description: " Enum options - V4, DNS, V6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-    IpAddrPrefix:
-        type: object
-        required:
-            -   ip_addr
-            -   mask
-        properties:
-            ip_addr:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/IpAddr'
-            mask:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: int32
-    KeyValue:
-        type: object
-        required:
-            -   key
-        properties:
-            key:
-                description: "Key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            value:
-                description: "Value. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-    RoleFilterMatchLabel:
-        type: object
-        required:
-            -   key
-        properties:
-            key:
-                description: "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: string
-            values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
-    TrafficCloneProfile:
-        type: object
-        required:
-            -   name
+            -   jwt
+            -   kid
+            -   last_rotated_at
+            -   public_key_algorithm
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
-            clone_servers:
-                description: " Field introduced in 17.1.1. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/CloneServer'
-            cloud_ref:
-                description: " It is a reference to an object of type Cloud. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
-            markers:
-                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/RoleFilterMatchLabel'
-            name:
-                description: "Name for the Traffic Clone Profile. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+            jwt:
+                description: "JWT containing current portal certificate along with the full certificate bundle chain, signed by the private key of previous portal certificate. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
-            preserve_client_ip:
-                description: "Specifies if client IP needs to be preserved to clone destination. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: boolean
-            tenant_ref:
-                description: " It is a reference to an object of type Tenant. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+            kid:
+                description: "SHA256 thumbprint of the previous old portal certificate. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            last_rotated_at:
+                description: "Timestamp of certificate rotation. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/TimeStamp'
+            public_key_algorithm:
+                description: "Public key algorithm. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the Traffic Clone Profile. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID of JWT. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
-    TrafficCloneProfileApiResponse:
+    CertJwtStoreApiResponse:
         type: object
         required:
             - count
@@ -577,6 +426,31 @@ definitions:
             results:
                 type: array
                 items:
-                    $ref: "#/definitions/TrafficCloneProfile"
+                    $ref: "#/definitions/CertJwtStore"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object
+        properties:
+            created_by:
+                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            version:
+                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1
+                format: uint32
+    TimeStamp:
+        type: object
+        required:
+            -   secs
+            -   usecs
+        properties:
+            secs:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int64
+            usecs:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int64

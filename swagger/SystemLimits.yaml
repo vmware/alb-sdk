@@ -399,6 +399,9 @@ definitions:
     ConfigPbAttributes:
         type: object
         properties:
+            created_by:
+                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
             version:
                 description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
@@ -542,10 +545,6 @@ definitions:
             flavor:
                 description: "Controller flavor for this sizing limit. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            num_application_insights_virtualservices:
-                description: "Maximum number of virtualservices configured with WAF. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                format: int32
             num_clouds:
                 description: "Maximum number of clouds. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
@@ -556,10 +555,6 @@ definitions:
                 format: int32
             num_pool_rt_metrics:
                 description: "Maximum number of pools with realtime metrics enabled. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                format: int32
-            num_positive_security_virtualservices:
-                description: "Maximum number of virtualservices configured with WAF. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_se_rt_metrics:
@@ -580,6 +575,14 @@ definitions:
                 format: int32
             num_virtualservices:
                 description: "Maximum number of virtualservices. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_virtualservices_application_insights:
+                description: "Maximum number of virtualservices configured with Application Insights. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_virtualservices_positive_security:
+                description: "Maximum number of virtualservices configured with Positive Security Policy. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_virtualservices_rt_metrics:
