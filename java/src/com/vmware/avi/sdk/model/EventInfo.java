@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class EventInfo extends AviRestResource  {
+    @JsonProperty("agent_id")
+    private Integer agentId;
+
     @JsonProperty("msg")
     private List<String> msg;
 
@@ -34,6 +37,30 @@ public class EventInfo extends AviRestResource  {
     private String uuid;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Remote site watcher agent id.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return agentId
+     */
+    public Integer getAgentId() {
+        return agentId;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Remote site watcher agent id.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param agentId set the agentId.
+     */
+    public void setAgentId(Integer  agentId) {
+        this.agentId = agentId;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -145,14 +172,16 @@ public class EventInfo extends AviRestResource  {
       return   Objects.equals(this.uuid, objEventInfo.uuid)&&
   Objects.equals(this.name, objEventInfo.name)&&
   Objects.equals(this.msg, objEventInfo.msg)&&
-  Objects.equals(this.timestamp, objEventInfo.timestamp);
+  Objects.equals(this.timestamp, objEventInfo.timestamp)&&
+  Objects.equals(this.agentId, objEventInfo.agentId);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class EventInfo {\n");
-                  sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
+                  sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
+                        sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
                         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
