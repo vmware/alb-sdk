@@ -1134,6 +1134,11 @@ definitions:
             enable_resmgr_log_cache_print:
                 description: "Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
+            event_manager_file_modified_ts_filter:
+                description: "Stated time duration beyond which Event manager disregards files whose modified timestamp from current time is later. Allowed values are 1-1800. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                default: 180
+                format: uint32
             event_manager_max_goroutines:
                 description: "Maximum number of goroutines for event manager process. Allowed values are 1-64. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
@@ -1529,19 +1534,7 @@ definitions:
                 format: uint32
     ControllerPropertiesApiResponse:
         type: object
-        required:
-            - count
-            - results
-        properties:
-            count:
-                type: integer
-                format: int32
-            results:
-                type: array
-                items:
-                    $ref: "#/definitions/ControllerProperties"
-            next:
-                type: string
+        $ref: "#/definitions/ControllerProperties"
     FalsePositiveLearningConfig:
         type: object
         properties:

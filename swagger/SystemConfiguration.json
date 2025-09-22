@@ -1295,25 +1295,7 @@
         },
         "SystemConfigurationApiResponse": {
             "type": "object",
-            "required": [
-                "count",
-                "results"
-            ],
-            "properties": {
-                "count": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "results": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/SystemConfiguration"
-                    }
-                },
-                "next": {
-                    "type": "string"
-                }
-            }
+            "$ref": "#/definitions/SystemConfiguration"
         },
         "SysTestEmailParams": {
             "type": "object",

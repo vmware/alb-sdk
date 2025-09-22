@@ -573,6 +573,18 @@
                     "description": "When true, the WAF includes argument-less URIs in its learning process. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
+                "max_params": {
+                    "description": "Maximum number of parameters per URI programmed for Application Insights. Allowed values are 10-1000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 100,
+                    "format": "uint32"
+                },
+                "max_uris": {
+                    "description": "Maximum number of URIs for Application Insights. Allowed values are 10-10000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 500,
+                    "format": "uint32"
+                },
                 "trusted_ipgroup_ref": {
                     "description": "Limits Application Learning from client IPs within the configured IP Address Group. It is a reference to an object of type IpAddrGroup. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
@@ -608,10 +620,6 @@
                 },
                 "enable_application_insights": {
                     "description": "Enable Application Insights, formerly called learning for this virtual service. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
-                "enable_application_sampling": {
-                    "description": "Enable Application Sampling. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "name": {

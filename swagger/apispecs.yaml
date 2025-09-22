@@ -377,7 +377,7 @@ info:
     \ object api\n```\n- configure positivesecuritypolicy <key>\n- show positivesecuritypolicy\
     \ <key>\n```\n\nAPI permission: PERMISSION_POSITIVESECURITYPOLICY\nAvi ApplicationInsightsState\
     \ object api\n```\n- show applicationinsightsstate <key>\n```\n\nAPI permission:\
-    \ PERMISSION_APPLICATIONINSIGHTSSTATE\nAvi HealthMonitor object api\n```\n- configure\
+    \ PERMISSION_APPLICATIONINSIGHTSPOLICY\nAvi HealthMonitor object api\n```\n- configure\
     \ healthmonitor <key>\n- show healthmonitor <key>\n```\n\nExamples\n- **healthmonitor_example**:\
     \ To create a basic HTTP health monitor that uses GET / to determine if the service\
     \ is alive\n  ```json\n    {'name': 'http-hmon', 'send_interval': 10, 'receive_timeout':\
@@ -2806,7 +2806,7 @@ tags:
     ```
 
 
-    API permission: PERMISSION_APPLICATIONINSIGHTSSTATE
+    API permission: PERMISSION_APPLICATIONINSIGHTSPOLICY
 
     Contact Info: https://support.broadcom.com<br>Version: 31.2.1<br>BasePath: /api<br>'
 - name: HealthMonitor
@@ -32881,403 +32881,6 @@ paths:
           description: log in failed
         '404':
           description: object not found
-  /gslbhsmruntime:
-    get:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: GET /gslbhsmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: POST /gslbhsmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbHSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbHSMRuntime'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-  /gslbhsmruntime/{uuid}:
-    get:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: GET /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbHSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbHSMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbHSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbHSMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    delete:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
-        '404':
-          description: object not found
   /gslbcrmruntime:
     get:
       tags:
@@ -34022,6 +33625,403 @@ paths:
       - GslbSMRuntime
       description: /gslbsmruntime/{uuid}/{uuid}
       operationId: DELETE /gslbsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: object not found
+  /gslbhsmruntime:
+    get:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: GET /gslbhsmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: POST /gslbhsmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbHSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbHSMRuntime'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+  /gslbhsmruntime/{uuid}:
+    get:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: GET /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbHSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbHSMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbHSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbHSMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -95053,10 +95053,10 @@ definitions:
           with Cloud Services edition.'
         type: string
       mode:
-        description: WAF Policy mode. This can be detection or enforcement. It can
-          be overwritten by rules if allow_mode_delegation is set. Enum options -
-          WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION. Field
-          introduced in 17.2.1. Allowed with any value in Enterprise, Essentials,
+        description: WAF Policy mode. This can be either detection, enforcement or
+          evaluation. It can be overwritten by rules if allow_mode_delegation is set.
+          Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.
+          Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
         default: WAF_MODE_DETECTION_ONLY
@@ -95297,9 +95297,9 @@ definitions:
           Basic, Enterprise with Cloud Services edition.
         type: boolean
       mode:
-        description: WAF Rule mode. This can be detection or enforcement. If this
-          is not set, the Policy mode is used. This only takes effect if the policy
-          allows delegation. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT,
+        description: WAF Rule mode. This can be either detection, enforcement or evaluation.
+          If this is not set, the Policy mode is used. This only takes effect if the
+          policy allows delegation. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT,
           WAF_MODE_EVALUATION. Field introduced in 18.1.5, 18.2.1. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
@@ -95964,6 +95964,7 @@ definitions:
         description: Site name of a member configured in gslb federation. Field introduced
           in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
+        readOnly: true
         type: string
   CloudRuntime:
     type: object
@@ -98605,52 +98606,53 @@ definitions:
           APPSIGNATURE_SYNC_SUCCESS, APPSIGNATURE_SYNC_FAILURE, IPV6_REPUTATION_DB_SYNC_SUCCESS,
           IPV6_REPUTATION_DB_SYNC_FAILURE, PSM_PROGRAM_FAILURE, PSM_MAX_PARAM_EVENT,
           PSM_MAX_URI_EVENT, SEC_MGR_DATA_ERROR_EVENT, UACACHE_PULSE_CONN_FAILED_EVENT,
-          ALBSERVICES_CONTROLLER_REGISTERED, ALBSERVICES_SUPPORT_CASE_CREATED, ALBSERVICES_SUPPORT_CASE_UPDATED,
-          ALBSERVICES_SUPPORT_CASE_FILE_ATTACHMENT_TRIGGERED, ALBSERVICES_SUPPORT_CASE_FILE_ATTACHMENT_SUCCESS,
-          ALBSERVICES_SUPPORT_CASE_FILE_ATTACHMENT_FAILURE, ALBSERVICES_FILE_DOWNLOAD_TRIGGERED,
-          ALBSERVICES_FILE_DOWNLOAD_SUCCESS, ALBSERVICES_FILE_DOWNLOAD_FAILURE, NSXT_ACCESS_SUCCESS,
-          VCENTER_ACCESS_SUCCESS, NSXT_ACCESS_FAIL, VCENTER_ACCESS_FAIL, NSXT_IMAGE_UPLOAD_FAILURE,
-          NSXT_IMAGE_UPLOAD_SUCCESS, NSXT_IMAGE_DELETE_FAILURE, NSXT_IMAGE_DELETE_SUCCESS,
-          VCENTER_VSPHERE_HA_NOT_CONFIGURED, NSXT_SI_SERVICE_CREATE_UPDATE_SUCCESS,
-          NSXT_SI_SERVICE_CREATE_UPDATE_FAILURE, NSXT_SI_SERVICE_DELETE_SUCCESS, NSXT_SI_SERVICE_DELETE_FAILURE,
-          NSXT_SI_VIRTUALENDPOINT_CREATE_UPDATE_SUCCESS, NSXT_SI_VIRTUALENDPOINT_CREATE_UPDATE_FAILURE,
-          NSXT_SI_VIRTUALENDPOINT_DELETE_SUCCESS, NSXT_SI_VIRTUALENDPOINT_DELETE_FAILURE,
-          NSXT_SI_REDIRECTPOLICY_CREATE_UPDATE_SUCCESS, NSXT_SI_REDIRECTPOLICY_CREATE_UPDATE_FAILURE,
-          NSXT_SI_REDIRECTPOLICY_DELETE_SUCCESS, NSXT_SI_REDIRECTPOLICY_DELETE_FAILURE,
-          NSXT_SI_REDIRECTRULE_CREATE_UPDATE_SUCCESS, NSXT_SI_REDIRECTRULE_CREATE_UPDATE_FAILURE,
-          NSXT_SI_REDIRECTRULE_DELETE_SUCCESS, NSXT_SI_REDIRECTRULE_DELETE_FAILURE,
-          VCENTER_IMAGE_UPLOAD_FAILURE, VCENTER_IMAGE_UPLOAD_SUCCESS, VCENTER_IMAGE_DELETE_FAILURE,
-          VCENTER_IMAGE_DELETE_SUCCESS, NSXT_INVALID_T1_SEG, NSXT_STREAMAGENT_CONNECT,
-          NSXT_STREAMAGENT_DISCONNECT, NSXT_DFW_GROUP_UPDATE_SUCCESS, NSXT_DFW_GROUP_UPDATE_FAILURE,
-          NSXT_DFW_GROUP_DELETE_FAILURE, NSXT_DFW_GROUP_DELETE_SUCCESS, NSXT_DFW_SERVICE_UPDATE_SUCCESS,
-          NSXT_DFW_SERVICE_UPDATE_FAILED, NSXT_DFW_SERVICE_DELETE_SUCCESS, NSXT_DFW_SERVICE_DELETE_FAILED,
-          NSXT_DFW_TAG_SEGMENT_PORT_SUCCESS, NSXT_DFW_TAG_SEGMENT_PORT_FAILED, NSXT_DFW_TAG_VM_SUCCESS,
-          NSXT_DFW_TAG_VM_FAILED, UPGRADE_CONTROLLER_STARTED, UPGRADE_SE_GROUP_STARTED,
-          RESUME_SE_GROUP_STARTED, PATCH_CONTROLLER_STARTED, PATCH_SE_GROUP_STARTED,
-          ROLLBACK_CONTROLLER_STARTED, ROLLBACK_SE_GROUP_STARTED, ROLLBACKPATCH_CONTROLLER_STARTED,
-          ROLLBACKPATCH_SE_GROUP_STARTED, UPGRADE_CONTROLLER_COMPLETE, UPGRADE_SE_GROUP_COMPLETE,
-          PATCH_CONTROLLER_COMPLETE, PATCH_SE_GROUP_COMPLETE, ROLLBACK_CONTROLLER_COMPLETE,
-          ROLLBACK_SE_GROUP_COMPLETE, ROLLBACKPATCH_CONTROLLER_COMPLETE, ROLLBACKPATCH_SE_GROUP_COMPLETE,
-          UPGRADE_CONTROLLER_ABORTED, PATCH_CONTROLLER_ABORTED, UPGRADE_SE_GROUP_SUSPENDED,
-          PATCH_SE_GROUP_SUSPENDED, ROLLBACK_SE_GROUP_SUSPENDED, ROLLBACKPATCH_SE_GROUP_SUSPENDED,
-          UPGRADE_REQUEST, LICENSE_TRANSACTION, LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE,
-          LICENSE_TIER_SWITCH, CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION,
-          CENTRAL_LICENSE_REFRESH_SUCCESS, CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED,
-          ROLLBACKPATCH_CONTROLLER_ABORTED, UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED,
-          UPGRADE_DRYRUN_ABORTED, AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT,
-          CONTROLLER_DB_ERROR, AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR,
-          DNS_VS_STATUS, CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED,
-          POSTGRES_REPLICATION_FAILED, SAML_METADATA_UPDATE_FAILED, RESTORE_CONTROLLER_STARTED,
-          RESTORE_CONTROLLER_ABORTED, RESTORE_CONTROLLER_COMPLETED, LOG_FREQUENT_DISK_CLEANUP,
-          REQUEST_QUEUE_FULL, REQUEST_QUEUE_RECOVERING, POSTGRES_MAX_CONN_LIMIT_BREACHED,
-          POSTGRES_CONN_RECOVERY, REQUEST_RATELIMIT, SYSTEM_REPORT_GENERATION_STARTED,
-          SYSTEM_REPORT_GENERATION_COMPLETED, SYSTEM_REPORT_GENERATION_FAILED, SYSTEM_REPORT_DELETED,
-          CRL_ENDPOINT_EXPIRED, CRL_ENDPOINT_EXPIRING_SOON, CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE,
-          UBER_EVENT_ERR_TEMPLATE, UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED,
-          SE_PROCESS_CRASHED, CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG,
-          SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG, SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.
+          APP_INSIGHTS_MAX_URI_EVENT, APP_INSIGHTS_MAX_PARAM_EVENT, ALBSERVICES_CONTROLLER_REGISTERED,
+          ALBSERVICES_SUPPORT_CASE_CREATED, ALBSERVICES_SUPPORT_CASE_UPDATED, ALBSERVICES_SUPPORT_CASE_FILE_ATTACHMENT_TRIGGERED,
+          ALBSERVICES_SUPPORT_CASE_FILE_ATTACHMENT_SUCCESS, ALBSERVICES_SUPPORT_CASE_FILE_ATTACHMENT_FAILURE,
+          ALBSERVICES_FILE_DOWNLOAD_TRIGGERED, ALBSERVICES_FILE_DOWNLOAD_SUCCESS,
+          ALBSERVICES_FILE_DOWNLOAD_FAILURE, NSXT_ACCESS_SUCCESS, VCENTER_ACCESS_SUCCESS,
+          NSXT_ACCESS_FAIL, VCENTER_ACCESS_FAIL, NSXT_IMAGE_UPLOAD_FAILURE, NSXT_IMAGE_UPLOAD_SUCCESS,
+          NSXT_IMAGE_DELETE_FAILURE, NSXT_IMAGE_DELETE_SUCCESS, VCENTER_VSPHERE_HA_NOT_CONFIGURED,
+          NSXT_SI_SERVICE_CREATE_UPDATE_SUCCESS, NSXT_SI_SERVICE_CREATE_UPDATE_FAILURE,
+          NSXT_SI_SERVICE_DELETE_SUCCESS, NSXT_SI_SERVICE_DELETE_FAILURE, NSXT_SI_VIRTUALENDPOINT_CREATE_UPDATE_SUCCESS,
+          NSXT_SI_VIRTUALENDPOINT_CREATE_UPDATE_FAILURE, NSXT_SI_VIRTUALENDPOINT_DELETE_SUCCESS,
+          NSXT_SI_VIRTUALENDPOINT_DELETE_FAILURE, NSXT_SI_REDIRECTPOLICY_CREATE_UPDATE_SUCCESS,
+          NSXT_SI_REDIRECTPOLICY_CREATE_UPDATE_FAILURE, NSXT_SI_REDIRECTPOLICY_DELETE_SUCCESS,
+          NSXT_SI_REDIRECTPOLICY_DELETE_FAILURE, NSXT_SI_REDIRECTRULE_CREATE_UPDATE_SUCCESS,
+          NSXT_SI_REDIRECTRULE_CREATE_UPDATE_FAILURE, NSXT_SI_REDIRECTRULE_DELETE_SUCCESS,
+          NSXT_SI_REDIRECTRULE_DELETE_FAILURE, VCENTER_IMAGE_UPLOAD_FAILURE, VCENTER_IMAGE_UPLOAD_SUCCESS,
+          VCENTER_IMAGE_DELETE_FAILURE, VCENTER_IMAGE_DELETE_SUCCESS, NSXT_INVALID_T1_SEG,
+          NSXT_STREAMAGENT_CONNECT, NSXT_STREAMAGENT_DISCONNECT, NSXT_DFW_GROUP_UPDATE_SUCCESS,
+          NSXT_DFW_GROUP_UPDATE_FAILURE, NSXT_DFW_GROUP_DELETE_FAILURE, NSXT_DFW_GROUP_DELETE_SUCCESS,
+          NSXT_DFW_SERVICE_UPDATE_SUCCESS, NSXT_DFW_SERVICE_UPDATE_FAILED, NSXT_DFW_SERVICE_DELETE_SUCCESS,
+          NSXT_DFW_SERVICE_DELETE_FAILED, NSXT_DFW_TAG_SEGMENT_PORT_SUCCESS, NSXT_DFW_TAG_SEGMENT_PORT_FAILED,
+          NSXT_DFW_TAG_VM_SUCCESS, NSXT_DFW_TAG_VM_FAILED, UPGRADE_CONTROLLER_STARTED,
+          UPGRADE_SE_GROUP_STARTED, RESUME_SE_GROUP_STARTED, PATCH_CONTROLLER_STARTED,
+          PATCH_SE_GROUP_STARTED, ROLLBACK_CONTROLLER_STARTED, ROLLBACK_SE_GROUP_STARTED,
+          ROLLBACKPATCH_CONTROLLER_STARTED, ROLLBACKPATCH_SE_GROUP_STARTED, UPGRADE_CONTROLLER_COMPLETE,
+          UPGRADE_SE_GROUP_COMPLETE, PATCH_CONTROLLER_COMPLETE, PATCH_SE_GROUP_COMPLETE,
+          ROLLBACK_CONTROLLER_COMPLETE, ROLLBACK_SE_GROUP_COMPLETE, ROLLBACKPATCH_CONTROLLER_COMPLETE,
+          ROLLBACKPATCH_SE_GROUP_COMPLETE, UPGRADE_CONTROLLER_ABORTED, PATCH_CONTROLLER_ABORTED,
+          UPGRADE_SE_GROUP_SUSPENDED, PATCH_SE_GROUP_SUSPENDED, ROLLBACK_SE_GROUP_SUSPENDED,
+          ROLLBACKPATCH_SE_GROUP_SUSPENDED, UPGRADE_REQUEST, LICENSE_TRANSACTION,
+          LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE, LICENSE_TIER_SWITCH,
+          CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION, CENTRAL_LICENSE_REFRESH_SUCCESS,
+          CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED, ROLLBACKPATCH_CONTROLLER_ABORTED,
+          UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED, UPGRADE_DRYRUN_ABORTED,
+          AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT, CONTROLLER_DB_ERROR,
+          AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR, DNS_VS_STATUS,
+          CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED, POSTGRES_REPLICATION_FAILED,
+          SAML_METADATA_UPDATE_FAILED, RESTORE_CONTROLLER_STARTED, RESTORE_CONTROLLER_ABORTED,
+          RESTORE_CONTROLLER_COMPLETED, LOG_FREQUENT_DISK_CLEANUP, REQUEST_QUEUE_FULL,
+          REQUEST_QUEUE_RECOVERING, POSTGRES_MAX_CONN_LIMIT_BREACHED, POSTGRES_CONN_RECOVERY,
+          REQUEST_RATELIMIT, SYSTEM_REPORT_GENERATION_STARTED, SYSTEM_REPORT_GENERATION_COMPLETED,
+          SYSTEM_REPORT_GENERATION_FAILED, SYSTEM_REPORT_DELETED, CRL_ENDPOINT_EXPIRED,
+          CRL_ENDPOINT_EXPIRING_SOON, CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE, UBER_EVENT_ERR_TEMPLATE,
+          UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED, SE_PROCESS_CRASHED,
+          CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG, SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG,
+          SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
         type: string
       not_cond:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -99853,6 +99855,19 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: string
+  AppInsightsDetails:
+    type: object
+    properties:
+      error:
+        description: Error details for the Application Insights Event. Field introduced
+          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
+      name:
+        description: Name of the application insights policy. Field introduced in
+          31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
   Application:
     type: object
     required:
@@ -99941,6 +99956,20 @@ definitions:
           process. Field introduced in 31.2.1. Allowed with any value in Enterprise,
           Enterprise with Cloud Services edition.
         type: boolean
+      max_params:
+        description: Maximum number of parameters per URI programmed for Application
+          Insights. Allowed values are 10-1000. Field introduced in 31.2.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: integer
+        default: 100
+        format: uint32
+      max_uris:
+        description: Maximum number of URIs for Application Insights. Allowed values
+          are 10-10000. Field introduced in 31.2.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: integer
+        default: 500
+        format: uint32
       trusted_ipgroup_ref:
         description: Limits Application Learning from client IPs within the configured
           IP Address Group. It is a reference to an object of type IpAddrGroup. Field
@@ -99981,10 +100010,6 @@ definitions:
         description: Enable Application Insights, formerly called learning for this
           virtual service. Field introduced in 31.2.1. Allowed with any value in Enterprise,
           Enterprise with Cloud Services edition.
-        type: boolean
-      enable_application_sampling:
-        description: Enable Application Sampling. Field introduced in 31.2.1. Allowed
-          with any value in Enterprise, Enterprise with Cloud Services edition.
         type: boolean
       name:
         description: The name of the Application Insights Configuration. Field introduced
@@ -108970,6 +108995,14 @@ definitions:
           for debugging purposes only. Field introduced in 20.1.6. Allowed with any
           value in Enterprise, Enterprise with Cloud Services edition.
         type: boolean
+      event_manager_file_modified_ts_filter:
+        description: Stated time duration beyond which Event manager disregards files
+          whose modified timestamp from current time is later. Allowed values are
+          1-1800. Field introduced in 31.2.1. Unit is SEC. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        type: integer
+        default: 180
+        format: uint32
       event_manager_max_goroutines:
         description: Maximum number of goroutines for event manager process. Allowed
           values are 1-64. Field introduced in 30.2.1. Allowed with any value in Enterprise,
@@ -109567,19 +109600,7 @@ definitions:
         format: uint32
   ControllerPropertiesApiResponse:
     type: object
-    required:
-    - count
-    - results
-    properties:
-      count:
-        type: integer
-        format: int32
-      results:
-        type: array
-        items:
-          $ref: '#/definitions/ControllerProperties'
-      next:
-        type: string
+    $ref: '#/definitions/ControllerProperties'
   ControllerSite:
     type: object
     required:
@@ -109694,12 +109715,6 @@ definitions:
           Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
-      num_application_insights_virtualservices:
-        description: Maximum number of virtualservices configured with WAF. Field
-          introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with
-          Cloud Services edition.
-        type: integer
-        format: int32
       num_clouds:
         description: Maximum number of clouds. Field introduced in 20.1.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
@@ -109715,12 +109730,6 @@ definitions:
       num_pool_rt_metrics:
         description: Maximum number of pools with realtime metrics enabled. Field
           introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with
-          Cloud Services edition.
-        type: integer
-        format: int32
-      num_positive_security_virtualservices:
-        description: Maximum number of virtualservices configured with WAF. Field
-          introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with
           Cloud Services edition.
         type: integer
         format: int32
@@ -109752,6 +109761,18 @@ definitions:
         description: Maximum number of virtualservices. Field introduced in 20.1.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
+        type: integer
+        format: int32
+      num_virtualservices_application_insights:
+        description: Maximum number of virtualservices configured with Application
+          Insights. Field introduced in 31.2.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: integer
+        format: int32
+      num_virtualservices_positive_security:
+        description: Maximum number of virtualservices configured with Positive Security
+          Policy. Field introduced in 31.2.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
         type: integer
         format: int32
       num_virtualservices_rt_metrics:
@@ -113629,6 +113650,10 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         $ref: '#/definitions/RequestLimiterEventInfo'
+      app_insights_details:
+        description: Application Insights Event Details. Field introduced in 31.2.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/AppInsightsDetails'
       app_signature_event_data:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -114841,52 +114866,53 @@ definitions:
           APPSIGNATURE_SYNC_SUCCESS, APPSIGNATURE_SYNC_FAILURE, IPV6_REPUTATION_DB_SYNC_SUCCESS,
           IPV6_REPUTATION_DB_SYNC_FAILURE, PSM_PROGRAM_FAILURE, PSM_MAX_PARAM_EVENT,
           PSM_MAX_URI_EVENT, SEC_MGR_DATA_ERROR_EVENT, UACACHE_PULSE_CONN_FAILED_EVENT,
-          ALBSERVICES_CONTROLLER_REGISTERED, ALBSERVICES_SUPPORT_CASE_CREATED, ALBSERVICES_SUPPORT_CASE_UPDATED,
-          ALBSERVICES_SUPPORT_CASE_FILE_ATTACHMENT_TRIGGERED, ALBSERVICES_SUPPORT_CASE_FILE_ATTACHMENT_SUCCESS,
-          ALBSERVICES_SUPPORT_CASE_FILE_ATTACHMENT_FAILURE, ALBSERVICES_FILE_DOWNLOAD_TRIGGERED,
-          ALBSERVICES_FILE_DOWNLOAD_SUCCESS, ALBSERVICES_FILE_DOWNLOAD_FAILURE, NSXT_ACCESS_SUCCESS,
-          VCENTER_ACCESS_SUCCESS, NSXT_ACCESS_FAIL, VCENTER_ACCESS_FAIL, NSXT_IMAGE_UPLOAD_FAILURE,
-          NSXT_IMAGE_UPLOAD_SUCCESS, NSXT_IMAGE_DELETE_FAILURE, NSXT_IMAGE_DELETE_SUCCESS,
-          VCENTER_VSPHERE_HA_NOT_CONFIGURED, NSXT_SI_SERVICE_CREATE_UPDATE_SUCCESS,
-          NSXT_SI_SERVICE_CREATE_UPDATE_FAILURE, NSXT_SI_SERVICE_DELETE_SUCCESS, NSXT_SI_SERVICE_DELETE_FAILURE,
-          NSXT_SI_VIRTUALENDPOINT_CREATE_UPDATE_SUCCESS, NSXT_SI_VIRTUALENDPOINT_CREATE_UPDATE_FAILURE,
-          NSXT_SI_VIRTUALENDPOINT_DELETE_SUCCESS, NSXT_SI_VIRTUALENDPOINT_DELETE_FAILURE,
-          NSXT_SI_REDIRECTPOLICY_CREATE_UPDATE_SUCCESS, NSXT_SI_REDIRECTPOLICY_CREATE_UPDATE_FAILURE,
-          NSXT_SI_REDIRECTPOLICY_DELETE_SUCCESS, NSXT_SI_REDIRECTPOLICY_DELETE_FAILURE,
-          NSXT_SI_REDIRECTRULE_CREATE_UPDATE_SUCCESS, NSXT_SI_REDIRECTRULE_CREATE_UPDATE_FAILURE,
-          NSXT_SI_REDIRECTRULE_DELETE_SUCCESS, NSXT_SI_REDIRECTRULE_DELETE_FAILURE,
-          VCENTER_IMAGE_UPLOAD_FAILURE, VCENTER_IMAGE_UPLOAD_SUCCESS, VCENTER_IMAGE_DELETE_FAILURE,
-          VCENTER_IMAGE_DELETE_SUCCESS, NSXT_INVALID_T1_SEG, NSXT_STREAMAGENT_CONNECT,
-          NSXT_STREAMAGENT_DISCONNECT, NSXT_DFW_GROUP_UPDATE_SUCCESS, NSXT_DFW_GROUP_UPDATE_FAILURE,
-          NSXT_DFW_GROUP_DELETE_FAILURE, NSXT_DFW_GROUP_DELETE_SUCCESS, NSXT_DFW_SERVICE_UPDATE_SUCCESS,
-          NSXT_DFW_SERVICE_UPDATE_FAILED, NSXT_DFW_SERVICE_DELETE_SUCCESS, NSXT_DFW_SERVICE_DELETE_FAILED,
-          NSXT_DFW_TAG_SEGMENT_PORT_SUCCESS, NSXT_DFW_TAG_SEGMENT_PORT_FAILED, NSXT_DFW_TAG_VM_SUCCESS,
-          NSXT_DFW_TAG_VM_FAILED, UPGRADE_CONTROLLER_STARTED, UPGRADE_SE_GROUP_STARTED,
-          RESUME_SE_GROUP_STARTED, PATCH_CONTROLLER_STARTED, PATCH_SE_GROUP_STARTED,
-          ROLLBACK_CONTROLLER_STARTED, ROLLBACK_SE_GROUP_STARTED, ROLLBACKPATCH_CONTROLLER_STARTED,
-          ROLLBACKPATCH_SE_GROUP_STARTED, UPGRADE_CONTROLLER_COMPLETE, UPGRADE_SE_GROUP_COMPLETE,
-          PATCH_CONTROLLER_COMPLETE, PATCH_SE_GROUP_COMPLETE, ROLLBACK_CONTROLLER_COMPLETE,
-          ROLLBACK_SE_GROUP_COMPLETE, ROLLBACKPATCH_CONTROLLER_COMPLETE, ROLLBACKPATCH_SE_GROUP_COMPLETE,
-          UPGRADE_CONTROLLER_ABORTED, PATCH_CONTROLLER_ABORTED, UPGRADE_SE_GROUP_SUSPENDED,
-          PATCH_SE_GROUP_SUSPENDED, ROLLBACK_SE_GROUP_SUSPENDED, ROLLBACKPATCH_SE_GROUP_SUSPENDED,
-          UPGRADE_REQUEST, LICENSE_TRANSACTION, LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE,
-          LICENSE_TIER_SWITCH, CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION,
-          CENTRAL_LICENSE_REFRESH_SUCCESS, CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED,
-          ROLLBACKPATCH_CONTROLLER_ABORTED, UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED,
-          UPGRADE_DRYRUN_ABORTED, AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT,
-          CONTROLLER_DB_ERROR, AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR,
-          DNS_VS_STATUS, CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED,
-          POSTGRES_REPLICATION_FAILED, SAML_METADATA_UPDATE_FAILED, RESTORE_CONTROLLER_STARTED,
-          RESTORE_CONTROLLER_ABORTED, RESTORE_CONTROLLER_COMPLETED, LOG_FREQUENT_DISK_CLEANUP,
-          REQUEST_QUEUE_FULL, REQUEST_QUEUE_RECOVERING, POSTGRES_MAX_CONN_LIMIT_BREACHED,
-          POSTGRES_CONN_RECOVERY, REQUEST_RATELIMIT, SYSTEM_REPORT_GENERATION_STARTED,
-          SYSTEM_REPORT_GENERATION_COMPLETED, SYSTEM_REPORT_GENERATION_FAILED, SYSTEM_REPORT_DELETED,
-          CRL_ENDPOINT_EXPIRED, CRL_ENDPOINT_EXPIRING_SOON, CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE,
-          UBER_EVENT_ERR_TEMPLATE, UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED,
-          SE_PROCESS_CRASHED, CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG,
-          SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG, SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.'
+          APP_INSIGHTS_MAX_URI_EVENT, APP_INSIGHTS_MAX_PARAM_EVENT, ALBSERVICES_CONTROLLER_REGISTERED,
+          ALBSERVICES_SUPPORT_CASE_CREATED, ALBSERVICES_SUPPORT_CASE_UPDATED, ALBSERVICES_SUPPORT_CASE_FILE_ATTACHMENT_TRIGGERED,
+          ALBSERVICES_SUPPORT_CASE_FILE_ATTACHMENT_SUCCESS, ALBSERVICES_SUPPORT_CASE_FILE_ATTACHMENT_FAILURE,
+          ALBSERVICES_FILE_DOWNLOAD_TRIGGERED, ALBSERVICES_FILE_DOWNLOAD_SUCCESS,
+          ALBSERVICES_FILE_DOWNLOAD_FAILURE, NSXT_ACCESS_SUCCESS, VCENTER_ACCESS_SUCCESS,
+          NSXT_ACCESS_FAIL, VCENTER_ACCESS_FAIL, NSXT_IMAGE_UPLOAD_FAILURE, NSXT_IMAGE_UPLOAD_SUCCESS,
+          NSXT_IMAGE_DELETE_FAILURE, NSXT_IMAGE_DELETE_SUCCESS, VCENTER_VSPHERE_HA_NOT_CONFIGURED,
+          NSXT_SI_SERVICE_CREATE_UPDATE_SUCCESS, NSXT_SI_SERVICE_CREATE_UPDATE_FAILURE,
+          NSXT_SI_SERVICE_DELETE_SUCCESS, NSXT_SI_SERVICE_DELETE_FAILURE, NSXT_SI_VIRTUALENDPOINT_CREATE_UPDATE_SUCCESS,
+          NSXT_SI_VIRTUALENDPOINT_CREATE_UPDATE_FAILURE, NSXT_SI_VIRTUALENDPOINT_DELETE_SUCCESS,
+          NSXT_SI_VIRTUALENDPOINT_DELETE_FAILURE, NSXT_SI_REDIRECTPOLICY_CREATE_UPDATE_SUCCESS,
+          NSXT_SI_REDIRECTPOLICY_CREATE_UPDATE_FAILURE, NSXT_SI_REDIRECTPOLICY_DELETE_SUCCESS,
+          NSXT_SI_REDIRECTPOLICY_DELETE_FAILURE, NSXT_SI_REDIRECTRULE_CREATE_UPDATE_SUCCESS,
+          NSXT_SI_REDIRECTRULE_CREATE_UPDATE_FAILURE, NSXT_SI_REDIRECTRULE_DELETE_SUCCESS,
+          NSXT_SI_REDIRECTRULE_DELETE_FAILURE, VCENTER_IMAGE_UPLOAD_FAILURE, VCENTER_IMAGE_UPLOAD_SUCCESS,
+          VCENTER_IMAGE_DELETE_FAILURE, VCENTER_IMAGE_DELETE_SUCCESS, NSXT_INVALID_T1_SEG,
+          NSXT_STREAMAGENT_CONNECT, NSXT_STREAMAGENT_DISCONNECT, NSXT_DFW_GROUP_UPDATE_SUCCESS,
+          NSXT_DFW_GROUP_UPDATE_FAILURE, NSXT_DFW_GROUP_DELETE_FAILURE, NSXT_DFW_GROUP_DELETE_SUCCESS,
+          NSXT_DFW_SERVICE_UPDATE_SUCCESS, NSXT_DFW_SERVICE_UPDATE_FAILED, NSXT_DFW_SERVICE_DELETE_SUCCESS,
+          NSXT_DFW_SERVICE_DELETE_FAILED, NSXT_DFW_TAG_SEGMENT_PORT_SUCCESS, NSXT_DFW_TAG_SEGMENT_PORT_FAILED,
+          NSXT_DFW_TAG_VM_SUCCESS, NSXT_DFW_TAG_VM_FAILED, UPGRADE_CONTROLLER_STARTED,
+          UPGRADE_SE_GROUP_STARTED, RESUME_SE_GROUP_STARTED, PATCH_CONTROLLER_STARTED,
+          PATCH_SE_GROUP_STARTED, ROLLBACK_CONTROLLER_STARTED, ROLLBACK_SE_GROUP_STARTED,
+          ROLLBACKPATCH_CONTROLLER_STARTED, ROLLBACKPATCH_SE_GROUP_STARTED, UPGRADE_CONTROLLER_COMPLETE,
+          UPGRADE_SE_GROUP_COMPLETE, PATCH_CONTROLLER_COMPLETE, PATCH_SE_GROUP_COMPLETE,
+          ROLLBACK_CONTROLLER_COMPLETE, ROLLBACK_SE_GROUP_COMPLETE, ROLLBACKPATCH_CONTROLLER_COMPLETE,
+          ROLLBACKPATCH_SE_GROUP_COMPLETE, UPGRADE_CONTROLLER_ABORTED, PATCH_CONTROLLER_ABORTED,
+          UPGRADE_SE_GROUP_SUSPENDED, PATCH_SE_GROUP_SUSPENDED, ROLLBACK_SE_GROUP_SUSPENDED,
+          ROLLBACKPATCH_SE_GROUP_SUSPENDED, UPGRADE_REQUEST, LICENSE_TRANSACTION,
+          LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE, LICENSE_TIER_SWITCH,
+          CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION, CENTRAL_LICENSE_REFRESH_SUCCESS,
+          CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED, ROLLBACKPATCH_CONTROLLER_ABORTED,
+          UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED, UPGRADE_DRYRUN_ABORTED,
+          AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT, CONTROLLER_DB_ERROR,
+          AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR, DNS_VS_STATUS,
+          CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED, POSTGRES_REPLICATION_FAILED,
+          SAML_METADATA_UPDATE_FAILED, RESTORE_CONTROLLER_STARTED, RESTORE_CONTROLLER_ABORTED,
+          RESTORE_CONTROLLER_COMPLETED, LOG_FREQUENT_DISK_CLEANUP, REQUEST_QUEUE_FULL,
+          REQUEST_QUEUE_RECOVERING, POSTGRES_MAX_CONN_LIMIT_BREACHED, POSTGRES_CONN_RECOVERY,
+          REQUEST_RATELIMIT, SYSTEM_REPORT_GENERATION_STARTED, SYSTEM_REPORT_GENERATION_COMPLETED,
+          SYSTEM_REPORT_GENERATION_FAILED, SYSTEM_REPORT_DELETED, CRL_ENDPOINT_EXPIRED,
+          CRL_ENDPOINT_EXPIRING_SOON, CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE, UBER_EVENT_ERR_TEMPLATE,
+          UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED, SE_PROCESS_CRASHED,
+          CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG, SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG,
+          SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
         type: string
       event_pages:
         description: Pages in which event should come up. Allowed with any value in
@@ -115684,6 +115710,9 @@ definitions:
         type: string
   FileObject:
     type: object
+    required:
+    - name
+    - type
     properties:
       _last_modified:
         description: UNIX time since epoch in microseconds. Units(MICROSECONDS).
@@ -129271,9 +129300,8 @@ definitions:
           PERMISSION_UPGRADEPROFILE, PERMISSION_RETENTIONPOLICY, PERMISSION_APIRATELIMITPROFILE,
           PERMISSION_TECHSUPPORTPROFILE, PERMISSION_TECHSUPPORTMESSAGE, PERMISSION_ALERTSCRIPTCONFIG,
           PERMISSION_REPORT, PERMISSION_REPORTPROFILE, PERMISSION_APPLICATIONINSIGHTSPOLICY,
-          PERMISSION_APPLICATIONINSIGHTSSTATE, PERMISSION_POSITIVESECURITYPOLICY.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.'
+          PERMISSION_POSITIVESECURITYPOLICY. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
         type: string
       subresource:
         description: Limits the scope of Write Access on the parent resource to modification
@@ -138576,19 +138604,7 @@ definitions:
         default: default
   SePropertiesApiResponse:
     type: object
-    required:
-    - count
-    - results
-    properties:
-      count:
-        type: integer
-        format: int32
-      results:
-        type: array
-        items:
-          $ref: '#/definitions/SeProperties'
-      next:
-        type: string
+    $ref: '#/definitions/SeProperties'
   SeRateLimiterDropDetails:
     type: object
     properties:
@@ -147362,19 +147378,7 @@ definitions:
         type: boolean
   SystemConfigurationApiResponse:
     type: object
-    required:
-    - count
-    - results
-    properties:
-      count:
-        type: integer
-        format: int32
-      results:
-        type: array
-        items:
-          $ref: '#/definitions/SystemConfiguration'
-      next:
-        type: string
+    $ref: '#/definitions/SystemConfiguration'
   SystemLimitObjectCount:
     type: object
     properties:
@@ -147406,8 +147410,8 @@ definitions:
           WAF_RULE_METRICS_ENABLED_VS, SE_NUM_NS_VS, SE_NUM_EW_VS, SE_NUM_ALL_VS,
           SE_NUM_VS_RT_METRICS, SE_NUM_VLAN_PER_PHY_INTF, SE_NUM_VLAN_PER_SE, SE_NUM_PHY_INTF_PER_SE,
           SE_NUM_LOGICAL_INTF_PER_SE, SE_VRF_PER_SE, NUM_POOL_RT_METRICS, NUM_SE_RT_METRICS,
-          NUM_VIRTUALSERVICES_RTMETRICS_WAF, T1_LRS_PER_CLOUD, NUM_APPLICATION_INSIGHTS_VIRTUALSERVICES,
-          NUM_POSITIVE_SECURITY_VIRTUALSERVICES. Field introduced in 31.2.1. Allowed
+          NUM_VIRTUALSERVICES_RTMETRICS_WAF, T1_LRS_PER_CLOUD, NUM_VIRTUALSERVICES_APPLICATION_INSIGHTS,
+          NUM_VIRTUALSERVICES_POSITIVE_SECURITY. Field introduced in 31.2.1. Allowed
           with any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
       limit_description:

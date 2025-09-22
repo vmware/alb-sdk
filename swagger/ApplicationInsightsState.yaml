@@ -17,7 +17,7 @@ info:
         - show applicationinsightsstate <key>
         ```
 
-        API permission: PERMISSION_APPLICATIONINSIGHTSSTATE
+        API permission: PERMISSION_APPLICATIONINSIGHTSPOLICY
 tags:
   - name: ApplicationInsightsState
 schemes:
