@@ -8,6 +8,9 @@ package models
 // swagger:model TenantConfiguration
 type TenantConfiguration struct {
 
+	// Application quota for the tenant. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AppQuota *AppQuotaConfig `json:"app_quota,omitempty"`
+
 	// License quota for the tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	LicenseQuota *QuotaConfig `json:"license_quota,omitempty"`
 

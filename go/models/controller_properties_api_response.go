@@ -7,15 +7,5 @@ package models
 // ControllerPropertiesAPIResponse controller properties Api response
 // swagger:model ControllerPropertiesApiResponse
 type ControllerPropertiesAPIResponse struct {
-
-	// count
-	// Required: true
-	Count *int32 `json:"count"`
-
-	// next
-	Next *string `json:"next,omitempty"`
-
-	// results
-	// Required: true
-	Results []*ControllerProperties `json:"results,omitempty"`
+	ControllerProperties
 }

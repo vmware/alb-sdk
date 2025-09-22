@@ -23,6 +23,12 @@ type ApplicationInsightsParams struct {
 	// When true, the WAF includes argument-less URIs in its learning process. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	LearnFromUrlsWithoutArgs *bool `json:"learn_from_urls_without_args,omitempty"`
 
+	// Maximum number of parameters per URI programmed for Application Insights. Allowed values are 10-1000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	MaxParams *uint32 `json:"max_params,omitempty"`
+
+	// Maximum number of URIs for Application Insights. Allowed values are 10-10000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	MaxUris *uint32 `json:"max_uris,omitempty"`
+
 	// Limits Application Learning from client IPs within the configured IP Address Group. It is a reference to an object of type IpAddrGroup. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	TrustedIpgroupRef *string `json:"trusted_ipgroup_ref,omitempty"`
 }
