@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TenantConfiguration  {
+    @JsonProperty("app_quota")
+    private AppQuotaConfig appQuota;
+
     @JsonProperty("license_quota")
     private QuotaConfig licenseQuota;
 
@@ -34,6 +37,30 @@ public class TenantConfiguration  {
     private Boolean tenantVrf = false;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Application quota for the tenant.
+     * Field introduced in 31.3.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return appQuota
+     */
+    public AppQuotaConfig getAppQuota() {
+        return appQuota;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Application quota for the tenant.
+     * Field introduced in 31.3.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param appQuota set the appQuota.
+     */
+    public void setAppQuota(AppQuotaConfig appQuota) {
+        this.appQuota = appQuota;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -142,14 +169,16 @@ public class TenantConfiguration  {
       return   Objects.equals(this.tenantVrf, objTenantConfiguration.tenantVrf)&&
   Objects.equals(this.seInProviderContext, objTenantConfiguration.seInProviderContext)&&
   Objects.equals(this.tenantAccessToProviderSe, objTenantConfiguration.tenantAccessToProviderSe)&&
-  Objects.equals(this.licenseQuota, objTenantConfiguration.licenseQuota);
+  Objects.equals(this.licenseQuota, objTenantConfiguration.licenseQuota)&&
+  Objects.equals(this.appQuota, objTenantConfiguration.appQuota);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class TenantConfiguration {\n");
-                  sb.append("    licenseQuota: ").append(toIndentedString(licenseQuota)).append("\n");
+                  sb.append("    appQuota: ").append(toIndentedString(appQuota)).append("\n");
+                        sb.append("    licenseQuota: ").append(toIndentedString(licenseQuota)).append("\n");
                         sb.append("    seInProviderContext: ").append(toIndentedString(seInProviderContext)).append("\n");
                         sb.append("    tenantAccessToProviderSe: ").append(toIndentedString(tenantAccessToProviderSe)).append("\n");
                         sb.append("    tenantVrf: ").append(toIndentedString(tenantVrf)).append("\n");

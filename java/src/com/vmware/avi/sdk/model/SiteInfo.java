@@ -24,6 +24,9 @@ public class SiteInfo  {
     @JsonProperty("cluster_id")
     private String clusterId;
 
+    @JsonProperty("site_name")
+    private String siteName;
+
 
 
     /**
@@ -50,6 +53,28 @@ public class SiteInfo  {
         this.clusterId = clusterId;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Site name of a member configured in gslb federation.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * @return siteName
+     */
+    public String getSiteName() {
+        return siteName;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Site name of a member configured in gslb federation.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * @param siteName set the siteName.
+     */
+    public void setSiteName(String  siteName) {
+        this.siteName = siteName;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -60,7 +85,8 @@ public class SiteInfo  {
           return false;
       }
       SiteInfo objSiteInfo = (SiteInfo) o;
-      return   Objects.equals(this.clusterId, objSiteInfo.clusterId);
+      return   Objects.equals(this.clusterId, objSiteInfo.clusterId)&&
+  Objects.equals(this.siteName, objSiteInfo.siteName);
     }
 
     @Override
@@ -68,6 +94,7 @@ public class SiteInfo  {
       StringBuilder sb = new StringBuilder();
       sb.append("class SiteInfo {\n");
                   sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+                        sb.append("    siteName: ").append(toIndentedString(siteName)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

@@ -24,6 +24,9 @@ public class GslbDnsInfo  {
     @JsonProperty("dns_active")
     private Boolean dnsActive;
 
+    @JsonProperty("dns_se_resource")
+    private SeResources dnsSeResource;
+
     @JsonProperty("dns_vs_states")
     private List<GslbPerDnsState> dnsVsStates;
 
@@ -55,6 +58,30 @@ public class GslbDnsInfo  {
      */
     public void setDnsActive(Boolean  dnsActive) {
         this.dnsActive = dnsActive;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This field tracks the service engine resource hosting the dns virtual service.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dnsSeResource
+     */
+    public SeResources getDnsSeResource() {
+        return dnsSeResource;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This field tracks the service engine resource hosting the dns virtual service.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param dnsSeResource set the dnsSeResource.
+     */
+    public void setDnsSeResource(SeResources dnsSeResource) {
+        this.dnsSeResource = dnsSeResource;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -151,7 +178,8 @@ public class GslbDnsInfo  {
       return   Objects.equals(this.dnsActive, objGslbDnsInfo.dnsActive)&&
   Objects.equals(this.dnsVsStates, objGslbDnsInfo.dnsVsStates)&&
   Objects.equals(this.gsStatus, objGslbDnsInfo.gsStatus)&&
-  Objects.equals(this.retryCount, objGslbDnsInfo.retryCount);
+  Objects.equals(this.retryCount, objGslbDnsInfo.retryCount)&&
+  Objects.equals(this.dnsSeResource, objGslbDnsInfo.dnsSeResource);
     }
 
     @Override
@@ -159,6 +187,7 @@ public class GslbDnsInfo  {
       StringBuilder sb = new StringBuilder();
       sb.append("class GslbDnsInfo {\n");
                   sb.append("    dnsActive: ").append(toIndentedString(dnsActive)).append("\n");
+                        sb.append("    dnsSeResource: ").append(toIndentedString(dnsSeResource)).append("\n");
                         sb.append("    dnsVsStates: ").append(toIndentedString(dnsVsStates)).append("\n");
                         sb.append("    gsStatus: ").append(toIndentedString(gsStatus)).append("\n");
                         sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");

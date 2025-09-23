@@ -51,6 +51,12 @@ public class ControllerSizingLimits  {
     @JsonProperty("num_virtualservices")
     private Integer numVirtualservices;
 
+    @JsonProperty("num_virtualservices_application_insights")
+    private Integer numVirtualservicesApplicationInsights;
+
+    @JsonProperty("num_virtualservices_positive_security")
+    private Integer numVirtualservicesPositiveSecurity;
+
     @JsonProperty("num_virtualservices_rt_metrics")
     private Integer numVirtualservicesRtMetrics;
 
@@ -324,6 +330,54 @@ public class ControllerSizingLimits  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Maximum number of virtualservices configured with application insights.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numVirtualservicesApplicationInsights
+     */
+    public Integer getNumVirtualservicesApplicationInsights() {
+        return numVirtualservicesApplicationInsights;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of virtualservices configured with application insights.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numVirtualservicesApplicationInsights set the numVirtualservicesApplicationInsights.
+     */
+    public void setNumVirtualservicesApplicationInsights(Integer  numVirtualservicesApplicationInsights) {
+        this.numVirtualservicesApplicationInsights = numVirtualservicesApplicationInsights;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum number of virtualservices configured with positive security policy.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numVirtualservicesPositiveSecurity
+     */
+    public Integer getNumVirtualservicesPositiveSecurity() {
+        return numVirtualservicesPositiveSecurity;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of virtualservices configured with positive security policy.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numVirtualservicesPositiveSecurity set the numVirtualservicesPositiveSecurity.
+     */
+    public void setNumVirtualservicesPositiveSecurity(Integer  numVirtualservicesPositiveSecurity) {
+        this.numVirtualservicesPositiveSecurity = numVirtualservicesPositiveSecurity;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Maximum number of virtualservices with realtime metrics enabled.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -441,6 +495,8 @@ public class ControllerSizingLimits  {
   Objects.equals(this.numPoolRtMetrics, objControllerSizingLimits.numPoolRtMetrics)&&
   Objects.equals(this.numSeRtMetrics, objControllerSizingLimits.numSeRtMetrics)&&
   Objects.equals(this.numVirtualservicesRtmetricsWaf, objControllerSizingLimits.numVirtualservicesRtmetricsWaf)&&
+  Objects.equals(this.numVirtualservicesApplicationInsights, objControllerSizingLimits.numVirtualservicesApplicationInsights)&&
+  Objects.equals(this.numVirtualservicesPositiveSecurity, objControllerSizingLimits.numVirtualservicesPositiveSecurity)&&
   Objects.equals(this.controllerSizingCloudLimits, objControllerSizingLimits.controllerSizingCloudLimits);
     }
 
@@ -458,6 +514,8 @@ public class ControllerSizingLimits  {
                         sb.append("    numServiceengines: ").append(toIndentedString(numServiceengines)).append("\n");
                         sb.append("    numTenants: ").append(toIndentedString(numTenants)).append("\n");
                         sb.append("    numVirtualservices: ").append(toIndentedString(numVirtualservices)).append("\n");
+                        sb.append("    numVirtualservicesApplicationInsights: ").append(toIndentedString(numVirtualservicesApplicationInsights)).append("\n");
+                        sb.append("    numVirtualservicesPositiveSecurity: ").append(toIndentedString(numVirtualservicesPositiveSecurity)).append("\n");
                         sb.append("    numVirtualservicesRtMetrics: ").append(toIndentedString(numVirtualservicesRtMetrics)).append("\n");
                         sb.append("    numVirtualservicesRtmetricsWaf: ").append(toIndentedString(numVirtualservicesRtmetricsWaf)).append("\n");
                         sb.append("    numVrfs: ").append(toIndentedString(numVrfs)).append("\n");
