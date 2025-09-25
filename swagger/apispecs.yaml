@@ -202,12 +202,12 @@ info:
     - configure techsupportprofile\n- show techsupportprofile\n```\n\nAPI permission:\
     \ PERMISSION_TECHSUPPORTPROFILE\nAvi Backup object api\n```\n- show backup <key>\n\
     ```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi FileObject object api\n```\n\
-    - upload fileobject file\n- configure fileobject <key>\n- show fileobject <key>\n\
-    - show fileobject\n```\n\nAPI permission: PERMISSION_FILE_OBJECT\nAvi DnsPolicy\
-    \ object api\n```\n- configure dnspolicy <key>\n- show dnspolicy <key>\n```\n\n\
-    API permission: PERMISSION_DNSPOLICY\nAvi TestSeDatastoreLevel3 object api\n```\n\
-    - configure testsedatastorelevel3 <key>\n- show testsedatastorelevel3 <key>\n\
-    ```\n\nAPI permission: PERMISSION_TESTSEDATASTORELEVEL3\nAvi ActionGroupConfig\
+    - upload fileobject file\n- show fileobject\n- configure fileobject <key>\n- show\
+    \ fileobject <key>\n- upload fileobject uri\n```\n\nAPI permission: PERMISSION_FILE_OBJECT\n\
+    Avi DnsPolicy object api\n```\n- configure dnspolicy <key>\n- show dnspolicy <key>\n\
+    ```\n\nAPI permission: PERMISSION_DNSPOLICY\nAvi TestSeDatastoreLevel3 object\
+    \ api\n```\n- configure testsedatastorelevel3 <key>\n- show testsedatastorelevel3\
+    \ <key>\n```\n\nAPI permission: PERMISSION_TESTSEDATASTORELEVEL3\nAvi ActionGroupConfig\
     \ object api\n```\n- configure actiongroupconfig <key>\n- show actiongroupconfig\
     \ <key>\n```\n\nAPI permission: PERMISSION_ACTIONGROUPCONFIG\nAvi VCenterServer\
     \ object api\n```\n- configure vcenterserver <key>\n- show vcenterserver <key>\n\
@@ -1520,11 +1520,13 @@ tags:
 
     - upload fileobject file
 
+    - show fileobject
+
     - configure fileobject <key>
 
     - show fileobject <key>
 
-    - show fileobject
+    - upload fileobject uri
 
     ```
 
@@ -75283,172 +75285,6 @@ paths:
           description: object deleted
           schema:
             type: string
-        '404':
-          description: object not found
-  /fileobject/{uuid}/federated_info/:
-    get:
-      tags:
-      - FileObject
-      description: /fileobject/{uuid}/federated_info/
-      operationId: GET /fileobject/{uuid}/federated_info/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-  /fileobject/{uuid}/['']/:
-    patch:
-      tags:
-      - FileObject
-      description: /fileobject/{uuid}/['']/
-      operationId: PATCH /fileobject/{uuid}/['']/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - FileObject
-      description: /fileobject/{uuid}/['']/
-      operationId: PUT /fileobject/{uuid}/['']/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: body
-        name: body
-        description: empty
-        required: true
-        schema:
-          type: object
-          additionalProperties:
-            type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
         '404':
           description: object not found
   /application:
