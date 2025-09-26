@@ -112,9 +112,6 @@ public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("ssh_hmacs")
     private List<String> sshHmacs;
 
-    @JsonProperty("sync_dns_to_se")
-    private Boolean syncDnsToSe = false;
-
     @JsonProperty("sync_kex_host_to_se")
     private Boolean syncKexHostToSe = false;
 
@@ -883,30 +880,6 @@ public class SystemConfiguration extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ability to sync the dns to ses.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @return syncDnsToSe
-     */
-    public Boolean getSyncDnsToSe() {
-        return syncDnsToSe;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Ability to sync the dns to ses.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @param syncDnsToSe set the syncDnsToSe.
-     */
-    public void setSyncDnsToSe(Boolean  syncDnsToSe) {
-        this.syncDnsToSe = syncDnsToSe;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Ability to sync the kexalgorithms & hostkeyalgorithms to ses.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -1198,7 +1171,6 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.aviEmailLoginPassword, objSystemConfiguration.aviEmailLoginPassword)&&
   Objects.equals(this.syslogServers, objSystemConfiguration.syslogServers)&&
   Objects.equals(this.syncKexHostToSe, objSystemConfiguration.syncKexHostToSe)&&
-  Objects.equals(this.syncDnsToSe, objSystemConfiguration.syncDnsToSe)&&
   Objects.equals(this.syncSyslogToSe, objSystemConfiguration.syncSyslogToSe)&&
   Objects.equals(this.licenseQuota, objSystemConfiguration.licenseQuota)&&
   Objects.equals(this.enableLicenseQuota, objSystemConfiguration.enableLicenseQuota);
@@ -1238,7 +1210,6 @@ public class SystemConfiguration extends AviRestResource  {
                         sb.append("    snmpConfiguration: ").append(toIndentedString(snmpConfiguration)).append("\n");
                         sb.append("    sshCiphers: ").append(toIndentedString(sshCiphers)).append("\n");
                         sb.append("    sshHmacs: ").append(toIndentedString(sshHmacs)).append("\n");
-                        sb.append("    syncDnsToSe: ").append(toIndentedString(syncDnsToSe)).append("\n");
                         sb.append("    syncKexHostToSe: ").append(toIndentedString(syncKexHostToSe)).append("\n");
                         sb.append("    syncSyslogToSe: ").append(toIndentedString(syncSyslogToSe)).append("\n");
                         sb.append("    syslogServers: ").append(toIndentedString(syslogServers)).append("\n");
