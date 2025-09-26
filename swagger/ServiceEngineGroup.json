@@ -1618,7 +1618,7 @@
                     "format": "int64"
                 },
                 "reservation": {
-                    "description": "Minimum license service units reserved for consumption. Allowed values are 0-65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Minimum license service units reserved for consumption. Reservation is not enforced for Tenant/SE Group. Allowed values are 0-65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 }
@@ -2445,7 +2445,6 @@
                 "metrics_collection_mode": {
                     "description": "Metrics collection mode, 0 = Pull mode.  se_agent pulls metrics from se_dp,  1 = Push mode. se_dp pushes metrics to se_agent.  9 = special value to reset collection state in push mode. . Allowed values are 0-1. Special values are 9- Reset metrics collection state. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "default": 1,
                     "format": "uint32"
                 },
                 "mgmt_network_ref": {
