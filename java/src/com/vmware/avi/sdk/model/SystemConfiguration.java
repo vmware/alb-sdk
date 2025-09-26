@@ -85,6 +85,9 @@ public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("ntp_configuration")
     private NTPConfiguration ntpConfiguration;
 
+    @JsonProperty("password_policy_ref")
+    private String passwordPolicyRef;
+
     @JsonProperty("portal_configuration")
     private PortalConfiguration portalConfiguration;
 
@@ -111,9 +114,6 @@ public class SystemConfiguration extends AviRestResource  {
 
     @JsonProperty("ssh_hmacs")
     private List<String> sshHmacs;
-
-    @JsonProperty("sync_dns_to_se")
-    private Boolean syncDnsToSe = false;
 
     @JsonProperty("sync_kex_host_to_se")
     private Boolean syncKexHostToSe = false;
@@ -649,6 +649,34 @@ public class SystemConfiguration extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Reference to uniform password policy.
+     * When not set, legacy password settings are used.
+     * It is a reference to an object of type passwordpolicy.
+     * Field introduced in 31.3.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return passwordPolicyRef
+     */
+    public String getPasswordPolicyRef() {
+        return passwordPolicyRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Reference to uniform password policy.
+     * When not set, legacy password settings are used.
+     * It is a reference to an object of type passwordpolicy.
+     * Field introduced in 31.3.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param passwordPolicyRef set the passwordPolicyRef.
+     */
+    public void setPasswordPolicyRef(String  passwordPolicyRef) {
+        this.passwordPolicyRef = passwordPolicyRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return portalConfiguration
@@ -879,30 +907,6 @@ public class SystemConfiguration extends AviRestResource  {
       }
       this.sshHmacs.add(sshHmacsItem);
       return this;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Ability to sync the dns to ses.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @return syncDnsToSe
-     */
-    public Boolean getSyncDnsToSe() {
-        return syncDnsToSe;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Ability to sync the dns to ses.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @param syncDnsToSe set the syncDnsToSe.
-     */
-    public void setSyncDnsToSe(Boolean  syncDnsToSe) {
-        this.syncDnsToSe = syncDnsToSe;
     }
 
     /**
@@ -1198,10 +1202,10 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.aviEmailLoginPassword, objSystemConfiguration.aviEmailLoginPassword)&&
   Objects.equals(this.syslogServers, objSystemConfiguration.syslogServers)&&
   Objects.equals(this.syncKexHostToSe, objSystemConfiguration.syncKexHostToSe)&&
-  Objects.equals(this.syncDnsToSe, objSystemConfiguration.syncDnsToSe)&&
   Objects.equals(this.syncSyslogToSe, objSystemConfiguration.syncSyslogToSe)&&
   Objects.equals(this.licenseQuota, objSystemConfiguration.licenseQuota)&&
-  Objects.equals(this.enableLicenseQuota, objSystemConfiguration.enableLicenseQuota);
+  Objects.equals(this.enableLicenseQuota, objSystemConfiguration.enableLicenseQuota)&&
+  Objects.equals(this.passwordPolicyRef, objSystemConfiguration.passwordPolicyRef);
     }
 
     @Override
@@ -1229,6 +1233,7 @@ public class SystemConfiguration extends AviRestResource  {
                         sb.append("    linuxConfiguration: ").append(toIndentedString(linuxConfiguration)).append("\n");
                         sb.append("    mgmtIpAccessControl: ").append(toIndentedString(mgmtIpAccessControl)).append("\n");
                         sb.append("    ntpConfiguration: ").append(toIndentedString(ntpConfiguration)).append("\n");
+                        sb.append("    passwordPolicyRef: ").append(toIndentedString(passwordPolicyRef)).append("\n");
                         sb.append("    portalConfiguration: ").append(toIndentedString(portalConfiguration)).append("\n");
                         sb.append("    proxyConfiguration: ").append(toIndentedString(proxyConfiguration)).append("\n");
                         sb.append("    rekeyTimeLimit: ").append(toIndentedString(rekeyTimeLimit)).append("\n");
@@ -1238,7 +1243,6 @@ public class SystemConfiguration extends AviRestResource  {
                         sb.append("    snmpConfiguration: ").append(toIndentedString(snmpConfiguration)).append("\n");
                         sb.append("    sshCiphers: ").append(toIndentedString(sshCiphers)).append("\n");
                         sb.append("    sshHmacs: ").append(toIndentedString(sshHmacs)).append("\n");
-                        sb.append("    syncDnsToSe: ").append(toIndentedString(syncDnsToSe)).append("\n");
                         sb.append("    syncKexHostToSe: ").append(toIndentedString(syncKexHostToSe)).append("\n");
                         sb.append("    syncSyslogToSe: ").append(toIndentedString(syncSyslogToSe)).append("\n");
                         sb.append("    syslogServers: ").append(toIndentedString(syslogServers)).append("\n");
