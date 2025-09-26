@@ -105,9 +105,6 @@ type SystemConfiguration struct {
 	// Allowed HMAC list for SSH to the management interface on the Controller and Service Engines. If this is not specified, all the default HMACs are allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SSHHmacs []string `json:"ssh_hmacs,omitempty"`
 
-	// Ability to sync the DNS to SEs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	SyncDNSToSe *bool `json:"sync_dns_to_se,omitempty"`
-
 	// Ability to sync the KexAlgorithms & HostKeyAlgorithms to SEs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SyncKexHostToSe *bool `json:"sync_kex_host_to_se,omitempty"`
 
