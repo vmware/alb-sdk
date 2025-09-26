@@ -18,6 +18,7 @@ info:
         - generate report waf_pov
         - show report
         - show report <key>
+        - show report <key> detail
         - delete report <key>
         - show report <key> export
         ```

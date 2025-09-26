@@ -8,7 +8,7 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi Report object api\n```\n- generate report application_security\n- generate report waf_pov\n- show report\n- show report <key>\n- delete report <key>\n- show report <key> export\n```\n\nAPI permission: PERMISSION_REPORT\n"
+        "description": "Avi Report object api\n```\n- generate report application_security\n- generate report waf_pov\n- show report\n- show report <key>\n- show report <key> detail\n- delete report <key>\n- show report <key> export\n```\n\nAPI permission: PERMISSION_REPORT\n"
     },
     "tags": [
         {

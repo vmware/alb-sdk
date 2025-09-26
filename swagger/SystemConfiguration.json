@@ -1244,10 +1244,6 @@
                         "type": "string"
                     }
                 },
-                "sync_dns_to_se": {
-                    "description": "Ability to sync the DNS to SEs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
                 "sync_kex_host_to_se": {
                     "description": "Ability to sync the KexAlgorithms & HostKeyAlgorithms to SEs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
