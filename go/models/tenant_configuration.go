@@ -11,6 +11,9 @@ type TenantConfiguration struct {
 	// Application quota for the tenant. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	AppQuota *AppQuotaConfig `json:"app_quota,omitempty"`
 
+	// Enable tenant binding mode for this tenant. When enabled, only explicitly shared objects from admin tenant will be visible. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	EnableTenantBinding *bool `json:"enable_tenant_binding,omitempty"`
+
 	// License quota for the tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	LicenseQuota *QuotaConfig `json:"license_quota,omitempty"`
 
