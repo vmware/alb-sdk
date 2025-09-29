@@ -949,12 +949,10 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 			}
 			return avisess.restRequest(verb, uri, payload, tenant, errorResult, retry+1)
 		} else {
-			glog.Error("CheckControllerStatus is disabled for this session, not going to retry.")
-			if err != nil {
-				glog.Errorf("Failed to invoke API. Error: %s", err.Error())
-				return nil, err
-			}
-			return nil, errors.New("Rest request error, returning to caller")
+			// When disableControllerStatusCheck is true, return the original error transparently
+			// so that clients can handle their own retry logic.
+			glog.Infof("CheckControllerStatus is disabled for this session, returning original error transparently for client retry handling.")
+			return nil, errorResult
 		}
 	}
 	return resp, nil
