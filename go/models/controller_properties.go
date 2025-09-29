@@ -174,7 +174,7 @@ type ControllerProperties struct {
 	// Disk size to be allocated [1MB to 500GB] to store logs on a controller vm. Allowed values are 1000-500000000. Field introduced in 31.2.1. Unit is KB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	LogRecordsAllocatedSize *uint32 `json:"log_records_allocated_size,omitempty"`
 
-	// Percentage of allocation (log_records_allocated_size)  for events on controller node. Allowed values are 10-50. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Percentage of allocation (log_records_allocated_size)  for events on controller node. Allowed values are 10-70. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	LogRecordsAllocationPercentageForEvents *uint32 `json:"log_records_allocation_percentage_for_events,omitempty"`
 
 	// Target percentage of allocated disk quota to reduce log file consumption to when cleanup is triggered. When disk usage exceeds 100% of the allocated quota, cleanup will reduce consumption to this percentage of the allocation. Allowed values are 30-90. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
