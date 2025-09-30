@@ -834,6 +834,7 @@ definitions:
             send_interval_prior_to_maintenance_mode:
                 description: "The user can specify a send-interval while entering maintenance mode. The validity of this 'maintenance send-interval' is only during maintenance mode. When the user leaves maintenance mode, the original send-interval is reinstated. This internal variable is used to store the original send-interval. . Field introduced in 18.2.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
+                default: 120
                 format: uint32
             short_probe_interval:
                 description: "Wait time between two consecutive short probe health checks. Allowed values are 1-3600. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."

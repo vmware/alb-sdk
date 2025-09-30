@@ -962,7 +962,7 @@
                     "format": "int64"
                 },
                 "reservation": {
-                    "description": "Minimum license service units reserved for consumption. Allowed values are 0-65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Minimum license service units reserved for consumption. Reservation is not enforced for Tenant/SE Group. Allowed values are 0-65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 }
@@ -1243,10 +1243,6 @@
                     "items": {
                         "type": "string"
                     }
-                },
-                "sync_dns_to_se": {
-                    "description": "Ability to sync the DNS to SEs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
                 },
                 "sync_kex_host_to_se": {
                     "description": "Ability to sync the KexAlgorithms & HostKeyAlgorithms to SEs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",

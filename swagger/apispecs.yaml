@@ -336,21 +336,21 @@ info:
     Avi UpgradeProfile object api\n```\n- configure upgrade profile\n- show upgrade\
     \ profile\n```\n\nAPI permission: PERMISSION_UPGRADEPROFILE\nAvi Report object\
     \ api\n```\n- generate report application_security\n- generate report waf_pov\n\
-    - show report\n- show report <key>\n- delete report <key>\n- show report <key>\
-    \ export\n```\n\nAPI permission: PERMISSION_REPORT\nAvi ApplicationInsightsPolicy\
-    \ object api\n```\n- configure applicationinsightspolicy <key>\n- show applicationinsightspolicy\
-    \ <key>\n```\n\nAPI permission: PERMISSION_APPLICATIONINSIGHTSPOLICY\nAvi TestSeDatastoreLevel1\
-    \ object api\n```\n- configure testsedatastorelevel1 <key>\n- show testsedatastorelevel1\
-    \ <key>\n```\n\nAPI permission: PERMISSION_TESTSEDATASTORELEVEL1\nAvi WafPolicyPSMGroupInventory\
-    \ object api\n```\n- show wafpolicypsmgroupinventory <key>\n```\n\nAPI permission:\
-    \ PERMISSION_WAFPOLICYPSMGROUP\nAvi JWTServerProfile object api\n```\n- configure\
-    \ jwtserverprofile <key>\n- show jwtserverprofile <key>\n```\n\nAPI permission:\
-    \ PERMISSION_JWTSERVERPROFILE\nAvi BotConfigConsolidator object api\n```\n- configure\
-    \ botconfigconsolidator <key>\n- show botconfigconsolidator <key>\n```\n\nAPI\
-    \ permission: PERMISSION_BOTDETECTIONPOLICY\nAvi ApplicationProfile object api\n\
-    ```\n- configure applicationprofile <key>\n- show applicationprofile <key>\n```\n\
-    \nAPI permission: PERMISSION_APPLICATIONPROFILE\nAvi NetworkSecurityPolicy object\
-    \ api\n```\n- configure networksecuritypolicy <key>\n- show networksecuritypolicy\
+    - show report\n- show report <key>\n- show report <key> detail\n- delete report\
+    \ <key>\n- show report <key> export\n```\n\nAPI permission: PERMISSION_REPORT\n\
+    Avi ApplicationInsightsPolicy object api\n```\n- configure applicationinsightspolicy\
+    \ <key>\n- show applicationinsightspolicy <key>\n```\n\nAPI permission: PERMISSION_APPLICATIONINSIGHTSPOLICY\n\
+    Avi TestSeDatastoreLevel1 object api\n```\n- configure testsedatastorelevel1 <key>\n\
+    - show testsedatastorelevel1 <key>\n```\n\nAPI permission: PERMISSION_TESTSEDATASTORELEVEL1\n\
+    Avi WafPolicyPSMGroupInventory object api\n```\n- show wafpolicypsmgroupinventory\
+    \ <key>\n```\n\nAPI permission: PERMISSION_WAFPOLICYPSMGROUP\nAvi JWTServerProfile\
+    \ object api\n```\n- configure jwtserverprofile <key>\n- show jwtserverprofile\
+    \ <key>\n```\n\nAPI permission: PERMISSION_JWTSERVERPROFILE\nAvi BotConfigConsolidator\
+    \ object api\n```\n- configure botconfigconsolidator <key>\n- show botconfigconsolidator\
+    \ <key>\n```\n\nAPI permission: PERMISSION_BOTDETECTIONPOLICY\nAvi ApplicationProfile\
+    \ object api\n```\n- configure applicationprofile <key>\n- show applicationprofile\
+    \ <key>\n```\n\nAPI permission: PERMISSION_APPLICATIONPROFILE\nAvi NetworkSecurityPolicy\
+    \ object api\n```\n- configure networksecuritypolicy <key>\n- show networksecuritypolicy\
     \ <key>\n```\n\nAPI permission: PERMISSION_NETWORKSECURITYPOLICY\nAvi ServerAutoScalePolicy\
     \ object api\n```\n- configure serverautoscalepolicy <key>\n- show serverautoscalepolicy\
     \ <key>\n```\n\nAPI permission: PERMISSION_AUTOSCALE\nAvi Pool object api\n```\n\
@@ -2535,6 +2535,8 @@ tags:
     - show report
 
     - show report <key>
+
+    - show report <key> detail
 
     - delete report <key>
 
@@ -32883,6 +32885,403 @@ paths:
           description: log in failed
         '404':
           description: object not found
+  /gslbhsmruntime:
+    get:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: GET /gslbhsmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: POST /gslbhsmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbHSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbHSMRuntime'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+  /gslbhsmruntime/{uuid}:
+    get:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: GET /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbHSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbHSMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbHSMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbHSMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbHSMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbhsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: object not found
   /gslbcrmruntime:
     get:
       tags:
@@ -33627,403 +34026,6 @@ paths:
       - GslbSMRuntime
       description: /gslbsmruntime/{uuid}/{uuid}
       operationId: DELETE /gslbsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
-        '404':
-          description: object not found
-  /gslbhsmruntime:
-    get:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: GET /gslbhsmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: POST /gslbhsmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbHSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbHSMRuntime'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-  /gslbhsmruntime/{uuid}:
-    get:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: GET /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbHSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbHSMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbHSMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbHSMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbHSMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    delete:
-      tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -67730,488 +67732,6 @@ paths:
             type: string
         '404':
           description: object not found
-  /debugvirtualservice:
-    get:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice
-      operationId: GET /debugvirtualservice
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: cloud_uuid
-        in: query
-        description: Filter to get objects that belongs to a specific cloud using
-          its uuid. Eg. cloud_uuid=cloud-xyz.
-        type: string
-      - name: cloud_ref.name
-        in: query
-        description: Filter to get objects that belongs to a specific cloud usings
-          its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
-        type: string
-      - name: cloud_ref.uuid
-        in: query
-        description: Filter to get objects that belongs to a specific cloud using
-          its uuid. Eg. cloud_ref.uuid=cloud_uuid.
-        type: string
-        required: false
-      - name: name.contains
-        in: query
-        description: Filter to get objects with name that contains the parameter.
-          This is a case sensitive search. Eg. name.contains=pool-.
-        type: string
-        required: false
-      - name: name.icontains
-        in: query
-        description: Filter to get objects with name that contains the parameter.
-          This is a case insensitive search. Eg. name.icontains=pool-.
-        type: string
-        required: false
-      - name: name.in
-        in: query
-        description: Filter to get objects that have a uuid matching any of the values
-          in the parameter list. Each value for this parameter is to comma separated.
-          Eg. name.in=pool-1,pool-12.
-        type: string
-        required: false
-      - name: uuid.in
-        in: query
-        description: Filter to get objects that have a uuid matching any of the values
-          in the parameter list. Each value for this parameter is to comma separated.
-          Eg. uuid.in=<uuid-1>,<uuid-2>.
-        type: string
-        required: false
-      - name: search
-        in: query
-        description: Filter to get objects that contains the search string as value
-          for any of its fields. Eg. search=LEAST_CONN. The search filter can also
-          be used to search under a specific field. This is achieved by sending the
-          parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
-        type: string
-        required: false
-      - name: isearch
-        in: query
-        description: Filter to get objects that contains case insensitive search string.
-          Eg. isearch=(name,Vs-Pool-).
-        type: string
-        required: false
-      - name: limit_by
-        in: query
-        description: Filter to limit the number of objects in the response data. Eg.
-          limit_by=3.
-        type: string
-        required: false
-      - name: exclude
-        in: query
-        description: Filter to exclude the uuid(s) contained in the parameter. Eg.
-          uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
-        type: string
-        required: false
-      - name: sort
-        in: query
-        description: Parameter to sort the results with respect to a field. Eg. sort=name.
-        type: string
-        required: false
-      - name: page
-        in: query
-        description: Parameter to specify the desired page number. The page starts
-          from 1 and default is 1.
-        type: string
-        required: false
-      - name: page_size
-        in: query
-        description: Parameter to specify the maximum number of results to be returned
-          per page. The page_size can range from 1 to 200. Eg. page_size=5.
-        type: string
-        required: false
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualServiceApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice
-      operationId: POST /debugvirtualservice
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: DebugVirtualService object creation
-        required: true
-        schema:
-          $ref: '#/definitions/DebugVirtualService'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-  /debugvirtualservice/{uuid}:
-    get:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: GET /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: PUT /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: DebugVirtualService object creation
-        required: true
-        schema:
-          $ref: '#/definitions/DebugVirtualService'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: PATCH /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: DebugVirtualService object creation
-        required: true
-        schema:
-          $ref: '#/definitions/DebugVirtualService'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    delete:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: DELETE /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
-        '404':
-          description: object not found
   /virtualservice:
     get:
       tags:
@@ -72109,6 +71629,488 @@ paths:
             type: string
         '401':
           description: log in failed
+        '404':
+          description: object not found
+  /debugvirtualservice:
+    get:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice
+      operationId: GET /debugvirtualservice
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: cloud_uuid
+        in: query
+        description: Filter to get objects that belongs to a specific cloud using
+          its uuid. Eg. cloud_uuid=cloud-xyz.
+        type: string
+      - name: cloud_ref.name
+        in: query
+        description: Filter to get objects that belongs to a specific cloud usings
+          its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
+        type: string
+      - name: cloud_ref.uuid
+        in: query
+        description: Filter to get objects that belongs to a specific cloud using
+          its uuid. Eg. cloud_ref.uuid=cloud_uuid.
+        type: string
+        required: false
+      - name: name.contains
+        in: query
+        description: Filter to get objects with name that contains the parameter.
+          This is a case sensitive search. Eg. name.contains=pool-.
+        type: string
+        required: false
+      - name: name.icontains
+        in: query
+        description: Filter to get objects with name that contains the parameter.
+          This is a case insensitive search. Eg. name.icontains=pool-.
+        type: string
+        required: false
+      - name: name.in
+        in: query
+        description: Filter to get objects that have a uuid matching any of the values
+          in the parameter list. Each value for this parameter is to comma separated.
+          Eg. name.in=pool-1,pool-12.
+        type: string
+        required: false
+      - name: uuid.in
+        in: query
+        description: Filter to get objects that have a uuid matching any of the values
+          in the parameter list. Each value for this parameter is to comma separated.
+          Eg. uuid.in=<uuid-1>,<uuid-2>.
+        type: string
+        required: false
+      - name: search
+        in: query
+        description: Filter to get objects that contains the search string as value
+          for any of its fields. Eg. search=LEAST_CONN. The search filter can also
+          be used to search under a specific field. This is achieved by sending the
+          parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
+        type: string
+        required: false
+      - name: isearch
+        in: query
+        description: Filter to get objects that contains case insensitive search string.
+          Eg. isearch=(name,Vs-Pool-).
+        type: string
+        required: false
+      - name: limit_by
+        in: query
+        description: Filter to limit the number of objects in the response data. Eg.
+          limit_by=3.
+        type: string
+        required: false
+      - name: exclude
+        in: query
+        description: Filter to exclude the uuid(s) contained in the parameter. Eg.
+          uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
+        type: string
+        required: false
+      - name: sort
+        in: query
+        description: Parameter to sort the results with respect to a field. Eg. sort=name.
+        type: string
+        required: false
+      - name: page
+        in: query
+        description: Parameter to specify the desired page number. The page starts
+          from 1 and default is 1.
+        type: string
+        required: false
+      - name: page_size
+        in: query
+        description: Parameter to specify the maximum number of results to be returned
+          per page. The page_size can range from 1 to 200. Eg. page_size=5.
+        type: string
+        required: false
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualServiceApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice
+      operationId: POST /debugvirtualservice
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: DebugVirtualService object creation
+        required: true
+        schema:
+          $ref: '#/definitions/DebugVirtualService'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+  /debugvirtualservice/{uuid}:
+    get:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: GET /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: PUT /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: DebugVirtualService object creation
+        required: true
+        schema:
+          $ref: '#/definitions/DebugVirtualService'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: PATCH /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: DebugVirtualService object creation
+        required: true
+        schema:
+          $ref: '#/definitions/DebugVirtualService'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: DELETE /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
         '404':
           description: object not found
   /inventoryfaultconfig:
@@ -87681,30 +87683,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -87982,7 +87985,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -91481,30 +91485,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -91782,7 +91787,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
@@ -95438,6 +95444,7 @@ definitions:
           . Field introduced in 18.2.3. Unit is SEC. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
+        default: 120
         format: uint32
       short_probe_interval:
         description: Wait time between two consecutive short probe health checks.
@@ -96510,30 +96517,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -96811,7 +96819,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         readOnly: true
@@ -96997,30 +97006,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -97298,7 +97308,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         readOnly: true
@@ -97760,8 +97771,9 @@ definitions:
           GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY,
           SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE,
           RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO,
-          REDISCOVERVCENTERPARAM, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME,
-          MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME,
+          REDISCOVERVCENTERPARAM, LICENSEQUOTAUSAGEINFO, CCCREATESEREQ, CCDELETESEREQ,
+          CCADDVNICSREQ, CCDELVNICSREQ, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME,
+          ARPSTATRUNTIME, MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME,
           CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
           SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME,
           DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME,
@@ -98094,8 +98106,9 @@ definitions:
           GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY,
           SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE,
           RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO,
-          REDISCOVERVCENTERPARAM, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME,
-          MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME,
+          REDISCOVERVCENTERPARAM, LICENSEQUOTAUSAGEINFO, CCCREATESEREQ, CCDELETESEREQ,
+          CCADDVNICSREQ, CCDELVNICSREQ, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME,
+          ARPSTATRUNTIME, MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME,
           CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
           SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME,
           DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME,
@@ -104381,30 +104394,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -104682,7 +104696,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.'
         type: string
@@ -108935,10 +108950,10 @@ definitions:
         format: uint32
       log_records_allocation_percentage_for_events:
         description: Percentage of allocation (log_records_allocated_size)  for events
-          on controller node. Allowed values are 10-50. Field introduced in 31.2.1.
+          on controller node. Allowed values are 10-70. Field introduced in 31.2.1.
           Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
         type: integer
-        default: 20
+        default: 50
         format: uint32
       log_records_cleanup_target_percentage:
         description: Target percentage of allocated disk quota to reduce log file
@@ -114821,8 +114836,9 @@ definitions:
           GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY,
           SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE,
           RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO,
-          REDISCOVERVCENTERPARAM, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME,
-          MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME,
+          REDISCOVERVCENTERPARAM, LICENSEQUOTAUSAGEINFO, CCCREATESEREQ, CCDELETESEREQ,
+          CCADDVNICSREQ, CCDELVNICSREQ, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME,
+          ARPSTATRUNTIME, MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME,
           CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
           SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME,
           DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME,
@@ -115016,30 +115032,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -115317,7 +115334,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Field deprecated in 31.1.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
@@ -119352,11 +119370,6 @@ definitions:
           the management network is used. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: boolean
-      use_legacy_engine:
-        description: If enabled, Thales Luna client will use legacy gem engine library,
-          instead of a Luna provider. Field introduced in 31.2.1. Allowed with any
-          value in Enterprise, Enterprise with Cloud Services edition.
-        type: boolean
   HSMSafenetLunaServer:
     type: object
     required:
@@ -120947,30 +120960,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -121248,7 +121262,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -130999,30 +131014,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -131300,7 +131316,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -131697,9 +131714,10 @@ definitions:
         default: -1
         format: int64
       reservation:
-        description: Minimum license service units reserved for consumption. Allowed
-          values are 0-65535. Field introduced in 31.2.1. Allowed with any value in
-          Enterprise, Enterprise with Cloud Services edition.
+        description: Minimum license service units reserved for consumption. Reservation
+          is not enforced for Tenant/SE Group. Allowed values are 0-65535. Field introduced
+          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
         type: integer
         format: uint64
   RancherConfiguration:
@@ -132520,30 +132538,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -132821,7 +132840,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Field introduced in 22.1.6, 30.2.1. Allowed with any value in Enterprise,
           Enterprise with Cloud Services edition.
         type: string
@@ -133304,30 +133324,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -133605,7 +133626,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -134764,8 +134786,9 @@ definitions:
           GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY,
           SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE,
           RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO,
-          REDISCOVERVCENTERPARAM, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME,
-          MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME,
+          REDISCOVERVCENTERPARAM, LICENSEQUOTAUSAGEINFO, CCCREATESEREQ, CCDELETESEREQ,
+          CCADDVNICSREQ, CCDELVNICSREQ, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME,
+          ARPSTATRUNTIME, MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME,
           CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME,
           SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME,
           DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME,
@@ -136099,30 +136122,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -136400,7 +136424,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -139375,30 +139400,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -139676,7 +139702,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.'
         type: string
@@ -139785,30 +139812,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -140086,7 +140114,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.'
         type: string
@@ -140225,30 +140254,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -140526,7 +140556,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.'
         type: string
@@ -140651,30 +140682,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -140952,7 +140984,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.'
         type: string
@@ -141091,30 +141124,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -141392,7 +141426,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.'
         type: string
@@ -142953,7 +142988,6 @@ definitions:
           30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
           edition.
         type: integer
-        default: 1
         format: uint32
       mgmt_network_ref:
         description: Management network to use for Avi Service Engines. It is a reference
@@ -147157,10 +147191,6 @@ definitions:
         type: array
         items:
           type: string
-      sync_dns_to_se:
-        description: Ability to sync the DNS to SEs. Field introduced in 31.2.1. Allowed
-          with any value in Enterprise, Enterprise with Cloud Services edition.
-        type: boolean
       sync_kex_host_to_se:
         description: Ability to sync the KexAlgorithms & HostKeyAlgorithms to SEs.
           Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise
@@ -147629,30 +147659,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -147930,7 +147961,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -148265,30 +148297,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -148566,7 +148599,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -148704,30 +148738,31 @@ definitions:
           SYSERR_VI_MGR_SEVM_FLAVOR_UNAVAIL, SYSERR_VI_MGR_SEVM_DELETED, SYSERR_VI_MGR_SEVM_VINFRA_FAILURE,
           SYSERR_VI_MGR_SEVM_VNIC_FAILURE_QUESTION, SYSERR_VI_MGR_LOGIN_FAIL_NO_VCENTER,
           SYSERR_VI_MGR_LOGIN_FAIL_USER_CREDENTIALS, SYSERR_VI_MGR_VCENTER_VERSION_MISMATCH,
-          SYSERR_DB_CACHE_TBL_NOT_FOUND, SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED,
-          SYSERR_DB_QUERY_BATCHED, SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED,
-          SYSERR_DB_ENQUEUE_FULL, SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED,
-          SYSERR_OS_AGENT_OPENSTACK_ACCESSERR, SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR,
-          SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA, SYSERR_CC_SVC_Q_FULL,
-          SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR, SYSERR_CC_AGENT_RESOURCEERR,
-          SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT, SYSERR_CC_SVC_INVALID_DATA,
-          SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR, SYSERR_CC_AGENT_ABSENT,
-          SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE, SYSERR_CC_AGENT_NON_INFRA_SEVM,
-          SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL, SYSERR_MESOS_DISCOVERY_TIMEOUT,
-          SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE, SYSERR_FLEET_API_ERROR,
-          SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED, SYSERR_MESOS_SSH_FAILURE,
-          SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE, SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK,
-          SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED, SYSERR_CC_AGENT_DS_FAILED,
-          SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY, SYSERR_CC_AGENT_NOT_IMPLEMENTED,
-          SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED, SYSERR_CC_AGENT_GENERIC_FAILURE,
-          SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG, SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES,
-          SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES, SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE,
-          SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE, SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE,
-          SYSERR_AUTOSCALE_REASON_ALERT, SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED,
-          SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN,
-          SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT, SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS,
-          SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS, SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED,
-          SYSERR_AUTOSCALE_REASON_MANUAL, SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
+          SYSERR_RM_LICENSE_QUOTA_LIMIT_EXCEEDED_CANNOT_SPAWN_SE, SYSERR_DB_CACHE_TBL_NOT_FOUND,
+          SYSERR_DB_CACHE_OBJ_NOT_FOUND, SYSERR_DB_QUERY_QUEUED, SYSERR_DB_QUERY_BATCHED,
+          SYSERR_DB_UPDATE_FAILED, SYSERR_DB_QUERY_FAILED, SYSERR_DB_ENQUEUE_FULL,
+          SYSERR_OS_AGENT_Q_FULL, SYSERR_OS_AGENT_OPENSTACK_UNINITIALIZED, SYSERR_OS_AGENT_OPENSTACK_ACCESSERR,
+          SYSERR_OS_AGENT_OPENSTACK_RESOURCEERR, SYSERR_OS_AGENT_TENANT_ABSENT, SYSERR_OS_AGENT_INVALID_DATA,
+          SYSERR_CC_SVC_Q_FULL, SYSERR_CC_AGENT_UNINITIALIZED, SYSERR_CC_AGENT_ACCESSERR,
+          SYSERR_CC_AGENT_RESOURCEERR, SYSERR_CC_AGENT_TENANT_ACCESSERR, SYSERR_CC_AGENT_TENANT_ABSENT,
+          SYSERR_CC_SVC_INVALID_DATA, SYSERR_CC_OS_AGENT_NEUTRON_HOST_ACCESSERR, SYSERR_CC_NO_FLAVOR,
+          SYSERR_CC_AGENT_ABSENT, SYSERR_CC_AGENT_CONFIG_FAILURE, SYSERR_CC_AGENT_DECONFIG_FAILURE,
+          SYSERR_CC_AGENT_NON_INFRA_SEVM, SYSERR_MESOS_DISCOVERY_DEPLOYMENT_FAIL,
+          SYSERR_MESOS_DISCOVERY_TIMEOUT, SYSERR_MARATHON_APP_TERMINATED, SYSERR_MARATHON_INACCESSIBLE,
+          SYSERR_FLEET_API_ERROR, SYSERR_MESOS_SSH_CMD_TIMEOUT, SYSERR_MESOS_SSH_ABORTED,
+          SYSERR_MESOS_SSH_FAILURE, SYSERR_MESOS_SSH_NOTFOUND, SYSERR_CC_AGENT_VNIC_NO_IPS_AVAILABLE,
+          SYSERR_CC_AGENT_VNIC_NO_SUBNETWORK, SYSERR_CC_AGENT_VNIC_FAILURE, SYSERR_CC_AGENT_SCALE_IN_FAILED,
+          SYSERR_CC_AGENT_DS_FAILED, SYSERR_CC_AGENT_SCALE_OUT_FAILED, SYSERR_CC_TOO_BUSY,
+          SYSERR_CC_AGENT_NOT_IMPLEMENTED, SYSERR_CC_AGENT_METHOD_NOT_IMPLEMENTED,
+          SYSERR_CC_AGENT_GENERIC_FAILURE, SYSERR_RUM_TOOMANYSAMPLES, SYSERR_METRICS_TOO_MANY_MSG,
+          SYSERR_METRICS_TOO_MANY_MSG_ACROSS_ENTITIES, SYSERR_ANOMALYZER_NOT_ENOUGH_SAMPLES,
+          SYSERR_AUTOSCALE_REASON_INTELLIGENT_AUTOSCALE, SYSERR_AUTOSCALE_REASON_CONFIG_UPDATE,
+          SYSERR_AUTOSCALE_REASON_POOL_STATE_CHANGE, SYSERR_AUTOSCALE_REASON_ALERT,
+          SYSERR_AUTOSCALEIN_FAILED_LIMIT_EXCEEDED, SYSERR_AUTOSCALEOUT_FAILED_LIMIT_EXCEEDED,
+          SYSERR_AUTOSCALE_IGNORED_AS_WITHIN_COOLDOWN, SYSERR_AUTOSCALE_ORCHESTRATION_TIMEOUT,
+          SYSERR_AUTOSCALE_REASON_NOT_ENOUGH_SERVERS, SYSERR_AUTOSCALE_REASON_TOO_MANY_SERVERS,
+          SYSERR_AUTOSCALE_REASON_ORCHESTRATION_FAILED, SYSERR_AUTOSCALE_REASON_MANUAL,
+          SYSERR_AUTOSCALE_POLICY_NOT_FOUND, SYSERR_AUTOSCALE_REASON_GARBAGE_COLLECTION,
           SYSERR_AUTOSCALE_SCHEDULED_SCALEIN, SYSERR_AUTOSCALE_SCHEDULED_SCALEOUT,
           SYSERR_LICENSE_FIELD_NAME_NOT_SET, SYSERR_LICENSE_FILE_NOT_FOUND, SYSERR_LICENSE_FIELD_VALID_UNTIL_NOT_SET,
           SYSERR_LICENSE_INVALID_TIERS, SYSERR_LICENSE_FIELD_LICENSE_ID_NOT_PRESENT,
@@ -149005,7 +149040,8 @@ definitions:
           SYSERR_REPORT_GENERATION_FAILED, SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING,
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
-          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR.
+          SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
           Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.'
         type: string
