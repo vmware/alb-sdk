@@ -601,7 +601,7 @@
                     "format": "int64"
                 },
                 "reservation": {
-                    "description": "Minimum license service units reserved for consumption. Allowed values are 0-65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Minimum license service units reserved for consumption. Reservation is not enforced for Tenant/SE Group. Allowed values are 0-65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 }
@@ -700,6 +700,10 @@
                 "app_quota": {
                     "description": "Application quota for the tenant. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/AppQuotaConfig"
+                },
+                "enable_tenant_binding": {
+                    "description": "Enable tenant binding mode for this tenant. When enabled, only explicitly shared objects from admin tenant will be visible. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 },
                 "license_quota": {
                     "description": "License quota for the tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",

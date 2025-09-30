@@ -2,17 +2,17 @@
     "swagger": "2.0",
     "info": {
         "version": "31.3.1",
-        "title": "Avi FileObject Object API",
+        "title": "Avi TenantBinding Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi FileObject object api\n```\n- upload fileobject file\n- show fileobject\n- configure fileobject <key>\n- show fileobject <key>\n- upload fileobject uri\n```\n\nAPI permission: PERMISSION_FILE_OBJECT\n"
+        "description": "Avi TenantBinding object api\n```\n- configure tenantbinding <key>\n- show tenantbinding <key>\n- delete tenantbinding <key>\n```\n\nAPI permission: PERMISSION_TENANTBINDING\n"
     },
     "tags": [
         {
-            "name": "FileObject"
+            "name": "TenantBinding"
         }
     ],
     "schemes": [
@@ -26,13 +26,13 @@
     },
     "basePath": "/api",
     "paths": {
-        "/fileobject": {
+        "/tenantbinding": {
             "get": {
                 "tags": [
-                    "FileObject"
+                    "TenantBinding"
                 ],
-                "description": "/fileobject",
-                "operationId": "GET /fileobject",
+                "description": "/tenantbinding",
+                "operationId": "GET /tenantbinding",
                 "consumes": [
                     "application/json"
                 ],
@@ -123,7 +123,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/FileObjectApiResponse"
+                            "$ref": "#/definitions/TenantBindingApiResponse"
                         }
                     },
                     "401": {
@@ -133,10 +133,10 @@
             },
             "post": {
                 "tags": [
-                    "FileObject"
+                    "TenantBinding"
                 ],
-                "description": "/fileobject",
-                "operationId": "POST /fileobject",
+                "description": "/tenantbinding",
+                "operationId": "POST /tenantbinding",
                 "consumes": [
                     "application/json"
                 ],
@@ -175,10 +175,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "FileObject object creation",
+                        "description": "TenantBinding object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/FileObject"
+                            "$ref": "#/definitions/TenantBinding"
                         }
                     }
                 ],
@@ -191,7 +191,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/FileObject"
+                            "$ref": "#/definitions/TenantBinding"
                         }
                     },
                     "401": {
@@ -200,13 +200,13 @@
                 }
             }
         },
-        "/fileobject/{uuid}": {
+        "/tenantbinding/{uuid}": {
             "get": {
                 "tags": [
-                    "FileObject"
+                    "TenantBinding"
                 ],
-                "description": "/fileobject/{uuid}/{uuid}",
-                "operationId": "GET /fileobject/{uuid}",
+                "description": "/tenantbinding/{uuid}/{uuid}",
+                "operationId": "GET /tenantbinding/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -292,7 +292,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/FileObject"
+                            "$ref": "#/definitions/TenantBinding"
                         }
                     },
                     "401": {
@@ -305,10 +305,10 @@
             },
             "put": {
                 "tags": [
-                    "FileObject"
+                    "TenantBinding"
                 ],
-                "description": "/fileobject/{uuid}/{uuid}",
-                "operationId": "PUT /fileobject/{uuid}",
+                "description": "/tenantbinding/{uuid}/{uuid}",
+                "operationId": "PUT /tenantbinding/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -354,10 +354,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "FileObject object creation",
+                        "description": "TenantBinding object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/FileObject"
+                            "$ref": "#/definitions/TenantBinding"
                         }
                     },
                     {
@@ -377,7 +377,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/FileObject"
+                            "$ref": "#/definitions/TenantBinding"
                         }
                     },
                     "401": {
@@ -390,10 +390,10 @@
             },
             "patch": {
                 "tags": [
-                    "FileObject"
+                    "TenantBinding"
                 ],
-                "description": "/fileobject/{uuid}/{uuid}",
-                "operationId": "PATCH /fileobject/{uuid}",
+                "description": "/tenantbinding/{uuid}/{uuid}",
+                "operationId": "PATCH /tenantbinding/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -439,10 +439,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "FileObject object creation",
+                        "description": "TenantBinding object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/FileObject"
+                            "$ref": "#/definitions/TenantBinding"
                         }
                     },
                     {
@@ -462,7 +462,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/FileObject"
+                            "$ref": "#/definitions/TenantBinding"
                         }
                     },
                     "401": {
@@ -475,10 +475,10 @@
             },
             "delete": {
                 "tags": [
-                    "FileObject"
+                    "TenantBinding"
                 ],
-                "description": "/fileobject/{uuid}/{uuid}",
-                "operationId": "DELETE /fileobject/{uuid}",
+                "description": "/tenantbinding/{uuid}/{uuid}",
+                "operationId": "DELETE /tenantbinding/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -564,58 +564,11 @@
                 }
             }
         },
-        "CRL": {
-            "type": "object",
-            "properties": {
-                "common_name": {
-                    "description": "Common name of the issuer in the Certificate Revocation list. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "distinguished_name": {
-                    "description": "Distinguished name of the issuer in the Certificate Revocation list. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "etag": {
-                    "description": "Cached etag to optimize the download of the CRL. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "fingerprint": {
-                    "description": "Fingerprint of the CRL. Used to avoid configuring duplicates. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "last_refreshed": {
-                    "description": "Last time CRL was refreshed by the system. This is an internal field used by the system. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "last_update": {
-                    "description": "The date when this CRL was last issued. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "next_update": {
-                    "description": "The date when a newer CRL will be available. Also conveys the date after which the CRL should be considered obsolete. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "server_url": {
-                    "description": "URL of a server that issues the Certificate Revocation list. If this is configured, CRL will be periodically downloaded either based on the configured update interval or the next update interval in the CRL. CRL itself is stored in the body. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "text": {
-                    "description": "Certificate Revocation list in plain text for readability. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "update_interval": {
-                    "description": "Interval in minutes to check for CRL update. If not specified, interval will be 1 day. Allowed values are 30-525600. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "default": 1440,
-                    "format": "int32"
-                }
-            }
-        },
-        "FileObject": {
+        "TenantBinding": {
             "type": "object",
             "required": [
                 "name",
-                "type"
+                "shared_tenant_ref"
             ],
             "properties": {
                 "_last_modified": {
@@ -623,87 +576,24 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "checksum": {
-                    "description": "SHA1 checksum of the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "child_refs": {
-                    "description": "AVI internal formatted/converted files. It is a reference to an object of type FileObject. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "compressed": {
-                    "description": "This field indicates whether the file is gzip-compressed. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
-                "created": {
-                    "description": "Timestamp of creation for the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "crl_info": {
-                    "description": "This field contains CRL metadata. . Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/CRL"
-                },
-                "description": {
-                    "description": "Description of the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "events": {
-                    "description": "List of all FileObject events. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/FileObjectEventMap"
-                    }
-                },
-                "expires_at": {
-                    "description": "Timestamp when the CRL contents are no longer valid and hence CRL-file will be no longer needed and can be removed by the system. If this is set, a garbage collector process shall remove the CRL-file after this time. This field is applicable in the CRL context. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "gslb_geodb_format": {
-                    "description": "This field indicates the file format(Avi/Maxmind and v4/v6/v4-v6) of GSLB geodb file type. . Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "has_parent": {
-                    "description": "This field indicates if the the given FileObjecthas a parent FileObject or not. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
-                "is_federated": {
-                    "description": "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the Gslb federation. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
                 "name": {
-                    "description": "Name of the file object. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the tenant binding. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
-                "path": {
-                    "description": "Path to the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "se_group_ref": {
+                    "description": "UUID of the Service Engine Group being shared. It is a reference to an object of type ServiceEngineGroup. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
-                "read_only": {
-                    "description": "Enforce Read-Only on the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
-                "restrict_download": {
-                    "description": "Flag to allow/restrict download of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
-                "size": {
-                    "description": "Size of the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "uint64"
+                "shared_tenant_ref": {
+                    "description": "UUID of the tenant to which the object is being shared. It is a reference to an object of type Tenant. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "type": {
-                    "description": "Type of the file. . Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA, IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- OTHER_FILE_TYPES), Basic (Allowed values- OTHER_FILE_TYPES) edition.",
+                    "description": "Tenant UUID. This field is used for admin tenant context. It is a reference to an object of type Tenant. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -712,16 +602,12 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the file. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "version": {
-                    "description": "Version of the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the tenant binding. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
         },
-        "FileObjectApiResponse": {
+        "TenantBindingApiResponse": {
             "type": "object",
             "required": [
                 "count",
@@ -735,52 +621,10 @@
                 "results": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/FileObject"
+                        "$ref": "#/definitions/TenantBinding"
                     }
                 },
                 "next": {
-                    "type": "string"
-                }
-            }
-        },
-        "FileObjectEvent": {
-            "type": "object",
-            "properties": {
-                "duration": {
-                    "description": "Time taken to complete the event in seconds. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "uint32"
-                },
-                "end_time": {
-                    "description": "End time of the event. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "message": {
-                    "description": "Event message if any. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "start_time": {
-                    "description": "Start time of the event. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "status": {
-                    "description": "Event status. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                }
-            }
-        },
-        "FileObjectEventMap": {
-            "type": "object",
-            "properties": {
-                "task_event": {
-                    "description": "Actual event informations. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/FileObjectEvent"
-                    }
-                },
-                "task_name": {
-                    "description": "Name of the event task. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
