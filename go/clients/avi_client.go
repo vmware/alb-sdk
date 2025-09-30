@@ -143,6 +143,7 @@ type AviClient struct {
 	TechSupportMessage              *TechSupportMessageClient
 	TechSupportProfile              *TechSupportProfileClient
 	Tenant                          *TenantClient
+	TenantBinding                   *TenantBindingClient
 	TenantSystemConfiguration       *TenantSystemConfigurationClient
 	TestSeDatastoreLevel1           *TestSeDatastoreLevel1Client
 	TestSeDatastoreLevel2           *TestSeDatastoreLevel2Client
@@ -321,6 +322,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.TechSupportMessage = NewTechSupportMessageClient(aviSession)
 	aviClient.TechSupportProfile = NewTechSupportProfileClient(aviSession)
 	aviClient.Tenant = NewTenantClient(aviSession)
+	aviClient.TenantBinding = NewTenantBindingClient(aviSession)
 	aviClient.TenantSystemConfiguration = NewTenantSystemConfigurationClient(aviSession)
 	aviClient.TestSeDatastoreLevel1 = NewTestSeDatastoreLevel1Client(aviSession)
 	aviClient.TestSeDatastoreLevel2 = NewTestSeDatastoreLevel2Client(aviSession)
