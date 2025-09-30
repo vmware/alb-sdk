@@ -58,7 +58,7 @@ public class ObjectRule  {
      * This is the getter method this will return the attribute value.
      * Maximum number of objects allowed in the system.
      * When the limit exceeds, action is invoked for the oldest objects.
-     * Allowed values are 1-100000.
+     * Allowed values are 1-100.
      * Field introduced in 31.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -72,7 +72,7 @@ public class ObjectRule  {
      * This is the setter method to the attribute.
      * Maximum number of objects allowed in the system.
      * When the limit exceeds, action is invoked for the oldest objects.
-     * Allowed values are 1-100000.
+     * Allowed values are 1-100.
      * Field introduced in 31.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

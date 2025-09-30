@@ -202,7 +202,7 @@ public class FileObject extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * This field contains certificate revocation list metadata.
+     * This field contains crl metadata.
      * Field introduced in 30.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -214,7 +214,7 @@ public class FileObject extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * This field contains certificate revocation list metadata.
+     * This field contains crl metadata.
      * Field introduced in 30.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -289,8 +289,9 @@ public class FileObject extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Timestamp when the file will be no longer needed and can be removed by the system.
-     * If this is set, a garbage collector process will try to remove the file after this time.
+     * Timestamp when the crl contents are no longer valid and hence crl-file will be no longer needed and can be removed by the system.
+     * If this is set, a garbage collector process shall remove the crl-file after this time.
+     * This field is applicable in the crl context.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -302,8 +303,9 @@ public class FileObject extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Timestamp when the file will be no longer needed and can be removed by the system.
-     * If this is set, a garbage collector process will try to remove the file after this time.
+     * Timestamp when the crl contents are no longer valid and hence crl-file will be no longer needed and can be removed by the system.
+     * If this is set, a garbage collector process shall remove the crl-file after this time.
+     * This field is applicable in the crl context.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -315,7 +317,7 @@ public class FileObject extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * This field indicates the file format of gslb geodb file type.
+     * This field indicates the file format(avi/maxmind and v4/v6/v4-v6) of gslb geodb file type.
      * Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6,
      * GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6.
      * Field introduced in 31.1.1.
@@ -329,7 +331,7 @@ public class FileObject extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * This field indicates the file format of gslb geodb file type.
+     * This field indicates the file format(avi/maxmind and v4/v6/v4-v6) of gslb geodb file type.
      * Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6,
      * GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6.
      * Field introduced in 31.1.1.
@@ -369,7 +371,7 @@ public class FileObject extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * This field describes the object's replication scope.
      * If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
-     * If the field is set to true, then the object is replicated across the federation.
+     * If the field is set to true, then the object is replicated across the gslb federation.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -383,7 +385,7 @@ public class FileObject extends AviRestResource  {
      * This is the setter method to the attribute.
      * This field describes the object's replication scope.
      * If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
-     * If the field is set to true, then the object is replicated across the federation.
+     * If the field is set to true, then the object is replicated across the gslb federation.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.

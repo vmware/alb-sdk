@@ -50,7 +50,7 @@ public class ControllerProperties extends AviRestResource  {
     private Integer archiveRetentionFrameworkPeriod = 60;
 
     @JsonProperty("async_cert_chaining_interval")
-    private Integer asyncCertChainingInterval = 0;
+    private Integer asyncCertChainingInterval = 2;
 
     @JsonProperty("async_patch_merge_period")
     private Integer asyncPatchMergePeriod = 0;
@@ -139,6 +139,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonIgnore
     private Boolean enableResmgrLogCachePrint = false;
 
+    @JsonProperty("event_manager_file_modified_ts_filter")
+    private Integer eventManagerFileModifiedTsFilter = 180;
+
     @JsonProperty("event_manager_max_goroutines")
     private Integer eventManagerMaxGoroutines = 8;
 
@@ -179,7 +182,7 @@ public class ControllerProperties extends AviRestResource  {
     private Integer logRecordsAllocatedSize;
 
     @JsonProperty("log_records_allocation_percentage_for_events")
-    private Integer logRecordsAllocationPercentageForEvents = 20;
+    private Integer logRecordsAllocationPercentageForEvents = 50;
 
     @JsonProperty("log_records_cleanup_target_percentage")
     private Integer logRecordsCleanupTargetPercentage = 90;
@@ -624,7 +627,7 @@ public class ControllerProperties extends AviRestResource  {
      * Field introduced in 31.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return asyncCertChainingInterval
      */
     public Integer getAsyncCertChainingInterval() {
@@ -638,7 +641,7 @@ public class ControllerProperties extends AviRestResource  {
      * Field introduced in 31.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param asyncCertChainingInterval set the asyncCertChainingInterval.
      */
     public void setAsyncCertChainingInterval(Integer  asyncCertChainingInterval) {
@@ -1389,6 +1392,34 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Stated time duration beyond which event manager disregards files whose modified timestamp from current time is later.
+     * Allowed values are 1-1800.
+     * Field introduced in 31.2.1.
+     * Unit is sec.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+     * @return eventManagerFileModifiedTsFilter
+     */
+    public Integer getEventManagerFileModifiedTsFilter() {
+        return eventManagerFileModifiedTsFilter;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Stated time duration beyond which event manager disregards files whose modified timestamp from current time is later.
+     * Allowed values are 1-1800.
+     * Field introduced in 31.2.1.
+     * Unit is sec.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+     * @param eventManagerFileModifiedTsFilter set the eventManagerFileModifiedTsFilter.
+     */
+    public void setEventManagerFileModifiedTsFilter(Integer  eventManagerFileModifiedTsFilter) {
+        this.eventManagerFileModifiedTsFilter = eventManagerFileModifiedTsFilter;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Maximum number of goroutines for event manager process.
      * Allowed values are 1-64.
      * Field introduced in 30.2.1.
@@ -1738,10 +1769,10 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Percentage of allocation (log_records_allocated_size)  for events on controller node.
-     * Allowed values are 10-50.
+     * Allowed values are 10-70.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 50.
      * @return logRecordsAllocationPercentageForEvents
      */
     public Integer getLogRecordsAllocationPercentageForEvents() {
@@ -1751,10 +1782,10 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Percentage of allocation (log_records_allocated_size)  for events on controller node.
-     * Allowed values are 10-50.
+     * Allowed values are 10-70.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 50.
      * @param logRecordsAllocationPercentageForEvents set the logRecordsAllocationPercentageForEvents.
      */
     public void setLogRecordsAllocationPercentageForEvents(Integer  logRecordsAllocationPercentageForEvents) {
@@ -3722,7 +3753,8 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.asyncCertChainingInterval, objControllerProperties.asyncCertChainingInterval)&&
   Objects.equals(this.logRecordsFrequentCleanupEventGenerationThreshold, objControllerProperties.logRecordsFrequentCleanupEventGenerationThreshold)&&
   Objects.equals(this.logRecordsCleanupTargetPercentage, objControllerProperties.logRecordsCleanupTargetPercentage)&&
-  Objects.equals(this.logRecordsAllocationPercentageForEvents, objControllerProperties.logRecordsAllocationPercentageForEvents);
+  Objects.equals(this.logRecordsAllocationPercentageForEvents, objControllerProperties.logRecordsAllocationPercentageForEvents)&&
+  Objects.equals(this.eventManagerFileModifiedTsFilter, objControllerProperties.eventManagerFileModifiedTsFilter);
     }
 
     @Override
@@ -3768,6 +3800,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    enableNsxStreamingAgent: ").append(toIndentedString(enableNsxStreamingAgent)).append("\n");
                         sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
                         sb.append("    enableResmgrLogCachePrint: ").append(toIndentedString(enableResmgrLogCachePrint)).append("\n");
+                        sb.append("    eventManagerFileModifiedTsFilter: ").append(toIndentedString(eventManagerFileModifiedTsFilter)).append("\n");
                         sb.append("    eventManagerMaxGoroutines: ").append(toIndentedString(eventManagerMaxGoroutines)).append("\n");
                         sb.append("    eventManagerMaxSubscribers: ").append(toIndentedString(eventManagerMaxSubscribers)).append("\n");
                         sb.append("    eventManagerProcessingTimeThreshold: ").append(toIndentedString(eventManagerProcessingTimeThreshold)).append("\n");

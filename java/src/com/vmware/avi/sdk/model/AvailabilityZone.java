@@ -51,6 +51,9 @@ public class AvailabilityZone extends AviRestResource  {
     @JsonProperty("vcenter_refs")
     private List<String> vcenterRefs;
 
+    @JsonProperty("vsphere_zones")
+    private List<VSphereZone> vsphereZones;
+
 
     /**
      * This is the getter method this will return the attribute value.
@@ -355,6 +358,48 @@ public class AvailabilityZone extends AviRestResource  {
       this.vcenterRefs.add(vcenterRefsItem);
       return this;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Vsphere zone associated with the az.
+     * Field introduced in 31.3.1.
+     * Maximum of 1 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vsphereZones
+     */
+    public List<VSphereZone> getVsphereZones() {
+        return vsphereZones;
+    }
+
+    /**
+     * This is the setter method. this will set the vsphereZones
+     * Vsphere zone associated with the az.
+     * Field introduced in 31.3.1.
+     * Maximum of 1 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vsphereZones
+     */
+    public void setVsphereZones(List<VSphereZone>  vsphereZones) {
+        this.vsphereZones = vsphereZones;
+    }
+
+    /**
+     * This is the setter method this will set the vsphereZones
+     * Vsphere zone associated with the az.
+     * Field introduced in 31.3.1.
+     * Maximum of 1 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vsphereZones
+     */
+    public AvailabilityZone addVsphereZonesItem(VSphereZone vsphereZonesItem) {
+      if (this.vsphereZones == null) {
+        this.vsphereZones = new ArrayList<VSphereZone>();
+      }
+      this.vsphereZones.add(vsphereZonesItem);
+      return this;
+    }
 
 
     @Override
@@ -374,7 +419,8 @@ public class AvailabilityZone extends AviRestResource  {
   Objects.equals(this.azClusters, objAvailabilityZone.azClusters)&&
   Objects.equals(this.azDatastore, objAvailabilityZone.azDatastore)&&
   Objects.equals(this.azHosts, objAvailabilityZone.azHosts)&&
-  Objects.equals(this.azDatastores, objAvailabilityZone.azDatastores);
+  Objects.equals(this.azDatastores, objAvailabilityZone.azDatastores)&&
+  Objects.equals(this.vsphereZones, objAvailabilityZone.vsphereZones);
     }
 
     @Override
@@ -390,6 +436,7 @@ public class AvailabilityZone extends AviRestResource  {
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    vcenterRefs: ").append(toIndentedString(vcenterRefs)).append("\n");
+                        sb.append("    vsphereZones: ").append(toIndentedString(vsphereZones)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
