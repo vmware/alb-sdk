@@ -60,6 +60,7 @@ public class QuotaConfig  {
     /**
      * This is the getter method this will return the attribute value.
      * Minimum license service units reserved for consumption.
+     * Reservation is not enforced for tenant/se group.
      * Allowed values are 0-65535.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -73,6 +74,7 @@ public class QuotaConfig  {
     /**
      * This is the setter method to the attribute.
      * Minimum license service units reserved for consumption.
+     * Reservation is not enforced for tenant/se group.
      * Allowed values are 0-65535.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
