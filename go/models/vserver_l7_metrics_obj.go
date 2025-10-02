@@ -314,6 +314,9 @@ type VserverL7MetricsObj struct {
 	// Maximum number of open SSL sessions. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxSslOpenSessions *float64 `json:"max_ssl_open_sessions,omitempty"`
 
+	// Max rate of client HTTP requests received by the virtual service per second. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MaxTotalRequests *float64 `json:"max_total_requests,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	NodeObjID *string `json:"node_obj_id"`
