@@ -1730,6 +1730,10 @@ definitions:
                 description: "Maximum number of open SSL sessions. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
+            max_total_requests:
+                description: "Max rate of client HTTP requests received by the virtual service per second. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                format: double
             node_obj_id:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
