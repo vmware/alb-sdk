@@ -156,6 +156,36 @@ err = aviClient.AviSession.GetObject(
 	session.SetCloudUUID("cloud-f39f950a-e6ca-442d-b546-fc31520991bb"))
 fmt.Printf("VS with CLOUD_UUID obj: %v", obj)
 ```
+- Get all VirtualServices (Pagination)
+
+```go
+vss, err := aviClient.VirtualService.GetAll()
+if err != nil {
+    fmt.Println("Error fetching VirtualServices:", err)
+    return
+}
+fmt.Printf("Fetched %d VirtualServices\n", len(vss))
+
+for _, vs := range vss {
+    fmt.Printf("VS: %s UUID: %s\n", *vs.Name, *vs.UUID)
+}
+```
+
+- Fetching a Generic Collection
+
+For resources that don’t yet have a typed client, you can use the generic GetCollection API from AviSession:
+
+```go
+var pools []*models.Pool
+	err = aviClient.AviSession.GetCollection("api/pool", &pools)
+	if err != nil {
+		fmt.Println("Error fetching pools:", err)
+	}
+	fmt.Printf("Fetched %d Pools\n", len(pools))
+	for _, pool := range pools {
+		fmt.Printf("POOL: %s UUID: %s\n", *pool.Name, *pool.UUID)
+	}
+```
 
 - Delete virtualservice
 
