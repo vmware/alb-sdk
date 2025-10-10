@@ -7,6 +7,7 @@ package com.vmware.avi.sdk.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -23,6 +24,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("admin_auth_configuration")
     private AdminAuthConfiguration adminAuthConfiguration;
+
+    @JsonIgnore
+    private String aviEmailLoginPassword;
 
     @JsonProperty("common_criteria_mode")
     private Boolean commonCriteriaMode = false;
@@ -158,6 +162,30 @@ public class SystemConfiguration extends AviRestResource  {
      */
     public void setAdminAuthConfiguration(AdminAuthConfiguration adminAuthConfiguration) {
         this.adminAuthConfiguration = adminAuthConfiguration;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Password for avi_email_login user.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return aviEmailLoginPassword
+     */
+    public String getAviEmailLoginPassword() {
+        return aviEmailLoginPassword;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Password for avi_email_login user.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param aviEmailLoginPassword set the aviEmailLoginPassword.
+     */
+    public void setAviEmailLoginPassword(String  aviEmailLoginPassword) {
+        this.aviEmailLoginPassword = aviEmailLoginPassword;
     }
 
     /**
@@ -1171,6 +1199,7 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.telemetryConfiguration, objSystemConfiguration.telemetryConfiguration)&&
   Objects.equals(this.truststorePkiprofileRef, objSystemConfiguration.truststorePkiprofileRef)&&
   Objects.equals(this.legacySslSupport, objSystemConfiguration.legacySslSupport)&&
+  Objects.equals(this.aviEmailLoginPassword, objSystemConfiguration.aviEmailLoginPassword)&&
   Objects.equals(this.syslogServers, objSystemConfiguration.syslogServers)&&
   Objects.equals(this.syncKexHostToSe, objSystemConfiguration.syncKexHostToSe)&&
   Objects.equals(this.syncSyslogToSe, objSystemConfiguration.syncSyslogToSe)&&
@@ -1184,6 +1213,7 @@ public class SystemConfiguration extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class SystemConfiguration {\n");
                   sb.append("    adminAuthConfiguration: ").append(toIndentedString(adminAuthConfiguration)).append("\n");
+                        sb.append("    aviEmailLoginPassword: ").append(toIndentedString(aviEmailLoginPassword)).append("\n");
                         sb.append("    commonCriteriaMode: ").append(toIndentedString(commonCriteriaMode)).append("\n");
                         sb.append("    controllerAnalyticsPolicy: ").append(toIndentedString(controllerAnalyticsPolicy)).append("\n");
                         sb.append("    defaultLicenseTier: ").append(toIndentedString(defaultLicenseTier)).append("\n");
