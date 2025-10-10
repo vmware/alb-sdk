@@ -15,6 +15,9 @@ type SystemConfiguration struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AdminAuthConfiguration *AdminAuthConfiguration `json:"admin_auth_configuration,omitempty"`
 
+	// Password for avi_email_login user. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AviEmailLoginPassword *string `json:"avi_email_login_password,omitempty"`
+
 	// Common criteria mode's current state. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	CommonCriteriaMode *bool `json:"common_criteria_mode,omitempty"`
 

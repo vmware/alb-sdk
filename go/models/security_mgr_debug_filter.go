@@ -8,6 +8,9 @@ package models
 // swagger:model SecurityMgrDebugFilter
 type SecurityMgrDebugFilter struct {
 
+	// HTTP methods to accumulate for consolidated learning (e.g., GET, POST, PUT). If empty, all methods are accumulated. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AccumulateHTTPMethods []string `json:"accumulate_http_methods,omitempty"`
+
 	// Dynamically adapt configuration parameters for Application Learning feature. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableAdaptiveConfig *bool `json:"enable_adaptive_config,omitempty"`
 
