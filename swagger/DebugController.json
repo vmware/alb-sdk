@@ -1129,6 +1129,13 @@
         "SecurityMgrDebugFilter": {
             "type": "object",
             "properties": {
+                "accumulate_http_methods": {
+                    "description": "HTTP methods to accumulate for consolidated learning (e.g., GET, POST, PUT). If empty, all methods are accumulated. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "enable_adaptive_config": {
                     "description": "Dynamically adapt configuration parameters for Application Learning feature. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
