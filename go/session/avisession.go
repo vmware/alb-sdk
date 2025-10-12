@@ -903,7 +903,8 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 	if !retryReq {
 		glog.Infof("Req for %s uri %v tenant %s RespCode %v", verb, url, tenant, resp.StatusCode)
 		errorResult.HttpStatusCode = resp.StatusCode
-
+		// Extract error message from response body
+		errorResult.Message = avisess.extractErrorMessage(resp)
 		if uri == "login" {
 			avisess.collectCookiesFromResp(resp)
 		}
@@ -1732,4 +1733,45 @@ func GetIPVersion(ipAddr string) net.IP {
 		return nil
 	}
 	return ip
+}
+
+// extractErrorMessage reads the response body and extracts error message without closing the body.
+// This is used to populate error messages for retry scenarios.
+func (avisess *AviSession) extractErrorMessage(resp *http.Response) *string {
+	if resp == nil || resp.Body == nil {
+		return nil
+	}
+
+	// Only extract error messages for error status codes
+	if resp.StatusCode >= 200 && resp.StatusCode < 300 {
+		return nil
+	}
+
+	// Read the body
+	bodyBytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		glog.Errorf("Error reading response body: %v", err)
+		return nil
+	}
+
+	if len(bodyBytes) == 0 {
+		return nil
+	}
+
+	// Parse and format the error message
+	mres, merr := convertAviResponseToMapInterface(bodyBytes)
+	if merr != nil {
+		glog.Infof("Failed to parse error response: %v", merr)
+		// Return raw body as string if JSON parsing fails
+		emsg := string(bodyBytes)
+		return &emsg
+	}
+
+	// Check if parsed result is nil before formatting
+	if mres == nil {
+		return nil
+	}
+
+	emsg := fmt.Sprintf("%v", mres)
+	return &emsg
 }
