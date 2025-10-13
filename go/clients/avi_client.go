@@ -25,7 +25,6 @@ type AviClient struct {
 	AnalyticsProfile                *AnalyticsProfileClient
 	Application                     *ApplicationClient
 	ApplicationInsightsPolicy       *ApplicationInsightsPolicyClient
-	ApplicationInsightsState        *ApplicationInsightsStateClient
 	ApplicationPersistenceProfile   *ApplicationPersistenceProfileClient
 	ApplicationProfile              *ApplicationProfileClient
 	AuthMappingProfile              *AuthMappingProfileClient
@@ -201,7 +200,6 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.AnalyticsProfile = NewAnalyticsProfileClient(aviSession)
 	aviClient.Application = NewApplicationClient(aviSession)
 	aviClient.ApplicationInsightsPolicy = NewApplicationInsightsPolicyClient(aviSession)
-	aviClient.ApplicationInsightsState = NewApplicationInsightsStateClient(aviSession)
 	aviClient.ApplicationPersistenceProfile = NewApplicationPersistenceProfileClient(aviSession)
 	aviClient.ApplicationProfile = NewApplicationProfileClient(aviSession)
 	aviClient.AuthMappingProfile = NewAuthMappingProfileClient(aviSession)
