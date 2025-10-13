@@ -21,11 +21,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbSiteHealthStatus  {
+    @JsonProperty("controller_flavor")
+    private String controllerFlavor;
+
     @JsonProperty("controller_gsinfo")
     private List<GslbPoolMemberRuntimeInfo> controllerGsinfo;
-
-    @JsonProperty("controller_size")
-    private ControllerSize controllerSize;
 
     @JsonProperty("datapath_gsinfo")
     private List<GslbPoolMemberRuntimeInfo> datapathGsinfo;
@@ -58,6 +58,32 @@ public class GslbSiteHealthStatus  {
     private Float timestamp;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Controller size of peer controller.
+     * Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return controllerFlavor
+     */
+    public String getControllerFlavor() {
+        return controllerFlavor;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Controller size of peer controller.
+     * Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param controllerFlavor set the controllerFlavor.
+     */
+    public void setControllerFlavor(String  controllerFlavor) {
+        this.controllerFlavor = controllerFlavor;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Controller retrieved gslb service operational info based of virtual service state.
@@ -93,30 +119,6 @@ public class GslbSiteHealthStatus  {
       }
       this.controllerGsinfo.add(controllerGsinfoItem);
       return this;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Controller size of peer controller.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return controllerSize
-     */
-    public ControllerSize getControllerSize() {
-        return controllerSize;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Controller size of peer controller.
-     * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param controllerSize set the controllerSize.
-     */
-    public void setControllerSize(ControllerSize controllerSize) {
-        this.controllerSize = controllerSize;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -473,15 +475,15 @@ public class GslbSiteHealthStatus  {
   Objects.equals(this.geoTable, objGslbSiteHealthStatus.geoTable)&&
   Objects.equals(this.gapTable, objGslbSiteHealthStatus.gapTable)&&
   Objects.equals(this.edges, objGslbSiteHealthStatus.edges)&&
-  Objects.equals(this.controllerSize, objGslbSiteHealthStatus.controllerSize);
+  Objects.equals(this.controllerFlavor, objGslbSiteHealthStatus.controllerFlavor);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class GslbSiteHealthStatus {\n");
-                  sb.append("    controllerGsinfo: ").append(toIndentedString(controllerGsinfo)).append("\n");
-                        sb.append("    controllerSize: ").append(toIndentedString(controllerSize)).append("\n");
+                  sb.append("    controllerFlavor: ").append(toIndentedString(controllerFlavor)).append("\n");
+                        sb.append("    controllerGsinfo: ").append(toIndentedString(controllerGsinfo)).append("\n");
                         sb.append("    datapathGsinfo: ").append(toIndentedString(datapathGsinfo)).append("\n");
                         sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
                         sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
