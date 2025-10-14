@@ -23,6 +23,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CollectionRules  {
     @JsonIgnore
+    private String enforcedReportPeriod = "REPORT_PERIOD_LAST_7_DAYS";
+
+    @JsonIgnore
+    private Integer enforcedReportSamples = 2000;
+
+    @JsonIgnore
     private Integer maxConcurrentWorkers = 1;
 
     @JsonProperty("min_free_disk_required")
@@ -32,6 +38,58 @@ public class CollectionRules  {
     private Integer timeout = 1800;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The period for report generation.
+     * Enum options - REPORT_PERIOD_LAST_24_HOURS, REPORT_PERIOD_LAST_7_DAYS, REPORT_PERIOD_LAST_30_DAYS.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "REPORT_PERIOD_LAST_7_DAYS".
+     * @return enforcedReportPeriod
+     */
+    public String getEnforcedReportPeriod() {
+        return enforcedReportPeriod;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The period for report generation.
+     * Enum options - REPORT_PERIOD_LAST_24_HOURS, REPORT_PERIOD_LAST_7_DAYS, REPORT_PERIOD_LAST_30_DAYS.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "REPORT_PERIOD_LAST_7_DAYS".
+     * @param enforcedReportPeriod set the enforcedReportPeriod.
+     */
+    public void setEnforcedReportPeriod(String  enforcedReportPeriod) {
+        this.enforcedReportPeriod = enforcedReportPeriod;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Minimum data samples required for report generation.
+     * Allowed values are 200-5000.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
+     * @return enforcedReportSamples
+     */
+    public Integer getEnforcedReportSamples() {
+        return enforcedReportSamples;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Minimum data samples required for report generation.
+     * Allowed values are 200-5000.
+     * Field introduced in 31.2.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
+     * @param enforcedReportSamples set the enforcedReportSamples.
+     */
+    public void setEnforcedReportSamples(Integer  enforcedReportSamples) {
+        this.enforcedReportSamples = enforcedReportSamples;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -127,14 +185,18 @@ public class CollectionRules  {
       CollectionRules objCollectionRules = (CollectionRules) o;
       return   Objects.equals(this.timeout, objCollectionRules.timeout)&&
   Objects.equals(this.minFreeDiskRequired, objCollectionRules.minFreeDiskRequired)&&
-  Objects.equals(this.maxConcurrentWorkers, objCollectionRules.maxConcurrentWorkers);
+  Objects.equals(this.maxConcurrentWorkers, objCollectionRules.maxConcurrentWorkers)&&
+  Objects.equals(this.enforcedReportPeriod, objCollectionRules.enforcedReportPeriod)&&
+  Objects.equals(this.enforcedReportSamples, objCollectionRules.enforcedReportSamples);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class CollectionRules {\n");
-                  sb.append("    maxConcurrentWorkers: ").append(toIndentedString(maxConcurrentWorkers)).append("\n");
+                  sb.append("    enforcedReportPeriod: ").append(toIndentedString(enforcedReportPeriod)).append("\n");
+                        sb.append("    enforcedReportSamples: ").append(toIndentedString(enforcedReportSamples)).append("\n");
+                        sb.append("    maxConcurrentWorkers: ").append(toIndentedString(maxConcurrentWorkers)).append("\n");
                         sb.append("    minFreeDiskRequired: ").append(toIndentedString(minFreeDiskRequired)).append("\n");
                         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
                   sb.append("}");
