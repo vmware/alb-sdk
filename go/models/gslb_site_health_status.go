@@ -8,11 +8,11 @@ package models
 // swagger:model GslbSiteHealthStatus
 type GslbSiteHealthStatus struct {
 
+	// Controller size of peer controller. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ControllerFlavor *string `json:"controller_flavor,omitempty"`
+
 	// Controller retrieved GSLB service operational info based of virtual service state. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerGsinfo []*GslbPoolMemberRuntimeInfo `json:"controller_gsinfo,omitempty"`
-
-	// Controller size of peer controller. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	ControllerSize *ControllerSize `json:"controller_size,omitempty"`
 
 	// Controller retrieved GSLB service operational info based of dns datapath resolution. This information is generated only on those sites that have DNS-VS participating in GSLB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DatapathGsinfo []*GslbPoolMemberRuntimeInfo `json:"datapath_gsinfo,omitempty"`
