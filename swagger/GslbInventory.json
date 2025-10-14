@@ -1884,25 +1884,6 @@
                 }
             }
         },
-        "ControllerSize": {
-            "type": "object",
-            "properties": {
-                "flavor": {
-                    "description": "Controller flavor (E/S/M/L) for this controller size. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "min_cpus": {
-                    "description": "Minimum number of cpu cores required. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "min_memory": {
-                    "description": "Minimum memory required. Field introduced in 20.1.1. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "int32"
-                }
-            }
-        },
         "DNSConfig": {
             "type": "object",
             "required": [
@@ -2923,16 +2904,16 @@
         "GslbSiteHealthStatus": {
             "type": "object",
             "properties": {
+                "controller_flavor": {
+                    "description": "Controller size of peer controller. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
                 "controller_gsinfo": {
                     "description": "Controller retrieved GSLB service operational info based of virtual service state. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/GslbPoolMemberRuntimeInfo"
                     }
-                },
-                "controller_size": {
-                    "description": "Controller size of peer controller. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/ControllerSize"
                 },
                 "datapath_gsinfo": {
                     "description": "Controller retrieved GSLB service operational info based of dns datapath resolution. This information is generated only on those sites that have DNS-VS participating in GSLB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
