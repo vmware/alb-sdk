@@ -15,11 +15,20 @@ type UserAccountProfile struct {
 	// Lock timeout period (in minutes). Default is 30 minutes. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AccountLockTimeout *uint32 `json:"account_lock_timeout,omitempty"`
 
+	// Password complexity constraints for the user account profile. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ComplexityConstraint *ComplexityConstraint `json:"complexity_constraint,omitempty"`
+
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// The time period after which credentials expire. Default is 180 days. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CredentialsTimeoutThreshold *uint32 `json:"credentials_timeout_threshold,omitempty"`
+
+	// Password expiration settings for the user account profile. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ExpirationConstraint *ExpirationConstraint `json:"expiration_constraint,omitempty"`
+
+	// Account lockout settings for the user account profile. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LockoutConstraint *LockoutConstraint `json:"lockout_constraint,omitempty"`
 
 	// The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps. Special values are 0 - Do not reset login_failure_counts on the basis of time.. Field introduced in 22.1.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	LoginFailureCountExpiryWindow *uint32 `json:"login_failure_count_expiry_window,omitempty"`
