@@ -2561,7 +2561,7 @@
                 "max_cpu_load_adaptive_sampling": {
                     "description": "When adaptive sampling is enabled, specifies the max CPU load allowed for adaptive sampling. If the CPU load exceeds this value, no requests will be sampled. Allowed values are 1-100. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "default": 80,
+                    "default": 95,
                     "format": "uint32"
                 },
                 "max_cpu_usage": {
