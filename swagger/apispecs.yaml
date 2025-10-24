@@ -32921,403 +32921,6 @@ paths:
             type: string
         '404':
           description: object not found
-  /gslbcrmruntime:
-    get:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime
-      operationId: GET /gslbcrmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntimeApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime
-      operationId: POST /gslbcrmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbCRMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbCRMRuntime'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntime'
-        '401':
-          description: log in failed
-  /gslbcrmruntime/{uuid}:
-    get:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: GET /gslbcrmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbcrmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbCRMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbCRMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbcrmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbCRMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbCRMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    delete:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbcrmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
-        '404':
-          description: object not found
   /gslbsmruntime:
     get:
       tags:
@@ -33665,6 +33268,403 @@ paths:
       - GslbSMRuntime
       description: /gslbsmruntime/{uuid}/{uuid}
       operationId: DELETE /gslbsmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: object not found
+  /gslbcrmruntime:
+    get:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime
+      operationId: GET /gslbcrmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntimeApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime
+      operationId: POST /gslbcrmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbCRMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbCRMRuntime'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntime'
+        '401':
+          description: log in failed
+  /gslbcrmruntime/{uuid}:
+    get:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: GET /gslbcrmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbcrmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbCRMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbCRMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbcrmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbCRMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbCRMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -83202,58 +83202,6 @@ paths:
         '404':
           description: object not found
   /cloud/{uuid}/gc/:
-    patch:
-      tags:
-      - Cloud
-      description: /cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
     put:
       tags:
       - Cloud
@@ -83298,6 +83246,58 @@ paths:
           type: object
           additionalProperties:
             type: string
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - Cloud
+      description: /cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -88823,7 +88823,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -92626,7 +92627,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
@@ -97666,7 +97668,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         readOnly: true
@@ -98156,7 +98159,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         readOnly: true
@@ -98715,10 +98719,10 @@ definitions:
           SYSTEMHEALTHGETSYSTEMHEALTHPOSTGRESRESPONSE, SYSTEMHEALTHGETSERVICEFAILEDRESPONSE,
           SYSTEMHEALTHGETSERVICERESTARTEDRESPONSE, SYSTEMHEALTHGETSERVICEDETAILRESPONSE,
           SEAGENTSEDATASTOREDOWNLOADFAIL, UPGRADEPROFILE, QATINFO, RETENTIONPOLICY,
-          SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, TECHSUPPORTPROFILE,
-          TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE, REPORT, REPORTPROFILE,
-          MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME, VERSIONINFO,
-          CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
+          SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, LOGMANAGERSTATS,
+          TECHSUPPORTPROFILE, TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE,
+          REPORT, REPORTPROFILE, MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME,
+          VERSIONINFO, CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
           GSLBHEALTHMONITORRUNTIME, GSLBGEODBPROFILERUNTIME, GSLBAPPLICATIONPERSISTENCEPROFILERUNTIME,
           GSLBPKIPROFILERUNTIME, GSLBJWTSERVERPROFILERUNTIME, GSLBSSLPROFILERUNTIME,
           GSLBSSLKEYANDCERTIFICATERUNTIME, GSLBGEOFILE, GSLBGEOFILERUNTIME, EVENTINFO,
@@ -99052,10 +99056,10 @@ definitions:
           SYSTEMHEALTHGETSYSTEMHEALTHPOSTGRESRESPONSE, SYSTEMHEALTHGETSERVICEFAILEDRESPONSE,
           SYSTEMHEALTHGETSERVICERESTARTEDRESPONSE, SYSTEMHEALTHGETSERVICEDETAILRESPONSE,
           SEAGENTSEDATASTOREDOWNLOADFAIL, UPGRADEPROFILE, QATINFO, RETENTIONPOLICY,
-          SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, TECHSUPPORTPROFILE,
-          TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE, REPORT, REPORTPROFILE,
-          MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME, VERSIONINFO,
-          CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
+          SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, LOGMANAGERSTATS,
+          TECHSUPPORTPROFILE, TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE,
+          REPORT, REPORTPROFILE, MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME,
+          VERSIONINFO, CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
           GSLBHEALTHMONITORRUNTIME, GSLBGEODBPROFILERUNTIME, GSLBAPPLICATIONPERSISTENCEPROFILERUNTIME,
           GSLBPKIPROFILERUNTIME, GSLBJWTSERVERPROFILERUNTIME, GSLBSSLPROFILERUNTIME,
           GSLBSSLKEYANDCERTIFICATERUNTIME, GSLBGEOFILE, GSLBGEOFILERUNTIME, EVENTINFO,
@@ -105493,7 +105497,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.'
         type: string
@@ -107422,6 +107427,20 @@ definitions:
   CollectionRules:
     type: object
     properties:
+      enforced_report_period:
+        description: The period for report generation. Enum options - REPORT_PERIOD_LAST_24_HOURS,
+          REPORT_PERIOD_LAST_7_DAYS, REPORT_PERIOD_LAST_30_DAYS. Field introduced
+          in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
+        default: REPORT_PERIOD_LAST_7_DAYS
+      enforced_report_samples:
+        description: Minimum data samples required for report generation. Allowed
+          values are 200-5000. Field introduced in 31.2.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        type: integer
+        default: 2000
+        format: uint32
       max_concurrent_workers:
         description: Maximum number of concurrent workers used for data collection
           during report generation. Allowed values are 1-10. Field introduced in 31.2.1.
@@ -107442,6 +107461,51 @@ definitions:
           in Enterprise, Enterprise with Cloud Services edition.
         type: integer
         default: 1800
+        format: uint32
+  ComplexityConstraint:
+    type: object
+    properties:
+      min_length:
+        description: Minimum password length. Defaults to 15 characters. Allowed values
+          are 8-64. Field introduced in 31.3.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: integer
+        default: 15
+        format: uint32
+      min_lowercase:
+        description: Minimum number of lowercase characters required. Allowed values
+          are 0-10. Field introduced in 31.3.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: integer
+        default: 1
+        format: uint32
+      min_numeric:
+        description: Minimum number of numeric characters required. Allowed values
+          are 0-10. Field introduced in 31.3.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: integer
+        default: 1
+        format: uint32
+      min_special:
+        description: Minimum number of special characters required. Allowed values
+          are 0-10. Field introduced in 31.3.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: integer
+        default: 1
+        format: uint32
+      min_uppercase:
+        description: Minimum number of uppercase characters required. Allowed values
+          are 0-10. Field introduced in 31.3.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: integer
+        default: 1
+        format: uint32
+      password_history:
+        description: Number of previous passwords to remember. Defaults to 5. Allowed
+          values are 1-10. Field introduced in 31.3.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: integer
+        default: 5
         format: uint32
   CompressionFilter:
     type: object
@@ -115788,10 +115852,10 @@ definitions:
           SYSTEMHEALTHGETSYSTEMHEALTHPOSTGRESRESPONSE, SYSTEMHEALTHGETSERVICEFAILEDRESPONSE,
           SYSTEMHEALTHGETSERVICERESTARTEDRESPONSE, SYSTEMHEALTHGETSERVICEDETAILRESPONSE,
           SEAGENTSEDATASTOREDOWNLOADFAIL, UPGRADEPROFILE, QATINFO, RETENTIONPOLICY,
-          SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, TECHSUPPORTPROFILE,
-          TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE, REPORT, REPORTPROFILE,
-          MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME, VERSIONINFO,
-          CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
+          SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, LOGMANAGERSTATS,
+          TECHSUPPORTPROFILE, TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE,
+          REPORT, REPORTPROFILE, MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME,
+          VERSIONINFO, CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
           GSLBHEALTHMONITORRUNTIME, GSLBGEODBPROFILERUNTIME, GSLBAPPLICATIONPERSISTENCEPROFILERUNTIME,
           GSLBPKIPROFILERUNTIME, GSLBJWTSERVERPROFILERUNTIME, GSLBSSLPROFILERUNTIME,
           GSLBSSLKEYANDCERTIFICATERUNTIME, GSLBGEOFILE, GSLBGEOFILERUNTIME, EVENTINFO,
@@ -116193,7 +116257,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Field deprecated in 31.1.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
@@ -116216,6 +116281,17 @@ definitions:
         description: ' Field introduced in 17.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.'
         type: string
+  ExpirationConstraint:
+    type: object
+    properties:
+      password_expiration_days:
+        description: Password expiry period in days. Defaults to 365 days. Allowed
+          values are 30-730. Special values are 0- No password expiry.. Field introduced
+          in 31.3.1. Unit is DAYS. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
+        type: integer
+        default: 365
+        format: uint32
   FalsePositiveDetails:
     type: object
     properties:
@@ -122124,7 +122200,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -124849,6 +124926,33 @@ definitions:
           $ref: '#/definitions/LocalWorkerFdsVersion'
       next:
         type: string
+  LockoutConstraint:
+    type: object
+    properties:
+      lockout_evaluation_period:
+        description: Time window for evaluating failed attempts in seconds. Defaults
+          to 900 seconds. Allowed values are 300-1800. Special values are 0 - Do not
+          reset login failure counts on the basis of any evaluation window.. Field
+          introduced in 31.3.1. Unit is SEC. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: integer
+        default: 900
+        format: uint32
+      lockout_max_auth_failures:
+        description: Number of failed attempts before account lockout. Defaults to
+          3. Setting it to 0 allows unlimited login failure attempts without any lockout.
+          Allowed values are 0-5. Field introduced in 31.3.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        type: integer
+        default: 3
+        format: uint32
+      lockout_period:
+        description: Account lockout duration in seconds. Defaults to 900 seconds.
+          Allowed values are 600-1800. Field introduced in 31.3.1. Unit is SEC. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: integer
+        default: 900
+        format: uint32
   LogAgentEventDetail:
     type: object
     required:
@@ -132317,7 +132421,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -133842,7 +133947,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Field introduced in 22.1.6, 30.2.1. Allowed with any value in Enterprise,
           Enterprise with Cloud Services edition.
         type: string
@@ -134629,7 +134735,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -135885,10 +135992,10 @@ definitions:
           SYSTEMHEALTHGETSYSTEMHEALTHPOSTGRESRESPONSE, SYSTEMHEALTHGETSERVICEFAILEDRESPONSE,
           SYSTEMHEALTHGETSERVICERESTARTEDRESPONSE, SYSTEMHEALTHGETSERVICEDETAILRESPONSE,
           SEAGENTSEDATASTOREDOWNLOADFAIL, UPGRADEPROFILE, QATINFO, RETENTIONPOLICY,
-          SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, TECHSUPPORTPROFILE,
-          TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE, REPORT, REPORTPROFILE,
-          MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME, VERSIONINFO,
-          CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
+          SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, LOGMANAGERSTATS,
+          TECHSUPPORTPROFILE, TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE,
+          REPORT, REPORTPROFILE, MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME,
+          VERSIONINFO, CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
           GSLBHEALTHMONITORRUNTIME, GSLBGEODBPROFILERUNTIME, GSLBAPPLICATIONPERSISTENCEPROFILERUNTIME,
           GSLBPKIPROFILERUNTIME, GSLBJWTSERVERPROFILERUNTIME, GSLBSSLPROFILERUNTIME,
           GSLBSSLKEYANDCERTIFICATERUNTIME, GSLBGEOFILE, GSLBGEOFILERUNTIME, EVENTINFO,
@@ -137430,7 +137537,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -140723,7 +140831,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.'
         type: string
@@ -141136,7 +141245,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.'
         type: string
@@ -141579,7 +141689,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.'
         type: string
@@ -142008,7 +142119,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.'
         type: string
@@ -142451,7 +142563,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.'
         type: string
@@ -143894,7 +144007,7 @@ definitions:
           is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud
           Services edition.
         type: integer
-        default: 80
+        default: 95
         format: uint32
       max_cpu_usage:
         description: When CPU usage on an SE exceeds this threshold, Virtual Services
@@ -148993,7 +149106,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -149632,7 +149746,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
@@ -150074,7 +150189,8 @@ definitions:
           SYSERR_CHECK_MIN_FREE_DISK_REQUIRED_REPORTING_ERR, SYSERR_CHECK_CLUSTER_REPORTING,
           SYSERR_CHECK_CLUSTER_REPORTING_ERR, SYSERR_CHECK_UPGRADE_IN_PROGRESS, SYSERR_CHECK_UPGRADE_IN_PROGRESS_ERR,
           SYSERR_CHECK_WAF_ENABLED_REPORTING, SYSERR_CHECK_WAF_ENABLED_REPORTING_ERR,
-          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION.
+          SYSERR_CHECK_REPORT_SE_GROUP_VERSION, SYSERR_CHECK_REPORT_LOWER_SE_GROUP_VERSION,
+          SYSERR_CHECK_REPORT_DATA_SAMPLES, SYSERR_CHECK_REPORT_DATA_SAMPLES_ERR.
           Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.'
         type: string
@@ -151477,6 +151593,11 @@ definitions:
         type: integer
         default: 30
         format: uint32
+      complexity_constraint:
+        description: Password complexity constraints for the user account profile.
+          Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
+        $ref: '#/definitions/ComplexityConstraint'
       configpb_attributes:
         description: Protobuf versioning for config pbs. Field introduced in 21.1.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
@@ -151489,6 +151610,16 @@ definitions:
         type: integer
         default: 180
         format: uint32
+      expiration_constraint:
+        description: Password expiration settings for the user account profile. Field
+          introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        $ref: '#/definitions/ExpirationConstraint'
+      lockout_constraint:
+        description: Account lockout settings for the user account profile. Field
+          introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        $ref: '#/definitions/LockoutConstraint'
       login_failure_count_expiry_window:
         description: The configurable time window beyond which we need to pop all
           the login failure timestamps from the login_failure_timestamps. Special
