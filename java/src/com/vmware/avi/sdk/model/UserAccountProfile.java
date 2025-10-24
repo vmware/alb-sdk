@@ -24,8 +24,17 @@ public class UserAccountProfile extends AviRestResource  {
     @JsonProperty("account_lock_timeout")
     private Integer accountLockTimeout = 30;
 
+    @JsonProperty("complexity_constraint")
+    private ComplexityConstraint complexityConstraint;
+
     @JsonProperty("credentials_timeout_threshold")
     private Integer credentialsTimeoutThreshold = 180;
+
+    @JsonProperty("expiration_constraint")
+    private ExpirationConstraint expirationConstraint;
+
+    @JsonProperty("lockout_constraint")
+    private LockoutConstraint lockoutConstraint;
 
     @JsonProperty("login_failure_count_expiry_window")
     private Integer loginFailureCountExpiryWindow = 0;
@@ -78,6 +87,30 @@ public class UserAccountProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Password complexity constraints for the user account profile.
+     * Field introduced in 31.3.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return complexityConstraint
+     */
+    public ComplexityConstraint getComplexityConstraint() {
+        return complexityConstraint;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Password complexity constraints for the user account profile.
+     * Field introduced in 31.3.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param complexityConstraint set the complexityConstraint.
+     */
+    public void setComplexityConstraint(ComplexityConstraint complexityConstraint) {
+        this.complexityConstraint = complexityConstraint;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * The time period after which credentials expire.
      * Default is 180 days.
      * Unit is days.
@@ -100,6 +133,54 @@ public class UserAccountProfile extends AviRestResource  {
      */
     public void setCredentialsTimeoutThreshold(Integer  credentialsTimeoutThreshold) {
         this.credentialsTimeoutThreshold = credentialsTimeoutThreshold;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Password expiration settings for the user account profile.
+     * Field introduced in 31.3.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return expirationConstraint
+     */
+    public ExpirationConstraint getExpirationConstraint() {
+        return expirationConstraint;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Password expiration settings for the user account profile.
+     * Field introduced in 31.3.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param expirationConstraint set the expirationConstraint.
+     */
+    public void setExpirationConstraint(ExpirationConstraint expirationConstraint) {
+        this.expirationConstraint = expirationConstraint;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Account lockout settings for the user account profile.
+     * Field introduced in 31.3.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return lockoutConstraint
+     */
+    public LockoutConstraint getLockoutConstraint() {
+        return lockoutConstraint;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Account lockout settings for the user account profile.
+     * Field introduced in 31.3.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param lockoutConstraint set the lockoutConstraint.
+     */
+    public void setLockoutConstraint(LockoutConstraint lockoutConstraint) {
+        this.lockoutConstraint = lockoutConstraint;
     }
 
     /**
@@ -280,7 +361,10 @@ public class UserAccountProfile extends AviRestResource  {
   Objects.equals(this.accountLockTimeout, objUserAccountProfile.accountLockTimeout)&&
   Objects.equals(this.maxConcurrentSessions, objUserAccountProfile.maxConcurrentSessions)&&
   Objects.equals(this.credentialsTimeoutThreshold, objUserAccountProfile.credentialsTimeoutThreshold)&&
-  Objects.equals(this.loginFailureCountExpiryWindow, objUserAccountProfile.loginFailureCountExpiryWindow);
+  Objects.equals(this.loginFailureCountExpiryWindow, objUserAccountProfile.loginFailureCountExpiryWindow)&&
+  Objects.equals(this.complexityConstraint, objUserAccountProfile.complexityConstraint)&&
+  Objects.equals(this.expirationConstraint, objUserAccountProfile.expirationConstraint)&&
+  Objects.equals(this.lockoutConstraint, objUserAccountProfile.lockoutConstraint);
     }
 
     @Override
@@ -288,7 +372,10 @@ public class UserAccountProfile extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class UserAccountProfile {\n");
                   sb.append("    accountLockTimeout: ").append(toIndentedString(accountLockTimeout)).append("\n");
+                        sb.append("    complexityConstraint: ").append(toIndentedString(complexityConstraint)).append("\n");
                         sb.append("    credentialsTimeoutThreshold: ").append(toIndentedString(credentialsTimeoutThreshold)).append("\n");
+                        sb.append("    expirationConstraint: ").append(toIndentedString(expirationConstraint)).append("\n");
+                        sb.append("    lockoutConstraint: ").append(toIndentedString(lockoutConstraint)).append("\n");
                         sb.append("    loginFailureCountExpiryWindow: ").append(toIndentedString(loginFailureCountExpiryWindow)).append("\n");
                         sb.append("    maxConcurrentSessions: ").append(toIndentedString(maxConcurrentSessions)).append("\n");
                         sb.append("    maxLoginFailureCount: ").append(toIndentedString(maxLoginFailureCount)).append("\n");
