@@ -36,7 +36,7 @@ type SSLProfile struct {
 	// DH Parameters used in SSL. At this time, it is not configurable and is set to 2048 bits. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Dhparam *string `json:"dhparam,omitempty"`
 
-	// Elliptic Curve Cryptography NamedCurves (TLS Supported Groups)represented as defined by RFC 8422-Section 5.1.1 andhttps //www.openssl.org/docs/man1.1.0/man3/SSL_CTX_set1_curves.html. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Elliptic Curve Cryptography NamedCurves (TLS Supported Groups)represented as defined by RFC 8422-Section 5.1.1 and https //docs.openssl.org/master/man3/SSL_CTX_set1_curves/. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EcNamedCurve *string `json:"ec_named_curve,omitempty"`
 
 	// Enable early data processing for TLS1.3 connections. Field introduced in 18.2.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
@@ -61,7 +61,7 @@ type SSLProfile struct {
 	// Send 'close notify' alert message for a clean shutdown of the SSL connection. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SendCloseNotify *bool `json:"send_close_notify,omitempty"`
 
-	// Signature Algorithms represented as defined by RFC5246-Section 7.4.1.4.1 andhttps //www.openssl.org/docs/man1.1.0/man3/SSL_CTX_set1_client_sigalgs_list.html. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Signature Algorithms represented as defined by RFC5246-Section 7.4.1.4.1 and https //docs.openssl.org/master/man3/SSL_CTX_set1_sigalgs/. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SignatureAlgorithm *string `json:"signature_algorithm,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
