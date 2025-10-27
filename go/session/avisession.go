@@ -793,8 +793,7 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 	if tenant == "" {
 		tenant = avisess.tenant
 	}
-
-	if !strings.HasSuffix(url, "login") && avisess.csrfToken != "" {
+	if url != avisess.prefix+"login" && avisess.csrfToken != "" {
 		req.Header["X-CSRFToken"] = []string{avisess.csrfToken}
 		req.AddCookie(&http.Cookie{Name: "csrftoken", Value: avisess.csrfToken})
 	}
@@ -803,9 +802,7 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 		req.Header.Set("X-Avi-Tenant", tenant)
 	}
 
-	_, exists := req.Header["Authorization"]
-
-	if !strings.HasSuffix(url, "login") && avisess.sessionid != "" && !exists {
+	if url != avisess.prefix+"login" && avisess.sessionid != "" {
 		req.AddCookie(&http.Cookie{Name: "sessionid", Value: avisess.sessionid})
 		req.AddCookie(&http.Cookie{Name: "avi-sessionid", Value: avisess.sessionid})
 	}
