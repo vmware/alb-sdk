@@ -722,7 +722,7 @@
                     "type": "string"
                 },
                 "ec_named_curve": {
-                    "description": "Elliptic Curve Cryptography NamedCurves (TLS Supported Groups)represented as defined by RFC 8422-Section 5.1.1 andhttps //www.openssl.org/docs/man1.1.0/man3/SSL_CTX_set1_curves.html. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Elliptic Curve Cryptography NamedCurves (TLS Supported Groups)represented as defined by RFC 8422-Section 5.1.1 and https //docs.openssl.org/master/man3/SSL_CTX_set1_curves/. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "auto"
                 },
@@ -760,7 +760,7 @@
                     "default": true
                 },
                 "signature_algorithm": {
-                    "description": "Signature Algorithms represented as defined by RFC5246-Section 7.4.1.4.1 andhttps //www.openssl.org/docs/man1.1.0/man3/SSL_CTX_set1_client_sigalgs_list.html. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Signature Algorithms represented as defined by RFC5246-Section 7.4.1.4.1 and https //docs.openssl.org/master/man3/SSL_CTX_set1_sigalgs/. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "auto"
                 },
