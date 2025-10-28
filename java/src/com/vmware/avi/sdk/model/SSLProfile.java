@@ -316,8 +316,8 @@ public class SSLProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Elliptic curve cryptography namedcurves (tls supported groups)represented as defined by rfc 8422-section 5.1.1 andhttps
-     * //www.openssl.org/docs/man1.1.0/man3/ssl_ctx_set1_curves.html.
+     * Elliptic curve cryptography namedcurves (tls supported groups)represented as defined by rfc 8422-section 5.1.1 and https
+     * //docs.openssl.org/master/man3/ssl_ctx_set1_curves/.
      * Field introduced in 21.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "auto".
@@ -329,8 +329,8 @@ public class SSLProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Elliptic curve cryptography namedcurves (tls supported groups)represented as defined by rfc 8422-section 5.1.1 andhttps
-     * //www.openssl.org/docs/man1.1.0/man3/ssl_ctx_set1_curves.html.
+     * Elliptic curve cryptography namedcurves (tls supported groups)represented as defined by rfc 8422-section 5.1.1 and https
+     * //docs.openssl.org/master/man3/ssl_ctx_set1_curves/.
      * Field introduced in 21.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "auto".
@@ -517,8 +517,7 @@ public class SSLProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Signature algorithms represented as defined by rfc5246-section 7.4.1.4.1 andhttps
-     * //www.openssl.org/docs/man1.1.0/man3/ssl_ctx_set1_client_sigalgs_list.html.
+     * Signature algorithms represented as defined by rfc5246-section 7.4.1.4.1 and https //docs.openssl.org/master/man3/ssl_ctx_set1_sigalgs/.
      * Field introduced in 21.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "auto".
@@ -530,8 +529,7 @@ public class SSLProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Signature algorithms represented as defined by rfc5246-section 7.4.1.4.1 andhttps
-     * //www.openssl.org/docs/man1.1.0/man3/ssl_ctx_set1_client_sigalgs_list.html.
+     * Signature algorithms represented as defined by rfc5246-section 7.4.1.4.1 and https //docs.openssl.org/master/man3/ssl_ctx_set1_sigalgs/.
      * Field introduced in 21.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "auto".
