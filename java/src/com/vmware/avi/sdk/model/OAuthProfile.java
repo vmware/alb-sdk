@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OAuthProfile  {
+    @JsonProperty("audience")
+    private String audience;
+
     @JsonProperty("authorization_endpoint")
     private String authorizationEndpoint;
 
@@ -76,6 +79,30 @@ public class OAuthProfile  {
     private String userinfoEndpoint;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Audience parameter used for jwt token validation.
+     * Field introduced in 31.3.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return audience
+     */
+    public String getAudience() {
+        return audience;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Audience parameter used for jwt token validation.
+     * Field introduced in 31.3.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param audience set the audience.
+     */
+    public void setAudience(String  audience) {
+        this.audience = audience;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -302,7 +329,7 @@ public class OAuthProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Type of oauth provider when using controller oauth as oauth profile type.
-     * Enum options - OAUTH_CSP.
+     * Enum options - OAUTH_CSP, OAUTH_VCF.
      * Field introduced in 30.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -315,7 +342,7 @@ public class OAuthProfile  {
     /**
      * This is the setter method to the attribute.
      * Type of oauth provider when using controller oauth as oauth profile type.
-     * Enum options - OAUTH_CSP.
+     * Enum options - OAUTH_CSP, OAUTH_VCF.
      * Field introduced in 30.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -550,14 +577,16 @@ public class OAuthProfile  {
   Objects.equals(this.oauthProvider, objOAuthProfile.oauthProvider)&&
   Objects.equals(this.serviceId, objOAuthProfile.serviceId)&&
   Objects.equals(this.instanceId, objOAuthProfile.instanceId)&&
-  Objects.equals(this.serviceName, objOAuthProfile.serviceName);
+  Objects.equals(this.serviceName, objOAuthProfile.serviceName)&&
+  Objects.equals(this.audience, objOAuthProfile.audience);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class OAuthProfile {\n");
-                  sb.append("    authorizationEndpoint: ").append(toIndentedString(authorizationEndpoint)).append("\n");
+                  sb.append("    audience: ").append(toIndentedString(audience)).append("\n");
+                        sb.append("    authorizationEndpoint: ").append(toIndentedString(authorizationEndpoint)).append("\n");
                         sb.append("    endSessionEndpoint: ").append(toIndentedString(endSessionEndpoint)).append("\n");
                         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
                         sb.append("    introspectionEndpoint: ").append(toIndentedString(introspectionEndpoint)).append("\n");
