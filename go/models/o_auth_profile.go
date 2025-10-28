@@ -8,6 +8,9 @@ package models
 // swagger:model OAuthProfile
 type OAuthProfile struct {
 
+	// Audience parameter used for JWT token validation. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	Audience *string `json:"audience,omitempty"`
+
 	// URL of authorization server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	AuthorizationEndpoint *string `json:"authorization_endpoint"`
@@ -36,7 +39,7 @@ type OAuthProfile struct {
 	// Type of OAuth profile which defines the usage type. Enum options - CLIENT_OAUTH, CONTROLLER_OAUTH. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	OauthProfileType *string `json:"oauth_profile_type,omitempty"`
 
-	// Type of OAuth Provider when using controller oauth as oauth profile type. Enum options - OAUTH_CSP. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Type of OAuth Provider when using controller oauth as oauth profile type. Enum options - OAUTH_CSP, OAUTH_VCF. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	OauthProvider *string `json:"oauth_provider,omitempty"`
 
 	// Buffering size for the responses from the OAUTH enpoints. Allowed values are 0-32768000. Field introduced in 21.1.3. Unit is BYTES. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
