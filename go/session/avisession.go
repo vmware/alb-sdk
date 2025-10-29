@@ -952,8 +952,17 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 		} else {
 			// When disableControllerStatusCheck is true, return the original error transparently
 			// so that clients can handle their own retry logic.
-			glog.Infof("CheckControllerStatus is disabled for this session, returning original error transparently for client retry handling. Error: %s", *errorResult.Message)
+
+			// Returns err if there's a network error
+			if err != nil {
+				glog.Infof("CheckControllerStatus is disabled for this session, returning Error: %s", err.Error())
+				return nil, err
+			}
+
+			// return AVI error message transparently
+			glog.Infof("CheckControllerStatus is disabled for this session, returning original error transparently for client retry handling. Error: %v", errorResult)
 			return nil, errorResult
+
 		}
 	}
 	return resp, nil
