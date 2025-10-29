@@ -626,6 +626,9 @@ definitions:
         required:
             -   authorization_endpoint
         properties:
+            audience:
+                description: "Audience parameter used for JWT token validation. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
             authorization_endpoint:
                 description: "URL of authorization server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
@@ -656,7 +659,7 @@ definitions:
                 type: string
                 default: "CLIENT_OAUTH"
             oauth_provider:
-                description: "Type of OAuth Provider when using controller oauth as oauth profile type. Enum options - OAUTH_CSP. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Type of OAuth Provider when using controller oauth as oauth profile type. Enum options - OAUTH_CSP, OAUTH_VCF. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             oauth_resp_buffer_sz:
                 description: "Buffering size for the responses from the OAUTH enpoints. Allowed values are 0-32768000. Field introduced in 21.1.3. Unit is BYTES. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
