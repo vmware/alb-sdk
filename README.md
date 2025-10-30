@@ -6,6 +6,7 @@ into the Avi Solution. Avi SDK provides the following tools and utilities:
 - **[Python AVI API SDK](./python/avi/sdk/)**: AVI API SDK is a Python Package that 
 provides APIs to communicate with Avi Controller’s REST APIs. It extends Python’s Request Library’s Session Class 
 and provides utilities to simplify integration with Avi Controller.
+scripts which helps to migrate/convert F5, Netscaler configurations to AVI.
 - **[Avi Go SDK and Utilities](./go/)**: Avi Go SDK is a Go Package that provides APIs to communicate with
  Avi Controller’s REST APIs. It uses Avisession class and provides utilities to simplify integration with Avi 
  controller.
@@ -32,3 +33,4 @@ as a dependency-free npm module.
 The alb-sdk project team welcomes contributions from the community. Before you start working with alb-sdk, please read our Developer Certificate of Origin. All contributions to this repository must be signed as described on that page. Your signature certifies that you wrote the patch or have the right to pass it on as an open-source patch.
 
 **Note**: Migrationtools will be released separately as part of AVI release process. Going forward, we will release the AVI migration tools as a standalone release and not part of the SDK starting with the 30.2.x releases.
+
