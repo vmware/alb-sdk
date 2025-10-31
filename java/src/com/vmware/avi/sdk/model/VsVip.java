@@ -57,9 +57,6 @@ public class VsVip extends AviRestResource  {
     @JsonProperty("url")
     private String url = "url";
 
-    @JsonProperty("use_standard_alb")
-    private Boolean useStandardAlb;
-
     @JsonProperty("uuid")
     private String uuid;
 
@@ -421,34 +418,6 @@ public class VsVip extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is
-     * set.
-     * This is only used when fip is used for vs on azure cloud.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @return useStandardAlb
-     */
-    public Boolean getUseStandardAlb() {
-        return useStandardAlb;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is
-     * set.
-     * This is only used when fip is used for vs on azure cloud.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @param useStandardAlb set the useStandardAlb.
-     */
-    public void setUseStandardAlb(Boolean  useStandardAlb) {
-        this.useStandardAlb = useStandardAlb;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Uuid of the vsvip object.
      * Field introduced in 17.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -580,7 +549,6 @@ public class VsVip extends AviRestResource  {
   Objects.equals(this.dnsInfo, objVsVip.dnsInfo)&&
   Objects.equals(this.vrfContextRef, objVsVip.vrfContextRef)&&
   Objects.equals(this.eastWestPlacement, objVsVip.eastWestPlacement)&&
-  Objects.equals(this.useStandardAlb, objVsVip.useStandardAlb)&&
   Objects.equals(this.tier1Lr, objVsVip.tier1Lr)&&
   Objects.equals(this.ipamSelector, objVsVip.ipamSelector)&&
   Objects.equals(this.bgpPeerLabels, objVsVip.bgpPeerLabels)&&
@@ -607,8 +575,7 @@ public class VsVip extends AviRestResource  {
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                         sb.append("    tier1Lr: ").append(toIndentedString(tier1Lr)).append("\n");
-                                    sb.append("    useStandardAlb: ").append(toIndentedString(useStandardAlb)).append("\n");
-                        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+                                    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    vip: ").append(toIndentedString(vip)).append("\n");
                         sb.append("    vrfContextRef: ").append(toIndentedString(vrfContextRef)).append("\n");
                         sb.append("    vsvipCloudConfigCksum: ").append(toIndentedString(vsvipCloudConfigCksum)).append("\n");

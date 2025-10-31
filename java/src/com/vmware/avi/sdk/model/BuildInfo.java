@@ -7,7 +7,6 @@ package com.vmware.avi.sdk.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -39,9 +38,6 @@ public class BuildInfo  {
 
     @JsonProperty("product_name")
     private String productName;
-
-    @JsonIgnore
-    private String remoteImageRef;
 
     @JsonProperty("tag")
     private String tag;
@@ -197,30 +193,6 @@ public class BuildInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Remote reference of the container image.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @return remoteImageRef
-     */
-    public String getRemoteImageRef() {
-        return remoteImageRef;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Remote reference of the container image.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @param remoteImageRef set the remoteImageRef.
-     */
-    public void setRemoteImageRef(String  remoteImageRef) {
-        this.remoteImageRef = remoteImageRef;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Tag related to the package.
      * Field introduced in 18.2.6.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -284,8 +256,7 @@ public class BuildInfo  {
   Objects.equals(this.minVersion, objBuildInfo.minVersion)&&
   Objects.equals(this.patchVersion, objBuildInfo.patchVersion)&&
   Objects.equals(this.product, objBuildInfo.product)&&
-  Objects.equals(this.productName, objBuildInfo.productName)&&
-  Objects.equals(this.remoteImageRef, objBuildInfo.remoteImageRef);
+  Objects.equals(this.productName, objBuildInfo.productName);
     }
 
     @Override
@@ -298,7 +269,6 @@ public class BuildInfo  {
                         sb.append("    patchVersion: ").append(toIndentedString(patchVersion)).append("\n");
                         sb.append("    product: ").append(toIndentedString(product)).append("\n");
                         sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-                        sb.append("    remoteImageRef: ").append(toIndentedString(remoteImageRef)).append("\n");
                         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
                         sb.append("    version: ").append(toIndentedString(version)).append("\n");
                   sb.append("}");

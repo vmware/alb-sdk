@@ -93,9 +93,6 @@ public class Pool extends AviRestResource  {
     @JsonProperty("fewest_tasks_feedback_delay")
     private Integer fewestTasksFeedbackDelay = 10;
 
-    @JsonProperty("graceful_disable_timeout")
-    private Integer gracefulDisableTimeout;
-
     @JsonProperty("graceful_disable_timeout_sec")
     private Integer gracefulDisableTimeoutSec = 60;
 
@@ -893,38 +890,6 @@ public class Pool extends AviRestResource  {
      */
     public void setFewestTasksFeedbackDelay(Integer  fewestTasksFeedbackDelay) {
         this.fewestTasksFeedbackDelay = fewestTasksFeedbackDelay;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Used to gracefully disable a server.
-     * Deprecated from version 31.2.1.
-     * Please use graceful_disable_timeout_sec instead.
-     * Allowed values are 1-7200.
-     * Special values are 0 - immediate, -1 - infinite.
-     * Field deprecated in 31.2.1.
-     * Unit is min.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return gracefulDisableTimeout
-     */
-    public Integer getGracefulDisableTimeout() {
-        return gracefulDisableTimeout;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Used to gracefully disable a server.
-     * Deprecated from version 31.2.1.
-     * Please use graceful_disable_timeout_sec instead.
-     * Allowed values are 1-7200.
-     * Special values are 0 - immediate, -1 - infinite.
-     * Field deprecated in 31.2.1.
-     * Unit is min.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param gracefulDisableTimeout set the gracefulDisableTimeout.
-     */
-    public void setGracefulDisableTimeout(Integer  gracefulDisableTimeout) {
-        this.gracefulDisableTimeout = gracefulDisableTimeout;
     }
 
     /**
@@ -2252,7 +2217,6 @@ public class Pool extends AviRestResource  {
       return   Objects.equals(this.uuid, objPool.uuid)&&
   Objects.equals(this.name, objPool.name)&&
   Objects.equals(this.defaultServerPort, objPool.defaultServerPort)&&
-  Objects.equals(this.gracefulDisableTimeout, objPool.gracefulDisableTimeout)&&
   Objects.equals(this.connectionRampDuration, objPool.connectionRampDuration)&&
   Objects.equals(this.maxConcurrentConnectionsPerServer, objPool.maxConcurrentConnectionsPerServer)&&
   Objects.equals(this.healthMonitorRefs, objPool.healthMonitorRefs)&&
@@ -2351,7 +2315,6 @@ public class Pool extends AviRestResource  {
                         sb.append("    externalAutoscaleGroups: ").append(toIndentedString(externalAutoscaleGroups)).append("\n");
                         sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
                         sb.append("    fewestTasksFeedbackDelay: ").append(toIndentedString(fewestTasksFeedbackDelay)).append("\n");
-                        sb.append("    gracefulDisableTimeout: ").append(toIndentedString(gracefulDisableTimeout)).append("\n");
                         sb.append("    gracefulDisableTimeoutSec: ").append(toIndentedString(gracefulDisableTimeoutSec)).append("\n");
                         sb.append("    gracefulHmDownDisableTimeout: ").append(toIndentedString(gracefulHmDownDisableTimeout)).append("\n");
                         sb.append("    gslbSpEnabled: ").append(toIndentedString(gslbSpEnabled)).append("\n");

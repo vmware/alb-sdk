@@ -66,9 +66,6 @@ public class Gslb extends AviRestResource  {
     @JsonProperty("name")
     private String name;
 
-    @JsonProperty("replication_policy")
-    private ReplicationPolicy replicationPolicy;
-
     @JsonProperty("send_interval")
     private Integer sendInterval = 15;
 
@@ -507,30 +504,6 @@ public class Gslb extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Policy for replicating configuration to the active follower sites.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return replicationPolicy
-     */
-    public ReplicationPolicy getReplicationPolicy() {
-        return replicationPolicy;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Policy for replicating configuration to the active follower sites.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param replicationPolicy set the replicationPolicy.
-     */
-    public void setReplicationPolicy(ReplicationPolicy replicationPolicy) {
-        this.replicationPolicy = replicationPolicy;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Frequency with which group members communicate.
      * Allowed values are 1-3600.
      * Unit is sec.
@@ -794,7 +767,6 @@ public class Gslb extends AviRestResource  {
   Objects.equals(this.clientIpAddrGroup, objGslb.clientIpAddrGroup)&&
   Objects.equals(this.asyncInterval, objGslb.asyncInterval)&&
   Objects.equals(this.errorResyncInterval, objGslb.errorResyncInterval)&&
-  Objects.equals(this.replicationPolicy, objGslb.replicationPolicy)&&
   Objects.equals(this.maintenanceMode, objGslb.maintenanceMode)&&
   Objects.equals(this.isFederated, objGslb.isFederated)&&
   Objects.equals(this.description, objGslb.description)&&
@@ -827,7 +799,6 @@ public class Gslb extends AviRestResource  {
                         sb.append("    leaderClusterUuid: ").append(toIndentedString(leaderClusterUuid)).append("\n");
                         sb.append("    maintenanceMode: ").append(toIndentedString(maintenanceMode)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-                        sb.append("    replicationPolicy: ").append(toIndentedString(replicationPolicy)).append("\n");
                         sb.append("    sendInterval: ").append(toIndentedString(sendInterval)).append("\n");
                         sb.append("    shortProbeInterval: ").append(toIndentedString(shortProbeInterval)).append("\n");
                         sb.append("    sites: ").append(toIndentedString(sites)).append("\n");
