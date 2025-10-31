@@ -8,23 +8,14 @@ package models
 // swagger:model GslbServiceRuntime
 type GslbServiceRuntime struct {
 
-	//  Field deprecated in 31.1.1. Field introduced in 17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Checksum *string `json:"checksum,omitempty"`
-
 	// Represents the local/remote site uuid; Every GS will have n entriesif there are n active sites in federation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ClusterUUID *string `json:"cluster_uuid,omitempty"`
 
 	// Fully qualified domain name of the GslbService. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DomainNames []string `json:"domain_names,omitempty"`
 
-	//  Field deprecated in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	FlrState []*CfgState `json:"flr_state,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Groups []*GslbPoolRuntime `json:"groups,omitempty"`
-
-	//  Field deprecated in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	LdrState *CfgState `json:"ldr_state,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`

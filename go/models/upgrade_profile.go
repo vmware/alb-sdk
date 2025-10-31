@@ -12,9 +12,6 @@ type UpgradeProfile struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// List of controller upgrade related configurable parameters. Field deprecated in 31.2.1. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	Controller *ControllerParams `json:"controller,omitempty"`
-
 	// List of controller upgrade related configurable parameters. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ControllerParams *ControllerParams `json:"controller_params,omitempty"`
 

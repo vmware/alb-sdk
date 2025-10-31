@@ -23,9 +23,6 @@ type GslbServiceSitePersistencePool struct {
 	// Detailed information of the servers in the pool. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ServerInfo []*ServerRuntimeSummary `json:"server_info,omitempty"`
 
-	// Detailed information of the servers in the pool. . Field deprecated in 31.1.1. Field introduced in 17.2.8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Servers []*ServerConfig `json:"servers,omitempty"`
-
 	// Site persistence pool's uuid. . Field introduced in 17.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

@@ -31,9 +31,6 @@ type CloudConnectorUser struct {
 	// Credentials to talk to NSX-T manager. Field introduced in 20.1.1. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.
 	NsxtCredentials *NsxtCredentials `json:"nsxt_credentials,omitempty"`
 
-	// Credentials for Oracle Cloud Infrastructure. Field deprecated in 31.1.1. Field introduced in 18.2.1,18.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	OciCredentials *OCICredentials `json:"oci_credentials,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Password *string `json:"password,omitempty"`
 

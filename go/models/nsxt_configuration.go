@@ -8,7 +8,7 @@ package models
 // swagger:model NsxtConfiguration
 type NsxtConfiguration struct {
 
-	// Set this flag to true to enable automatic import of NSX projects into Avi.This flag is only applicable when VPC mode is enabled for this cloud; it is ignored when VPC mode is disabled.NSX projects under VCF-A management are excluded from this automatic import process, as VCF-A creates these projects in Avi through its own integration workflow. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Set this flag to true to enable automatic import of NSX projects into Avi.This flag is only applicable when VPC mode is enabled for this cloud; it is ignored when VPC mode is disabled.NSX projects under VCF-A management are excluded from this automatic import process, as VCF-A creates these projects in Avi through its own integration workflow. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	AutoImportNsxProjects *bool `json:"auto_import_nsx_projects,omitempty"`
 
 	// Automatically create/delete DFW objects such as NSGroups and NSServices in NSX-T Manager. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
@@ -35,7 +35,7 @@ type NsxtConfiguration struct {
 	// NSX-T manager hostname or IP address. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxtURL *string `json:"nsxt_url,omitempty"`
 
-	// Enable to automatically register the Avi Controller with NSX-T Manager. This triggers the NSX onboarding workflow API to configure the ALB cluster and create an enforcement point. Note  This flag must be enabled on exactly one NSX-T Cloud to avoid conflicts. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enable to automatically register the Avi Controller with NSX-T Manager. This triggers the NSX onboarding workflow API to configure the ALB cluster and create an enforcement point. Note  This flag must be enabled on exactly one NSX-T Cloud to avoid conflicts. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	OnboardAviIntoNsx *bool `json:"onboard_avi_into_nsx,omitempty"`
 
 	// Site where transport zone belongs to. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -106,9 +106,6 @@ type Cloud struct {
 	// Default prefix for all automatically created objects in this cloud. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ObjNamePrefix *string `json:"obj_name_prefix,omitempty"`
 
-	//  Field deprecated in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	OpenstackConfiguration *OpenStackConfiguration `json:"openstack_configuration,omitempty"`
-
 	// Prefer static routes over interface routes during VirtualService placement. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PreferStaticRoutes *bool `json:"prefer_static_routes,omitempty"`
 

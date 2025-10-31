@@ -27,14 +27,8 @@ type WebappUT struct {
 	// default *int32 field. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DefaultFourthInt *int32 `json:"default_fourth_int,omitempty"`
 
-	// default *int64 field. Field deprecated in 31.1.1. Field introduced in 30.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	DefaultSecondInt *int64 `json:"default_second_int,omitempty"`
-
 	// Default *string field. Field introduced in 30.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DefaultString *string `json:"default_string,omitempty"`
-
-	// default *int32 field. Field deprecated in 31.1.1. Field introduced in 30.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	DefaultThirdInt *int32 `json:"default_third_int,omitempty"`
 
 	// Optional message for nested f_mandatory test cases defined at level1. Field introduced in 21.1.5, 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MandatoryTest *L1FMandatoryTestCase `json:"mandatory_test,omitempty"`

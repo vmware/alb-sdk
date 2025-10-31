@@ -8,7 +8,7 @@ package models
 // swagger:model OAuthProfile
 type OAuthProfile struct {
 
-	// Audience parameter used for JWT token validation. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Audience parameter used for JWT token validation. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Audience *string `json:"audience,omitempty"`
 
 	// URL of authorization server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.

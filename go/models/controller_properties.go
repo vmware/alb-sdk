@@ -273,29 +273,11 @@ type ControllerProperties struct {
 	//  Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SecureChannelSeTokenTimeout *uint32 `json:"secure_channel_se_token_timeout,omitempty"`
 
-	// This parameter defines the buffer size during SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. Please refer to UpgradeProfile for equivalent fields. Field deprecated in 31.1.1. Field introduced in 22.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	SeupgradeCopyBufferSize *uint32 `json:"seupgrade_copy_buffer_size,omitempty"`
-
-	// This parameter defines the number of simultaneous SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. A value of 0 will disable the pacing scheme and all the SE(s) in the SeGroup will attempt to download the image. Please refer to UpgradeProfile for equivalent fields. Field deprecated in 31.1.1. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SeupgradeCopyPoolSize *uint32 `json:"seupgrade_copy_pool_size,omitempty"`
-
-	// The pool size is used to control the number of concurrent segroup upgrades. This field value takes affect upon controller warm reboot. Please refer to UpgradeProfile for equivalent fields. Allowed values are 2-20. Field deprecated in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SeupgradeFabricPoolSize *uint32 `json:"seupgrade_fabric_pool_size,omitempty"`
-
-	// Time to wait before marking segroup upgrade as stuck. . Field deprecated in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SeupgradeSegroupMinDeadTimeout *uint32 `json:"seupgrade_segroup_min_dead_timeout,omitempty"`
-
 	// SSL Certificates in the admin tenant can be used in non-admin tenants. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SharedSslCertificates *bool `json:"shared_ssl_certificates,omitempty"`
 
 	// Skip API Performance collection for requests going through the Apiserver. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SkipBeegoPerfCollection *bool `json:"skip_beego_perf_collection,omitempty"`
-
-	// Time interval (in seconds) between retires for skopeo commands. Field deprecated in 31.1.1. Field introduced in 30.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	SkopeoRetryInterval *uint32 `json:"skopeo_retry_interval,omitempty"`
-
-	// Number of times to try skopeo commands for remote image registries. Field deprecated in 31.1.1. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	SkopeoRetryLimit *uint32 `json:"skopeo_retry_limit,omitempty"`
 
 	// Soft Limit on the minimum SE Memory that an SE needs to have on SE Register. Field introduced in 30.1.1. Unit is MB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SoftMinMemPerSeLimit *uint32 `json:"soft_min_mem_per_se_limit,omitempty"`
@@ -305,12 +287,6 @@ type ControllerProperties struct {
 
 	// Configure statecache behavior for Config, SE, ResMgr. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	StatecacheProperties *SCProperties `json:"statecache_properties,omitempty"`
-
-	// Time in minutes to wait between cleanup of SystemReports. Allowed values are 15-300. Field deprecated in 31.1.1. Field introduced in 22.1.6, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SystemReportCleanupInterval *uint32 `json:"system_report_cleanup_interval,omitempty"`
-
-	// Number of SystemReports retained in the system. Once the number of system reports exceed this threshold, the oldest SystemReport will be removed and the latest one retained. i.e. the SystemReport will be rotated and the reports don't exceed the threshold. Allowed values are 5-50. Field deprecated in 31.1.1. Field introduced in 22.1.6, 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SystemReportLimit *uint32 `json:"system_report_limit,omitempty"`
 
 	// Period for telemetry job. Allowed values are 1-1440. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TelemetryInterval *uint32 `json:"telemetry_interval,omitempty"`
@@ -326,12 +302,6 @@ type ControllerProperties struct {
 
 	// Time to account for DNS TTL during upgrade. This is in addition to vs_scalein_timeout_for_upgrade in se_group. Field introduced in 17.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 5), Basic (Allowed values- 5) edition.
 	UpgradeDNSTTL *uint32 `json:"upgrade_dns_ttl,omitempty"`
-
-	// Amount of time Controller waits for a large-sized SE (>=128GB memory) to reconnect after it is rebooted during upgrade. Please refer to UpgradeProfile for equivalent fields. Field deprecated in 31.1.1. Field introduced in 18.2.10, 20.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	UpgradeFatSeLeaseTime *uint32 `json:"upgrade_fat_se_lease_time,omitempty"`
-
-	// Amount of time Controller waits for a regular-sized SE (<128GB memory) to reconnect after it is rebooted during upgrade. Starting 18.2.10/20.1.1, the default time has increased from 360 seconds to 600 seconds. Please refer to UpgradeProfile for equivalent fields. Field deprecated in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	UpgradeLeaseTime *uint32 `json:"upgrade_lease_time,omitempty"`
 
 	// This parameter defines the upper-bound value of the VS scale-in or VS scale-out operation executed in the SeScaleIn and SeScale context.  User can tweak this parameter to a higher value if the Segroup gets suspended due to SeScalein or SeScaleOut timeout failure typically associated with high number of VS(es) scaled out. . Field introduced in 18.2.10, 20.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UpgradeSePerVsScaleOpsTxnTime *uint32 `json:"upgrade_se_per_vs_scale_ops_txn_time,omitempty"`

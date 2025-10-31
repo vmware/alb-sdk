@@ -8,15 +8,6 @@ package models
 // swagger:model ServiceEngineLimits
 type ServiceEngineLimits struct {
 
-	// Maximum number of virtualservices per serviceengine, including east-west virtualservices. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	AllVirtualservicesPerServiceengine *int32 `json:"all_virtualservices_per_serviceengine,omitempty"`
-
-	// Maximum number of east-west virtualservices per serviceengine, excluding north-south virtualservices. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	EwVirtualservicesPerServiceengine *int32 `json:"ew_virtualservices_per_serviceengine,omitempty"`
-
-	// Maximum number of north-south virtualservices per serviceengine, excluding east-west virtualservices. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	NsVirtualservicesPerServiceengine *int32 `json:"ns_virtualservices_per_serviceengine,omitempty"`
-
 	// Maximum number of logical interfaces (vlan, bond) per serviceengine. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumLogicalIntfPerSe *int32 `json:"num_logical_intf_per_se,omitempty"`
 

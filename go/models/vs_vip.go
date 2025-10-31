@@ -53,9 +53,6 @@ type VsVip struct {
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// This overrides the cloud level default and needs to match the SE Group value in which it will be used if the SE Group use_standard_alb value is set. This is only used when FIP is used for VS on Azure Cloud. Field deprecated in 31.1.1. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	UseStandardAlb *bool `json:"use_standard_alb,omitempty"`
-
 	// UUID of the VsVip object. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 
