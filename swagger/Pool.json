@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.3.1",
+        "version": "32.1.1",
         "title": "Avi Pool Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -2497,7 +2497,7 @@
             "type": "object",
             "properties": {
                 "created_by": {
-                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {
@@ -3176,11 +3176,6 @@
                     "default": 10,
                     "format": "uint32"
                 },
-                "graceful_disable_timeout": {
-                    "description": "Used to gracefully disable a server. Deprecated from version 31.2.1. Please use graceful_disable_timeout_sec instead. Allowed values are 1-7200. Special values are 0 - Immediate, -1 - Infinite. Field deprecated in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "int32"
-                },
                 "graceful_disable_timeout_sec": {
                     "description": "Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-432000. Special values are 0 - Immediate, -1 - Infinite. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
@@ -3451,10 +3446,6 @@
         "PoolAnalyticsPolicy": {
             "type": "object",
             "properties": {
-                "enable_realtime_metrics": {
-                    "description": "Enable real time metrics for server and pool metrics eg. l4_server.xxx, l7_server.xxx. Field deprecated in 31.1.1. Field introduced in 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
                 "metrics_realtime_update": {
                     "description": "Enable realtime metrics and its duration. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/MetricsRealTimeUpdate"

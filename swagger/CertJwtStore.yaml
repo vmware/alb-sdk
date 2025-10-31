@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.3.1'
+    version: '32.1.1'
     title: Avi CertJwtStore Object API
     contact:
         name: Avi Networks Inc.
@@ -393,26 +393,26 @@ definitions:
                 readOnly: True
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             jwt:
-                description: "JWT containing current portal certificate along with the full certificate bundle chain, signed by the private key of previous portal certificate. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "JWT containing current portal certificate along with the full certificate bundle chain, signed by the private key of previous portal certificate. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             kid:
-                description: "SHA256 thumbprint of the previous old portal certificate. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "SHA256 thumbprint of the previous old portal certificate. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             last_rotated_at:
-                description: "Timestamp of certificate rotation. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Timestamp of certificate rotation. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TimeStamp'
             public_key_algorithm:
-                description: "Public key algorithm. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Public key algorithm. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of JWT. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "UUID of JWT. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     CertJwtStoreApiResponse:
         type: object
@@ -433,7 +433,7 @@ definitions:
         type: object
         properties:
             created_by:
-                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             version:
                 description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

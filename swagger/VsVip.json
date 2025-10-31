@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.3.1",
+        "version": "32.1.1",
         "title": "Avi VsVip Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -649,7 +649,7 @@
             "type": "object",
             "properties": {
                 "created_by": {
-                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {
@@ -1096,10 +1096,6 @@
                     "description": "url",
                     "readOnly": true,
                     "type": "string"
-                },
-                "use_standard_alb": {
-                    "description": "This overrides the cloud level default and needs to match the SE Group value in which it will be used if the SE Group use_standard_alb value is set. This is only used when FIP is used for VS on Azure Cloud. Field deprecated in 31.1.1. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
                 },
                 "uuid": {
                     "description": "UUID of the VsVip object. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",

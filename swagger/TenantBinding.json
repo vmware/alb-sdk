@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.3.1",
+        "version": "32.1.1",
         "title": "Avi TenantBinding Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -553,7 +553,7 @@
             "type": "object",
             "properties": {
                 "created_by": {
-                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {
@@ -577,23 +577,23 @@
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "name": {
-                    "description": "Name of the tenant binding. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Name of the tenant binding. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_group_ref": {
-                    "description": "UUID of the Service Engine Group being shared. It is a reference to an object of type ServiceEngineGroup. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the Service Engine Group being shared. It is a reference to an object of type ServiceEngineGroup. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "shared_tenant_ref": {
-                    "description": "UUID of the tenant to which the object is being shared. It is a reference to an object of type Tenant. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the tenant to which the object is being shared. It is a reference to an object of type Tenant. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "Tenant UUID. This field is used for admin tenant context. It is a reference to an object of type Tenant. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Tenant UUID. This field is used for admin tenant context. It is a reference to an object of type Tenant. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -602,7 +602,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the tenant binding. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the tenant binding. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

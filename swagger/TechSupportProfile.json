@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.3.1",
+        "version": "32.1.1",
         "title": "Avi TechSupportProfile Object API",
         "contact": {
             "name": "Avi Networks Inc.",

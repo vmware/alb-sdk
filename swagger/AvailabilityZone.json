@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.3.1",
+        "version": "32.1.1",
         "title": "Avi AvailabilityZone Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -663,10 +663,6 @@
                         "$ref": "#/definitions/AZCluster"
                     }
                 },
-                "az_datastore": {
-                    "description": "Group of datastores associated with the AZ. Field deprecated in 31.2.1. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/AZDatastore"
-                },
                 "az_datastores": {
                     "description": "Group of datastores associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -706,15 +702,8 @@
                     "description": "Availability zone config UUID. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
-                "vcenter_refs": {
-                    "description": "Group of VCenter list belong to availabilty zone. It is a reference to an object of type VCenterServer. Field deprecated in 31.1.1. Field introduced in 20.1.1. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
                 "vsphere_zones": {
-                    "description": "VSphere Zone associated with the AZ. Field introduced in 31.3.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "VSphere Zone associated with the AZ. Field introduced in 32.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/VSphereZone"
@@ -800,7 +789,7 @@
             "type": "object",
             "properties": {
                 "created_by": {
-                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {
@@ -815,11 +804,11 @@
             "type": "object",
             "properties": {
                 "vcenter_ref": {
-                    "description": "The UUID of the vCenter Server where the vSphere zone belongs. It is a reference to an object of type VCenterServer. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The UUID of the vCenter Server where the vSphere zone belongs. It is a reference to an object of type VCenterServer. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "zone_name": {
-                    "description": "Name of the vSphere zone in vCenter. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Name of the vSphere zone in vCenter. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

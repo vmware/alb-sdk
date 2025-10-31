@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.3.1'
+    version: '32.1.1'
     title: Avi ControllerProperties Object API
     contact:
         name: Avi Networks Inc.
@@ -207,7 +207,7 @@ definitions:
         type: object
         properties:
             created_by:
-                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             version:
                 description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -612,36 +612,12 @@ definitions:
                 type: integer
                 default: 60
                 format: uint32
-            seupgrade_copy_buffer_size:
-                description: "This parameter defines the buffer size during SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. Please refer to UpgradeProfile for equivalent fields. Field deprecated in 31.1.1. Field introduced in 22.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
-            seupgrade_copy_pool_size:
-                description: "This parameter defines the number of simultaneous SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. A value of 0 will disable the pacing scheme and all the SE(s) in the SeGroup will attempt to download the image. Please refer to UpgradeProfile for equivalent fields. Field deprecated in 31.1.1. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
-            seupgrade_fabric_pool_size:
-                description: "The pool size is used to control the number of concurrent segroup upgrades. This field value takes affect upon controller warm reboot. Please refer to UpgradeProfile for equivalent fields. Allowed values are 2-20. Field deprecated in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
-            seupgrade_segroup_min_dead_timeout:
-                description: "Time to wait before marking segroup upgrade as stuck. . Field deprecated in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
             shared_ssl_certificates:
                 description: "SSL Certificates in the admin tenant can be used in non-admin tenants. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             skip_beego_perf_collection:
                 description: "Skip API Performance collection for requests going through the Apiserver. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
-            skopeo_retry_interval:
-                description: "Time interval (in seconds) between retires for skopeo commands. Field deprecated in 31.1.1. Field introduced in 30.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
-            skopeo_retry_limit:
-                description: "Number of times to try skopeo commands for remote image registries. Field deprecated in 31.1.1. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
             soft_min_mem_per_se_limit:
                 description: "Soft Limit on the minimum SE Memory that an SE needs to have on SE Register. Field introduced in 30.1.1. Unit is MB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
@@ -656,14 +632,6 @@ definitions:
             statecache_properties:
                 description: "Configure statecache behavior for Config, SE, ResMgr. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SCProperties'
-            system_report_cleanup_interval:
-                description: "Time in minutes to wait between cleanup of SystemReports. Allowed values are 15-300. Field deprecated in 31.1.1. Field introduced in 22.1.6, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
-            system_report_limit:
-                description: "Number of SystemReports retained in the system. Once the number of system reports exceed this threshold, the oldest SystemReport will be removed and the latest one retained. i.e. the SystemReport will be rotated and the reports don't exceed the threshold. Allowed values are 5-50. Field deprecated in 31.1.1. Field introduced in 22.1.6, 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
             telemetry_interval:
                 description: "Period for telemetry job. Allowed values are 1-1440. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
@@ -688,14 +656,6 @@ definitions:
                 description: "Time to account for DNS TTL during upgrade. This is in addition to vs_scalein_timeout_for_upgrade in se_group. Field introduced in 17.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 5), Basic (Allowed values- 5) edition."
                 type: integer
                 default: 5
-                format: uint32
-            upgrade_fat_se_lease_time:
-                description: "Amount of time Controller waits for a large-sized SE (>=128GB memory) to reconnect after it is rebooted during upgrade. Please refer to UpgradeProfile for equivalent fields. Field deprecated in 31.1.1. Field introduced in 18.2.10, 20.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
-            upgrade_lease_time:
-                description: "Amount of time Controller waits for a regular-sized SE (<128GB memory) to reconnect after it is rebooted during upgrade. Starting 18.2.10/20.1.1, the default time has increased from 360 seconds to 600 seconds. Please refer to UpgradeProfile for equivalent fields. Field deprecated in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
                 format: uint32
             upgrade_se_per_vs_scale_ops_txn_time:
                 description: "This parameter defines the upper-bound value of the VS scale-in or VS scale-out operation executed in the SeScaleIn and SeScale context.  User can tweak this parameter to a higher value if the Segroup gets suspended due to SeScalein or SeScaleOut timeout failure typically associated with high number of VS(es) scaled out. . Field introduced in 18.2.10, 20.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

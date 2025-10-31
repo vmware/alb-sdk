@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.3.1'
+    version: '32.1.1'
     title: Avi SystemConfiguration Object API
     contact:
         name: Avi Networks Inc.
@@ -288,7 +288,7 @@ definitions:
         type: object
         properties:
             vs_limit:
-                description: "Maximum number of Virtual Services allowed for this tenant. -1 as Default is maximum value, set to 0 to disallow any VS creation. Allowed values are -1-+65535. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Maximum number of Virtual Services allowed for this tenant. -1 as Default is maximum value, set to 0 to disallow any VS creation. Allowed values are -1-+65535. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
                 default: -1
                 format: int32
@@ -383,7 +383,7 @@ definitions:
         type: object
         properties:
             created_by:
-                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             version:
                 description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -880,7 +880,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/NTPConfiguration'
             password_policy_ref:
-                description: "Reference to uniform password policy. When not set, legacy password settings are used. It is a reference to an object of type PasswordPolicy. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Reference to uniform password policy. When not set, legacy password settings are used. It is a reference to an object of type PasswordPolicy. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             portal_configuration:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -999,10 +999,10 @@ definitions:
         type: object
         properties:
             app_quota:
-                description: "Application quota for the tenant. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Application quota for the tenant. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AppQuotaConfig'
             enable_tenant_binding:
-                description: "Enable tenant binding mode for this tenant. When enabled, only explicitly shared objects from admin tenant will be visible. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable tenant binding mode for this tenant. When enabled, only explicitly shared objects from admin tenant will be visible. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             license_quota:
                 description: "License quota for the tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."

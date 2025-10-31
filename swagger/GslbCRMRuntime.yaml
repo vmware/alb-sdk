@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.3.1'
+    version: '32.1.1'
     title: Avi GslbCRMRuntime Object API
     contact:
         name: Avi Networks Inc.
@@ -672,9 +672,6 @@ definitions:
     ReplicationPolicy:
         type: object
         properties:
-            checkpoint_uuid:
-                description: "Leader's checkpoint. Follower attempt to replicate configuration till this checkpoint. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             replication_mode:
                 description: "Replication mode. Enum options - REPLICATION_MODE_CONTINUOUS, REPLICATION_MODE_MANUAL, REPLICATION_MODE_ADAPTIVE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string

@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.3.1",
+        "version": "32.1.1",
         "title": "Avi Image Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -575,10 +575,6 @@
                 },
                 "product_name": {
                     "description": "Product Name. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "remote_image_ref": {
-                    "description": "Remote reference of the container image. Field deprecated in 31.1.1. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tag": {
