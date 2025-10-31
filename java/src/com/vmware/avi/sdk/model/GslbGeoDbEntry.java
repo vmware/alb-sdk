@@ -21,9 +21,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbGeoDbEntry  {
-    @JsonProperty("file")
-    private GslbGeoDbFile file;
-
     @JsonProperty("file_obj_ref")
     private String fileObjRef;
 
@@ -31,30 +28,6 @@ public class GslbGeoDbEntry  {
     private Integer priority = 10;
 
 
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * This field describes the geodb file.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return file
-     */
-    public GslbGeoDbFile getFile() {
-        return file;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * This field describes the geodb file.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param file set the file.
-     */
-    public void setFile(GslbGeoDbFile file) {
-        this.file = file;
-    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -123,7 +96,6 @@ public class GslbGeoDbEntry  {
       }
       GslbGeoDbEntry objGslbGeoDbEntry = (GslbGeoDbEntry) o;
       return   Objects.equals(this.priority, objGslbGeoDbEntry.priority)&&
-  Objects.equals(this.file, objGslbGeoDbEntry.file)&&
   Objects.equals(this.fileObjRef, objGslbGeoDbEntry.fileObjRef);
     }
 
@@ -131,8 +103,7 @@ public class GslbGeoDbEntry  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class GslbGeoDbEntry {\n");
-                  sb.append("    file: ").append(toIndentedString(file)).append("\n");
-                        sb.append("    fileObjRef: ").append(toIndentedString(fileObjRef)).append("\n");
+                  sb.append("    fileObjRef: ").append(toIndentedString(fileObjRef)).append("\n");
                         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
                   sb.append("}");
       return sb.toString();

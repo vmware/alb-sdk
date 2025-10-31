@@ -70,7 +70,7 @@ public class PasswordPolicy extends AviRestResource  {
      * Time window for evaluating failed attempts in seconds.
      * Defaults to 900 seconds.
      * Allowed values are 300-1800.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 900.
@@ -85,7 +85,7 @@ public class PasswordPolicy extends AviRestResource  {
      * Time window for evaluating failed attempts in seconds.
      * Defaults to 900 seconds.
      * Allowed values are 300-1800.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 900.
@@ -101,7 +101,7 @@ public class PasswordPolicy extends AviRestResource  {
      * Defaults to 3.
      * Allowed values are 0-5.
      * Special values are 0- unlimited login attempts allowed.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @return lockoutMaxAuthFailures
@@ -116,7 +116,7 @@ public class PasswordPolicy extends AviRestResource  {
      * Defaults to 3.
      * Allowed values are 0-5.
      * Special values are 0- unlimited login attempts allowed.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @param lockoutMaxAuthFailures set the lockoutMaxAuthFailures.
@@ -130,7 +130,7 @@ public class PasswordPolicy extends AviRestResource  {
      * Account lockout duration in seconds.
      * Defaults to 900 seconds.
      * Allowed values are 600-1800.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 900.
@@ -145,7 +145,7 @@ public class PasswordPolicy extends AviRestResource  {
      * Account lockout duration in seconds.
      * Defaults to 900 seconds.
      * Allowed values are 600-1800.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 900.
@@ -160,7 +160,7 @@ public class PasswordPolicy extends AviRestResource  {
      * Minimum password length.
      * Defaults to 15 characters.
      * Allowed values are 8-64.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 15.
      * @return minLength
@@ -174,7 +174,7 @@ public class PasswordPolicy extends AviRestResource  {
      * Minimum password length.
      * Defaults to 15 characters.
      * Allowed values are 8-64.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 15.
      * @param minLength set the minLength.
@@ -187,7 +187,7 @@ public class PasswordPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Minimum number of lowercase characters required.
      * Allowed values are 0-10.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return minLowercase
@@ -200,7 +200,7 @@ public class PasswordPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Minimum number of lowercase characters required.
      * Allowed values are 0-10.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param minLowercase set the minLowercase.
@@ -213,7 +213,7 @@ public class PasswordPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Minimum number of numeric characters required.
      * Allowed values are 0-10.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return minNumeric
@@ -226,7 +226,7 @@ public class PasswordPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Minimum number of numeric characters required.
      * Allowed values are 0-10.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param minNumeric set the minNumeric.
@@ -239,7 +239,7 @@ public class PasswordPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Minimum number of special characters required.
      * Allowed values are 0-10.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return minSpecial
@@ -252,7 +252,7 @@ public class PasswordPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Minimum number of special characters required.
      * Allowed values are 0-10.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param minSpecial set the minSpecial.
@@ -265,7 +265,7 @@ public class PasswordPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Minimum number of uppercase characters required.
      * Allowed values are 0-10.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return minUppercase
@@ -278,7 +278,7 @@ public class PasswordPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Minimum number of uppercase characters required.
      * Allowed values are 0-10.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param minUppercase set the minUppercase.
@@ -290,7 +290,7 @@ public class PasswordPolicy extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the password policy configuration.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
@@ -302,7 +302,7 @@ public class PasswordPolicy extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Name of the password policy configuration.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
@@ -316,7 +316,7 @@ public class PasswordPolicy extends AviRestResource  {
      * Password expiry period in days.
      * Defaults to 365 days.
      * Allowed values are 30-730.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Unit is days.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 365.
@@ -331,7 +331,7 @@ public class PasswordPolicy extends AviRestResource  {
      * Password expiry period in days.
      * Defaults to 365 days.
      * Allowed values are 30-730.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Unit is days.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 365.
@@ -346,7 +346,7 @@ public class PasswordPolicy extends AviRestResource  {
      * Number of previous passwords to remember.
      * Defaults to 5.
      * Allowed values are 1-10.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return passwordHistory
@@ -360,7 +360,7 @@ public class PasswordPolicy extends AviRestResource  {
      * Number of previous passwords to remember.
      * Defaults to 5.
      * Allowed values are 1-10.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param passwordHistory set the passwordHistory.
@@ -373,7 +373,7 @@ public class PasswordPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Tenant ref for the passwordpolicy.
      * It is a reference to an object of type tenant.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
@@ -386,7 +386,7 @@ public class PasswordPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Tenant ref for the passwordpolicy.
      * It is a reference to an object of type tenant.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
@@ -415,7 +415,7 @@ public class PasswordPolicy extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Unique object identifier of the passwordpolicy.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
@@ -427,7 +427,7 @@ public class PasswordPolicy extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Unique object identifier of the passwordpolicy.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.

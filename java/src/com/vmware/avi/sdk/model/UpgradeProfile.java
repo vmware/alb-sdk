@@ -21,9 +21,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UpgradeProfile extends AviRestResource  {
-    @JsonProperty("controller")
-    private ControllerParams controller;
-
     @JsonProperty("controller_params")
     private ControllerParams controllerParams;
 
@@ -46,30 +43,6 @@ public class UpgradeProfile extends AviRestResource  {
     private String uuid;
 
 
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * List of controller upgrade related configurable parameters.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @return controller
-     */
-    public ControllerParams getController() {
-        return controller;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * List of controller upgrade related configurable parameters.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @param controller set the controller.
-     */
-    public void setController(ControllerParams controller) {
-        this.controller = controller;
-    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -243,7 +216,6 @@ public class UpgradeProfile extends AviRestResource  {
       }
       UpgradeProfile objUpgradeProfile = (UpgradeProfile) o;
       return   Objects.equals(this.uuid, objUpgradeProfile.uuid)&&
-  Objects.equals(this.controller, objUpgradeProfile.controller)&&
   Objects.equals(this.serviceEngine, objUpgradeProfile.serviceEngine)&&
   Objects.equals(this.image, objUpgradeProfile.image)&&
   Objects.equals(this.dryRun, objUpgradeProfile.dryRun)&&
@@ -255,8 +227,7 @@ public class UpgradeProfile extends AviRestResource  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class UpgradeProfile {\n");
-                  sb.append("    controller: ").append(toIndentedString(controller)).append("\n");
-                        sb.append("    controllerParams: ").append(toIndentedString(controllerParams)).append("\n");
+                  sb.append("    controllerParams: ").append(toIndentedString(controllerParams)).append("\n");
                         sb.append("    dryRun: ").append(toIndentedString(dryRun)).append("\n");
                         sb.append("    image: ").append(toIndentedString(image)).append("\n");
                         sb.append("    preChecks: ").append(toIndentedString(preChecks)).append("\n");

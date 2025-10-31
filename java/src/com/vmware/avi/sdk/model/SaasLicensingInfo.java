@@ -24,12 +24,6 @@ public class SaasLicensingInfo  {
     @JsonProperty("enable_notional_reserve")
     private Boolean enableNotionalReserve = true;
 
-    @JsonProperty("max_service_units")
-    private Float maxServiceUnits;
-
-    @JsonProperty("reserve_service_units")
-    private Float reserveServiceUnits;
-
 
 
     /**
@@ -56,58 +50,6 @@ public class SaasLicensingInfo  {
         this.enableNotionalReserve = enableNotionalReserve;
     }
 
-    /**
-     * This is the getter method this will return the attribute value.
-     * This field is deprecated.
-     * Allowed values are 0-100000.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @return maxServiceUnits
-     */
-    public Float getMaxServiceUnits() {
-        return maxServiceUnits;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * This field is deprecated.
-     * Allowed values are 0-100000.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @param maxServiceUnits set the maxServiceUnits.
-     */
-    public void setMaxServiceUnits(Float  maxServiceUnits) {
-        this.maxServiceUnits = maxServiceUnits;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * This field is deprecated.
-     * Allowed values are 0-1000.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @return reserveServiceUnits
-     */
-    public Float getReserveServiceUnits() {
-        return reserveServiceUnits;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * This field is deprecated.
-     * Allowed values are 0-1000.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @param reserveServiceUnits set the reserveServiceUnits.
-     */
-    public void setReserveServiceUnits(Float  reserveServiceUnits) {
-        this.reserveServiceUnits = reserveServiceUnits;
-    }
-
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,9 +60,7 @@ public class SaasLicensingInfo  {
           return false;
       }
       SaasLicensingInfo objSaasLicensingInfo = (SaasLicensingInfo) o;
-      return   Objects.equals(this.reserveServiceUnits, objSaasLicensingInfo.reserveServiceUnits)&&
-  Objects.equals(this.maxServiceUnits, objSaasLicensingInfo.maxServiceUnits)&&
-  Objects.equals(this.enableNotionalReserve, objSaasLicensingInfo.enableNotionalReserve);
+      return   Objects.equals(this.enableNotionalReserve, objSaasLicensingInfo.enableNotionalReserve);
     }
 
     @Override
@@ -128,8 +68,6 @@ public class SaasLicensingInfo  {
       StringBuilder sb = new StringBuilder();
       sb.append("class SaasLicensingInfo {\n");
                   sb.append("    enableNotionalReserve: ").append(toIndentedString(enableNotionalReserve)).append("\n");
-                        sb.append("    maxServiceUnits: ").append(toIndentedString(maxServiceUnits)).append("\n");
-                        sb.append("    reserveServiceUnits: ").append(toIndentedString(reserveServiceUnits)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

@@ -30,12 +30,6 @@ public class GslbDnsInfo  {
     @JsonProperty("dns_vs_states")
     private List<GslbPerDnsState> dnsVsStates;
 
-    @JsonProperty("gs_status")
-    private GslbDnsGsStatus gsStatus;
-
-    @JsonProperty("retry_count")
-    private Integer retryCount;
-
 
 
     /**
@@ -117,54 +111,6 @@ public class GslbDnsInfo  {
       return this;
     }
 
-    /**
-     * This is the getter method this will return the attribute value.
-     * This field encapsulates the gs-status edge-triggered framework.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return gsStatus
-     */
-    public GslbDnsGsStatus getGsStatus() {
-        return gsStatus;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * This field encapsulates the gs-status edge-triggered framework.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param gsStatus set the gsStatus.
-     */
-    public void setGsStatus(GslbDnsGsStatus gsStatus) {
-        this.gsStatus = gsStatus;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * This field is used to track the retry attempts for se download errors.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return retryCount
-     */
-    public Integer getRetryCount() {
-        return retryCount;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * This field is used to track the retry attempts for se download errors.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param retryCount set the retryCount.
-     */
-    public void setRetryCount(Integer  retryCount) {
-        this.retryCount = retryCount;
-    }
-
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -177,8 +123,6 @@ public class GslbDnsInfo  {
       GslbDnsInfo objGslbDnsInfo = (GslbDnsInfo) o;
       return   Objects.equals(this.dnsActive, objGslbDnsInfo.dnsActive)&&
   Objects.equals(this.dnsVsStates, objGslbDnsInfo.dnsVsStates)&&
-  Objects.equals(this.gsStatus, objGslbDnsInfo.gsStatus)&&
-  Objects.equals(this.retryCount, objGslbDnsInfo.retryCount)&&
   Objects.equals(this.dnsSeResource, objGslbDnsInfo.dnsSeResource);
     }
 
@@ -189,8 +133,6 @@ public class GslbDnsInfo  {
                   sb.append("    dnsActive: ").append(toIndentedString(dnsActive)).append("\n");
                         sb.append("    dnsSeResource: ").append(toIndentedString(dnsSeResource)).append("\n");
                         sb.append("    dnsVsStates: ").append(toIndentedString(dnsVsStates)).append("\n");
-                        sb.append("    gsStatus: ").append(toIndentedString(gsStatus)).append("\n");
-                        sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

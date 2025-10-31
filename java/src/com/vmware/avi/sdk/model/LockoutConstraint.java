@@ -38,7 +38,7 @@ public class LockoutConstraint  {
      * Defaults to 900 seconds.
      * Allowed values are 300-1800.
      * Special values are 0 - do not reset login failure counts on the basis of any evaluation window.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 900.
@@ -54,7 +54,7 @@ public class LockoutConstraint  {
      * Defaults to 900 seconds.
      * Allowed values are 300-1800.
      * Special values are 0 - do not reset login failure counts on the basis of any evaluation window.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 900.
@@ -70,7 +70,7 @@ public class LockoutConstraint  {
      * Defaults to 3.
      * Setting it to 0 allows unlimited login failure attempts without any lockout.
      * Allowed values are 0-5.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @return lockoutMaxAuthFailures
@@ -85,7 +85,7 @@ public class LockoutConstraint  {
      * Defaults to 3.
      * Setting it to 0 allows unlimited login failure attempts without any lockout.
      * Allowed values are 0-5.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @param lockoutMaxAuthFailures set the lockoutMaxAuthFailures.
@@ -99,7 +99,7 @@ public class LockoutConstraint  {
      * Account lockout duration in seconds.
      * Defaults to 900 seconds.
      * Allowed values are 600-1800.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 900.
@@ -114,7 +114,7 @@ public class LockoutConstraint  {
      * Account lockout duration in seconds.
      * Defaults to 900 seconds.
      * Allowed values are 600-1800.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 900.

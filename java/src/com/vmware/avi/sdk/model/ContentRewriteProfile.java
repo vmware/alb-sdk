@@ -24,9 +24,6 @@ public class ContentRewriteProfile  {
     @JsonProperty("req_rewrite_rules")
     private List<ReqContentRewriteRule> reqRewriteRules;
 
-    @JsonProperty("rewritable_content_ref")
-    private String rewritableContentRef;
-
     @JsonProperty("rsp_rewrite_rules")
     private List<RspContentRewriteRule> rspRewriteRules;
 
@@ -72,32 +69,6 @@ public class ContentRewriteProfile  {
       }
       this.reqRewriteRules.add(reqRewriteRulesItem);
       return this;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Rewrite only content types listed in this string group.
-     * Content types not present in this list are not rewritten.
-     * It is a reference to an object of type stringgroup.
-     * Field deprecated in 31.2.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return rewritableContentRef
-     */
-    public String getRewritableContentRef() {
-        return rewritableContentRef;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Rewrite only content types listed in this string group.
-     * Content types not present in this list are not rewritten.
-     * It is a reference to an object of type stringgroup.
-     * Field deprecated in 31.2.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param rewritableContentRef set the rewritableContentRef.
-     */
-    public void setRewritableContentRef(String  rewritableContentRef) {
-        this.rewritableContentRef = rewritableContentRef;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -152,8 +123,7 @@ public class ContentRewriteProfile  {
           return false;
       }
       ContentRewriteProfile objContentRewriteProfile = (ContentRewriteProfile) o;
-      return   Objects.equals(this.rewritableContentRef, objContentRewriteProfile.rewritableContentRef)&&
-  Objects.equals(this.rspRewriteRules, objContentRewriteProfile.rspRewriteRules)&&
+      return   Objects.equals(this.rspRewriteRules, objContentRewriteProfile.rspRewriteRules)&&
   Objects.equals(this.reqRewriteRules, objContentRewriteProfile.reqRewriteRules);
     }
 
@@ -162,7 +132,6 @@ public class ContentRewriteProfile  {
       StringBuilder sb = new StringBuilder();
       sb.append("class ContentRewriteProfile {\n");
                   sb.append("    reqRewriteRules: ").append(toIndentedString(reqRewriteRules)).append("\n");
-                        sb.append("    rewritableContentRef: ").append(toIndentedString(rewritableContentRef)).append("\n");
                         sb.append("    rspRewriteRules: ").append(toIndentedString(rspRewriteRules)).append("\n");
                   sb.append("}");
       return sb.toString();

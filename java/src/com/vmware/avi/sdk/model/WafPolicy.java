@@ -7,7 +7,6 @@ package com.vmware.avi.sdk.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -37,9 +36,6 @@ public class WafPolicy extends AviRestResource  {
     @JsonProperty("bypass_static_extensions")
     private Boolean bypassStaticExtensions = true;
 
-    @JsonProperty("confidence_override")
-    private AppLearningConfidenceOverride confidenceOverride;
-
     @JsonProperty("created_by")
     private String createdBy;
 
@@ -48,15 +44,6 @@ public class WafPolicy extends AviRestResource  {
 
     @JsonProperty("description")
     private String description;
-
-    @JsonProperty("enable_app_learning")
-    private Boolean enableAppLearning;
-
-    @JsonProperty("enable_auto_rule_updates")
-    private Boolean enableAutoRuleUpdates;
-
-    @JsonIgnore
-    private Boolean enableRegexLearning;
 
     @JsonProperty("enable_streaming")
     private Boolean enableStreaming = false;
@@ -70,14 +57,8 @@ public class WafPolicy extends AviRestResource  {
     @JsonProperty("geo_db_ref")
     private String geoDbRef;
 
-    @JsonProperty("learning_params")
-    private AppLearningParams learningParams;
-
     @JsonProperty("markers")
     private List<RoleFilterMatchLabel> markers;
-
-    @JsonProperty("min_confidence")
-    private String minConfidence;
 
     @JsonProperty("mode")
     private String mode = "WAF_MODE_DETECTION_ONLY";
@@ -102,9 +83,6 @@ public class WafPolicy extends AviRestResource  {
 
     @JsonProperty("tenant_ref")
     private String tenantRef;
-
-    @JsonProperty("updated_crs_rules_in_detection_mode")
-    private Boolean updatedCrsRulesInDetectionMode;
 
     @JsonProperty("url")
     private String url = "url";
@@ -253,30 +231,6 @@ public class WafPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * [deprecated] configure thresholds for confidence labels.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return confidenceOverride
-     */
-    public AppLearningConfidenceOverride getConfidenceOverride() {
-        return confidenceOverride;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * [deprecated] configure thresholds for confidence labels.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param confidenceOverride set the confidenceOverride.
-     */
-    public void setConfidenceOverride(AppLearningConfidenceOverride confidenceOverride) {
-        this.confidenceOverride = confidenceOverride;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Creator name.
      * Field introduced in 17.2.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -358,80 +312,6 @@ public class WafPolicy extends AviRestResource  {
      */
     public void setDescription(String  description) {
         this.description = description;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * [deprecated] enable application learning for this waf policy.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return enableAppLearning
-     */
-    public Boolean getEnableAppLearning() {
-        return enableAppLearning;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * [deprecated] enable application learning for this waf policy.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param enableAppLearning set the enableAppLearning.
-     */
-    public void setEnableAppLearning(Boolean  enableAppLearning) {
-        this.enableAppLearning = enableAppLearning;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * [deprecated] enable application learning based rule updates on the waf profile.rules will be programmed in dedicated waf learning group.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return enableAutoRuleUpdates
-     */
-    public Boolean getEnableAutoRuleUpdates() {
-        return enableAutoRuleUpdates;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * [deprecated] enable application learning based rule updates on the waf profile.rules will be programmed in dedicated waf learning group.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param enableAutoRuleUpdates set the enableAutoRuleUpdates.
-     */
-    public void setEnableAutoRuleUpdates(Boolean  enableAutoRuleUpdates) {
-        this.enableAutoRuleUpdates = enableAutoRuleUpdates;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * [deprecated] enable dynamic regex generation for positive security model rules.
-     * This is an experimental feature and shouldn't be used in production.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return enableRegexLearning
-     */
-    public Boolean getEnableRegexLearning() {
-        return enableRegexLearning;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * [deprecated] enable dynamic regex generation for positive security model rules.
-     * This is an experimental feature and shouldn't be used in production.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param enableRegexLearning set the enableRegexLearning.
-     */
-    public void setEnableRegexLearning(Boolean  enableRegexLearning) {
-        this.enableRegexLearning = enableRegexLearning;
     }
 
     /**
@@ -543,30 +423,6 @@ public class WafPolicy extends AviRestResource  {
     public void setGeoDbRef(String  geoDbRef) {
         this.geoDbRef = geoDbRef;
     }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * [deprecated] parameters for tuning application learning.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return learningParams
-     */
-    public AppLearningParams getLearningParams() {
-        return learningParams;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * [deprecated] parameters for tuning application learning.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param learningParams set the learningParams.
-     */
-    public void setLearningParams(AppLearningParams learningParams) {
-        this.learningParams = learningParams;
-    }
     /**
      * This is the getter method this will return the attribute value.
      * List of labels to be used for granular rbac.
@@ -605,32 +461,6 @@ public class WafPolicy extends AviRestResource  {
       }
       this.markers.add(markersItem);
       return this;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * [deprecated] minimum confidence label required for auto rule updates.
-     * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return minConfidence
-     */
-    public String getMinConfidence() {
-        return minConfidence;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * [deprecated] minimum confidence label required for auto rule updates.
-     * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param minConfidence set the minConfidence.
-     */
-    public void setMinConfidence(String  minConfidence) {
-        this.minConfidence = minConfidence;
     }
 
     /**
@@ -874,30 +704,6 @@ public class WafPolicy extends AviRestResource  {
     public void setTenantRef(String  tenantRef) {
         this.tenantRef = tenantRef;
     }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * The functionality of this flag was moved to the new use_evaluation_mode_on_crs_update flag.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @return updatedCrsRulesInDetectionMode
-     */
-    public Boolean getUpdatedCrsRulesInDetectionMode() {
-        return updatedCrsRulesInDetectionMode;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * The functionality of this flag was moved to the new use_evaluation_mode_on_crs_update flag.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @param updatedCrsRulesInDetectionMode set the updatedCrsRulesInDetectionMode.
-     */
-    public void setUpdatedCrsRulesInDetectionMode(Boolean  updatedCrsRulesInDetectionMode) {
-        this.updatedCrsRulesInDetectionMode = updatedCrsRulesInDetectionMode;
-    }
     /**
      * This is the getter method this will return the attribute value.
      * Avi controller URL of the object.
@@ -1044,20 +850,13 @@ public class WafPolicy extends AviRestResource  {
   Objects.equals(this.failureMode, objWafPolicy.failureMode)&&
   Objects.equals(this.allowModeDelegation, objWafPolicy.allowModeDelegation)&&
   Objects.equals(this.positiveSecurityModel, objWafPolicy.positiveSecurityModel)&&
-  Objects.equals(this.enableAppLearning, objWafPolicy.enableAppLearning)&&
   Objects.equals(this.applicationSignatures, objWafPolicy.applicationSignatures)&&
-  Objects.equals(this.learningParams, objWafPolicy.learningParams)&&
-  Objects.equals(this.minConfidence, objWafPolicy.minConfidence)&&
-  Objects.equals(this.confidenceOverride, objWafPolicy.confidenceOverride)&&
-  Objects.equals(this.enableAutoRuleUpdates, objWafPolicy.enableAutoRuleUpdates)&&
-  Objects.equals(this.enableRegexLearning, objWafPolicy.enableRegexLearning)&&
   Objects.equals(this.allowlist, objWafPolicy.allowlist)&&
   Objects.equals(this.geoDbRef, objWafPolicy.geoDbRef)&&
   Objects.equals(this.markers, objWafPolicy.markers)&&
   Objects.equals(this.crsOverrides, objWafPolicy.crsOverrides)&&
   Objects.equals(this.bypassStaticExtensions, objWafPolicy.bypassStaticExtensions)&&
   Objects.equals(this.autoUpdateCrs, objWafPolicy.autoUpdateCrs)&&
-  Objects.equals(this.updatedCrsRulesInDetectionMode, objWafPolicy.updatedCrsRulesInDetectionMode)&&
   Objects.equals(this.useEvaluationModeOnCrsUpdate, objWafPolicy.useEvaluationModeOnCrsUpdate)&&
   Objects.equals(this.samplingMode, objWafPolicy.samplingMode)&&
   Objects.equals(this.fixedSamplingRate, objWafPolicy.fixedSamplingRate)&&
@@ -1073,20 +872,14 @@ public class WafPolicy extends AviRestResource  {
                         sb.append("    applicationSignatures: ").append(toIndentedString(applicationSignatures)).append("\n");
                         sb.append("    autoUpdateCrs: ").append(toIndentedString(autoUpdateCrs)).append("\n");
                         sb.append("    bypassStaticExtensions: ").append(toIndentedString(bypassStaticExtensions)).append("\n");
-                        sb.append("    confidenceOverride: ").append(toIndentedString(confidenceOverride)).append("\n");
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
                         sb.append("    crsOverrides: ").append(toIndentedString(crsOverrides)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-                        sb.append("    enableAppLearning: ").append(toIndentedString(enableAppLearning)).append("\n");
-                        sb.append("    enableAutoRuleUpdates: ").append(toIndentedString(enableAutoRuleUpdates)).append("\n");
-                        sb.append("    enableRegexLearning: ").append(toIndentedString(enableRegexLearning)).append("\n");
                         sb.append("    enableStreaming: ").append(toIndentedString(enableStreaming)).append("\n");
                         sb.append("    failureMode: ").append(toIndentedString(failureMode)).append("\n");
                         sb.append("    fixedSamplingRate: ").append(toIndentedString(fixedSamplingRate)).append("\n");
                         sb.append("    geoDbRef: ").append(toIndentedString(geoDbRef)).append("\n");
-                        sb.append("    learningParams: ").append(toIndentedString(learningParams)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
-                        sb.append("    minConfidence: ").append(toIndentedString(minConfidence)).append("\n");
                         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    paranoiaLevel: ").append(toIndentedString(paranoiaLevel)).append("\n");
@@ -1095,7 +888,6 @@ public class WafPolicy extends AviRestResource  {
                         sb.append("    preCrsGroups: ").append(toIndentedString(preCrsGroups)).append("\n");
                         sb.append("    samplingMode: ").append(toIndentedString(samplingMode)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-                        sb.append("    updatedCrsRulesInDetectionMode: ").append(toIndentedString(updatedCrsRulesInDetectionMode)).append("\n");
                                     sb.append("    useEvaluationModeOnCrsUpdate: ").append(toIndentedString(useEvaluationModeOnCrsUpdate)).append("\n");
                         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    wafCrsRef: ").append(toIndentedString(wafCrsRef)).append("\n");

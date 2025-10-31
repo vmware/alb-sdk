@@ -33,14 +33,8 @@ public class WebappUT extends AviRestResource  {
     @JsonProperty("default_fourth_int")
     private Integer defaultFourthInt = 4;
 
-    @JsonProperty("default_second_int")
-    private Integer defaultSecondInt;
-
     @JsonProperty("default_string")
     private String defaultString = "default string";
-
-    @JsonProperty("default_third_int")
-    private Integer defaultThirdInt;
 
     @JsonProperty("mandatory_test")
     private L1FMandatoryTestCase mandatoryTest;
@@ -183,30 +177,6 @@ public class WebappUT extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Default int64 field.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 30.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @return defaultSecondInt
-     */
-    public Integer getDefaultSecondInt() {
-        return defaultSecondInt;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Default int64 field.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 30.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @param defaultSecondInt set the defaultSecondInt.
-     */
-    public void setDefaultSecondInt(Integer  defaultSecondInt) {
-        this.defaultSecondInt = defaultSecondInt;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Default string field.
      * Field introduced in 30.1.2.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -227,30 +197,6 @@ public class WebappUT extends AviRestResource  {
      */
     public void setDefaultString(String  defaultString) {
         this.defaultString = defaultString;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Default int32 field.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 30.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @return defaultThirdInt
-     */
-    public Integer getDefaultThirdInt() {
-        return defaultThirdInt;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Default int32 field.
-     * Field deprecated in 31.1.1.
-     * Field introduced in 30.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * @param defaultThirdInt set the defaultThirdInt.
-     */
-    public void setDefaultThirdInt(Integer  defaultThirdInt) {
-        this.defaultThirdInt = defaultThirdInt;
     }
 
     /**
@@ -631,8 +577,6 @@ public class WebappUT extends AviRestResource  {
   Objects.equals(this.skipOptionalCheckTests, objWebappUT.skipOptionalCheckTests)&&
   Objects.equals(this.defaultString, objWebappUT.defaultString)&&
   Objects.equals(this.defaultFirstInt, objWebappUT.defaultFirstInt)&&
-  Objects.equals(this.defaultSecondInt, objWebappUT.defaultSecondInt)&&
-  Objects.equals(this.defaultThirdInt, objWebappUT.defaultThirdInt)&&
   Objects.equals(this.cloudRef, objWebappUT.cloudRef)&&
   Objects.equals(this.defaultFourthInt, objWebappUT.defaultFourthInt)&&
   Objects.equals(this.defaultFifthInt, objWebappUT.defaultFifthInt);
@@ -646,9 +590,7 @@ public class WebappUT extends AviRestResource  {
                         sb.append("    defaultFifthInt: ").append(toIndentedString(defaultFifthInt)).append("\n");
                         sb.append("    defaultFirstInt: ").append(toIndentedString(defaultFirstInt)).append("\n");
                         sb.append("    defaultFourthInt: ").append(toIndentedString(defaultFourthInt)).append("\n");
-                        sb.append("    defaultSecondInt: ").append(toIndentedString(defaultSecondInt)).append("\n");
                         sb.append("    defaultString: ").append(toIndentedString(defaultString)).append("\n");
-                        sb.append("    defaultThirdInt: ").append(toIndentedString(defaultThirdInt)).append("\n");
                         sb.append("    mandatoryTest: ").append(toIndentedString(mandatoryTest)).append("\n");
                         sb.append("    mandatoryTests: ").append(toIndentedString(mandatoryTests)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");

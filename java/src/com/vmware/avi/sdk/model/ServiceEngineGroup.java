@@ -828,9 +828,6 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("use_legacy_netlink")
     private Boolean useLegacyNetlink = false;
 
-    @JsonProperty("use_objsync")
-    private Boolean useObjsync;
-
     @JsonProperty("use_standard_alb")
     private Boolean useStandardAlb = true;
 
@@ -8139,32 +8136,6 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enable interse objsyc distribution framework.
-     * Deprecated, use objsync_mode instead.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return useObjsync
-     */
-    public Boolean getUseObjsync() {
-        return useObjsync;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Enable interse objsyc distribution framework.
-     * Deprecated, use objsync_mode instead.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param useObjsync set the useObjsync.
-     */
-    public void setUseObjsync(Boolean  useObjsync) {
-        this.useObjsync = useObjsync;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Use standard sku azure load balancer.
      * By default cloud level flag is set.
      * If not set, it inherits/uses the use_standard_alb flag from the cloud.
@@ -9277,7 +9248,6 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.dpHbTimeoutCount, objServiceEngineGroup.dpHbTimeoutCount)&&
   Objects.equals(this.pcapTxRingRdBalancingFactor, objServiceEngineGroup.pcapTxRingRdBalancingFactor)&&
   Objects.equals(this.gcpConfig, objServiceEngineGroup.gcpConfig)&&
-  Objects.equals(this.useObjsync, objServiceEngineGroup.useObjsync)&&
   Objects.equals(this.seIpEncapIpc, objServiceEngineGroup.seIpEncapIpc)&&
   Objects.equals(this.seL3EncapIpc, objServiceEngineGroup.seL3EncapIpc)&&
   Objects.equals(this.netlinkPollerThreads, objServiceEngineGroup.netlinkPollerThreads)&&
@@ -9662,7 +9632,6 @@ public class ServiceEngineGroup extends AviRestResource  {
                                     sb.append("    useDpUtilForScaleout: ").append(toIndentedString(useDpUtilForScaleout)).append("\n");
                         sb.append("    useHyperthreadedCores: ").append(toIndentedString(useHyperthreadedCores)).append("\n");
                         sb.append("    useLegacyNetlink: ").append(toIndentedString(useLegacyNetlink)).append("\n");
-                        sb.append("    useObjsync: ").append(toIndentedString(useObjsync)).append("\n");
                         sb.append("    useStandardAlb: ").append(toIndentedString(useStandardAlb)).append("\n");
                         sb.append("    userAgentCacheConfig: ").append(toIndentedString(userAgentCacheConfig)).append("\n");
                         sb.append("    userDefinedMetricAge: ").append(toIndentedString(userDefinedMetricAge)).append("\n");

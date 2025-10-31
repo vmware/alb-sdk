@@ -70,7 +70,7 @@ public class NsxtConfiguration  {
      * Set this flag to true to enable automatic import of nsx projects into avi.this flag is only applicable when vpc mode is enabled for this cloud;
      * it is ignored when vpc mode is disabled.nsx projects under vcf-a management are excluded from this automatic import process, as vcf-a creates
      * these projects in avi through its own integration workflow.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return autoImportNsxProjects
@@ -84,7 +84,7 @@ public class NsxtConfiguration  {
      * Set this flag to true to enable automatic import of nsx projects into avi.this flag is only applicable when vpc mode is enabled for this cloud;
      * it is ignored when vpc mode is disabled.nsx projects under vcf-a management are excluded from this automatic import process, as vcf-a creates
      * these projects in avi through its own integration workflow.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param autoImportNsxProjects set the autoImportNsxProjects.
@@ -294,7 +294,7 @@ public class NsxtConfiguration  {
      * Enable to automatically register the avi controller with nsx-t manager.
      * This triggers the nsx onboarding workflow api to configure the alb cluster and create an enforcement point.
      * Note  this flag must be enabled on exactly one nsx-t cloud to avoid conflicts.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return onboardAviIntoNsx
@@ -308,7 +308,7 @@ public class NsxtConfiguration  {
      * Enable to automatically register the avi controller with nsx-t manager.
      * This triggers the nsx onboarding workflow api to configure the alb cluster and create an enforcement point.
      * Note  this flag must be enabled on exactly one nsx-t cloud to avoid conflicts.
-     * Field introduced in 31.3.1.
+     * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param onboardAviIntoNsx set the onboardAviIntoNsx.

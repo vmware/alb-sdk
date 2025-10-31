@@ -21,15 +21,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServiceEngineLimits  {
-    @JsonProperty("all_virtualservices_per_serviceengine")
-    private Integer allVirtualservicesPerServiceengine;
-
-    @JsonProperty("ew_virtualservices_per_serviceengine")
-    private Integer ewVirtualservicesPerServiceengine;
-
-    @JsonProperty("ns_virtualservices_per_serviceengine")
-    private Integer nsVirtualservicesPerServiceengine;
-
     @JsonProperty("num_logical_intf_per_se")
     private Integer numLogicalIntfPerSe;
 
@@ -49,78 +40,6 @@ public class ServiceEngineLimits  {
     private List<ServiceEngineCloudLimits> serviceengineCloudLimits;
 
 
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Maximum number of virtualservices per serviceengine, including east-west virtualservices.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return allVirtualservicesPerServiceengine
-     */
-    public Integer getAllVirtualservicesPerServiceengine() {
-        return allVirtualservicesPerServiceengine;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Maximum number of virtualservices per serviceengine, including east-west virtualservices.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param allVirtualservicesPerServiceengine set the allVirtualservicesPerServiceengine.
-     */
-    public void setAllVirtualservicesPerServiceengine(Integer  allVirtualservicesPerServiceengine) {
-        this.allVirtualservicesPerServiceengine = allVirtualservicesPerServiceengine;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Maximum number of east-west virtualservices per serviceengine, excluding north-south virtualservices.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return ewVirtualservicesPerServiceengine
-     */
-    public Integer getEwVirtualservicesPerServiceengine() {
-        return ewVirtualservicesPerServiceengine;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Maximum number of east-west virtualservices per serviceengine, excluding north-south virtualservices.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param ewVirtualservicesPerServiceengine set the ewVirtualservicesPerServiceengine.
-     */
-    public void setEwVirtualservicesPerServiceengine(Integer  ewVirtualservicesPerServiceengine) {
-        this.ewVirtualservicesPerServiceengine = ewVirtualservicesPerServiceengine;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Maximum number of north-south virtualservices per serviceengine, excluding east-west virtualservices.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @return nsVirtualservicesPerServiceengine
-     */
-    public Integer getNsVirtualservicesPerServiceengine() {
-        return nsVirtualservicesPerServiceengine;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Maximum number of north-south virtualservices per serviceengine, excluding east-west virtualservices.
-     * Field deprecated in 31.2.1.
-     * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * @param nsVirtualservicesPerServiceengine set the nsVirtualservicesPerServiceengine.
-     */
-    public void setNsVirtualservicesPerServiceengine(Integer  nsVirtualservicesPerServiceengine) {
-        this.nsVirtualservicesPerServiceengine = nsVirtualservicesPerServiceengine;
-    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -291,10 +210,7 @@ public class ServiceEngineLimits  {
           return false;
       }
       ServiceEngineLimits objServiceEngineLimits = (ServiceEngineLimits) o;
-      return   Objects.equals(this.nsVirtualservicesPerServiceengine, objServiceEngineLimits.nsVirtualservicesPerServiceengine)&&
-  Objects.equals(this.ewVirtualservicesPerServiceengine, objServiceEngineLimits.ewVirtualservicesPerServiceengine)&&
-  Objects.equals(this.allVirtualservicesPerServiceengine, objServiceEngineLimits.allVirtualservicesPerServiceengine)&&
-  Objects.equals(this.numVirtualservicesRtMetrics, objServiceEngineLimits.numVirtualservicesRtMetrics)&&
+      return   Objects.equals(this.numVirtualservicesRtMetrics, objServiceEngineLimits.numVirtualservicesRtMetrics)&&
   Objects.equals(this.numVlanIntfPerPhyIntf, objServiceEngineLimits.numVlanIntfPerPhyIntf)&&
   Objects.equals(this.numVlanIntfPerSe, objServiceEngineLimits.numVlanIntfPerSe)&&
   Objects.equals(this.numPhyIntfPerSe, objServiceEngineLimits.numPhyIntfPerSe)&&
@@ -306,10 +222,7 @@ public class ServiceEngineLimits  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class ServiceEngineLimits {\n");
-                  sb.append("    allVirtualservicesPerServiceengine: ").append(toIndentedString(allVirtualservicesPerServiceengine)).append("\n");
-                        sb.append("    ewVirtualservicesPerServiceengine: ").append(toIndentedString(ewVirtualservicesPerServiceengine)).append("\n");
-                        sb.append("    nsVirtualservicesPerServiceengine: ").append(toIndentedString(nsVirtualservicesPerServiceengine)).append("\n");
-                        sb.append("    numLogicalIntfPerSe: ").append(toIndentedString(numLogicalIntfPerSe)).append("\n");
+                  sb.append("    numLogicalIntfPerSe: ").append(toIndentedString(numLogicalIntfPerSe)).append("\n");
                         sb.append("    numPhyIntfPerSe: ").append(toIndentedString(numPhyIntfPerSe)).append("\n");
                         sb.append("    numVirtualservicesRtMetrics: ").append(toIndentedString(numVirtualservicesRtMetrics)).append("\n");
                         sb.append("    numVlanIntfPerPhyIntf: ").append(toIndentedString(numVlanIntfPerPhyIntf)).append("\n");
