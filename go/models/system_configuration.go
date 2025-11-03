@@ -99,6 +99,9 @@ type SystemConfiguration struct {
 	// Configure Secure Channel properties. Field introduced in 18.1.4, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SecureChannelConfiguration *SecureChannelConfiguration `json:"secure_channel_configuration,omitempty"`
 
+	// Service Auth configurations. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ServiceAuthConfigurations []*ServiceAuthConfiguration `json:"service_auth_configurations,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SnmpConfiguration *SnmpConfiguration `json:"snmp_configuration,omitempty"`
 

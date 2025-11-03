@@ -12,6 +12,9 @@ type AuthProfile struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
+	// Client Cert settings. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ClientCert *ClientCertAuthSettings `json:"client_cert,omitempty"`
+
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
@@ -46,7 +49,7 @@ type AuthProfile struct {
 	//  It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
-	// Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- AUTH_PROFILE_LDAP,AUTH_PROFILE_TACACS_PLUS,AUTH_PROFILE_SAML,AUTH_PROFILE_JWT,AUTH_PROFILE_OAUTH), Basic (Allowed values- AUTH_PROFILE_LDAP,AUTH_PROFILE_TACACS_PLUS,AUTH_PROFILE_SAML,AUTH_PROFILE_JWT,AUTH_PROFILE_OAUTH) edition.
+	// Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH, AUTH_PROFILE_CLIENT_CERT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- AUTH_PROFILE_LDAP,AUTH_PROFILE_TACACS_PLUS,AUTH_PROFILE_SAML,AUTH_PROFILE_JWT,AUTH_PROFILE_OAUTH,AUTH_PROFILE_CLIENT_CERT), Basic (Allowed values- AUTH_PROFILE_LDAP,AUTH_PROFILE_TACACS_PLUS,AUTH_PROFILE_SAML,AUTH_PROFILE_JWT,AUTH_PROFILE_OAUTH,AUTH_PROFILE_CLIENT_CERT) edition.
 	// Required: true
 	Type *string `json:"type"`
 

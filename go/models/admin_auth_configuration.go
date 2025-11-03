@@ -13,7 +13,4 @@ type AdminAuthConfiguration struct {
 
 	// Remote Auth configurations. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RemoteAuthConfigurations []*RemoteAuthConfiguration `json:"remote_auth_configurations,omitempty"`
-
-	// Service Auth configurations. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	ServiceAuthConfigurations []*ServiceAuthConfiguration `json:"service_auth_configurations,omitempty"`
 }
