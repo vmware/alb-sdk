@@ -167,9 +167,6 @@ type VirtualService struct {
 	// Network security policies for the Virtual Service. It is a reference to an object of type NetworkSecurityPolicy. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NetworkSecurityPolicyRef *string `json:"network_security_policy_ref,omitempty"`
 
-	// A list of NSX Groups representing the Clients which can access the Virtual IP of the Virtual Service. Field deprecated in 31.2.1. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	NsxSecuritygroup []string `json:"nsx_securitygroup,omitempty"`
-
 	// VirtualService specific OAuth config. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	OauthVsConfig *OAuthVSConfig `json:"oauth_vs_config,omitempty"`
 

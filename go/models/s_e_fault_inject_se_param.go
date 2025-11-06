@@ -8,8 +8,14 @@ package models
 // swagger:model SEFaultInjectSeParam
 type SEFaultInjectSeParam struct {
 
+	// Internal  Duration in seconds to wait before terminating hung se_agent process. Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AgentTerminateOnHungDuration *uint32 `json:"agent_terminate_on_hung_duration,omitempty"`
+
 	// Inject fault in specific core. Field introduced in 18.1.5,18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Core *uint32 `json:"core,omitempty"`
+
+	// Internal  Terminate se_agent upon detecting of > 20s or below configured hung_duration. Set 0 to dis-able, 1 to enable. Allowed values are 0-1. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	EnableAgentTerminateOnHung *uint32 `json:"enable_agent_terminate_on_hung,omitempty"`
 
 	// Inject Fault on Objects. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ObjNames []string `json:"obj_names,omitempty"`

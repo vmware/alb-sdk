@@ -24,7 +24,4 @@ type TechSupportMessage struct {
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
-
-	// Uuid for techsupport message. Field deprecated in 31.2.1. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	UUID *string `json:"uuid,omitempty"`
 }

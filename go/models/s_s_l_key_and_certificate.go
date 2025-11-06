@@ -95,7 +95,7 @@ type SSLKeyAndCertificate struct {
 	//  It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
-	//  Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA, SSL_CERTIFICATE_TYPE_CLIENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Type *string `json:"type,omitempty"`
 
 	// url

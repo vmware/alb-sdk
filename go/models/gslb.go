@@ -62,9 +62,6 @@ type Gslb struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// Policy for replicating configuration to the active follower sites. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ReplicationPolicy *ReplicationPolicy `json:"replication_policy,omitempty"`
-
 	// Frequency with which group members communicate. Allowed values are 1-3600. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SendInterval *uint32 `json:"send_interval,omitempty"`
 

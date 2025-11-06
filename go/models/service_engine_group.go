@@ -827,9 +827,6 @@ type ServiceEngineGroup struct {
 	// Enable legacy model of netlink notifications. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	UseLegacyNetlink *bool `json:"use_legacy_netlink,omitempty"`
 
-	// Enable InterSE Objsyc distribution framework. Deprecated, use objsync_mode instead. Field deprecated in 31.2.1. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	UseObjsync *bool `json:"use_objsync,omitempty"`
-
 	// Use Standard SKU Azure Load Balancer. By default cloud level flag is set. If not set, it inherits/uses the use_standard_alb flag from the cloud. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UseStandardAlb *bool `json:"use_standard_alb,omitempty"`
 

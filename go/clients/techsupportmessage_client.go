@@ -69,14 +69,6 @@ func (client *TechSupportMessageClient) Create(obj *models.TechSupportMessage, o
 	return robj, err
 }
 
-// Update an existing TechSupportMessage object
-func (client *TechSupportMessageClient) Update(obj *models.TechSupportMessage, options ...session.ApiOptionsParams) (*models.TechSupportMessage, error) {
-	var robj *models.TechSupportMessage
-	path := client.getAPIPath(*obj.UUID)
-	err := client.aviSession.Put(path, obj, &robj, options...)
-	return robj, err
-}
-
 // Patch an existing TechSupportMessage object specified using uuid
 // patchOp: Patch operation - add, replace, or delete
 // patch: Patch payload should be compatible with the models.TechSupportMessage
@@ -95,15 +87,6 @@ func (client *TechSupportMessageClient) Delete(uuid string, options ...session.A
 	} else {
 		return client.aviSession.DeleteObject(client.getAPIPath(uuid), options...)
 	}
-}
-
-// DeleteByName - Delete an existing TechSupportMessage object with a given name
-func (client *TechSupportMessageClient) DeleteByName(name string, options ...session.ApiOptionsParams) error {
-	res, err := client.GetByName(name, options...)
-	if err != nil {
-		return err
-	}
-	return client.Delete(*res.UUID, options...)
 }
 
 // GetAviSession

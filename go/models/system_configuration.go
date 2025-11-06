@@ -78,7 +78,7 @@ type SystemConfiguration struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NtpConfiguration *NTPConfiguration `json:"ntp_configuration,omitempty"`
 
-	// Reference to uniform password policy. When not set, legacy password settings are used. It is a reference to an object of type PasswordPolicy. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Reference to uniform password policy. When not set, legacy password settings are used. It is a reference to an object of type PasswordPolicy. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	PasswordPolicyRef *string `json:"password_policy_ref,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -98,6 +98,9 @@ type SystemConfiguration struct {
 
 	// Configure Secure Channel properties. Field introduced in 18.1.4, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SecureChannelConfiguration *SecureChannelConfiguration `json:"secure_channel_configuration,omitempty"`
+
+	// Service Auth configurations. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ServiceAuthConfigurations []*ServiceAuthConfiguration `json:"service_auth_configurations,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SnmpConfiguration *SnmpConfiguration `json:"snmp_configuration,omitempty"`
