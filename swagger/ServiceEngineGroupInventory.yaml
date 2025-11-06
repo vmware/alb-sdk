@@ -1306,12 +1306,6 @@ definitions:
                 type: array
                 items:
                     $ref: '#/definitions/MetricsEventThreshold'
-    SeRefs:
-        type: object
-        properties:
-            ref:
-                description: "UUID of the Service Engine. It is a reference to an object of type ServiceEngine. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: string
     ServiceEngineGroup:
         type: object
         required:
@@ -2623,11 +2617,11 @@ definitions:
             config:
                 description: "Configuration summary of the service engine group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServiceEngineGroup'
-            serviceengins:
-                description: "Service engines the SE-Group is assigned to. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+            serviceengines:
+                description: "Service engines the SE-Group is assigned to. It is a reference to an object of type ServiceEngine. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
-                    $ref: '#/definitions/SeRefs'
+                    type: string
             upgradestatus:
                 description: "Upgrade status summary of the service engine group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/UpgradeStatusSummary'
@@ -2639,10 +2633,10 @@ definitions:
                 description: "UUID of the service engine group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             virtualservices:
-                description: "Virtual services the SE-Group is assigned to. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Virtual services the SE-Group is assigned to. It is a reference to an object of type VirtualService. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: array
                 items:
-                    $ref: '#/definitions/VsRefs'
+                    type: string
     ServiceEngineGroupInventoryApiResponse:
         type: object
         required:
@@ -2948,12 +2942,6 @@ definitions:
                 type: string
             vsphere_storage_policy_id:
                 description: "vSphere VM Storage Policy UUID to be associated to the Service Engine. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: string
-    VsRefs:
-        type: object
-        properties:
-            ref:
-                description: "UUID of the Virtual Service. It is a reference to an object of type VirtualService. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
     VssPlacement:
         type: object
