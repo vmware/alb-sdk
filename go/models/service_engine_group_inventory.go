@@ -15,8 +15,8 @@ type ServiceEngineGroupInventory struct {
 	// Configuration summary of the service engine group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Config *ServiceEngineGroup `json:"config,omitempty"`
 
-	// Service engines the SE-Group is assigned to. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	Serviceengins []*SeRefs `json:"serviceengins,omitempty"`
+	// Service engines the SE-Group is assigned to. It is a reference to an object of type ServiceEngine. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	Serviceengines []string `json:"serviceengines,omitempty"`
 
 	// Upgrade status summary of the service engine group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Upgradestatus *UpgradeStatusSummary `json:"upgradestatus,omitempty"`
@@ -28,6 +28,6 @@ type ServiceEngineGroupInventory struct {
 	// UUID of the service engine group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 
-	// Virtual services the SE-Group is assigned to. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	Virtualservices []*VsRefs `json:"virtualservices,omitempty"`
+	// Virtual services the SE-Group is assigned to. It is a reference to an object of type VirtualService. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	Virtualservices []string `json:"virtualservices,omitempty"`
 }
