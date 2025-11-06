@@ -18,6 +18,9 @@ type ReportProfile struct {
 	// Maximum number of concurrent reports allowed to be generated. Allowed values are 1-10. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MaxConcurrentReports *uint32 `json:"max_concurrent_reports,omitempty"`
 
+	// Remote controller request to enable report generation for remote controller. If enabled, the report generation will be done for the remote controller. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	RemoteController *RemoteController `json:"remote_controller,omitempty"`
+
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
