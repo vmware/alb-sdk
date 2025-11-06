@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.3.1",
+        "version": "32.1.1",
         "title": "Avi UpgradeProfile Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -667,10 +667,6 @@
                     "description": "UNIX time since epoch in microseconds. Units(MICROSECONDS).",
                     "readOnly": true,
                     "type": "string"
-                },
-                "controller": {
-                    "description": "List of controller upgrade related configurable parameters. Field deprecated in 31.2.1. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/ControllerParams"
                 },
                 "controller_params": {
                     "description": "List of controller upgrade related configurable parameters. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",

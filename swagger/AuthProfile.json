@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.3.1",
+        "version": "32.1.1",
         "title": "Avi AuthProfile Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -561,6 +561,10 @@
                     "readOnly": true,
                     "type": "string"
                 },
+                "client_cert": {
+                    "description": "Client Cert settings. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ClientCertAuthSettings"
+                },
                 "configpb_attributes": {
                     "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
@@ -609,7 +613,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "description": "Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- AUTH_PROFILE_LDAP,AUTH_PROFILE_TACACS_PLUS,AUTH_PROFILE_SAML,AUTH_PROFILE_JWT,AUTH_PROFILE_OAUTH), Basic (Allowed values- AUTH_PROFILE_LDAP,AUTH_PROFILE_TACACS_PLUS,AUTH_PROFILE_SAML,AUTH_PROFILE_JWT,AUTH_PROFILE_OAUTH) edition.",
+                    "description": "Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH, AUTH_PROFILE_CLIENT_CERT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- AUTH_PROFILE_LDAP,AUTH_PROFILE_TACACS_PLUS,AUTH_PROFILE_SAML,AUTH_PROFILE_JWT,AUTH_PROFILE_OAUTH,AUTH_PROFILE_CLIENT_CERT), Basic (Allowed values- AUTH_PROFILE_LDAP,AUTH_PROFILE_TACACS_PLUS,AUTH_PROFILE_SAML,AUTH_PROFILE_JWT,AUTH_PROFILE_OAUTH,AUTH_PROFILE_CLIENT_CERT) edition.",
                     "type": "string"
                 },
                 "url": {
@@ -684,11 +688,23 @@
                 }
             }
         },
+        "ClientCertAuthSettings": {
+            "type": "object",
+            "properties": {
+                "client_cert_refs": {
+                    "description": "Client Certs to be used for authentication. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
         "ConfigPbAttributes": {
             "type": "object",
             "properties": {
                 "created_by": {
-                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {
@@ -882,7 +898,7 @@
             ],
             "properties": {
                 "audience": {
-                    "description": "Audience parameter used for JWT token validation. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Audience parameter used for JWT token validation. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "authorization_endpoint": {

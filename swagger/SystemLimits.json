@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.3.1",
+        "version": "32.1.1",
         "title": "Avi SystemLimits Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -573,7 +573,7 @@
             "type": "object",
             "properties": {
                 "created_by": {
-                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {
@@ -949,21 +949,6 @@
         "ServiceEngineLimits": {
             "type": "object",
             "properties": {
-                "all_virtualservices_per_serviceengine": {
-                    "description": "Maximum number of virtualservices per serviceengine, including east-west virtualservices. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "ew_virtualservices_per_serviceengine": {
-                    "description": "Maximum number of east-west virtualservices per serviceengine, excluding north-south virtualservices. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "ns_virtualservices_per_serviceengine": {
-                    "description": "Maximum number of north-south virtualservices per serviceengine, excluding east-west virtualservices. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "int32"
-                },
                 "num_logical_intf_per_se": {
                     "description": "Maximum number of logical interfaces (vlan, bond) per serviceengine. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",

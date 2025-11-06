@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.3.1'
+    version: '32.1.1'
     title: Avi WebappUT Object API
     contact:
         name: Avi Networks Inc.
@@ -453,7 +453,7 @@ definitions:
         type: object
         properties:
             created_by:
-                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             version:
                 description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -622,18 +622,10 @@ definitions:
                 type: integer
                 default: 4
                 format: int32
-            default_second_int:
-                description: "default int64 field. Field deprecated in 31.1.1. Field introduced in 30.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                format: int64
             default_string:
                 description: "Default string field. Field introduced in 30.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
                 default: "default string"
-            default_third_int:
-                description: "default int32 field. Field deprecated in 31.1.1. Field introduced in 30.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                format: int32
             mandatory_test:
                 description: "Optional message for nested f_mandatory test cases defined at level1. Field introduced in 21.1.5, 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L1FMandatoryTestCase'

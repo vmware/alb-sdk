@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.3.1",
+        "version": "32.1.1",
         "title": "Avi ServiceEngineGroup Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -1194,7 +1194,7 @@
             "type": "object",
             "properties": {
                 "created_by": {
-                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {
@@ -3106,10 +3106,6 @@
                 },
                 "use_legacy_netlink": {
                     "description": "Enable legacy model of netlink notifications. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
-                "use_objsync": {
-                    "description": "Enable InterSE Objsyc distribution framework. Deprecated, use objsync_mode instead. Field deprecated in 31.2.1. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "use_standard_alb": {

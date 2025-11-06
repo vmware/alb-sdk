@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.3.1",
+        "version": "32.1.1",
         "title": "Avi ApplicationInsightsPolicy Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -719,7 +719,7 @@
             "type": "object",
             "properties": {
                 "created_by": {
-                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {

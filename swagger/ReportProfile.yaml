@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.3.1'
+    version: '32.1.1'
     title: Avi ReportProfile Object API
     contact:
         name: Avi Networks Inc.
@@ -408,6 +408,24 @@ definitions:
                 type: integer
                 default: 1800
                 format: uint32
+    RemoteController:
+        type: object
+        properties:
+            address:
+                description: "Remote controller address. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            enabled:
+                description: "Enable remote controller request. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: boolean
+            password:
+                description: "Remote controller password. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            tenant:
+                description: "Remote controller tenant name. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            username:
+                description: "Remote controller username. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
     ReportProfile:
         type: object
         properties:
@@ -423,6 +441,9 @@ definitions:
                 type: integer
                 default: 1
                 format: uint32
+            remote_controller:
+                description: "Remote controller request to enable report generation for remote controller. If enabled, the report generation will be done for the remote controller. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/RemoteController'
             url:
                 description: "url"
                 readOnly: True

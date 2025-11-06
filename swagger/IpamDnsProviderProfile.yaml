@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.3.1'
+    version: '32.1.1'
     title: Avi IpamDnsProviderProfile Object API
     contact:
         name: Avi Networks Inc.
@@ -422,7 +422,7 @@ definitions:
         type: object
         properties:
             created_by:
-                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             version:
                 description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -677,9 +677,6 @@ definitions:
                 type: string
             password:
                 description: "Password for API access for Infoblox appliance. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            profile_url:
-                description: "url of the profile writen to /etc/hosts for HA between IPv6 and IPv4. Field deprecated in 31.1.1. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             usable_alloc_subnets:
                 description: "Subnets to use for Infoblox IP allocation. Field introduced in 18.2.8, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

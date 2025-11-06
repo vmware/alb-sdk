@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "31.3.1",
+        "version": "32.1.1",
         "title": "Avi Gslb Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -1066,7 +1066,7 @@
             "type": "object",
             "properties": {
                 "created_by": {
-                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {
@@ -1198,10 +1198,6 @@
                 "name": {
                     "description": "Name for the GSLB object. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
-                },
-                "replication_policy": {
-                    "description": "Policy for replicating configuration to the active follower sites. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/ReplicationPolicy"
                 },
                 "send_interval": {
                     "description": "Frequency with which group members communicate. Allowed values are 1-3600. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1583,10 +1579,6 @@
         "ReplicationPolicy": {
             "type": "object",
             "properties": {
-                "checkpoint_uuid": {
-                    "description": "Leader's checkpoint. Follower attempt to replicate configuration till this checkpoint. Field deprecated in 31.2.1. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
                 "replication_mode": {
                     "description": "Replication mode. Enum options - REPLICATION_MODE_CONTINUOUS, REPLICATION_MODE_MANUAL, REPLICATION_MODE_ADAPTIVE. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",

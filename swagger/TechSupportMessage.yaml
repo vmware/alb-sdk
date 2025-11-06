@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.3.1'
+    version: '32.1.1'
     title: Avi TechSupportMessage Object API
     contact:
         name: Avi Networks Inc.
@@ -410,9 +410,6 @@ definitions:
             url:
                 description: "url"
                 readOnly: True
-                type: string
-            uuid:
-                description: "Uuid for techsupport message. Field deprecated in 31.2.1. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     TechSupportMessageApiResponse:
         type: object

@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.3.1'
+    version: '32.1.1'
     title: Avi GslbSMRuntime Object API
     contact:
         name: Avi Networks Inc.
@@ -505,13 +505,6 @@ definitions:
                 type: array
                 items:
                     $ref: '#/definitions/GslbPerDnsState'
-            gs_status:
-                description: "This field encapsulates the Gs-status edge-triggered framework. . Field deprecated in 31.1.1. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/GslbDnsGsStatus'
-            retry_count:
-                description: "This field is used to track the retry attempts for SE download errors. . Field deprecated in 31.1.1. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
     GslbDownloadStatus:
         type: object
         properties:

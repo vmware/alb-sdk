@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.3.1'
+    version: '32.1.1'
     title: Avi Cloud Object API
     contact:
         name: Avi Networks Inc.
@@ -1172,9 +1172,6 @@ definitions:
             obj_name_prefix:
                 description: "Default prefix for all automatically created objects in this cloud. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            openstack_configuration:
-                description: " Field deprecated in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/OpenStackConfiguration'
             prefer_static_routes:
                 description: "Prefer static routes over interface routes during VirtualService placement. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
@@ -1266,7 +1263,7 @@ definitions:
         type: object
         properties:
             created_by:
-                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 31.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             version:
                 description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1996,7 +1993,7 @@ definitions:
         type: object
         properties:
             auto_import_nsx_projects:
-                description: "Set this flag to true to enable automatic import of NSX projects into Avi.This flag is only applicable when VPC mode is enabled for this cloud; it is ignored when VPC mode is disabled.NSX projects under VCF-A management are excluded from this automatic import process, as VCF-A creates these projects in Avi through its own integration workflow. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Set this flag to true to enable automatic import of NSX projects into Avi.This flag is only applicable when VPC mode is enabled for this cloud; it is ignored when VPC mode is disabled.NSX projects under VCF-A management are excluded from this automatic import process, as VCF-A creates these projects in Avi through its own integration workflow. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             automate_dfw_objects:
@@ -2027,7 +2024,7 @@ definitions:
                 description: "NSX-T manager hostname or IP address. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             onboard_avi_into_nsx:
-                description: "Enable to automatically register the Avi Controller with NSX-T Manager. This triggers the NSX onboarding workflow API to configure the ALB cluster and create an enforcement point. Note  This flag must be enabled on exactly one NSX-T Cloud to avoid conflicts. Field introduced in 31.3.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable to automatically register the Avi Controller with NSX-T Manager. This triggers the NSX onboarding workflow API to configure the ALB cluster and create an enforcement point. Note  This flag must be enabled on exactly one NSX-T Cloud to avoid conflicts. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             site_id:
                 description: "Site where transport zone belongs to. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
