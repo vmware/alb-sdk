@@ -21,8 +21,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SEFaultInjectSeParam  {
+    @JsonProperty("agent_terminate_on_hung_duration")
+    private Integer agentTerminateOnHungDuration;
+
     @JsonProperty("core")
     private Integer core = 1000;
+
+    @JsonProperty("enable_agent_terminate_on_hung")
+    private Integer enableAgentTerminateOnHung;
 
     @JsonProperty("obj_names")
     private List<String> objNames;
@@ -37,6 +43,32 @@ public class SEFaultInjectSeParam  {
     private String seDpFault = "SE_DP_FAULT_DISABLED";
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Internal  duration in seconds to wait before terminating hung se_agent process.
+     * Field introduced in 32.1.1.
+     * Unit is sec.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return agentTerminateOnHungDuration
+     */
+    public Integer getAgentTerminateOnHungDuration() {
+        return agentTerminateOnHungDuration;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Internal  duration in seconds to wait before terminating hung se_agent process.
+     * Field introduced in 32.1.1.
+     * Unit is sec.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param agentTerminateOnHungDuration set the agentTerminateOnHungDuration.
+     */
+    public void setAgentTerminateOnHungDuration(Integer  agentTerminateOnHungDuration) {
+        this.agentTerminateOnHungDuration = agentTerminateOnHungDuration;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -60,6 +92,34 @@ public class SEFaultInjectSeParam  {
      */
     public void setCore(Integer  core) {
         this.core = core;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Internal  terminate se_agent upon detecting of > 20s or below configured hung_duration.
+     * Set 0 to dis-able, 1 to enable.
+     * Allowed values are 0-1.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return enableAgentTerminateOnHung
+     */
+    public Integer getEnableAgentTerminateOnHung() {
+        return enableAgentTerminateOnHung;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Internal  terminate se_agent upon detecting of > 20s or below configured hung_duration.
+     * Set 0 to dis-able, 1 to enable.
+     * Allowed values are 0-1.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param enableAgentTerminateOnHung set the enableAgentTerminateOnHung.
+     */
+    public void setEnableAgentTerminateOnHung(Integer  enableAgentTerminateOnHung) {
+        this.enableAgentTerminateOnHung = enableAgentTerminateOnHung;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -193,14 +253,18 @@ public class SEFaultInjectSeParam  {
   Objects.equals(this.seDpFault, objSEFaultInjectSeParam.seDpFault)&&
   Objects.equals(this.randomCore, objSEFaultInjectSeParam.randomCore)&&
   Objects.equals(this.core, objSEFaultInjectSeParam.core)&&
-  Objects.equals(this.objNames, objSEFaultInjectSeParam.objNames);
+  Objects.equals(this.objNames, objSEFaultInjectSeParam.objNames)&&
+  Objects.equals(this.enableAgentTerminateOnHung, objSEFaultInjectSeParam.enableAgentTerminateOnHung)&&
+  Objects.equals(this.agentTerminateOnHungDuration, objSEFaultInjectSeParam.agentTerminateOnHungDuration);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class SEFaultInjectSeParam {\n");
-                  sb.append("    core: ").append(toIndentedString(core)).append("\n");
+                  sb.append("    agentTerminateOnHungDuration: ").append(toIndentedString(agentTerminateOnHungDuration)).append("\n");
+                        sb.append("    core: ").append(toIndentedString(core)).append("\n");
+                        sb.append("    enableAgentTerminateOnHung: ").append(toIndentedString(enableAgentTerminateOnHung)).append("\n");
                         sb.append("    objNames: ").append(toIndentedString(objNames)).append("\n");
                         sb.append("    randomCore: ").append(toIndentedString(randomCore)).append("\n");
                         sb.append("    seAgentFault: ").append(toIndentedString(seAgentFault)).append("\n");
