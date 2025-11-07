@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthProfile extends AviRestResource  {
+    @JsonProperty("client_cert")
+    private ClientCertAuthSettings clientCert;
+
     @JsonProperty("description")
     private String description;
 
@@ -61,6 +64,30 @@ public class AuthProfile extends AviRestResource  {
     private String uuid;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Client cert settings.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clientCert
+     */
+    public ClientCertAuthSettings getClientCert() {
+        return clientCert;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Client cert settings.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param clientCert set the clientCert.
+     */
+    public void setClientCert(ClientCertAuthSettings clientCert) {
+        this.clientCert = clientCert;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -308,10 +335,12 @@ public class AuthProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Type of the auth profile.
-     * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH.
+     * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH,
+     * AUTH_PROFILE_CLIENT_CERT.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth), basic
-     * (allowed values- auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth) edition.
+     * Allowed in essentials (allowed values-
+     * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth,auth_profile_client_cert), basic (allowed values-
+     * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth,auth_profile_client_cert) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -322,10 +351,12 @@ public class AuthProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Type of the auth profile.
-     * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH.
+     * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH,
+     * AUTH_PROFILE_CLIENT_CERT.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth), basic
-     * (allowed values- auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth) edition.
+     * Allowed in essentials (allowed values-
+     * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth,auth_profile_client_cert), basic (allowed values-
+     * auth_profile_ldap,auth_profile_tacacs_plus,auth_profile_saml,auth_profile_jwt,auth_profile_oauth,auth_profile_client_cert) edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */
@@ -391,6 +422,7 @@ public class AuthProfile extends AviRestResource  {
   Objects.equals(this.saml, objAuthProfile.saml)&&
   Objects.equals(this.jwtProfileRef, objAuthProfile.jwtProfileRef)&&
   Objects.equals(this.oauthProfile, objAuthProfile.oauthProfile)&&
+  Objects.equals(this.clientCert, objAuthProfile.clientCert)&&
   Objects.equals(this.markers, objAuthProfile.markers)&&
   Objects.equals(this.description, objAuthProfile.description)&&
   Objects.equals(this.tenantRef, objAuthProfile.tenantRef);
@@ -400,7 +432,8 @@ public class AuthProfile extends AviRestResource  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class AuthProfile {\n");
-                  sb.append("    description: ").append(toIndentedString(description)).append("\n");
+                  sb.append("    clientCert: ").append(toIndentedString(clientCert)).append("\n");
+                        sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    http: ").append(toIndentedString(http)).append("\n");
                         sb.append("    jwtProfileRef: ").append(toIndentedString(jwtProfileRef)).append("\n");
                         sb.append("    ldap: ").append(toIndentedString(ldap)).append("\n");

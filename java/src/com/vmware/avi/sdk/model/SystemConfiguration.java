@@ -106,6 +106,9 @@ public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("secure_channel_configuration")
     private SecureChannelConfiguration secureChannelConfiguration;
 
+    @JsonProperty("service_auth_configurations")
+    private List<ServiceAuthConfiguration> serviceAuthConfigurations;
+
     @JsonProperty("snmp_configuration")
     private SnmpConfiguration snmpConfiguration;
 
@@ -810,6 +813,45 @@ public class SystemConfiguration extends AviRestResource  {
     public void setSecureChannelConfiguration(SecureChannelConfiguration secureChannelConfiguration) {
         this.secureChannelConfiguration = secureChannelConfiguration;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Service auth configurations.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return serviceAuthConfigurations
+     */
+    public List<ServiceAuthConfiguration> getServiceAuthConfigurations() {
+        return serviceAuthConfigurations;
+    }
+
+    /**
+     * This is the setter method. this will set the serviceAuthConfigurations
+     * Service auth configurations.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return serviceAuthConfigurations
+     */
+    public void setServiceAuthConfigurations(List<ServiceAuthConfiguration>  serviceAuthConfigurations) {
+        this.serviceAuthConfigurations = serviceAuthConfigurations;
+    }
+
+    /**
+     * This is the setter method this will set the serviceAuthConfigurations
+     * Service auth configurations.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return serviceAuthConfigurations
+     */
+    public SystemConfiguration addServiceAuthConfigurationsItem(ServiceAuthConfiguration serviceAuthConfigurationsItem) {
+      if (this.serviceAuthConfigurations == null) {
+        this.serviceAuthConfigurations = new ArrayList<ServiceAuthConfiguration>();
+      }
+      this.serviceAuthConfigurations.add(serviceAuthConfigurationsItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -1205,7 +1247,8 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.syncSyslogToSe, objSystemConfiguration.syncSyslogToSe)&&
   Objects.equals(this.licenseQuota, objSystemConfiguration.licenseQuota)&&
   Objects.equals(this.enableLicenseQuota, objSystemConfiguration.enableLicenseQuota)&&
-  Objects.equals(this.passwordPolicyRef, objSystemConfiguration.passwordPolicyRef);
+  Objects.equals(this.passwordPolicyRef, objSystemConfiguration.passwordPolicyRef)&&
+  Objects.equals(this.serviceAuthConfigurations, objSystemConfiguration.serviceAuthConfigurations);
     }
 
     @Override
@@ -1240,6 +1283,7 @@ public class SystemConfiguration extends AviRestResource  {
                         sb.append("    rekeyVolumeLimit: ").append(toIndentedString(rekeyVolumeLimit)).append("\n");
                         sb.append("    sddcmanagerFqdn: ").append(toIndentedString(sddcmanagerFqdn)).append("\n");
                         sb.append("    secureChannelConfiguration: ").append(toIndentedString(secureChannelConfiguration)).append("\n");
+                        sb.append("    serviceAuthConfigurations: ").append(toIndentedString(serviceAuthConfigurations)).append("\n");
                         sb.append("    snmpConfiguration: ").append(toIndentedString(snmpConfiguration)).append("\n");
                         sb.append("    sshCiphers: ").append(toIndentedString(sshCiphers)).append("\n");
                         sb.append("    sshHmacs: ").append(toIndentedString(sshHmacs)).append("\n");
