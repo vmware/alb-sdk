@@ -898,6 +898,11 @@
                     "description": "Allow Incoming Connections from Clients Using TLS 1.0/1.1 to Controller. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
+                "minimum_password_length": {
+                    "description": "Minimum password length for user accounts. Allowed values are 6-32. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
                 "password_strength_check": {
                     "description": "Strict checking of password strength for user accounts. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
