@@ -37,7 +37,7 @@ public class LogManagerDebugFilter  {
     private Integer cacheCleanupDelayMs = 300000;
 
     @JsonProperty("client_index_op_timeout_seconds")
-    private Integer clientIndexOpTimeoutSeconds = 2;
+    private Integer clientIndexOpTimeoutSeconds = 5;
 
     @JsonProperty("db_notifn_chan_capacity")
     private Integer dbNotifnChanCapacity = 1000;
@@ -294,7 +294,7 @@ public class LogManagerDebugFilter  {
      * Timeout for the client to create an index in seconds.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return clientIndexOpTimeoutSeconds
      */
     public Integer getClientIndexOpTimeoutSeconds() {
@@ -306,7 +306,7 @@ public class LogManagerDebugFilter  {
      * Timeout for the client to create an index in seconds.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param clientIndexOpTimeoutSeconds set the clientIndexOpTimeoutSeconds.
      */
     public void setClientIndexOpTimeoutSeconds(Integer  clientIndexOpTimeoutSeconds) {
