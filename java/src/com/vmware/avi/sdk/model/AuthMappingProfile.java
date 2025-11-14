@@ -21,8 +21,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthMappingProfile extends AviRestResource  {
+    @JsonProperty("allow_unlabelled_access")
+    private Boolean allowUnlabelledAccess = true;
+
     @JsonProperty("description")
     private String description;
+
+    @JsonProperty("dynamic_role_filters")
+    private List<RoleFilter> dynamicRoleFilters;
 
     @JsonProperty("mapping_rules")
     private List<AuthMappingRule> mappingRules;
@@ -46,6 +52,30 @@ public class AuthMappingProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Allow access to unlabelled objects.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return allowUnlabelledAccess
+     */
+    public Boolean getAllowUnlabelledAccess() {
+        return allowUnlabelledAccess;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allow access to unlabelled objects.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param allowUnlabelledAccess set the allowUnlabelledAccess.
+     */
+    public void setAllowUnlabelledAccess(Boolean  allowUnlabelledAccess) {
+        this.allowUnlabelledAccess = allowUnlabelledAccess;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Description for the authmappingprofile.
      * Field introduced in 22.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -66,6 +96,54 @@ public class AuthMappingProfile extends AviRestResource  {
      */
     public void setDescription(String  description) {
         this.description = description;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Filters for granular object access control based on object labels.
+     * Multiple filters are merged using the and operator.
+     * If empty, all objects according to the privileges will be accessible to the user.
+     * Field introduced in 32.1.1.
+     * Maximum of 4 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dynamicRoleFilters
+     */
+    public List<RoleFilter> getDynamicRoleFilters() {
+        return dynamicRoleFilters;
+    }
+
+    /**
+     * This is the setter method. this will set the dynamicRoleFilters
+     * Filters for granular object access control based on object labels.
+     * Multiple filters are merged using the and operator.
+     * If empty, all objects according to the privileges will be accessible to the user.
+     * Field introduced in 32.1.1.
+     * Maximum of 4 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dynamicRoleFilters
+     */
+    public void setDynamicRoleFilters(List<RoleFilter>  dynamicRoleFilters) {
+        this.dynamicRoleFilters = dynamicRoleFilters;
+    }
+
+    /**
+     * This is the setter method this will set the dynamicRoleFilters
+     * Filters for granular object access control based on object labels.
+     * Multiple filters are merged using the and operator.
+     * If empty, all objects according to the privileges will be accessible to the user.
+     * Field introduced in 32.1.1.
+     * Maximum of 4 items allowed.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dynamicRoleFilters
+     */
+    public AuthMappingProfile addDynamicRoleFiltersItem(RoleFilter dynamicRoleFiltersItem) {
+      if (this.dynamicRoleFilters == null) {
+        this.dynamicRoleFilters = new ArrayList<RoleFilter>();
+      }
+      this.dynamicRoleFilters.add(dynamicRoleFiltersItem);
+      return this;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -244,14 +322,18 @@ public class AuthMappingProfile extends AviRestResource  {
   Objects.equals(this.type, objAuthMappingProfile.type)&&
   Objects.equals(this.mappingRules, objAuthMappingProfile.mappingRules)&&
   Objects.equals(this.description, objAuthMappingProfile.description)&&
-  Objects.equals(this.tenantRef, objAuthMappingProfile.tenantRef);
+  Objects.equals(this.tenantRef, objAuthMappingProfile.tenantRef)&&
+  Objects.equals(this.allowUnlabelledAccess, objAuthMappingProfile.allowUnlabelledAccess)&&
+  Objects.equals(this.dynamicRoleFilters, objAuthMappingProfile.dynamicRoleFilters);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class AuthMappingProfile {\n");
-                  sb.append("    description: ").append(toIndentedString(description)).append("\n");
+                  sb.append("    allowUnlabelledAccess: ").append(toIndentedString(allowUnlabelledAccess)).append("\n");
+                        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+                        sb.append("    dynamicRoleFilters: ").append(toIndentedString(dynamicRoleFilters)).append("\n");
                         sb.append("    mappingRules: ").append(toIndentedString(mappingRules)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
