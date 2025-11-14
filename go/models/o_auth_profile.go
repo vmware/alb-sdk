@@ -18,9 +18,6 @@ type OAuthProfile struct {
 	// Logout URI of IDP server. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EndSessionEndpoint *string `json:"end_session_endpoint,omitempty"`
 
-	// Instance uuid of the csp service. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	InstanceID *string `json:"instance_id,omitempty"`
-
 	// URL of token introspection server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	IntrospectionEndpoint *string `json:"introspection_endpoint,omitempty"`
 
@@ -45,20 +42,11 @@ type OAuthProfile struct {
 	// Buffering size for the responses from the OAUTH enpoints. Allowed values are 0-32768000. Field introduced in 21.1.3. Unit is BYTES. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	OauthRespBufferSz *int32 `json:"oauth_resp_buffer_sz,omitempty"`
 
-	// Organization Id for OAuth. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	OrgID *string `json:"org_id,omitempty"`
-
 	// Pool object to interface with Authorization Server endpoints. It is a reference to an object of type Pool. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	PoolRef *string `json:"pool_ref,omitempty"`
 
 	// Redirect URI specified in the request to Authorization Server. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	RedirectURI *string `json:"redirect_uri,omitempty"`
-
-	// Uuid value of csp service. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	ServiceID *string `json:"service_id,omitempty"`
-
-	// Name of the csp service. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	ServiceName *string `json:"service_name,omitempty"`
 
 	// URL of token exchange server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	TokenEndpoint *string `json:"token_endpoint,omitempty"`
