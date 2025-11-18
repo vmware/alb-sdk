@@ -2809,7 +2809,7 @@
                     "format": "uint32"
                 },
                 "se_kernel_rss": {
-                    "description": "This knob enables kernel RSS. When enabled flowtable entry is added to every disp cpu. Should be used under supervision. Requires SE reboot. . Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Allows runtime updates and planting of FT entries across all dispacther cpu. Any changes does not impact existing flows. Should be used under supervision. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "se_kni_burst_factor": {
