@@ -21,8 +21,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PreChecksParams  {
-    @JsonProperty("export_config_timeout")
-    private Integer exportConfigTimeout = 3600;
+    @JsonProperty("checks_base_timeout")
+    private Integer checksBaseTimeout = 60;
 
     @JsonProperty("max_alerts")
     private Integer maxAlerts = 200;
@@ -31,30 +31,34 @@ public class PreChecksParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Maximum wait time for configuration export to complete.
-     * Allowed values are 600-5400.
-     * Field introduced in 31.1.1.
+     * Base timeout value for all upgrade pre-checks operations.
+     * The timeout value for applicable checks is a multiple of checks_base_timeout.
+     * For example, config export timeout = [multiplier] * checks_base_timeout.
+     * (the multiplier varies by operation.).
+     * Field introduced in 32.1.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
-     * @return exportConfigTimeout
+     * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+     * @return checksBaseTimeout
      */
-    public Integer getExportConfigTimeout() {
-        return exportConfigTimeout;
+    public Integer getChecksBaseTimeout() {
+        return checksBaseTimeout;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Maximum wait time for configuration export to complete.
-     * Allowed values are 600-5400.
-     * Field introduced in 31.1.1.
+     * Base timeout value for all upgrade pre-checks operations.
+     * The timeout value for applicable checks is a multiple of checks_base_timeout.
+     * For example, config export timeout = [multiplier] * checks_base_timeout.
+     * (the multiplier varies by operation.).
+     * Field introduced in 32.1.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
-     * @param exportConfigTimeout set the exportConfigTimeout.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+     * @param checksBaseTimeout set the checksBaseTimeout.
      */
-    public void setExportConfigTimeout(Integer  exportConfigTimeout) {
-        this.exportConfigTimeout = exportConfigTimeout;
+    public void setChecksBaseTimeout(Integer  checksBaseTimeout) {
+        this.checksBaseTimeout = checksBaseTimeout;
     }
 
     /**
@@ -93,15 +97,15 @@ public class PreChecksParams  {
           return false;
       }
       PreChecksParams objPreChecksParams = (PreChecksParams) o;
-      return   Objects.equals(this.exportConfigTimeout, objPreChecksParams.exportConfigTimeout)&&
-  Objects.equals(this.maxAlerts, objPreChecksParams.maxAlerts);
+      return   Objects.equals(this.maxAlerts, objPreChecksParams.maxAlerts)&&
+  Objects.equals(this.checksBaseTimeout, objPreChecksParams.checksBaseTimeout);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class PreChecksParams {\n");
-                  sb.append("    exportConfigTimeout: ").append(toIndentedString(exportConfigTimeout)).append("\n");
+                  sb.append("    checksBaseTimeout: ").append(toIndentedString(checksBaseTimeout)).append("\n");
                         sb.append("    maxAlerts: ").append(toIndentedString(maxAlerts)).append("\n");
                   sb.append("}");
       return sb.toString();
