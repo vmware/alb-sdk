@@ -571,7 +571,7 @@ definitions:
             client_index_op_timeout_seconds:
                 description: "Timeout for the client to create an index in seconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
-                default: 2
+                default: 5
                 format: uint32
             db_notifn_chan_capacity:
                 description: "Database notification channel capacity. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
