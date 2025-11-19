@@ -30,9 +30,6 @@ public class OAuthProfile  {
     @JsonProperty("end_session_endpoint")
     private String endSessionEndpoint;
 
-    @JsonProperty("instance_id")
-    private String instanceId;
-
     @JsonProperty("introspection_endpoint")
     private String introspectionEndpoint;
 
@@ -57,20 +54,11 @@ public class OAuthProfile  {
     @JsonProperty("oauth_resp_buffer_sz")
     private Integer oauthRespBufferSz = 102400;
 
-    @JsonProperty("org_id")
-    private String orgId;
-
     @JsonProperty("pool_ref")
     private String poolRef;
 
     @JsonProperty("redirect_uri")
     private String redirectUri;
-
-    @JsonProperty("service_id")
-    private String serviceId;
-
-    @JsonProperty("service_name")
-    private String serviceName;
 
     @JsonProperty("token_endpoint")
     private String tokenEndpoint;
@@ -150,30 +138,6 @@ public class OAuthProfile  {
      */
     public void setEndSessionEndpoint(String  endSessionEndpoint) {
         this.endSessionEndpoint = endSessionEndpoint;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Instance uuid of the csp service.
-     * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return instanceId
-     */
-    public String getInstanceId() {
-        return instanceId;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Instance uuid of the csp service.
-     * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param instanceId set the instanceId.
-     */
-    public void setInstanceId(String  instanceId) {
-        this.instanceId = instanceId;
     }
 
     /**
@@ -382,30 +346,6 @@ public class OAuthProfile  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Organization id for oauth.
-     * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return orgId
-     */
-    public String getOrgId() {
-        return orgId;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Organization id for oauth.
-     * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param orgId set the orgId.
-     */
-    public void setOrgId(String  orgId) {
-        this.orgId = orgId;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Pool object to interface with authorization server endpoints.
      * It is a reference to an object of type pool.
      * Field introduced in 21.1.3.
@@ -452,54 +392,6 @@ public class OAuthProfile  {
      */
     public void setRedirectUri(String  redirectUri) {
         this.redirectUri = redirectUri;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Uuid value of csp service.
-     * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return serviceId
-     */
-    public String getServiceId() {
-        return serviceId;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Uuid value of csp service.
-     * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param serviceId set the serviceId.
-     */
-    public void setServiceId(String  serviceId) {
-        this.serviceId = serviceId;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Name of the csp service.
-     * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return serviceName
-     */
-    public String getServiceName() {
-        return serviceName;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Name of the csp service.
-     * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param serviceName set the serviceName.
-     */
-    public void setServiceName(String  serviceName) {
-        this.serviceName = serviceName;
     }
 
     /**
@@ -571,13 +463,9 @@ public class OAuthProfile  {
   Objects.equals(this.userinfoEndpoint, objOAuthProfile.userinfoEndpoint)&&
   Objects.equals(this.endSessionEndpoint, objOAuthProfile.endSessionEndpoint)&&
   Objects.equals(this.redirectUri, objOAuthProfile.redirectUri)&&
-  Objects.equals(this.orgId, objOAuthProfile.orgId)&&
   Objects.equals(this.oauthProfileType, objOAuthProfile.oauthProfileType)&&
   Objects.equals(this.oauthControllerSettings, objOAuthProfile.oauthControllerSettings)&&
   Objects.equals(this.oauthProvider, objOAuthProfile.oauthProvider)&&
-  Objects.equals(this.serviceId, objOAuthProfile.serviceId)&&
-  Objects.equals(this.instanceId, objOAuthProfile.instanceId)&&
-  Objects.equals(this.serviceName, objOAuthProfile.serviceName)&&
   Objects.equals(this.audience, objOAuthProfile.audience);
     }
 
@@ -588,7 +476,6 @@ public class OAuthProfile  {
                   sb.append("    audience: ").append(toIndentedString(audience)).append("\n");
                         sb.append("    authorizationEndpoint: ").append(toIndentedString(authorizationEndpoint)).append("\n");
                         sb.append("    endSessionEndpoint: ").append(toIndentedString(endSessionEndpoint)).append("\n");
-                        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
                         sb.append("    introspectionEndpoint: ").append(toIndentedString(introspectionEndpoint)).append("\n");
                         sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
                         sb.append("    jwksTimeout: ").append(toIndentedString(jwksTimeout)).append("\n");
@@ -597,11 +484,8 @@ public class OAuthProfile  {
                         sb.append("    oauthProfileType: ").append(toIndentedString(oauthProfileType)).append("\n");
                         sb.append("    oauthProvider: ").append(toIndentedString(oauthProvider)).append("\n");
                         sb.append("    oauthRespBufferSz: ").append(toIndentedString(oauthRespBufferSz)).append("\n");
-                        sb.append("    orgId: ").append(toIndentedString(orgId)).append("\n");
                         sb.append("    poolRef: ").append(toIndentedString(poolRef)).append("\n");
                         sb.append("    redirectUri: ").append(toIndentedString(redirectUri)).append("\n");
-                        sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
-                        sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
                         sb.append("    tokenEndpoint: ").append(toIndentedString(tokenEndpoint)).append("\n");
                         sb.append("    userinfoEndpoint: ").append(toIndentedString(userinfoEndpoint)).append("\n");
                   sb.append("}");

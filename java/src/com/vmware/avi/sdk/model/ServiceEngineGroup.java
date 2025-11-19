@@ -6591,10 +6591,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * This knob enables kernel rss.
-     * When enabled flowtable entry is added to every disp cpu.
+     * Allows runtime updates and planting of ft entries across all dispacther cpu.
+     * Any changes does not impact existing flows.
      * Should be used under supervision.
-     * Requires se reboot.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -6606,10 +6605,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * This knob enables kernel rss.
-     * When enabled flowtable entry is added to every disp cpu.
+     * Allows runtime updates and planting of ft entries across all dispacther cpu.
+     * Any changes does not impact existing flows.
      * Should be used under supervision.
-     * Requires se reboot.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
