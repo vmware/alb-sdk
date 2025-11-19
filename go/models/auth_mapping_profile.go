@@ -12,11 +12,17 @@ type AuthMappingProfile struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
+	// Allow access to unlabelled objects. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AllowUnlabelledAccess *bool `json:"allow_unlabelled_access,omitempty"`
+
 	// Protobuf versioning for config pbs. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Description for the AuthMappingProfile. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
+
+	// Filters for granular object access control based on object labels. Multiple filters are merged using the AND operator. If empty, all objects according to the privileges will be accessible to the user. Field introduced in 32.1.1. Maximum of 4 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	DynamicRoleFilters []*RoleFilter `json:"dynamic_role_filters,omitempty"`
 
 	// Rules list for tenant or role mapping. Field introduced in 22.1.1. Minimum of 1 items required. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MappingRules []*AuthMappingRule `json:"mapping_rules,omitempty"`
