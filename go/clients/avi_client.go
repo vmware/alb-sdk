@@ -130,6 +130,7 @@ type AviClient struct {
 	ServiceEngineInventory          *ServiceEngineInventoryClient
 	SiteVersion                     *SiteVersionClient
 	SnmpTrapProfile                 *SnmpTrapProfileClient
+	SspInstance                     *SspInstanceClient
 	StatediffOperation              *StatediffOperationClient
 	StatediffSnapshot               *StatediffSnapshotClient
 	StringGroup                     *StringGroupClient
@@ -307,6 +308,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.ServiceEngineInventory = NewServiceEngineInventoryClient(aviSession)
 	aviClient.SiteVersion = NewSiteVersionClient(aviSession)
 	aviClient.SnmpTrapProfile = NewSnmpTrapProfileClient(aviSession)
+	aviClient.SspInstance = NewSspInstanceClient(aviSession)
 	aviClient.StatediffOperation = NewStatediffOperationClient(aviSession)
 	aviClient.StatediffSnapshot = NewStatediffSnapshotClient(aviSession)
 	aviClient.StringGroup = NewStringGroupClient(aviSession)
