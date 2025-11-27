@@ -609,7 +609,7 @@
             "type": "object",
             "properties": {
                 "password_expiration_days": {
-                    "description": "Password expiry period in days. Defaults to 365 days. Allowed values are 30-730. Special values are 0- No password expiry.. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Password expiry period in days. Defaults to 365 days. Allowed values are 30-730. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 365,
                     "format": "uint32"
@@ -642,6 +642,9 @@
         "UserAccountProfile": {
             "type": "object",
             "required": [
+                "complexity_constraint",
+                "expiration_constraint",
+                "lockout_constraint",
                 "name"
             ],
             "properties": {
