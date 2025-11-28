@@ -354,3 +354,7 @@ Changelog:
 
 * Add support for modifying pool server hostname when mapping servers
 * Update examples in the readme
+
+2.0.10:
+
+* Add support for cloning a VS with an ICAP Profile across clouds
