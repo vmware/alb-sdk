@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 9]
+AVICLONE_VERSION = [2, 0, 10]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -96,7 +96,8 @@ class AviClone:
         'vs-authprofile': 'client_auth/auth_profile_ref',
         'vs-ssoauthprofile': 'sso_policy/default_auth_profile_ref',
         'vs-ssopolicy': 'sso_policy_ref',
-        'vs-botpolicy': 'bot_policy_ref'
+        'vs-botpolicy': 'bot_policy_ref',
+        'vs-icapprofile': 'icap_request_profile_refs'
     }
     VALID_VS_OVERRIDE_REF_OBJECTS = {
         'vsoverride-appprofile': 'override_application_profile_ref',
@@ -143,6 +144,9 @@ class AviClone:
         'hm-pkiprofile': 'https_monitor/ssl_attributes/pki_profile_ref',
         'hm-sslkeyandcertificate':
           'https_monitor/ssl_attributes/ssl_key_and_certificate_ref'
+    }
+    VALID_ICAPPROFILE_REF_OBJECTS = {
+        'icap-poolgroup': 'pool_group_ref'
     }
 
     def __init__(self, source_api, dest_api=None, flags=None, tenant=None,
@@ -296,7 +300,7 @@ class AviClone:
                 else:
                     obj = api_to_use.get_object_by_name(obj_type, obj_name,
                                                         tenant_uuid=tenant_uuid,
-                                                        params=({"cloud_uuid": cloud_uuid}
+                                                        params=({'cloud_uuid': cloud_uuid}
                                                                 if cloud_uuid else {}))
 
                     if obj is None and obj_type == 'tenant':
@@ -366,7 +370,7 @@ class AviClone:
 
     def clone_object(self, old_name, new_name, object_type=None,
                      force_clone=None, force_unique_name=False,
-                     old_obj=None):
+                     old_obj=None, skip_uniqueness_check=False):
         """
         Clones an object other than a Virtual Service or GSLB Service
 
@@ -388,6 +392,9 @@ class AviClone:
                                   appending an index number
         :param old_obj: Existing object to clone - can be specified instead
                         of passing old_name if the object is already available
+        :param skip_uniqueness_check: Skip check for unique object naming
+                                      check to support object types that allow
+                                      duplicate names across clouds/tenants
         :return: tuple - json representation of the cloned object, list of
                  additional objects created if any
         :rtype: tuple
@@ -442,7 +449,9 @@ class AviClone:
         logger.debug('Cloning %s "%s" to "%s"', object_type,
                 old_name, new_name)
 
-        new_name = self.get_new_name(object_type, new_name, force_unique_name)
+        if not skip_uniqueness_check:
+            new_name = self.get_new_name(object_type, new_name,
+                                         force_unique_name)
 
         # Remove unique attributes and rename object
 
@@ -1439,6 +1448,45 @@ class AviClone:
 
         return created_objs, warnings
 
+    def _processobject_icapprofile(self, obj, force_clone):
+        """
+        Performs icapprofile-specific manipulations on the cloned
+        object
+        """
+
+        logger.debug('Running _process_icapprofile')
+
+        created_objs = []
+        warnings = []
+
+        if self.oc_obj:
+
+            # Moving to a different cloud, so we will need to force
+            # clone the referenced pool group
+
+            obj['cloud_ref'] = self.oc_obj['url']
+            force_clone = list(set(force_clone + ['icap-poolgroup']))
+
+        try:
+            valid_ref_objects = self.VALID_ICAPPROFILE_REF_OBJECTS
+
+            # Process generic references, re-using or cloning referenced
+            # objects as necessary
+
+            created_objs, warnings = self._process_refs(parent_obj=obj,
+                                                        refs=valid_ref_objects,
+                                                        force_clone=force_clone)
+
+        except Exception as ex:
+            # If an exception occurred, delete any intermediate objects we
+            # have created
+
+            self.delete_objects(created_objs)
+
+            raise
+
+        return created_objs, warnings
+
     def _process_refs(self, parent_obj, refs, force_clone, name=None):
 
         # Process references in the object based on a ref list and
@@ -2412,6 +2460,49 @@ class AviClone:
                     vsvip_obj.pop('vrf_context_ref', None)
                     vsvip_obj.pop('tier1_lr', None)
 
+                # If VS has an ICAP profile and is moving to a different cloud
+                # then check first for an ICAP profile with the same name in
+                # the target cloud, otherwise clone the ICAP profile to the
+                # target cloud, preserving the name.
+
+                if ('vs-icapprofile' not in force_clone and
+                    'icap_request_profile_refs' in v_obj):
+                    irp_refs = v_obj['icap_request_profile_refs']
+                    new_irp_refs = []
+
+                    for irp in irp_refs:
+                        irp_path = irp.split('/api/')[1]
+
+                        irp_obj = self.api.get(irp_path,
+                                            tenant_uuid=self.tenant_uuid).json()
+                        irp_name = irp_obj['name']
+
+                        i_obj = self.dest_api.get_object_by_name(
+                            'icapprofile', irp_name,
+                            tenant_uuid=self.otenant_uuid,
+                            params={'cloud_uuid': self.ocloud_uuid}
+                        )
+
+                        if not i_obj:
+                            (i_obj, i_created_objs,
+                             i_warnings) = self.clone_object(
+                                 old_name=irp_path,
+                                 new_name=irp_name,
+                                 force_clone=force_clone,
+                                 force_unique_name=False,
+                                 skip_uniqueness_check=True
+                             )
+
+                            created_objs.append(i_obj)
+                            created_objs.extend(i_created_objs)
+                            warnings.extend(i_warnings)
+
+                        new_irp_refs.append(i_obj['url'])
+
+                    v_obj['icap_request_profile_refs'] = new_irp_refs
+
+
+
             # Update VRF or T1_LR reference if a target VRF is specified
             if vsvip_obj and not(manual_vsvip):
                 if self.ov_obj:
@@ -2705,7 +2796,8 @@ if __name__ == '__main__':
         set(AviClone.VALID_SSLCERT_REF_OBJECTS.keys()) |
         set(AviClone.VALID_SSOPOLICY_REF_OBJECTS.keys()) |
         set(AviClone.VALID_HEALTHMONITOR_REF_OBJECTS.keys()) |
-        set(AviClone.VALID_OAUTHSETTINGS_REF_OBJECTS.keys()))
+        set(AviClone.VALID_OAUTHSETTINGS_REF_OBJECTS.keys()) |
+        set(AviClone.VALID_ICAPPROFILE_REF_OBJECTS.keys()))
 
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -3287,4 +3379,3 @@ if __name__ == '__main__':
                 cl.delete_objects(all_created_objs)
     else:
         parser.print_help()
-        
