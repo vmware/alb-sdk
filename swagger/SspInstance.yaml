@@ -6,21 +6,21 @@
 swagger: '2.0'
 info:
     version: '32.1.1'
-    title: Avi UserAccountProfile Object API
+    title: Avi SspInstance Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        Avi UserAccountProfile object api
+        Avi SspInstance object api
         ```
-        - configure useraccountprofile <key>
-        - show useraccountprofile <key>
+        - configure sspinstance <key>
+        - show sspinstance <key>
         ```
 
-        API permission: PERMISSION_USER
+        API permission: PERMISSION_CONTROLLER
 tags:
-  - name: UserAccountProfile
+  - name: SspInstance
 schemes:
   - https
 securityDefinitions:
@@ -29,12 +29,12 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /useraccountprofile:
+    /sspinstance:
         get:
             tags:
-                - UserAccountProfile
-            description: /useraccountprofile
-            operationId: GET /useraccountprofile
+                - SspInstance
+            description: /sspinstance
+            operationId: GET /sspinstance
             consumes:
                 -   application/json
             produces:
@@ -97,14 +97,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/UserAccountProfileApiResponse"
+                        $ref: "#/definitions/SspInstanceApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - UserAccountProfile
-            description: /useraccountprofile
-            operationId: POST /useraccountprofile
+                - SspInstance
+            description: /sspinstance
+            operationId: POST /sspinstance
             consumes:
                 -   application/json
             produces:
@@ -132,25 +132,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: UserAccountProfile object creation
+                    description: SspInstance object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/UserAccountProfile"
+                        $ref: "#/definitions/SspInstance"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/UserAccountProfile"
+                        $ref: "#/definitions/SspInstance"
                 "401":
                     description: log in failed
-    /useraccountprofile/{uuid}:
+    /sspinstance/{uuid}:
         get:
             tags:
-                - UserAccountProfile
-            description: /useraccountprofile/{uuid}/{uuid}
-            operationId: GET /useraccountprofile/{uuid}
+                - SspInstance
+            description: /sspinstance/{uuid}/{uuid}
+            operationId: GET /sspinstance/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -210,16 +210,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/UserAccountProfile"
+                        $ref: "#/definitions/SspInstance"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - UserAccountProfile
-            description: /useraccountprofile/{uuid}/{uuid}
-            operationId: PUT /useraccountprofile/{uuid}
+                - SspInstance
+            description: /sspinstance/{uuid}/{uuid}
+            operationId: PUT /sspinstance/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -252,10 +252,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: UserAccountProfile object creation
+                    description: SspInstance object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/UserAccountProfile"
+                        $ref: "#/definitions/SspInstance"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -267,16 +267,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/UserAccountProfile"
+                        $ref: "#/definitions/SspInstance"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - UserAccountProfile
-            description: /useraccountprofile/{uuid}/{uuid}
-            operationId: PATCH /useraccountprofile/{uuid}
+                - SspInstance
+            description: /sspinstance/{uuid}/{uuid}
+            operationId: PATCH /sspinstance/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -309,10 +309,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: UserAccountProfile object creation
+                    description: SspInstance object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/UserAccountProfile"
+                        $ref: "#/definitions/SspInstance"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -324,16 +324,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/UserAccountProfile"
+                        $ref: "#/definitions/SspInstance"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - UserAccountProfile
-            description: /useraccountprofile/{uuid}/{uuid}
-            operationId: DELETE /useraccountprofile/{uuid}
+                - SspInstance
+            description: /sspinstance/{uuid}/{uuid}
+            operationId: DELETE /sspinstance/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -381,39 +381,6 @@ paths:
 
 
 definitions:
-    ComplexityConstraint:
-        type: object
-        properties:
-            min_length:
-                description: "Minimum password length. Defaults to 15 characters. Allowed values are 8-64. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                default: 15
-                format: uint32
-            min_lowercase:
-                description: "Minimum number of lowercase characters required. Allowed values are 0-10. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
-            min_numeric:
-                description: "Minimum number of numeric characters required. Allowed values are 0-10. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
-            min_special:
-                description: "Minimum number of special characters required. Allowed values are 0-10. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
-            min_uppercase:
-                description: "Minimum number of uppercase characters required. Allowed values are 0-10. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
-            password_history:
-                description: "Number of previous passwords to remember. Defaults to 5. Allowed values are 1-10. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                default: 5
-                format: uint32
     ConfigPbAttributes:
         type: object
         properties:
@@ -425,71 +392,59 @@ definitions:
                 type: integer
                 default: 1
                 format: uint32
-    ExpirationConstraint:
-        type: object
-        properties:
-            password_expiration_days:
-                description: "Password expiry period in days. Defaults to 365 days. Allowed values are 30-730. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                default: 365
-                format: uint32
-    LockoutConstraint:
-        type: object
-        properties:
-            lockout_evaluation_period:
-                description: "Time window for evaluating failed attempts in seconds. Defaults to 900 seconds. Allowed values are 300-1800. Special values are 0 - Do not reset login failure counts on the basis of any evaluation window.. Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                default: 900
-                format: uint32
-            lockout_max_auth_failures:
-                description: "Number of failed attempts before account lockout. Defaults to 3. Setting it to 0 allows unlimited login failure attempts without any lockout. Allowed values are 0-5. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                default: 3
-                format: uint32
-            lockout_period:
-                description: "Account lockout duration in seconds. Defaults to 900 seconds. Allowed values are 600-1800. Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: integer
-                default: 900
-                format: uint32
-    UserAccountProfile:
+    SspInstance:
         type: object
         required:
-            -   complexity_constraint
-            -   expiration_constraint
-            -   lockout_constraint
+            -   feature
+            -   hostname
             -   name
+            -   status
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
-            complexity_constraint:
-                description: "Password complexity constraints for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/ComplexityConstraint'
+            avi_client_cert:
+                description: "Client certificate that Avi uses to authenticate with the SSP instance. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            client_cert:
+                description: "Client certificate that the SSP instance uses to authenticate with Avi. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
-            expiration_constraint:
-                description: "Password expiration settings for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/ExpirationConstraint'
-            lockout_constraint:
-                description: "Account lockout settings for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/LockoutConstraint'
-            max_concurrent_sessions:
-                description: "Maximum number of concurrent sessions allowed. There are unlimited sessions by default. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
+            description:
+                description: "Description of the onboarded SSP feature instance. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            feature:
+                description: "Type of the SSP feature instance. Enum options - SSP_INTELLIGENT_ASSIST, SSP_VDLS. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            hostname:
+                description: "Hostname of the SSP feature instance. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            ingress_cert:
+                description: "Ingress (server) certificate chain that the SSP endpoint uses. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
             name:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the onboarded SSP feature instance. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            resources:
+                description: "Resources associated with the SSP feature instance. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/SspResources'
+            status:
+                description: "Status of the SSP feature instance. Enum options - SSP_STATUS_IN_PROGRESS, SSP_STATUS_ACTIVE, SSP_STATUS_CERT_UPDATE_FAILED. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            tenant_ref:
+                description: "Tenant reference for the SSP object. It is a reference to an object of type Tenant. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID for the onboarded SSP feature instance. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
-    UserAccountProfileApiResponse:
+    SspInstanceApiResponse:
         type: object
         required:
             - count
@@ -501,6 +456,21 @@ definitions:
             results:
                 type: array
                 items:
-                    $ref: "#/definitions/UserAccountProfile"
+                    $ref: "#/definitions/SspInstance"
             next:
+                type: string
+    SspResources:
+        type: object
+        properties:
+            avi_client_cert_ref:
+                description: "Client certificate used by Avi to authenticate with the SSP instance. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            client_cert_auth_mapping_profile_ref:
+                description: "AuthMappingProfile used to setup client cert auth for the SSP instance. It is a reference to an object of type AuthMappingProfile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            client_cert_auth_profile_ref:
+                description: "AuthProfile used to setup client cert auth for the SSP instance. It is a reference to an object of type AuthProfile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            client_cert_ref:
+                description: "Client certificate that the SSP instance uses to authenticate with Avi. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
