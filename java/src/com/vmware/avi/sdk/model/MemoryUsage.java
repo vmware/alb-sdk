@@ -21,6 +21,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MemoryUsage  {
+    @JsonProperty("available")
+    private Integer available;
+
+    @JsonProperty("effective_ctlr_mem_used_percent")
+    private Integer effectiveCtlrMemUsedPercent;
+
     @JsonProperty("free")
     private Integer free;
 
@@ -28,6 +34,54 @@ public class MemoryUsage  {
     private Integer total;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Available memory of the node.
+     * Field introduced in 30.2.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return available
+     */
+    public Integer getAvailable() {
+        return available;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Available memory of the node.
+     * Field introduced in 30.2.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param available set the available.
+     */
+    public void setAvailable(Integer  available) {
+        this.available = available;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Effective total memory used by memory balancer to make decisions for stopping processes.
+     * Field introduced in 30.2.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return effectiveCtlrMemUsedPercent
+     */
+    public Integer getEffectiveCtlrMemUsedPercent() {
+        return effectiveCtlrMemUsedPercent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Effective total memory used by memory balancer to make decisions for stopping processes.
+     * Field introduced in 30.2.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param effectiveCtlrMemUsedPercent set the effectiveCtlrMemUsedPercent.
+     */
+    public void setEffectiveCtlrMemUsedPercent(Integer  effectiveCtlrMemUsedPercent) {
+        this.effectiveCtlrMemUsedPercent = effectiveCtlrMemUsedPercent;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -80,14 +134,18 @@ public class MemoryUsage  {
       }
       MemoryUsage objMemoryUsage = (MemoryUsage) o;
       return   Objects.equals(this.total, objMemoryUsage.total)&&
-  Objects.equals(this.free, objMemoryUsage.free);
+  Objects.equals(this.free, objMemoryUsage.free)&&
+  Objects.equals(this.available, objMemoryUsage.available)&&
+  Objects.equals(this.effectiveCtlrMemUsedPercent, objMemoryUsage.effectiveCtlrMemUsedPercent);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class MemoryUsage {\n");
-                  sb.append("    free: ").append(toIndentedString(free)).append("\n");
+                  sb.append("    available: ").append(toIndentedString(available)).append("\n");
+                        sb.append("    effectiveCtlrMemUsedPercent: ").append(toIndentedString(effectiveCtlrMemUsedPercent)).append("\n");
+                        sb.append("    free: ").append(toIndentedString(free)).append("\n");
                         sb.append("    total: ").append(toIndentedString(total)).append("\n");
                   sb.append("}");
       return sb.toString();
