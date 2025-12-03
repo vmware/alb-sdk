@@ -13,16 +13,19 @@ type UserAccountProfile struct {
 	LastModified *string `json:"_last_modified,omitempty"`
 
 	// Password complexity constraints for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	ComplexityConstraint *ComplexityConstraint `json:"complexity_constraint,omitempty"`
+	// Required: true
+	ComplexityConstraint *ComplexityConstraint `json:"complexity_constraint"`
 
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Password expiration settings for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	ExpirationConstraint *ExpirationConstraint `json:"expiration_constraint,omitempty"`
+	// Required: true
+	ExpirationConstraint *ExpirationConstraint `json:"expiration_constraint"`
 
 	// Account lockout settings for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	LockoutConstraint *LockoutConstraint `json:"lockout_constraint,omitempty"`
+	// Required: true
+	LockoutConstraint *LockoutConstraint `json:"lockout_constraint"`
 
 	// Maximum number of concurrent sessions allowed. There are unlimited sessions by default. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxConcurrentSessions *uint32 `json:"max_concurrent_sessions,omitempty"`
