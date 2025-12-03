@@ -432,6 +432,7 @@ font-style: italic;
         "persistence_key_rotate_period" : "",
         "secure_channel_controller_token_timeout" : "",
         "api_idle_timeout" : "",
+        "event_manager_file_modified_ts_filter" : "",
         "max_threads_cc_vip_bg_worker" : "",
         "cloud_discovery_interval" : "",
         "vs_se_vnic_fail" : "",
@@ -678,6 +679,7 @@ font-style: italic;
       "persistence_key_rotate_period" : "",
       "secure_channel_controller_token_timeout" : "",
       "api_idle_timeout" : "",
+      "event_manager_file_modified_ts_filter" : "",
       "max_threads_cc_vip_bg_worker" : "",
       "cloud_discovery_interval" : "",
       "vs_se_vnic_fail" : "",
@@ -995,6 +997,7 @@ font-style: italic;
       "persistence_key_rotate_period" : "",
       "secure_channel_controller_token_timeout" : "",
       "api_idle_timeout" : "",
+      "event_manager_file_modified_ts_filter" : "",
       "max_threads_cc_vip_bg_worker" : "",
       "cloud_discovery_interval" : "",
       "vs_se_vnic_fail" : "",
@@ -1252,6 +1255,7 @@ font-style: italic;
       "persistence_key_rotate_period" : "",
       "secure_channel_controller_token_timeout" : "",
       "api_idle_timeout" : "",
+      "event_manager_file_modified_ts_filter" : "",
       "max_threads_cc_vip_bg_worker" : "",
       "cloud_discovery_interval" : "",
       "vs_se_vnic_fail" : "",
@@ -1509,6 +1513,7 @@ font-style: italic;
       "persistence_key_rotate_period" : "",
       "secure_channel_controller_token_timeout" : "",
       "api_idle_timeout" : "",
+      "event_manager_file_modified_ts_filter" : "",
       "max_threads_cc_vip_bg_worker" : "",
       "cloud_discovery_interval" : "",
       "vs_se_vnic_fail" : "",
@@ -1719,6 +1724,7 @@ font-style: italic;
     "persistence_key_rotate_period" : "",
     "secure_channel_controller_token_timeout" : "",
     "api_idle_timeout" : "",
+    "event_manager_file_modified_ts_filter" : "",
     "max_threads_cc_vip_bg_worker" : "",
     "cloud_discovery_interval" : "",
     "vs_se_vnic_fail" : "",
@@ -1913,6 +1919,7 @@ font-style: italic;
   "persistence_key_rotate_period" : "",
   "secure_channel_controller_token_timeout" : "",
   "api_idle_timeout" : "",
+  "event_manager_file_modified_ts_filter" : "",
   "max_threads_cc_vip_bg_worker" : "",
   "cloud_discovery_interval" : "",
   "vs_se_vnic_fail" : "",
@@ -2178,6 +2185,7 @@ font-style: italic;
   "persistence_key_rotate_period" : "",
   "secure_channel_controller_token_timeout" : "",
   "api_idle_timeout" : "",
+  "event_manager_file_modified_ts_filter" : "",
   "max_threads_cc_vip_bg_worker" : "",
   "cloud_discovery_interval" : "",
   "vs_se_vnic_fail" : "",
@@ -2383,6 +2391,7 @@ font-style: italic;
   "persistence_key_rotate_period" : "",
   "secure_channel_controller_token_timeout" : "",
   "api_idle_timeout" : "",
+  "event_manager_file_modified_ts_filter" : "",
   "max_threads_cc_vip_bg_worker" : "",
   "cloud_discovery_interval" : "",
   "vs_se_vnic_fail" : "",
@@ -2588,6 +2597,7 @@ font-style: italic;
   "persistence_key_rotate_period" : "",
   "secure_channel_controller_token_timeout" : "",
   "api_idle_timeout" : "",
+  "event_manager_file_modified_ts_filter" : "",
   "max_threads_cc_vip_bg_worker" : "",
   "cloud_discovery_interval" : "",
   "vs_se_vnic_fail" : "",
@@ -2780,6 +2790,7 @@ font-style: italic;
 <div class="param">enable_memory_balancer (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable/Disable Memory Balancer. Field introduced in 17.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">enable_per_process_stop (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits threshold limit. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">enable_resmgr_log_cache_print (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">event_manager_file_modified_ts_filter (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Stated time duration beyond which Event manager disregards files whose modified timestamp from current time is later. Allowed values are 1-1800. Field introduced in 30.2.6. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">event_manager_max_goroutines (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of goroutines for event manager process. Allowed values are 1-64. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">event_manager_max_subscribers (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of subscribers for event manager process. Allowed values are 1-6. Special values are 0 - Disabled. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">event_manager_processing_time_threshold (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Log instances for event manager processing delay; recorded whenever event processing delay exceeds configured interval specified in seconds. Allowed values are 1-5. Special values are 0 - Disabled. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
