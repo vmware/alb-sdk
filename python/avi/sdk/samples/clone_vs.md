@@ -358,3 +358,7 @@ Changelog:
 2.0.10:
 
 * Add support for cloning a VS with an ICAP Profile across clouds
+
+2.0.11:
+
+* Add support for the reuseds flag when cloning between Controllers or tenants

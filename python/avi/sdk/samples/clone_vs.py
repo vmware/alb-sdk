@@ -582,8 +582,8 @@ class AviClone:
                         subnet, mask = new_placement_split
                         network = None
                     else:
-                        raise('Unable to parse placement network info "%s".'
-                              % new_placement)
+                        raise Exception('Unable to parse placement network '
+                                        ' info "%s".' % new_placement)
                     placement_network = {}
                     if network:
                         (n_obj, n_name, n_uuid) = self._get_obj_info(
@@ -594,9 +594,9 @@ class AviClone:
                         if n_obj:
                             placement_network['network_ref'] = n_obj['url']
                         else:
-                            raise('Unable to find referenced placement '
-                                    'network "%s" in the cloud.'
-                                    % new_placement[1])
+                            raise Exception('Unable to find referenced '
+                                            'placement network "%s" in the '
+                                            ' cloud.' % new_placement[1])
                         if ':' in subnet:
                             placement_network['subnet6'] = {
                                 'ip_addr': {
@@ -2228,8 +2228,9 @@ class AviClone:
                                     mask6 = None
                                     network = None
                                 else:
-                                    raise('Unable to parse placement network '
-                                          'info "%s".' % vs_placement_data)
+                                    raise Exception('Unable to parse placement '
+                                                    'network info "%s".'
+                                                    % vs_placement_data)
                                 if network:
                                     (n_obj, n_name, n_uuid) = self._get_obj_info(
                                         obj_type='network',
@@ -2239,9 +2240,9 @@ class AviClone:
                                     if n_obj:
                                         placement_network['network_ref'] = n_obj['url']
                                     else:
-                                        raise('Unable to find referenced placement '
-                                            'network "%s" in the cloud.'
-                                            % network)
+                                        raise Exception('Unable to find '
+                                                'referenced placement network '
+                                                '"%s" in the cloud.'% network)
                                 if subnet6:
                                     placement_network['subnet'] = {
                                             'ip_addr': {
@@ -2678,6 +2679,28 @@ class AviClone:
                                         'cloned. It will be necessary to '
                                         'update the script with the cloned '
                                         'object names.')
+
+            elif ('vs_datascripts' in v_obj and 'reuseds' in self.flags and
+                  (self.ot_obj or self.api != self.dest_api)):
+
+                # Attempt to link to an existing DataScript with the same name
+                # when cloning to a different Controller or tenant when the
+                # reuseds flag is specified
+
+                for dsset in v_obj['vs_datascripts']:
+                    ds_path = dsset['vs_datascript_set_ref'].split('/api/')[1]
+                    old_ds_obj = self.api.get(
+                        ds_path,
+                        tenant_uuid=self.tenant_uuid).json()
+                    ds_name = old_ds_obj['name']
+                    new_ds_obj = self.dest_api.get_object_by_name(
+                        'vsdatascriptset', ds_name,
+                        tenant_uuid=self.otenant_uuid)
+                    if new_ds_obj:
+                        dsset['vs_datascript_set_ref'] = new_ds_obj['url']
+                    else:
+                        raise Exception('Unable to reuse VsDataScriptSet '
+                                        '"%s"' % ds_name)
 
             valid_ref_objects = self.VALID_VS_REF_OBJECTS
 
