@@ -1071,9 +1071,61 @@
         "MetricsApiSrvDebugFilter": {
             "type": "object",
             "properties": {
+                "db_stats_num_snapshots": {
+                    "description": "Number of last-N metrics DB query stats snapshots to save. Allowed values are 4-24. Special values are 0- Stop taking metrics DB query stats snapshots. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "db_stats_snapshot_period_hours": {
+                    "description": "Periodicity in hours of taking snapshots of metrics DB query stats. Allowed values are 1-48. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
                 "entity_ref": {
                     "description": "uuid of the entity. It is a reference to an object of type Virtualservice. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                },
+                "mapi_perf_stats_enabled": {
+                    "description": "Single knob to enable collection of metrics API server stats. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "mapi_req_history_entity_type_filters": {
+                    "description": "Maintain query history only for the specified entity type - POOL_METRICS_ENTITY etc. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "mapi_req_history_entity_uuid_filters": {
+                    "description": "Maintain query history only for the specified entity uuid. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "mapi_req_history_metric_id_filters": {
+                    "description": "Maintain query history only for the specified metric id. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "mapi_req_history_num_records": {
+                    "description": "Number of last-N metrics API server queries to save. Allowed values are 1-32. Special values are 0- Stop saving of last-N metrics API server queries.. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "mapi_req_history_se_uuid_filters": {
+                    "description": "Maintain query history only for the specified serviceengine uuid. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "mapi_stats_log_period_hours": {
+                    "description": "Periodicity in hours of saving operational stats of metrics API server to a log file. Allowed values are 1-12. Special values are 0- Stop periodic saving of last-N metrics API server queries.. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
                 }
             }
         },
