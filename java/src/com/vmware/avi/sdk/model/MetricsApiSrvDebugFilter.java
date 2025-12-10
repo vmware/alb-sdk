@@ -21,10 +21,93 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsApiSrvDebugFilter  {
+    @JsonProperty("db_stats_num_snapshots")
+    private Integer dbStatsNumSnapshots;
+
+    @JsonProperty("db_stats_snapshot_period_hours")
+    private Integer dbStatsSnapshotPeriodHours;
+
     @JsonProperty("entity_ref")
     private String entityRef;
 
+    @JsonProperty("mapi_perf_stats_enabled")
+    private Boolean mapiPerfStatsEnabled;
 
+    @JsonProperty("mapi_req_history_entity_type_filters")
+    private List<String> mapiReqHistoryEntityTypeFilters;
+
+    @JsonProperty("mapi_req_history_entity_uuid_filters")
+    private List<String> mapiReqHistoryEntityUuidFilters;
+
+    @JsonProperty("mapi_req_history_metric_id_filters")
+    private List<String> mapiReqHistoryMetricIdFilters;
+
+    @JsonProperty("mapi_req_history_num_records")
+    private Integer mapiReqHistoryNumRecords;
+
+    @JsonProperty("mapi_req_history_se_uuid_filters")
+    private List<String> mapiReqHistorySeUuidFilters;
+
+    @JsonProperty("mapi_stats_log_period_hours")
+    private Integer mapiStatsLogPeriodHours;
+
+
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Number of last-n metrics db query stats snapshots to save.
+     * Allowed values are 4-24.
+     * Special values are 0- stop taking metrics db query stats snapshots.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dbStatsNumSnapshots
+     */
+    public Integer getDbStatsNumSnapshots() {
+        return dbStatsNumSnapshots;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of last-n metrics db query stats snapshots to save.
+     * Allowed values are 4-24.
+     * Special values are 0- stop taking metrics db query stats snapshots.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param dbStatsNumSnapshots set the dbStatsNumSnapshots.
+     */
+    public void setDbStatsNumSnapshots(Integer  dbStatsNumSnapshots) {
+        this.dbStatsNumSnapshots = dbStatsNumSnapshots;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Periodicity in hours of taking snapshots of metrics db query stats.
+     * Allowed values are 1-48.
+     * Field introduced in 32.1.1.
+     * Unit is hours.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dbStatsSnapshotPeriodHours
+     */
+    public Integer getDbStatsSnapshotPeriodHours() {
+        return dbStatsSnapshotPeriodHours;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Periodicity in hours of taking snapshots of metrics db query stats.
+     * Allowed values are 1-48.
+     * Field introduced in 32.1.1.
+     * Unit is hours.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param dbStatsSnapshotPeriodHours set the dbStatsSnapshotPeriodHours.
+     */
+    public void setDbStatsSnapshotPeriodHours(Integer  dbStatsSnapshotPeriodHours) {
+        this.dbStatsSnapshotPeriodHours = dbStatsSnapshotPeriodHours;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -52,6 +135,244 @@ public class MetricsApiSrvDebugFilter  {
         this.entityRef = entityRef;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Single knob to enable collection of metrics api server stats.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiPerfStatsEnabled
+     */
+    public Boolean getMapiPerfStatsEnabled() {
+        return mapiPerfStatsEnabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Single knob to enable collection of metrics api server stats.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param mapiPerfStatsEnabled set the mapiPerfStatsEnabled.
+     */
+    public void setMapiPerfStatsEnabled(Boolean  mapiPerfStatsEnabled) {
+        this.mapiPerfStatsEnabled = mapiPerfStatsEnabled;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maintain query history only for the specified entity type - pool_metrics_entity etc.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistoryEntityTypeFilters
+     */
+    public List<String> getMapiReqHistoryEntityTypeFilters() {
+        return mapiReqHistoryEntityTypeFilters;
+    }
+
+    /**
+     * This is the setter method. this will set the mapiReqHistoryEntityTypeFilters
+     * Maintain query history only for the specified entity type - pool_metrics_entity etc.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistoryEntityTypeFilters
+     */
+    public void setMapiReqHistoryEntityTypeFilters(List<String>  mapiReqHistoryEntityTypeFilters) {
+        this.mapiReqHistoryEntityTypeFilters = mapiReqHistoryEntityTypeFilters;
+    }
+
+    /**
+     * This is the setter method this will set the mapiReqHistoryEntityTypeFilters
+     * Maintain query history only for the specified entity type - pool_metrics_entity etc.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistoryEntityTypeFilters
+     */
+    public MetricsApiSrvDebugFilter addMapiReqHistoryEntityTypeFiltersItem(String mapiReqHistoryEntityTypeFiltersItem) {
+      if (this.mapiReqHistoryEntityTypeFilters == null) {
+        this.mapiReqHistoryEntityTypeFilters = new ArrayList<String>();
+      }
+      this.mapiReqHistoryEntityTypeFilters.add(mapiReqHistoryEntityTypeFiltersItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maintain query history only for the specified entity uuid.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistoryEntityUuidFilters
+     */
+    public List<String> getMapiReqHistoryEntityUuidFilters() {
+        return mapiReqHistoryEntityUuidFilters;
+    }
+
+    /**
+     * This is the setter method. this will set the mapiReqHistoryEntityUuidFilters
+     * Maintain query history only for the specified entity uuid.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistoryEntityUuidFilters
+     */
+    public void setMapiReqHistoryEntityUuidFilters(List<String>  mapiReqHistoryEntityUuidFilters) {
+        this.mapiReqHistoryEntityUuidFilters = mapiReqHistoryEntityUuidFilters;
+    }
+
+    /**
+     * This is the setter method this will set the mapiReqHistoryEntityUuidFilters
+     * Maintain query history only for the specified entity uuid.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistoryEntityUuidFilters
+     */
+    public MetricsApiSrvDebugFilter addMapiReqHistoryEntityUuidFiltersItem(String mapiReqHistoryEntityUuidFiltersItem) {
+      if (this.mapiReqHistoryEntityUuidFilters == null) {
+        this.mapiReqHistoryEntityUuidFilters = new ArrayList<String>();
+      }
+      this.mapiReqHistoryEntityUuidFilters.add(mapiReqHistoryEntityUuidFiltersItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maintain query history only for the specified metric id.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistoryMetricIdFilters
+     */
+    public List<String> getMapiReqHistoryMetricIdFilters() {
+        return mapiReqHistoryMetricIdFilters;
+    }
+
+    /**
+     * This is the setter method. this will set the mapiReqHistoryMetricIdFilters
+     * Maintain query history only for the specified metric id.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistoryMetricIdFilters
+     */
+    public void setMapiReqHistoryMetricIdFilters(List<String>  mapiReqHistoryMetricIdFilters) {
+        this.mapiReqHistoryMetricIdFilters = mapiReqHistoryMetricIdFilters;
+    }
+
+    /**
+     * This is the setter method this will set the mapiReqHistoryMetricIdFilters
+     * Maintain query history only for the specified metric id.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistoryMetricIdFilters
+     */
+    public MetricsApiSrvDebugFilter addMapiReqHistoryMetricIdFiltersItem(String mapiReqHistoryMetricIdFiltersItem) {
+      if (this.mapiReqHistoryMetricIdFilters == null) {
+        this.mapiReqHistoryMetricIdFilters = new ArrayList<String>();
+      }
+      this.mapiReqHistoryMetricIdFilters.add(mapiReqHistoryMetricIdFiltersItem);
+      return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Number of last-n metrics api server queries to save.
+     * Allowed values are 1-32.
+     * Special values are 0- stop saving of last-n metrics api server queries.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistoryNumRecords
+     */
+    public Integer getMapiReqHistoryNumRecords() {
+        return mapiReqHistoryNumRecords;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of last-n metrics api server queries to save.
+     * Allowed values are 1-32.
+     * Special values are 0- stop saving of last-n metrics api server queries.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param mapiReqHistoryNumRecords set the mapiReqHistoryNumRecords.
+     */
+    public void setMapiReqHistoryNumRecords(Integer  mapiReqHistoryNumRecords) {
+        this.mapiReqHistoryNumRecords = mapiReqHistoryNumRecords;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maintain query history only for the specified serviceengine uuid.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistorySeUuidFilters
+     */
+    public List<String> getMapiReqHistorySeUuidFilters() {
+        return mapiReqHistorySeUuidFilters;
+    }
+
+    /**
+     * This is the setter method. this will set the mapiReqHistorySeUuidFilters
+     * Maintain query history only for the specified serviceengine uuid.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistorySeUuidFilters
+     */
+    public void setMapiReqHistorySeUuidFilters(List<String>  mapiReqHistorySeUuidFilters) {
+        this.mapiReqHistorySeUuidFilters = mapiReqHistorySeUuidFilters;
+    }
+
+    /**
+     * This is the setter method this will set the mapiReqHistorySeUuidFilters
+     * Maintain query history only for the specified serviceengine uuid.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiReqHistorySeUuidFilters
+     */
+    public MetricsApiSrvDebugFilter addMapiReqHistorySeUuidFiltersItem(String mapiReqHistorySeUuidFiltersItem) {
+      if (this.mapiReqHistorySeUuidFilters == null) {
+        this.mapiReqHistorySeUuidFilters = new ArrayList<String>();
+      }
+      this.mapiReqHistorySeUuidFilters.add(mapiReqHistorySeUuidFiltersItem);
+      return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Periodicity in hours of saving operational stats of metrics api server to a log file.
+     * Allowed values are 1-12.
+     * Special values are 0- stop periodic saving of last-n metrics api server queries.
+     * Field introduced in 32.1.1.
+     * Unit is hours.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mapiStatsLogPeriodHours
+     */
+    public Integer getMapiStatsLogPeriodHours() {
+        return mapiStatsLogPeriodHours;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Periodicity in hours of saving operational stats of metrics api server to a log file.
+     * Allowed values are 1-12.
+     * Special values are 0- stop periodic saving of last-n metrics api server queries.
+     * Field introduced in 32.1.1.
+     * Unit is hours.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param mapiStatsLogPeriodHours set the mapiStatsLogPeriodHours.
+     */
+    public void setMapiStatsLogPeriodHours(Integer  mapiStatsLogPeriodHours) {
+        this.mapiStatsLogPeriodHours = mapiStatsLogPeriodHours;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -62,14 +383,32 @@ public class MetricsApiSrvDebugFilter  {
           return false;
       }
       MetricsApiSrvDebugFilter objMetricsApiSrvDebugFilter = (MetricsApiSrvDebugFilter) o;
-      return   Objects.equals(this.entityRef, objMetricsApiSrvDebugFilter.entityRef);
+      return   Objects.equals(this.entityRef, objMetricsApiSrvDebugFilter.entityRef)&&
+  Objects.equals(this.mapiPerfStatsEnabled, objMetricsApiSrvDebugFilter.mapiPerfStatsEnabled)&&
+  Objects.equals(this.dbStatsSnapshotPeriodHours, objMetricsApiSrvDebugFilter.dbStatsSnapshotPeriodHours)&&
+  Objects.equals(this.dbStatsNumSnapshots, objMetricsApiSrvDebugFilter.dbStatsNumSnapshots)&&
+  Objects.equals(this.mapiReqHistoryNumRecords, objMetricsApiSrvDebugFilter.mapiReqHistoryNumRecords)&&
+  Objects.equals(this.mapiStatsLogPeriodHours, objMetricsApiSrvDebugFilter.mapiStatsLogPeriodHours)&&
+  Objects.equals(this.mapiReqHistoryEntityTypeFilters, objMetricsApiSrvDebugFilter.mapiReqHistoryEntityTypeFilters)&&
+  Objects.equals(this.mapiReqHistoryEntityUuidFilters, objMetricsApiSrvDebugFilter.mapiReqHistoryEntityUuidFilters)&&
+  Objects.equals(this.mapiReqHistorySeUuidFilters, objMetricsApiSrvDebugFilter.mapiReqHistorySeUuidFilters)&&
+  Objects.equals(this.mapiReqHistoryMetricIdFilters, objMetricsApiSrvDebugFilter.mapiReqHistoryMetricIdFilters);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class MetricsApiSrvDebugFilter {\n");
-                  sb.append("    entityRef: ").append(toIndentedString(entityRef)).append("\n");
+                  sb.append("    dbStatsNumSnapshots: ").append(toIndentedString(dbStatsNumSnapshots)).append("\n");
+                        sb.append("    dbStatsSnapshotPeriodHours: ").append(toIndentedString(dbStatsSnapshotPeriodHours)).append("\n");
+                        sb.append("    entityRef: ").append(toIndentedString(entityRef)).append("\n");
+                        sb.append("    mapiPerfStatsEnabled: ").append(toIndentedString(mapiPerfStatsEnabled)).append("\n");
+                        sb.append("    mapiReqHistoryEntityTypeFilters: ").append(toIndentedString(mapiReqHistoryEntityTypeFilters)).append("\n");
+                        sb.append("    mapiReqHistoryEntityUuidFilters: ").append(toIndentedString(mapiReqHistoryEntityUuidFilters)).append("\n");
+                        sb.append("    mapiReqHistoryMetricIdFilters: ").append(toIndentedString(mapiReqHistoryMetricIdFilters)).append("\n");
+                        sb.append("    mapiReqHistoryNumRecords: ").append(toIndentedString(mapiReqHistoryNumRecords)).append("\n");
+                        sb.append("    mapiReqHistorySeUuidFilters: ").append(toIndentedString(mapiReqHistorySeUuidFilters)).append("\n");
+                        sb.append("    mapiStatsLogPeriodHours: ").append(toIndentedString(mapiStatsLogPeriodHours)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
