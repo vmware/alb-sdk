@@ -18,6 +18,9 @@ type GslbGeoDbProfile struct {
 	//  Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
+	// Algorithm to be used for computing distance between geo locations.Only applicable when load balancing algorithm is GSLB_ALGORITHM_GEO. Enum options - GSLB_DISTANCE_AVI_OPTIMISED, GSLB_DISTANCE_HAVERSINE. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	DistanceComputationAlgorithm *string `json:"distance_computation_algorithm,omitempty"`
+
 	// List of Geodb entries. An entry can either be a geodb file or an ip address group with geo properties. . Field introduced in 17.1.1. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Entries []*GslbGeoDbEntry `json:"entries,omitempty"`
 
