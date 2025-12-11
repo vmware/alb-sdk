@@ -24,6 +24,9 @@ public class GslbGeoDbProfile extends AviRestResource  {
     @JsonProperty("description")
     private String description;
 
+    @JsonProperty("distance_computation_algorithm")
+    private String distanceComputationAlgorithm = "GSLB_DISTANCE_AVI_OPTIMISED";
+
     @JsonProperty("entries")
     private List<GslbGeoDbEntry> entries;
 
@@ -67,6 +70,32 @@ public class GslbGeoDbProfile extends AviRestResource  {
      */
     public void setDescription(String  description) {
         this.description = description;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Algorithm to be used for computing distance between geo locations.only applicable when load balancing algorithm is gslb_algorithm_geo.
+     * Enum options - GSLB_DISTANCE_AVI_OPTIMISED, GSLB_DISTANCE_HAVERSINE.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_DISTANCE_AVI_OPTIMISED".
+     * @return distanceComputationAlgorithm
+     */
+    public String getDistanceComputationAlgorithm() {
+        return distanceComputationAlgorithm;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Algorithm to be used for computing distance between geo locations.only applicable when load balancing algorithm is gslb_algorithm_geo.
+     * Enum options - GSLB_DISTANCE_AVI_OPTIMISED, GSLB_DISTANCE_HAVERSINE.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_DISTANCE_AVI_OPTIMISED".
+     * @param distanceComputationAlgorithm set the distanceComputationAlgorithm.
+     */
+    public void setDistanceComputationAlgorithm(String  distanceComputationAlgorithm) {
+        this.distanceComputationAlgorithm = distanceComputationAlgorithm;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -282,7 +311,8 @@ public class GslbGeoDbProfile extends AviRestResource  {
   Objects.equals(this.markers, objGslbGeoDbProfile.markers)&&
   Objects.equals(this.isFederated, objGslbGeoDbProfile.isFederated)&&
   Objects.equals(this.description, objGslbGeoDbProfile.description)&&
-  Objects.equals(this.tenantRef, objGslbGeoDbProfile.tenantRef);
+  Objects.equals(this.tenantRef, objGslbGeoDbProfile.tenantRef)&&
+  Objects.equals(this.distanceComputationAlgorithm, objGslbGeoDbProfile.distanceComputationAlgorithm);
     }
 
     @Override
@@ -290,6 +320,7 @@ public class GslbGeoDbProfile extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class GslbGeoDbProfile {\n");
                   sb.append("    description: ").append(toIndentedString(description)).append("\n");
+                        sb.append("    distanceComputationAlgorithm: ").append(toIndentedString(distanceComputationAlgorithm)).append("\n");
                         sb.append("    entries: ").append(toIndentedString(entries)).append("\n");
                         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
