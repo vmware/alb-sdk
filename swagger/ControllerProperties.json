@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "30.2.6",
+        "version": "30.2.7",
         "title": "Avi ControllerProperties Object API",
         "contact": {
             "name": "Avi Networks Inc.",
