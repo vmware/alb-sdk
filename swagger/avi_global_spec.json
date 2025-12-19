@@ -151586,6 +151586,10 @@
                 "uuid": {
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                },
+                "vcf_org_id": {
+                    "description": "VCF organization identifier. This field is automatically populated exclusively for tenants associated with VCF organizations. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 }
             }
         },
