@@ -1760,6 +1760,10 @@ func (avisess *AviSession) extractErrorMessage(resp *http.Response) *string {
 		return nil
 	}
 
+	resp.Body.Close()
+	// After reading, we need to restore the body so it can be read again.
+	resp.Body = io.NopCloser(bytes.NewBuffer(bodyBytes))
+
 	if len(bodyBytes) == 0 {
 		return nil
 	}
