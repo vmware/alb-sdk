@@ -18,9 +18,6 @@ type CloudProperties struct {
 	// Cloud types supported by CloudConnector. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CcVtypes []string `json:"cc_vtypes,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Hypervisor properties. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HypProps []*HypervisorProperties `json:"hyp_props,omitempty"`
 

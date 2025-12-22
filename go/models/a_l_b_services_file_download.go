@@ -12,9 +12,6 @@ type ALBServicesFileDownload struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Destination of the file to be saved. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	DestinationDir *string `json:"destination_dir"`

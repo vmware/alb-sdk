@@ -33,9 +33,6 @@ type BackupConfiguration struct {
 	// By default, JSON Backups are generated. When this flag is enabled, bundle backups will be generated. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	BundleMode *bool `json:"bundle_mode,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Rotate the backup files based on this count. Allowed values are 1-20. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaximumBackupsStored *uint32 `json:"maximum_backups_stored,omitempty"`
 

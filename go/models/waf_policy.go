@@ -27,9 +27,6 @@ type WafPolicy struct {
 	// Enable the functionality to bypass WAF for static file extensions. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	BypassStaticExtensions *bool `json:"bypass_static_extensions,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Creator name. Field introduced in 17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CreatedBy *string `json:"created_by,omitempty"`
 
@@ -73,9 +70,6 @@ type WafPolicy struct {
 
 	// WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be  enforced before the CRS groups. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PreCrsGroups []*WafRuleGroup `json:"pre_crs_groups,omitempty"`
-
-	// The data files and types referred in this WAF policy. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	RequiredDataFiles []*WafPolicyRequiredDataFile `json:"required_data_files,omitempty"`
 
 	// If and how WAF should use sampling to restrict the number of requests checked. Enum options - WAF_SAMPLING_MODE_NO_SAMPLING, WAF_SAMPLING_MODE_ADAPTIVE_SAMPLING, WAF_SAMPLING_MODE_FIXED_SAMPLING. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SamplingMode *string `json:"sampling_mode,omitempty"`

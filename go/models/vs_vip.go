@@ -24,9 +24,6 @@ type VsVip struct {
 	//  It is a reference to an object of type Cloud. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudRef *string `json:"cloud_ref,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Service discovery specific data including fully qualified domain name, type and Time-To-Live of the DNS record. This takes effect only if dns profile isassociated with cloud. Field introduced in 17.1.1. Maximum of 1000 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DNSInfo []*DNSInfo `json:"dns_info,omitempty"`
 

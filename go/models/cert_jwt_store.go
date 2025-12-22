@@ -12,9 +12,6 @@ type CertJwtStore struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// JWT containing current portal certificate along with the full certificate bundle chain, signed by the private key of previous portal certificate. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	Jwt *string `json:"jwt"`

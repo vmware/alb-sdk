@@ -78,9 +78,6 @@ type ControllerProperties struct {
 	// Period for cluster ip gratuitous arp job. Allowed values are 1-1440. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClusterIPGratuitousArpPeriod *uint32 `json:"cluster_ip_gratuitous_arp_period,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Period for consistency check job. Field introduced in 18.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConsistencyCheckTimeoutPeriod *uint32 `json:"consistency_check_timeout_period,omitempty"`
 

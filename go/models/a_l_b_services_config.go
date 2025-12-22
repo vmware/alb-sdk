@@ -23,9 +23,6 @@ type ALBServicesConfig struct {
 	// Required: true
 	CaseConfig *CaseConfig `json:"case_config"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Features opt-in for Pulse Cloud Services. Field introduced in 20.1.1.
 	// Required: true
 	FeatureOptInStatus *PortalFeatureOptIn `json:"feature_opt_in_status"`

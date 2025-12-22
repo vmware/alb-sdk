@@ -51,9 +51,6 @@ type Server struct {
 	// Optionally specify the servers port number.  This will override the pool's default server port attribute. Allowed values are 1-65535. Special values are 0- use backend port in pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Port *int32 `json:"port,omitempty"`
 
-	// Preference order of this member in the group. The DNS Service chooses the member with the lowest preference that is operationally up. Allowed values are 1-128. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	PreferenceOrder *uint32 `json:"preference_order,omitempty"`
-
 	// Header value for custom header persistence. . Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	PrstHdrVal *string `json:"prst_hdr_val,omitempty"`
 
@@ -68,9 +65,6 @@ type Server struct {
 
 	// Hostname of the node where the server VM or container resides. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServerNode *string `json:"server_node,omitempty"`
-
-	// SRV record parameters for GSLB Service member. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SrvRdata *GslbServiceSrvRdata `json:"srv_rdata,omitempty"`
 
 	// If statically learned. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Static *bool `json:"static,omitempty"`

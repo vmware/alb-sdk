@@ -12,9 +12,6 @@ type WafApplicationSignatures struct {
 	// Required: true
 	ProviderRef *string `json:"provider_ref"`
 
-	// A resolved version of the active application specific rules together with the overrides. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ResolvedRules []*WafRule `json:"resolved_rules,omitempty"`
-
 	// Override attributes of application signature rules. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	RuleOverrides []*WafRuleOverrides `json:"rule_overrides,omitempty"`
 

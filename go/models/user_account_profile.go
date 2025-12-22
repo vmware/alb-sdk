@@ -16,9 +16,6 @@ type UserAccountProfile struct {
 	// Required: true
 	ComplexityConstraint *ComplexityConstraint `json:"complexity_constraint"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Password expiration settings for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	ExpirationConstraint *ExpirationConstraint `json:"expiration_constraint"`

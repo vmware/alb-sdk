@@ -62,19 +62,10 @@ type User struct {
 	Passwordless *bool `json:"passwordless,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	RecoveryToken *string `json:"recovery_token,omitempty"`
-
-	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServiceUser *bool `json:"service_user,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	TokenExpirationDate *string `json:"token_expiration_date,omitempty"`
-
-	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UIProperty *string `json:"ui_property,omitempty"`
-
-	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	UID *uint32 `json:"uid,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UnixCryptPassword *string `json:"unix_crypt_password,omitempty"`
