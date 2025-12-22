@@ -437,9 +437,6 @@ definitions:
             case_config:
                 description: "Default values for case management. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CaseConfig'
-            configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/ConfigPbAttributes'
             feature_opt_in_status:
                 description: "Features opt-in for Pulse Cloud Services. Field introduced in 20.1.1."
                 $ref: '#/definitions/PortalFeatureOptIn'
@@ -565,17 +562,6 @@ definitions:
                 description: "Enable cleanup of successfully attached files to support case. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition. Special default for Essentials edition is false, Basic edition is false, Enterprise edition is True."
                 type: boolean
                 default: True
-    ConfigPbAttributes:
-        type: object
-        properties:
-            created_by:
-                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            version:
-                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
     InventoryConfig:
         type: object
         properties:
