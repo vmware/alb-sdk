@@ -121,10 +121,10 @@ public class LogManagerDebugFilter  {
     private Integer opensearchNumReplicas = 0;
 
     @JsonProperty("opensearch_num_shards")
-    private Integer opensearchNumShards = 1;
+    private Integer opensearchNumShards = 9;
 
     @JsonProperty("opensearch_port")
-    private String opensearchPort = "9200";
+    private String opensearchPort = "5010";
 
     @JsonProperty("query_queue_buffer_size")
     private Integer queryQueueBufferSize = 100;
@@ -968,7 +968,7 @@ public class LogManagerDebugFilter  {
      * Number of shards for opensearch.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 9.
      * @return opensearchNumShards
      */
     public Integer getOpensearchNumShards() {
@@ -980,7 +980,7 @@ public class LogManagerDebugFilter  {
      * Number of shards for opensearch.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 9.
      * @param opensearchNumShards set the opensearchNumShards.
      */
     public void setOpensearchNumShards(Integer  opensearchNumShards) {
@@ -992,7 +992,7 @@ public class LogManagerDebugFilter  {
      * Opensearch port.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "9200".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "5010".
      * @return opensearchPort
      */
     public String getOpensearchPort() {
@@ -1004,7 +1004,7 @@ public class LogManagerDebugFilter  {
      * Opensearch port.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "9200".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "5010".
      * @param opensearchPort set the opensearchPort.
      */
     public void setOpensearchPort(String  opensearchPort) {
