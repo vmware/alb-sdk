@@ -15,9 +15,6 @@ type Webhook struct {
 	// Callback URL for the Webhook. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CallbackURL *string `json:"callback_url,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	//  Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 

@@ -18,9 +18,6 @@ type ApplicationInsightsPolicy struct {
 	// Application sampling configuration to control rate and volume of data ingestion for Application Insights that the ServiceEngines are expected to send to the controller. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ApplicationSamplingConfig *ApplicationSamplingConfig `json:"application_sampling_config,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Details of the Application Insights Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 

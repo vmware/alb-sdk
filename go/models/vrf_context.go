@@ -24,9 +24,6 @@ type VrfContext struct {
 	//  It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudRef *string `json:"cloud_ref,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Configure debug flags for VRF. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Debugvrfcontext *DebugVrfContext `json:"debugvrfcontext,omitempty"`
 

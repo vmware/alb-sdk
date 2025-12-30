@@ -16,9 +16,6 @@ type WafProfile struct {
 	// Required: true
 	Config *WafConfig `json:"config"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	//  Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 

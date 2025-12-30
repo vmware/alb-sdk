@@ -15,9 +15,6 @@ type GslbService struct {
 	// The federated application persistence associated with GslbService site persistence functionality. . It is a reference to an object of type ApplicationPersistenceProfile. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ApplicationPersistenceProfileRef *string `json:"application_persistence_profile_ref,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// GS member's overall health status is derived based on a combination of controller and datapath health-status inputs. Note that the datapath status is determined by the association of health monitor profiles. Only the controller provided status is determined through this configuration. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerHealthStatusEnabled *bool `json:"controller_health_status_enabled,omitempty"`
 
@@ -44,9 +41,6 @@ type GslbService struct {
 
 	// Health monitor probe can be executed for all the members or it can be executed only for third-party members. This operational mode is useful to reduce the number of health monitor probes in case of a hybrid scenario. In such a case, Avi members can have controller derived status while Non-Avi members can be probed by via health monitor probes in dataplane. Enum options - GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS, GSLB_SERVICE_HEALTH_MONITOR_ONLY_NON_AVI_MEMBERS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HealthMonitorScope *string `json:"health_monitor_scope,omitempty"`
-
-	// This field is an internal field and is used in SE. Field introduced in 18.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	HmOff *bool `json:"hm_off,omitempty"`
 
 	// If enabled, provide the SRV target's resolved IP in the response SRV GSLB service. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	IncludeAdditionalRecords *bool `json:"include_additional_records,omitempty"`
@@ -100,9 +94,6 @@ type GslbService struct {
 
 	// UUID of the GSLB service. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
-
-	// VRF name of the DNS VS to which this GS is bound to. In case it is bound to multiple DNS VSes on the SE, this field will be inherited from the first DNS VS in the configuration order. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	VrfUUIDForGs *string `json:"vrf_uuid_for_gs,omitempty"`
 
 	// Enable wild-card match of fqdn  if an exact match is not found in the DNS table, the longest match is chosen by wild-carding the fqdn in the DNS request. Default is false. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WildcardMatch *bool `json:"wildcard_match,omitempty"`

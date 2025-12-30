@@ -18,9 +18,6 @@ type HealthMonitor struct {
 	// Authentication information for username/password. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Authentication *HealthMonitorAuthInfo `json:"authentication,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 

@@ -12,9 +12,6 @@ type TenantSystemConfiguration struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// DNS virtual services hosting FQDN records for applications configured within this tenant. It is a reference to an object of type VirtualService. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DNSVirtualserviceRefs []string `json:"dns_virtualservice_refs,omitempty"`
 

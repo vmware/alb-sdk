@@ -15,9 +15,6 @@ type ApplicationPersistenceProfile struct {
 	// Specifies the Application Cookie Persistence profile parameters. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AppCookiePersistenceProfile *AppCookiePersistenceProfile `json:"app_cookie_persistence_profile,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 

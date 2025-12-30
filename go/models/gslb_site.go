@@ -59,7 +59,4 @@ type GslbSite struct {
 	// The username used when authenticating with the Site. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Username *string `json:"username"`
-
-	// This field is used as a key in the datastore for the GslbSite table to encapsulate site-related info. . Field introduced in 17.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	UUID *string `json:"uuid,omitempty"`
 }

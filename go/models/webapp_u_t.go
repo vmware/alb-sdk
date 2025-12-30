@@ -15,9 +15,6 @@ type WebappUT struct {
 	// Cloud of the WebappUT object-level0. It is a reference to an object of type Cloud. Field introduced in 30.2.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	CloudRef *string `json:"cloud_ref,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.5, 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// default *int32 field. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DefaultFifthInt *int32 `json:"default_fifth_int,omitempty"`
 

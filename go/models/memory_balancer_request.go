@@ -12,9 +12,6 @@ type MemoryBalancerRequest struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Current details regarding controller. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ControllerInfo *ControllerInfo `json:"controller_info,omitempty"`
 

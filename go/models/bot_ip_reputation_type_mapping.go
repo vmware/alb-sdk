@@ -12,9 +12,6 @@ type BotIPReputationTypeMapping struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Map every IPReputationType to a bot type (can be unknown). Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	IPReputationMappings []*IPReputationTypeMapping `json:"ip_reputation_mappings,omitempty"`
 

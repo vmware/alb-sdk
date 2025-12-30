@@ -21,9 +21,6 @@ type FileObject struct {
 	// This field indicates whether the file is gzip-compressed. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Compressed *bool `json:"compressed,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Timestamp of creation for the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Created *string `json:"created,omitempty"`
 

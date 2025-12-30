@@ -12,9 +12,6 @@ type ServerAutoScalePolicy struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Delay in minutes after which a down server will be removed from Pool. Value 0 disables this functionality. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DelayForServerGarbageCollection *uint32 `json:"delay_for_server_garbage_collection,omitempty"`
 

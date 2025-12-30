@@ -15,9 +15,6 @@ type AuthProfile struct {
 	// Client Cert settings. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ClientCert *ClientCertAuthSettings `json:"client_cert,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 

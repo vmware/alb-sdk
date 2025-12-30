@@ -18,9 +18,6 @@ type SspInstance struct {
 	// Client certificate that the SSP instance uses to authenticate with Avi. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ClientCert *string `json:"client_cert,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Description of the onboarded SSP feature instance. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 

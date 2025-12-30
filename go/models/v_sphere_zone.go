@@ -12,5 +12,6 @@ type VSphereZone struct {
 	VcenterRef *string `json:"vcenter_ref,omitempty"`
 
 	// Name of the vSphere zone in vCenter. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	ZoneName *string `json:"zone_name,omitempty"`
+	// Required: true
+	ZoneName *string `json:"zone_name"`
 }

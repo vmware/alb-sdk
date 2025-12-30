@@ -41,9 +41,6 @@ type NsxtConfiguration struct {
 	// Site where transport zone belongs to. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SiteID *string `json:"site_id,omitempty"`
 
-	// Flag to identify the DFW scheme implemented by cloud connector,  If enabled, the DFW scheme will group and reduce the number of DFW objects created on NSX. The objects will be grouped per Tier-1/Segment. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	StreamlineDfwObjects *bool `json:"streamline_dfw_objects,omitempty"`
-
 	// Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter and NSX-T Manager. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	VerifyCertificate *bool `json:"verify_certificate,omitempty"`
 

@@ -16,9 +16,6 @@ type ControllerSite struct {
 	// Required: true
 	Address *string `json:"address"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Name for the Site Controller Cluster. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
