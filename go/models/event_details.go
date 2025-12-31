@@ -551,6 +551,9 @@ type EventDetails struct {
 	// Details about the process that crashed on a specific SE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SeProcessCrashedDetails *SeProcessCrashedDetails `json:"se_process_crashed_details,omitempty"`
 
+	//  Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SeQatModeEventDetail *SeQatModeEventDetail `json:"se_qat_mode_event_detail,omitempty"`
+
 	//  Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SeRateLimiterDropDetails *SeRateLimiterDropDetails `json:"se_rate_limiter_drop_details,omitempty"`
 

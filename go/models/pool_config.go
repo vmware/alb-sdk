@@ -27,14 +27,14 @@ type PoolConfig struct {
 	// Name of the pool. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// UUID of the pool. It is a reference to an object of type Pool. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	Ref *string `json:"ref,omitempty"`
-
 	//  It is a reference to an object of type Tenant. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// URL of the pool. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	URL *string `json:"url,omitempty"`
+
+	// UUID of the pool. It is a reference to an object of type Pool. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	UUID *string `json:"uuid,omitempty"`
 
 	// Virtual Routing Context that the pool is bound to. This is used to provide the isolation of the set of networks the pool is attached to. The pool inherits the Virtual Routing Conext of the Virtual Service, and this field is used only internally, and is set by pb-transform. It is a reference to an object of type VrfContext. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	VrfRef *string `json:"vrf_ref,omitempty"`

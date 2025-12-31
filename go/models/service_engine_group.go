@@ -48,6 +48,9 @@ type ServiceEngineGroup struct {
 	// Number of Async SSL threads per se_dp.Requires SE Reboot. Allowed values are 1-16. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AsyncSslThreads *uint32 `json:"async_ssl_threads,omitempty"`
 
+	// This knob enables audit of QAT Hugepages. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	AuditQatHugePages *bool `json:"audit_qat_huge_pages,omitempty"`
+
 	// If set, Virtual Services will be automatically migrated when load on an SE is less than minimum or more than maximum thresholds. Only Alerts are generated when the auto_rebalance is not set. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
 	AutoRebalance *bool `json:"auto_rebalance,omitempty"`
 
@@ -98,6 +101,9 @@ type ServiceEngineGroup struct {
 
 	// Percentage of memory for connection state. This will come at the expense of memory used for HTTP in-memory cache. Allowed values are 10-90. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnectionMemoryPercentage *uint32 `json:"connection_memory_percentage,omitempty"`
+
+	// This knob enables control of QAT Hugepages. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ControlQatHugePages *bool `json:"control_qat_huge_pages,omitempty"`
 
 	// Include shared memory for app cache in core file.Requires SE Reboot. Field introduced in 18.2.8, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CoreShmAppCache *bool `json:"core_shm_app_cache,omitempty"`
@@ -546,6 +552,9 @@ type ServiceEngineGroup struct {
 
 	// Available memory threshold on SE in MB, to get qualified for upgrade operation. Adjusting this knob will override the internal value of available memory threshold for SE, thereby qualifying it for upgrade operation. '0' is a special auto value, which will indicate that memory threshold is calculated based on total memory size of the SE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	PreUpgradeSeAvailableMemThreshold *uint32 `json:"pre_upgrade_se_available_mem_threshold,omitempty"`
+
+	// This knob is used to set the number of QAT Hugepages. Enum options - QAT_HPAGE_MEM_8MB, QAT_HPAGE_MEM_16MB, QAT_HPAGE_MEM_32MB. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	QatHpageMemPerProcess *string `json:"qat_hpage_mem_per_process,omitempty"`
 
 	// Enable or deactivate real time SE metrics. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RealtimeSeMetrics *MetricsRealTimeUpdate `json:"realtime_se_metrics,omitempty"`

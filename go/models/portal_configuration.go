@@ -41,12 +41,6 @@ type PortalConfiguration struct {
 	// Allow Incoming Connections from Clients Using TLS 1.0/1.1 to Controller. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	LegacySslSupport *bool `json:"legacy_ssl_support,omitempty"`
 
-	// Minimum password length for user accounts. Allowed values are 6-32. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	MinimumPasswordLength *uint32 `json:"minimum_password_length,omitempty"`
-
-	// Strict checking of password strength for user accounts. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	PasswordStrengthCheck *bool `json:"password_strength_check,omitempty"`
-
 	// Reference to PKIProfile Config used for CRL validation. It is a reference to an object of type PKIProfile. Field introduced in 30.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	PkiprofileRef *string `json:"pkiprofile_ref,omitempty"`
 

@@ -16,6 +16,13 @@ type CertJwtStore struct {
 	// Required: true
 	Jwt *string `json:"jwt"`
 
+	// Private key. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Required: true
+	Key *string `json:"key"`
+
+	// Private key passphrase. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	KeyPassphrase *string `json:"key_passphrase,omitempty"`
+
 	// SHA256 thumbprint of the previous old portal certificate. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	Kid *string `json:"kid"`
@@ -27,6 +34,9 @@ type CertJwtStore struct {
 	// Public key algorithm. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	PublicKeyAlgorithm *string `json:"public_key_algorithm"`
+
+	// Type of SSL certificate. Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA, SSL_CERTIFICATE_TYPE_CLIENT, SSL_CERTIFICATE_TYPE_SECURE_CHANNEL. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	Type *string `json:"type,omitempty"`
 
 	// url
 	// Read Only: true
