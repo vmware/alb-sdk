@@ -15,9 +15,6 @@ type RateLimitConfiguration struct {
 	// The maximum request per second(RPS) user intends to support for this category.This is not guaranteed as this will be the minimum of the RPS supported by the resources in the category and this value.If user doesn't provide then it will be minimum value of the resources in this category. Allowed values are 1-1000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Burst *uint32 `json:"burst,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Description for the Rate Limit Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 

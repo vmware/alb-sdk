@@ -12,9 +12,6 @@ type InventoryFaultConfig struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Configure controller faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ControllerFaults *ControllerFaults `json:"controller_faults,omitempty"`
 

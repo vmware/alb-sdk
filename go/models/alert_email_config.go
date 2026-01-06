@@ -15,9 +15,6 @@ type AlertEmailConfig struct {
 	// Alerts are copied to the comma separated list of  email recipients. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CcEmails *string `json:"cc_emails,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 

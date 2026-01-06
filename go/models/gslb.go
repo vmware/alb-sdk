@@ -24,9 +24,6 @@ type Gslb struct {
 	// Group to specify if the client ip addresses are public or private. Field introduced in 17.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientIPAddrGroup *GslbClientIPAddrGroup `json:"client_ip_addr_group,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
@@ -67,9 +64,6 @@ type Gslb struct {
 
 	// Frequency with which group members communicate. Allowed values are 1-3600. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SendInterval *uint32 `json:"send_interval,omitempty"`
-
-	// The user can specify a send-interval while entering maintenance mode. The validity of this 'maintenance send-interval' is only during maintenance mode. When the user leaves maintenance mode, the original send-interval is reinstated. This internal variable is used to store the original send-interval. . Field introduced in 18.2.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SendIntervalPriorToMaintenanceMode *uint32 `json:"send_interval_prior_to_maintenance_mode,omitempty"`
 
 	// Wait time between two consecutive short probe health checks. Allowed values are 1-3600. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ShortProbeInterval *uint32 `json:"short_probe_interval,omitempty"`

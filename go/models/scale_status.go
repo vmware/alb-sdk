@@ -23,9 +23,6 @@ type ScaleStatus struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumSeRequested *uint32 `json:"num_se_requested,omitempty"`
 
-	//  Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	PlacementReadFailCnt *uint32 `json:"placement_read_fail_cnt,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Reason []string `json:"reason,omitempty"`
 

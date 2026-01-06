@@ -12,9 +12,6 @@ type TrustedHostProfile struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// List of Host IP(v4/v6) addresses or FQDNs. Field introduced in 31.1.1. Minimum of 1 items required. Maximum of 20 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	Hosts []*TrustedHost `json:"hosts,omitempty"`

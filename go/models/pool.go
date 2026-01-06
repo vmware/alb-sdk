@@ -45,9 +45,6 @@ type Pool struct {
 	//  It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudRef *string `json:"cloud_ref,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Connnection pool properties. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnPoolProperties *ConnPoolProperties `json:"conn_pool_properties,omitempty"`
 
@@ -95,9 +92,6 @@ type Pool struct {
 
 	// Time interval for gracefully closing the connections on server, When health monitoring marks the server down. Allowed values are 1-432000. Special values are 0 - Immediate, -1 - Infinite. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	GracefulHmDownDisableTimeout *int32 `json:"graceful_hm_down_disable_timeout,omitempty"`
-
-	// Specifies the pool type (GENERIC/PRIVATE/PUBLIC). The public IPs of the members can be specified in seperate pool of type PUBLIC.This would allow features like health monitoring to be enabled independantly for the public IPs.This is only applicable for GSLB pools. Enum options - GSLB_POOL_TYPE_GENERIC, GSLB_POOL_TYPE_PRIVATE, GSLB_POOL_TYPE_PUBLIC. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	GslbPoolType *string `json:"gslb_pool_type,omitempty"`
 
 	// Indicates if the pool is a site-persistence pool. . Field introduced in 17.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Read Only: true
@@ -182,9 +176,6 @@ type Pool struct {
 	// Enable request queue when pool is full. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
 	RequestQueueEnabled *bool `json:"request_queue_enabled,omitempty"`
 
-	// This field is used as a flag to create a job for JobManager. Field introduced in 18.2.10,20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ResolvePoolByDNS *bool `json:"resolve_pool_by_dns,omitempty"`
-
 	// Rewrite incoming Host Header to server name of the server to which the request is proxied.  Enabling this feature rewrites Host Header for requests to all servers in the pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RewriteHostHeaderToServerName *bool `json:"rewrite_host_header_to_server_name,omitempty"`
 
@@ -214,9 +205,6 @@ type Pool struct {
 
 	// Enable TLS SNI for server connections. If disabled, Avi will not send the SNI extension as part of the handshake. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SniEnabled *bool `json:"sni_enabled,omitempty"`
-
-	// GSLB service associated with the site persistence pool. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SpGsInfo *SpGslbServiceInfo `json:"sp_gs_info,omitempty"`
 
 	// Service Engines will present a client SSL certificate to the server. It is a reference to an object of type SSLKeyAndCertificate. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslKeyAndCertificateRef *string `json:"ssl_key_and_certificate_ref,omitempty"`

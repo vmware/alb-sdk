@@ -15,9 +15,6 @@ type UserAccountProfile struct {
 	// Lock timeout period (in minutes). Default is 30 minutes. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AccountLockTimeout *uint32 `json:"account_lock_timeout,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// The time period after which credentials expire. Default is 180 days. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CredentialsTimeoutThreshold *uint32 `json:"credentials_timeout_threshold,omitempty"`
 

@@ -18,9 +18,6 @@ type BotDetectionPolicy struct {
 	// The client behavior configuration used in this policy. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientBehaviorDetector *BotConfigClientBehavior `json:"client_behavior_detector,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Human-readable description of this Bot Detection Policy. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 

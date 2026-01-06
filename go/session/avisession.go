@@ -301,7 +301,7 @@ type AviSession struct {
 	proxyURL string
 }
 
-const DEFAULT_AVI_VERSION = "18.2.6"
+const DEFAULT_AVI_VERSION = "22.1.2"
 const DEFAULT_API_TIMEOUT = time.Duration(60 * time.Second)
 const DEFAULT_API_TENANT = "admin"
 const DEFAULT_MAX_API_RETRIES = 3
@@ -1762,6 +1762,9 @@ func (avisess *AviSession) extractErrorMessage(resp *http.Response) *string {
 		glog.Errorf("Error reading response body: %v", err)
 		return nil
 	}
+	resp.Body.Close()
+	// After reading, we need to restore the body so it can be read again.
+	resp.Body = io.NopCloser(bytes.NewBuffer(bodyBytes))
 
 	if len(bodyBytes) == 0 {
 		return nil

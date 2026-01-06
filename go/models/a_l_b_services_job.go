@@ -16,9 +16,6 @@ type ALBServicesJob struct {
 	// Required: true
 	Command *string `json:"command"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Time at which the albservicesjob ended. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EndTime *TimeStamp `json:"end_time,omitempty"`
 
