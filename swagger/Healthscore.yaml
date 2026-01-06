@@ -23,7 +23,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /analytics/Healthscore/pool/:
+    /analytics/healthscore/pool/:
         get:
             consumes:
                 -   application/json
@@ -145,7 +145,7 @@ paths:
                         $ref: "#/definitions/HealthScoreQueryResponseApiResponse"
                 401:
                     description: log in failed
-    /analytics/Healthscore/pool/{uuid}:
+    /analytics/healthscore/pool/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -267,7 +267,7 @@ paths:
                         $ref: "#/definitions/HealthScoreQueryResponse"
                 401:
                     description: log in failed
-    /analytics/Healthscore/serviceengine/:
+    /analytics/healthscore/serviceengine/:
         get:
             consumes:
                 -   application/json
@@ -389,7 +389,7 @@ paths:
                         $ref: "#/definitions/HealthScoreQueryResponseApiResponse"
                 401:
                     description: log in failed
-    /analytics/Healthscore/serviceengine/{uuid}:
+    /analytics/healthscore/serviceengine/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -511,7 +511,7 @@ paths:
                         $ref: "#/definitions/HealthScoreQueryResponse"
                 401:
                     description: log in failed
-    /analytics/Healthscore/virtualservice/:
+    /analytics/healthscore/virtualservice/:
         get:
             consumes:
                 -   application/json
@@ -633,7 +633,7 @@ paths:
                         $ref: "#/definitions/HealthScoreQueryResponseApiResponse"
                 401:
                     description: log in failed
-    /analytics/Healthscore/virtualservice/{uuid}:
+    /analytics/healthscore/virtualservice/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -767,7 +767,7 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
+            uuid:
                 description: " It is a reference to an object of type Application. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             virtualservice_anomaly_scores:
@@ -786,7 +786,7 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
+            uuid:
                 description: " It is a reference to an object of type Application. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             virtualservice_performance_scores:
@@ -805,7 +805,7 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
+            uuid:
                 description: " It is a reference to an object of type Application. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             virtualservice_resources_scores:
@@ -902,14 +902,14 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the DoS Attack Level. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             serviceengine_dos_attack_level_scores:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ServiceEngineDosAttackLevel'
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
             value:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
@@ -1441,14 +1441,14 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             server_anomaly_scores:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ServerAnomalyScore'
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     PoolPerformanceScore:
         type: object
         required:
@@ -1496,13 +1496,13 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             sum_finished_conns:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     PoolResourcesScore:
         type: object
         required:
@@ -1546,14 +1546,14 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             server_resources_scores:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ServerResourcesScore'
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     ServerAnomalyScore:
         type: object
         required:
@@ -1618,11 +1618,11 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             server:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ServerPerformanceScoreData:
         type: object
@@ -1651,9 +1651,6 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             server:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -1661,6 +1658,9 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     ServerResourcesScore:
         type: object
         required:
@@ -1733,11 +1733,11 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             server:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ServiceEngineAnomalyScore:
         type: object
@@ -1789,7 +1789,7 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
+            uuid:
                 description: " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ServiceEngineDosAttackLevel:
@@ -1843,7 +1843,7 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the DoS Attack Level. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
+            uuid:
                 description: " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             value:
@@ -1864,7 +1864,7 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the performance score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
+            uuid:
                 description: " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ServiceEngineResourcesScore:
@@ -1945,7 +1945,7 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
+            uuid:
                 description: " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     SslScoreData:
@@ -2017,12 +2017,12 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the SSL Config Level. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             ssl_enabled:
                 description: "Set whether the SSL service is enabled for the VS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
             value:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
@@ -2096,14 +2096,14 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             serviceengine_anomaly_scores:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ServiceEngineAnomalyScore'
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     VirtualServicePerformanceScore:
         type: object
         required:
@@ -2157,9 +2157,6 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             rum_apdexr:
                 description: "Rum Apdexr when client insights is active. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
@@ -2168,6 +2165,9 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
             vs_uptime:
                 description: "Percentage time of last 5mins that the VirtualService has been up. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
@@ -2224,11 +2224,11 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             serviceengine_resources_scores:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ServiceEngineResourcesScore'
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string

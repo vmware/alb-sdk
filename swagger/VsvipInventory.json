@@ -591,10 +591,6 @@
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
-                "ref": {
-                    "description": " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
                 "route_revoked_pool_down": {
                     "description": "VIP Route is revoked as pool went down. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
@@ -628,13 +624,17 @@
                 "standby": {
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
+                },
+                "uuid": {
+                    "description": " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 }
             }
         },
         "VsRefs": {
             "type": "object",
             "properties": {
-                "ref": {
+                "uuid": {
                     "description": "UUID of the Virtual Service. It is a reference to an object of type VirtualService. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }

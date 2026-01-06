@@ -381,14 +381,6 @@ paths:
 
 
 definitions:
-    ConfigPbAttributes:
-        type: object
-        properties:
-            version:
-                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
     UserAccountProfile:
         type: object
         required:
@@ -403,9 +395,6 @@ definitions:
                 type: integer
                 default: 30
                 format: uint32
-            configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/ConfigPbAttributes'
             credentials_timeout_threshold:
                 description: "The time period after which credentials expire. Default is 180 days. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer

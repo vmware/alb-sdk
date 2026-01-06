@@ -479,9 +479,6 @@ definitions:
             cloud_ref:
                 description: "Availability zone belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/ConfigPbAttributes'
             name:
                 description: "Availabilty zone where VCenter list belongs to. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -551,11 +548,3 @@ definitions:
             vcenter_ref:
                 description: "The UUID of the vCenter Server that manages the hosts associated with this AvailabilityZone. It is a reference to an object of type VCenterServer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
-    ConfigPbAttributes:
-        type: object
-        properties:
-            version:
-                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32

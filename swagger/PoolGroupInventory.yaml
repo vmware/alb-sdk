@@ -239,10 +239,6 @@ definitions:
             file_content:
                 description: "File content to used in the local HTTP response body. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            file_length:
-                description: "File content length. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
     PoolGroupConfig:
         type: object
         required:

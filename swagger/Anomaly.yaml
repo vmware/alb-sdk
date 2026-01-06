@@ -23,7 +23,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /analytics/Anomaly/pool/:
+    /analytics/anomaly/pool/:
         get:
             consumes:
                 -   application/json
@@ -169,7 +169,7 @@ paths:
                         $ref: "#/definitions/AnomalyzerQueryResponseApiResponse"
                 401:
                     description: log in failed
-    /analytics/Anomaly/pool/{uuid}:
+    /analytics/anomaly/pool/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -315,7 +315,7 @@ paths:
                         $ref: "#/definitions/AnomalyzerQueryResponse"
                 401:
                     description: log in failed
-    /analytics/Anomaly/serviceengine/:
+    /analytics/anomaly/serviceengine/:
         get:
             consumes:
                 -   application/json
@@ -461,7 +461,7 @@ paths:
                         $ref: "#/definitions/AnomalyzerQueryResponseApiResponse"
                 401:
                     description: log in failed
-    /analytics/Anomaly/serviceengine/{uuid}:
+    /analytics/anomaly/serviceengine/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -607,7 +607,7 @@ paths:
                         $ref: "#/definitions/AnomalyzerQueryResponse"
                 401:
                     description: log in failed
-    /analytics/Anomaly/virtualservice/:
+    /analytics/anomaly/virtualservice/:
         get:
             consumes:
                 -   application/json
@@ -753,7 +753,7 @@ paths:
                         $ref: "#/definitions/AnomalyzerQueryResponseApiResponse"
                 401:
                     description: log in failed
-    /analytics/Anomaly/virtualservice/{uuid}:
+    /analytics/anomaly/virtualservice/{uuid}:
         get:
             consumes:
                 -   application/json

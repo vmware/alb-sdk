@@ -727,10 +727,6 @@
                     "description": "The client behavior configuration used in this policy. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/BotConfigClientBehavior"
                 },
-                "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/ConfigPbAttributes"
-                },
                 "description": {
                     "description": "Human-readable description of this Bot Detection Policy. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
@@ -801,17 +797,6 @@
                 },
                 "next": {
                     "type": "string"
-                }
-            }
-        },
-        "ConfigPbAttributes": {
-            "type": "object",
-            "properties": {
-                "version": {
-                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "default": 1,
-                    "format": "uint32"
                 }
             }
         },

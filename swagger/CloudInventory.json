@@ -987,10 +987,6 @@
                     "description": " Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/CloudStackConfiguration"
                 },
-                "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/ConfigPbAttributes"
-                },
                 "custom_tags": {
                     "description": "Custom tags for all Avi created resources in the cloud infrastructure. Field introduced in 17.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -1369,17 +1365,6 @@
                 "state": {
                     "description": "Cloud State. Enum options - CLOUD_STATE_UNKNOWN, CLOUD_STATE_IN_PROGRESS, CLOUD_STATE_FAILED, CLOUD_STATE_PLACEMENT_READY, CLOUD_STATE_DELETING, CLOUD_STATE_NOT_CONNECTED. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
-                }
-            }
-        },
-        "ConfigPbAttributes": {
-            "type": "object",
-            "properties": {
-                "version": {
-                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "default": 1,
-                    "format": "uint32"
                 }
             }
         },
@@ -2415,11 +2400,6 @@
                     "description": "Site where transport zone belongs to. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "default"
-                },
-                "streamline_dfw_objects": {
-                    "description": "Flag to identify the DFW scheme implemented by cloud connector,  If enabled, the DFW scheme will group and reduce the number of DFW objects created on NSX. The objects will be grouped per Tier-1/Segment. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean",
-                    "default": true
                 },
                 "verify_certificate": {
                     "description": "Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter and NSX-T Manager. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",

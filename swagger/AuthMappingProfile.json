@@ -561,10 +561,6 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/ConfigPbAttributes"
-                },
                 "description": {
                     "description": "Description for the AuthMappingProfile. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
@@ -739,17 +735,6 @@
                     "items": {
                         "type": "string"
                     }
-                }
-            }
-        },
-        "ConfigPbAttributes": {
-            "type": "object",
-            "properties": {
-                "version": {
-                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "default": 1,
-                    "format": "uint32"
                 }
             }
         }

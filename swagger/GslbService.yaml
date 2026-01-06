@@ -475,14 +475,6 @@ paths:
                 "404":
                     description: object not found
 definitions:
-    ConfigPbAttributes:
-        type: object
-        properties:
-            version:
-                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
     GeoLocation:
         type: object
         properties:
@@ -641,9 +633,6 @@ definitions:
             application_persistence_profile_ref:
                 description: "The federated application persistence associated with GslbService site persistence functionality. . It is a reference to an object of type ApplicationPersistenceProfile. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/ConfigPbAttributes'
             controller_health_status_enabled:
                 description: "GS member's overall health status is derived based on a combination of controller and datapath health-status inputs. Note that the datapath status is determined by the association of health monitor profiles. Only the controller provided status is determined through this configuration. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
@@ -680,9 +669,6 @@ definitions:
                 description: "Health monitor probe can be executed for all the members or it can be executed only for third-party members. This operational mode is useful to reduce the number of health monitor probes in case of a hybrid scenario. In such a case, Avi members can have controller derived status while Non-Avi members can be probed by via health monitor probes in dataplane. Enum options - GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS, GSLB_SERVICE_HEALTH_MONITOR_ONLY_NON_AVI_MEMBERS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS"
-            hm_off:
-                description: "This field is an internal field and is used in SE. Field introduced in 18.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: boolean
             include_additional_records:
                 description: "If enabled, provide the SRV target's resolved IP in the response SRV GSLB service. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
@@ -743,9 +729,6 @@ definitions:
                 default: True
             uuid:
                 description: "UUID of the GSLB service. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            vrf_uuid_for_gs:
-                description: "VRF name of the DNS VS to which this GS is bound to. In case it is bound to multiple DNS VSes on the SE, this field will be inherited from the first DNS VS in the configuration order. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             wildcard_match:
                 description: "Enable wild-card match of fqdn  if an exact match is not found in the DNS table, the longest match is chosen by wild-carding the fqdn in the DNS request. Default is false. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

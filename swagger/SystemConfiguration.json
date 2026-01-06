@@ -523,17 +523,6 @@
                 }
             }
         },
-        "ConfigPbAttributes": {
-            "type": "object",
-            "properties": {
-                "version": {
-                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "default": 1,
-                    "format": "uint32"
-                }
-            }
-        },
         "ControllerAnalyticsPolicy": {
             "type": "object",
             "properties": {
@@ -1118,10 +1107,6 @@
                 "common_criteria_mode": {
                     "description": "Common criteria mode's current state. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
-                },
-                "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "controller_analytics_policy": {
                     "description": "Controller metrics event dynamic thresholds can be set here. CONTROLLER_CPU_HIGH and CONTROLLER_MEM_HIGH evets can take configured dynamic thresholds. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
