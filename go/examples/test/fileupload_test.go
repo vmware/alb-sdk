@@ -35,7 +35,7 @@ func TestFileUpload(t *testing.T) {
 	}
 
 	uri := "hsmpackages?hsmtype=safenet"
-	local_file := "/mnt/files/hsm/safenet_pkg/7.3/safenet.tar"
+	local_file := os.Getenv("HSM_SAFENET_PACKAGE_PATH")
 	local_file_ptr := mustOpen(local_file)
 	err = aviClient.AviSession.PostMultipartRequest("POST", uri, local_file_ptr)
 	if err != nil {
