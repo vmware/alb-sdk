@@ -4,10 +4,11 @@ package test
 
 import (
 	"fmt"
-	"github.com/vmware/alb-sdk/go/clients"
-	"github.com/vmware/alb-sdk/go/session"
 	"os"
 	"testing"
+
+	"github.com/vmware/alb-sdk/go/clients"
+	"github.com/vmware/alb-sdk/go/session"
 )
 
 func TestAviClientWithInvalidController(t *testing.T) {
@@ -70,7 +71,7 @@ func TestUpdatePassword(t *testing.T) {
 	}
 
 	//Teardown
-	data["password"] = password
+	data["password"] = os.Getenv("NEW_AVI_PASSWORD")
 	data["old_password"] = new_password
 	err = aviClientNewPassword.AviSession.Put(path, data, &robj)
 	if err != nil {
