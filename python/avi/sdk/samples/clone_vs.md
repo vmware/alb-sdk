@@ -362,3 +362,8 @@ Changelog:
 2.0.11:
 
 * Add support for the reuseds flag when cloning between Controllers or tenants
+
+2.0.12:
+
+* Support for the new content rewrite object model in version 31.2.1 that supports request rewrite and pre-rule rewritable content string groups
+* Add special handling when cloning VS to 31.2.1 and later when the source VS has a content rewrite profile present with no rewrite rules

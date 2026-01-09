@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 10]
+AVICLONE_VERSION = [2, 0, 11]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -93,6 +93,10 @@ class AviClone:
         'vs-signingcert': 'saml_sp_config/signing_ssl_key_and_certificate_ref',
         'vs-wafpolicy': 'waf_policy_ref',
         'vs-rewritablecontent': 'content_rewrite/rewritable_content_ref',
+        'vs-rewritablecontent-req': 'content_rewrite/req_rewrite_rules/'
+                                    'rewritable_content_ref',
+        'vs-rewritablecontent-rsp': 'content_rewrite/rsp_rewrite_rules/'
+                                    'rewritable_content_ref',
         'vs-authprofile': 'client_auth/auth_profile_ref',
         'vs-ssoauthprofile': 'sso_policy/default_auth_profile_ref',
         'vs-ssopolicy': 'sso_policy_ref',
@@ -178,7 +182,7 @@ class AviClone:
                                                 tenant_uuid=self.otenant_uuid)
 
         if other_vrf and not other_cloud:
-            raise Exception('Cloning to a VRF requires '
+            raise ValueError('Cloning to a VRF requires '
                             'target cloud to be specified also')
 
         if (other_vrf and self.oc_obj['vtype'] == 'CLOUD_NSXT' and
@@ -318,8 +322,8 @@ class AviClone:
                                 break
 
                     if obj is None:
-                        raise Exception('A %s with name %s could not be found'
-                                        % (obj_type, obj_name))
+                        raise RuntimeError('A %s with name %s could not be '
+                                           'found' % (obj_type, obj_name))
                     obj_uuid = obj.get('uuid', None)
 
         return obj, obj_name, obj_uuid
@@ -363,9 +367,9 @@ class AviClone:
                         tenant_uuid=self.otenant_uuid)
                 logger.debug('Forced unique name "%s"', new_name)
             else:
-                raise Exception('An object of type %s with '
-                                'name "%s" already exists'
-                                % (object_type, new_name))
+                raise RuntimeError('An object of type %s with '
+                                   'name "%s" already exists'
+                                   % (object_type, new_name))
         return new_name
 
     def clone_object(self, old_name, new_name, object_type=None,
@@ -437,8 +441,8 @@ class AviClone:
                                         else None))
 
         if not old_obj:
-            raise Exception('Object of type %s named %s could not be found'
-                            % (object_type, old_name))
+            raise RuntimeError('Object of type %s named %s could not be found'
+                               % (object_type, old_name))
 
         if not new_name:
             # If new_name is not specified, assume new object should use the
@@ -499,7 +503,7 @@ class AviClone:
                                    new_name, r.status_code, r.text))
             logger.debug(exception_string)
             logger.debug(old_obj)
-            raise Exception(exception_string)
+            raise RuntimeError(exception_string)
 
         except Exception as ex:
             # If an exception occurred, delete any intermediate objects we
@@ -507,8 +511,8 @@ class AviClone:
 
             self.delete_objects(created_objs)
 
-            raise Exception('%s\r\n=> Unable to clone %s "%s" as "%s"'
-                            % (ex, object_type, old_name, new_name))
+            raise RuntimeError('%s\r\n=> Unable to clone %s "%s" as "%s"'
+                               % (ex, object_type, old_name, new_name))
 
     def _processobject_pool(self, obj, force_clone):
         """
@@ -582,8 +586,8 @@ class AviClone:
                         subnet, mask = new_placement_split
                         network = None
                     else:
-                        raise Exception('Unable to parse placement network '
-                                        ' info "%s".' % new_placement)
+                        raise RuntimeError('Unable to parse placement network '
+                                           ' info "%s".' % new_placement)
                     placement_network = {}
                     if network:
                         (n_obj, n_name, n_uuid) = self._get_obj_info(
@@ -594,9 +598,9 @@ class AviClone:
                         if n_obj:
                             placement_network['network_ref'] = n_obj['url']
                         else:
-                            raise Exception('Unable to find referenced '
-                                            'placement network "%s" in the '
-                                            ' cloud.' % new_placement[1])
+                            raise RuntimeError('Unable to find referenced '
+                                               'placement network "%s" in the '
+                                               ' cloud.' % new_placement[1])
                         if ':' in subnet:
                             placement_network['subnet6'] = {
                                 'ip_addr': {
@@ -1750,8 +1754,8 @@ class AviClone:
                      old_gs_name, new_gs_name)
 
         if self.api != self.dest_api:
-            raise Exception('Cannot clone GSLB Services to a different '
-                            'Controller.')
+            raise RuntimeError('Cannot clone GSLB Services to a different '
+                               'Controller.')
 
         force_clone = force_clone or []
         new_fqdns = new_fqdns or ['*']
@@ -1764,12 +1768,12 @@ class AviClone:
             g_obj = self.api.get_object_by_name('gslbservice', old_gs_name,
                                                 tenant_uuid=self.tenant_uuid)
         if not g_obj:
-            raise Exception('GSLB Service %s could not be found' %
-                            old_gs_name)
+            raise RuntimeError('GSLB Service %s could not be found' %
+                               old_gs_name)
 
         if g_obj.get('site_persistence_enabled', False):
-            raise Exception('Cannot clone GSLB Service %s as it has site '
-                            'persistence enabled.' % old_gs_name)
+            raise RuntimeError('Cannot clone GSLB Service %s as it has site '
+                               'persistence enabled.' % old_gs_name)
 
         created_objs = []
         warnings = []
@@ -1823,7 +1827,7 @@ class AviClone:
                                                          r.text))
                 logger.debug(exception_string)
                 logger.debug(g_obj)
-                raise Exception(exception_string)
+                raise RuntimeError(exception_string)
         except Exception as ex:
             # If an exception occurred, delete any intermediate objects we have
             # created
@@ -1832,8 +1836,8 @@ class AviClone:
 
             #logger.debug('Exception occurred', exc_info=ex)
 
-            raise Exception('%s\r\n=> Unable to clone GSLB Service "%s" '
-                            'as "%s"' % (ex, old_gs_name, new_gs_name))
+            raise RuntimeError('%s\r\n=> Unable to clone GSLB Service "%s" '
+                               'as "%s"' % (ex, old_gs_name, new_gs_name))
 
     def clone_vs(self, old_vs_name, new_vs_name, enable_vs=False,
                  new_vs_vips=None, new_vs_v6vips=None, new_vs_fips=None,
@@ -1915,8 +1919,8 @@ class AviClone:
         new_fqdns = new_fqdns or ['*']
 
         if new_vs_fips != [None] and len(new_vs_vips) != len(new_vs_fips):
-            raise Exception('Cannot clone Virtual Service if number of VIPs '
-                            'and number of FIPs is not equal')
+            raise RuntimeError('Cannot clone Virtual Service if number of VIPs '
+                               'and number of FIPs is not equal')
 
         if old_vs_name.startswith('virtualservice/'):
             v_obj = self.api.get(old_vs_name,
@@ -1926,8 +1930,8 @@ class AviClone:
             v_obj = self.api.get_object_by_name('virtualservice', old_vs_name,
                                                 tenant_uuid=self.tenant_uuid)
         if not v_obj:
-            raise Exception('Virtual Service %s could not be found' %
-                            old_vs_name)
+            raise RuntimeError('Virtual Service %s could not be found' %
+                               old_vs_name)
 
 
         is_child_vs = (v_obj['type'] == 'VS_TYPE_VH_CHILD')
@@ -1940,11 +1944,11 @@ class AviClone:
         if vh_type:
             if (vh_type in ('sni_parent', 'evh_parent', 'no_vh')
                 and is_child_vs and not(manual_vsvip)):
-                raise Exception('Existing VsVip must be specified in order to '
-                                'clone a child VS to a parent/non-VH VS')
+                raise RuntimeError('Existing VsVip must be specified in order '
+                                   'to clone a child VS to a parent/non-VH VS')
             if (vh_type in ('sni_child', 'ech_child') and not(is_child_vs)
                 and not(new_parent)):
-                raise Exception('Parent Virtual Service must be specified')
+                raise RuntimeError('Parent Virtual Service must be specified')
             if vh_type == 'sni_parent':
                 v_obj['vh_type'] = 'VS_TYPE_VH_SNI'
                 v_obj['type'] = 'VS_TYPE_VH_PARENT'
@@ -2045,17 +2049,17 @@ class AviClone:
                     if pvs_obj:
                         v_obj['vh_parent_vs_ref'] = pvs_obj['url']
                     else:
-                        raise Exception('Unable to locate parent VS "%s"%s' %
-                                        (new_parent, (' in tenant "%s"' %
+                        raise RuntimeError('Unable to locate parent VS "%s"%s' %
+                                           (new_parent, (' in tenant "%s"' %
                                                       self.other_tenant) if
-                                         self.other_tenant else ''))
+                                           self.other_tenant else ''))
                 vsvip_obj = None
             elif manual_vsvip:
                 vsvip_obj = self.dest_api.get_object_by_name(
                     'vsvip', manual_vsvip, tenant_uuid=self.otenant_uuid)
                 if not(vsvip_obj):
-                    raise Exception('Unable to locate VsVip "%s"'
-                                    % manual_vsvip)
+                    raise RuntimeError('Unable to locate VsVip "%s"'
+                                       % manual_vsvip)
                 logger.debug('Trying to use existing VsVip "%s":%s' %
                              (manual_vsvip, vsvip_obj['uuid']))
             else:
@@ -2094,15 +2098,16 @@ class AviClone:
                             vip.pop('ip_address', None)
                             vip.pop('ip6_address', None)
                         else:
-                            raise Exception('Existing VS does not have '
-                                            'auto-allocate enabled')
+                            raise RuntimeError('Existing VS does not have '
+                                               'auto-allocate enabled')
                         if vip['auto_allocate_floating_ip'] is True:
                             vip.pop('floating_ip', None)
                 else:
                     # Update VIPs in destination VS
 
                     if len(new_vs_vips) != len(new_vs_v6vips):
-                        raise Exception('Number of V4 and V6 VIPs should match.')
+                        raise RuntimeError('Number of V4 and V6 VIPs '
+                                           'should match.')
 
                     vsvip_obj['vip'] = []
                     for c, (new_vs_vip,
@@ -2228,9 +2233,9 @@ class AviClone:
                                     mask6 = None
                                     network = None
                                 else:
-                                    raise Exception('Unable to parse placement '
-                                                    'network info "%s".'
-                                                    % vs_placement_data)
+                                    raise ValueError('Unable to parse placement '
+                                                     'network info "%s".'
+                                                     % vs_placement_data)
                                 if network:
                                     (n_obj, n_name, n_uuid) = self._get_obj_info(
                                         obj_type='network',
@@ -2240,7 +2245,7 @@ class AviClone:
                                     if n_obj:
                                         placement_network['network_ref'] = n_obj['url']
                                     else:
-                                        raise Exception('Unable to find '
+                                        raise RuntimeError('Unable to find '
                                                 'referenced placement network '
                                                 '"%s" in the cloud.'% network)
                                 if subnet6:
@@ -2385,6 +2390,24 @@ class AviClone:
                                                        force_clone=force_clone)
                     created_objs.extend(s_created_objs)
                     warnings.extend(s_warnings)
+
+            # Fix up VS with empty content rewrite profile if cloning to
+            # version 31.2.1 or later to avoid deprecation error for
+            # content_rewrite_profile_ref. VS may have such a configuration
+            # if created via the UI in earlier releases.
+            #
+            # This configuration is handled during upgrade but not by API
+            # versioning.
+
+            if (self.version_range(self.dest_api.remote_api_version['Version'],
+                              min_version='31.2.1') and
+                'content_rewrite' in v_obj):
+                cr_data = v_obj['content_rewrite']
+                if ('req_rewrite_rules' not in cr_data and
+                    'rsp_rewrite_rules' not in cr_data):
+                    logger.debug('Removing content_rewrite profile with '
+                                 'no rewrite rules from the VS')
+                    v_obj.pop('content_rewrite', None)
 
             # Remove unique atributes and rename
 
@@ -2532,8 +2555,8 @@ class AviClone:
                 try:
                     v_obj['se_group_ref'] = new_seg_obj[0]['url']
                 except IndexError:
-                    raise Exception('A service engine group with name %s could'
-                                    ' not be found' % new_segroup)
+                    raise RuntimeError('A service engine group with name %s '
+                                       'could not be found' % new_segroup)
 
             v_obj['enabled'] = enable_vs
 
@@ -2699,8 +2722,8 @@ class AviClone:
                     if new_ds_obj:
                         dsset['vs_datascript_set_ref'] = new_ds_obj['url']
                     else:
-                        raise Exception('Unable to reuse VsDataScriptSet '
-                                        '"%s"' % ds_name)
+                        raise RuntimeError('Unable to reuse VsDataScriptSet '
+                                           '"%s"' % ds_name)
 
             valid_ref_objects = self.VALID_VS_REF_OBJECTS
 
@@ -2732,7 +2755,7 @@ class AviClone:
                                             r.text))
                         logger.debug(exception_string)
                         logger.debug(vsvip_obj)
-                        raise Exception(exception_string)
+                        raise RuntimeError(exception_string)
                     created_objs.append(new_vsvip_obj)
                     self.actions += ['Cloned vsvip "%s"%s'
                                     % (new_vsvip_obj['name'],
@@ -2776,7 +2799,7 @@ class AviClone:
                                                          r.text))
                 logger.debug(exception_string)
                 logger.debug(v_obj)
-                raise Exception(exception_string)
+                raise RuntimeError(exception_string)
 
         except Exception as ex:
             # If an exception occurred, delete any intermediate objects we have
@@ -2786,8 +2809,8 @@ class AviClone:
 
             #logger.debug('Exception occurred', exc_info=ex)
 
-            raise Exception('%s\r\n=> Unable to clone Virtual Service "%s" '
-                            'as "%s"' % (ex, old_vs_name, new_vs_name))
+            raise RuntimeError('%s\r\n=> Unable to clone Virtual Service "%s" '
+                               'as "%s"' % (ex, old_vs_name, new_vs_name))
 
 # MAIN PROGRAM
 
@@ -2862,7 +2885,7 @@ if __name__ == '__main__':
                         help='Clone the pool group to a different cloud',
                         metavar='other_cloud')
     parser.add_argument('-2v', '--tovrf',
-                        help='The optional new VRF for the cloned Virtual Servicse/Pools',
+                        help='The optional new VRF for the cloned Virtual Services/Pools',
                         metavar='other_vrf')
     parser.add_argument('-map', '--mapservers',
                         help='List of server IP addresses to match '
@@ -2992,9 +3015,9 @@ if __name__ == '__main__':
             if controller2:
                 if (args.obj_type in ['vs', 'pool', 'poolgroup']
                         and not args.tocloud):
-                    raise Exception('Destination cloud should be specified '
-                                    'when cloning %s to a different '
-                                    'controller' % args.obj_type)
+                    raise RuntimeError('Destination cloud should be specified '
+                                       'when cloning %s to a different '
+                                       'controller' % args.obj_type)
 
                 while not password2:
                     password2 = getpass.getpass('Password for %s@%s:' %
@@ -3138,8 +3161,8 @@ if __name__ == '__main__':
                     # VS rather than values per new VS
 
                     if len(vips) != len(v6vips):
-                        raise Exception('Number of VIPs and V6 VIPs'
-                                        'should match.')
+                        raise RuntimeError('Number of VIPs and V6 VIPs'
+                                           'should match.')
 
                     vips = [vips]
                     fips = [fips]
@@ -3161,28 +3184,28 @@ if __name__ == '__main__':
                         vsplacements = [[vsplacement] for vsplacement
                                         in vsplacements]
                     else:
-                        raise Exception('The number of VIPs (%d: %s), V6VIPs '
-                                        '(%d: %s), FIPs (%d: %s), FQDNs '
-                                        '(%d: %s), Placements (%d: %s) '
-                                        'and new VS names (%d: %s) '
-                                        'must be consistent.' %
-                                        (len(vips),
-                                         ','.join(
-                                             [vip or '-' for vip in vips]),
-                                         len(v6vips),
-                                            ','.join(
-                                                [v6vip or '-' for v6vip in v6vips]),
-                                            len(fips),
-                                            ','.join(
-                                                [fip or '-' for fip in fips]),
-                                            len(fqdns),
-                                            ','.join(
-                                                [fqdn or '-' for fqdn in fqdns]),
-                                            len(vsplacements),
-                                            ','.join([vsplacement or '-'
-                                                      for vsplacement in vsplacements]),
-                                            len(new_vs_names),
-                                            ','.join(new_vs_names)))
+                        raise RuntimeError('The number of VIPs (%d: %s), V6VIPs '
+                            '(%d: %s), FIPs (%d: %s), FQDNs '
+                            '(%d: %s), Placements (%d: %s) '
+                            'and new VS names (%d: %s) '
+                            'must be consistent.' %
+                            (len(vips),
+                                ','.join(
+                                    [vip or '-' for vip in vips]),
+                                len(v6vips),
+                                ','.join(
+                                    [v6vip or '-' for v6vip in v6vips]),
+                                len(fips),
+                                ','.join(
+                                    [fip or '-' for fip in fips]),
+                                len(fqdns),
+                                ','.join(
+                                    [fqdn or '-' for fqdn in fqdns]),
+                                len(vsplacements),
+                                ','.join([vsplacement or '-'
+                                            for vsplacement in vsplacements]),
+                                len(new_vs_names),
+                                ','.join(new_vs_names)))
 
                 def flag_map(x): return x if x is None else (x == 'true')
 
@@ -3303,13 +3326,13 @@ if __name__ == '__main__':
                     if len(fqdns) == num_new_gs:
                         fqdns = [[fqdn] for fqdn in fqdns]
                     else:
-                        raise Exception('The number of FQDNs '
-                                        '(%d: %s) and new GS names (%d: %s) '
-                                        'must be consistent.' %
-                                        (len(fqdns),
-                                         ','.join(
-                                             [fqdn or '-' for fqdn in fqdns]),
-                                         len(new_gs_names),
+                        raise RuntimeError('The number of FQDNs '
+                                           '(%d: %s) and new GS names (%d: %s) '
+                                           'must be consistent.' %
+                                           (len(fqdns),
+                                            ','.join(
+                                               [fqdn or '-' for fqdn in fqdns]),
+                                            len(new_gs_names),
                                             ','.join(new_gs_names)))
 
                 for (new_gs_name, new_fqdns) in zip(new_gs_names, fqdns):
