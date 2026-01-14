@@ -706,12 +706,12 @@ definitions:
             opensearch_num_shards:
                 description: "Number of shards for OpenSearch. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer
-                default: 1
+                default: 9
                 format: uint32
             opensearch_port:
                 description: "OpenSearch port. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
-                default: "9200"
+                default: "5010"
             query_queue_buffer_size:
                 description: "Buffer size for query queues. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: integer

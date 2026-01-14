@@ -512,9 +512,6 @@ definitions:
             client_behavior_detector:
                 description: "The client behavior configuration used in this policy. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BotConfigClientBehavior'
-            configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/ConfigPbAttributes'
             description:
                 description: "Human-readable description of this Bot Detection Policy. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
@@ -567,17 +564,6 @@ definitions:
                     $ref: "#/definitions/BotDetectionPolicy"
             next:
                 type: string
-    ConfigPbAttributes:
-        type: object
-        properties:
-            created_by:
-                description: "Identifies the user type that created the configuration. Nil for non-service users. Enum options - SERVICE_USER. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            version:
-                description: "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                default: 1
-                format: uint32
     CookieMatch:
         type: object
         required:
