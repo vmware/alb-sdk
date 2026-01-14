@@ -57,6 +57,9 @@ type ControllerProperties struct {
 	// Use Ansible for SE creation in baremetal. Field introduced in 17.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BmUseAnsible *bool `json:"bm_use_ansible,omitempty"`
 
+	// Number of days to retain JWT tokens generated during certificate rotation. Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months, 180 = 6 months). Allowed values are 1-3650. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	CertRotationJwtRetentionDays *uint32 `json:"cert_rotation_jwt_retention_days,omitempty"`
+
 	// Enforce VsVip FQDN syntax checks. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CheckVsvipFqdnSyntax *bool `json:"check_vsvip_fqdn_syntax,omitempty"`
 

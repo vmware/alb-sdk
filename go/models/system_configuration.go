@@ -75,6 +75,9 @@ type SystemConfiguration struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NtpConfiguration *NTPConfiguration `json:"ntp_configuration,omitempty"`
 
+	// Indicates whether password policy fields are managed by VCF-Ops. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	PasswordPolicyManagedAtOps *bool `json:"password_policy_managed_at_ops,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PortalConfiguration *PortalConfiguration `json:"portal_configuration,omitempty"`
 

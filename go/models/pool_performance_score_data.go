@@ -28,9 +28,9 @@ type PoolPerformanceScoreData struct {
 	// Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ReasonAttr *string `json:"reason_attr,omitempty"`
 
-	//  It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Ref *string `json:"ref,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumFinishedConns *float64 `json:"sum_finished_conns,omitempty"`
+
+	//  It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	UUID *string `json:"uuid,omitempty"`
 }
