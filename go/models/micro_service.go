@@ -19,9 +19,6 @@ type MicroService struct {
 	// Checksum of cloud configuration for Microservice. Internally set by cloud connector. Field introduced in 17.2.8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudConfigCksum *string `json:"cloud_config_cksum,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// The list of containers for this microservice. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Containers []*MicroServiceContainer `json:"containers,omitempty"`
 

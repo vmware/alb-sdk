@@ -15,9 +15,6 @@ type Scheduler struct {
 	// Backup Configuration to be executed by this scheduler. It is a reference to an object of type BackupConfiguration. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BackupConfigRef *string `json:"backup_config_ref,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Enabled *bool `json:"enabled,omitempty"`
 

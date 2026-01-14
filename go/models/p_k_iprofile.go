@@ -18,9 +18,6 @@ type PKIprofile struct {
 	// List of Certificate Authorities (Root and Intermediate) trusted that is used for certificate validation. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CaCerts []*SSLCertificate `json:"ca_certs,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Creator name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CreatedBy *string `json:"created_by,omitempty"`
 

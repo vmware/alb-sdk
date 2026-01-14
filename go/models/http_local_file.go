@@ -15,7 +15,4 @@ type HTTPLocalFile struct {
 	// File content to used in the local HTTP response body. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	FileContent *string `json:"file_content"`
-
-	// File content length. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	FileLength *uint32 `json:"file_length,omitempty"`
 }

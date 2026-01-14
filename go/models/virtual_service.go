@@ -37,12 +37,6 @@ type VirtualService struct {
 	// Read Only: true
 	AzureAvailabilitySet *string `json:"azure_availability_set,omitempty"`
 
-	// LOCAL_PREF to be used for VsVip advertised. Applicable only over iBGP. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	BgpLocalPreference *uint32 `json:"bgp_local_preference,omitempty"`
-
-	// Number of times the local AS should be prepended additionally to VsVip. Applicable only over eBGP. Allowed values are 1-10. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	BgpNumAsPathPrepend *uint32 `json:"bgp_num_as_path_prepend,omitempty"`
-
 	// Select BGP peers, using peer label, for VsVip advertisement. Field introduced in 20.1.5. Maximum of 128 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	BgpPeerLabels []string `json:"bgp_peer_labels,omitempty"`
 
@@ -63,9 +57,6 @@ type VirtualService struct {
 
 	//  Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- CLOUD_NONE,CLOUD_VCENTER), Basic (Allowed values- CLOUD_NONE,CLOUD_NSXT) edition.
 	CloudType *string `json:"cloud_type,omitempty"`
-
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Rate limit the incoming connections to this virtual service. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.
 	ConnectionsRateLimit *RateProfile `json:"connections_rate_limit,omitempty"`
@@ -297,9 +288,6 @@ type VirtualService struct {
 
 	// Datascripts applied on the data traffic of the Virtual Service. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.
 	VsDatascripts []*VSDataScripts `json:"vs_datascripts,omitempty"`
-
-	// Checksum of cloud configuration for VsVip. Internally set by cloud connector. Field introduced in 17.2.9, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	VsvipCloudConfigCksum *string `json:"vsvip_cloud_config_cksum,omitempty"`
 
 	// Mostly used during the creation of Shared VS, this field refers to entities that can be shared across Virtual Services. It is a reference to an object of type VsVip. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsvipRef *string `json:"vsvip_ref,omitempty"`

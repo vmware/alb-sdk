@@ -24,9 +24,6 @@ type Cloud struct {
 	//  Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	CloudstackConfiguration *CloudStackConfiguration `json:"cloudstack_configuration,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Custom tags for all Avi created resources in the cloud infrastructure. Field introduced in 17.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CustomTags []*CustomTag `json:"custom_tags,omitempty"`
 

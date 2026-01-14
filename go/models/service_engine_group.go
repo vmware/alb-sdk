@@ -96,9 +96,6 @@ type ServiceEngineGroup struct {
 	// Enable config debugs on all cores of SE. Field introduced in 17.2.13,18.1.5,18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConfigDebugsOnAllCores *bool `json:"config_debugs_on_all_cores,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Percentage of memory for connection state. This will come at the expense of memory used for HTTP in-memory cache. Allowed values are 10-90. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnectionMemoryPercentage *uint32 `json:"connection_memory_percentage,omitempty"`
 
@@ -302,9 +299,6 @@ type ServiceEngineGroup struct {
 
 	// Instance/Flavor name for SE instance. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	InstanceFlavor *string `json:"instance_flavor,omitempty"`
-
-	// Additional information associated with instance_flavor. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	InstanceFlavorInfo *CloudFlavor `json:"instance_flavor_info,omitempty"`
 
 	// Iptable Rules. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Iptables []*IptableRuleSet `json:"iptables,omitempty"`

@@ -18,9 +18,6 @@ type CloudConnectorUser struct {
 	//  Field introduced in 17.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	AzureUserpass *AzureUserPassCredentials `json:"azure_userpass,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Credentials for Google Cloud Platform. Field introduced in 18.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	GcpCredentials *GCPCredentials `json:"gcp_credentials,omitempty"`
 

@@ -48,9 +48,6 @@ type AnalyticsProfile struct {
 	// Configure to stream logs to an external server. Field introduced in 17.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ClientLogStreamingConfig *ClientLogStreamingConfig `json:"client_log_streaming_config,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// A connection between client and Avi is considered lossy when more than this percentage of out of order packets are received. Allowed values are 1-100. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 50), Basic (Allowed values- 50) edition.
 	ConnLossyOooThreshold *uint32 `json:"conn_lossy_ooo_threshold,omitempty"`
 

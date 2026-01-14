@@ -9,5 +9,5 @@ package models
 type PoolGroupRefs struct {
 
 	// UUID of the pool group. It is a reference to an object of type PoolGroup. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	Ref *string `json:"ref,omitempty"`
+	UUID *string `json:"uuid,omitempty"`
 }

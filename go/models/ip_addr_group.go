@@ -15,9 +15,6 @@ type IPAddrGroup struct {
 	// Configure IP address(es). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Addrs []*IPAddr `json:"addrs,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Populate the IP address ranges from the geo database for this country. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CountryCodes []string `json:"country_codes,omitempty"`
 

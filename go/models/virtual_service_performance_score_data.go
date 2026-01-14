@@ -31,14 +31,14 @@ type VirtualServicePerformanceScoreData struct {
 	// Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ReasonAttr *string `json:"reason_attr,omitempty"`
 
-	//  It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Ref *string `json:"ref,omitempty"`
-
 	// Rum Apdexr when client insights is active. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RumApdexr *float64 `json:"rum_apdexr,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumFinishedConns *float64 `json:"sum_finished_conns,omitempty"`
+
+	//  It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	UUID *string `json:"uuid,omitempty"`
 
 	// Percentage time of last 5mins that the VirtualService has been up. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsUptime *float64 `json:"vs_uptime,omitempty"`

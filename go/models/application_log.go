@@ -45,9 +45,6 @@ type ApplicationLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Cacheable *bool `json:"cacheable,omitempty"`
 
-	// Byte stream of client cipher list sent on SSL_R_NO_SHARED_CIPHER error.This byte stream is used to generate client_cipher_list. Field introduced in 18.1.4, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	CipherBytes *string `json:"cipher_bytes,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientBrowser *string `json:"client_browser,omitempty"`
 

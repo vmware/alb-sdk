@@ -21,9 +21,6 @@ type IPAMDNSProviderProfile struct {
 	// Provider details if type is Microsoft Azure. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AzureProfile *IPAMDNSAzureProfile `json:"azure_profile,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Provider details if type is Custom. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CustomProfile *IPAMDNSCustomProfile `json:"custom_profile,omitempty"`
 

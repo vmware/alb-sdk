@@ -16,7 +16,7 @@ type ApplicationPerformanceScoreData struct {
 	ReasonAttr *string `json:"reason_attr,omitempty"`
 
 	//  It is a reference to an object of type Application. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Ref *string `json:"ref,omitempty"`
+	UUID *string `json:"uuid,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VirtualservicePerformanceScores []*VirtualServicePerformanceScore `json:"virtualservice_performance_scores,omitempty"`

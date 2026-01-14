@@ -19,5 +19,5 @@ type ServiceEnginePerformanceScoreData struct {
 	ReasonAttr *string `json:"reason_attr,omitempty"`
 
 	//  It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Ref *string `json:"ref,omitempty"`
+	UUID *string `json:"uuid,omitempty"`
 }

@@ -27,7 +27,4 @@ type GslbThirdPartySite struct {
 
 	// User can overide the individual GslbPoolMember ratio for all the VIPs of this site. If this field is not configured, then the GslbPoolMember ratio gets applied. . Allowed values are 1-20. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Ratio *uint32 `json:"ratio,omitempty"`
-
-	// This field is used as a key in the datastore for the GslbThirdPartySite table to encapsulate site-related info. . Field introduced in 17.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	UUID *string `json:"uuid,omitempty"`
 }

@@ -21,9 +21,6 @@ type SystemConfiguration struct {
 	// Common criteria mode's current state. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	CommonCriteriaMode *bool `json:"common_criteria_mode,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Controller metrics event dynamic thresholds can be set here. CONTROLLER_CPU_HIGH and CONTROLLER_MEM_HIGH evets can take configured dynamic thresholds. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	ControllerAnalyticsPolicy *ControllerAnalyticsPolicy `json:"controller_analytics_policy,omitempty"`
 
