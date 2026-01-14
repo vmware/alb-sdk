@@ -23,7 +23,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /analytics/Metrics/collection/:
+    /analytics/metrics/collection/:
         post:
             consumes:
                 -   application/json
@@ -92,7 +92,7 @@ paths:
                 401:
                     description: log in failed
 
-    /analytics/Metrics/controller/:
+    /analytics/metrics/controller/:
         get:
             consumes:
                 -   application/json
@@ -306,7 +306,7 @@ paths:
                         $ref: "#/definitions/MetricsQueryResponseApiResponse"
                 401:
                     description: log in failed
-    /analytics/Metrics/controller/{uuid}:
+    /analytics/metrics/controller/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -520,7 +520,7 @@ paths:
                         $ref: "#/definitions/MetricsQueryResponse"
                 401:
                     description: log in failed
-    /analytics/Metrics/pool/:
+    /analytics/metrics/pool/:
         get:
             consumes:
                 -   application/json
@@ -734,7 +734,7 @@ paths:
                         $ref: "#/definitions/MetricsQueryResponseApiResponse"
                 401:
                     description: log in failed
-    /analytics/Metrics/pool/{uuid}:
+    /analytics/metrics/pool/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -948,7 +948,7 @@ paths:
                         $ref: "#/definitions/MetricsQueryResponse"
                 401:
                     description: log in failed
-    /analytics/Metrics/serviceengine/:
+    /analytics/metrics/serviceengine/:
         get:
             consumes:
                 -   application/json
@@ -1162,7 +1162,7 @@ paths:
                         $ref: "#/definitions/MetricsQueryResponseApiResponse"
                 401:
                     description: log in failed
-    /analytics/Metrics/serviceengine/{uuid}:
+    /analytics/metrics/serviceengine/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -1376,7 +1376,7 @@ paths:
                         $ref: "#/definitions/MetricsQueryResponse"
                 401:
                     description: log in failed
-    /analytics/Metrics/virtualservice/:
+    /analytics/metrics/virtualservice/:
         get:
             consumes:
                 -   application/json
@@ -1590,7 +1590,7 @@ paths:
                         $ref: "#/definitions/MetricsQueryResponseApiResponse"
                 401:
                     description: log in failed
-    /analytics/Metrics/virtualservice/{uuid}:
+    /analytics/metrics/virtualservice/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -1809,7 +1809,7 @@ definitions:
         type: object
         properties:
             metric_requests:
-                description: "list of Metrics queries"
+                description: "list of metrics queries"
                 type: array
                 items:
                     $ref: '#/definitions/MetricsQuery'
@@ -1817,7 +1817,7 @@ definitions:
         type: object
         properties:
             series:
-                description: "list of Metrics data series map"
+                description: "list of metrics data series map"
                 additionalProperties:
                     $ref: '#/definitions/MetricsDataSeries'
     MetricsData:

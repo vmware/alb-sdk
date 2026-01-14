@@ -602,17 +602,6 @@
                 }
             }
         },
-        "ConfigPbAttributes": {
-            "type": "object",
-            "properties": {
-                "version": {
-                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "default": 1,
-                    "format": "uint32"
-                }
-            }
-        },
         "CustomIpamSubnet": {
             "type": "object",
             "required": [
@@ -958,10 +947,6 @@
                     "description": "Password for API access for Infoblox appliance. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
-                "profile_url": {
-                    "description": "url of the profile writen to /etc/hosts for HA between IPv6 and IPv4. Field deprecated in 31.1.1. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
                 "usable_alloc_subnets": {
                     "description": "Subnets to use for Infoblox IP allocation. Field introduced in 18.2.8, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -1093,10 +1078,6 @@
                 "azure_profile": {
                     "description": "Provider details if type is Microsoft Azure. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpamDnsAzureProfile"
-                },
-                "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "custom_profile": {
                     "description": "Provider details if type is Custom. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",

@@ -5700,17 +5700,6 @@
                 }
             }
         },
-        "ConfigPbAttributes": {
-            "type": "object",
-            "properties": {
-                "version": {
-                    "description": "Version sequence number that monotonically advances with each configuration update event. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "default": 1,
-                    "format": "uint32"
-                }
-            }
-        },
         "ConnectionClearFilter": {
             "type": "object",
             "properties": {
@@ -6239,11 +6228,6 @@
                 "file_content": {
                     "description": "File content to used in the local HTTP response body. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
-                },
-                "file_length": {
-                    "description": "File content length. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "uint32"
                 }
             }
         },
@@ -7487,10 +7471,6 @@
                     "description": "Authorization Policy Settings. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/AuthorizationPolicy"
                 },
-                "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/ConfigPbAttributes"
-                },
                 "markers": {
                     "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -7853,16 +7833,6 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "bgp_local_preference": {
-                    "description": "LOCAL_PREF to be used for VsVip advertised. Applicable only over iBGP. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "uint32"
-                },
-                "bgp_num_as_path_prepend": {
-                    "description": "Number of times the local AS should be prepended additionally to VsVip. Applicable only over eBGP. Allowed values are 1-10. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "uint32"
-                },
                 "bgp_peer_labels": {
                     "description": "Select BGP peers, using peer label, for VsVip advertisement. Field introduced in 20.1.5. Maximum of 128 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -7894,10 +7864,6 @@
                     "description": " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- CLOUD_NONE,CLOUD_VCENTER), Basic (Allowed values- CLOUD_NONE,CLOUD_NSXT) edition.",
                     "type": "string",
                     "default": "CLOUD_NONE"
-                },
-                "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "connections_rate_limit": {
                     "description": "Rate limit the incoming connections to this virtual service. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.",
@@ -8272,10 +8238,6 @@
                     "items": {
                         "$ref": "#/definitions/VSDataScripts"
                     }
-                },
-                "vsvip_cloud_config_cksum": {
-                    "description": "Checksum of cloud configuration for VsVip. Internally set by cloud connector. Field introduced in 17.2.9, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
                 },
                 "vsvip_ref": {
                     "description": "Mostly used during the creation of Shared VS, this field refers to entities that can be shared across Virtual Services. It is a reference to an object of type VsVip. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",

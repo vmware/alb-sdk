@@ -189,7 +189,7 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
+            uuid:
                 description: " It is a reference to an object of type Application. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             virtualservice_performance_scores:
@@ -370,14 +370,14 @@ definitions:
             name:
                 description: "Name of the pool. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: "UUID of the pool. It is a reference to an object of type Pool. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
-                type: string
             tenant_ref:
                 description: " It is a reference to an object of type Tenant. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "URL of the pool. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            uuid:
+                description: "UUID of the pool. It is a reference to an object of type Pool. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             vrf_ref:
                 description: "Virtual Routing Context that the pool is bound to. This is used to provide the isolation of the set of networks the pool is attached to. The pool inherits the Virtual Routing Conext of the Virtual Service, and this field is used only internally, and is set by pb-transform. It is a reference to an object of type VrfContext. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
@@ -496,13 +496,13 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             sum_finished_conns:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     PoolRuntimeSummary:
         type: object
         required:
@@ -561,9 +561,6 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             server:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -571,6 +568,9 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     ServiceEnginePerformanceScoreData:
         type: object
         required:
@@ -585,7 +585,7 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the performance score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
+            uuid:
                 description: " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     TimeStamp:
@@ -655,9 +655,6 @@ definitions:
             reason_attr:
                 description: "Attribute that is dominating the health score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            ref:
-                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
             rum_apdexr:
                 description: "Rum Apdexr when client insights is active. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
@@ -666,6 +663,9 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
+            uuid:
+                description: " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
             vs_uptime:
                 description: "Percentage time of last 5mins that the VirtualService has been up. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
@@ -673,6 +673,6 @@ definitions:
     VsRefs:
         type: object
         properties:
-            ref:
+            uuid:
                 description: "UUID of the Virtual Service. It is a reference to an object of type VirtualService. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
