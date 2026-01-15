@@ -526,6 +526,9 @@ type ServiceEngineGroup struct {
 	// Management network UUID. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OpenstackMgmtNetworkUUID *string `json:"openstack_mgmt_network_uuid,omitempty"`
 
+	// Allows packed placement on existing SEs with asynchronous spinning up of buffer SEs. Used in packed placement with buffer SEs. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	OptimisticPlacement *bool `json:"optimistic_placement,omitempty"`
+
 	// Amount of extra memory to be reserved for use by the Operating System on a Service Engine. Unit is MB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OsReservedMemory *uint32 `json:"os_reserved_memory,omitempty"`
 
