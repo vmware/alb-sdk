@@ -1740,6 +1740,11 @@
                     "default": 1,
                     "format": "uint32"
                 },
+                "audit_qat_huge_pages": {
+                    "description": "This knob enables audit of QAT Hugepages. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                },
                 "auto_rebalance": {
                     "description": "If set, Virtual Services will be automatically migrated when load on an SE is less than minimum or more than maximum thresholds. Only Alerts are generated when the auto_rebalance is not set. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
                     "type": "boolean"
@@ -1828,6 +1833,11 @@
                     "type": "integer",
                     "default": 50,
                     "format": "uint32"
+                },
+                "control_qat_huge_pages": {
+                    "description": "This knob enables control of QAT Hugepages. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
                 },
                 "core_shm_app_cache": {
                     "description": "Include shared memory for app cache in core file.Requires SE Reboot. Field introduced in 18.2.8, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2561,6 +2571,10 @@
                     "description": "Management network UUID. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
+                "optimistic_placement": {
+                    "description": "Allows packed placement on existing SEs with asynchronous spinning up of buffer SEs. Used in packed placement with buffer SEs. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
                 "os_reserved_memory": {
                     "description": "Amount of extra memory to be reserved for use by the Operating System on a Service Engine. Unit is MB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
@@ -2603,6 +2617,11 @@
                     "description": "Available memory threshold on SE in MB, to get qualified for upgrade operation. Adjusting this knob will override the internal value of available memory threshold for SE, thereby qualifying it for upgrade operation. '0' is a special auto value, which will indicate that memory threshold is calculated based on total memory size of the SE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
+                },
+                "qat_hpage_mem_per_process": {
+                    "description": "This knob is used to set the number of QAT Hugepages. Enum options - QAT_HPAGE_MEM_8MB, QAT_HPAGE_MEM_16MB, QAT_HPAGE_MEM_32MB. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "QAT_HPAGE_MEM_16MB"
                 },
                 "realtime_se_metrics": {
                     "description": "Enable or deactivate real time SE metrics. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",

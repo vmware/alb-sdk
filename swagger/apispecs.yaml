@@ -36216,12 +36216,12 @@ paths:
           description: log in failed
         '404':
           description: object not found
-  /gslbcrmruntime:
+  /gslbhsmruntime:
     get:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime
-      operationId: GET /gslbcrmruntime
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: GET /gslbhsmruntime
       consumes:
       - application/json
       produces:
@@ -36298,14 +36298,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntimeApiResponse'
+            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime
-      operationId: POST /gslbcrmruntime
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: POST /gslbhsmruntime
       consumes:
       - application/json
       produces:
@@ -36339,25 +36339,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbCRMRuntime object creation
+        description: GslbHSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbCRMRuntime'
+          $ref: '#/definitions/GslbHSMRuntime'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntime'
+            $ref: '#/definitions/GslbHSMRuntime'
         '401':
           description: log in failed
-  /gslbcrmruntime/{uuid}:
+  /gslbhsmruntime/{uuid}:
     get:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: GET /gslbcrmruntime/{uuid}
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: GET /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -36427,16 +36427,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntime'
+            $ref: '#/definitions/GslbHSMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbcrmruntime/{uuid}
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -36475,10 +36475,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbCRMRuntime object creation
+        description: GslbHSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbCRMRuntime'
+          $ref: '#/definitions/GslbHSMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -36490,16 +36490,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntime'
+            $ref: '#/definitions/GslbHSMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbcrmruntime/{uuid}
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -36538,10 +36538,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbCRMRuntime object creation
+        description: GslbHSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbCRMRuntime'
+          $ref: '#/definitions/GslbHSMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -36553,16 +36553,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntime'
+            $ref: '#/definitions/GslbHSMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbcrmruntime/{uuid}
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -37010,12 +37010,12 @@ paths:
             type: string
         '404':
           description: object not found
-  /gslbhsmruntime:
+  /gslbcrmruntime:
     get:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: GET /gslbhsmruntime
+      - GslbCRMRuntime
+      description: /gslbcrmruntime
+      operationId: GET /gslbcrmruntime
       consumes:
       - application/json
       produces:
@@ -37092,14 +37092,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
+            $ref: '#/definitions/GslbCRMRuntimeApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: POST /gslbhsmruntime
+      - GslbCRMRuntime
+      description: /gslbcrmruntime
+      operationId: POST /gslbcrmruntime
       consumes:
       - application/json
       produces:
@@ -37133,25 +37133,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbHSMRuntime object creation
+        description: GslbCRMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbHSMRuntime'
+          $ref: '#/definitions/GslbCRMRuntime'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntime'
+            $ref: '#/definitions/GslbCRMRuntime'
         '401':
           description: log in failed
-  /gslbhsmruntime/{uuid}:
+  /gslbcrmruntime/{uuid}:
     get:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: GET /gslbhsmruntime/{uuid}
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: GET /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -37221,16 +37221,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntime'
+            $ref: '#/definitions/GslbCRMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbhsmruntime/{uuid}
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -37269,10 +37269,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbHSMRuntime object creation
+        description: GslbCRMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbHSMRuntime'
+          $ref: '#/definitions/GslbCRMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -37284,16 +37284,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntime'
+            $ref: '#/definitions/GslbCRMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbhsmruntime/{uuid}
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -37332,10 +37332,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbHSMRuntime object creation
+        description: GslbCRMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbHSMRuntime'
+          $ref: '#/definitions/GslbCRMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -37347,16 +37347,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntime'
+            $ref: '#/definitions/GslbCRMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbhsmruntime/{uuid}
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -52003,6 +52003,59 @@ paths:
       - ServiceEngine
       description: /serviceengine/{uuid}/systeminfo/
       operationId: GET /serviceengine/{uuid}/systeminfo/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+  /serviceengine/{uuid}/hugepageinfo/:
+    get:
+      tags:
+      - ServiceEngine
+      description: /serviceengine/{uuid}/hugepageinfo/
+      operationId: GET /serviceengine/{uuid}/hugepageinfo/
       consumes:
       - application/json
       produces:
@@ -86497,6 +86550,58 @@ paths:
         '404':
           description: object not found
   /cloud/{uuid}/gc/:
+    patch:
+      tags:
+      - Cloud
+      description: /cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
     put:
       tags:
       - Cloud
@@ -86541,58 +86646,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - Cloud
-      description: /cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -91821,9 +91874,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -95595,9 +95650,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -100421,9 +100478,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -100912,9 +100971,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -101700,7 +101761,7 @@ definitions:
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
           SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL,
           PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME,
-          APICCONFIGURATION, CIFTABLE, APICTRANSACTION, VIRTUALSERVICESTATEDBCACHESUMMARY,
+          SEHUGEPAGEINFORUNTIME, APICCONFIGURATION, CIFTABLE, APICTRANSACTION, VIRTUALSERVICESTATEDBCACHESUMMARY,
           POOLSTATEDBCACHESUMMARY, SERVERSTATEDBCACHESUMMARY, APICAGENTINTERNAL, APICTRANSACTIONFLAP,
           APICGRAPHINSTANCES, APICEPGS, APICEPGEPS, APICDEVICEPKGVER, APICTENANTS,
           APICVMMDOMAINS, STATECACHESTATS, STATECACHECONFIG, STATECACHEINTERNAL, STATECACHEDNS,
@@ -102028,7 +102089,7 @@ definitions:
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
           SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL,
           PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME,
-          APICCONFIGURATION, CIFTABLE, APICTRANSACTION, VIRTUALSERVICESTATEDBCACHESUMMARY,
+          SEHUGEPAGEINFORUNTIME, APICCONFIGURATION, CIFTABLE, APICTRANSACTION, VIRTUALSERVICESTATEDBCACHESUMMARY,
           POOLSTATEDBCACHESUMMARY, SERVERSTATEDBCACHESUMMARY, APICAGENTINTERNAL, APICTRANSACTIONFLAP,
           APICGRAPHINSTANCES, APICEPGS, APICEPGEPS, APICDEVICEPKGVER, APICTENANTS,
           APICVMMDOMAINS, STATECACHESTATS, STATECACHECONFIG, STATECACHEINTERNAL, STATECACHEDNS,
@@ -102194,64 +102255,64 @@ definitions:
           SE_EV_VS_RL_CONFIG_FAILED, SE_DP_HB_RECOVERED, SE_VS_PKT_BUFF_HIGH, SE_DISCONTINUOUS_TIME_CHANGE,
           SE_HIGH_INGRESS_PROC_LATENCY, SE_VS_DEL_FLOWS_DISRUPTED, SE_NTP_SYNCHRONIZATION_FAILED,
           SE_HIGH_EGRESS_PROC_LATENCY, SE_ARP_RATE_LIMIT_DROP, SE_ND_RATE_LIMIT_DROP,
-          DEBUG_MODE_ON, DEBUG_MODE_OFF, CONFIG_CREATE, CONFIG_UPDATE, CONFIG_DELETE,
-          USER_LOGIN, USER_LOGOUT, CONFIG_ACTION, CONFIG_INTERNAL_CREATE, CONFIG_INTERNAL_UPDATE,
-          USER_PASSWORD_CHANGE_REQUEST, USER_AUTHORIZED_BY_RULE, USER_NOT_AUTHORIZED_BY_ANY_RULE,
-          CONFIG_SE_GRP_FLAVOR_UPDATE, API_VERSION_DEPRECATED, DNS_QUERY_ERROR, ASYNC_PATCH_STATUS,
-          MERGED_ASYNC_PATCH_STATUS, CONFIG_EXPORT, TECHSUPPORT_COLLECTION_STARTED,
-          TECHSUPPORT_COLLECTION_ONGOING, TECHSUPPORT_COLLECTION_SUCCESS, TECHSUPPORT_COLLECTION_SUCCESS_WITH_ERROR,
-          WARNING_EVENT, SSL_CERT_EXPIRE, SSL_KEY_EXPORTED, SSL_CERT_RENEW, SSL_CERT_RENEW_FAILED,
-          SSL_CERT_IGNORED, SSL_CERT_REVOKED, CONTROLLER_NODE_JOINED, CONTROLLER_NODE_LEFT,
-          CONTROLLER_SERVICE_FAILURE, CONTROLLER_LEADER_FAILOVER, CONTROLLER_WARM_REBOOT,
-          CONTROLLER_SERVICE_RESTORED, CONTROLLER_SERVICE_CRITICAL_FAILURE, CONTROLLER_NODE_SHUTDOWN,
-          CONTROLLER_NODE_STARTED, CLUSTER_CONFIG_FAILED, SE_SECURE_KEY_EXCHANGE,
-          CTLR_SECURE_KEY_EXCHANGE, MALFORMED_SECURE_KEY_EXCHANGE, CLUSTIFY_CHECK_EVENT,
-          SYSTEM_UPGRADE_STARTED, SYSTEM_UPGRADE_COMPLETE, SYSTEM_UPGRADE_ABORTED,
-          SYSTEM_ROLLBACK_STARTED, SYSTEM_ROLLBACK_COMPLETE, SYSTEM_ROLLBACK_ABORTED,
-          CONTROLLER_NODE_DB_REPLICATION_FAILED, CONTROLLER_PROCESS_STOPPED, CONTROLLER_MEMORY_BALANCER_DISABLED,
-          CONTROLLER_MEMORY_BALANCER_DEACTIVATED, CONTROLLER_DISCONTINUOUS_TIME_CHANGE,
-          CONTROLLER_PROCESS_MODE_TRANSITION, CONTROLLER_PROCESS_TREND_TRANSITION,
-          CONTROLLER_PROCESS_STOPPED_MEMORY_VIOLATION, LOG_MANAGER_TASKQUEUE_ABNORMAL_GROWTH,
-          USAGE_METERING_REGISTRATION, USAGE_METERING_DE_REGISTRATION, METRIC_THRESHOLD_UP_VIOLATION,
-          LICENSE_EXPIRY, ANOMALY, LICENSE_ADDITION_NOTIF, LICENSE_REMOVAL_NOTIF,
-          METRICS_DB_DISK_FULL, METRICS_DB_QUEUE_FULL, METRICS_DB_QUEUE_HEALTHY, METRICS_DBSYNC_FAILURE,
-          METRICS_GRPC_AUTH_FAILURE, OPENSTACK_ACCESS_FAILURE, OPENSTACK_ACCESS_SUCCESS,
-          OPENSTACK_IMAGE_UPLOAD_FAILURE, OPENSTACK_IMAGE_UPLOAD_SUCCESS, OPENSTACK_SE_VM_CREATED,
-          OPENSTACK_SE_VM_DELETED, OPENSTACK_SE_VM_DELETION_DETECTED, OPENSTACK_VNIC_ADDED,
-          OPENSTACK_VNIC_REMOVED, OPENSTACK_IP_DETACHED, OPENSTACK_IP_ATTACHED, OPENSTACK_SE_CREATION_FAILURE,
-          OPENSTACK_SE_DELETION_FAILURE, OPENSTACK_VNIC_ADDITION_FAILURE, OPENSTACK_VNIC_DELETION_FAILURE,
-          OPENSTACK_IP_DETACH_FAILURE, OPENSTACK_IP_ATTACH_FAILURE, OPENSTACK_LBPROV_AUDIT_FAILURE,
-          OPENSTACK_LBPROV_AUDIT_SUCCESS, OPENSTACK_LBPLUGIN_OP_FAILURE, OPENSTACK_LBPLUGIN_OP_SUCCESS,
-          OPENSTACK_SYNC_SERVICES_SUCCESS, OPENSTACK_SYNC_SERVICES_FAILURE, OPENSTACK_TENANTS_DELETED,
-          OPENSTACK_API_VERSION_CHECK_FAILED, AWS_ACCESS_FAILURE, AWS_ACCESS_SUCCESS,
-          AWS_IMAGE_UPLOAD_FAILURE, AWS_IMAGE_UPLOAD_SUCCESS, AWS_SNS_ACCESS_FAILURE,
-          AWS_SNS_ACCESS_SUCCESS, AWS_SQS_ACCESS_FAILURE, AWS_SQS_ACCESS_SUCCESS,
-          AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_FAILURE, AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_SUCCESS,
-          AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_FAILURE, AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_SUCCESS,
-          AWS_ASG_NOTIFICATION_PROCESSING_FAILURE, AWS_ASG_NOTIFICATION_PROCESSING_SUCCESS,
-          AWS_ASG_NOTIFICATION_INSTANCE_ADDED, AWS_ASG_NOTIFICATION_INSTANCE_REMOVED,
-          AWS_ASG_ACCESS_FAILURE, AWS_ASG_ACCESS_SUCCESS, AWS_ASG_NOTIFICATION_INSTANCE_LAUNCH_ERROR,
-          AWS_ASG_NOTIFICATION_INSTANCE_TERMINATE_ERROR, AWS_ASG_NOTIFICATION_AUTOSCALE_GROUP_DELETED,
-          CLOUD_AUTOSCALING_CONFIG_FAILURE, CLOUD_AUTOSCALING_DECONFIG_FAILURE, CLOUD_AUTOSCALING_ASG_ADD_FAILURE,
-          CLOUD_AUTOSCALING_ASG_REMOVE_FAILURE, CLOUD_AUTOSCALING_NOTIFICATION_PROCESSING_FAILURE,
-          CLOUD_ROUTE_CREATION_FAILURE, CLOUD_ROUTE_CREATION_SUCCESS, CLOUD_ROUTE_REMOVE_FAILURE,
-          CLOUD_ROUTE_REMOVE_SUCCESS, CLOUDSTACK_ACCESS_FAILURE, CLOUDSTACK_ACCESS_SUCCESS,
-          CLOUDSTACK_IMAGE_UPLOAD_FAILURE, CLOUDSTACK_IMAGE_UPLOAD_SUCCESS, DOCKER_UCP_ACCESS_SUCCESS,
-          DOCKER_UCP_ACCESS_FAILURE, DOCKER_UCP_IMAGE_UPLOAD_FAILURE, DOCKER_UCP_IMAGE_UPLOAD_SUCCESS,
-          DOCKER_UCP_IMAGE_UPLOAD_IN_PROGRESS, VCA_ACCESS_FAILURE, VCA_ACCESS_SUCCESS,
-          VCA_IMAGE_UPLOAD_FAILURE, VCA_IMAGE_UPLOAD_SUCCESS, LS_ACCESS_FAILURE, LS_ACCESS_SUCCESS,
-          LS_IMAGE_UPLOAD_FAILURE, LS_IMAGE_UPLOAD_SUCCESS, MESOS_ACCESS_SUCCESS,
-          MESOS_ACCESS_FAILURE, MESOS_IMAGE_UPLOAD_FAILURE, MESOS_IMAGE_UPLOAD_SUCCESS,
-          MESOS_IMAGE_UPLOAD_IN_PROGRESS, MESOS_CREATED_SE, MESOS_CREATE_SE_FAIL,
-          MESOS_DELETED_SE, MESOS_DELETE_SE_FAIL, MESOS_STOPPED_SE, MESOS_STOP_SE_FAIL,
-          MESOS_STARTED_SE, MESOS_START_SE_FAIL, MESOS_UPDATED_HOSTS, CC_SE_CREATED,
-          CC_SE_CREATION_FAILURE, CC_SE_DELETED, CC_SE_DELETION_FAILURE, CC_SE_DELETION_DETECTED,
-          CC_VNIC_ADDED, CC_VNIC_ADDITION_FAILURE, CC_VNIC_DELETED, CC_VNIC_DELETION_FAILURE,
-          CC_IP_ATTACHED, CC_IP_ATTACH_FAILURE, CC_IP_DETACHED, CC_IP_DETACH_FAILURE,
-          CC_SYNC_SERVICES_SUCCESS, CC_SYNC_SERVICES_FAILURE, CC_UPDATE_VIP_FAILURE,
-          CC_DELETE_VIP_FAILURE, CC_CONFIG_FAILURE, CC_DECONFIG_FAILURE, CC_GENERIC_FAILURE,
-          CC_CLUSTER_VIP_CONFIG_SUCCESS, CC_CLUSTER_VIP_CONFIG_FAILURE, CC_CLUSTER_VIP_DECONFIG_SUCCESS,
-          CC_CLUSTER_VIP_DECONFIG_FAILURE, CC_MARATHON_SERVICE_PORT_OUTSIDE_VALID_RANGE,
+          DEBUG_MODE_ON, DEBUG_MODE_OFF, QAT_SERVICE_OPER_DOWN, CONFIG_CREATE, CONFIG_UPDATE,
+          CONFIG_DELETE, USER_LOGIN, USER_LOGOUT, CONFIG_ACTION, CONFIG_INTERNAL_CREATE,
+          CONFIG_INTERNAL_UPDATE, USER_PASSWORD_CHANGE_REQUEST, USER_AUTHORIZED_BY_RULE,
+          USER_NOT_AUTHORIZED_BY_ANY_RULE, CONFIG_SE_GRP_FLAVOR_UPDATE, API_VERSION_DEPRECATED,
+          DNS_QUERY_ERROR, ASYNC_PATCH_STATUS, MERGED_ASYNC_PATCH_STATUS, CONFIG_EXPORT,
+          TECHSUPPORT_COLLECTION_STARTED, TECHSUPPORT_COLLECTION_ONGOING, TECHSUPPORT_COLLECTION_SUCCESS,
+          TECHSUPPORT_COLLECTION_SUCCESS_WITH_ERROR, WARNING_EVENT, SSL_CERT_EXPIRE,
+          SSL_KEY_EXPORTED, SSL_CERT_RENEW, SSL_CERT_RENEW_FAILED, SSL_CERT_IGNORED,
+          SSL_CERT_REVOKED, CONTROLLER_NODE_JOINED, CONTROLLER_NODE_LEFT, CONTROLLER_SERVICE_FAILURE,
+          CONTROLLER_LEADER_FAILOVER, CONTROLLER_WARM_REBOOT, CONTROLLER_SERVICE_RESTORED,
+          CONTROLLER_SERVICE_CRITICAL_FAILURE, CONTROLLER_NODE_SHUTDOWN, CONTROLLER_NODE_STARTED,
+          CLUSTER_CONFIG_FAILED, SE_SECURE_KEY_EXCHANGE, CTLR_SECURE_KEY_EXCHANGE,
+          MALFORMED_SECURE_KEY_EXCHANGE, CLUSTIFY_CHECK_EVENT, SYSTEM_UPGRADE_STARTED,
+          SYSTEM_UPGRADE_COMPLETE, SYSTEM_UPGRADE_ABORTED, SYSTEM_ROLLBACK_STARTED,
+          SYSTEM_ROLLBACK_COMPLETE, SYSTEM_ROLLBACK_ABORTED, CONTROLLER_NODE_DB_REPLICATION_FAILED,
+          CONTROLLER_PROCESS_STOPPED, CONTROLLER_MEMORY_BALANCER_DISABLED, CONTROLLER_MEMORY_BALANCER_DEACTIVATED,
+          CONTROLLER_DISCONTINUOUS_TIME_CHANGE, CONTROLLER_PROCESS_MODE_TRANSITION,
+          CONTROLLER_PROCESS_TREND_TRANSITION, CONTROLLER_PROCESS_STOPPED_MEMORY_VIOLATION,
+          LOG_MANAGER_TASKQUEUE_ABNORMAL_GROWTH, USAGE_METERING_REGISTRATION, USAGE_METERING_DE_REGISTRATION,
+          METRIC_THRESHOLD_UP_VIOLATION, LICENSE_EXPIRY, ANOMALY, LICENSE_ADDITION_NOTIF,
+          LICENSE_REMOVAL_NOTIF, METRICS_DB_DISK_FULL, METRICS_DB_QUEUE_FULL, METRICS_DB_QUEUE_HEALTHY,
+          METRICS_DBSYNC_FAILURE, METRICS_GRPC_AUTH_FAILURE, OPENSTACK_ACCESS_FAILURE,
+          OPENSTACK_ACCESS_SUCCESS, OPENSTACK_IMAGE_UPLOAD_FAILURE, OPENSTACK_IMAGE_UPLOAD_SUCCESS,
+          OPENSTACK_SE_VM_CREATED, OPENSTACK_SE_VM_DELETED, OPENSTACK_SE_VM_DELETION_DETECTED,
+          OPENSTACK_VNIC_ADDED, OPENSTACK_VNIC_REMOVED, OPENSTACK_IP_DETACHED, OPENSTACK_IP_ATTACHED,
+          OPENSTACK_SE_CREATION_FAILURE, OPENSTACK_SE_DELETION_FAILURE, OPENSTACK_VNIC_ADDITION_FAILURE,
+          OPENSTACK_VNIC_DELETION_FAILURE, OPENSTACK_IP_DETACH_FAILURE, OPENSTACK_IP_ATTACH_FAILURE,
+          OPENSTACK_LBPROV_AUDIT_FAILURE, OPENSTACK_LBPROV_AUDIT_SUCCESS, OPENSTACK_LBPLUGIN_OP_FAILURE,
+          OPENSTACK_LBPLUGIN_OP_SUCCESS, OPENSTACK_SYNC_SERVICES_SUCCESS, OPENSTACK_SYNC_SERVICES_FAILURE,
+          OPENSTACK_TENANTS_DELETED, OPENSTACK_API_VERSION_CHECK_FAILED, AWS_ACCESS_FAILURE,
+          AWS_ACCESS_SUCCESS, AWS_IMAGE_UPLOAD_FAILURE, AWS_IMAGE_UPLOAD_SUCCESS,
+          AWS_SNS_ACCESS_FAILURE, AWS_SNS_ACCESS_SUCCESS, AWS_SQS_ACCESS_FAILURE,
+          AWS_SQS_ACCESS_SUCCESS, AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_FAILURE,
+          AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_SUCCESS, AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_FAILURE,
+          AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_SUCCESS, AWS_ASG_NOTIFICATION_PROCESSING_FAILURE,
+          AWS_ASG_NOTIFICATION_PROCESSING_SUCCESS, AWS_ASG_NOTIFICATION_INSTANCE_ADDED,
+          AWS_ASG_NOTIFICATION_INSTANCE_REMOVED, AWS_ASG_ACCESS_FAILURE, AWS_ASG_ACCESS_SUCCESS,
+          AWS_ASG_NOTIFICATION_INSTANCE_LAUNCH_ERROR, AWS_ASG_NOTIFICATION_INSTANCE_TERMINATE_ERROR,
+          AWS_ASG_NOTIFICATION_AUTOSCALE_GROUP_DELETED, CLOUD_AUTOSCALING_CONFIG_FAILURE,
+          CLOUD_AUTOSCALING_DECONFIG_FAILURE, CLOUD_AUTOSCALING_ASG_ADD_FAILURE, CLOUD_AUTOSCALING_ASG_REMOVE_FAILURE,
+          CLOUD_AUTOSCALING_NOTIFICATION_PROCESSING_FAILURE, CLOUD_ROUTE_CREATION_FAILURE,
+          CLOUD_ROUTE_CREATION_SUCCESS, CLOUD_ROUTE_REMOVE_FAILURE, CLOUD_ROUTE_REMOVE_SUCCESS,
+          CLOUDSTACK_ACCESS_FAILURE, CLOUDSTACK_ACCESS_SUCCESS, CLOUDSTACK_IMAGE_UPLOAD_FAILURE,
+          CLOUDSTACK_IMAGE_UPLOAD_SUCCESS, DOCKER_UCP_ACCESS_SUCCESS, DOCKER_UCP_ACCESS_FAILURE,
+          DOCKER_UCP_IMAGE_UPLOAD_FAILURE, DOCKER_UCP_IMAGE_UPLOAD_SUCCESS, DOCKER_UCP_IMAGE_UPLOAD_IN_PROGRESS,
+          VCA_ACCESS_FAILURE, VCA_ACCESS_SUCCESS, VCA_IMAGE_UPLOAD_FAILURE, VCA_IMAGE_UPLOAD_SUCCESS,
+          LS_ACCESS_FAILURE, LS_ACCESS_SUCCESS, LS_IMAGE_UPLOAD_FAILURE, LS_IMAGE_UPLOAD_SUCCESS,
+          MESOS_ACCESS_SUCCESS, MESOS_ACCESS_FAILURE, MESOS_IMAGE_UPLOAD_FAILURE,
+          MESOS_IMAGE_UPLOAD_SUCCESS, MESOS_IMAGE_UPLOAD_IN_PROGRESS, MESOS_CREATED_SE,
+          MESOS_CREATE_SE_FAIL, MESOS_DELETED_SE, MESOS_DELETE_SE_FAIL, MESOS_STOPPED_SE,
+          MESOS_STOP_SE_FAIL, MESOS_STARTED_SE, MESOS_START_SE_FAIL, MESOS_UPDATED_HOSTS,
+          CC_SE_CREATED, CC_SE_CREATION_FAILURE, CC_SE_DELETED, CC_SE_DELETION_FAILURE,
+          CC_SE_DELETION_DETECTED, CC_VNIC_ADDED, CC_VNIC_ADDITION_FAILURE, CC_VNIC_DELETED,
+          CC_VNIC_DELETION_FAILURE, CC_IP_ATTACHED, CC_IP_ATTACH_FAILURE, CC_IP_DETACHED,
+          CC_IP_DETACH_FAILURE, CC_SYNC_SERVICES_SUCCESS, CC_SYNC_SERVICES_FAILURE,
+          CC_UPDATE_VIP_FAILURE, CC_DELETE_VIP_FAILURE, CC_CONFIG_FAILURE, CC_DECONFIG_FAILURE,
+          CC_GENERIC_FAILURE, CC_CLUSTER_VIP_CONFIG_SUCCESS, CC_CLUSTER_VIP_CONFIG_FAILURE,
+          CC_CLUSTER_VIP_DECONFIG_SUCCESS, CC_CLUSTER_VIP_DECONFIG_FAILURE, CC_MARATHON_SERVICE_PORT_OUTSIDE_VALID_RANGE,
           CC_MARATHON_SERVICE_PORT_ALREADY_IN_USE, CC_VIP_DNS_REGISTER_FAILURE, CC_TENANT_INIT_FAILURE,
           CC_HEALTH_FAILURE, CC_HEALTH_OK, CC_SE_STARTED, CC_SE_START_FAILURE, CC_SE_STOPPED,
           CC_SE_STOP_FAILURE, CC_VIP_PARK_INTF_SUCCESS, CC_VIP_PARK_INTF_FAILURE,
@@ -104666,7 +104727,7 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
+      uuid:
         description: ' It is a reference to an object of type Application. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.'
@@ -108146,9 +108207,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -108574,6 +108637,7 @@ definitions:
     type: object
     required:
     - jwt
+    - key
     - kid
     - last_rotated_at
     - public_key_algorithm
@@ -108588,6 +108652,14 @@ definitions:
           Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
         type: string
+      key:
+        description: Private key. Field introduced in 32.1.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      key_passphrase:
+        description: Private key passphrase. Field introduced in 32.1.1. Allowed with
+          any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
       kid:
         description: SHA256 thumbprint of the previous old portal certificate. Field
           introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with
@@ -108600,6 +108672,12 @@ definitions:
       public_key_algorithm:
         description: Public key algorithm. Field introduced in 32.1.1. Allowed with
           any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      type:
+        description: Type of SSL certificate. Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE,
+          SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA, SSL_CERTIFICATE_TYPE_CLIENT,
+          SSL_CERTIFICATE_TYPE_SECURE_CHANNEL. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
       url:
         description: url
@@ -112470,6 +112548,15 @@ definitions:
           with Cloud Services edition.
         type: boolean
         default: true
+      cert_rotation_jwt_retention_days:
+        description: Number of days to retain JWT tokens generated during certificate
+          rotation. Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months,
+          180 = 6 months). Allowed values are 1-3650. Field introduced in 32.1.1.
+          Unit is DAYS. Allowed with any value in Enterprise, Enterprise with Cloud
+          Services edition.
+        type: integer
+        default: 180
+        format: uint32
       check_vsvip_fqdn_syntax:
         description: Enforce VsVip FQDN syntax checks. Field introduced in 20.1.6.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
@@ -117879,6 +117966,10 @@ definitions:
           introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with
           Cloud Services edition.
         $ref: '#/definitions/SeProcessCrashedDetails'
+      se_qat_mode_event_detail:
+        description: ' Field introduced in 32.1.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.'
+        $ref: '#/definitions/SeQatModeEventDetail'
       se_rate_limiter_drop_details:
         description: ' Field introduced in 31.2.1. Allowed with any value in Enterprise,
           Enterprise with Cloud Services edition.'
@@ -118297,64 +118388,64 @@ definitions:
           SE_EV_VS_RL_CONFIG_FAILED, SE_DP_HB_RECOVERED, SE_VS_PKT_BUFF_HIGH, SE_DISCONTINUOUS_TIME_CHANGE,
           SE_HIGH_INGRESS_PROC_LATENCY, SE_VS_DEL_FLOWS_DISRUPTED, SE_NTP_SYNCHRONIZATION_FAILED,
           SE_HIGH_EGRESS_PROC_LATENCY, SE_ARP_RATE_LIMIT_DROP, SE_ND_RATE_LIMIT_DROP,
-          DEBUG_MODE_ON, DEBUG_MODE_OFF, CONFIG_CREATE, CONFIG_UPDATE, CONFIG_DELETE,
-          USER_LOGIN, USER_LOGOUT, CONFIG_ACTION, CONFIG_INTERNAL_CREATE, CONFIG_INTERNAL_UPDATE,
-          USER_PASSWORD_CHANGE_REQUEST, USER_AUTHORIZED_BY_RULE, USER_NOT_AUTHORIZED_BY_ANY_RULE,
-          CONFIG_SE_GRP_FLAVOR_UPDATE, API_VERSION_DEPRECATED, DNS_QUERY_ERROR, ASYNC_PATCH_STATUS,
-          MERGED_ASYNC_PATCH_STATUS, CONFIG_EXPORT, TECHSUPPORT_COLLECTION_STARTED,
-          TECHSUPPORT_COLLECTION_ONGOING, TECHSUPPORT_COLLECTION_SUCCESS, TECHSUPPORT_COLLECTION_SUCCESS_WITH_ERROR,
-          WARNING_EVENT, SSL_CERT_EXPIRE, SSL_KEY_EXPORTED, SSL_CERT_RENEW, SSL_CERT_RENEW_FAILED,
-          SSL_CERT_IGNORED, SSL_CERT_REVOKED, CONTROLLER_NODE_JOINED, CONTROLLER_NODE_LEFT,
-          CONTROLLER_SERVICE_FAILURE, CONTROLLER_LEADER_FAILOVER, CONTROLLER_WARM_REBOOT,
-          CONTROLLER_SERVICE_RESTORED, CONTROLLER_SERVICE_CRITICAL_FAILURE, CONTROLLER_NODE_SHUTDOWN,
-          CONTROLLER_NODE_STARTED, CLUSTER_CONFIG_FAILED, SE_SECURE_KEY_EXCHANGE,
-          CTLR_SECURE_KEY_EXCHANGE, MALFORMED_SECURE_KEY_EXCHANGE, CLUSTIFY_CHECK_EVENT,
-          SYSTEM_UPGRADE_STARTED, SYSTEM_UPGRADE_COMPLETE, SYSTEM_UPGRADE_ABORTED,
-          SYSTEM_ROLLBACK_STARTED, SYSTEM_ROLLBACK_COMPLETE, SYSTEM_ROLLBACK_ABORTED,
-          CONTROLLER_NODE_DB_REPLICATION_FAILED, CONTROLLER_PROCESS_STOPPED, CONTROLLER_MEMORY_BALANCER_DISABLED,
-          CONTROLLER_MEMORY_BALANCER_DEACTIVATED, CONTROLLER_DISCONTINUOUS_TIME_CHANGE,
-          CONTROLLER_PROCESS_MODE_TRANSITION, CONTROLLER_PROCESS_TREND_TRANSITION,
-          CONTROLLER_PROCESS_STOPPED_MEMORY_VIOLATION, LOG_MANAGER_TASKQUEUE_ABNORMAL_GROWTH,
-          USAGE_METERING_REGISTRATION, USAGE_METERING_DE_REGISTRATION, METRIC_THRESHOLD_UP_VIOLATION,
-          LICENSE_EXPIRY, ANOMALY, LICENSE_ADDITION_NOTIF, LICENSE_REMOVAL_NOTIF,
-          METRICS_DB_DISK_FULL, METRICS_DB_QUEUE_FULL, METRICS_DB_QUEUE_HEALTHY, METRICS_DBSYNC_FAILURE,
-          METRICS_GRPC_AUTH_FAILURE, OPENSTACK_ACCESS_FAILURE, OPENSTACK_ACCESS_SUCCESS,
-          OPENSTACK_IMAGE_UPLOAD_FAILURE, OPENSTACK_IMAGE_UPLOAD_SUCCESS, OPENSTACK_SE_VM_CREATED,
-          OPENSTACK_SE_VM_DELETED, OPENSTACK_SE_VM_DELETION_DETECTED, OPENSTACK_VNIC_ADDED,
-          OPENSTACK_VNIC_REMOVED, OPENSTACK_IP_DETACHED, OPENSTACK_IP_ATTACHED, OPENSTACK_SE_CREATION_FAILURE,
-          OPENSTACK_SE_DELETION_FAILURE, OPENSTACK_VNIC_ADDITION_FAILURE, OPENSTACK_VNIC_DELETION_FAILURE,
-          OPENSTACK_IP_DETACH_FAILURE, OPENSTACK_IP_ATTACH_FAILURE, OPENSTACK_LBPROV_AUDIT_FAILURE,
-          OPENSTACK_LBPROV_AUDIT_SUCCESS, OPENSTACK_LBPLUGIN_OP_FAILURE, OPENSTACK_LBPLUGIN_OP_SUCCESS,
-          OPENSTACK_SYNC_SERVICES_SUCCESS, OPENSTACK_SYNC_SERVICES_FAILURE, OPENSTACK_TENANTS_DELETED,
-          OPENSTACK_API_VERSION_CHECK_FAILED, AWS_ACCESS_FAILURE, AWS_ACCESS_SUCCESS,
-          AWS_IMAGE_UPLOAD_FAILURE, AWS_IMAGE_UPLOAD_SUCCESS, AWS_SNS_ACCESS_FAILURE,
-          AWS_SNS_ACCESS_SUCCESS, AWS_SQS_ACCESS_FAILURE, AWS_SQS_ACCESS_SUCCESS,
-          AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_FAILURE, AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_SUCCESS,
-          AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_FAILURE, AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_SUCCESS,
-          AWS_ASG_NOTIFICATION_PROCESSING_FAILURE, AWS_ASG_NOTIFICATION_PROCESSING_SUCCESS,
-          AWS_ASG_NOTIFICATION_INSTANCE_ADDED, AWS_ASG_NOTIFICATION_INSTANCE_REMOVED,
-          AWS_ASG_ACCESS_FAILURE, AWS_ASG_ACCESS_SUCCESS, AWS_ASG_NOTIFICATION_INSTANCE_LAUNCH_ERROR,
-          AWS_ASG_NOTIFICATION_INSTANCE_TERMINATE_ERROR, AWS_ASG_NOTIFICATION_AUTOSCALE_GROUP_DELETED,
-          CLOUD_AUTOSCALING_CONFIG_FAILURE, CLOUD_AUTOSCALING_DECONFIG_FAILURE, CLOUD_AUTOSCALING_ASG_ADD_FAILURE,
-          CLOUD_AUTOSCALING_ASG_REMOVE_FAILURE, CLOUD_AUTOSCALING_NOTIFICATION_PROCESSING_FAILURE,
-          CLOUD_ROUTE_CREATION_FAILURE, CLOUD_ROUTE_CREATION_SUCCESS, CLOUD_ROUTE_REMOVE_FAILURE,
-          CLOUD_ROUTE_REMOVE_SUCCESS, CLOUDSTACK_ACCESS_FAILURE, CLOUDSTACK_ACCESS_SUCCESS,
-          CLOUDSTACK_IMAGE_UPLOAD_FAILURE, CLOUDSTACK_IMAGE_UPLOAD_SUCCESS, DOCKER_UCP_ACCESS_SUCCESS,
-          DOCKER_UCP_ACCESS_FAILURE, DOCKER_UCP_IMAGE_UPLOAD_FAILURE, DOCKER_UCP_IMAGE_UPLOAD_SUCCESS,
-          DOCKER_UCP_IMAGE_UPLOAD_IN_PROGRESS, VCA_ACCESS_FAILURE, VCA_ACCESS_SUCCESS,
-          VCA_IMAGE_UPLOAD_FAILURE, VCA_IMAGE_UPLOAD_SUCCESS, LS_ACCESS_FAILURE, LS_ACCESS_SUCCESS,
-          LS_IMAGE_UPLOAD_FAILURE, LS_IMAGE_UPLOAD_SUCCESS, MESOS_ACCESS_SUCCESS,
-          MESOS_ACCESS_FAILURE, MESOS_IMAGE_UPLOAD_FAILURE, MESOS_IMAGE_UPLOAD_SUCCESS,
-          MESOS_IMAGE_UPLOAD_IN_PROGRESS, MESOS_CREATED_SE, MESOS_CREATE_SE_FAIL,
-          MESOS_DELETED_SE, MESOS_DELETE_SE_FAIL, MESOS_STOPPED_SE, MESOS_STOP_SE_FAIL,
-          MESOS_STARTED_SE, MESOS_START_SE_FAIL, MESOS_UPDATED_HOSTS, CC_SE_CREATED,
-          CC_SE_CREATION_FAILURE, CC_SE_DELETED, CC_SE_DELETION_FAILURE, CC_SE_DELETION_DETECTED,
-          CC_VNIC_ADDED, CC_VNIC_ADDITION_FAILURE, CC_VNIC_DELETED, CC_VNIC_DELETION_FAILURE,
-          CC_IP_ATTACHED, CC_IP_ATTACH_FAILURE, CC_IP_DETACHED, CC_IP_DETACH_FAILURE,
-          CC_SYNC_SERVICES_SUCCESS, CC_SYNC_SERVICES_FAILURE, CC_UPDATE_VIP_FAILURE,
-          CC_DELETE_VIP_FAILURE, CC_CONFIG_FAILURE, CC_DECONFIG_FAILURE, CC_GENERIC_FAILURE,
-          CC_CLUSTER_VIP_CONFIG_SUCCESS, CC_CLUSTER_VIP_CONFIG_FAILURE, CC_CLUSTER_VIP_DECONFIG_SUCCESS,
-          CC_CLUSTER_VIP_DECONFIG_FAILURE, CC_MARATHON_SERVICE_PORT_OUTSIDE_VALID_RANGE,
+          DEBUG_MODE_ON, DEBUG_MODE_OFF, QAT_SERVICE_OPER_DOWN, CONFIG_CREATE, CONFIG_UPDATE,
+          CONFIG_DELETE, USER_LOGIN, USER_LOGOUT, CONFIG_ACTION, CONFIG_INTERNAL_CREATE,
+          CONFIG_INTERNAL_UPDATE, USER_PASSWORD_CHANGE_REQUEST, USER_AUTHORIZED_BY_RULE,
+          USER_NOT_AUTHORIZED_BY_ANY_RULE, CONFIG_SE_GRP_FLAVOR_UPDATE, API_VERSION_DEPRECATED,
+          DNS_QUERY_ERROR, ASYNC_PATCH_STATUS, MERGED_ASYNC_PATCH_STATUS, CONFIG_EXPORT,
+          TECHSUPPORT_COLLECTION_STARTED, TECHSUPPORT_COLLECTION_ONGOING, TECHSUPPORT_COLLECTION_SUCCESS,
+          TECHSUPPORT_COLLECTION_SUCCESS_WITH_ERROR, WARNING_EVENT, SSL_CERT_EXPIRE,
+          SSL_KEY_EXPORTED, SSL_CERT_RENEW, SSL_CERT_RENEW_FAILED, SSL_CERT_IGNORED,
+          SSL_CERT_REVOKED, CONTROLLER_NODE_JOINED, CONTROLLER_NODE_LEFT, CONTROLLER_SERVICE_FAILURE,
+          CONTROLLER_LEADER_FAILOVER, CONTROLLER_WARM_REBOOT, CONTROLLER_SERVICE_RESTORED,
+          CONTROLLER_SERVICE_CRITICAL_FAILURE, CONTROLLER_NODE_SHUTDOWN, CONTROLLER_NODE_STARTED,
+          CLUSTER_CONFIG_FAILED, SE_SECURE_KEY_EXCHANGE, CTLR_SECURE_KEY_EXCHANGE,
+          MALFORMED_SECURE_KEY_EXCHANGE, CLUSTIFY_CHECK_EVENT, SYSTEM_UPGRADE_STARTED,
+          SYSTEM_UPGRADE_COMPLETE, SYSTEM_UPGRADE_ABORTED, SYSTEM_ROLLBACK_STARTED,
+          SYSTEM_ROLLBACK_COMPLETE, SYSTEM_ROLLBACK_ABORTED, CONTROLLER_NODE_DB_REPLICATION_FAILED,
+          CONTROLLER_PROCESS_STOPPED, CONTROLLER_MEMORY_BALANCER_DISABLED, CONTROLLER_MEMORY_BALANCER_DEACTIVATED,
+          CONTROLLER_DISCONTINUOUS_TIME_CHANGE, CONTROLLER_PROCESS_MODE_TRANSITION,
+          CONTROLLER_PROCESS_TREND_TRANSITION, CONTROLLER_PROCESS_STOPPED_MEMORY_VIOLATION,
+          LOG_MANAGER_TASKQUEUE_ABNORMAL_GROWTH, USAGE_METERING_REGISTRATION, USAGE_METERING_DE_REGISTRATION,
+          METRIC_THRESHOLD_UP_VIOLATION, LICENSE_EXPIRY, ANOMALY, LICENSE_ADDITION_NOTIF,
+          LICENSE_REMOVAL_NOTIF, METRICS_DB_DISK_FULL, METRICS_DB_QUEUE_FULL, METRICS_DB_QUEUE_HEALTHY,
+          METRICS_DBSYNC_FAILURE, METRICS_GRPC_AUTH_FAILURE, OPENSTACK_ACCESS_FAILURE,
+          OPENSTACK_ACCESS_SUCCESS, OPENSTACK_IMAGE_UPLOAD_FAILURE, OPENSTACK_IMAGE_UPLOAD_SUCCESS,
+          OPENSTACK_SE_VM_CREATED, OPENSTACK_SE_VM_DELETED, OPENSTACK_SE_VM_DELETION_DETECTED,
+          OPENSTACK_VNIC_ADDED, OPENSTACK_VNIC_REMOVED, OPENSTACK_IP_DETACHED, OPENSTACK_IP_ATTACHED,
+          OPENSTACK_SE_CREATION_FAILURE, OPENSTACK_SE_DELETION_FAILURE, OPENSTACK_VNIC_ADDITION_FAILURE,
+          OPENSTACK_VNIC_DELETION_FAILURE, OPENSTACK_IP_DETACH_FAILURE, OPENSTACK_IP_ATTACH_FAILURE,
+          OPENSTACK_LBPROV_AUDIT_FAILURE, OPENSTACK_LBPROV_AUDIT_SUCCESS, OPENSTACK_LBPLUGIN_OP_FAILURE,
+          OPENSTACK_LBPLUGIN_OP_SUCCESS, OPENSTACK_SYNC_SERVICES_SUCCESS, OPENSTACK_SYNC_SERVICES_FAILURE,
+          OPENSTACK_TENANTS_DELETED, OPENSTACK_API_VERSION_CHECK_FAILED, AWS_ACCESS_FAILURE,
+          AWS_ACCESS_SUCCESS, AWS_IMAGE_UPLOAD_FAILURE, AWS_IMAGE_UPLOAD_SUCCESS,
+          AWS_SNS_ACCESS_FAILURE, AWS_SNS_ACCESS_SUCCESS, AWS_SQS_ACCESS_FAILURE,
+          AWS_SQS_ACCESS_SUCCESS, AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_FAILURE,
+          AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_SUCCESS, AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_FAILURE,
+          AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_SUCCESS, AWS_ASG_NOTIFICATION_PROCESSING_FAILURE,
+          AWS_ASG_NOTIFICATION_PROCESSING_SUCCESS, AWS_ASG_NOTIFICATION_INSTANCE_ADDED,
+          AWS_ASG_NOTIFICATION_INSTANCE_REMOVED, AWS_ASG_ACCESS_FAILURE, AWS_ASG_ACCESS_SUCCESS,
+          AWS_ASG_NOTIFICATION_INSTANCE_LAUNCH_ERROR, AWS_ASG_NOTIFICATION_INSTANCE_TERMINATE_ERROR,
+          AWS_ASG_NOTIFICATION_AUTOSCALE_GROUP_DELETED, CLOUD_AUTOSCALING_CONFIG_FAILURE,
+          CLOUD_AUTOSCALING_DECONFIG_FAILURE, CLOUD_AUTOSCALING_ASG_ADD_FAILURE, CLOUD_AUTOSCALING_ASG_REMOVE_FAILURE,
+          CLOUD_AUTOSCALING_NOTIFICATION_PROCESSING_FAILURE, CLOUD_ROUTE_CREATION_FAILURE,
+          CLOUD_ROUTE_CREATION_SUCCESS, CLOUD_ROUTE_REMOVE_FAILURE, CLOUD_ROUTE_REMOVE_SUCCESS,
+          CLOUDSTACK_ACCESS_FAILURE, CLOUDSTACK_ACCESS_SUCCESS, CLOUDSTACK_IMAGE_UPLOAD_FAILURE,
+          CLOUDSTACK_IMAGE_UPLOAD_SUCCESS, DOCKER_UCP_ACCESS_SUCCESS, DOCKER_UCP_ACCESS_FAILURE,
+          DOCKER_UCP_IMAGE_UPLOAD_FAILURE, DOCKER_UCP_IMAGE_UPLOAD_SUCCESS, DOCKER_UCP_IMAGE_UPLOAD_IN_PROGRESS,
+          VCA_ACCESS_FAILURE, VCA_ACCESS_SUCCESS, VCA_IMAGE_UPLOAD_FAILURE, VCA_IMAGE_UPLOAD_SUCCESS,
+          LS_ACCESS_FAILURE, LS_ACCESS_SUCCESS, LS_IMAGE_UPLOAD_FAILURE, LS_IMAGE_UPLOAD_SUCCESS,
+          MESOS_ACCESS_SUCCESS, MESOS_ACCESS_FAILURE, MESOS_IMAGE_UPLOAD_FAILURE,
+          MESOS_IMAGE_UPLOAD_SUCCESS, MESOS_IMAGE_UPLOAD_IN_PROGRESS, MESOS_CREATED_SE,
+          MESOS_CREATE_SE_FAIL, MESOS_DELETED_SE, MESOS_DELETE_SE_FAIL, MESOS_STOPPED_SE,
+          MESOS_STOP_SE_FAIL, MESOS_STARTED_SE, MESOS_START_SE_FAIL, MESOS_UPDATED_HOSTS,
+          CC_SE_CREATED, CC_SE_CREATION_FAILURE, CC_SE_DELETED, CC_SE_DELETION_FAILURE,
+          CC_SE_DELETION_DETECTED, CC_VNIC_ADDED, CC_VNIC_ADDITION_FAILURE, CC_VNIC_DELETED,
+          CC_VNIC_DELETION_FAILURE, CC_IP_ATTACHED, CC_IP_ATTACH_FAILURE, CC_IP_DETACHED,
+          CC_IP_DETACH_FAILURE, CC_SYNC_SERVICES_SUCCESS, CC_SYNC_SERVICES_FAILURE,
+          CC_UPDATE_VIP_FAILURE, CC_DELETE_VIP_FAILURE, CC_CONFIG_FAILURE, CC_DECONFIG_FAILURE,
+          CC_GENERIC_FAILURE, CC_CLUSTER_VIP_CONFIG_SUCCESS, CC_CLUSTER_VIP_CONFIG_FAILURE,
+          CC_CLUSTER_VIP_DECONFIG_SUCCESS, CC_CLUSTER_VIP_DECONFIG_FAILURE, CC_MARATHON_SERVICE_PORT_OUTSIDE_VALID_RANGE,
           CC_MARATHON_SERVICE_PORT_ALREADY_IN_USE, CC_VIP_DNS_REGISTER_FAILURE, CC_TENANT_INIT_FAILURE,
           CC_HEALTH_FAILURE, CC_HEALTH_OK, CC_SE_STARTED, CC_SE_START_FAILURE, CC_SE_STOPPED,
           CC_SE_STOP_FAILURE, CC_VIP_PARK_INTF_SUCCESS, CC_VIP_PARK_INTF_FAILURE,
@@ -118602,7 +118693,7 @@ definitions:
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
           SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL,
           PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME,
-          APICCONFIGURATION, CIFTABLE, APICTRANSACTION, VIRTUALSERVICESTATEDBCACHESUMMARY,
+          SEHUGEPAGEINFORUNTIME, APICCONFIGURATION, CIFTABLE, APICTRANSACTION, VIRTUALSERVICESTATEDBCACHESUMMARY,
           POOLSTATEDBCACHESUMMARY, SERVERSTATEDBCACHESUMMARY, APICAGENTINTERNAL, APICTRANSACTIONFLAP,
           APICGRAPHINSTANCES, APICEPGS, APICEPGEPS, APICDEVICEPKGVER, APICTENANTS,
           APICVMMDOMAINS, STATECACHESTATS, STATECACHECONFIG, STATECACHEINTERNAL, STATECACHEDNS,
@@ -124272,9 +124363,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -133285,11 +133378,6 @@ definitions:
         description: Name of the pool. Field introduced in 22.1.1. Allowed with any
           value in Enterprise, Enterprise with Cloud Services edition.
         type: string
-      ref:
-        description: UUID of the pool. It is a reference to an object of type Pool.
-          Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise
-          with Cloud Services edition.
-        type: string
       tenant_ref:
         description: ' It is a reference to an object of type Tenant. Field introduced
           in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
@@ -133298,6 +133386,11 @@ definitions:
       url:
         description: URL of the pool. Field introduced in 22.1.1. Allowed with any
           value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      uuid:
+        description: UUID of the pool. It is a reference to an object of type Pool.
+          Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
         type: string
       vrf_ref:
         description: Virtual Routing Context that the pool is bound to. This is used
@@ -133652,7 +133745,7 @@ definitions:
   PoolGroupRefs:
     type: object
     properties:
-      ref:
+      uuid:
         description: UUID of the pool group. It is a reference to an object of type
           PoolGroup. Field introduced in 22.1.1. Allowed with any value in Enterprise,
           Enterprise with Cloud Services edition.
@@ -133782,20 +133875,20 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
-        description: ' It is a reference to an object of type VirtualService. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
-        type: string
       sum_finished_conns:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: number
         format: double
+      uuid:
+        description: ' It is a reference to an object of type VirtualService. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
+        type: string
   PoolRefs:
     type: object
     properties:
-      ref:
+      uuid:
         description: UUID of the pool. It is a reference to an object of type Pool.
           Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise
           with Cloud Services edition.
@@ -133895,17 +133988,6 @@ definitions:
         description: Allow Incoming Connections from Clients Using TLS 1.0/1.1 to
           Controller. Field introduced in 31.1.1. Allowed with any value in Enterprise,
           Enterprise with Cloud Services edition.
-        type: boolean
-      minimum_password_length:
-        description: Minimum password length for user accounts. Allowed values are
-          6-32. Field introduced in 20.1.3. Allowed with any value in Enterprise,
-          Enterprise with Cloud Services edition.
-        type: integer
-        format: uint32
-      password_strength_check:
-        description: Strict checking of password strength for user accounts. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.
         type: boolean
       pkiprofile_ref:
         description: Reference to PKIProfile Config used for CRL validation. It is
@@ -134284,9 +134366,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -135821,9 +135905,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -136615,9 +136701,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -138100,7 +138188,7 @@ definitions:
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
           SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL,
           PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME,
-          APICCONFIGURATION, CIFTABLE, APICTRANSACTION, VIRTUALSERVICESTATEDBCACHESUMMARY,
+          SEHUGEPAGEINFORUNTIME, APICCONFIGURATION, CIFTABLE, APICTRANSACTION, VIRTUALSERVICESTATEDBCACHESUMMARY,
           POOLSTATEDBCACHESUMMARY, SERVERSTATEDBCACHESUMMARY, APICAGENTINTERNAL, APICTRANSACTIONFLAP,
           APICGRAPHINSTANCES, APICEPGS, APICEPGEPS, APICDEVICEPKGVER, APICTENANTS,
           APICVMMDOMAINS, STATECACHESTATS, STATECACHECONFIG, STATECACHEINTERNAL, STATECACHEDNS,
@@ -139403,9 +139491,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -141722,6 +141812,23 @@ definitions:
   SePropertiesApiResponse:
     type: object
     $ref: '#/definitions/SeProperties'
+  SeQatModeEventDetail:
+    type: object
+    properties:
+      description:
+        description: Intel QAT Service is Oper_Down. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      se_name:
+        description: Name of the SE, reporting this event. It is a reference to an
+          object of type ServiceEngine. Field introduced in 32.1.1. Allowed with any
+          value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      se_ref:
+        description: UUID of the SE, responsible for this event. It is a reference
+          to an object of type ServiceEngine. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
   SeRateLimiterDropDetails:
     type: object
     properties:
@@ -141854,6 +141961,12 @@ definitions:
           with any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
         default: QAT_OFF
+      qat_oper_mode:
+        description: Usage of Intel QAT for performance mode. Enum options - QAT_OPER_MODE_LEGACY,
+          QAT_OPER_MODE_PERF, QAT_OPER_MODE_UNKNOWN. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+        default: QAT_OPER_MODE_UNKNOWN
       sockets:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -142680,9 +142793,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -143094,9 +143209,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -143538,9 +143655,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -143968,9 +144087,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -144412,9 +144533,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -144894,11 +145017,6 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
-        description: ' It is a reference to an object of type VirtualService. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
-        type: string
       server:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -144908,6 +145026,11 @@ definitions:
           with Cloud Services edition.'
         type: number
         format: double
+      uuid:
+        description: ' It is a reference to an object of type VirtualService. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
+        type: string
   ServerScaleInParams:
     type: object
     properties:
@@ -145330,6 +145453,12 @@ definitions:
         type: integer
         default: 1
         format: uint32
+      audit_qat_huge_pages:
+        description: This knob enables audit of QAT Hugepages. Field introduced in
+          32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: boolean
+        default: true
       auto_rebalance:
         description: If set, Virtual Services will be automatically migrated when
           load on an SE is less than minimum or more than maximum thresholds. Only
@@ -145444,6 +145573,12 @@ definitions:
         type: integer
         default: 50
         format: uint32
+      control_qat_huge_pages:
+        description: This knob enables control of QAT Hugepages. Field introduced
+          in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: boolean
+        default: true
       core_shm_app_cache:
         description: Include shared memory for app cache in core file.Requires SE
           Reboot. Field introduced in 18.2.8, 20.1.1. Allowed with any value in Enterprise,
@@ -146387,6 +146522,12 @@ definitions:
         description: Management network UUID. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
+      optimistic_placement:
+        description: Allows packed placement on existing SEs with asynchronous spinning
+          up of buffer SEs. Used in packed placement with buffer SEs. Field introduced
+          in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: boolean
       os_reserved_memory:
         description: Amount of extra memory to be reserved for use by the Operating
           System on a Service Engine. Unit is MB. Allowed with any value in Enterprise,
@@ -146450,6 +146591,13 @@ definitions:
           edition.
         type: integer
         format: uint32
+      qat_hpage_mem_per_process:
+        description: This knob is used to set the number of QAT Hugepages. Enum options
+          - QAT_HPAGE_MEM_8MB, QAT_HPAGE_MEM_16MB, QAT_HPAGE_MEM_32MB. Field introduced
+          in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
+        default: QAT_HPAGE_MEM_16MB
       realtime_se_metrics:
         description: Enable or deactivate real time SE metrics. Allowed with any value
           in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -147513,7 +147661,7 @@ definitions:
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
-      ref:
+      uuid:
         description: ' It is a reference to an object of type ServiceEngine. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.'
@@ -148968,8 +149116,9 @@ definitions:
         type: string
       type:
         description: ' Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM,
-          SSL_CERTIFICATE_TYPE_CA, SSL_CERTIFICATE_TYPE_CLIENT. Allowed with any value
-          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.'
+          SSL_CERTIFICATE_TYPE_CA, SSL_CERTIFICATE_TYPE_CLIENT, SSL_CERTIFICATE_TYPE_SECURE_CHANNEL.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.'
         type: string
       url:
         description: url
@@ -149395,8 +149544,8 @@ definitions:
         type: string
       feature:
         description: Type of the SSP feature instance. Enum options - SSP_INTELLIGENT_ASSIST,
-          SSP_VDLS. Field introduced in 32.1.1. Allowed with any value in Enterprise,
-          Enterprise with Cloud Services edition.
+          SSP_CENTRAL_LICENSING_SERVICE. Field introduced in 32.1.1. Allowed with
+          any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
       hostname:
         description: Hostname of the SSP feature instance. Field introduced in 32.1.1.
@@ -149923,9 +150072,9 @@ definitions:
           JOB_TYPE_ARCHIVE_AND_RETENTION_PERIODIC_POLICY, JOB_TYPE_EXECUTE_TELEMETRY,
           JOB_TYPE_SEGROUP_OBJSYNC, JOB_TYPE_CASCADE_UPDATE_CERT_CHILD_PARENT_REF,
           JOB_TYPE_SCHEDULE_CERT_CASCADE_UPDATE, JOB_TYPE_GSLB_DNS_RESOLVE_ON_SE,
-          JOB_TYPE_GSLB_AUTO_UPDATE_SEND_INTERVAL. Field introduced in 18.1.1. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
+          JOB_TYPE_GSLB_AUTO_UPDATE_SEND_INTERVAL, JOB_TYPE_CERTIFICATE_ROTATION_JWT_CLEANUP.
+          Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.'
         type: string
   Subnet:
     type: object
@@ -150410,6 +150559,11 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         $ref: '#/definitions/NTPConfiguration'
+      password_policy_managed_at_ops:
+        description: Indicates whether password policy fields are managed by VCF-Ops.
+          Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
+        type: boolean
       portal_configuration:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -150976,9 +151130,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -151616,9 +151772,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -152059,9 +152217,11 @@ definitions:
           SYSERR_LICENSE_INVALID_CLUSTER_UUID, SYSERR_LICENSE_SAAS_LICENSE_INSTALLATION_FAILED,
           SYSERR_LICENSE_TRANSACTION_SERVICE_UNITS_REQUIRED, SYSERR_LICENSE_TRANSACTION_SEGROUP_LIMIT_EXCEEDED,
           SYSERR_LICENSE_TRANSACTION_TENANT_LIMIT_EXCEEDED, SYSERR_LICENSE_TRANSACTION_SYSTEM_LIMIT_EXCEEDED,
-          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_SEAGENT_OBJ_INACTIVE,
-          SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING, SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR,
-          SYSERR_SEAGENT_OBJ_DP_ERROR, SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
+          SYSERR_LICENSE_TRANSACTION_RESERVATION_VIOLATION, SYSERR_LICENSE_CLS_ID_NOT_SET,
+          SYSERR_INVALID_LICENSE_WARNING_DATE, SYSERR_INVALID_LICENSE_EXPIRATION_DATE,
+          SYSERR_SEAGENT_OBJ_INACTIVE, SYSERR_SEAGENT_OBJ_AWAITING_DP_PROGRAMMING,
+          SYSERR_SEAGENT_OBJ_ACTIVE, SYSERR_SEAGENT_OBJ_GRAPHDB_ERROR, SYSERR_SEAGENT_OBJ_DP_ERROR,
+          SYSERR_SEAGENT_OBJ_DISABLED_RULE_POOL, SYSERR_SEAGENT_EASTWEST_VS_SUBNET_ERROR,
           SYSERR_SEAGENT_OBJ_NOT_FOUND, SYSERR_SEAGENT_VS_NOT_FOUND, SYSERR_SEAGENT_VS_VRF_ERROR,
           SYSERR_SEAGENT_VS_SELIST_LIMIT_ERROR, SYSERR_SEAGENT_VS_SELIST_SE_INTF_ERROR,
           SYSERR_SEAGENT_VS_CHILD_PARENT_UUID_MISSING, SYSERR_SEDP_PARENT_VS_NOT_EXIST_FOR_CHILD,
@@ -156014,11 +156174,6 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: boolean
-      ref:
-        description: ' It is a reference to an object of type ServiceEngine. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
-        type: string
       route_revoked_pool_down:
         description: VIP Route is revoked as pool went down. Field introduced in 30.2.1.
           Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
@@ -156055,6 +156210,11 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: boolean
+      uuid:
+        description: ' It is a reference to an object of type ServiceEngine. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
+        type: string
   VipSummary:
     type: object
     properties:
@@ -156904,11 +157064,6 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
-        description: ' It is a reference to an object of type VirtualService. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
-        type: string
       rum_apdexr:
         description: Rum Apdexr when client insights is active. Allowed with any value
           in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -156919,6 +157074,11 @@ definitions:
           with Cloud Services edition.'
         type: number
         format: double
+      uuid:
+        description: ' It is a reference to an object of type VirtualService. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
+        type: string
       vs_uptime:
         description: Percentage time of last 5mins that the VirtualService has been
           up. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -158012,7 +158172,7 @@ definitions:
   VsRefs:
     type: object
     properties:
-      ref:
+      uuid:
         description: UUID of the Virtual Service. It is a reference to an object of
           type VirtualService. Field introduced in 22.1.1. Allowed with any value
           in Enterprise, Enterprise with Cloud Services edition.
@@ -160511,7 +160671,7 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
+      uuid:
         description: ' It is a reference to an object of type Application. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.'
@@ -160535,7 +160695,7 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
+      uuid:
         description: ' It is a reference to an object of type Application. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.'
@@ -160656,17 +160816,17 @@ definitions:
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
-      ref:
-        description: ' It is a reference to an object of type VirtualService. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
-        type: string
       serviceengine_dos_attack_level_scores:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: array
         items:
           $ref: '#/definitions/ServiceEngineDosAttackLevel'
+      uuid:
+        description: ' It is a reference to an object of type VirtualService. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
+        type: string
       value:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -161234,17 +161394,17 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
-        description: ' It is a reference to an object of type VirtualService. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
-        type: string
       server_anomaly_scores:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: array
         items:
           $ref: '#/definitions/ServerAnomalyScore'
+      uuid:
+        description: ' It is a reference to an object of type VirtualService. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
+        type: string
   PoolResourcesScore:
     type: object
     required:
@@ -161297,17 +161457,17 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
-        description: ' It is a reference to an object of type VirtualService. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
-        type: string
       server_resources_scores:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: array
         items:
           $ref: '#/definitions/ServerResourcesScore'
+      uuid:
+        description: ' It is a reference to an object of type VirtualService. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
+        type: string
   ServerAnomalyScore:
     type: object
     required:
@@ -161385,14 +161545,14 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
-        description: ' It is a reference to an object of type VirtualService. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
-        type: string
       server:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
+        type: string
+      uuid:
+        description: ' It is a reference to an object of type VirtualService. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
         type: string
   ServerResourcesScore:
     type: object
@@ -161482,14 +161642,14 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
-        description: ' It is a reference to an object of type VirtualService. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
-        type: string
       server:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
+        type: string
+      uuid:
+        description: ' It is a reference to an object of type VirtualService. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
         type: string
   ServiceEngineAnomalyScore:
     type: object
@@ -161551,7 +161711,7 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
+      uuid:
         description: ' It is a reference to an object of type ServiceEngine. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.'
@@ -161620,7 +161780,7 @@ definitions:
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
-      ref:
+      uuid:
         description: ' It is a reference to an object of type ServiceEngine. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.'
@@ -161731,7 +161891,7 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
+      uuid:
         description: ' It is a reference to an object of type ServiceEngine. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.'
@@ -161827,16 +161987,16 @@ definitions:
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
-      ref:
-        description: ' It is a reference to an object of type VirtualService. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
-        type: string
       ssl_enabled:
         description: Set whether the SSL service is enabled for the VS. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: boolean
+      uuid:
+        description: ' It is a reference to an object of type VirtualService. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
+        type: string
       value:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -161929,17 +162089,17 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
-        description: ' It is a reference to an object of type VirtualService. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
-        type: string
       serviceengine_anomaly_scores:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: array
         items:
           $ref: '#/definitions/ServiceEngineAnomalyScore'
+      uuid:
+        description: ' It is a reference to an object of type VirtualService. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
+        type: string
   VirtualServiceResourcesScore:
     type: object
     required:
@@ -162006,17 +162166,17 @@ definitions:
         description: Attribute that is dominating the health score. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-      ref:
-        description: ' It is a reference to an object of type VirtualService. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
-        type: string
       serviceengine_resources_scores:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: array
         items:
           $ref: '#/definitions/ServiceEngineResourcesScore'
+      uuid:
+        description: ' It is a reference to an object of type VirtualService. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
+        type: string
   MetricsCollectionApiReq:
     type: object
     properties:
