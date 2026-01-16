@@ -11,6 +11,6 @@ type SSLKeyRSAParams struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Exponent *uint32 `json:"exponent,omitempty"`
 
-	//  Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS, SSL_KEY_8192_BITS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	KeySize *string `json:"key_size,omitempty"`
 }
