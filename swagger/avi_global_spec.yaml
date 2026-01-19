@@ -21322,12 +21322,12 @@ paths:
                     description: object not found
 
 
-    /gslbsmruntime:
+    /gslbcrmruntime:
         get:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime
-            operationId: GET /gslbsmruntime
+                - GslbCRMRuntime
+            description: /gslbcrmruntime
+            operationId: GET /gslbcrmruntime
             consumes:
                 -   application/json
             produces:
@@ -21390,14 +21390,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntimeApiResponse"
+                        $ref: "#/definitions/GslbCRMRuntimeApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime
-            operationId: POST /gslbsmruntime
+                - GslbCRMRuntime
+            description: /gslbcrmruntime
+            operationId: POST /gslbcrmruntime
             consumes:
                 -   application/json
             produces:
@@ -21425,25 +21425,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbSMRuntime object creation
+                    description: GslbCRMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
-    /gslbsmruntime/{uuid}:
+    /gslbcrmruntime/{uuid}:
         get:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime/{uuid}/{uuid}
-            operationId: GET /gslbsmruntime/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: GET /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -21503,16 +21503,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime/{uuid}/{uuid}
-            operationId: PUT /gslbsmruntime/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: PUT /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -21545,10 +21545,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbSMRuntime object creation
+                    description: GslbCRMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -21560,16 +21560,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime/{uuid}/{uuid}
-            operationId: PATCH /gslbsmruntime/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: PATCH /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -21602,10 +21602,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbSMRuntime object creation
+                    description: GslbCRMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -21617,16 +21617,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime/{uuid}/{uuid}
-            operationId: DELETE /gslbsmruntime/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: DELETE /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -22024,12 +22024,12 @@ paths:
                     description: object not found
 
 
-    /gslbcrmruntime:
+    /gslbsmruntime:
         get:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime
-            operationId: GET /gslbcrmruntime
+                - GslbSMRuntime
+            description: /gslbsmruntime
+            operationId: GET /gslbsmruntime
             consumes:
                 -   application/json
             produces:
@@ -22092,14 +22092,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntimeApiResponse"
+                        $ref: "#/definitions/GslbSMRuntimeApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime
-            operationId: POST /gslbcrmruntime
+                - GslbSMRuntime
+            description: /gslbsmruntime
+            operationId: POST /gslbsmruntime
             consumes:
                 -   application/json
             produces:
@@ -22127,25 +22127,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbCRMRuntime object creation
+                    description: GslbSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 "401":
                     description: log in failed
-    /gslbcrmruntime/{uuid}:
+    /gslbsmruntime/{uuid}:
         get:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: GET /gslbcrmruntime/{uuid}
+                - GslbSMRuntime
+            description: /gslbsmruntime/{uuid}/{uuid}
+            operationId: GET /gslbsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -22205,16 +22205,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: PUT /gslbcrmruntime/{uuid}
+                - GslbSMRuntime
+            description: /gslbsmruntime/{uuid}/{uuid}
+            operationId: PUT /gslbsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -22247,10 +22247,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbCRMRuntime object creation
+                    description: GslbSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -22262,16 +22262,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: PATCH /gslbcrmruntime/{uuid}
+                - GslbSMRuntime
+            description: /gslbsmruntime/{uuid}/{uuid}
+            operationId: PATCH /gslbsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -22304,10 +22304,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbCRMRuntime object creation
+                    description: GslbSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -22319,16 +22319,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: DELETE /gslbcrmruntime/{uuid}
+                - GslbSMRuntime
+            description: /gslbsmruntime/{uuid}/{uuid}
+            operationId: DELETE /gslbsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -56860,12 +56860,12 @@ paths:
                     description: object not found
 
 
-    /debugvirtualservice:
+    /upgradestatusinfo:
         get:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice
-            operationId: GET /debugvirtualservice
+                - UpgradeStatusSummary
+            description: /upgradestatusinfo
+            operationId: GET /upgradestatusinfo
             consumes:
                 -   application/json
             produces:
@@ -56922,88 +56922,20 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: cloud_uuid
-                    in: query
-                    description: Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_uuid=cloud-xyz.
-                    type: string
-                -   name: cloud_ref.name
-                    in: query
-                    description: Filter to get objects that belongs to a specific cloud usings its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
-                    type: string
-                -   name: cloud_ref.uuid
-                    in: query
-                    description: Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_ref.uuid=cloud_uuid.
-                    type: string
-                    required: false
-                -   name: name.contains
-                    in: query
-                    description: Filter to get objects with name that contains the parameter. This is a case sensitive search. Eg. name.contains=pool-.
-                    type: string
-                    required: false
-                -   name: name.icontains
-                    in: query
-                    description: Filter to get objects with name that contains the parameter. This is a case insensitive search. Eg. name.icontains=pool-.
-                    type: string
-                    required: false
-                -   name: name.in
-                    in: query
-                    description: Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. name.in=pool-1,pool-12.
-                    type: string
-                    required: false
-                -   name: uuid.in
-                    in: query
-                    description: Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. uuid.in=<uuid-1>,<uuid-2>.
-                    type: string
-                    required: false
-                -   name: search
-                    in: query
-                    description: Filter to get objects that contains the search string as value for any of its fields. Eg. search=LEAST_CONN. The search filter can also be used to search under a specific field. This is achieved by sending the parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
-                    type: string
-                    required: false
-                -   name: isearch
-                    in: query
-                    description: Filter to get objects that contains case insensitive search string. Eg. isearch=(name,Vs-Pool-).
-                    type: string
-                    required: false
-                -   name: limit_by
-                    in: query
-                    description: Filter to limit the number of objects in the response data. Eg. limit_by=3.
-                    type: string
-                    required: false
-                -   name: exclude
-                    in: query
-                    description: Filter to exclude the uuid(s) contained in the parameter. Eg. uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
-                    type: string
-                    required: false
-                -   name: sort
-                    in: query
-                    description: Parameter to sort the results with respect to a field. Eg. sort=name.
-                    type: string
-                    required: false
-                -   name: page
-                    in: query
-                    description: Parameter to specify the desired page number. The page starts from 1 and default is 1.
-                    type: string
-                    required: false
-                -   name: page_size
-                    in: query
-                    description: Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.
-                    type: string
-                    required: false
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
+                        $ref: "#/definitions/UpgradeStatusSummaryApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice
-            operationId: POST /debugvirtualservice
+                - UpgradeStatusSummary
+            description: /upgradestatusinfo
+            operationId: POST /upgradestatusinfo
             consumes:
                 -   application/json
             produces:
@@ -57031,25 +56963,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: UpgradeStatusSummary object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusSummary"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusSummary"
                 "401":
                     description: log in failed
-    /debugvirtualservice/{uuid}:
+    /upgradestatusinfo/{uuid}:
         get:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: GET /debugvirtualservice/{uuid}
+                - UpgradeStatusSummary
+            description: /upgradestatusinfo/{uuid}/{uuid}
+            operationId: GET /upgradestatusinfo/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -57109,16 +57041,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusSummary"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: PUT /debugvirtualservice/{uuid}
+                - UpgradeStatusSummary
+            description: /upgradestatusinfo/{uuid}/{uuid}
+            operationId: PUT /upgradestatusinfo/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -57151,10 +57083,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: UpgradeStatusSummary object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusSummary"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -57166,16 +57098,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusSummary"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: PATCH /debugvirtualservice/{uuid}
+                - UpgradeStatusSummary
+            description: /upgradestatusinfo/{uuid}/{uuid}
+            operationId: PATCH /upgradestatusinfo/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -57208,10 +57140,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: UpgradeStatusSummary object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusSummary"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -57223,16 +57155,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusSummary"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: DELETE /debugvirtualservice/{uuid}
+                - UpgradeStatusSummary
+            description: /upgradestatusinfo/{uuid}/{uuid}
+            operationId: DELETE /upgradestatusinfo/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -60810,12 +60742,12 @@ paths:
                     description: log in failed
                 "404":
                     description: object not found
-    /upgradestatusinfo:
+    /debugvirtualservice:
         get:
             tags:
-                - UpgradeStatusSummary
-            description: /upgradestatusinfo
-            operationId: GET /upgradestatusinfo
+                - DebugVirtualService
+            description: /debugvirtualservice
+            operationId: GET /debugvirtualservice
             consumes:
                 -   application/json
             produces:
@@ -60872,20 +60804,88 @@ paths:
                     type: string
                     required: false
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: cloud_uuid
+                    in: query
+                    description: Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_uuid=cloud-xyz.
+                    type: string
+                -   name: cloud_ref.name
+                    in: query
+                    description: Filter to get objects that belongs to a specific cloud usings its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
+                    type: string
+                -   name: cloud_ref.uuid
+                    in: query
+                    description: Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_ref.uuid=cloud_uuid.
+                    type: string
+                    required: false
+                -   name: name.contains
+                    in: query
+                    description: Filter to get objects with name that contains the parameter. This is a case sensitive search. Eg. name.contains=pool-.
+                    type: string
+                    required: false
+                -   name: name.icontains
+                    in: query
+                    description: Filter to get objects with name that contains the parameter. This is a case insensitive search. Eg. name.icontains=pool-.
+                    type: string
+                    required: false
+                -   name: name.in
+                    in: query
+                    description: Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. name.in=pool-1,pool-12.
+                    type: string
+                    required: false
+                -   name: uuid.in
+                    in: query
+                    description: Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. uuid.in=<uuid-1>,<uuid-2>.
+                    type: string
+                    required: false
+                -   name: search
+                    in: query
+                    description: Filter to get objects that contains the search string as value for any of its fields. Eg. search=LEAST_CONN. The search filter can also be used to search under a specific field. This is achieved by sending the parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
+                    type: string
+                    required: false
+                -   name: isearch
+                    in: query
+                    description: Filter to get objects that contains case insensitive search string. Eg. isearch=(name,Vs-Pool-).
+                    type: string
+                    required: false
+                -   name: limit_by
+                    in: query
+                    description: Filter to limit the number of objects in the response data. Eg. limit_by=3.
+                    type: string
+                    required: false
+                -   name: exclude
+                    in: query
+                    description: Filter to exclude the uuid(s) contained in the parameter. Eg. uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
+                    type: string
+                    required: false
+                -   name: sort
+                    in: query
+                    description: Parameter to sort the results with respect to a field. Eg. sort=name.
+                    type: string
+                    required: false
+                -   name: page
+                    in: query
+                    description: Parameter to specify the desired page number. The page starts from 1 and default is 1.
+                    type: string
+                    required: false
+                -   name: page_size
+                    in: query
+                    description: Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.
+                    type: string
+                    required: false
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusSummaryApiResponse"
+                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - UpgradeStatusSummary
-            description: /upgradestatusinfo
-            operationId: POST /upgradestatusinfo
+                - DebugVirtualService
+            description: /debugvirtualservice
+            operationId: POST /debugvirtualservice
             consumes:
                 -   application/json
             produces:
@@ -60913,25 +60913,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: UpgradeStatusSummary object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/UpgradeStatusSummary"
+                        $ref: "#/definitions/DebugVirtualService"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusSummary"
+                        $ref: "#/definitions/DebugVirtualService"
                 "401":
                     description: log in failed
-    /upgradestatusinfo/{uuid}:
+    /debugvirtualservice/{uuid}:
         get:
             tags:
-                - UpgradeStatusSummary
-            description: /upgradestatusinfo/{uuid}/{uuid}
-            operationId: GET /upgradestatusinfo/{uuid}
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: GET /debugvirtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -60991,16 +60991,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusSummary"
+                        $ref: "#/definitions/DebugVirtualService"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - UpgradeStatusSummary
-            description: /upgradestatusinfo/{uuid}/{uuid}
-            operationId: PUT /upgradestatusinfo/{uuid}
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: PUT /debugvirtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -61033,10 +61033,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: UpgradeStatusSummary object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/UpgradeStatusSummary"
+                        $ref: "#/definitions/DebugVirtualService"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -61048,16 +61048,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusSummary"
+                        $ref: "#/definitions/DebugVirtualService"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - UpgradeStatusSummary
-            description: /upgradestatusinfo/{uuid}/{uuid}
-            operationId: PATCH /upgradestatusinfo/{uuid}
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: PATCH /debugvirtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -61090,10 +61090,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: UpgradeStatusSummary object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/UpgradeStatusSummary"
+                        $ref: "#/definitions/DebugVirtualService"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -61105,16 +61105,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusSummary"
+                        $ref: "#/definitions/DebugVirtualService"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - UpgradeStatusSummary
-            description: /upgradestatusinfo/{uuid}/{uuid}
-            operationId: DELETE /upgradestatusinfo/{uuid}
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: DELETE /debugvirtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -93921,7 +93921,7 @@ definitions:
                 description: "Server reselect configuration for HTTP requests. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPServerReselect'
             server_timeout:
-                description: "Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes between AVI and the server. Value of 0 results in using default timeout of 60 minutes. Allowed values are 0-21600000. Field introduced in 18.1.5,18.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Timeout for backend server connection and data reception. This setting controls two timeouts  First, the maximum time allowed to establish a TCP connection to the backend server. Second, the maximum idle time while receiving data - the timer resets each time data arrives, so the backend can take as long as needed to send the complete response as long as it doesn't stop sending data for longer than this timeout. Value of 0 (default) inherits from the Service Engine Group's upstream_read_timeout and upstream_connect_timeout properties. It applies only to L7 (HTTP) virtual services. Allowed values are 0-21600000. Field introduced in 18.1.5,18.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             servers:
