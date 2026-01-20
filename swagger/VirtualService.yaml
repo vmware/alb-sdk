@@ -4439,6 +4439,12 @@ definitions:
             jwt_name:
                 description: "Name by which the JWT can be identified if the token is sent as a query param in the request url. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
+            protected_resource:
+                description: "The protected resource identifier. This is a URL that uniquely identifies the protected resource. Typically the base URL of the API/service. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            protected_resource_name:
+                description: "Human-readable name of the protected resource. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
     KeyValue:
         type: object
         required:
