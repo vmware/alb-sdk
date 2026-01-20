@@ -12,7 +12,7 @@ type ApplicationProfile struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Specifies app service type for an application. Enum options - APP_SERVICE_TYPE_L7_HORIZON, APP_SERVICE_TYPE_L4_BLAST, APP_SERVICE_TYPE_L4_PCOIP, APP_SERVICE_TYPE_L4_FTP. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Specifies app service type for an application. Enum options - APP_SERVICE_TYPE_L7_HORIZON, APP_SERVICE_TYPE_L4_BLAST, APP_SERVICE_TYPE_L4_PCOIP, APP_SERVICE_TYPE_L4_FTP, APP_SERVICE_TYPE_HTTP_MCP. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	AppServiceType *string `json:"app_service_type,omitempty"`
 
 	// Checksum of application profiles. Internally set by cloud connector. Field introduced in 17.2.14, 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
