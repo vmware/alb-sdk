@@ -317,6 +317,12 @@ type EventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogAgentEventDetails *LogAgentEventDetail `json:"log_agent_event_details,omitempty"`
 
+	// Details for Access Grant events that authorize namespace-scoped access to Avi Controller. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ManagementSvcAccessGrantDetails *ManagementServiceAccessGrantEventDetails `json:"management_svc_access_grant_details,omitempty"`
+
+	// Details for Management Service events that expose Avi Controller endpoint for VKS clusters. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ManagementSvcDetails *ManagementServiceEventDetails `json:"management_svc_details,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MarathonServicePortConflictDetails *MarathonServicePortConflict `json:"marathon_service_port_conflict_details,omitempty"`
 

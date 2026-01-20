@@ -31,6 +31,9 @@ type JWTServerProfile struct {
 	// Required: true
 	Name *string `json:"name"`
 
+	// OAuth 2.0 Protected Resource Metadata configuration (RFC 9728). Only applicable when jwt_profile_type is CLIENT_AUTH. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	ProtectedResourceConfig *JWTProtectedResourceConfig `json:"protected_resource_config,omitempty"`
+
 	// UUID of the Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
