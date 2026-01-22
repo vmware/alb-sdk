@@ -67,6 +67,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("bm_use_ansible")
     private Boolean bmUseAnsible = true;
 
+    @JsonProperty("cert_rotation_jwt_retention_days")
+    private Integer certRotationJwtRetentionDays = 180;
+
     @JsonProperty("check_vsvip_fqdn_syntax")
     private Boolean checkVsvipFqdnSyntax = true;
 
@@ -740,6 +743,36 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setBmUseAnsible(Boolean  bmUseAnsible) {
         this.bmUseAnsible = bmUseAnsible;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Number of days to retain jwt tokens generated during certificate rotation.
+     * Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months, 180 = 6 months).
+     * Allowed values are 1-3650.
+     * Field introduced in 32.1.1.
+     * Unit is days.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+     * @return certRotationJwtRetentionDays
+     */
+    public Integer getCertRotationJwtRetentionDays() {
+        return certRotationJwtRetentionDays;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of days to retain jwt tokens generated during certificate rotation.
+     * Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months, 180 = 6 months).
+     * Allowed values are 1-3650.
+     * Field introduced in 32.1.1.
+     * Unit is days.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+     * @param certRotationJwtRetentionDays set the certRotationJwtRetentionDays.
+     */
+    public void setCertRotationJwtRetentionDays(Integer  certRotationJwtRetentionDays) {
+        this.certRotationJwtRetentionDays = certRotationJwtRetentionDays;
     }
 
     /**
@@ -3438,7 +3471,8 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.logRecordsFrequentCleanupEventGenerationThreshold, objControllerProperties.logRecordsFrequentCleanupEventGenerationThreshold)&&
   Objects.equals(this.logRecordsCleanupTargetPercentage, objControllerProperties.logRecordsCleanupTargetPercentage)&&
   Objects.equals(this.logRecordsAllocationPercentageForEvents, objControllerProperties.logRecordsAllocationPercentageForEvents)&&
-  Objects.equals(this.eventManagerFileModifiedTsFilter, objControllerProperties.eventManagerFileModifiedTsFilter);
+  Objects.equals(this.eventManagerFileModifiedTsFilter, objControllerProperties.eventManagerFileModifiedTsFilter)&&
+  Objects.equals(this.certRotationJwtRetentionDays, objControllerProperties.certRotationJwtRetentionDays);
     }
 
     @Override
@@ -3460,6 +3494,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    attachIpRetryInterval: ").append(toIndentedString(attachIpRetryInterval)).append("\n");
                         sb.append("    attachIpRetryLimit: ").append(toIndentedString(attachIpRetryLimit)).append("\n");
                         sb.append("    bmUseAnsible: ").append(toIndentedString(bmUseAnsible)).append("\n");
+                        sb.append("    certRotationJwtRetentionDays: ").append(toIndentedString(certRotationJwtRetentionDays)).append("\n");
                         sb.append("    checkVsvipFqdnSyntax: ").append(toIndentedString(checkVsvipFqdnSyntax)).append("\n");
                         sb.append("    cleanupExpiredAuthtokenTimeoutPeriod: ").append(toIndentedString(cleanupExpiredAuthtokenTimeoutPeriod)).append("\n");
                         sb.append("    cleanupSessionsTimeoutPeriod: ").append(toIndentedString(cleanupSessionsTimeoutPeriod)).append("\n");

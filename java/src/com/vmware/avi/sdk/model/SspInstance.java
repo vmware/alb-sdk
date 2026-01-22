@@ -134,7 +134,7 @@ public class SspInstance extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Type of the ssp feature instance.
-     * Enum options - SSP_INTELLIGENT_ASSIST, SSP_VDLS.
+     * Enum options - SSP_INTELLIGENT_ASSIST, SSP_CENTRAL_LICENSING_SERVICE.
      * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -147,7 +147,7 @@ public class SspInstance extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Type of the ssp feature instance.
-     * Enum options - SSP_INTELLIGENT_ASSIST, SSP_VDLS.
+     * Enum options - SSP_INTELLIGENT_ASSIST, SSP_CENTRAL_LICENSING_SERVICE.
      * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

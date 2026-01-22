@@ -51,7 +51,7 @@ public class SSLKeyRSAParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS.
+     * Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS, SSL_KEY_8192_BITS.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_2048_BITS".
      * @return keySize
@@ -62,7 +62,7 @@ public class SSLKeyRSAParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS.
+     * Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS, SSL_KEY_8192_BITS.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_2048_BITS".
      * @param keySize set the keySize.

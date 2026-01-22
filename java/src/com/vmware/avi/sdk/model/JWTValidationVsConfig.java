@@ -30,6 +30,12 @@ public class JWTValidationVsConfig  {
     @JsonProperty("jwt_name")
     private String jwtName;
 
+    @JsonProperty("protected_resource")
+    private String protectedResource;
+
+    @JsonProperty("protected_resource_name")
+    private String protectedResourceName;
+
 
 
     /**
@@ -108,6 +114,58 @@ public class JWTValidationVsConfig  {
         this.jwtName = jwtName;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * The protected resource identifier.
+     * This is a url that uniquely identifies the protected resource.
+     * Typically the base url of the api/service.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return protectedResource
+     */
+    public String getProtectedResource() {
+        return protectedResource;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The protected resource identifier.
+     * This is a url that uniquely identifies the protected resource.
+     * Typically the base url of the api/service.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param protectedResource set the protectedResource.
+     */
+    public void setProtectedResource(String  protectedResource) {
+        this.protectedResource = protectedResource;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Human-readable name of the protected resource.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return protectedResourceName
+     */
+    public String getProtectedResourceName() {
+        return protectedResourceName;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Human-readable name of the protected resource.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param protectedResourceName set the protectedResourceName.
+     */
+    public void setProtectedResourceName(String  protectedResourceName) {
+        this.protectedResourceName = protectedResourceName;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,7 +178,9 @@ public class JWTValidationVsConfig  {
       JWTValidationVsConfig objJWTValidationVsConfig = (JWTValidationVsConfig) o;
       return   Objects.equals(this.jwtLocation, objJWTValidationVsConfig.jwtLocation)&&
   Objects.equals(this.jwtName, objJWTValidationVsConfig.jwtName)&&
-  Objects.equals(this.audience, objJWTValidationVsConfig.audience);
+  Objects.equals(this.audience, objJWTValidationVsConfig.audience)&&
+  Objects.equals(this.protectedResource, objJWTValidationVsConfig.protectedResource)&&
+  Objects.equals(this.protectedResourceName, objJWTValidationVsConfig.protectedResourceName);
     }
 
     @Override
@@ -130,6 +190,8 @@ public class JWTValidationVsConfig  {
                   sb.append("    audience: ").append(toIndentedString(audience)).append("\n");
                         sb.append("    jwtLocation: ").append(toIndentedString(jwtLocation)).append("\n");
                         sb.append("    jwtName: ").append(toIndentedString(jwtName)).append("\n");
+                        sb.append("    protectedResource: ").append(toIndentedString(protectedResource)).append("\n");
+                        sb.append("    protectedResourceName: ").append(toIndentedString(protectedResourceName)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

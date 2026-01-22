@@ -330,6 +330,12 @@ public class EventDetails  {
     @JsonProperty("log_agent_event_details")
     private LogAgentEventDetail logAgentEventDetails;
 
+    @JsonProperty("management_svc_access_grant_details")
+    private ManagementServiceAccessGrantEventDetails managementSvcAccessGrantDetails;
+
+    @JsonProperty("management_svc_details")
+    private ManagementServiceEventDetails managementSvcDetails;
+
     @JsonProperty("marathon_service_port_conflict_details")
     private MarathonServicePortConflict marathonServicePortConflictDetails;
 
@@ -563,6 +569,9 @@ public class EventDetails  {
 
     @JsonProperty("se_process_crashed_details")
     private SeProcessCrashedDetails seProcessCrashedDetails;
+
+    @JsonProperty("se_qat_mode_event_detail")
+    private SeQatModeEventDetail seQatModeEventDetail;
 
     @JsonProperty("se_rate_limiter_drop_details")
     private SeRateLimiterDropDetails seRateLimiterDropDetails;
@@ -2911,6 +2920,54 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Details for access grant events that authorize namespace-scoped access to avi controller.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return managementSvcAccessGrantDetails
+     */
+    public ManagementServiceAccessGrantEventDetails getManagementSvcAccessGrantDetails() {
+        return managementSvcAccessGrantDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Details for access grant events that authorize namespace-scoped access to avi controller.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param managementSvcAccessGrantDetails set the managementSvcAccessGrantDetails.
+     */
+    public void setManagementSvcAccessGrantDetails(ManagementServiceAccessGrantEventDetails managementSvcAccessGrantDetails) {
+        this.managementSvcAccessGrantDetails = managementSvcAccessGrantDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Details for management service events that expose avi controller endpoint for vks clusters.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return managementSvcDetails
+     */
+    public ManagementServiceEventDetails getManagementSvcDetails() {
+        return managementSvcDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Details for management service events that expose avi controller endpoint for vks clusters.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param managementSvcDetails set the managementSvcDetails.
+     */
+    public void setManagementSvcDetails(ManagementServiceEventDetails managementSvcDetails) {
+        this.managementSvcDetails = managementSvcDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return marathonServicePortConflictDetails
@@ -4557,6 +4614,28 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seQatModeEventDetail
+     */
+    public SeQatModeEventDetail getSeQatModeEventDetail() {
+        return seQatModeEventDetail;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param seQatModeEventDetail set the seQatModeEventDetail.
+     */
+    public void setSeQatModeEventDetail(SeQatModeEventDetail seQatModeEventDetail) {
+        this.seQatModeEventDetail = seQatModeEventDetail;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -6141,6 +6220,7 @@ public class EventDetails  {
   Objects.equals(this.seDebugModeEventDetail, objEventDetails.seDebugModeEventDetail)&&
   Objects.equals(this.seObjsyncPeerDownDetails, objEventDetails.seObjsyncPeerDownDetails)&&
   Objects.equals(this.seRateLimiterDropDetails, objEventDetails.seRateLimiterDropDetails)&&
+  Objects.equals(this.seQatModeEventDetail, objEventDetails.seQatModeEventDetail)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -6277,6 +6357,8 @@ public class EventDetails  {
   Objects.equals(this.nsxtDfwGroupDetails, objEventDetails.nsxtDfwGroupDetails)&&
   Objects.equals(this.nsxtDfwTagSegmentPort, objEventDetails.nsxtDfwTagSegmentPort)&&
   Objects.equals(this.nsxtDfwTagVmDetails, objEventDetails.nsxtDfwTagVmDetails)&&
+  Objects.equals(this.managementSvcDetails, objEventDetails.managementSvcDetails)&&
+  Objects.equals(this.managementSvcAccessGrantDetails, objEventDetails.managementSvcAccessGrantDetails)&&
   Objects.equals(this.psmProgramDetails, objEventDetails.psmProgramDetails)&&
   Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
   Objects.equals(this.falsePositiveDetails, objEventDetails.falsePositiveDetails)&&
@@ -6422,6 +6504,8 @@ public class EventDetails  {
                         sb.append("    licenseTierSwitchDetails: ").append(toIndentedString(licenseTierSwitchDetails)).append("\n");
                         sb.append("    licenseTransactionDetails: ").append(toIndentedString(licenseTransactionDetails)).append("\n");
                         sb.append("    logAgentEventDetails: ").append(toIndentedString(logAgentEventDetails)).append("\n");
+                        sb.append("    managementSvcAccessGrantDetails: ").append(toIndentedString(managementSvcAccessGrantDetails)).append("\n");
+                        sb.append("    managementSvcDetails: ").append(toIndentedString(managementSvcDetails)).append("\n");
                         sb.append("    marathonServicePortConflictDetails: ").append(toIndentedString(marathonServicePortConflictDetails)).append("\n");
                         sb.append("    memoryBalancerInfo: ").append(toIndentedString(memoryBalancerInfo)).append("\n");
                         sb.append("    mesosInfraDetails: ").append(toIndentedString(mesosInfraDetails)).append("\n");
@@ -6500,6 +6584,7 @@ public class EventDetails  {
                         sb.append("    sePersistenceDetails: ").append(toIndentedString(sePersistenceDetails)).append("\n");
                         sb.append("    sePoolLbDetails: ").append(toIndentedString(sePoolLbDetails)).append("\n");
                         sb.append("    seProcessCrashedDetails: ").append(toIndentedString(seProcessCrashedDetails)).append("\n");
+                        sb.append("    seQatModeEventDetail: ").append(toIndentedString(seQatModeEventDetail)).append("\n");
                         sb.append("    seRateLimiterDropDetails: ").append(toIndentedString(seRateLimiterDropDetails)).append("\n");
                         sb.append("    seReconcileDetails: ").append(toIndentedString(seReconcileDetails)).append("\n");
                         sb.append("    seThreshEventDetails: ").append(toIndentedString(seThreshEventDetails)).append("\n");
