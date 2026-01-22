@@ -848,16 +848,18 @@ class AviClone:
 
         created_objs = []
         warnings = []
+        
+        SENSITIVE_PLACEHOLDER = 'placeholder'
 
         if 'ldap' in obj:
             ldap_obj = obj['ldap']
             if 'settings' in ldap_obj:
-                ldap_obj['settings']['password'] = 'placeholder'
+                ldap_obj['settings']['password'] = SENSITIVE_PLACEHOLDER
                 warnings.append('The LDAP password referenced in authprofile '
                                 '%s cannot be cloned and must be re-entered '
                                 'manually.' % obj['name'])
         if 'tacacs_plus' in obj:
-            obj['tacacs_plus']['password'] = 'placeholder'
+            obj['tacacs_plus']['password'] = SENSITIVE_PLACEHOLDER
             warnings.append('The TACACS password referenced in authprofile '
                             '%s cannot be cloned and must be re-entered '
                             'manually.' % obj['name'])
@@ -1088,12 +1090,14 @@ class AviClone:
 
         created_objs = []
         warnings = []
+        
+        SENSITIVE_PLACEHOLDER = 'placeholder'
 
         try:
             if 'script_params' in obj:
                 for par in obj['script_params']:
                     if par['is_sensitive']:
-                        par['value'] = 'placeholder'
+                        par['value'] = SENSITIVE_PLACEHOLDER
                         warnings.append(
                             'A sensitive script parameter (%s) in '
                             'certificate management profile %s cannot '
@@ -1907,11 +1911,11 @@ class AviClone:
         scaleout_ecmp = vs_flags.get('scaleout_ecmp', None)
         enable_rhi = vs_flags.get('enable_rhi', None)
 
-        new_vs_vips = new_vs_vips or ([None * len(new_vs_v6vips)]
+        new_vs_vips = new_vs_vips or ([None] * len(new_vs_v6vips)
                                       if new_vs_v6vips else ['*'])
-        new_vs_fips = new_vs_fips or [None * len(new_vs_vips)]
-        new_vs_v6vips = new_vs_v6vips or [None * len(new_vs_vips)]
-        new_vs_placements = new_vs_placements or [None * len(new_vs_vips)]
+        new_vs_fips = new_vs_fips or [None] * len(new_vs_vips)
+        new_vs_v6vips = new_vs_v6vips or [None] * len(new_vs_vips)
+        new_vs_placements = new_vs_placements or [None] * len(new_vs_vips)
         new_fqdns = new_fqdns or ['*']
 
         if new_vs_fips != [None] and len(new_vs_vips) != len(new_vs_fips):

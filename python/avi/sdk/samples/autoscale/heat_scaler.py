@@ -14,8 +14,11 @@ cooldown = 5
 
 # http://developer.openstack.org/api-ref-orchestration-v1.html
 
-def heat_init(node='10.10.184.2', uname='admin', passwd='admin', tenant='admin', 
+def heat_init(node='10.10.184.2', uname='admin', passwd=None, tenant='admin', 
     sch='http', region='RegionOne', tmo=120):
+    if passwd is None:
+        import os
+        passwd = os.environ.get('OPENSTACK_PASSWORD', '')
     authurl = '%s://%s:5000/v2.0' % (sch, node)
     ksc     = ksclient.Client(username=uname, password=passwd, tenant_name=tenant, 
                 auth_url=authurl, timeout=tmo, insecure=True, region_name=region)
@@ -27,9 +30,15 @@ def heat_init(node='10.10.184.2', uname='admin', passwd='admin', tenant='admin',
 
 # read params from ENV/rc file
 def _heat_get_env():
-    env = {'username': 'admin', 'password': 'admin', 'tenant': 'admin', 
-           'host': '10.10.184.2', 'scheme': 'http', 'region': 'RegionOne',
-           'env-file': ['/opt/avi/python/lib/avi/sdk/samples/heat/lb-env.yaml'], 'template-file': '/opt/avi/python/lib/avi/sdk/samples/heat/lb-asg.yaml'}
+    import os
+    env = {'username': os.environ.get('OPENSTACK_USERNAME', 'admin'), 
+           'password': os.environ.get('OPENSTACK_PASSWORD', ''), 
+           'tenant': os.environ.get('OPENSTACK_TENANT', 'admin'), 
+           'host': os.environ.get('OPENSTACK_HOST', '10.10.184.2'), 
+           'scheme': os.environ.get('OPENSTACK_SCHEME', 'http'), 
+           'region': os.environ.get('OPENSTACK_REGION', 'RegionOne'),
+           'env-file': ['/opt/avi/python/lib/avi/sdk/samples/heat/lb-env.yaml'], 
+           'template-file': '/opt/avi/python/lib/avi/sdk/samples/heat/lb-asg.yaml'}
     return env
 
 def heat_stack_exists(hc, name):
@@ -91,11 +100,12 @@ def heat_stack_scale(name, image, flavor, networks, passwd, key, lbpool,
     return
 
 if __name__ == '__main__':
+    import os
     logging.basicConfig(level=logging.DEBUG)
     hc   = heat_init()
     name = 'avi-heat-asg'
     args = {'name'    : name, 'image': 'cirros', 'flavor': 'm1.tiny', 
-            'networks': 'avi-mgmt', 'passwd': 'blah', 'key': 'heat_key', 'init':1, 
+            'networks': 'avi-mgmt', 'passwd': os.environ.get('INSTANCE_PASSWORD', ''), 'key': 'heat_key', 'init':1, 
             'sgrps'   : '844f5b1b-55c1-46ed-bab5-21e527da82e2', 
             'lbpool'  : 'b2c15882-a253-4208-b530-e9b5150ccd61',
             'metadata': {'name':'siva','test':'heat trials'},
