@@ -35714,12 +35714,12 @@ paths:
           description: log in failed
         '404':
           description: object not found
-  /gslbcrmruntime:
+  /gslbhsmruntime:
     get:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime
-      operationId: GET /gslbcrmruntime
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: GET /gslbhsmruntime
       consumes:
       - application/json
       produces:
@@ -35796,14 +35796,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntimeApiResponse'
+            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime
-      operationId: POST /gslbcrmruntime
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: POST /gslbhsmruntime
       consumes:
       - application/json
       produces:
@@ -35837,25 +35837,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbCRMRuntime object creation
+        description: GslbHSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbCRMRuntime'
+          $ref: '#/definitions/GslbHSMRuntime'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntime'
+            $ref: '#/definitions/GslbHSMRuntime'
         '401':
           description: log in failed
-  /gslbcrmruntime/{uuid}:
+  /gslbhsmruntime/{uuid}:
     get:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: GET /gslbcrmruntime/{uuid}
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: GET /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -35925,16 +35925,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntime'
+            $ref: '#/definitions/GslbHSMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbcrmruntime/{uuid}
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -35973,10 +35973,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbCRMRuntime object creation
+        description: GslbHSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbCRMRuntime'
+          $ref: '#/definitions/GslbHSMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -35988,16 +35988,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntime'
+            $ref: '#/definitions/GslbHSMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbcrmruntime/{uuid}
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -36036,10 +36036,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbCRMRuntime object creation
+        description: GslbHSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbCRMRuntime'
+          $ref: '#/definitions/GslbHSMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -36051,16 +36051,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbCRMRuntime'
+            $ref: '#/definitions/GslbHSMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbcrmruntime/{uuid}
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -36508,12 +36508,12 @@ paths:
             type: string
         '404':
           description: object not found
-  /gslbhsmruntime:
+  /gslbcrmruntime:
     get:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: GET /gslbhsmruntime
+      - GslbCRMRuntime
+      description: /gslbcrmruntime
+      operationId: GET /gslbcrmruntime
       consumes:
       - application/json
       produces:
@@ -36590,14 +36590,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
+            $ref: '#/definitions/GslbCRMRuntimeApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: POST /gslbhsmruntime
+      - GslbCRMRuntime
+      description: /gslbcrmruntime
+      operationId: POST /gslbcrmruntime
       consumes:
       - application/json
       produces:
@@ -36631,25 +36631,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbHSMRuntime object creation
+        description: GslbCRMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbHSMRuntime'
+          $ref: '#/definitions/GslbCRMRuntime'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntime'
+            $ref: '#/definitions/GslbCRMRuntime'
         '401':
           description: log in failed
-  /gslbhsmruntime/{uuid}:
+  /gslbcrmruntime/{uuid}:
     get:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: GET /gslbhsmruntime/{uuid}
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: GET /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -36719,16 +36719,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntime'
+            $ref: '#/definitions/GslbCRMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbhsmruntime/{uuid}
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -36767,10 +36767,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbHSMRuntime object creation
+        description: GslbCRMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbHSMRuntime'
+          $ref: '#/definitions/GslbCRMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -36782,16 +36782,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntime'
+            $ref: '#/definitions/GslbCRMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbhsmruntime/{uuid}
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -36830,10 +36830,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbHSMRuntime object creation
+        description: GslbCRMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbHSMRuntime'
+          $ref: '#/definitions/GslbCRMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -36845,16 +36845,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntime'
+            $ref: '#/definitions/GslbCRMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbhsmruntime/{uuid}
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
