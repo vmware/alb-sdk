@@ -36,11 +36,17 @@ type VIMgrGuestNicRuntime struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NetworkUUID *string `json:"network_uuid,omitempty"`
 
+	// NSX segment port path for TEPless VPC mode. This port is pre-created before VNIC attachment. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	NsxSegmentPortPath *string `json:"nsx_segment_port_path,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OsPortUUID *string `json:"os_port_uuid,omitempty"`
 
 	// Segment port of the vnic assigned to SE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SegmentPort *string `json:"segment_port,omitempty"`
+
+	// Tepless IP for TEP-less VPC. Used as source IP for all SE-originated traffic in this VRF. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	TeplessIP *IPAddr `json:"tepless_ip,omitempty"`
 
 	//  Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
