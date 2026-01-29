@@ -96,6 +96,9 @@ public class SeList  {
     @JsonProperty("snat_ip6_address")
     private IpAddr snatIp6Address;
 
+    @JsonProperty("tepless_ip")
+    private IpAddr teplessIp;
+
     @JsonProperty("vcpus")
     private Integer vcpus = 2;
 
@@ -720,6 +723,34 @@ public class SeList  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Tepless ip for tep-less vpc.
+     * Used as source ip for all se-originated traffic in this vrf.
+     * Required for inter-se communication in scale-out scenarios.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return teplessIp
+     */
+    public IpAddr getTeplessIp() {
+        return teplessIp;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tepless ip for tep-less vpc.
+     * Used as source ip for all se-originated traffic in this vrf.
+     * Required for inter-se communication in scale-out scenarios.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param teplessIp set the teplessIp.
+     */
+    public void setTeplessIp(IpAddr teplessIp) {
+        this.teplessIp = teplessIp;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return vcpus
@@ -948,7 +979,8 @@ public class SeList  {
   Objects.equals(this.cloudProgrammingStatus, objSeList.cloudProgrammingStatus)&&
   Objects.equals(this.snatIp6Address, objSeList.snatIp6Address)&&
   Objects.equals(this.floatingIntfIp6Addresses, objSeList.floatingIntfIp6Addresses)&&
-  Objects.equals(this.routeRevokedPoolDown, objSeList.routeRevokedPoolDown);
+  Objects.equals(this.routeRevokedPoolDown, objSeList.routeRevokedPoolDown)&&
+  Objects.equals(this.teplessIp, objSeList.teplessIp);
     }
 
     @Override
@@ -980,6 +1012,7 @@ public class SeList  {
                         sb.append("    secIdx: ").append(toIndentedString(secIdx)).append("\n");
                         sb.append("    snatIp: ").append(toIndentedString(snatIp)).append("\n");
                         sb.append("    snatIp6Address: ").append(toIndentedString(snatIp6Address)).append("\n");
+                        sb.append("    teplessIp: ").append(toIndentedString(teplessIp)).append("\n");
                         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
                         sb.append("    vip6SubnetMask: ").append(toIndentedString(vip6SubnetMask)).append("\n");
                         sb.append("    vipIntfIp: ").append(toIndentedString(vipIntfIp)).append("\n");

@@ -39,6 +39,9 @@ public class JWTServerProfile extends AviRestResource  {
     @JsonProperty("name")
     private String name;
 
+    @JsonProperty("protected_resource_config")
+    private JWTProtectedResourceConfig protectedResourceConfig;
+
     @JsonProperty("tenant_ref")
     private String tenantRef;
 
@@ -202,6 +205,32 @@ public class JWTServerProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Oauth 2.0 protected resource metadata configuration (rfc 9728).
+     * Only applicable when jwt_profile_type is client_auth.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return protectedResourceConfig
+     */
+    public JWTProtectedResourceConfig getProtectedResourceConfig() {
+        return protectedResourceConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Oauth 2.0 protected resource metadata configuration (rfc 9728).
+     * Only applicable when jwt_profile_type is client_auth.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param protectedResourceConfig set the protectedResourceConfig.
+     */
+    public void setProtectedResourceConfig(JWTProtectedResourceConfig protectedResourceConfig) {
+        this.protectedResourceConfig = protectedResourceConfig;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Uuid of the tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 20.1.3.
@@ -284,7 +313,8 @@ public class JWTServerProfile extends AviRestResource  {
   Objects.equals(this.tenantRef, objJWTServerProfile.tenantRef)&&
   Objects.equals(this.isFederated, objJWTServerProfile.isFederated)&&
   Objects.equals(this.jwtProfileType, objJWTServerProfile.jwtProfileType)&&
-  Objects.equals(this.controllerInternalAuth, objJWTServerProfile.controllerInternalAuth);
+  Objects.equals(this.controllerInternalAuth, objJWTServerProfile.controllerInternalAuth)&&
+  Objects.equals(this.protectedResourceConfig, objJWTServerProfile.protectedResourceConfig);
     }
 
     @Override
@@ -297,6 +327,7 @@ public class JWTServerProfile extends AviRestResource  {
                         sb.append("    jwksKeys: ").append(toIndentedString(jwksKeys)).append("\n");
                         sb.append("    jwtProfileType: ").append(toIndentedString(jwtProfileType)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    protectedResourceConfig: ").append(toIndentedString(protectedResourceConfig)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");

@@ -48,11 +48,17 @@ public class VIMgrGuestNicRuntime  {
     @JsonProperty("network_uuid")
     private String networkUuid;
 
+    @JsonProperty("nsx_segment_port_path")
+    private String nsxSegmentPortPath;
+
     @JsonProperty("os_port_uuid")
     private String osPortUuid;
 
     @JsonProperty("segment_port")
     private String segmentPort;
+
+    @JsonProperty("tepless_ip")
+    private IpAddr teplessIp;
 
     @JsonProperty("type")
     private String type;
@@ -254,6 +260,32 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Nsx segment port path for tepless vpc mode.
+     * This port is pre-created before vnic attachment.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nsxSegmentPortPath
+     */
+    public String getNsxSegmentPortPath() {
+        return nsxSegmentPortPath;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Nsx segment port path for tepless vpc mode.
+     * This port is pre-created before vnic attachment.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param nsxSegmentPortPath set the nsxSegmentPortPath.
+     */
+    public void setNsxSegmentPortPath(String  nsxSegmentPortPath) {
+        this.nsxSegmentPortPath = nsxSegmentPortPath;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return osPortUuid
@@ -294,6 +326,32 @@ public class VIMgrGuestNicRuntime  {
      */
     public void setSegmentPort(String  segmentPort) {
         this.segmentPort = segmentPort;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Tepless ip for tep-less vpc.
+     * Used as source ip for all se-originated traffic in this vrf.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return teplessIp
+     */
+    public IpAddr getTeplessIp() {
+        return teplessIp;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tepless ip for tep-less vpc.
+     * Used as source ip for all se-originated traffic in this vrf.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param teplessIp set the teplessIp.
+     */
+    public void setTeplessIp(IpAddr teplessIp) {
+        this.teplessIp = teplessIp;
     }
 
     /**
@@ -341,7 +399,9 @@ public class VIMgrGuestNicRuntime  {
   Objects.equals(this.connected, objVIMgrGuestNicRuntime.connected)&&
   Objects.equals(this.label, objVIMgrGuestNicRuntime.label)&&
   Objects.equals(this.segmentPort, objVIMgrGuestNicRuntime.segmentPort)&&
-  Objects.equals(this.osPortUuid, objVIMgrGuestNicRuntime.osPortUuid);
+  Objects.equals(this.osPortUuid, objVIMgrGuestNicRuntime.osPortUuid)&&
+  Objects.equals(this.teplessIp, objVIMgrGuestNicRuntime.teplessIp)&&
+  Objects.equals(this.nsxSegmentPortPath, objVIMgrGuestNicRuntime.nsxSegmentPortPath);
     }
 
     @Override
@@ -357,8 +417,10 @@ public class VIMgrGuestNicRuntime  {
                         sb.append("    mgmtVnic: ").append(toIndentedString(mgmtVnic)).append("\n");
                         sb.append("    networkName: ").append(toIndentedString(networkName)).append("\n");
                         sb.append("    networkUuid: ").append(toIndentedString(networkUuid)).append("\n");
+                        sb.append("    nsxSegmentPortPath: ").append(toIndentedString(nsxSegmentPortPath)).append("\n");
                         sb.append("    osPortUuid: ").append(toIndentedString(osPortUuid)).append("\n");
                         sb.append("    segmentPort: ").append(toIndentedString(segmentPort)).append("\n");
+                        sb.append("    teplessIp: ").append(toIndentedString(teplessIp)).append("\n");
                         sb.append("    type: ").append(toIndentedString(type)).append("\n");
                   sb.append("}");
       return sb.toString();
