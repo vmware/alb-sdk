@@ -1809,7 +1809,7 @@ definitions:
         type: object
         properties:
             metric_requests:
-                description: "list of metrics queries"
+                description: "list of Metrics queries"
                 type: array
                 items:
                     $ref: '#/definitions/MetricsQuery'
@@ -1817,7 +1817,7 @@ definitions:
         type: object
         properties:
             series:
-                description: "list of metrics data series map"
+                description: "list of Metrics data series map"
                 additionalProperties:
                     $ref: '#/definitions/MetricsDataSeries'
     MetricsData:
