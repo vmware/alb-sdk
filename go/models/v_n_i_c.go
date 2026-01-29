@@ -90,6 +90,9 @@ type VNIC struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PortUUID *string `json:"port_uuid,omitempty"`
 
+	// Tepless IP address for TEP-less VPC deployment. This IP is used as the source IP for all traffic originated by the SE in this VRF. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	TeplessIP *IPAddr `json:"tepless_ip,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VlanID *int32 `json:"vlan_id,omitempty"`
 

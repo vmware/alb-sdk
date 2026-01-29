@@ -84,6 +84,9 @@ type SeList struct {
 	// IPV6 address for SE snat. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	SnatIp6Address *IPAddr `json:"snat_ip6_address,omitempty"`
 
+	// Tepless IP for TEP-less VPC. Used as source IP for all SE-originated traffic in this VRF. Required for inter-SE communication in scale-out scenarios. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	TeplessIP *IPAddr `json:"tepless_ip,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Vcpus *int32 `json:"vcpus,omitempty"`
 
