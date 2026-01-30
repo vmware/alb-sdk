@@ -30,6 +30,9 @@ type Cloud struct {
 	// Select the IP address management scheme. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DhcpEnabled *bool `json:"dhcp_enabled,omitempty"`
 
+	// To disable metrics collection. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	DisableMetricsPolling *bool `json:"disable_metrics_polling,omitempty"`
+
 	// DNS Profile for the cloud. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	DNSProviderRef *string `json:"dns_provider_ref,omitempty"`
 

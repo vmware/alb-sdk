@@ -45,6 +45,9 @@ type User struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IsSuperuser *bool `json:"is_superuser,omitempty"`
 
+	// Indicates if the user was created via VCFA OAuth authentication. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	IsVcfaUser *bool `json:"is_vcfa_user,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Local *bool `json:"local,omitempty"`
 
