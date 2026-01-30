@@ -541,5 +541,5 @@ if __name__ == '__main__':
         vse.edit_ip_group(args.resource_name, args.ips)
     elif args.option == 'clone-vs':
         if not args.vip:
-            raise ('New VIP is required')
+            raise Exception('New VIP is required')
         vse.clone_vs(args.resource_name, args.vip)

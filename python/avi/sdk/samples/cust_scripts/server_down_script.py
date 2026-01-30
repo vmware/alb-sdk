@@ -10,15 +10,17 @@ import copy
 import os
 from avi.sdk.avi_api import ApiSession
 
+import os
+
 alert_name = ""
 virtualservice = ""
 server_ip = ""
 pool = ""
 server = ""
-controller_ip = "localhost"
-username = "admin"
-password = "avi123"
-tenant = "admin"
+controller_ip = os.environ.get("AVI_CONTROLLER", "localhost")
+username = os.environ.get("AVI_USERNAME", "admin")
+password = os.environ.get("AVI_PASSWORD", "")
+tenant = os.environ.get("AVI_TENANT", "admin")
 
 session = None
 

@@ -36,6 +36,8 @@ from requests.packages import urllib3
 # Suppress warnings (typically SSL certificate warnings) when calling the API
 urllib3.disable_warnings()
 
+SSL_VERIFY = False
+
 class APIError(Exception):
     def __init__(self, arg, rsp=None):
         self.args = [arg, rsp]
@@ -54,7 +56,7 @@ def get_token(vra_ip, username, password, tenant):
         'Content-Type': 'application/json'
     }
 
-    r = requests.post(url, headers = headers, data = json.dumps(data), verify=False)
+    r = requests.post(url, headers = headers, data = json.dumps(data), verify=SSL_VERIFY)
     if r.status_code == 200:
         resp = r.json()
         token = resp['id']
@@ -70,7 +72,7 @@ def get_catalog_id(vra_ip, token, catalog_name):
         'Content-Type': 'application/json',
         'Authorization': 'Bearer %s' % token
     }
-    r = requests.get(url, headers = headers, verify=False)
+    r = requests.get(url, headers = headers, verify=SSL_VERIFY)
     if r.status_code == 200:
         resp = r.json()
         for cat_item in resp['content']:
@@ -88,7 +90,7 @@ def get_cat_template(vra_ip, token, catalog_id):
         'Content-Type': 'application/json',
         'Authorization': 'Bearer %s' % token
     }
-    r = requests.get(url, headers = headers, verify=False)
+    r = requests.get(url, headers = headers, verify=SSL_VERIFY)
     if r.status_code == 200:
         resp = r.json()
         return resp
@@ -104,7 +106,7 @@ def request_cat_item(vra_ip, token, catalog_id, se_name, template):
     }
     template['data']['criteria'] = se_name
 
-    r = requests.post(url, headers = headers, data = json.dumps(template), verify=False)
+    r = requests.post(url, headers = headers, data = json.dumps(template), verify=SSL_VERIFY)
     if r.status_code == 201:
         resp = r.json()
         return resp
@@ -118,7 +120,7 @@ def get_resource_id(vra_ip, token, se_name):
         'Content-Type': 'application/json',
         'Authorization': 'Bearer %s' % token
     }
-    r = requests.get(url, headers = headers, verify=False)
+    r = requests.get(url, headers = headers, verify=SSL_VERIFY)
     if r.status_code == 200:
         resp = r.json()
         for cat_item in resp['content']:
@@ -136,7 +138,7 @@ def get_action_id(vra_ip, token, resource_id, action_name):
         'Content-Type': 'application/json',
         'Authorization': 'Bearer %s' % token
     }
-    r = requests.get(url, headers = headers, verify=False)
+    r = requests.get(url, headers = headers, verify=SSL_VERIFY)
     if r.status_code == 200:
         resp = r.json()
         for cat_item in resp['content']:
@@ -154,7 +156,7 @@ def get_action_template(vra_ip, token, resource_id, action_id):
         'Content-Type': 'application/json',
         'Authorization': 'Bearer %s' % token
     }
-    r = requests.get(url, headers = headers, verify=False)
+    r = requests.get(url, headers = headers, verify=SSL_VERIFY)
     if r.status_code == 200:
         resp = r.json()
         return resp
@@ -170,7 +172,7 @@ def request_day2_action(vra_ip, token, resource_id, action_id, template, force=F
     }
     template['data']['ForceDestroy'] = force
 
-    r = requests.post(url, headers = headers, data = json.dumps(template), verify=False)
+    r = requests.post(url, headers = headers, data = json.dumps(template), verify=SSL_VERIFY)
     if r.status_code == 201:
         return True
     else:
