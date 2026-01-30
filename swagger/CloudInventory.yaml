@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '32.1.1'
+    version: '32.2.1'
     title: Avi CloudInventory Object API
     contact:
         name: Avi Networks Inc.
@@ -702,6 +702,9 @@ definitions:
                 description: "Select the IP address management scheme. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
+            disable_metrics_polling:
+                description: "To disable metrics collection. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: boolean
             dns_provider_ref:
                 description: "DNS Profile for the cloud. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
@@ -1750,6 +1753,14 @@ definitions:
             vpc_mode:
                 description: "VPC Mode. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
+    NsxtGroupSyncEntry:
+        type: object
+        properties:
+            ip_addresses:
+                description: "IP addresses for this NSX group. Empty list means fetch from NSX. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
     NsxtStreamingServerStatus:
         type: object
         properties:
@@ -1771,6 +1782,15 @@ definitions:
             uuid:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    NsxtStreamingServerStatus.PendingGroupsEntry:
+        type: object
+        properties:
+            key:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            value:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/NsxtGroupSyncEntry'
     NsxtTier1SegmentAutomaticMode:
         type: object
         required:

@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "32.1.1",
+        "version": "32.2.1",
         "title": "Avi User Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -607,6 +607,10 @@
                 },
                 "is_superuser": {
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "is_vcfa_user": {
+                    "description": "Indicates if the user was created via VCFA OAuth authentication. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "local": {
