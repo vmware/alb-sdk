@@ -24,6 +24,12 @@ public class CertJwtStore extends AviRestResource  {
     @JsonProperty("jwt")
     private String jwt;
 
+    @JsonProperty("key")
+    private String key;
+
+    @JsonProperty("key_passphrase")
+    private String keyPassphrase;
+
     @JsonProperty("kid")
     private String kid;
 
@@ -32,6 +38,9 @@ public class CertJwtStore extends AviRestResource  {
 
     @JsonProperty("public_key_algorithm")
     private String publicKeyAlgorithm;
+
+    @JsonProperty("type")
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
@@ -63,6 +72,54 @@ public class CertJwtStore extends AviRestResource  {
      */
     public void setJwt(String  jwt) {
         this.jwt = jwt;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Private key.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return key
+     */
+    public String getKey() {
+        return key;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Private key.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param key set the key.
+     */
+    public void setKey(String  key) {
+        this.key = key;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Private key passphrase.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return keyPassphrase
+     */
+    public String getKeyPassphrase() {
+        return keyPassphrase;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Private key passphrase.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param keyPassphrase set the keyPassphrase.
+     */
+    public void setKeyPassphrase(String  keyPassphrase) {
+        this.keyPassphrase = keyPassphrase;
     }
 
     /**
@@ -136,6 +193,34 @@ public class CertJwtStore extends AviRestResource  {
     public void setPublicKeyAlgorithm(String  publicKeyAlgorithm) {
         this.publicKeyAlgorithm = publicKeyAlgorithm;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Type of ssl certificate.
+     * Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA, SSL_CERTIFICATE_TYPE_CLIENT,
+     * SSL_CERTIFICATE_TYPE_SECURE_CHANNEL.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Type of ssl certificate.
+     * Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA, SSL_CERTIFICATE_TYPE_CLIENT,
+     * SSL_CERTIFICATE_TYPE_SECURE_CHANNEL.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param type set the type.
+     */
+    public void setType(String  type) {
+        this.type = type;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Avi controller URL of the object.
@@ -192,7 +277,10 @@ public class CertJwtStore extends AviRestResource  {
   Objects.equals(this.kid, objCertJwtStore.kid)&&
   Objects.equals(this.jwt, objCertJwtStore.jwt)&&
   Objects.equals(this.publicKeyAlgorithm, objCertJwtStore.publicKeyAlgorithm)&&
-  Objects.equals(this.lastRotatedAt, objCertJwtStore.lastRotatedAt);
+  Objects.equals(this.lastRotatedAt, objCertJwtStore.lastRotatedAt)&&
+  Objects.equals(this.key, objCertJwtStore.key)&&
+  Objects.equals(this.keyPassphrase, objCertJwtStore.keyPassphrase)&&
+  Objects.equals(this.type, objCertJwtStore.type);
     }
 
     @Override
@@ -200,9 +288,12 @@ public class CertJwtStore extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class CertJwtStore {\n");
                   sb.append("    jwt: ").append(toIndentedString(jwt)).append("\n");
+                        sb.append("    key: ").append(toIndentedString(key)).append("\n");
+                        sb.append("    keyPassphrase: ").append(toIndentedString(keyPassphrase)).append("\n");
                         sb.append("    kid: ").append(toIndentedString(kid)).append("\n");
                         sb.append("    lastRotatedAt: ").append(toIndentedString(lastRotatedAt)).append("\n");
                         sb.append("    publicKeyAlgorithm: ").append(toIndentedString(publicKeyAlgorithm)).append("\n");
+                        sb.append("    type: ").append(toIndentedString(type)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();

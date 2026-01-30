@@ -1863,9 +1863,12 @@ public class Pool extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes
-     * between avi and the server.
-     * Value of 0 results in using default timeout of 60 minutes.
+     * Timeout for backend server connection and data reception.
+     * This setting controls two timeouts  first, the maximum time allowed to establish a tcp connection to the backend server.
+     * Second, the maximum idle time while receiving data - the timer resets each time data arrives, so the backend can take as long as needed to send
+     * the complete response as long as it doesn't stop sending data for longer than this timeout.
+     * Value of 0 (default) inherits from the service engine group's upstream_read_timeout and upstream_connect_timeout properties.
+     * It applies only to l7 (http) virtual services.
      * Allowed values are 0-21600000.
      * Field introduced in 18.1.5,18.2.1.
      * Unit is milliseconds.
@@ -1879,9 +1882,12 @@ public class Pool extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes
-     * between avi and the server.
-     * Value of 0 results in using default timeout of 60 minutes.
+     * Timeout for backend server connection and data reception.
+     * This setting controls two timeouts  first, the maximum time allowed to establish a tcp connection to the backend server.
+     * Second, the maximum idle time while receiving data - the timer resets each time data arrives, so the backend can take as long as needed to send
+     * the complete response as long as it doesn't stop sending data for longer than this timeout.
+     * Value of 0 (default) inherits from the service engine group's upstream_read_timeout and upstream_connect_timeout properties.
+     * It applies only to l7 (http) virtual services.
      * Allowed values are 0-21600000.
      * Field introduced in 18.1.5,18.2.1.
      * Unit is milliseconds.

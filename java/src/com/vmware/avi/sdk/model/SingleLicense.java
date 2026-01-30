@@ -33,6 +33,9 @@ public class SingleLicense  {
     @JsonProperty("ccu")
     private Integer ccu = 0;
 
+    @JsonProperty("cls_id")
+    private String clsId;
+
     @JsonProperty("cores")
     private Float cores;
 
@@ -71,6 +74,9 @@ public class SingleLicense  {
 
     @JsonProperty("max_ses")
     private Integer maxSes;
+
+    @JsonProperty("policy")
+    private LicensePolicy policy;
 
     @JsonProperty("se_bandwidth_limits")
     private List<SEBandwidthLimit> seBandwidthLimits;
@@ -216,6 +222,30 @@ public class SingleLicense  {
      */
     public void setCcu(Integer  ccu) {
         this.ccu = ccu;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Central license service id.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clsId
+     */
+    public String getClsId() {
+        return clsId;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Central license service id.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param clsId set the clsId.
+     */
+    public void setClsId(String  clsId) {
+        this.clsId = clsId;
     }
 
     /**
@@ -515,6 +545,30 @@ public class SingleLicense  {
     public void setMaxSes(Integer  maxSes) {
         this.maxSes = maxSes;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * License policy details.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return policy
+     */
+    public LicensePolicy getPolicy() {
+        return policy;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * License policy details.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param policy set the policy.
+     */
+    public void setPolicy(LicensePolicy policy) {
+        this.policy = policy;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Service engine bandwidth limits for bandwidth based licenses.
@@ -797,7 +851,9 @@ public class SingleLicense  {
   Objects.equals(this.addons, objSingleLicense.addons)&&
   Objects.equals(this.capacity, objSingleLicense.capacity)&&
   Objects.equals(this.unit, objSingleLicense.unit)&&
-  Objects.equals(this.tenantUuid, objSingleLicense.tenantUuid);
+  Objects.equals(this.tenantUuid, objSingleLicense.tenantUuid)&&
+  Objects.equals(this.clsId, objSingleLicense.clsId)&&
+  Objects.equals(this.policy, objSingleLicense.policy);
     }
 
     @Override
@@ -808,6 +864,7 @@ public class SingleLicense  {
                         sb.append("    burstCores: ").append(toIndentedString(burstCores)).append("\n");
                         sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
                         sb.append("    ccu: ").append(toIndentedString(ccu)).append("\n");
+                        sb.append("    clsId: ").append(toIndentedString(clsId)).append("\n");
                         sb.append("    cores: ").append(toIndentedString(cores)).append("\n");
                         sb.append("    cpuCores: ").append(toIndentedString(cpuCores)).append("\n");
                         sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
@@ -821,6 +878,7 @@ public class SingleLicense  {
                         sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
                         sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
                         sb.append("    maxSes: ").append(toIndentedString(maxSes)).append("\n");
+                        sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
                         sb.append("    seBandwidthLimits: ").append(toIndentedString(seBandwidthLimits)).append("\n");
                         sb.append("    serialKey: ").append(toIndentedString(serialKey)).append("\n");
                         sb.append("    serviceCores: ").append(toIndentedString(serviceCores)).append("\n");
