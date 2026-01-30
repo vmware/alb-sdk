@@ -6052,6 +6052,9 @@ definitions:
             port_uuid:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            tepless_ip:
+                description: "Tepless IP address for TEP-less VPC deployment. This IP is used as the source IP for all traffic originated by the SE in this VRF. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/IpAddr'
             vlan_id:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer

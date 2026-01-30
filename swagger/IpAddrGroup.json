@@ -8,7 +8,7 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi IpAddrGroup object api\n```\n- configure ipaddrgroup <key>\n- show ipaddrgroup <key>\n```\n\nAPI permission: PERMISSION_IPADDRGROUP\n"
+        "description": "Avi IpAddrGroup object api\n```\n- configure ipaddrgroup <key>\n- show ipaddrgroup <key>\n- sync nsxt ipaddrgroup <key>\n```\n\nAPI permission: PERMISSION_IPADDRGROUP\n"
     },
     "tags": [
         {
@@ -546,6 +546,86 @@
                     }
                 }
             }
+        },
+        "/ipaddrgroup/{uuid}/syncnsxt": {
+            "post": {
+                "tags": [
+                    "IpAddrGroup"
+                ],
+                "description": "/ipaddrgroup/{uuid}/syncnsxt",
+                "operationId": "POST /ipaddrgroup/{uuid}/syncnsxt",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "IpAddrGroupSyncParams",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/IpAddrGroupSyncParams"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -622,6 +702,13 @@
                     "description": "Name of the IP address group. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
+                "nsx_groups": {
+                    "description": "An NSX Group that maps to a dynamic collection of IP addresses, derived from its definition in NSX. Field introduced in 32.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "prefixes": {
                     "description": "Configure IP address prefix(es). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -669,6 +756,19 @@
                     }
                 },
                 "next": {
+                    "type": "string"
+                }
+            }
+        },
+        "IpAddrGroupSyncParams": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Name of the IpAddrGroup to sync NSX group IPs for. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "uuid": {
+                    "description": "UUID of the IpAddrGroup to sync NSX group IPs for. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
