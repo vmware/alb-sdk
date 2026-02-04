@@ -65,7 +65,8 @@ SDK_PATH = '/opt/avi/python/lib/avi/sdk/'
 server_cert, server_key, ca_key, ca_cert = get_ssl_params_from_path(SDK_PATH)
 
 HEAT_KWARGS = {'image': 'cirros', 'flavor': 'm1.tiny',
-               'networks': 'avi-mgmt', 'passwd': 'blah', 'key': 'heat_key',
+               'networks': 'avi-mgmt', 'passwd': os.environ.get('HEAT_INSTANCE_PASSWORD', ''), 
+               'key': 'heat_key',
                'init': 1, 'sgrps': '844f5b1b-55c1-46ed-bab5-21e527da82e2',
                'metadata': {'name': 'siva', 'test': 'heat trials'},
                'userdata': 'user=root;data=blah'}

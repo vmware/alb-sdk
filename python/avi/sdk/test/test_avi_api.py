@@ -662,47 +662,47 @@ class Test(unittest.TestCase):
     @my_vcr.use_cassette()
     @pytest.mark.TCID1_48_1547_37_0
     def test_user_login(self):
-        api1 = ApiSession(controller_ip=login_info.get('controller_ip'),
-            username=login_info.get('username'),
-            password=login_info.get('password'),
-            lazy_authentication=False)
-        user_info = gSAMPLE_CONFIG["Passwords"]
-        original_password = login_info.get('password')
-        new_password = "admin123@!@#"
-        user_info['password'] = new_password
-        user_info['old_password'] = original_password
-        res = api1.put('useraccount', data=json.dumps(user_info))
-        assert res.status_code == 200
-        api1.clear_cached_sessions()
+        """
+        Test user login and password change functionality to test new password policy.
+        Requires AVI_NEW_PASSWORD environment variable to be set.
+        """
+        try:
+            new_password = os.environ.get('AVI_NEW_PASSWORD')
+            if not new_password:
+                raise ValueError("AVI_NEW_PASSWORD environment variable is not set")
 
-        api2 = ApiSession(controller_ip=login_info.get('controller_ip'),
-                          username=login_info.get('username'),
-                          password=new_password,
-                          lazy_authentication=False)
-        res = api2.get('pool')
-        assert res.status_code in [200, 204]
+            # Create session with current credentials and change password
+            api = ApiSession(controller_ip=login_info.get('controller_ip'),
+                             username=login_info.get('username'),
+                             password=login_info.get('password'),
+                             lazy_authentication=False)
 
-        resp = api2.get('systemconfiguration', tenant='admin')
-        r = resp.json()
-        data = r['portal_configuration']['password_strength_check'] = False
-        sysresp = api2.put('systemconfiguration', data=data, tenant='admin')
-        assert sysresp.status_code == 200
-        old_password = user_info['password']
-        changed_password = original_password
-        user_info['password'] = original_password
-        user_info['old_password'] = old_password
-        result = api2.put('useraccount', user_info)
-        assert result.status_code == 200
-        res = api2.get('pool')
-        assert res.status_code in [200, 204]
-        api2.clear_cached_sessions()
+            payload = {
+                "full_name": "System Administrator",
+                "is_superuser": True,
+                "local": True,
+                "name": "admin",
+                "username": login_info.get('username'),
+                "old_password": login_info.get('password'),
+                "password": new_password,
+                "confirm_password": new_password
+            }
 
-        api3 = ApiSession(controller_ip=login_info.get('controller_ip'),
-                          username=login_info.get('username'),
-                          password=changed_password,
-                          lazy_authentication=False)
-        res = api3.get('pool')
-        assert res.status_code in [200, 204]
+            res = api.put('useraccount', data=payload, api_version=login_info.get("api_version"))
+            assert res.status_code == 200
+
+            # Clear cached sessions and create new session with new password
+            ApiSession.clear_cached_sessions()
+            api = ApiSession(controller_ip=login_info.get('controller_ip'),
+                             username=login_info.get('username'),
+                             password=new_password,
+                             lazy_authentication=False)
+
+            # Verify login works with the new password
+            res = api.get('pool')
+            assert res.status_code in [200, 204]
+        except Exception as e:
+            assert False, f"Test user login failed: {e}"   
 
     @pytest.mark.travis
     @my_vcr.use_cassette()
