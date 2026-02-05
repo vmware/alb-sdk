@@ -898,17 +898,17 @@ func testCreateDeleteAviTenant(t *testing.T, avisess *AviSession, tenantName str
 func TestAviSessionGoRoutine(t *testing.T) {
 	var wg sync.WaitGroup
 	//session := getSessions(t)
-	sem := make(chan struct{}, 25)
 	for _, session := range getSessions(t) {
+		invalidateSession := false
 		for i := 0; i < 100; i++ {
 			tenantName := fmt.Sprintf("testtenant-%d", i)
-			invalidateSession := (i == 20)
 			wg.Add(1)
 			go func(tenantName string, wg *sync.WaitGroup) {
 				defer wg.Done()
-				sem <- struct{}{}
-				defer func() { <-sem }()
 				glog.Infof("Tenant Name: %s", tenantName)
+				if i == 20 {
+					invalidateSession = true
+				}
 				testCreateDeleteAviTenant(t, session, tenantName, invalidateSession)
 				time.Sleep(time.Second * 1)
 			}(tenantName, &wg)
