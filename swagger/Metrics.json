@@ -26,7 +26,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/analytics/Metrics/collection/": {
+        "/analytics/metrics/collection/": {
             "post": {
                 "consumes": [
                     "application/json"
@@ -129,7 +129,7 @@
                 }
             }
         },
-        "/analytics/Metrics/controller/": {
+        "/analytics/metrics/controller/": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -451,7 +451,7 @@
                 }
             }
         },
-        "/analytics/Metrics/controller/{uuid}": {
+        "/analytics/metrics/controller/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -773,7 +773,7 @@
                 }
             }
         },
-        "/analytics/Metrics/pool/": {
+        "/analytics/metrics/pool/": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -1095,7 +1095,7 @@
                 }
             }
         },
-        "/analytics/Metrics/pool/{uuid}": {
+        "/analytics/metrics/pool/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -1417,7 +1417,7 @@
                 }
             }
         },
-        "/analytics/Metrics/serviceengine/": {
+        "/analytics/metrics/serviceengine/": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -1739,7 +1739,7 @@
                 }
             }
         },
-        "/analytics/Metrics/serviceengine/{uuid}": {
+        "/analytics/metrics/serviceengine/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -2061,7 +2061,7 @@
                 }
             }
         },
-        "/analytics/Metrics/virtualservice/": {
+        "/analytics/metrics/virtualservice/": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -2383,7 +2383,7 @@
                 }
             }
         },
-        "/analytics/Metrics/virtualservice/{uuid}": {
+        "/analytics/metrics/virtualservice/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"

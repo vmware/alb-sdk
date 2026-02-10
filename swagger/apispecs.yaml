@@ -671,12 +671,12 @@ info:
     Avi IPReputationDB object api\n```\n- configure ipreputationdb <key>\n- show ipreputationdb\
     \ <key>\n- show ipreputationdb <key> data\n```\n\nAPI permission: PERMISSION_IPREPUTATIONDB\n\
     Avi IpAddrGroup object api\n```\n- configure ipaddrgroup <key>\n- show ipaddrgroup\
-    \ <key>\n```\n\nAPI permission: PERMISSION_IPADDRGROUP\nAvi SnmpTrapProfile object\
-    \ api\n```\n- configure snmptrapprofile <key>\n- show snmptrapprofile <key>\n\
-    - test alerttestsnmptrap <key>\n```\n\nAPI permission: PERMISSION_SNMPTRAPPROFILE\n\
-    Avi VsInventory object api\n```\n- show vsinventory <key>\n```\n\nAPI permission:\
-    \ PERMISSION_VIRTUALSERVICE\nAvi WafApplicationSignatureProvider object api\n\
-    ```\n- show wafapplicationsignatureprovider <key>\n- configure wafapplicationsignatureprovider\
+    \ <key>\n- sync nsxt ipaddrgroup <key>\n```\n\nAPI permission: PERMISSION_IPADDRGROUP\n\
+    Avi SnmpTrapProfile object api\n```\n- configure snmptrapprofile <key>\n- show\
+    \ snmptrapprofile <key>\n- test alerttestsnmptrap <key>\n```\n\nAPI permission:\
+    \ PERMISSION_SNMPTRAPPROFILE\nAvi VsInventory object api\n```\n- show vsinventory\
+    \ <key>\n```\n\nAPI permission: PERMISSION_VIRTUALSERVICE\nAvi WafApplicationSignatureProvider\
+    \ object api\n```\n- show wafapplicationsignatureprovider <key>\n- configure wafapplicationsignatureprovider\
     \ <key>\n```\n\nAPI permission: PERMISSION_WAFPOLICY\nAvi SystemReport object\
     \ api\n```\n- show systemreport <key>\n- show systemreport <key> export\n- delete\
     \ systemreport <key>\n```\n\nAPI permission: PERMISSION_SYSTEMREPORT\nAvi PositiveSecurityPolicy\
@@ -756,12 +756,12 @@ info:
     Avi IPReputationDB object api\n```\n- configure ipreputationdb <key>\n- show ipreputationdb\
     \ <key>\n- show ipreputationdb <key> data\n```\n\nAPI permission: PERMISSION_IPREPUTATIONDB\n\
     Avi IpAddrGroup object api\n```\n- configure ipaddrgroup <key>\n- show ipaddrgroup\
-    \ <key>\n```\n\nAPI permission: PERMISSION_IPADDRGROUP\nAvi SnmpTrapProfile object\
-    \ api\n```\n- configure snmptrapprofile <key>\n- show snmptrapprofile <key>\n\
-    - test alerttestsnmptrap <key>\n```\n\nAPI permission: PERMISSION_SNMPTRAPPROFILE\n\
-    Avi VsInventory object api\n```\n- show vsinventory <key>\n```\n\nAPI permission:\
-    \ PERMISSION_VIRTUALSERVICE\nAvi WafApplicationSignatureProvider object api\n\
-    ```\n- show wafapplicationsignatureprovider <key>\n- configure wafapplicationsignatureprovider\
+    \ <key>\n- sync nsxt ipaddrgroup <key>\n```\n\nAPI permission: PERMISSION_IPADDRGROUP\n\
+    Avi SnmpTrapProfile object api\n```\n- configure snmptrapprofile <key>\n- show\
+    \ snmptrapprofile <key>\n- test alerttestsnmptrap <key>\n```\n\nAPI permission:\
+    \ PERMISSION_SNMPTRAPPROFILE\nAvi VsInventory object api\n```\n- show vsinventory\
+    \ <key>\n```\n\nAPI permission: PERMISSION_VIRTUALSERVICE\nAvi WafApplicationSignatureProvider\
+    \ object api\n```\n- show wafapplicationsignatureprovider <key>\n- configure wafapplicationsignatureprovider\
     \ <key>\n```\n\nAPI permission: PERMISSION_WAFPOLICY\nAvi SystemReport object\
     \ api\n```\n- show systemreport <key>\n- show systemreport <key> export\n- delete\
     \ systemreport <key>\n```\n\nAPI permission: PERMISSION_SYSTEMREPORT\nAvi PositiveSecurityPolicy\
@@ -2146,9 +2146,6 @@ tags:
     API permission: PERMISSION_ROLE
 
     Contact Info: https://support.broadcom.com<br>Version: 32.1.1<br>BasePath: /api<br>'
-- name: Healthscore
-  description: 'Contact Info: https://support.broadcom.com<br>Version: 32.1.1<br>BasePath:
-    /api<br>'
 - name: WafProfile
   description: 'Avi WafProfile object api
 
@@ -2602,6 +2599,9 @@ tags:
     API permission: PERMISSION_STRINGGROUP
 
     Contact Info: https://support.broadcom.com<br>Version: 32.1.1<br>BasePath: /api<br>'
+- name: HealthScore
+  description: 'Contact Info: https://support.broadcom.com<br>Version: 32.1.1<br>BasePath:
+    /api<br>'
 - name: NetworkService
   description: 'Avi NetworkService object api
 
@@ -3056,12 +3056,12 @@ tags:
     Avi IPReputationDB object api\n```\n- configure ipreputationdb <key>\n- show ipreputationdb\
     \ <key>\n- show ipreputationdb <key> data\n```\n\nAPI permission: PERMISSION_IPREPUTATIONDB\n\
     Avi IpAddrGroup object api\n```\n- configure ipaddrgroup <key>\n- show ipaddrgroup\
-    \ <key>\n```\n\nAPI permission: PERMISSION_IPADDRGROUP\nAvi SnmpTrapProfile object\
-    \ api\n```\n- configure snmptrapprofile <key>\n- show snmptrapprofile <key>\n\
-    - test alerttestsnmptrap <key>\n```\n\nAPI permission: PERMISSION_SNMPTRAPPROFILE\n\
-    Avi VsInventory object api\n```\n- show vsinventory <key>\n```\n\nAPI permission:\
-    \ PERMISSION_VIRTUALSERVICE\nAvi WafApplicationSignatureProvider object api\n\
-    ```\n- show wafapplicationsignatureprovider <key>\n- configure wafapplicationsignatureprovider\
+    \ <key>\n- sync nsxt ipaddrgroup <key>\n```\n\nAPI permission: PERMISSION_IPADDRGROUP\n\
+    Avi SnmpTrapProfile object api\n```\n- configure snmptrapprofile <key>\n- show\
+    \ snmptrapprofile <key>\n- test alerttestsnmptrap <key>\n```\n\nAPI permission:\
+    \ PERMISSION_SNMPTRAPPROFILE\nAvi VsInventory object api\n```\n- show vsinventory\
+    \ <key>\n```\n\nAPI permission: PERMISSION_VIRTUALSERVICE\nAvi WafApplicationSignatureProvider\
+    \ object api\n```\n- show wafapplicationsignatureprovider <key>\n- configure wafapplicationsignatureprovider\
     \ <key>\n```\n\nAPI permission: PERMISSION_WAFPOLICY\nAvi SystemReport object\
     \ api\n```\n- show systemreport <key>\n- show systemreport <key> export\n- delete\
     \ systemreport <key>\n```\n\nAPI permission: PERMISSION_SYSTEMREPORT\nAvi PositiveSecurityPolicy\
@@ -4433,9 +4433,6 @@ tags:
     API permission: PERMISSION_ROLE
 
     Contact Info: https://support.broadcom.com<br>Version: 32.1.1<br>BasePath: /api<br>'
-- name: Healthscore
-  description: 'Contact Info: https://support.broadcom.com<br>Version: 32.1.1<br>BasePath:
-    /api<br>'
 - name: WafProfile
   description: 'Avi WafProfile object api
 
@@ -4889,6 +4886,9 @@ tags:
     API permission: PERMISSION_STRINGGROUP
 
     Contact Info: https://support.broadcom.com<br>Version: 32.1.1<br>BasePath: /api<br>'
+- name: HealthScore
+  description: 'Contact Info: https://support.broadcom.com<br>Version: 32.1.1<br>BasePath:
+    /api<br>'
 - name: NetworkService
   description: 'Avi NetworkService object api
 
@@ -5426,6 +5426,8 @@ tags:
     - configure ipaddrgroup <key>
 
     - show ipaddrgroup <key>
+
+    - sync nsxt ipaddrgroup <key>
 
     ```
 
@@ -6047,6 +6049,8 @@ tags:
     - configure ipaddrgroup <key>
 
     - show ipaddrgroup <key>
+
+    - sync nsxt ipaddrgroup <key>
 
     ```
 
@@ -36216,6 +36220,403 @@ paths:
           description: log in failed
         '404':
           description: object not found
+  /gslbcrmruntime:
+    get:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime
+      operationId: GET /gslbcrmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntimeApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime
+      operationId: POST /gslbcrmruntime
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbCRMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbCRMRuntime'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntime'
+        '401':
+          description: log in failed
+  /gslbcrmruntime/{uuid}:
+    get:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: GET /gslbcrmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbcrmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbCRMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbCRMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbcrmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: GslbCRMRuntime object creation
+        required: true
+        schema:
+          $ref: '#/definitions/GslbCRMRuntime'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GslbCRMRuntime'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - GslbCRMRuntime
+      description: /gslbcrmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbcrmruntime/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: object not found
   /gslbsmruntime:
     get:
       tags:
@@ -36960,403 +37361,6 @@ paths:
       - GslbHSMRuntime
       description: /gslbhsmruntime/{uuid}/{uuid}
       operationId: DELETE /gslbhsmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
-        '404':
-          description: object not found
-  /gslbcrmruntime:
-    get:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime
-      operationId: GET /gslbcrmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntimeApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime
-      operationId: POST /gslbcrmruntime
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbCRMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbCRMRuntime'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntime'
-        '401':
-          description: log in failed
-  /gslbcrmruntime/{uuid}:
-    get:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: GET /gslbcrmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbcrmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbCRMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbCRMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbcrmruntime/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: GslbCRMRuntime object creation
-        required: true
-        schema:
-          $ref: '#/definitions/GslbCRMRuntime'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbCRMRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    delete:
-      tags:
-      - GslbCRMRuntime
-      description: /gslbcrmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbcrmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -64784,6 +64788,65 @@ paths:
             type: string
         '404':
           description: object not found
+  /ipaddrgroup/{uuid}/syncnsxt:
+    post:
+      tags:
+      - IpAddrGroup
+      description: /ipaddrgroup/{uuid}/syncnsxt
+      operationId: POST /ipaddrgroup/{uuid}/syncnsxt
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: IpAddrGroupSyncParams
+        required: true
+        schema:
+          $ref: '#/definitions/IpAddrGroupSyncParams'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
   /stringgroup:
     get:
       tags:
@@ -71910,488 +71973,6 @@ paths:
             type: string
         '404':
           description: object not found
-  /debugvirtualservice:
-    get:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice
-      operationId: GET /debugvirtualservice
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: cloud_uuid
-        in: query
-        description: Filter to get objects that belongs to a specific cloud using
-          its uuid. Eg. cloud_uuid=cloud-xyz.
-        type: string
-      - name: cloud_ref.name
-        in: query
-        description: Filter to get objects that belongs to a specific cloud usings
-          its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
-        type: string
-      - name: cloud_ref.uuid
-        in: query
-        description: Filter to get objects that belongs to a specific cloud using
-          its uuid. Eg. cloud_ref.uuid=cloud_uuid.
-        type: string
-        required: false
-      - name: name.contains
-        in: query
-        description: Filter to get objects with name that contains the parameter.
-          This is a case sensitive search. Eg. name.contains=pool-.
-        type: string
-        required: false
-      - name: name.icontains
-        in: query
-        description: Filter to get objects with name that contains the parameter.
-          This is a case insensitive search. Eg. name.icontains=pool-.
-        type: string
-        required: false
-      - name: name.in
-        in: query
-        description: Filter to get objects that have a uuid matching any of the values
-          in the parameter list. Each value for this parameter is to comma separated.
-          Eg. name.in=pool-1,pool-12.
-        type: string
-        required: false
-      - name: uuid.in
-        in: query
-        description: Filter to get objects that have a uuid matching any of the values
-          in the parameter list. Each value for this parameter is to comma separated.
-          Eg. uuid.in=<uuid-1>,<uuid-2>.
-        type: string
-        required: false
-      - name: search
-        in: query
-        description: Filter to get objects that contains the search string as value
-          for any of its fields. Eg. search=LEAST_CONN. The search filter can also
-          be used to search under a specific field. This is achieved by sending the
-          parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
-        type: string
-        required: false
-      - name: isearch
-        in: query
-        description: Filter to get objects that contains case insensitive search string.
-          Eg. isearch=(name,Vs-Pool-).
-        type: string
-        required: false
-      - name: limit_by
-        in: query
-        description: Filter to limit the number of objects in the response data. Eg.
-          limit_by=3.
-        type: string
-        required: false
-      - name: exclude
-        in: query
-        description: Filter to exclude the uuid(s) contained in the parameter. Eg.
-          uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
-        type: string
-        required: false
-      - name: sort
-        in: query
-        description: Parameter to sort the results with respect to a field. Eg. sort=name.
-        type: string
-        required: false
-      - name: page
-        in: query
-        description: Parameter to specify the desired page number. The page starts
-          from 1 and default is 1.
-        type: string
-        required: false
-      - name: page_size
-        in: query
-        description: Parameter to specify the maximum number of results to be returned
-          per page. The page_size can range from 1 to 200. Eg. page_size=5.
-        type: string
-        required: false
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualServiceApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice
-      operationId: POST /debugvirtualservice
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: DebugVirtualService object creation
-        required: true
-        schema:
-          $ref: '#/definitions/DebugVirtualService'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-  /debugvirtualservice/{uuid}:
-    get:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: GET /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: PUT /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: DebugVirtualService object creation
-        required: true
-        schema:
-          $ref: '#/definitions/DebugVirtualService'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: PATCH /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: DebugVirtualService object creation
-        required: true
-        schema:
-          $ref: '#/definitions/DebugVirtualService'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    delete:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: DELETE /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
-        '404':
-          description: object not found
   /virtualservice:
     get:
       tags:
@@ -76289,6 +75870,488 @@ paths:
             type: string
         '401':
           description: log in failed
+        '404':
+          description: object not found
+  /debugvirtualservice:
+    get:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice
+      operationId: GET /debugvirtualservice
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: cloud_uuid
+        in: query
+        description: Filter to get objects that belongs to a specific cloud using
+          its uuid. Eg. cloud_uuid=cloud-xyz.
+        type: string
+      - name: cloud_ref.name
+        in: query
+        description: Filter to get objects that belongs to a specific cloud usings
+          its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
+        type: string
+      - name: cloud_ref.uuid
+        in: query
+        description: Filter to get objects that belongs to a specific cloud using
+          its uuid. Eg. cloud_ref.uuid=cloud_uuid.
+        type: string
+        required: false
+      - name: name.contains
+        in: query
+        description: Filter to get objects with name that contains the parameter.
+          This is a case sensitive search. Eg. name.contains=pool-.
+        type: string
+        required: false
+      - name: name.icontains
+        in: query
+        description: Filter to get objects with name that contains the parameter.
+          This is a case insensitive search. Eg. name.icontains=pool-.
+        type: string
+        required: false
+      - name: name.in
+        in: query
+        description: Filter to get objects that have a uuid matching any of the values
+          in the parameter list. Each value for this parameter is to comma separated.
+          Eg. name.in=pool-1,pool-12.
+        type: string
+        required: false
+      - name: uuid.in
+        in: query
+        description: Filter to get objects that have a uuid matching any of the values
+          in the parameter list. Each value for this parameter is to comma separated.
+          Eg. uuid.in=<uuid-1>,<uuid-2>.
+        type: string
+        required: false
+      - name: search
+        in: query
+        description: Filter to get objects that contains the search string as value
+          for any of its fields. Eg. search=LEAST_CONN. The search filter can also
+          be used to search under a specific field. This is achieved by sending the
+          parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
+        type: string
+        required: false
+      - name: isearch
+        in: query
+        description: Filter to get objects that contains case insensitive search string.
+          Eg. isearch=(name,Vs-Pool-).
+        type: string
+        required: false
+      - name: limit_by
+        in: query
+        description: Filter to limit the number of objects in the response data. Eg.
+          limit_by=3.
+        type: string
+        required: false
+      - name: exclude
+        in: query
+        description: Filter to exclude the uuid(s) contained in the parameter. Eg.
+          uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
+        type: string
+        required: false
+      - name: sort
+        in: query
+        description: Parameter to sort the results with respect to a field. Eg. sort=name.
+        type: string
+        required: false
+      - name: page
+        in: query
+        description: Parameter to specify the desired page number. The page starts
+          from 1 and default is 1.
+        type: string
+        required: false
+      - name: page_size
+        in: query
+        description: Parameter to specify the maximum number of results to be returned
+          per page. The page_size can range from 1 to 200. Eg. page_size=5.
+        type: string
+        required: false
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualServiceApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice
+      operationId: POST /debugvirtualservice
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: DebugVirtualService object creation
+        required: true
+        schema:
+          $ref: '#/definitions/DebugVirtualService'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+  /debugvirtualservice/{uuid}:
+    get:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: GET /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: PUT /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: DebugVirtualService object creation
+        required: true
+        schema:
+          $ref: '#/definitions/DebugVirtualService'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: PATCH /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: DebugVirtualService object creation
+        required: true
+        schema:
+          $ref: '#/definitions/DebugVirtualService'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: DELETE /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
         '404':
           description: object not found
   /inventoryfaultconfig:
@@ -85219,7 +85282,7 @@ paths:
             type: string
         '404':
           description: object not found
-  /analytics/Anomaly/pool/:
+  /analytics/anomaly/pool/:
     get:
       consumes:
       - application/json
@@ -85414,7 +85477,7 @@ paths:
             $ref: '#/definitions/AnomalyzerQueryResponseApiResponse'
         401:
           description: log in failed
-  /analytics/Anomaly/pool/{uuid}:
+  /analytics/anomaly/pool/{uuid}:
     get:
       consumes:
       - application/json
@@ -85609,7 +85672,7 @@ paths:
             $ref: '#/definitions/AnomalyzerQueryResponse'
         401:
           description: log in failed
-  /analytics/Anomaly/serviceengine/:
+  /analytics/anomaly/serviceengine/:
     get:
       consumes:
       - application/json
@@ -85804,7 +85867,7 @@ paths:
             $ref: '#/definitions/AnomalyzerQueryResponseApiResponse'
         401:
           description: log in failed
-  /analytics/Anomaly/serviceengine/{uuid}:
+  /analytics/anomaly/serviceengine/{uuid}:
     get:
       consumes:
       - application/json
@@ -85999,7 +86062,7 @@ paths:
             $ref: '#/definitions/AnomalyzerQueryResponse'
         401:
           description: log in failed
-  /analytics/Anomaly/virtualservice/:
+  /analytics/anomaly/virtualservice/:
     get:
       consumes:
       - application/json
@@ -86194,7 +86257,7 @@ paths:
             $ref: '#/definitions/AnomalyzerQueryResponseApiResponse'
         401:
           description: log in failed
-  /analytics/Anomaly/virtualservice/{uuid}:
+  /analytics/anomaly/virtualservice/{uuid}:
     get:
       consumes:
       - application/json
@@ -86980,7 +87043,7 @@ paths:
           description: log in failed
         '404':
           description: object not found
-  /analytics/Healthscore/pool/:
+  /analytics/healthscore/pool/:
     get:
       consumes:
       - application/json
@@ -87142,7 +87205,7 @@ paths:
             $ref: '#/definitions/HealthScoreQueryResponseApiResponse'
         401:
           description: log in failed
-  /analytics/Healthscore/pool/{uuid}:
+  /analytics/healthscore/pool/{uuid}:
     get:
       consumes:
       - application/json
@@ -87304,7 +87367,7 @@ paths:
             $ref: '#/definitions/HealthScoreQueryResponse'
         401:
           description: log in failed
-  /analytics/Healthscore/serviceengine/:
+  /analytics/healthscore/serviceengine/:
     get:
       consumes:
       - application/json
@@ -87466,7 +87529,7 @@ paths:
             $ref: '#/definitions/HealthScoreQueryResponseApiResponse'
         401:
           description: log in failed
-  /analytics/Healthscore/serviceengine/{uuid}:
+  /analytics/healthscore/serviceengine/{uuid}:
     get:
       consumes:
       - application/json
@@ -87628,7 +87691,7 @@ paths:
             $ref: '#/definitions/HealthScoreQueryResponse'
         401:
           description: log in failed
-  /analytics/Healthscore/virtualservice/:
+  /analytics/healthscore/virtualservice/:
     get:
       consumes:
       - application/json
@@ -87790,7 +87853,7 @@ paths:
             $ref: '#/definitions/HealthScoreQueryResponseApiResponse'
         401:
           description: log in failed
-  /analytics/Healthscore/virtualservice/{uuid}:
+  /analytics/healthscore/virtualservice/{uuid}:
     get:
       consumes:
       - application/json
@@ -87952,7 +88015,7 @@ paths:
             $ref: '#/definitions/HealthScoreQueryResponse'
         401:
           description: log in failed
-  /analytics/Metrics/collection/:
+  /analytics/metrics/collection/:
     post:
       consumes:
       - application/json
@@ -88027,7 +88090,7 @@ paths:
             $ref: '#/definitions/MetricsCollectionApiRsp'
         401:
           description: log in failed
-  /analytics/Metrics/controller/:
+  /analytics/metrics/controller/:
     get:
       consumes:
       - application/json
@@ -88330,7 +88393,7 @@ paths:
             $ref: '#/definitions/MetricsQueryResponseApiResponse'
         401:
           description: log in failed
-  /analytics/Metrics/controller/{uuid}:
+  /analytics/metrics/controller/{uuid}:
     get:
       consumes:
       - application/json
@@ -88633,7 +88696,7 @@ paths:
             $ref: '#/definitions/MetricsQueryResponse'
         401:
           description: log in failed
-  /analytics/Metrics/pool/:
+  /analytics/metrics/pool/:
     get:
       consumes:
       - application/json
@@ -88936,7 +88999,7 @@ paths:
             $ref: '#/definitions/MetricsQueryResponseApiResponse'
         401:
           description: log in failed
-  /analytics/Metrics/pool/{uuid}:
+  /analytics/metrics/pool/{uuid}:
     get:
       consumes:
       - application/json
@@ -89239,7 +89302,7 @@ paths:
             $ref: '#/definitions/MetricsQueryResponse'
         401:
           description: log in failed
-  /analytics/Metrics/serviceengine/:
+  /analytics/metrics/serviceengine/:
     get:
       consumes:
       - application/json
@@ -89542,7 +89605,7 @@ paths:
             $ref: '#/definitions/MetricsQueryResponseApiResponse'
         401:
           description: log in failed
-  /analytics/Metrics/serviceengine/{uuid}:
+  /analytics/metrics/serviceengine/{uuid}:
     get:
       consumes:
       - application/json
@@ -89845,7 +89908,7 @@ paths:
             $ref: '#/definitions/MetricsQueryResponse'
         401:
           description: log in failed
-  /analytics/Metrics/virtualservice/:
+  /analytics/metrics/virtualservice/:
     get:
       consumes:
       - application/json
@@ -90148,7 +90211,7 @@ paths:
             $ref: '#/definitions/MetricsQueryResponseApiResponse'
         401:
           description: log in failed
-  /analytics/Metrics/virtualservice/{uuid}:
+  /analytics/metrics/virtualservice/{uuid}:
     get:
       consumes:
       - application/json
@@ -91966,16 +92029,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -95742,16 +95805,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -100570,16 +100633,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -101063,16 +101126,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -101785,9 +101848,9 @@ definitions:
           SEAGENTSEDATASTOREDOWNLOADFAIL, UPGRADEPROFILE, QATINFO, RETENTIONPOLICY,
           SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, LOGMANAGERSTATS,
           TECHSUPPORTPROFILE, TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE,
-          REPORT, REPORTPROFILE, SSPINSTANCE, VSPHEREZONEPARAMS, ALERTMGRMONITORINGDATA,
-          MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME, VERSIONINFO,
-          CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
+          REPORT, REPORTPROFILE, SSPINSTANCE, VSPHEREZONEPARAMS, ROTATIONPARAMS, IPADDRGROUPSYNCPARAMS,
+          ALERTMGRMONITORINGDATA, MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME,
+          VERSIONINFO, CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
           GSLBHEALTHMONITORRUNTIME, GSLBGEODBPROFILERUNTIME, GSLBAPPLICATIONPERSISTENCEPROFILERUNTIME,
           GSLBPKIPROFILERUNTIME, GSLBJWTSERVERPROFILERUNTIME, GSLBSSLPROFILERUNTIME,
           GSLBSSLKEYANDCERTIFICATERUNTIME, GSLBGEOFILE, GSLBGEOFILERUNTIME, EVENTINFO,
@@ -102113,9 +102176,9 @@ definitions:
           SEAGENTSEDATASTOREDOWNLOADFAIL, UPGRADEPROFILE, QATINFO, RETENTIONPOLICY,
           SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, LOGMANAGERSTATS,
           TECHSUPPORTPROFILE, TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE,
-          REPORT, REPORTPROFILE, SSPINSTANCE, VSPHEREZONEPARAMS, ALERTMGRMONITORINGDATA,
-          MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME, VERSIONINFO,
-          CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
+          REPORT, REPORTPROFILE, SSPINSTANCE, VSPHEREZONEPARAMS, ROTATIONPARAMS, IPADDRGROUPSYNCPARAMS,
+          ALERTMGRMONITORINGDATA, MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME,
+          VERSIONINFO, CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
           GSLBHEALTHMONITORRUNTIME, GSLBGEODBPROFILERUNTIME, GSLBAPPLICATIONPERSISTENCEPROFILERUNTIME,
           GSLBPKIPROFILERUNTIME, GSLBJWTSERVERPROFILERUNTIME, GSLBSSLPROFILERUNTIME,
           GSLBSSLKEYANDCERTIFICATERUNTIME, GSLBGEOFILE, GSLBGEOFILERUNTIME, EVENTINFO,
@@ -102389,33 +102452,35 @@ definitions:
           NSXT_DFW_GROUP_UPDATE_FAILURE, NSXT_DFW_GROUP_DELETE_FAILURE, NSXT_DFW_GROUP_DELETE_SUCCESS,
           NSXT_DFW_SERVICE_UPDATE_SUCCESS, NSXT_DFW_SERVICE_UPDATE_FAILED, NSXT_DFW_SERVICE_DELETE_SUCCESS,
           NSXT_DFW_SERVICE_DELETE_FAILED, NSXT_DFW_TAG_SEGMENT_PORT_SUCCESS, NSXT_DFW_TAG_SEGMENT_PORT_FAILED,
-          NSXT_DFW_TAG_VM_SUCCESS, NSXT_DFW_TAG_VM_FAILED, UPGRADE_CONTROLLER_STARTED,
-          UPGRADE_SE_GROUP_STARTED, RESUME_SE_GROUP_STARTED, PATCH_CONTROLLER_STARTED,
-          PATCH_SE_GROUP_STARTED, ROLLBACK_CONTROLLER_STARTED, ROLLBACK_SE_GROUP_STARTED,
-          ROLLBACKPATCH_CONTROLLER_STARTED, ROLLBACKPATCH_SE_GROUP_STARTED, UPGRADE_CONTROLLER_COMPLETE,
-          UPGRADE_SE_GROUP_COMPLETE, PATCH_CONTROLLER_COMPLETE, PATCH_SE_GROUP_COMPLETE,
-          ROLLBACK_CONTROLLER_COMPLETE, ROLLBACK_SE_GROUP_COMPLETE, ROLLBACKPATCH_CONTROLLER_COMPLETE,
-          ROLLBACKPATCH_SE_GROUP_COMPLETE, UPGRADE_CONTROLLER_ABORTED, PATCH_CONTROLLER_ABORTED,
-          UPGRADE_SE_GROUP_SUSPENDED, PATCH_SE_GROUP_SUSPENDED, ROLLBACK_SE_GROUP_SUSPENDED,
-          ROLLBACKPATCH_SE_GROUP_SUSPENDED, UPGRADE_REQUEST, LICENSE_TRANSACTION,
-          LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE, LICENSE_TIER_SWITCH,
-          CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION, CENTRAL_LICENSE_REFRESH_SUCCESS,
-          CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED, ROLLBACKPATCH_CONTROLLER_ABORTED,
-          UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED, UPGRADE_DRYRUN_ABORTED,
-          AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT, CONTROLLER_DB_ERROR,
-          AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR, DNS_VS_STATUS,
-          CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED, POSTGRES_REPLICATION_FAILED,
-          SAML_METADATA_UPDATE_FAILED, RESTORE_CONTROLLER_STARTED, RESTORE_CONTROLLER_ABORTED,
-          RESTORE_CONTROLLER_COMPLETED, LOG_FREQUENT_DISK_CLEANUP, REQUEST_QUEUE_FULL,
-          REQUEST_QUEUE_RECOVERING, POSTGRES_MAX_CONN_LIMIT_BREACHED, POSTGRES_CONN_RECOVERY,
-          REQUEST_RATELIMIT, SYSTEM_REPORT_GENERATION_STARTED, SYSTEM_REPORT_GENERATION_COMPLETED,
-          SYSTEM_REPORT_GENERATION_FAILED, SYSTEM_REPORT_DELETED, CRL_ENDPOINT_EXPIRED,
-          CRL_ENDPOINT_EXPIRING_SOON, CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE, UBER_EVENT_ERR_TEMPLATE,
-          UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED, SE_PROCESS_CRASHED,
-          CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG, SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG,
-          SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED. Allowed with
-          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.
+          NSXT_DFW_TAG_VM_SUCCESS, NSXT_DFW_TAG_VM_FAILED, NSXT_IP_GROUP_UPDATE_FAILED,
+          NSXT_IP_GROUP_SYNC_NOT_SUPPORTED, NSXT_GROUP_FETCH_FAILED, NSXT_IP_GROUP_SYNC_MULTIPLE_NSX_URLS,
+          UPGRADE_CONTROLLER_STARTED, UPGRADE_SE_GROUP_STARTED, RESUME_SE_GROUP_STARTED,
+          PATCH_CONTROLLER_STARTED, PATCH_SE_GROUP_STARTED, ROLLBACK_CONTROLLER_STARTED,
+          ROLLBACK_SE_GROUP_STARTED, ROLLBACKPATCH_CONTROLLER_STARTED, ROLLBACKPATCH_SE_GROUP_STARTED,
+          UPGRADE_CONTROLLER_COMPLETE, UPGRADE_SE_GROUP_COMPLETE, PATCH_CONTROLLER_COMPLETE,
+          PATCH_SE_GROUP_COMPLETE, ROLLBACK_CONTROLLER_COMPLETE, ROLLBACK_SE_GROUP_COMPLETE,
+          ROLLBACKPATCH_CONTROLLER_COMPLETE, ROLLBACKPATCH_SE_GROUP_COMPLETE, UPGRADE_CONTROLLER_ABORTED,
+          PATCH_CONTROLLER_ABORTED, UPGRADE_SE_GROUP_SUSPENDED, PATCH_SE_GROUP_SUSPENDED,
+          ROLLBACK_SE_GROUP_SUSPENDED, ROLLBACKPATCH_SE_GROUP_SUSPENDED, UPGRADE_REQUEST,
+          LICENSE_TRANSACTION, LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE,
+          LICENSE_TIER_SWITCH, CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION,
+          CENTRAL_LICENSE_REFRESH_SUCCESS, CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED,
+          ROLLBACKPATCH_CONTROLLER_ABORTED, UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED,
+          UPGRADE_DRYRUN_ABORTED, AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT,
+          CONTROLLER_DB_ERROR, AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR,
+          DNS_VS_STATUS, CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED,
+          POSTGRES_REPLICATION_FAILED, SAML_METADATA_UPDATE_FAILED, RESTORE_CONTROLLER_STARTED,
+          RESTORE_CONTROLLER_ABORTED, RESTORE_CONTROLLER_COMPLETED, LOG_FREQUENT_DISK_CLEANUP,
+          REQUEST_QUEUE_FULL, REQUEST_QUEUE_RECOVERING, POSTGRES_MAX_CONN_LIMIT_BREACHED,
+          POSTGRES_CONN_RECOVERY, REQUEST_RATELIMIT, SYSTEM_REPORT_GENERATION_STARTED,
+          SYSTEM_REPORT_GENERATION_COMPLETED, SYSTEM_REPORT_GENERATION_FAILED, SYSTEM_REPORT_DELETED,
+          CRL_ENDPOINT_EXPIRED, CRL_ENDPOINT_EXPIRING_SOON, CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE,
+          UBER_EVENT_ERR_TEMPLATE, UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED,
+          SE_PROCESS_CRASHED, CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG,
+          SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG, SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED,
+          PASSWORD_ROTATION_COMPLETED, PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
         type: string
       not_cond:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -108303,16 +108368,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -109008,6 +109073,10 @@ definitions:
           in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: boolean
         default: true
+      disable_metrics_polling:
+        description: To disable metrics collection. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: boolean
       dns_provider_ref:
         description: DNS Profile for the cloud. It is a reference to an object of
           type IpamDnsProviderProfile. Allowed with any value in Enterprise, Enterprise
@@ -109323,9 +109392,21 @@ definitions:
         description: Credentials for Google Cloud Platform. Field introduced in 18.2.1.
           Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
         $ref: '#/definitions/GCPCredentials'
+      last_password_rotation:
+        description: Timestamp (Unix epoch in seconds) of last successful password
+          rotation. Used to determine when next rotation is due based on password_expiry_days.
+          Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: integer
+        format: uint64
       name:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
+        type: string
+      new_password_enc:
+        description: New password stored temporarily during rotation. Cleared after
+          successful rotation. Field introduced in 32.1.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
         type: string
       nsxt_credentials:
         description: Credentials to talk to NSX-T manager. Field introduced in 20.1.1.
@@ -110099,6 +110180,36 @@ definitions:
           CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.'
+        type: string
+  CLSStatus:
+    type: object
+    properties:
+      cls_id:
+        description: CLS Id. Field introduced in 32.1.1. Allowed with any value in
+          Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      cls_ref:
+        description: UUID of the SSP instance for CLS licensing. It is a reference
+          to an object of type SspInstance. Field introduced in 32.1.1. Allowed with
+          any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      connected:
+        description: CLS connectivity status. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: boolean
+      enabled:
+        description: Whether CLS is enabled. Field introduced in 32.1.1. Allowed with
+          any value in Enterprise, Enterprise with Cloud Services edition.
+        type: boolean
+      refreshed_at:
+        description: Timestamp of last attempted license refresh from CLS. Field introduced
+          in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
+      usage_uploaded_at:
+        description: Timestamp of last successful license usage upload to CLS. Field
+          introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
         type: string
   ClusterCloudDetails:
     type: object
@@ -112725,6 +112836,14 @@ definitions:
           for debugging purposes only. Field introduced in 20.1.6. Allowed with any
           value in Enterprise, Enterprise with Cloud Services edition.
         type: boolean
+      enable_streaming_based_nsx_ip_group_sync:
+        description: When set to true, Avi Controller will attempt to automatically
+          sync NSX Groups with AVI IP Groups provided the IP group is configured with
+          an NSX Group path and NSX Dynamic streaming is enabled and active. Field
+          introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        type: boolean
+        default: true
       event_manager_file_modified_ts_filter:
         description: Stated time duration beyond which Event manager disregards files
           whose modified timestamp from current time is later. Allowed values are
@@ -112899,6 +113018,21 @@ definitions:
           with any value in Enterprise, Enterprise with Cloud Services edition.
         type: integer
         default: 20
+        format: uint32
+      password_expiry_days:
+        description: Number of days after which password expires and requires rotation.
+          Allowed values are 30-730. Field introduced in 32.1.1. Unit is DAYS. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: integer
+        default: 30
+        format: uint32
+      password_rotation_job_period:
+        description: Period in hours for CloudConnectorUser password rotation check
+          job. Default is 24 hours (1 day). Range is 1-168 hours (1 hour to 7 days).
+          Allowed values are 1-168. Field introduced in 32.1.1. Unit is HOURS. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: integer
+        default: 24
         format: uint32
       permission_scoped_shared_admin_networks:
         description: Network and VrfContext objects from the admin tenant will not
@@ -117729,6 +117863,10 @@ definitions:
           in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services
           edition.
         $ref: '#/definitions/NsxtSIEndpointDetails'
+      nsxt_group_fetch:
+        description: NSX-T IP group sync event. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/NsxtGroupFetch'
       nsxt_img_details:
         description: Nsxt Image event. Field introduced in 20.1.1. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -117737,6 +117875,10 @@ definitions:
         description: Nsxt cloud event. Field introduced in 20.1.1. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         $ref: '#/definitions/NsxtSetup'
+      nsxt_ip_group:
+        description: NSX-T IP group sync event. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/NsxtIPGroup'
       nsxt_policy_details:
         description: NSX-T ServiceInsertion RedirectPolicy event. Field introduced
           in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services
@@ -117800,6 +117942,11 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         $ref: '#/definitions/OpenStackVnicChange'
+      password_rotation_details:
+        description: Details about CloudConnectorUser password rotation. Field introduced
+          in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        $ref: '#/definitions/PasswordRotationDetails'
       pkiprofile_details:
         description: PKIProfile event. Field introduced in 30.2.1. Allowed with any
           value in Enterprise, Enterprise with Cloud Services edition.
@@ -118536,33 +118683,35 @@ definitions:
           NSXT_DFW_GROUP_UPDATE_FAILURE, NSXT_DFW_GROUP_DELETE_FAILURE, NSXT_DFW_GROUP_DELETE_SUCCESS,
           NSXT_DFW_SERVICE_UPDATE_SUCCESS, NSXT_DFW_SERVICE_UPDATE_FAILED, NSXT_DFW_SERVICE_DELETE_SUCCESS,
           NSXT_DFW_SERVICE_DELETE_FAILED, NSXT_DFW_TAG_SEGMENT_PORT_SUCCESS, NSXT_DFW_TAG_SEGMENT_PORT_FAILED,
-          NSXT_DFW_TAG_VM_SUCCESS, NSXT_DFW_TAG_VM_FAILED, UPGRADE_CONTROLLER_STARTED,
-          UPGRADE_SE_GROUP_STARTED, RESUME_SE_GROUP_STARTED, PATCH_CONTROLLER_STARTED,
-          PATCH_SE_GROUP_STARTED, ROLLBACK_CONTROLLER_STARTED, ROLLBACK_SE_GROUP_STARTED,
-          ROLLBACKPATCH_CONTROLLER_STARTED, ROLLBACKPATCH_SE_GROUP_STARTED, UPGRADE_CONTROLLER_COMPLETE,
-          UPGRADE_SE_GROUP_COMPLETE, PATCH_CONTROLLER_COMPLETE, PATCH_SE_GROUP_COMPLETE,
-          ROLLBACK_CONTROLLER_COMPLETE, ROLLBACK_SE_GROUP_COMPLETE, ROLLBACKPATCH_CONTROLLER_COMPLETE,
-          ROLLBACKPATCH_SE_GROUP_COMPLETE, UPGRADE_CONTROLLER_ABORTED, PATCH_CONTROLLER_ABORTED,
-          UPGRADE_SE_GROUP_SUSPENDED, PATCH_SE_GROUP_SUSPENDED, ROLLBACK_SE_GROUP_SUSPENDED,
-          ROLLBACKPATCH_SE_GROUP_SUSPENDED, UPGRADE_REQUEST, LICENSE_TRANSACTION,
-          LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE, LICENSE_TIER_SWITCH,
-          CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION, CENTRAL_LICENSE_REFRESH_SUCCESS,
-          CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED, ROLLBACKPATCH_CONTROLLER_ABORTED,
-          UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED, UPGRADE_DRYRUN_ABORTED,
-          AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT, CONTROLLER_DB_ERROR,
-          AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR, DNS_VS_STATUS,
-          CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED, POSTGRES_REPLICATION_FAILED,
-          SAML_METADATA_UPDATE_FAILED, RESTORE_CONTROLLER_STARTED, RESTORE_CONTROLLER_ABORTED,
-          RESTORE_CONTROLLER_COMPLETED, LOG_FREQUENT_DISK_CLEANUP, REQUEST_QUEUE_FULL,
-          REQUEST_QUEUE_RECOVERING, POSTGRES_MAX_CONN_LIMIT_BREACHED, POSTGRES_CONN_RECOVERY,
-          REQUEST_RATELIMIT, SYSTEM_REPORT_GENERATION_STARTED, SYSTEM_REPORT_GENERATION_COMPLETED,
-          SYSTEM_REPORT_GENERATION_FAILED, SYSTEM_REPORT_DELETED, CRL_ENDPOINT_EXPIRED,
-          CRL_ENDPOINT_EXPIRING_SOON, CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE, UBER_EVENT_ERR_TEMPLATE,
-          UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED, SE_PROCESS_CRASHED,
-          CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG, SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG,
-          SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED. Allowed with
-          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
+          NSXT_DFW_TAG_VM_SUCCESS, NSXT_DFW_TAG_VM_FAILED, NSXT_IP_GROUP_UPDATE_FAILED,
+          NSXT_IP_GROUP_SYNC_NOT_SUPPORTED, NSXT_GROUP_FETCH_FAILED, NSXT_IP_GROUP_SYNC_MULTIPLE_NSX_URLS,
+          UPGRADE_CONTROLLER_STARTED, UPGRADE_SE_GROUP_STARTED, RESUME_SE_GROUP_STARTED,
+          PATCH_CONTROLLER_STARTED, PATCH_SE_GROUP_STARTED, ROLLBACK_CONTROLLER_STARTED,
+          ROLLBACK_SE_GROUP_STARTED, ROLLBACKPATCH_CONTROLLER_STARTED, ROLLBACKPATCH_SE_GROUP_STARTED,
+          UPGRADE_CONTROLLER_COMPLETE, UPGRADE_SE_GROUP_COMPLETE, PATCH_CONTROLLER_COMPLETE,
+          PATCH_SE_GROUP_COMPLETE, ROLLBACK_CONTROLLER_COMPLETE, ROLLBACK_SE_GROUP_COMPLETE,
+          ROLLBACKPATCH_CONTROLLER_COMPLETE, ROLLBACKPATCH_SE_GROUP_COMPLETE, UPGRADE_CONTROLLER_ABORTED,
+          PATCH_CONTROLLER_ABORTED, UPGRADE_SE_GROUP_SUSPENDED, PATCH_SE_GROUP_SUSPENDED,
+          ROLLBACK_SE_GROUP_SUSPENDED, ROLLBACKPATCH_SE_GROUP_SUSPENDED, UPGRADE_REQUEST,
+          LICENSE_TRANSACTION, LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE,
+          LICENSE_TIER_SWITCH, CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION,
+          CENTRAL_LICENSE_REFRESH_SUCCESS, CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED,
+          ROLLBACKPATCH_CONTROLLER_ABORTED, UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED,
+          UPGRADE_DRYRUN_ABORTED, AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT,
+          CONTROLLER_DB_ERROR, AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR,
+          DNS_VS_STATUS, CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED,
+          POSTGRES_REPLICATION_FAILED, SAML_METADATA_UPDATE_FAILED, RESTORE_CONTROLLER_STARTED,
+          RESTORE_CONTROLLER_ABORTED, RESTORE_CONTROLLER_COMPLETED, LOG_FREQUENT_DISK_CLEANUP,
+          REQUEST_QUEUE_FULL, REQUEST_QUEUE_RECOVERING, POSTGRES_MAX_CONN_LIMIT_BREACHED,
+          POSTGRES_CONN_RECOVERY, REQUEST_RATELIMIT, SYSTEM_REPORT_GENERATION_STARTED,
+          SYSTEM_REPORT_GENERATION_COMPLETED, SYSTEM_REPORT_GENERATION_FAILED, SYSTEM_REPORT_DELETED,
+          CRL_ENDPOINT_EXPIRED, CRL_ENDPOINT_EXPIRING_SOON, CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE,
+          UBER_EVENT_ERR_TEMPLATE, UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED,
+          SE_PROCESS_CRASHED, CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG,
+          SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG, SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED,
+          PASSWORD_ROTATION_COMPLETED, PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.'
         type: string
       event_pages:
         description: Pages in which event should come up. Allowed with any value in
@@ -118734,9 +118883,9 @@ definitions:
           SEAGENTSEDATASTOREDOWNLOADFAIL, UPGRADEPROFILE, QATINFO, RETENTIONPOLICY,
           SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, LOGMANAGERSTATS,
           TECHSUPPORTPROFILE, TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE,
-          REPORT, REPORTPROFILE, SSPINSTANCE, VSPHEREZONEPARAMS, ALERTMGRMONITORINGDATA,
-          MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME, VERSIONINFO,
-          CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
+          REPORT, REPORTPROFILE, SSPINSTANCE, VSPHEREZONEPARAMS, ROTATIONPARAMS, IPADDRGROUPSYNCPARAMS,
+          ALERTMGRMONITORINGDATA, MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME,
+          VERSIONINFO, CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
           GSLBHEALTHMONITORRUNTIME, GSLBGEODBPROFILERUNTIME, GSLBAPPLICATIONPERSISTENCEPROFILERUNTIME,
           GSLBPKIPROFILERUNTIME, GSLBJWTSERVERPROFILERUNTIME, GSLBSSLPROFILERUNTIME,
           GSLBSSLKEYANDCERTIFICATERUNTIME, GSLBGEOFILE, GSLBGEOFILERUNTIME, EVENTINFO,
@@ -124472,16 +124621,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -124940,6 +125089,14 @@ definitions:
         description: Name of the IP address group. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
+      nsx_groups:
+        description: An NSX Group that maps to a dynamic collection of IP addresses,
+          derived from its definition in NSX. Field introduced in 32.1.1. Maximum
+          of 1 items allowed. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        type: array
+        items:
+          type: string
       prefixes:
         description: Configure IP address prefix(es). Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
@@ -124979,6 +125136,19 @@ definitions:
         items:
           $ref: '#/definitions/IpAddrGroup'
       next:
+        type: string
+  IpAddrGroupSyncParams:
+    type: object
+    properties:
+      name:
+        description: Name of the IpAddrGroup to sync NSX group IPs for. Field introduced
+          in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: string
+      uuid:
+        description: UUID of the IpAddrGroup to sync NSX group IPs for. Field introduced
+          in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
         type: string
   IPAddrLimits:
     type: object
@@ -125924,6 +126094,11 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: string
+      is_federated:
+        description: populate the is_federated field based object config. Field introduced
+          in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: boolean
       name:
         description: ' Field introduced in 18.1.2. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.'
@@ -127066,6 +127241,27 @@ definitions:
           $ref: '#/definitions/LicenseLedgerDetails'
       next:
         type: string
+  LicensePool:
+    type: object
+    properties:
+      available_service_units:
+        description: Available service units in the pool. Field introduced in 32.1.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: number
+        format: double
+      pool_id:
+        description: Pool ID. Field introduced in 32.1.1. Allowed with any value in
+          Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      pool_name:
+        description: Pool name. Field introduced in 32.1.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      used_service_units:
+        description: Used service units in the pool. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: number
+        format: double
   LicenseReservationInfo:
     type: object
     properties:
@@ -127097,6 +127293,15 @@ definitions:
         description: UNIX time since epoch in microseconds. Units(MICROSECONDS).
         readOnly: true
         type: string
+      cls_status:
+        description: CLS licensing status. Field introduced in 32.1.1. Allowed with
+          any value in Enterprise, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/CLSStatus'
+      legacy_license_grace_period:
+        description: Legacy license grace period, when controller upgrades with existing
+          legacy licenses. Field introduced in 32.1.1. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: string
       saas_status:
         description: Saas licensing status. Field introduced in 21.1.3. Allowed with
           any value in Enterprise, Enterprise with Cloud Services edition.
@@ -127105,6 +127310,12 @@ definitions:
         description: Pulse license service update. Field introduced in 21.1.4. Allowed
           with any value in Enterprise, Enterprise with Cloud Services edition.
         $ref: '#/definitions/LicenseServiceUpdate'
+      support_legacy_license:
+        description: Indicates if legacy licenses are supported. When false, legacy
+          licenses have been cleaned up after grace period expiry. Field introduced
+          in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        type: boolean
       tenant_uuid:
         description: Tenant uuid. Field introduced in 30.1.1. Allowed with any value
           in Enterprise, Enterprise with Cloud Services edition.
@@ -130410,6 +130621,27 @@ definitions:
         description: NSX-T DFW VM name. Field introduced in 31.2.1. Allowed with any
           value in Enterprise, Enterprise with Cloud Services edition.
         type: string
+  NsxtGroupFetch:
+    type: object
+    properties:
+      error_string:
+        description: Error message. Field introduced in 32.1.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      path:
+        description: NSX Group . Field introduced in 32.1.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+  NsxtGroupSyncEntry:
+    type: object
+    properties:
+      ip_addresses:
+        description: IP addresses for this NSX group. Empty list means fetch from
+          NSX. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
+        type: array
+        items:
+          type: string
   NsxtHosts:
     type: object
     properties:
@@ -130443,6 +130675,17 @@ definitions:
       vc_url:
         description: VC url. Field introduced in 20.1.1. Allowed with any value in
           Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+  NsxtIPGroup:
+    type: object
+    properties:
+      error_string:
+        description: Error message. Field introduced in 32.1.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      path:
+        description: IP Group . Field introduced in 32.1.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
         type: string
   NsxtSegmentRuntime:
     type: object
@@ -130746,6 +130989,17 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: string
+  NsxtStreamingServerStatus.PendingGroupsEntry:
+    type: object
+    properties:
+      key:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        type: string
+      value:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        $ref: '#/definitions/NsxtGroupSyncEntry'
   NsxtT1Seg:
     type: object
     properties:
@@ -132563,6 +132817,25 @@ definitions:
           PARAM_TEXT, PARAM_TEXT_MULTILINE, PARAM_ALL. Field introduced in 20.1.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
+        type: string
+  PasswordRotationDetails:
+    type: object
+    properties:
+      credential_type:
+        description: Type of credential (NSX-T or vCenter). Field introduced in 32.1.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      error_string:
+        description: Error message if rotation failed. Field introduced in 32.1.1.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      name:
+        description: Name of the CloudConnectorUser. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      uuid:
+        description: UUID of the CloudConnectorUser. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
   PatchInfo:
     type: object
@@ -134592,16 +134865,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -136131,16 +136404,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -136927,16 +137200,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -137781,6 +138054,10 @@ definitions:
         description: Name. Field introduced in 21.1.3. Allowed with any value in Enterprise,
           Enterprise with Cloud Services edition.
         type: string
+      pool:
+        description: License pool information. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/LicensePool'
       public_key:
         description: Public key. Field introduced in 21.1.3. Allowed with any value
           in Enterprise, Enterprise with Cloud Services edition.
@@ -138346,9 +138623,9 @@ definitions:
           SEAGENTSEDATASTOREDOWNLOADFAIL, UPGRADEPROFILE, QATINFO, RETENTIONPOLICY,
           SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, LOGMANAGERSTATS,
           TECHSUPPORTPROFILE, TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE,
-          REPORT, REPORTPROFILE, SSPINSTANCE, VSPHEREZONEPARAMS, ALERTMGRMONITORINGDATA,
-          MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME, VERSIONINFO,
-          CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
+          REPORT, REPORTPROFILE, SSPINSTANCE, VSPHEREZONEPARAMS, ROTATIONPARAMS, IPADDRGROUPSYNCPARAMS,
+          ALERTMGRMONITORINGDATA, MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME,
+          VERSIONINFO, CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL,
           GSLBHEALTHMONITORRUNTIME, GSLBGEODBPROFILERUNTIME, GSLBAPPLICATIONPERSISTENCEPROFILERUNTIME,
           GSLBPKIPROFILERUNTIME, GSLBJWTSERVERPROFILERUNTIME, GSLBSSLPROFILERUNTIME,
           GSLBSSLKEYANDCERTIFICATERUNTIME, GSLBGEOFILE, GSLBGEOFILERUNTIME, EVENTINFO,
@@ -139717,16 +139994,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -141523,6 +141800,12 @@ definitions:
         description: IPV6 address for SE snat. Field introduced in 30.2.1. Allowed
           with any value in Enterprise, Enterprise with Cloud Services edition.
         $ref: '#/definitions/IpAddr'
+      tepless_ip:
+        description: Tepless IP for TEP-less VPC. Used as source IP for all SE-originated
+          traffic in this VRF. Required for inter-SE communication in scale-out scenarios.
+          Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
+        $ref: '#/definitions/IpAddr'
       vcpus:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -143019,16 +143302,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -143435,16 +143718,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -143881,16 +144164,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -144313,16 +144596,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -144759,16 +145042,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -150206,9 +150489,10 @@ definitions:
           JOB_TYPE_ARCHIVE_AND_RETENTION_PERIODIC_POLICY, JOB_TYPE_EXECUTE_TELEMETRY,
           JOB_TYPE_SEGROUP_OBJSYNC, JOB_TYPE_CASCADE_UPDATE_CERT_CHILD_PARENT_REF,
           JOB_TYPE_SCHEDULE_CERT_CASCADE_UPDATE, JOB_TYPE_GSLB_DNS_RESOLVE_ON_SE,
-          JOB_TYPE_GSLB_AUTO_UPDATE_SEND_INTERVAL, JOB_TYPE_CERTIFICATE_ROTATION_JWT_CLEANUP.
-          Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials,
-          Basic, Enterprise with Cloud Services edition.'
+          JOB_TYPE_GSLB_AUTO_UPDATE_SEND_INTERVAL, JOB_TYPE_CERTIFICATE_ROTATION_JWT_CLEANUP,
+          JOB_TYPE_CCU_PASSWORD_ROTATION. Field introduced in 18.1.1. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
         type: string
   Subnet:
     type: object
@@ -151356,16 +151640,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -151998,16 +152282,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -152443,16 +152727,16 @@ definitions:
           SYSERR_ALBSVC_DATABASE_UPDATE_ERROR, SYSERR_ALBSVC_ALREADY_DEREGISTERED,
           SYSERR_ALBSVC_FILE_DOWNLOAD_IN_PROGRESS, SYSERR_ALBSVC_FILE_DOWNLOAD_SUCCESS,
           SYSERR_ALBSVC_FILE_DOWNLOAD_FAILED, SYSERR_ALBSVC_FILE_DOWNLOAD_STARTED,
-          SYSERR_UPGRADE_SYSTEM_STARTED, SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED,
-          SYSERR_RESUME_SEGROUP_STARTED, SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED,
-          SYSERR_PATCH_SEGROUP_STARTED, SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED,
-          SYSERR_ROLLBACK_CONTROLLER_STARTED, SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED,
-          SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED, SYSERR_ROLLBACKPATCH_SEGROUP_STARTED,
-          SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED,
-          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED, SYSERR_CONCURRENT_UPGRADE,
-          SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED, SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED,
-          SYSERR_EVAL_UPGRADE_SEGROUP_STARTED, SYSERR_EVAL_RESUME_SEGROUP_STARTED,
-          SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
+          SYSERR_ALBSVC_CLOUD_LICENSING_ENABLED, SYSERR_ALBSVC_SITE_ID_MISSING, SYSERR_UPGRADE_SYSTEM_STARTED,
+          SYSERR_UPGRADE_CONTROLLER_STARTED, SYSERR_UPGRADE_SEGROUP_STARTED, SYSERR_RESUME_SEGROUP_STARTED,
+          SYSERR_PATCH_SYSTEM_STARTED, SYSERR_PATCH_CONTROLLER_STARTED, SYSERR_PATCH_SEGROUP_STARTED,
+          SYSERR_PATCHSEGROUP_RESUME_STARTED, SYSERR_ROLLBACK_SYSTEM_STARTED, SYSERR_ROLLBACK_CONTROLLER_STARTED,
+          SYSERR_ROLLBACK_SEGROUP_STARTED, SYSERR_ROLLBACKPATCH_SYSTEM_STARTED, SYSERR_ROLLBACKPATCH_CONTROLLER_STARTED,
+          SYSERR_ROLLBACKPATCH_SEGROUP_STARTED, SYSERR_UPGRADE_OPS_VS_DISRUPTION_WARNINGS,
+          SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_TRANSITION_STARTED, SYSERR_UPGRADE_OPS_COMPLIANCE_MODE_ERROR_RECOVERY_STARTED,
+          SYSERR_CONCURRENT_UPGRADE, SYSERR_RESTORE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SYSTEM_STARTED,
+          SYSERR_EVAL_UPGRADE_CONTROLLER_STARTED, SYSERR_EVAL_UPGRADE_SEGROUP_STARTED,
+          SYSERR_EVAL_RESUME_SEGROUP_STARTED, SYSERR_EVAL_PATCH_SYSTEM_STARTED, SYSERR_EVAL_PATCH_CONTROLLER_STARTED,
           SYSERR_EVAL_PATCH_SEGROUP_STARTED, SYSERR_EVAL_PATCHSEGROUP_RESUME_STARTED,
           SYSERR_EVAL_ROLLBACK_SYSTEM_STARTED, SYSERR_EVAL_ROLLBACK_CONTROLLER_STARTED,
           SYSERR_EVAL_ROLLBACK_SEGROUP_STARTED, SYSERR_EVAL_ROLLBACKPATCH_SYSTEM_STARTED,
@@ -153879,6 +154163,11 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: boolean
+      is_vcfa_user:
+        description: Indicates if the user was created via VCFA OAuth authentication.
+          Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
+        type: boolean
       local:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -154745,6 +155034,11 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: string
+      nsx_segment_port_path:
+        description: NSX segment port path for TEPless VPC mode. This port is pre-created
+          before VNIC attachment. Field introduced in 32.1.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        type: string
       os_port_uuid:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -154754,6 +155048,11 @@ definitions:
           31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services
           edition.
         type: string
+      tepless_ip:
+        description: Tepless IP for TEP-less VPC. Used as source IP for all SE-originated
+          traffic in this VRF. Field introduced in 32.1.1. Allowed with any value
+          in Enterprise, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/IpAddr'
       type:
         description: ' Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK,
           CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
@@ -157576,6 +157875,12 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: string
+      tepless_ip:
+        description: Tepless IP address for TEP-less VPC deployment. This IP is used
+          as the source IP for all traffic originated by the SE in this VRF. Field
+          introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        $ref: '#/definitions/IpAddr'
       vlan_id:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'

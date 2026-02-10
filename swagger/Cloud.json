@@ -1582,6 +1582,10 @@
                     "type": "boolean",
                     "default": true
                 },
+                "disable_metrics_polling": {
+                    "description": "To disable metrics collection. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
                 "dns_provider_ref": {
                     "description": "DNS Profile for the cloud. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
