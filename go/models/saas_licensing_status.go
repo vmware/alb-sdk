@@ -26,6 +26,9 @@ type SaasLicensingStatus struct {
 	// Name. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
+	// License pool information. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	Pool *LicensePool `json:"pool,omitempty"`
+
 	// Public key. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	PublicKey *string `json:"public_key,omitempty"`
 

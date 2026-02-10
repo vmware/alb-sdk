@@ -132,6 +132,9 @@ type ControllerProperties struct {
 	// Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EnableResmgrLogCachePrint *bool `json:"enable_resmgr_log_cache_print,omitempty"`
 
+	// When set to true, Avi Controller will attempt to automatically sync NSX Groups with AVI IP Groups provided the IP group is configured with an NSX Group path and NSX Dynamic streaming is enabled and active. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	EnableStreamingBasedNsxIPGroupSync *bool `json:"enable_streaming_based_nsx_ip_group_sync,omitempty"`
+
 	// Stated time duration beyond which Event manager disregards files whose modified timestamp from current time is later. Allowed values are 1-1800. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	EventManagerFileModifiedTsFilter *uint32 `json:"event_manager_file_modified_ts_filter,omitempty"`
 
@@ -203,6 +206,12 @@ type ControllerProperties struct {
 
 	// Maximum number of threads in threadpool used by cloud connector CCVIPBGWorker. Allowed values are 1-100. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MaxThreadsCcVipBgWorker *uint32 `json:"max_threads_cc_vip_bg_worker,omitempty"`
+
+	// Number of days after which password expires and requires rotation. Allowed values are 30-730. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	PasswordExpiryDays *uint32 `json:"password_expiry_days,omitempty"`
+
+	// Period in hours for CloudConnectorUser password rotation check job. Default is 24 hours (1 day). Range is 1-168 hours (1 hour to 7 days). Allowed values are 1-168. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	PasswordRotationJobPeriod *uint32 `json:"password_rotation_job_period,omitempty"`
 
 	// Network and VrfContext objects from the admin tenant will not be shared to non-admin tenants unless admin permissions are granted. Field introduced in 18.2.7, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PermissionScopedSharedAdminNetworks *bool `json:"permission_scoped_shared_admin_networks,omitempty"`
