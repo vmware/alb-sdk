@@ -67,6 +67,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("bm_use_ansible")
     private Boolean bmUseAnsible = true;
 
+    @JsonProperty("cert_rotation_jwt_retention_days")
+    private Integer certRotationJwtRetentionDays = 180;
+
     @JsonProperty("check_vsvip_fqdn_syntax")
     private Boolean checkVsvipFqdnSyntax = true;
 
@@ -139,6 +142,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonIgnore
     private Boolean enableResmgrLogCachePrint = false;
 
+    @JsonProperty("enable_streaming_based_nsx_ip_group_sync")
+    private Boolean enableStreamingBasedNsxIpGroupSync = true;
+
     @JsonProperty("event_manager_file_modified_ts_filter")
     private Integer eventManagerFileModifiedTsFilter = 180;
 
@@ -210,6 +216,12 @@ public class ControllerProperties extends AviRestResource  {
 
     @JsonProperty("max_threads_cc_vip_bg_worker")
     private Integer maxThreadsCcVipBgWorker = 20;
+
+    @JsonProperty("password_expiry_days")
+    private Integer passwordExpiryDays = 30;
+
+    @JsonProperty("password_rotation_job_period")
+    private Integer passwordRotationJobPeriod = 24;
 
     @JsonProperty("permission_scoped_shared_admin_networks")
     private Boolean permissionScopedSharedAdminNetworks = false;
@@ -740,6 +752,36 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setBmUseAnsible(Boolean  bmUseAnsible) {
         this.bmUseAnsible = bmUseAnsible;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Number of days to retain jwt tokens generated during certificate rotation.
+     * Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months, 180 = 6 months).
+     * Allowed values are 1-3650.
+     * Field introduced in 32.1.1.
+     * Unit is days.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+     * @return certRotationJwtRetentionDays
+     */
+    public Integer getCertRotationJwtRetentionDays() {
+        return certRotationJwtRetentionDays;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of days to retain jwt tokens generated during certificate rotation.
+     * Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months, 180 = 6 months).
+     * Allowed values are 1-3650.
+     * Field introduced in 32.1.1.
+     * Unit is days.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 180.
+     * @param certRotationJwtRetentionDays set the certRotationJwtRetentionDays.
+     */
+    public void setCertRotationJwtRetentionDays(Integer  certRotationJwtRetentionDays) {
+        this.certRotationJwtRetentionDays = certRotationJwtRetentionDays;
     }
 
     /**
@@ -1358,6 +1400,32 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setEnableResmgrLogCachePrint(Boolean  enableResmgrLogCachePrint) {
         this.enableResmgrLogCachePrint = enableResmgrLogCachePrint;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * When set to true, avi controller will attempt to automatically sync nsx groups with avi ip groups provided the ip group is configured with an nsx
+     * group path and nsx dynamic streaming is enabled and active.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return enableStreamingBasedNsxIpGroupSync
+     */
+    public Boolean getEnableStreamingBasedNsxIpGroupSync() {
+        return enableStreamingBasedNsxIpGroupSync;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * When set to true, avi controller will attempt to automatically sync nsx groups with avi ip groups provided the ip group is configured with an nsx
+     * group path and nsx dynamic streaming is enabled and active.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param enableStreamingBasedNsxIpGroupSync set the enableStreamingBasedNsxIpGroupSync.
+     */
+    public void setEnableStreamingBasedNsxIpGroupSync(Boolean  enableStreamingBasedNsxIpGroupSync) {
+        this.enableStreamingBasedNsxIpGroupSync = enableStreamingBasedNsxIpGroupSync;
     }
 
     /**
@@ -1982,6 +2050,66 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setMaxThreadsCcVipBgWorker(Integer  maxThreadsCcVipBgWorker) {
         this.maxThreadsCcVipBgWorker = maxThreadsCcVipBgWorker;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Number of days after which password expires and requires rotation.
+     * Allowed values are 30-730.
+     * Field introduced in 32.1.1.
+     * Unit is days.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+     * @return passwordExpiryDays
+     */
+    public Integer getPasswordExpiryDays() {
+        return passwordExpiryDays;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of days after which password expires and requires rotation.
+     * Allowed values are 30-730.
+     * Field introduced in 32.1.1.
+     * Unit is days.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+     * @param passwordExpiryDays set the passwordExpiryDays.
+     */
+    public void setPasswordExpiryDays(Integer  passwordExpiryDays) {
+        this.passwordExpiryDays = passwordExpiryDays;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Period in hours for cloudconnectoruser password rotation check job.
+     * Default is 24 hours (1 day).
+     * Range is 1-168 hours (1 hour to 7 days).
+     * Allowed values are 1-168.
+     * Field introduced in 32.1.1.
+     * Unit is hours.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 24.
+     * @return passwordRotationJobPeriod
+     */
+    public Integer getPasswordRotationJobPeriod() {
+        return passwordRotationJobPeriod;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Period in hours for cloudconnectoruser password rotation check job.
+     * Default is 24 hours (1 day).
+     * Range is 1-168 hours (1 hour to 7 days).
+     * Allowed values are 1-168.
+     * Field introduced in 32.1.1.
+     * Unit is hours.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 24.
+     * @param passwordRotationJobPeriod set the passwordRotationJobPeriod.
+     */
+    public void setPasswordRotationJobPeriod(Integer  passwordRotationJobPeriod) {
+        this.passwordRotationJobPeriod = passwordRotationJobPeriod;
     }
 
     /**
@@ -3438,7 +3566,11 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.logRecordsFrequentCleanupEventGenerationThreshold, objControllerProperties.logRecordsFrequentCleanupEventGenerationThreshold)&&
   Objects.equals(this.logRecordsCleanupTargetPercentage, objControllerProperties.logRecordsCleanupTargetPercentage)&&
   Objects.equals(this.logRecordsAllocationPercentageForEvents, objControllerProperties.logRecordsAllocationPercentageForEvents)&&
-  Objects.equals(this.eventManagerFileModifiedTsFilter, objControllerProperties.eventManagerFileModifiedTsFilter);
+  Objects.equals(this.eventManagerFileModifiedTsFilter, objControllerProperties.eventManagerFileModifiedTsFilter)&&
+  Objects.equals(this.certRotationJwtRetentionDays, objControllerProperties.certRotationJwtRetentionDays)&&
+  Objects.equals(this.passwordRotationJobPeriod, objControllerProperties.passwordRotationJobPeriod)&&
+  Objects.equals(this.passwordExpiryDays, objControllerProperties.passwordExpiryDays)&&
+  Objects.equals(this.enableStreamingBasedNsxIpGroupSync, objControllerProperties.enableStreamingBasedNsxIpGroupSync);
     }
 
     @Override
@@ -3460,6 +3592,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    attachIpRetryInterval: ").append(toIndentedString(attachIpRetryInterval)).append("\n");
                         sb.append("    attachIpRetryLimit: ").append(toIndentedString(attachIpRetryLimit)).append("\n");
                         sb.append("    bmUseAnsible: ").append(toIndentedString(bmUseAnsible)).append("\n");
+                        sb.append("    certRotationJwtRetentionDays: ").append(toIndentedString(certRotationJwtRetentionDays)).append("\n");
                         sb.append("    checkVsvipFqdnSyntax: ").append(toIndentedString(checkVsvipFqdnSyntax)).append("\n");
                         sb.append("    cleanupExpiredAuthtokenTimeoutPeriod: ").append(toIndentedString(cleanupExpiredAuthtokenTimeoutPeriod)).append("\n");
                         sb.append("    cleanupSessionsTimeoutPeriod: ").append(toIndentedString(cleanupSessionsTimeoutPeriod)).append("\n");
@@ -3484,6 +3617,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    enableNsxStreamingAgent: ").append(toIndentedString(enableNsxStreamingAgent)).append("\n");
                         sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
                         sb.append("    enableResmgrLogCachePrint: ").append(toIndentedString(enableResmgrLogCachePrint)).append("\n");
+                        sb.append("    enableStreamingBasedNsxIpGroupSync: ").append(toIndentedString(enableStreamingBasedNsxIpGroupSync)).append("\n");
                         sb.append("    eventManagerFileModifiedTsFilter: ").append(toIndentedString(eventManagerFileModifiedTsFilter)).append("\n");
                         sb.append("    eventManagerMaxGoroutines: ").append(toIndentedString(eventManagerMaxGoroutines)).append("\n");
                         sb.append("    eventManagerMaxSubscribers: ").append(toIndentedString(eventManagerMaxSubscribers)).append("\n");
@@ -3508,6 +3642,8 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    maxSeqAttachIpFailures: ").append(toIndentedString(maxSeqAttachIpFailures)).append("\n");
                         sb.append("    maxSeqVnicFailures: ").append(toIndentedString(maxSeqVnicFailures)).append("\n");
                         sb.append("    maxThreadsCcVipBgWorker: ").append(toIndentedString(maxThreadsCcVipBgWorker)).append("\n");
+                        sb.append("    passwordExpiryDays: ").append(toIndentedString(passwordExpiryDays)).append("\n");
+                        sb.append("    passwordRotationJobPeriod: ").append(toIndentedString(passwordRotationJobPeriod)).append("\n");
                         sb.append("    permissionScopedSharedAdminNetworks: ").append(toIndentedString(permissionScopedSharedAdminNetworks)).append("\n");
                         sb.append("    persistenceKeyRotatePeriod: ").append(toIndentedString(persistenceKeyRotatePeriod)).append("\n");
                         sb.append("    portalRequestBurstLimit: ").append(toIndentedString(portalRequestBurstLimit)).append("\n");

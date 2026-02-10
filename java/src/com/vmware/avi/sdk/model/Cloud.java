@@ -39,6 +39,9 @@ public class Cloud extends AviRestResource  {
     @JsonProperty("dhcp_enabled")
     private Boolean dhcpEnabled = true;
 
+    @JsonProperty("disable_metrics_polling")
+    private Boolean disableMetricsPolling = false;
+
     @JsonProperty("dns_provider_ref")
     private String dnsProviderRef;
 
@@ -303,6 +306,30 @@ public class Cloud extends AviRestResource  {
      */
     public void setDhcpEnabled(Boolean  dhcpEnabled) {
         this.dhcpEnabled = dhcpEnabled;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * To disable metrics collection.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return disableMetricsPolling
+     */
+    public Boolean getDisableMetricsPolling() {
+        return disableMetricsPolling;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * To disable metrics collection.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param disableMetricsPolling set the disableMetricsPolling.
+     */
+    public void setDisableMetricsPolling(Boolean  disableMetricsPolling) {
+        this.disableMetricsPolling = disableMetricsPolling;
     }
 
     /**
@@ -1262,7 +1289,8 @@ public class Cloud extends AviRestResource  {
   Objects.equals(this.dnsResolvers, objCloud.dnsResolvers)&&
   Objects.equals(this.markers, objCloud.markers)&&
   Objects.equals(this.metricsPollingInterval, objCloud.metricsPollingInterval)&&
-  Objects.equals(this.ntpConfiguration, objCloud.ntpConfiguration);
+  Objects.equals(this.ntpConfiguration, objCloud.ntpConfiguration)&&
+  Objects.equals(this.disableMetricsPolling, objCloud.disableMetricsPolling);
     }
 
     @Override
@@ -1275,6 +1303,7 @@ public class Cloud extends AviRestResource  {
                         sb.append("    cloudstackConfiguration: ").append(toIndentedString(cloudstackConfiguration)).append("\n");
                         sb.append("    customTags: ").append(toIndentedString(customTags)).append("\n");
                         sb.append("    dhcpEnabled: ").append(toIndentedString(dhcpEnabled)).append("\n");
+                        sb.append("    disableMetricsPolling: ").append(toIndentedString(disableMetricsPolling)).append("\n");
                         sb.append("    dnsProviderRef: ").append(toIndentedString(dnsProviderRef)).append("\n");
                         sb.append("    dnsResolutionOnSe: ").append(toIndentedString(dnsResolutionOnSe)).append("\n");
                         sb.append("    dnsResolvers: ").append(toIndentedString(dnsResolvers)).append("\n");

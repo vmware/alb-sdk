@@ -54,12 +54,6 @@ public class PortalConfiguration  {
     @JsonProperty("legacy_ssl_support")
     private Boolean legacySslSupport = false;
 
-    @JsonProperty("minimum_password_length")
-    private Integer minimumPasswordLength;
-
-    @JsonProperty("password_strength_check")
-    private Boolean passwordStrengthCheck = false;
-
     @JsonProperty("pkiprofile_ref")
     private String pkiprofileRef;
 
@@ -333,54 +327,6 @@ public class PortalConfiguration  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Minimum password length for user accounts.
-     * Allowed values are 6-32.
-     * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return minimumPasswordLength
-     */
-    public Integer getMinimumPasswordLength() {
-        return minimumPasswordLength;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Minimum password length for user accounts.
-     * Allowed values are 6-32.
-     * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param minimumPasswordLength set the minimumPasswordLength.
-     */
-    public void setMinimumPasswordLength(Integer  minimumPasswordLength) {
-        this.minimumPasswordLength = minimumPasswordLength;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Strict checking of password strength for user accounts.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @return passwordStrengthCheck
-     */
-    public Boolean getPasswordStrengthCheck() {
-        return passwordStrengthCheck;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Strict checking of password strength for user accounts.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @param passwordStrengthCheck set the passwordStrengthCheck.
-     */
-    public void setPasswordStrengthCheck(Boolean  passwordStrengthCheck) {
-        this.passwordStrengthCheck = passwordStrengthCheck;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Reference to pkiprofile config used for crl validation.
      * It is a reference to an object of type pkiprofile.
      * Field introduced in 30.1.2.
@@ -537,11 +483,9 @@ public class PortalConfiguration  {
   Objects.equals(this.allowBasicAuthentication, objPortalConfiguration.allowBasicAuthentication)&&
   Objects.equals(this.httpPort, objPortalConfiguration.httpPort)&&
   Objects.equals(this.httpsPort, objPortalConfiguration.httpsPort)&&
-  Objects.equals(this.passwordStrengthCheck, objPortalConfiguration.passwordStrengthCheck)&&
   Objects.equals(this.disableRemoteCliShell, objPortalConfiguration.disableRemoteCliShell)&&
   Objects.equals(this.disableSwagger, objPortalConfiguration.disableSwagger)&&
   Objects.equals(this.apiForceTimeout, objPortalConfiguration.apiForceTimeout)&&
-  Objects.equals(this.minimumPasswordLength, objPortalConfiguration.minimumPasswordLength)&&
   Objects.equals(this.pkiprofileRef, objPortalConfiguration.pkiprofileRef)&&
   Objects.equals(this.legacySslSupport, objPortalConfiguration.legacySslSupport)&&
   Objects.equals(this.enableRateLimiter, objPortalConfiguration.enableRateLimiter);
@@ -562,8 +506,6 @@ public class PortalConfiguration  {
                         sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");
                         sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
                         sb.append("    legacySslSupport: ").append(toIndentedString(legacySslSupport)).append("\n");
-                        sb.append("    minimumPasswordLength: ").append(toIndentedString(minimumPasswordLength)).append("\n");
-                        sb.append("    passwordStrengthCheck: ").append(toIndentedString(passwordStrengthCheck)).append("\n");
                         sb.append("    pkiprofileRef: ").append(toIndentedString(pkiprofileRef)).append("\n");
                         sb.append("    redirectToHttps: ").append(toIndentedString(redirectToHttps)).append("\n");
                         sb.append("    sslkeyandcertificateRefs: ").append(toIndentedString(sslkeyandcertificateRefs)).append("\n");
