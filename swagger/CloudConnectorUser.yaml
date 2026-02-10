@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '32.1.1'
+    version: '32.2.1'
     title: Avi CloudConnectorUser Object API
     contact:
         name: Avi Networks Inc.
@@ -477,8 +477,15 @@ definitions:
             gcp_credentials:
                 description: "Credentials for Google Cloud Platform. Field introduced in 18.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/GCPCredentials'
+            last_password_rotation:
+                description: "Timestamp (Unix epoch in seconds) of last successful password rotation. Used to determine when next rotation is due based on password_expiry_days. Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
             name:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            new_password_enc:
+                description: "New password stored temporarily during rotation. Cleared after successful rotation. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
             nsxt_credentials:
                 description: "Credentials to talk to NSX-T manager. Field introduced in 20.1.1. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
