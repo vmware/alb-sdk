@@ -374,11 +374,17 @@ type EventDetails struct {
 	// NSX-T ServiceInsertion VirtualEndpoint event. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	NsxtEndpointDetails *NsxtSIEndpointDetails `json:"nsxt_endpoint_details,omitempty"`
 
+	// NSX-T IP group sync event. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	NsxtGroupFetch *NsxtGroupFetch `json:"nsxt_group_fetch,omitempty"`
+
 	// Nsxt Image event. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxtImgDetails *NsxtImageDetails `json:"nsxt_img_details,omitempty"`
 
 	// Nsxt cloud event. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxtInfo *NsxtSetup `json:"nsxt_info,omitempty"`
+
+	// NSX-T IP group sync event. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	NsxtIPGroup *NsxtIPGroup `json:"nsxt_ip_group,omitempty"`
 
 	// NSX-T ServiceInsertion RedirectPolicy event. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	NsxtPolicyDetails *NsxtSIpolicyDetails `json:"nsxt_policy_details,omitempty"`
@@ -424,6 +430,9 @@ type EventDetails struct {
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OsVnicDetails *OpenStackVnicChange `json:"os_vnic_details,omitempty"`
+
+	// Details about CloudConnectorUser password rotation. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	PasswordRotationDetails *PasswordRotationDetails `json:"password_rotation_details,omitempty"`
 
 	// PKIProfile event. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	PkiprofileDetails *PKIprofileDetails `json:"pkiprofile_details,omitempty"`
