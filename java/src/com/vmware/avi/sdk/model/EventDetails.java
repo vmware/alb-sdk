@@ -387,11 +387,17 @@ public class EventDetails  {
     @JsonProperty("nsxt_endpoint_details")
     private NsxtSIEndpointDetails nsxtEndpointDetails;
 
+    @JsonProperty("nsxt_group_fetch")
+    private NsxtGroupFetch nsxtGroupFetch;
+
     @JsonProperty("nsxt_img_details")
     private NsxtImageDetails nsxtImgDetails;
 
     @JsonProperty("nsxt_info")
     private NsxtSetup nsxtInfo;
+
+    @JsonProperty("nsxt_ip_group")
+    private NsxtIPGroup nsxtIpGroup;
 
     @JsonProperty("nsxt_policy_details")
     private NsxtSIPolicyDetails nsxtPolicyDetails;
@@ -437,6 +443,9 @@ public class EventDetails  {
 
     @JsonProperty("os_vnic_details")
     private OpenStackVnicChange osVnicDetails;
+
+    @JsonProperty("password_rotation_details")
+    private PasswordRotationDetails passwordRotationDetails;
 
     @JsonProperty("pkiprofile_details")
     private PKIProfileDetails pkiprofileDetails;
@@ -3328,6 +3337,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Nsx-t ip group sync event.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nsxtGroupFetch
+     */
+    public NsxtGroupFetch getNsxtGroupFetch() {
+        return nsxtGroupFetch;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Nsx-t ip group sync event.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param nsxtGroupFetch set the nsxtGroupFetch.
+     */
+    public void setNsxtGroupFetch(NsxtGroupFetch nsxtGroupFetch) {
+        this.nsxtGroupFetch = nsxtGroupFetch;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Nsxt image event.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -3372,6 +3405,30 @@ public class EventDetails  {
      */
     public void setNsxtInfo(NsxtSetup nsxtInfo) {
         this.nsxtInfo = nsxtInfo;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Nsx-t ip group sync event.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nsxtIpGroup
+     */
+    public NsxtIPGroup getNsxtIpGroup() {
+        return nsxtIpGroup;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Nsx-t ip group sync event.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param nsxtIpGroup set the nsxtIpGroup.
+     */
+    public void setNsxtIpGroup(NsxtIPGroup nsxtIpGroup) {
+        this.nsxtIpGroup = nsxtIpGroup;
     }
 
     /**
@@ -3690,6 +3747,30 @@ public class EventDetails  {
      */
     public void setOsVnicDetails(OpenStackVnicChange osVnicDetails) {
         this.osVnicDetails = osVnicDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Details about cloudconnectoruser password rotation.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return passwordRotationDetails
+     */
+    public PasswordRotationDetails getPasswordRotationDetails() {
+        return passwordRotationDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Details about cloudconnectoruser password rotation.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param passwordRotationDetails set the passwordRotationDetails.
+     */
+    public void setPasswordRotationDetails(PasswordRotationDetails passwordRotationDetails) {
+        this.passwordRotationDetails = passwordRotationDetails;
     }
 
     /**
@@ -6359,6 +6440,8 @@ public class EventDetails  {
   Objects.equals(this.nsxtDfwTagVmDetails, objEventDetails.nsxtDfwTagVmDetails)&&
   Objects.equals(this.managementSvcDetails, objEventDetails.managementSvcDetails)&&
   Objects.equals(this.managementSvcAccessGrantDetails, objEventDetails.managementSvcAccessGrantDetails)&&
+  Objects.equals(this.nsxtIpGroup, objEventDetails.nsxtIpGroup)&&
+  Objects.equals(this.nsxtGroupFetch, objEventDetails.nsxtGroupFetch)&&
   Objects.equals(this.psmProgramDetails, objEventDetails.psmProgramDetails)&&
   Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
   Objects.equals(this.falsePositiveDetails, objEventDetails.falsePositiveDetails)&&
@@ -6394,7 +6477,8 @@ public class EventDetails  {
   Objects.equals(this.systemLimitObjectCounts, objEventDetails.systemLimitObjectCounts)&&
   Objects.equals(this.usageMeteringEventDetails, objEventDetails.usageMeteringEventDetails)&&
   Objects.equals(this.controlscriptDetails, objEventDetails.controlscriptDetails)&&
-  Objects.equals(this.seAutoscalerEventDetails, objEventDetails.seAutoscalerEventDetails);
+  Objects.equals(this.seAutoscalerEventDetails, objEventDetails.seAutoscalerEventDetails)&&
+  Objects.equals(this.passwordRotationDetails, objEventDetails.passwordRotationDetails);
     }
 
     @Override
@@ -6523,8 +6607,10 @@ public class EventDetails  {
                         sb.append("    nsxtDfwTagSegmentPort: ").append(toIndentedString(nsxtDfwTagSegmentPort)).append("\n");
                         sb.append("    nsxtDfwTagVmDetails: ").append(toIndentedString(nsxtDfwTagVmDetails)).append("\n");
                         sb.append("    nsxtEndpointDetails: ").append(toIndentedString(nsxtEndpointDetails)).append("\n");
+                        sb.append("    nsxtGroupFetch: ").append(toIndentedString(nsxtGroupFetch)).append("\n");
                         sb.append("    nsxtImgDetails: ").append(toIndentedString(nsxtImgDetails)).append("\n");
                         sb.append("    nsxtInfo: ").append(toIndentedString(nsxtInfo)).append("\n");
+                        sb.append("    nsxtIpGroup: ").append(toIndentedString(nsxtIpGroup)).append("\n");
                         sb.append("    nsxtPolicyDetails: ").append(toIndentedString(nsxtPolicyDetails)).append("\n");
                         sb.append("    nsxtRuleDetails: ").append(toIndentedString(nsxtRuleDetails)).append("\n");
                         sb.append("    nsxtServiceDetails: ").append(toIndentedString(nsxtServiceDetails)).append("\n");
@@ -6540,6 +6626,7 @@ public class EventDetails  {
                         sb.append("    osSeVmDetails: ").append(toIndentedString(osSeVmDetails)).append("\n");
                         sb.append("    osSyncServicesDetails: ").append(toIndentedString(osSyncServicesDetails)).append("\n");
                         sb.append("    osVnicDetails: ").append(toIndentedString(osVnicDetails)).append("\n");
+                        sb.append("    passwordRotationDetails: ").append(toIndentedString(passwordRotationDetails)).append("\n");
                         sb.append("    pkiprofileDetails: ").append(toIndentedString(pkiprofileDetails)).append("\n");
                         sb.append("    poolDeploymentFailureInfo: ").append(toIndentedString(poolDeploymentFailureInfo)).append("\n");
                         sb.append("    poolDeploymentSuccessInfo: ").append(toIndentedString(poolDeploymentSuccessInfo)).append("\n");
