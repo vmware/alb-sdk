@@ -72,7 +72,7 @@ public class MatchTarget  {
      * This is the getter method this will return the attribute value.
      * Configure the bot classification result.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return botDetectionResult
      */
@@ -84,7 +84,7 @@ public class MatchTarget  {
      * This is the setter method to the attribute.
      * Configure the bot classification result.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param botDetectionResult set the botDetectionResult.
      */
@@ -140,7 +140,7 @@ public class MatchTarget  {
      * Configure the geo information.
      * Field introduced in 21.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoMatches
      */
@@ -153,7 +153,7 @@ public class MatchTarget  {
      * Configure the geo information.
      * Field introduced in 21.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoMatches
      */
@@ -166,7 +166,7 @@ public class MatchTarget  {
      * Configure the geo information.
      * Field introduced in 21.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoMatches
      */
@@ -243,7 +243,7 @@ public class MatchTarget  {
      * This is the getter method this will return the attribute value.
      * Configure ip reputation.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipReputationType
      */
@@ -255,7 +255,7 @@ public class MatchTarget  {
      * This is the setter method to the attribute.
      * Configure ip reputation.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipReputationType set the ipReputationType.
      */
@@ -355,7 +355,7 @@ public class MatchTarget  {
      * This is the getter method this will return the attribute value.
      * Configure source ip addresses.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sourceIp
      */
@@ -367,7 +367,7 @@ public class MatchTarget  {
      * This is the setter method to the attribute.
      * Configure source ip addresses.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sourceIp set the sourceIp.
      */
@@ -379,7 +379,7 @@ public class MatchTarget  {
      * This is the getter method this will return the attribute value.
      * Configure the tls fingerprint.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tlsFingerprintMatch
      */
@@ -391,7 +391,7 @@ public class MatchTarget  {
      * This is the setter method to the attribute.
      * Configure the tls fingerprint.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tlsFingerprintMatch set the tlsFingerprintMatch.
      */

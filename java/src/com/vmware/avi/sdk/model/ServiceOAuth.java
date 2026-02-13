@@ -42,7 +42,7 @@ public class ServiceOAuth  {
      * This is the getter method this will return the attribute value.
      * Url of authorization server.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authorizationEndpoint
      */
@@ -54,7 +54,7 @@ public class ServiceOAuth  {
      * This is the setter method to the attribute.
      * Url of authorization server.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param authorizationEndpoint set the authorizationEndpoint.
      */
@@ -66,7 +66,7 @@ public class ServiceOAuth  {
      * This is the getter method this will return the attribute value.
      * Application specific identifier for service auth.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientId
      */
@@ -78,7 +78,7 @@ public class ServiceOAuth  {
      * This is the setter method to the attribute.
      * Application specific identifier for service auth.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientId set the clientId.
      */
@@ -90,7 +90,7 @@ public class ServiceOAuth  {
      * This is the getter method this will return the attribute value.
      * Organization id for service oauth(required for csp).
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return orgId
      */
@@ -102,7 +102,7 @@ public class ServiceOAuth  {
      * This is the setter method to the attribute.
      * Organization id for service oauth(required for csp).
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param orgId set the orgId.
      */
@@ -114,7 +114,7 @@ public class ServiceOAuth  {
      * This is the getter method this will return the attribute value.
      * Uuid value of the service(required for csp).
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceId
      */
@@ -126,7 +126,7 @@ public class ServiceOAuth  {
      * This is the setter method to the attribute.
      * Uuid value of the service(required for csp).
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceId set the serviceId.
      */
@@ -138,7 +138,7 @@ public class ServiceOAuth  {
      * This is the getter method this will return the attribute value.
      * Name of the service(required for csp).
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceName
      */
@@ -150,7 +150,7 @@ public class ServiceOAuth  {
      * This is the setter method to the attribute.
      * Name of the service(required for csp).
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceName set the serviceName.
      */

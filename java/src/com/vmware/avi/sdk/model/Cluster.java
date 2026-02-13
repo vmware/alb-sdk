@@ -213,7 +213,7 @@ public class Cluster extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * A v6 virtual ip address for the cluster that always points to the v6 ip of the leader node in cluster.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return virtualIp6
      */
@@ -225,7 +225,7 @@ public class Cluster extends AviRestResource  {
      * This is the setter method to the attribute.
      * A v6 virtual ip address for the cluster that always points to the v6 ip of the leader node in cluster.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param virtualIp6 set the virtualIp6.
      */

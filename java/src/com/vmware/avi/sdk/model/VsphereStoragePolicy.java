@@ -34,7 +34,7 @@ public class VsphereStoragePolicy  {
      * Vcenter server configuration , applicable only for nsxt-cloud.
      * It is a reference to an object of type vcenterserver.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterRef
      */
@@ -47,7 +47,7 @@ public class VsphereStoragePolicy  {
      * Vcenter server configuration , applicable only for nsxt-cloud.
      * It is a reference to an object of type vcenterserver.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterRef set the vcenterRef.
      */
@@ -59,7 +59,7 @@ public class VsphereStoragePolicy  {
      * This is the getter method this will return the attribute value.
      * Vsphere vm storage policy uuid to be associated to the service engine.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsphereStoragePolicyId
      */
@@ -71,7 +71,7 @@ public class VsphereStoragePolicy  {
      * This is the setter method to the attribute.
      * Vsphere vm storage policy uuid to be associated to the service engine.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsphereStoragePolicyId set the vsphereStoragePolicyId.
      */

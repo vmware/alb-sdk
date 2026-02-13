@@ -157,7 +157,7 @@ public class ConfigUserAuthrzByRule  {
      * This is the getter method this will return the attribute value.
      * Assigned user account profile name.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userprofile
      */
@@ -169,7 +169,7 @@ public class ConfigUserAuthrzByRule  {
      * This is the setter method to the attribute.
      * Assigned user account profile name.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userprofile set the userprofile.
      */

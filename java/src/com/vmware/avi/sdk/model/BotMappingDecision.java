@@ -33,7 +33,7 @@ public class BotMappingDecision  {
      * This is the getter method this will return the attribute value.
      * The name of the bot mapping that made the decision.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingName
      */
@@ -45,7 +45,7 @@ public class BotMappingDecision  {
      * This is the setter method to the attribute.
      * The name of the bot mapping that made the decision.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mappingName set the mappingName.
      */
@@ -57,7 +57,7 @@ public class BotMappingDecision  {
      * This is the getter method this will return the attribute value.
      * The name of the bot mapping rule that made the decision.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRuleName
      */
@@ -69,7 +69,7 @@ public class BotMappingDecision  {
      * This is the setter method to the attribute.
      * The name of the bot mapping rule that made the decision.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mappingRuleName set the mappingRuleName.
      */

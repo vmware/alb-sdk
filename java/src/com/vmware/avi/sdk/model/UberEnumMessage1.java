@@ -34,7 +34,7 @@ public class UberEnumMessage1  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rm
      */
@@ -45,7 +45,7 @@ public class UberEnumMessage1  {
     /**
      * This is the setter method. this will set the rm
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rm
      */
@@ -56,7 +56,7 @@ public class UberEnumMessage1  {
     /**
      * This is the setter method this will set the rm
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rm
      */
@@ -70,7 +70,7 @@ public class UberEnumMessage1  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rv
      */
@@ -81,7 +81,7 @@ public class UberEnumMessage1  {
     /**
      * This is the setter method. this will set the rv
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rv
      */
@@ -92,7 +92,7 @@ public class UberEnumMessage1  {
     /**
      * This is the setter method this will set the rv
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rv
      */
@@ -107,7 +107,7 @@ public class UberEnumMessage1  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return v
      */
@@ -118,7 +118,7 @@ public class UberEnumMessage1  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param v set the v.
      */

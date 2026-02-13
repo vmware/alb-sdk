@@ -76,7 +76,7 @@ public class SensitiveLogProfile  {
      * Query params from the uri are extracted and checked for matching sensitive parameter names.
      * A successful match will mask the parameter values in accordance with this rule action.
      * Field introduced in 20.1.7, 21.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriQueryFieldRules
      */
@@ -90,7 +90,7 @@ public class SensitiveLogProfile  {
      * Query params from the uri are extracted and checked for matching sensitive parameter names.
      * A successful match will mask the parameter values in accordance with this rule action.
      * Field introduced in 20.1.7, 21.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriQueryFieldRules
      */
@@ -104,7 +104,7 @@ public class SensitiveLogProfile  {
      * Query params from the uri are extracted and checked for matching sensitive parameter names.
      * A successful match will mask the parameter values in accordance with this rule action.
      * Field introduced in 20.1.7, 21.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriQueryFieldRules
      */

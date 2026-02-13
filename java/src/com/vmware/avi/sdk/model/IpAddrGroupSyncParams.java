@@ -33,7 +33,7 @@ public class IpAddrGroupSyncParams extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the ipaddrgroup to sync nsx group ips for.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -45,7 +45,7 @@ public class IpAddrGroupSyncParams extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the ipaddrgroup to sync nsx group ips for.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -57,7 +57,7 @@ public class IpAddrGroupSyncParams extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the ipaddrgroup to sync nsx group ips for.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -69,7 +69,7 @@ public class IpAddrGroupSyncParams extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the ipaddrgroup to sync nsx group ips for.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

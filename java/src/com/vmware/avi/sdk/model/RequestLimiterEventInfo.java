@@ -48,7 +48,7 @@ public class RequestLimiterEventInfo  {
      * This is the getter method this will return the attribute value.
      * Ip of the client from which request has been received.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientIp
      */
@@ -60,7 +60,7 @@ public class RequestLimiterEventInfo  {
      * This is the setter method to the attribute.
      * Ip of the client from which request has been received.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientIp set the clientIp.
      */
@@ -73,7 +73,7 @@ public class RequestLimiterEventInfo  {
      * Http error response code for the throttled request.
      * Allowed values are 200-504.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorStatusCode
      */
@@ -86,7 +86,7 @@ public class RequestLimiterEventInfo  {
      * Http error response code for the throttled request.
      * Allowed values are 200-504.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorStatusCode set the errorStatusCode.
      */
@@ -98,7 +98,7 @@ public class RequestLimiterEventInfo  {
      * This is the getter method this will return the attribute value.
      * Error/warning/alert message describing the event.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return message
      */
@@ -110,7 +110,7 @@ public class RequestLimiterEventInfo  {
      * This is the setter method to the attribute.
      * Error/warning/alert message describing the event.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param message set the message.
      */
@@ -122,7 +122,7 @@ public class RequestLimiterEventInfo  {
      * This is the getter method this will return the attribute value.
      * Http request method.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return method
      */
@@ -134,7 +134,7 @@ public class RequestLimiterEventInfo  {
      * This is the setter method to the attribute.
      * Http request method.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param method set the method.
      */
@@ -146,7 +146,7 @@ public class RequestLimiterEventInfo  {
      * This is the getter method this will return the attribute value.
      * Whether the request has been processed(true) or not(false).
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return processed
      */
@@ -158,7 +158,7 @@ public class RequestLimiterEventInfo  {
      * This is the setter method to the attribute.
      * Whether the request has been processed(true) or not(false).
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param processed set the processed.
      */
@@ -169,7 +169,7 @@ public class RequestLimiterEventInfo  {
      * This is the getter method this will return the attribute value.
      * Http request url.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return url
      */
@@ -181,7 +181,7 @@ public class RequestLimiterEventInfo  {
     * This is the setter method. this will set the url
     * Http request url.
     * Field introduced in 31.1.1.
-    * Allowed with any value in enterprise, enterprise with cloud services edition.
+    * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
     * Default value when not specified in API or module is interpreted by Avi Controller as null.
     * @return url
     */
@@ -193,7 +193,7 @@ public class RequestLimiterEventInfo  {
      * This is the getter method this will return the attribute value.
      * User agent of the client from which request has been received.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userAgent
      */
@@ -205,7 +205,7 @@ public class RequestLimiterEventInfo  {
      * This is the setter method to the attribute.
      * User agent of the client from which request has been received.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userAgent set the userAgent.
      */

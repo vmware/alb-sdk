@@ -34,7 +34,7 @@ public class TokenRefillRate  {
      * The time interval over which refill rate is defined.
      * Enum options - PER_MINUTE_INTERVAL.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PER_MINUTE_INTERVAL".
      * @return interval
      */
@@ -47,7 +47,7 @@ public class TokenRefillRate  {
      * The time interval over which refill rate is defined.
      * Enum options - PER_MINUTE_INTERVAL.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PER_MINUTE_INTERVAL".
      * @param interval set the interval.
      */
@@ -60,7 +60,7 @@ public class TokenRefillRate  {
      * The rate per refill interval at which tokens are added to the bucket.
      * Allowed values are 1-100000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return refillRate
      */
@@ -73,7 +73,7 @@ public class TokenRefillRate  {
      * The rate per refill interval at which tokens are added to the bucket.
      * Allowed values are 1-100000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param refillRate set the refillRate.
      */

@@ -48,7 +48,7 @@ public class SCFaultOptions  {
      * This is the getter method this will return the attribute value.
      * Delay create in config path (seconds).
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return delayCreate
      */
@@ -60,7 +60,7 @@ public class SCFaultOptions  {
      * This is the setter method to the attribute.
      * Delay create in config path (seconds).
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param delayCreate set the delayCreate.
      */
@@ -72,7 +72,7 @@ public class SCFaultOptions  {
      * This is the getter method this will return the attribute value.
      * Delay deletes in config, se paths (seconds).
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return delayDelete
      */
@@ -84,7 +84,7 @@ public class SCFaultOptions  {
      * This is the setter method to the attribute.
      * Delay deletes in config, se paths (seconds).
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param delayDelete set the delayDelete.
      */
@@ -96,7 +96,7 @@ public class SCFaultOptions  {
      * This is the getter method this will return the attribute value.
      * Delay updates in resmgr, config, se paths (seconds).
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return delayUpdate
      */
@@ -108,7 +108,7 @@ public class SCFaultOptions  {
      * This is the setter method to the attribute.
      * Delay updates in resmgr, config, se paths (seconds).
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param delayUpdate set the delayUpdate.
      */
@@ -121,7 +121,7 @@ public class SCFaultOptions  {
      * Type of fault to injection.
      * Enum options - DELAY_NOTIF, DELAY_SE, DELAY_RM.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return faultType
      */
@@ -134,7 +134,7 @@ public class SCFaultOptions  {
      * Type of fault to injection.
      * Enum options - DELAY_NOTIF, DELAY_SE, DELAY_RM.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param faultType set the faultType.
      */
@@ -146,7 +146,7 @@ public class SCFaultOptions  {
      * This is the getter method this will return the attribute value.
      * Introduce faults for specific object uuid.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return obj
      */
@@ -158,7 +158,7 @@ public class SCFaultOptions  {
      * This is the setter method to the attribute.
      * Introduce faults for specific object uuid.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param obj set the obj.
      */
@@ -173,7 +173,7 @@ public class SCFaultOptions  {
      * STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT,
      * PKIPROFILE, AUTHPROFILE, CLOUD...
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objectType
      */
@@ -188,7 +188,7 @@ public class SCFaultOptions  {
      * STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT,
      * PKIPROFILE, AUTHPROFILE, CLOUD...
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objectType set the objectType.
      */
@@ -200,7 +200,7 @@ public class SCFaultOptions  {
      * This is the getter method this will return the attribute value.
      * Introduce faults in se path of specific se uuid.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return se
      */
@@ -212,7 +212,7 @@ public class SCFaultOptions  {
      * This is the setter method to the attribute.
      * Introduce faults in se path of specific se uuid.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param se set the se.
      */

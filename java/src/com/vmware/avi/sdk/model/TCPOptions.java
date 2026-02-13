@@ -30,7 +30,7 @@ public class TCPOptions  {
      * This is the getter method this will return the attribute value.
      * Remove the sack tcp option from header.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return stripSack
      */
@@ -42,7 +42,7 @@ public class TCPOptions  {
      * This is the setter method to the attribute.
      * Remove the sack tcp option from header.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param stripSack set the stripSack.
      */

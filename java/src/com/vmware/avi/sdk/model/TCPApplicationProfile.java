@@ -42,7 +42,7 @@ public class TCPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Ftp profile configuration.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ftpProfile
      */
@@ -54,7 +54,7 @@ public class TCPApplicationProfile  {
      * This is the setter method to the attribute.
      * Ftp profile configuration.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ftpProfile set the ftpProfile.
      */
@@ -68,7 +68,7 @@ public class TCPApplicationProfile  {
      * This profile defines the certificate authority and revocation list.
      * It is a reference to an object of type pkiprofile.
      * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pkiProfileRef
      */
@@ -82,7 +82,7 @@ public class TCPApplicationProfile  {
      * This profile defines the certificate authority and revocation list.
      * It is a reference to an object of type pkiprofile.
      * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pkiProfileRef set the pkiProfileRef.
      */
@@ -94,8 +94,7 @@ public class TCPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Enable/disable the usage of proxy protocol to convey client connection information to the back-end servers.
      * Valid only for l4 application profiles and tcp proxy.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return proxyProtocolEnabled
      */
@@ -107,8 +106,7 @@ public class TCPApplicationProfile  {
      * This is the setter method to the attribute.
      * Enable/disable the usage of proxy protocol to convey client connection information to the back-end servers.
      * Valid only for l4 application profiles and tcp proxy.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param proxyProtocolEnabled set the proxyProtocolEnabled.
      */
@@ -120,8 +118,7 @@ public class TCPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Version of proxy protocol to be used to convey client connection information to the back-end servers.
      * Enum options - PROXY_PROTOCOL_VERSION_1, PROXY_PROTOCOL_VERSION_2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- proxy_protocol_version_1), basic (allowed values- proxy_protocol_version_1) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PROXY_PROTOCOL_VERSION_1".
      * @return proxyProtocolVersion
      */
@@ -133,8 +130,7 @@ public class TCPApplicationProfile  {
      * This is the setter method to the attribute.
      * Version of proxy protocol to be used to convey client connection information to the back-end servers.
      * Enum options - PROXY_PROTOCOL_VERSION_1, PROXY_PROTOCOL_VERSION_2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- proxy_protocol_version_1), basic (allowed values- proxy_protocol_version_1) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PROXY_PROTOCOL_VERSION_1".
      * @param proxyProtocolVersion set the proxyProtocolVersion.
      */
@@ -147,8 +143,7 @@ public class TCPApplicationProfile  {
      * Specifies whether the client side verification is set to none, request or require.
      * Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE.
      * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- ssl_client_certificate_none), basic (allowed values- ssl_client_certificate_none) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CLIENT_CERTIFICATE_NONE".
      * @return sslClientCertificateMode
      */
@@ -161,8 +156,7 @@ public class TCPApplicationProfile  {
      * Specifies whether the client side verification is set to none, request or require.
      * Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE.
      * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- ssl_client_certificate_none), basic (allowed values- ssl_client_certificate_none) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CLIENT_CERTIFICATE_NONE".
      * @param sslClientCertificateMode set the sslClientCertificateMode.
      */

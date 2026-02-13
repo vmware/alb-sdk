@@ -32,7 +32,7 @@ public class AZCluster  {
      * This is the getter method this will return the attribute value.
      * A list of managed object ids (moids) of vcenter clusters that are part of this availability zone.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterIds
      */
@@ -44,7 +44,7 @@ public class AZCluster  {
      * This is the setter method. this will set the clusterIds
      * A list of managed object ids (moids) of vcenter clusters that are part of this availability zone.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterIds
      */
@@ -56,7 +56,7 @@ public class AZCluster  {
      * This is the setter method this will set the clusterIds
      * A list of managed object ids (moids) of vcenter clusters that are part of this availability zone.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterIds
      */
@@ -73,7 +73,7 @@ public class AZCluster  {
      * The uuid of the vcenter server that manages the clusters associated with this availabilityzone.
      * It is a reference to an object of type vcenterserver.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterRef
      */
@@ -86,7 +86,7 @@ public class AZCluster  {
      * The uuid of the vcenter server that manages the clusters associated with this availabilityzone.
      * It is a reference to an object of type vcenterserver.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterRef set the vcenterRef.
      */

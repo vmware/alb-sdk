@@ -35,7 +35,7 @@ public class ControllerParams  {
      * Allowed values are 300-3600.
      * Field introduced in 31.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return taskBaseTimeout
      */
@@ -52,7 +52,7 @@ public class ControllerParams  {
      * Allowed values are 300-3600.
      * Field introduced in 31.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param taskBaseTimeout set the taskBaseTimeout.
      */

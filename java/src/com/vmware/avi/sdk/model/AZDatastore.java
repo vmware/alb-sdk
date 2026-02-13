@@ -35,7 +35,7 @@ public class AZDatastore  {
      * This is the getter method this will return the attribute value.
      * List of managed object id of datastores.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dsIds
      */
@@ -47,7 +47,7 @@ public class AZDatastore  {
      * This is the setter method. this will set the dsIds
      * List of managed object id of datastores.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dsIds
      */
@@ -59,7 +59,7 @@ public class AZDatastore  {
      * This is the setter method this will set the dsIds
      * List of managed object id of datastores.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dsIds
      */
@@ -75,7 +75,7 @@ public class AZDatastore  {
      * This is the getter method this will return the attribute value.
      * Include or exclude the datastores from the list.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return include
      */
@@ -87,7 +87,7 @@ public class AZDatastore  {
      * This is the setter method to the attribute.
      * Include or exclude the datastores from the list.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param include set the include.
      */
@@ -100,7 +100,7 @@ public class AZDatastore  {
      * Vcenter id of the datastores.
      * It is a reference to an object of type vcenterserver.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterRef
      */
@@ -113,7 +113,7 @@ public class AZDatastore  {
      * Vcenter id of the datastores.
      * It is a reference to an object of type vcenterserver.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterRef set the vcenterRef.
      */

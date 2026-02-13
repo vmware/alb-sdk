@@ -45,7 +45,7 @@ public class UpgradeOpsParam  {
      * This is the getter method this will return the attribute value.
      * This field holds the configurable controller params required in upgrade flows for current request.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controller
      */
@@ -57,7 +57,7 @@ public class UpgradeOpsParam  {
      * This is the setter method to the attribute.
      * This field holds the configurable controller params required in upgrade flows for current request.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controller set the controller.
      */
@@ -169,7 +169,7 @@ public class UpgradeOpsParam  {
      * This is the getter method this will return the attribute value.
      * This field holds the configurable serviceenginegroup params required in upgrade flows for current request.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceEngine
      */
@@ -181,7 +181,7 @@ public class UpgradeOpsParam  {
      * This is the setter method to the attribute.
      * This field holds the configurable serviceenginegroup params required in upgrade flows for current request.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceEngine set the serviceEngine.
      */

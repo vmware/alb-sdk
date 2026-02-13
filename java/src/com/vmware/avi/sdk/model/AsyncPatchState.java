@@ -60,7 +60,7 @@ public class AsyncPatchState  {
      * This is the getter method this will return the attribute value.
      * Error message if request failed.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorMessage
      */
@@ -72,7 +72,7 @@ public class AsyncPatchState  {
      * This is the setter method to the attribute.
      * Error message if request failed.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorMessage set the errorMessage.
      */
@@ -84,7 +84,7 @@ public class AsyncPatchState  {
      * This is the getter method this will return the attribute value.
      * Error status code if request failed.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorStatusCode
      */
@@ -96,7 +96,7 @@ public class AsyncPatchState  {
      * This is the setter method to the attribute.
      * Error status code if request failed.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorStatusCode set the errorStatusCode.
      */
@@ -108,7 +108,7 @@ public class AsyncPatchState  {
      * This is the getter method this will return the attribute value.
      * Merged patch id.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mergedPatchId
      */
@@ -120,7 +120,7 @@ public class AsyncPatchState  {
      * This is the setter method to the attribute.
      * Merged patch id.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mergedPatchId set the mergedPatchId.
      */
@@ -132,7 +132,7 @@ public class AsyncPatchState  {
      * This is the getter method this will return the attribute value.
      * List of patch ids.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patchIds
      */
@@ -144,7 +144,7 @@ public class AsyncPatchState  {
      * This is the setter method to the attribute.
      * List of patch ids.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param patchIds set the patchIds.
      */
@@ -156,7 +156,7 @@ public class AsyncPatchState  {
      * This is the getter method this will return the attribute value.
      * Api path.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return path
      */
@@ -168,7 +168,7 @@ public class AsyncPatchState  {
      * This is the setter method to the attribute.
      * Api path.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param path set the path.
      */
@@ -180,7 +180,7 @@ public class AsyncPatchState  {
      * This is the getter method this will return the attribute value.
      * Request data.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return requestData
      */
@@ -192,7 +192,7 @@ public class AsyncPatchState  {
      * This is the setter method to the attribute.
      * Request data.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param requestData set the requestData.
      */
@@ -204,7 +204,7 @@ public class AsyncPatchState  {
      * This is the getter method this will return the attribute value.
      * Async patch queue data for which status is updated.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceData
      */
@@ -216,7 +216,7 @@ public class AsyncPatchState  {
      * This is the setter method to the attribute.
      * Async patch queue data for which status is updated.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourceData set the resourceData.
      */
@@ -228,7 +228,7 @@ public class AsyncPatchState  {
      * This is the getter method this will return the attribute value.
      * Name of the resource.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceName
      */
@@ -240,7 +240,7 @@ public class AsyncPatchState  {
      * This is the setter method to the attribute.
      * Name of the resource.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourceName set the resourceName.
      */
@@ -252,7 +252,7 @@ public class AsyncPatchState  {
      * This is the getter method this will return the attribute value.
      * Config type of the resource.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceType
      */
@@ -264,7 +264,7 @@ public class AsyncPatchState  {
      * This is the setter method to the attribute.
      * Config type of the resource.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourceType set the resourceType.
      */
@@ -276,7 +276,7 @@ public class AsyncPatchState  {
      * This is the getter method this will return the attribute value.
      * Status of async patch.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -288,7 +288,7 @@ public class AsyncPatchState  {
      * This is the setter method to the attribute.
      * Status of async patch.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */
@@ -300,7 +300,7 @@ public class AsyncPatchState  {
      * This is the getter method this will return the attribute value.
      * Request user.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return user
      */
@@ -312,7 +312,7 @@ public class AsyncPatchState  {
      * This is the setter method to the attribute.
      * Request user.
      * Field introduced in 22.1.6,30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param user set the user.
      */

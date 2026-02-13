@@ -76,7 +76,7 @@ public class VsVip extends AviRestResource  {
      * Local_pref to be used for vsvip advertised.
      * Applicable only over ibgp.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return bgpLocalPreference
      */
@@ -89,7 +89,7 @@ public class VsVip extends AviRestResource  {
      * Local_pref to be used for vsvip advertised.
      * Applicable only over ibgp.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param bgpLocalPreference set the bgpLocalPreference.
      */
@@ -103,7 +103,7 @@ public class VsVip extends AviRestResource  {
      * Applicable only over ebgp.
      * Allowed values are 1-10.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return bgpNumAsPathPrepend
      */
@@ -117,7 +117,7 @@ public class VsVip extends AviRestResource  {
      * Applicable only over ebgp.
      * Allowed values are 1-10.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param bgpNumAsPathPrepend set the bgpNumAsPathPrepend.
      */
@@ -129,7 +129,7 @@ public class VsVip extends AviRestResource  {
      * Select bgp peers, using peer label, for vsvip advertisement.
      * Field introduced in 20.1.5.
      * Maximum of 128 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return bgpPeerLabels
      */
@@ -142,7 +142,7 @@ public class VsVip extends AviRestResource  {
      * Select bgp peers, using peer label, for vsvip advertisement.
      * Field introduced in 20.1.5.
      * Maximum of 128 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return bgpPeerLabels
      */
@@ -155,7 +155,7 @@ public class VsVip extends AviRestResource  {
      * Select bgp peers, using peer label, for vsvip advertisement.
      * Field introduced in 20.1.5.
      * Maximum of 128 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return bgpPeerLabels
      */
@@ -196,7 +196,7 @@ public class VsVip extends AviRestResource  {
      * This takes effect only if dns profile isassociated with cloud.
      * Field introduced in 17.1.1.
      * Maximum of 1000 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsInfo
      */
@@ -210,7 +210,7 @@ public class VsVip extends AviRestResource  {
      * This takes effect only if dns profile isassociated with cloud.
      * Field introduced in 17.1.1.
      * Maximum of 1000 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsInfo
      */
@@ -224,7 +224,7 @@ public class VsVip extends AviRestResource  {
      * This takes effect only if dns profile isassociated with cloud.
      * Field introduced in 17.1.1.
      * Maximum of 1000 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsInfo
      */
@@ -240,8 +240,7 @@ public class VsVip extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Force placement on all service engines in the service engine group (container clouds only).
      * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return eastWestPlacement
      */
@@ -253,8 +252,7 @@ public class VsVip extends AviRestResource  {
      * This is the setter method to the attribute.
      * Force placement on all service engines in the service engine group (container clouds only).
      * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param eastWestPlacement set the eastWestPlacement.
      */
@@ -267,7 +265,7 @@ public class VsVip extends AviRestResource  {
      * Determines the set of ipam networks to use for this vsvip.
      * Selector type must be selector_ipam and only one label is supported.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipamSelector
      */
@@ -280,7 +278,7 @@ public class VsVip extends AviRestResource  {
      * Determines the set of ipam networks to use for this vsvip.
      * Selector type must be selector_ipam and only one label is supported.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipamSelector set the ipamSelector.
      */

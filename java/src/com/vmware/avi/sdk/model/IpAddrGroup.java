@@ -306,7 +306,7 @@ public class IpAddrGroup extends AviRestResource  {
      * An nsx group that maps to a dynamic collection of ip addresses, derived from its definition in nsx.
      * Field introduced in 32.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxGroups
      */
@@ -319,7 +319,7 @@ public class IpAddrGroup extends AviRestResource  {
      * An nsx group that maps to a dynamic collection of ip addresses, derived from its definition in nsx.
      * Field introduced in 32.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxGroups
      */
@@ -332,7 +332,7 @@ public class IpAddrGroup extends AviRestResource  {
      * An nsx group that maps to a dynamic collection of ip addresses, derived from its definition in nsx.
      * Field introduced in 32.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxGroups
      */

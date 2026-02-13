@@ -45,7 +45,7 @@ public class ManagementServiceAccessGrantEventDetails  {
      * This is the getter method this will return the attribute value.
      * Name of the access grant authorizing vm access to avi controller.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return accessGrantName
      */
@@ -57,7 +57,7 @@ public class ManagementServiceAccessGrantEventDetails  {
      * This is the setter method to the attribute.
      * Name of the access grant authorizing vm access to avi controller.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param accessGrantName set the accessGrantName.
      */
@@ -69,7 +69,7 @@ public class ManagementServiceAccessGrantEventDetails  {
      * This is the getter method this will return the attribute value.
      * Cloud uuid associated with the nsx-t cloud configuration.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -81,7 +81,7 @@ public class ManagementServiceAccessGrantEventDetails  {
      * This is the setter method to the attribute.
      * Cloud uuid associated with the nsx-t cloud configuration.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -93,7 +93,7 @@ public class ManagementServiceAccessGrantEventDetails  {
      * This is the getter method this will return the attribute value.
      * Error message describing the failure reason (empty on success).
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -105,7 +105,7 @@ public class ManagementServiceAccessGrantEventDetails  {
      * This is the setter method to the attribute.
      * Error message describing the failure reason (empty on success).
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */
@@ -117,7 +117,7 @@ public class ManagementServiceAccessGrantEventDetails  {
      * This is the getter method this will return the attribute value.
      * Name of the management service exposing the avi controller endpoint.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return managementServiceName
      */
@@ -129,7 +129,7 @@ public class ManagementServiceAccessGrantEventDetails  {
      * This is the setter method to the attribute.
      * Name of the management service exposing the avi controller endpoint.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param managementServiceName set the managementServiceName.
      */
@@ -141,7 +141,7 @@ public class ManagementServiceAccessGrantEventDetails  {
      * This is the getter method this will return the attribute value.
      * Vsphere namespace for which access to avi controller is granted.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return namespace
      */
@@ -153,7 +153,7 @@ public class ManagementServiceAccessGrantEventDetails  {
      * This is the setter method to the attribute.
      * Vsphere namespace for which access to avi controller is granted.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param namespace set the namespace.
      */
@@ -165,7 +165,7 @@ public class ManagementServiceAccessGrantEventDetails  {
      * This is the getter method this will return the attribute value.
      * Vcenter url used for the api operation.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterUrl
      */
@@ -177,7 +177,7 @@ public class ManagementServiceAccessGrantEventDetails  {
      * This is the setter method to the attribute.
      * Vcenter url used for the api operation.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterUrl set the vcenterUrl.
      */

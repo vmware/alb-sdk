@@ -36,7 +36,7 @@ public class SeDebugModeEventDetail  {
      * This is the getter method this will return the attribute value.
      * Description of the event.
      * Field introduced in 22.1.6.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -48,7 +48,7 @@ public class SeDebugModeEventDetail  {
      * This is the setter method to the attribute.
      * Description of the event.
      * Field introduced in 22.1.6.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -61,7 +61,7 @@ public class SeDebugModeEventDetail  {
      * Name of the se, reporting this event.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 22.1.6.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seName
      */
@@ -74,7 +74,7 @@ public class SeDebugModeEventDetail  {
      * Name of the se, reporting this event.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 22.1.6.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seName set the seName.
      */
@@ -87,7 +87,7 @@ public class SeDebugModeEventDetail  {
      * Uuid of the se, responsible for this event.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 22.1.6.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seRef
      */
@@ -100,7 +100,7 @@ public class SeDebugModeEventDetail  {
      * Uuid of the se, responsible for this event.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 22.1.6.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seRef set the seRef.
      */

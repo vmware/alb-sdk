@@ -48,7 +48,7 @@ public class OAuthVSConfig  {
      * This is the getter method this will return the attribute value.
      * Http cookie name for authorized session.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cookieName
      */
@@ -60,7 +60,7 @@ public class OAuthVSConfig  {
      * This is the setter method to the attribute.
      * Http cookie name for authorized session.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cookieName set the cookieName.
      */
@@ -74,7 +74,7 @@ public class OAuthVSConfig  {
      * Allowed values are 1-1440.
      * Field introduced in 21.1.3.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return cookieTimeout
      */
@@ -88,7 +88,7 @@ public class OAuthVSConfig  {
      * Allowed values are 1-1440.
      * Field introduced in 21.1.3.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param cookieTimeout set the cookieTimeout.
      */
@@ -99,7 +99,7 @@ public class OAuthVSConfig  {
      * This is the getter method this will return the attribute value.
      * Key to generate the cookie.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return key
      */
@@ -111,7 +111,7 @@ public class OAuthVSConfig  {
      * This is the setter method. this will set the key
      * Key to generate the cookie.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return key
      */
@@ -123,7 +123,7 @@ public class OAuthVSConfig  {
      * This is the setter method this will set the key
      * Key to generate the cookie.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return key
      */
@@ -139,7 +139,7 @@ public class OAuthVSConfig  {
      * This is the getter method this will return the attribute value.
      * Uri which triggers oauth logout.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return logoutUri
      */
@@ -151,7 +151,7 @@ public class OAuthVSConfig  {
      * This is the setter method to the attribute.
      * Uri which triggers oauth logout.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param logoutUri set the logoutUri.
      */
@@ -163,7 +163,7 @@ public class OAuthVSConfig  {
      * Application and idp settings for oauth/oidc.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oauthSettings
      */
@@ -176,7 +176,7 @@ public class OAuthVSConfig  {
      * Application and idp settings for oauth/oidc.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oauthSettings
      */
@@ -189,7 +189,7 @@ public class OAuthVSConfig  {
      * Application and idp settings for oauth/oidc.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oauthSettings
      */
@@ -205,7 +205,7 @@ public class OAuthVSConfig  {
      * This is the getter method this will return the attribute value.
      * Uri to which idp will redirect to after the logout.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return postLogoutRedirectUri
      */
@@ -217,7 +217,7 @@ public class OAuthVSConfig  {
      * This is the setter method to the attribute.
      * Uri to which idp will redirect to after the logout.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param postLogoutRedirectUri set the postLogoutRedirectUri.
      */
@@ -229,7 +229,7 @@ public class OAuthVSConfig  {
      * This is the getter method this will return the attribute value.
      * Redirect uri specified in the request to authorization server.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return redirectUri
      */
@@ -241,7 +241,7 @@ public class OAuthVSConfig  {
      * This is the setter method to the attribute.
      * Redirect uri specified in the request to authorization server.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param redirectUri set the redirectUri.
      */

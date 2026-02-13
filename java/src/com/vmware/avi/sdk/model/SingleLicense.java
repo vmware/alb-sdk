@@ -114,7 +114,7 @@ public class SingleLicense  {
      * Features supported by the add-on license.
      * Enum options - LICENSE_UNKNOWN_ADDON, LICENSE_LEGACY_ADDON.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addons
      */
@@ -127,7 +127,7 @@ public class SingleLicense  {
      * Features supported by the add-on license.
      * Enum options - LICENSE_UNKNOWN_ADDON, LICENSE_LEGACY_ADDON.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addons
      */
@@ -140,7 +140,7 @@ public class SingleLicense  {
      * Features supported by the add-on license.
      * Enum options - LICENSE_UNKNOWN_ADDON, LICENSE_LEGACY_ADDON.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addons
      */
@@ -180,7 +180,7 @@ public class SingleLicense  {
      * This is the getter method this will return the attribute value.
      * Total licensing capacity available for all the resoures available in a single license.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @return capacity
      */
@@ -192,7 +192,7 @@ public class SingleLicense  {
      * This is the setter method to the attribute.
      * Total licensing capacity available for all the resoures available in a single license.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @param capacity set the capacity.
      */
@@ -204,7 +204,7 @@ public class SingleLicense  {
      * This is the getter method this will return the attribute value.
      * Number of concurrent vmware horizon users.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return ccu
      */
@@ -216,7 +216,7 @@ public class SingleLicense  {
      * This is the setter method to the attribute.
      * Number of concurrent vmware horizon users.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param ccu set the ccu.
      */
@@ -228,7 +228,7 @@ public class SingleLicense  {
      * This is the getter method this will return the attribute value.
      * Central license service id.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clsId
      */
@@ -240,7 +240,7 @@ public class SingleLicense  {
      * This is the setter method to the attribute.
      * Central license service id.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clsId set the clsId.
      */
@@ -550,7 +550,7 @@ public class SingleLicense  {
      * This is the getter method this will return the attribute value.
      * License policy details.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return policy
      */
@@ -562,7 +562,7 @@ public class SingleLicense  {
      * This is the setter method to the attribute.
      * License policy details.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param policy set the policy.
      */
@@ -703,7 +703,7 @@ public class SingleLicense  {
      * This is the getter method this will return the attribute value.
      * Tenant uuid.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantUuid
      */
@@ -715,7 +715,7 @@ public class SingleLicense  {
      * This is the setter method to the attribute.
      * Tenant uuid.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantUuid set the tenantUuid.
      */
@@ -754,7 +754,7 @@ public class SingleLicense  {
      * Units in which resources will be licensed.
      * Enum options - UNNOWN_UNIT, SERVICE_UNIT, LEGACY_ADDON_UNIT.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SERVICE_UNIT".
      * @return unit
      */
@@ -767,7 +767,7 @@ public class SingleLicense  {
      * Units in which resources will be licensed.
      * Enum options - UNNOWN_UNIT, SERVICE_UNIT, LEGACY_ADDON_UNIT.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SERVICE_UNIT".
      * @param unit set the unit.
      */

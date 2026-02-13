@@ -36,7 +36,7 @@ public class CentralLicenseRefreshDetails  {
      * This is the getter method this will return the attribute value.
      * Message.
      * Field introduced in 21.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return message
      */
@@ -48,7 +48,7 @@ public class CentralLicenseRefreshDetails  {
      * This is the setter method to the attribute.
      * Message.
      * Field introduced in 21.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param message set the message.
      */
@@ -60,7 +60,7 @@ public class CentralLicenseRefreshDetails  {
      * This is the getter method this will return the attribute value.
      * Service units.
      * Field introduced in 21.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceUnits
      */
@@ -72,7 +72,7 @@ public class CentralLicenseRefreshDetails  {
      * This is the setter method to the attribute.
      * Service units.
      * Field introduced in 21.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceUnits set the serviceUnits.
      */
@@ -84,7 +84,7 @@ public class CentralLicenseRefreshDetails  {
      * This is the getter method this will return the attribute value.
      * Tenant uuid.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantUuid
      */
@@ -96,7 +96,7 @@ public class CentralLicenseRefreshDetails  {
      * This is the setter method to the attribute.
      * Tenant uuid.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantUuid set the tenantUuid.
      */

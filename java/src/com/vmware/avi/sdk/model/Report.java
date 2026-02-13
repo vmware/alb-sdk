@@ -76,7 +76,7 @@ public class Report extends AviRestResource  {
      * Time taken to complete report generation in seconds.
      * Field introduced in 31.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return duration
      */
@@ -89,7 +89,7 @@ public class Report extends AviRestResource  {
      * Time taken to complete report generation in seconds.
      * Field introduced in 31.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param duration set the duration.
      */
@@ -101,7 +101,7 @@ public class Report extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * End time of the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endTime
      */
@@ -113,7 +113,7 @@ public class Report extends AviRestResource  {
      * This is the setter method to the attribute.
      * End time of the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endTime set the endTime.
      */
@@ -125,7 +125,7 @@ public class Report extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the report artifact on reports repository.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return filename
      */
@@ -137,7 +137,7 @@ public class Report extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the report artifact on reports repository.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param filename set the filename.
      */
@@ -149,7 +149,7 @@ public class Report extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the report.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -161,7 +161,7 @@ public class Report extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the report.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -173,7 +173,7 @@ public class Report extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Cluster member node on which the report is processed.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return node
      */
@@ -185,7 +185,7 @@ public class Report extends AviRestResource  {
      * This is the setter method to the attribute.
      * Cluster member node on which the report is processed.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param node set the node.
      */
@@ -197,7 +197,7 @@ public class Report extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Pre-check details for the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return preCheck
      */
@@ -209,7 +209,7 @@ public class Report extends AviRestResource  {
      * This is the setter method to the attribute.
      * Pre-check details for the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param preCheck set the preCheck.
      */
@@ -223,7 +223,7 @@ public class Report extends AviRestResource  {
      * Allowed values are 0-100.
      * Field introduced in 31.2.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return progress
      */
@@ -237,7 +237,7 @@ public class Report extends AviRestResource  {
      * Allowed values are 0-100.
      * Field introduced in 31.2.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param progress set the progress.
      */
@@ -249,7 +249,7 @@ public class Report extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Request for the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return request
      */
@@ -261,7 +261,7 @@ public class Report extends AviRestResource  {
      * This is the setter method to the attribute.
      * Request for the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param request set the request.
      */
@@ -273,7 +273,7 @@ public class Report extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Start time of the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startTime
      */
@@ -285,7 +285,7 @@ public class Report extends AviRestResource  {
      * This is the setter method to the attribute.
      * Start time of the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startTime set the startTime.
      */
@@ -297,7 +297,7 @@ public class Report extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * State of the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return state
      */
@@ -309,7 +309,7 @@ public class Report extends AviRestResource  {
      * This is the setter method to the attribute.
      * State of the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param state set the state.
      */
@@ -320,7 +320,7 @@ public class Report extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of tasks associated with the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tasks
      */
@@ -332,7 +332,7 @@ public class Report extends AviRestResource  {
      * This is the setter method. this will set the tasks
      * List of tasks associated with the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tasks
      */
@@ -344,7 +344,7 @@ public class Report extends AviRestResource  {
      * This is the setter method this will set the tasks
      * List of tasks associated with the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tasks
      */
@@ -361,7 +361,7 @@ public class Report extends AviRestResource  {
      * No.
      * Of tasks completed.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tasksCompleted
      */
@@ -374,7 +374,7 @@ public class Report extends AviRestResource  {
      * No.
      * Of tasks completed.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tasksCompleted set the tasksCompleted.
      */
@@ -387,7 +387,7 @@ public class Report extends AviRestResource  {
      * Tenant uuid of the report generation.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -400,7 +400,7 @@ public class Report extends AviRestResource  {
      * Tenant uuid of the report generation.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -413,7 +413,7 @@ public class Report extends AviRestResource  {
      * Total no.
      * Of tasks.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return totalTasks
      */
@@ -426,7 +426,7 @@ public class Report extends AviRestResource  {
      * Total no.
      * Of tasks.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param totalTasks set the totalTasks.
      */
@@ -455,7 +455,7 @@ public class Report extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid identifier for the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -467,7 +467,7 @@ public class Report extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid identifier for the report generation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

@@ -39,7 +39,7 @@ public class LicensePool  {
      * This is the getter method this will return the attribute value.
      * Available service units in the pool.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availableServiceUnits
      */
@@ -51,7 +51,7 @@ public class LicensePool  {
      * This is the setter method to the attribute.
      * Available service units in the pool.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param availableServiceUnits set the availableServiceUnits.
      */
@@ -63,7 +63,7 @@ public class LicensePool  {
      * This is the getter method this will return the attribute value.
      * Pool id.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolId
      */
@@ -75,7 +75,7 @@ public class LicensePool  {
      * This is the setter method to the attribute.
      * Pool id.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolId set the poolId.
      */
@@ -87,7 +87,7 @@ public class LicensePool  {
      * This is the getter method this will return the attribute value.
      * Pool name.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolName
      */
@@ -99,7 +99,7 @@ public class LicensePool  {
      * This is the setter method to the attribute.
      * Pool name.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolName set the poolName.
      */
@@ -111,7 +111,7 @@ public class LicensePool  {
      * This is the getter method this will return the attribute value.
      * Used service units in the pool.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usedServiceUnits
      */
@@ -123,7 +123,7 @@ public class LicensePool  {
      * This is the setter method to the attribute.
      * Used service units in the pool.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param usedServiceUnits set the usedServiceUnits.
      */

@@ -39,7 +39,7 @@ public class HealthMonitorTcp  {
      * This is the getter method this will return the attribute value.
      * Match or look for this keyword in the first 2kb of server's response indicating server maintenance.
      * A successful match results in the server being marked down.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maintenanceResponse
      */
@@ -51,7 +51,7 @@ public class HealthMonitorTcp  {
      * This is the setter method to the attribute.
      * Match or look for this keyword in the first 2kb of server's response indicating server maintenance.
      * A successful match results in the server being marked down.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maintenanceResponse set the maintenanceResponse.
      */
@@ -65,8 +65,7 @@ public class HealthMonitorTcp  {
      * fledged server side connection and the overhead and logs associated with it.
      * This method is light-weight as it makes use of listener in server's kernel layer to measure the health and a child socket or user thread is not
      * created on the server side.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return tcpHalfOpen
      */
@@ -80,8 +79,7 @@ public class HealthMonitorTcp  {
      * fledged server side connection and the overhead and logs associated with it.
      * This method is light-weight as it makes use of listener in server's kernel layer to measure the health and a child socket or user thread is not
      * created on the server side.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param tcpHalfOpen set the tcpHalfOpen.
      */

@@ -52,7 +52,7 @@ public class ApplicationInsightsParams  {
      * If set to true, limit application learning only from clients which match the learn_from_bots specification.
      * The settings learn_from_authenticated_clients_only and trusted_ip_groups always take precedence.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableLearnFromBots
      */
@@ -65,7 +65,7 @@ public class ApplicationInsightsParams  {
      * If set to true, limit application learning only from clients which match the learn_from_bots specification.
      * The settings learn_from_authenticated_clients_only and trusted_ip_groups always take precedence.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableLearnFromBots set the enableLearnFromBots.
      */
@@ -77,7 +77,7 @@ public class ApplicationInsightsParams  {
      * This is the getter method this will return the attribute value.
      * If true, learns the params per uri path.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enablePerUriLearning
      */
@@ -89,7 +89,7 @@ public class ApplicationInsightsParams  {
      * This is the setter method to the attribute.
      * If true, learns the params per uri path.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enablePerUriLearning set the enablePerUriLearning.
      */
@@ -101,7 +101,7 @@ public class ApplicationInsightsParams  {
      * This is the getter method this will return the attribute value.
      * Limit application learning only from authenticated clients.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return learnFromAuthenticatedClientsOnly
      */
@@ -113,7 +113,7 @@ public class ApplicationInsightsParams  {
      * This is the setter method to the attribute.
      * Limit application learning only from authenticated clients.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param learnFromAuthenticatedClientsOnly set the learnFromAuthenticatedClientsOnly.
      */
@@ -126,7 +126,7 @@ public class ApplicationInsightsParams  {
      * If bot detection is active for this virtual service, learning will only be performed on application data from clients within the configured bot
      * classification types.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return learnFromBots
      */
@@ -139,7 +139,7 @@ public class ApplicationInsightsParams  {
      * If bot detection is active for this virtual service, learning will only be performed on application data from clients within the configured bot
      * classification types.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param learnFromBots set the learnFromBots.
      */
@@ -151,7 +151,7 @@ public class ApplicationInsightsParams  {
      * This is the getter method this will return the attribute value.
      * When true, the waf includes argument-less uris in its learning process.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return learnFromUrlsWithoutArgs
      */
@@ -163,7 +163,7 @@ public class ApplicationInsightsParams  {
      * This is the setter method to the attribute.
      * When true, the waf includes argument-less uris in its learning process.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param learnFromUrlsWithoutArgs set the learnFromUrlsWithoutArgs.
      */
@@ -176,7 +176,7 @@ public class ApplicationInsightsParams  {
      * Maximum number of parameters per uri programmed for application insights.
      * Allowed values are 10-1000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return maxParams
      */
@@ -189,7 +189,7 @@ public class ApplicationInsightsParams  {
      * Maximum number of parameters per uri programmed for application insights.
      * Allowed values are 10-1000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param maxParams set the maxParams.
      */
@@ -202,7 +202,7 @@ public class ApplicationInsightsParams  {
      * Maximum number of uris for application insights.
      * Allowed values are 10-10000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
      * @return maxUris
      */
@@ -215,7 +215,7 @@ public class ApplicationInsightsParams  {
      * Maximum number of uris for application insights.
      * Allowed values are 10-10000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
      * @param maxUris set the maxUris.
      */
@@ -228,7 +228,7 @@ public class ApplicationInsightsParams  {
      * Limits application learning from client ips within the configured ip address group.
      * It is a reference to an object of type ipaddrgroup.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return trustedIpgroupRef
      */
@@ -241,7 +241,7 @@ public class ApplicationInsightsParams  {
      * Limits application learning from client ips within the configured ip address group.
      * It is a reference to an object of type ipaddrgroup.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param trustedIpgroupRef set the trustedIpgroupRef.
      */

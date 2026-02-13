@@ -39,7 +39,7 @@ public class UDPFastPathProfile  {
      * This is the getter method this will return the attribute value.
      * Dsr profile information.
      * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dsrProfile
      */
@@ -51,7 +51,7 @@ public class UDPFastPathProfile  {
      * This is the setter method to the attribute.
      * Dsr profile information.
      * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dsrProfile set the dsrProfile.
      */
@@ -63,8 +63,7 @@ public class UDPFastPathProfile  {
      * This is the getter method this will return the attribute value.
      * When enabled, every udp packet is considered a new transaction and may be load balanced to a different server.
      * When disabled, packets from the same client source ip and port are sent to the same server.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return perPktLoadbalance
      */
@@ -76,8 +75,7 @@ public class UDPFastPathProfile  {
      * This is the setter method to the attribute.
      * When enabled, every udp packet is considered a new transaction and may be load balanced to a different server.
      * When disabled, packets from the same client source ip and port are sent to the same server.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param perPktLoadbalance set the perPktLoadbalance.
      */

@@ -39,7 +39,7 @@ public class PoolGroupMember  {
      * This is the getter method this will return the attribute value.
      * Pool deployment state used with the pg deployment policy.
      * Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return deploymentState
      */
@@ -51,7 +51,7 @@ public class PoolGroupMember  {
      * This is the setter method to the attribute.
      * Pool deployment state used with the pg deployment policy.
      * Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param deploymentState set the deploymentState.
      */
@@ -114,8 +114,7 @@ public class PoolGroupMember  {
      * Ratio of selecting eligible pools in the pool group.
      * Allowed values are 1-1000.
      * Special values are 0 - do not select this pool for new connections.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- 1), basic (allowed values- 1) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return ratio
      */
@@ -128,8 +127,7 @@ public class PoolGroupMember  {
      * Ratio of selecting eligible pools in the pool group.
      * Allowed values are 1-1000.
      * Special values are 0 - do not select this pool for new connections.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- 1), basic (allowed values- 1) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param ratio set the ratio.
      */

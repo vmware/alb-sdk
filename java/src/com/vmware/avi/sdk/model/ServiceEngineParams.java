@@ -48,7 +48,7 @@ public class ServiceEngineParams  {
      * The value is modified based on flavor size of controller.
      * Allowed values are 1-24.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @return concurrentSegroupUpgrades
      */
@@ -63,7 +63,7 @@ public class ServiceEngineParams  {
      * The value is modified based on flavor size of controller.
      * Allowed values are 1-24.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @param concurrentSegroupUpgrades set the concurrentSegroupUpgrades.
      */
@@ -79,7 +79,7 @@ public class ServiceEngineParams  {
      * Allowed values are 64-2048.
      * Field introduced in 31.1.1.
      * Unit is kb.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 512.
      * @return imageDataTransferSize
      */
@@ -95,7 +95,7 @@ public class ServiceEngineParams  {
      * Allowed values are 64-2048.
      * Field introduced in 31.1.1.
      * Unit is kb.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 512.
      * @param imageDataTransferSize set the imageDataTransferSize.
      */
@@ -109,7 +109,7 @@ public class ServiceEngineParams  {
      * Allowed values are 1200-2400.
      * Field introduced in 31.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1200.
      * @return largeSeConnectTimeout
      */
@@ -123,7 +123,7 @@ public class ServiceEngineParams  {
      * Allowed values are 1200-2400.
      * Field introduced in 31.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1200.
      * @param largeSeConnectTimeout set the largeSeConnectTimeout.
      */
@@ -137,7 +137,7 @@ public class ServiceEngineParams  {
      * Allowed values are 600-1200.
      * Field introduced in 31.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
      * @return seConnectTimeout
      */
@@ -151,7 +151,7 @@ public class ServiceEngineParams  {
      * Allowed values are 600-1200.
      * Field introduced in 31.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
      * @param seConnectTimeout set the seConnectTimeout.
      */
@@ -165,7 +165,7 @@ public class ServiceEngineParams  {
      * It is used to pace serviceengine upgrade package downloads so that controller network/cpu bandwidth is a bounded operation.
      * Allowed values are 1-20.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return simultaneousImageDownloads
      */
@@ -179,7 +179,7 @@ public class ServiceEngineParams  {
      * It is used to pace serviceengine upgrade package downloads so that controller network/cpu bandwidth is a bounded operation.
      * Allowed values are 1-20.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param simultaneousImageDownloads set the simultaneousImageDownloads.
      */
@@ -196,7 +196,7 @@ public class ServiceEngineParams  {
      * Allowed values are 300-3600.
      * Field introduced in 31.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return taskBaseTimeout
      */
@@ -213,7 +213,7 @@ public class ServiceEngineParams  {
      * Allowed values are 300-3600.
      * Field introduced in 31.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param taskBaseTimeout set the taskBaseTimeout.
      */

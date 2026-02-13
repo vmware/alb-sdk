@@ -33,7 +33,7 @@ public class LicenseReservationInfo extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * License cores reserved by tenant/se group.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reserved
      */
@@ -45,7 +45,7 @@ public class LicenseReservationInfo extends AviRestResource  {
      * This is the setter method to the attribute.
      * License cores reserved by tenant/se group.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reserved set the reserved.
      */
@@ -57,7 +57,7 @@ public class LicenseReservationInfo extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid for tenant/se group.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -69,7 +69,7 @@ public class LicenseReservationInfo extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid for tenant/se group.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

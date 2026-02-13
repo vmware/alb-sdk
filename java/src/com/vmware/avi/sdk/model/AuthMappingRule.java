@@ -153,7 +153,7 @@ public class AuthMappingRule  {
      * Enum options - ASSIGN_ALL, ASSIGN_FROM_SELECT_LIST, ASSIGN_MATCHING_GROUP_NAME, ASSIGN_MATCHING_ATTRIBUTE_VALUE, ASSIGN_MATCHING_GROUP_REGEX,
      * ASSIGN_MATCHING_ATTRIBUTE_REGEX, ASSIGN_CONFIG_CONTAINS_ATTRIBUTE_VALUE.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return assignUserprofile
      */
@@ -167,7 +167,7 @@ public class AuthMappingRule  {
      * Enum options - ASSIGN_ALL, ASSIGN_FROM_SELECT_LIST, ASSIGN_MATCHING_GROUP_NAME, ASSIGN_MATCHING_ATTRIBUTE_VALUE, ASSIGN_MATCHING_GROUP_REGEX,
      * ASSIGN_MATCHING_ATTRIBUTE_REGEX, ASSIGN_CONFIG_CONTAINS_ATTRIBUTE_VALUE.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param assignUserprofile set the assignUserprofile.
      */
@@ -200,7 +200,7 @@ public class AuthMappingRule  {
      * Default tenant ref to assign to user.
      * It is a reference to an object of type tenant.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return defaultTenantRef
      */
@@ -213,7 +213,7 @@ public class AuthMappingRule  {
      * Default tenant ref to assign to user.
      * It is a reference to an object of type tenant.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param defaultTenantRef set the defaultTenantRef.
      */
@@ -421,7 +421,7 @@ public class AuthMappingRule  {
      * This is the getter method this will return the attribute value.
      * Attribute name for user account profile assignment.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userprofileAttributeName
      */
@@ -433,7 +433,7 @@ public class AuthMappingRule  {
      * This is the setter method to the attribute.
      * Attribute name for user account profile assignment.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userprofileAttributeName set the userprofileAttributeName.
      */
@@ -446,7 +446,7 @@ public class AuthMappingRule  {
      * User account profile to assign to user on successful match.
      * It is a reference to an object of type useraccountprofile.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userprofileRef
      */
@@ -459,7 +459,7 @@ public class AuthMappingRule  {
      * User account profile to assign to user on successful match.
      * It is a reference to an object of type useraccountprofile.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userprofileRef set the userprofileRef.
      */

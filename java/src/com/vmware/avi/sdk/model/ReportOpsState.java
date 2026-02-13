@@ -36,7 +36,7 @@ public class ReportOpsState  {
      * This is the getter method this will return the attribute value.
      * The last time the state changed.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastChangedTime
      */
@@ -48,7 +48,7 @@ public class ReportOpsState  {
      * This is the setter method to the attribute.
      * The last time the state changed.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastChangedTime set the lastChangedTime.
      */
@@ -60,7 +60,7 @@ public class ReportOpsState  {
      * This is the getter method this will return the attribute value.
      * Descriptive reason for the state-change.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -72,7 +72,7 @@ public class ReportOpsState  {
      * This is the setter method to the attribute.
      * Descriptive reason for the state-change.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -85,7 +85,7 @@ public class ReportOpsState  {
      * The system operation's current fsm-state.
      * Enum options - SYSTEM_REPORT_STARTED, SYSTEM_REPORT_IN_PROGRESS, SYSTEM_REPORT_SUCCESS, SYSTEM_REPORT_WARNING, SYSTEM_REPORT_ERROR.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return state
      */
@@ -98,7 +98,7 @@ public class ReportOpsState  {
      * The system operation's current fsm-state.
      * Enum options - SYSTEM_REPORT_STARTED, SYSTEM_REPORT_IN_PROGRESS, SYSTEM_REPORT_SUCCESS, SYSTEM_REPORT_WARNING, SYSTEM_REPORT_ERROR.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param state set the state.
      */

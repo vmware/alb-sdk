@@ -29,7 +29,7 @@ public class SCProperties  {
      * This is the getter method this will return the attribute value.
      * Introduce delay faults in scm config, se, resmgrgo paths.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return delayInjections
      */
@@ -41,7 +41,7 @@ public class SCProperties  {
      * This is the setter method. this will set the delayInjections
      * Introduce delay faults in scm config, se, resmgrgo paths.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return delayInjections
      */
@@ -53,7 +53,7 @@ public class SCProperties  {
      * This is the setter method this will set the delayInjections
      * Introduce delay faults in scm config, se, resmgrgo paths.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return delayInjections
      */

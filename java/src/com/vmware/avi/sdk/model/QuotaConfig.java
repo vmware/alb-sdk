@@ -35,7 +35,7 @@ public class QuotaConfig  {
      * -1 as default is maximum value.
      * Allowed values are -1-+65535.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as -1.
      * @return limit
      */
@@ -49,7 +49,7 @@ public class QuotaConfig  {
      * -1 as default is maximum value.
      * Allowed values are -1-+65535.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as -1.
      * @param limit set the limit.
      */
@@ -63,7 +63,7 @@ public class QuotaConfig  {
      * Reservation is not enforced for tenant/se group.
      * Allowed values are 0-65535.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return reservation
      */
@@ -77,7 +77,7 @@ public class QuotaConfig  {
      * Reservation is not enforced for tenant/se group.
      * Allowed values are 0-65535.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param reservation set the reservation.
      */

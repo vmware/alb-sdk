@@ -39,7 +39,7 @@ public class FalsePositiveLearningConfig  {
      * This is the getter method this will return the attribute value.
      * Max number of applications supported to detect false positive.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return maxAppsSupported
      */
@@ -51,7 +51,7 @@ public class FalsePositiveLearningConfig  {
      * This is the setter method to the attribute.
      * Max number of applications supported to detect false positive.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param maxAppsSupported set the maxAppsSupported.
      */
@@ -65,7 +65,7 @@ public class FalsePositiveLearningConfig  {
      * Unit is minutes.
      * Field introduced in 22.1.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10080.
      * @return minMonitorTime
      */
@@ -79,7 +79,7 @@ public class FalsePositiveLearningConfig  {
      * Unit is minutes.
      * Field introduced in 22.1.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10080.
      * @param minMonitorTime set the minMonitorTime.
      */
@@ -91,7 +91,7 @@ public class FalsePositiveLearningConfig  {
      * This is the getter method this will return the attribute value.
      * Minimum number of transactions in one application required to automatically detect false positive.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000000.
      * @return minTransPerApplication
      */
@@ -103,7 +103,7 @@ public class FalsePositiveLearningConfig  {
      * This is the setter method to the attribute.
      * Minimum number of transactions in one application required to automatically detect false positive.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1000000.
      * @param minTransPerApplication set the minTransPerApplication.
      */
@@ -115,7 +115,7 @@ public class FalsePositiveLearningConfig  {
      * This is the getter method this will return the attribute value.
      * Minimum number of transactions in one uri required to automatically detect false positive.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @return minTransPerUri
      */
@@ -127,7 +127,7 @@ public class FalsePositiveLearningConfig  {
      * This is the setter method to the attribute.
      * Minimum number of transactions in one uri required to automatically detect false positive.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @param minTransPerUri set the minTransPerUri.
      */

@@ -45,7 +45,7 @@ public class DnsResolver  {
      * Allowed values are 5-2147483647.
      * Field introduced in 20.1.5.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fixedTtl
      */
@@ -60,7 +60,7 @@ public class DnsResolver  {
      * Allowed values are 5-2147483647.
      * Field introduced in 20.1.5.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fixedTtl set the fixedTtl.
      */
@@ -74,7 +74,7 @@ public class DnsResolver  {
      * Allowed values are 5-2147483647.
      * Field introduced in 20.1.5.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return minTtl
      */
@@ -88,7 +88,7 @@ public class DnsResolver  {
      * Allowed values are 5-2147483647.
      * Field introduced in 20.1.5.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param minTtl set the minTtl.
      */
@@ -101,7 +101,7 @@ public class DnsResolver  {
      * Field introduced in 20.1.5.
      * Minimum of 1 items required.
      * Maximum of 10 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nameserverIps
      */
@@ -115,7 +115,7 @@ public class DnsResolver  {
      * Field introduced in 20.1.5.
      * Minimum of 1 items required.
      * Maximum of 10 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nameserverIps
      */
@@ -129,7 +129,7 @@ public class DnsResolver  {
      * Field introduced in 20.1.5.
      * Minimum of 1 items required.
      * Maximum of 10 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nameserverIps
      */
@@ -145,7 +145,7 @@ public class DnsResolver  {
      * This is the getter method this will return the attribute value.
      * Unique name for resolver config.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resolverName
      */
@@ -157,7 +157,7 @@ public class DnsResolver  {
      * This is the setter method to the attribute.
      * Unique name for resolver config.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resolverName set the resolverName.
      */
@@ -169,7 +169,7 @@ public class DnsResolver  {
      * This is the getter method this will return the attribute value.
      * If enabled, dns resolution is performed via management network.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useMgmt
      */
@@ -181,7 +181,7 @@ public class DnsResolver  {
      * This is the setter method to the attribute.
      * If enabled, dns resolution is performed via management network.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useMgmt set the useMgmt.
      */

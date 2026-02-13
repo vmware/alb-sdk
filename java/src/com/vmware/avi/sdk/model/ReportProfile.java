@@ -43,7 +43,7 @@ public class ReportProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Collection rules for the report.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return collectionRules
      */
@@ -55,7 +55,7 @@ public class ReportProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Collection rules for the report.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param collectionRules set the collectionRules.
      */
@@ -68,7 +68,7 @@ public class ReportProfile extends AviRestResource  {
      * Maximum number of concurrent reports allowed to be generated.
      * Allowed values are 1-10.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return maxConcurrentReports
      */
@@ -81,7 +81,7 @@ public class ReportProfile extends AviRestResource  {
      * Maximum number of concurrent reports allowed to be generated.
      * Allowed values are 1-10.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param maxConcurrentReports set the maxConcurrentReports.
      */
@@ -94,7 +94,7 @@ public class ReportProfile extends AviRestResource  {
      * Remote controller request to enable report generation for remote controller.
      * If enabled, the report generation will be done for the remote controller.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteController
      */
@@ -107,7 +107,7 @@ public class ReportProfile extends AviRestResource  {
      * Remote controller request to enable report generation for remote controller.
      * If enabled, the report generation will be done for the remote controller.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param remoteController set the remoteController.
      */
@@ -136,7 +136,7 @@ public class ReportProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid identifier for the reportprofile object.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -148,7 +148,7 @@ public class ReportProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid identifier for the reportprofile object.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

@@ -36,7 +36,7 @@ public class HTTPHdrValue  {
      * This is the getter method this will return the attribute value.
      * The custom value field is sensitive and will not be displayed.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isSensitive
      */
@@ -48,7 +48,7 @@ public class HTTPHdrValue  {
      * This is the setter method to the attribute.
      * The custom value field is sensitive and will not be displayed.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isSensitive set the isSensitive.
      */

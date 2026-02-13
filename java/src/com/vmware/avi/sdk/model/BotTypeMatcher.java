@@ -35,7 +35,7 @@ public class BotTypeMatcher  {
      * DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION, SUSPICIOUS_APPLICATION.
      * Field introduced in 21.1.1.
      * Minimum of 1 items required.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientTypes
      */
@@ -50,7 +50,7 @@ public class BotTypeMatcher  {
      * DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION, SUSPICIOUS_APPLICATION.
      * Field introduced in 21.1.1.
      * Minimum of 1 items required.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientTypes
      */
@@ -65,7 +65,7 @@ public class BotTypeMatcher  {
      * DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION, SUSPICIOUS_APPLICATION.
      * Field introduced in 21.1.1.
      * Minimum of 1 items required.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientTypes
      */
@@ -82,7 +82,7 @@ public class BotTypeMatcher  {
      * The match operation.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
      * @return op
      */
@@ -95,7 +95,7 @@ public class BotTypeMatcher  {
      * The match operation.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
      * @param op set the op.
      */

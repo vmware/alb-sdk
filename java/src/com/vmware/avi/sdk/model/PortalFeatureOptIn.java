@@ -28,13 +28,13 @@ public class PortalFeatureOptIn  {
     private Boolean enableIpReputation = false;
 
     @JsonProperty("enable_pulse_case_management")
-    private Boolean enablePulseCaseManagement;
+    private Boolean enablePulseCaseManagement = true;
 
     @JsonProperty("enable_pulse_inventory")
-    private Boolean enablePulseInventory;
+    private Boolean enablePulseInventory = false;
 
     @JsonProperty("enable_pulse_waf_management")
-    private Boolean enablePulseWafManagement;
+    private Boolean enablePulseWafManagement = true;
 
     @JsonProperty("enable_user_agent_db_sync")
     private Boolean enableUserAgentDbSync = false;
@@ -45,8 +45,7 @@ public class PortalFeatureOptIn  {
      * This is the getter method this will return the attribute value.
      * Enable to receive application specific signature updates.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableAppsignatureSync
      */
@@ -58,8 +57,7 @@ public class PortalFeatureOptIn  {
      * This is the setter method to the attribute.
      * Enable to receive application specific signature updates.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableAppsignatureSync set the enableAppsignatureSync.
      */
@@ -71,8 +69,7 @@ public class PortalFeatureOptIn  {
      * This is the getter method this will return the attribute value.
      * Enable to receive ip reputation updates.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableIpReputation
      */
@@ -84,8 +81,7 @@ public class PortalFeatureOptIn  {
      * This is the setter method to the attribute.
      * Enable to receive ip reputation updates.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableIpReputation set the enableIpReputation.
      */
@@ -97,9 +93,8 @@ public class PortalFeatureOptIn  {
      * This is the getter method this will return the attribute value.
      * Enable pulse cloud services case management.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enablePulseCaseManagement
      */
     public Boolean getEnablePulseCaseManagement() {
@@ -110,9 +105,8 @@ public class PortalFeatureOptIn  {
      * This is the setter method to the attribute.
      * Enable pulse cloud services case management.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enablePulseCaseManagement set the enablePulseCaseManagement.
      */
     public void setEnablePulseCaseManagement(Boolean  enablePulseCaseManagement) {
@@ -123,9 +117,8 @@ public class PortalFeatureOptIn  {
      * This is the getter method this will return the attribute value.
      * Enable pulse cloud services inventory.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise edition is false.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enablePulseInventory
      */
     public Boolean getEnablePulseInventory() {
@@ -136,9 +129,8 @@ public class PortalFeatureOptIn  {
      * This is the setter method to the attribute.
      * Enable pulse cloud services inventory.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise edition is false.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enablePulseInventory set the enablePulseInventory.
      */
     public void setEnablePulseInventory(Boolean  enablePulseInventory) {
@@ -149,9 +141,8 @@ public class PortalFeatureOptIn  {
      * This is the getter method this will return the attribute value.
      * Enable to receive waf crs updates.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enablePulseWafManagement
      */
     public Boolean getEnablePulseWafManagement() {
@@ -162,9 +153,8 @@ public class PortalFeatureOptIn  {
      * This is the setter method to the attribute.
      * Enable to receive waf crs updates.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enablePulseWafManagement set the enablePulseWafManagement.
      */
     public void setEnablePulseWafManagement(Boolean  enablePulseWafManagement) {
@@ -175,8 +165,7 @@ public class PortalFeatureOptIn  {
      * This is the getter method this will return the attribute value.
      * Enable to receive bot management updates.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableUserAgentDbSync
      */
@@ -188,8 +177,7 @@ public class PortalFeatureOptIn  {
      * This is the setter method to the attribute.
      * Enable to receive bot management updates.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableUserAgentDbSync set the enableUserAgentDbSync.
      */

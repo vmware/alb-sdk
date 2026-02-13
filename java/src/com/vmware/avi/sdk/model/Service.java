@@ -54,8 +54,7 @@ public class Service  {
      * This is the getter method this will return the attribute value.
      * Enable http2 on this port.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableHttp2
      */
@@ -67,8 +66,7 @@ public class Service  {
      * This is the setter method to the attribute.
      * Enable http2 on this port.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableHttp2 set the enableHttp2.
      */
@@ -103,7 +101,7 @@ public class Service  {
      * Used for horizon deployment.
      * If set used for l7 redirect.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return horizonInternalPorts
      */
@@ -116,7 +114,7 @@ public class Service  {
      * Used for horizon deployment.
      * If set used for l7 redirect.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param horizonInternalPorts set the horizonInternalPorts.
      */
@@ -128,7 +126,7 @@ public class Service  {
      * This is the getter method this will return the attribute value.
      * Source port used by vs for active ftp data connections.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isActiveFtpDataPort
      */
@@ -140,7 +138,7 @@ public class Service  {
      * This is the setter method to the attribute.
      * Source port used by vs for active ftp data connections.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isActiveFtpDataPort set the isActiveFtpDataPort.
      */
@@ -152,7 +150,7 @@ public class Service  {
      * This is the getter method this will return the attribute value.
      * Source port used by vs for passive ftp data connections.change in this flag is disruptive update.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isPassiveFtpDataPort
      */
@@ -164,7 +162,7 @@ public class Service  {
      * This is the setter method to the attribute.
      * Source port used by vs for passive ftp data connections.change in this flag is disruptive update.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isPassiveFtpDataPort set the isPassiveFtpDataPort.
      */
@@ -177,7 +175,7 @@ public class Service  {
      * Enable application layer specific features for the this specific service.
      * It is a reference to an object of type applicationprofile.
      * Field introduced in 17.2.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return overrideApplicationProfileRef
      */
@@ -190,7 +188,7 @@ public class Service  {
      * Enable application layer specific features for the this specific service.
      * It is a reference to an object of type applicationprofile.
      * Field introduced in 17.2.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param overrideApplicationProfileRef set the overrideApplicationProfileRef.
      */
@@ -202,7 +200,7 @@ public class Service  {
      * This is the getter method this will return the attribute value.
      * Override the network profile for this specific service port.
      * It is a reference to an object of type networkprofile.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return overrideNetworkProfileRef
      */
@@ -214,7 +212,7 @@ public class Service  {
      * This is the setter method to the attribute.
      * Override the network profile for this specific service port.
      * It is a reference to an object of type networkprofile.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param overrideNetworkProfileRef set the overrideNetworkProfileRef.
      */

@@ -45,7 +45,7 @@ public class CLSStatus  {
      * This is the getter method this will return the attribute value.
      * Cls id.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clsId
      */
@@ -57,7 +57,7 @@ public class CLSStatus  {
      * This is the setter method to the attribute.
      * Cls id.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clsId set the clsId.
      */
@@ -70,7 +70,7 @@ public class CLSStatus  {
      * Uuid of the ssp instance for cls licensing.
      * It is a reference to an object of type sspinstance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clsRef
      */
@@ -83,7 +83,7 @@ public class CLSStatus  {
      * Uuid of the ssp instance for cls licensing.
      * It is a reference to an object of type sspinstance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clsRef set the clsRef.
      */
@@ -95,7 +95,7 @@ public class CLSStatus  {
      * This is the getter method this will return the attribute value.
      * Cls connectivity status.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connected
      */
@@ -107,7 +107,7 @@ public class CLSStatus  {
      * This is the setter method to the attribute.
      * Cls connectivity status.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connected set the connected.
      */
@@ -119,7 +119,7 @@ public class CLSStatus  {
      * This is the getter method this will return the attribute value.
      * Whether cls is enabled.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return enabled
      */
@@ -131,7 +131,7 @@ public class CLSStatus  {
      * This is the setter method to the attribute.
      * Whether cls is enabled.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param enabled set the enabled.
      */
@@ -143,7 +143,7 @@ public class CLSStatus  {
      * This is the getter method this will return the attribute value.
      * Timestamp of last attempted license refresh from cls.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return refreshedAt
      */
@@ -155,7 +155,7 @@ public class CLSStatus  {
      * This is the setter method to the attribute.
      * Timestamp of last attempted license refresh from cls.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param refreshedAt set the refreshedAt.
      */
@@ -167,7 +167,7 @@ public class CLSStatus  {
      * This is the getter method this will return the attribute value.
      * Timestamp of last successful license usage upload to cls.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usageUploadedAt
      */
@@ -179,7 +179,7 @@ public class CLSStatus  {
      * This is the setter method to the attribute.
      * Timestamp of last successful license usage upload to cls.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param usageUploadedAt set the usageUploadedAt.
      */

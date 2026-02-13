@@ -33,7 +33,7 @@ public class UsageMeteringCloud  {
      * This is the getter method this will return the attribute value.
      * Name of the cloud.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -45,7 +45,7 @@ public class UsageMeteringCloud  {
      * This is the setter method to the attribute.
      * Name of the cloud.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -58,7 +58,7 @@ public class UsageMeteringCloud  {
      * Status of the task for the cloud.
      * Enum options - USAGE_METERING_CLOUD_STATUS_SUCCESS, USAGE_METERING_CLOUD_STATUS_FAILURE, USAGE_METERING_CLOUD_STATUS_SKIPPED.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -71,7 +71,7 @@ public class UsageMeteringCloud  {
      * Status of the task for the cloud.
      * Enum options - USAGE_METERING_CLOUD_STATUS_SUCCESS, USAGE_METERING_CLOUD_STATUS_FAILURE, USAGE_METERING_CLOUD_STATUS_SKIPPED.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */

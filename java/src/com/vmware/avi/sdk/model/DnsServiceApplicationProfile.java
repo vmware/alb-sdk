@@ -125,7 +125,7 @@ public class DnsServiceApplicationProfile  {
      * Allowed values are 10-100000000.
      * Field introduced in 22.1.5, 30.1.2, 30.2.1.
      * Unit is milliseconds.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @return clientDnsTcpRequestTimeout
      */
@@ -140,7 +140,7 @@ public class DnsServiceApplicationProfile  {
      * Allowed values are 10-100000000.
      * Field introduced in 22.1.5, 30.1.2, 30.2.1.
      * Unit is milliseconds.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @param clientDnsTcpRequestTimeout set the clientDnsTcpRequestTimeout.
      */
@@ -153,7 +153,7 @@ public class DnsServiceApplicationProfile  {
      * If enabled, the service engine initiates closure of client tcp connections after the first dns response, for pass-through/proxy cases.
      * This behavior applies to all dns request types other than ax-fr.
      * Field introduced in 21.1.7, 22.1.4, 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return closeTcpConnectionPostResponse
      */
@@ -166,7 +166,7 @@ public class DnsServiceApplicationProfile  {
      * If enabled, the service engine initiates closure of client tcp connections after the first dns response, for pass-through/proxy cases.
      * This behavior applies to all dns request types other than ax-fr.
      * Field introduced in 21.1.7, 22.1.4, 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param closeTcpConnectionPostResponse set the closeTcpConnectionPostResponse.
      */

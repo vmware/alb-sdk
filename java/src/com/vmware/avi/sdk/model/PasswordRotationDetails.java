@@ -39,7 +39,7 @@ public class PasswordRotationDetails extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Type of credential (nsx-t or vcenter).
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return credentialType
      */
@@ -51,7 +51,7 @@ public class PasswordRotationDetails extends AviRestResource  {
      * This is the setter method to the attribute.
      * Type of credential (nsx-t or vcenter).
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param credentialType set the credentialType.
      */
@@ -63,7 +63,7 @@ public class PasswordRotationDetails extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Error message if rotation failed.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -75,7 +75,7 @@ public class PasswordRotationDetails extends AviRestResource  {
      * This is the setter method to the attribute.
      * Error message if rotation failed.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */
@@ -87,7 +87,7 @@ public class PasswordRotationDetails extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the cloudconnectoruser.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -99,7 +99,7 @@ public class PasswordRotationDetails extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the cloudconnectoruser.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -111,7 +111,7 @@ public class PasswordRotationDetails extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the cloudconnectoruser.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -123,7 +123,7 @@ public class PasswordRotationDetails extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the cloudconnectoruser.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

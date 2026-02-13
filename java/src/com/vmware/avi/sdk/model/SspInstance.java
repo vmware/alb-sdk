@@ -63,7 +63,7 @@ public class SspInstance extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Client certificate that avi uses to authenticate with the ssp instance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return aviClientCert
      */
@@ -75,7 +75,7 @@ public class SspInstance extends AviRestResource  {
      * This is the setter method to the attribute.
      * Client certificate that avi uses to authenticate with the ssp instance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param aviClientCert set the aviClientCert.
      */
@@ -87,7 +87,7 @@ public class SspInstance extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Client certificate that the ssp instance uses to authenticate with avi.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientCert
      */
@@ -99,7 +99,7 @@ public class SspInstance extends AviRestResource  {
      * This is the setter method to the attribute.
      * Client certificate that the ssp instance uses to authenticate with avi.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientCert set the clientCert.
      */
@@ -111,7 +111,7 @@ public class SspInstance extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Description of the onboarded ssp feature instance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -123,7 +123,7 @@ public class SspInstance extends AviRestResource  {
      * This is the setter method to the attribute.
      * Description of the onboarded ssp feature instance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -136,7 +136,7 @@ public class SspInstance extends AviRestResource  {
      * Type of the ssp feature instance.
      * Enum options - SSP_INTELLIGENT_ASSIST, SSP_CENTRAL_LICENSING_SERVICE.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return feature
      */
@@ -149,7 +149,7 @@ public class SspInstance extends AviRestResource  {
      * Type of the ssp feature instance.
      * Enum options - SSP_INTELLIGENT_ASSIST, SSP_CENTRAL_LICENSING_SERVICE.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param feature set the feature.
      */
@@ -161,7 +161,7 @@ public class SspInstance extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Hostname of the ssp feature instance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostname
      */
@@ -173,7 +173,7 @@ public class SspInstance extends AviRestResource  {
      * This is the setter method to the attribute.
      * Hostname of the ssp feature instance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostname set the hostname.
      */
@@ -185,7 +185,7 @@ public class SspInstance extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Ingress (server) certificate chain that the ssp endpoint uses.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ingressCert
      */
@@ -197,7 +197,7 @@ public class SspInstance extends AviRestResource  {
      * This is the setter method to the attribute.
      * Ingress (server) certificate chain that the ssp endpoint uses.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ingressCert set the ingressCert.
      */
@@ -209,7 +209,7 @@ public class SspInstance extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the onboarded ssp feature instance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -221,7 +221,7 @@ public class SspInstance extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the onboarded ssp feature instance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -233,7 +233,7 @@ public class SspInstance extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Resources associated with the ssp feature instance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resources
      */
@@ -245,7 +245,7 @@ public class SspInstance extends AviRestResource  {
      * This is the setter method to the attribute.
      * Resources associated with the ssp feature instance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resources set the resources.
      */
@@ -258,7 +258,7 @@ public class SspInstance extends AviRestResource  {
      * Status of the ssp feature instance.
      * Enum options - SSP_STATUS_IN_PROGRESS, SSP_STATUS_ACTIVE, SSP_STATUS_CERT_UPDATE_FAILED.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -271,7 +271,7 @@ public class SspInstance extends AviRestResource  {
      * Status of the ssp feature instance.
      * Enum options - SSP_STATUS_IN_PROGRESS, SSP_STATUS_ACTIVE, SSP_STATUS_CERT_UPDATE_FAILED.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */
@@ -284,7 +284,7 @@ public class SspInstance extends AviRestResource  {
      * Tenant reference for the ssp object.
      * It is a reference to an object of type tenant.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -297,7 +297,7 @@ public class SspInstance extends AviRestResource  {
      * Tenant reference for the ssp object.
      * It is a reference to an object of type tenant.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -326,7 +326,7 @@ public class SspInstance extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid for the onboarded ssp feature instance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -338,7 +338,7 @@ public class SspInstance extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid for the onboarded ssp feature instance.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

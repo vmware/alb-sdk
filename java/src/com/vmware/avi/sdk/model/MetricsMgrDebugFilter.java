@@ -60,7 +60,7 @@ public class MetricsMgrDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Set to ignore skip_eval_period field in metrics_anomaly_option.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return debugSkipEvalPeriod
      */
@@ -72,7 +72,7 @@ public class MetricsMgrDebugFilter  {
      * This is the setter method to the attribute.
      * Set to ignore skip_eval_period field in metrics_anomaly_option.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param debugSkipEvalPeriod set the debugSkipEvalPeriod.
      */
@@ -206,7 +206,7 @@ public class MetricsMgrDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Setting to change the number of queries being processed by per db connection by metrics manager.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return minDbQueriesEachConn
      */
@@ -218,7 +218,7 @@ public class MetricsMgrDebugFilter  {
      * This is the setter method to the attribute.
      * Setting to change the number of queries being processed by per db connection by metrics manager.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param minDbQueriesEachConn set the minDbQueriesEachConn.
      */

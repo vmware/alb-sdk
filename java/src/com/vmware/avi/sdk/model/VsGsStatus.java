@@ -38,7 +38,7 @@ public class VsGsStatus extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Details of the event.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return details
      */
@@ -50,7 +50,7 @@ public class VsGsStatus extends AviRestResource  {
      * This is the setter method. this will set the details
      * Details of the event.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return details
      */
@@ -62,7 +62,7 @@ public class VsGsStatus extends AviRestResource  {
      * This is the setter method this will set the details
      * Details of the event.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return details
      */
@@ -78,7 +78,7 @@ public class VsGsStatus extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Config object name.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -90,7 +90,7 @@ public class VsGsStatus extends AviRestResource  {
      * This is the setter method to the attribute.
      * Config object name.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -102,7 +102,7 @@ public class VsGsStatus extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Config object uuid.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -114,7 +114,7 @@ public class VsGsStatus extends AviRestResource  {
      * This is the setter method to the attribute.
      * Config object uuid.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -126,7 +126,7 @@ public class VsGsStatus extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Vsgs config object data.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsgsObj
      */
@@ -138,7 +138,7 @@ public class VsGsStatus extends AviRestResource  {
      * This is the setter method to the attribute.
      * Vsgs config object data.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsgsObj set the vsgsObj.
      */

@@ -39,7 +39,7 @@ public class LicenseQuotaUsageInfo extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * License cores consumed.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return consumed
      */
@@ -51,7 +51,7 @@ public class LicenseQuotaUsageInfo extends AviRestResource  {
      * This is the setter method to the attribute.
      * License cores consumed.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param consumed set the consumed.
      */
@@ -63,7 +63,7 @@ public class LicenseQuotaUsageInfo extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum license cores allowed to consume.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return limit
      */
@@ -75,7 +75,7 @@ public class LicenseQuotaUsageInfo extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum license cores allowed to consume.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param limit set the limit.
      */
@@ -87,7 +87,7 @@ public class LicenseQuotaUsageInfo extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * License cores reserved.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reserved
      */
@@ -99,7 +99,7 @@ public class LicenseQuotaUsageInfo extends AviRestResource  {
      * This is the setter method to the attribute.
      * License cores reserved.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reserved set the reserved.
      */
@@ -111,7 +111,7 @@ public class LicenseQuotaUsageInfo extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid for reference.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -123,7 +123,7 @@ public class LicenseQuotaUsageInfo extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid for reference.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

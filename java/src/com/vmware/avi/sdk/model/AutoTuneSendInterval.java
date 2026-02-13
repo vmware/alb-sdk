@@ -35,7 +35,7 @@ public class AutoTuneSendInterval  {
      * Allowed values are 100-3600.
      * Field introduced in 30.2.5, 31.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return autoTuneSendIntervalTimeout
      */
@@ -49,7 +49,7 @@ public class AutoTuneSendInterval  {
      * Allowed values are 100-3600.
      * Field introduced in 30.2.5, 31.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param autoTuneSendIntervalTimeout set the autoTuneSendIntervalTimeout.
      */
@@ -61,7 +61,7 @@ public class AutoTuneSendInterval  {
      * This is the getter method this will return the attribute value.
      * Set the flag to enable auto tune send interval.
      * Field introduced in 30.2.5, 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enabled
      */
@@ -73,7 +73,7 @@ public class AutoTuneSendInterval  {
      * This is the setter method to the attribute.
      * Set the flag to enable auto tune send interval.
      * Field introduced in 30.2.5, 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enabled set the enabled.
      */

@@ -45,7 +45,7 @@ public class SeVsConfigSeDatastoreDownloadFailed  {
      * This is the getter method this will return the attribute value.
      * Name of the failed config object where downlaod fails.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return failObjName
      */
@@ -57,7 +57,7 @@ public class SeVsConfigSeDatastoreDownloadFailed  {
      * This is the setter method to the attribute.
      * Name of the failed config object where downlaod fails.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param failObjName set the failObjName.
      */
@@ -69,7 +69,7 @@ public class SeVsConfigSeDatastoreDownloadFailed  {
      * This is the getter method this will return the attribute value.
      * Uuid of the failed config object.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return failObjUuid
      */
@@ -81,7 +81,7 @@ public class SeVsConfigSeDatastoreDownloadFailed  {
      * This is the setter method to the attribute.
      * Uuid of the failed config object.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param failObjUuid set the failObjUuid.
      */
@@ -93,7 +93,7 @@ public class SeVsConfigSeDatastoreDownloadFailed  {
      * This is the getter method this will return the attribute value.
      * Reason for config download failure.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return failReason
      */
@@ -105,7 +105,7 @@ public class SeVsConfigSeDatastoreDownloadFailed  {
      * This is the setter method to the attribute.
      * Reason for config download failure.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param failReason set the failReason.
      */
@@ -117,7 +117,7 @@ public class SeVsConfigSeDatastoreDownloadFailed  {
      * This is the getter method this will return the attribute value.
      * Uuid of the top level object where config downlaod failed.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return parentObjUuid
      */
@@ -129,7 +129,7 @@ public class SeVsConfigSeDatastoreDownloadFailed  {
      * This is the setter method to the attribute.
      * Uuid of the top level object where config downlaod failed.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param parentObjUuid set the parentObjUuid.
      */
@@ -142,7 +142,7 @@ public class SeVsConfigSeDatastoreDownloadFailed  {
      * Uuid of the se responsible for this event.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seRef
      */
@@ -155,7 +155,7 @@ public class SeVsConfigSeDatastoreDownloadFailed  {
      * Uuid of the se responsible for this event.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seRef set the seRef.
      */
@@ -168,7 +168,7 @@ public class SeVsConfigSeDatastoreDownloadFailed  {
      * Uuid of the vs where config downlaod failed.
      * It is a reference to an object of type virtualservice.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsRef
      */
@@ -181,7 +181,7 @@ public class SeVsConfigSeDatastoreDownloadFailed  {
      * Uuid of the vs where config downlaod failed.
      * It is a reference to an object of type virtualservice.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsRef set the vsRef.
      */

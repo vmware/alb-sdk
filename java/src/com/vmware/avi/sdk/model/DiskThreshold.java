@@ -88,7 +88,7 @@ public class DiskThreshold  {
      * Allowed values are 1-25.
      * Field introduced in 31.1.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxDiskPercent
      */
@@ -102,7 +102,7 @@ public class DiskThreshold  {
      * Allowed values are 1-25.
      * Field introduced in 31.1.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxDiskPercent set the maxDiskPercent.
      */
@@ -116,7 +116,7 @@ public class DiskThreshold  {
      * Allowed values are 5-50.
      * Field introduced in 31.1.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return minFreeDiskPercent
      */
@@ -130,7 +130,7 @@ public class DiskThreshold  {
      * Allowed values are 5-50.
      * Field introduced in 31.1.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param minFreeDiskPercent set the minFreeDiskPercent.
      */
@@ -144,7 +144,7 @@ public class DiskThreshold  {
      * Trigger the action when no other disk criteria is specified and number of files exceed the retain limit.
      * Subdirectories do not count.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return retain
      */
@@ -158,7 +158,7 @@ public class DiskThreshold  {
      * Trigger the action when no other disk criteria is specified and number of files exceed the retain limit.
      * Subdirectories do not count.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param retain set the retain.
      */

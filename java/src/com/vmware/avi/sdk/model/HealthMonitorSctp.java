@@ -33,7 +33,7 @@ public class HealthMonitorSctp  {
      * This is the getter method this will return the attribute value.
      * Request data to send after completing the sctp handshake.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sctpRequest
      */
@@ -45,7 +45,7 @@ public class HealthMonitorSctp  {
      * This is the setter method to the attribute.
      * Request data to send after completing the sctp handshake.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sctpRequest set the sctpRequest.
      */
@@ -58,7 +58,7 @@ public class HealthMonitorSctp  {
      * Match for the desired keyword in the first 2kb of the server's sctp response.
      * If this field is left blank, no server response is required.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sctpResponse
      */
@@ -71,7 +71,7 @@ public class HealthMonitorSctp  {
      * Match for the desired keyword in the first 2kb of the server's sctp response.
      * If this field is left blank, no server response is required.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sctpResponse set the sctpResponse.
      */

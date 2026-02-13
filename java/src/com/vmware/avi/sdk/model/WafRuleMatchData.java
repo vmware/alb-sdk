@@ -123,7 +123,7 @@ public class WafRuleMatchData  {
      * This is the getter method this will return the attribute value.
      * The starting index of the first character of match_value field with respect to original match value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return matchValueOffset
      */
@@ -135,7 +135,7 @@ public class WafRuleMatchData  {
      * This is the setter method to the attribute.
      * The starting index of the first character of match_value field with respect to original match value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param matchValueOffset set the matchValueOffset.
      */

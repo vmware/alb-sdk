@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClientLogConfiguration  {
     @JsonProperty("enable_significant_log_collection")
-    private Boolean enableSignificantLogCollection;
+    private Boolean enableSignificantLogCollection = true;
 
     @JsonProperty("filtered_log_processing")
     private String filteredLogProcessing = "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND";
@@ -41,9 +41,8 @@ public class ClientLogConfiguration  {
      * By default, this flag is enabled, which means that avi ses collect significant logs and forward them to controller for further processing.
      * For example, these logs correspond to error conditions such as when the response code for a request is 500.
      * Users can deactivate this flag to turn off default significant log collection.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableSignificantLogCollection
      */
     public Boolean getEnableSignificantLogCollection() {
@@ -56,9 +55,8 @@ public class ClientLogConfiguration  {
      * By default, this flag is enabled, which means that avi ses collect significant logs and forward them to controller for further processing.
      * For example, these logs correspond to error conditions such as when the response code for a request is 500.
      * Users can deactivate this flag to turn off default significant log collection.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableSignificantLogCollection set the enableSignificantLogCollection.
      */
     public void setEnableSignificantLogCollection(Boolean  enableSignificantLogCollection) {

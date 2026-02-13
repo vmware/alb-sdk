@@ -36,7 +36,7 @@ public class VsgsOpsInfo  {
      * This is the getter method this will return the attribute value.
      * Dnsvs uuid associated with the object(gslb, gslbservice, gslbgeodb).
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsvsUuid
      */
@@ -48,7 +48,7 @@ public class VsgsOpsInfo  {
      * This is the setter method to the attribute.
      * Dnsvs uuid associated with the object(gslb, gslbservice, gslbgeodb).
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dnsvsUuid set the dnsvsUuid.
      */
@@ -61,7 +61,7 @@ public class VsgsOpsInfo  {
      * Vsgs operation type, changed or deleted.
      * Enum options - GSLB_OBJECT_CHANGED, GSLB_OBJECT_UNCHANGED, GSLB_OBJECT_DELETE.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ops
      */
@@ -74,7 +74,7 @@ public class VsgsOpsInfo  {
      * Vsgs operation type, changed or deleted.
      * Enum options - GSLB_OBJECT_CHANGED, GSLB_OBJECT_UNCHANGED, GSLB_OBJECT_DELETE.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ops set the ops.
      */
@@ -86,7 +86,7 @@ public class VsgsOpsInfo  {
      * This is the getter method this will return the attribute value.
      * Timestamp for vsgs cud operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return timestamp
      */
@@ -98,7 +98,7 @@ public class VsgsOpsInfo  {
      * This is the setter method to the attribute.
      * Timestamp for vsgs cud operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param timestamp set the timestamp.
      */

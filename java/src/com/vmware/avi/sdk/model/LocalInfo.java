@@ -33,7 +33,7 @@ public class LocalInfo  {
      * This is the getter method this will return the attribute value.
      * This field encapsulates the gs-status edge-triggered framework.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gsStatus
      */
@@ -45,7 +45,7 @@ public class LocalInfo  {
      * This is the setter method to the attribute.
      * This field encapsulates the gs-status edge-triggered framework.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gsStatus set the gsStatus.
      */
@@ -57,7 +57,7 @@ public class LocalInfo  {
      * This is the getter method this will return the attribute value.
      * This field keeps track of gslb object's information.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gslbInfo
      */
@@ -69,7 +69,7 @@ public class LocalInfo  {
      * This is the setter method to the attribute.
      * This field keeps track of gslb object's information.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gslbInfo set the gslbInfo.
      */

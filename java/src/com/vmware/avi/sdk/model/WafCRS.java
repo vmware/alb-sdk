@@ -71,7 +71,7 @@ public class WafCRS extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Allowed request content type character sets in waf.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowedRequestContentTypeCharsets
      */
@@ -83,7 +83,7 @@ public class WafCRS extends AviRestResource  {
      * This is the setter method. this will set the allowedRequestContentTypeCharsets
      * Allowed request content type character sets in waf.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowedRequestContentTypeCharsets
      */
@@ -95,7 +95,7 @@ public class WafCRS extends AviRestResource  {
      * This is the setter method this will set the allowedRequestContentTypeCharsets
      * Allowed request content type character sets in waf.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowedRequestContentTypeCharsets
      */
@@ -134,7 +134,7 @@ public class WafCRS extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of data files used for waf rules.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return files
      */
@@ -146,7 +146,7 @@ public class WafCRS extends AviRestResource  {
      * This is the setter method. this will set the files
      * List of data files used for waf rules.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return files
      */
@@ -158,7 +158,7 @@ public class WafCRS extends AviRestResource  {
      * This is the setter method this will set the files
      * List of data files used for waf rules.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return files
      */
@@ -239,7 +239,7 @@ public class WafCRS extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Integrity protection values for crs.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return integrityValues
      */
@@ -251,7 +251,7 @@ public class WafCRS extends AviRestResource  {
      * This is the setter method. this will set the integrityValues
      * Integrity protection values for crs.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return integrityValues
      */
@@ -263,7 +263,7 @@ public class WafCRS extends AviRestResource  {
      * This is the setter method this will set the integrityValues
      * Integrity protection values for crs.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return integrityValues
      */
@@ -365,7 +365,7 @@ public class WafCRS extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Waf restricted file extensions.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return restrictedExtensions
      */
@@ -377,7 +377,7 @@ public class WafCRS extends AviRestResource  {
      * This is the setter method. this will set the restrictedExtensions
      * Waf restricted file extensions.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return restrictedExtensions
      */
@@ -389,7 +389,7 @@ public class WafCRS extends AviRestResource  {
      * This is the setter method this will set the restrictedExtensions
      * Waf restricted file extensions.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return restrictedExtensions
      */
@@ -404,7 +404,7 @@ public class WafCRS extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Waf restricted http headers.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return restrictedHeaders
      */
@@ -416,7 +416,7 @@ public class WafCRS extends AviRestResource  {
      * This is the setter method. this will set the restrictedHeaders
      * Waf restricted http headers.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return restrictedHeaders
      */
@@ -428,7 +428,7 @@ public class WafCRS extends AviRestResource  {
      * This is the setter method this will set the restrictedHeaders
      * Waf restricted http headers.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return restrictedHeaders
      */

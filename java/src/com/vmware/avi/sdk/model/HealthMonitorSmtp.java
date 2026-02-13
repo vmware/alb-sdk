@@ -42,7 +42,7 @@ public class HealthMonitorSmtp  {
      * This is the getter method this will return the attribute value.
      * Sender domain name.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return domainname
      */
@@ -54,7 +54,7 @@ public class HealthMonitorSmtp  {
      * This is the setter method to the attribute.
      * Sender domain name.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param domainname set the domainname.
      */
@@ -66,7 +66,7 @@ public class HealthMonitorSmtp  {
      * This is the getter method this will return the attribute value.
      * Mail data.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mailData
      */
@@ -78,7 +78,7 @@ public class HealthMonitorSmtp  {
      * This is the setter method to the attribute.
      * Mail data.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mailData set the mailData.
      */
@@ -89,7 +89,7 @@ public class HealthMonitorSmtp  {
      * This is the getter method this will return the attribute value.
      * Mail recipients.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return recipientsIds
      */
@@ -101,7 +101,7 @@ public class HealthMonitorSmtp  {
      * This is the setter method. this will set the recipientsIds
      * Mail recipients.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return recipientsIds
      */
@@ -113,7 +113,7 @@ public class HealthMonitorSmtp  {
      * This is the setter method this will set the recipientsIds
      * Mail recipients.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return recipientsIds
      */
@@ -129,7 +129,7 @@ public class HealthMonitorSmtp  {
      * This is the getter method this will return the attribute value.
      * Mail sender.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return senderId
      */
@@ -141,7 +141,7 @@ public class HealthMonitorSmtp  {
      * This is the setter method to the attribute.
      * Mail sender.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param senderId set the senderId.
      */
@@ -153,7 +153,7 @@ public class HealthMonitorSmtp  {
      * This is the getter method this will return the attribute value.
      * Ssl attributes for smtps monitor.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslAttributes
      */
@@ -165,7 +165,7 @@ public class HealthMonitorSmtp  {
      * This is the setter method to the attribute.
      * Ssl attributes for smtps monitor.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslAttributes set the sslAttributes.
      */

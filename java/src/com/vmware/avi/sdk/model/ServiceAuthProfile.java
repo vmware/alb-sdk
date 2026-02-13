@@ -48,7 +48,7 @@ public class ServiceAuthProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Description for the service auth profile.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -60,7 +60,7 @@ public class ServiceAuthProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Description for the service auth profile.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -72,7 +72,7 @@ public class ServiceAuthProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the service auth profile.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -84,7 +84,7 @@ public class ServiceAuthProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the service auth profile.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -96,7 +96,7 @@ public class ServiceAuthProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Oauth profile - common endpoint information for service authentication.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceOauthProfile
      */
@@ -108,7 +108,7 @@ public class ServiceAuthProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Oauth profile - common endpoint information for service authentication.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceOauthProfile set the serviceOauthProfile.
      */
@@ -121,7 +121,7 @@ public class ServiceAuthProfile extends AviRestResource  {
      * Tenant ref for the service auth profile.
      * It is a reference to an object of type tenant.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -134,7 +134,7 @@ public class ServiceAuthProfile extends AviRestResource  {
      * Tenant ref for the service auth profile.
      * It is a reference to an object of type tenant.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -147,7 +147,7 @@ public class ServiceAuthProfile extends AviRestResource  {
      * Type of the service auth profile.
      * Enum options - SERVICE_AUTH_OAUTH.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -160,7 +160,7 @@ public class ServiceAuthProfile extends AviRestResource  {
      * Type of the service auth profile.
      * Enum options - SERVICE_AUTH_OAUTH.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */
@@ -189,7 +189,7 @@ public class ServiceAuthProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the service auth profile.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -201,7 +201,7 @@ public class ServiceAuthProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the service auth profile.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

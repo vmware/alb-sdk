@@ -191,7 +191,7 @@ public class UserActivity extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Its a queue that store the timestamps for past login_failures.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return loginFailureTimestamps
      */
@@ -203,7 +203,7 @@ public class UserActivity extends AviRestResource  {
      * This is the setter method. this will set the loginFailureTimestamps
      * Its a queue that store the timestamps for past login_failures.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return loginFailureTimestamps
      */
@@ -215,7 +215,7 @@ public class UserActivity extends AviRestResource  {
      * This is the setter method this will set the loginFailureTimestamps
      * Its a queue that store the timestamps for past login_failures.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return loginFailureTimestamps
      */

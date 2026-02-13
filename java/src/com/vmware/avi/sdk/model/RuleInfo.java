@@ -35,7 +35,7 @@ public class RuleInfo  {
      * This is the getter method this will return the attribute value.
      * Uri hitted signature rule matches.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matches
      */
@@ -47,7 +47,7 @@ public class RuleInfo  {
      * This is the setter method. this will set the matches
      * Uri hitted signature rule matches.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matches
      */
@@ -59,7 +59,7 @@ public class RuleInfo  {
      * This is the setter method this will set the matches
      * Uri hitted signature rule matches.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matches
      */
@@ -75,7 +75,7 @@ public class RuleInfo  {
      * This is the getter method this will return the attribute value.
      * Uri hitted signature rule group id.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ruleGroupId
      */
@@ -87,7 +87,7 @@ public class RuleInfo  {
      * This is the setter method to the attribute.
      * Uri hitted signature rule group id.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ruleGroupId set the ruleGroupId.
      */
@@ -99,7 +99,7 @@ public class RuleInfo  {
      * This is the getter method this will return the attribute value.
      * Uri hitted signature rule id.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ruleId
      */
@@ -111,7 +111,7 @@ public class RuleInfo  {
      * This is the setter method to the attribute.
      * Uri hitted signature rule id.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ruleId set the ruleId.
      */

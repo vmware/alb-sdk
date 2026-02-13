@@ -43,7 +43,7 @@ public class TrustedHostProfile extends AviRestResource  {
      * Field introduced in 31.1.1.
      * Minimum of 1 items required.
      * Maximum of 20 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
@@ -57,7 +57,7 @@ public class TrustedHostProfile extends AviRestResource  {
      * Field introduced in 31.1.1.
      * Minimum of 1 items required.
      * Maximum of 20 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
@@ -71,7 +71,7 @@ public class TrustedHostProfile extends AviRestResource  {
      * Field introduced in 31.1.1.
      * Minimum of 1 items required.
      * Maximum of 20 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
@@ -87,7 +87,7 @@ public class TrustedHostProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Trustedhostprofile name.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -99,7 +99,7 @@ public class TrustedHostProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Trustedhostprofile name.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -112,7 +112,7 @@ public class TrustedHostProfile extends AviRestResource  {
      * Tenant ref for trusted host profile.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -125,7 +125,7 @@ public class TrustedHostProfile extends AviRestResource  {
      * Tenant ref for trusted host profile.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -154,7 +154,7 @@ public class TrustedHostProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Trustedhostprofile uuid.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -166,7 +166,7 @@ public class TrustedHostProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Trustedhostprofile uuid.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

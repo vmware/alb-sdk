@@ -33,7 +33,7 @@ public class SeRateLimiterDropDetails  {
      * This is the getter method this will return the attribute value.
      * Number of packets dropped by rate limiter.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numPktsDropped
      */
@@ -45,7 +45,7 @@ public class SeRateLimiterDropDetails  {
      * This is the setter method to the attribute.
      * Number of packets dropped by rate limiter.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numPktsDropped set the numPktsDropped.
      */
@@ -58,7 +58,7 @@ public class SeRateLimiterDropDetails  {
      * Uuid of the se responsible for this event.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seRef
      */
@@ -71,7 +71,7 @@ public class SeRateLimiterDropDetails  {
      * Uuid of the se responsible for this event.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seRef set the seRef.
      */

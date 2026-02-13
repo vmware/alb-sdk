@@ -34,7 +34,7 @@ public class DiameterAVPPersistenceProfile  {
      * Avpkey type.
      * Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SESSION_ID".
      * @return avpKeyType
      */
@@ -47,7 +47,7 @@ public class DiameterAVPPersistenceProfile  {
      * Avpkey type.
      * Enum options - SESSION_ID, ORIGIN_HOST, ORIGIN_REALM, DESTINATION_HOST, DESTINATION_REALM, APPLICATION_ID.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SESSION_ID".
      * @param avpKeyType set the avpKeyType.
      */
@@ -61,7 +61,7 @@ public class DiameterAVPPersistenceProfile  {
      * No value or 'zero' indicates no timeout.
      * Field introduced in 31.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return timeout
      */
@@ -75,7 +75,7 @@ public class DiameterAVPPersistenceProfile  {
      * No value or 'zero' indicates no timeout.
      * Field introduced in 31.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param timeout set the timeout.
      */

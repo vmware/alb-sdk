@@ -54,7 +54,7 @@ public class Subnet  {
      * This is the getter method this will return the attribute value.
      * Static ip ranges for this subnet.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticIpRanges
      */
@@ -66,7 +66,7 @@ public class Subnet  {
      * This is the setter method. this will set the staticIpRanges
      * Static ip ranges for this subnet.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticIpRanges
      */
@@ -78,7 +78,7 @@ public class Subnet  {
      * This is the setter method this will set the staticIpRanges
      * Static ip ranges for this subnet.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticIpRanges
      */

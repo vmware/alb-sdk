@@ -29,7 +29,7 @@ public class OpsInfo  {
      * This is the getter method this will return the attribute value.
      * Current outstanding request-response token of the message to this site.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rrtoken
      */
@@ -41,7 +41,7 @@ public class OpsInfo  {
      * This is the setter method. this will set the rrtoken
      * Current outstanding request-response token of the message to this site.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rrtoken
      */
@@ -53,7 +53,7 @@ public class OpsInfo  {
      * This is the setter method this will set the rrtoken
      * Current outstanding request-response token of the message to this site.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rrtoken
      */

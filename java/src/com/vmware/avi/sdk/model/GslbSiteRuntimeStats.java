@@ -512,7 +512,7 @@ public class GslbSiteRuntimeStats  {
      * This is the getter method this will return the attribute value.
      * Used for federated file object stats for create.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGfoCrRxed
      */
@@ -524,7 +524,7 @@ public class GslbSiteRuntimeStats  {
      * This is the setter method to the attribute.
      * Used for federated file object stats for create.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGfoCrRxed set the numGfoCrRxed.
      */
@@ -536,7 +536,7 @@ public class GslbSiteRuntimeStats  {
      * This is the getter method this will return the attribute value.
      * Used for federated file object stats for delete.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGfoDelRxed
      */
@@ -548,7 +548,7 @@ public class GslbSiteRuntimeStats  {
      * This is the setter method to the attribute.
      * Used for federated file object stats for delete.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGfoDelRxed set the numGfoDelRxed.
      */
@@ -560,7 +560,7 @@ public class GslbSiteRuntimeStats  {
      * This is the getter method this will return the attribute value.
      * Used for federated file object stats for update.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGfoUpdRxed
      */
@@ -572,7 +572,7 @@ public class GslbSiteRuntimeStats  {
      * This is the setter method to the attribute.
      * Used for federated file object stats for update.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGfoUpdRxed set the numGfoUpdRxed.
      */
@@ -703,7 +703,7 @@ public class GslbSiteRuntimeStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGjwtCrRxed
      */
@@ -714,7 +714,7 @@ public class GslbSiteRuntimeStats  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGjwtCrRxed set the numGjwtCrRxed.
      */
@@ -725,7 +725,7 @@ public class GslbSiteRuntimeStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGjwtCrTxed
      */
@@ -736,7 +736,7 @@ public class GslbSiteRuntimeStats  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGjwtCrTxed set the numGjwtCrTxed.
      */
@@ -747,7 +747,7 @@ public class GslbSiteRuntimeStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGjwtDelRxed
      */
@@ -758,7 +758,7 @@ public class GslbSiteRuntimeStats  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGjwtDelRxed set the numGjwtDelRxed.
      */
@@ -769,7 +769,7 @@ public class GslbSiteRuntimeStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGjwtDelTxed
      */
@@ -780,7 +780,7 @@ public class GslbSiteRuntimeStats  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGjwtDelTxed set the numGjwtDelTxed.
      */
@@ -791,7 +791,7 @@ public class GslbSiteRuntimeStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGjwtUpdRxed
      */
@@ -802,7 +802,7 @@ public class GslbSiteRuntimeStats  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGjwtUpdRxed set the numGjwtUpdRxed.
      */
@@ -813,7 +813,7 @@ public class GslbSiteRuntimeStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGjwtUpdTxed
      */
@@ -824,7 +824,7 @@ public class GslbSiteRuntimeStats  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGjwtUpdTxed set the numGjwtUpdTxed.
      */
@@ -1208,7 +1208,7 @@ public class GslbSiteRuntimeStats  {
      * This is the getter method this will return the attribute value.
      * Used for federated ssl key and cert stats for create.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGsslCertCrRxed
      */
@@ -1220,7 +1220,7 @@ public class GslbSiteRuntimeStats  {
      * This is the setter method to the attribute.
      * Used for federated ssl key and cert stats for create.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGsslCertCrRxed set the numGsslCertCrRxed.
      */
@@ -1232,7 +1232,7 @@ public class GslbSiteRuntimeStats  {
      * This is the getter method this will return the attribute value.
      * Used for federated ssl key and cert stats for delete.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGsslCertDelRxed
      */
@@ -1244,7 +1244,7 @@ public class GslbSiteRuntimeStats  {
      * This is the setter method to the attribute.
      * Used for federated ssl key and cert stats for delete.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGsslCertDelRxed set the numGsslCertDelRxed.
      */
@@ -1256,7 +1256,7 @@ public class GslbSiteRuntimeStats  {
      * This is the getter method this will return the attribute value.
      * Used for federated ssl key and cert stats for update.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGsslCertUpdRxed
      */
@@ -1268,7 +1268,7 @@ public class GslbSiteRuntimeStats  {
      * This is the setter method to the attribute.
      * Used for federated ssl key and cert stats for update.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGsslCertUpdRxed set the numGsslCertUpdRxed.
      */
@@ -1280,7 +1280,7 @@ public class GslbSiteRuntimeStats  {
      * This is the getter method this will return the attribute value.
      * Used for federated ssl profile stats for create.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGsslCrRxed
      */
@@ -1292,7 +1292,7 @@ public class GslbSiteRuntimeStats  {
      * This is the setter method to the attribute.
      * Used for federated ssl profile stats for create.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGsslCrRxed set the numGsslCrRxed.
      */
@@ -1304,7 +1304,7 @@ public class GslbSiteRuntimeStats  {
      * This is the getter method this will return the attribute value.
      * Used for federated ssl profile stats for delete.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGsslDelRxed
      */
@@ -1316,7 +1316,7 @@ public class GslbSiteRuntimeStats  {
      * This is the setter method to the attribute.
      * Used for federated ssl profile stats for delete.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGsslDelRxed set the numGsslDelRxed.
      */
@@ -1328,7 +1328,7 @@ public class GslbSiteRuntimeStats  {
      * This is the getter method this will return the attribute value.
      * Used for federated ssl profile stats for update.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numGsslUpdRxed
      */
@@ -1340,7 +1340,7 @@ public class GslbSiteRuntimeStats  {
      * This is the setter method to the attribute.
      * Used for federated ssl profile stats for update.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numGsslUpdRxed set the numGsslUpdRxed.
      */

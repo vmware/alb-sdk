@@ -104,7 +104,7 @@ public class ClusterNode  {
      * This is the getter method this will return the attribute value.
      * Interface details of the controller node.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return interfaces
      */
@@ -116,7 +116,7 @@ public class ClusterNode  {
      * This is the setter method. this will set the interfaces
      * Interface details of the controller node.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return interfaces
      */
@@ -128,7 +128,7 @@ public class ClusterNode  {
      * This is the setter method this will set the interfaces
      * Interface details of the controller node.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return interfaces
      */
@@ -166,7 +166,7 @@ public class ClusterNode  {
      * This is the getter method this will return the attribute value.
      * V6 ip address of controller vm.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip6
      */
@@ -178,7 +178,7 @@ public class ClusterNode  {
      * This is the setter method to the attribute.
      * V6 ip address of controller vm.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip6 set the ip6.
      */
@@ -257,7 +257,7 @@ public class ClusterNode  {
      * This is the getter method this will return the attribute value.
      * Static routes configured on the controller node.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticRoutes
      */
@@ -269,7 +269,7 @@ public class ClusterNode  {
      * This is the setter method. this will set the staticRoutes
      * Static routes configured on the controller node.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticRoutes
      */
@@ -281,7 +281,7 @@ public class ClusterNode  {
      * This is the setter method this will set the staticRoutes
      * Static routes configured on the controller node.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticRoutes
      */

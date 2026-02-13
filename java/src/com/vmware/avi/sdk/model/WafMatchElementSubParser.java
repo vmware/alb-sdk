@@ -42,7 +42,7 @@ public class WafMatchElementSubParser  {
      * This is the getter method this will return the attribute value.
      * Determine the order of the rules.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -54,7 +54,7 @@ public class WafMatchElementSubParser  {
      * This is the setter method to the attribute.
      * Determine the order of the rules.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */
@@ -67,7 +67,7 @@ public class WafMatchElementSubParser  {
      * Case sensitivity to use for the matching.
      * Enum options - SENSITIVE, INSENSITIVE.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SENSITIVE".
      * @return matchCase
      */
@@ -80,7 +80,7 @@ public class WafMatchElementSubParser  {
      * Case sensitivity to use for the matching.
      * Enum options - SENSITIVE, INSENSITIVE.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SENSITIVE".
      * @param matchCase set the matchCase.
      */
@@ -93,7 +93,7 @@ public class WafMatchElementSubParser  {
      * The match element for which a subparser can be specified.
      * Allowed values are of the form 'args name' where name can be any string or a regular expression.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchElement
      */
@@ -106,7 +106,7 @@ public class WafMatchElementSubParser  {
      * The match element for which a subparser can be specified.
      * Allowed values are of the form 'args name' where name can be any string or a regular expression.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matchElement set the matchElement.
      */
@@ -121,7 +121,7 @@ public class WafMatchElementSubParser  {
      * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
      * REGEX_DOES_NOT_MATCH.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "EQUALS".
      * @return matchOp
      */
@@ -136,7 +136,7 @@ public class WafMatchElementSubParser  {
      * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
      * REGEX_DOES_NOT_MATCH.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "EQUALS".
      * @param matchOp set the matchOp.
      */
@@ -151,7 +151,7 @@ public class WafMatchElementSubParser  {
      * Enum options - WAF_REQUEST_PARSER_URLENCODED, WAF_REQUEST_PARSER_MULTIPART, WAF_REQUEST_PARSER_JSON, WAF_REQUEST_PARSER_XML,
      * WAF_REQUEST_PARSER_HANDLE_AS_STRING, WAF_REQUEST_PARSER_DO_NOT_PARSE, WAF_REQUEST_PARSER_AUTO_DETECT.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_REQUEST_PARSER_AUTO_DETECT".
      * @return subParser
      */
@@ -166,7 +166,7 @@ public class WafMatchElementSubParser  {
      * Enum options - WAF_REQUEST_PARSER_URLENCODED, WAF_REQUEST_PARSER_MULTIPART, WAF_REQUEST_PARSER_JSON, WAF_REQUEST_PARSER_XML,
      * WAF_REQUEST_PARSER_HANDLE_AS_STRING, WAF_REQUEST_PARSER_DO_NOT_PARSE, WAF_REQUEST_PARSER_AUTO_DETECT.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_REQUEST_PARSER_AUTO_DETECT".
      * @param subParser set the subParser.
      */

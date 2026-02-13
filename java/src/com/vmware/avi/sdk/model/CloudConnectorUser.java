@@ -71,7 +71,7 @@ public class CloudConnectorUser extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azureServiceprincipal
      */
@@ -82,7 +82,7 @@ public class CloudConnectorUser extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param azureServiceprincipal set the azureServiceprincipal.
      */
@@ -93,7 +93,7 @@ public class CloudConnectorUser extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azureUserpass
      */
@@ -104,7 +104,7 @@ public class CloudConnectorUser extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param azureUserpass set the azureUserpass.
      */
@@ -116,7 +116,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Credentials for google cloud platform.
      * Field introduced in 18.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gcpCredentials
      */
@@ -128,7 +128,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * This is the setter method to the attribute.
      * Credentials for google cloud platform.
      * Field introduced in 18.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gcpCredentials set the gcpCredentials.
      */
@@ -142,7 +142,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * Used to determine when next rotation is due based on cc_user_password_expiry_days.
      * Field introduced in 32.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastPasswordRotation
      */
@@ -156,7 +156,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * Used to determine when next rotation is due based on cc_user_password_expiry_days.
      * Field introduced in 32.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastPasswordRotation set the lastPasswordRotation.
      */
@@ -189,7 +189,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * New password stored temporarily during rotation.
      * Cleared after successful rotation.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return newPasswordEnc
      */
@@ -202,7 +202,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * New password stored temporarily during rotation.
      * Cleared after successful rotation.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param newPasswordEnc set the newPasswordEnc.
      */
@@ -214,7 +214,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Credentials to talk to nsx-t manager.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtCredentials
      */
@@ -226,7 +226,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * This is the setter method to the attribute.
      * Credentials to talk to nsx-t manager.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtCredentials set the nsxtCredentials.
      */
@@ -320,7 +320,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Credentials for tencent cloud.
      * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tencentCredentials
      */
@@ -332,7 +332,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * This is the setter method to the attribute.
      * Credentials for tencent cloud.
      * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tencentCredentials set the tencentCredentials.
      */

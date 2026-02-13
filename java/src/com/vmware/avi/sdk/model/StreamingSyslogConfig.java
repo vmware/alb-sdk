@@ -128,7 +128,7 @@ public class StreamingSyslogConfig  {
      * This is the getter method this will return the attribute value.
      * As per rfc, constant string to identify the type of message.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "NILVALUE".
      * @return msgId
      */
@@ -140,7 +140,7 @@ public class StreamingSyslogConfig  {
      * This is the setter method to the attribute.
      * As per rfc, constant string to identify the type of message.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "NILVALUE".
      * @param msgId set the msgId.
      */
@@ -180,7 +180,7 @@ public class StreamingSyslogConfig  {
      * This is the getter method this will return the attribute value.
      * As per rfc, if there is a change in value indicated there has been discontinuity in syslog reporting.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "NILVALUE".
      * @return procId
      */
@@ -192,7 +192,7 @@ public class StreamingSyslogConfig  {
      * This is the setter method to the attribute.
      * As per rfc, if there is a change in value indicated there has been discontinuity in syslog reporting.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "NILVALUE".
      * @param procId set the procId.
      */

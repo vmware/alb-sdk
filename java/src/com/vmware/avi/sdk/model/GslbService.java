@@ -406,7 +406,7 @@ public class GslbService extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If enabled, provide the srv target's resolved ip in the response srv gslb service.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return includeAdditionalRecords
      */
@@ -418,7 +418,7 @@ public class GslbService extends AviRestResource  {
      * This is the setter method to the attribute.
      * If enabled, provide the srv target's resolved ip in the response srv gslb service.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param includeAdditionalRecords set the includeAdditionalRecords.
      */
@@ -572,7 +572,7 @@ public class GslbService extends AviRestResource  {
      * Pki profile associated with the gslb service.
      * It is a reference to an object of type pkiprofile.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pkiProfileRef
      */
@@ -585,7 +585,7 @@ public class GslbService extends AviRestResource  {
      * Pki profile associated with the gslb service.
      * It is a reference to an object of type pkiprofile.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pkiProfileRef set the pkiProfileRef.
      */
@@ -624,7 +624,7 @@ public class GslbService extends AviRestResource  {
      * Field to specify the type of gslb service.
      * Enum options - GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME, GSLB_SERVICE_RECORD_TYPE_SRV.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME".
      * @return recordType
      */
@@ -637,7 +637,7 @@ public class GslbService extends AviRestResource  {
      * Field to specify the type of gslb service.
      * Enum options - GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME, GSLB_SERVICE_RECORD_TYPE_SRV.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME".
      * @param recordType set the recordType.
      */
@@ -720,7 +720,7 @@ public class GslbService extends AviRestResource  {
      * When enabled, topology policy rules are used for member selection first.
      * If no valid member is found using the topology policy rules, configured gslb algorithms for pool selection and member selection are used.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return topologyPolicyEnabled
      */
@@ -733,7 +733,7 @@ public class GslbService extends AviRestResource  {
      * When enabled, topology policy rules are used for member selection first.
      * If no valid member is found using the topology policy rules, configured gslb algorithms for pool selection and member selection are used.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param topologyPolicyEnabled set the topologyPolicyEnabled.
      */

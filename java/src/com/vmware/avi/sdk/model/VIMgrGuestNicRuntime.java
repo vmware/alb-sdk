@@ -263,7 +263,7 @@ public class VIMgrGuestNicRuntime  {
      * Nsx segment port path for tepless vpc mode.
      * This port is pre-created before vnic attachment.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxSegmentPortPath
      */
@@ -276,7 +276,7 @@ public class VIMgrGuestNicRuntime  {
      * Nsx segment port path for tepless vpc mode.
      * This port is pre-created before vnic attachment.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxSegmentPortPath set the nsxSegmentPortPath.
      */
@@ -308,7 +308,7 @@ public class VIMgrGuestNicRuntime  {
      * This is the getter method this will return the attribute value.
      * Segment port of the vnic assigned to se.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return segmentPort
      */
@@ -320,7 +320,7 @@ public class VIMgrGuestNicRuntime  {
      * This is the setter method to the attribute.
      * Segment port of the vnic assigned to se.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param segmentPort set the segmentPort.
      */
@@ -333,7 +333,7 @@ public class VIMgrGuestNicRuntime  {
      * Tepless ip for tep-less vpc.
      * Used as source ip for all se-originated traffic in this vrf.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return teplessIp
      */
@@ -346,7 +346,7 @@ public class VIMgrGuestNicRuntime  {
      * Tepless ip for tep-less vpc.
      * Used as source ip for all se-originated traffic in this vrf.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param teplessIp set the teplessIp.
      */

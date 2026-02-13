@@ -33,7 +33,7 @@ public class NsxtDFWGroupDetails  {
      * This is the getter method this will return the attribute value.
      * Error message.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -45,7 +45,7 @@ public class NsxtDFWGroupDetails  {
      * This is the setter method to the attribute.
      * Error message.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */
@@ -57,7 +57,7 @@ public class NsxtDFWGroupDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t dfw group name.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return group
      */
@@ -69,7 +69,7 @@ public class NsxtDFWGroupDetails  {
      * This is the setter method to the attribute.
      * Nsx-t dfw group name.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param group set the group.
      */

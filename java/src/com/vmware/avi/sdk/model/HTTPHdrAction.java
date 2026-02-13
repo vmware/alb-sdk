@@ -42,8 +42,7 @@ public class HTTPHdrAction  {
      * and a new header with the new value is added.
      * Remove  all the headers of the given name are removed.
      * Enum options - HTTP_ADD_HDR, HTTP_REMOVE_HDR, HTTP_REPLACE_HDR.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- http_remove_hdr,http_replace_hdr), basic (allowed values- http_remove_hdr,http_replace_hdr) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return action
      */
@@ -58,8 +57,7 @@ public class HTTPHdrAction  {
      * and a new header with the new value is added.
      * Remove  all the headers of the given name are removed.
      * Enum options - HTTP_ADD_HDR, HTTP_REMOVE_HDR, HTTP_REPLACE_HDR.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- http_remove_hdr,http_replace_hdr), basic (allowed values- http_remove_hdr,http_replace_hdr) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param action set the action.
      */

@@ -33,7 +33,7 @@ public class Selector  {
      * Labels as key value pairs to select on.
      * Field introduced in 20.1.3.
      * Minimum of 1 items required.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -46,7 +46,7 @@ public class Selector  {
      * Labels as key value pairs to select on.
      * Field introduced in 20.1.3.
      * Minimum of 1 items required.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -59,7 +59,7 @@ public class Selector  {
      * Labels as key value pairs to select on.
      * Field introduced in 20.1.3.
      * Minimum of 1 items required.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -76,7 +76,7 @@ public class Selector  {
      * Selector type.
      * Enum options - SELECTOR_IPAM.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -89,7 +89,7 @@ public class Selector  {
      * Selector type.
      * Enum options - SELECTOR_IPAM.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */

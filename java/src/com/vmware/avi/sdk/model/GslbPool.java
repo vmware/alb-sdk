@@ -220,7 +220,7 @@ public class GslbPool  {
      * independently for the public ips.
      * Enum options - GSLB_POOL_TYPE_GENERIC, GSLB_POOL_TYPE_PRIVATE, GSLB_POOL_TYPE_PUBLIC.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_POOL_TYPE_GENERIC".
      * @return gslbPoolType
      */
@@ -235,7 +235,7 @@ public class GslbPool  {
      * independently for the public ips.
      * Enum options - GSLB_POOL_TYPE_GENERIC, GSLB_POOL_TYPE_PRIVATE, GSLB_POOL_TYPE_PUBLIC.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_POOL_TYPE_GENERIC".
      * @param gslbPoolType set the gslbPoolType.
      */
@@ -248,7 +248,7 @@ public class GslbPool  {
      * Manually resume traffic to a pool member once it goes down.
      * If enabled a pool member once goes down is kept in admin down state unless admin re enables it.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return manualResume
      */
@@ -261,7 +261,7 @@ public class GslbPool  {
      * Manually resume traffic to a pool member once it goes down.
      * If enabled a pool member once goes down is kept in admin down state unless admin re enables it.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param manualResume set the manualResume.
      */

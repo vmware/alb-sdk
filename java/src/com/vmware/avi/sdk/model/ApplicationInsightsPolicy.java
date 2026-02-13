@@ -51,7 +51,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Application insights parameters to filter application learning from clients.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return applicationInsightsParams
      */
@@ -63,7 +63,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Application insights parameters to filter application learning from clients.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param applicationInsightsParams set the applicationInsightsParams.
      */
@@ -76,7 +76,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * Application sampling configuration to control rate and volume of data ingestion for application insights that the serviceengines are expected to
      * send to the controller.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return applicationSamplingConfig
      */
@@ -89,7 +89,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * Application sampling configuration to control rate and volume of data ingestion for application insights that the serviceengines are expected to
      * send to the controller.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param applicationSamplingConfig set the applicationSamplingConfig.
      */
@@ -101,7 +101,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Details of the application insights configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -113,7 +113,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Details of the application insights configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -125,7 +125,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable application insights, formerly called learning for this virtual service.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableApplicationInsights
      */
@@ -137,7 +137,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable application insights, formerly called learning for this virtual service.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableApplicationInsights set the enableApplicationInsights.
      */
@@ -149,7 +149,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The name of the application insights configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -161,7 +161,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * The name of the application insights configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -174,7 +174,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * Details of the tenant for the application insights configuration.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -187,7 +187,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * Details of the tenant for the application insights configuration.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -216,7 +216,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the application insights configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -228,7 +228,7 @@ public class ApplicationInsightsPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the application insights configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

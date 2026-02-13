@@ -101,7 +101,7 @@ public class DnsPolicy extends AviRestResource  {
      * The dns policy is created and modified by internal modules only.
      * This should not be modified by users.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return internal
      */
@@ -114,7 +114,7 @@ public class DnsPolicy extends AviRestResource  {
      * The dns policy is created and modified by internal modules only.
      * This should not be modified by users.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param internal set the internal.
      */
