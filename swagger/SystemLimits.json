@@ -553,17 +553,17 @@
             "type": "object",
             "properties": {
                 "allow_rules": {
-                    "description": "Maximum number of rules to control which requests undergo BOT detection. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of rules to control which requests undergo BOT detection. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "hdrs": {
-                    "description": "Maximum number of configurable HTTP header(s). Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of configurable HTTP header(s). Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "mapping_rules": {
-                    "description": "Maximum number of rules in a BotMapping object. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of rules in a BotMapping object. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -578,7 +578,7 @@
                     "format": "int32"
                 },
                 "t1_lrs_per_cloud": {
-                    "description": "Maximum number of Tier1 logical routers allowed per cloud. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of Tier1 logical routers allowed per cloud. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -592,7 +592,7 @@
             "type": "object",
             "properties": {
                 "bot_limits": {
-                    "description": "BOT system limits. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "BOT system limits. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/BOTLimits"
                 },
                 "certificates_per_virtualservice": {
@@ -620,12 +620,12 @@
                     "format": "int32"
                 },
                 "gateway_mon_per_vrf": {
-                    "description": "Maximum number of gateway monitors per vrfcontext. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of gateway monitors per vrfcontext. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "ipaddress_limits": {
-                    "description": "IP address limits. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "IP address limits. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IPAddrLimits"
                 },
                 "ips_per_ipgroup": {
@@ -634,7 +634,7 @@
                     "format": "int32"
                 },
                 "l7_limits": {
-                    "description": "System limits that apply to Layer 7 configuration objects. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "System limits that apply to Layer 7 configuration objects. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/L7limits"
                 },
                 "poolgroups_per_virtualservice": {
@@ -658,7 +658,7 @@
                     "format": "int32"
                 },
                 "rules_per_nat_policy": {
-                    "description": "Maximum number of nat rules in nat policy. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of nat rules in nat policy. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -693,11 +693,11 @@
                     "format": "int32"
                 },
                 "waf_limits": {
-                    "description": "WAF system limits. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "WAF system limits. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/WAFLimits"
                 },
                 "waf_rule_metrics_enabled_vs": {
-                    "description": "Maximum number of VS configurable with WAF rule metrics debug flag. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of VS configurable with WAF rule metrics debug flag. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -761,12 +761,12 @@
                     "format": "int32"
                 },
                 "num_pool_rt_metrics": {
-                    "description": "Maximum number of pools with realtime metrics enabled. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of pools with realtime metrics enabled. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_se_rt_metrics": {
-                    "description": "Maximum number of Serviceengine with realtime metrics enabled. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of Serviceengine with realtime metrics enabled. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -791,12 +791,12 @@
                     "format": "int32"
                 },
                 "num_virtualservices_application_insights": {
-                    "description": "Maximum number of virtualservices configured with Application Insights. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of virtualservices configured with Application Insights. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_virtualservices_positive_security": {
-                    "description": "Maximum number of virtualservices configured with Positive Security Policy. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of virtualservices configured with Positive Security Policy. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -806,7 +806,7 @@
                     "format": "int32"
                 },
                 "num_virtualservices_rtmetrics_waf": {
-                    "description": "Number of virtualservices with both real-time metrics and WAF enabled together. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of virtualservices with both real-time metrics and WAF enabled together. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -816,7 +816,7 @@
                     "format": "int32"
                 },
                 "num_waf_virtualservices": {
-                    "description": "Maximum number of virtualservices configured with WAF. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of virtualservices configured with WAF. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -826,22 +826,22 @@
             "type": "object",
             "properties": {
                 "ip_address_group_per_match_criteria": {
-                    "description": "Number of IP address groups for match criteria. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of IP address groups for match criteria. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "ip_address_prefix_per_match_criteria": {
-                    "description": "Number of IP address prefixes for match criteria. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of IP address prefixes for match criteria. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "ip_address_range_per_match_criteria": {
-                    "description": "Number of IP address ranges for match criteria. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of IP address ranges for match criteria. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "ip_addresses_per_match_criteria": {
-                    "description": "Number of IP addresses for match criteria. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of IP addresses for match criteria. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -851,67 +851,67 @@
             "type": "object",
             "properties": {
                 "http_policies_per_vs": {
-                    "description": "Number of HTTPPolicies attached to a VS. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of HTTPPolicies attached to a VS. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_compression_filters": {
-                    "description": "Number of Compression Filters. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of Compression Filters. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_custom_str": {
-                    "description": "Number of Custom strings per match/action. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of Custom strings per match/action. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_matches_per_rule": {
-                    "description": "Number of Matches per Rule. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of Matches per Rule. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_rules_per_evh_host": {
-                    "description": "Number of rules per EVH Host. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of rules per EVH Host. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_rules_per_http_policy": {
-                    "description": "Number of rules per HTTPRequest/HTTPResponse/HTTPSecurity Policy. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of rules per HTTPRequest/HTTPResponse/HTTPSecurity Policy. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_strgroups_per_match": {
-                    "description": "Number of Stringgroups/IPgroups per match. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of Stringgroups/IPgroups per match. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "str_cache_mime": {
-                    "description": "Number of implicit strings for Cacheable MIME types. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of implicit strings for Cacheable MIME types. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "str_groups_cache_mime": {
-                    "description": "Number of String groups for Cacheable MIME types. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of String groups for Cacheable MIME types. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "str_groups_no_cache_mime": {
-                    "description": "Number of String groups for non Cacheable MIME types. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of String groups for non Cacheable MIME types. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "str_groups_no_cache_uri": {
-                    "description": "Number of String groups for non Cacheable URI. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of String groups for non Cacheable URI. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "str_no_cache_mime": {
-                    "description": "Number of implicit strings for non Cacheable MIME types. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of implicit strings for non Cacheable MIME types. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "str_no_cache_uri": {
-                    "description": "Number of implicit strings for non Cacheable URI. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of implicit strings for non Cacheable URI. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -1028,87 +1028,87 @@
             "type": "object",
             "properties": {
                 "num_allowed_content_types": {
-                    "description": "Number of WAF allowed Content Types. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of WAF allowed Content Types. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_allowed_request_content_type_charsets": {
-                    "description": "Number of allowed request content type character sets in WAF. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of allowed request content type character sets in WAF. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_allowlist_policy_rules": {
-                    "description": "Number of rules used in WAF allowlist policy. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of rules used in WAF allowlist policy. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_applications": {
-                    "description": "Number of applications for which we use rules from sig provider. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of applications for which we use rules from sig provider. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_content_type_mappings": {
-                    "description": "Number of allowed request content type mappings in waf profile. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of allowed request content type mappings in waf profile. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_data_files": {
-                    "description": "Number of datafiles used in WAF. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of datafiles used in WAF. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_exclude_list_per_rule_group": {
-                    "description": "Number of exclude list entries in waf rule group. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of exclude list entries in waf rule group. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_pre_post_crs_groups": {
-                    "description": "Number of pre, post CRS groups. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of pre, post CRS groups. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_psm_groups": {
-                    "description": "Number of total PSM groups in WAF. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of total PSM groups in WAF. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_psm_match_elements": {
-                    "description": "Number of match elements used in WAF PSM. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of match elements used in WAF PSM. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_psm_match_rules_per_loc": {
-                    "description": "Number of match rules per location. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of match rules per location. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_psm_total_locations": {
-                    "description": "Number of locations used in WAF PSM. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of locations used in WAF PSM. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_restricted_extensions": {
-                    "description": "Number of restricted extensions in WAF. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of restricted extensions in WAF. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_restricted_headers": {
-                    "description": "Number of restricted HTTP headers in WAF. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of restricted HTTP headers in WAF. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_rule_tags": {
-                    "description": "Number of tags for waf rule . Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of tags for waf rule . Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_rules_per_rulegroup": {
-                    "description": "Number of rules as per modsec language. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of rules as per modsec language. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_static_extensions": {
-                    "description": "Number of restricted static extensions in WAF. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of restricted static extensions in WAF. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }

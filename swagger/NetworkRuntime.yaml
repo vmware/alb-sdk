@@ -434,7 +434,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             obj_uuids:
-                description: "Objects using static IPs in this network. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Objects using static IPs in this network. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -474,32 +474,32 @@ definitions:
             -   ip
         properties:
             ip:
-                description: "IP address. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "IP address. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             obj_info:
-                description: "Object metadata. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Object metadata. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             obj_uuid:
-                description: "Object which this IP address is allocated to. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Object which this IP address is allocated to. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     StaticIpRangeRuntime:
         type: object
         properties:
             allocated_ips:
-                description: "Allocated IPs. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Allocated IPs. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/StaticIpAllocInfo'
             free_ip_count:
-                description: "Free IP count. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Free IP count. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             total_ip_count:
-                description: "Total IP count. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Total IP count. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             type:
-                description: "Object type (VIP only, Service Engine only, or both) which is using this IP group. Enum options - STATIC_IPS_FOR_SE, STATIC_IPS_FOR_VIP, STATIC_IPS_FOR_VIP_AND_SE. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Object type (VIP only, Service Engine only, or both) which is using this IP group. Enum options - STATIC_IPS_FOR_SE, STATIC_IPS_FOR_VIP, STATIC_IPS_FOR_VIP_AND_SE. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "STATIC_IPS_FOR_VIP_AND_SE"
     SubnetRuntime:
@@ -508,7 +508,7 @@ definitions:
             -   prefix
         properties:
             ip_range_runtimes:
-                description: "Static IP range runtime. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Static IP range runtime. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/StaticIpRangeRuntime'

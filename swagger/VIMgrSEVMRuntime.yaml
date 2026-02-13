@@ -551,16 +551,16 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             nsx_segment_port_path:
-                description: "NSX segment port path for TEPless VPC mode. This port is pre-created before VNIC attachment. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "NSX segment port path for TEPless VPC mode. This port is pre-created before VNIC attachment. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             os_port_uuid:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             segment_port:
-                description: "Segment port of the vnic assigned to SE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Segment port of the vnic assigned to SE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tepless_ip:
-                description: "Tepless IP for TEP-less VPC. Used as source IP for all SE-originated traffic in this VRF. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Tepless IP for TEP-less VPC. Used as source IP for all SE-originated traffic in this VRF. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             type:
                 description: " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -630,10 +630,10 @@ definitions:
                 description: " It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             cluster_id:
-                description: "ServiceEngine deployed on cluster.Ex MOB  domain-c23. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "ServiceEngine deployed on cluster.Ex MOB  domain-c23. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             cluster_vmgroup:
-                description: "ServiceEngine added to cluster vmgroup. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "ServiceEngine added to cluster vmgroup. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             connection_state:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -668,7 +668,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             gcp_se_project_id:
-                description: "GCP Project ID in which SE is created. This field is applicable for GCP cloud type only. Field introduced in 20.1.7, 21.1.2, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "GCP Project ID in which SE is created. This field is applicable for GCP cloud type only. Field introduced in 20.1.7, 21.1.2, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             guest_nic:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -706,7 +706,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             nsxt_no_hotplug:
-                description: "If set to true for NSXT cloud, controller should not hotplug the VNICs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If set to true for NSXT cloud, controller should not hotplug the VNICs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             powerstate:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -737,10 +737,10 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vcenter_host_connection_state:
-                description: "ServiceEngine host connection state in vCenter. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "ServiceEngine host connection state in vCenter. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vcenter_host_ha_state:
-                description: "VCenter Host HA state.Ex  election, fdmUnreachable, hostDown, initializationError, networkIsolated, uninitializationError, uninitialized. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "VCenter Host HA state.Ex  election, fdmUnreachable, hostDown, initializationError, networkIsolated, uninitializationError, uninitialized. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vcenter_instance_uuid:
                 description: "ServiceEngine instance uuid from vCenter. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -774,10 +774,10 @@ definitions:
                 type: integer
                 format: uint32
             vsphere_ha_enabled:
-                description: "VSphere HA on cluster enabled or not. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "VSphere HA on cluster enabled or not. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             vsphere_ha_inprogress:
-                description: "If this flag is set to True, vCenter vSphere HA handles ServiceEngine failure. This flag is set dynamiclly based on underlying ESX HA state(connected, hostDown..etc). Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If this flag is set to True, vCenter vSphere HA handles ServiceEngine failure. This flag is set dynamiclly based on underlying ESX HA state(connected, hostDown..etc). Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     VIMgrSEVMRuntimeApiResponse:
         type: object

@@ -808,7 +808,7 @@
                     }
                 },
                 "logical_switch_id": {
-                    "description": "UUID of NSX-T segment spanning multiple VDS with vCenter cloud. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID of NSX-T segment spanning multiple VDS with vCenter cloud. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "managed_object_id": {

@@ -408,7 +408,7 @@ definitions:
                 description: "Indicates whether the user is logged in or not. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             login_failure_timestamps:
-                description: "Its a queue that store the timestamps for past login_failures. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Its a queue that store the timestamps for past login_failures. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string

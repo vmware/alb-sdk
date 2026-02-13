@@ -438,7 +438,7 @@ definitions:
                 description: "Default values for case management. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CaseConfig'
             feature_opt_in_status:
-                description: "Features opt-in for Pulse Cloud Services. Field introduced in 20.1.1."
+                description: "Features opt-in for Pulse Cloud Services. Field introduced in 20.1.1. Allowed with any value in Essentials, Basic, Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PortalFeatureOptIn'
             inventory_config:
                 description: "Inventory Configurations for Pulse Cloud Services. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -447,7 +447,7 @@ definitions:
                 description: "Default values to be used for IP Reputation sync. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpReputationConfig'
             mode:
-                description: "Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM. Field introduced in 20.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Basic (Allowed values- SALESFORCE,MYVMWARE,SYSTEST) edition."
+                description: "Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM. Field introduced in 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "MYVMWARE"
             name:
@@ -484,7 +484,7 @@ definitions:
                 description: "By default, Pulse Cloud Services uses proxy added in system configuration. If it should use a separate proxy, set this flag to true and configure split proxy configuration. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             use_tls:
-                description: "Secure the controller to Pulse Cloud Services communication over TLS. Field introduced in 20.1.3. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "Secure the controller to Pulse Cloud Services communication over TLS. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             user_agent_db_config:
@@ -540,7 +540,7 @@ definitions:
         type: object
         properties:
             app_signature_sync_interval:
-                description: "Application Signature db sync interval in minutes. Allowed values are 1440-10080. Field introduced in 20.1.4. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition. Special default for Essentials edition is 1440, Basic edition is 1440, Enterprise edition is 1440."
+                description: "Application Signature db sync interval in minutes. Allowed values are 1440-10080. Field introduced in 20.1.4. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1440
                 format: uint32
@@ -548,25 +548,25 @@ definitions:
         type: object
         properties:
             additional_emails:
-                description: "Additional emails to get notified when the case gets created. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Additional emails to get notified when the case gets created. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             enable_auto_case_creation_on_controller_failure:
-                description: "Enable pro-active support case creation when a controller failure occurs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Enable pro-active support case creation when a controller failure occurs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_auto_case_creation_on_se_failure:
-                description: "Enable pro-active support case creation when a service engine failure occurs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Enable pro-active support case creation when a service engine failure occurs. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_cleanup_of_attached_files:
-                description: "Enable cleanup of successfully attached files to support case. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition. Special default for Essentials edition is false, Basic edition is false, Enterprise edition is True."
+                description: "Enable cleanup of successfully attached files to support case. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
     InventoryConfig:
         type: object
         properties:
             enable:
-                description: "Allow inventory stats to be regularly sent to Pulse Cloud Services. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Allow inventory stats to be regularly sent to Pulse Cloud Services. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     InventoryConfiguration:
         type: object
@@ -578,10 +578,10 @@ definitions:
         type: object
         properties:
             enable_ipv4_reputation:
-                description: "Enable IPv4 Reputation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable IPv4 Reputation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_ipv6_reputation:
-                description: "Enable IPv6 Reputation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable IPv6 Reputation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             ip_reputation_file_object_expiry_duration:
                 description: "IP reputation db file object expiry duration in days. Allowed values are 1-7. Field introduced in 20.1.1. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -589,7 +589,7 @@ definitions:
                 default: 3
                 format: uint32
             ip_reputation_sync_interval:
-                description: "IP reputation db sync interval in minutes. Allowed values are 30-1440. Field introduced in 20.1.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 60), Basic (Allowed values- 60) edition."
+                description: "IP reputation db sync interval in minutes. Allowed values are 30-1440. Field introduced in 20.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: uint32
@@ -597,39 +597,39 @@ definitions:
         type: object
         properties:
             inventory_config:
-                description: "Inventory op config. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Inventory op config. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/InventoryConfig'
     PortalFeatureOptIn:
         type: object
         properties:
             enable_appsignature_sync:
-                description: "Enable to receive Application specific signature updates. Field introduced in 20.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Enable to receive Application specific signature updates. Field introduced in 20.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_ip_reputation:
-                description: "Enable to receive IP reputation updates. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Enable to receive IP reputation updates. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_pulse_case_management:
-                description: "Enable Pulse Cloud Services Case Management. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition. Special default for Essentials edition is false, Basic edition is false, Enterprise edition is True."
+                description: "Enable Pulse Cloud Services Case Management. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             enable_pulse_inventory:
-                description: "Enable Pulse Cloud Services Inventory. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition. Special default for Essentials edition is false, Basic edition is false, Enterprise edition is False."
+                description: "Enable Pulse Cloud Services Inventory. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_pulse_waf_management:
-                description: "Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition. Special default for Essentials edition is false, Basic edition is false, Enterprise edition is True."
+                description: "Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             enable_user_agent_db_sync:
-                description: "Enable to receive Bot Management updates. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Enable to receive Bot Management updates. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     ProactiveSupportDefaults:
         type: object
         properties:
             attach_core_dump:
-                description: "Opt-in to attach core dump with support case. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Opt-in to attach core dump with support case. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             attach_tech_support:
-                description: "Opt-in to attach tech support with support case. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition. Special default for Essentials edition is false, Basic edition is false, Enterprise edition is True."
+                description: "Opt-in to attach tech support with support case. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             case_severity:
@@ -659,7 +659,7 @@ definitions:
         type: object
         properties:
             session_headers:
-                description: "Session Headers. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Session Headers. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/SessionHeaders'
@@ -667,54 +667,54 @@ definitions:
         type: object
         properties:
             heartbeat_interval:
-                description: "Heartbeat Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Heartbeat Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             license_escrow_interval:
-                description: "License Escrow Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "License Escrow Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             license_expiry_interval:
-                description: "License Expiry Interval duration. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "License Expiry Interval duration. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             license_reconcile_interval:
-                description: "License Reconcile Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "License Reconcile Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             license_refresh_interval:
-                description: "License Refresh Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "License Refresh Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             license_renewal_interval:
-                description: "License Renewal Interval duration. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "License Renewal Interval duration. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             token_refresh_interval:
-                description: "Token Refresh Interval duration. Allowed values are 1-240. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Token Refresh Interval duration. Allowed values are 1-240. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
     SaasLicensingInfo:
         type: object
         properties:
             enable_notional_reserve:
-                description: "Enable relaxed reservation norm allowing up to 2x free units( normally constrained to free license units ) to be reserved by upcoming SE’s. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable relaxed reservation norm allowing up to 2x free units( normally constrained to free license units ) to be reserved by upcoming SE’s. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
     SessionHeaders:
         type: object
         properties:
             name:
-                description: "Header Name. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Header Name. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Header Value. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Header Value. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     UserAgentDBConfig:
         type: object
         properties:
             allowed_batch_size:
-                description: "Batch query limit. Allowed values are 1-500. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 500), Basic (Allowed values- 500) edition."
+                description: "Batch query limit. Allowed values are 1-500. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 500
                 format: uint32
@@ -722,9 +722,9 @@ definitions:
         type: object
         properties:
             enable_auto_download_waf_signatures:
-                description: "Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_waf_signatures_notifications:
-                description: "Enable event notifications when new WAF signatures/CRS versions are available. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition. Special default for Essentials edition is false, Basic edition is false, Enterprise edition is True."
+                description: "Enable event notifications when new WAF signatures/CRS versions are available. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True

@@ -597,7 +597,7 @@
                     }
                 },
                 "se_group_infos": {
-                    "description": "Maintain information about SE Group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maintain information about SE Group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SeGroupInfo"
@@ -611,7 +611,7 @@
                     }
                 },
                 "tenant_infos": {
-                    "description": "Maintain information about Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maintain information about Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/LicenseReservationInfo"
@@ -625,7 +625,7 @@
                     }
                 },
                 "total_licenses_reserved": {
-                    "description": "Total of max licenses reserved as per quota config of tenant/segroup. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Total of max licenses reserved as per quota config of tenant/segroup. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
@@ -666,12 +666,12 @@
             "type": "object",
             "properties": {
                 "reserved": {
-                    "description": "License Cores reserved by tenant/se group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "License Cores reserved by tenant/se group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "uuid": {
-                    "description": "Uuid for tenant/se group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Uuid for tenant/se group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -718,17 +718,17 @@
             "type": "object",
             "properties": {
                 "consumed": {
-                    "description": "License cores consumed by se group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "License cores consumed by se group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "escrow": {
-                    "description": "License cores reserved by se group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "License cores reserved by se group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "uuid": {
-                    "description": "Se group uuid for reference. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Se group uuid for reference. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

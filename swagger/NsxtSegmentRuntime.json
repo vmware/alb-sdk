@@ -693,11 +693,11 @@
                     "type": "string"
                 },
                 "origin_id": {
-                    "description": "Origin ID applicable to security only cloud. Field introduced in 22.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Origin ID applicable to security only cloud. Field introduced in 22.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "security_only_nsxt": {
-                    "description": "Nsxt segment belongs to Security only cloud. Field introduced in 22.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Nsxt segment belongs to Security only cloud. Field introduced in 22.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "segment_gw": {
@@ -742,7 +742,7 @@
                     "type": "string"
                 },
                 "vlan_ids": {
-                    "description": "Segment Vlan ids. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Segment Vlan ids. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"

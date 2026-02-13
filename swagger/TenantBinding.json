@@ -562,19 +562,19 @@
                     "type": "string"
                 },
                 "name": {
-                    "description": "Name of the tenant binding. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Name of the tenant binding. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_group_ref": {
-                    "description": "UUID of the Service Engine Group being shared. It is a reference to an object of type ServiceEngineGroup. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the Service Engine Group being shared. It is a reference to an object of type ServiceEngineGroup. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "shared_tenant_ref": {
-                    "description": "UUID of the tenant to which the object is being shared. It is a reference to an object of type Tenant. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the tenant to which the object is being shared. It is a reference to an object of type Tenant. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "Tenant UUID. This field is used for admin tenant context. It is a reference to an object of type Tenant. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Tenant UUID. This field is used for admin tenant context. It is a reference to an object of type Tenant. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -583,7 +583,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the tenant binding. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the tenant binding. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

@@ -1022,7 +1022,7 @@ definitions:
                 description: "Azure resource group dedicated for Avi Controller. Avi Controller will create all its resources in this resource group. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             se_storage_account:
-                description: "Storage Account to be used for uploading SE VHD images to Azure. Must include the resource group name. Format '<resource-group> <storage-account-name>'. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Storage Account to be used for uploading SE VHD images to Azure. Must include the resource group name. Format '<resource-group> <storage-account-name>'. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             subscription_id:
                 description: "Subscription Id for the Azure subscription. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1064,18 +1064,18 @@ definitions:
                 readOnly: True
                 type: string
             autoscale_polling_interval:
-                description: "CloudConnector polling interval in seconds for external autoscale groups, minimum 60 seconds. Allowed values are 60-3600. Field introduced in 18.2.2. Unit is SECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 60), Basic (Allowed values- 60) edition."
+                description: "CloudConnector polling interval in seconds for external autoscale groups, minimum 60 seconds. Allowed values are 60-3600. Field introduced in 18.2.2. Unit is SECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: uint32
             aws_configuration:
-                description: " Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AwsConfiguration'
             azure_configuration:
-                description: " Field introduced in 17.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: " Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AzureConfiguration'
             cloudstack_configuration:
-                description: " Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CloudStackConfiguration'
             custom_tags:
                 description: "Custom tags for all Avi created resources in the cloud infrastructure. Field introduced in 17.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1087,27 +1087,27 @@ definitions:
                 type: boolean
                 default: True
             disable_metrics_polling:
-                description: "To disable metrics collection. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "To disable metrics collection. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             dns_provider_ref:
-                description: "DNS Profile for the cloud. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "DNS Profile for the cloud. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             dns_resolution_on_se:
-                description: "By default, pool member FQDNs are resolved on the Controller. When this is set, pool member FQDNs are instead resolved on Service Engines in this cloud. This is useful in scenarios where pool member FQDNs can only be resolved from Service Engines and not from the Controller. Field introduced in 18.2.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "By default, pool member FQDNs are resolved on the Controller. When this is set, pool member FQDNs are instead resolved on Service Engines in this cloud. This is useful in scenarios where pool member FQDNs can only be resolved from Service Engines and not from the Controller. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             dns_resolvers:
-                description: "DNS resolver for the cloud. Field introduced in 20.1.5. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "DNS resolver for the cloud. Field introduced in 20.1.5. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DnsResolver'
             docker_configuration:
-                description: " Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DockerConfiguration'
             east_west_dns_provider_ref:
-                description: "DNS Profile for East-West services. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "DNS Profile for East-West services. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             east_west_ipam_provider_ref:
-                description: "Ipam Profile for East-West services. Warning - Please use virtual subnets in this IPAM profile that do not conflict with the underlay networks or any overlay networks in the cluster. For example in AWS and GCP, 169.254.0.0/16 is used for storing instance metadata. Hence, it should not be used in this profile. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Ipam Profile for East-West services. Warning - Please use virtual subnets in this IPAM profile that do not conflict with the underlay networks or any overlay networks in the cluster. For example in AWS and GCP, 169.254.0.0/16 is used for storing instance metadata. Hence, it should not be used in this profile. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             enable_vip_on_all_interfaces:
                 description: "Enable VIP on all data interfaces for the Cloud. Field introduced in 18.2.9, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1116,7 +1116,7 @@ definitions:
                 description: "Use static routes for VIP side network resolution during VirtualService placement. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             gcp_configuration:
-                description: "Google Cloud Platform Configuration. Field introduced in 18.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Google Cloud Platform Configuration. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/GCPConfiguration'
             ip6_autocfg_enabled:
                 description: "Enable IPv6 auto configuration. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1132,10 +1132,10 @@ definitions:
                 description: "If no license type is specified then default license enforcement for the cloud type is chosen. The default mappings are Container Cloud is Max Ses, OpenStack and VMware is cores and linux it is Sockets. Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             linuxserver_configuration:
-                description: " Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LinuxServerConfiguration'
             maintenance_mode:
-                description: "Cloud is in maintenance mode. Field introduced in 20.1.7,21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Cloud is in maintenance mode. Field introduced in 20.1.7,21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             markers:
                 description: "List of labels to be used for granular RBAC. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1148,11 +1148,11 @@ definitions:
                 default: 300
                 format: uint32
             mgmt_ip_v4_enabled:
-                description: "Enable IPv4 on the Management interface of the ServiceEngine. Defaults to dhcp if no static config on Network present. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable IPv4 on the Management interface of the ServiceEngine. Defaults to dhcp if no static config on Network present. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             mgmt_ip_v6_enabled:
-                description: "Enable IPv6 on the Management interface of the ServiceEngine. Defaults to autocfg if no static config on Network present. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable IPv6 on the Management interface of the ServiceEngine. Defaults to autocfg if no static config on Network present. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             mtu:
@@ -1164,10 +1164,10 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             nsxt_configuration:
-                description: "NSX-T Cloud Platform Configuration. Field introduced in 20.1.1. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "NSX-T Cloud Platform Configuration. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/NsxtConfiguration'
             ntp_configuration:
-                description: "NTP Configuration for the cloud. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "NTP Configuration for the cloud. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/NTPConfiguration'
             obj_name_prefix:
                 description: "Default prefix for all automatically created objects in this cloud. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1176,19 +1176,19 @@ definitions:
                 description: "Prefer static routes over interface routes during VirtualService placement. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             proxy_configuration:
-                description: " Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ProxyConfiguration'
             rancher_configuration:
-                description: " Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/RancherConfiguration'
             resolve_fqdn_to_ipv6:
-                description: "Resolve IPv6 address for pool member FQDNs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Resolve IPv6 address for pool member FQDNs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             se_group_template_ref:
                 description: "The Service Engine Group to use as template. It is a reference to an object of type ServiceEngineGroup. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             state_based_dns_registration:
-                description: "DNS records for VIPs are added/deleted based on the operational state of the VIPs. Field introduced in 17.1.12. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- true), Basic (Allowed values- true) edition."
+                description: "DNS records for VIPs are added/deleted based on the operational state of the VIPs. Field introduced in 17.1.12. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             tenant_ref:
@@ -1202,16 +1202,16 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vca_configuration:
-                description: " Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/vCloudAirConfiguration'
             vcenter_configuration:
-                description: " Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/vCenterConfiguration'
             vmc_deployment:
-                description: "This deployment is VMware on AWS cloud. Field introduced in 20.1.5, 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "This deployment is VMware on AWS cloud. Field introduced in 20.1.5, 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             vtype:
-                description: "Cloud type. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- CLOUD_NONE,CLOUD_VCENTER), Basic (Allowed values- CLOUD_NONE,CLOUD_NSXT) edition."
+                description: "Cloud type. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "CLOUD_NONE"
     CloudApiResponse:
@@ -1283,16 +1283,16 @@ definitions:
         type: object
         properties:
             tier1_segment_config:
-                description: "Nsxt tier1 segment configuration for Avi Service Engine data path. This should be set only when transport zone is of type OVERLAY. Field introduced in 20.1.5. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "Nsxt tier1 segment configuration for Avi Service Engine data path. This should be set only when transport zone is of type OVERLAY. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/NsxtTier1SegmentConfig'
             transport_zone:
-                description: "Data transport zone path for Avi Service Engines. Example- /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx. Field introduced in 20.1.5. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "Data transport zone path for Avi Service Engines. Example- /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tz_type:
-                description: "Data transport zone type overlay or vlan. Enum options - OVERLAY, VLAN. Field introduced in 20.1.5. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "Data transport zone type overlay or vlan. Enum options - OVERLAY, VLAN. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vlan_segments:
-                description: "Data vlan segments path to use for Avi Service Engines. Example- /infra/segments/vlanls. This should be set only when transport zone is of type VLAN. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Data vlan segments path to use for Avi Service Engines. Example- /infra/segments/vlanls. This should be set only when transport zone is of type VLAN. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -1302,24 +1302,24 @@ definitions:
             -   resolver_name
         properties:
             fixed_ttl:
-                description: "If configured, this value used for refreshing the DNS entries.Overrides both received_ttl and min_ttl. The entries are refreshed only on fixed_ttleven when received_ttl is less than fixed_ttl. Allowed values are 5-2147483647. Field introduced in 20.1.5. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If configured, this value used for refreshing the DNS entries.Overrides both received_ttl and min_ttl. The entries are refreshed only on fixed_ttleven when received_ttl is less than fixed_ttl. Allowed values are 5-2147483647. Field introduced in 20.1.5. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             min_ttl:
-                description: "If configured, the min_ttl overrides the ttl from responses when ttl < min_ttl,effectively ttl = max(recieved_ttl, min_ttl). Allowed values are 5-2147483647. Field introduced in 20.1.5. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If configured, the min_ttl overrides the ttl from responses when ttl < min_ttl,effectively ttl = max(recieved_ttl, min_ttl). Allowed values are 5-2147483647. Field introduced in 20.1.5. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5
                 format: uint32
             nameserver_ips:
-                description: "Name server IPv4 addresses. Field introduced in 20.1.5. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Name server IPv4 addresses. Field introduced in 20.1.5. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddr'
             resolver_name:
-                description: "Unique name for resolver config. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Unique name for resolver config. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             use_mgmt:
-                description: "If enabled, DNS resolution is performed via management network. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If enabled, DNS resolution is performed via management network. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     DockerConfiguration:
         type: object
@@ -1470,7 +1470,7 @@ definitions:
                 description: "Credentials to access Google Cloud Platform APIs. It is a reference to an object of type CloudConnectorUser. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             encryption_keys:
-                description: "Encryption Keys for Google Cloud Services. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Encryption Keys for Google Cloud Services. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/GCPEncryptionKeys'
             firewall_target_tags:
                 description: "Firewall rule network target tags which will be applied on Service Engines to allow ingress and egress traffic for Service Engines. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1478,7 +1478,7 @@ definitions:
                 items:
                     type: string
             gcp_service_account_email:
-                description: "Email of GCP Service Account to be associated to the Service Engines. Field introduced in 20.1.7, 21.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Email of GCP Service Account to be associated to the Service Engines. Field introduced in 20.1.7, 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             gcs_bucket_name:
                 description: "Google Cloud Storage Bucket Name where Service Engine image will be uploaded. This image will be deleted once the image is created in Google compute images. By default, a bucket will be created if this field is not specified. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1507,16 +1507,16 @@ definitions:
         type: object
         properties:
             gcs_bucket_kms_key_id:
-                description: "CMEK Resource ID to encrypt Google Cloud Storage Bucket. This Bucket is used to upload Service Engine raw image. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "CMEK Resource ID to encrypt Google Cloud Storage Bucket. This Bucket is used to upload Service Engine raw image. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             gcs_objects_kms_key_id:
-                description: "CMEK Resource ID to encrypt Service Engine raw image. The raw image is a Google Cloud Storage Object. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "CMEK Resource ID to encrypt Service Engine raw image. The raw image is a Google Cloud Storage Object. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             se_disk_kms_key_id:
-                description: "CMEK Resource ID to encrypt Service Engine Disks. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "CMEK Resource ID to encrypt Service Engine Disks. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             se_image_kms_key_id:
-                description: "CMEK Resource ID to encrypt Service Engine GCE Image. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "CMEK Resource ID to encrypt Service Engine GCE Image. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     GCPInBandManagement:
         type: object
@@ -1571,7 +1571,7 @@ definitions:
                 description: "Service Engine Management Network Name. Field introduced in 18.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             management_vpc_project_id:
-                description: "Project ID of the Service Engine Management Network. By default, Service Engine Project ID will be used. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Project ID of the Service Engine Management Network. By default, Service Engine Project ID will be used. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             management_vpc_subnet_name:
                 description: "Service Engine Management Network Subnet Name. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1590,7 +1590,7 @@ definitions:
                 description: "Service Engine Backend Data Network Name. Field introduced in 18.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             backend_data_vpc_project_id:
-                description: "Project ID of the Service Engine Backend Data Network. By default, Service Engine Project ID will be used. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Project ID of the Service Engine Backend Data Network. By default, Service Engine Project ID will be used. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             backend_data_vpc_subnet_name:
                 description: "Service Engine Backend Data Network Subnet Name. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1608,7 +1608,7 @@ definitions:
                 description: "Service Engine Management Network Name. Field introduced in 18.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             management_vpc_project_id:
-                description: "Project ID of the Service Engine Management Network. By default, Service Engine Project ID will be used. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Project ID of the Service Engine Management Network. By default, Service Engine Project ID will be used. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             management_vpc_subnet_name:
                 description: "Service Engine Management Network Subnet Name. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1643,7 +1643,7 @@ definitions:
                 description: "Match SE group subnets for VIP placement. Default is to not match SE group subnets. Field introduced in 18.2.9, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             route_priority:
-                description: "Priority of the routes created in GCP. Field introduced in 20.1.7, 21.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Priority of the routes created in GCP. Field introduced in 20.1.7, 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 2000
                 format: uint32
@@ -1748,16 +1748,16 @@ definitions:
             -   tz_type
         properties:
             overlay_segment:
-                description: "Management overlay segment to use for Avi Service Engines. This should be set only when transport zone is of type OVERLAY. Field introduced in 20.1.5. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "Management overlay segment to use for Avi Service Engines. This should be set only when transport zone is of type OVERLAY. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/Tier1LogicalRouterInfo'
             transport_zone:
-                description: "Management transport zone path for Avi Service Engines. Example- /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx. Field introduced in 20.1.5. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "Management transport zone path for Avi Service Engines. Example- /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tz_type:
-                description: "Management transport zone type overlay or vlan. Enum options - OVERLAY, VLAN. Field introduced in 20.1.5. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "Management transport zone type overlay or vlan. Enum options - OVERLAY, VLAN. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vlan_segment:
-                description: "Management vlan segment path to use for Avi Service Engines. Example- /infra/segments/vlanls. This should be set only when transport zone is of type VLAN. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Management vlan segment path to use for Avi Service Engines. Example- /infra/segments/vlanls. This should be set only when transport zone is of type VLAN. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     MarathonConfiguration:
         type: object
@@ -1982,18 +1982,18 @@ definitions:
         type: object
         properties:
             auto_import_nsx_projects:
-                description: "Set this flag to true to enable automatic import of NSX projects into Avi.This flag is only applicable when VPC mode is enabled for this cloud; it is ignored when VPC mode is disabled.NSX projects under VCF-A management are excluded from this automatic import process, as VCF-A creates these projects in Avi through its own integration workflow. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Set this flag to true to enable automatic import of NSX projects into Avi.This flag is only applicable when VPC mode is enabled for this cloud; it is ignored when VPC mode is disabled.NSX projects under VCF-A management are excluded from this automatic import process, as VCF-A creates these projects in Avi through its own integration workflow. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             automate_dfw_objects:
-                description: "Automatically create/delete DFW objects such as NSGroups and NSServices in NSX-T Manager. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Automatically create/delete DFW objects such as NSGroups and NSServices in NSX-T Manager. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             automate_dfw_rules:
-                description: "Automatically create DFW rules for VirtualService in NSX-T Manager. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- false) edition."
+                description: "Automatically create DFW rules for VirtualService in NSX-T Manager. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             data_network_config:
-                description: "Data network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "Data network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DataNetworkConfig'
             domain_id:
                 description: "Domain where NSGroup objects belongs to. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -2004,7 +2004,7 @@ definitions:
                 type: string
                 default: "default"
             management_network_config:
-                description: "Management network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "Management network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ManagementNetworkConfig'
             nsxt_credentials_ref:
                 description: "Credentials to access NSX-T manager. It is a reference to an object of type CloudConnectorUser. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -2013,20 +2013,20 @@ definitions:
                 description: "NSX-T manager hostname or IP address. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             onboard_avi_into_nsx:
-                description: "Enable to automatically register the Avi Controller with NSX-T Manager. This triggers the NSX onboarding workflow API to configure the ALB cluster and create an enforcement point. Note  This flag must be enabled on exactly one NSX-T Cloud to avoid conflicts. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable to automatically register the Avi Controller with NSX-T Manager. This triggers the NSX onboarding workflow API to configure the ALB cluster and create an enforcement point. Note  This flag must be enabled on exactly one NSX-T Cloud to avoid conflicts. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             site_id:
                 description: "Site where transport zone belongs to. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "default"
             verify_certificate:
-                description: "Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter and NSX-T Manager. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter and NSX-T Manager. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             vmc_mode:
-                description: "VMC mode. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "VMC mode. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             vpc_mode:
-                description: "VPC Mode. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "VPC Mode. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     NsxtTier1SegmentAutomaticMode:
         type: object
@@ -2052,13 +2052,13 @@ definitions:
             -   segment_config_mode
         properties:
             automatic:
-                description: "Avi controller creates and manages logical segments for a Tier-1 LR. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition."
+                description: "Avi controller creates and manages logical segments for a Tier-1 LR. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/NsxtTier1SegmentAutomaticMode'
             manual:
                 description: "Avi Admin selects an available logical segment (created by NSX-T admin) associated with a Tier-1 LR. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/NsxtTier1SegmentManualMode'
             segment_config_mode:
-                description: "Config Mode for selecting the placement logical segments for Avi ServiceEngine data path. Enum options - TIER1_SEGMENT_MANUAL, TIER1_SEGMENT_AUTOMATIC. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- TIER1_SEGMENT_MANUAL) edition."
+                description: "Config Mode for selecting the placement logical segments for Avi ServiceEngine data path. Enum options - TIER1_SEGMENT_MANUAL, TIER1_SEGMENT_AUTOMATIC. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "TIER1_SEGMENT_MANUAL"
     NsxtTier1SegmentManualMode:
@@ -2198,10 +2198,10 @@ definitions:
                 items:
                     $ref: '#/definitions/Property'
             enable_os_object_caching:
-                description: "When enabled, frequently used objects like networks, subnets, routers etc. are cached to improve performance and reduce load on OpenStack Controllers. Suitable for OpenStack environments where Neutron resources are not frequently created, updated, or deleted.The cache is refreshed when cloud GC API is issued. Field introduced in 21.1.5, 22.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "When enabled, frequently used objects like networks, subnets, routers etc. are cached to improve performance and reduce load on OpenStack Controllers. Suitable for OpenStack environments where Neutron resources are not frequently created, updated, or deleted.The cache is refreshed when cloud GC API is issued. Field introduced in 21.1.5, 22.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_tagging:
-                description: "When set to True, OpenStack resources created by Avi are tagged with Avi Cloud UUID. Field introduced in 21.1.5, 22.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "When set to True, OpenStack resources created by Avi are tagged with Avi Cloud UUID. Field introduced in 21.1.5, 22.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             external_networks:
                 description: "If True, allow selection of networks marked as 'external' for management,  vip or data networks. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -2297,7 +2297,7 @@ definitions:
                 description: "The username Avi Vantage will use when authenticating to Keystone. For Keystone v3, provide the user information in user@domain format, unless that user belongs to the Default domain. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vip_port_in_admin_tenant:
-                description: "When set to True, VIP ports are created in OpenStack tenant configured as admin_tenant in cloud. Otherwise, default behavior is to create VIP ports in user tenant. Field introduced in 21.1.5, 22.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "When set to True, VIP ports are created in OpenStack tenant configured as admin_tenant in cloud. Otherwise, default behavior is to create VIP ports in user tenant. Field introduced in 21.1.5, 22.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     OpenStackHypervisorProperties:
         type: object
@@ -2730,10 +2730,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -2761,7 +2761,7 @@ definitions:
             -   tier1_lr_id
         properties:
             locale_service:
-                description: "Locale-services configuration, holds T1 edge-cluster information. When VirtualService is enabled with preserve client IP, ServiceInsertion VirtualEndpoint will be created in this locale-service. By default Avi controller picks default locale-service on T1. If more than one locale-services are present, this will be used for resolving the same. Example locale-service path - /infra/tier-1s/London_Tier1Gateway1/locale-services/London_Tier1LocalServices-1. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Locale-services configuration, holds T1 edge-cluster information. When VirtualService is enabled with preserve client IP, ServiceInsertion VirtualEndpoint will be created in this locale-service. By default Avi controller picks default locale-service on T1. If more than one locale-services are present, this will be used for resolving the same. Example locale-service path - /infra/tier-1s/London_Tier1Gateway1/locale-services/London_Tier1LocalServices-1. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             segment_id:
                 description: "Overlay segment path. Example- /infra/segments/Seg-Web-T1-01. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -2775,16 +2775,16 @@ definitions:
             -   privilege
         properties:
             content_lib:
-                description: "vCenter content library where Service Engine images are stored. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "vCenter content library where Service Engine images are stored. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ContentLibConfig'
             datacenter:
                 description: "Datacenter for virtual infrastructure discovery. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             datacenter_managed_object_id:
-                description: "Managed object id of the datacenter. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition."
+                description: "Managed object id of the datacenter. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             is_nsx_environment:
-                description: "If true, NSX-T segment spanning multiple VDS with vCenter cloud are merged to a single network in Avi. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If true, NSX-T segment spanning multiple VDS with vCenter cloud are merged to a single network in Avi. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             management_ip_subnet:
                 description: "Management subnet to use for Avi Service Engines. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -2800,7 +2800,7 @@ definitions:
                 type: string
                 default: "WRITE_ACCESS"
             use_content_lib:
-                description: "If false, Service Engine image will not be pushed to content library. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition."
+                description: "If false, Service Engine image will not be pushed to content library. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             username:
@@ -2813,7 +2813,7 @@ definitions:
                 description: "vCenter hostname or IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             verify_certificate:
-                description: "Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter server. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter server. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     vCloudAirConfiguration:
         type: object

@@ -391,16 +391,16 @@ definitions:
                 readOnly: True
                 type: string
             aws_access_key:
-                description: "AWS Access Key ID. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "AWS Access Key ID. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             aws_bucket_id:
-                description: "AWS bucket. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "AWS bucket. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             aws_bucket_region:
-                description: "The name of the AWS region associated with the bucket. Field introduced in 21.1.5, 22.1.1, 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "The name of the AWS region associated with the bucket. Field introduced in 21.1.5, 22.1.1, 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             aws_secret_access:
-                description: "AWS Secret Access Key. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "AWS Secret Access Key. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             backup_file_prefix:
                 description: "Prefix of the exported configuration file. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -409,7 +409,7 @@ definitions:
                 description: "Default passphrase to encrypt sensitive fields for configuration export and periodic backup. The same passphrase must be provided to import the configuration. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             bundle_mode:
-                description: "By default, JSON Backups are generated. When this flag is enabled, bundle backups will be generated. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "By default, JSON Backups are generated. When this flag is enabled, bundle backups will be generated. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             maximum_backups_stored:
                 description: "Rotate the backup files based on this count. Allowed values are 1-20. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -423,14 +423,14 @@ definitions:
                 description: "Directory at remote destination with write permission for ssh user. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             remote_file_transfer_protocol:
-                description: "Remote file transfer protocol type. Enum options - SCP, SFTP. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- SCP,SFTP) edition."
+                description: "Remote file transfer protocol type. Enum options - SCP, SFTP. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "SCP"
             remote_hostname:
                 description: "Remote Destination. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             s3_bucket_folder:
-                description: "The folder name in s3 bucket where backup will be stored. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "The folder name in s3 bucket where backup will be stored. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             save_local:
                 description: "Local Backup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -445,7 +445,7 @@ definitions:
                 description: "Remote Backup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             upload_to_s3:
-                description: "Cloud Backup. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Cloud Backup. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             url:
                 description: "url"

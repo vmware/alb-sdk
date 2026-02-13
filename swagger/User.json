@@ -584,7 +584,7 @@
                     "type": "string"
                 },
                 "enable_config_warnings": {
-                    "description": "Flag to enable or disable config warnings. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Flag to enable or disable config warnings. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
@@ -610,7 +610,7 @@
                     "type": "boolean"
                 },
                 "is_vcfa_user": {
-                    "description": "Indicates if the user was created via VCFA OAuth authentication. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Indicates if the user was created via VCFA OAuth authentication. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "local": {

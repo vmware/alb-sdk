@@ -385,31 +385,31 @@ definitions:
         type: object
         properties:
             backup_scheduler_faults:
-                description: "Enable backup scheduler faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable backup scheduler faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             cluster_faults:
-                description: "Enable cluster faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable cluster faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             deprecated_api_version_faults:
-                description: "Enable deprecated api version faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable deprecated api version faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             license_faults:
-                description: "Enable license faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable license faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             migration_faults:
-                description: "Enable DB migration faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable DB migration faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             sslprofile_faults:
-                description: "Enable SSL Profile faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable SSL Profile faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             system_limits_faults:
-                description: "Enable system limits faults. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable system limits faults. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
     InventoryFaultConfig:
@@ -420,26 +420,26 @@ definitions:
                 readOnly: True
                 type: string
             controller_faults:
-                description: "Configure controller faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Configure controller faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ControllerFaults'
             name:
-                description: "Name. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Name. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             serviceengine_faults:
-                description: "Configure serviceengine faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Configure serviceengine faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServiceengineFaults'
             tenant_ref:
-                description: "Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID Auto generated. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "UUID Auto generated. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             virtualservice_faults:
-                description: "Configure VirtualService faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Configure VirtualService faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VirtualserviceFaults'
     InventoryFaultConfigApiResponse:
         type: object
@@ -460,33 +460,33 @@ definitions:
         type: object
         properties:
             debug_faults:
-                description: "Enable debug faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable debug faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
     VirtualserviceFaults:
         type: object
         properties:
             debug_faults:
-                description: "Enable debug faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable debug faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             pool_server_faults:
-                description: "Enable pool server faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable pool server faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             scaleout_faults:
-                description: "Enable VS scaleout and scalein faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable VS scaleout and scalein faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             shared_vip_faults:
-                description: "Enable shared vip faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable shared vip faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             ssl_cert_expiry_faults:
-                description: "Enable SSL certificate expiry faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable SSL certificate expiry faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             ssl_cert_status_faults:
-                description: "Enable SSL certificate status faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable SSL certificate status faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True

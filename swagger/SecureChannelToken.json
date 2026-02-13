@@ -579,7 +579,7 @@
                     "format": "double"
                 },
                 "in_use": {
-                    "description": "Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "metadata": {

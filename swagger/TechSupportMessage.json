@@ -566,7 +566,7 @@
                     "type": "string"
                 },
                 "tech_support_ref": {
-                    "description": "'Techsupport object ref.'. It is a reference to an object of type TechSupport. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "'Techsupport object ref.'. It is a reference to an object of type TechSupport. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
