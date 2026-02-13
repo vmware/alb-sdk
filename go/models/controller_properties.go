@@ -57,6 +57,12 @@ type ControllerProperties struct {
 	// Use Ansible for SE creation in baremetal. Field introduced in 17.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BmUseAnsible *bool `json:"bm_use_ansible,omitempty"`
 
+	// Number of days after which CloudConnectorUser (service account) password expires. Rotation is triggered 5 days before expiry. Set to 0 to disable automatic rotation. Allowed values are 1-730. Special values are 0 - Disabled. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	CcUserPasswordExpiryDays *uint32 `json:"cc_user_password_expiry_days,omitempty"`
+
+	// Period in hours for CloudConnectorUser (service account) password rotation check job. Default is 24 hours (1 day). Range is 1-168 hours (1 hour to 7 days). Allowed values are 1-168. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	CcUserPasswordRotationJobPeriod *uint32 `json:"cc_user_password_rotation_job_period,omitempty"`
+
 	// Number of days to retain JWT tokens generated during certificate rotation. Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months, 180 = 6 months). Allowed values are 1-3650. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	CertRotationJwtRetentionDays *uint32 `json:"cert_rotation_jwt_retention_days,omitempty"`
 
@@ -206,12 +212,6 @@ type ControllerProperties struct {
 
 	// Maximum number of threads in threadpool used by cloud connector CCVIPBGWorker. Allowed values are 1-100. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	MaxThreadsCcVipBgWorker *uint32 `json:"max_threads_cc_vip_bg_worker,omitempty"`
-
-	// Number of days after which password expires and requires rotation. Allowed values are 30-730. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	PasswordExpiryDays *uint32 `json:"password_expiry_days,omitempty"`
-
-	// Period in hours for CloudConnectorUser password rotation check job. Default is 24 hours (1 day). Range is 1-168 hours (1 hour to 7 days). Allowed values are 1-168. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	PasswordRotationJobPeriod *uint32 `json:"password_rotation_job_period,omitempty"`
 
 	// Network and VrfContext objects from the admin tenant will not be shared to non-admin tenants unless admin permissions are granted. Field introduced in 18.2.7, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PermissionScopedSharedAdminNetworks *bool `json:"permission_scoped_shared_admin_networks,omitempty"`
