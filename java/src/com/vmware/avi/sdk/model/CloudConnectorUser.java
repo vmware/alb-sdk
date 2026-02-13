@@ -139,7 +139,7 @@ public class CloudConnectorUser extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Timestamp (unix epoch in seconds) of last successful password rotation.
-     * Used to determine when next rotation is due based on password_expiry_days.
+     * Used to determine when next rotation is due based on cc_user_password_expiry_days.
      * Field introduced in 32.1.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -153,7 +153,7 @@ public class CloudConnectorUser extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Timestamp (unix epoch in seconds) of last successful password rotation.
-     * Used to determine when next rotation is due based on password_expiry_days.
+     * Used to determine when next rotation is due based on cc_user_password_expiry_days.
      * Field introduced in 32.1.1.
      * Unit is sec.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
