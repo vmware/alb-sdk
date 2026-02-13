@@ -12,25 +12,25 @@ type InventoryFaultConfig struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Configure controller faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Configure controller faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerFaults *ControllerFaults `json:"controller_faults,omitempty"`
 
-	// Name. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Name. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// Configure serviceengine faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Configure serviceengine faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServiceengineFaults *ServiceengineFaults `json:"serviceengine_faults,omitempty"`
 
-	// Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// UUID Auto generated. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// UUID Auto generated. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 
-	// Configure VirtualService faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Configure VirtualService faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VirtualserviceFaults *VirtualserviceFaults `json:"virtualservice_faults,omitempty"`
 }

@@ -8,7 +8,7 @@ package models
 // swagger:model ALBServicesCase
 type ALBServicesCase struct {
 
-	// Additional emails to get notified when the case gets created. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Additional emails to get notified when the case gets created. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AdditionalEmails []string `json:"additional_emails,omitempty"`
 
 	//  Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -65,7 +65,7 @@ type ALBServicesCase struct {
 	//  Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LastModifiedDate *string `json:"last_modified_date,omitempty"`
 
-	// Stores the ALB services configuration mode. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Stores the ALB services configuration mode. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Mode *string `json:"mode,omitempty"`
 
 	//  Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -80,7 +80,7 @@ type ALBServicesCase struct {
 	//  Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Subject *string `json:"subject,omitempty"`
 
-	// Tenant information. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Tenant information. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantUUID *string `json:"tenant_uuid,omitempty"`
 
 	//  Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

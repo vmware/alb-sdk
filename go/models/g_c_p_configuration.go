@@ -11,13 +11,13 @@ type GCPConfiguration struct {
 	// Credentials to access Google Cloud Platform APIs. It is a reference to an object of type CloudConnectorUser. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudCredentialsRef *string `json:"cloud_credentials_ref,omitempty"`
 
-	// Encryption Keys for Google Cloud Services. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Encryption Keys for Google Cloud Services. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EncryptionKeys *GCPEncryptionKeys `json:"encryption_keys,omitempty"`
 
 	// Firewall rule network target tags which will be applied on Service Engines to allow ingress and egress traffic for Service Engines. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FirewallTargetTags []string `json:"firewall_target_tags,omitempty"`
 
-	// Email of GCP Service Account to be associated to the Service Engines. Field introduced in 20.1.7, 21.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Email of GCP Service Account to be associated to the Service Engines. Field introduced in 20.1.7, 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GcpServiceAccountEmail *string `json:"gcp_service_account_email,omitempty"`
 
 	// Google Cloud Storage Bucket Name where Service Engine image will be uploaded. This image will be deleted once the image is created in Google compute images. By default, a bucket will be created if this field is not specified. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

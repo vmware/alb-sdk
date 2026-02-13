@@ -8,6 +8,6 @@ package models
 // swagger:model ClientCertAuthSettings
 type ClientCertAuthSettings struct {
 
-	// Client Certs to be used for authentication. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Client Certs to be used for authentication. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientCertRefs []string `json:"client_cert_refs,omitempty"`
 }

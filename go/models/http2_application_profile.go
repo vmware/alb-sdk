@@ -8,13 +8,13 @@ package models
 // swagger:model HTTP2ApplicationProfile
 type Http2ApplicationProfile struct {
 
-	// Enables automatic conversion of preload links specified in the 'Link' response header fields into Server push requests. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enables automatic conversion of preload links specified in the 'Link' response header fields into Server push requests. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableHttp2ServerPush *bool `json:"enable_http2_server_push,omitempty"`
 
 	// The initial flow control window size in KB for HTTP/2 streams. Allowed values are 64-32768. Field introduced in 18.2.10, 20.1.1. Unit is KB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Http2InitialWindowSize *uint32 `json:"http2_initial_window_size,omitempty"`
 
-	// Maximum number of concurrent push streams over a client side HTTP/2 connection. Allowed values are 1-256. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum number of concurrent push streams over a client side HTTP/2 connection. Allowed values are 1-256. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxHttp2ConcurrentPushesPerConnection *uint32 `json:"max_http2_concurrent_pushes_per_connection,omitempty"`
 
 	// Maximum number of concurrent streams over a client side HTTP/2 connection. Allowed values are 1-256. Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

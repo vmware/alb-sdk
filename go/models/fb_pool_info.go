@@ -8,6 +8,6 @@ package models
 // swagger:model FbPoolInfo
 type FbPoolInfo struct {
 
-	// FB snapshot data. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// FB snapshot data. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OperStatus *OperationalStatus `json:"oper_status,omitempty"`
 }

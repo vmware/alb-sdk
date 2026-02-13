@@ -23,7 +23,7 @@ type ALBServicesConfig struct {
 	// Required: true
 	CaseConfig *CaseConfig `json:"case_config"`
 
-	// Features opt-in for Pulse Cloud Services. Field introduced in 20.1.1.
+	// Features opt-in for Pulse Cloud Services. Field introduced in 20.1.1. Allowed with any value in Essentials, Basic, Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	FeatureOptInStatus *PortalFeatureOptIn `json:"feature_opt_in_status"`
 
@@ -35,7 +35,7 @@ type ALBServicesConfig struct {
 	// Required: true
 	IPReputationConfig *IPReputationConfig `json:"ip_reputation_config"`
 
-	// Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM. Field introduced in 20.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Basic (Allowed values- SALESFORCE,MYVMWARE,SYSTEST) edition.
+	// Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE, BROADCOM. Field introduced in 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Mode *string `json:"mode,omitempty"`
 
 	// Name of the ALBServicesConfig object. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -71,7 +71,7 @@ type ALBServicesConfig struct {
 	// By default, Pulse Cloud Services uses proxy added in system configuration. If it should use a separate proxy, set this flag to true and configure split proxy configuration. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UseSplitProxy *bool `json:"use_split_proxy,omitempty"`
 
-	// Secure the controller to Pulse Cloud Services communication over TLS. Field introduced in 20.1.3. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.
+	// Secure the controller to Pulse Cloud Services communication over TLS. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UseTLS *bool `json:"use_tls,omitempty"`
 
 	// Default values for user agent DB Service. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

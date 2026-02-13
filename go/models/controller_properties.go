@@ -12,7 +12,7 @@ type ControllerProperties struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Enable to use event manager as source of eventsDisable to use log manager as source of events. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enable to use event manager as source of eventsDisable to use log manager as source of events. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AlertManagerUseEvms *bool `json:"alert_manager_use_evms,omitempty"`
 
 	// Allow non-admin tenants to update admin VrfContext and Network objects. Field introduced in 18.2.7, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -33,19 +33,19 @@ type ControllerProperties struct {
 	// Threshold to log request timing in portal_performance.log and Server-Timing response header. Any stage taking longer than 1% of the threshold will be included in the Server-Timing header. Field introduced in 18.1.4, 18.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	APIPerfLoggingThreshold *uint32 `json:"api_perf_logging_threshold,omitempty"`
 
-	// Export configuration in appviewx compatibility mode. Field introduced in 17.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
+	// Export configuration in appviewx compatibility mode. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AppviewxCompatMode *bool `json:"appviewx_compat_mode,omitempty"`
 
 	// Period for archive and retention framework job. Allowed values are 1-240. Field introduced in 31.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ArchiveRetentionFrameworkPeriod *uint32 `json:"archive_retention_framework_period,omitempty"`
 
-	// Time in seconds to wait before starting async certificate chaining. Allowed values are 0-120. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Time in seconds to wait before starting async certificate chaining. Allowed values are 0-120. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AsyncCertChainingInterval *uint32 `json:"async_cert_chaining_interval,omitempty"`
 
-	// Period for which asynchronous patch requests are queued. Allowed values are 30-120. Special values are 0 - Deactivated. Field introduced in 18.2.11, 20.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Period for which asynchronous patch requests are queued. Allowed values are 30-120. Special values are 0 - Deactivated. Field introduced in 18.2.11, 20.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AsyncPatchMergePeriod *uint32 `json:"async_patch_merge_period,omitempty"`
 
-	// Duration for which asynchronous patch requests should be kept, after being marked as SUCCESS or FAIL. Allowed values are 5-120. Field introduced in 18.2.11, 20.1.3. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Duration for which asynchronous patch requests should be kept, after being marked as SUCCESS or FAIL. Allowed values are 5-120. Field introduced in 18.2.11, 20.1.3. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AsyncPatchRequestCleanupDuration *uint32 `json:"async_patch_request_cleanup_duration,omitempty"`
 
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -57,13 +57,13 @@ type ControllerProperties struct {
 	// Use Ansible for SE creation in baremetal. Field introduced in 17.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BmUseAnsible *bool `json:"bm_use_ansible,omitempty"`
 
-	// Number of days after which CloudConnectorUser (service account) password expires. Rotation is triggered 5 days before expiry. Set to 0 to disable automatic rotation. Allowed values are 1-730. Special values are 0 - Disabled. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Number of days after which CloudConnectorUser (service account) password expires. Rotation is triggered 5 days before expiry. Set to 0 to disable automatic rotation. Allowed values are 1-730. Special values are 0 - Disabled. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CcUserPasswordExpiryDays *uint32 `json:"cc_user_password_expiry_days,omitempty"`
 
-	// Period in hours for CloudConnectorUser (service account) password rotation check job. Default is 24 hours (1 day). Range is 1-168 hours (1 hour to 7 days). Allowed values are 1-168. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Period in hours for CloudConnectorUser (service account) password rotation check job. Default is 24 hours (1 day). Range is 1-168 hours (1 hour to 7 days). Allowed values are 1-168. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CcUserPasswordRotationJobPeriod *uint32 `json:"cc_user_password_rotation_job_period,omitempty"`
 
-	// Number of days to retain JWT tokens generated during certificate rotation. Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months, 180 = 6 months). Allowed values are 1-3650. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Number of days to retain JWT tokens generated during certificate rotation. Use multiples of 30 for months (e.g., 30 = 1 month, 60 = 2 months, 180 = 6 months). Allowed values are 1-3650. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CertRotationJwtRetentionDays *uint32 `json:"cert_rotation_jwt_retention_days,omitempty"`
 
 	// Enforce VsVip FQDN syntax checks. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -75,13 +75,13 @@ type ControllerProperties struct {
 	// Period for sessions cleanup job. Field introduced in 18.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CleanupSessionsTimeoutPeriod *uint32 `json:"cleanup_sessions_timeout_period,omitempty"`
 
-	// Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudDiscoveryInterval *uint32 `json:"cloud_discovery_interval,omitempty"`
 
 	// Enable/Disable periodic reconcile for all the clouds. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudReconcile *bool `json:"cloud_reconcile,omitempty"`
 
-	// Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudReconcileInterval *uint32 `json:"cloud_reconcile_interval,omitempty"`
 
 	// Period for cluster ip gratuitous arp job. Allowed values are 1-1440. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -90,7 +90,7 @@ type ControllerProperties struct {
 	// Period for consistency check job. Field introduced in 18.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConsistencyCheckTimeoutPeriod *uint32 `json:"consistency_check_timeout_period,omitempty"`
 
-	// Periodically collect stats. Field introduced in 20.1.3. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Periodically collect stats. Field introduced in 20.1.3. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerResourceInfoCollectionPeriod *uint32 `json:"controller_resource_info_collection_period,omitempty"`
 
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -102,19 +102,19 @@ type ControllerProperties struct {
 	// Minimum api timeout value.If this value is not 60, it will be the default timeout for all APIs that do not have a specific timeout.If an API has a specific timeout but is less than this value, this value will become the new timeout. Allowed values are 60-3600. Field introduced in 18.2.6. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DefaultMinimumAPITimeout *uint32 `json:"default_minimum_api_timeout,omitempty"`
 
-	// The amount of time the controller will wait before deleting an offline SE after it has been rebooted. For unresponsive SEs, the total time will be  unresponsive_se_reboot + del_offline_se_after_reboot_delay. For crashed SEs, the total time will be crashed_se_reboot + del_offline_se_after_reboot_delay. Field introduced in 20.1.5. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The amount of time the controller will wait before deleting an offline SE after it has been rebooted. For unresponsive SEs, the total time will be  unresponsive_se_reboot + del_offline_se_after_reboot_delay. For crashed SEs, the total time will be crashed_se_reboot + del_offline_se_after_reboot_delay. Field introduced in 20.1.5. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DelOfflineSeAfterRebootDelay *uint32 `json:"del_offline_se_after_reboot_delay,omitempty"`
 
-	// Amount of time to wait after last Detach IP failure before attempting next Detach IP retry. Field introduced in 21.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Amount of time to wait after last Detach IP failure before attempting next Detach IP retry. Field introduced in 21.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DetachIPRetryInterval *uint32 `json:"detach_ip_retry_interval,omitempty"`
 
-	// Maximum number of Detach IP retries. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum number of Detach IP retries. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DetachIPRetryLimit *uint32 `json:"detach_ip_retry_limit,omitempty"`
 
-	// Time to wait before marking Detach IP as failed. Field introduced in 21.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Time to wait before marking Detach IP as failed. Field introduced in 21.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DetachIPTimeout *uint32 `json:"detach_ip_timeout,omitempty"`
 
-	// Period for refresh pool and gslb DNS job. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 60), Basic (Allowed values- 60) edition.
+	// Period for refresh pool and gslb DNS job. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSRefreshPeriod *uint32 `json:"dns_refresh_period,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -129,31 +129,31 @@ type ControllerProperties struct {
 	// Enable/Disable Memory Balancer. Field introduced in 17.2.8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableMemoryBalancer *bool `json:"enable_memory_balancer,omitempty"`
 
-	// When set to true, Avi Controller will connect to Dynamic Config Streaming Agent on NSX Manager to get live updates. If it cannot connect, it will fallback to using REST APIs based periodic polling. Dynamic streaming is supported from NSX version 4.2.1 onwards. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// When set to true, Avi Controller will connect to Dynamic Config Streaming Agent on NSX Manager to get live updates. If it cannot connect, it will fallback to using REST APIs based periodic polling. Dynamic streaming is supported from NSX version 4.2.1 onwards. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableNsxStreamingAgent *bool `json:"enable_nsx_streaming_agent,omitempty"`
 
-	// Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits threshold limit. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits threshold limit. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnablePerProcessStop *bool `json:"enable_per_process_stop,omitempty"`
 
-	// Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableResmgrLogCachePrint *bool `json:"enable_resmgr_log_cache_print,omitempty"`
 
-	// When set to true, Avi Controller will attempt to automatically sync NSX Groups with AVI IP Groups provided the IP group is configured with an NSX Group path and NSX Dynamic streaming is enabled and active. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// When set to true, Avi Controller will attempt to automatically sync NSX Groups with AVI IP Groups provided the IP group is configured with an NSX Group path and NSX Dynamic streaming is enabled and active. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableStreamingBasedNsxIPGroupSync *bool `json:"enable_streaming_based_nsx_ip_group_sync,omitempty"`
 
-	// Stated time duration beyond which Event manager disregards files whose modified timestamp from current time is later. Allowed values are 1-1800. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Stated time duration beyond which Event manager disregards files whose modified timestamp from current time is later. Allowed values are 1-1800. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EventManagerFileModifiedTsFilter *uint32 `json:"event_manager_file_modified_ts_filter,omitempty"`
 
-	// Maximum number of goroutines for event manager process. Allowed values are 1-64. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum number of goroutines for event manager process. Allowed values are 1-64. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EventManagerMaxGoroutines *uint32 `json:"event_manager_max_goroutines,omitempty"`
 
-	// Maximum number of subscribers for event manager process. Allowed values are 1-6. Special values are 0 - Disabled. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum number of subscribers for event manager process. Allowed values are 1-6. Special values are 0 - Disabled. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EventManagerMaxSubscribers *uint32 `json:"event_manager_max_subscribers,omitempty"`
 
-	// Log instances for event manager processing delay; recorded whenever event processing delay exceeds configured interval specified in seconds. Allowed values are 1-5. Special values are 0 - Disabled. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Log instances for event manager processing delay; recorded whenever event processing delay exceeds configured interval specified in seconds. Allowed values are 1-5. Special values are 0 - Disabled. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EventManagerProcessingTimeThreshold *uint32 `json:"event_manager_processing_time_threshold,omitempty"`
 
-	// False Positive learning configuration. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// False Positive learning configuration. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FalsePositiveLearningConfig *FalsePositiveLearningConfig `json:"false_positive_learning_config,omitempty"`
 
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -165,34 +165,34 @@ type ControllerProperties struct {
 	// Period for file object cleanup job. Field introduced in 20.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FileObjectCleanupPeriod *uint32 `json:"file_object_cleanup_period,omitempty"`
 
-	// This is the max number of file versions that will be retained for a file referenced by the local FileObject. Subsequent uploads of file will result in the file rotation of the older version and the latest version retained. Example  When a file Upload is done for the first time, there will be a v1 version. Subsequent uploads will get mapped to v1, v2 and v3 versions. On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained. Allowed values are 1-5. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// This is the max number of file versions that will be retained for a file referenced by the local FileObject. Subsequent uploads of file will result in the file rotation of the older version and the latest version retained. Example  When a file Upload is done for the first time, there will be a v1 version. Subsequent uploads will get mapped to v1, v2 and v3 versions. On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained. Allowed values are 1-5. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FileobjectMaxFileVersions *uint32 `json:"fileobject_max_file_versions,omitempty"`
 
-	// Number of version copies for a givenfile object of GSLB_GEO_DB type. Allowed values are 2-50000. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Number of version copies for a givenfile object of GSLB_GEO_DB type. Allowed values are 2-50000. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GslbFileobjectMaxVersionCount *uint32 `json:"gslb_fileobject_max_version_count,omitempty"`
 
-	// Batch size for the vs_mgr to perform datastrorecleanup during a GSLB purge. Allowed values are 50-1200. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Batch size for the vs_mgr to perform datastrorecleanup during a GSLB purge. Allowed values are 50-1200. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GslbPurgeBatchSize *uint32 `json:"gslb_purge_batch_size,omitempty"`
 
-	// Sleep time in the vs_mgr during a FederatedPurge RPC call. Allowed values are 50-100. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Sleep time in the vs_mgr during a FederatedPurge RPC call. Allowed values are 50-100. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GslbPurgeSleepTimeMs *uint32 `json:"gslb_purge_sleep_time_ms,omitempty"`
 
-	// Ignore the vrf_context filter for /networksubnetlist API. Field introduced in 22.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Ignore the vrf_context filter for /networksubnetlist API. Field introduced in 22.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IgnoreVrfInNetworksubnetlist *bool `json:"ignore_vrf_in_networksubnetlist,omitempty"`
 
-	// Disk size to be allocated [1MB to 500GB] to store logs on a controller vm. Allowed values are 1000-500000000. Field introduced in 31.2.1. Unit is KB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Disk size to be allocated [1MB to 500GB] to store logs on a controller vm. Allowed values are 1000-500000000. Field introduced in 31.2.1. Unit is KB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogRecordsAllocatedSize *uint32 `json:"log_records_allocated_size,omitempty"`
 
-	// Percentage of allocation (log_records_allocated_size)  for events on controller node. Allowed values are 10-70. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Percentage of allocation (log_records_allocated_size)  for events on controller node. Allowed values are 10-70. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogRecordsAllocationPercentageForEvents *uint32 `json:"log_records_allocation_percentage_for_events,omitempty"`
 
-	// Target percentage of allocated disk quota to reduce log file consumption to when cleanup is triggered. When disk usage exceeds 100% of the allocated quota, cleanup will reduce consumption to this percentage of the allocation. Allowed values are 30-90. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Target percentage of allocated disk quota to reduce log file consumption to when cleanup is triggered. When disk usage exceeds 100% of the allocated quota, cleanup will reduce consumption to this percentage of the allocation. Allowed values are 30-90. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogRecordsCleanupTargetPercentage *uint32 `json:"log_records_cleanup_target_percentage,omitempty"`
 
-	// The threshold for raising an event on frequent cleanup of logs system. By default if two consecutive purger/ clean up runs find logs beyond allocated size then an event in raised. Allowed values are 2-100. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The threshold for raising an event on frequent cleanup of logs system. By default if two consecutive purger/ clean up runs find logs beyond allocated size then an event in raised. Allowed values are 2-100. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogRecordsFrequentCleanupEventGenerationThreshold *uint32 `json:"log_records_frequent_cleanup_event_generation_threshold,omitempty"`
 
-	// Frequency (in seconds) to clean up log files on Controller node. Allowed values are 10-100000. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Frequency (in seconds) to clean up log files on Controller node. Allowed values are 10-100000. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogRecordsPurgeInterval *uint32 `json:"log_records_purge_interval,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -210,13 +210,13 @@ type ControllerProperties struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxSeqVnicFailures *uint32 `json:"max_seq_vnic_failures,omitempty"`
 
-	// Maximum number of threads in threadpool used by cloud connector CCVIPBGWorker. Allowed values are 1-100. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum number of threads in threadpool used by cloud connector CCVIPBGWorker. Allowed values are 1-100. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxThreadsCcVipBgWorker *uint32 `json:"max_threads_cc_vip_bg_worker,omitempty"`
 
 	// Network and VrfContext objects from the admin tenant will not be shared to non-admin tenants unless admin permissions are granted. Field introduced in 18.2.7, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PermissionScopedSharedAdminNetworks *bool `json:"permission_scoped_shared_admin_networks,omitempty"`
 
-	// Period for rotate app persistence keys job. Allowed values are 1-1051200. Special values are 0 - Disabled. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 0), Basic (Allowed values- 0) edition.
+	// Period for rotate app persistence keys job. Allowed values are 1-1051200. Special values are 0 - Disabled. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PersistenceKeyRotatePeriod *uint32 `json:"persistence_key_rotate_period,omitempty"`
 
 	// Burst limit on number of incoming requests. 0 to disable. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -228,7 +228,7 @@ type ControllerProperties struct {
 	// Token used for uploading tech-support to portal. Field introduced in 16.4.6,17.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PortalToken *string `json:"portal_token,omitempty"`
 
-	// Period for which postgres vacuum are executed. Allowed values are 30-40320. Special values are 0 - Deactivated. Field introduced in 22.1.3. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Period for which postgres vacuum are executed. Allowed values are 30-40320. Special values are 0 - Deactivated. Field introduced in 22.1.3. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PostgresVacuumPeriod *uint32 `json:"postgres_vacuum_period,omitempty"`
 
 	// Period for process locked user accounts job. Field introduced in 18.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -240,10 +240,10 @@ type ControllerProperties struct {
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	QueryHostFail *uint32 `json:"query_host_fail,omitempty"`
 
-	// Period for each cycle of log caching in Resource Manager. At the end of each cycle, the in memory cached log history will be cleared. Field introduced in 20.1.5. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Period for each cycle of log caching in Resource Manager. At the end of each cycle, the in memory cached log history will be cleared. Field introduced in 20.1.5. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResmgrLogCachingPeriod *uint32 `json:"resmgr_log_caching_period,omitempty"`
 
-	// Restrict read access to cloud. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Restrict read access to cloud. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RestrictCloudReadAccess *bool `json:"restrict_cloud_read_access,omitempty"`
 
 	// Version of the safenet package installed on the controller. Field introduced in 16.5.2,17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -264,13 +264,13 @@ type ControllerProperties struct {
 	// Default retry period before attempting another Service Engine spawn in SE Group. Field introduced in 20.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeSpawnRetryInterval *uint32 `json:"se_spawn_retry_interval,omitempty"`
 
-	// Timeout for flows cleanup by ServiceEngine during Upgrade.Internal knob  to be exercised under the surveillance of VMware AVI support team. Field introduced in 22.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Timeout for flows cleanup by ServiceEngine during Upgrade.Internal knob  to be exercised under the surveillance of VMware AVI support team. Field introduced in 22.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeUpgradeFlowCleanupTimeout *uint32 `json:"se_upgrade_flow_cleanup_timeout,omitempty"`
 
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeVnicCooldown *uint32 `json:"se_vnic_cooldown,omitempty"`
 
-	// Duration to wait after last vNIC addition before proceeding with vNIC garbage collection. Used for testing purposes. Field introduced in 20.1.4. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Duration to wait after last vNIC addition before proceeding with vNIC garbage collection. Used for testing purposes. Field introduced in 20.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeVnicGcWaitTime *uint32 `json:"se_vnic_gc_wait_time,omitempty"`
 
 	// Period for secure channel cleanup job. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -285,16 +285,16 @@ type ControllerProperties struct {
 	// SSL Certificates in the admin tenant can be used in non-admin tenants. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SharedSslCertificates *bool `json:"shared_ssl_certificates,omitempty"`
 
-	// Skip API Performance collection for requests going through the Apiserver. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Skip API Performance collection for requests going through the Apiserver. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SkipBeegoPerfCollection *bool `json:"skip_beego_perf_collection,omitempty"`
 
-	// Soft Limit on the minimum SE Memory that an SE needs to have on SE Register. Field introduced in 30.1.1. Unit is MB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Soft Limit on the minimum SE Memory that an SE needs to have on SE Register. Field introduced in 30.1.1. Unit is MB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SoftMinMemPerSeLimit *uint32 `json:"soft_min_mem_per_se_limit,omitempty"`
 
 	// Number of days for SSL Certificate expiry warning. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslCertificateExpiryWarningDays []int64 `json:"ssl_certificate_expiry_warning_days,omitempty,omitempty"`
 
-	// Configure statecache behavior for Config, SE, ResMgr. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Configure statecache behavior for Config, SE, ResMgr. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StatecacheProperties *SCProperties `json:"statecache_properties,omitempty"`
 
 	// Period for telemetry job. Allowed values are 1-1440. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -303,13 +303,13 @@ type ControllerProperties struct {
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UnresponsiveSeReboot *uint32 `json:"unresponsive_se_reboot,omitempty"`
 
-	// Number of times to retry a DNS entry update/delete operation. Field introduced in 21.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Number of times to retry a DNS entry update/delete operation. Field introduced in 21.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UpdateDNSEntryRetryLimit *uint32 `json:"update_dns_entry_retry_limit,omitempty"`
 
-	// Timeout period for a DNS entry update/delete operation. Field introduced in 21.1.4. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Timeout period for a DNS entry update/delete operation. Field introduced in 21.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UpdateDNSEntryTimeout *uint32 `json:"update_dns_entry_timeout,omitempty"`
 
-	// Time to account for DNS TTL during upgrade. This is in addition to vs_scalein_timeout_for_upgrade in se_group. Field introduced in 17.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 5), Basic (Allowed values- 5) edition.
+	// Time to account for DNS TTL during upgrade. This is in addition to vs_scalein_timeout_for_upgrade in se_group. Field introduced in 17.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UpgradeDNSTTL *uint32 `json:"upgrade_dns_ttl,omitempty"`
 
 	// This parameter defines the upper-bound value of the VS scale-in or VS scale-out operation executed in the SeScaleIn and SeScale context.  User can tweak this parameter to a higher value if the Segroup gets suspended due to SeScalein or SeScaleOut timeout failure typically associated with high number of VS(es) scaled out. . Field introduced in 18.2.10, 20.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -319,7 +319,7 @@ type ControllerProperties struct {
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// Configuration for User-Agent Cache used in Bot Management. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Configuration for User-Agent Cache used in Bot Management. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UserAgentCacheConfig *UserAgentCacheConfig `json:"user_agent_cache_config,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -343,7 +343,7 @@ type ControllerProperties struct {
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsSeBootupFail *uint32 `json:"vs_se_bootup_fail,omitempty"`
 
-	// Wait for longer for patch SEs to boot up. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Wait for longer for patch SEs to boot up. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsSeBootupFailPatch *uint32 `json:"vs_se_bootup_fail_patch,omitempty"`
 
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -358,13 +358,13 @@ type ControllerProperties struct {
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsSeVnicIPFail *uint32 `json:"vs_se_vnic_ip_fail,omitempty"`
 
-	// vSphere HA monitor detection timeout. If vsphere_ha_enabled is true and the controller is not able to reach the SE, placement will wait for this duration for vsphere_ha_inprogress to be marked true before taking corrective action. Field introduced in 20.1.7, 21.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// vSphere HA monitor detection timeout. If vsphere_ha_enabled is true and the controller is not able to reach the SE, placement will wait for this duration for vsphere_ha_inprogress to be marked true before taking corrective action. Field introduced in 20.1.7, 21.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsphereHaDetectionTimeout *uint32 `json:"vsphere_ha_detection_timeout,omitempty"`
 
-	// vSphere HA monitor recovery timeout. Once vsphere_ha_inprogress is set to true (meaning host failure detected and vSphere HA will recover the Service Engine), placement will wait for at least this duration for the SE to reconnect to the controller before taking corrective action. Field introduced in 20.1.7, 21.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// vSphere HA monitor recovery timeout. Once vsphere_ha_inprogress is set to true (meaning host failure detected and vSphere HA will recover the Service Engine), placement will wait for at least this duration for the SE to reconnect to the controller before taking corrective action. Field introduced in 20.1.7, 21.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsphereHaRecoveryTimeout *uint32 `json:"vsphere_ha_recovery_timeout,omitempty"`
 
-	// vSphere HA monitor timer interval for sending cc_check_se_status to Cloud Connector. Field introduced in 20.1.7, 21.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// vSphere HA monitor timer interval for sending cc_check_se_status to Cloud Connector. Field introduced in 20.1.7, 21.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsphereHaTimerInterval *uint32 `json:"vsphere_ha_timer_interval,omitempty"`
 
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

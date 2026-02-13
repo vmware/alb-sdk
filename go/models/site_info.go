@@ -8,7 +8,7 @@ package models
 // swagger:model SiteInfo
 type SiteInfo struct {
 
-	// Cluster_uuid of a member configured in gslb federation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Cluster_uuid of a member configured in gslb federation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClusterID *string `json:"cluster_id,omitempty"`
 
 	// Site name of a member configured in gslb federation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

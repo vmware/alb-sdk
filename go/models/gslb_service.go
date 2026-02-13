@@ -42,7 +42,7 @@ type GslbService struct {
 	// Health monitor probe can be executed for all the members or it can be executed only for third-party members. This operational mode is useful to reduce the number of health monitor probes in case of a hybrid scenario. In such a case, Avi members can have controller derived status while Non-Avi members can be probed by via health monitor probes in dataplane. Enum options - GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS, GSLB_SERVICE_HEALTH_MONITOR_ONLY_NON_AVI_MEMBERS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HealthMonitorScope *string `json:"health_monitor_scope,omitempty"`
 
-	// If enabled, provide the SRV target's resolved IP in the response SRV GSLB service. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// If enabled, provide the SRV target's resolved IP in the response SRV GSLB service. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IncludeAdditionalRecords *bool `json:"include_additional_records,omitempty"`
 
 	// This field indicates that this object is replicated across GSLB federation. Field introduced in 17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -61,13 +61,13 @@ type GslbService struct {
 	// Number of IP addresses of this GSLB service to be returned by the DNS Service. Enter 0 to return all IP addresses. Allowed values are 1-20. Special values are 0- Return all IP addresses. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumDNSIP *uint32 `json:"num_dns_ip,omitempty"`
 
-	// PKI profile associated with the Gslb Service. It is a reference to an object of type PKIProfile. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// PKI profile associated with the Gslb Service. It is a reference to an object of type PKIProfile. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PkiProfileRef *string `json:"pki_profile_ref,omitempty"`
 
 	// The load balancing algorithm will pick a GSLB pool within the GSLB service list of available pools. Enum options - GSLB_SERVICE_ALGORITHM_PRIORITY, GSLB_SERVICE_ALGORITHM_GEO. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PoolAlgorithm *string `json:"pool_algorithm,omitempty"`
 
-	// Field to specify the type of GSLB service. Enum options - GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME, GSLB_SERVICE_RECORD_TYPE_SRV. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Field to specify the type of GSLB service. Enum options - GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME, GSLB_SERVICE_RECORD_TYPE_SRV. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RecordType *string `json:"record_type,omitempty"`
 
 	// This field indicates that for a CNAME query, respond with resolved CNAMEs in the additional section with A records. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -79,7 +79,7 @@ type GslbService struct {
 	//  It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
-	// When enabled, topology policy rules are used for member selection first. If no valid member is found using the topology policy rules, configured GSLB algorithms for pool selection and member selection are used. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// When enabled, topology policy rules are used for member selection first. If no valid member is found using the topology policy rules, configured GSLB algorithms for pool selection and member selection are used. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TopologyPolicyEnabled *bool `json:"topology_policy_enabled,omitempty"`
 
 	// TTL value (in seconds) for records served for this GSLB service by the DNS Service. Allowed values are 0-86400. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

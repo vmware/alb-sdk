@@ -12,15 +12,15 @@ type UserAccountProfile struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Password complexity constraints for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Password complexity constraints for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	ComplexityConstraint *ComplexityConstraint `json:"complexity_constraint"`
 
-	// Password expiration settings for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Password expiration settings for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	ExpirationConstraint *ExpirationConstraint `json:"expiration_constraint"`
 
-	// Account lockout settings for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Account lockout settings for the user account profile. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	LockoutConstraint *LockoutConstraint `json:"lockout_constraint"`
 

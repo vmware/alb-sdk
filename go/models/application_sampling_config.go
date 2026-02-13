@@ -8,9 +8,9 @@ package models
 // swagger:model ApplicationSamplingConfig
 type ApplicationSamplingConfig struct {
 
-	// Maximum percent of the application data subjected to Application learning. Allowed values are 1-100. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum percent of the application data subjected to Application learning. Allowed values are 1-100. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxSamplingPercent *uint32 `json:"max_sampling_percent,omitempty"`
 
-	// Minimum periodicity at which ServiceEngine sends the application data to the controller. Allowed values are 1-60. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Minimum periodicity at which ServiceEngine sends the application data to the controller. Allowed values are 1-60. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MinUpdateInterval *uint32 `json:"min_update_interval,omitempty"`
 }

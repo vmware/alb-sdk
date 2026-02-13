@@ -8,7 +8,7 @@ package models
 // swagger:model HTTPRedirectAction
 type HTTPRedirectAction struct {
 
-	// Add a query *string to the redirect URI. If keep_query is set, concatenates the add_string to the query of the incoming request. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Add a query *string to the redirect URI. If keep_query is set, concatenates the add_string to the query of the incoming request. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AddString *string `json:"add_string,omitempty"`
 
 	// Host config. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

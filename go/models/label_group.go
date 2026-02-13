@@ -12,10 +12,10 @@ type LabelGroup struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// List of allowed or suggested labels for the label group. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// List of allowed or suggested labels for the label group. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Labels []*RoleMatchOperationMatchLabel `json:"labels,omitempty"`
 
-	// Name of the Label Group. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Name of the Label Group. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
@@ -23,6 +23,6 @@ type LabelGroup struct {
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// UUID of the Label Group. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// UUID of the Label Group. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

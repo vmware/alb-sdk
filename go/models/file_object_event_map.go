@@ -8,9 +8,9 @@ package models
 // swagger:model FileObjectEventMap
 type FileObjectEventMap struct {
 
-	// Actual event informations. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Actual event informations. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TaskEvent []*FileObjectEvent `json:"task_event,omitempty"`
 
-	// Name of the event task. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Name of the event task. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TaskName *string `json:"task_name,omitempty"`
 }

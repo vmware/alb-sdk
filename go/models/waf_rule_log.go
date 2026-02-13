@@ -14,7 +14,7 @@ type WafRuleLog struct {
 	// Rule's msg *string per ModSec language. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Msg *string `json:"msg,omitempty"`
 
-	// The count of omitted match element logs in the current rule. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The count of omitted match element logs in the current rule. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OmittedMatchElements *uint32 `json:"omitted_match_elements,omitempty"`
 
 	// Phase in which transaction matched the Rule - for instance, Request Header Phase. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

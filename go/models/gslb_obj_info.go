@@ -8,6 +8,6 @@ package models
 // swagger:model GslbObjInfo
 type GslbObjInfo struct {
 
-	// The config replication info to SE(es) and peer sites. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The config replication info to SE(es) and peer sites. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ReplState *CfgState `json:"repl_state,omitempty"`
 }

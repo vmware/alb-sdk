@@ -20,6 +20,6 @@ type ErrorPage struct {
 	// Index of the error page. Field introduced in 17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Index *int32 `json:"index,omitempty"`
 
-	// Add match criteria for http status codes to the error page. Field introduced in 17.2.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Add match criteria for http status codes to the error page. Field introduced in 17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Match *HttpstatusMatch `json:"match,omitempty"`
 }

@@ -12,7 +12,7 @@ type SecureChannelMapping struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Auth_token used for SE authorization. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Auth_token used for SE authorization. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AuthToken *string `json:"auth_token,omitempty"`
 
 	// IP of SE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -27,7 +27,7 @@ type SecureChannelMapping struct {
 	// Whether this entry is marked for delete (first step of deletion). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MarkedForDelete *bool `json:"marked_for_delete,omitempty"`
 
-	// Metadata associated with auth_token. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Metadata associated with auth_token. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Metadata []*SecureChannelMetadata `json:"metadata,omitempty"`
 
 	// Uuid of SE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

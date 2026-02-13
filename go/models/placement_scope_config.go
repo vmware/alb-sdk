@@ -8,13 +8,13 @@ package models
 // swagger:model PlacementScopeConfig
 type PlacementScopeConfig struct {
 
-	// Cluster vSphere HA configuration. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.
+	// Cluster vSphere HA configuration. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Clusters []*ClusterHAConfig `json:"clusters,omitempty"`
 
-	// List of transport node clusters include or exclude. Field introduced in 20.1.6. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.
+	// List of transport node clusters include or exclude. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxtClusters *NsxtClusters `json:"nsxt_clusters,omitempty"`
 
-	// List of shared datastores to include or exclude. Field introduced in 20.1.2. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.
+	// List of shared datastores to include or exclude. Field introduced in 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxtDatastores *NsxtDatastores `json:"nsxt_datastores,omitempty"`
 
 	// List of transport nodes include or exclude. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

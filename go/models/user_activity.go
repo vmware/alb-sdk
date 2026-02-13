@@ -30,7 +30,7 @@ type UserActivity struct {
 	// Indicates whether the user is logged in or not. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LoggedIn *bool `json:"logged_in,omitempty"`
 
-	// Its a queue that store the timestamps for past login_failures. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Its a queue that store the timestamps for past login_failures. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LoginFailureTimestamps []string `json:"login_failure_timestamps,omitempty"`
 
 	// Name of the user this object refers to. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

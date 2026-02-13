@@ -12,13 +12,13 @@ type AvailabilityZone struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Group of clusters belongs to the AZ. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Group of clusters belongs to the AZ. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AzClusters []*AZCluster `json:"az_clusters,omitempty"`
 
-	// Group of datastores associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Group of datastores associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AzDatastores []*AZDatastore `json:"az_datastores,omitempty"`
 
-	// Group of hosts associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Group of hosts associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AzHosts []*AZHost `json:"az_hosts,omitempty"`
 
 	// Availability zone belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -38,6 +38,6 @@ type AvailabilityZone struct {
 	// Availability zone config UUID. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 
-	// VSphere Zone associated with the AZ. Field introduced in 32.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// VSphere Zone associated with the AZ. Field introduced in 32.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsphereZones []*VSphereZone `json:"vsphere_zones,omitempty"`
 }

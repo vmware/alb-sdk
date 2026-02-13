@@ -29,12 +29,12 @@ type CRL struct {
 	// The date when a newer CRL will be available. Also conveys the date after which the CRL should be considered obsolete. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NextUpdate *string `json:"next_update,omitempty"`
 
-	// URL of a server that issues the Certificate Revocation list. If this is configured, CRL will be periodically downloaded either based on the configured update interval or the next update interval in the CRL. CRL itself is stored in the body. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// URL of a server that issues the Certificate Revocation list. If this is configured, CRL will be periodically downloaded either based on the configured update interval or the next update interval in the CRL. CRL itself is stored in the body. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServerURL *string `json:"server_url,omitempty"`
 
 	// Certificate Revocation list in plain text for readability. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Text *string `json:"text,omitempty"`
 
-	// Interval in minutes to check for CRL update. If not specified, interval will be 1 day. Allowed values are 30-525600. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Interval in minutes to check for CRL update. If not specified, interval will be 1 day. Allowed values are 30-525600. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UpdateInterval *int32 `json:"update_interval,omitempty"`
 }

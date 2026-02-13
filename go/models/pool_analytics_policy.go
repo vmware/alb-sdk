@@ -8,6 +8,6 @@ package models
 // swagger:model PoolAnalyticsPolicy
 type PoolAnalyticsPolicy struct {
 
-	// Enable realtime metrics and its duration. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enable realtime metrics and its duration. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MetricsRealtimeUpdate *MetricsRealTimeUpdate `json:"metrics_realtime_update,omitempty"`
 }

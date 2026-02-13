@@ -8,12 +8,12 @@ package models
 // swagger:model SeGroupInfo
 type SeGroupInfo struct {
 
-	// License cores consumed by se group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// License cores consumed by se group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Consumed *float64 `json:"consumed,omitempty"`
 
-	// License cores reserved by se group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// License cores reserved by se group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Escrow *float64 `json:"escrow,omitempty"`
 
-	// Se group uuid for reference. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Se group uuid for reference. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

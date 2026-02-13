@@ -20,7 +20,7 @@ type GslbSiteRuntimeCfg struct {
 	// GHM info published for a site. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GhmInfo *ConfigInfo `json:"ghm_info,omitempty"`
 
-	// Gslb JWTProfile info published for a site. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Gslb JWTProfile info published for a site. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GjwtInfo *ConfigInfo `json:"gjwt_info,omitempty"`
 
 	// Gslb info published for a site. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

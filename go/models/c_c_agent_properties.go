@@ -23,16 +23,16 @@ type CCAgentProperties struct {
 	// Slow poll interval. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PollSlowTarget *uint32 `json:"poll_slow_target,omitempty"`
 
-	// Vcenter host reachability check interval. Allowed values are 60-3600. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Vcenter host reachability check interval. Allowed values are 60-3600. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterHostPingInterval *uint32 `json:"vcenter_host_ping_interval,omitempty"`
 
-	// Batch size of vcenter inventory updates. Allowed values are 1-500. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Batch size of vcenter inventory updates. Allowed values are 1-500. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterInventoryMaxObjectUpdates *uint32 `json:"vcenter_inventory_max_object_updates,omitempty"`
 
-	// Max datastore processing go routines for vcenter datastore updates. Allowed values are 1-40. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Max datastore processing go routines for vcenter datastore updates. Allowed values are 1-40. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterMaxDatastoreGoRoutines *uint32 `json:"vcenter_max_datastore_go_routines,omitempty"`
 
-	// Reconcile interval for vcenter inventory. Allowed values are 60-3600. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Reconcile interval for vcenter inventory. Allowed values are 60-3600. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterReconcileInterval *uint32 `json:"vcenter_reconcile_interval,omitempty"`
 
 	// Maximum polls to check for vnics to be attached to VM. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

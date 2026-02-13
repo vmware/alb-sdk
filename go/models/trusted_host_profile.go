@@ -12,21 +12,21 @@ type TrustedHostProfile struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// List of Host IP(v4/v6) addresses or FQDNs. Field introduced in 31.1.1. Minimum of 1 items required. Maximum of 20 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// List of Host IP(v4/v6) addresses or FQDNs. Field introduced in 31.1.1. Minimum of 1 items required. Maximum of 20 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Hosts []*TrustedHost `json:"hosts,omitempty"`
 
-	// TrustedHostProfile name. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// TrustedHostProfile name. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
-	// Tenant ref for trusted host profile. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Tenant ref for trusted host profile. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// TrustedHostProfile UUID. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// TrustedHostProfile UUID. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

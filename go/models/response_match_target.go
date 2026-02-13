@@ -38,10 +38,10 @@ type ResponseMatchTarget struct {
 	// Configure the HTTP headers in response. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RspHdrs []*HdrMatch `json:"rsp_hdrs,omitempty"`
 
-	// Configure source ip addresses. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Configure source ip addresses. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SourceIP *IPAddrMatch `json:"source_ip,omitempty"`
 
-	// Configure the HTTP status code(s). Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Configure the HTTP status code(s). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Status *HttpstatusMatch `json:"status,omitempty"`
 
 	// Configure versions of the HTTP protocol. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

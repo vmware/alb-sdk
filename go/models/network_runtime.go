@@ -16,7 +16,7 @@ type NetworkRuntime struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// Objects using static IPs in this network. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Objects using static IPs in this network. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ObjUuids []string `json:"obj_uuids,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

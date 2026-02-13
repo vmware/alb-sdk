@@ -8,7 +8,7 @@ package models
 // swagger:model HTTPRequestRule
 type HTTPRequestRule struct {
 
-	// Log all HTTP headers upon rule match. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Log all HTTP headers upon rule match. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllHeaders *bool `json:"all_headers,omitempty"`
 
 	// Enable or disable the rule. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -22,7 +22,7 @@ type HTTPRequestRule struct {
 	// Required: true
 	Index *int32 `json:"index"`
 
-	// Log HTTP request upon rule match. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Log HTTP request upon rule match. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Log *bool `json:"log,omitempty"`
 
 	// Add match criteria to the rule. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -12,6 +12,6 @@ type HTTPVersionMatch struct {
 	// Required: true
 	MatchCriteria *string `json:"match_criteria"`
 
-	// HTTP protocol version. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Minimum of 1 items required. Maximum of 8 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- ONE_ZERO,ONE_ONE), Basic (Allowed values- ONE_ZERO,ONE_ONE) edition.
+	// HTTP protocol version. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Minimum of 1 items required. Maximum of 8 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Versions []string `json:"versions,omitempty"`
 }

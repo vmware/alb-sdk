@@ -36,10 +36,10 @@ type NsxtSegmentRuntime struct {
 	// Opaque network Id. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OpaqueNetworkID *string `json:"opaque_network_id,omitempty"`
 
-	// Origin ID applicable to security only cloud. Field introduced in 22.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Origin ID applicable to security only cloud. Field introduced in 22.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OriginID *string `json:"origin_id,omitempty"`
 
-	// Nsxt segment belongs to Security only cloud. Field introduced in 22.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Nsxt segment belongs to Security only cloud. Field introduced in 22.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SecurityOnlyNsxt *bool `json:"security_only_nsxt,omitempty"`
 
 	// Segment Gateway. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -73,7 +73,7 @@ type NsxtSegmentRuntime struct {
 	// Uuid. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 
-	// Segment Vlan ids. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Segment Vlan ids. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VlanIds []string `json:"vlan_ids,omitempty"`
 
 	// Corresponding vrf context object in Avi. It is a reference to an object of type VrfContext. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

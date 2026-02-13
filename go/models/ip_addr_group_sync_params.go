@@ -8,9 +8,9 @@ package models
 // swagger:model IpAddrGroupSyncParams
 type IPAddrGroupSyncParams struct {
 
-	// Name of the IpAddrGroup to sync NSX group IPs for. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Name of the IpAddrGroup to sync NSX group IPs for. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// UUID of the IpAddrGroup to sync NSX group IPs for. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// UUID of the IpAddrGroup to sync NSX group IPs for. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

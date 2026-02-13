@@ -17,7 +17,7 @@ type RmSpawnSeEventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudUUID *string `json:"cloud_uuid,omitempty"`
 
-	//  Field introduced in 20.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Field introduced in 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FlavorName *string `json:"flavor_name,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

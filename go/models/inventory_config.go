@@ -8,6 +8,6 @@ package models
 // swagger:model InventoryConfig
 type InventoryConfig struct {
 
-	// Allow inventory stats to be regularly sent to Pulse Cloud Services. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Allow inventory stats to be regularly sent to Pulse Cloud Services. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Enable *bool `json:"enable,omitempty"`
 }

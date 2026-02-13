@@ -15,37 +15,37 @@ type WafPolicy struct {
 	// Allow Rules to overwrite the policy mode. This must be set if the policy mode is set to enforcement. Field introduced in 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllowModeDelegation *bool `json:"allow_mode_delegation,omitempty"`
 
-	// A set of rules which describe conditions under which the request will bypass the WAF. This will be processed in the request header phase before any other WAF related code. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// A set of rules which describe conditions under which the request will bypass the WAF. This will be processed in the request header phase before any other WAF related code. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Allowlist *WafPolicyAllowlist `json:"allowlist,omitempty"`
 
 	// Application Specific Signatures. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ApplicationSignatures *WafApplicationSignatures `json:"application_signatures,omitempty"`
 
-	// If this flag is set, the system will try to keep the CRS version used in this policy up-to-date. If a newer CRS object is available on this controller, the system will issue the CRS upgrade process for this WAF Policy. It will not update polices if the current CRS version is CRS-VERSION-NOT-APPLICABLE. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// If this flag is set, the system will try to keep the CRS version used in this policy up-to-date. If a newer CRS object is available on this controller, the system will issue the CRS upgrade process for this WAF Policy. It will not update polices if the current CRS version is CRS-VERSION-NOT-APPLICABLE. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoUpdateCrs *bool `json:"auto_update_crs,omitempty"`
 
-	// Enable the functionality to bypass WAF for static file extensions. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enable the functionality to bypass WAF for static file extensions. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BypassStaticExtensions *bool `json:"bypass_static_extensions,omitempty"`
 
 	// Creator name. Field introduced in 17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CreatedBy *string `json:"created_by,omitempty"`
 
-	// Override attributes for CRS rules. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Override attributes for CRS rules. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CrsOverrides []*WafRuleGroupOverrides `json:"crs_overrides,omitempty"`
 
 	//  Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// If this is set, WAF will let requests be streamed to the backend servers. If not set, requests and responses will be buffered up to the configured maximum values. It can only be set if the WafPolicy is not set to enforcement mode. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// If this is set, WAF will let requests be streamed to the backend servers. If not set, requests and responses will be buffered up to the configured maximum values. It can only be set if the WafPolicy is not set to enforcement mode. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableStreaming *bool `json:"enable_streaming,omitempty"`
 
 	// WAF Policy failure mode. This can be 'Open' or 'Closed'. Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED. Field introduced in 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FailureMode *string `json:"failure_mode,omitempty"`
 
-	// If sampling_mode is set to FIXED_SAMPLING, this value determines the percentage of requests choosen for WAF processing. Allowed values are 1-100. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// If sampling_mode is set to FIXED_SAMPLING, this value determines the percentage of requests choosen for WAF processing. Allowed values are 1-100. Field introduced in 31.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FixedSamplingRate *uint32 `json:"fixed_sampling_rate,omitempty"`
 
-	// Geo Location Mapping Database used by this WafPolicy. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Geo Location Mapping Database used by this WafPolicy. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GeoDbRef *string `json:"geo_db_ref,omitempty"`
 
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -71,7 +71,7 @@ type WafPolicy struct {
 	// WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be  enforced before the CRS groups. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PreCrsGroups []*WafRuleGroup `json:"pre_crs_groups,omitempty"`
 
-	// If and how WAF should use sampling to restrict the number of requests checked. Enum options - WAF_SAMPLING_MODE_NO_SAMPLING, WAF_SAMPLING_MODE_ADAPTIVE_SAMPLING, WAF_SAMPLING_MODE_FIXED_SAMPLING. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// If and how WAF should use sampling to restrict the number of requests checked. Enum options - WAF_SAMPLING_MODE_NO_SAMPLING, WAF_SAMPLING_MODE_ADAPTIVE_SAMPLING, WAF_SAMPLING_MODE_FIXED_SAMPLING. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SamplingMode *string `json:"sampling_mode,omitempty"`
 
 	//  It is a reference to an object of type Tenant. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -81,7 +81,7 @@ type WafPolicy struct {
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// While updating CRS, the system will make sure that new rules are added in EVALUATION mode. A CRS update will set new rules into EVALUATION mode by adding crs_overrides for the new rules. If this flag is not set or if the old CRS object was empty, the new rules will be added without crs_overrides. This option is used for the auto_update_crs workflow as well as for the UI based CRS update workflow. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// While updating CRS, the system will make sure that new rules are added in EVALUATION mode. A CRS update will set new rules into EVALUATION mode by adding crs_overrides for the new rules. If this flag is not set or if the old CRS object was empty, the new rules will be added without crs_overrides. This option is used for the auto_update_crs workflow as well as for the UI based CRS update workflow. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UseEvaluationModeOnCrsUpdate *bool `json:"use_evaluation_mode_on_crs_update,omitempty"`
 
 	//  Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

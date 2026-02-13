@@ -12,15 +12,15 @@ type ALBServicesFileDownload struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Destination of the file to be saved. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Destination of the file to be saved. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	DestinationDir *string `json:"destination_dir"`
 
-	// SOFTWARE / CRS/ INVENTORY. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// SOFTWARE / CRS/ INVENTORY. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	FileType *string `json:"file_type"`
 
-	// file uri on the cloud bucket. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// file uri on the cloud bucket. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	FileURI *string `json:"file_uri"`
 
@@ -32,7 +32,7 @@ type ALBServicesFileDownload struct {
 	// Read Only: true
 	Metadata *ALBServicesFileDownloadMetadata `json:"metadata,omitempty"`
 
-	// The name of the file with which it is saved to the disk. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The name of the file with which it is saved to the disk. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
@@ -40,13 +40,13 @@ type ALBServicesFileDownload struct {
 	// Read Only: true
 	Status *string `json:"status,omitempty"`
 
-	// Tenant UUID associated with the object. It is a reference to an object of type Tenant. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Tenant UUID associated with the object. It is a reference to an object of type Tenant. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// Unique ID of the object. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Unique ID of the object. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

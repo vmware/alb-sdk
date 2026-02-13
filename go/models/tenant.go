@@ -12,7 +12,7 @@ type Tenant struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Key/value tenant attributes. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Key/value tenant attributes. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Attrs []*KeyValue `json:"attrs,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -24,10 +24,10 @@ type Tenant struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// The referred label groups are enforced on the tenant if this is set to true.If this is set to false, the label groups are suggested for the tenant. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The referred label groups are enforced on the tenant if this is set to true.If this is set to false, the label groups are suggested for the tenant. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnforceLabelGroup *bool `json:"enforce_label_group,omitempty"`
 
-	// The label_groups to be enforced on the tenant. This is strictly enforced only if enforce_label_group is set to True. It is a reference to an object of type LabelGroup. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The label_groups to be enforced on the tenant. This is strictly enforced only if enforce_label_group is set to True. It is a reference to an object of type LabelGroup. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LabelGroupRefs []string `json:"label_group_refs,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

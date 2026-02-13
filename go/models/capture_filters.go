@@ -29,7 +29,7 @@ type CaptureFilters struct {
 	// Source Port filter. Allowed values are 1-65535. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SrcPort *uint32 `json:"src_port,omitempty"`
 
-	// Source Port range end filter. If specified, the source port filter will be a range. The filter range will be between src_port and src_port_range_end. Allowed values are 1-65535. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Source Port range end filter. If specified, the source port filter will be a range. The filter range will be between src_port and src_port_range_end. Allowed values are 1-65535. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SrcPortRangeEnd *uint32 `json:"src_port_range_end,omitempty"`
 
 	// TCP ACK flag filter. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

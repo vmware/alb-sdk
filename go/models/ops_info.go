@@ -8,6 +8,6 @@ package models
 // swagger:model OpsInfo
 type OpsInfo struct {
 
-	// Current outstanding request-response token of the message to this site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Current outstanding request-response token of the message to this site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Rrtoken []string `json:"rrtoken,omitempty"`
 }

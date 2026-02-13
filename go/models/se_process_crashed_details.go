@@ -8,12 +8,12 @@ package models
 // swagger:model SeProcessCrashedDetails
 type SeProcessCrashedDetails struct {
 
-	// Number of times the process has crashed. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Number of times the process has crashed. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CrashCounter *uint32 `json:"crash_counter,omitempty"`
 
-	// Name of the process that crashed. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Name of the process that crashed. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProcessName *string `json:"process_name,omitempty"`
 
-	// Name of the SE reporting this event. It is a reference to an object of type ServiceEngine. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Name of the SE reporting this event. It is a reference to an object of type ServiceEngine. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeName *string `json:"se_name,omitempty"`
 }

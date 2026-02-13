@@ -8,6 +8,6 @@ package models
 // swagger:model SaasLicensingInfo
 type SaasLicensingInfo struct {
 
-	// Enable relaxed reservation norm allowing up to 2x free units( normally constrained to free license units ) to be reserved by upcoming SE’s. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enable relaxed reservation norm allowing up to 2x free units( normally constrained to free license units ) to be reserved by upcoming SE’s. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableNotionalReserve *bool `json:"enable_notional_reserve,omitempty"`
 }

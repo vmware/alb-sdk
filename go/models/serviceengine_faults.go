@@ -8,6 +8,6 @@ package models
 // swagger:model ServiceengineFaults
 type ServiceengineFaults struct {
 
-	// Enable debug faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enable debug faults. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DebugFaults *bool `json:"debug_faults,omitempty"`
 }

@@ -19,7 +19,7 @@ type CertificateManagementProfile struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// Alert script config object for certificate management profile. It is a reference to an object of type AlertScriptConfig. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Alert script config object for certificate management profile. It is a reference to an object of type AlertScriptConfig. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	RunScriptRef *string `json:"run_script_ref"`
 

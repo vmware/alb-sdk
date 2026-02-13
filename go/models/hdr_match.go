@@ -19,7 +19,7 @@ type HdrMatch struct {
 	// Required: true
 	MatchCriteria *string `json:"match_criteria"`
 
-	// UUID of the *string group(s). It is a reference to an object of type StringGroup. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// UUID of the *string group(s). It is a reference to an object of type StringGroup. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StringGroupRefs []string `json:"string_group_refs,omitempty"`
 
 	// String values to match in the HTTP header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

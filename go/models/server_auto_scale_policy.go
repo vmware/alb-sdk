@@ -12,7 +12,7 @@ type ServerAutoScalePolicy struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Delay in minutes after which a down server will be removed from Pool. Value 0 disables this functionality. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Delay in minutes after which a down server will be removed from Pool. Value 0 disables this functionality. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DelayForServerGarbageCollection *uint32 `json:"delay_for_server_garbage_collection,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -58,7 +58,7 @@ type ServerAutoScalePolicy struct {
 	// Cooldown period during which no new scale-out is triggered to allow previous scale-out to successfully complete. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ScaleoutCooldown *uint32 `json:"scaleout_cooldown,omitempty"`
 
-	// Scheduled-based scale-in/out policy. During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from ScheduleScale policy. Field introduced in 21.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Scheduled-based scale-in/out policy. During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from ScheduleScale policy. Field introduced in 21.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ScheduledScalings []*ScheduledScaling `json:"scheduled_scalings,omitempty"`
 
 	//  It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

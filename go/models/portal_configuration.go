@@ -29,7 +29,7 @@ type PortalConfiguration struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableHTTPS *bool `json:"enable_https,omitempty"`
 
-	// Feature flag for enabling rate limiter(false by default). Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Feature flag for enabling rate limiter(false by default). Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableRateLimiter *bool `json:"enable_rate_limiter,omitempty"`
 
 	// HTTP port. Allowed values are 1-65535. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -38,10 +38,10 @@ type PortalConfiguration struct {
 	// HTTPS port. Allowed values are 1-65535. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HTTPSPort *uint32 `json:"https_port,omitempty"`
 
-	// Allow Incoming Connections from Clients Using TLS 1.0/1.1 to Controller. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Allow Incoming Connections from Clients Using TLS 1.0/1.1 to Controller. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LegacySslSupport *bool `json:"legacy_ssl_support,omitempty"`
 
-	// Reference to PKIProfile Config used for CRL validation. It is a reference to an object of type PKIProfile. Field introduced in 30.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Reference to PKIProfile Config used for CRL validation. It is a reference to an object of type PKIProfile. Field introduced in 30.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PkiprofileRef *string `json:"pkiprofile_ref,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

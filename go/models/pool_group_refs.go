@@ -8,6 +8,6 @@ package models
 // swagger:model PoolGroupRefs
 type PoolGroupRefs struct {
 
-	// UUID of the pool group. It is a reference to an object of type PoolGroup. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// UUID of the pool group. It is a reference to an object of type PoolGroup. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

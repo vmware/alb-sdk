@@ -29,19 +29,19 @@ type WafConfig struct {
 	// 0  For Netscape Cookies. 1  For version 1 cookies. Allowed values are 0-1. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CookieFormatVersion *uint32 `json:"cookie_format_version,omitempty"`
 
-	// If this is set, the limits from the json_parsing_limit section are checked on parsing. . Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// If this is set, the limits from the json_parsing_limit section are checked on parsing. . Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableJSONParsingLimits *bool `json:"enable_json_parsing_limits,omitempty"`
 
-	// Flag or Reject the client request if it exceeds client_request_max_body_size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Flag or Reject the client request if it exceeds client_request_max_body_size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnforceMaxBodySize *bool `json:"enforce_max_body_size,omitempty"`
 
 	// Ignore request body parsing errors due to partial scanning. Field introduced in 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IgnoreIncompleteRequestBodyError *bool `json:"ignore_incomplete_request_body_error,omitempty"`
 
-	// The parsing limits for JSON objects. If one of theses limits is exceeded, parsing will stop generating new key-value pairs for WAF and will set the REQUEST_BODY_ERROR variable to indicate this. However, it will continue the parsing itself to detect problems in the structure of the JSON body. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The parsing limits for JSON objects. If one of theses limits is exceeded, parsing will stop generating new key-value pairs for WAF and will set the REQUEST_BODY_ERROR variable to indicate this. However, it will continue the parsing itself to detect problems in the structure of the JSON body. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	JSONParsingLimits *JSONParsingLimits `json:"json_parsing_limits,omitempty"`
 
-	// Every match element listed here will be parsed by a second parser. This happens non-recursivly. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Every match element listed here will be parsed by a second parser. This happens non-recursivly. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MatchElementSubParsers []*WafMatchElementSubParser `json:"match_element_sub_parsers,omitempty"`
 
 	// The maximum period of time WAF processing is allowed to take for a single request. A value of 0 (zero) means no limit and should not be chosen in production deployments. It is only used for exceptional situations where crashes of se_dp processes are acceptable. The behavior of the system if this time is exceeded depends on two other configuration settings, the WAF policy mode and the WAF failure mode. In WAF policy mode 'Detection', the request is allowed and flagged for both failure mode 'Closed' and 'Open'. In enforcement node, 'Closed' means the request is rejected, 'Open' means the request is allowed and flagged. Irrespective of these settings, no subsequent WAF rules of this or other phases will be executed once the maximum execution time has been exceeded. Allowed values are 0-5000. Special values are 0- Do not apply this restriction.. Field introduced in 17.2.12, 18.1.2. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -75,7 +75,7 @@ type WafConfig struct {
 	// WAF Restricted HTTP Headers. Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RestrictedHeaders []string `json:"restricted_headers,omitempty"`
 
-	// Whether or not to send WAF status in a request header to pool servers. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Whether or not to send WAF status in a request header to pool servers. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SendStatusHeader *bool `json:"send_status_header,omitempty"`
 
 	// Maximum size for response body scanned by WAF. Allowed values are 1-32768. Field introduced in 17.2.1. Unit is KB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -87,10 +87,10 @@ type WafConfig struct {
 	// HTTP status code used by WAF Positive Security Model when rejecting a request. Enum options - HTTP_RESPONSE_CODE_0, HTTP_RESPONSE_CODE_100, HTTP_RESPONSE_CODE_101, HTTP_RESPONSE_CODE_200, HTTP_RESPONSE_CODE_201, HTTP_RESPONSE_CODE_202, HTTP_RESPONSE_CODE_203, HTTP_RESPONSE_CODE_204, HTTP_RESPONSE_CODE_205, HTTP_RESPONSE_CODE_206, HTTP_RESPONSE_CODE_300, HTTP_RESPONSE_CODE_301, HTTP_RESPONSE_CODE_302, HTTP_RESPONSE_CODE_303, HTTP_RESPONSE_CODE_304, HTTP_RESPONSE_CODE_305, HTTP_RESPONSE_CODE_307, HTTP_RESPONSE_CODE_400, HTTP_RESPONSE_CODE_401, HTTP_RESPONSE_CODE_402.... Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StatusCodeForRejectedRequests *string `json:"status_code_for_rejected_requests,omitempty"`
 
-	// The name of the request header indicating WAF evaluation status to pool servers. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The name of the request header indicating WAF evaluation status to pool servers. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StatusHeaderName *string `json:"status_header_name,omitempty"`
 
-	// Collection variable set by the XML request body parser. Enum options - WAF_XML_COLLECTION_XML, WAF_XML_COLLECTION_ARGS. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Collection variable set by the XML request body parser. Enum options - WAF_XML_COLLECTION_XML, WAF_XML_COLLECTION_ARGS. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	XMLCollection *string `json:"xml_collection,omitempty"`
 
 	// Block or flag XML requests referring to External Entities. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -21,7 +21,7 @@ type ClientLogStreamingConfig struct {
 	// Type of logs to stream to the external server. Default is LOGS_ALL, i.e., send all logs. Enum options - LOGS_SIGNIFICANT_ONLY, LOGS_UDF_ONLY, LOGS_UDF_SIGNIFICANT, LOGS_ALL. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogTypesToSend *string `json:"log_types_to_send,omitempty"`
 
-	// One or more keys which should exist in VirtualService RBAC markers. Key along with values will be streamed out in log. If key is not found in RBAC markers, it will not be streamed. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// One or more keys which should exist in VirtualService RBAC markers. Key along with values will be streamed out in log. If key is not found in RBAC markers, it will not be streamed. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MarkerKeys []*RoleFilterMatchLabel `json:"marker_keys,omitempty"`
 
 	// This setting limits the number of logs streamed per VS from each SE to the external server. By default, 100 logs per second are streamed. Set this to zero(0) to not enforce any limit. Note that the SE group's throttle value takes precedence over this setting. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

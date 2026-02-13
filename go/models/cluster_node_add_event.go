@@ -11,7 +11,7 @@ type ClusterNodeAddEvent struct {
 	// IPv4 address of the controller VM. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IP *IPAddr `json:"ip,omitempty"`
 
-	// IPv6 address of the controller VM. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// IPv6 address of the controller VM. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Ip6 *IPAddr `json:"ip6,omitempty"`
 
 	// Name of controller node. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

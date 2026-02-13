@@ -13,7 +13,7 @@ type ObjectRule struct {
 	// Read Only: true
 	Action *RetentionAction `json:"action"`
 
-	// Maximum number of objects allowed in the system. When the limit exceeds, action is invoked for the oldest objects. Allowed values are 1-100. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum number of objects allowed in the system. When the limit exceeds, action is invoked for the oldest objects. Allowed values are 1-100. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Limit *uint64 `json:"limit,omitempty"`
 
 	// Name of the object model. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

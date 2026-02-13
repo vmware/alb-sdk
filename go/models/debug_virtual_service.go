@@ -21,7 +21,7 @@ type DebugVirtualService struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CaptureParams *DebugVirtualServiceCapture `json:"capture_params,omitempty"`
 
-	// Per packet capture filters for Debug Virtual Service. Applies to both frontend and backend packets. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Per packet capture filters for Debug Virtual Service. Applies to both frontend and backend packets. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CapturePktFilter *CapturePacketFilter `json:"capture_pkt_filter,omitempty"`
 
 	//  It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -39,14 +39,14 @@ type DebugVirtualService struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Flags []*DebugVsDataplane `json:"flags,omitempty"`
 
-	// Deprecated in 22.1.1. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Deprecated in 22.1.1. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LatencyAuditFilters *CaptureFilters `json:"latency_audit_filters,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
-	// Object sync debug options. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Object sync debug options. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Objsync *DebugVirtualServiceObjSync `json:"objsync,omitempty"`
 
 	// This option re-synchronizes flows between Active-Standby service engines for all the virtual services placed on them. It should be used with caution because as it can cause a flood between Active-Standby. Field introduced in 18.1.3,18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

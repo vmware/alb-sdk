@@ -12,28 +12,28 @@ type LicenseStatus struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// CLS licensing status. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// CLS licensing status. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClsStatus *CLSStatus `json:"cls_status,omitempty"`
 
-	// Legacy license grace period, when controller upgrades with existing legacy licenses. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Legacy license grace period, when controller upgrades with existing legacy licenses. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LegacyLicenseGracePeriod *string `json:"legacy_license_grace_period,omitempty"`
 
-	// Saas licensing status. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Saas licensing status. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SaasStatus *SaasLicensingStatus `json:"saas_status,omitempty"`
 
-	// Pulse license service update. Field introduced in 21.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Pulse license service update. Field introduced in 21.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServiceUpdate *LicenseServiceUpdate `json:"service_update,omitempty"`
 
-	// Indicates if legacy licenses are supported. When false, legacy licenses have been cleaned up after grace period expiry. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Indicates if legacy licenses are supported. When false, legacy licenses have been cleaned up after grace period expiry. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SupportLegacyLicense *bool `json:"support_legacy_license,omitempty"`
 
-	// Tenant uuid. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Tenant uuid. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantUUID *string `json:"tenant_uuid,omitempty"`
 
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// Uuid. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Uuid. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

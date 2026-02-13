@@ -23,13 +23,13 @@ type GslbRuntime struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FlrState []*CfgState `json:"flr_state,omitempty"`
 
-	// Contains the replication Details. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Contains the replication Details. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GslbCrmRuntime []*GslbCRMRuntime `json:"gslb_crm_runtime,omitempty"`
 
-	// Contains the health status Details. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Contains the health status Details. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GslbHsmRuntime []*GslbHSMRuntime `json:"gslb_hsm_runtime,omitempty"`
 
-	// Contains the Site Details. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Contains the Site Details. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GslbSmRuntime []*GslbSMRuntime `json:"gslb_sm_runtime,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

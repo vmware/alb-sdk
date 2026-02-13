@@ -14,7 +14,7 @@ type HTTPClientAuthenticationParams struct {
 	// Basic authentication realm to present to a user along with the prompt for credentials. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Realm *string `json:"realm,omitempty"`
 
-	// Rrequest URI path when the authentication applies. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Rrequest URI path when the authentication applies. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RequestURIPath *StringMatch `json:"request_uri_path,omitempty"`
 
 	// type of client authentication. Enum options - HTTP_BASIC_AUTH. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

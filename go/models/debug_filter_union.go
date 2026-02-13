@@ -20,7 +20,7 @@ type DebugFilterUnion struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HsDebugFilter *HSMgrDebugFilter `json:"hs_debug_filter,omitempty"`
 
-	// Add filter to Log Manager Debug. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Add filter to Log Manager Debug. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogmanagerDebugFilter *LogManagerDebugFilter `json:"logmanager_debug_filter,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

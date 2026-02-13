@@ -8,9 +8,9 @@ package models
 // swagger:model ReportParameter
 type ReportParameter struct {
 
-	// The name of the parameter. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The name of the parameter. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// The value of the parameter. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The value of the parameter. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Value *string `json:"value,omitempty"`
 }

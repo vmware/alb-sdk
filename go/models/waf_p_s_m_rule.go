@@ -14,7 +14,7 @@ type WafPSMRule struct {
 	// Enable or disable this rule. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Enable *bool `json:"enable,omitempty"`
 
-	// If this is set, the hit action for this match will be WAF_ACTION_NO_OP. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// If this is set, the hit action for this match will be WAF_ACTION_NO_OP. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IgnoreHitAction *bool `json:"ignore_hit_action,omitempty"`
 
 	// Rule index, this is used to determine the order of the rules. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -33,10 +33,10 @@ type WafPSMRule struct {
 	// A regular expression which describes the expected value. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MatchValuePattern *string `json:"match_value_pattern,omitempty"`
 
-	// If match_value_string_group_uuid and match_value_string_group_key are set, the referenced regular expression is used as match_value_pattern. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// If match_value_string_group_uuid and match_value_string_group_key are set, the referenced regular expression is used as match_value_pattern. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MatchValueStringGroupKey *string `json:"match_value_string_group_key,omitempty"`
 
-	// The UUID of a *string group containing key used in match_value_string_group_key. It is a reference to an object of type StringGroup. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The UUID of a *string group containing key used in match_value_string_group_key. It is a reference to an object of type StringGroup. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MatchValueStringGroupRef *string `json:"match_value_string_group_ref,omitempty"`
 
 	// WAF Rule mode. This can be detection or enforcement. If this is not set, the Policy mode is used. This only takes effect if the policy allows delegation. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -11,6 +11,6 @@ type PerformanceLimits struct {
 	// The maximum number of concurrent client conections allowed to the Virtual Service. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxConcurrentConnections *int32 `json:"max_concurrent_connections,omitempty"`
 
-	// The maximum throughput per second for all clients allowed through the client side of the Virtual Service per SE. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The maximum throughput per second for all clients allowed through the client side of the Virtual Service per SE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxThroughput *int32 `json:"max_throughput,omitempty"`
 }

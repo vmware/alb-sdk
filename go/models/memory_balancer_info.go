@@ -14,10 +14,10 @@ type MemoryBalancerInfo struct {
 	// Current controller memory (in GB) usage. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerMemory *int32 `json:"controller_memory,omitempty"`
 
-	// Percent usage of total controller memory. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Percent usage of total controller memory. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerMemoryUsagePercent *float64 `json:"controller_memory_usage_percent,omitempty"`
 
-	// Holder for debug message. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Holder for debug message. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DebugMessage *string `json:"debug_message,omitempty"`
 
 	// Limit on the memory (in KB) for the Process. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -32,15 +32,15 @@ type MemoryBalancerInfo struct {
 	// Name of the Process. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Process *string `json:"process,omitempty"`
 
-	// Current mode of the process. Enum options - REGULAR, DEBUG, DEGRADED, STOP. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Current mode of the process. Enum options - REGULAR, DEBUG, DEGRADED, STOP. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProcessMode *string `json:"process_mode,omitempty"`
 
-	// Current usage trend of the process. Enum options - UPWARD, DOWNWARD, NEUTRAL. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Current usage trend of the process. Enum options - UPWARD, DOWNWARD, NEUTRAL. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProcessTrend *string `json:"process_trend,omitempty"`
 
-	// Size of the task queue usage. Field introduced in 30.2.1, 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Size of the task queue usage. Field introduced in 30.2.1, 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TaskQueueLength *uint64 `json:"task_queue_length,omitempty"`
 
-	// Percent usage of the process limit. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Percent usage of the process limit. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ThresholdPercent *float64 `json:"threshold_percent,omitempty"`
 }

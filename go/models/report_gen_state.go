@@ -8,12 +8,12 @@ package models
 // swagger:model ReportGenState
 type ReportGenState struct {
 
-	// The last time the state changed. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The last time the state changed. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LastChangedTime *TimeStamp `json:"last_changed_time,omitempty"`
 
-	// Reason for the state. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Reason for the state. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 
-	// State of the report generation. Enum options - REPORT_FSM_STARTED, REPORT_FSM_IN_PROGRESS, REPORT_FSM_COMPLETED, REPORT_FSM_FAILED. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// State of the report generation. Enum options - REPORT_FSM_STARTED, REPORT_FSM_IN_PROGRESS, REPORT_FSM_COMPLETED, REPORT_FSM_FAILED. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	State *string `json:"state,omitempty"`
 }

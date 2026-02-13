@@ -8,9 +8,9 @@ package models
 // swagger:model ImageParams
 type ImageParams struct {
 
-	// Maximum wait time to replicate image files from Leader to followers. Allowed values are 600-3600. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum wait time to replicate image files from Leader to followers. Allowed values are 600-3600. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ImageReplicationTimeout *uint32 `json:"image_replication_timeout,omitempty"`
 
-	// Maximum permitted size for image uploads. Allowed values are 10-15. Field introduced in 31.1.1. Unit is GB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum permitted size for image uploads. Allowed values are 10-15. Field introduced in 31.1.1. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxImageSize *uint32 `json:"max_image_size,omitempty"`
 }

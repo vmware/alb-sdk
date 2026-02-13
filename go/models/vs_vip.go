@@ -12,25 +12,25 @@ type VsVip struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// LOCAL_PREF to be used for VsVip advertised. Applicable only over iBGP. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// LOCAL_PREF to be used for VsVip advertised. Applicable only over iBGP. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BgpLocalPreference *uint32 `json:"bgp_local_preference,omitempty"`
 
-	// Number of times the local AS should be prepended additionally to VsVip. Applicable only over eBGP. Allowed values are 1-10. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Number of times the local AS should be prepended additionally to VsVip. Applicable only over eBGP. Allowed values are 1-10. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BgpNumAsPathPrepend *uint32 `json:"bgp_num_as_path_prepend,omitempty"`
 
-	// Select BGP peers, using peer label, for VsVip advertisement. Field introduced in 20.1.5. Maximum of 128 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Select BGP peers, using peer label, for VsVip advertisement. Field introduced in 20.1.5. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BgpPeerLabels []string `json:"bgp_peer_labels,omitempty"`
 
 	//  It is a reference to an object of type Cloud. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudRef *string `json:"cloud_ref,omitempty"`
 
-	// Service discovery specific data including fully qualified domain name, type and Time-To-Live of the DNS record. This takes effect only if dns profile isassociated with cloud. Field introduced in 17.1.1. Maximum of 1000 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Service discovery specific data including fully qualified domain name, type and Time-To-Live of the DNS record. This takes effect only if dns profile isassociated with cloud. Field introduced in 17.1.1. Maximum of 1000 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSInfo []*DNSInfo `json:"dns_info,omitempty"`
 
-	// Force placement on all Service Engines in the Service Engine Group (Container clouds only). Field introduced in 17.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
+	// Force placement on all Service Engines in the Service Engine Group (Container clouds only). Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EastWestPlacement *bool `json:"east_west_placement,omitempty"`
 
-	// Determines the set of IPAM networks to use for this VsVip. Selector type must be SELECTOR_IPAM and only one label is supported. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Determines the set of IPAM networks to use for this VsVip. Selector type must be SELECTOR_IPAM and only one label is supported. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IPAMSelector *Selector `json:"ipam_selector,omitempty"`
 
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

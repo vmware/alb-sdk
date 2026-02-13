@@ -8,7 +8,7 @@ package models
 // swagger:model AttackMetaData
 type AttackMetaData struct {
 
-	// DNS amplification attack record. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// DNS amplification attack record. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Amplification *AttackDNSAmplification `json:"amplification,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

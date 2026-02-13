@@ -12,16 +12,16 @@ type Cloud struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// CloudConnector polling interval in seconds for external autoscale groups, minimum 60 seconds. Allowed values are 60-3600. Field introduced in 18.2.2. Unit is SECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 60), Basic (Allowed values- 60) edition.
+	// CloudConnector polling interval in seconds for external autoscale groups, minimum 60 seconds. Allowed values are 60-3600. Field introduced in 18.2.2. Unit is SECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoscalePollingInterval *uint32 `json:"autoscale_polling_interval,omitempty"`
 
-	//  Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AwsConfiguration *AwsConfiguration `json:"aws_configuration,omitempty"`
 
-	//  Field introduced in 17.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AzureConfiguration *AzureConfiguration `json:"azure_configuration,omitempty"`
 
-	//  Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudstackConfiguration *CloudStackConfiguration `json:"cloudstack_configuration,omitempty"`
 
 	// Custom tags for all Avi created resources in the cloud infrastructure. Field introduced in 17.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -30,25 +30,25 @@ type Cloud struct {
 	// Select the IP address management scheme. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DhcpEnabled *bool `json:"dhcp_enabled,omitempty"`
 
-	// To disable metrics collection. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// To disable metrics collection. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DisableMetricsPolling *bool `json:"disable_metrics_polling,omitempty"`
 
-	// DNS Profile for the cloud. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// DNS Profile for the cloud. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSProviderRef *string `json:"dns_provider_ref,omitempty"`
 
-	// By default, pool member FQDNs are resolved on the Controller. When this is set, pool member FQDNs are instead resolved on Service Engines in this cloud. This is useful in scenarios where pool member FQDNs can only be resolved from Service Engines and not from the Controller. Field introduced in 18.2.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
+	// By default, pool member FQDNs are resolved on the Controller. When this is set, pool member FQDNs are instead resolved on Service Engines in this cloud. This is useful in scenarios where pool member FQDNs can only be resolved from Service Engines and not from the Controller. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSResolutionOnSe *bool `json:"dns_resolution_on_se,omitempty"`
 
-	// DNS resolver for the cloud. Field introduced in 20.1.5. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// DNS resolver for the cloud. Field introduced in 20.1.5. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSResolvers []*DNSResolver `json:"dns_resolvers,omitempty"`
 
-	//  Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DockerConfiguration *DockerConfiguration `json:"docker_configuration,omitempty"`
 
-	// DNS Profile for East-West services. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// DNS Profile for East-West services. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EastWestDNSProviderRef *string `json:"east_west_dns_provider_ref,omitempty"`
 
-	// Ipam Profile for East-West services. Warning - Please use virtual subnets in this IPAM profile that do not conflict with the underlay networks or any overlay networks in the cluster. For example in AWS and GCP, 169.254.0.0/16 is used for storing instance metadata. Hence, it should not be used in this profile. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Ipam Profile for East-West services. Warning - Please use virtual subnets in this IPAM profile that do not conflict with the underlay networks or any overlay networks in the cluster. For example in AWS and GCP, 169.254.0.0/16 is used for storing instance metadata. Hence, it should not be used in this profile. It is a reference to an object of type IpamDnsProviderProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EastWestIPAMProviderRef *string `json:"east_west_ipam_provider_ref,omitempty"`
 
 	// Enable VIP on all data interfaces for the Cloud. Field introduced in 18.2.9, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -57,7 +57,7 @@ type Cloud struct {
 	// Use static routes for VIP side network resolution during VirtualService placement. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableVipStaticRoutes *bool `json:"enable_vip_static_routes,omitempty"`
 
-	// Google Cloud Platform Configuration. Field introduced in 18.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Google Cloud Platform Configuration. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GcpConfiguration *GCPConfiguration `json:"gcp_configuration,omitempty"`
 
 	// Enable IPv6 auto configuration. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -72,10 +72,10 @@ type Cloud struct {
 	// If no license type is specified then default license enforcement for the cloud type is chosen. The default mappings are Container Cloud is Max Ses, OpenStack and VMware is cores and linux it is Sockets. Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LicenseType *string `json:"license_type,omitempty"`
 
-	//  Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LinuxserverConfiguration *LinuxServerConfiguration `json:"linuxserver_configuration,omitempty"`
 
-	// Cloud is in maintenance mode. Field introduced in 20.1.7,21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Cloud is in maintenance mode. Field introduced in 20.1.7,21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaintenanceMode *bool `json:"maintenance_mode,omitempty"`
 
 	// List of labels to be used for granular RBAC. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -84,10 +84,10 @@ type Cloud struct {
 	// Cloud metrics collector polling interval in seconds. Field introduced in 22.1.1. Unit is SECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MetricsPollingInterval *uint32 `json:"metrics_polling_interval,omitempty"`
 
-	// Enable IPv4 on the Management interface of the ServiceEngine. Defaults to dhcp if no static config on Network present. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enable IPv4 on the Management interface of the ServiceEngine. Defaults to dhcp if no static config on Network present. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MgmtIPV4Enabled *bool `json:"mgmt_ip_v4_enabled,omitempty"`
 
-	// Enable IPv6 on the Management interface of the ServiceEngine. Defaults to autocfg if no static config on Network present. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enable IPv6 on the Management interface of the ServiceEngine. Defaults to autocfg if no static config on Network present. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MgmtIPV6Enabled *bool `json:"mgmt_ip_v6_enabled,omitempty"`
 
 	// MTU setting for the cloud. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -97,10 +97,10 @@ type Cloud struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// NSX-T Cloud Platform Configuration. Field introduced in 20.1.1. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.
+	// NSX-T Cloud Platform Configuration. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxtConfiguration *NsxtConfiguration `json:"nsxt_configuration,omitempty"`
 
-	// NTP Configuration for the cloud. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// NTP Configuration for the cloud. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NtpConfiguration *NTPConfiguration `json:"ntp_configuration,omitempty"`
 
 	// Default prefix for all automatically created objects in this cloud. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -109,19 +109,19 @@ type Cloud struct {
 	// Prefer static routes over interface routes during VirtualService placement. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PreferStaticRoutes *bool `json:"prefer_static_routes,omitempty"`
 
-	//  Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProxyConfiguration *ProxyConfiguration `json:"proxy_configuration,omitempty"`
 
-	//  Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RancherConfiguration *RancherConfiguration `json:"rancher_configuration,omitempty"`
 
-	// Resolve IPv6 address for pool member FQDNs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Resolve IPv6 address for pool member FQDNs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResolveFqdnToIPV6 *bool `json:"resolve_fqdn_to_ipv6,omitempty"`
 
 	// The Service Engine Group to use as template. It is a reference to an object of type ServiceEngineGroup. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeGroupTemplateRef *string `json:"se_group_template_ref,omitempty"`
 
-	// DNS records for VIPs are added/deleted based on the operational state of the VIPs. Field introduced in 17.1.12. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- true), Basic (Allowed values- true) edition.
+	// DNS records for VIPs are added/deleted based on the operational state of the VIPs. Field introduced in 17.1.12. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StateBasedDNSRegistration *bool `json:"state_based_dns_registration,omitempty"`
 
 	//  It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -134,16 +134,16 @@ type Cloud struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 
-	//  Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcaConfiguration *VCloudAirConfiguration `json:"vca_configuration,omitempty"`
 
-	//  Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterConfiguration *VCenterConfiguration `json:"vcenter_configuration,omitempty"`
 
-	// This deployment is VMware on AWS cloud. Field introduced in 20.1.5, 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// This deployment is VMware on AWS cloud. Field introduced in 20.1.5, 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VmcDeployment *bool `json:"vmc_deployment,omitempty"`
 
-	// Cloud type. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- CLOUD_NONE,CLOUD_VCENTER), Basic (Allowed values- CLOUD_NONE,CLOUD_NSXT) edition.
+	// Cloud type. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Vtype *string `json:"vtype"`
 }

@@ -11,7 +11,7 @@ type SeVipInterfaceList struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IsPortchannel *bool `json:"is_portchannel,omitempty"`
 
-	// List of placement_networks reachable from this interface. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// List of placement_networks reachable from this interface. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Networks []*DiscoveredNetwork `json:"networks,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

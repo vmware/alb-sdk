@@ -14,7 +14,7 @@ type VsScaleoutParams struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NewVcpus *uint32 `json:"new_vcpus,omitempty"`
 
-	// actuator which initiated this scaleout. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// actuator which initiated this scaleout. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Source *string `json:"source,omitempty"`
 
 	//  It is a reference to an object of type VIMgrHostRuntime. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
