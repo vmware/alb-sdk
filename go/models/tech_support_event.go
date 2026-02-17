@@ -8,6 +8,6 @@ package models
 // swagger:model TechSupportEvent
 type TechSupportEvent struct {
 
-	// Techsupport object. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Techsupport object. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TechSupport *TechSupport `json:"tech_support,omitempty"`
 }

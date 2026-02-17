@@ -8,6 +8,6 @@ package models
 // swagger:model SystemLimitObjectCounts
 type SystemLimitObjectCounts struct {
 
-	// System limit count info for various system limits. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// System limit count info for various system limits. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ObjectCounts []*SystemLimitObjectCount `json:"object_counts,omitempty"`
 }

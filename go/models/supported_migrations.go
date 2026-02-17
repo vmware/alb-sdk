@@ -17,7 +17,7 @@ type SupportedMigrations struct {
 	// Minimum number of cores required for Controller. Field introduced in 18.2.10, 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerMinCores *int32 `json:"controller_min_cores,omitempty"`
 
-	// Minimum supported Docker version required for Controller. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Minimum supported Docker version required for Controller. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerMinDockerVersion *string `json:"controller_min_docker_version,omitempty"`
 
 	// Minimum space required(in GB) on controller for this image installation. Field introduced in 18.2.6. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -29,28 +29,28 @@ type SupportedMigrations struct {
 	// Minimum space required(in GB) for Controller. Field introduced in 18.2.10, 20.1.2. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerMinTotalDisk *int32 `json:"controller_min_total_disk,omitempty"`
 
-	// Minimum cpu cores required to perform dryrun operation for this image. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Minimum cpu cores required to perform dryrun operation for this image. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DryrunMinCores *uint32 `json:"dryrun_min_cores,omitempty"`
 
-	// Minimum free disk space required (in GB) to perform dryrun operation for this image. Field introduced in 31.1.1. Unit is GB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Minimum free disk space required (in GB) to perform dryrun operation for this image. Field introduced in 31.1.1. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DryrunMinFreeDiskSize *uint32 `json:"dryrun_min_free_disk_size,omitempty"`
 
-	// Minimum memory required to perform dryrun operation for this image. Field introduced in 31.1.1. Unit is GB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Minimum memory required to perform dryrun operation for this image. Field introduced in 31.1.1. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DryrunMinMemory *float32 `json:"dryrun_min_memory,omitempty"`
 
-	// Total memory required to perform full upgrade dryrun operation for this image. Field introduced in 31.2.1. Unit is GB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Total memory required to perform full upgrade dryrun operation for this image. Field introduced in 31.2.1. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DryrunTotalMemoryRequired *float32 `json:"dryrun_total_memory_required,omitempty"`
 
 	// Supported active versions for this image. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxActiveVersions *int32 `json:"max_active_versions,omitempty"`
 
-	// Minimum supported API version. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Minimum supported API version. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MinSupportedAPIVersion *string `json:"min_supported_api_version,omitempty"`
 
-	// Minimum space required(in GB) on podman controller host for this image installation. Field introduced in 21.1.4. Unit is GB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Minimum space required(in GB) on podman controller host for this image installation. Field introduced in 21.1.4. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PodmanControllerHostMinFreeDiskSize *int32 `json:"podman_controller_host_min_free_disk_size,omitempty"`
 
-	// Minimum space required(in GB) on podman se host for this image installation. Field introduced in 21.1.4. Unit is GB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Minimum space required(in GB) on podman se host for this image installation. Field introduced in 21.1.4. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PodmanSeHostMinFreeDiskSize *int32 `json:"podman_se_host_min_free_disk_size,omitempty"`
 
 	// Minimum space required(in GB) on controller for rollback. Field introduced in 18.2.6. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

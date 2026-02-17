@@ -15,16 +15,16 @@ type ActionGroupConfig struct {
 	// reference of the action script configuration to be used. It is a reference to an object of type AlertScriptConfig. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ActionScriptConfigRef *string `json:"action_script_config_ref,omitempty"`
 
-	// Trigger Notification to AutoScale Manager. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
+	// Trigger Notification to AutoScale Manager. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoscaleTriggerNotification *bool `json:"autoscale_trigger_notification,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Select the Email Notification configuration to use when sending alerts via email. It is a reference to an object of type AlertEmailConfig. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Select the Email Notification configuration to use when sending alerts via email. It is a reference to an object of type AlertEmailConfig. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EmailConfigRef *string `json:"email_config_ref,omitempty"`
 
-	// Generate Alert only to external destinations. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
+	// Generate Alert only to external destinations. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	ExternalOnly *bool `json:"external_only"`
 
@@ -36,7 +36,7 @@ type ActionGroupConfig struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// Select the SNMP Trap Notification to use when sending alerts via SNMP Trap. It is a reference to an object of type SnmpTrapProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Select the SNMP Trap Notification to use when sending alerts via SNMP Trap. It is a reference to an object of type SnmpTrapProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SnmpTrapProfileRef *string `json:"snmp_trap_profile_ref,omitempty"`
 
 	// Select the Syslog Notification configuration to use when sending alerts via Syslog. It is a reference to an object of type AlertSyslogConfig. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -8,9 +8,9 @@ package models
 // swagger:model SiteLink
 type SiteLink struct {
 
-	// Destination site information (cluster_uuid, name). Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Destination site information (cluster_uuid, name). Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Destination *SiteInfo `json:"destination,omitempty"`
 
-	// Source site information (cluster_uuid, name). Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Source site information (cluster_uuid, name). Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Source *SiteInfo `json:"source,omitempty"`
 }

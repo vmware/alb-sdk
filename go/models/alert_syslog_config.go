@@ -19,7 +19,7 @@ type AlertSyslogConfig struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// User defined sender hostname in syslog message. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// User defined sender hostname in syslog message. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SenderHostname *string `json:"sender_hostname,omitempty"`
 
 	// The list of syslog servers. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

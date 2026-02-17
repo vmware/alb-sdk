@@ -11,7 +11,7 @@ type GcpInfo struct {
 	// Hostname of this SE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Hostname *string `json:"hostname,omitempty"`
 
-	// Instance type of this SE. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Instance type of this SE. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MachineType *string `json:"machine_type,omitempty"`
 
 	// Network this SE is assigned. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

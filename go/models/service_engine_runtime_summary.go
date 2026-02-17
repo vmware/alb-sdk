@@ -14,7 +14,7 @@ type ServiceEngineRuntimeSummary struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AtCurrVer *bool `json:"at_curr_ver,omitempty"`
 
-	// Indicates if at least 1 BGP peer with advertise_vip is UP and at least 1 BGP peer with advertise_snat_ip is UP if there are such peers configured. Flag will be set to false if the condition above is not true for any of the VRFs configured on the SE. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Indicates if at least 1 BGP peer with advertise_vip is UP and at least 1 BGP peer with advertise_snat_ip is UP if there are such peers configured. Flag will be set to false if the condition above is not true for any of the VRFs configured on the SE. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BgpPeersUp *bool `json:"bgp_peers_up,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -59,12 +59,12 @@ type ServiceEngineRuntimeSummary struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VinfraDiscovered *bool `json:"vinfra_discovered,omitempty"`
 
-	// vSphere HA on cluster enabled. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// vSphere HA on cluster enabled. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsphereHaEnabled *bool `json:"vsphere_ha_enabled,omitempty"`
 
-	// This flag is set to true when Cloud Connector has detected an ESX host failure. This flag is set to false when the SE connects back to the controller, or when vSphere HA recovery timeout has occurred. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// This flag is set to true when Cloud Connector has detected an ESX host failure. This flag is set to false when the SE connects back to the controller, or when vSphere HA recovery timeout has occurred. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsphereHaInprogress *bool `json:"vsphere_ha_inprogress,omitempty"`
 
-	// vSphere HA monitor job has been created or is running. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// vSphere HA monitor job has been created or is running. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsphereHaJobActive *bool `json:"vsphere_ha_job_active,omitempty"`
 }

@@ -11,7 +11,7 @@ type ConfigUserLogin struct {
 	// client ip. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientIP *string `json:"client_ip,omitempty"`
 
-	// Type of client used to login UI, CLI, others(API). Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Type of client used to login UI, CLI, others(API). Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientType *string `json:"client_type,omitempty"`
 
 	// error message if authentication failed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

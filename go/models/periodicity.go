@@ -13,6 +13,6 @@ type Periodicity struct {
 	// Read Only: true
 	Action *RetentionAction `json:"action"`
 
-	// Time interval in minutes between the action triggers. Allowed values are 1-43200. Field introduced in 31.1.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Time interval in minutes between the action triggers. Allowed values are 1-43200. Field introduced in 31.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Interval *uint32 `json:"interval,omitempty"`
 }

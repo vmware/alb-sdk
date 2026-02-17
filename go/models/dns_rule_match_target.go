@@ -11,7 +11,7 @@ type DNSRuleMatchTarget struct {
 	// IP addresses to match against client IP or the EDNS client subnet IP. Field introduced in 17.1.6,17.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientIPAddress *DNSClientIPMatch `json:"client_ip_address,omitempty"`
 
-	// Port number to match against client port number. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Port number to match against client port number. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientPortNumbers *DNSClientPortMatch `json:"client_port_numbers,omitempty"`
 
 	// Geographical location attribute to match against that of the client IP. Field introduced in 17.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

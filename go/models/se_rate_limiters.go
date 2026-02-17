@@ -23,7 +23,7 @@ type SeRateLimiters struct {
 	// Rate limiter for ICMP response in pps. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IcmpRspRl *uint32 `json:"icmp_rsp_rl,omitempty"`
 
-	// Rate limiter for ND packets in pps. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Rate limiter for ND packets in pps. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NdRl *uint32 `json:"nd_rl,omitempty"`
 
 	// Rate limiter for number RST pkts sent in pps. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

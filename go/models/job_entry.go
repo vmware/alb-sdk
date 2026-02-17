@@ -16,7 +16,7 @@ type JobEntry struct {
 	// Required: true
 	ExpiresAt *string `json:"expires_at"`
 
-	// populate the is_federated field based object config. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// populate the is_federated field based object config. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IsFederated *bool `json:"is_federated,omitempty"`
 
 	//  Field introduced in 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

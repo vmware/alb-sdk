@@ -21,16 +21,16 @@ type PoolGroup struct {
 	// Name of the user who created the object. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CreatedBy *string `json:"created_by,omitempty"`
 
-	// Deactivate primary pool for selection when down until it is activated by user via clear poolgroup command. Field introduced in 20.1.7, 21.1.2, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Deactivate primary pool for selection when down until it is activated by user via clear poolgroup command. Field introduced in 20.1.7, 21.1.2, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DeactivatePrimaryPoolOnDown *bool `json:"deactivate_primary_pool_on_down,omitempty"`
 
-	// When setup autoscale manager will automatically promote new pools into production when deployment goals are met. It is a reference to an object of type PoolGroupDeploymentPolicy. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// When setup autoscale manager will automatically promote new pools into production when deployment goals are met. It is a reference to an object of type PoolGroupDeploymentPolicy. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DeploymentPolicyRef *string `json:"deployment_policy_ref,omitempty"`
 
 	// Description of Pool Group. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Enable an action - Close Connection, HTTP Redirect, or Local HTTP Response - when a pool group failure happens. By default, a connection will be closed, in case the pool group experiences a failure. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enable an action - Close Connection, HTTP Redirect, or Local HTTP Response - when a pool group failure happens. By default, a connection will be closed, in case the pool group experiences a failure. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FailAction *FailAction `json:"fail_action,omitempty"`
 
 	// Whether an implicit set of priority labels is generated. Field introduced in 17.1.9,17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -42,14 +42,14 @@ type PoolGroup struct {
 	// List of pool group members object of type PoolGroupMember. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Members []*PoolGroupMember `json:"members,omitempty"`
 
-	// The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 0), Basic (Allowed values- 0) edition.
+	// The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MinServers *uint32 `json:"min_servers,omitempty"`
 
 	// The name of the pool group. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
-	// UUID of the priority labels. If not provided, pool group member priority label will be interpreted as a number with a larger number considered higher priority. It is a reference to an object of type PriorityLabels. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// UUID of the priority labels. If not provided, pool group member priority label will be interpreted as a number with a larger number considered higher priority. It is a reference to an object of type PriorityLabels. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PriorityLabelsRef *string `json:"priority_labels_ref,omitempty"`
 
 	// Metadata pertaining to the service provided by this PoolGroup. In Openshift/Kubernetes environments, app metadata info is stored. Any user input to this field will be overwritten by Avi Vantage. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -17,7 +17,7 @@ type SeBootupProperties struct {
 	// Enable or disable fair queueing for packet transmission among virtualservices on an SE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FairQueueingEnabled *bool `json:"fair_queueing_enabled,omitempty"`
 
-	// Granularity or Resolution of co-ordinates used. When the value is 1 the co-ordinates provided in the geo-db are used as is (highest resolution.This value provides a 'zoom-out' value so that coarser co-ordinates are used. With higher resolution, logs can contain finer location information. But, lower resolution provides significant memory and cpu benefits on the service engine. Besides, given a smaller number of members that are separated geographically, a lower resolution is sufficient for correct load-balancing. Allowed values are 1-20. Field introduced in 17.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 1), Basic (Allowed values- 1) edition.
+	// Granularity or Resolution of co-ordinates used. When the value is 1 the co-ordinates provided in the geo-db are used as is (highest resolution.This value provides a 'zoom-out' value so that coarser co-ordinates are used. With higher resolution, logs can contain finer location information. But, lower resolution provides significant memory and cpu benefits on the service engine. Besides, given a smaller number of members that are separated geographically, a lower resolution is sufficient for correct load-balancing. Allowed values are 1-20. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GeoDbGranularity *uint32 `json:"geo_db_granularity,omitempty"`
 
 	// Number of L7 connections that can be cached per core. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -32,10 +32,10 @@ type SeBootupProperties struct {
 	// Deprecated in 21.1.1. Enable trace logs by default on Service Engine. Configuration operations are logged along with other important logs by Service Engine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogAgentTraceEnabled *bool `json:"log_agent_trace_enabled,omitempty"`
 
-	//  Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeDpCompression *SeBootupCompressionProperties `json:"se_dp_compression,omitempty"`
 
-	// Deprecated in 21.1.3. Use config in ServiceEngineGroup instead. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 0), Basic (Allowed values- 0) edition.
+	// Deprecated in 21.1.3. Use config in ServiceEngineGroup instead. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeEmulatedCores *uint32 `json:"se_emulated_cores,omitempty"`
 
 	// Determines if SE-SE IPC messages are encapsulated in an IP header   Note  This field has been moved to se_group properties 20.1.3 onwards.    0        Automatically determine based on hypervisor type    1        Use IP encap unconditionally    ~[0,1]   Don't use IP encap. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -8,7 +8,7 @@ package models
 // swagger:model HTTPResponseRule
 type HTTPResponseRule struct {
 
-	// Log all HTTP headers upon rule match. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Log all HTTP headers upon rule match. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllHeaders *bool `json:"all_headers,omitempty"`
 
 	// Enable or disable the rule. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -22,10 +22,10 @@ type HTTPResponseRule struct {
 	// Required: true
 	Index *int32 `json:"index"`
 
-	// Location header rewrite action. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Location header rewrite action. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LocHdrAction *HTTPRewriteLocHdrAction `json:"loc_hdr_action,omitempty"`
 
-	// Log HTTP request upon rule match. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Log HTTP request upon rule match. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Log *bool `json:"log,omitempty"`
 
 	// Add match criteria to the rule. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

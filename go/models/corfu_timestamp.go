@@ -8,9 +8,9 @@ package models
 // swagger:model CorfuTimestamp
 type CorfuTimestamp struct {
 
-	// unix time since epoch. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// unix time since epoch. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Epoch *uint64 `json:"epoch,omitempty"`
 
-	// CorfuDB log sequence number. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// CorfuDB log sequence number. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Sequence *uint64 `json:"sequence,omitempty"`
 }

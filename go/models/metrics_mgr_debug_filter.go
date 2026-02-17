@@ -8,7 +8,7 @@ package models
 // swagger:model MetricsMgrDebugFilter
 type MetricsMgrDebugFilter struct {
 
-	// Set to ignore skip_eval_period field in metrics_anomaly_option. Field introduced in 20.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Set to ignore skip_eval_period field in metrics_anomaly_option. Field introduced in 20.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DebugSkipEvalPeriod *string `json:"debug_skip_eval_period,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -29,7 +29,7 @@ type MetricsMgrDebugFilter struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MetricInstanceID *string `json:"metric_instance_id,omitempty"`
 
-	// Setting to change the number of queries being processed by per DB connection by Metrics Manager. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Setting to change the number of queries being processed by per DB connection by Metrics Manager. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MinDbQueriesEachConn *string `json:"min_db_queries_each_conn,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

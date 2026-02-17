@@ -8,6 +8,6 @@ package models
 // swagger:model SingleOptionalSensitiveFieldMessage
 type SingleOptionalSensitiveFieldMessage struct {
 
-	// Optional *string field for nested f_mandatory test cases-level3. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Optional *string field for nested f_mandatory test cases-level3. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OptionalSensitiveString *string `json:"optional_sensitive_string,omitempty"`
 }

@@ -24,10 +24,10 @@ type VIMgrSEVMRuntime struct {
 	//  It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudRef *string `json:"cloud_ref,omitempty"`
 
-	// ServiceEngine deployed on cluster.Ex MOB  domain-c23. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// ServiceEngine deployed on cluster.Ex MOB  domain-c23. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClusterID *string `json:"cluster_id,omitempty"`
 
-	// ServiceEngine added to cluster vmgroup. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// ServiceEngine added to cluster vmgroup. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClusterVmgroup *string `json:"cluster_vmgroup,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -60,7 +60,7 @@ type VIMgrSEVMRuntime struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Flavor *string `json:"flavor,omitempty"`
 
-	// GCP Project ID in which SE is created. This field is applicable for GCP cloud type only. Field introduced in 20.1.7, 21.1.2, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// GCP Project ID in which SE is created. This field is applicable for GCP cloud type only. Field introduced in 20.1.7, 21.1.2, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GcpSeProjectID *string `json:"gcp_se_project_id,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -95,7 +95,7 @@ type VIMgrSEVMRuntime struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// If set to true for NSXT cloud, controller should not hotplug the VNICs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// If set to true for NSXT cloud, controller should not hotplug the VNICs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxtNoHotplug *bool `json:"nsxt_no_hotplug,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -127,10 +127,10 @@ type VIMgrSEVMRuntime struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterDatacenterUUID *string `json:"vcenter_datacenter_uuid,omitempty"`
 
-	// ServiceEngine host connection state in vCenter. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// ServiceEngine host connection state in vCenter. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterHostConnectionState *string `json:"vcenter_host_connection_state,omitempty"`
 
-	// VCenter Host HA state.Ex  election, fdmUnreachable, hostDown, initializationError, networkIsolated, uninitializationError, uninitialized. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// VCenter Host HA state.Ex  election, fdmUnreachable, hostDown, initializationError, networkIsolated, uninitializationError, uninitialized. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterHostHaState *string `json:"vcenter_host_ha_state,omitempty"`
 
 	// ServiceEngine instance uuid from vCenter. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -163,9 +163,9 @@ type VIMgrSEVMRuntime struct {
 	// Count of vcpus for each service engine VM. Field introduced in 18.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Vcpus *uint32 `json:"vcpus,omitempty"`
 
-	// VSphere HA on cluster enabled or not. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// VSphere HA on cluster enabled or not. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsphereHaEnabled *bool `json:"vsphere_ha_enabled,omitempty"`
 
-	// If this flag is set to True, vCenter vSphere HA handles ServiceEngine failure. This flag is set dynamiclly based on underlying ESX HA state(connected, hostDown..etc). Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// If this flag is set to True, vCenter vSphere HA handles ServiceEngine failure. This flag is set dynamiclly based on underlying ESX HA state(connected, hostDown..etc). Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsphereHaInprogress *bool `json:"vsphere_ha_inprogress,omitempty"`
 }

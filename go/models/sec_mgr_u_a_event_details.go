@@ -8,6 +8,6 @@ package models
 // swagger:model SecMgrUAEventDetails
 type SecMgrUAEventDetails struct {
 
-	// Error descibing UA cache status in controller. Field introduced in 21.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Error descibing UA cache status in controller. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Error *string `json:"error,omitempty"`
 }

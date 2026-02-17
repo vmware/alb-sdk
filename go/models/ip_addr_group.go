@@ -37,7 +37,7 @@ type IPAddrGroup struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// An NSX Group that maps to a dynamic collection of IP addresses, derived from its definition in NSX. Field introduced in 32.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// An NSX Group that maps to a dynamic collection of IP addresses, derived from its definition in NSX. Field introduced in 32.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxGroups []string `json:"nsx_groups,omitempty"`
 
 	// Configure IP address prefix(es). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -8,7 +8,7 @@ package models
 // swagger:model UpgradeOpsParam
 type UpgradeOpsParam struct {
 
-	// This field holds the configurable Controller params required in upgrade flows for current request. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// This field holds the configurable Controller params required in upgrade flows for current request. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Controller *ControllerParams `json:"controller,omitempty"`
 
 	// Image uuid for identifying base image. It is a reference to an object of type Image. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -23,6 +23,6 @@ type UpgradeOpsParam struct {
 	// Apply options while resuming SE group upgrade operations. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeGroupResumeOptions *SeGroupResumeOptions `json:"se_group_resume_options,omitempty"`
 
-	// This field holds the configurable ServiceEngineGroup params required in upgrade flows for current request. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// This field holds the configurable ServiceEngineGroup params required in upgrade flows for current request. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServiceEngine *ServiceEngineParams `json:"service_engine,omitempty"`
 }

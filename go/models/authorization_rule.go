@@ -20,7 +20,7 @@ type AuthorizationRule struct {
 	// Required: true
 	Index *int32 `json:"index"`
 
-	// Authorization match criteria for the rule. Field introduced in 18.2.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Authorization match criteria for the rule. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Match *AuthorizationMatch `json:"match"`
 

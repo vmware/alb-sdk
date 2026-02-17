@@ -8,11 +8,11 @@ package models
 // swagger:model KeyValueConfiguration
 type KeyValueConfiguration struct {
 
-	// Reserved key *string to be used for internal configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Reserved key *string to be used for internal configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Key *string `json:"key"`
 
-	// Value corresponding to the key. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Value corresponding to the key. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Value *uint32 `json:"value"`
 }

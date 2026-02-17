@@ -50,13 +50,13 @@ type GslbSiteRuntimeStats struct {
 	//  Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGeoUpdTxed *uint32 `json:"num_geo_upd_txed,omitempty"`
 
-	// Used for federated file object stats for create. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Used for federated file object stats for create. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGfoCrRxed *uint32 `json:"num_gfo_cr_rxed,omitempty"`
 
-	// Used for federated file object stats for delete. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Used for federated file object stats for delete. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGfoDelRxed *uint32 `json:"num_gfo_del_rxed,omitempty"`
 
-	// Used for federated file object stats for update. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Used for federated file object stats for update. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGfoUpdRxed *uint32 `json:"num_gfo_upd_rxed,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -77,22 +77,22 @@ type GslbSiteRuntimeStats struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGhmUpdTxed *uint32 `json:"num_ghm_upd_txed,omitempty"`
 
-	//  Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGjwtCrRxed *uint32 `json:"num_gjwt_cr_rxed,omitempty"`
 
-	//  Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGjwtCrTxed *uint32 `json:"num_gjwt_cr_txed,omitempty"`
 
-	//  Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGjwtDelRxed *uint32 `json:"num_gjwt_del_rxed,omitempty"`
 
-	//  Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGjwtDelTxed *uint32 `json:"num_gjwt_del_txed,omitempty"`
 
-	//  Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGjwtUpdRxed *uint32 `json:"num_gjwt_upd_rxed,omitempty"`
 
-	//  Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGjwtUpdTxed *uint32 `json:"num_gjwt_upd_txed,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -149,22 +149,22 @@ type GslbSiteRuntimeStats struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGsUpdTxed *uint32 `json:"num_gs_upd_txed,omitempty"`
 
-	// Used for federated ssl key and cert stats for create. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Used for federated ssl key and cert stats for create. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGsslCertCrRxed *uint32 `json:"num_gssl_cert_cr_rxed,omitempty"`
 
-	// Used for federated ssl key and cert stats for delete. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Used for federated ssl key and cert stats for delete. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGsslCertDelRxed *uint32 `json:"num_gssl_cert_del_rxed,omitempty"`
 
-	// Used for federated ssl key and cert stats for update. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Used for federated ssl key and cert stats for update. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGsslCertUpdRxed *uint32 `json:"num_gssl_cert_upd_rxed,omitempty"`
 
-	// Used for federated ssl profile stats for create. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Used for federated ssl profile stats for create. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGsslCrRxed *uint32 `json:"num_gssl_cr_rxed,omitempty"`
 
-	// Used for federated ssl profile stats for delete. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Used for federated ssl profile stats for delete. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGsslDelRxed *uint32 `json:"num_gssl_del_rxed,omitempty"`
 
-	// Used for federated ssl profile stats for update. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Used for federated ssl profile stats for update. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumGsslUpdRxed *uint32 `json:"num_gssl_upd_rxed,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

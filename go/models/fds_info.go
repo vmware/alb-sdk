@@ -8,9 +8,9 @@ package models
 // swagger:model FdsInfo
 type FdsInfo struct {
 
-	// Captures the federated objects the site supports as per the controller version . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Captures the federated objects the site supports as per the controller version . Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Objects []string `json:"objects,omitempty"`
 
-	// Capture fds timeline the client is using. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Capture fds timeline the client is using. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Timeline *string `json:"timeline,omitempty"`
 }

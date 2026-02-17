@@ -8,14 +8,14 @@ package models
 // swagger:model SeAutoScalerEventDetails
 type SeAutoScalerEventDetails struct {
 
-	// Actions generated for the request. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Actions generated for the request. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Actions []*VipAction `json:"actions,omitempty"`
 
-	// Source of the rebalance request i.e SE autoscaler auto rebalance, SE autoscaler user manual rebalance etc. Enum options - SE_AUTOSCALER_AUTO_REBALANCE, SE_AUTOSCALER_USER_MANUAL_REBALANCE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Source of the rebalance request i.e SE autoscaler auto rebalance, SE autoscaler user manual rebalance etc. Enum options - SE_AUTOSCALER_AUTO_REBALANCE, SE_AUTOSCALER_USER_MANUAL_REBALANCE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	RequestSource *string `json:"request_source"`
 
-	// SeGroup Uuid. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// SeGroup Uuid. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	SeGroupUUID *string `json:"se_group_uuid"`
 }

@@ -21,13 +21,13 @@ type NetworkSecurityPolicy struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Geo database. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Geo database. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GeoDbRef *string `json:"geo_db_ref,omitempty"`
 
-	// Network Security Policy is created and modified by internal modules only. Should not be modified by users. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Network Security Policy is created and modified by internal modules only. Should not be modified by users. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Internal *bool `json:"internal,omitempty"`
 
-	// IP reputation database. It is a reference to an object of type IPReputationDB. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// IP reputation database. It is a reference to an object of type IPReputationDB. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IPReputationDbRef *string `json:"ip_reputation_db_ref,omitempty"`
 
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

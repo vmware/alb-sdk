@@ -15,7 +15,7 @@ type IPReputationDB struct {
 	// IP reputation DB base file. It is a reference to an object of type FileObject. Field introduced in 20.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BaseFileRefs []string `json:"base_file_refs,omitempty"`
 
-	// IP reputation DB base file for IPv6. It is a reference to an object of type FileObject. Field introduced in 31.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// IP reputation DB base file for IPv6. It is a reference to an object of type FileObject. Field introduced in 31.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BaseFileV6Refs []string `json:"base_file_v6_refs,omitempty"`
 
 	// Description. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -24,7 +24,7 @@ type IPReputationDB struct {
 	// IP reputation DB incremental update files. It is a reference to an object of type FileObject. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IncrementalFileRefs []string `json:"incremental_file_refs,omitempty"`
 
-	// IP reputation DB incremental update files for IPv6. It is a reference to an object of type FileObject. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// IP reputation DB incremental update files for IPv6. It is a reference to an object of type FileObject. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IncrementalFileV6Refs []string `json:"incremental_file_v6_refs,omitempty"`
 
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -47,7 +47,7 @@ type IPReputationDB struct {
 	// UUID of this object. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 
-	// A version number for IPv6 files for the object. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// A version number for IPv6 files for the object. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	V6Version *string `json:"v6_version,omitempty"`
 
 	// Organization providing IP reputation data. Enum options - IP_REPUTATION_VENDOR_WEBROOT. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

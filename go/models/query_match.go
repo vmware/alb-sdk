@@ -15,7 +15,7 @@ type QueryMatch struct {
 	// Required: true
 	MatchCriteria *string `json:"match_criteria"`
 
-	// Match against the decoded URI query. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Match against the decoded URI query. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MatchDecodedString *bool `json:"match_decoded_string,omitempty"`
 
 	// String value(s). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

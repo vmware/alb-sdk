@@ -8,9 +8,9 @@ package models
 // swagger:model DebugServiceEngineSeDataStoreMockDlFail
 type DebugServiceEngineSeDataStoreMockDlFail struct {
 
-	// Se Datastore Notification RPC type to be failed. Set true for UPDATE and false for CREATE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Se Datastore Notification RPC type to be failed. Set true for UPDATE and false for CREATE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IsSedatastoreUpdateRPC *bool `json:"is_sedatastore_update_rpc,omitempty"`
 
-	// Incoming Stream Response Object Type to be failed. Eg  'VirtualServiceSe', 'Pool', 'FileObject', etc. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Incoming Stream Response Object Type to be failed. Eg  'VirtualServiceSe', 'Pool', 'FileObject', etc. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ObjectType *string `json:"object_type,omitempty"`
 }

@@ -29,6 +29,6 @@ type ClientLogFilter struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	//  Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	URI *StringMatch `json:"uri,omitempty"`
 }

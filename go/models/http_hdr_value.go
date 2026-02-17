@@ -8,7 +8,7 @@ package models
 // swagger:model HTTPHdrValue
 type HTTPHdrValue struct {
 
-	// The Custom Value field is sensitive and will not be displayed. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The Custom Value field is sensitive and will not be displayed. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IsSensitive *bool `json:"is_sensitive,omitempty"`
 
 	// HTTP header value or variable representing an HTTP header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

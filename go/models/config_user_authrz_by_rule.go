@@ -23,6 +23,6 @@ type ConfigUserAuthrzByRule struct {
 	// Request user. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	User *string `json:"user,omitempty"`
 
-	// assigned user account profile name. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// assigned user account profile name. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Userprofile *string `json:"userprofile,omitempty"`
 }

@@ -38,7 +38,7 @@ type ServerRuntimeSummary struct {
 	// Required: true
 	Port *int32 `json:"port"`
 
-	// Flag used to indicate if server or GS member hostname is resolved by DNS. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Flag used to indicate if server or GS member hostname is resolved by DNS. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResolveServerByDNS *bool `json:"resolve_server_by_dns,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

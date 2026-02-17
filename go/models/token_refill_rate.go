@@ -8,10 +8,10 @@ package models
 // swagger:model TokenRefillRate
 type TokenRefillRate struct {
 
-	// The time interval over which refill rate is defined. Enum options - PER_MINUTE_INTERVAL. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The time interval over which refill rate is defined. Enum options - PER_MINUTE_INTERVAL. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Interval *string `json:"interval,omitempty"`
 
-	// The rate per refill interval at which tokens are added to the bucket. Allowed values are 1-100000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The rate per refill interval at which tokens are added to the bucket. Allowed values are 1-100000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	RefillRate *uint32 `json:"refill_rate"`
 }

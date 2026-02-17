@@ -8,7 +8,7 @@ package models
 // swagger:model HTTPServerReselect
 type HttpserverReselect struct {
 
-	// Enable HTTP request reselect when server responds with specific response codes. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.
+	// Enable HTTP request reselect when server responds with specific response codes. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Enabled *bool `json:"enabled"`
 

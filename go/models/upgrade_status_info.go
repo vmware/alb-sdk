@@ -21,7 +21,7 @@ type UpgradeStatusInfo struct {
 	// Flag for clean installation. Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Clean *bool `json:"clean,omitempty"`
 
-	// Upgrade dry-run operation details. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Upgrade dry-run operation details. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DryrunInfo *DryrunInfo `json:"dryrun_info,omitempty"`
 
 	// Duration of Upgrade operation in seconds. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -39,10 +39,10 @@ type UpgradeStatusInfo struct {
 	// Enqueue time of Upgrade operation. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnqueueTime *string `json:"enqueue_time,omitempty"`
 
-	// Fips mode for the entire system. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Fips mode for the entire system. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FipsMode *bool `json:"fips_mode,omitempty"`
 
-	// Record of past operations on this node. Field introduced in 20.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Record of past operations on this node. Field introduced in 20.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	History []*OpsHistory `json:"history,omitempty"`
 
 	// Image path of current base image. Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -84,7 +84,7 @@ type UpgradeStatusInfo struct {
 	// Image path of previous patch image. Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PrevPatchImagePath *string `json:"prev_patch_image_path,omitempty"`
 
-	// Remote image reference of previous base image. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Remote image reference of previous base image. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PrevRemoteImageRef *string `json:"prev_remote_image_ref,omitempty"`
 
 	// Image uuid for identifying previous base image.Example  Base-image was 18.2.5 and an upgrade was done to 18.2.6, then this field will indicate the 18.2.5 value. . It is a reference to an object of type Image. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -105,10 +105,10 @@ type UpgradeStatusInfo struct {
 	// Upgrade operations progress which holds value between 0-100. Allowed values are 0-100. Field introduced in 18.2.8, 20.1.1. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Progress *uint32 `json:"progress,omitempty"`
 
-	// Descriptive reason for the Upgrade state. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Descriptive reason for the Upgrade state. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 
-	// Remote image reference of current base image. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Remote image reference of current base image. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RemoteImageRef *string `json:"remote_image_ref,omitempty"`
 
 	// Image path of se patch image.(required in case of reimage and upgrade + patch). Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -132,13 +132,13 @@ type UpgradeStatusInfo struct {
 	// Current status of the Upgrade operation. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	State *UpgradeOpsState `json:"state,omitempty"`
 
-	// Record of Pre/Post snapshot captured for current upgrade operation. It is a reference to an object of type StatediffOperation. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Record of Pre/Post snapshot captured for current upgrade operation. It is a reference to an object of type StatediffOperation. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StatediffRef *string `json:"statediff_ref,omitempty"`
 
 	// Flag is set only in the cluster if the upgrade is initiated as a system-upgrade. . Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	System *bool `json:"system,omitempty"`
 
-	// Tracks the list of reports created for node. It is a reference to an object of type SystemReport. Field introduced in 22.1.6, 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Tracks the list of reports created for node. It is a reference to an object of type SystemReport. Field introduced in 22.1.6, 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SystemReportRefs []string `json:"system_report_refs,omitempty"`
 
 	// Completed set of tasks in the Upgrade operation. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -156,7 +156,7 @@ type UpgradeStatusInfo struct {
 	// Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UpgradeOps *string `json:"upgrade_ops,omitempty"`
 
-	// Upgrade readiness check execution detail. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Upgrade readiness check execution detail. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UpgradeReadiness *UpgradeReadinessCheckObj `json:"upgrade_readiness,omitempty"`
 
 	// url

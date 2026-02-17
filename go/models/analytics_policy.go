@@ -23,7 +23,7 @@ type AnalyticsPolicy struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FullClientLogs *FullClientLogs `json:"full_client_logs,omitempty"`
 
-	// Configuration for learning logging determining whether it's enabled and where is the destination. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Configuration for learning logging determining whether it's enabled and where is the destination. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LearningLogPolicy *LearningLogPolicy `json:"learning_log_policy,omitempty"`
 
 	// Settings to turn on realtime metrics and set duration for realtime updates. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

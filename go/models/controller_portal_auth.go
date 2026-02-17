@@ -11,7 +11,7 @@ type ControllerPortalAuth struct {
 	// Access Token to authenticate Customer Portal REST calls. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AccessToken *string `json:"access_token,omitempty"`
 
-	// Grant type of the JWT token. Enum options - REFRESH_TOKEN, CLIENT_CREDENTIALS. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Grant type of the JWT token. Enum options - REFRESH_TOKEN, CLIENT_CREDENTIALS. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GrantType *string `json:"grant_type,omitempty"`
 
 	// Cloud services instance URL. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -20,6 +20,6 @@ type ControllerPortalAuth struct {
 	// Signed JWT to refresh the access token. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	JwtToken *string `json:"jwt_token,omitempty"`
 
-	// Tenant information for which cloud services authentication information is persisted. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Tenant information for which cloud services authentication information is persisted. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Tenant *string `json:"tenant,omitempty"`
 }

@@ -19,7 +19,7 @@ type HttpsecurityRule struct {
 	// Required: true
 	Index *int32 `json:"index"`
 
-	// Log HTTP request upon rule match. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Log HTTP request upon rule match. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Log *bool `json:"log,omitempty"`
 
 	// Add match criteria to the rule. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

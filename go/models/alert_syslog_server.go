@@ -20,7 +20,7 @@ type AlertSyslogServer struct {
 	// Select a certificate and key which will be used to authenticate to the syslog server. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 17.2.17, 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslKeyAndCertificateRef *string `json:"ssl_key_and_certificate_ref,omitempty"`
 
-	// strict verificiation of certificate given by the server. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// strict verificiation of certificate given by the server. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StrictCertVerify *bool `json:"strict_cert_verify,omitempty"`
 
 	// The destination Syslog server IP(v4/v6) address or FQDN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

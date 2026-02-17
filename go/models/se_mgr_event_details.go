@@ -36,16 +36,16 @@ type SeMgrEventDetails struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	//  Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NewMgmtIP *string `json:"new_mgmt_ip,omitempty"`
 
-	//  Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NewMgmtIp6 *string `json:"new_mgmt_ip6,omitempty"`
 
-	//  Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OldMgmtIP *string `json:"old_mgmt_ip,omitempty"`
 
-	//  Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	//  Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OldMgmtIp6 *string `json:"old_mgmt_ip6,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -66,9 +66,9 @@ type SeMgrEventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsUUID []string `json:"vs_uuid,omitempty"`
 
-	// vSphere HA on cluster enabled. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// vSphere HA on cluster enabled. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsphereHaEnabled *bool `json:"vsphere_ha_enabled,omitempty"`
 
-	// This flag is set to true when Cloud Connector has detected an ESX host failure. This flag is set to false when the SE connects back to the controller, or when vSphere HA recovery timeout has occurred. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// This flag is set to true when Cloud Connector has detected an ESX host failure. This flag is set to false when the SE connects back to the controller, or when vSphere HA recovery timeout has occurred. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsphereHaInprogress *bool `json:"vsphere_ha_inprogress,omitempty"`
 }

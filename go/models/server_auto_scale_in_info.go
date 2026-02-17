@@ -41,6 +41,6 @@ type ServerAutoScaleInInfo struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ScaleinServerCandidates []*ServerID `json:"scalein_server_candidates,omitempty"`
 
-	// Desired number of servers for scheduled autocale. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Desired number of servers for scheduled autocale. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ScheduledDesiredCapacity *uint32 `json:"scheduled_desired_capacity,omitempty"`
 }

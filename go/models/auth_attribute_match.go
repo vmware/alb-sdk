@@ -12,7 +12,7 @@ type AuthAttributeMatch struct {
 	// Required: true
 	AttributeName *string `json:"attribute_name"`
 
-	// Attribute Values used to determine access when authentication applies. Field introduced in 18.2.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Attribute Values used to determine access when authentication applies. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	AttributeValueList *StringMatch `json:"attribute_value_list"`
 }

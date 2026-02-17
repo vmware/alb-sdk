@@ -12,7 +12,7 @@ type Permission struct {
 	// Required: true
 	Resource *string `json:"resource"`
 
-	// Limits the scope of Write Access on the parent resource to modification of only the specified subresources. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Limits the scope of Write Access on the parent resource to modification of only the specified subresources. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Subresource *SubResource `json:"subresource,omitempty"`
 
 	//  Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

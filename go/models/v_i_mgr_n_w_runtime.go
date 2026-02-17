@@ -39,7 +39,7 @@ type VIMgrNWRuntime struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IPSubnet []*VIMgrIPSubnetRuntime `json:"ip_subnet,omitempty"`
 
-	// UUID of NSX-T segment spanning multiple VDS with vCenter cloud. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// UUID of NSX-T segment spanning multiple VDS with vCenter cloud. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogicalSwitchID *string `json:"logical_switch_id,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

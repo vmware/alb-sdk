@@ -15,7 +15,7 @@ type SecureChannelToken struct {
 	// Expiry time for auth_token. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ExpiryTime *float64 `json:"expiry_time,omitempty"`
 
-	// Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	InUse *bool `json:"in_use,omitempty"`
 
 	// Metadata associated with auth_token. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

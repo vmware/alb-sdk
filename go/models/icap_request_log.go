@@ -35,10 +35,10 @@ type IcapRequestLog struct {
 	// The response code received from the ICAP server. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IcapResponseCode *uint32 `json:"icap_response_code,omitempty"`
 
-	// ICAP server IP for this connection. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// ICAP server IP for this connection. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IcapServerIP *uint32 `json:"icap_server_ip,omitempty"`
 
-	// ICAP server port for this connection. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// ICAP server port for this connection. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IcapServerPort *uint32 `json:"icap_server_port,omitempty"`
 
 	// Latency added due to ICAP processing. This is the time taken from 1st byte of ICAP request sent to last byte of ICAP response received. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -47,10 +47,10 @@ type IcapRequestLog struct {
 	// Content-Length of the modified content from ICAP server. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ModifiedContentLength *uint32 `json:"modified_content_length,omitempty"`
 
-	// ICAP log specific to NSX Defender. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// ICAP log specific to NSX Defender. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxDefenderLog *IcapNSXDefenderLog `json:"nsx_defender_log,omitempty"`
 
-	// ICAP log specific to OPSWAT. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// ICAP log specific to OPSWAT. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OpswatLog *IcapOPSWATLog `json:"opswat_log,omitempty"`
 
 	// The name of the pool that was used for the request. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -62,6 +62,6 @@ type IcapRequestLog struct {
 	// Source port for this connection. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SourcePort *uint32 `json:"source_port,omitempty"`
 
-	// Selected ICAP vendor for the request. Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Selected ICAP vendor for the request. Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Vendor *string `json:"vendor,omitempty"`
 }

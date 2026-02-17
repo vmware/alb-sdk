@@ -8,7 +8,7 @@ package models
 // swagger:model HealthMonitorUdp
 type HealthMonitorUDP struct {
 
-	// Match or look for this keyword in the first 2KB of server's response indicating server maintenance.  A successful match results in the server being marked down. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Match or look for this keyword in the first 2KB of server's response indicating server maintenance.  A successful match results in the server being marked down. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaintenanceResponse *string `json:"maintenance_response,omitempty"`
 
 	// Send UDP request. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

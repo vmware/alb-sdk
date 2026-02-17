@@ -21,7 +21,7 @@ type HTTPPolicySet struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Geo database. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Geo database. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GeoDbRef *string `json:"geo_db_ref,omitempty"`
 
 	// HTTP request policy for the virtual service. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -33,7 +33,7 @@ type HTTPPolicySet struct {
 	// HTTP security policy for the virtual service. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HTTPSecurityPolicy *HttpsecurityPolicy `json:"http_security_policy,omitempty"`
 
-	// IP reputation database. It is a reference to an object of type IPReputationDB. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// IP reputation database. It is a reference to an object of type IPReputationDB. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IPReputationDbRef *string `json:"ip_reputation_db_ref,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

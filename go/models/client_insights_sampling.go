@@ -11,9 +11,9 @@ type ClientInsightsSampling struct {
 	// Client IP addresses to check when inserting RUM script. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientIP *IPAddrMatch `json:"client_ip,omitempty"`
 
-	// URL patterns to check when inserting RUM script. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// URL patterns to check when inserting RUM script. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SampleUris *StringMatch `json:"sample_uris,omitempty"`
 
-	// URL patterns to avoid when inserting RUM script. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// URL patterns to avoid when inserting RUM script. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SkipUris *StringMatch `json:"skip_uris,omitempty"`
 }

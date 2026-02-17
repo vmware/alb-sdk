@@ -12,7 +12,7 @@ type WafApplicationSignatures struct {
 	// Required: true
 	ProviderRef *string `json:"provider_ref"`
 
-	// Override attributes of application signature rules. Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Override attributes of application signature rules. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RuleOverrides []*WafRuleOverrides `json:"rule_overrides,omitempty"`
 
 	// The version in use of the provided ruleset. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

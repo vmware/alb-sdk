@@ -8,12 +8,12 @@ package models
 // swagger:model PolicySpec
 type PolicySpec struct {
 
-	// Disk usage policy. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Disk usage policy. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Disk *DiskThreshold `json:"disk,omitempty"`
 
-	// Objects policy. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Objects policy. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Object *ObjectRule `json:"object,omitempty"`
 
-	// Periodic policy. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Periodic policy. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Periodic *Periodicity `json:"periodic,omitempty"`
 }

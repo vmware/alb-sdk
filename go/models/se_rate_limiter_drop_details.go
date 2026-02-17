@@ -8,9 +8,9 @@ package models
 // swagger:model SeRateLimiterDropDetails
 type SeRateLimiterDropDetails struct {
 
-	// Number of packets dropped by rate limiter. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Number of packets dropped by rate limiter. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumPktsDropped *uint64 `json:"num_pkts_dropped,omitempty"`
 
-	// UUID of the SE responsible for this event. It is a reference to an object of type ServiceEngine. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// UUID of the SE responsible for this event. It is a reference to an object of type ServiceEngine. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeRef *string `json:"se_ref,omitempty"`
 }

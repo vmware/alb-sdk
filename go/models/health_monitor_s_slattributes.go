@@ -21,6 +21,6 @@ type HealthMonitorSSlattributes struct {
 	// Required: true
 	SslProfileRef *string `json:"ssl_profile_ref"`
 
-	// Use the SNI server name configured in the Pool. This will override the server_name configured in the Health Monitor. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Use the SNI server name configured in the Pool. This will override the server_name configured in the Health Monitor. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UsePoolSniServerName *bool `json:"use_pool_sni_server_name,omitempty"`
 }

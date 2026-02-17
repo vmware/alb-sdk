@@ -14,7 +14,7 @@ type DNSRuleAction struct {
 	// Rate limits the DNS requests. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSRateLimiter *DNSRateLimiter `json:"dns_rate_limiter,omitempty"`
 
-	// GSLB Service group to be selected. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// GSLB Service group to be selected. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GsGroupSelection *DNSRuleActionGsGroupSelection `json:"gs_group_selection,omitempty"`
 
 	// Select a specific GSLB site for the DNS query. This action should be used only when GSLB services have been configured for the DNS virtual service. Field introduced in 17.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

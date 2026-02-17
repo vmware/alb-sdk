@@ -32,10 +32,10 @@ type SeResources struct {
 	// Required: true
 	NumVcpus *int32 `json:"num_vcpus"`
 
-	// Usage of Intel QAT for crypto offloads. Enum options - QAT_OFF, QAT_SW_ACCELERATION, QAT_HW_OFFLOAD. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Usage of Intel QAT for crypto offloads. Enum options - QAT_OFF, QAT_SW_ACCELERATION, QAT_HW_OFFLOAD. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	QatMode *string `json:"qat_mode,omitempty"`
 
-	// Usage of Intel QAT for performance mode. Enum options - QAT_OPER_MODE_LEGACY, QAT_OPER_MODE_PERF, QAT_OPER_MODE_UNKNOWN. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Usage of Intel QAT for performance mode. Enum options - QAT_OPER_MODE_LEGACY, QAT_OPER_MODE_PERF, QAT_OPER_MODE_UNKNOWN. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	QatOperMode *string `json:"qat_oper_mode,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

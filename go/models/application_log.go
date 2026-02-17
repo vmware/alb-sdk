@@ -21,19 +21,19 @@ type ApplicationLog struct {
 	//  Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AppResponseTime *uint64 `json:"app_response_time,omitempty"`
 
-	// Set the Session Authentication Status. Enum options - AUTH_STATUS_NO_AUTHENTICATION, AUTH_STATUS_AUTHENTICATION_SUCCESS, AUTH_STATUS_AUTHENTICATION_FAILURE, AUTH_STATUS_UNAUTHORIZED, AUTH_STATUS_AUTHENTICATED_REQUEST, AUTH_STATUS_AUTHZ_FAILED. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Set the Session Authentication Status. Enum options - AUTH_STATUS_NO_AUTHENTICATION, AUTH_STATUS_AUTHENTICATION_SUCCESS, AUTH_STATUS_AUTHENTICATION_FAILURE, AUTH_STATUS_UNAUTHORIZED, AUTH_STATUS_AUTHENTICATED_REQUEST, AUTH_STATUS_AUTHZ_FAILED. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AuthStatus *string `json:"auth_status,omitempty"`
 
-	// Average packet processing latency for the backend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Average packet processing latency for the backend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgIngressLatencyBe *uint32 `json:"avg_ingress_latency_be,omitempty"`
 
-	// Average packet processing latency for the frontend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Average packet processing latency for the frontend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgIngressLatencyFe *uint32 `json:"avg_ingress_latency_fe,omitempty"`
 
 	//  Enum options - NOT_UPDATED, BY_CONTENT_REWRITE_PROFILE, BY_DATA_SCRIPT. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BodyUpdated *string `json:"body_updated,omitempty"`
 
-	// Logs related to Bot detection. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Logs related to Bot detection. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BotManagementLog *BotManagementLog `json:"bot_management_log,omitempty"`
 
 	// Cache fetch and store is disabled by the Datascript policies. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -58,7 +58,7 @@ type ApplicationLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientDevice *string `json:"client_device,omitempty"`
 
-	// The fingerprints for this client. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The fingerprints for this client. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientFingerprints *ClientFingerprints `json:"client_fingerprints,omitempty"`
 
 	//  Enum options - INSIGHTS_DISABLED, NO_INSIGHTS_NOT_SAMPLED_COUNT, NO_INSIGHTS_NOT_SAMPLED_TYPE, NO_INSIGHTS_NOT_SAMPLED_SKIP_URI, NO_INSIGHTS_NOT_SAMPLED_URI_NOT_IN_LIST, NO_INSIGHTS_NOT_SAMPLED_CLIENT_IP_NOT_IN_RANGE, NO_INSIGHTS_NOT_SAMPLED_OTHER, ACTIVE_INSIGHTS_FAILED, ACTIVE_INSIGHTS_ENABLED, PASSIVE_INSIGHTS_ENABLED. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -94,16 +94,16 @@ type ApplicationLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CompressionPercentage *int32 `json:"compression_percentage,omitempty"`
 
-	// TCP connection establishment time for the backend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// TCP connection establishment time for the backend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnEstTimeBe *uint32 `json:"conn_est_time_be,omitempty"`
 
-	// TCP connection establishment time for the frontend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// TCP connection establishment time for the frontend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnEstTimeFe *uint32 `json:"conn_est_time_fe,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnectionErrorInfo *ConnErrorInfo `json:"connection_error_info,omitempty"`
 
-	// Critical error encountered during request processing. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Critical error encountered during request processing. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CriticalErrorEncountered *bool `json:"critical_error_encountered,omitempty"`
 
 	//  Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -157,20 +157,20 @@ type ApplicationLog struct {
 	// Log for the ICAP processing. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IcapLog *IcapLog `json:"icap_log,omitempty"`
 
-	// Logs for the JWT Validation process. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Logs for the JWT Validation process. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	JwtLog *JwtLog `json:"jwt_log,omitempty"`
 
-	// Indicate if this request is used for learning. If it is not used, this field contains the reason for this decision. Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED, CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Indicate if this request is used for learning. If it is not used, this field contains the reason for this decision. Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED, CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LearningStatus *string `json:"learning_status,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	LogID *uint32 `json:"log_id"`
 
-	// Maximum packet processing latency for the backend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum packet processing latency for the backend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxIngressLatencyBe *uint32 `json:"max_ingress_latency_be,omitempty"`
 
-	// Maximum packet processing latency for the frontend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum packet processing latency for the frontend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxIngressLatencyFe *uint32 `json:"max_ingress_latency_fe,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -185,19 +185,19 @@ type ApplicationLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NetworkSecurityPolicyRuleName *string `json:"network_security_policy_rule_name,omitempty"`
 
-	// NTLM auto-detection logs. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// NTLM auto-detection logs. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NtlmLog *NtlmLog `json:"ntlm_log,omitempty"`
 
-	// Logs related to OAuth requests. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Logs related to OAuth requests. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OauthLog *OauthLog `json:"oauth_log,omitempty"`
 
 	// OCSP Certificate Status response sent in the SSL/TLS connection handshake. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OcspStatusRespSent *bool `json:"ocsp_status_resp_sent,omitempty"`
 
-	// Logs for HTTP Out-Of-Band Requests. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Logs for HTTP Out-Of-Band Requests. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OobLog *OutOfBandRequestLog `json:"oob_log,omitempty"`
 
-	// The actual client request URI sent before normalization. Only included if it differs from the normalized URI. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The actual client request URI sent before normalization. Only included if it differs from the normalized URI. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OrigURI *string `json:"orig_uri,omitempty"`
 
 	// Logs for the PingAccess authentication process. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -225,7 +225,7 @@ type ApplicationLog struct {
 	// Required: true
 	ReportTimestamp *uint64 `json:"report_timestamp"`
 
-	// Request body modified. Enum options - REQ_BODY_NOT_UPDATED, REQ_BODY_UPDATED_BY_CONTENT_REWRITE_PROFILE, REQ_BODY_UPDATE_SKIPPED_COMPRESSION. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Request body modified. Enum options - REQ_BODY_NOT_UPDATED, REQ_BODY_UPDATED_BY_CONTENT_REWRITE_PROFILE, REQ_BODY_UPDATE_SKIPPED_COMPRESSION. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RequestBodyUpdated *string `json:"request_body_updated,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -309,10 +309,10 @@ type ApplicationLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServerName *string `json:"server_name,omitempty"`
 
-	// Request which initiates Server Push. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Request which initiates Server Push. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServerPushInitiated *bool `json:"server_push_initiated,omitempty"`
 
-	// Requests served via Server Push. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Requests served via Server Push. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServerPushedRequest *bool `json:"server_pushed_request,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -349,7 +349,7 @@ type ApplicationLog struct {
 	// Required: true
 	ServiceEngine *string `json:"service_engine"`
 
-	// If the HTTP Session module is enabled for the Virtual Service, this field will contain the session id created by the module. Later calls to the DataScript function avi.vs.set_session_id() overwrite the value of this field with the value supplied in the function call. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// If the HTTP Session module is enabled for the Virtual Service, this field will contain the session id created by the module. Later calls to the DataScript function avi.vs.set_session_id() overwrite the value of this field with the value supplied in the function call. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SessionID *string `json:"session_id,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -365,10 +365,10 @@ type ApplicationLog struct {
 	//  Field introduced in 17.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SniHostname *string `json:"sni_hostname,omitempty"`
 
-	// Source IP of the client connection to the VS. This can be different from client IP when true client IP feature is enabled. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Source IP of the client connection to the VS. This can be different from client IP when true client IP feature is enabled. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SourceIP *uint32 `json:"source_ip,omitempty"`
 
-	// IPv6 address of the source of the client connection to the VS. This can be different from client IPv6 address when true client IP feature is enabled. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// IPv6 address of the source of the client connection to the VS. This can be different from client IPv6 address when true client IP feature is enabled. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SourceIp6 *string `json:"source_ip6,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -377,13 +377,13 @@ type ApplicationLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslCipher *string `json:"ssl_cipher,omitempty"`
 
-	// SSl group negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// SSl group negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslNamedGroup *string `json:"ssl_named_group,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslSessionID *string `json:"ssl_session_id,omitempty"`
 
-	// SSL signature algorithm negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// SSL signature algorithm negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslSignatureAlgorithm *string `json:"ssl_signature_algorithm,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -412,7 +412,7 @@ type ApplicationLog struct {
 	// Required: true
 	VcpuID *uint32 `json:"vcpu_id"`
 
-	// EVH rule matching the request. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// EVH rule matching the request. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VhMatchRule *string `json:"vh_match_rule,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

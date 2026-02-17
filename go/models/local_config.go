@@ -8,6 +8,6 @@ package models
 // swagger:model LocalConfig
 type LocalConfig struct {
 
-	// VSGS operational information. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// VSGS operational information. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsgsInfo []*VsgsOpsInfo `json:"vsgs_info,omitempty"`
 }

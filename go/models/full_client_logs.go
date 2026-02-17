@@ -11,7 +11,7 @@ type FullClientLogs struct {
 	// How long should the system capture all logs, measured in minutes. Set to 0 for infinite. Special values are 0 - infinite. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Duration *uint32 `json:"duration,omitempty"`
 
-	// Capture all client logs including connections and requests.  When deactivated, only errors will be logged. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition. Special default for Essentials edition is false, Basic edition is false, Enterprise edition is False.
+	// Capture all client logs including connections and requests.  When deactivated, only errors will be logged. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Enabled *bool `json:"enabled"`
 

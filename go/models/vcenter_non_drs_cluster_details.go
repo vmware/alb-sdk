@@ -8,12 +8,12 @@ package models
 // swagger:model VcenterNonDrsClusterDetails
 type VcenterNonDrsClusterDetails struct {
 
-	// Cloud id. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Cloud id. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CcID *string `json:"cc_id,omitempty"`
 
-	// A list of cluster IDs having DRS disabled. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// A list of cluster IDs having DRS disabled. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NonDrsClusterIds []string `json:"non_drs_cluster_ids,omitempty"`
 
-	// The UUID of the Service Engine whose placement triggered this event. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The UUID of the Service Engine whose placement triggered this event. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeVMUUID *string `json:"se_vm_uuid,omitempty"`
 }

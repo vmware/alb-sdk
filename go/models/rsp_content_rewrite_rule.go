@@ -8,18 +8,18 @@ package models
 // swagger:model RspContentRewriteRule
 type RspContentRewriteRule struct {
 
-	// Enable rewrite rule on response body. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Enable rewrite rule on response body. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Enable *bool `json:"enable,omitempty"`
 
-	// Index of the response rewrite rule. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Index of the response rewrite rule. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Index *int32 `json:"index,omitempty"`
 
-	// Name of the response rewrite rule. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Name of the response rewrite rule. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// List of search-and-replace *string pairs for the response body. For eg. Strings 'foo' and 'bar', where all searches of 'foo' in the response body will be replaced with 'bar'. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// List of search-and-replace *string pairs for the response body. For eg. Strings 'foo' and 'bar', where all searches of 'foo' in the response body will be replaced with 'bar'. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Pairs []*SearchReplacePair `json:"pairs,omitempty"`
 
-	// Rewrite only content types listed in this *string group. Content types not present in this list are not rewritten. It is a reference to an object of type StringGroup. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Rewrite only content types listed in this *string group. Content types not present in this list are not rewritten. It is a reference to an object of type StringGroup. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RewritableContentRef *string `json:"rewritable_content_ref,omitempty"`
 }

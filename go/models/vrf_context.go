@@ -15,10 +15,10 @@ type VrfContext struct {
 	// Key/value vrfcontext attributes. Field introduced in 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Attrs []*KeyValue `json:"attrs,omitempty"`
 
-	// BFD configuration profile. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// BFD configuration profile. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BfdProfile *BfdProfile `json:"bfd_profile,omitempty"`
 
-	// Bgp Local and Peer Info. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Bgp Local and Peer Info. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BgpProfile *BgpProfile `json:"bgp_profile,omitempty"`
 
 	//  It is a reference to an object of type Cloud. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -30,13 +30,13 @@ type VrfContext struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Configure ping based heartbeat check for gateway in service engines of vrf. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Configure ping based heartbeat check for gateway in service engines of vrf. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GatewayMon []*GatewayMonitor `json:"gateway_mon,omitempty"`
 
 	// Configure ping based heartbeat check for all default gateways in service engines of vrf. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	InternalGatewayMonitor *InternalGatewayMonitor `json:"internal_gateway_monitor,omitempty"`
 
-	// Enable LLDP. Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- true), Basic (Allowed values- true) edition.
+	// Enable LLDP. Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LldpEnable *bool `json:"lldp_enable,omitempty"`
 
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

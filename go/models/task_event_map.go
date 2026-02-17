@@ -8,12 +8,12 @@ package models
 // swagger:model TaskEventMap
 type TaskEventMap struct {
 
-	// List of all events node wise. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// List of all events node wise. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NodesEvents []*TaskEvent `json:"nodes_events,omitempty"`
 
-	// List of all events node wise. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// List of all events node wise. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SubEvents []*TaskEvent `json:"sub_events,omitempty"`
 
-	// Name representing the task. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Name representing the task. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TaskName *string `json:"task_name,omitempty"`
 }

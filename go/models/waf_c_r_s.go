@@ -12,14 +12,14 @@ type WafCRS struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Allowed request content type character sets in WAF. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Allowed request content type character sets in WAF. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllowedRequestContentTypeCharsets []string `json:"allowed_request_content_type_charsets,omitempty"`
 
 	// A short description of this ruleset. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Description *string `json:"description"`
 
-	// List of Data Files used for WAF Rules. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// List of Data Files used for WAF Rules. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Files []*WafDataFile `json:"files,omitempty"`
 
 	// WAF Rules are sorted in groups based on their characterization. Field introduced in 18.1.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -29,7 +29,7 @@ type WafCRS struct {
 	// Required: true
 	Integrity *string `json:"integrity"`
 
-	// Integrity protection values for CRS. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Integrity protection values for CRS. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IntegrityValues []string `json:"integrity_values,omitempty"`
 
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -43,10 +43,10 @@ type WafCRS struct {
 	// Required: true
 	ReleaseDate *string `json:"release_date"`
 
-	// WAF Restricted File Extensions. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// WAF Restricted File Extensions. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RestrictedExtensions []string `json:"restricted_extensions,omitempty"`
 
-	// WAF Restricted HTTP Headers. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// WAF Restricted HTTP Headers. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RestrictedHeaders []string `json:"restricted_headers,omitempty"`
 
 	// Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

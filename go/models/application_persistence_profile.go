@@ -18,10 +18,10 @@ type ApplicationPersistenceProfile struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Specifies the Diameter Persistence profile parameters. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Specifies the Diameter Persistence profile parameters. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DiameterAppPersistenceProfile *DiameterAVPPersistenceProfile `json:"diameter_app_persistence_profile,omitempty"`
 
-	// Specifies the custom HTTP Header Persistence profile parameters. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Specifies the custom HTTP Header Persistence profile parameters. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HdrPersistenceProfile *HdrPersistenceProfile `json:"hdr_persistence_profile,omitempty"`
 
 	// Specifies the HTTP Cookie Persistence profile parameters. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -40,14 +40,14 @@ type ApplicationPersistenceProfile struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// Method used to persist clients to the same server for a duration of time or a session. Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS, PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE, PERSISTENCE_TYPE_APP_DIAMETER. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE), Basic (Allowed values- PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE) edition.
+	// Method used to persist clients to the same server for a duration of time or a session. Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS, PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE, PERSISTENCE_TYPE_APP_DIAMETER. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	PersistenceType *string `json:"persistence_type"`
 
-	// Interval in minutes at which refreshed persistence entries are synced to peer SEs. If not set, it willsync at an interval of timeout/2. Allowed values are 1-30. Field introduced in 30.2.4. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Interval in minutes at which refreshed persistence entries are synced to peer SEs. If not set, it willsync at an interval of timeout/2. Allowed values are 1-30. Field introduced in 30.2.4. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PersistenceUpdateInterval *uint32 `json:"persistence_update_interval,omitempty"`
 
-	// Specifies behavior when a persistent server has been marked down by a health monitor. Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- HM_DOWN_PICK_NEW_SERVER), Basic (Allowed values- HM_DOWN_PICK_NEW_SERVER) edition.
+	// Specifies behavior when a persistent server has been marked down by a health monitor. Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServerHmDownRecovery *string `json:"server_hm_down_recovery,omitempty"`
 
 	//  It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

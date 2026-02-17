@@ -8,12 +8,12 @@ package models
 // swagger:model TechSupportState
 type TechSupportState struct {
 
-	// The last time the state changed. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The last time the state changed. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LastChangedTime *TimeStamp `json:"last_changed_time,omitempty"`
 
-	// Descriptive reason for the techsupport state-change. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Descriptive reason for the techsupport state-change. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 
-	// The upgrade operations current fsm-state. Enum options - TECHSUPPORT_FSM_STARTED, TECHSUPPORT_FSM_IN_PROGRESS, TECHSUPPORT_FSM_COMPLETED, TECHSUPPORT_FSM_COMPLETED_WITH_WARNINGS, TECHSUPPORT_FSM_WARNING, TECHSUPPORT_FSM_ERROR. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The upgrade operations current fsm-state. Enum options - TECHSUPPORT_FSM_STARTED, TECHSUPPORT_FSM_IN_PROGRESS, TECHSUPPORT_FSM_COMPLETED, TECHSUPPORT_FSM_COMPLETED_WITH_WARNINGS, TECHSUPPORT_FSM_WARNING, TECHSUPPORT_FSM_ERROR. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	State *string `json:"state,omitempty"`
 }

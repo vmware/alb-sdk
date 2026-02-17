@@ -14,7 +14,7 @@ type IPAMDNSInfobloxProfile struct {
 	// Custom parameters that will passed to the Infoblox provider as extensible attributes. Field introduced in 18.2.7, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ExtensibleAttributes []*CustomParams `json:"extensible_attributes,omitempty"`
 
-	// IPv6 Address of Infoblox appliance. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// IPv6 Address of Infoblox appliance. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Ip6Address *IPAddr `json:"ip6_address,omitempty"`
 
 	// IPv4 Address of Infoblox appliance. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

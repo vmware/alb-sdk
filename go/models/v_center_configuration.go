@@ -8,16 +8,16 @@ package models
 // swagger:model vCenterConfiguration
 type VCenterConfiguration struct {
 
-	// vCenter content library where Service Engine images are stored. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// vCenter content library where Service Engine images are stored. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ContentLib *ContentLibConfig `json:"content_lib,omitempty"`
 
 	// Datacenter for virtual infrastructure discovery. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Datacenter *string `json:"datacenter,omitempty"`
 
-	// Managed object id of the datacenter. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition.
+	// Managed object id of the datacenter. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DatacenterManagedObjectID *string `json:"datacenter_managed_object_id,omitempty"`
 
-	// If true, NSX-T segment spanning multiple VDS with vCenter cloud are merged to a single network in Avi. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// If true, NSX-T segment spanning multiple VDS with vCenter cloud are merged to a single network in Avi. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IsNsxEnvironment *bool `json:"is_nsx_environment,omitempty"`
 
 	// Management subnet to use for Avi Service Engines. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -33,7 +33,7 @@ type VCenterConfiguration struct {
 	// Required: true
 	Privilege *string `json:"privilege"`
 
-	// If false, Service Engine image will not be pushed to content library. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition.
+	// If false, Service Engine image will not be pushed to content library. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UseContentLib *bool `json:"use_content_lib,omitempty"`
 
 	// The username Avi Vantage will use when authenticating with vCenter. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -45,6 +45,6 @@ type VCenterConfiguration struct {
 	// vCenter hostname or IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterURL *string `json:"vcenter_url,omitempty"`
 
-	// Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter server. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter server. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VerifyCertificate *bool `json:"verify_certificate,omitempty"`
 }

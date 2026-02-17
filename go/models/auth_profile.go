@@ -12,7 +12,7 @@ type AuthProfile struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Client Cert settings. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Client Cert settings. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientCert *ClientCertAuthSettings `json:"client_cert,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -21,7 +21,7 @@ type AuthProfile struct {
 	// HTTP user authentication params. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HTTP *AuthProfileHTTPClientParams `json:"http,omitempty"`
 
-	// JWTServerProfile to be used for authentication. It is a reference to an object of type JWTServerProfile. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// JWTServerProfile to be used for authentication. It is a reference to an object of type JWTServerProfile. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	JwtProfileRef *string `json:"jwt_profile_ref,omitempty"`
 
 	// LDAP server and directory settings. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -34,19 +34,19 @@ type AuthProfile struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// OAuth Profile - Common endpoint information. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// OAuth Profile - Common endpoint information. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OauthProfile *OAuthProfile `json:"oauth_profile,omitempty"`
 
 	// SAML settings. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Saml *SamlSettings `json:"saml,omitempty"`
 
-	// TACACS+ settings. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// TACACS+ settings. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TacacsPlus *TacacsPlusAuthSettings `json:"tacacs_plus,omitempty"`
 
 	//  It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
-	// Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH, AUTH_PROFILE_CLIENT_CERT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- AUTH_PROFILE_LDAP,AUTH_PROFILE_TACACS_PLUS,AUTH_PROFILE_SAML,AUTH_PROFILE_JWT,AUTH_PROFILE_OAUTH,AUTH_PROFILE_CLIENT_CERT), Basic (Allowed values- AUTH_PROFILE_LDAP,AUTH_PROFILE_TACACS_PLUS,AUTH_PROFILE_SAML,AUTH_PROFILE_JWT,AUTH_PROFILE_OAUTH,AUTH_PROFILE_CLIENT_CERT) edition.
+	// Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH, AUTH_PROFILE_CLIENT_CERT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Type *string `json:"type"`
 

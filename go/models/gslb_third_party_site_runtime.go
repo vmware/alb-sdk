@@ -8,7 +8,7 @@ package models
 // swagger:model GslbThirdPartySiteRuntime
 type GslbThirdPartySiteRuntime struct {
 
-	// This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HealthMonitorInfo *string `json:"health_monitor_info,omitempty"`
 
 	//  Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

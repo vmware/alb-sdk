@@ -11,16 +11,16 @@ type SeAgentStateCacheProperties struct {
 	// Max elements to flush in one shot from the internal buffer by the statecache thread. Allowed values are 1-10000. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ScBatchBufferFlushLimit *uint32 `json:"sc_batch_buffer_flush_limit,omitempty"`
 
-	// Max elements to dequeue in one shot from the Q by the statecache thread. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Max elements to dequeue in one shot from the Q by the statecache thread. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ScCfgQBatchDequeueLimit *uint32 `json:"sc_cfg_q_batch_dequeue_limit,omitempty"`
 
-	// Max elements in the config queue between seagent main and the statecache thread. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Max elements in the config queue between seagent main and the statecache thread. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ScCfgQMaxSize *uint32 `json:"sc_cfg_q_max_size,omitempty"`
 
-	// Max elements to dequeue in one shot from the Q by the statecache thread. Allowed values are 1-10000. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Max elements to dequeue in one shot from the Q by the statecache thread. Allowed values are 1-10000. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ScDNSQBatchDequeueLimit *uint32 `json:"sc_dns_q_batch_dequeue_limit,omitempty"`
 
-	// Max elements in the dns queue between seagent main and the statecache thread. Allowed values are 1-10000. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Max elements in the dns queue between seagent main and the statecache thread. Allowed values are 1-10000. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ScDNSQMaxSize *uint32 `json:"sc_dns_q_max_size,omitempty"`
 
 	// Max time to wait by the statecache thread before cleaning up connection to the controller shard. Allowed values are 1-1000000. Field introduced in 18.2.5. Unit is SECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -8,7 +8,7 @@ package models
 // swagger:model GslbSiteHealthStatus
 type GslbSiteHealthStatus struct {
 
-	// Controller size of peer controller. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Controller size of peer controller. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerFlavor *string `json:"controller_flavor,omitempty"`
 
 	// Controller retrieved GSLB service operational info based of virtual service state. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -20,7 +20,7 @@ type GslbSiteHealthStatus struct {
 	// DNS info at the site. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSInfo *GslbDNSInfo `json:"dns_info,omitempty"`
 
-	// This is used to identify the connection between the sitesIn a 3 site scenario A, B, C, if C is connected to A and BWhen C is responding to A HsResponse will contain (C, A), (C, B). Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// This is used to identify the connection between the sitesIn a 3 site scenario A, B, C, if C is connected to A and BWhen C is responding to A HsResponse will contain (C, A), (C, B). Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Edges []*SiteLink `json:"edges,omitempty"`
 
 	// GSLB application persistence profile state at member. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

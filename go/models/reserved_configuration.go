@@ -8,6 +8,6 @@ package models
 // swagger:model ReservedConfiguration
 type ReservedConfiguration struct {
 
-	// List of configurations for internal purposes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// List of configurations for internal purposes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	KeyValueConfigurations []*KeyValueConfiguration `json:"key_value_configurations,omitempty"`
 }

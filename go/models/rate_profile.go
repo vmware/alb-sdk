@@ -12,16 +12,16 @@ type RateProfile struct {
 	// Required: true
 	Action *RateLimiterAction `json:"action"`
 
-	// Explicitly tracks an attacker across rate periods. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- false) edition.
+	// Explicitly tracks an attacker across rate periods. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ExplicitTracking *bool `json:"explicit_tracking,omitempty"`
 
-	// Enable fine granularity. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- false) edition.
+	// Enable fine granularity. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FineGrain *bool `json:"fine_grain,omitempty"`
 
-	// HTTP cookie name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition.
+	// HTTP cookie name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HTTPCookie *string `json:"http_cookie,omitempty"`
 
-	// HTTP header name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition.
+	// HTTP header name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HTTPHeader *string `json:"http_header,omitempty"`
 
 	// The rate limiter configuration for this rate profile. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

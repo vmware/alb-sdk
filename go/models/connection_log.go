@@ -15,10 +15,10 @@ type ConnectionLog struct {
 	//  Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AverageTurntime *uint32 `json:"average_turntime,omitempty"`
 
-	// Average packet processing latency for the backend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Average packet processing latency for the backend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgIngressLatencyBe *uint32 `json:"avg_ingress_latency_be,omitempty"`
 
-	// Average packet processing latency for the frontend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Average packet processing latency for the frontend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgIngressLatencyFe *uint32 `json:"avg_ingress_latency_fe,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -46,17 +46,17 @@ type ConnectionLog struct {
 	// Required: true
 	ClientSrcPort *uint32 `json:"client_src_port"`
 
-	// TCP connection establishment time for the backend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// TCP connection establishment time for the backend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnEstTimeBe *uint32 `json:"conn_est_time_be,omitempty"`
 
-	// TCP connection establishment time for the frontend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// TCP connection establishment time for the frontend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnEstTimeFe *uint32 `json:"conn_est_time_fe,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	ConnectionEnded *bool `json:"connection_ended"`
 
-	// Diameter related logging information. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Diameter related logging information. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DiameterLog *DiameterLog `json:"diameter_log,omitempty"`
 
 	//  Enum options - DNS_ENTRY_PASS_THROUGH, DNS_ENTRY_GSLB, DNS_ENTRY_VIRTUALSERVICE, DNS_ENTRY_STATIC, DNS_ENTRY_POLICY, DNS_ENTRY_LOCAL. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -68,10 +68,10 @@ type ConnectionLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSIps []int64 `json:"dns_ips,omitempty,omitempty"`
 
-	// DNS policy or Topology policy name which resulted in a match. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// DNS policy or Topology policy name which resulted in a match. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSPolicy *string `json:"dns_policy,omitempty"`
 
-	// DNS policy rule name which resulted in a match. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// DNS policy rule name which resulted in a match. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSPolicyRuleName *string `json:"dns_policy_rule_name,omitempty"`
 
 	//  Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -83,7 +83,7 @@ type ConnectionLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSResponse *DNSResponse `json:"dns_response,omitempty"`
 
-	// Service engine closed the TCP connection after the first DNS response. Field introduced in 21.1.7, 22.1.4, 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Service engine closed the TCP connection after the first DNS response. Field introduced in 21.1.7, 22.1.4, 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSTCPConnCloseFromSe *bool `json:"dns_tcp_conn_close_from_se,omitempty"`
 
 	// Datascript Log. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -102,10 +102,10 @@ type ConnectionLog struct {
 	// Required: true
 	LogID *uint32 `json:"log_id"`
 
-	// Maximum packet processing latency for the backend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum packet processing latency for the backend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxIngressLatencyBe *uint32 `json:"max_ingress_latency_be,omitempty"`
 
-	// Maximum packet processing latency for the frontend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Maximum packet processing latency for the frontend flow. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxIngressLatencyFe *uint32 `json:"max_ingress_latency_fe,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -262,13 +262,13 @@ type ConnectionLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslCipher *string `json:"ssl_cipher,omitempty"`
 
-	// SSl group negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// SSl group negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslNamedGroup *string `json:"ssl_named_group,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslSessionID *string `json:"ssl_session_id,omitempty"`
 
-	// SSL signature algorithm negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// SSL signature algorithm negotitaed during SSL handhshake. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslSignatureAlgorithm *string `json:"ssl_signature_algorithm,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -282,7 +282,7 @@ type ConnectionLog struct {
 	// Required: true
 	Timeouts *uint32 `json:"timeouts"`
 
-	// Topology policy rule name which resulted in a match. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Topology policy rule name which resulted in a match. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TopologyPolicyRuleName *string `json:"topology_policy_rule_name,omitempty"`
 
 	//  Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -12,43 +12,43 @@ type GslbCRMRuntime struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// This field tracks the site_uuid for local/remote site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// This field tracks the site_uuid for local/remote site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClusterUUID *string `json:"cluster_uuid,omitempty"`
 
-	// Events Captured wrt to config replication. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Events Captured wrt to config replication. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Events []*EventInfo `json:"events,omitempty"`
 
-	// Federated data store related info. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Federated data store related info. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FdsInfo *FdsInfo `json:"fds_info,omitempty"`
 
-	// Represents Local Info for the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Represents Local Info for the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LocalInfo *LocalInfo `json:"local_info,omitempty"`
 
-	// The name of DB entry. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The name of DB entry. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// GSLB CRM Runtime object uuid. Points to the GSLB to which this belongs. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// GSLB CRM Runtime object uuid. Points to the GSLB to which this belongs. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ObjUUID *string `json:"obj_uuid,omitempty"`
 
-	// Respresents Remote Site's info wrt to replication. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Respresents Remote Site's info wrt to replication. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RemoteInfo *RemoteInfo `json:"remote_info,omitempty"`
 
-	// Policy for replicating configuration to the active follower sites. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Policy for replicating configuration to the active follower sites. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ReplicationPolicy *ReplicationPolicy `json:"replication_policy,omitempty"`
 
-	// This field tracks the site name. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// This field tracks the site name. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SiteName *string `json:"site_name,omitempty"`
 
-	// CRM operational status. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// CRM operational status. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StatusInfo *OperationalStatus `json:"status_info,omitempty"`
 
-	// Uuid of the tenant. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Uuid of the tenant. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// The uuid of DB entry. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The uuid of DB entry. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

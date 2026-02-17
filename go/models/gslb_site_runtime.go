@@ -14,7 +14,7 @@ type GslbSiteRuntime struct {
 	// This field tracks the glb-uuid. Field introduced in 17.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GlbUUID *string `json:"glb_uuid,omitempty"`
 
-	// This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HealthMonitorInfo *string `json:"health_monitor_info,omitempty"`
 
 	// Carries replication stats for a given site. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

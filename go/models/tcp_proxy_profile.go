@@ -8,7 +8,7 @@ package models
 // swagger:model TCPProxyProfile
 type TCPProxyProfile struct {
 
-	// Controls whether we immediately send ack when incoming packet has PUSH flag marked. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Controls whether we immediately send ack when incoming packet has PUSH flag marked. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AckOnPush *bool `json:"ack_on_push,omitempty"`
 
 	// Controls the our congestion window to send, normally it's 1 mss, If this option is turned on, we use 10 msses. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -17,7 +17,7 @@ type TCPProxyProfile struct {
 	// Controls whether the windows are static or supports autogrowth. Maximum that it can grow to is limited to 4MB. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoWindowGrowth *bool `json:"auto_window_growth,omitempty"`
 
-	// Dynamically pick the relevant parameters for connections. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- true) edition.
+	// Dynamically pick the relevant parameters for connections. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Automatic *bool `json:"automatic,omitempty"`
 
 	// Controls the congestion control algorithm we use. Enum options - CC_ALGO_NEW_RENO, CC_ALGO_CUBIC, CC_ALGO_HTCP. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -26,10 +26,10 @@ type TCPProxyProfile struct {
 	// Congestion window scaling factor after recovery. Allowed values are 0-8. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CongestionRecoveryScalingFactor *uint32 `json:"congestion_recovery_scaling_factor,omitempty"`
 
-	// Determines if delayed ack mode is enabledTrue  Unconditionally use delayed ackFalse  Don't use delayed ack. Field introduced in 30.2.3, 31.1.2, 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Determines if delayed ack mode is enabledTrue  Unconditionally use delayed ackFalse  Don't use delayed ack. Field introduced in 30.2.3, 31.1.2, 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DelayedAckMode *bool `json:"delayed_ack_mode,omitempty"`
 
-	// The time in milliseconds for delayed timer to kick in. Allowed values are 0-500. Special values are 0 - Disable Delayed Ack. Field introduced in 31.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// The time in milliseconds for delayed timer to kick in. Allowed values are 0-500. Special values are 0 - Disable Delayed Ack. Field introduced in 31.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DelayedAckTimerDelay *uint32 `json:"delayed_ack_timer_delay,omitempty"`
 
 	// The duration for keepalive probes or session idle timeout. Max value is 14400 seconds, min is 5.  Set to 0 to allow infinite idle time. Allowed values are 5-14400. Special values are 0 - infinite. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -27,7 +27,7 @@ type User struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Email *string `json:"email,omitempty"`
 
-	// Flag to enable or disable config warnings. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Flag to enable or disable config warnings. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableConfigWarnings *bool `json:"enable_config_warnings,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -45,7 +45,7 @@ type User struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IsSuperuser *bool `json:"is_superuser,omitempty"`
 
-	// Indicates if the user was created via VCFA OAuth authentication. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Indicates if the user was created via VCFA OAuth authentication. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IsVcfaUser *bool `json:"is_vcfa_user,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

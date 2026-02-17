@@ -15,7 +15,7 @@ type SSLKeyParams struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EcParams *SSLKeyECParams `json:"ec_params,omitempty"`
 
-	// Mldsa keys. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Mldsa keys. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MldsaParams *SSLKeyMldsaParams `json:"mldsa_params,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
