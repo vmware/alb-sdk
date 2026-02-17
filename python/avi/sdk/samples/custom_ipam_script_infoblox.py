@@ -1,6 +1,6 @@
 ############################################################################
 # ========================================================================
-# Copyright (c) 2025 Broadcom Inc. and/or its subsidiaries. All Rights Reserved. Broadcom Confidential.
+# Copyright (c) 2026 Broadcom Inc. and/or its subsidiaries. All Rights Reserved. Broadcom Confidential.
 # ========================================================================
 ###
 
@@ -39,6 +39,8 @@ import logging
 import copy
 import json
 from bs4 import BeautifulSoup
+
+CERT_VERIFICATION = False
 
 class CustomIpamAuthenticationErrorException(Exception):
     """
@@ -133,7 +135,7 @@ def _get_api_paginated(auth_params, dest_url, dest_url6, data_key, results_per_p
     
     if 'server6' in auth_params:
         r6 = requests.get(
-            url=page_url6, auth=(auth_params['username'], auth_params['password']), verify=False, timeout=30)
+            url=page_url6, auth=(auth_params['username'], auth_params['password']), verify=CERT_VERIFICATION, timeout=30)
         logger.info("F[_get_api_paginated] req[%s] status_code[%s]" % (page_url6, r6.status_code))
         _check_and_raise_auth_error(r6)
         if r6.status_code == 200:
@@ -160,7 +162,7 @@ def _get_api_paginated(auth_params, dest_url, dest_url6, data_key, results_per_p
             while next_page_id and elapsed_time < api_timeout:
                 page_url6 = dest_url6 + '&_page_id=%s' % next_page_id
                 r6 = requests.get(
-                    url=page_url6, auth=(auth_params['username'], auth_params['password']), verify=False, timeout=30)
+                    url=page_url6, auth=(auth_params['username'], auth_params['password']), verify=CERT_VERIFICATION, timeout=30)
                 logger.info("F[_get_api_paginated] req[%s] status_code[%s]" % (page_url6, r6.status_code))
                 _check_and_raise_auth_error(r6)
                 if r6.status_code != 200:
@@ -185,7 +187,7 @@ def _get_api_paginated(auth_params, dest_url, dest_url6, data_key, results_per_p
             return data_vals
         elif 'server' in auth_params:
             r = requests.get(
-                url=page_url, auth=(auth_params['username'], auth_params['password']), verify=False, timeout=30)
+                url=page_url, auth=(auth_params['username'], auth_params['password']), verify=CERT_VERIFICATION, timeout=30)
             logger.info("F[_get_api_paginated] req[%s] status_code[%s]" % (page_url, r.status_code))
             _check_and_raise_auth_error(r)
             if r.status_code == 200:
@@ -212,7 +214,7 @@ def _get_api_paginated(auth_params, dest_url, dest_url6, data_key, results_per_p
                 while next_page_id and elapsed_time < api_timeout:
                     page_url = dest_url + '&_page_id=%s' % next_page_id
                     r = requests.get(
-                        url=page_url, auth=(auth_params['username'], auth_params['password']), verify=False, timeout=30)
+                        url=page_url, auth=(auth_params['username'], auth_params['password']), verify=CERT_VERIFICATION, timeout=30)
                     logger.info("F[_get_api_paginated] req[%s] status_code[%s]" % (page_url, r.status_code))
                     _check_and_raise_auth_error(r)
                     if r.status_code != 200:
@@ -244,7 +246,7 @@ def _get_api_paginated(auth_params, dest_url, dest_url6, data_key, results_per_p
             raise CustomIpamGeneralException("F[GetAvailableNetworksAndSubnets] req[%s] ip_type[%s] err[%s]" % (page_url6, ip_type, err_msg))
     elif 'server' in auth_params:
         r = requests.get(
-            url=page_url, auth=(auth_params['username'], auth_params['password']), verify=False, timeout=30)
+            url=page_url, auth=(auth_params['username'], auth_params['password']), verify=CERT_VERIFICATION, timeout=30)
         logger.info("F[_get_api_paginated] req[%s] status_code[%s]" % (page_url, r.status_code))
         _check_and_raise_auth_error(r)
         if r.status_code == 200:
@@ -271,7 +273,7 @@ def _get_api_paginated(auth_params, dest_url, dest_url6, data_key, results_per_p
             while next_page_id and elapsed_time < api_timeout:
                 page_url = dest_url + '&_page_id=%s' % next_page_id
                 r = requests.get(
-                    url=page_url, auth=(auth_params['username'], auth_params['password']), verify=False, timeout=30)
+                    url=page_url, auth=(auth_params['username'], auth_params['password']), verify=CERT_VERIFICATION, timeout=30)
                 logger.info("F[_get_api_paginated] req[%s] status_code[%s]" % (page_url, r.status_code))
                 _check_and_raise_auth_error(r)
                 if r.status_code != 200:
@@ -371,10 +373,10 @@ def TestLogin(auth_params):
         r = None
         r6 = None
         if server:
-            r = requests.get(url=schema_url, auth=auth, verify=False, timeout=30)
+            r = requests.get(url=schema_url, auth=auth, verify=CERT_VERIFICATION, timeout=30)
             logger.info("F[TestLogin] req[%s] status_code[%s]" % (schema_url, r.status_code))
         if server6:
-            r6 = requests.get(url=schema_url6, auth=auth, verify=False, timeout=30)
+            r6 = requests.get(url=schema_url6, auth=auth, verify=CERT_VERIFICATION, timeout=30)
             logger.info("F[TestLogin] req[%s] status_code[%s]" % (schema_url6, r6.status_code))
         if (not r or r.status_code == 200) and (not r6 or r6.status_code == 200):
             return True
@@ -528,7 +530,7 @@ def CreateIpamRecord(auth_params, record_info):
             #HA code for ipv6 and ipv4 addresses
             if 'server6' in auth_params:
                 r6 = requests.post(url=rest_url6, auth=(auth_params['username'], auth_params['password']),
-                            verify=False, data=payload)
+                            verify=CERT_VERIFICATION, data=payload)
                 logger.info("F[CreateIpamRecord] req[%s %s] status_code[%s]" % (rest_url6, payload, r6.status_code))
                 _check_and_raise_auth_error(r6)
                 if r6.status_code in [200, 201]:
@@ -543,7 +545,7 @@ def CreateIpamRecord(auth_params, record_info):
                     return alloc_info
                 elif 'server' in  auth_params:
                     r = requests.post(url=rest_url, auth=(auth_params['username'], auth_params['password']),
-                                    verify=False, data=payload)
+                                    verify=CERT_VERIFICATION, data=payload)
                     logger.info("F[CreateIpamRecord] req[%s %s] status_code[%s]" % (rest_url, payload, r.status_code))
                     _check_and_raise_auth_error(r)
                     if r.status_code in [200,201]:
@@ -566,7 +568,7 @@ def CreateIpamRecord(auth_params, record_info):
                     continue
             elif 'server' in auth_params:
                 r = requests.post(url=rest_url, auth=(auth_params['username'], auth_params['password']),
-                            verify=False, data=payload)
+                            verify=CERT_VERIFICATION, data=payload)
                 logger.info("F[CreateIpamRecord] req[%s %s] status_code[%s]" % (rest_url, payload, r.status_code))
                 _check_and_raise_auth_error(r)
                 if r.status_code in [200,201]:
@@ -608,7 +610,7 @@ def CreateIpamRecord(auth_params, record_info):
             #HA code for ipv6 and ipv4 addresses
             if 'server6' in auth_params:
                 r6 = requests.post(url=rest_url6, auth=(auth_params['username'], auth_params['password']),
-                            verify=False, data=payload)
+                            verify=CERT_VERIFICATION, data=payload)
                 logger.info("F[CreateIpamRecord] req[%s %s] status_code[%s]" % (rest_url6, payload, r6.status_code))
                 _check_and_raise_auth_error(r6)
                 if r6.status_code in [200, 201]:
@@ -623,7 +625,7 @@ def CreateIpamRecord(auth_params, record_info):
                     return alloc_info
                 elif 'server' in  auth_params:
                     r = requests.post(url=rest_url, auth=(auth_params['username'], auth_params['password']),
-                                    verify=False, data=payload)
+                                    verify=CERT_VERIFICATION, data=payload)
                     logger.info("F[CreateIpamRecord] req[%s %s] status_code[%s]" % (rest_url, payload, r.status_code))
                     _check_and_raise_auth_error(r)
                     if r.status_code in [200,201]:
@@ -646,7 +648,7 @@ def CreateIpamRecord(auth_params, record_info):
                     continue
             elif 'server' in auth_params:
                 r = requests.post(url=rest_url, auth=(auth_params['username'], auth_params['password']),
-                            verify=False, data=payload)
+                            verify=CERT_VERIFICATION, data=payload)
                 logger.info("F[CreateIpamRecord] req[%s %s] status_code[%s]" % (rest_url, payload, r.status_code))
                 _check_and_raise_auth_error(r)
                 if r.status_code in [200,201]:
@@ -711,7 +713,7 @@ def DeleteIpamRecord(auth_params, record_info):
         #HA code for ipv6 and ipv4 addresses
         if 'server6' in auth_params:
             r6 = requests.get(url=rest_url6, auth=(auth_params['username'], auth_params['password']), 
-                            verify=False, timeout=30)
+                            verify=CERT_VERIFICATION, timeout=30)
             logger.info("F[DeleteIpamRecord] req[%s] status_code[%s]" % (rest_url6, r6.status_code))
             _check_and_raise_auth_error(r6)
             r6_json = r6.json()
@@ -726,7 +728,7 @@ def DeleteIpamRecord(auth_params, record_info):
                 url6 = 'https://[' + auth_params['server6'] + ']/wapi/' + \
                     auth_params['wapi_version'] + '/' + host_ref
                 r6 = requests.delete(url=url6, auth=(
-                    auth_params['username'], auth_params['password']), verify=False)
+                    auth_params['username'], auth_params['password']), verify=CERT_VERIFICATION)
                 logger.info("F[DeleteIpamRecord] req[%s] status_code[%s]" % (url6, r6.status_code))
                 _check_and_raise_auth_error(r6)
                 r6_json = r6.json()
@@ -739,7 +741,7 @@ def DeleteIpamRecord(auth_params, record_info):
                     raise CustomIpamRecordNotFoundException(err_msg)
             elif 'server' in  auth_params:
                 r = requests.get(url=rest_url, auth=(auth_params['username'], auth_params['password']), 
-                            verify=False, timeout=30)
+                            verify=CERT_VERIFICATION, timeout=30)
                 logger.info("F[DeleteIpamRecord] req[%s] status_code[%s]" % (rest_url, r.status_code))
                 _check_and_raise_auth_error(r)
                 r_json = r.json()
@@ -754,7 +756,7 @@ def DeleteIpamRecord(auth_params, record_info):
                     url = 'https://' + auth_params['server'] + '/wapi/' + \
                         auth_params['wapi_version'] + '/' + host_ref
                     r = requests.delete(url=url, auth=(
-                        auth_params['username'], auth_params['password']), verify=False)
+                        auth_params['username'], auth_params['password']), verify=CERT_VERIFICATION)
                     logger.info("F[DeleteIpamRecord] req[%s] status_code[%s]" % (url, r.status_code))
                     _check_and_raise_auth_error(r)
                     r_json = r.json()
@@ -771,7 +773,7 @@ def DeleteIpamRecord(auth_params, record_info):
                 raise CustomIpamRecordNotFoundException(err_msg)
         elif 'server' in auth_params:
             r = requests.get(url=rest_url, auth=(auth_params['username'], auth_params['password']), 
-                            verify=False, timeout=30)
+                            verify=CERT_VERIFICATION, timeout=30)
             logger.info("F[DeleteIpamRecord] req[%s] status_code[%s]" % (rest_url, r.status_code))
             _check_and_raise_auth_error(r)
             r_json = r.json()
@@ -786,7 +788,7 @@ def DeleteIpamRecord(auth_params, record_info):
                 url = 'https://' + auth_params['server'] + '/wapi/' + \
                     auth_params['wapi_version'] + '/' + host_ref
                 r = requests.delete(url=url, auth=(
-                    auth_params['username'], auth_params['password']), verify=False)
+                    auth_params['username'], auth_params['password']), verify=CERT_VERIFICATION)
                 logger.info("F[DeleteIpamRecord] req[%s] status_code[%s]" % (url, r.status_code))
                 _check_and_raise_auth_error(r)
                 r_json = r.json()
@@ -896,7 +898,7 @@ def UpdateIpamRecord(auth_params, new_record_info, old_record_info):
     try:
         if 'server6' in auth_params:
             r6 = requests.get(url=rest_url6, auth=(auth_params['username'], auth_params['password']),
-                            verify=False, timeout=30)
+                            verify=CERT_VERIFICATION, timeout=30)
             logger.info("F[UpdateIpamRecord] req[%s] status_code[%s]" % (rest_url6, r6.status_code))
             _check_and_raise_auth_error(r6)
             r6_json = r6.json()
@@ -904,7 +906,7 @@ def UpdateIpamRecord(auth_params, new_record_info, old_record_info):
                 host_ref = r6_json[0]['_ref'] if len(r6_json) > 0 and r6_json[0]['_ref'] else None
             elif 'server' in auth_params:
                 r = requests.get(url=rest_url, auth=(auth_params['username'], auth_params['password']),
-                            verify=False, timeout=30)
+                            verify=CERT_VERIFICATION, timeout=30)
                 logger.info("F[UpdateIpamRecord] req[%s] status_code[%s]" % (rest_url, r.status_code))
                 _check_and_raise_auth_error(r)
                 r_json = r.json()
@@ -922,7 +924,7 @@ def UpdateIpamRecord(auth_params, new_record_info, old_record_info):
                 raise CustomIpamRecordNotFoundException("F[UpdateIpamRecord] Error retrieving the record[%s] reason[%s]" % (name, err_msg))
         elif 'server' in auth_params:
             r = requests.get(url=rest_url, auth=(auth_params['username'], auth_params['password']),
-                                verify=False, timeout=30)
+                                verify=CERT_VERIFICATION, timeout=30)
             logger.info("F[UpdateIpamRecord] req[%s] status_code[%s]" % (rest_url, r.status_code))
             _check_and_raise_auth_error(r)
             r_json = r.json()
@@ -977,7 +979,7 @@ def UpdateIpamRecord(auth_params, new_record_info, old_record_info):
 
     if 'server6' in auth_params:
         r6 = requests.put(url=rest_url6, auth=(auth_params['username'], auth_params['password']),
-                    verify=False, data=payload, timeout=30)
+                    verify=CERT_VERIFICATION, data=payload, timeout=30)
         logger.info("F[UpdateIpamRecord] req[%s %s] status_code[%s]" % (rest_url6, payload, r6.status_code))
         _check_and_raise_auth_error(r6)
         if r6.status_code in [200, 201]:
@@ -992,7 +994,7 @@ def UpdateIpamRecord(auth_params, new_record_info, old_record_info):
             return alloc_info
         elif 'server' in auth_params:
             r = requests.put(url=rest_url, auth=(auth_params['username'], auth_params['password']),
-                    verify=False, data=payload, timeout=30)
+                    verify=CERT_VERIFICATION, data=payload, timeout=30)
             logger.info("F[UpdateIpamRecord] req[%s %s] status_code[%s]" % (rest_url, payload, r.status_code))
             _check_and_raise_auth_error(r)
             if r.status_code not in [200, 201]:
@@ -1016,7 +1018,7 @@ def UpdateIpamRecord(auth_params, new_record_info, old_record_info):
                 name, rest_url6, payload, err_msg)
     elif 'server' in auth_params:
         r = requests.put(url=rest_url, auth=(auth_params['username'], auth_params['password']),
-                        verify=False, data=payload, timeout=30)
+                        verify=CERT_VERIFICATION, data=payload, timeout=30)
         logger.info("F[UpdateIpamRecord] req[%s %s] status_code[%s]" % (rest_url, payload, r.status_code))
         _check_and_raise_auth_error(r)
         if r.status_code not in [200, 201]:
