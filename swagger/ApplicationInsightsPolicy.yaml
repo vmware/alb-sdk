@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '31.2.2'
+    version: '31.2.3'
     title: Avi ApplicationInsightsPolicy Object API
     contact:
         name: Avi Networks Inc.
