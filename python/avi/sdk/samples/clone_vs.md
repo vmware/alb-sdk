@@ -280,6 +280,20 @@ Note: If the source VS is an SNI child, the cloned VS will inherit its SSL profi
 
 Note: A VsVip ("example-vsvip" in this example) must be manually created in advance. If the source VS is an SNI child, the cloned VS will inherit its SSL profile and certificates and the services will be configured for port 443 (SSL). If the source VS is an EVH child, the cloned VS is created as a non-SSL VS using port 80 (no SSL).
 
+### Arbitrarily modifying cloned VS configuration
+
+The -tf (--vstransform) option allows the arbitrary modification of the cloned VS configuration by updating the cloned VS object with a user-supplied JSON blob.
+
+For example, you may want to clone a VS with the `use_vip_as_snat` parameter enabled from an Active/Standby SE Group to an Active/Active SE Group. Since `use_vip_as_snat` is not supported in an Active/Active SE Group, it must be disabled in the cloned VS. To achieve this you can use:
+
+> clone_vs.py -c controller.example.com vs example cloned-example -tf '{"use_vip_as_snat": false}'
+
+Similarly, a VS may be configured with statically-defined SNAT IPs which must be unique for each virtual service. You can specify a new set of SNAT IPs
+
+> clone_vs.py -c controller.example.com vs example cloned-example -tf '{"snat_ip": [{"addr": "10.10.10.101", "type": "V4"}, {"addr": "10.10.10.102", "type": "V4"}]}'
+
+Note: This option is intended for modification of top-level parameters rather than deeply-nested configuration. Where a replacement value is a dictionary or list, the entire dictionary or list will be replaced (as in the above SNAT IP example). Merging with existing list or dictionary values is not possible.
+
 ## Cross-Version support
 
 By default, the API version is automatically determined based on the minimum of the software versions of the source and destination Controllers. It is also possible to specify the specific API version to be used with the -x parameter.
@@ -367,3 +381,7 @@ Changelog:
 
 * Support for the new content rewrite object model in version 31.2.1 that supports request rewrite and pre-rule rewritable content string groups
 * Add special handling when cloning VS to 31.2.1 and later when the source VS has a content rewrite profile present with no rewrite rules
+
+2.0.13:
+
+* Add a configuration transform option to allow modification of cloned VS configuration parameters.

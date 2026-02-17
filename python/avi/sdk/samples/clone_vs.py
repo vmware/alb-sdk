@@ -14,6 +14,7 @@ from __future__ import print_function
 import sys
 import os
 import argparse
+import json
 import getpass
 import textwrap
 import logging
@@ -30,7 +31,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 12]
+AVICLONE_VERSION = [2, 0, 13]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -1845,7 +1846,8 @@ class AviClone:
                  force_clone=None, vs_flags=None,
                  new_parent=None, vh_type=None,
                  manual_vsvip=None,
-                 new_vs_placements=None):
+                 new_vs_placements=None,
+                 vs_transform=None):
         """
         Clones a Virtual Service object
 
@@ -1893,6 +1895,8 @@ class AviClone:
                              Virtual Service
         :param new_vs_placements: Specifies the placement network(s) for
                                   the VsVip
+        :param vs_transform: Dictionary to apply as a transform on the config
+                             of the cloned VS, replacing specified keys/values.
         :return: tuple - json representation of the cloned VS object, list of
                     additional objects created if any
         :rtype: tuple
@@ -2771,6 +2775,10 @@ class AviClone:
                     # Controller to manage VS's VRF from VsVip tier_1 config
                     v_obj.pop('vrf_context_ref', None)
 
+            if vs_transform:
+                logger.debug('Applying configuration transform to the VS')
+                v_obj.update(vs_transform)
+
             # Try to create the new VS (possibly in a different tenant to the
             # source)
 
@@ -2957,6 +2965,12 @@ if __name__ == '__main__':
                            'network-name/subnet/mask/subnet6/mask6. Multiple placement '
                            'networks can be separated with ";"',
                            metavar='vs_placements')
+    vs_parser.add_argument('-tf', '--vstransform',
+                           help='Specify a JSON object that should be applied to the '
+                           'cloned VS to transform the configuration. All keys in the '
+                           'supplied JSON will overwrite matching keys in the cloned ' \
+                           'object.',
+                           metavar='vs_transform')
     gs_parser = type_parser.add_parser('gs',
                                        help='Clone a GSLB Service')
     gs_parser.add_argument('gs_name',
@@ -3214,6 +3228,15 @@ if __name__ == '__main__':
                             'enable_rhi': flag_map(args.enable_rhi)}
 
                 vh_type = args.vhtype
+                if args.vstransform:
+                    try:
+                        vs_transform = json.loads(args.vstransform)
+                    except json.decoder.JSONDecodeError as e:
+                        raise ValueError('VS Transform JSON parsing error at '
+                                         'position %s: %s'
+                                         % (e.pos, e.msg)) from e
+                else:
+                    vs_transform = None
 
                 for (new_vs_name, new_vips,
                      new_fips, new_fqdns, new_v6vips, new_vsplacement) in zip(
@@ -3239,7 +3262,8 @@ if __name__ == '__main__':
                         new_parent=args.newparent,
                         vh_type=vh_type,
                         manual_vsvip=args.manualvsvip,
-                        new_vs_placements=new_vsplacement)
+                        new_vs_placements=new_vsplacement,
+                        vs_transform=vs_transform)
 
                     # Get VsVip object
                     for cloned_obj in cloned_objs:
