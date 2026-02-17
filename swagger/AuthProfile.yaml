@@ -392,7 +392,7 @@ definitions:
                 readOnly: True
                 type: string
             client_cert:
-                description: "Client Cert settings. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Client Cert settings. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ClientCertAuthSettings'
             description:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -401,7 +401,7 @@ definitions:
                 description: "HTTP user authentication params. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AuthProfileHTTPClientParams'
             jwt_profile_ref:
-                description: "JWTServerProfile to be used for authentication. It is a reference to an object of type JWTServerProfile. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "JWTServerProfile to be used for authentication. It is a reference to an object of type JWTServerProfile. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             ldap:
                 description: "LDAP server and directory settings. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -415,19 +415,19 @@ definitions:
                 description: "Name of the Auth Profile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             oauth_profile:
-                description: "OAuth Profile - Common endpoint information. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "OAuth Profile - Common endpoint information. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/OAuthProfile'
             saml:
                 description: "SAML settings. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SamlSettings'
             tacacs_plus:
-                description: "TACACS+ settings. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "TACACS+ settings. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TacacsPlusAuthSettings'
             tenant_ref:
                 description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: "Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH, AUTH_PROFILE_CLIENT_CERT. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- AUTH_PROFILE_LDAP,AUTH_PROFILE_TACACS_PLUS,AUTH_PROFILE_SAML,AUTH_PROFILE_JWT,AUTH_PROFILE_OAUTH,AUTH_PROFILE_CLIENT_CERT), Basic (Allowed values- AUTH_PROFILE_LDAP,AUTH_PROFILE_TACACS_PLUS,AUTH_PROFILE_SAML,AUTH_PROFILE_JWT,AUTH_PROFILE_OAUTH,AUTH_PROFILE_CLIENT_CERT) edition."
+                description: "Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH, AUTH_PROFILE_CLIENT_CERT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
@@ -483,7 +483,7 @@ definitions:
         type: object
         properties:
             client_cert_refs:
-                description: "Client Certs to be used for authentication. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Client Certs to be used for authentication. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -605,16 +605,16 @@ definitions:
             -   client_id
         properties:
             client_id:
-                description: "Application specific identifier. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Application specific identifier. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             client_secret:
-                description: "Application specific identifier secret. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Application specific identifier secret. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             oidc_config:
-                description: "OpenID Connect specific configuration. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "OpenID Connect specific configuration. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/OIDCConfig'
             scopes:
-                description: "Scope specified to give limited access to the app. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Scope specified to give limited access to the app. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -624,69 +624,69 @@ definitions:
             -   authorization_endpoint
         properties:
             audience:
-                description: "Audience parameter used for JWT token validation. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Audience parameter used for JWT token validation. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             authorization_endpoint:
-                description: "URL of authorization server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "URL of authorization server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             end_session_endpoint:
-                description: "Logout URI of IDP server. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Logout URI of IDP server. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             introspection_endpoint:
-                description: "URL of token introspection server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "URL of token introspection server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             issuer:
-                description: "Uniquely identifiable name of the Token Issuer. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Uniquely identifiable name of the Token Issuer. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             jwks_timeout:
-                description: "Lifetime of the cached JWKS keys. Allowed values are 0-1440. Field introduced in 21.1.3. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Lifetime of the cached JWKS keys. Allowed values are 0-1440. Field introduced in 21.1.3. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             jwks_uri:
-                description: "JWKS URL of the endpoint that hosts the public keys that can be used to verify any JWT issued by the authorization server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "JWKS URL of the endpoint that hosts the public keys that can be used to verify any JWT issued by the authorization server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             oauth_controller_settings:
-                description: "OAuth App Settings for controller authentication. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "OAuth App Settings for controller authentication. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/OAuthAppSettings'
             oauth_profile_type:
-                description: "Type of OAuth profile which defines the usage type. Enum options - CLIENT_OAUTH, CONTROLLER_OAUTH. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Type of OAuth profile which defines the usage type. Enum options - CLIENT_OAUTH, CONTROLLER_OAUTH. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "CLIENT_OAUTH"
             oauth_provider:
-                description: "Type of OAuth Provider when using controller oauth as oauth profile type. Enum options - OAUTH_CSP, OAUTH_VCF. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Type of OAuth Provider when using controller oauth as oauth profile type. Enum options - OAUTH_CSP, OAUTH_VCF. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             oauth_resp_buffer_sz:
-                description: "Buffering size for the responses from the OAUTH enpoints. Allowed values are 0-32768000. Field introduced in 21.1.3. Unit is BYTES. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Buffering size for the responses from the OAUTH enpoints. Allowed values are 0-32768000. Field introduced in 21.1.3. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 102400
                 format: int32
             pool_ref:
-                description: "Pool object to interface with Authorization Server endpoints. It is a reference to an object of type Pool. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Pool object to interface with Authorization Server endpoints. It is a reference to an object of type Pool. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             redirect_uri:
-                description: "Redirect URI specified in the request to Authorization Server. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Redirect URI specified in the request to Authorization Server. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             token_endpoint:
-                description: "URL of token exchange server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "URL of token exchange server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             userinfo_endpoint:
-                description: "URL of the Userinfo Endpoint. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "URL of the Userinfo Endpoint. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     OIDCConfig:
         type: object
         properties:
             oidc_enable:
-                description: "Adds openid as one of the scopes enabling OpenID Connect flow. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Adds openid as one of the scopes enabling OpenID Connect flow. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             profile:
-                description: "Fetch profile information by enabling profile scope. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Fetch profile information by enabling profile scope. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             userid_claim_name:
-                description: "Claim name from id token to be used as User ID. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Claim name from id token to be used as User ID. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             userinfo:
-                description: "Fetch profile information from Userinfo Endpoint. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Fetch profile information from Userinfo Endpoint. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     RoleFilterMatchLabel:
         type: object
@@ -694,10 +694,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -705,7 +705,7 @@ definitions:
         type: object
         properties:
             meta_data_download_interval:
-                description: "The interval to query and download SAML IDP metadata using the metadata URL. Allowed values are 1-10080. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "The interval to query and download SAML IDP metadata using the metadata URL. Allowed values are 1-10080. Field introduced in 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
@@ -713,10 +713,10 @@ definitions:
                 description: "SAML IDP metadata. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             metadata_url:
-                description: "SAML IDP Federation Metadata Url. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "SAML IDP Federation Metadata Url. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             periodic_download:
-                description: "Enable Periodic Metadata Download. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable Periodic Metadata Download. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     SamlServiceProviderNode:
         type: object

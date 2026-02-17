@@ -564,15 +564,15 @@
                     "type": "string"
                 },
                 "destination_dir": {
-                    "description": "Destination of the file to be saved. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Destination of the file to be saved. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "file_type": {
-                    "description": "SOFTWARE / CRS/ INVENTORY. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "SOFTWARE / CRS/ INVENTORY. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "file_uri": {
-                    "description": "file uri on the cloud bucket. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "file uri on the cloud bucket. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "message": {
@@ -586,7 +586,7 @@
                     "$ref": "#/definitions/ALBServicesFileDownloadMetadata"
                 },
                 "name": {
-                    "description": "The name of the file with which it is saved to the disk. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The name of the file with which it is saved to the disk. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "status": {
@@ -595,7 +595,7 @@
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "Tenant UUID associated with the object. It is a reference to an object of type Tenant. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Tenant UUID associated with the object. It is a reference to an object of type Tenant. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -604,7 +604,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "Unique ID of the object. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Unique ID of the object. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -640,28 +640,28 @@
             ],
             "properties": {
                 "checksum": {
-                    "description": "Checksum of the file. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Checksum of the file. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "checksum_type": {
-                    "description": "Currently only MD5 checksum type is supported. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Currently only MD5 checksum type is supported. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "chunk_size": {
-                    "description": "Checksum size in bytes. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Checksum size in bytes. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "is_multi_part_download": {
-                    "description": "Whether the file can be downloaded in parts or not. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Whether the file can be downloaded in parts or not. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "signed_url": {
-                    "description": "Sigend url of the file from pulse. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Sigend url of the file from pulse. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "total_size": {
-                    "description": "Total size of the file in bytes. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Total size of the file in bytes. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 }

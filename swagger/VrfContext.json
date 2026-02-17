@@ -709,7 +709,7 @@
                     "format": "uint32"
                 },
                 "ibgp_local_as_override": {
-                    "description": "Override the profile level local_as with the peer level remote_as. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Override the profile level local_as with the peer level remote_as. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "keepalive_interval": {
@@ -1051,11 +1051,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1119,11 +1119,11 @@
                     }
                 },
                 "bfd_profile": {
-                    "description": "BFD configuration profile. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "BFD configuration profile. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/BfdProfile"
                 },
                 "bgp_profile": {
-                    "description": "Bgp Local and Peer Info. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Bgp Local and Peer Info. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/BgpProfile"
                 },
                 "cloud_ref": {
@@ -1139,7 +1139,7 @@
                     "type": "string"
                 },
                 "gateway_mon": {
-                    "description": "Configure ping based heartbeat check for gateway in service engines of vrf. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Configure ping based heartbeat check for gateway in service engines of vrf. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/GatewayMonitor"
@@ -1150,7 +1150,7 @@
                     "$ref": "#/definitions/InternalGatewayMonitor"
                 },
                 "lldp_enable": {
-                    "description": "Enable LLDP. Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- true), Basic (Allowed values- true) edition.",
+                    "description": "Enable LLDP. Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },

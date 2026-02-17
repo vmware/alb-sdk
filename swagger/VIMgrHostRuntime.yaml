@@ -576,7 +576,7 @@ definitions:
         type: object
         properties:
             cloud_uuid:
-                description: "Vcenter cloud id. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Vcenter cloud id. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     VIMgrHostRuntime:
         type: object

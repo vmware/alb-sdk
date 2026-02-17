@@ -695,7 +695,7 @@
                     "$ref": "#/definitions/HSMgrDebugFilter"
                 },
                 "logmanager_debug_filter": {
-                    "description": "Add filter to Log Manager Debug. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Add filter to Log Manager Debug. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/LogManagerDebugFilter"
                 },
                 "mesos_metrics_debug_filter": {
@@ -770,275 +770,275 @@
             "type": "object",
             "properties": {
                 "adf_protection_time_minutes": {
-                    "description": "Delete protection time for ADF indices in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Delete protection time for ADF indices in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1380,
                     "format": "uint32"
                 },
                 "batch_queue_buffer_size": {
-                    "description": "Buffer size for batch queues. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Buffer size for batch queues. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
                     "format": "uint32"
                 },
                 "batch_worker_count": {
-                    "description": "Number of workers for batch processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of workers for batch processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
                     "format": "uint32"
                 },
                 "bulk_payload_string_size": {
-                    "description": "Size of bulk payload buffer. This is the max bulk payload size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Size of bulk payload buffer. This is the max bulk payload size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 11000000,
                     "format": "uint32"
                 },
                 "cache_cleanup_delay_ms": {
-                    "description": "Cache cleanup delay in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Cache cleanup delay in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300000,
                     "format": "uint32"
                 },
                 "client_index_op_timeout_seconds": {
-                    "description": "Timeout for the client to create an index in seconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Timeout for the client to create an index in seconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
                     "format": "uint32"
                 },
                 "db_notifn_chan_capacity": {
-                    "description": "Database notification channel capacity. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Database notification channel capacity. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
                     "format": "uint32"
                 },
                 "entity_ref": {
-                    "description": "UUID of the entity. It is a reference to an object of type Virtualservice. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the entity. It is a reference to an object of type Virtualservice. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "go_gc_percent": {
-                    "description": "Go garbage collection percentage. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Go garbage collection percentage. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
                     "format": "uint32"
                 },
                 "incremental_timeout_buffer_ms": {
-                    "description": "Incremental timeout buffer in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Incremental timeout buffer in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
                     "format": "uint32"
                 },
                 "index_cleaner_interval_minutes": {
-                    "description": "Index cleaner interval in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Index cleaner interval in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
                     "format": "uint32"
                 },
                 "index_config_path": {
-                    "description": "Base path for Search Engine Mappings and Settings. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Base path for Search Engine Mappings and Settings. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "/var/lib/avi/indexer_configs"
                 },
                 "index_retention_period_minutes": {
-                    "description": "Index retention period in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Index retention period in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1440,
                     "format": "uint32"
                 },
                 "index_status_queue_buffer_size": {
-                    "description": "Buffer size for index status queue. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Buffer size for index status queue. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
                     "format": "uint32"
                 },
                 "json_all_str_builder_size": {
-                    "description": "Renderer configuration - JSON all string builder size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Renderer configuration - JSON all string builder size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2048,
                     "format": "uint32"
                 },
                 "json_everything_str_builder_size": {
-                    "description": "Renderer configuration - JSON everything string builder size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Renderer configuration - JSON everything string builder size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 512,
                     "format": "uint32"
                 },
                 "json_str_builder_size": {
-                    "description": "Renderer configuration - JSON string builder size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Renderer configuration - JSON string builder size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 16384,
                     "format": "uint32"
                 },
                 "log_indexer_task_timeout_ms": {
-                    "description": "Log indexer task timeout in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Log indexer task timeout in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60000,
                     "format": "uint32"
                 },
                 "log_records_incremental_timeout_ms": {
-                    "description": "Log records incremental timeout in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Log records incremental timeout in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2000,
                     "format": "uint32"
                 },
                 "log_records_task_timeout_ms": {
-                    "description": "Log records task timeout in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Log records task timeout in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
                     "format": "uint32"
                 },
                 "max_batch_duration_ms": {
-                    "description": "Maximum duration to wait for batching files to indexer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum duration to wait for batching files to indexer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 500,
                     "format": "uint32"
                 },
                 "max_batch_size": {
-                    "description": "Maximum number of files in a batch to indexer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of files in a batch to indexer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "uint32"
                 },
                 "max_files_per_index": {
-                    "description": "Maximum number of files per index. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of files per index. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2000,
                     "format": "uint32"
                 },
                 "max_indices_events": {
-                    "description": "Maximum number of indices for events. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of indices for events. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
                     "format": "uint32"
                 },
                 "max_indices_per_vs": {
-                    "description": "Maximum number of indices per VS. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of indices per VS. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
                     "format": "uint32"
                 },
                 "max_indices_system": {
-                    "description": "Maximum number of indices for system. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of indices for system. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
                     "format": "uint32"
                 },
                 "max_logs_per_index": {
-                    "description": "Maximum number of logs per index. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of logs per index. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2000000,
                     "format": "uint32"
                 },
                 "max_num_workers": {
-                    "description": "Number of goroutines for indexer_worker. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of goroutines for indexer_worker. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "uint32"
                 },
                 "max_queue_size": {
-                    "description": "Max number of index task requests taken by indexer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Max number of index task requests taken by indexer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
                     "format": "uint32"
                 },
                 "max_size_per_index_mb": {
-                    "description": "Maximum size per index in MB. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum size per index in MB. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 400,
                     "format": "uint32"
                 },
                 "nf_protection_time_minutes": {
-                    "description": "Delete protection time for NF indices in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Delete protection time for NF indices in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
                     "format": "uint32"
                 },
                 "opensearch_host": {
-                    "description": "OpenSearch host. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "OpenSearch host. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "localhost"
                 },
                 "opensearch_num_replicas": {
-                    "description": "Number of replicas for OpenSearch. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of replicas for OpenSearch. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "opensearch_num_shards": {
-                    "description": "Number of shards for OpenSearch. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of shards for OpenSearch. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 9,
                     "format": "uint32"
                 },
                 "opensearch_port": {
-                    "description": "OpenSearch port. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "OpenSearch port. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "5010"
                 },
                 "query_queue_buffer_size": {
-                    "description": "Buffer size for query queues. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Buffer size for query queues. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
                     "format": "uint32"
                 },
                 "query_worker_count": {
-                    "description": "Number of workers for query processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of workers for query processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
                     "format": "uint32"
                 },
                 "records_status_queue_buffer_size": {
-                    "description": "Buffer size for records status queue. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Buffer size for records status queue. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
                     "format": "uint32"
                 },
                 "records_status_worker_count": {
-                    "description": "Number of workers for records status processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of workers for records status processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
                     "format": "uint32"
                 },
                 "reserved_1": {
-                    "description": "Reserved field for future use. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Reserved field for future use. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "reserved_2": {
-                    "description": "Reserved field for future use. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Reserved field for future use. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "reserved_3": {
-                    "description": "Reserved field for future use. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Reserved field for future use. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "reserved_4": {
-                    "description": "Reserved field for future use. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Reserved field for future use. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "search_query_timeout_ms": {
-                    "description": "Search query timeout in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Search query timeout in milliseconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 15000,
                     "format": "uint32"
                 },
                 "task_re_enqueue_wait_time_seconds": {
-                    "description": "Wait time before re-enqueueing failed tasks in seconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Wait time before re-enqueueing failed tasks in seconds. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
                 },
                 "telemetry_trace_log_level": {
-                    "description": "Set the log level for telemetry trace logs. Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Set the log level for telemetry trace logs. Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "telemetry_trace_percentage": {
-                    "description": "Telemetry trace percentage. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Telemetry trace percentage. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
                     "format": "uint32"
                 },
                 "udf_protection_time_minutes": {
-                    "description": "Delete protection time for UDF indices in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Delete protection time for UDF indices in minutes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
                     "format": "uint32"
@@ -1072,12 +1072,12 @@
             "type": "object",
             "properties": {
                 "db_stats_num_snapshots": {
-                    "description": "Number of last-N metrics DB query stats snapshots to save. Allowed values are 4-24. Special values are 0- Stop taking metrics DB query stats snapshots. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of last-N metrics DB query stats snapshots to save. Allowed values are 4-24. Special values are 0- Stop taking metrics DB query stats snapshots. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "db_stats_snapshot_period_hours": {
-                    "description": "Periodicity in hours of taking snapshots of metrics DB query stats. Allowed values are 1-48. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Periodicity in hours of taking snapshots of metrics DB query stats. Allowed values are 1-48. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
@@ -1086,44 +1086,44 @@
                     "type": "string"
                 },
                 "mapi_perf_stats_enabled": {
-                    "description": "Single knob to enable collection of metrics API server stats. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Single knob to enable collection of metrics API server stats. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "mapi_req_history_entity_type_filters": {
-                    "description": "Maintain query history only for the specified entity type - POOL_METRICS_ENTITY etc. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maintain query history only for the specified entity type - POOL_METRICS_ENTITY etc. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "mapi_req_history_entity_uuid_filters": {
-                    "description": "Maintain query history only for the specified entity uuid. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maintain query history only for the specified entity uuid. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "mapi_req_history_metric_id_filters": {
-                    "description": "Maintain query history only for the specified metric id. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maintain query history only for the specified metric id. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "mapi_req_history_num_records": {
-                    "description": "Number of last-N metrics API server queries to save. Allowed values are 1-32. Special values are 0- Stop saving of last-N metrics API server queries.. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of last-N metrics API server queries to save. Allowed values are 1-32. Special values are 0- Stop saving of last-N metrics API server queries.. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "mapi_req_history_se_uuid_filters": {
-                    "description": "Maintain query history only for the specified serviceengine uuid. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maintain query history only for the specified serviceengine uuid. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "mapi_stats_log_period_hours": {
-                    "description": "Periodicity in hours of saving operational stats of metrics API server to a log file. Allowed values are 1-12. Special values are 0- Stop periodic saving of last-N metrics API server queries.. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Periodicity in hours of saving operational stats of metrics API server to a log file. Allowed values are 1-12. Special values are 0- Stop periodic saving of last-N metrics API server queries.. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 }
@@ -1133,7 +1133,7 @@
             "type": "object",
             "properties": {
                 "debug_skip_eval_period": {
-                    "description": "Set to ignore skip_eval_period field in metrics_anomaly_option. Field introduced in 20.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Set to ignore skip_eval_period field in metrics_anomaly_option. Field introduced in 20.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "disable_hw_training": {
@@ -1161,7 +1161,7 @@
                     "type": "string"
                 },
                 "min_db_queries_each_conn": {
-                    "description": "Setting to change the number of queries being processed by per DB connection by Metrics Manager. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Setting to change the number of queries being processed by per DB connection by Metrics Manager. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "obj": {
@@ -1182,7 +1182,7 @@
             "type": "object",
             "properties": {
                 "accumulate_http_methods": {
-                    "description": "HTTP methods to accumulate for consolidated learning (e.g., GET, POST, PUT). If empty, all methods are accumulated. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "HTTP methods to accumulate for consolidated learning (e.g., GET, POST, PUT). If empty, all methods are accumulated. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1198,13 +1198,13 @@
                     "type": "string"
                 },
                 "psm_programming_interval": {
-                    "description": "Dynamically update the interval for rule generation in PSM programming. Allowed values are 1-60. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Dynamically update the interval for rule generation in PSM programming. Allowed values are 1-60. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
                     "format": "uint32"
                 },
                 "psm_rule_id_multiplier": {
-                    "description": "Dynamically update the multiplier for rule ID generation in PSM programming for Learning feature. Allowed values are 10-100000. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Dynamically update the multiplier for rule ID generation in PSM programming for Learning feature. Allowed values are 10-100000. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 }

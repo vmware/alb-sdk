@@ -567,7 +567,7 @@
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "local_config": {
-                    "description": "Config push to SE(s) information in the local site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Config push to SE(s) information in the local site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/LocalConfig"
                 },
                 "reason": {
@@ -615,15 +615,15 @@
             "type": "object",
             "properties": {
                 "event_type": {
-                    "description": "Type of replication event. Enum options - DNSVS, OBJECT_CONFIG_VERSION. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Type of replication event. Enum options - DNSVS, OBJECT_CONFIG_VERSION. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "obj_name": {
-                    "description": "Name of config object. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Name of config object. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "obj_uuid": {
-                    "description": "UUID of config object. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID of config object. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -644,7 +644,7 @@
             "type": "object",
             "properties": {
                 "agent_id": {
-                    "description": "Remote Site Watcher Agent ID. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Remote Site Watcher Agent ID. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
@@ -660,7 +660,7 @@
                     "type": "string"
                 },
                 "timestamp": {
-                    "description": "Event creation time. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Event creation time. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "uuid": {
@@ -705,7 +705,7 @@
                     "type": "boolean"
                 },
                 "dns_se_resource": {
-                    "description": "This field tracks the service engine resource hosting the DNS virtual service. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "This field tracks the service engine resource hosting the DNS virtual service. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SeResources"
                 },
                 "dns_vs_states": {
@@ -735,7 +735,7 @@
             "type": "object",
             "properties": {
                 "repl_state": {
-                    "description": "The config replication info to SE(es) and peer sites. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The config replication info to SE(es) and peer sites. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/CfgState"
                 }
             }
@@ -818,24 +818,24 @@
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "last_fail_obj": {
-                    "description": "Last object having replication issue. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Last object having replication issue. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigVersionStatus"
                 },
                 "prev_target_version": {
-                    "description": "Previous targer version for a site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Previous targer version for a site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "reason": {
-                    "description": "Reason for the replication issues. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Reason for the replication issues. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "recommendation": {
-                    "description": "Recommended way to resolve replication issue. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Recommended way to resolve replication issue. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "site_version": {
-                    "description": "Version of the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Version of the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
@@ -844,7 +844,7 @@
                     "type": "string"
                 },
                 "target_version": {
-                    "description": "Target version of the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Target version of the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 }
@@ -862,102 +862,102 @@
                     "type": "string"
                 },
                 "cluster_leader": {
-                    "description": "The controller cluster leader node UUID. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The controller cluster leader node UUID. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cluster_uuid": {
-                    "description": "The site controller cluster UUID. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The site controller cluster UUID. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "controller_flavor": {
-                    "description": "Controller flavor of the peer site controller. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Controller flavor of the peer site controller. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE, CONTROLLER_EXTRA_LARGE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "dns_configs": {
-                    "description": "Sub domain configuration for the GSLB.  GSLB service's FQDN must be a match one of these subdomains. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Sub domain configuration for the GSLB.  GSLB service's FQDN must be a match one of these subdomains. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/DNSConfig"
                     }
                 },
                 "dns_info": {
-                    "description": "DNS info at the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "DNS info at the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/GslbDnsInfo"
                 },
                 "enabled": {
-                    "description": "Activate/de-activate state retrieved from the cfg. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Activate/de-activate state retrieved from the cfg. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "events": {
-                    "description": "Captures SM related events. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Captures SM related events. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/EventInfo"
                     }
                 },
                 "health_monitor_info": {
-                    "description": "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "leader_cluster_uuid": {
-                    "description": "Mark this Site as leader of GSLB configuration. This site is the one among the Avi sites. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Mark this Site as leader of GSLB configuration. This site is the one among the Avi sites. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "member_type": {
-                    "description": "The site's member type  A leader is set to ACTIVE while all members are set to passive. . Enum options - GSLB_ACTIVE_MEMBER, GSLB_PASSIVE_MEMBER. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The site's member type  A leader is set to ACTIVE while all members are set to passive. . Enum options - GSLB_ACTIVE_MEMBER, GSLB_PASSIVE_MEMBER. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "GSLB_PASSIVE_MEMBER"
                 },
                 "name": {
-                    "description": "The name of DB entry. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The name of DB entry. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "node_uuid": {
-                    "description": "The controller cluster node UUID that processes the site.Sites are sharded across the cluster nodes. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The controller cluster node UUID that processes the site.Sites are sharded across the cluster nodes. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "num_of_retries": {
-                    "description": "Number of retry attempts to reach the remote site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of retry attempts to reach the remote site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "obj_uuid": {
-                    "description": "GSLB SM Runtime object uuid. Points to the GSLB to which this belongs. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "GSLB SM Runtime object uuid. Points to the GSLB to which this belongs. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "oper_status": {
-                    "description": "Gslb site operational status, represents whether site is UP or DOWN. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Gslb site operational status, represents whether site is UP or DOWN. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/OperationalStatus"
                 },
                 "remote_info": {
-                    "description": "Remote info is basically updated by GRW. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Remote info is basically updated by GRW. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/RemoteInfo"
                 },
                 "role": {
-                    "description": "Site Role  Leader or Follower. Enum options - GSLB_LEADER, GSLB_MEMBER, GSLB_NOT_A_MEMBER. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Site Role  Leader or Follower. Enum options - GSLB_LEADER, GSLB_MEMBER, GSLB_NOT_A_MEMBER. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "GSLB_NOT_A_MEMBER"
                 },
                 "site_name": {
-                    "description": "The Gslb site name. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The Gslb site name. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "site_type": {
-                    "description": "Indicates if it is Avi Site or third-party. Enum options - GSLB_AVI_SITE, GSLB_THIRD_PARTY_SITE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Indicates if it is Avi Site or third-party. Enum options - GSLB_AVI_SITE, GSLB_THIRD_PARTY_SITE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "state": {
-                    "description": "Represents the state of the site. Enum options - SITE_STATE_NULL, SITE_STATE_JOIN_IN_PROGRESS, SITE_STATE_LEAVE_IN_PROGRESS, SITE_STATE_INIT, SITE_STATE_UNREACHABLE, SITE_STATE_MMODE, SITE_STATE_DISABLE_IN_PROGRESS, SITE_STATE_DISABLED, SITE_STATE_HS_IN_PROGRESS. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Represents the state of the site. Enum options - SITE_STATE_NULL, SITE_STATE_JOIN_IN_PROGRESS, SITE_STATE_LEAVE_IN_PROGRESS, SITE_STATE_INIT, SITE_STATE_UNREACHABLE, SITE_STATE_MMODE, SITE_STATE_DISABLE_IN_PROGRESS, SITE_STATE_DISABLED, SITE_STATE_HS_IN_PROGRESS. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SITE_STATE_NULL"
                 },
                 "sw_version": {
-                    "description": "Current Software version of the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Current Software version of the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "Not-Initialized"
                 },
                 "tenant_ref": {
-                    "description": "Uuid of the tenant. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Uuid of the tenant. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -966,11 +966,11 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "The uuid of DB entry. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The uuid of DB entry. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "view_id": {
-                    "description": "The view-id is used in change-leader mode to differentiate partitioned groups while they have the same GSLB namespace. Each partitioned group will be able to operate independently by using the view-id. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The view-id is used in change-leader mode to differentiate partitioned groups while they have the same GSLB namespace. Each partitioned group will be able to operate independently by using the view-id. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 }
@@ -1037,7 +1037,7 @@
             "type": "object",
             "properties": {
                 "vsgs_info": {
-                    "description": "VSGS operational information. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "VSGS operational information. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/VsgsOpsInfo"
@@ -1094,7 +1094,7 @@
             "type": "object",
             "properties": {
                 "rrtoken": {
-                    "description": "Current outstanding request-response token of the message to this site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Current outstanding request-response token of the message to this site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1106,19 +1106,19 @@
             "type": "object",
             "properties": {
                 "gslb_info": {
-                    "description": "Gslb object related information in the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Gslb object related information in the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/GslbObjInfo"
                 },
                 "ops_info": {
-                    "description": "Operational information of the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Operational information of the site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/OpsInfo"
                 },
                 "sync_info": {
-                    "description": "Configuration sync-info of the site . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Configuration sync-info of the site . Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/GslbSiteCfgSyncInfo"
                 },
                 "sync_stats": {
-                    "description": "Site replication specific statistic. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Site replication specific statistic. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/GslbReplicationStats"
                 }
             }
@@ -1165,12 +1165,12 @@
                     "format": "int32"
                 },
                 "qat_mode": {
-                    "description": "Usage of Intel QAT for crypto offloads. Enum options - QAT_OFF, QAT_SW_ACCELERATION, QAT_HW_OFFLOAD. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Usage of Intel QAT for crypto offloads. Enum options - QAT_OFF, QAT_SW_ACCELERATION, QAT_HW_OFFLOAD. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "QAT_OFF"
                 },
                 "qat_oper_mode": {
-                    "description": "Usage of Intel QAT for performance mode. Enum options - QAT_OPER_MODE_LEGACY, QAT_OPER_MODE_PERF, QAT_OPER_MODE_UNKNOWN. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Usage of Intel QAT for performance mode. Enum options - QAT_OPER_MODE_LEGACY, QAT_OPER_MODE_PERF, QAT_OPER_MODE_UNKNOWN. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "QAT_OPER_MODE_UNKNOWN"
                 },
@@ -1216,11 +1216,11 @@
                     "type": "string"
                 },
                 "reason": {
-                    "description": "Describes the reason for the object in this state. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Describes the reason for the object in this state. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "status": {
-                    "description": "Represents the state of the object. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Represents the state of the object. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
@@ -1234,15 +1234,15 @@
             "type": "object",
             "properties": {
                 "dnsvs_uuid": {
-                    "description": "DNSVS UUID associated with the object(GSLB, GSLBSERVICE, GSLBGEODB). Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "DNSVS UUID associated with the object(GSLB, GSLBSERVICE, GSLBGEODB). Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ops": {
-                    "description": "VSGS operation type, Changed or deleted. Enum options - GSLB_OBJECT_CHANGED, GSLB_OBJECT_UNCHANGED, GSLB_OBJECT_DELETE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "VSGS operation type, Changed or deleted. Enum options - GSLB_OBJECT_CHANGED, GSLB_OBJECT_UNCHANGED, GSLB_OBJECT_DELETE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "timestamp": {
-                    "description": "Timestamp for VSGS CUD operation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Timestamp for VSGS CUD operation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeStamp"
                 }
             }

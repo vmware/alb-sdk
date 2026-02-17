@@ -657,21 +657,21 @@
                     "type": "string"
                 },
                 "az_clusters": {
-                    "description": "Group of clusters belongs to the AZ. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Group of clusters belongs to the AZ. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AZCluster"
                     }
                 },
                 "az_datastores": {
-                    "description": "Group of datastores associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Group of datastores associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AZDatastore"
                     }
                 },
                 "az_hosts": {
-                    "description": "Group of hosts associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Group of hosts associated with the AZ. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AZHost"
@@ -699,7 +699,7 @@
                     "type": "string"
                 },
                 "vsphere_zones": {
-                    "description": "VSphere Zone associated with the AZ. Field introduced in 32.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "VSphere Zone associated with the AZ. Field introduced in 32.1.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/VSphereZone"
@@ -733,14 +733,14 @@
             "type": "object",
             "properties": {
                 "cluster_ids": {
-                    "description": "A list of Managed Object IDs (MOIDs) of vCenter clusters that are part of this Availability Zone. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "A list of Managed Object IDs (MOIDs) of vCenter clusters that are part of this Availability Zone. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "vcenter_ref": {
-                    "description": "The UUID of the vCenter Server that manages the clusters associated with this AvailabilityZone. It is a reference to an object of type VCenterServer. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The UUID of the vCenter Server that manages the clusters associated with this AvailabilityZone. It is a reference to an object of type VCenterServer. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -749,18 +749,18 @@
             "type": "object",
             "properties": {
                 "ds_ids": {
-                    "description": "List of Managed object id of datastores. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "List of Managed object id of datastores. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "include": {
-                    "description": "Include or exclude the datastores from the list. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Include or exclude the datastores from the list. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "vcenter_ref": {
-                    "description": "Vcenter Id of the datastores. It is a reference to an object of type VCenterServer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Vcenter Id of the datastores. It is a reference to an object of type VCenterServer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -769,14 +769,14 @@
             "type": "object",
             "properties": {
                 "host_ids": {
-                    "description": "A list of Managed Object IDs (MOIDs) of vCenter hosts that are part of this Availability Zone. Field introduced in 31.2.1. Minimum of 1 items required. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "A list of Managed Object IDs (MOIDs) of vCenter hosts that are part of this Availability Zone. Field introduced in 31.2.1. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "vcenter_ref": {
-                    "description": "The UUID of the vCenter Server that manages the hosts associated with this AvailabilityZone. It is a reference to an object of type VCenterServer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The UUID of the vCenter Server that manages the hosts associated with this AvailabilityZone. It is a reference to an object of type VCenterServer. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -788,11 +788,11 @@
             ],
             "properties": {
                 "vcenter_ref": {
-                    "description": "The UUID of the vCenter Server where the vSphere zone belongs. It is a reference to an object of type VCenterServer. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The UUID of the vCenter Server where the vSphere zone belongs. It is a reference to an object of type VCenterServer. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "zone_name": {
-                    "description": "Name of the vSphere zone in vCenter. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Name of the vSphere zone in vCenter. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

@@ -563,40 +563,40 @@
                     "type": "string"
                 },
                 "burst": {
-                    "description": "The maximum request per second(RPS) user intends to support for this category.This is not guaranteed as this will be the minimum of the RPS supported by the resources in the category and this value.If user doesn't provide then it will be minimum value of the resources in this category. Allowed values are 1-1000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The maximum request per second(RPS) user intends to support for this category.This is not guaranteed as this will be the minimum of the RPS supported by the resources in the category and this value.If user doesn't provide then it will be minimum value of the resources in this category. Allowed values are 1-1000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
                 },
                 "description": {
-                    "description": "Description for the Rate Limit Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Description for the Rate Limit Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "http_methods": {
-                    "description": "List of HTTP method(s) of the resources that need to be rate limited. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 31.2.1. Minimum of 1 items required. Maximum of 5 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "List of HTTP method(s) of the resources that need to be rate limited. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 31.2.1. Minimum of 1 items required. Maximum of 5 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "name": {
-                    "description": "Name of the Rate Limit Configuration(unique). Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Name of the Rate Limit Configuration(unique). Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "resource": {
-                    "description": "RateLimitResource which needs to be rate limited. Enum options - RATE_LIMIT_VIRTUALSERVICE, RATE_LIMIT_POOL, RATE_LIMIT_LOGIN, RATE_LIMIT_AUTHTOKEN, RATE_LIMIT_HEALTHMONITOR. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "RateLimitResource which needs to be rate limited. Enum options - RATE_LIMIT_VIRTUALSERVICE, RATE_LIMIT_POOL, RATE_LIMIT_LOGIN, RATE_LIMIT_AUTHTOKEN, RATE_LIMIT_HEALTHMONITOR. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "Tenant ref for the auth Rate Limit Configuration. It is a reference to an object of type Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Tenant ref for the auth Rate Limit Configuration. It is a reference to an object of type Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "token_refill_rate": {
-                    "description": "Token Refill Rate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Token Refill Rate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TokenRefillRate"
                 },
                 "type": {
-                    "description": "Type of the Rate Limiter, for now we only support api categorization based. Enum options - RATE_LIMITER_API_CATEGORY. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Type of the Rate Limiter, for now we only support api categorization based. Enum options - RATE_LIMITER_API_CATEGORY. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "RATE_LIMITER_API_CATEGORY"
                 },
@@ -606,7 +606,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the Rate Limit Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the Rate Limit Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -640,12 +640,12 @@
             ],
             "properties": {
                 "interval": {
-                    "description": "The time interval over which refill rate is defined. Enum options - PER_MINUTE_INTERVAL. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The time interval over which refill rate is defined. Enum options - PER_MINUTE_INTERVAL. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "PER_MINUTE_INTERVAL"
                 },
                 "refill_rate": {
-                    "description": "The rate per refill interval at which tokens are added to the bucket. Allowed values are 1-100000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The rate per refill interval at which tokens are added to the bucket. Allowed values are 1-100000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"

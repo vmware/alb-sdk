@@ -649,7 +649,7 @@
                     "type": "string"
                 },
                 "sender_hostname": {
-                    "description": "User defined sender hostname in syslog message. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "User defined sender hostname in syslog message. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "syslog_servers": {
@@ -721,7 +721,7 @@
                     "type": "string"
                 },
                 "strict_cert_verify": {
-                    "description": "strict verificiation of certificate given by the server. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "strict verificiation of certificate given by the server. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "syslog_server": {

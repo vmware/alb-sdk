@@ -1050,13 +1050,13 @@
             "type": "object",
             "properties": {
                 "auto_tune_send_interval_timeout": {
-                    "description": "Time period to check if the send interval is valid. Allowed values are 100-3600. Field introduced in 30.2.5, 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Time period to check if the send interval is valid. Allowed values are 100-3600. Field introduced in 30.2.5, 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300,
                     "format": "uint32"
                 },
                 "enabled": {
-                    "description": "Set the flag to enable auto tune send interval. Field introduced in 30.2.5, 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Set the flag to enable auto tune send interval. Field introduced in 30.2.5, 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 }
@@ -1115,7 +1115,7 @@
                     "format": "uint32"
                 },
                 "auto_tune_send_interval": {
-                    "description": "Automatically set the send interval value based on the load. Field introduced in 30.2.5, 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Automatically set the send interval value based on the load. Field introduced in 30.2.5, 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/AutoTuneSendInterval"
                 },
                 "clear_on_max_retries": {
@@ -1140,7 +1140,7 @@
                     }
                 },
                 "enable_config_by_members": {
-                    "description": "Allows enable/disable of GslbService pool groups and pool members from the gslb follower members. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Allows enable/disable of GslbService pool groups and pool members from the gslb follower members. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "error_resync_interval": {
@@ -1150,13 +1150,13 @@
                     "format": "uint32"
                 },
                 "fileobject_max_file_versions": {
-                    "description": "This is the max number of file versions that will be retained for a file referenced by the federated FileObject. Subsequent uploads of file will result in the file rotation of the older version and the latest version retained. Example  When a file Upload is done for the first time, there will be a v1 version. Subsequent uploads will get mapped to v1, v2 and v3 versions. On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained. Allowed values are 1-5. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "This is the max number of file versions that will be retained for a file referenced by the federated FileObject. Subsequent uploads of file will result in the file rotation of the older version and the latest version retained. Example  When a file Upload is done for the first time, there will be a v1 version. Subsequent uploads will get mapped to v1, v2 and v3 versions. On the fourth upload of the file, the v1 will be file rotated and v2, v3 and v4 will be retained. Allowed values are 1-5. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3,
                     "format": "uint32"
                 },
                 "gs_member_fqdn_resolution_on_se": {
-                    "description": "If this knob is enabled, GSLB Service member FQDN will be resolved by the service engines hosting the GSLB service. Each service engine will resolve and consume the resolved IP addresses locally. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "If this knob is enabled, GSLB Service member FQDN will be resolved by the service engines hosting the GSLB service. Each service engine will resolve and consume the resolved IP addresses locally. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_federated": {
@@ -1165,7 +1165,7 @@
                     "default": true
                 },
                 "leader_change_info": {
-                    "description": "This field has leader change configuration info including mode, leader designate sites and other configurations for auto leader change like max short probe failures. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "This field has leader change configuration info including mode, leader designate sites and other configurations for auto leader change like max short probe failures. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/LeaderChangeInfo"
                 },
                 "leader_cluster_uuid": {
@@ -1187,7 +1187,7 @@
                     "format": "uint32"
                 },
                 "short_probe_interval": {
-                    "description": "Wait time between two consecutive short probe health checks. Allowed values are 1-3600. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Wait time between two consecutive short probe health checks. Allowed values are 1-3600. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
                     "format": "uint32"
@@ -1204,7 +1204,7 @@
                     "type": "string"
                 },
                 "tenant_scoped": {
-                    "description": "This field indicates tenant visibility for GS pool member selection across the Gslb federated objects.Tenant scope can be set only during the Gslb create and cannot be changed once it is set. Field introduced in 18.2.12,20.1.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "This field indicates tenant visibility for GS pool member selection across the Gslb federated objects.Tenant scope can be set only during the Gslb create and cannot be changed once it is set. Field introduced in 18.2.12,20.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
@@ -1393,7 +1393,7 @@
                     "format": "uint32"
                 },
                 "replication_policy": {
-                    "description": "Policy for replicating configuration to the follower sites. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Policy for replicating configuration to the follower sites. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ReplicationPolicy"
                 },
                 "suspend_mode": {
@@ -1519,24 +1519,24 @@
             "type": "object",
             "properties": {
                 "enabled": {
-                    "description": "Leader change mechanism can be disabled in the federation for administration purposes. This would effectively disable Gslb disaster recovery possibilities. The best practice is to change the mode (Auto to manual or vice-versa) rather than disabling the leader change mechanism. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Leader change mechanism can be disabled in the federation for administration purposes. This would effectively disable Gslb disaster recovery possibilities. The best practice is to change the mode (Auto to manual or vice-versa) rather than disabling the leader change mechanism. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "leader_candidates": {
-                    "description": "Sites that can be the future Gslb Leader in federation. These sites should be enabled active follower sites.A site that is deactivated or passive or a third-party site cannot be a leader candidate. Field introduced in 31.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Sites that can be the future Gslb Leader in federation. These sites should be enabled active follower sites.A site that is deactivated or passive or a third-party site cannot be a leader candidate. Field introduced in 31.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SiteInfo"
                     }
                 },
                 "leader_change_mode": {
-                    "description": "Leader change mode, can be auto or manual. Enum options - GSLB_LC_MODE_MANUAL, GSLB_LC_MODE_AUTO. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Leader change mode, can be auto or manual. Enum options - GSLB_LC_MODE_MANUAL, GSLB_LC_MODE_AUTO. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "GSLB_LC_MODE_MANUAL"
                 },
                 "max_unsuccessful_probes": {
-                    "description": "Maximum number of probe failures before considering other site as down for auto leader change. Allowed values are 1-3600. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of probe failures before considering other site as down for auto leader change. Allowed values are 1-3600. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 15,
                     "format": "uint32"
@@ -1557,7 +1557,7 @@
             "type": "object",
             "properties": {
                 "cluster_id": {
-                    "description": "Cluster_uuid of a member configured in gslb federation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Cluster_uuid of a member configured in gslb federation. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "site_name": {

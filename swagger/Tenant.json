@@ -553,7 +553,7 @@
             "type": "object",
             "properties": {
                 "vs_limit": {
-                    "description": "Maximum number of Virtual Services allowed for this tenant. -1 as Default is maximum value, set to 0 to disallow any VS creation. Allowed values are -1-+65535. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of Virtual Services allowed for this tenant. -1 as Default is maximum value, set to 0 to disallow any VS creation. Allowed values are -1-+65535. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": -1,
                     "format": "int32"
@@ -580,13 +580,13 @@
             "type": "object",
             "properties": {
                 "limit": {
-                    "description": "Maximum license service units allowed for consumption. -1 as Default is maximum value. Allowed values are -1-+65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum license service units allowed for consumption. -1 as Default is maximum value. Allowed values are -1-+65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": -1,
                     "format": "int64"
                 },
                 "reservation": {
-                    "description": "Minimum license service units reserved for consumption. Reservation is not enforced for Tenant/SE Group. Allowed values are 0-65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Minimum license service units reserved for consumption. Reservation is not enforced for Tenant/SE Group. Allowed values are 0-65535. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 }
@@ -604,7 +604,7 @@
                     "type": "string"
                 },
                 "attrs": {
-                    "description": "Key/value tenant attributes. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Key/value tenant attributes. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/KeyValue"
@@ -623,11 +623,11 @@
                     "type": "string"
                 },
                 "enforce_label_group": {
-                    "description": "The referred label groups are enforced on the tenant if this is set to true.If this is set to false, the label groups are suggested for the tenant. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The referred label groups are enforced on the tenant if this is set to true.If this is set to false, the label groups are suggested for the tenant. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "label_group_refs": {
-                    "description": "The label_groups to be enforced on the tenant. This is strictly enforced only if enforce_label_group is set to True. It is a reference to an object of type LabelGroup. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The label_groups to be enforced on the tenant. This is strictly enforced only if enforce_label_group is set to True. It is a reference to an object of type LabelGroup. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -679,15 +679,15 @@
             "type": "object",
             "properties": {
                 "app_quota": {
-                    "description": "Application quota for the tenant. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Application quota for the tenant. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/AppQuotaConfig"
                 },
                 "enable_tenant_binding": {
-                    "description": "Enable tenant binding mode for this tenant. When enabled, only explicitly shared objects from admin tenant will be visible. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Enable tenant binding mode for this tenant. When enabled, only explicitly shared objects from admin tenant will be visible. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "license_quota": {
-                    "description": "License quota for the tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "License quota for the tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/QuotaConfig"
                 },
                 "se_in_provider_context": {
@@ -713,11 +713,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Label key string. Field introduced in 20.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Label key string. Field introduced in 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "value": {
-                    "description": "Label value string. Field introduced in 20.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Label value string. Field introduced in 20.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

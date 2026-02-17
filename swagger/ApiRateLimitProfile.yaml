@@ -391,29 +391,29 @@ definitions:
                 readOnly: True
                 type: string
             description:
-                description: "Description for the Api Rate Limit Profile. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Description for the Api Rate Limit Profile. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             enabled:
-                description: "Activate/Deactivate the Api Rate Limit Profile. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Activate/Deactivate the Api Rate Limit Profile. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             name:
-                description: "Name of the Api Rate Limit Profile. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Name of the Api Rate Limit Profile. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             rate_limit_configuration_refs:
-                description: "List of the Rate Limiter configuration UUIDs. It is a reference to an object of type RateLimitConfiguration. Field introduced in 31.2.1. Minimum of 1 items required. Maximum of 100 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "List of the Rate Limiter configuration UUIDs. It is a reference to an object of type RateLimitConfiguration. Field introduced in 31.2.1. Minimum of 1 items required. Maximum of 100 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             tenant_ref:
-                description: "Tenant ref for the Api Rate Limit Profile. It is a reference to an object of type Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Tenant ref for the Api Rate Limit Profile. It is a reference to an object of type Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the Api Rate Limit Profile. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "UUID of the Api Rate Limit Profile. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ApiRateLimitProfileApiResponse:
         type: object

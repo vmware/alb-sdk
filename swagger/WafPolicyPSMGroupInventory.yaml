@@ -176,26 +176,26 @@ definitions:
         type: object
         properties:
             uuid:
-                description: "UUID of the Virtual Service. It is a reference to an object of type VirtualService. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "UUID of the Virtual Service. It is a reference to an object of type VirtualService. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     WafPolicyPSMGroupConfig:
         type: object
         properties:
             enable:
-                description: "Enable or disable this WAF rule group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable or disable this WAF rule group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             name:
                 description: "User defined name of the group. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: "Tenant that Waf Policy PSM Group belongs to. It is a reference to an object of type Tenant. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Tenant that Waf Policy PSM Group belongs to. It is a reference to an object of type Tenant. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
-                description: "URL of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "URL of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             uuid:
-                description: "UUID of Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "UUID of Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     WafPolicyPSMGroupConfigApiResponse:
         type: object
@@ -220,17 +220,17 @@ definitions:
                 readOnly: True
                 type: string
             config:
-                description: "Configuration summary of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Configuration summary of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WafPolicyPSMGroupConfig'
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "UUID of the Waf Policy PSM Group. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             virtualservices_refs:
-                description: "Virtual services references. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Virtual services references. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VsRefs'

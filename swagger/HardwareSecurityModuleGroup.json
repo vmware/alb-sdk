@@ -594,7 +594,7 @@
                     "type": "string"
                 },
                 "ca_certs": {
-                    "description": "List of certificates present in the CA chain that were used to sign custom client certificate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "List of certificates present in the CA chain that were used to sign custom client certificate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SSLCertificate"
@@ -888,11 +888,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1038,7 +1038,7 @@
             "type": "object",
             "properties": {
                 "algorithm": {
-                    "description": "MLDSA signature algorithm. Enum options - SSL_KEY_MLDSA44, SSL_KEY_MLDSA65, SSL_KEY_MLDSA87. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "MLDSA signature algorithm. Enum options - SSL_KEY_MLDSA44, SSL_KEY_MLDSA65, SSL_KEY_MLDSA87. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SSL_KEY_MLDSA44"
                 }
@@ -1060,7 +1060,7 @@
                     "$ref": "#/definitions/SSLKeyECParams"
                 },
                 "mldsa_params": {
-                    "description": "Mldsa keys. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Mldsa keys. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SSLKeyMldsaParams"
                 },
                 "rsa_params": {

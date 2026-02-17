@@ -2519,19 +2519,19 @@
             "type": "object",
             "properties": {
                 "upstream_connpool_conn_idle_tmo": {
-                    "description": "Connection idle timeout. Allowed values are 0-86400000. Special values are 0- Infinite idle time.. Field introduced in 18.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 60000), Basic (Allowed values- 60000) edition.",
+                    "description": "Connection idle timeout. Allowed values are 0-86400000. Special values are 0- Infinite idle time.. Field introduced in 18.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60000,
                     "format": "uint32"
                 },
                 "upstream_connpool_conn_life_tmo": {
-                    "description": "Connection life timeout. Allowed values are 0-86400000. Special values are 0- Infinite life time.. Field introduced in 18.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 600000), Basic (Allowed values- 600000) edition.",
+                    "description": "Connection life timeout. Allowed values are 0-86400000. Special values are 0- Infinite life time.. Field introduced in 18.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 600000,
                     "format": "uint32"
                 },
                 "upstream_connpool_conn_max_reuse": {
-                    "description": "Maximum number of times a connection can be reused. Special values are 0- unlimited. Field introduced in 18.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 0), Basic (Allowed values- 0) edition.",
+                    "description": "Maximum number of times a connection can be reused. Special values are 0- unlimited. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
@@ -2575,15 +2575,15 @@
             ],
             "properties": {
                 "local_rsp": {
-                    "description": "Local response to HTTP requests when pool experiences a failure. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Local response to HTTP requests when pool experiences a failure. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/FailActionHTTPLocalResponse"
                 },
                 "redirect": {
-                    "description": "URL to redirect HTTP requests to when pool experiences a failure. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.",
+                    "description": "URL to redirect HTTP requests to when pool experiences a failure. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/FailActionHTTPRedirect"
                 },
                 "type": {
-                    "description": "Enables a response to client when pool experiences a failure. By default TCP connection is closed. Enum options - FAIL_ACTION_HTTP_REDIRECT, FAIL_ACTION_HTTP_LOCAL_RSP, FAIL_ACTION_CLOSE_CONN, FAIL_ACTION_BACKUP_POOL. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- FAIL_ACTION_CLOSE_CONN), Basic (Allowed values- FAIL_ACTION_CLOSE_CONN,FAIL_ACTION_HTTP_REDIRECT) edition.",
+                    "description": "Enables a response to client when pool experiences a failure. By default TCP connection is closed. Enum options - FAIL_ACTION_HTTP_REDIRECT, FAIL_ACTION_HTTP_LOCAL_RSP, FAIL_ACTION_CLOSE_CONN, FAIL_ACTION_BACKUP_POOL. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "FAIL_ACTION_CLOSE_CONN"
                 }
@@ -2630,7 +2630,7 @@
                     "type": "string"
                 },
                 "protocol": {
-                    "description": " Enum options - HTTP, HTTPS. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- HTTP) edition. Special default for Basic edition is HTTP, Enterprise edition is HTTPS.",
+                    "description": " Enum options - HTTP, HTTPS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "HTTPS"
                 },
@@ -2639,7 +2639,7 @@
                     "type": "string"
                 },
                 "status_code": {
-                    "description": " Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- HTTP_REDIRECT_STATUS_CODE_302) edition.",
+                    "description": " Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "HTTP_REDIRECT_STATUS_CODE_302"
                 }
@@ -2677,17 +2677,17 @@
             ],
             "properties": {
                 "port": {
-                    "description": "Service port. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Service port. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "priority": {
-                    "description": "Priority of the target hosting the service, low value implies higher priority for this service record. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Priority of the target hosting the service, low value implies higher priority for this service record. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "weight": {
-                    "description": "Relative weight for service records with same priority, high value implies higher preference for this service record. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Relative weight for service records with same priority, high value implies higher preference for this service record. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 }
@@ -2697,13 +2697,13 @@
             "type": "object",
             "properties": {
                 "blast_port": {
-                    "description": "Horizon blast port of the UAG server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Horizon blast port of the UAG server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8443,
                     "format": "uint32"
                 },
                 "pcoip_port": {
-                    "description": "Horizon pcoip port of the UAG server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Horizon pcoip port of the UAG server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4172,
                     "format": "uint32"
@@ -2714,12 +2714,12 @@
             "type": "object",
             "properties": {
                 "max_http2_control_frames_per_connection": {
-                    "description": "The max number of control frames that server can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- Unlimited control frames on a server side HTTP/2 connection. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The max number of control frames that server can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- Unlimited control frames on a server side HTTP/2 connection. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "max_http2_header_field_size": {
-                    "description": "The maximum size in bytes of the compressed request header field. The limit applies equally to both name and value. Allowed values are 1-8192. Field introduced in 21.1.1. Unit is BYTES. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The maximum size in bytes of the compressed request header field. The limit applies equally to both name and value. Allowed values are 1-8192. Field introduced in 21.1.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4096,
                     "format": "uint32"
@@ -2775,7 +2775,7 @@
             ],
             "properties": {
                 "add_string": {
-                    "description": "Add a query string to the redirect URI. If keep_query is set, concatenates the add_string to the query of the incoming request. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Add a query string to the redirect URI. If keep_query is set, concatenates the add_string to the query of the incoming request. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "host": {
@@ -2841,7 +2841,7 @@
             ],
             "properties": {
                 "enabled": {
-                    "description": "Enable HTTP request reselect when server responds with specific response codes. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
+                    "description": "Enable HTTP request reselect when server responds with specific response codes. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "num_retries": {
@@ -3046,7 +3046,7 @@
                     "type": "string"
                 },
                 "append_port": {
-                    "description": "Allows the option to append port to hostname in the host header while sending a request to the server. By default, port is appended for non-default ports. This setting will apply for Pool's 'Rewrite Host Header to Server Name', 'Rewrite Host Header to SNI' features and Server's 'Rewrite Host Header' settings as well as HTTP healthmonitors attached to pools. Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- NEVER), Basic (Allowed values- NEVER) edition. Special default for Essentials edition is NEVER, Basic edition is NEVER, Enterprise edition is NON_DEFAULT_80_443.",
+                    "description": "Allows the option to append port to hostname in the host header while sending a request to the server. By default, port is appended for non-default ports. This setting will apply for Pool's 'Rewrite Host Header to Server Name', 'Rewrite Host Header to SNI' features and Server's 'Rewrite Host Header' settings as well as HTTP healthmonitors attached to pools. Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "NON_DEFAULT_80_443"
                 },
@@ -3055,26 +3055,26 @@
                     "type": "string"
                 },
                 "autoscale_launch_config_ref": {
-                    "description": "If configured then Avi will trigger orchestration of pool server creation and deletion. It is a reference to an object of type AutoScaleLaunchConfig. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "If configured then Avi will trigger orchestration of pool server creation and deletion. It is a reference to an object of type AutoScaleLaunchConfig. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "autoscale_networks": {
-                    "description": "Network Ids for the launch configuration. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Network Ids for the launch configuration. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "autoscale_policy_ref": {
-                    "description": "Reference to Server Autoscale Policy. It is a reference to an object of type ServerAutoScalePolicy. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Reference to Server Autoscale Policy. It is a reference to an object of type ServerAutoScalePolicy. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "capacity_estimation": {
-                    "description": "Inline estimation of capacity of servers. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
+                    "description": "Inline estimation of capacity of servers. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "capacity_estimation_ttfb_thresh": {
-                    "description": "The maximum time-to-first-byte of a server. Allowed values are 1-5000. Special values are 0 - Automatic. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 0), Basic (Allowed values- 0) edition.",
+                    "description": "The maximum time-to-first-byte of a server. Allowed values are 1-5000. Special values are 0 - Automatic. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
@@ -3091,7 +3091,7 @@
                     "$ref": "#/definitions/ConnPoolProperties"
                 },
                 "connection_ramp_duration": {
-                    "description": "Duration for which new connections will be gradually ramped up to a server recently brought online.  Useful for LB algorithms that are least connection based. Allowed values are 1-300. Special values are 0 - Immediate. Unit is MIN. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 0), Basic (Allowed values- 0) edition. Special default for Essentials edition is 0, Basic edition is 0, Enterprise edition is 10.",
+                    "description": "Duration for which new connections will be gradually ramped up to a server recently brought online.  Useful for LB algorithms that are least connection based. Allowed values are 1-300. Special values are 0 - Immediate. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "int32"
@@ -3107,7 +3107,7 @@
                     "format": "int32"
                 },
                 "delete_server_on_dns_refresh": {
-                    "description": "Indicates whether existing IPs are disabled(false) or deleted(true) on dns hostname refreshDetail -- On a dns refresh, some IPs set on pool may no longer be returned by the resolver. These IPs are deleted from the pool when this knob is set to true. They are disabled, if the knob is set to false. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- true), Basic (Allowed values- true) edition.",
+                    "description": "Indicates whether existing IPs are disabled(false) or deleted(true) on dns hostname refreshDetail -- On a dns refresh, some IPs set on pool may no longer be returned by the resolver. These IPs are deleted from the pool when this knob is set to true. They are disabled, if the knob is set to false. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
@@ -3127,7 +3127,7 @@
                     "type": "boolean"
                 },
                 "enable_http2": {
-                    "description": "Enable HTTP/2 for traffic from VirtualService to all backend servers in this pool. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
+                    "description": "Enable HTTP/2 for traffic from VirtualService to all backend servers in this pool. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "enabled": {
@@ -3153,19 +3153,19 @@
                     "format": "uint32"
                 },
                 "graceful_disable_timeout_sec": {
-                    "description": "Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-432000. Special values are 0 - Immediate, -1 - Infinite. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-432000. Special values are 0 - Immediate, -1 - Infinite. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
                     "format": "int32"
                 },
                 "graceful_hm_down_disable_timeout": {
-                    "description": "Time interval for gracefully closing the connections on server, When health monitoring marks the server down. Allowed values are 1-432000. Special values are 0 - Immediate, -1 - Infinite. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Time interval for gracefully closing the connections on server, When health monitoring marks the server down. Allowed values are 1-432000. Special values are 0 - Immediate, -1 - Infinite. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": -1,
                     "format": "int32"
                 },
                 "gslb_sp_enabled": {
-                    "description": "Indicates if the pool is a site-persistence pool. . Field introduced in 17.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Indicates if the pool is a site-persistence pool. . Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "boolean"
                 },
@@ -3177,7 +3177,7 @@
                     }
                 },
                 "horizon_profile": {
-                    "description": "Horizon UAG configuration. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Horizon UAG configuration. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HorizonProfile"
                 },
                 "host_check_enabled": {
@@ -3202,11 +3202,11 @@
                     "type": "string"
                 },
                 "lb_algo_rr_per_se": {
-                    "description": "Do load balancing at SE level instead of the default per core load balancing. Field introduced in 21.1.5, 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Do load balancing at SE level instead of the default per core load balancing. Field introduced in 21.1.5, 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "lb_algorithm": {
-                    "description": "The load balancing algorithm will pick a server within the pool's list of available servers. Values LB_ALGORITHM_NEAREST_SERVER and LB_ALGORITHM_TOPOLOGY are only allowed for GSLB pool. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- LB_ALGORITHM_LEAST_CONNECTIONS,LB_ALGORITHM_ROUND_ROBIN,LB_ALGORITHM_CONSISTENT_HASH), Basic (Allowed values- LB_ALGORITHM_LEAST_CONNECTIONS,LB_ALGORITHM_ROUND_ROBIN,LB_ALGORITHM_CONSISTENT_HASH) edition.",
+                    "description": "The load balancing algorithm will pick a server within the pool's list of available servers. Values LB_ALGORITHM_NEAREST_SERVER and LB_ALGORITHM_TOPOLOGY are only allowed for GSLB pool. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "LB_ALGORITHM_LEAST_CONNECTIONS"
                 },
@@ -3215,18 +3215,18 @@
                     "type": "string"
                 },
                 "lb_algorithm_core_nonaffinity": {
-                    "description": "Degree of non-affinity for core affinity based server selection. Allowed values are 1-65535. Field introduced in 17.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 2), Basic (Allowed values- 2) edition.",
+                    "description": "Degree of non-affinity for core affinity based server selection. Allowed values are 1-65535. Field introduced in 17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
                     "format": "uint32"
                 },
                 "lb_algorithm_hash": {
-                    "description": "Criteria used as a key for determining the hash between the client and  server. Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT, LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING, LB_ALGORITHM_CONSISTENT_HASH_CALLID. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS), Basic (Allowed values- LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS) edition.",
+                    "description": "Criteria used as a key for determining the hash between the client and  server. Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT, LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING, LB_ALGORITHM_CONSISTENT_HASH_CALLID. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS"
                 },
                 "lookup_server_by_name": {
-                    "description": "Allow server lookup by name. Field introduced in 17.1.11,17.2.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
+                    "description": "Allow server lookup by name. Field introduced in 17.1.11,17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "markers": {
@@ -3242,11 +3242,11 @@
                     "format": "int32"
                 },
                 "max_conn_rate_per_server": {
-                    "description": "Rate Limit connections to each server. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Rate Limit connections to each server. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/RateProfile"
                 },
                 "min_health_monitors_up": {
-                    "description": "Minimum number of health monitors in UP state to mark server UP. Field introduced in 18.2.1, 17.2.12. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Minimum number of health monitors in UP state to mark server UP. Field introduced in 18.2.1, 17.2.12. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
@@ -3285,18 +3285,18 @@
                     }
                 },
                 "pool_type": {
-                    "description": "Type or Purpose, the Pool is to be used for. Enum options - POOL_TYPE_GENERIC_APP, POOL_TYPE_OAUTH. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Type or Purpose, the Pool is to be used for. Enum options - POOL_TYPE_GENERIC_APP, POOL_TYPE_OAUTH. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "POOL_TYPE_GENERIC_APP"
                 },
                 "request_queue_depth": {
-                    "description": "Minimum number of requests to be queued when pool is full. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 128), Basic (Allowed values- 128) edition.",
+                    "description": "Minimum number of requests to be queued when pool is full. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 128,
                     "format": "uint32"
                 },
                 "request_queue_enabled": {
-                    "description": "Enable request queue when pool is full. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
+                    "description": "Enable request queue when pool is full. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "rewrite_host_header_to_server_name": {
@@ -3312,7 +3312,7 @@
                     "type": "boolean"
                 },
                 "server_disable_type": {
-                    "description": "Server graceful disable timeout behaviour. Enum options - DISALLOW_NEW_CONNECTION, ALLOW_NEW_CONNECTION_IF_PERSISTENCE_PRESENT. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Server graceful disable timeout behaviour. Enum options - DISALLOW_NEW_CONNECTION, ALLOW_NEW_CONNECTION_IF_PERSISTENCE_PRESENT. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "DISALLOW_NEW_CONNECTION"
                 },
@@ -3367,11 +3367,11 @@
                     "type": "string"
                 },
                 "use_service_port": {
-                    "description": "Do not translate the client's destination port when sending the connection to the server. Monitor port needs to be specified for health monitors. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false) edition.",
+                    "description": "Do not translate the client's destination port when sending the connection to the server. Monitor port needs to be specified for health monitors. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "use_service_ssl_mode": {
-                    "description": "This applies only when use_service_port is set to true. If enabled, SSL mode of the connection to the server is decided by the SSL mode on the Virtualservice service port, on which the request was received. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "This applies only when use_service_port is set to true. If enabled, SSL mode of the connection to the server is decided by the SSL mode on the Virtualservice service port, on which the request was received. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "uuid": {
@@ -3410,7 +3410,7 @@
             "type": "object",
             "properties": {
                 "metrics_realtime_update": {
-                    "description": "Enable realtime metrics and its duration. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Enable realtime metrics and its duration. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/MetricsRealTimeUpdate"
                 }
             }
@@ -3423,7 +3423,7 @@
             ],
             "properties": {
                 "burst_sz": {
-                    "description": "Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- 0) edition.",
+                    "description": "Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
@@ -3438,7 +3438,7 @@
                     "type": "string"
                 },
                 "period": {
-                    "description": "Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- 1) edition.",
+                    "description": "Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -3449,20 +3449,20 @@
             "type": "object",
             "properties": {
                 "file": {
-                    "description": "File to be used for HTTP Local response rate limit action. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition.",
+                    "description": "File to be used for HTTP Local response rate limit action. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HTTPLocalFile"
                 },
                 "redirect": {
-                    "description": "Parameters for HTTP Redirect rate limit action. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition.",
+                    "description": "Parameters for HTTP Redirect rate limit action. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HTTPRedirectAction"
                 },
                 "status_code": {
-                    "description": "HTTP status code for Local Response rate limit action. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- HTTP_LOCAL_RESPONSE_STATUS_CODE_429) edition.",
+                    "description": "HTTP status code for Local Response rate limit action. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "HTTP_LOCAL_RESPONSE_STATUS_CODE_429"
                 },
                 "type": {
-                    "description": "Type of action to be enforced upon hitting the rate limit. Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- RL_ACTION_NONE,RL_ACTION_DROP_CONN) edition.",
+                    "description": "Type of action to be enforced upon hitting the rate limit. Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "RL_ACTION_NONE"
                 }
@@ -3479,19 +3479,19 @@
                     "$ref": "#/definitions/RateLimiterAction"
                 },
                 "explicit_tracking": {
-                    "description": "Explicitly tracks an attacker across rate periods. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- false) edition.",
+                    "description": "Explicitly tracks an attacker across rate periods. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "fine_grain": {
-                    "description": "Enable fine granularity. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- false) edition.",
+                    "description": "Enable fine granularity. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "http_cookie": {
-                    "description": "HTTP cookie name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition.",
+                    "description": "HTTP cookie name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "http_header": {
-                    "description": "HTTP header name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition.",
+                    "description": "HTTP header name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "rate_limiter": {
@@ -3507,11 +3507,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -3526,7 +3526,7 @@
             ],
             "properties": {
                 "autoscaling_group_name": {
-                    "description": "Name of autoscaling group this server belongs to. Field introduced in 17.1.2. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of autoscaling group this server belongs to. Field introduced in 17.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "availability_zone": {
@@ -3558,7 +3558,7 @@
                     "type": "string"
                 },
                 "health_monitor_refs": {
-                    "description": "Verify server health by applying one or more health monitors.  Active monitors generate synthetic traffic from each Service Engine and mark a server up or down based on the response. . It is a reference to an object of type HealthMonitor. Field introduced in 31.1.1. Maximum of 10 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Verify server health by applying one or more health monitors.  Active monitors generate synthetic traffic from each Service Engine and mark a server up or down based on the response. . It is a reference to an object of type HealthMonitor. Field introduced in 31.1.1. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -3573,7 +3573,7 @@
                     "$ref": "#/definitions/IpAddr"
                 },
                 "location": {
-                    "description": "(internal-use) Geographic location of the server.Currently only for internal usage. Field introduced in 17.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "(internal-use) Geographic location of the server.Currently only for internal usage. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/GeoLocation"
                 },
                 "mac_address": {
@@ -3590,7 +3590,7 @@
                     "format": "int32"
                 },
                 "prst_hdr_val": {
-                    "description": "Header value for custom header persistence. . Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Header value for custom header persistence. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ratio": {
@@ -3600,7 +3600,7 @@
                     "format": "int32"
                 },
                 "resolve_server_by_dns": {
-                    "description": "Auto resolve server's IP using DNS name. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
+                    "description": "Auto resolve server's IP using DNS name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "rewrite_host_header": {
@@ -3684,14 +3684,14 @@
             "type": "object",
             "properties": {
                 "fqdns": {
-                    "description": "FQDNs associated with the GSLB service. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "FQDNs associated with the GSLB service. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "gs_ref": {
-                    "description": "GSLB service uuid associated with the site persistence pool. It is a reference to an object of type GslbService. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "GSLB service uuid associated with the site persistence pool. It is a reference to an object of type GslbService. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

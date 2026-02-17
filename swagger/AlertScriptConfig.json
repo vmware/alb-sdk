@@ -573,7 +573,7 @@
                     "type": "string"
                 },
                 "timeout": {
-                    "description": "controlscript excution timeout. Field introduced in 22.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "controlscript excution timeout. Field introduced in 22.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -583,7 +583,7 @@
                     "type": "string"
                 },
                 "user_id": {
-                    "description": "Uuid of last editor user. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Uuid of last editor user. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "uuid": {

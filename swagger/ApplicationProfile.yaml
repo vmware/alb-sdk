@@ -439,7 +439,7 @@ definitions:
                 readOnly: True
                 type: string
             app_service_type:
-                description: "Specifies app service type for an application. Enum options - APP_SERVICE_TYPE_L7_HORIZON, APP_SERVICE_TYPE_L4_BLAST, APP_SERVICE_TYPE_L4_PCOIP, APP_SERVICE_TYPE_L4_FTP, APP_SERVICE_TYPE_HTTP_MCP. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Specifies app service type for an application. Enum options - APP_SERVICE_TYPE_L7_HORIZON, APP_SERVICE_TYPE_L4_BLAST, APP_SERVICE_TYPE_L4_PCOIP, APP_SERVICE_TYPE_L4_FTP, APP_SERVICE_TYPE_HTTP_MCP. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             cloud_config_cksum:
                 description: "Checksum of application profiles. Internally set by cloud connector. Field introduced in 17.2.14, 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -451,19 +451,19 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             diameter_service_profile:
-                description: "Specifies various Diameter service related controls for virtual service. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Specifies various Diameter service related controls for virtual service. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DiameterServiceApplicationProfile'
             dns_service_profile:
-                description: "Specifies various DNS service related controls for virtual service. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Specifies various DNS service related controls for virtual service. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DnsServiceApplicationProfile'
             dos_rl_profile:
-                description: "Specifies various security related controls for virtual service. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Specifies various security related controls for virtual service. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DosRateLimitProfile'
             http_profile:
-                description: "Specifies the HTTP application proxy profile parameters. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "Specifies the HTTP application proxy profile parameters. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPApplicationProfile'
             l4_ssl_profile:
-                description: "Specifies various L4 SSL service related controls for virtual service. Field introduced in 22.1.2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Specifies various L4 SSL service related controls for virtual service. Field introduced in 22.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L4SSLApplicationProfile'
             markers:
                 description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -480,10 +480,10 @@ definitions:
                 description: "Specifies if we need to preserve client port while preserving client IP for backend connections. Field introduced in 17.2.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             preserve_dest_ip_port:
-                description: "Specifies if destination IP and port needs to be preserved for backend connection. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Specifies if destination IP and port needs to be preserved for backend connection. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             sip_service_profile:
-                description: "Specifies various SIP service related controls for virtual service. Field introduced in 17.2.8, 18.1.3, 18.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Specifies various SIP service related controls for virtual service. Field introduced in 17.2.8, 18.1.3, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SipServiceApplicationProfile'
             tcp_app_profile:
                 description: "Specifies the TCP application proxy profile parameters. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -492,7 +492,7 @@ definitions:
                 description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: "Specifies which application layer proxy is enabled for the virtual service. Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS, APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- APPLICATION_PROFILE_TYPE_L4), Basic (Allowed values- APPLICATION_PROFILE_TYPE_L4,APPLICATION_PROFILE_TYPE_HTTP) edition."
+                description: "Specifies which application layer proxy is enabled for the virtual service. Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS, APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
@@ -572,12 +572,12 @@ definitions:
             -   type
         properties:
             buf_num:
-                description: "Number of buffers to use for compression output. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Number of buffers to use for compression output. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 128
                 format: int32
             buf_size:
-                description: "Size of each buffer used for compression output, this should ideally be a multiple of pagesize. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Size of each buffer used for compression output, this should ideally be a multiple of pagesize. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 4096
                 format: int32
@@ -593,37 +593,37 @@ definitions:
                 items:
                     $ref: '#/definitions/CompressionFilter'
             hash_size:
-                description: "hash size used by compression, rounded to the last power of 2. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "hash size used by compression, rounded to the last power of 2. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 16384
                 format: int32
             level_aggressive:
-                description: "Level of compression to apply on content selected for aggressive compression. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Level of compression to apply on content selected for aggressive compression. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5
                 format: int32
             level_normal:
-                description: "Level of compression to apply on content selected for normal compression. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Level of compression to apply on content selected for normal compression. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
             max_low_rtt:
-                description: "If client RTT is higher than this threshold, enable normal compression on the response. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If client RTT is higher than this threshold, enable normal compression on the response. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: int32
             min_high_rtt:
-                description: "If client RTT is higher than this threshold, enable aggressive compression on the response.  . Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If client RTT is higher than this threshold, enable aggressive compression on the response.  . Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 200
                 format: int32
             min_length:
-                description: "Minimum response content length to enable compression. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Minimum response content length to enable compression. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 128
                 format: int32
             mobile_str_ref:
-                description: "Values that identify mobile browsers in order to enable aggressive compression. It is a reference to an object of type StringGroup. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Values that identify mobile browsers in order to enable aggressive compression. It is a reference to an object of type StringGroup. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             remove_accept_encoding_header:
                 description: "Offload compression from the servers to AVI. Saves compute cycles on the servers. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -634,7 +634,7 @@ definitions:
                 type: string
                 default: "AUTO_COMPRESSION"
             window_size:
-                description: "window size used by compression, rounded to the last power of 2. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "window size used by compression, rounded to the last power of 2. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 4096
                 format: int32
@@ -642,29 +642,29 @@ definitions:
         type: object
         properties:
             client_origin_host:
-                description: "Origin-Host AVP towards client. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Origin-Host AVP towards client. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             client_origin_realm:
-                description: "Origin-Realm AVP towards client. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Origin-Realm AVP towards client. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             host_ip_addr_rewrite:
-                description: "Rwrite Host-IP-Address AVP. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Rwrite Host-IP-Address AVP. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             max_outstanding_req:
-                description: "Max number of outstanding request waiting for response. Allowed values are 1-1048576. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Max number of outstanding request waiting for response. Allowed values are 1-1048576. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 4096
                 format: uint32
             req_timeout:
-                description: "Response waiting time for the request sent. Allowed values are 1-1800. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Response waiting time for the request sent. Allowed values are 1-1800. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: uint32
             server_origin_host:
-                description: "Origin-Host AVP towards server. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Origin-Host AVP towards server. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             server_origin_realm:
-                description: "Origin-Realm AVP towards server. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Origin-Realm AVP towards server. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     DnsServiceApplicationProfile:
         type: object
@@ -678,12 +678,12 @@ definitions:
                 type: string
                 default: "hostmaster"
             client_dns_tcp_request_timeout:
-                description: "The maximum time allowed for a client to transmit an entire DNS request over TCP. This helps mitigate various forms of SlowLoris attacks. Allowed values are 10-100000000. Field introduced in 22.1.5, 30.1.2, 30.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "The maximum time allowed for a client to transmit an entire DNS request over TCP. This helps mitigate various forms of SlowLoris attacks. Allowed values are 10-100000000. Field introduced in 22.1.5, 30.1.2, 30.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10000
                 format: uint32
             close_tcp_connection_post_response:
-                description: "If enabled, the Service Engine initiates closure of client TCP connections after the first DNS response, for pass-through/proxy cases. This behavior applies to all DNS request types other than AX-FR. Field introduced in 21.1.7, 22.1.4, 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If enabled, the Service Engine initiates closure of client TCP connections after the first DNS response, for pass-through/proxy cases. This behavior applies to all DNS request types other than AX-FR. Field introduced in 21.1.7, 22.1.4, 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             dns_over_tcp_enabled:
                 description: "Enable DNS query/response over TCP. This enables analytics for pass-through queries as well. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -793,16 +793,16 @@ definitions:
         type: object
         properties:
             deactivate_active:
-                description: "Deactivate active FTP mode. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Deactivate active FTP mode. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             deactivate_passive:
-                description: "Deactivate passive FTP mode. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Deactivate passive FTP mode. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     HTTP2ApplicationProfile:
         type: object
         properties:
             enable_http2_server_push:
-                description: "Enables automatic conversion of preload links specified in the 'Link' response header fields into Server push requests. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enables automatic conversion of preload links specified in the 'Link' response header fields into Server push requests. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             http2_initial_window_size:
                 description: "The initial flow control window size in KB for HTTP/2 streams. Allowed values are 64-32768. Field introduced in 18.2.10, 20.1.1. Unit is KB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -810,7 +810,7 @@ definitions:
                 default: 64
                 format: uint32
             max_http2_concurrent_pushes_per_connection:
-                description: "Maximum number of concurrent push streams over a client side HTTP/2 connection. Allowed values are 1-256. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Maximum number of concurrent push streams over a client side HTTP/2 connection. Allowed values are 1-256. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: uint32
@@ -848,18 +848,18 @@ definitions:
         type: object
         properties:
             allow_dots_in_header_name:
-                description: "Allow use of dot (.) in HTTP header names, for instance Header.app.special  PickAppVersionX. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Allow use of dot (.) in HTTP header names, for instance Header.app.special  PickAppVersionX. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             cache_config:
-                description: "HTTP Caching config to use with this HTTP Profile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "HTTP Caching config to use with this HTTP Profile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HttpCacheConfig'
             client_body_timeout:
-                description: "The maximum length of time allowed between consecutive read operations for a client request body. The value '0' specifies no timeout. This setting generally impacts the length of time allowed for a client to send a POST. Allowed values are 0-100000000. Unit is MILLISECONDS. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 30000) edition."
+                description: "The maximum length of time allowed between consecutive read operations for a client request body. The value '0' specifies no timeout. This setting generally impacts the length of time allowed for a client to send a POST. Allowed values are 0-100000000. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 30000
                 format: int32
             client_header_timeout:
-                description: "The maximum length of time allowed for a client to transmit an entire request header. This helps mitigate various forms of SlowLoris attacks. Allowed values are 10-100000000. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 10000), Basic (Allowed values- 10000) edition."
+                description: "The maximum length of time allowed for a client to transmit an entire request header. This helps mitigate various forms of SlowLoris attacks. Allowed values are 10-100000000. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10000
                 format: int32
@@ -868,7 +868,7 @@ definitions:
                 type: integer
                 format: int64
             client_max_header_size:
-                description: "Maximum size in Kbytes of a single HTTP header in the client request. Allowed values are 1-64. Unit is KB. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 12) edition."
+                description: "Maximum size in Kbytes of a single HTTP header in the client request. Allowed values are 1-64. Unit is KB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 12
                 format: int32
@@ -878,24 +878,24 @@ definitions:
                 default: 48
                 format: int32
             close_server_side_connection_on_error:
-                description: "Close server-side connection when an error response is received. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Close server-side connection when an error response is received. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             collect_client_tls_fingerprint:
-                description: "If enabled, the client's TLS fingerprint will be collected and included in the Application Log. For Virtual Services with Bot Detection enabled, TLS fingerprints are always computed if 'use_tls_fingerprint' is enabled in the Bot Detection Policy's User-Agent detection component. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If enabled, the client's TLS fingerprint will be collected and included in the Application Log. For Virtual Services with Bot Detection enabled, TLS fingerprints are always computed if 'use_tls_fingerprint' is enabled in the Bot Detection Policy's User-Agent detection component. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             compression_profile:
-                description: "HTTP Compression settings to use with this HTTP Profile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "HTTP Compression settings to use with this HTTP Profile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CompressionProfile'
             connection_multiplexing_enabled:
                 description: "Allows HTTP requests, not just TCP connections, to be load balanced across servers.  Proxied TCP connections to servers may be reused by multiple clients to improve performance. Not compatible with Preserve Client IP. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             detect_ntlm_app:
-                description: "Detect NTLM apps based on the HTTP Response from the server. Once detected, connection multiplexing will be disabled for that connection. Field introduced in 20.1.3. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "Detect NTLM apps based on the HTTP Response from the server. Once detected, connection multiplexing will be disabled for that connection. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             disable_keepalive_posts_msie6:
-                description: "Disable keep-alive client side connections for older browsers based off MS Internet Explorer 6.0 (MSIE6). For some applications, this might break NTLM authentication for older clients based off MSIE6. For such applications, set this option to false to allow keep-alive connections. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- true), Basic (Allowed values- true) edition."
+                description: "Disable keep-alive client side connections for older browsers based off MS Internet Explorer 6.0 (MSIE6). For some applications, this might break NTLM authentication for older clients based off MSIE6. For such applications, set this option to false to allow keep-alive connections. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             disable_sni_hostname_check:
@@ -906,48 +906,48 @@ definitions:
                 type: boolean
                 default: True
             enable_fire_and_forget:
-                description: "Enable support for fire and forget feature. If enabled, request from client is forwarded to server even if client prematurely closes the connection. Field introduced in 17.2.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Enable support for fire and forget feature. If enabled, request from client is forwarded to server even if client prematurely closes the connection. Field introduced in 17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_request_body_buffering:
                 description: "Enable request body buffering for POST requests. If enabled, max buffer size is set to lower of 32M or the value (non-zero) configured in client_max_body_size. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_request_body_metrics:
-                description: "Enable HTTP request body metrics. If enabled, requests from clients are parsed and relevant statistics about them are gathered. Currently, it processes HTTP POST requests with Content-Type application/x-www-form-urlencoded or multipart/form-data, and adds the number of detected parameters to the l7_client.http_params_count. This is an experimental feature and it may have performance impact. Use it when detailed information about the number of HTTP POST parameters is needed, e.g. for WAF sizing. Field introduced in 18.1.5, 18.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Enable HTTP request body metrics. If enabled, requests from clients are parsed and relevant statistics about them are gathered. Currently, it processes HTTP POST requests with Content-Type application/x-www-form-urlencoded or multipart/form-data, and adds the number of detected parameters to the l7_client.http_params_count. This is an experimental feature and it may have performance impact. Use it when detailed information about the number of HTTP POST parameters is needed, e.g. for WAF sizing. Field introduced in 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             fwd_close_hdr_for_bound_connections:
                 description: "Forward the Connection  Close header coming from backend server to the client if connection-switching is enabled, i.e. front-end and backend connections are bound together. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             hsts_enabled:
-                description: "Inserts HTTP Strict-Transport-Security header in the HTTPS response.  HSTS can help mitigate man-in-the-middle attacks by telling browsers that support HSTS that they should only access this site via HTTPS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Inserts HTTP Strict-Transport-Security header in the HTTPS response.  HSTS can help mitigate man-in-the-middle attacks by telling browsers that support HSTS that they should only access this site via HTTPS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             hsts_max_age:
-                description: "Number of days for which the client should regard this virtual service as a known HSTS host. Allowed values are 0-10000. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 365), Basic (Allowed values- 365) edition."
+                description: "Number of days for which the client should regard this virtual service as a known HSTS host. Allowed values are 0-10000. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 365
                 format: uint64
             hsts_subdomains_enabled:
-                description: "Insert the 'includeSubdomains' directive in the HTTP Strict-Transport-Security header. Adding the includeSubdomains directive signals the User-Agent that the HSTS Policy applies to this HSTS Host as well as any subdomains of the host's domain name. Field introduced in 17.2.13, 18.1.4, 18.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition. Special default for Essentials edition is false, Basic edition is false, Enterprise edition is True."
+                description: "Insert the 'includeSubdomains' directive in the HTTP Strict-Transport-Security header. Adding the includeSubdomains directive signals the User-Agent that the HSTS Policy applies to this HSTS Host as well as any subdomains of the host's domain name. Field introduced in 17.2.13, 18.1.4, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             http2_profile:
-                description: "Specifies the HTTP/2 specific application profile parameters. Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition."
+                description: "Specifies the HTTP/2 specific application profile parameters. Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTP2ApplicationProfile'
             http_to_https:
-                description: "Client requests received via HTTP will be redirected to HTTPS. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false) edition."
+                description: "Client requests received via HTTP will be redirected to HTTPS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             http_upstream_buffer_size:
-                description: "Size of HTTP buffer in kB. Allowed values are 1-256. Special values are 0- Auto compute the size of buffer. Field introduced in 20.1.1. Unit is KB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 0), Basic (Allowed values- 0) edition."
+                description: "Size of HTTP buffer in kB. Allowed values are 1-256. Special values are 0- Auto compute the size of buffer. Field introduced in 20.1.1. Unit is KB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             httponly_enabled:
-                description: "Mark HTTP cookies as HTTPonly.  This helps mitigate cross site scripting attacks as browsers will not allow these cookies to be read by third parties, such as javascript. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Mark HTTP cookies as HTTPonly.  This helps mitigate cross site scripting attacks as browsers will not allow these cookies to be read by third parties, such as javascript. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             keepalive_header:
                 description: "Send HTTP 'Keep-Alive' header to the client. By default, the timeout specified in the 'Keep-Alive Timeout' field will be used unless the 'Use App Keepalive Timeout' flag is set, in which case the timeout sent by the application will be honored. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             keepalive_timeout:
-                description: "The max idle time allowed between HTTP requests over a Keep-alive connection. Allowed values are 10-100000000. Unit is MILLISECONDS. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 30000) edition."
+                description: "The max idle time allowed between HTTP requests over a Keep-alive connection. Allowed values are 10-100000000. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 30000
                 format: int32
@@ -964,17 +964,17 @@ definitions:
                 type: integer
                 format: uint32
             max_header_count:
-                description: "Maximum number of headers allowed in HTTP request and response. Allowed values are 0-4096. Special values are 0- unlimited headers in request and response. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 0), Basic (Allowed values- 0) edition. Special default for Essentials edition is 0, Basic edition is 0, Enterprise edition is 256."
+                description: "Maximum number of headers allowed in HTTP request and response. Allowed values are 0-4096. Special values are 0- unlimited headers in request and response. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 256
                 format: int32
             max_keepalive_requests:
-                description: "The max number of HTTP requests that can be sent over a Keep-Alive connection. '0' means unlimited. Allowed values are 0-1000000. Special values are 0- Unlimited requests on a connection. Field introduced in 18.2.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 100), Basic (Allowed values- 100) edition."
+                description: "The max number of HTTP requests that can be sent over a Keep-Alive connection. '0' means unlimited. Allowed values are 0-1000000. Special values are 0- Unlimited requests on a connection. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: int32
             max_response_headers_size:
-                description: "Maximum size in Kbytes of all the HTTP response headers. Allowed values are 1-256. Unit is KB. Allowed with any value in Enterprise, Basic, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 48) edition."
+                description: "Maximum size in Kbytes of all the HTTP response headers. Allowed values are 1-256. Unit is KB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 48
                 format: int32
@@ -999,54 +999,54 @@ definitions:
                 type: integer
                 format: uint32
             pass_through_x_accel_headers:
-                description: "Pass through X-ACCEL headers. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Pass through X-ACCEL headers. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             pki_profile_ref:
                 description: "Select the PKI profile to be associated with the Virtual Service. This profile defines the Certificate Authority and Revocation List. It is a reference to an object of type PKIProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             post_accept_timeout:
-                description: "The max allowed length of time between a client establishing a TCP connection and Avi receives the first byte of the client's HTTP request. Allowed values are 10-100000000. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 30000), Basic (Allowed values- 30000) edition."
+                description: "The max allowed length of time between a client establishing a TCP connection and Avi receives the first byte of the client's HTTP request. Allowed values are 10-100000000. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 30000
                 format: int32
             reset_conn_http_on_ssl_port:
-                description: "If enabled, an HTTP request on an SSL port will result in connection close instead of a 400 response. Field introduced in 18.2.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "If enabled, an HTTP request on an SSL port will result in connection close instead of a 400 response. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             respond_with_100_continue:
                 description: "Avi will respond with 100-Continue response if Expect  100-Continue header received from client. Field introduced in 17.2.8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             secure_cookie_enabled:
-                description: "Mark server cookies with the 'Secure' attribute.  Client browsers will not send a cookie marked as secure over an unencrypted connection.  If Avi is terminating SSL from clients and passing it as HTTP to the server, the server may return cookies without the secure flag set. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Mark server cookies with the 'Secure' attribute.  Client browsers will not send a cookie marked as secure over an unencrypted connection.  If Avi is terminating SSL from clients and passing it as HTTP to the server, the server may return cookies without the secure flag set. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             server_side_redirect_to_https:
-                description: "When terminating client SSL sessions at Avi, servers may incorrectly send redirect to clients as HTTP.  This option will rewrite the server's redirect responses for this virtual service from HTTP to HTTPS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "When terminating client SSL sessions at Avi, servers may incorrectly send redirect to clients as HTTP.  This option will rewrite the server's redirect responses for this virtual service from HTTP to HTTPS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             session_config:
-                description: "HTTP session configuration. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "HTTP session configuration. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPSessionConfig'
             ssl_client_certificate_action:
-                description: "Set of match/action rules that govern what happens when the client certificate request is enabled. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Set of match/action rules that govern what happens when the client certificate request is enabled. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SSLClientCertificateAction'
             ssl_client_certificate_mode:
-                description: "Specifies whether the client side verification is set to none, request or require. Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- SSL_CLIENT_CERTIFICATE_NONE,SSL_CLIENT_CERTIFICATE_REQUIRE), Basic (Allowed values- SSL_CLIENT_CERTIFICATE_NONE,SSL_CLIENT_CERTIFICATE_REQUIRE) edition."
+                description: "Specifies whether the client side verification is set to none, request or require. Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "SSL_CLIENT_CERTIFICATE_NONE"
             true_client_ip:
-                description: "Detect client IP from user specified header at the configured index in the specified direction. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Detect client IP from user specified header at the configured index in the specified direction. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TrueClientIPConfig'
             use_app_keepalive_timeout:
-                description: "Use 'Keep-Alive' header timeout sent by application instead of sending the HTTP Keep-Alive Timeout. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Use 'Keep-Alive' header timeout sent by application instead of sending the HTTP Keep-Alive Timeout. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             use_true_client_ip:
-                description: "Detect client IP from user specified header. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Detect client IP from user specified header. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             websockets_enabled:
                 description: "Enable Websockets proxy for traffic from clients to the virtual service. Connections to this VS start in HTTP mode. If the client requests an Upgrade to Websockets, and the server responds back with success, then the connection is upgraded to WebSockets mode. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             x_forwarded_proto_enabled:
-                description: "Insert an X-Forwarded-Proto header in the request sent to the server.  When the client connects via SSL, Avi terminates the SSL, and then forwards the requests to the servers via HTTP, so the servers can determine the original protocol via this header.  In this example, the value will be 'https'. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Insert an X-Forwarded-Proto header in the request sent to the server.  When the client connects via SSL, Avi terminates the SSL, and then forwards the requests to the servers via HTTP, so the servers can determine the original protocol via this header.  In this example, the value will be 'https'. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             xff_alternate_name:
                 description: "Provide a custom name for the X-Forwarded-For header sent to the servers. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1057,7 +1057,7 @@ definitions:
                 type: boolean
                 default: True
             xff_update:
-                description: "Configure how incoming X-Forwarded-For headers from the client are handled. Enum options - REPLACE_XFF_HEADERS, APPEND_TO_THE_XFF_HEADER, ADD_NEW_XFF_HEADER. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Configure how incoming X-Forwarded-For headers from the client are handled. Enum options - REPLACE_XFF_HEADERS, APPEND_TO_THE_XFF_HEADER, ADD_NEW_XFF_HEADER. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "REPLACE_XFF_HEADERS"
     HttpCacheConfig:
@@ -1098,12 +1098,12 @@ definitions:
                 default: 4194304
                 format: uint32
             mime_types_block_group_refs:
-                description: "Blocklist string group of non-cacheable mime types. It is a reference to an object of type StringGroup. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Blocklist string group of non-cacheable mime types. It is a reference to an object of type StringGroup. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             mime_types_block_lists:
-                description: "Blocklist of non-cacheable mime types. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Blocklist of non-cacheable mime types. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -1150,7 +1150,7 @@ definitions:
             -   protocol
         properties:
             add_string:
-                description: "Add a query string to the redirect URI. If keep_query is set, concatenates the add_string to the query of the incoming request. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Add a query string to the redirect URI. If keep_query is set, concatenates the add_string to the query of the incoming request. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             host:
                 description: "Host config. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1177,33 +1177,33 @@ definitions:
         type: object
         properties:
             session_cookie_httponly:
-                description: "If set, HTTP session cookie will use 'HttpOnly' attribute. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If set, HTTP session cookie will use 'HttpOnly' attribute. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             session_cookie_name:
-                description: "HTTP session cookie name to use. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "HTTP session cookie name to use. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "albsessid"
             session_cookie_samesite:
-                description: "HTTP session cookie SameSite attribute. Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "HTTP session cookie SameSite attribute. Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "SAMESITE_LAX"
             session_cookie_secure:
-                description: "If set, HTTP session cookie will use 'Secure' attribute. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If set, HTTP session cookie will use 'Secure' attribute. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             session_establishment_timeout:
-                description: "Maximum allowed time between creating a session and the client coming back. Value in seconds. Allowed values are 120-3600. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Maximum allowed time between creating a session and the client coming back. Value in seconds. Allowed values are 120-3600. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: uint32
             session_idle_timeout:
-                description: "Maximum allowed time to expire the session after establishment on client inactivity. Value in seconds. Allowed values are 120-604800. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Maximum allowed time to expire the session after establishment on client inactivity. Value in seconds. Allowed values are 120-604800. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1800
                 format: uint32
             session_maximum_timeout:
-                description: "Maximum allowed time to expire the session, even if it is still active. Value in seconds. Allowed values are 120-604800. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Maximum allowed time to expire the session, even if it is still active. Value in seconds. Allowed values are 120-604800. Field introduced in 30.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 28800
                 format: uint32
@@ -1248,7 +1248,7 @@ definitions:
         type: object
         properties:
             ssl_stream_idle_timeout:
-                description: "L4 stream idle connection timeout in seconds. Allowed values are 60-86400. Field introduced in 22.1.2. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "L4 stream idle connection timeout in seconds. Allowed values are 60-86400. Field introduced in 22.1.2. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 3600
                 format: uint32
@@ -1262,11 +1262,11 @@ definitions:
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL), Basic (Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition."
+                description: "Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "CONTAINS"
             match_decoded_string:
-                description: "Match against the decoded URI path. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Match against the decoded URI path. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             match_str:
@@ -1286,7 +1286,7 @@ definitions:
             -   period
         properties:
             burst_sz:
-                description: "Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- 0) edition."
+                description: "Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             count:
@@ -1298,7 +1298,7 @@ definitions:
                 description: "Identifier for Rate Limit. Constructed according to context. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             period:
-                description: "Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- 1) edition."
+                description: "Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: uint32
@@ -1306,17 +1306,17 @@ definitions:
         type: object
         properties:
             file:
-                description: "File to be used for HTTP Local response rate limit action. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition."
+                description: "File to be used for HTTP Local response rate limit action. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPLocalFile'
             redirect:
-                description: "Parameters for HTTP Redirect rate limit action. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition."
+                description: "Parameters for HTTP Redirect rate limit action. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPRedirectAction'
             status_code:
-                description: "HTTP status code for Local Response rate limit action. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- HTTP_LOCAL_RESPONSE_STATUS_CODE_429) edition."
+                description: "HTTP status code for Local Response rate limit action. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "HTTP_LOCAL_RESPONSE_STATUS_CODE_429"
             type:
-                description: "Type of action to be enforced upon hitting the rate limit. Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- RL_ACTION_NONE,RL_ACTION_DROP_CONN) edition."
+                description: "Type of action to be enforced upon hitting the rate limit. Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "RL_ACTION_NONE"
     RateLimiterProfile:
@@ -1366,16 +1366,16 @@ definitions:
                 description: "Action to perform upon rate limiting. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/RateLimiterAction'
             explicit_tracking:
-                description: "Explicitly tracks an attacker across rate periods. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- false) edition."
+                description: "Explicitly tracks an attacker across rate periods. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             fine_grain:
-                description: "Enable fine granularity. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition. Allowed in Basic (Allowed values- false) edition."
+                description: "Enable fine granularity. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             http_cookie:
-                description: "HTTP cookie name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition."
+                description: "HTTP cookie name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             http_header:
-                description: "HTTP header name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Enterprise with Cloud Services edition."
+                description: "HTTP header name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             rate_limiter:
                 description: "The rate limiter configuration for this rate profile. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1386,10 +1386,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -1425,27 +1425,27 @@ definitions:
         type: object
         properties:
             ftp_profile:
-                description: "FTP profile configuration. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "FTP profile configuration. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/FTPProfile'
             pki_profile_ref:
-                description: "Select the PKI profile to be associated with the Virtual Service. This profile defines the Certificate Authority and Revocation List. It is a reference to an object of type PKIProfile. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Select the PKI profile to be associated with the Virtual Service. This profile defines the Certificate Authority and Revocation List. It is a reference to an object of type PKIProfile. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             proxy_protocol_enabled:
-                description: "Enable/Disable the usage of proxy protocol to convey client connection information to the back-end servers.  Valid only for L4 application profiles and TCP proxy. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Enable/Disable the usage of proxy protocol to convey client connection information to the back-end servers.  Valid only for L4 application profiles and TCP proxy. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             proxy_protocol_version:
-                description: "Version of proxy protocol to be used to convey client connection information to the back-end servers. Enum options - PROXY_PROTOCOL_VERSION_1, PROXY_PROTOCOL_VERSION_2. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- PROXY_PROTOCOL_VERSION_1), Basic (Allowed values- PROXY_PROTOCOL_VERSION_1) edition."
+                description: "Version of proxy protocol to be used to convey client connection information to the back-end servers. Enum options - PROXY_PROTOCOL_VERSION_1, PROXY_PROTOCOL_VERSION_2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "PROXY_PROTOCOL_VERSION_1"
             ssl_client_certificate_mode:
-                description: "Specifies whether the client side verification is set to none, request or require. Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE. Field introduced in 18.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- SSL_CLIENT_CERTIFICATE_NONE), Basic (Allowed values- SSL_CLIENT_CERTIFICATE_NONE) edition."
+                description: "Specifies whether the client side verification is set to none, request or require. Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "SSL_CLIENT_CERTIFICATE_NONE"
     TrueClientIPConfig:
         type: object
         properties:
             direction:
-                description: "Denotes the end from which to count the IPs in the specified header value. Enum options - LEFT, RIGHT. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Denotes the end from which to count the IPs in the specified header value. Enum options - LEFT, RIGHT. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "LEFT"
             headers:
@@ -1454,7 +1454,7 @@ definitions:
                 items:
                     type: string
             index_in_header:
-                description: "Position in the configured direction, in the specified header's value, to be used to set true client IP. If the value is greater than the number of IP addresses in the header, then the last IP address in the configured direction in the header will be used. Allowed values are 1-1000. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Position in the configured direction, in the specified header's value, to be used to set true client IP. If the value is greater than the number of IP addresses in the header, then the last IP address in the configured direction in the header will be used. Allowed values are 1-1000. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: uint32

@@ -553,7 +553,7 @@
             "type": "object",
             "properties": {
                 "task_base_timeout": {
-                    "description": "Base timeout value for all controller-specific upgrade operation tasks. The timeout value for each task is a multiple of task_base_timeout. For example, SwitchAndReboot task timeout = [multiplier] * task_base_timeout. (The multiplier varies by task.). Allowed values are 300-3600. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Base timeout value for all controller-specific upgrade operation tasks. The timeout value for each task is a multiple of task_base_timeout. For example, SwitchAndReboot task timeout = [multiplier] * task_base_timeout. (The multiplier varies by task.). Allowed values are 300-3600. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300,
                     "format": "uint32"
@@ -564,23 +564,23 @@
             "type": "object",
             "properties": {
                 "allow_single_node": {
-                    "description": "Allow dry-run operation on single node controller. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Allow dry-run operation on single node controller. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "memory": {
-                    "description": "Amount of memory allocated for dry-run. Field introduced in 31.1.1. Unit is GB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Amount of memory allocated for dry-run. Field introduced in 31.1.1. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 6.0,
                     "format": "float"
                 },
                 "num_cpu": {
-                    "description": "Number of CPU(s) allocated for dry-run. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of CPU(s) allocated for dry-run. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
                     "format": "uint32"
                 },
                 "preferred_worker": {
-                    "description": "VM hostname of the preferred worker node. Example  node2.controller.local. When configured, dry-run is performed on specified node. When not configured, one of the follower node is elected for dry-run. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "VM hostname of the preferred worker node. Example  node2.controller.local. When configured, dry-run is performed on specified node. When not configured, one of the follower node is elected for dry-run. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -589,13 +589,13 @@
             "type": "object",
             "properties": {
                 "image_replication_timeout": {
-                    "description": "Maximum wait time to replicate image files from Leader to followers. Allowed values are 600-3600. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum wait time to replicate image files from Leader to followers. Allowed values are 600-3600. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 600,
                     "format": "uint32"
                 },
                 "max_image_size": {
-                    "description": "Maximum permitted size for image uploads. Allowed values are 10-15. Field introduced in 31.1.1. Unit is GB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum permitted size for image uploads. Allowed values are 10-15. Field introduced in 31.1.1. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "uint32"
@@ -606,13 +606,13 @@
             "type": "object",
             "properties": {
                 "checks_base_timeout": {
-                    "description": "Base timeout value for all upgrade pre-checks operations. The timeout value for applicable checks is a multiple of checks_base_timeout. For example, config export timeout = [multiplier] * checks_base_timeout. (The multiplier varies by operation.). Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Base timeout value for all upgrade pre-checks operations. The timeout value for applicable checks is a multiple of checks_base_timeout. For example, config export timeout = [multiplier] * checks_base_timeout. (The multiplier varies by operation.). Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
                     "format": "uint32"
                 },
                 "max_alerts": {
-                    "description": "Maximum number of alerts allowed for configuration export. Allowed values are 200-500. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of alerts allowed for configuration export. Allowed values are 200-500. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 200,
                     "format": "uint32"
@@ -623,37 +623,37 @@
             "type": "object",
             "properties": {
                 "concurrent_segroup_upgrades": {
-                    "description": "This parameter is used to control the number of concurrent segroup upgrades. This field value takes affect upon controller warm reboot. The value is modified based on flavor size of controller. Allowed values are 1-24. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "This parameter is used to control the number of concurrent segroup upgrades. This field value takes affect upon controller warm reboot. The value is modified based on flavor size of controller. Allowed values are 1-24. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
                     "format": "uint32"
                 },
                 "image_data_transfer_size": {
-                    "description": "This parameter defines the buffer size during ServiceEngine image downloads in a ServiceEngineGroup.It is used to pace the ServiceEngine upgrade package downloads so that controller network/CPU/Memory bandwidth is a bounded operation. It generally specifies the buffer size used for data transfer. Allowed values are 64-2048. Field introduced in 31.1.1. Unit is KB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "This parameter defines the buffer size during ServiceEngine image downloads in a ServiceEngineGroup.It is used to pace the ServiceEngine upgrade package downloads so that controller network/CPU/Memory bandwidth is a bounded operation. It generally specifies the buffer size used for data transfer. Allowed values are 64-2048. Field introduced in 31.1.1. Unit is KB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 512,
                     "format": "uint32"
                 },
                 "large_se_connect_timeout": {
-                    "description": "Amount of time Controller waits for a large-sized SE (>=128GB memory)to reconnect after it is rebooted during upgrade. Allowed values are 1200-2400. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Amount of time Controller waits for a large-sized SE (>=128GB memory)to reconnect after it is rebooted during upgrade. Allowed values are 1200-2400. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1200,
                     "format": "uint32"
                 },
                 "se_connect_timeout": {
-                    "description": "Amount of time Controller waits for a regular-sized SE (<128GB memory)to reconnect after it is rebooted during upgrade. Allowed values are 600-1200. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Amount of time Controller waits for a regular-sized SE (<128GB memory)to reconnect after it is rebooted during upgrade. Allowed values are 600-1200. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 600,
                     "format": "uint32"
                 },
                 "simultaneous_image_downloads": {
-                    "description": "Number of simultaneous ServiceEngine image downloads in a ServiceEngineGroup. It is used to pace ServiceEngine upgrade package downloads so that controller network/CPU bandwidth is a bounded operation. Allowed values are 1-20. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Number of simultaneous ServiceEngine image downloads in a ServiceEngineGroup. It is used to pace ServiceEngine upgrade package downloads so that controller network/CPU bandwidth is a bounded operation. Allowed values are 1-20. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
                     "format": "uint32"
                 },
                 "task_base_timeout": {
-                    "description": "Base timeout value for all service engine upgrade operation tasks. The timeout for certain tasks is a multiple of this field. For example, in the CopyAndInstallImage task, the ServiceEngine has a maximum wait time to install an image or package, i.e., timeout = [scaling factor] * task_base_timeout. Allowed values are 300-3600. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Base timeout value for all service engine upgrade operation tasks. The timeout for certain tasks is a multiple of this field. For example, in the CopyAndInstallImage task, the ServiceEngine has a maximum wait time to install an image or package, i.e., timeout = [scaling factor] * task_base_timeout. Allowed values are 300-3600. Field introduced in 31.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300,
                     "format": "uint32"
@@ -669,23 +669,23 @@
                     "type": "string"
                 },
                 "controller_params": {
-                    "description": "List of controller upgrade related configurable parameters. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "List of controller upgrade related configurable parameters. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ControllerParams"
                 },
                 "dry_run": {
-                    "description": "List of dryrun related configurable parameters. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "List of dryrun related configurable parameters. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DryRunParams"
                 },
                 "image": {
-                    "description": "List of image related configurable parameters. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "List of image related configurable parameters. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ImageParams"
                 },
                 "pre_checks": {
-                    "description": "List of upgrade pre-checks related configurable parameters. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "List of upgrade pre-checks related configurable parameters. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/PreChecksParams"
                 },
                 "service_engine": {
-                    "description": "List of service engine upgrade related configurable parameters. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "List of service engine upgrade related configurable parameters. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ServiceEngineParams"
                 },
                 "url": {
@@ -694,7 +694,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID Identifier for the UpgradeProfile object. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID Identifier for the UpgradeProfile object. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

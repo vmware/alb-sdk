@@ -217,7 +217,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             hdr_string_op:
-                description: " Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL), Basic (Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition."
+                description: " Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     DosThreshold:
         type: object
@@ -466,22 +466,22 @@ definitions:
                 default: 300
                 format: uint32
             sc_cfg_q_batch_dequeue_limit:
-                description: "Max elements to dequeue in one shot from the Q by the statecache thread. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Max elements to dequeue in one shot from the Q by the statecache thread. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: uint32
             sc_cfg_q_max_size:
-                description: "Max elements in the config queue between seagent main and the statecache thread. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Max elements in the config queue between seagent main and the statecache thread. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 4096
                 format: uint32
             sc_dns_q_batch_dequeue_limit:
-                description: "Max elements to dequeue in one shot from the Q by the statecache thread. Allowed values are 1-10000. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Max elements to dequeue in one shot from the Q by the statecache thread. Allowed values are 1-10000. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: uint32
             sc_dns_q_max_size:
-                description: "Max elements in the dns queue between seagent main and the statecache thread. Allowed values are 1-10000. Field introduced in 20.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Max elements in the dns queue between seagent main and the statecache thread. Allowed values are 1-10000. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 4096
                 format: uint32
@@ -570,7 +570,7 @@ definitions:
                 description: "Enable or disable fair queueing for packet transmission among virtualservices on an SE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             geo_db_granularity:
-                description: "Granularity or Resolution of co-ordinates used. When the value is 1 the co-ordinates provided in the geo-db are used as is (highest resolution.This value provides a 'zoom-out' value so that coarser co-ordinates are used. With higher resolution, logs can contain finer location information. But, lower resolution provides significant memory and cpu benefits on the service engine. Besides, given a smaller number of members that are separated geographically, a lower resolution is sufficient for correct load-balancing. Allowed values are 1-20. Field introduced in 17.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 1), Basic (Allowed values- 1) edition."
+                description: "Granularity or Resolution of co-ordinates used. When the value is 1 the co-ordinates provided in the geo-db are used as is (highest resolution.This value provides a 'zoom-out' value so that coarser co-ordinates are used. With higher resolution, logs can contain finer location information. But, lower resolution provides significant memory and cpu benefits on the service engine. Besides, given a smaller number of members that are separated geographically, a lower resolution is sufficient for correct load-balancing. Allowed values are 1-20. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: uint32
@@ -592,10 +592,10 @@ definitions:
                 type: boolean
                 default: True
             se_dp_compression:
-                description: " Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SeBootupCompressionProperties'
             se_emulated_cores:
-                description: "Deprecated in 21.1.3. Use config in ServiceEngineGroup instead. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 0), Basic (Allowed values- 0) edition."
+                description: "Deprecated in 21.1.3. Use config in ServiceEngineGroup instead. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             se_ip_encap_ipc:
@@ -702,7 +702,7 @@ definitions:
                 default: 2000
                 format: uint32
             nd_rl:
-                description: "Rate limiter for ND packets in pps. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Rate limiter for ND packets in pps. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 2000
                 format: uint32
@@ -742,7 +742,7 @@ definitions:
                 type: boolean
                 default: True
             app_headers:
-                description: " Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/AppHdr'
@@ -750,12 +750,12 @@ definitions:
                 description: "Deprecated in 21.1.3. Use config in ServiceEngineGroup instead. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             connections_lossy_log_rate_limiter_threshold:
-                description: "Rate limit on maximum adf lossy log to pushper second. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 1000), Basic (Allowed values- 1000) edition."
+                description: "Rate limit on maximum adf lossy log to pushper second. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1000
                 format: int32
             connections_udfnf_log_rate_limiter_threshold:
-                description: "Rate limit on maximum adf udf or nf log to pushper second. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 1000), Basic (Allowed values- 1000) edition."
+                description: "Rate limit on maximum adf udf or nf log to pushper second. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1000
                 format: int32
@@ -763,7 +763,7 @@ definitions:
                 description: "Disable Flow Probes for Scaled out VS'es. (This field has been moved to se_group properties 20.1.3 onwards.). Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             dos_profile:
-                description: " Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DosThresholdProfile'
             downstream_send_timeout:
                 description: "Timeout for downstream to become writable. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -771,12 +771,12 @@ definitions:
                 default: 3600000
                 format: uint32
             dp_aggressive_hb_frequency:
-                description: "Frequency of SE - SE HB messages when aggressive failure mode detection is enabled. (This field has been moved to se_group properties 20.1.3 onwards). Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 100), Basic (Allowed values- 100) edition."
+                description: "Frequency of SE - SE HB messages when aggressive failure mode detection is enabled. (This field has been moved to se_group properties 20.1.3 onwards). Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: uint32
             dp_aggressive_hb_timeout_count:
-                description: "Consecutive HB failures after which failure is reported to controller,when aggressive failure mode detection is enabled. (This field has been moved to se_group properties 20.1.3 onwards). Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 10), Basic (Allowed values- 10) edition."
+                description: "Consecutive HB failures after which failure is reported to controller,when aggressive failure mode detection is enabled. (This field has been moved to se_group properties 20.1.3 onwards). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: uint32
@@ -816,10 +816,10 @@ definitions:
                 type: integer
                 format: uint32
             http_rum_console_log:
-                description: "Enable Javascript console logs on the client browser when collecting client insights. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition."
+                description: "Enable Javascript console logs on the client browser when collecting client insights. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             http_rum_min_content_length:
-                description: "Minimum response size content length to sample for client insights. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 64), Basic (Allowed values- 64) edition."
+                description: "Minimum response size content length to sample for client insights. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 64
                 format: uint32
@@ -942,7 +942,7 @@ definitions:
                 description: "LDAP basicauth uses multiple ldap servers in the event of a failover only. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             se_dp_compression:
-                description: " Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SeRuntimeCompressionProperties'
             se_dp_hm_drops:
                 description: "Deprecated - This field has been moved to se_group properties 20.1.3 onwards. Internal only. Used to simulate SE - SE HB failure. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -984,12 +984,12 @@ definitions:
                 type: boolean
                 default: True
             se_metrics_interval:
-                description: "Internal use only. Frequency (ms) of metrics updates from SE to controller. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 60000), Basic (Allowed values- 60000) edition."
+                description: "Internal use only. Frequency (ms) of metrics updates from SE to controller. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60000
                 format: uint32
             se_metrics_rt_enabled:
-                description: "Internal use only. Enable or disable real time metrics irrespective of virtualservice or SE group configuration. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition. Special default for Essentials edition is false, Basic edition is false, Enterprise edition is True."
+                description: "Internal use only. Enable or disable real time metrics irrespective of virtualservice or SE group configuration. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             se_metrics_rt_interval:
@@ -1005,7 +1005,7 @@ definitions:
                 description: "Internal use only. If enabled, randomly packets are dropped. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             se_rate_limiters:
-                description: "SE rate limiters. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "SE rate limiters. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SeRateLimiters'
             service_ip_subnets:
                 description: "IP ranges on which there may be virtual services (for configuring iptables/routes). Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1058,7 +1058,7 @@ definitions:
                 default: 3600000
                 format: uint32
             upstream_send_timeout:
-                description: "Timeout for upstream to become writable. Unit is MILLISECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- 3600000), Basic (Allowed values- 3600000) edition."
+                description: "Timeout for upstream to become writable. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 3600000
                 format: uint32

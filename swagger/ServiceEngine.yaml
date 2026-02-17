@@ -5764,7 +5764,7 @@ definitions:
         type: object
         properties:
             agent_terminate_on_hung_duration:
-                description: "Internal  Duration in seconds to wait before terminating hung se_agent process. Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Internal  Duration in seconds to wait before terminating hung se_agent process. Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             core:
@@ -5773,11 +5773,11 @@ definitions:
                 default: 1000
                 format: uint32
             enable_agent_terminate_on_hung:
-                description: "Internal  Terminate se_agent upon detecting of > 20s or below configured hung_duration. Set 0 to dis-able, 1 to enable. Allowed values are 0-1. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Internal  Terminate se_agent upon detecting of > 20s or below configured hung_duration. Set 0 to dis-able, 1 to enable. Allowed values are 0-1. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             obj_names:
-                description: "Inject Fault on Objects. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Inject Fault on Objects. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -5826,11 +5826,11 @@ definitions:
                 type: integer
                 format: int32
             qat_mode:
-                description: "Usage of Intel QAT for crypto offloads. Enum options - QAT_OFF, QAT_SW_ACCELERATION, QAT_HW_OFFLOAD. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Usage of Intel QAT for crypto offloads. Enum options - QAT_OFF, QAT_SW_ACCELERATION, QAT_HW_OFFLOAD. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "QAT_OFF"
             qat_oper_mode:
-                description: "Usage of Intel QAT for performance mode. Enum options - QAT_OPER_MODE_LEGACY, QAT_OPER_MODE_PERF, QAT_OPER_MODE_UNKNOWN. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Usage of Intel QAT for performance mode. Enum options - QAT_OPER_MODE_LEGACY, QAT_OPER_MODE_PERF, QAT_OPER_MODE_UNKNOWN. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "QAT_OPER_MODE_UNKNOWN"
             sockets:
@@ -5889,7 +5889,7 @@ definitions:
                 type: string
                 default: "VM name unknown"
             nsxt_no_hotplug:
-                description: "If set to true, controller does not hotplugg the vNICs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "If set to true, controller does not hotplugg the vNICs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             resources:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -6039,11 +6039,11 @@ definitions:
                 description: " It is a reference to an object of type Network. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             num_rx_descriptors:
-                description: "User defined value for RX descriptor ring size, expressed as power of 2. Setting a value of 0 implies the default value for that environment. (Tech-Preview, vCenter only). Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "User defined value for RX descriptor ring size, expressed as power of 2. Setting a value of 0 implies the default value for that environment. (Tech-Preview, vCenter only). Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             num_tx_descriptors:
-                description: "User defined value for TX descriptor ring size, expressed as power of 2. Setting a value of 0 implies the default value for that environment. (Tech-Preview, vCenter only). Field introduced in 30.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "User defined value for TX descriptor ring size, expressed as power of 2. Setting a value of 0 implies the default value for that environment. (Tech-Preview, vCenter only). Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             pci_id:
@@ -6053,7 +6053,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tepless_ip:
-                description: "Tepless IP address for TEP-less VPC deployment. This IP is used as the source IP for all traffic originated by the SE in this VRF. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Tepless IP address for TEP-less VPC deployment. This IP is used as the source IP for all traffic originated by the SE in this VRF. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             vlan_id:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

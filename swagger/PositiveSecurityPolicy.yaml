@@ -408,24 +408,24 @@ definitions:
         type: object
         properties:
             confidence_override:
-                description: "Configure thresholds for the confidence labels defined by AppLearningConfidenceLabel. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Configure thresholds for the confidence labels defined by AppLearningConfidenceLabel. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AppLearningConfidenceOverride'
             max_params:
-                description: "Maximum number of parameters per URI programmed for an application. Allowed values are 10-1000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Maximum number of parameters per URI programmed for an application. Allowed values are 10-1000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: uint32
             max_uris:
-                description: "Maximum number of URIs programmed for an application. Allowed values are 10-10000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Maximum number of URIs programmed for an application. Allowed values are 10-10000. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 500
                 format: uint32
             min_confidence:
-                description: "Minimum confidence label required for positive security rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Minimum confidence label required for positive security rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "CONFIDENCE_VERY_HIGH"
             min_hits_to_program:
-                description: "Minimum number of occurances required for a Param to qualify for programming into a PSM rule. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Minimum number of occurances required for a Param to qualify for programming into a PSM rule. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10000
                 format: uint64
@@ -437,29 +437,29 @@ definitions:
                 readOnly: True
                 type: string
             description:
-                description: "Details of the Positive Security Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Details of the Positive Security Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             enable_positive_security_rule_updates:
-                description: "Enable Positive Security rule generation using the application learning data Rules will be programmed in a dedicated learning group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable Positive Security rule generation using the application learning data Rules will be programmed in a dedicated learning group. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             enable_regex_programming:
-                description: "Enable dynamic regex generation for positive security rules. This is an experimental feature and shouldn't be used in production. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Enable dynamic regex generation for positive security rules. This is an experimental feature and shouldn't be used in production. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             name:
-                description: "The name of the PositiveSecurity Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "The name of the PositiveSecurity Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             positive_security_params:
-                description: "Parameters for generating positive security rules. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Parameters for generating positive security rules. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PositiveSecurityParams'
             tenant_ref:
-                description: "Details of the tenant for positive security policy. It is a reference to an object of type Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Details of the tenant for positive security policy. It is a reference to an object of type Tenant. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the Positive Security Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "UUID of the Positive Security Configuration. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     PositiveSecurityPolicyApiResponse:
         type: object

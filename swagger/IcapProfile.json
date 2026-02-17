@@ -649,7 +649,7 @@
             "type": "object",
             "properties": {
                 "status_url": {
-                    "description": "URL to get details from NSXDefender using task_uuid for a particular request. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "URL to get details from NSXDefender using task_uuid for a particular request. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "https://user.lastline.com/portal#/analyst/task/$uuid/overview"
                 }
@@ -669,7 +669,7 @@
                     "type": "string"
                 },
                 "allow_204": {
-                    "description": "Allow ICAP server to send 204 response as described in RFC 3507 section 4.5. Service Engine will buffer the complete request if alllow_204 is enabled. If disabled, preview_size request body will be buffered if enable_preview is set to true, and rest of the request body will be streamed to the ICAP server. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Allow ICAP server to send 204 response as described in RFC 3507 section 4.5. Service Engine will buffer the complete request if alllow_204 is enabled. If disabled, preview_size request body will be buffered if enable_preview is set to true, and rest of the request body will be streamed to the ICAP server. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
@@ -707,7 +707,7 @@
                     "type": "string"
                 },
                 "nsx_defender_config": {
-                    "description": "NSXDefender specific ICAP configurations. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "NSXDefender specific ICAP configurations. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IcapNsxDefenderConfig"
                 },
                 "pool_group_ref": {

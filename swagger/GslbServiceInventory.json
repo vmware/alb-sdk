@@ -256,7 +256,7 @@
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "local_config": {
-                    "description": "Config push to SE(s) information in the local site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Config push to SE(s) information in the local site. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/LocalConfig"
                 },
                 "reason": {
@@ -372,12 +372,12 @@
                     "type": "string"
                 },
                 "gslb_pool_type": {
-                    "description": "Specifies the pool type (GENERIC/PRIVATE/PUBLIC). The public IPs of the members can be specified in seperate pool of type PUBLIC.This would allow features like health monitoring to be enabled independently for the public IPs. Enum options - GSLB_POOL_TYPE_GENERIC, GSLB_POOL_TYPE_PRIVATE, GSLB_POOL_TYPE_PUBLIC. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Specifies the pool type (GENERIC/PRIVATE/PUBLIC). The public IPs of the members can be specified in seperate pool of type PUBLIC.This would allow features like health monitoring to be enabled independently for the public IPs. Enum options - GSLB_POOL_TYPE_GENERIC, GSLB_POOL_TYPE_PRIVATE, GSLB_POOL_TYPE_PUBLIC. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "GSLB_POOL_TYPE_GENERIC"
                 },
                 "manual_resume": {
-                    "description": "Manually resume traffic to a pool member once it goes down. If enabled a pool member once goes down is kept in admin down state unless admin re enables it. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Manually resume traffic to a pool member once it goes down. If enabled a pool member once goes down is kept in admin down state unless admin re enables it. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "members": {
@@ -441,7 +441,7 @@
                     "$ref": "#/definitions/GslbGeoLocation"
                 },
                 "preference_order": {
-                    "description": "Preference order of this member in the group. The DNS Service chooses the member with the lowest preference that is operationally up. Allowed values are 1-128. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Preference order of this member in the group. The DNS Service chooses the member with the lowest preference that is operationally up. Allowed values are 1-128. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -461,7 +461,7 @@
                     "type": "boolean"
                 },
                 "srv_rdata": {
-                    "description": "SRV resource record data for the GSLB service member member. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "SRV resource record data for the GSLB service member member. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/GslbServiceSrvRdata"
                 },
                 "vs_uuid": {
@@ -522,7 +522,7 @@
                     "type": "string"
                 },
                 "health_monitor_info": {
-                    "description": "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -624,84 +624,84 @@
             ],
             "properties": {
                 "controller_health_status_enabled": {
-                    "description": "GS member's overall health status is derived based on a combination of controller and datapath health-status inputs. Note that the datapath status is determined by the association of health monitor profiles. Only the controller provided status is determined through this configuration. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "GS member's overall health status is derived based on a combination of controller and datapath health-status inputs. Note that the datapath status is determined by the association of health monitor profiles. Only the controller provided status is determined through this configuration. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "domain_names": {
-                    "description": "Fully qualified domain name of the GSLB service. Field introduced in 22.1.1. Minimum of 1 items required. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Fully qualified domain name of the GSLB service. Field introduced in 22.1.1. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "down_response": {
-                    "description": "Response to the client query when the GSLB service is DOWN. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Response to the client query when the GSLB service is DOWN. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/GslbServiceDownResponse"
                 },
                 "enabled": {
-                    "description": "Enable or disable the GSLB service. If the GSLB service is enabled, then the VIPs are sent in the DNS responses based on reachability and configured algorithm. If the GSLB service is disabled, then the VIPs are no longer available in the DNS response. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Enable or disable the GSLB service. If the GSLB service is enabled, then the VIPs are sent in the DNS responses based on reachability and configured algorithm. If the GSLB service is disabled, then the VIPs are no longer available in the DNS response. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "groups": {
-                    "description": "Select list of pools belonging to this GSLB service. Field introduced in 22.1.1. Minimum of 1 items required. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Select list of pools belonging to this GSLB service. Field introduced in 22.1.1. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/GslbPool"
                     }
                 },
                 "health_monitor_scope": {
-                    "description": "Health monitor probe can be executed for all the members or it can be executed only for third-party members. This operational mode is useful to reduce the number of health monitor probes in case of a hybrid scenario. In such a case, Avi members can have controller derived status while Non-Avi members can be probed by via health monitor probes in dataplane. Enum options - GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS, GSLB_SERVICE_HEALTH_MONITOR_ONLY_NON_AVI_MEMBERS. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Health monitor probe can be executed for all the members or it can be executed only for third-party members. This operational mode is useful to reduce the number of health monitor probes in case of a hybrid scenario. In such a case, Avi members can have controller derived status while Non-Avi members can be probed by via health monitor probes in dataplane. Enum options - GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS, GSLB_SERVICE_HEALTH_MONITOR_ONLY_NON_AVI_MEMBERS. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS"
                 },
                 "is_federated": {
-                    "description": "This field indicates that this object is replicated across GSLB federation. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "This field indicates that this object is replicated across GSLB federation. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "min_members": {
-                    "description": "The minimum number of members to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The minimum number of members to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "name": {
-                    "description": "Name of the GSLB Service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Name of the GSLB Service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "pool_algorithm": {
-                    "description": "The load balancing algorithm will pick a GSLB pool within the GSLB service list of available pools. Enum options - GSLB_SERVICE_ALGORITHM_PRIORITY, GSLB_SERVICE_ALGORITHM_GEO. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The load balancing algorithm will pick a GSLB pool within the GSLB service list of available pools. Enum options - GSLB_SERVICE_ALGORITHM_PRIORITY, GSLB_SERVICE_ALGORITHM_GEO. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "GSLB_SERVICE_ALGORITHM_PRIORITY"
                 },
                 "resolve_cname": {
-                    "description": "This field indicates that for a CNAME query, respond with resolved CNAMEs in the additional section with A records. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "This field indicates that for a CNAME query, respond with resolved CNAMEs in the additional section with A records. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "site_persistence_enabled": {
-                    "description": "Enable site-persistence for the GslbService. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Enable site-persistence for the GslbService. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": " It is a reference to an object of type Tenant. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
-                    "description": "URL of the GSLB Service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "URL of the GSLB Service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "use_edns_client_subnet": {
-                    "description": "Use the client ip subnet from the EDNS option as source IPaddress for client geo-location and consistent hash algorithm. Default is true. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Use the client ip subnet from the EDNS option as source IPaddress for client geo-location and consistent hash algorithm. Default is true. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "uuid": {
-                    "description": "UUID of the GSLB Service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the GSLB Service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "wildcard_match": {
-                    "description": "Enable wild-card match of fqdn  if an exact match is not found in the DNS table, the longest match is chosen by wild-carding the fqdn in the DNS request. Default is false. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Enable wild-card match of fqdn  if an exact match is not found in the DNS table, the longest match is chosen by wild-carding the fqdn in the DNS request. Default is false. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 }
             }
@@ -735,7 +735,7 @@
             ],
             "properties": {
                 "fallback_cname": {
-                    "description": "Fallback CNAME to use in response to the client query when the GSLB service is DOWN. Field introduced in 30.2.1, 22.1.5. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Fallback CNAME to use in response to the client query when the GSLB service is DOWN. Field introduced in 30.2.1, 22.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "fallback_ip": {
@@ -747,11 +747,11 @@
                     "$ref": "#/definitions/IpAddr"
                 },
                 "public_fallback_ip": {
-                    "description": "Fallback IP address to use in A response to the client having public IP when the GSLB service is DOWN or when no public pool is available. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Fallback IP address to use in A response to the client having public IP when the GSLB service is DOWN or when no public pool is available. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "public_fallback_ip6": {
-                    "description": "Fallback IPV6 address to use in AAAA response to the client having public IP when the GSLB service is DOWN or when no public pool is available. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Fallback IPV6 address to use in AAAA response to the client having public IP when the GSLB service is DOWN or when no public pool is available. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "type": {
@@ -770,11 +770,11 @@
                     "type": "string"
                 },
                 "config": {
-                    "description": "Configuration summary of the GSLB Service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Configuration summary of the GSLB Service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/GslbServiceConfig"
                 },
                 "runtime": {
-                    "description": "Runtime summary of the GSLB Service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Runtime summary of the GSLB Service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/GslbServiceRuntime"
                 },
                 "url": {
@@ -783,7 +783,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the GSLB Service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the GSLB Service. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -814,11 +814,11 @@
             "type": "object",
             "properties": {
                 "cluster_uuid": {
-                    "description": "Represents the local/remote site uuid; Every GS will have n entriesif there are n active sites in federation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Represents the local/remote site uuid; Every GS will have n entriesif there are n active sites in federation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "domain_names": {
-                    "description": "Fully qualified domain name of the GslbService. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Fully qualified domain name of the GslbService. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -836,7 +836,7 @@
                     "type": "string"
                 },
                 "obj_uuid": {
-                    "description": "GslbService object uuid. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "GslbService object uuid. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "oper_status": {
@@ -844,7 +844,7 @@
                     "$ref": "#/definitions/OperationalStatus"
                 },
                 "repl_state": {
-                    "description": "The config replication info to SE(s) or peer sites. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The config replication info to SE(s) or peer sites. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/CfgState"
                 },
                 "send_event": {
@@ -868,7 +868,7 @@
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "The unique identifier of the tenant to which the gslbservice belongs. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The unique identifier of the tenant to which the gslbservice belongs. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "uuid": {
@@ -881,7 +881,7 @@
             "type": "object",
             "properties": {
                 "enable_http2": {
-                    "description": "Site persistence pool's http2 state. . Field introduced in 20.1.6. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Site persistence pool's http2 state. . Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "name": {
@@ -899,7 +899,7 @@
                     "format": "int64"
                 },
                 "server_info": {
-                    "description": "Detailed information of the servers in the pool. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Detailed information of the servers in the pool. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ServerRuntimeSummary"
@@ -920,17 +920,17 @@
             ],
             "properties": {
                 "port": {
-                    "description": "Service port. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Service port. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "priority": {
-                    "description": "Priority of the target hosting the service, low value implies higher priority for this service record. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Priority of the target hosting the service, low value implies higher priority for this service record. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "weight": {
-                    "description": "Relative weight for service records with same priority, high value implies higher preference for this service record. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Relative weight for service records with same priority, high value implies higher preference for this service record. Allowed values are 0-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 }
@@ -957,7 +957,7 @@
             "type": "object",
             "properties": {
                 "vsgs_info": {
-                    "description": "VSGS operational information. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "VSGS operational information. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/VsgsOpsInfo"
@@ -1144,7 +1144,7 @@
                     "format": "int32"
                 },
                 "resolve_server_by_dns": {
-                    "description": "Flag used to indicate if server or GS member hostname is resolved by DNS. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Flag used to indicate if server or GS member hostname is resolved by DNS. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "se_uuid": {
@@ -1164,7 +1164,7 @@
             ],
             "properties": {
                 "enable_http2": {
-                    "description": "Enable HTTP2 on this port. Field introduced in 20.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition. Allowed in Essentials (Allowed values- false), Basic (Allowed values- false) edition.",
+                    "description": "Enable HTTP2 on this port. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "enable_ssl": {
@@ -1172,23 +1172,23 @@
                     "type": "boolean"
                 },
                 "horizon_internal_ports": {
-                    "description": "Used for Horizon deployment. If set used for L7 redirect. Field introduced in 21.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Used for Horizon deployment. If set used for L7 redirect. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_active_ftp_data_port": {
-                    "description": "Source port used by VS for active FTP data connections. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Source port used by VS for active FTP data connections. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_passive_ftp_data_port": {
-                    "description": "Source port used by VS for passive FTP data connections.Change in this flag is disruptive update. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Source port used by VS for passive FTP data connections.Change in this flag is disruptive update. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "override_application_profile_ref": {
-                    "description": "Enable application layer specific features for the this specific service. It is a reference to an object of type ApplicationProfile. Field introduced in 17.2.4. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Enable application layer specific features for the this specific service. It is a reference to an object of type ApplicationProfile. Field introduced in 17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "override_network_profile_ref": {
-                    "description": "Override the network profile for this specific service port. It is a reference to an object of type NetworkProfile. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Override the network profile for this specific service port. It is a reference to an object of type NetworkProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "port": {
@@ -1546,7 +1546,7 @@
                     "format": "double"
                 },
                 "max_connection_estb_time_fe": {
-                    "description": "Maximum connection establishment time on the client side. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Maximum connection establishment time on the client side. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
@@ -1630,7 +1630,7 @@
                     "format": "double"
                 },
                 "sum_conn_est_time_exceeded_flows_fe": {
-                    "description": "Total number of times client side connection establishment time was breached. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Total number of times client side connection establishment time was breached. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
@@ -1675,7 +1675,7 @@
                     "format": "double"
                 },
                 "sum_ingress_latency_exceeded_flows": {
-                    "description": "Total number of times 'latency_threshold' was breached during ingress. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Total number of times 'latency_threshold' was breached during ingress. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
@@ -1943,17 +1943,17 @@
                     "format": "double"
                 },
                 "avg_ssl_auth_mldsa44": {
-                    "description": "Average SSL Sessions using mldsa44 certificate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Average SSL Sessions using mldsa44 certificate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_ssl_auth_mldsa65": {
-                    "description": "Average SSL Sessions using mldsa65 certificate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Average SSL Sessions using mldsa65 certificate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_ssl_auth_mldsa87": {
-                    "description": "Average SSL Sessions using mldsa87 certificate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Average SSL Sessions using mldsa87 certificate. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
@@ -2228,7 +2228,7 @@
                     "format": "double"
                 },
                 "effective_sampling_rate": {
-                    "description": "The effective sampling rate, i.e., the percentage of optional requests admitted. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The effective sampling rate, i.e., the percentage of optional requests admitted. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
@@ -2407,12 +2407,12 @@
                     "format": "double"
                 },
                 "sum_num_optional_processing_admitted": {
-                    "description": "The number of requests admitted for optional processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The number of requests admitted for optional processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_num_optional_processing_refused": {
-                    "description": "The number of requests refused for optional processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "The number of requests refused for optional processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
@@ -2432,7 +2432,7 @@
                     "format": "double"
                 },
                 "sum_optional_cpu_usage": {
-                    "description": "Total CPU in microseconds used for optional processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Total CPU in microseconds used for optional processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
@@ -2687,15 +2687,15 @@
             "type": "object",
             "properties": {
                 "dnsvs_uuid": {
-                    "description": "DNSVS UUID associated with the object(GSLB, GSLBSERVICE, GSLBGEODB). Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "DNSVS UUID associated with the object(GSLB, GSLBSERVICE, GSLBGEODB). Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ops": {
-                    "description": "VSGS operation type, Changed or deleted. Enum options - GSLB_OBJECT_CHANGED, GSLB_OBJECT_UNCHANGED, GSLB_OBJECT_DELETE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "VSGS operation type, Changed or deleted. Enum options - GSLB_OBJECT_CHANGED, GSLB_OBJECT_UNCHANGED, GSLB_OBJECT_DELETE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "timestamp": {
-                    "description": "Timestamp for VSGS CUD operation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "Timestamp for VSGS CUD operation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeStamp"
                 }
             }

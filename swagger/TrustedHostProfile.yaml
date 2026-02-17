@@ -399,10 +399,10 @@ definitions:
             -   host
         properties:
             host:
-                description: "Any valid IPv4, IPv6, or domain address. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Any valid IPv4, IPv6, or domain address. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             port:
-                description: "Optionally specify the port number. Allowed values are 1-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Optionally specify the port number. Allowed values are 1-65535. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     TrustedHostProfile:
@@ -416,22 +416,22 @@ definitions:
                 readOnly: True
                 type: string
             hosts:
-                description: "List of Host IP(v4/v6) addresses or FQDNs. Field introduced in 31.1.1. Minimum of 1 items required. Maximum of 20 items allowed. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "List of Host IP(v4/v6) addresses or FQDNs. Field introduced in 31.1.1. Minimum of 1 items required. Maximum of 20 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/TrustedHost'
             name:
-                description: "TrustedHostProfile name. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "TrustedHostProfile name. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: "Tenant ref for trusted host profile. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "Tenant ref for trusted host profile. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "TrustedHostProfile UUID. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "TrustedHostProfile UUID. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     TrustedHostProfileApiResponse:
         type: object
