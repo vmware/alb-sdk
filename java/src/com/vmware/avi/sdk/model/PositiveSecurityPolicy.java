@@ -52,7 +52,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Details of the positive security configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -64,7 +64,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Details of the positive security configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -76,7 +76,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable positive security rule generation using the application learning data rules will be programmed in a dedicated learning group.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enablePositiveSecurityRuleUpdates
      */
@@ -88,7 +88,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable positive security rule generation using the application learning data rules will be programmed in a dedicated learning group.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enablePositiveSecurityRuleUpdates set the enablePositiveSecurityRuleUpdates.
      */
@@ -101,7 +101,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * Enable dynamic regex generation for positive security rules.
      * This is an experimental feature and shouldn't be used in production.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableRegexProgramming
      */
@@ -114,7 +114,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * Enable dynamic regex generation for positive security rules.
      * This is an experimental feature and shouldn't be used in production.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableRegexProgramming set the enableRegexProgramming.
      */
@@ -126,7 +126,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The name of the positivesecurity configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -138,7 +138,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * The name of the positivesecurity configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -150,7 +150,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Parameters for generating positive security rules.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return positiveSecurityParams
      */
@@ -162,7 +162,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Parameters for generating positive security rules.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param positiveSecurityParams set the positiveSecurityParams.
      */
@@ -175,7 +175,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * Details of the tenant for positive security policy.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -188,7 +188,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * Details of the tenant for positive security policy.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -217,7 +217,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the positive security configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -229,7 +229,7 @@ public class PositiveSecurityPolicy extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the positive security configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

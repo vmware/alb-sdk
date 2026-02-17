@@ -66,7 +66,7 @@ public class vCenterConfiguration  {
      * This is the getter method this will return the attribute value.
      * Vcenter content library where service engine images are stored.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return contentLib
      */
@@ -78,7 +78,7 @@ public class vCenterConfiguration  {
      * This is the setter method to the attribute.
      * Vcenter content library where service engine images are stored.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param contentLib set the contentLib.
      */
@@ -112,7 +112,7 @@ public class vCenterConfiguration  {
      * This is the getter method this will return the attribute value.
      * Managed object id of the datacenter.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datacenterManagedObjectId
      */
@@ -124,7 +124,7 @@ public class vCenterConfiguration  {
      * This is the setter method to the attribute.
      * Managed object id of the datacenter.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param datacenterManagedObjectId set the datacenterManagedObjectId.
      */
@@ -136,7 +136,7 @@ public class vCenterConfiguration  {
      * This is the getter method this will return the attribute value.
      * If true, nsx-t segment spanning multiple vds with vcenter cloud are merged to a single network in avi.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isNsxEnvironment
      */
@@ -148,7 +148,7 @@ public class vCenterConfiguration  {
      * This is the setter method to the attribute.
      * If true, nsx-t segment spanning multiple vds with vcenter cloud are merged to a single network in avi.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isNsxEnvironment set the isNsxEnvironment.
      */
@@ -254,7 +254,7 @@ public class vCenterConfiguration  {
      * This is the getter method this will return the attribute value.
      * If false, service engine image will not be pushed to content library.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return useContentLib
      */
@@ -266,7 +266,7 @@ public class vCenterConfiguration  {
      * This is the setter method to the attribute.
      * If false, service engine image will not be pushed to content library.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param useContentLib set the useContentLib.
      */
@@ -344,7 +344,7 @@ public class vCenterConfiguration  {
      * This is the getter method this will return the attribute value.
      * Flag is used to indicate whether tls certificate verificationbe done when establishing a connection to a vcenter server.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return verifyCertificate
      */
@@ -356,7 +356,7 @@ public class vCenterConfiguration  {
      * This is the setter method to the attribute.
      * Flag is used to indicate whether tls certificate verificationbe done when establishing a connection to a vcenter server.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param verifyCertificate set the verifyCertificate.
      */

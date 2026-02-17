@@ -88,7 +88,7 @@ public class ServerAutoScalePolicy extends AviRestResource  {
      * Delay in minutes after which a down server will be removed from pool.
      * Value 0 disables this functionality.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return delayForServerGarbageCollection
      */
@@ -101,7 +101,7 @@ public class ServerAutoScalePolicy extends AviRestResource  {
      * Delay in minutes after which a down server will be removed from pool.
      * Value 0 disables this functionality.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param delayForServerGarbageCollection set the delayForServerGarbageCollection.
      */
@@ -489,7 +489,7 @@ public class ServerAutoScalePolicy extends AviRestResource  {
      * During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from schedulescale policy.
      * Field introduced in 21.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return scheduledScalings
      */
@@ -503,7 +503,7 @@ public class ServerAutoScalePolicy extends AviRestResource  {
      * During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from schedulescale policy.
      * Field introduced in 21.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return scheduledScalings
      */
@@ -517,7 +517,7 @@ public class ServerAutoScalePolicy extends AviRestResource  {
      * During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from schedulescale policy.
      * Field introduced in 21.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return scheduledScalings
      */

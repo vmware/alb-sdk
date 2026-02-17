@@ -115,7 +115,7 @@ public class HttpCookiePersistenceProfile  {
      * Sets the httponly attribute in the cookie.
      * Setting this helps to prevent the client side scripts from accessing this cookie, if supported by browser.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return httpOnly
      */
@@ -128,7 +128,7 @@ public class HttpCookiePersistenceProfile  {
      * Sets the httponly attribute in the cookie.
      * Setting this helps to prevent the client side scripts from accessing this cookie, if supported by browser.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param httpOnly set the httpOnly.
      */
@@ -143,7 +143,7 @@ public class HttpCookiePersistenceProfile  {
      * By default, it is set to false, making the cookie a session cookie, which allows clients to use it even after the timeout, if the session is
      * still open.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isPersistentCookie
      */
@@ -158,7 +158,7 @@ public class HttpCookiePersistenceProfile  {
      * By default, it is set to false, making the cookie a session cookie, which allows clients to use it even after the timeout, if the session is
      * still open.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isPersistentCookie set the isPersistentCookie.
      */

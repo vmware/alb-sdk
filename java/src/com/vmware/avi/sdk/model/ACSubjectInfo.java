@@ -34,7 +34,7 @@ public class ACSubjectInfo  {
      * Subject type for the audit event (e.g.
      * Dns hostname, ip address, uri).
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -47,7 +47,7 @@ public class ACSubjectInfo  {
      * Subject type for the audit event (e.g.
      * Dns hostname, ip address, uri).
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */
@@ -60,7 +60,7 @@ public class ACSubjectInfo  {
      * Subject value for the audit event (e.g.
      * Www.example.com, 10.10.10.10, www.foo.com/index.html).
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -73,7 +73,7 @@ public class ACSubjectInfo  {
      * Subject value for the audit event (e.g.
      * Www.example.com, 10.10.10.10, www.foo.com/index.html).
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

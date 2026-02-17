@@ -387,11 +387,17 @@ public class EventDetails  {
     @JsonProperty("nsxt_endpoint_details")
     private NsxtSIEndpointDetails nsxtEndpointDetails;
 
+    @JsonProperty("nsxt_group_fetch")
+    private NsxtGroupFetch nsxtGroupFetch;
+
     @JsonProperty("nsxt_img_details")
     private NsxtImageDetails nsxtImgDetails;
 
     @JsonProperty("nsxt_info")
     private NsxtSetup nsxtInfo;
+
+    @JsonProperty("nsxt_ip_group")
+    private NsxtIPGroup nsxtIpGroup;
 
     @JsonProperty("nsxt_policy_details")
     private NsxtSIPolicyDetails nsxtPolicyDetails;
@@ -437,6 +443,9 @@ public class EventDetails  {
 
     @JsonProperty("os_vnic_details")
     private OpenStackVnicChange osVnicDetails;
+
+    @JsonProperty("password_rotation_details")
+    private PasswordRotationDetails passwordRotationDetails;
 
     @JsonProperty("pkiprofile_details")
     private PKIProfileDetails pkiprofileDetails;
@@ -793,7 +802,7 @@ public class EventDetails  {
      * Adaptive replication event e.g.
      * Dns vs, config version.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return adaptreplEvent
      */
@@ -806,7 +815,7 @@ public class EventDetails  {
      * Adaptive replication event e.g.
      * Dns vs, config version.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param adaptreplEvent set the adaptreplEvent.
      */
@@ -858,7 +867,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Albservices file download event details.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return albservicesFileDownloadDetails
      */
@@ -870,7 +879,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Albservices file download event details.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param albservicesFileDownloadDetails set the albservicesFileDownloadDetails.
      */
@@ -1042,7 +1051,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Application insights event details.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return appInsightsDetails
      */
@@ -1054,7 +1063,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Application insights event details.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param appInsightsDetails set the appInsightsDetails.
      */
@@ -1085,7 +1094,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 22.1.6,30.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return asyncPatchState
      */
@@ -1096,7 +1105,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 22.1.6,30.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param asyncPatchState set the asyncPatchState.
      */
@@ -1108,7 +1117,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details for attach ip status.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attachIpStatusDetails
      */
@@ -1120,7 +1129,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details for attach ip status.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param attachIpStatusDetails set the attachIpStatusDetails.
      */
@@ -1580,7 +1589,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Central license refresh details.
      * Field introduced in 21.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return centralLicenseRefreshDetails
      */
@@ -1592,7 +1601,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Central license refresh details.
      * Field introduced in 21.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param centralLicenseRefreshDetails set the centralLicenseRefreshDetails.
      */
@@ -1604,7 +1613,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Central license subscription details.
      * Field introduced in 21.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return centralLicenseSubscriptionDetails
      */
@@ -1616,7 +1625,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Central license subscription details.
      * Field introduced in 21.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param centralLicenseSubscriptionDetails set the centralLicenseSubscriptionDetails.
      */
@@ -1668,7 +1677,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Cloud routes event.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudRouteNotifDetails
      */
@@ -1680,7 +1689,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Cloud routes event.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudRouteNotifDetails set the cloudRouteNotifDetails.
      */
@@ -2132,7 +2141,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Connection event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connectionEvent
      */
@@ -2144,7 +2153,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Connection event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connectionEvent set the connectionEvent.
      */
@@ -2215,7 +2224,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerDiscontinuousTimeChangeEventDetails
      */
@@ -2226,7 +2235,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerDiscontinuousTimeChangeEventDetails set the controllerDiscontinuousTimeChangeEventDetails.
      */
@@ -2258,7 +2267,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Control script execution details.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controlscriptDetails
      */
@@ -2270,7 +2279,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Control script execution details.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controlscriptDetails set the controlscriptDetails.
      */
@@ -2382,7 +2391,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Database error event.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return databaseEventInfo
      */
@@ -2394,7 +2403,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Database error event.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param databaseEventInfo set the databaseEventInfo.
      */
@@ -2426,7 +2435,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details for detach ip status.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return detachIpStatusDetails
      */
@@ -2438,7 +2447,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details for detach ip status.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param detachIpStatusDetails set the detachIpStatusDetails.
      */
@@ -2490,7 +2499,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Log files exsiting on controller need to be cleanup.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return diskCleanupEventDetails
      */
@@ -2502,7 +2511,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Log files exsiting on controller need to be cleanup.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param diskCleanupEventDetails set the diskCleanupEventDetails.
      */
@@ -2594,7 +2603,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * False positive details.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return falsePositiveDetails
      */
@@ -2606,7 +2615,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * False positive details.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param falsePositiveDetails set the falsePositiveDetails.
      */
@@ -2618,7 +2627,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * File object event.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fileobjectDetails
      */
@@ -2630,7 +2639,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * File object event.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fileobjectDetails set the fileobjectDetails.
      */
@@ -2922,7 +2931,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details for access grant events that authorize namespace-scoped access to avi controller.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return managementSvcAccessGrantDetails
      */
@@ -2934,7 +2943,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details for access grant events that authorize namespace-scoped access to avi controller.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param managementSvcAccessGrantDetails set the managementSvcAccessGrantDetails.
      */
@@ -2946,7 +2955,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details for management service events that expose avi controller endpoint for vks clusters.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return managementSvcDetails
      */
@@ -2958,7 +2967,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details for management service events that expose avi controller endpoint for vks clusters.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param managementSvcDetails set the managementSvcDetails.
      */
@@ -3210,7 +3219,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t dfw group event details.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtDfwGroupDetails
      */
@@ -3222,7 +3231,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t dfw group event details.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtDfwGroupDetails set the nsxtDfwGroupDetails.
      */
@@ -3234,7 +3243,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t dfw service event details.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtDfwServiceDetails
      */
@@ -3246,7 +3255,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t dfw service event details.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtDfwServiceDetails set the nsxtDfwServiceDetails.
      */
@@ -3258,7 +3267,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t dfw tag segment port event details.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtDfwTagSegmentPort
      */
@@ -3270,7 +3279,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t dfw tag segment port event details.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtDfwTagSegmentPort set the nsxtDfwTagSegmentPort.
      */
@@ -3282,7 +3291,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t dfw tag vm event details.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtDfwTagVmDetails
      */
@@ -3294,7 +3303,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t dfw tag vm event details.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtDfwTagVmDetails set the nsxtDfwTagVmDetails.
      */
@@ -3306,7 +3315,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t serviceinsertion virtualendpoint event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtEndpointDetails
      */
@@ -3318,12 +3327,36 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t serviceinsertion virtualendpoint event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtEndpointDetails set the nsxtEndpointDetails.
      */
     public void setNsxtEndpointDetails(NsxtSIEndpointDetails nsxtEndpointDetails) {
         this.nsxtEndpointDetails = nsxtEndpointDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Nsx-t ip group sync event.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nsxtGroupFetch
+     */
+    public NsxtGroupFetch getNsxtGroupFetch() {
+        return nsxtGroupFetch;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Nsx-t ip group sync event.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param nsxtGroupFetch set the nsxtGroupFetch.
+     */
+    public void setNsxtGroupFetch(NsxtGroupFetch nsxtGroupFetch) {
+        this.nsxtGroupFetch = nsxtGroupFetch;
     }
 
     /**
@@ -3376,9 +3409,33 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Nsx-t ip group sync event.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nsxtIpGroup
+     */
+    public NsxtIPGroup getNsxtIpGroup() {
+        return nsxtIpGroup;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Nsx-t ip group sync event.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param nsxtIpGroup set the nsxtIpGroup.
+     */
+    public void setNsxtIpGroup(NsxtIPGroup nsxtIpGroup) {
+        this.nsxtIpGroup = nsxtIpGroup;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Nsx-t serviceinsertion redirectpolicy event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtPolicyDetails
      */
@@ -3390,7 +3447,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t serviceinsertion redirectpolicy event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtPolicyDetails set the nsxtPolicyDetails.
      */
@@ -3402,7 +3459,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t serviceinsertion redirectrule event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtRuleDetails
      */
@@ -3414,7 +3471,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t serviceinsertion redirectrule event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtRuleDetails set the nsxtRuleDetails.
      */
@@ -3426,7 +3483,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t serviceinsertion service event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtServiceDetails
      */
@@ -3438,7 +3495,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t serviceinsertion service event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtServiceDetails set the nsxtServiceDetails.
      */
@@ -3450,7 +3507,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t tier1(s) segment(s) event details.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtT1SegDetails
      */
@@ -3462,7 +3519,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t tier1(s) segment(s) event details.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtT1SegDetails set the nsxtT1SegDetails.
      */
@@ -3694,9 +3751,33 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Details about cloudconnectoruser password rotation.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return passwordRotationDetails
+     */
+    public PasswordRotationDetails getPasswordRotationDetails() {
+        return passwordRotationDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Details about cloudconnectoruser password rotation.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param passwordRotationDetails set the passwordRotationDetails.
+     */
+    public void setPasswordRotationDetails(PasswordRotationDetails passwordRotationDetails) {
+        this.passwordRotationDetails = passwordRotationDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Pkiprofile event.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pkiprofileDetails
      */
@@ -3708,7 +3789,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Pkiprofile event.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pkiprofileDetails set the pkiprofileDetails.
      */
@@ -3982,7 +4063,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details about the se autoscaler actions generated.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seAutoscalerEventDetails
      */
@@ -3994,7 +4075,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details about the se autoscaler actions generated.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seAutoscalerEventDetails set the seAutoscalerEventDetails.
      */
@@ -4067,7 +4148,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 22.1.6.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDebugModeEventDetail
      */
@@ -4078,7 +4159,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 22.1.6.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seDebugModeEventDetail set the seDebugModeEventDetail.
      */
@@ -4109,7 +4190,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiscontinuousTimeChangeEventDetails
      */
@@ -4120,7 +4201,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seDiscontinuousTimeChangeEventDetails set the seDiscontinuousTimeChangeEventDetails.
      */
@@ -4258,7 +4339,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Egress queueing latency from proxy to dispatcher.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seHighEgressProcLatencyEventDetails
      */
@@ -4270,7 +4351,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Egress queueing latency from proxy to dispatcher.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seHighEgressProcLatencyEventDetails set the seHighEgressProcLatencyEventDetails.
      */
@@ -4281,7 +4362,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seHighIngressProcLatencyEventDetails
      */
@@ -4292,7 +4373,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seHighIngressProcLatencyEventDetails set the seHighIngressProcLatencyEventDetails.
      */
@@ -4506,7 +4587,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Se ntp synchronization failed.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seNtpSynchronizationFailed
      */
@@ -4518,7 +4599,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Se ntp synchronization failed.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seNtpSynchronizationFailed set the seNtpSynchronizationFailed.
      */
@@ -4529,7 +4610,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seObjsyncPeerDownDetails
      */
@@ -4540,7 +4621,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seObjsyncPeerDownDetails set the seObjsyncPeerDownDetails.
      */
@@ -4592,7 +4673,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details about the process that crashed on a specific se.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seProcessCrashedDetails
      */
@@ -4604,7 +4685,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details about the process that crashed on a specific se.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seProcessCrashedDetails set the seProcessCrashedDetails.
      */
@@ -4615,7 +4696,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seQatModeEventDetail
      */
@@ -4626,7 +4707,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seQatModeEventDetail set the seQatModeEventDetail.
      */
@@ -4637,7 +4718,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seRateLimiterDropDetails
      */
@@ -4648,7 +4729,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seRateLimiterDropDetails set the seRateLimiterDropDetails.
      */
@@ -4760,7 +4841,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Vs flows disrupted when a vs was deleted from se.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seVsDelFlowsDisrupted
      */
@@ -4772,7 +4853,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Vs flows disrupted when a vs was deleted from se.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seVsDelFlowsDisrupted set the seVsDelFlowsDisrupted.
      */
@@ -4803,7 +4884,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 18.2.11,20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seVsPktBufHighEventDetails
      */
@@ -4814,7 +4895,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 18.2.11,20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seVsPktBufHighEventDetails set the seVsPktBufHighEventDetails.
      */
@@ -4846,7 +4927,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Security-mgr ua cache event details.
      * Field introduced in 21.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return secMgrUaEventDetails
      */
@@ -4858,7 +4939,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Security-mgr ua cache event details.
      * Field introduced in 21.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param secMgrUaEventDetails set the secMgrUaEventDetails.
      */
@@ -5314,7 +5395,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Count information for system limit object.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return systemLimitObjectCounts
      */
@@ -5326,7 +5407,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Count information for system limit object.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param systemLimitObjectCounts set the systemLimitObjectCounts.
      */
@@ -5338,7 +5419,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * System report event details.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return systemReportEventDetails
      */
@@ -5350,7 +5431,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * System report event details.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param systemReportEventDetails set the systemReportEventDetails.
      */
@@ -5362,7 +5443,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Task journal event details.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return taskJournalEventDetails
      */
@@ -5374,7 +5455,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Task journal event details.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param taskJournalEventDetails set the taskJournalEventDetails.
      */
@@ -5385,7 +5466,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return techSupportEvent
      */
@@ -5396,7 +5477,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param techSupportEvent set the techSupportEvent.
      */
@@ -5408,7 +5489,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Techsupport event details.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return techSupportEventDetails
      */
@@ -5420,7 +5501,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Techsupport event details.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param techSupportEventDetails set the techSupportEventDetails.
      */
@@ -5452,7 +5533,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Uber event details, for testing only.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uberEventDetails
      */
@@ -5464,7 +5545,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Uber event details, for testing only.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uberEventDetails set the uberEventDetails.
      */
@@ -5540,7 +5621,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details about avi usage metering.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usageMeteringEventDetails
      */
@@ -5552,7 +5633,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details about avi usage metering.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param usageMeteringEventDetails set the usageMeteringEventDetails.
      */
@@ -5584,7 +5665,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details of objects still referred to cloud.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterCloudDeleteDetails
      */
@@ -5596,7 +5677,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details of objects still referred to cloud.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterCloudDeleteDetails set the vcenterCloudDeleteDetails.
      */
@@ -5608,7 +5689,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Vcenter cluster event.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterClusterDetails
      */
@@ -5620,7 +5701,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Vcenter cluster event.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterClusterDetails set the vcenterClusterDetails.
      */
@@ -5692,7 +5773,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Vcenter image event details.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterImgDetails
      */
@@ -5704,7 +5785,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Vcenter image event details.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterImgDetails set the vcenterImgDetails.
      */
@@ -5736,7 +5817,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details of non drs clusters in vcenter.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterNonDrsClusterDetails
      */
@@ -5748,7 +5829,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details of non drs clusters in vcenter.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterNonDrsClusterDetails set the vcenterNonDrsClusterDetails.
      */
@@ -5780,7 +5861,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Failed to tag ses with custom tags.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterTagEventDetails
      */
@@ -5792,7 +5873,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Failed to tag ses with custom tags.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterTagEventDetails set the vcenterTagEventDetails.
      */
@@ -5844,7 +5925,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details for vip symmetry.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipSymmetryDetails
      */
@@ -5856,7 +5937,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details for vip symmetry.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipSymmetryDetails set the vipSymmetryDetails.
      */
@@ -6068,7 +6149,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details for primary switchover status.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsSwitchoverDetails
      */
@@ -6080,7 +6161,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details for primary switchover status.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsSwitchoverDetails set the vsSwitchoverDetails.
      */
@@ -6111,7 +6192,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return warningEventDetails
      */
@@ -6122,7 +6203,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param warningEventDetails set the warningEventDetails.
      */
@@ -6359,6 +6440,8 @@ public class EventDetails  {
   Objects.equals(this.nsxtDfwTagVmDetails, objEventDetails.nsxtDfwTagVmDetails)&&
   Objects.equals(this.managementSvcDetails, objEventDetails.managementSvcDetails)&&
   Objects.equals(this.managementSvcAccessGrantDetails, objEventDetails.managementSvcAccessGrantDetails)&&
+  Objects.equals(this.nsxtIpGroup, objEventDetails.nsxtIpGroup)&&
+  Objects.equals(this.nsxtGroupFetch, objEventDetails.nsxtGroupFetch)&&
   Objects.equals(this.psmProgramDetails, objEventDetails.psmProgramDetails)&&
   Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
   Objects.equals(this.falsePositiveDetails, objEventDetails.falsePositiveDetails)&&
@@ -6394,7 +6477,8 @@ public class EventDetails  {
   Objects.equals(this.systemLimitObjectCounts, objEventDetails.systemLimitObjectCounts)&&
   Objects.equals(this.usageMeteringEventDetails, objEventDetails.usageMeteringEventDetails)&&
   Objects.equals(this.controlscriptDetails, objEventDetails.controlscriptDetails)&&
-  Objects.equals(this.seAutoscalerEventDetails, objEventDetails.seAutoscalerEventDetails);
+  Objects.equals(this.seAutoscalerEventDetails, objEventDetails.seAutoscalerEventDetails)&&
+  Objects.equals(this.passwordRotationDetails, objEventDetails.passwordRotationDetails);
     }
 
     @Override
@@ -6523,8 +6607,10 @@ public class EventDetails  {
                         sb.append("    nsxtDfwTagSegmentPort: ").append(toIndentedString(nsxtDfwTagSegmentPort)).append("\n");
                         sb.append("    nsxtDfwTagVmDetails: ").append(toIndentedString(nsxtDfwTagVmDetails)).append("\n");
                         sb.append("    nsxtEndpointDetails: ").append(toIndentedString(nsxtEndpointDetails)).append("\n");
+                        sb.append("    nsxtGroupFetch: ").append(toIndentedString(nsxtGroupFetch)).append("\n");
                         sb.append("    nsxtImgDetails: ").append(toIndentedString(nsxtImgDetails)).append("\n");
                         sb.append("    nsxtInfo: ").append(toIndentedString(nsxtInfo)).append("\n");
+                        sb.append("    nsxtIpGroup: ").append(toIndentedString(nsxtIpGroup)).append("\n");
                         sb.append("    nsxtPolicyDetails: ").append(toIndentedString(nsxtPolicyDetails)).append("\n");
                         sb.append("    nsxtRuleDetails: ").append(toIndentedString(nsxtRuleDetails)).append("\n");
                         sb.append("    nsxtServiceDetails: ").append(toIndentedString(nsxtServiceDetails)).append("\n");
@@ -6540,6 +6626,7 @@ public class EventDetails  {
                         sb.append("    osSeVmDetails: ").append(toIndentedString(osSeVmDetails)).append("\n");
                         sb.append("    osSyncServicesDetails: ").append(toIndentedString(osSyncServicesDetails)).append("\n");
                         sb.append("    osVnicDetails: ").append(toIndentedString(osVnicDetails)).append("\n");
+                        sb.append("    passwordRotationDetails: ").append(toIndentedString(passwordRotationDetails)).append("\n");
                         sb.append("    pkiprofileDetails: ").append(toIndentedString(pkiprofileDetails)).append("\n");
                         sb.append("    poolDeploymentFailureInfo: ").append(toIndentedString(poolDeploymentFailureInfo)).append("\n");
                         sb.append("    poolDeploymentSuccessInfo: ").append(toIndentedString(poolDeploymentSuccessInfo)).append("\n");

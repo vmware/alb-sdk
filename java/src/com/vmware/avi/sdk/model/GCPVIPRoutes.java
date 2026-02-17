@@ -59,7 +59,7 @@ public class GCPVIPRoutes  {
      * This is the getter method this will return the attribute value.
      * Priority of the routes created in gcp.
      * Field introduced in 20.1.7, 21.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @return routePriority
      */
@@ -71,7 +71,7 @@ public class GCPVIPRoutes  {
      * This is the setter method to the attribute.
      * Priority of the routes created in gcp.
      * Field introduced in 20.1.7, 21.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @param routePriority set the routePriority.
      */

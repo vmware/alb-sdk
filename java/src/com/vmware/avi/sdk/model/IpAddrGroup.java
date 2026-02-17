@@ -45,6 +45,9 @@ public class IpAddrGroup extends AviRestResource  {
     @JsonProperty("name")
     private String name;
 
+    @JsonProperty("nsx_groups")
+    private List<String> nsxGroups;
+
     @JsonProperty("prefixes")
     private List<IpAddrPrefix> prefixes;
 
@@ -300,6 +303,48 @@ public class IpAddrGroup extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
+     * An nsx group that maps to a dynamic collection of ip addresses, derived from its definition in nsx.
+     * Field introduced in 32.1.1.
+     * Maximum of 1 items allowed.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nsxGroups
+     */
+    public List<String> getNsxGroups() {
+        return nsxGroups;
+    }
+
+    /**
+     * This is the setter method. this will set the nsxGroups
+     * An nsx group that maps to a dynamic collection of ip addresses, derived from its definition in nsx.
+     * Field introduced in 32.1.1.
+     * Maximum of 1 items allowed.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nsxGroups
+     */
+    public void setNsxGroups(List<String>  nsxGroups) {
+        this.nsxGroups = nsxGroups;
+    }
+
+    /**
+     * This is the setter method this will set the nsxGroups
+     * An nsx group that maps to a dynamic collection of ip addresses, derived from its definition in nsx.
+     * Field introduced in 32.1.1.
+     * Maximum of 1 items allowed.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nsxGroups
+     */
+    public IpAddrGroup addNsxGroupsItem(String nsxGroupsItem) {
+      if (this.nsxGroups == null) {
+        this.nsxGroups = new ArrayList<String>();
+      }
+      this.nsxGroups.add(nsxGroupsItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
      * Configure ip address prefix(es).
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -452,6 +497,7 @@ public class IpAddrGroup extends AviRestResource  {
   Objects.equals(this.marathonAppName, objIpAddrGroup.marathonAppName)&&
   Objects.equals(this.marathonServicePort, objIpAddrGroup.marathonServicePort)&&
   Objects.equals(this.markers, objIpAddrGroup.markers)&&
+  Objects.equals(this.nsxGroups, objIpAddrGroup.nsxGroups)&&
   Objects.equals(this.description, objIpAddrGroup.description)&&
   Objects.equals(this.tenantRef, objIpAddrGroup.tenantRef);
     }
@@ -468,6 +514,7 @@ public class IpAddrGroup extends AviRestResource  {
                         sb.append("    marathonServicePort: ").append(toIndentedString(marathonServicePort)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    nsxGroups: ").append(toIndentedString(nsxGroups)).append("\n");
                         sb.append("    prefixes: ").append(toIndentedString(prefixes)).append("\n");
                         sb.append("    ranges: ").append(toIndentedString(ranges)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

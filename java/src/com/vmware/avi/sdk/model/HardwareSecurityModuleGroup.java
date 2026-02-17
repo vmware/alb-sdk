@@ -47,7 +47,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of certificates present in the ca chain that were used to sign custom client certificate.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return caCerts
      */
@@ -59,7 +59,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource  {
      * This is the setter method. this will set the caCerts
      * List of certificates present in the ca chain that were used to sign custom client certificate.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return caCerts
      */
@@ -71,7 +71,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource  {
      * This is the setter method this will set the caCerts
      * List of certificates present in the ca chain that were used to sign custom client certificate.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return caCerts
      */

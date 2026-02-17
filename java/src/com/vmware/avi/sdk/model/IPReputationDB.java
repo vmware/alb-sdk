@@ -115,7 +115,7 @@ public class IPReputationDB extends AviRestResource  {
      * It is a reference to an object of type fileobject.
      * Field introduced in 31.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return baseFileV6Refs
      */
@@ -129,7 +129,7 @@ public class IPReputationDB extends AviRestResource  {
      * It is a reference to an object of type fileobject.
      * Field introduced in 31.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return baseFileV6Refs
      */
@@ -143,7 +143,7 @@ public class IPReputationDB extends AviRestResource  {
      * It is a reference to an object of type fileobject.
      * Field introduced in 31.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return baseFileV6Refs
      */
@@ -225,7 +225,7 @@ public class IPReputationDB extends AviRestResource  {
      * Ip reputation db incremental update files for ipv6.
      * It is a reference to an object of type fileobject.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return incrementalFileV6Refs
      */
@@ -238,7 +238,7 @@ public class IPReputationDB extends AviRestResource  {
      * Ip reputation db incremental update files for ipv6.
      * It is a reference to an object of type fileobject.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return incrementalFileV6Refs
      */
@@ -251,7 +251,7 @@ public class IPReputationDB extends AviRestResource  {
      * Ip reputation db incremental update files for ipv6.
      * It is a reference to an object of type fileobject.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return incrementalFileV6Refs
      */
@@ -421,7 +421,7 @@ public class IPReputationDB extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * A version number for ipv6 files for the object.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return v6Version
      */
@@ -433,7 +433,7 @@ public class IPReputationDB extends AviRestResource  {
      * This is the setter method to the attribute.
      * A version number for ipv6 files for the object.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param v6Version set the v6Version.
      */

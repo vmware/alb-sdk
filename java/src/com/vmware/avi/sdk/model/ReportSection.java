@@ -33,7 +33,7 @@ public class ReportSection  {
      * This is the getter method this will return the attribute value.
      * The id of the section.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return id
      */
@@ -45,7 +45,7 @@ public class ReportSection  {
      * This is the setter method to the attribute.
      * The id of the section.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param id set the id.
      */
@@ -56,7 +56,7 @@ public class ReportSection  {
      * This is the getter method this will return the attribute value.
      * The sub sections of the section.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subSections
      */
@@ -68,7 +68,7 @@ public class ReportSection  {
      * This is the setter method. this will set the subSections
      * The sub sections of the section.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subSections
      */
@@ -80,7 +80,7 @@ public class ReportSection  {
      * This is the setter method this will set the subSections
      * The sub sections of the section.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subSections
      */

@@ -59,7 +59,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * supported by the resources in the category and this value.if user doesn't provide then it will be minimum value of the resources in this category.
      * Allowed values are 1-1000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return burst
      */
@@ -73,7 +73,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * supported by the resources in the category and this value.if user doesn't provide then it will be minimum value of the resources in this category.
      * Allowed values are 1-1000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param burst set the burst.
      */
@@ -85,7 +85,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Description for the rate limit configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -97,7 +97,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * Description for the rate limit configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -113,7 +113,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * Field introduced in 31.2.1.
      * Minimum of 1 items required.
      * Maximum of 5 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpMethods
      */
@@ -130,7 +130,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * Field introduced in 31.2.1.
      * Minimum of 1 items required.
      * Maximum of 5 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpMethods
      */
@@ -147,7 +147,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * Field introduced in 31.2.1.
      * Minimum of 1 items required.
      * Maximum of 5 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpMethods
      */
@@ -163,7 +163,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the rate limit configuration(unique).
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -175,7 +175,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the rate limit configuration(unique).
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -188,7 +188,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * Ratelimitresource which needs to be rate limited.
      * Enum options - RATE_LIMIT_VIRTUALSERVICE, RATE_LIMIT_POOL, RATE_LIMIT_LOGIN, RATE_LIMIT_AUTHTOKEN, RATE_LIMIT_HEALTHMONITOR.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resource
      */
@@ -201,7 +201,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * Ratelimitresource which needs to be rate limited.
      * Enum options - RATE_LIMIT_VIRTUALSERVICE, RATE_LIMIT_POOL, RATE_LIMIT_LOGIN, RATE_LIMIT_AUTHTOKEN, RATE_LIMIT_HEALTHMONITOR.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resource set the resource.
      */
@@ -214,7 +214,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * Tenant ref for the auth rate limit configuration.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -227,7 +227,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * Tenant ref for the auth rate limit configuration.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -239,7 +239,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Token refill rate.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tokenRefillRate
      */
@@ -251,7 +251,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * Token refill rate.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tokenRefillRate set the tokenRefillRate.
      */
@@ -264,7 +264,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * Type of the rate limiter, for now we only support api categorization based.
      * Enum options - RATE_LIMITER_API_CATEGORY.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "RATE_LIMITER_API_CATEGORY".
      * @return type
      */
@@ -277,7 +277,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * Type of the rate limiter, for now we only support api categorization based.
      * Enum options - RATE_LIMITER_API_CATEGORY.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "RATE_LIMITER_API_CATEGORY".
      * @param type set the type.
      */
@@ -306,7 +306,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the rate limit configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -318,7 +318,7 @@ public class RateLimitConfiguration extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the rate limit configuration.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

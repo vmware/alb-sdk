@@ -36,7 +36,7 @@ public class VcenterNonDrsClusterDetails  {
      * This is the getter method this will return the attribute value.
      * Cloud id.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -48,7 +48,7 @@ public class VcenterNonDrsClusterDetails  {
      * This is the setter method to the attribute.
      * Cloud id.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -59,7 +59,7 @@ public class VcenterNonDrsClusterDetails  {
      * This is the getter method this will return the attribute value.
      * A list of cluster ids having drs disabled.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nonDrsClusterIds
      */
@@ -71,7 +71,7 @@ public class VcenterNonDrsClusterDetails  {
      * This is the setter method. this will set the nonDrsClusterIds
      * A list of cluster ids having drs disabled.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nonDrsClusterIds
      */
@@ -83,7 +83,7 @@ public class VcenterNonDrsClusterDetails  {
      * This is the setter method this will set the nonDrsClusterIds
      * A list of cluster ids having drs disabled.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nonDrsClusterIds
      */
@@ -99,7 +99,7 @@ public class VcenterNonDrsClusterDetails  {
      * This is the getter method this will return the attribute value.
      * The uuid of the service engine whose placement triggered this event.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seVmUuid
      */
@@ -111,7 +111,7 @@ public class VcenterNonDrsClusterDetails  {
      * This is the setter method to the attribute.
      * The uuid of the service engine whose placement triggered this event.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seVmUuid set the seVmUuid.
      */

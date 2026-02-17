@@ -48,7 +48,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Current value for the system limit.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return currentCount
      */
@@ -60,7 +60,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * This is the setter method to the attribute.
      * Current value for the system limit.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param currentCount set the currentCount.
      */
@@ -75,7 +75,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * NUM_CLOUDS, NUM_TENANTS, POOLS_PER_VS, POOLGROUPS_PER_VS, CERTIFICATES_PER_VS, POOLS_PER_POOLGROUP, RULES_PER_HTTPPOLICY, RULES_PER_NSP,
      * SERVERS_PER_POOL, ROUTES_PER_VRF, DEF_ROUTES_PER_VRF, SNI_CHILD_PER_PARENT_VS, IPS_PER_IPADDRGROUP, STRINGS_PER_STRINGGROUP...
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return limit
      */
@@ -90,7 +90,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * NUM_CLOUDS, NUM_TENANTS, POOLS_PER_VS, POOLGROUPS_PER_VS, CERTIFICATES_PER_VS, POOLS_PER_POOLGROUP, RULES_PER_HTTPPOLICY, RULES_PER_NSP,
      * SERVERS_PER_POOL, ROUTES_PER_VRF, DEF_ROUTES_PER_VRF, SNI_CHILD_PER_PARENT_VS, IPS_PER_IPADDRGROUP, STRINGS_PER_STRINGGROUP...
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param limit set the limit.
      */
@@ -102,7 +102,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Description of the system limit.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return limitDescription
      */
@@ -114,7 +114,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * This is the setter method to the attribute.
      * Description of the system limit.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param limitDescription set the limitDescription.
      */
@@ -126,7 +126,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the system limit.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return limitName
      */
@@ -138,7 +138,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the system limit.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param limitName set the limitName.
      */
@@ -150,7 +150,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the system limit object.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -162,7 +162,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the system limit object.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -174,7 +174,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Recommended max limit value for the system limit.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return recommendedMaxLimit
      */
@@ -186,7 +186,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * This is the setter method to the attribute.
      * Recommended max limit value for the system limit.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param recommendedMaxLimit set the recommendedMaxLimit.
      */
@@ -198,7 +198,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the system limit object.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -210,7 +210,7 @@ public class SystemLimitObjectCount extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the system limit object.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

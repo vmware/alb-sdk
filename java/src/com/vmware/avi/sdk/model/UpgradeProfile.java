@@ -48,7 +48,7 @@ public class UpgradeProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of controller upgrade related configurable parameters.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerParams
      */
@@ -60,7 +60,7 @@ public class UpgradeProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * List of controller upgrade related configurable parameters.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerParams set the controllerParams.
      */
@@ -72,7 +72,7 @@ public class UpgradeProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of dryrun related configurable parameters.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dryRun
      */
@@ -84,7 +84,7 @@ public class UpgradeProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * List of dryrun related configurable parameters.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dryRun set the dryRun.
      */
@@ -96,7 +96,7 @@ public class UpgradeProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of image related configurable parameters.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return image
      */
@@ -108,7 +108,7 @@ public class UpgradeProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * List of image related configurable parameters.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param image set the image.
      */
@@ -120,7 +120,7 @@ public class UpgradeProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of upgrade pre-checks related configurable parameters.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return preChecks
      */
@@ -132,7 +132,7 @@ public class UpgradeProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * List of upgrade pre-checks related configurable parameters.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param preChecks set the preChecks.
      */
@@ -144,7 +144,7 @@ public class UpgradeProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of service engine upgrade related configurable parameters.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceEngine
      */
@@ -156,7 +156,7 @@ public class UpgradeProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * List of service engine upgrade related configurable parameters.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceEngine set the serviceEngine.
      */
@@ -185,7 +185,7 @@ public class UpgradeProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid identifier for the upgradeprofile object.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -197,7 +197,7 @@ public class UpgradeProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid identifier for the upgradeprofile object.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

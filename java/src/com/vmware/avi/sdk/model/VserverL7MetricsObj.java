@@ -1539,7 +1539,7 @@ public class VserverL7MetricsObj  {
      * This is the getter method this will return the attribute value.
      * Average ssl sessions using mldsa44 certificate.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return avgSslAuthMldsa44
      */
@@ -1551,7 +1551,7 @@ public class VserverL7MetricsObj  {
      * This is the setter method to the attribute.
      * Average ssl sessions using mldsa44 certificate.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param avgSslAuthMldsa44 set the avgSslAuthMldsa44.
      */
@@ -1563,7 +1563,7 @@ public class VserverL7MetricsObj  {
      * This is the getter method this will return the attribute value.
      * Average ssl sessions using mldsa65 certificate.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return avgSslAuthMldsa65
      */
@@ -1575,7 +1575,7 @@ public class VserverL7MetricsObj  {
      * This is the setter method to the attribute.
      * Average ssl sessions using mldsa65 certificate.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param avgSslAuthMldsa65 set the avgSslAuthMldsa65.
      */
@@ -1587,7 +1587,7 @@ public class VserverL7MetricsObj  {
      * This is the getter method this will return the attribute value.
      * Average ssl sessions using mldsa87 certificate.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return avgSslAuthMldsa87
      */
@@ -1599,7 +1599,7 @@ public class VserverL7MetricsObj  {
      * This is the setter method to the attribute.
      * Average ssl sessions using mldsa87 certificate.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param avgSslAuthMldsa87 set the avgSslAuthMldsa87.
      */
@@ -2857,7 +2857,7 @@ public class VserverL7MetricsObj  {
      * This is the getter method this will return the attribute value.
      * The effective sampling rate, i.e., the percentage of optional requests admitted.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return effectiveSamplingRate
      */
@@ -2869,7 +2869,7 @@ public class VserverL7MetricsObj  {
      * This is the setter method to the attribute.
      * The effective sampling rate, i.e., the percentage of optional requests admitted.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param effectiveSamplingRate set the effectiveSamplingRate.
      */
@@ -3671,7 +3671,7 @@ public class VserverL7MetricsObj  {
      * This is the getter method this will return the attribute value.
      * The number of requests admitted for optional processing.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sumNumOptionalProcessingAdmitted
      */
@@ -3683,7 +3683,7 @@ public class VserverL7MetricsObj  {
      * This is the setter method to the attribute.
      * The number of requests admitted for optional processing.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sumNumOptionalProcessingAdmitted set the sumNumOptionalProcessingAdmitted.
      */
@@ -3695,7 +3695,7 @@ public class VserverL7MetricsObj  {
      * This is the getter method this will return the attribute value.
      * The number of requests refused for optional processing.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sumNumOptionalProcessingRefused
      */
@@ -3707,7 +3707,7 @@ public class VserverL7MetricsObj  {
      * This is the setter method to the attribute.
      * The number of requests refused for optional processing.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sumNumOptionalProcessingRefused set the sumNumOptionalProcessingRefused.
      */
@@ -3785,7 +3785,7 @@ public class VserverL7MetricsObj  {
      * This is the getter method this will return the attribute value.
      * Total cpu in microseconds used for optional processing.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sumOptionalCpuUsage
      */
@@ -3797,7 +3797,7 @@ public class VserverL7MetricsObj  {
      * This is the setter method to the attribute.
      * Total cpu in microseconds used for optional processing.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sumOptionalCpuUsage set the sumOptionalCpuUsage.
      */

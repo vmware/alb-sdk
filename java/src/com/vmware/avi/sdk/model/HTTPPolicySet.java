@@ -136,7 +136,7 @@ public class HTTPPolicySet extends AviRestResource  {
      * Geo database.
      * It is a reference to an object of type geodb.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoDbRef
      */
@@ -149,7 +149,7 @@ public class HTTPPolicySet extends AviRestResource  {
      * Geo database.
      * It is a reference to an object of type geodb.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param geoDbRef set the geoDbRef.
      */
@@ -228,7 +228,7 @@ public class HTTPPolicySet extends AviRestResource  {
      * Ip reputation database.
      * It is a reference to an object of type ipreputationdb.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipReputationDbRef
      */
@@ -241,7 +241,7 @@ public class HTTPPolicySet extends AviRestResource  {
      * Ip reputation database.
      * It is a reference to an object of type ipreputationdb.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipReputationDbRef set the ipReputationDbRef.
      */

@@ -25,7 +25,7 @@ public class WafCrsConfig  {
     private Boolean enableAutoDownloadWafSignatures = false;
 
     @JsonProperty("enable_waf_signatures_notifications")
-    private Boolean enableWafSignaturesNotifications;
+    private Boolean enableWafSignaturesNotifications = true;
 
 
 
@@ -33,8 +33,7 @@ public class WafCrsConfig  {
      * This is the getter method this will return the attribute value.
      * Enable to automatically download new waf signatures/crs version to the controller.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableAutoDownloadWafSignatures
      */
@@ -46,8 +45,7 @@ public class WafCrsConfig  {
      * This is the setter method to the attribute.
      * Enable to automatically download new waf signatures/crs version to the controller.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableAutoDownloadWafSignatures set the enableAutoDownloadWafSignatures.
      */
@@ -59,9 +57,8 @@ public class WafCrsConfig  {
      * This is the getter method this will return the attribute value.
      * Enable event notifications when new waf signatures/crs versions are available.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableWafSignaturesNotifications
      */
     public Boolean getEnableWafSignaturesNotifications() {
@@ -72,9 +69,8 @@ public class WafCrsConfig  {
      * This is the setter method to the attribute.
      * Enable event notifications when new waf signatures/crs versions are available.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableWafSignaturesNotifications set the enableWafSignaturesNotifications.
      */
     public void setEnableWafSignaturesNotifications(Boolean  enableWafSignaturesNotifications) {

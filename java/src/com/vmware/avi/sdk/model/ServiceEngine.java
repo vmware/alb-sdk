@@ -371,7 +371,7 @@ public class ServiceEngine extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If set to true, controller does not hotplugg the vnics.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtNoHotplug
      */
@@ -383,7 +383,7 @@ public class ServiceEngine extends AviRestResource  {
      * This is the setter method to the attribute.
      * If set to true, controller does not hotplugg the vnics.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtNoHotplug set the nsxtNoHotplug.
      */

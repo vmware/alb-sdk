@@ -45,7 +45,7 @@ public class LocalWorkerFdsVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Default glw fds version name.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default".
      * @return name
      */
@@ -57,7 +57,7 @@ public class LocalWorkerFdsVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * Default glw fds version name.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default".
      * @param name set the name.
      */
@@ -70,7 +70,7 @@ public class LocalWorkerFdsVersion extends AviRestResource  {
      * Uuid of the tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -83,7 +83,7 @@ public class LocalWorkerFdsVersion extends AviRestResource  {
      * Uuid of the tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -95,7 +95,7 @@ public class LocalWorkerFdsVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Fds timeline maintained by glw.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return timeline
      */
@@ -107,7 +107,7 @@ public class LocalWorkerFdsVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * Fds timeline maintained by glw.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param timeline set the timeline.
      */
@@ -136,7 +136,7 @@ public class LocalWorkerFdsVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Default glw fds version uuid.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -148,7 +148,7 @@ public class LocalWorkerFdsVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * Default glw fds version uuid.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -160,7 +160,7 @@ public class LocalWorkerFdsVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Fds version maintained by glw.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return version
      */
@@ -172,7 +172,7 @@ public class LocalWorkerFdsVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * Fds version maintained by glw.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param version set the version.
      */

@@ -42,7 +42,7 @@ public class EventInfo extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Remote site watcher agent id.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return agentId
      */
@@ -54,7 +54,7 @@ public class EventInfo extends AviRestResource  {
      * This is the setter method to the attribute.
      * Remote site watcher agent id.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param agentId set the agentId.
      */
@@ -119,7 +119,7 @@ public class EventInfo extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Event creation time.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return timestamp
      */
@@ -131,7 +131,7 @@ public class EventInfo extends AviRestResource  {
      * This is the setter method to the attribute.
      * Event creation time.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param timestamp set the timestamp.
      */

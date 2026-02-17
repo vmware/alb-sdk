@@ -146,7 +146,7 @@ public class PoolGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Deactivate primary pool for selection when down until it is activated by user via clear poolgroup command.
      * Field introduced in 20.1.7, 21.1.2, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return deactivatePrimaryPoolOnDown
      */
@@ -158,7 +158,7 @@ public class PoolGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Deactivate primary pool for selection when down until it is activated by user via clear poolgroup command.
      * Field introduced in 20.1.7, 21.1.2, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param deactivatePrimaryPoolOnDown set the deactivatePrimaryPoolOnDown.
      */
@@ -170,7 +170,7 @@ public class PoolGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * When setup autoscale manager will automatically promote new pools into production when deployment goals are met.
      * It is a reference to an object of type poolgroupdeploymentpolicy.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return deploymentPolicyRef
      */
@@ -182,7 +182,7 @@ public class PoolGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * When setup autoscale manager will automatically promote new pools into production when deployment goals are met.
      * It is a reference to an object of type poolgroupdeploymentpolicy.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param deploymentPolicyRef set the deploymentPolicyRef.
      */
@@ -216,7 +216,7 @@ public class PoolGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enable an action - close connection, http redirect, or local http response - when a pool group failure happens.
      * By default, a connection will be closed, in case the pool group experiences a failure.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return failAction
      */
@@ -228,7 +228,7 @@ public class PoolGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enable an action - close connection, http redirect, or local http response - when a pool group failure happens.
      * By default, a connection will be closed, in case the pool group experiences a failure.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param failAction set the failAction.
      */
@@ -340,8 +340,7 @@ public class PoolGroup extends AviRestResource  {
      * The minimum number of servers to distribute traffic to.
      * Allowed values are 1-65535.
      * Special values are 0 - disable.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return minServers
      */
@@ -354,8 +353,7 @@ public class PoolGroup extends AviRestResource  {
      * The minimum number of servers to distribute traffic to.
      * Allowed values are 1-65535.
      * Special values are 0 - disable.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param minServers set the minServers.
      */
@@ -390,7 +388,7 @@ public class PoolGroup extends AviRestResource  {
      * Uuid of the priority labels.
      * If not provided, pool group member priority label will be interpreted as a number with a larger number considered higher priority.
      * It is a reference to an object of type prioritylabels.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return priorityLabelsRef
      */
@@ -403,7 +401,7 @@ public class PoolGroup extends AviRestResource  {
      * Uuid of the priority labels.
      * If not provided, pool group member priority label will be interpreted as a number with a larger number considered higher priority.
      * It is a reference to an object of type prioritylabels.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param priorityLabelsRef set the priorityLabelsRef.
      */

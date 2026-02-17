@@ -30,7 +30,7 @@ public class DnsRuleActionGsGroupSelection  {
      * This is the getter method this will return the attribute value.
      * Gslb service group name.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return groupName
      */
@@ -42,7 +42,7 @@ public class DnsRuleActionGsGroupSelection  {
      * This is the setter method to the attribute.
      * Gslb service group name.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param groupName set the groupName.
      */

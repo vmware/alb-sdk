@@ -319,7 +319,7 @@ public class NsxtSegmentRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Origin id applicable to security only cloud.
      * Field introduced in 22.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return originId
      */
@@ -331,7 +331,7 @@ public class NsxtSegmentRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * Origin id applicable to security only cloud.
      * Field introduced in 22.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param originId set the originId.
      */
@@ -343,7 +343,7 @@ public class NsxtSegmentRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Nsxt segment belongs to security only cloud.
      * Field introduced in 22.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return securityOnlyNsxt
      */
@@ -355,7 +355,7 @@ public class NsxtSegmentRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * Nsxt segment belongs to security only cloud.
      * Field introduced in 22.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param securityOnlyNsxt set the securityOnlyNsxt.
      */
@@ -601,7 +601,7 @@ public class NsxtSegmentRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Segment vlan ids.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vlanIds
      */
@@ -613,7 +613,7 @@ public class NsxtSegmentRuntime extends AviRestResource  {
      * This is the setter method. this will set the vlanIds
      * Segment vlan ids.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vlanIds
      */
@@ -625,7 +625,7 @@ public class NsxtSegmentRuntime extends AviRestResource  {
      * This is the setter method this will set the vlanIds
      * Segment vlan ids.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vlanIds
      */

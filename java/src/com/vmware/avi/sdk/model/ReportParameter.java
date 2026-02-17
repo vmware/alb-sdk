@@ -33,7 +33,7 @@ public class ReportParameter  {
      * This is the getter method this will return the attribute value.
      * The name of the parameter.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -45,7 +45,7 @@ public class ReportParameter  {
      * This is the setter method to the attribute.
      * The name of the parameter.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -57,7 +57,7 @@ public class ReportParameter  {
      * This is the getter method this will return the attribute value.
      * The value of the parameter.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -69,7 +69,7 @@ public class ReportParameter  {
      * This is the setter method to the attribute.
      * The value of the parameter.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

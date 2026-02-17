@@ -48,7 +48,7 @@ public class JWTClaimMatch  {
      * This is the getter method this will return the attribute value.
      * Boolean value against which the claim is matched.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return boolMatch
      */
@@ -60,7 +60,7 @@ public class JWTClaimMatch  {
      * This is the setter method to the attribute.
      * Boolean value against which the claim is matched.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param boolMatch set the boolMatch.
      */
@@ -72,7 +72,7 @@ public class JWTClaimMatch  {
      * This is the getter method this will return the attribute value.
      * Integer value against which the claim is matched.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return intMatch
      */
@@ -84,7 +84,7 @@ public class JWTClaimMatch  {
      * This is the setter method to the attribute.
      * Integer value against which the claim is matched.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param intMatch set the intMatch.
      */
@@ -96,7 +96,7 @@ public class JWTClaimMatch  {
      * This is the getter method this will return the attribute value.
      * Specified claim should be present in the jwt.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return isMandatory
      */
@@ -108,7 +108,7 @@ public class JWTClaimMatch  {
      * This is the setter method to the attribute.
      * Specified claim should be present in the jwt.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param isMandatory set the isMandatory.
      */
@@ -120,7 +120,7 @@ public class JWTClaimMatch  {
      * This is the getter method this will return the attribute value.
      * Jwt claim name to be validated.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -132,7 +132,7 @@ public class JWTClaimMatch  {
      * This is the setter method to the attribute.
      * Jwt claim name to be validated.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -144,7 +144,7 @@ public class JWTClaimMatch  {
      * This is the getter method this will return the attribute value.
      * String values against which the claim is matched.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return stringMatch
      */
@@ -156,7 +156,7 @@ public class JWTClaimMatch  {
      * This is the setter method to the attribute.
      * String values against which the claim is matched.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param stringMatch set the stringMatch.
      */
@@ -169,7 +169,7 @@ public class JWTClaimMatch  {
      * Specifies the type of the claim.
      * Enum options - JWT_CLAIM_TYPE_BOOL, JWT_CLAIM_TYPE_INT, JWT_CLAIM_TYPE_STRING.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -182,7 +182,7 @@ public class JWTClaimMatch  {
      * Specifies the type of the claim.
      * Enum options - JWT_CLAIM_TYPE_BOOL, JWT_CLAIM_TYPE_INT, JWT_CLAIM_TYPE_STRING.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */
@@ -194,7 +194,7 @@ public class JWTClaimMatch  {
      * This is the getter method this will return the attribute value.
      * Specifies whether to validate the claim value.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return validate
      */
@@ -206,7 +206,7 @@ public class JWTClaimMatch  {
      * This is the setter method to the attribute.
      * Specifies whether to validate the claim value.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param validate set the validate.
      */

@@ -90,7 +90,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * Newer rules are rules where the rule id is not in the range of 2,000,000 to 2,080,000 or where the rule has a tag with a cve from 2013 or newer.
      * All other rules are ignored on rule import.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return filterRulesOnImport
      */
@@ -105,7 +105,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * Newer rules are rules where the rule id is not in the range of 2,000,000 to 2,080,000 or where the rule has a tag with a cve from 2013 or newer.
      * All other rules are ignored on rule import.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param filterRulesOnImport set the filterRulesOnImport.
      */
@@ -163,7 +163,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If this object is managed by the application signatures update service, this field contain the status of this syncronization.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceStatus
      */
@@ -175,7 +175,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method to the attribute.
      * If this object is managed by the application signatures update service, this field contain the status of this syncronization.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceStatus set the serviceStatus.
      */

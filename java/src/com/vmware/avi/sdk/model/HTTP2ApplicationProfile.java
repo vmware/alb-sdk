@@ -54,7 +54,7 @@ public class HTTP2ApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Enables automatic conversion of preload links specified in the 'link' response header fields into server push requests.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableHttp2ServerPush
      */
@@ -66,7 +66,7 @@ public class HTTP2ApplicationProfile  {
      * This is the setter method to the attribute.
      * Enables automatic conversion of preload links specified in the 'link' response header fields into server push requests.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableHttp2ServerPush set the enableHttp2ServerPush.
      */
@@ -107,7 +107,7 @@ public class HTTP2ApplicationProfile  {
      * Maximum number of concurrent push streams over a client side http/2 connection.
      * Allowed values are 1-256.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return maxHttp2ConcurrentPushesPerConnection
      */
@@ -120,7 +120,7 @@ public class HTTP2ApplicationProfile  {
      * Maximum number of concurrent push streams over a client side http/2 connection.
      * Allowed values are 1-256.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param maxHttp2ConcurrentPushesPerConnection set the maxHttp2ConcurrentPushesPerConnection.
      */

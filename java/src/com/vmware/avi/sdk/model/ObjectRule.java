@@ -60,7 +60,7 @@ public class ObjectRule  {
      * When the limit exceeds, action is invoked for the oldest objects.
      * Allowed values are 1-100.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return limit
      */
@@ -74,7 +74,7 @@ public class ObjectRule  {
      * When the limit exceeds, action is invoked for the oldest objects.
      * Allowed values are 1-100.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param limit set the limit.
      */

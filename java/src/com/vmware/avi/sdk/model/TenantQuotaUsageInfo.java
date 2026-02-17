@@ -32,7 +32,7 @@ public class TenantQuotaUsageInfo  {
      * This is the getter method this will return the attribute value.
      * License quota usage per se group of the tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupInfos
      */
@@ -44,7 +44,7 @@ public class TenantQuotaUsageInfo  {
      * This is the setter method. this will set the seGroupInfos
      * License quota usage per se group of the tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupInfos
      */
@@ -56,7 +56,7 @@ public class TenantQuotaUsageInfo  {
      * This is the setter method this will set the seGroupInfos
      * License quota usage per se group of the tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupInfos
      */
@@ -72,7 +72,7 @@ public class TenantQuotaUsageInfo  {
      * This is the getter method this will return the attribute value.
      * License quota usage per tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantInfo
      */
@@ -84,7 +84,7 @@ public class TenantQuotaUsageInfo  {
      * This is the setter method to the attribute.
      * License quota usage per tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantInfo set the tenantInfo.
      */

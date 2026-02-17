@@ -66,7 +66,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The site controller cluster uuid.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterUuid
      */
@@ -78,7 +78,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * The site controller cluster uuid.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterUuid set the clusterUuid.
      */
@@ -90,7 +90,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Represents whether hsm is enabled/disabled.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return enabled
      */
@@ -102,7 +102,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * Represents whether hsm is enabled/disabled.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param enabled set the enabled.
      */
@@ -113,7 +113,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Events captured wrt to config replication.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return events
      */
@@ -125,7 +125,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the setter method. this will set the events
      * Events captured wrt to config replication.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return events
      */
@@ -137,7 +137,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the setter method this will set the events
      * Events captured wrt to config replication.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return events
      */
@@ -153,7 +153,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Represents local info for the site.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return localInfo
      */
@@ -165,7 +165,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * Represents local info for the site.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param localInfo set the localInfo.
      */
@@ -177,7 +177,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The name of db entry.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -189,7 +189,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * The name of db entry.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -202,7 +202,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * Gslb hsm runtime object uuid.
      * Points to the gslb to which this belongs.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objUuid
      */
@@ -215,7 +215,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * Gslb hsm runtime object uuid.
      * Points to the gslb to which this belongs.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objUuid set the objUuid.
      */
@@ -227,7 +227,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Gslb site operational status, represents whether site is up or down.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return operStatus
      */
@@ -239,7 +239,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * Gslb site operational status, represents whether site is up or down.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param operStatus set the operStatus.
      */
@@ -251,7 +251,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Remote info is basically updated by grw.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteInfo
      */
@@ -263,7 +263,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * Remote info is basically updated by grw.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param remoteInfo set the remoteInfo.
      */
@@ -276,7 +276,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * Frequency with which group members communicate.
      * This field shadows glb_cfg.send_interval.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sendInterval
      */
@@ -289,7 +289,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * Frequency with which group members communicate.
      * This field shadows glb_cfg.send_interval.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sendInterval set the sendInterval.
      */
@@ -301,7 +301,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The gslb site name.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return siteName
      */
@@ -313,7 +313,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * The gslb site name.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param siteName set the siteName.
      */
@@ -326,7 +326,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * Uuid of the tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -339,7 +339,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * Uuid of the tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -368,7 +368,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The uuid of db entry.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -380,7 +380,7 @@ public class GslbHSMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * The uuid of db entry.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

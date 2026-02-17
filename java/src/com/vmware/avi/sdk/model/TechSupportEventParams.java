@@ -38,7 +38,7 @@ public class TechSupportEventParams  {
      * This flag will have higher precedence over duration, files and days.
      * If flag is false then precedence given to duration passed while invocation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return collectAllEvents
      */
@@ -52,7 +52,7 @@ public class TechSupportEventParams  {
      * This flag will have higher precedence over duration, files and days.
      * If flag is false then precedence given to duration passed while invocation.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param collectAllEvents set the collectAllEvents.
      */
@@ -68,7 +68,7 @@ public class TechSupportEventParams  {
      * If have 20 files with 3 days old then collect on basis of specified number of files.
      * Allowed values are 1-5.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return days
      */
@@ -84,7 +84,7 @@ public class TechSupportEventParams  {
      * If have 20 files with 3 days old then collect on basis of specified number of files.
      * Allowed values are 1-5.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param days set the days.
      */
@@ -100,7 +100,7 @@ public class TechSupportEventParams  {
      * If have 10 files with 2 days old then collect only specified number of files.
      * Allowed values are 1-10.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @return files
      */
@@ -116,7 +116,7 @@ public class TechSupportEventParams  {
      * If have 10 files with 2 days old then collect only specified number of files.
      * Allowed values are 1-10.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @param files set the files.
      */

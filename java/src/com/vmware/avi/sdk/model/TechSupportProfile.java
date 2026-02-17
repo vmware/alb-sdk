@@ -60,7 +60,7 @@ public class TechSupportProfile extends AviRestResource  {
      * E.g.
      * To ensure a 450mb file, such as /var/sample.log, is collected with every invocation, configure and add its path to the techsupportprofile.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return archiveRules
      */
@@ -75,7 +75,7 @@ public class TechSupportProfile extends AviRestResource  {
      * E.g.
      * To ensure a 450mb file, such as /var/sample.log, is collected with every invocation, configure and add its path to the techsupportprofile.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param archiveRules set the archiveRules.
      */
@@ -88,7 +88,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Specify this params to set threshold for event files.
      * User provided parameters will take precedence over the profile parameters.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return eventParams
      */
@@ -101,7 +101,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Specify this params to set threshold for event files.
      * User provided parameters will take precedence over the profile parameters.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param eventParams set the eventParams.
      */
@@ -116,7 +116,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Allowed values are 128-512.
      * Field introduced in 31.2.1.
      * Unit is mb.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @return fileSizeThreshold
      */
@@ -131,7 +131,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Allowed values are 128-512.
      * Field introduced in 31.2.1.
      * Unit is mb.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @param fileSizeThreshold set the fileSizeThreshold.
      */
@@ -148,7 +148,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Allowed values are 10-25.
      * Field introduced in 31.2.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return maxDiskSizePercent
      */
@@ -165,7 +165,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Allowed values are 10-25.
      * Field introduced in 31.2.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param maxDiskSizePercent set the maxDiskSizePercent.
      */
@@ -182,7 +182,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Allowed values are 5-10.
      * Field introduced in 31.2.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return minFreeDiskRequired
      */
@@ -199,7 +199,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Allowed values are 5-10.
      * Field introduced in 31.2.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param minFreeDiskRequired set the minFreeDiskRequired.
      */
@@ -212,7 +212,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Number of techsupport to retain from techsupport cleanup policy.
      * Allowed values are 1-5.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return noOfTechsupportRetentions
      */
@@ -225,7 +225,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Number of techsupport to retain from techsupport cleanup policy.
      * Allowed values are 1-5.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param noOfTechsupportRetentions set the noOfTechsupportRetentions.
      */
@@ -238,7 +238,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Number of simultaneous techsupport invocation allowed.
      * Allowed values are 1-2.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return simultaneousInvocations
      */
@@ -251,7 +251,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Number of simultaneous techsupport invocation allowed.
      * Allowed values are 1-2.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param simultaneousInvocations set the simultaneousInvocations.
      */
@@ -266,7 +266,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Tweak the timeout value in cases of timeout observation in the logs.
      * Field introduced in 31.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 180.
      * @return taskTimeout
      */
@@ -281,7 +281,7 @@ public class TechSupportProfile extends AviRestResource  {
      * Tweak the timeout value in cases of timeout observation in the logs.
      * Field introduced in 31.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 180.
      * @param taskTimeout set the taskTimeout.
      */
@@ -310,7 +310,7 @@ public class TechSupportProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid identifier for the techsupport profile.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -322,7 +322,7 @@ public class TechSupportProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid identifier for the techsupport profile.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

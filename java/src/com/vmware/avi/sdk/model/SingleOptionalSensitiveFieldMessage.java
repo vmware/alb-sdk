@@ -30,7 +30,7 @@ public class SingleOptionalSensitiveFieldMessage  {
      * This is the getter method this will return the attribute value.
      * Optional string field for nested f_mandatory test cases-level3.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return optionalSensitiveString
      */
@@ -42,7 +42,7 @@ public class SingleOptionalSensitiveFieldMessage  {
      * This is the setter method to the attribute.
      * Optional string field for nested f_mandatory test cases-level3.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param optionalSensitiveString set the optionalSensitiveString.
      */

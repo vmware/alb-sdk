@@ -53,7 +53,7 @@ public class AvailabilityZone extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Group of clusters belongs to the az.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azClusters
      */
@@ -65,7 +65,7 @@ public class AvailabilityZone extends AviRestResource  {
      * This is the setter method. this will set the azClusters
      * Group of clusters belongs to the az.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azClusters
      */
@@ -77,7 +77,7 @@ public class AvailabilityZone extends AviRestResource  {
      * This is the setter method this will set the azClusters
      * Group of clusters belongs to the az.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azClusters
      */
@@ -92,7 +92,7 @@ public class AvailabilityZone extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Group of datastores associated with the az.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azDatastores
      */
@@ -104,7 +104,7 @@ public class AvailabilityZone extends AviRestResource  {
      * This is the setter method. this will set the azDatastores
      * Group of datastores associated with the az.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azDatastores
      */
@@ -116,7 +116,7 @@ public class AvailabilityZone extends AviRestResource  {
      * This is the setter method this will set the azDatastores
      * Group of datastores associated with the az.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azDatastores
      */
@@ -131,7 +131,7 @@ public class AvailabilityZone extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Group of hosts associated with the az.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azHosts
      */
@@ -143,7 +143,7 @@ public class AvailabilityZone extends AviRestResource  {
      * This is the setter method. this will set the azHosts
      * Group of hosts associated with the az.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azHosts
      */
@@ -155,7 +155,7 @@ public class AvailabilityZone extends AviRestResource  {
      * This is the setter method this will set the azHosts
      * Group of hosts associated with the az.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azHosts
      */
@@ -288,7 +288,7 @@ public class AvailabilityZone extends AviRestResource  {
      * Vsphere zone associated with the az.
      * Field introduced in 32.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsphereZones
      */
@@ -301,7 +301,7 @@ public class AvailabilityZone extends AviRestResource  {
      * Vsphere zone associated with the az.
      * Field introduced in 32.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsphereZones
      */
@@ -314,7 +314,7 @@ public class AvailabilityZone extends AviRestResource  {
      * Vsphere zone associated with the az.
      * Field introduced in 32.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsphereZones
      */

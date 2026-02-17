@@ -30,8 +30,14 @@ public class CloudConnectorUser extends AviRestResource  {
     @JsonProperty("gcp_credentials")
     private GCPCredentials gcpCredentials;
 
+    @JsonProperty("last_password_rotation")
+    private Integer lastPasswordRotation;
+
     @JsonProperty("name")
     private String name;
+
+    @JsonProperty("new_password_enc")
+    private String newPasswordEnc;
 
     @JsonProperty("nsxt_credentials")
     private NsxtCredentials nsxtCredentials;
@@ -65,7 +71,7 @@ public class CloudConnectorUser extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azureServiceprincipal
      */
@@ -76,7 +82,7 @@ public class CloudConnectorUser extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param azureServiceprincipal set the azureServiceprincipal.
      */
@@ -87,7 +93,7 @@ public class CloudConnectorUser extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azureUserpass
      */
@@ -98,7 +104,7 @@ public class CloudConnectorUser extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param azureUserpass set the azureUserpass.
      */
@@ -110,7 +116,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Credentials for google cloud platform.
      * Field introduced in 18.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gcpCredentials
      */
@@ -122,12 +128,40 @@ public class CloudConnectorUser extends AviRestResource  {
      * This is the setter method to the attribute.
      * Credentials for google cloud platform.
      * Field introduced in 18.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gcpCredentials set the gcpCredentials.
      */
     public void setGcpCredentials(GCPCredentials gcpCredentials) {
         this.gcpCredentials = gcpCredentials;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Timestamp (unix epoch in seconds) of last successful password rotation.
+     * Used to determine when next rotation is due based on cc_user_password_expiry_days.
+     * Field introduced in 32.1.1.
+     * Unit is sec.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return lastPasswordRotation
+     */
+    public Integer getLastPasswordRotation() {
+        return lastPasswordRotation;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Timestamp (unix epoch in seconds) of last successful password rotation.
+     * Used to determine when next rotation is due based on cc_user_password_expiry_days.
+     * Field introduced in 32.1.1.
+     * Unit is sec.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param lastPasswordRotation set the lastPasswordRotation.
+     */
+    public void setLastPasswordRotation(Integer  lastPasswordRotation) {
+        this.lastPasswordRotation = lastPasswordRotation;
     }
 
     /**
@@ -152,9 +186,35 @@ public class CloudConnectorUser extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * New password stored temporarily during rotation.
+     * Cleared after successful rotation.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return newPasswordEnc
+     */
+    public String getNewPasswordEnc() {
+        return newPasswordEnc;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * New password stored temporarily during rotation.
+     * Cleared after successful rotation.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param newPasswordEnc set the newPasswordEnc.
+     */
+    public void setNewPasswordEnc(String  newPasswordEnc) {
+        this.newPasswordEnc = newPasswordEnc;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Credentials to talk to nsx-t manager.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtCredentials
      */
@@ -166,7 +226,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * This is the setter method to the attribute.
      * Credentials to talk to nsx-t manager.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtCredentials set the nsxtCredentials.
      */
@@ -260,7 +320,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Credentials for tencent cloud.
      * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tencentCredentials
      */
@@ -272,7 +332,7 @@ public class CloudConnectorUser extends AviRestResource  {
      * This is the setter method to the attribute.
      * Credentials for tencent cloud.
      * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tencentCredentials set the tencentCredentials.
      */
@@ -362,6 +422,8 @@ public class CloudConnectorUser extends AviRestResource  {
   Objects.equals(this.tencentCredentials, objCloudConnectorUser.tencentCredentials)&&
   Objects.equals(this.nsxtCredentials, objCloudConnectorUser.nsxtCredentials)&&
   Objects.equals(this.vcenterCredentials, objCloudConnectorUser.vcenterCredentials)&&
+  Objects.equals(this.lastPasswordRotation, objCloudConnectorUser.lastPasswordRotation)&&
+  Objects.equals(this.newPasswordEnc, objCloudConnectorUser.newPasswordEnc)&&
   Objects.equals(this.tenantRef, objCloudConnectorUser.tenantRef);
     }
 
@@ -372,7 +434,9 @@ public class CloudConnectorUser extends AviRestResource  {
                   sb.append("    azureServiceprincipal: ").append(toIndentedString(azureServiceprincipal)).append("\n");
                         sb.append("    azureUserpass: ").append(toIndentedString(azureUserpass)).append("\n");
                         sb.append("    gcpCredentials: ").append(toIndentedString(gcpCredentials)).append("\n");
+                        sb.append("    lastPasswordRotation: ").append(toIndentedString(lastPasswordRotation)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    newPasswordEnc: ").append(toIndentedString(newPasswordEnc)).append("\n");
                         sb.append("    nsxtCredentials: ").append(toIndentedString(nsxtCredentials)).append("\n");
                         sb.append("    password: ").append(toIndentedString(password)).append("\n");
                         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");

@@ -44,7 +44,7 @@ public class CollectionRules  {
      * The period for report generation.
      * Enum options - REPORT_PERIOD_LAST_24_HOURS, REPORT_PERIOD_LAST_7_DAYS, REPORT_PERIOD_LAST_30_DAYS.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "REPORT_PERIOD_LAST_7_DAYS".
      * @return enforcedReportPeriod
      */
@@ -57,7 +57,7 @@ public class CollectionRules  {
      * The period for report generation.
      * Enum options - REPORT_PERIOD_LAST_24_HOURS, REPORT_PERIOD_LAST_7_DAYS, REPORT_PERIOD_LAST_30_DAYS.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "REPORT_PERIOD_LAST_7_DAYS".
      * @param enforcedReportPeriod set the enforcedReportPeriod.
      */
@@ -70,7 +70,7 @@ public class CollectionRules  {
      * Minimum data samples required for report generation.
      * Allowed values are 200-5000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @return enforcedReportSamples
      */
@@ -83,7 +83,7 @@ public class CollectionRules  {
      * Minimum data samples required for report generation.
      * Allowed values are 200-5000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @param enforcedReportSamples set the enforcedReportSamples.
      */
@@ -96,7 +96,7 @@ public class CollectionRules  {
      * Maximum number of concurrent workers used for data collection during report generation.
      * Allowed values are 1-10.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return maxConcurrentWorkers
      */
@@ -109,7 +109,7 @@ public class CollectionRules  {
      * Maximum number of concurrent workers used for data collection during report generation.
      * Allowed values are 1-10.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param maxConcurrentWorkers set the maxConcurrentWorkers.
      */
@@ -123,7 +123,7 @@ public class CollectionRules  {
      * Allowed values are 0.1-20.
      * Field introduced in 31.2.1.
      * Unit is gb.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.5f.
      * @return minFreeDiskRequired
      */
@@ -137,7 +137,7 @@ public class CollectionRules  {
      * Allowed values are 0.1-20.
      * Field introduced in 31.2.1.
      * Unit is gb.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.5f.
      * @param minFreeDiskRequired set the minFreeDiskRequired.
      */
@@ -151,7 +151,7 @@ public class CollectionRules  {
      * Allowed values are 300-3600.
      * Field introduced in 31.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
      * @return timeout
      */
@@ -165,7 +165,7 @@ public class CollectionRules  {
      * Allowed values are 300-3600.
      * Field introduced in 31.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
      * @param timeout set the timeout.
      */

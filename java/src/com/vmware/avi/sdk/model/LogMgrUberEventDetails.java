@@ -51,7 +51,7 @@ public class LogMgrUberEventDetails  {
      * This is the getter method this will return the attribute value.
      * Enum options - X_ENUM_1, X_ENUM_2, X_ENUM_3, X_ENUM_4.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return xEnum
      */
@@ -63,7 +63,7 @@ public class LogMgrUberEventDetails  {
      * This is the setter method to the attribute.
      * Enum options - X_ENUM_1, X_ENUM_2, X_ENUM_3, X_ENUM_4.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param xEnum set the xEnum.
      */
@@ -74,7 +74,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return xFloat
      */
@@ -85,7 +85,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param xFloat set the xFloat.
      */
@@ -96,7 +96,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return xHex
      */
@@ -107,7 +107,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param xHex set the xHex.
      */
@@ -118,7 +118,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return xInt
      */
@@ -129,7 +129,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param xInt set the xInt.
      */
@@ -140,7 +140,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return xMsg
      */
@@ -151,7 +151,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param xMsg set the xMsg.
      */
@@ -161,7 +161,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return xRmsg
      */
@@ -172,7 +172,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the setter method. this will set the xRmsg
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return xRmsg
      */
@@ -183,7 +183,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the setter method this will set the xRmsg
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return xRmsg
      */
@@ -198,7 +198,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return xStr
      */
@@ -209,7 +209,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param xStr set the xStr.
      */
@@ -219,7 +219,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return xX
      */
@@ -230,7 +230,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the setter method. this will set the xX
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return xX
      */
@@ -241,7 +241,7 @@ public class LogMgrUberEventDetails  {
     /**
      * This is the setter method this will set the xX
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return xX
      */

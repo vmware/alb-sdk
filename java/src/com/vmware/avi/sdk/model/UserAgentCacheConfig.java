@@ -67,7 +67,7 @@ public class UserAgentCacheConfig  {
      * How many unknown user-agents to batch up before querying controller - unless max_wait_time is reached first.
      * Allowed values are 1-500.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return batchSize
      */
@@ -80,7 +80,7 @@ public class UserAgentCacheConfig  {
      * How many unknown user-agents to batch up before querying controller - unless max_wait_time is reached first.
      * Allowed values are 1-500.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param batchSize set the batchSize.
      */
@@ -93,7 +93,7 @@ public class UserAgentCacheConfig  {
      * The number of user-agent entries to cache on the controller.
      * Allowed values are 500-10000000.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300000.
      * @return controllerCacheSize
      */
@@ -106,7 +106,7 @@ public class UserAgentCacheConfig  {
      * The number of user-agent entries to cache on the controller.
      * Allowed values are 500-10000000.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300000.
      * @param controllerCacheSize set the controllerCacheSize.
      */
@@ -119,7 +119,7 @@ public class UserAgentCacheConfig  {
      * Time interval in seconds after which an existing entry is refreshed from upstream if it has been accessed during max_last_hit_time.
      * Allowed values are 60-604800.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
      * @return maxAge
      */
@@ -132,7 +132,7 @@ public class UserAgentCacheConfig  {
      * Time interval in seconds after which an existing entry is refreshed from upstream if it has been accessed during max_last_hit_time.
      * Allowed values are 60-604800.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
      * @param maxAge set the maxAge.
      */
@@ -147,7 +147,7 @@ public class UserAgentCacheConfig  {
      * older than 'max_age'.
      * Allowed values are 60-604800.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
      * @return maxLastHitTime
      */
@@ -162,7 +162,7 @@ public class UserAgentCacheConfig  {
      * older than 'max_age'.
      * Allowed values are 60-604800.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
      * @param maxLastHitTime set the maxLastHitTime.
      */
@@ -175,7 +175,7 @@ public class UserAgentCacheConfig  {
      * How often at most to query controller for a given user-agent.
      * Allowed values are 2-100.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return maxUpstreamQueries
      */
@@ -188,7 +188,7 @@ public class UserAgentCacheConfig  {
      * How often at most to query controller for a given user-agent.
      * Allowed values are 2-100.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param maxUpstreamQueries set the maxUpstreamQueries.
      */
@@ -202,7 +202,7 @@ public class UserAgentCacheConfig  {
      * Allowed values are 20-100000.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return maxWaitTime
      */
@@ -216,7 +216,7 @@ public class UserAgentCacheConfig  {
      * Allowed values are 20-100000.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param maxWaitTime set the maxWaitTime.
      */
@@ -229,7 +229,7 @@ public class UserAgentCacheConfig  {
      * How many botuacacheresult elements to include in an upstream update message.
      * Allowed values are 1-10000.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return numEntriesUpstreamUpdate
      */
@@ -242,7 +242,7 @@ public class UserAgentCacheConfig  {
      * How many botuacacheresult elements to include in an upstream update message.
      * Allowed values are 1-10000.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param numEntriesUpstreamUpdate set the numEntriesUpstreamUpdate.
      */
@@ -254,7 +254,7 @@ public class UserAgentCacheConfig  {
      * This is the getter method this will return the attribute value.
      * How much space to reserve in percent for known bad bots.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return percentReservedForBadBots
      */
@@ -266,7 +266,7 @@ public class UserAgentCacheConfig  {
      * This is the setter method to the attribute.
      * How much space to reserve in percent for known bad bots.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param percentReservedForBadBots set the percentReservedForBadBots.
      */
@@ -278,7 +278,7 @@ public class UserAgentCacheConfig  {
      * This is the getter method this will return the attribute value.
      * How much space to reserve in percent for browsers.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 50.
      * @return percentReservedForBrowsers
      */
@@ -290,7 +290,7 @@ public class UserAgentCacheConfig  {
      * This is the setter method to the attribute.
      * How much space to reserve in percent for browsers.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 50.
      * @param percentReservedForBrowsers set the percentReservedForBrowsers.
      */
@@ -302,7 +302,7 @@ public class UserAgentCacheConfig  {
      * This is the getter method this will return the attribute value.
      * How much space to reserve in percent for known good bots.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return percentReservedForGoodBots
      */
@@ -314,7 +314,7 @@ public class UserAgentCacheConfig  {
      * This is the setter method to the attribute.
      * How much space to reserve in percent for known good bots.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param percentReservedForGoodBots set the percentReservedForGoodBots.
      */
@@ -326,7 +326,7 @@ public class UserAgentCacheConfig  {
      * This is the getter method this will return the attribute value.
      * How much space to reserve in percent for outstanding upstream requests.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return percentReservedForOutstanding
      */
@@ -338,7 +338,7 @@ public class UserAgentCacheConfig  {
      * This is the setter method to the attribute.
      * How much space to reserve in percent for outstanding upstream requests.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param percentReservedForOutstanding set the percentReservedForOutstanding.
      */
@@ -351,7 +351,7 @@ public class UserAgentCacheConfig  {
      * The number of user-agent entries to cache on each service engine.
      * Allowed values are 500-10000000.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20000.
      * @return seCacheSize
      */
@@ -364,7 +364,7 @@ public class UserAgentCacheConfig  {
      * The number of user-agent entries to cache on each service engine.
      * Allowed values are 500-10000000.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20000.
      * @param seCacheSize set the seCacheSize.
      */
@@ -377,7 +377,7 @@ public class UserAgentCacheConfig  {
      * How often in seconds to send updates about user-agent cache entries to the next upstream cache.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
      * @return upstreamUpdateInterval
      */
@@ -390,7 +390,7 @@ public class UserAgentCacheConfig  {
      * How often in seconds to send updates about user-agent cache entries to the next upstream cache.
      * Field introduced in 21.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
      * @param upstreamUpdateInterval set the upstreamUpdateInterval.
      */

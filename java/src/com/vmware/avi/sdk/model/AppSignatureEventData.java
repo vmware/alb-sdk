@@ -36,7 +36,7 @@ public class AppSignatureEventData  {
      * This is the getter method this will return the attribute value.
      * Last successful updated time of the appsignature.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastSuccessfulUpdatedTime
      */
@@ -48,7 +48,7 @@ public class AppSignatureEventData  {
      * This is the setter method to the attribute.
      * Last successful updated time of the appsignature.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastSuccessfulUpdatedTime set the lastSuccessfulUpdatedTime.
      */
@@ -60,7 +60,7 @@ public class AppSignatureEventData  {
      * This is the getter method this will return the attribute value.
      * Reason for appsignature transaction failure.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -72,7 +72,7 @@ public class AppSignatureEventData  {
      * This is the setter method to the attribute.
      * Reason for appsignature transaction failure.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -84,7 +84,7 @@ public class AppSignatureEventData  {
      * This is the getter method this will return the attribute value.
      * Status of appsignature transaction.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -96,7 +96,7 @@ public class AppSignatureEventData  {
      * This is the setter method to the attribute.
      * Status of appsignature transaction.
      * Field introduced in 20.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */

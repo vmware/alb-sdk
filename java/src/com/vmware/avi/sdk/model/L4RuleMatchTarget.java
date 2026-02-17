@@ -36,7 +36,7 @@ public class L4RuleMatchTarget  {
      * This is the getter method this will return the attribute value.
      * Ip addresses to match against client ip.
      * Field introduced in 17.2.7.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientIp
      */
@@ -48,7 +48,7 @@ public class L4RuleMatchTarget  {
      * This is the setter method to the attribute.
      * Ip addresses to match against client ip.
      * Field introduced in 17.2.7.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientIp set the clientIp.
      */
@@ -84,7 +84,7 @@ public class L4RuleMatchTarget  {
      * This is the getter method this will return the attribute value.
      * Tcp/udp/icmp protocol to match against transport protocol.
      * Field introduced in 17.2.7.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return protocol
      */
@@ -96,7 +96,7 @@ public class L4RuleMatchTarget  {
      * This is the setter method to the attribute.
      * Tcp/udp/icmp protocol to match against transport protocol.
      * Field introduced in 17.2.7.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param protocol set the protocol.
      */

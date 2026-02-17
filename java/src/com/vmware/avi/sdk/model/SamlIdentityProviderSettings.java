@@ -41,7 +41,7 @@ public class SamlIdentityProviderSettings  {
      * Allowed values are 1-10080.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return metaDataDownloadInterval
      */
@@ -55,7 +55,7 @@ public class SamlIdentityProviderSettings  {
      * Allowed values are 1-10080.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param metaDataDownloadInterval set the metaDataDownloadInterval.
      */
@@ -91,7 +91,7 @@ public class SamlIdentityProviderSettings  {
      * This is the getter method this will return the attribute value.
      * Saml idp federation metadata url.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metadataUrl
      */
@@ -103,7 +103,7 @@ public class SamlIdentityProviderSettings  {
      * This is the setter method to the attribute.
      * Saml idp federation metadata url.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metadataUrl set the metadataUrl.
      */
@@ -115,7 +115,7 @@ public class SamlIdentityProviderSettings  {
      * This is the getter method this will return the attribute value.
      * Enable periodic metadata download.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return periodicDownload
      */
@@ -127,7 +127,7 @@ public class SamlIdentityProviderSettings  {
      * This is the setter method to the attribute.
      * Enable periodic metadata download.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param periodicDownload set the periodicDownload.
      */

@@ -233,7 +233,7 @@ public class PortalConfiguration  {
      * This is the getter method this will return the attribute value.
      * Feature flag for enabling rate limiter(false by default).
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableRateLimiter
      */
@@ -245,7 +245,7 @@ public class PortalConfiguration  {
      * This is the setter method to the attribute.
      * Feature flag for enabling rate limiter(false by default).
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableRateLimiter set the enableRateLimiter.
      */
@@ -305,7 +305,7 @@ public class PortalConfiguration  {
      * This is the getter method this will return the attribute value.
      * Allow incoming connections from clients using tls 1.0/1.1 to controller.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return legacySslSupport
      */
@@ -317,7 +317,7 @@ public class PortalConfiguration  {
      * This is the setter method to the attribute.
      * Allow incoming connections from clients using tls 1.0/1.1 to controller.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param legacySslSupport set the legacySslSupport.
      */
@@ -330,7 +330,7 @@ public class PortalConfiguration  {
      * Reference to pkiprofile config used for crl validation.
      * It is a reference to an object of type pkiprofile.
      * Field introduced in 30.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pkiprofileRef
      */
@@ -343,7 +343,7 @@ public class PortalConfiguration  {
      * Reference to pkiprofile config used for crl validation.
      * It is a reference to an object of type pkiprofile.
      * Field introduced in 30.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pkiprofileRef set the pkiprofileRef.
      */

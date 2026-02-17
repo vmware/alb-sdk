@@ -31,8 +31,7 @@ public class UserAgentDBConfig  {
      * Batch query limit.
      * Allowed values are 1-500.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- 500), basic (allowed values- 500) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
      * @return allowedBatchSize
      */
@@ -45,8 +44,7 @@ public class UserAgentDBConfig  {
      * Batch query limit.
      * Allowed values are 1-500.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- 500), basic (allowed values- 500) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
      * @param allowedBatchSize set the allowedBatchSize.
      */

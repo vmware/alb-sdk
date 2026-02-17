@@ -125,7 +125,7 @@ public class EmailConfiguration  {
      * AFRICA_BANJUL, AFRICA_BISSAU, AFRICA_BLANTYRE, AFRICA_BRAZZAVILLE, AFRICA_BUJUMBURA, AFRICA_CAIRO, AFRICA_CASABLANCA, AFRICA_CEUTA,
      * AFRICA_CONAKRY, AFRICA_DAKAR, AFRICA_DAR_ES_SALAAM...
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return emailTimezone
      */
@@ -140,7 +140,7 @@ public class EmailConfiguration  {
      * AFRICA_BANJUL, AFRICA_BISSAU, AFRICA_BLANTYRE, AFRICA_BRAZZAVILLE, AFRICA_BUJUMBURA, AFRICA_CAIRO, AFRICA_CASABLANCA, AFRICA_CEUTA,
      * AFRICA_CONAKRY, AFRICA_DAKAR, AFRICA_DAR_ES_SALAAM...
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param emailTimezone set the emailTimezone.
      */
@@ -174,7 +174,7 @@ public class EmailConfiguration  {
      * This is the getter method this will return the attribute value.
      * Friendly name in from field.
      * Field introduced in 21.1.4, 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fromName
      */
@@ -186,7 +186,7 @@ public class EmailConfiguration  {
      * This is the setter method to the attribute.
      * Friendly name in from field.
      * Field introduced in 21.1.4, 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fromName set the fromName.
      */

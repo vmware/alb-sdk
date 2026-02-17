@@ -37,7 +37,7 @@ public class GslbServiceSrvRdata  {
      * Service port.
      * Allowed values are 0-65535.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -50,7 +50,7 @@ public class GslbServiceSrvRdata  {
      * Service port.
      * Allowed values are 0-65535.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */
@@ -63,7 +63,7 @@ public class GslbServiceSrvRdata  {
      * Priority of the target hosting the service, low value implies higher priority for this service record.
      * Allowed values are 0-65535.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return priority
      */
@@ -76,7 +76,7 @@ public class GslbServiceSrvRdata  {
      * Priority of the target hosting the service, low value implies higher priority for this service record.
      * Allowed values are 0-65535.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param priority set the priority.
      */
@@ -89,7 +89,7 @@ public class GslbServiceSrvRdata  {
      * Relative weight for service records with same priority, high value implies higher preference for this service record.
      * Allowed values are 0-65535.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return weight
      */
@@ -102,7 +102,7 @@ public class GslbServiceSrvRdata  {
      * Relative weight for service records with same priority, high value implies higher preference for this service record.
      * Allowed values are 0-65535.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param weight set the weight.
      */

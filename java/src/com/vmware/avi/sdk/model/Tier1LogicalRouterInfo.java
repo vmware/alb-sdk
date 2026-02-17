@@ -40,7 +40,7 @@ public class Tier1LogicalRouterInfo  {
      * If more than one locale-services are present, this will be used for resolving the same.
      * Example locale-service path - /infra/tier-1s/london_tier1gateway1/locale-services/london_tier1localservices-1.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return localeService
      */
@@ -56,7 +56,7 @@ public class Tier1LogicalRouterInfo  {
      * If more than one locale-services are present, this will be used for resolving the same.
      * Example locale-service path - /infra/tier-1s/london_tier1gateway1/locale-services/london_tier1localservices-1.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param localeService set the localeService.
      */

@@ -48,7 +48,7 @@ public class NetworkProfileUnion  {
      * This is the getter method this will return the attribute value.
      * Configure sctp fastpath network profile.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sctpFastPathProfile
      */
@@ -60,7 +60,7 @@ public class NetworkProfileUnion  {
      * This is the setter method to the attribute.
      * Configure sctp fastpath network profile.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sctpFastPathProfile set the sctpFastPathProfile.
      */
@@ -72,7 +72,7 @@ public class NetworkProfileUnion  {
      * This is the getter method this will return the attribute value.
      * Configure sctp proxy network profile.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sctpProxyProfile
      */
@@ -84,7 +84,7 @@ public class NetworkProfileUnion  {
      * This is the setter method to the attribute.
      * Configure sctp proxy network profile.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sctpProxyProfile set the sctpProxyProfile.
      */
@@ -114,7 +114,7 @@ public class NetworkProfileUnion  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tcpProxyProfile
      */
@@ -124,7 +124,7 @@ public class NetworkProfileUnion  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tcpProxyProfile set the tcpProxyProfile.
      */
@@ -137,9 +137,7 @@ public class NetworkProfileUnion  {
      * Configure one of either proxy or fast path profiles.
      * Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY,
      * PROTOCOL_TYPE_SCTP_PROXY, PROTOCOL_TYPE_SCTP_FAST_PATH.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- protocol_type_tcp_fast_path,protocol_type_udp_fast_path), basic (allowed values-
-     * protocol_type_tcp_proxy,protocol_type_tcp_fast_path,protocol_type_udp_fast_path) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PROTOCOL_TYPE_TCP_PROXY".
      * @return type
      */
@@ -152,9 +150,7 @@ public class NetworkProfileUnion  {
      * Configure one of either proxy or fast path profiles.
      * Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY,
      * PROTOCOL_TYPE_SCTP_PROXY, PROTOCOL_TYPE_SCTP_FAST_PATH.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- protocol_type_tcp_fast_path,protocol_type_udp_fast_path), basic (allowed values-
-     * protocol_type_tcp_proxy,protocol_type_tcp_fast_path,protocol_type_udp_fast_path) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PROTOCOL_TYPE_TCP_PROXY".
      * @param type set the type.
      */
@@ -186,7 +182,7 @@ public class NetworkProfileUnion  {
      * This is the getter method this will return the attribute value.
      * Configure udp proxy network profile.
      * Field introduced in 17.2.8, 18.1.3, 18.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return udpProxyProfile
      */
@@ -198,7 +194,7 @@ public class NetworkProfileUnion  {
      * This is the setter method to the attribute.
      * Configure udp proxy network profile.
      * Field introduced in 17.2.8, 18.1.3, 18.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param udpProxyProfile set the udpProxyProfile.
      */

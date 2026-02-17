@@ -89,7 +89,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maintain information about se group.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupInfos
      */
@@ -101,7 +101,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the setter method. this will set the seGroupInfos
      * Maintain information about se group.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupInfos
      */
@@ -113,7 +113,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the setter method this will set the seGroupInfos
      * Maintain information about se group.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupInfos
      */
@@ -167,7 +167,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maintain information about tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantInfos
      */
@@ -179,7 +179,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the setter method. this will set the tenantInfos
      * Maintain information about tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantInfos
      */
@@ -191,7 +191,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the setter method this will set the tenantInfos
      * Maintain information about tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantInfos
      */
@@ -246,7 +246,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Total of max licenses reserved as per quota config of tenant/segroup.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return totalLicensesReserved
      */
@@ -258,7 +258,7 @@ public class LicenseLedgerDetails extends AviRestResource  {
      * This is the setter method to the attribute.
      * Total of max licenses reserved as per quota config of tenant/segroup.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param totalLicensesReserved set the totalLicensesReserved.
      */

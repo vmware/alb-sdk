@@ -53,7 +53,7 @@ public class StatediffOperation extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Info for each statediff event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return events
      */
@@ -65,7 +65,7 @@ public class StatediffOperation extends AviRestResource  {
      * This is the setter method. this will set the events
      * Info for each statediff event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return events
      */
@@ -77,7 +77,7 @@ public class StatediffOperation extends AviRestResource  {
      * This is the setter method this will set the events
      * Info for each statediff event.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return events
      */
@@ -93,7 +93,7 @@ public class StatediffOperation extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of statediff operation.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -105,7 +105,7 @@ public class StatediffOperation extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of statediff operation.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -117,7 +117,7 @@ public class StatediffOperation extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of node for statediff operation entry.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodeUuid
      */
@@ -129,7 +129,7 @@ public class StatediffOperation extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of node for statediff operation entry.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nodeUuid set the nodeUuid.
      */
@@ -142,7 +142,7 @@ public class StatediffOperation extends AviRestResource  {
      * Type of statediff operation.
      * Enum options - FB_UPGRADE, FB_ROLLBACK, FB_PATCH, FB_ROLLBACK_PATCH.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return operation
      */
@@ -155,7 +155,7 @@ public class StatediffOperation extends AviRestResource  {
      * Type of statediff operation.
      * Enum options - FB_UPGRADE, FB_ROLLBACK, FB_PATCH, FB_ROLLBACK_PATCH.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param operation set the operation.
      */
@@ -168,7 +168,7 @@ public class StatediffOperation extends AviRestResource  {
      * Phase of statediff operation.
      * Enum options - FB_PRE_SNAPSHOT, FB_POST_SNAPSHOT.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return phase
      */
@@ -181,7 +181,7 @@ public class StatediffOperation extends AviRestResource  {
      * Phase of statediff operation.
      * Enum options - FB_PRE_SNAPSHOT, FB_POST_SNAPSHOT.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param phase set the phase.
      */
@@ -194,7 +194,7 @@ public class StatediffOperation extends AviRestResource  {
      * Status of statediff operation.
      * Enum options - FB_INIT, FB_IN_PROGRESS, FB_COMPLETED, FB_FAILED, FB_COMPLETED_WITH_ERRORS.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -207,7 +207,7 @@ public class StatediffOperation extends AviRestResource  {
      * Status of statediff operation.
      * Enum options - FB_INIT, FB_IN_PROGRESS, FB_COMPLETED, FB_FAILED, FB_COMPLETED_WITH_ERRORS.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */
@@ -220,7 +220,7 @@ public class StatediffOperation extends AviRestResource  {
      * Tenant that this object belongs to.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -233,7 +233,7 @@ public class StatediffOperation extends AviRestResource  {
      * Tenant that this object belongs to.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -262,7 +262,7 @@ public class StatediffOperation extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Unique identifier for statediff entry.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -274,7 +274,7 @@ public class StatediffOperation extends AviRestResource  {
      * This is the setter method to the attribute.
      * Unique identifier for statediff entry.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

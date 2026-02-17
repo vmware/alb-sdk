@@ -43,7 +43,7 @@ public class CSRFRule  {
      * Csrf action to be applied for matched target.
      * Enum options - VERIFY_CSRF_TOKEN, VERIFY_ORIGIN, VERIFY_ORIGIN_AND_CSRF_TOKEN, BYPASS_CSRF.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "VERIFY_ORIGIN_AND_CSRF_TOKEN".
      * @return action
      */
@@ -56,7 +56,7 @@ public class CSRFRule  {
      * Csrf action to be applied for matched target.
      * Enum options - VERIFY_CSRF_TOKEN, VERIFY_ORIGIN, VERIFY_ORIGIN_AND_CSRF_TOKEN, BYPASS_CSRF.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "VERIFY_ORIGIN_AND_CSRF_TOKEN".
      * @param action set the action.
      */
@@ -68,7 +68,7 @@ public class CSRFRule  {
      * This is the getter method this will return the attribute value.
      * Enable or deactivate the rule.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enable
      */
@@ -80,7 +80,7 @@ public class CSRFRule  {
      * This is the setter method to the attribute.
      * Enable or deactivate the rule.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enable set the enable.
      */
@@ -92,7 +92,7 @@ public class CSRFRule  {
      * This is the getter method this will return the attribute value.
      * Rules are processed in order of this index field.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -104,7 +104,7 @@ public class CSRFRule  {
      * This is the setter method to the attribute.
      * Rules are processed in order of this index field.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */
@@ -116,7 +116,7 @@ public class CSRFRule  {
      * This is the getter method this will return the attribute value.
      * Match criteria for requests to apply csrf action.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return match
      */
@@ -128,7 +128,7 @@ public class CSRFRule  {
      * This is the setter method to the attribute.
      * Match criteria for requests to apply csrf action.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param match set the match.
      */
@@ -140,7 +140,7 @@ public class CSRFRule  {
      * This is the getter method this will return the attribute value.
      * A name describing the rule in a short form.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -152,7 +152,7 @@ public class CSRFRule  {
      * This is the setter method to the attribute.
      * A name describing the rule in a short form.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

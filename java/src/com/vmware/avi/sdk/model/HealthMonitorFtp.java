@@ -36,7 +36,7 @@ public class HealthMonitorFtp  {
      * This is the getter method this will return the attribute value.
      * Filename to download with full path.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return filename
      */
@@ -48,7 +48,7 @@ public class HealthMonitorFtp  {
      * This is the setter method to the attribute.
      * Filename to download with full path.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param filename set the filename.
      */
@@ -61,7 +61,7 @@ public class HealthMonitorFtp  {
      * Ftp data transfer process mode.
      * Enum options - FTP_PASSIVE_MODE, FTP_PORT_MODE.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "FTP_PASSIVE_MODE".
      * @return mode
      */
@@ -74,7 +74,7 @@ public class HealthMonitorFtp  {
      * Ftp data transfer process mode.
      * Enum options - FTP_PASSIVE_MODE, FTP_PORT_MODE.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "FTP_PASSIVE_MODE".
      * @param mode set the mode.
      */
@@ -86,7 +86,7 @@ public class HealthMonitorFtp  {
      * This is the getter method this will return the attribute value.
      * Ssl attributes for ftps monitor.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslAttributes
      */
@@ -98,7 +98,7 @@ public class HealthMonitorFtp  {
      * This is the setter method to the attribute.
      * Ssl attributes for ftps monitor.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslAttributes set the sslAttributes.
      */

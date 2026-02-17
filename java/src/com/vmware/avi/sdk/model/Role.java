@@ -48,7 +48,7 @@ public class Role extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Allow access to unlabelled objects.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return allowUnlabelledAccess
      */
@@ -60,7 +60,7 @@ public class Role extends AviRestResource  {
      * This is the setter method to the attribute.
      * Allow access to unlabelled objects.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param allowUnlabelledAccess set the allowUnlabelledAccess.
      */
@@ -74,7 +74,7 @@ public class Role extends AviRestResource  {
      * If empty, all objects according to the privileges will be accessible to the user.
      * Field introduced in 20.1.3.
      * Maximum of 4 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return filters
      */
@@ -89,7 +89,7 @@ public class Role extends AviRestResource  {
      * If empty, all objects according to the privileges will be accessible to the user.
      * Field introduced in 20.1.3.
      * Maximum of 4 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return filters
      */
@@ -104,7 +104,7 @@ public class Role extends AviRestResource  {
      * If empty, all objects according to the privileges will be accessible to the user.
      * Field introduced in 20.1.3.
      * Maximum of 4 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return filters
      */

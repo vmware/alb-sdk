@@ -42,7 +42,7 @@ public class PositiveSecurityParams  {
      * This is the getter method this will return the attribute value.
      * Configure thresholds for the confidence labels defined by applearningconfidencelabel.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return confidenceOverride
      */
@@ -54,7 +54,7 @@ public class PositiveSecurityParams  {
      * This is the setter method to the attribute.
      * Configure thresholds for the confidence labels defined by applearningconfidencelabel.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param confidenceOverride set the confidenceOverride.
      */
@@ -67,7 +67,7 @@ public class PositiveSecurityParams  {
      * Maximum number of parameters per uri programmed for an application.
      * Allowed values are 10-1000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return maxParams
      */
@@ -80,7 +80,7 @@ public class PositiveSecurityParams  {
      * Maximum number of parameters per uri programmed for an application.
      * Allowed values are 10-1000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param maxParams set the maxParams.
      */
@@ -93,7 +93,7 @@ public class PositiveSecurityParams  {
      * Maximum number of uris programmed for an application.
      * Allowed values are 10-10000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
      * @return maxUris
      */
@@ -106,7 +106,7 @@ public class PositiveSecurityParams  {
      * Maximum number of uris programmed for an application.
      * Allowed values are 10-10000.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
      * @param maxUris set the maxUris.
      */
@@ -119,7 +119,7 @@ public class PositiveSecurityParams  {
      * Minimum confidence label required for positive security rule updates.
      * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "CONFIDENCE_VERY_HIGH".
      * @return minConfidence
      */
@@ -132,7 +132,7 @@ public class PositiveSecurityParams  {
      * Minimum confidence label required for positive security rule updates.
      * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "CONFIDENCE_VERY_HIGH".
      * @param minConfidence set the minConfidence.
      */
@@ -144,7 +144,7 @@ public class PositiveSecurityParams  {
      * This is the getter method this will return the attribute value.
      * Minimum number of occurances required for a param to qualify for programming into a psm rule.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @return minHitsToProgram
      */
@@ -156,7 +156,7 @@ public class PositiveSecurityParams  {
      * This is the setter method to the attribute.
      * Minimum number of occurances required for a param to qualify for programming into a psm rule.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @param minHitsToProgram set the minHitsToProgram.
      */

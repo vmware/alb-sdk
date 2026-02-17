@@ -38,8 +38,7 @@ public class VSDataScript  {
      * VS_DATASCRIPT_EVT_CLIENT_SSL_PRE_CONNECT, VS_DATASCRIPT_EVT_CLIENT_SSL_CLIENT_HELLO, VS_DATASCRIPT_EVT_DNS_REQ, VS_DATASCRIPT_EVT_DNS_RESP,
      * VS_DATASCRIPT_EVT_L4_REQUEST, VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_CLIENT_CLOSED, VS_DATASCRIPT_EVT_SERVER_CLOSED,
      * VS_DATASCRIPT_EVT_SERVER_CONNECTED...
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-     * Allowed in basic (allowed values- vs_datascript_evt_http_req,vs_datascript_evt_http_resp) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return evt
      */
@@ -56,8 +55,7 @@ public class VSDataScript  {
      * VS_DATASCRIPT_EVT_CLIENT_SSL_PRE_CONNECT, VS_DATASCRIPT_EVT_CLIENT_SSL_CLIENT_HELLO, VS_DATASCRIPT_EVT_DNS_REQ, VS_DATASCRIPT_EVT_DNS_RESP,
      * VS_DATASCRIPT_EVT_L4_REQUEST, VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_CLIENT_CLOSED, VS_DATASCRIPT_EVT_SERVER_CLOSED,
      * VS_DATASCRIPT_EVT_SERVER_CONNECTED...
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-     * Allowed in basic (allowed values- vs_datascript_evt_http_req,vs_datascript_evt_http_resp) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param evt set the evt.
      */

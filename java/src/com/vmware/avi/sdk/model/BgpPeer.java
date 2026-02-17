@@ -250,7 +250,7 @@ public class BgpPeer  {
      * This is the getter method this will return the attribute value.
      * Override the profile level local_as with the peer level remote_as.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ibgpLocalAsOverride
      */
@@ -262,7 +262,7 @@ public class BgpPeer  {
      * This is the setter method to the attribute.
      * Override the profile level local_as with the peer level remote_as.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ibgpLocalAsOverride set the ibgpLocalAsOverride.
      */

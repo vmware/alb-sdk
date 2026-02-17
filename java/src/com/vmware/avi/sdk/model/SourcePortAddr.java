@@ -37,7 +37,7 @@ public class SourcePortAddr  {
      * Match criteria.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
      * @return matchOperation
      */
@@ -50,7 +50,7 @@ public class SourcePortAddr  {
      * Match criteria.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
      * @param matchOperation set the matchOperation.
      */
@@ -63,7 +63,7 @@ public class SourcePortAddr  {
      * Tcp/udp port range end (inclusive).
      * Allowed values are 1-65535.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return srcPortEnd
      */
@@ -76,7 +76,7 @@ public class SourcePortAddr  {
      * Tcp/udp port range end (inclusive).
      * Allowed values are 1-65535.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param srcPortEnd set the srcPortEnd.
      */
@@ -89,7 +89,7 @@ public class SourcePortAddr  {
      * Tcp/udp port range start (inclusive).
      * Allowed values are 1-65535.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return srcPortStart
      */
@@ -102,7 +102,7 @@ public class SourcePortAddr  {
      * Tcp/udp port range start (inclusive).
      * Allowed values are 1-65535.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param srcPortStart set the srcPortStart.
      */

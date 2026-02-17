@@ -374,7 +374,7 @@ public class WafConfig  {
      * This is the getter method this will return the attribute value.
      * If this is set, the limits from the json_parsing_limit section are checked on parsing.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableJsonParsingLimits
      */
@@ -386,7 +386,7 @@ public class WafConfig  {
      * This is the setter method to the attribute.
      * If this is set, the limits from the json_parsing_limit section are checked on parsing.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableJsonParsingLimits set the enableJsonParsingLimits.
      */
@@ -398,7 +398,7 @@ public class WafConfig  {
      * This is the getter method this will return the attribute value.
      * Flag or reject the client request if it exceeds client_request_max_body_size.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enforceMaxBodySize
      */
@@ -410,7 +410,7 @@ public class WafConfig  {
      * This is the setter method to the attribute.
      * Flag or reject the client request if it exceeds client_request_max_body_size.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enforceMaxBodySize set the enforceMaxBodySize.
      */
@@ -449,7 +449,7 @@ public class WafConfig  {
      * indicate this.
      * However, it will continue the parsing itself to detect problems in the structure of the json body.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return jsonParsingLimits
      */
@@ -464,7 +464,7 @@ public class WafConfig  {
      * indicate this.
      * However, it will continue the parsing itself to detect problems in the structure of the json body.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param jsonParsingLimits set the jsonParsingLimits.
      */
@@ -476,7 +476,7 @@ public class WafConfig  {
      * Every match element listed here will be parsed by a second parser.
      * This happens non-recursivly.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchElementSubParsers
      */
@@ -489,7 +489,7 @@ public class WafConfig  {
      * Every match element listed here will be parsed by a second parser.
      * This happens non-recursivly.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchElementSubParsers
      */
@@ -502,7 +502,7 @@ public class WafConfig  {
      * Every match element listed here will be parsed by a second parser.
      * This happens non-recursivly.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchElementSubParsers
      */
@@ -784,7 +784,7 @@ public class WafConfig  {
      * This is the getter method this will return the attribute value.
      * Whether or not to send waf status in a request header to pool servers.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return sendStatusHeader
      */
@@ -796,7 +796,7 @@ public class WafConfig  {
      * This is the setter method to the attribute.
      * Whether or not to send waf status in a request header to pool servers.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param sendStatusHeader set the sendStatusHeader.
      */
@@ -910,7 +910,7 @@ public class WafConfig  {
      * This is the getter method this will return the attribute value.
      * The name of the request header indicating waf evaluation status to pool servers.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "X-WAF-Result".
      * @return statusHeaderName
      */
@@ -922,7 +922,7 @@ public class WafConfig  {
      * This is the setter method to the attribute.
      * The name of the request header indicating waf evaluation status to pool servers.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "X-WAF-Result".
      * @param statusHeaderName set the statusHeaderName.
      */
@@ -935,7 +935,7 @@ public class WafConfig  {
      * Collection variable set by the xml request body parser.
      * Enum options - WAF_XML_COLLECTION_XML, WAF_XML_COLLECTION_ARGS.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_XML_COLLECTION_XML".
      * @return xmlCollection
      */
@@ -948,7 +948,7 @@ public class WafConfig  {
      * Collection variable set by the xml request body parser.
      * Enum options - WAF_XML_COLLECTION_XML, WAF_XML_COLLECTION_ARGS.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_XML_COLLECTION_XML".
      * @param xmlCollection set the xmlCollection.
      */

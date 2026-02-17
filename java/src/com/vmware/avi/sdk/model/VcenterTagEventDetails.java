@@ -36,7 +36,7 @@ public class VcenterTagEventDetails  {
      * This is the getter method this will return the attribute value.
      * Cloud id.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -48,7 +48,7 @@ public class VcenterTagEventDetails  {
      * This is the setter method to the attribute.
      * Cloud id.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -60,7 +60,7 @@ public class VcenterTagEventDetails  {
      * This is the getter method this will return the attribute value.
      * Failure reason.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -72,7 +72,7 @@ public class VcenterTagEventDetails  {
      * This is the setter method to the attribute.
      * Failure reason.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */
@@ -84,7 +84,7 @@ public class VcenterTagEventDetails  {
      * This is the getter method this will return the attribute value.
      * Sevm object id.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vmId
      */
@@ -96,7 +96,7 @@ public class VcenterTagEventDetails  {
      * This is the setter method to the attribute.
      * Sevm object id.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vmId set the vmId.
      */

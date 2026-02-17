@@ -218,7 +218,7 @@ public class CRL  {
      * Url of a server that issues the certificate revocation list.
      * If this is configured, crl will be periodically downloaded either based on the configured update interval or the next update interval in the crl.
      * Crl itself is stored in the body.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverUrl
      */
@@ -231,7 +231,7 @@ public class CRL  {
      * Url of a server that issues the certificate revocation list.
      * If this is configured, crl will be periodically downloaded either based on the configured update interval or the next update interval in the crl.
      * Crl itself is stored in the body.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverUrl set the serverUrl.
      */
@@ -267,7 +267,7 @@ public class CRL  {
      * If not specified, interval will be 1 day.
      * Allowed values are 30-525600.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1440.
      * @return updateInterval
      */
@@ -281,7 +281,7 @@ public class CRL  {
      * If not specified, interval will be 1 day.
      * Allowed values are 30-525600.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1440.
      * @param updateInterval set the updateInterval.
      */

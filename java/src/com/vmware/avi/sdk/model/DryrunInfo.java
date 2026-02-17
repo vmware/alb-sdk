@@ -61,7 +61,7 @@ public class DryrunInfo  {
      * Duration of dry-run operation in seconds.
      * Field introduced in 31.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return duration
      */
@@ -74,7 +74,7 @@ public class DryrunInfo  {
      * Duration of dry-run operation in seconds.
      * Field introduced in 31.1.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param duration set the duration.
      */
@@ -86,7 +86,7 @@ public class DryrunInfo  {
      * This is the getter method this will return the attribute value.
      * End time of dry-run operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endTime
      */
@@ -98,7 +98,7 @@ public class DryrunInfo  {
      * This is the setter method to the attribute.
      * End time of dry-run operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endTime set the endTime.
      */
@@ -112,7 +112,7 @@ public class DryrunInfo  {
      * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
      * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return operation
      */
@@ -126,7 +126,7 @@ public class DryrunInfo  {
      * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
      * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param operation set the operation.
      */
@@ -138,7 +138,7 @@ public class DryrunInfo  {
      * This is the getter method this will return the attribute value.
      * Parameters for performing the dry-run operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return params
      */
@@ -150,7 +150,7 @@ public class DryrunInfo  {
      * This is the setter method to the attribute.
      * Parameters for performing the dry-run operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param params set the params.
      */
@@ -164,7 +164,7 @@ public class DryrunInfo  {
      * Allowed values are 0-100.
      * Field introduced in 31.1.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return progress
      */
@@ -178,7 +178,7 @@ public class DryrunInfo  {
      * Allowed values are 0-100.
      * Field introduced in 31.1.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param progress set the progress.
      */
@@ -190,7 +190,7 @@ public class DryrunInfo  {
      * This is the getter method this will return the attribute value.
      * Start time of dry-run operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startTime
      */
@@ -202,7 +202,7 @@ public class DryrunInfo  {
      * This is the setter method to the attribute.
      * Start time of dry-run operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startTime set the startTime.
      */
@@ -214,7 +214,7 @@ public class DryrunInfo  {
      * This is the getter method this will return the attribute value.
      * Current status of the dry-run operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return state
      */
@@ -226,7 +226,7 @@ public class DryrunInfo  {
      * This is the setter method to the attribute.
      * Current status of the dry-run operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param state set the state.
      */
@@ -238,7 +238,7 @@ public class DryrunInfo  {
      * This is the getter method this will return the attribute value.
      * Completed set of tasks in the upgrade operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tasksCompleted
      */
@@ -250,7 +250,7 @@ public class DryrunInfo  {
      * This is the setter method to the attribute.
      * Completed set of tasks in the upgrade operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tasksCompleted set the tasksCompleted.
      */
@@ -262,7 +262,7 @@ public class DryrunInfo  {
      * This is the getter method this will return the attribute value.
      * Total number of tasks in the upgrade operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return totalTasks
      */
@@ -274,7 +274,7 @@ public class DryrunInfo  {
      * This is the setter method to the attribute.
      * Total number of tasks in the upgrade operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param totalTasks set the totalTasks.
      */
@@ -285,7 +285,7 @@ public class DryrunInfo  {
      * This is the getter method this will return the attribute value.
      * Controller events for dry-run operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return upgradeEvents
      */
@@ -297,7 +297,7 @@ public class DryrunInfo  {
      * This is the setter method. this will set the upgradeEvents
      * Controller events for dry-run operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return upgradeEvents
      */
@@ -309,7 +309,7 @@ public class DryrunInfo  {
      * This is the setter method this will set the upgradeEvents
      * Controller events for dry-run operation.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return upgradeEvents
      */
@@ -325,7 +325,7 @@ public class DryrunInfo  {
      * This is the getter method this will return the attribute value.
      * Node on which the dry-run is performed.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return worker
      */
@@ -337,7 +337,7 @@ public class DryrunInfo  {
      * This is the setter method to the attribute.
      * Node on which the dry-run is performed.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param worker set the worker.
      */

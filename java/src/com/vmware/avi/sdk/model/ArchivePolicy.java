@@ -33,7 +33,7 @@ public class ArchivePolicy  {
      * This is the getter method this will return the attribute value.
      * Specify a file path to add archive rule.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return filePath
      */
@@ -45,7 +45,7 @@ public class ArchivePolicy  {
      * This is the setter method to the attribute.
      * Specify a file path to add archive rule.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param filePath set the filePath.
      */
@@ -58,7 +58,7 @@ public class ArchivePolicy  {
      * Specify a threshold for file path in mb.
      * Field introduced in 31.2.1.
      * Unit is mb.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @return threshold
      */
@@ -71,7 +71,7 @@ public class ArchivePolicy  {
      * Specify a threshold for file path in mb.
      * Field introduced in 31.2.1.
      * Unit is mb.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @param threshold set the threshold.
      */

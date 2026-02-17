@@ -50,7 +50,7 @@ public class FlowtableProfile  {
      * Allowed values are 1-36000.
      * Field introduced in 20.1.3.
      * Unit is seconds.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return icmpIdleTimeout
      */
@@ -64,7 +64,7 @@ public class FlowtableProfile  {
      * Allowed values are 1-36000.
      * Field introduced in 20.1.3.
      * Unit is seconds.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param icmpIdleTimeout set the icmpIdleTimeout.
      */

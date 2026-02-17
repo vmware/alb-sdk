@@ -623,7 +623,7 @@ public class vNIC  {
      * Setting a value of 0 implies the default value for that environment.
      * (tech-preview, vcenter only).
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numRxDescriptors
      */
@@ -637,7 +637,7 @@ public class vNIC  {
      * Setting a value of 0 implies the default value for that environment.
      * (tech-preview, vcenter only).
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numRxDescriptors set the numRxDescriptors.
      */
@@ -651,7 +651,7 @@ public class vNIC  {
      * Setting a value of 0 implies the default value for that environment.
      * (tech-preview, vcenter only).
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numTxDescriptors
      */
@@ -665,7 +665,7 @@ public class vNIC  {
      * Setting a value of 0 implies the default value for that environment.
      * (tech-preview, vcenter only).
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numTxDescriptors set the numTxDescriptors.
      */
@@ -718,7 +718,7 @@ public class vNIC  {
      * Tepless ip address for tep-less vpc deployment.
      * This ip is used as the source ip for all traffic originated by the se in this vrf.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return teplessIp
      */
@@ -731,7 +731,7 @@ public class vNIC  {
      * Tepless ip address for tep-less vpc deployment.
      * This ip is used as the source ip for all traffic originated by the se in this vrf.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param teplessIp set the teplessIp.
      */

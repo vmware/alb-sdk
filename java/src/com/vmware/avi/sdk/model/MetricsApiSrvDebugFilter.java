@@ -59,7 +59,7 @@ public class MetricsApiSrvDebugFilter  {
      * Allowed values are 4-24.
      * Special values are 0- stop taking metrics db query stats snapshots.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dbStatsNumSnapshots
      */
@@ -73,7 +73,7 @@ public class MetricsApiSrvDebugFilter  {
      * Allowed values are 4-24.
      * Special values are 0- stop taking metrics db query stats snapshots.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dbStatsNumSnapshots set the dbStatsNumSnapshots.
      */
@@ -87,7 +87,7 @@ public class MetricsApiSrvDebugFilter  {
      * Allowed values are 1-48.
      * Field introduced in 32.1.1.
      * Unit is hours.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dbStatsSnapshotPeriodHours
      */
@@ -101,7 +101,7 @@ public class MetricsApiSrvDebugFilter  {
      * Allowed values are 1-48.
      * Field introduced in 32.1.1.
      * Unit is hours.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dbStatsSnapshotPeriodHours set the dbStatsSnapshotPeriodHours.
      */
@@ -139,7 +139,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Single knob to enable collection of metrics api server stats.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiPerfStatsEnabled
      */
@@ -151,7 +151,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the setter method to the attribute.
      * Single knob to enable collection of metrics api server stats.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mapiPerfStatsEnabled set the mapiPerfStatsEnabled.
      */
@@ -162,7 +162,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Maintain query history only for the specified entity type - pool_metrics_entity etc.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistoryEntityTypeFilters
      */
@@ -174,7 +174,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the setter method. this will set the mapiReqHistoryEntityTypeFilters
      * Maintain query history only for the specified entity type - pool_metrics_entity etc.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistoryEntityTypeFilters
      */
@@ -186,7 +186,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the setter method this will set the mapiReqHistoryEntityTypeFilters
      * Maintain query history only for the specified entity type - pool_metrics_entity etc.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistoryEntityTypeFilters
      */
@@ -201,7 +201,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Maintain query history only for the specified entity uuid.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistoryEntityUuidFilters
      */
@@ -213,7 +213,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the setter method. this will set the mapiReqHistoryEntityUuidFilters
      * Maintain query history only for the specified entity uuid.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistoryEntityUuidFilters
      */
@@ -225,7 +225,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the setter method this will set the mapiReqHistoryEntityUuidFilters
      * Maintain query history only for the specified entity uuid.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistoryEntityUuidFilters
      */
@@ -240,7 +240,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Maintain query history only for the specified metric id.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistoryMetricIdFilters
      */
@@ -252,7 +252,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the setter method. this will set the mapiReqHistoryMetricIdFilters
      * Maintain query history only for the specified metric id.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistoryMetricIdFilters
      */
@@ -264,7 +264,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the setter method this will set the mapiReqHistoryMetricIdFilters
      * Maintain query history only for the specified metric id.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistoryMetricIdFilters
      */
@@ -282,7 +282,7 @@ public class MetricsApiSrvDebugFilter  {
      * Allowed values are 1-32.
      * Special values are 0- stop saving of last-n metrics api server queries.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistoryNumRecords
      */
@@ -296,7 +296,7 @@ public class MetricsApiSrvDebugFilter  {
      * Allowed values are 1-32.
      * Special values are 0- stop saving of last-n metrics api server queries.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mapiReqHistoryNumRecords set the mapiReqHistoryNumRecords.
      */
@@ -307,7 +307,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Maintain query history only for the specified serviceengine uuid.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistorySeUuidFilters
      */
@@ -319,7 +319,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the setter method. this will set the mapiReqHistorySeUuidFilters
      * Maintain query history only for the specified serviceengine uuid.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistorySeUuidFilters
      */
@@ -331,7 +331,7 @@ public class MetricsApiSrvDebugFilter  {
      * This is the setter method this will set the mapiReqHistorySeUuidFilters
      * Maintain query history only for the specified serviceengine uuid.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiReqHistorySeUuidFilters
      */
@@ -350,7 +350,7 @@ public class MetricsApiSrvDebugFilter  {
      * Special values are 0- stop periodic saving of last-n metrics api server queries.
      * Field introduced in 32.1.1.
      * Unit is hours.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mapiStatsLogPeriodHours
      */
@@ -365,7 +365,7 @@ public class MetricsApiSrvDebugFilter  {
      * Special values are 0- stop periodic saving of last-n metrics api server queries.
      * Field introduced in 32.1.1.
      * Unit is hours.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mapiStatsLogPeriodHours set the mapiStatsLogPeriodHours.
      */

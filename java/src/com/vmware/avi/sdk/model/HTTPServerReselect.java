@@ -41,8 +41,7 @@ public class HTTPServerReselect  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable http request reselect when server responds with specific response codes.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enabled
      */
@@ -53,8 +52,7 @@ public class HTTPServerReselect  {
     /**
      * This is the setter method to the attribute.
      * Enable http request reselect when server responds with specific response codes.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enabled set the enabled.
      */

@@ -43,7 +43,7 @@ public class SETimeTrackerProperties  {
      * Audit queueing latency from proxy to dispatcher.
      * Enum options - SE_TT_AUDIT_OFF, SE_TT_AUDIT_ON, SE_TT_AUDIT_ON_WITH_EVENT.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SE_TT_AUDIT_OFF".
      * @return egressAuditMode
      */
@@ -56,7 +56,7 @@ public class SETimeTrackerProperties  {
      * Audit queueing latency from proxy to dispatcher.
      * Enum options - SE_TT_AUDIT_OFF, SE_TT_AUDIT_ON, SE_TT_AUDIT_ON_WITH_EVENT.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SE_TT_AUDIT_OFF".
      * @param egressAuditMode set the egressAuditMode.
      */
@@ -69,7 +69,7 @@ public class SETimeTrackerProperties  {
      * Maximum egress latency threshold between dispatcher and proxy.
      * Field introduced in 22.1.1.
      * Unit is milliseconds.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return egressThreshold
      */
@@ -82,7 +82,7 @@ public class SETimeTrackerProperties  {
      * Maximum egress latency threshold between dispatcher and proxy.
      * Field introduced in 22.1.1.
      * Unit is milliseconds.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param egressThreshold set the egressThreshold.
      */
@@ -95,7 +95,7 @@ public class SETimeTrackerProperties  {
      * Window for cumulative event generation.
      * Field introduced in 22.1.1.
      * Unit is seconds.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return eventGenWindow
      */
@@ -108,7 +108,7 @@ public class SETimeTrackerProperties  {
      * Window for cumulative event generation.
      * Field introduced in 22.1.1.
      * Unit is seconds.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param eventGenWindow set the eventGenWindow.
      */
@@ -121,7 +121,7 @@ public class SETimeTrackerProperties  {
      * Audit queueing latency from dispatcher to proxy.
      * Enum options - SE_TT_AUDIT_OFF, SE_TT_AUDIT_ON, SE_TT_AUDIT_ON_WITH_EVENT.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SE_TT_AUDIT_OFF".
      * @return ingressAuditMode
      */
@@ -134,7 +134,7 @@ public class SETimeTrackerProperties  {
      * Audit queueing latency from dispatcher to proxy.
      * Enum options - SE_TT_AUDIT_OFF, SE_TT_AUDIT_ON, SE_TT_AUDIT_ON_WITH_EVENT.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SE_TT_AUDIT_OFF".
      * @param ingressAuditMode set the ingressAuditMode.
      */
@@ -147,7 +147,7 @@ public class SETimeTrackerProperties  {
      * Maximum ingress latency threshold between dispatcher and proxy.
      * Field introduced in 22.1.1.
      * Unit is milliseconds.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return ingressThreshold
      */
@@ -160,7 +160,7 @@ public class SETimeTrackerProperties  {
      * Maximum ingress latency threshold between dispatcher and proxy.
      * Field introduced in 22.1.1.
      * Unit is milliseconds.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param ingressThreshold set the ingressThreshold.
      */

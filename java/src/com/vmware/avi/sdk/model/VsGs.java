@@ -54,7 +54,7 @@ public class VsGs extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Gslb geodb being associated using this object.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geodbUuid
      */
@@ -66,7 +66,7 @@ public class VsGs extends AviRestResource  {
      * This is the setter method to the attribute.
      * Gslb geodb being associated using this object.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param geodbUuid set the geodbUuid.
      */
@@ -78,7 +78,7 @@ public class VsGs extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Gslb service being associated using this object.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gsUuid
      */
@@ -90,7 +90,7 @@ public class VsGs extends AviRestResource  {
      * This is the setter method to the attribute.
      * Gslb service being associated using this object.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gsUuid set the gsUuid.
      */
@@ -102,7 +102,7 @@ public class VsGs extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Gslb being associated using this object.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gslbUuid
      */
@@ -114,7 +114,7 @@ public class VsGs extends AviRestResource  {
      * This is the setter method to the attribute.
      * Gslb being associated using this object.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gslbUuid set the gslbUuid.
      */
@@ -126,7 +126,7 @@ public class VsGs extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the vs-gs association object.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -138,7 +138,7 @@ public class VsGs extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the vs-gs association object.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -151,7 +151,7 @@ public class VsGs extends AviRestResource  {
      * Tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -164,7 +164,7 @@ public class VsGs extends AviRestResource  {
      * Tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -177,7 +177,7 @@ public class VsGs extends AviRestResource  {
      * Type of the vs-gs association object.
      * Enum options - VSGS_TYPE_GSLB, VSGS_TYPE_GS, VSGS_TYPE_GEO_DB.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -190,7 +190,7 @@ public class VsGs extends AviRestResource  {
      * Type of the vs-gs association object.
      * Enum options - VSGS_TYPE_GSLB, VSGS_TYPE_GS, VSGS_TYPE_GEO_DB.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */
@@ -219,7 +219,7 @@ public class VsGs extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the vs-gs association object.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -231,7 +231,7 @@ public class VsGs extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the vs-gs association object.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -243,7 +243,7 @@ public class VsGs extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Virtual service being associated using this object.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -255,7 +255,7 @@ public class VsGs extends AviRestResource  {
      * This is the setter method to the attribute.
      * Virtual service being associated using this object.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsUuid set the vsUuid.
      */

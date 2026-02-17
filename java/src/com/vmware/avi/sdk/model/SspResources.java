@@ -40,7 +40,7 @@ public class SspResources  {
      * Client certificate used by avi to authenticate with the ssp instance.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return aviClientCertRef
      */
@@ -53,7 +53,7 @@ public class SspResources  {
      * Client certificate used by avi to authenticate with the ssp instance.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param aviClientCertRef set the aviClientCertRef.
      */
@@ -66,7 +66,7 @@ public class SspResources  {
      * Authmappingprofile used to setup client cert auth for the ssp instance.
      * It is a reference to an object of type authmappingprofile.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientCertAuthMappingProfileRef
      */
@@ -79,7 +79,7 @@ public class SspResources  {
      * Authmappingprofile used to setup client cert auth for the ssp instance.
      * It is a reference to an object of type authmappingprofile.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientCertAuthMappingProfileRef set the clientCertAuthMappingProfileRef.
      */
@@ -92,7 +92,7 @@ public class SspResources  {
      * Authprofile used to setup client cert auth for the ssp instance.
      * It is a reference to an object of type authprofile.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientCertAuthProfileRef
      */
@@ -105,7 +105,7 @@ public class SspResources  {
      * Authprofile used to setup client cert auth for the ssp instance.
      * It is a reference to an object of type authprofile.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientCertAuthProfileRef set the clientCertAuthProfileRef.
      */
@@ -118,7 +118,7 @@ public class SspResources  {
      * Client certificate that the ssp instance uses to authenticate with avi.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientCertRef
      */
@@ -131,7 +131,7 @@ public class SspResources  {
      * Client certificate that the ssp instance uses to authenticate with avi.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientCertRef set the clientCertRef.
      */

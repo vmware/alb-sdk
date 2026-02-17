@@ -21,11 +21,20 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicenseStatus extends AviRestResource  {
+    @JsonProperty("cls_status")
+    private CLSStatus clsStatus;
+
+    @JsonProperty("legacy_license_grace_period")
+    private String legacyLicenseGracePeriod;
+
     @JsonProperty("saas_status")
     private SaasLicensingStatus saasStatus;
 
     @JsonProperty("service_update")
     private LicenseServiceUpdate serviceUpdate;
+
+    @JsonProperty("support_legacy_license")
+    private Boolean supportLegacyLicense;
 
     @JsonProperty("tenant_uuid")
     private String tenantUuid;
@@ -40,9 +49,57 @@ public class LicenseStatus extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Cls licensing status.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clsStatus
+     */
+    public CLSStatus getClsStatus() {
+        return clsStatus;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Cls licensing status.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param clsStatus set the clsStatus.
+     */
+    public void setClsStatus(CLSStatus clsStatus) {
+        this.clsStatus = clsStatus;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Legacy license grace period, when controller upgrades with existing legacy licenses.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return legacyLicenseGracePeriod
+     */
+    public String getLegacyLicenseGracePeriod() {
+        return legacyLicenseGracePeriod;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Legacy license grace period, when controller upgrades with existing legacy licenses.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param legacyLicenseGracePeriod set the legacyLicenseGracePeriod.
+     */
+    public void setLegacyLicenseGracePeriod(String  legacyLicenseGracePeriod) {
+        this.legacyLicenseGracePeriod = legacyLicenseGracePeriod;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Saas licensing status.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return saasStatus
      */
@@ -54,7 +111,7 @@ public class LicenseStatus extends AviRestResource  {
      * This is the setter method to the attribute.
      * Saas licensing status.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param saasStatus set the saasStatus.
      */
@@ -66,7 +123,7 @@ public class LicenseStatus extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Pulse license service update.
      * Field introduced in 21.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceUpdate
      */
@@ -78,7 +135,7 @@ public class LicenseStatus extends AviRestResource  {
      * This is the setter method to the attribute.
      * Pulse license service update.
      * Field introduced in 21.1.4.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceUpdate set the serviceUpdate.
      */
@@ -88,9 +145,35 @@ public class LicenseStatus extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Indicates if legacy licenses are supported.
+     * When false, legacy licenses have been cleaned up after grace period expiry.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return supportLegacyLicense
+     */
+    public Boolean getSupportLegacyLicense() {
+        return supportLegacyLicense;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Indicates if legacy licenses are supported.
+     * When false, legacy licenses have been cleaned up after grace period expiry.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param supportLegacyLicense set the supportLegacyLicense.
+     */
+    public void setSupportLegacyLicense(Boolean  supportLegacyLicense) {
+        this.supportLegacyLicense = supportLegacyLicense;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Tenant uuid.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantUuid
      */
@@ -102,7 +185,7 @@ public class LicenseStatus extends AviRestResource  {
      * This is the setter method to the attribute.
      * Tenant uuid.
      * Field introduced in 30.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantUuid set the tenantUuid.
      */
@@ -131,7 +214,7 @@ public class LicenseStatus extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -143,7 +226,7 @@ public class LicenseStatus extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -164,6 +247,9 @@ public class LicenseStatus extends AviRestResource  {
       return   Objects.equals(this.uuid, objLicenseStatus.uuid)&&
   Objects.equals(this.saasStatus, objLicenseStatus.saasStatus)&&
   Objects.equals(this.serviceUpdate, objLicenseStatus.serviceUpdate)&&
+  Objects.equals(this.clsStatus, objLicenseStatus.clsStatus)&&
+  Objects.equals(this.legacyLicenseGracePeriod, objLicenseStatus.legacyLicenseGracePeriod)&&
+  Objects.equals(this.supportLegacyLicense, objLicenseStatus.supportLegacyLicense)&&
   Objects.equals(this.tenantUuid, objLicenseStatus.tenantUuid);
     }
 
@@ -171,8 +257,11 @@ public class LicenseStatus extends AviRestResource  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class LicenseStatus {\n");
-                  sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
+                  sb.append("    clsStatus: ").append(toIndentedString(clsStatus)).append("\n");
+                        sb.append("    legacyLicenseGracePeriod: ").append(toIndentedString(legacyLicenseGracePeriod)).append("\n");
+                        sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
                         sb.append("    serviceUpdate: ").append(toIndentedString(serviceUpdate)).append("\n");
+                        sb.append("    supportLegacyLicense: ").append(toIndentedString(supportLegacyLicense)).append("\n");
                         sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");

@@ -66,8 +66,7 @@ public class RateProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Explicitly tracks an attacker across rate periods.
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-     * Allowed in basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return explicitTracking
      */
@@ -78,8 +77,7 @@ public class RateProfile  {
     /**
      * This is the setter method to the attribute.
      * Explicitly tracks an attacker across rate periods.
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-     * Allowed in basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param explicitTracking set the explicitTracking.
      */
@@ -90,8 +88,7 @@ public class RateProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable fine granularity.
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-     * Allowed in basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return fineGrain
      */
@@ -102,8 +99,7 @@ public class RateProfile  {
     /**
      * This is the setter method to the attribute.
      * Enable fine granularity.
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
-     * Allowed in basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param fineGrain set the fineGrain.
      */
@@ -115,7 +111,7 @@ public class RateProfile  {
      * This is the getter method this will return the attribute value.
      * Http cookie name.
      * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpCookie
      */
@@ -127,7 +123,7 @@ public class RateProfile  {
      * This is the setter method to the attribute.
      * Http cookie name.
      * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpCookie set the httpCookie.
      */
@@ -139,7 +135,7 @@ public class RateProfile  {
      * This is the getter method this will return the attribute value.
      * Http header name.
      * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpHeader
      */
@@ -151,7 +147,7 @@ public class RateProfile  {
      * This is the setter method to the attribute.
      * Http header name.
      * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, essentials, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpHeader set the httpHeader.
      */

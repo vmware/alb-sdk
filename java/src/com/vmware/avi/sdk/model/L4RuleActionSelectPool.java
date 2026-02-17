@@ -37,8 +37,7 @@ public class L4RuleActionSelectPool  {
      * Indicates action to take on rule match.
      * Enum options - L4_RULE_ACTION_SELECT_POOL, L4_RULE_ACTION_SELECT_POOLGROUP.
      * Field introduced in 17.2.7.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- l4_rule_action_select_pool), basic (allowed values- l4_rule_action_select_pool) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return actionType
      */
@@ -51,8 +50,7 @@ public class L4RuleActionSelectPool  {
      * Indicates action to take on rule match.
      * Enum options - L4_RULE_ACTION_SELECT_POOL, L4_RULE_ACTION_SELECT_POOLGROUP.
      * Field introduced in 17.2.7.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- l4_rule_action_select_pool), basic (allowed values- l4_rule_action_select_pool) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param actionType set the actionType.
      */
@@ -65,7 +63,7 @@ public class L4RuleActionSelectPool  {
      * Id of the pool group to serve the request.
      * It is a reference to an object of type poolgroup.
      * Field introduced in 17.2.7.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolGroupRef
      */
@@ -78,7 +76,7 @@ public class L4RuleActionSelectPool  {
      * Id of the pool group to serve the request.
      * It is a reference to an object of type poolgroup.
      * Field introduced in 17.2.7.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolGroupRef set the poolGroupRef.
      */

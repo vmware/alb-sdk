@@ -144,8 +144,7 @@ public class HealthMonitor extends AviRestResource  {
      * desired.
      * Use this knob to allow duplicates.
      * Field introduced in 18.2.8.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowDuplicateMonitors
      */
@@ -160,8 +159,7 @@ public class HealthMonitor extends AviRestResource  {
      * desired.
      * Use this knob to allow duplicates.
      * Field introduced in 18.2.8.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- true), basic (allowed values- true) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param allowDuplicateMonitors set the allowDuplicateMonitors.
      */
@@ -173,7 +171,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Authentication information for username/password.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authentication
      */
@@ -185,7 +183,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Authentication information for username/password.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param authentication set the authentication.
      */
@@ -219,8 +217,7 @@ public class HealthMonitor extends AviRestResource  {
      * kick in, to mark the server up as soon as possible.
      * This knob may be used to turn this feature off.
      * Field introduced in 18.2.7.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return disableQuickstart
      */
@@ -234,8 +231,7 @@ public class HealthMonitor extends AviRestResource  {
      * kick in, to mark the server up as soon as possible.
      * This knob may be used to turn this feature off.
      * Field introduced in 18.2.7.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param disableQuickstart set the disableQuickstart.
      */
@@ -245,7 +241,7 @@ public class HealthMonitor extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsMonitor
      */
@@ -255,7 +251,7 @@ public class HealthMonitor extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dnsMonitor set the dnsMonitor.
      */
@@ -311,7 +307,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for ftp.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ftpMonitor
      */
@@ -323,7 +319,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for ftp.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ftpMonitor set the ftpMonitor.
      */
@@ -335,7 +331,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for ftps.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ftpsMonitor
      */
@@ -347,7 +343,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for ftps.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ftpsMonitor set the ftpsMonitor.
      */
@@ -359,7 +355,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for http2.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return http2Monitor
      */
@@ -371,7 +367,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for http2.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param http2Monitor set the http2Monitor.
      */
@@ -383,7 +379,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for http2s.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return http2sMonitor
      */
@@ -395,7 +391,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for http2s.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param http2sMonitor set the http2sMonitor.
      */
@@ -405,7 +401,7 @@ public class HealthMonitor extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpMonitor
      */
@@ -415,7 +411,7 @@ public class HealthMonitor extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpMonitor set the httpMonitor.
      */
@@ -425,7 +421,7 @@ public class HealthMonitor extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpsMonitor
      */
@@ -435,7 +431,7 @@ public class HealthMonitor extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed with any value in enterprise, basic, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpsMonitor set the httpsMonitor.
      */
@@ -447,7 +443,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for imap.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return imapMonitor
      */
@@ -459,7 +455,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for imap.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param imapMonitor set the imapMonitor.
      */
@@ -471,7 +467,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for imaps.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return imapsMonitor
      */
@@ -483,7 +479,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for imaps.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param imapsMonitor set the imapsMonitor.
      */
@@ -497,8 +493,7 @@ public class HealthMonitor extends AviRestResource  {
      * If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
      * If the field is set to true, then the object is replicated across the federation.
      * Field introduced in 17.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isFederated
      */
@@ -512,8 +507,7 @@ public class HealthMonitor extends AviRestResource  {
      * If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
      * If the field is set to true, then the object is replicated across the federation.
      * Field introduced in 17.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isFederated set the isFederated.
      */
@@ -525,7 +519,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for ldap.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ldapMonitor
      */
@@ -537,7 +531,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for ldap.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ldapMonitor set the ldapMonitor.
      */
@@ -549,7 +543,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for ldaps.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ldapsMonitor
      */
@@ -561,7 +555,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for ldaps.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ldapsMonitor set the ldapsMonitor.
      */
@@ -612,7 +606,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Destination ip address to be monitored instead of the pool member ip.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return monitorIp
      */
@@ -624,7 +618,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Destination ip address to be monitored instead of the pool member ip.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param monitorIp set the monitorIp.
      */
@@ -686,7 +680,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for pop3.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pop3Monitor
      */
@@ -698,7 +692,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for pop3.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pop3Monitor set the pop3Monitor.
      */
@@ -710,7 +704,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for pop3s.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pop3sMonitor
      */
@@ -722,7 +716,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for pop3s.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pop3sMonitor set the pop3sMonitor.
      */
@@ -734,7 +728,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for radius.
      * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return radiusMonitor
      */
@@ -746,7 +740,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for radius.
      * Field introduced in 18.2.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param radiusMonitor set the radiusMonitor.
      */
@@ -788,7 +782,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for sctp.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sctpMonitor
      */
@@ -800,7 +794,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for sctp.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sctpMonitor set the sctpMonitor.
      */
@@ -838,7 +832,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for sip.
      * Field introduced in 17.2.8, 18.1.3, 18.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sipMonitor
      */
@@ -850,7 +844,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for sip.
      * Field introduced in 17.2.8, 18.1.3, 18.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sipMonitor set the sipMonitor.
      */
@@ -862,7 +856,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for smtp.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return smtpMonitor
      */
@@ -874,7 +868,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for smtp.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param smtpMonitor set the smtpMonitor.
      */
@@ -886,7 +880,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Health monitor for smtps.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return smtpsMonitor
      */
@@ -898,7 +892,7 @@ public class HealthMonitor extends AviRestResource  {
      * This is the setter method to the attribute.
      * Health monitor for smtps.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param smtpsMonitor set the smtpsMonitor.
      */
@@ -979,9 +973,7 @@ public class HealthMonitor extends AviRestResource  {
      * HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS,
      * HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS,
      * HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS...
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp), basic (allowed values-
-     * health_monitor_ping,health_monitor_tcp,health_monitor_udp,health_monitor_http,health_monitor_https) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -996,9 +988,7 @@ public class HealthMonitor extends AviRestResource  {
      * HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS,
      * HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS,
      * HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS...
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp), basic (allowed values-
-     * health_monitor_ping,health_monitor_tcp,health_monitor_udp,health_monitor_http,health_monitor_https) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */

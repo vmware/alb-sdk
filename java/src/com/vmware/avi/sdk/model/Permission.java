@@ -64,7 +64,7 @@ public class Permission  {
      * This is the getter method this will return the attribute value.
      * Limits the scope of write access on the parent resource to modification of only the specified subresources.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subresource
      */
@@ -76,7 +76,7 @@ public class Permission  {
      * This is the setter method to the attribute.
      * Limits the scope of write access on the parent resource to modification of only the specified subresources.
      * Field introduced in 20.1.5.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subresource set the subresource.
      */

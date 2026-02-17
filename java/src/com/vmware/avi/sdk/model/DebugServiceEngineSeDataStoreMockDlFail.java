@@ -34,7 +34,7 @@ public class DebugServiceEngineSeDataStoreMockDlFail  {
      * Se datastore notification rpc type to be failed.
      * Set true for update and false for create.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return isSedatastoreUpdateRpc
      */
@@ -47,7 +47,7 @@ public class DebugServiceEngineSeDataStoreMockDlFail  {
      * Se datastore notification rpc type to be failed.
      * Set true for update and false for create.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param isSedatastoreUpdateRpc set the isSedatastoreUpdateRpc.
      */
@@ -60,7 +60,7 @@ public class DebugServiceEngineSeDataStoreMockDlFail  {
      * Incoming stream response object type to be failed.
      * Eg  'virtualservicese', 'pool', 'fileobject', etc.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objectType
      */
@@ -73,7 +73,7 @@ public class DebugServiceEngineSeDataStoreMockDlFail  {
      * Incoming stream response object type to be failed.
      * Eg  'virtualservicese', 'pool', 'fileobject', etc.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objectType set the objectType.
      */

@@ -42,7 +42,7 @@ public class LicensePolicy  {
      * This is the getter method this will return the attribute value.
      * License expiration date.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return expirationDate
      */
@@ -54,7 +54,7 @@ public class LicensePolicy  {
      * This is the setter method to the attribute.
      * License expiration date.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param expirationDate set the expirationDate.
      */
@@ -66,7 +66,7 @@ public class LicensePolicy  {
      * This is the getter method this will return the attribute value.
      * Expiration pre warning period.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return expirationPreWarn
      */
@@ -78,7 +78,7 @@ public class LicensePolicy  {
      * This is the setter method to the attribute.
      * Expiration pre warning period.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param expirationPreWarn set the expirationPreWarn.
      */
@@ -90,7 +90,7 @@ public class LicensePolicy  {
      * This is the getter method this will return the attribute value.
      * License expiration reason.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return expirationReason
      */
@@ -102,7 +102,7 @@ public class LicensePolicy  {
      * This is the setter method to the attribute.
      * License expiration reason.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param expirationReason set the expirationReason.
      */
@@ -114,7 +114,7 @@ public class LicensePolicy  {
      * This is the getter method this will return the attribute value.
      * License grace period.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gracePeriod
      */
@@ -126,7 +126,7 @@ public class LicensePolicy  {
      * This is the setter method to the attribute.
      * License grace period.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gracePeriod set the gracePeriod.
      */
@@ -137,7 +137,7 @@ public class LicensePolicy  {
      * This is the getter method this will return the attribute value.
      * License warnings.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseWarnings
      */
@@ -149,7 +149,7 @@ public class LicensePolicy  {
      * This is the setter method. this will set the licenseWarnings
      * License warnings.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseWarnings
      */
@@ -161,7 +161,7 @@ public class LicensePolicy  {
      * This is the setter method this will set the licenseWarnings
      * License warnings.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseWarnings
      */

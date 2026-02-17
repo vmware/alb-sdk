@@ -188,7 +188,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type certificatemanagementprofile.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return certificateManagementProfileRef
      */
@@ -199,7 +199,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type certificatemanagementprofile.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param certificateManagementProfileRef set the certificateManagementProfileRef.
      */
@@ -231,7 +231,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Dynamic parameters needed for certificate management profile.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dynamicParams
      */
@@ -242,7 +242,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     /**
      * This is the setter method. this will set the dynamicParams
      * Dynamic parameters needed for certificate management profile.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dynamicParams
      */
@@ -253,7 +253,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     /**
      * This is the setter method this will set the dynamicParams
      * Dynamic parameters needed for certificate management profile.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dynamicParams
      */
@@ -269,8 +269,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enables ocsp stapling.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableOcspStapling
      */
@@ -282,8 +281,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enables ocsp stapling.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableOcspStapling set the enableOcspStapling.
      */
@@ -366,7 +364,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type hardwaresecuritymodulegroup.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hardwaresecuritymodulegroupRef
      */
@@ -377,7 +375,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type hardwaresecuritymodulegroup.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hardwaresecuritymodulegroupRef set the hardwaresecuritymodulegroupRef.
      */
@@ -389,7 +387,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Flag to enable private key import to hsm while importing the certificate.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return importKeyToHsm
      */
@@ -401,7 +399,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the setter method to the attribute.
      * Flag to enable private key import to hsm while importing the certificate.
      * Field introduced in 22.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param importKeyToHsm set the importKeyToHsm.
      */
@@ -413,7 +411,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * It specifies whether the object has to be replicated to the gslb followers.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isFederated
      */
@@ -425,7 +423,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the setter method to the attribute.
      * It specifies whether the object has to be replicated to the gslb followers.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isFederated set the isFederated.
      */
@@ -582,7 +580,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Configuration related to ocsp.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ocspConfig
      */
@@ -594,7 +592,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the setter method to the attribute.
      * Configuration related to ocsp.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ocspConfig set the ocspConfig.
      */
@@ -611,8 +609,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * OCSP_ERR_CERTSTATUS_ISSUER_REVOKED, OCSP_ERR_CERTSTATUS_PARSE_CERT, OCSP_ERR_CERTSTATUS_HTTP_REQ, OCSP_ERR_CERTSTATUS_URL_LIST,
      * OCSP_ERR_CERTSTATUS_HTTP_SEND, OCSP_ERR_CERTSTATUS_HTTP_RECV, OCSP_ERR_CERTSTATUS_HTTP_RESP.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- ocsp_err_certstatus_disabled), basic (allowed values- ocsp_err_certstatus_disabled) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return ocspErrorStatus
      */
     public String getOcspErrorStatus() {
@@ -628,8 +625,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * OCSP_ERR_CERTSTATUS_ISSUER_REVOKED, OCSP_ERR_CERTSTATUS_PARSE_CERT, OCSP_ERR_CERTSTATUS_HTTP_REQ, OCSP_ERR_CERTSTATUS_URL_LIST,
      * OCSP_ERR_CERTSTATUS_HTTP_SEND, OCSP_ERR_CERTSTATUS_HTTP_RECV, OCSP_ERR_CERTSTATUS_HTTP_RESP.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- ocsp_err_certstatus_disabled), basic (allowed values- ocsp_err_certstatus_disabled) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param ocspErrorStatus set the ocspErrorStatus.
      */
     public void setOcspErrorStatus(String  ocspErrorStatus) {
@@ -639,7 +635,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * This is an internal field to store the ocsp responder urls contained in the certificate.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return ocspResponderUrlListFromCerts
      */
     public List<String> getOcspResponderUrlListFromCerts() {
@@ -650,7 +646,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the setter method. this will set the ocspResponderUrlListFromCerts
      * This is an internal field to store the ocsp responder urls contained in the certificate.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return ocspResponderUrlListFromCerts
      */
     public void setOcspResponderUrlListFromCerts(List<String>  ocspResponderUrlListFromCerts) {
@@ -661,7 +657,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the setter method this will set the ocspResponderUrlListFromCerts
      * This is an internal field to store the ocsp responder urls contained in the certificate.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return ocspResponderUrlListFromCerts
      */
     public SSLKeyAndCertificate addOcspResponderUrlListFromCertsItem(String ocspResponderUrlListFromCertsItem) {
@@ -676,7 +672,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Information related to ocsp response.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return ocspResponseInfo
      */
     public OCSPResponseInfo getOcspResponseInfo() {
@@ -687,7 +683,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is the setter method to the attribute.
      * Information related to ocsp response.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param ocspResponseInfo set the ocspResponseInfo.
      */
     public void setOcspResponseInfo(OCSPResponseInfo ocspResponseInfo) {

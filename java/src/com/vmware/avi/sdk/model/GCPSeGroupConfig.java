@@ -36,7 +36,7 @@ public class GCPSeGroupConfig  {
      * This is the getter method this will return the attribute value.
      * Service engine backend data network name, used only for gcp cloud.overrides the cloud level setting for backend data network in gcp two arm mode.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return backendDataVpcNetworkName
      */
@@ -48,7 +48,7 @@ public class GCPSeGroupConfig  {
      * This is the setter method to the attribute.
      * Service engine backend data network name, used only for gcp cloud.overrides the cloud level setting for backend data network in gcp two arm mode.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param backendDataVpcNetworkName set the backendDataVpcNetworkName.
      */
@@ -61,7 +61,7 @@ public class GCPSeGroupConfig  {
      * Project id of the service engine backend data network.
      * By default, service engine project id will be used.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return backendDataVpcProjectId
      */
@@ -74,7 +74,7 @@ public class GCPSeGroupConfig  {
      * Project id of the service engine backend data network.
      * By default, service engine project id will be used.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param backendDataVpcProjectId set the backendDataVpcProjectId.
      */
@@ -86,7 +86,7 @@ public class GCPSeGroupConfig  {
      * This is the getter method this will return the attribute value.
      * Service engine backend data subnet name, used only for gcp cloud.overrides the cloud level setting for backend data subnet in gcp two arm mode.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return backendDataVpcSubnetName
      */
@@ -98,7 +98,7 @@ public class GCPSeGroupConfig  {
      * This is the setter method to the attribute.
      * Service engine backend data subnet name, used only for gcp cloud.overrides the cloud level setting for backend data subnet in gcp two arm mode.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param backendDataVpcSubnetName set the backendDataVpcSubnetName.
      */

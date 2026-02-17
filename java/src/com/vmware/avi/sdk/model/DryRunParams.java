@@ -40,7 +40,7 @@ public class DryRunParams  {
      * This is the getter method this will return the attribute value.
      * Allow dry-run operation on single node controller.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return allowSingleNode
      */
@@ -52,7 +52,7 @@ public class DryRunParams  {
      * This is the setter method to the attribute.
      * Allow dry-run operation on single node controller.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param allowSingleNode set the allowSingleNode.
      */
@@ -65,7 +65,7 @@ public class DryRunParams  {
      * Amount of memory allocated for dry-run.
      * Field introduced in 31.1.1.
      * Unit is gb.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 6.0f.
      * @return memory
      */
@@ -78,7 +78,7 @@ public class DryRunParams  {
      * Amount of memory allocated for dry-run.
      * Field introduced in 31.1.1.
      * Unit is gb.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 6.0f.
      * @param memory set the memory.
      */
@@ -90,7 +90,7 @@ public class DryRunParams  {
      * This is the getter method this will return the attribute value.
      * Number of cpu(s) allocated for dry-run.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return numCpu
      */
@@ -102,7 +102,7 @@ public class DryRunParams  {
      * This is the setter method to the attribute.
      * Number of cpu(s) allocated for dry-run.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param numCpu set the numCpu.
      */
@@ -117,7 +117,7 @@ public class DryRunParams  {
      * When configured, dry-run is performed on specified node.
      * When not configured, one of the follower node is elected for dry-run.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return preferredWorker
      */
@@ -132,7 +132,7 @@ public class DryRunParams  {
      * When configured, dry-run is performed on specified node.
      * When not configured, one of the follower node is elected for dry-run.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param preferredWorker set the preferredWorker.
      */

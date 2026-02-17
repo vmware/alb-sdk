@@ -46,7 +46,7 @@ public class ReportEvent  {
      * Time taken to complete event in seconds.
      * Field introduced in 22.1.6, 30.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return duration
      */
@@ -59,7 +59,7 @@ public class ReportEvent  {
      * Time taken to complete event in seconds.
      * Field introduced in 22.1.6, 30.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param duration set the duration.
      */
@@ -71,7 +71,7 @@ public class ReportEvent  {
      * This is the getter method this will return the attribute value.
      * Event end time.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endTime
      */
@@ -83,7 +83,7 @@ public class ReportEvent  {
      * This is the setter method to the attribute.
      * Event end time.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endTime set the endTime.
      */
@@ -95,7 +95,7 @@ public class ReportEvent  {
      * This is the getter method this will return the attribute value.
      * Name representing the event.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return eventName
      */
@@ -107,7 +107,7 @@ public class ReportEvent  {
      * This is the setter method to the attribute.
      * Name representing the event.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param eventName set the eventName.
      */
@@ -118,7 +118,7 @@ public class ReportEvent  {
      * This is the getter method this will return the attribute value.
      * Event message if any.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return messages
      */
@@ -130,7 +130,7 @@ public class ReportEvent  {
      * This is the setter method. this will set the messages
      * Event message if any.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return messages
      */
@@ -142,7 +142,7 @@ public class ReportEvent  {
      * This is the setter method this will set the messages
      * Event message if any.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return messages
      */
@@ -158,7 +158,7 @@ public class ReportEvent  {
      * This is the getter method this will return the attribute value.
      * Event start time.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startTime
      */
@@ -170,7 +170,7 @@ public class ReportEvent  {
      * This is the setter method to the attribute.
      * Event start time.
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startTime set the startTime.
      */
@@ -185,7 +185,7 @@ public class ReportEvent  {
      * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
      * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -200,7 +200,7 @@ public class ReportEvent  {
      * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
      * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_FAILED...
      * Field introduced in 22.1.6, 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */

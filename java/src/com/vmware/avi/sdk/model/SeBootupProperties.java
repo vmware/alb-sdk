@@ -162,8 +162,7 @@ public class SeBootupProperties  {
      * Besides, given a smaller number of members that are separated geographically, a lower resolution is sufficient for correct load-balancing.
      * Allowed values are 1-20.
      * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- 1), basic (allowed values- 1) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return geoDbGranularity
      */
@@ -181,8 +180,7 @@ public class SeBootupProperties  {
      * Besides, given a smaller number of members that are separated geographically, a lower resolution is sufficient for correct load-balancing.
      * Allowed values are 1-20.
      * Field introduced in 17.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- 1), basic (allowed values- 1) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param geoDbGranularity set the geoDbGranularity.
      */
@@ -290,7 +288,7 @@ public class SeBootupProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDpCompression
      */
@@ -300,7 +298,7 @@ public class SeBootupProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seDpCompression set the seDpCompression.
      */
@@ -312,8 +310,7 @@ public class SeBootupProperties  {
      * This is the getter method this will return the attribute value.
      * Deprecated in 21.1.3.
      * Use config in serviceenginegroup instead.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seEmulatedCores
      */
@@ -325,8 +322,7 @@ public class SeBootupProperties  {
      * This is the setter method to the attribute.
      * Deprecated in 21.1.3.
      * Use config in serviceenginegroup instead.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- 0), basic (allowed values- 0) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seEmulatedCores set the seEmulatedCores.
      */

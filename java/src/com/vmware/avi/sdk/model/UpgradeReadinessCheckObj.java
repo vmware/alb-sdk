@@ -59,7 +59,7 @@ public class UpgradeReadinessCheckObj  {
      * This is the getter method this will return the attribute value.
      * List of upgrade readiness check exceptions.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return checks
      */
@@ -71,7 +71,7 @@ public class UpgradeReadinessCheckObj  {
      * This is the setter method. this will set the checks
      * List of upgrade readiness check exceptions.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return checks
      */
@@ -83,7 +83,7 @@ public class UpgradeReadinessCheckObj  {
      * This is the setter method this will set the checks
      * List of upgrade readiness check exceptions.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return checks
      */
@@ -100,7 +100,7 @@ public class UpgradeReadinessCheckObj  {
      * No.
      * Of checks completed.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return checksCompleted
      */
@@ -113,7 +113,7 @@ public class UpgradeReadinessCheckObj  {
      * No.
      * Of checks completed.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param checksCompleted set the checksCompleted.
      */
@@ -126,7 +126,7 @@ public class UpgradeReadinessCheckObj  {
      * Time taken to complete upgrade readiness checks in seconds.
      * Field introduced in 22.1.3.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return duration
      */
@@ -139,7 +139,7 @@ public class UpgradeReadinessCheckObj  {
      * Time taken to complete upgrade readiness checks in seconds.
      * Field introduced in 22.1.3.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param duration set the duration.
      */
@@ -151,7 +151,7 @@ public class UpgradeReadinessCheckObj  {
      * This is the getter method this will return the attribute value.
      * Time at which execution of upgrade readiness checks was completed.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endTime
      */
@@ -163,7 +163,7 @@ public class UpgradeReadinessCheckObj  {
      * This is the setter method to the attribute.
      * Time at which execution of upgrade readiness checks was completed.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endTime set the endTime.
      */
@@ -176,7 +176,7 @@ public class UpgradeReadinessCheckObj  {
      * Image uuid for identifying the next base image.
      * It is a reference to an object of type image.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return imageRef
      */
@@ -189,7 +189,7 @@ public class UpgradeReadinessCheckObj  {
      * Image uuid for identifying the next base image.
      * It is a reference to an object of type image.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param imageRef set the imageRef.
      */
@@ -202,7 +202,7 @@ public class UpgradeReadinessCheckObj  {
      * Image uuid for identifying the next patch.
      * It is a reference to an object of type image.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patchImageRef
      */
@@ -215,7 +215,7 @@ public class UpgradeReadinessCheckObj  {
      * Image uuid for identifying the next patch.
      * It is a reference to an object of type image.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param patchImageRef set the patchImageRef.
      */
@@ -229,7 +229,7 @@ public class UpgradeReadinessCheckObj  {
      * Allowed values are 0-100.
      * Field introduced in 31.1.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return progress
      */
@@ -243,7 +243,7 @@ public class UpgradeReadinessCheckObj  {
      * Allowed values are 0-100.
      * Field introduced in 31.1.1.
      * Unit is percent.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param progress set the progress.
      */
@@ -255,7 +255,7 @@ public class UpgradeReadinessCheckObj  {
      * This is the getter method this will return the attribute value.
      * Time at which execution of upgrade readiness checks was started.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startTime
      */
@@ -267,7 +267,7 @@ public class UpgradeReadinessCheckObj  {
      * This is the setter method to the attribute.
      * Time at which execution of upgrade readiness checks was started.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startTime set the startTime.
      */
@@ -279,7 +279,7 @@ public class UpgradeReadinessCheckObj  {
      * This is the getter method this will return the attribute value.
      * The upgrade readiness check operations current fsm-state.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return state
      */
@@ -291,7 +291,7 @@ public class UpgradeReadinessCheckObj  {
      * This is the setter method to the attribute.
      * The upgrade readiness check operations current fsm-state.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param state set the state.
      */
@@ -304,7 +304,7 @@ public class UpgradeReadinessCheckObj  {
      * Total no.
      * Of checks.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return totalChecks
      */
@@ -317,7 +317,7 @@ public class UpgradeReadinessCheckObj  {
      * Total no.
      * Of checks.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param totalChecks set the totalChecks.
      */
@@ -331,7 +331,7 @@ public class UpgradeReadinessCheckObj  {
      * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
      * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return upgradeOps
      */
@@ -345,7 +345,7 @@ public class UpgradeReadinessCheckObj  {
      * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
      * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param upgradeOps set the upgradeOps.
      */

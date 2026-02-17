@@ -36,7 +36,7 @@ public class TechSupportState  {
      * This is the getter method this will return the attribute value.
      * The last time the state changed.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastChangedTime
      */
@@ -48,7 +48,7 @@ public class TechSupportState  {
      * This is the setter method to the attribute.
      * The last time the state changed.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastChangedTime set the lastChangedTime.
      */
@@ -60,7 +60,7 @@ public class TechSupportState  {
      * This is the getter method this will return the attribute value.
      * Descriptive reason for the techsupport state-change.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -72,7 +72,7 @@ public class TechSupportState  {
      * This is the setter method to the attribute.
      * Descriptive reason for the techsupport state-change.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -86,7 +86,7 @@ public class TechSupportState  {
      * Enum options - TECHSUPPORT_FSM_STARTED, TECHSUPPORT_FSM_IN_PROGRESS, TECHSUPPORT_FSM_COMPLETED, TECHSUPPORT_FSM_COMPLETED_WITH_WARNINGS,
      * TECHSUPPORT_FSM_WARNING, TECHSUPPORT_FSM_ERROR.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return state
      */
@@ -100,7 +100,7 @@ public class TechSupportState  {
      * Enum options - TECHSUPPORT_FSM_STARTED, TECHSUPPORT_FSM_IN_PROGRESS, TECHSUPPORT_FSM_COMPLETED, TECHSUPPORT_FSM_COMPLETED_WITH_WARNINGS,
      * TECHSUPPORT_FSM_WARNING, TECHSUPPORT_FSM_ERROR.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param state set the state.
      */

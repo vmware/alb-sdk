@@ -36,7 +36,7 @@ public class LicenseWarning  {
      * This is the getter method this will return the attribute value.
      * License warning date.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return date
      */
@@ -48,7 +48,7 @@ public class LicenseWarning  {
      * This is the setter method to the attribute.
      * License warning date.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param date set the date.
      */
@@ -60,7 +60,7 @@ public class LicenseWarning  {
      * This is the getter method this will return the attribute value.
      * License pre warning period.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return preWarn
      */
@@ -72,7 +72,7 @@ public class LicenseWarning  {
      * This is the setter method to the attribute.
      * License pre warning period.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param preWarn set the preWarn.
      */
@@ -84,7 +84,7 @@ public class LicenseWarning  {
      * This is the getter method this will return the attribute value.
      * License warning reason.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -96,7 +96,7 @@ public class LicenseWarning  {
      * This is the setter method to the attribute.
      * License warning reason.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */

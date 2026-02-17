@@ -290,7 +290,7 @@ public class HttpCacheConfig  {
      * Blocklist string group of non-cacheable mime types.
      * It is a reference to an object of type stringgroup.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mimeTypesBlockGroupRefs
      */
@@ -303,7 +303,7 @@ public class HttpCacheConfig  {
      * Blocklist string group of non-cacheable mime types.
      * It is a reference to an object of type stringgroup.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mimeTypesBlockGroupRefs
      */
@@ -316,7 +316,7 @@ public class HttpCacheConfig  {
      * Blocklist string group of non-cacheable mime types.
      * It is a reference to an object of type stringgroup.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mimeTypesBlockGroupRefs
      */
@@ -331,7 +331,7 @@ public class HttpCacheConfig  {
      * This is the getter method this will return the attribute value.
      * Blocklist of non-cacheable mime types.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mimeTypesBlockLists
      */
@@ -343,7 +343,7 @@ public class HttpCacheConfig  {
      * This is the setter method. this will set the mimeTypesBlockLists
      * Blocklist of non-cacheable mime types.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mimeTypesBlockLists
      */
@@ -355,7 +355,7 @@ public class HttpCacheConfig  {
      * This is the setter method this will set the mimeTypesBlockLists
      * Blocklist of non-cacheable mime types.
      * Field introduced in 20.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mimeTypesBlockLists
      */

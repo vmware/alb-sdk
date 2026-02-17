@@ -25,7 +25,7 @@ public class ProactiveSupportDefaults  {
     private Boolean attachCoreDump = false;
 
     @JsonProperty("attach_tech_support")
-    private Boolean attachTechSupport;
+    private Boolean attachTechSupport = true;
 
     @JsonProperty("case_severity")
     private String caseSeverity = "Severity 5";
@@ -36,8 +36,7 @@ public class ProactiveSupportDefaults  {
      * This is the getter method this will return the attribute value.
      * Opt-in to attach core dump with support case.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return attachCoreDump
      */
@@ -49,8 +48,7 @@ public class ProactiveSupportDefaults  {
      * This is the setter method to the attribute.
      * Opt-in to attach core dump with support case.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param attachCoreDump set the attachCoreDump.
      */
@@ -62,9 +60,8 @@ public class ProactiveSupportDefaults  {
      * This is the getter method this will return the attribute value.
      * Opt-in to attach tech support with support case.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return attachTechSupport
      */
     public Boolean getAttachTechSupport() {
@@ -75,9 +72,8 @@ public class ProactiveSupportDefaults  {
      * This is the setter method to the attribute.
      * Opt-in to attach tech support with support case.
      * Field introduced in 20.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- false), basic (allowed values- false) edition.
-     * Special default for essentials edition is false, basic edition is false, enterprise edition is true.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param attachTechSupport set the attachTechSupport.
      */
     public void setAttachTechSupport(Boolean  attachTechSupport) {

@@ -29,9 +29,7 @@ public class SSLVersion  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - SSL_VERSION_SSLV3, SSL_VERSION_TLS1, SSL_VERSION_TLS1_1, SSL_VERSION_TLS1_2, SSL_VERSION_TLS1_3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- ssl_version_tls1,ssl_version_tls1_1,ssl_version_tls1_2), basic (allowed values-
-     * ssl_version_tls1,ssl_version_tls1_1,ssl_version_tls1_2) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_VERSION_TLS1_1".
      * @return type
      */
@@ -42,9 +40,7 @@ public class SSLVersion  {
     /**
      * This is the setter method to the attribute.
      * Enum options - SSL_VERSION_SSLV3, SSL_VERSION_TLS1, SSL_VERSION_TLS1_1, SSL_VERSION_TLS1_2, SSL_VERSION_TLS1_3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Allowed in essentials (allowed values- ssl_version_tls1,ssl_version_tls1_1,ssl_version_tls1_2), basic (allowed values-
-     * ssl_version_tls1,ssl_version_tls1_1,ssl_version_tls1_2) edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_VERSION_TLS1_1".
      * @param type set the type.
      */

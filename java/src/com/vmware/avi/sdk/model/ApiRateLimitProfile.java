@@ -48,7 +48,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Description for the api rate limit profile.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -60,7 +60,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Description for the api rate limit profile.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -72,7 +72,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Activate/deactivate the api rate limit profile.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enabled
      */
@@ -84,7 +84,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Activate/deactivate the api rate limit profile.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enabled set the enabled.
      */
@@ -96,7 +96,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the api rate limit profile.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -108,7 +108,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the api rate limit profile.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -122,7 +122,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * Field introduced in 31.2.1.
      * Minimum of 1 items required.
      * Maximum of 100 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rateLimitConfigurationRefs
      */
@@ -137,7 +137,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * Field introduced in 31.2.1.
      * Minimum of 1 items required.
      * Maximum of 100 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rateLimitConfigurationRefs
      */
@@ -152,7 +152,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * Field introduced in 31.2.1.
      * Minimum of 1 items required.
      * Maximum of 100 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rateLimitConfigurationRefs
      */
@@ -169,7 +169,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * Tenant ref for the api rate limit profile.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -182,7 +182,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * Tenant ref for the api rate limit profile.
      * It is a reference to an object of type tenant.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -211,7 +211,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the api rate limit profile.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -223,7 +223,7 @@ public class ApiRateLimitProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the api rate limit profile.
      * Field introduced in 31.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

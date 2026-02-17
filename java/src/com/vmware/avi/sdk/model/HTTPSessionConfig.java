@@ -48,7 +48,7 @@ public class HTTPSessionConfig  {
      * This is the getter method this will return the attribute value.
      * If set, http session cookie will use 'httponly' attribute.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return sessionCookieHttponly
      */
@@ -60,7 +60,7 @@ public class HTTPSessionConfig  {
      * This is the setter method to the attribute.
      * If set, http session cookie will use 'httponly' attribute.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param sessionCookieHttponly set the sessionCookieHttponly.
      */
@@ -72,7 +72,7 @@ public class HTTPSessionConfig  {
      * This is the getter method this will return the attribute value.
      * Http session cookie name to use.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "albsessid".
      * @return sessionCookieName
      */
@@ -84,7 +84,7 @@ public class HTTPSessionConfig  {
      * This is the setter method to the attribute.
      * Http session cookie name to use.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "albsessid".
      * @param sessionCookieName set the sessionCookieName.
      */
@@ -97,7 +97,7 @@ public class HTTPSessionConfig  {
      * Http session cookie samesite attribute.
      * Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SAMESITE_LAX".
      * @return sessionCookieSamesite
      */
@@ -110,7 +110,7 @@ public class HTTPSessionConfig  {
      * Http session cookie samesite attribute.
      * Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SAMESITE_LAX".
      * @param sessionCookieSamesite set the sessionCookieSamesite.
      */
@@ -122,7 +122,7 @@ public class HTTPSessionConfig  {
      * This is the getter method this will return the attribute value.
      * If set, http session cookie will use 'secure' attribute.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return sessionCookieSecure
      */
@@ -134,7 +134,7 @@ public class HTTPSessionConfig  {
      * This is the setter method to the attribute.
      * If set, http session cookie will use 'secure' attribute.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param sessionCookieSecure set the sessionCookieSecure.
      */
@@ -149,7 +149,7 @@ public class HTTPSessionConfig  {
      * Allowed values are 120-3600.
      * Field introduced in 30.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return sessionEstablishmentTimeout
      */
@@ -164,7 +164,7 @@ public class HTTPSessionConfig  {
      * Allowed values are 120-3600.
      * Field introduced in 30.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param sessionEstablishmentTimeout set the sessionEstablishmentTimeout.
      */
@@ -179,7 +179,7 @@ public class HTTPSessionConfig  {
      * Allowed values are 120-604800.
      * Field introduced in 30.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
      * @return sessionIdleTimeout
      */
@@ -194,7 +194,7 @@ public class HTTPSessionConfig  {
      * Allowed values are 120-604800.
      * Field introduced in 30.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
      * @param sessionIdleTimeout set the sessionIdleTimeout.
      */
@@ -209,7 +209,7 @@ public class HTTPSessionConfig  {
      * Allowed values are 120-604800.
      * Field introduced in 30.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 28800.
      * @return sessionMaximumTimeout
      */
@@ -224,7 +224,7 @@ public class HTTPSessionConfig  {
      * Allowed values are 120-604800.
      * Field introduced in 30.2.1.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 28800.
      * @param sessionMaximumTimeout set the sessionMaximumTimeout.
      */

@@ -30,7 +30,7 @@ public class OperationsConfig  {
      * This is the getter method this will return the attribute value.
      * Inventory op config.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return inventoryConfig
      */
@@ -42,7 +42,7 @@ public class OperationsConfig  {
      * This is the setter method to the attribute.
      * Inventory op config.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param inventoryConfig set the inventoryConfig.
      */

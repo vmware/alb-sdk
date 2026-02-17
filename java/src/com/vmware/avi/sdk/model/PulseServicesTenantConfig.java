@@ -50,7 +50,7 @@ public class PulseServicesTenantConfig  {
      * Heartbeat interval duration.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return heartbeatInterval
      */
@@ -63,7 +63,7 @@ public class PulseServicesTenantConfig  {
      * Heartbeat interval duration.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param heartbeatInterval set the heartbeatInterval.
      */
@@ -76,7 +76,7 @@ public class PulseServicesTenantConfig  {
      * License escrow interval duration.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseEscrowInterval
      */
@@ -89,7 +89,7 @@ public class PulseServicesTenantConfig  {
      * License escrow interval duration.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseEscrowInterval set the licenseEscrowInterval.
      */
@@ -103,7 +103,7 @@ public class PulseServicesTenantConfig  {
      * Allowed values are 1-1440.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseExpiryInterval
      */
@@ -117,7 +117,7 @@ public class PulseServicesTenantConfig  {
      * Allowed values are 1-1440.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseExpiryInterval set the licenseExpiryInterval.
      */
@@ -130,7 +130,7 @@ public class PulseServicesTenantConfig  {
      * License reconcile interval duration.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseReconcileInterval
      */
@@ -143,7 +143,7 @@ public class PulseServicesTenantConfig  {
      * License reconcile interval duration.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseReconcileInterval set the licenseReconcileInterval.
      */
@@ -156,7 +156,7 @@ public class PulseServicesTenantConfig  {
      * License refresh interval duration.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseRefreshInterval
      */
@@ -169,7 +169,7 @@ public class PulseServicesTenantConfig  {
      * License refresh interval duration.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseRefreshInterval set the licenseRefreshInterval.
      */
@@ -183,7 +183,7 @@ public class PulseServicesTenantConfig  {
      * Allowed values are 1-1440.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseRenewalInterval
      */
@@ -197,7 +197,7 @@ public class PulseServicesTenantConfig  {
      * Allowed values are 1-1440.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseRenewalInterval set the licenseRenewalInterval.
      */
@@ -211,7 +211,7 @@ public class PulseServicesTenantConfig  {
      * Allowed values are 1-240.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tokenRefreshInterval
      */
@@ -225,7 +225,7 @@ public class PulseServicesTenantConfig  {
      * Allowed values are 1-240.
      * Field introduced in 30.2.1.
      * Unit is min.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tokenRefreshInterval set the tokenRefreshInterval.
      */

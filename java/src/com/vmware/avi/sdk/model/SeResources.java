@@ -206,7 +206,7 @@ public class SeResources  {
      * Usage of intel qat for crypto offloads.
      * Enum options - QAT_OFF, QAT_SW_ACCELERATION, QAT_HW_OFFLOAD.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "QAT_OFF".
      * @return qatMode
      */
@@ -219,7 +219,7 @@ public class SeResources  {
      * Usage of intel qat for crypto offloads.
      * Enum options - QAT_OFF, QAT_SW_ACCELERATION, QAT_HW_OFFLOAD.
      * Field introduced in 31.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "QAT_OFF".
      * @param qatMode set the qatMode.
      */
@@ -232,7 +232,7 @@ public class SeResources  {
      * Usage of intel qat for performance mode.
      * Enum options - QAT_OPER_MODE_LEGACY, QAT_OPER_MODE_PERF, QAT_OPER_MODE_UNKNOWN.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "QAT_OPER_MODE_UNKNOWN".
      * @return qatOperMode
      */
@@ -245,7 +245,7 @@ public class SeResources  {
      * Usage of intel qat for performance mode.
      * Enum options - QAT_OPER_MODE_LEGACY, QAT_OPER_MODE_PERF, QAT_OPER_MODE_UNKNOWN.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "QAT_OPER_MODE_UNKNOWN".
      * @param qatOperMode set the qatOperMode.
      */

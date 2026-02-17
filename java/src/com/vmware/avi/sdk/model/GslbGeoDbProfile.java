@@ -77,7 +77,7 @@ public class GslbGeoDbProfile extends AviRestResource  {
      * Algorithm to be used for computing distance between geo locations.only applicable when load balancing algorithm is gslb_algorithm_geo.
      * Enum options - GSLB_DISTANCE_AVI_OPTIMISED, GSLB_DISTANCE_HAVERSINE.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_DISTANCE_AVI_OPTIMISED".
      * @return distanceComputationAlgorithm
      */
@@ -90,7 +90,7 @@ public class GslbGeoDbProfile extends AviRestResource  {
      * Algorithm to be used for computing distance between geo locations.only applicable when load balancing algorithm is gslb_algorithm_geo.
      * Enum options - GSLB_DISTANCE_AVI_OPTIMISED, GSLB_DISTANCE_HAVERSINE.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_DISTANCE_AVI_OPTIMISED".
      * @param distanceComputationAlgorithm set the distanceComputationAlgorithm.
      */

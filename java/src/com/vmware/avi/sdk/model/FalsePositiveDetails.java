@@ -35,7 +35,7 @@ public class FalsePositiveDetails  {
      * This is the getter method this will return the attribute value.
      * False positive result details.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return falsePositiveResults
      */
@@ -47,7 +47,7 @@ public class FalsePositiveDetails  {
      * This is the setter method. this will set the falsePositiveResults
      * False positive result details.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return falsePositiveResults
      */
@@ -59,7 +59,7 @@ public class FalsePositiveDetails  {
      * This is the setter method this will set the falsePositiveResults
      * False positive result details.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return falsePositiveResults
      */
@@ -75,7 +75,7 @@ public class FalsePositiveDetails  {
      * This is the getter method this will return the attribute value.
      * Virtualservice name for which false positive is being generated.
      * Field introduced in 30.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsName
      */
@@ -87,7 +87,7 @@ public class FalsePositiveDetails  {
      * This is the setter method to the attribute.
      * Virtualservice name for which false positive is being generated.
      * Field introduced in 30.1.2.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsName set the vsName.
      */
@@ -99,7 +99,7 @@ public class FalsePositiveDetails  {
      * This is the getter method this will return the attribute value.
      * Virtualservice uuid for which false positive is being generated.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -111,7 +111,7 @@ public class FalsePositiveDetails  {
      * This is the setter method to the attribute.
      * Virtualservice uuid for which false positive is being generated.
      * Field introduced in 21.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsUuid set the vsUuid.
      */

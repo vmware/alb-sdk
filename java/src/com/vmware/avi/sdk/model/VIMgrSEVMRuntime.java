@@ -264,7 +264,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Serviceengine deployed on cluster.ex mob  domain-c23.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterId
      */
@@ -276,7 +276,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * Serviceengine deployed on cluster.ex mob  domain-c23.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterId set the clusterId.
      */
@@ -288,7 +288,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Serviceengine added to cluster vmgroup.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterVmgroup
      */
@@ -300,7 +300,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * Serviceengine added to cluster vmgroup.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterVmgroup set the clusterVmgroup.
      */
@@ -521,7 +521,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * Gcp project id in which se is created.
      * This field is applicable for gcp cloud type only.
      * Field introduced in 20.1.7, 21.1.2, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gcpSeProjectId
      */
@@ -534,7 +534,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * Gcp project id in which se is created.
      * This field is applicable for gcp cloud type only.
      * Field introduced in 20.1.7, 21.1.2, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gcpSeProjectId set the gcpSeProjectId.
      */
@@ -767,7 +767,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If set to true for nsxt cloud, controller should not hotplug the vnics.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtNoHotplug
      */
@@ -779,7 +779,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * If set to true for nsxt cloud, controller should not hotplug the vnics.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtNoHotplug set the nsxtNoHotplug.
      */
@@ -976,7 +976,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Serviceengine host connection state in vcenter.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterHostConnectionState
      */
@@ -988,7 +988,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * Serviceengine host connection state in vcenter.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterHostConnectionState set the vcenterHostConnectionState.
      */
@@ -1000,7 +1000,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Vcenter host ha state.ex  election, fdmunreachable, hostdown, initializationerror, networkisolated, uninitializationerror, uninitialized.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterHostHaState
      */
@@ -1012,7 +1012,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * Vcenter host ha state.ex  election, fdmunreachable, hostdown, initializationerror, networkisolated, uninitializationerror, uninitialized.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterHostHaState set the vcenterHostHaState.
      */
@@ -1246,7 +1246,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Vsphere ha on cluster enabled or not.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsphereHaEnabled
      */
@@ -1258,7 +1258,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * Vsphere ha on cluster enabled or not.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsphereHaEnabled set the vsphereHaEnabled.
      */
@@ -1271,7 +1271,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * If this flag is set to true, vcenter vsphere ha handles serviceengine failure.
      * This flag is set dynamiclly based on underlying esx ha state(connected, hostdown..etc).
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsphereHaInprogress
      */
@@ -1284,7 +1284,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      * If this flag is set to true, vcenter vsphere ha handles serviceengine failure.
      * This flag is set dynamiclly based on underlying esx ha state(connected, hostdown..etc).
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsphereHaInprogress set the vsphereHaInprogress.
      */

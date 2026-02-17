@@ -42,7 +42,7 @@ public class JWTProtectedResourceConfig  {
      * List of authorization server issuer urls that can issue tokens for this protected resource.
      * Field introduced in 32.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authorizationServers
      */
@@ -55,7 +55,7 @@ public class JWTProtectedResourceConfig  {
      * List of authorization server issuer urls that can issue tokens for this protected resource.
      * Field introduced in 32.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authorizationServers
      */
@@ -68,7 +68,7 @@ public class JWTProtectedResourceConfig  {
      * List of authorization server issuer urls that can issue tokens for this protected resource.
      * Field introduced in 32.1.1.
      * Maximum of 1 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authorizationServers
      */
@@ -84,7 +84,7 @@ public class JWTProtectedResourceConfig  {
      * This is the getter method this will return the attribute value.
      * Enable oauth 2.0 protected resource metadata (rfc 9728) support.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableProtectedResourceMetadata
      */
@@ -96,7 +96,7 @@ public class JWTProtectedResourceConfig  {
      * This is the setter method to the attribute.
      * Enable oauth 2.0 protected resource metadata (rfc 9728) support.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableProtectedResourceMetadata set the enableProtectedResourceMetadata.
      */
@@ -109,7 +109,7 @@ public class JWTProtectedResourceConfig  {
      * Url path where oauth 2.0 protected resource metadata is published.
      * This is relative to the virtual service.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "/.well-known/oauth-protected-resource".
      * @return metadataUrlPath
      */
@@ -122,7 +122,7 @@ public class JWTProtectedResourceConfig  {
      * Url path where oauth 2.0 protected resource metadata is published.
      * This is relative to the virtual service.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "/.well-known/oauth-protected-resource".
      * @param metadataUrlPath set the metadataUrlPath.
      */
@@ -134,7 +134,7 @@ public class JWTProtectedResourceConfig  {
      * This is the getter method this will return the attribute value.
      * Url of documentation for this protected resource.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceDocumentation
      */
@@ -146,7 +146,7 @@ public class JWTProtectedResourceConfig  {
      * This is the setter method to the attribute.
      * Url of documentation for this protected resource.
      * Field introduced in 32.1.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourceDocumentation set the resourceDocumentation.
      */
@@ -158,7 +158,7 @@ public class JWTProtectedResourceConfig  {
      * List of oauth 2.0 scopes supported by this protected resource.
      * Field introduced in 32.1.1.
      * Maximum of 20 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return supportedScopes
      */
@@ -171,7 +171,7 @@ public class JWTProtectedResourceConfig  {
      * List of oauth 2.0 scopes supported by this protected resource.
      * Field introduced in 32.1.1.
      * Maximum of 20 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return supportedScopes
      */
@@ -184,7 +184,7 @@ public class JWTProtectedResourceConfig  {
      * List of oauth 2.0 scopes supported by this protected resource.
      * Field introduced in 32.1.1.
      * Maximum of 20 items allowed.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return supportedScopes
      */

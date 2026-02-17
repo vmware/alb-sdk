@@ -182,7 +182,7 @@ public class CC_AgentProperties  {
      * Allowed values are 60-3600.
      * Field introduced in 22.1.3.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return vcenterHostPingInterval
      */
@@ -196,7 +196,7 @@ public class CC_AgentProperties  {
      * Allowed values are 60-3600.
      * Field introduced in 22.1.3.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param vcenterHostPingInterval set the vcenterHostPingInterval.
      */
@@ -209,7 +209,7 @@ public class CC_AgentProperties  {
      * Batch size of vcenter inventory updates.
      * Allowed values are 1-500.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return vcenterInventoryMaxObjectUpdates
      */
@@ -222,7 +222,7 @@ public class CC_AgentProperties  {
      * Batch size of vcenter inventory updates.
      * Allowed values are 1-500.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param vcenterInventoryMaxObjectUpdates set the vcenterInventoryMaxObjectUpdates.
      */
@@ -235,7 +235,7 @@ public class CC_AgentProperties  {
      * Max datastore processing go routines for vcenter datastore updates.
      * Allowed values are 1-40.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return vcenterMaxDatastoreGoRoutines
      */
@@ -248,7 +248,7 @@ public class CC_AgentProperties  {
      * Max datastore processing go routines for vcenter datastore updates.
      * Allowed values are 1-40.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param vcenterMaxDatastoreGoRoutines set the vcenterMaxDatastoreGoRoutines.
      */
@@ -262,7 +262,7 @@ public class CC_AgentProperties  {
      * Allowed values are 60-3600.
      * Field introduced in 22.1.3.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
      * @return vcenterReconcileInterval
      */
@@ -276,7 +276,7 @@ public class CC_AgentProperties  {
      * Allowed values are 60-3600.
      * Field introduced in 22.1.3.
      * Unit is sec.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
      * @param vcenterReconcileInterval set the vcenterReconcileInterval.
      */

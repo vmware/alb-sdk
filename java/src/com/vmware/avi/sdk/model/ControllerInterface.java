@@ -63,7 +63,7 @@ public class ControllerInterface  {
      * This is the getter method this will return the attribute value.
      * Ipv4 default gateway of the interface.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gateway
      */
@@ -75,7 +75,7 @@ public class ControllerInterface  {
      * This is the setter method to the attribute.
      * Ipv4 default gateway of the interface.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gateway set the gateway.
      */
@@ -87,7 +87,7 @@ public class ControllerInterface  {
      * This is the getter method this will return the attribute value.
      * Ipv6 default gateway of the interface.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gateway6
      */
@@ -99,7 +99,7 @@ public class ControllerInterface  {
      * This is the setter method to the attribute.
      * Ipv6 default gateway of the interface.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gateway6 set the gateway6.
      */
@@ -111,7 +111,7 @@ public class ControllerInterface  {
      * This is the getter method this will return the attribute value.
      * Interface name.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ifName
      */
@@ -123,7 +123,7 @@ public class ControllerInterface  {
      * This is the setter method to the attribute.
      * Interface name.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ifName set the ifName.
      */
@@ -135,7 +135,7 @@ public class ControllerInterface  {
      * This is the getter method this will return the attribute value.
      * Ipv4 prefix of the interface.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -147,7 +147,7 @@ public class ControllerInterface  {
      * This is the setter method to the attribute.
      * Ipv4 prefix of the interface.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -159,7 +159,7 @@ public class ControllerInterface  {
      * This is the getter method this will return the attribute value.
      * Ipv6 prefix of the interface.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip6
      */
@@ -171,7 +171,7 @@ public class ControllerInterface  {
      * This is the setter method to the attribute.
      * Ipv6 prefix of the interface.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip6 set the ip6.
      */
@@ -183,7 +183,7 @@ public class ControllerInterface  {
      * Interface label like mgmt, secure channel or hsm.
      * Enum options - MGMT, SE_SECURE_CHANNEL, HSM.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -196,7 +196,7 @@ public class ControllerInterface  {
      * Interface label like mgmt, secure channel or hsm.
      * Enum options - MGMT, SE_SECURE_CHANNEL, HSM.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -209,7 +209,7 @@ public class ControllerInterface  {
      * Interface label like mgmt, secure channel or hsm.
      * Enum options - MGMT, SE_SECURE_CHANNEL, HSM.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -225,7 +225,7 @@ public class ControllerInterface  {
      * This is the getter method this will return the attribute value.
      * Mac address of interface.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return macAddress
      */
@@ -237,7 +237,7 @@ public class ControllerInterface  {
      * This is the setter method to the attribute.
      * Mac address of interface.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param macAddress set the macAddress.
      */
@@ -250,7 +250,7 @@ public class ControllerInterface  {
      * Ipv4 address mode dhcp/static.
      * Enum options - DHCP, STATIC, VIP, DOCKER_HOST, MODE_MANUAL.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mode
      */
@@ -263,7 +263,7 @@ public class ControllerInterface  {
      * Ipv4 address mode dhcp/static.
      * Enum options - DHCP, STATIC, VIP, DOCKER_HOST, MODE_MANUAL.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mode set the mode.
      */
@@ -276,7 +276,7 @@ public class ControllerInterface  {
      * Ipv6 address mode static.
      * Enum options - DHCP, STATIC, VIP, DOCKER_HOST, MODE_MANUAL.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mode6
      */
@@ -289,7 +289,7 @@ public class ControllerInterface  {
      * Ipv6 address mode static.
      * Enum options - DHCP, STATIC, VIP, DOCKER_HOST, MODE_MANUAL.
      * Field introduced in 22.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mode6 set the mode6.
      */
@@ -301,7 +301,7 @@ public class ControllerInterface  {
      * This is the getter method this will return the attribute value.
      * Public ip of interface.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return publicIpOrName
      */
@@ -313,7 +313,7 @@ public class ControllerInterface  {
      * This is the setter method to the attribute.
      * Public ip of interface.
      * Field introduced in 21.1.3.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param publicIpOrName set the publicIpOrName.
      */
@@ -325,7 +325,7 @@ public class ControllerInterface  {
      * This is the getter method this will return the attribute value.
      * Enable v4 ip on this interface.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return v4Enabled
      */
@@ -337,7 +337,7 @@ public class ControllerInterface  {
      * This is the setter method to the attribute.
      * Enable v4 ip on this interface.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param v4Enabled set the v4Enabled.
      */
@@ -349,7 +349,7 @@ public class ControllerInterface  {
      * This is the getter method this will return the attribute value.
      * Enable v6 ip on this interface.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return v6Enabled
      */
@@ -361,7 +361,7 @@ public class ControllerInterface  {
      * This is the setter method to the attribute.
      * Enable v6 ip on this interface.
      * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param v6Enabled set the v6Enabled.
      */
