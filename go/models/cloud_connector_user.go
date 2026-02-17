@@ -21,7 +21,7 @@ type CloudConnectorUser struct {
 	// Credentials for Google Cloud Platform. Field introduced in 18.2.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	GcpCredentials *GCPCredentials `json:"gcp_credentials,omitempty"`
 
-	// Timestamp (Unix epoch in seconds) of last successful password rotation. Used to determine when next rotation is due based on password_expiry_days. Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Timestamp (Unix epoch in seconds) of last successful password rotation. Used to determine when next rotation is due based on cc_user_password_expiry_days. Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	LastPasswordRotation *uint64 `json:"last_password_rotation,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
