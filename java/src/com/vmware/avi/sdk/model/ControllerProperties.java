@@ -67,6 +67,12 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("bm_use_ansible")
     private Boolean bmUseAnsible = true;
 
+    @JsonProperty("cc_user_password_expiry_days")
+    private Integer ccUserPasswordExpiryDays = 30;
+
+    @JsonProperty("cc_user_password_rotation_job_period")
+    private Integer ccUserPasswordRotationJobPeriod = 24;
+
     @JsonProperty("cert_rotation_jwt_retention_days")
     private Integer certRotationJwtRetentionDays = 180;
 
@@ -216,12 +222,6 @@ public class ControllerProperties extends AviRestResource  {
 
     @JsonProperty("max_threads_cc_vip_bg_worker")
     private Integer maxThreadsCcVipBgWorker = 20;
-
-    @JsonProperty("password_expiry_days")
-    private Integer passwordExpiryDays = 30;
-
-    @JsonProperty("password_rotation_job_period")
-    private Integer passwordRotationJobPeriod = 24;
 
     @JsonProperty("permission_scoped_shared_admin_networks")
     private Boolean permissionScopedSharedAdminNetworks = false;
@@ -752,6 +752,72 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setBmUseAnsible(Boolean  bmUseAnsible) {
         this.bmUseAnsible = bmUseAnsible;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Number of days after which cloudconnectoruser (service account) password expires.
+     * Rotation is triggered 5 days before expiry.
+     * Set to 0 to disable automatic rotation.
+     * Allowed values are 1-730.
+     * Special values are 0 - disabled.
+     * Field introduced in 32.1.1.
+     * Unit is days.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+     * @return ccUserPasswordExpiryDays
+     */
+    public Integer getCcUserPasswordExpiryDays() {
+        return ccUserPasswordExpiryDays;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of days after which cloudconnectoruser (service account) password expires.
+     * Rotation is triggered 5 days before expiry.
+     * Set to 0 to disable automatic rotation.
+     * Allowed values are 1-730.
+     * Special values are 0 - disabled.
+     * Field introduced in 32.1.1.
+     * Unit is days.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+     * @param ccUserPasswordExpiryDays set the ccUserPasswordExpiryDays.
+     */
+    public void setCcUserPasswordExpiryDays(Integer  ccUserPasswordExpiryDays) {
+        this.ccUserPasswordExpiryDays = ccUserPasswordExpiryDays;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Period in hours for cloudconnectoruser (service account) password rotation check job.
+     * Default is 24 hours (1 day).
+     * Range is 1-168 hours (1 hour to 7 days).
+     * Allowed values are 1-168.
+     * Field introduced in 32.1.1.
+     * Unit is hours.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 24.
+     * @return ccUserPasswordRotationJobPeriod
+     */
+    public Integer getCcUserPasswordRotationJobPeriod() {
+        return ccUserPasswordRotationJobPeriod;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Period in hours for cloudconnectoruser (service account) password rotation check job.
+     * Default is 24 hours (1 day).
+     * Range is 1-168 hours (1 hour to 7 days).
+     * Allowed values are 1-168.
+     * Field introduced in 32.1.1.
+     * Unit is hours.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 24.
+     * @param ccUserPasswordRotationJobPeriod set the ccUserPasswordRotationJobPeriod.
+     */
+    public void setCcUserPasswordRotationJobPeriod(Integer  ccUserPasswordRotationJobPeriod) {
+        this.ccUserPasswordRotationJobPeriod = ccUserPasswordRotationJobPeriod;
     }
 
     /**
@@ -2050,66 +2116,6 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setMaxThreadsCcVipBgWorker(Integer  maxThreadsCcVipBgWorker) {
         this.maxThreadsCcVipBgWorker = maxThreadsCcVipBgWorker;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Number of days after which password expires and requires rotation.
-     * Allowed values are 30-730.
-     * Field introduced in 32.1.1.
-     * Unit is days.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 30.
-     * @return passwordExpiryDays
-     */
-    public Integer getPasswordExpiryDays() {
-        return passwordExpiryDays;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Number of days after which password expires and requires rotation.
-     * Allowed values are 30-730.
-     * Field introduced in 32.1.1.
-     * Unit is days.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 30.
-     * @param passwordExpiryDays set the passwordExpiryDays.
-     */
-    public void setPasswordExpiryDays(Integer  passwordExpiryDays) {
-        this.passwordExpiryDays = passwordExpiryDays;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Period in hours for cloudconnectoruser password rotation check job.
-     * Default is 24 hours (1 day).
-     * Range is 1-168 hours (1 hour to 7 days).
-     * Allowed values are 1-168.
-     * Field introduced in 32.1.1.
-     * Unit is hours.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 24.
-     * @return passwordRotationJobPeriod
-     */
-    public Integer getPasswordRotationJobPeriod() {
-        return passwordRotationJobPeriod;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Period in hours for cloudconnectoruser password rotation check job.
-     * Default is 24 hours (1 day).
-     * Range is 1-168 hours (1 hour to 7 days).
-     * Allowed values are 1-168.
-     * Field introduced in 32.1.1.
-     * Unit is hours.
-     * Allowed with any value in enterprise, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 24.
-     * @param passwordRotationJobPeriod set the passwordRotationJobPeriod.
-     */
-    public void setPasswordRotationJobPeriod(Integer  passwordRotationJobPeriod) {
-        this.passwordRotationJobPeriod = passwordRotationJobPeriod;
     }
 
     /**
@@ -3568,8 +3574,8 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.logRecordsAllocationPercentageForEvents, objControllerProperties.logRecordsAllocationPercentageForEvents)&&
   Objects.equals(this.eventManagerFileModifiedTsFilter, objControllerProperties.eventManagerFileModifiedTsFilter)&&
   Objects.equals(this.certRotationJwtRetentionDays, objControllerProperties.certRotationJwtRetentionDays)&&
-  Objects.equals(this.passwordRotationJobPeriod, objControllerProperties.passwordRotationJobPeriod)&&
-  Objects.equals(this.passwordExpiryDays, objControllerProperties.passwordExpiryDays)&&
+  Objects.equals(this.ccUserPasswordRotationJobPeriod, objControllerProperties.ccUserPasswordRotationJobPeriod)&&
+  Objects.equals(this.ccUserPasswordExpiryDays, objControllerProperties.ccUserPasswordExpiryDays)&&
   Objects.equals(this.enableStreamingBasedNsxIpGroupSync, objControllerProperties.enableStreamingBasedNsxIpGroupSync);
     }
 
@@ -3592,6 +3598,8 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    attachIpRetryInterval: ").append(toIndentedString(attachIpRetryInterval)).append("\n");
                         sb.append("    attachIpRetryLimit: ").append(toIndentedString(attachIpRetryLimit)).append("\n");
                         sb.append("    bmUseAnsible: ").append(toIndentedString(bmUseAnsible)).append("\n");
+                        sb.append("    ccUserPasswordExpiryDays: ").append(toIndentedString(ccUserPasswordExpiryDays)).append("\n");
+                        sb.append("    ccUserPasswordRotationJobPeriod: ").append(toIndentedString(ccUserPasswordRotationJobPeriod)).append("\n");
                         sb.append("    certRotationJwtRetentionDays: ").append(toIndentedString(certRotationJwtRetentionDays)).append("\n");
                         sb.append("    checkVsvipFqdnSyntax: ").append(toIndentedString(checkVsvipFqdnSyntax)).append("\n");
                         sb.append("    cleanupExpiredAuthtokenTimeoutPeriod: ").append(toIndentedString(cleanupExpiredAuthtokenTimeoutPeriod)).append("\n");
@@ -3642,8 +3650,6 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    maxSeqAttachIpFailures: ").append(toIndentedString(maxSeqAttachIpFailures)).append("\n");
                         sb.append("    maxSeqVnicFailures: ").append(toIndentedString(maxSeqVnicFailures)).append("\n");
                         sb.append("    maxThreadsCcVipBgWorker: ").append(toIndentedString(maxThreadsCcVipBgWorker)).append("\n");
-                        sb.append("    passwordExpiryDays: ").append(toIndentedString(passwordExpiryDays)).append("\n");
-                        sb.append("    passwordRotationJobPeriod: ").append(toIndentedString(passwordRotationJobPeriod)).append("\n");
                         sb.append("    permissionScopedSharedAdminNetworks: ").append(toIndentedString(permissionScopedSharedAdminNetworks)).append("\n");
                         sb.append("    persistenceKeyRotatePeriod: ").append(toIndentedString(persistenceKeyRotatePeriod)).append("\n");
                         sb.append("    portalRequestBurstLimit: ").append(toIndentedString(portalRequestBurstLimit)).append("\n");
