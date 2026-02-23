@@ -568,6 +568,10 @@
                     "description": "Whether CLS is enabled. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
+                "message": {
+                    "description": "Message. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
                 "refreshed_at": {
                     "description": "Timestamp of last attempted license refresh from CLS. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "string"
