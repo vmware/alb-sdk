@@ -33,6 +33,9 @@ public class CLSStatus  {
     @JsonProperty("enabled")
     private Boolean enabled;
 
+    @JsonProperty("message")
+    private String message;
+
     @JsonProperty("refreshed_at")
     private String refreshedAt;
 
@@ -141,6 +144,30 @@ public class CLSStatus  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Message.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Message.
+     * Field introduced in 32.1.1.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param message set the message.
+     */
+    public void setMessage(String  message) {
+        this.message = message;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Timestamp of last attempted license refresh from cls.
      * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -202,7 +229,8 @@ public class CLSStatus  {
   Objects.equals(this.clsId, objCLSStatus.clsId)&&
   Objects.equals(this.refreshedAt, objCLSStatus.refreshedAt)&&
   Objects.equals(this.usageUploadedAt, objCLSStatus.usageUploadedAt)&&
-  Objects.equals(this.enabled, objCLSStatus.enabled);
+  Objects.equals(this.enabled, objCLSStatus.enabled)&&
+  Objects.equals(this.message, objCLSStatus.message);
     }
 
     @Override
@@ -213,6 +241,7 @@ public class CLSStatus  {
                         sb.append("    clsRef: ").append(toIndentedString(clsRef)).append("\n");
                         sb.append("    connected: ").append(toIndentedString(connected)).append("\n");
                         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+                        sb.append("    message: ").append(toIndentedString(message)).append("\n");
                         sb.append("    refreshedAt: ").append(toIndentedString(refreshedAt)).append("\n");
                         sb.append("    usageUploadedAt: ").append(toIndentedString(usageUploadedAt)).append("\n");
                   sb.append("}");
