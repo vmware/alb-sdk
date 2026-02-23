@@ -9,8 +9,7 @@ package models
 type JWTValidationVsConfig struct {
 
 	// Uniquely identifies a resource server. This is used to validate against the aud claim. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
-	// Required: true
-	Audience *string `json:"audience"`
+	Audience *string `json:"audience,omitempty"`
 
 	// Defines where to look for JWT in the request. Enum options - JWT_LOCATION_AUTHORIZATION_HEADER, JWT_LOCATION_QUERY_PARAM. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true

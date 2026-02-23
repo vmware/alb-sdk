@@ -20,6 +20,9 @@ type CLSStatus struct {
 	// Whether CLS is enabled. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	Enabled *bool `json:"enabled,omitempty"`
 
+	// Message. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	Message *string `json:"message,omitempty"`
+
 	// Timestamp of last attempted license refresh from CLS. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	RefreshedAt *string `json:"refreshed_at,omitempty"`
 
