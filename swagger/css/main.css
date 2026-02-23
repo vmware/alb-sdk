@@ -17,57 +17,171 @@ html {
     background: #fafafa;
   }
   
-  /* customized */
+  /* @AI-Modified: 2026-02-04 - Restyled #header to match avi-main-header design */
   
   body.swagger-section #header {
-    background-color: #434343;
-    padding: 0;
-    height: 76px;
+    display: flex;
+    align-items: center;
+    background-color: #00364d;
+    padding: 0 20px;
+    height: 60px;
+    font-family: 'Metropolis', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
   }
-  
+
+  /* @AI-Modified: 2026-02-04 - Header branding section (logo + title) */
+  #header .header-branding {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  #header .header-logo {
+    width: 36px;
+    height: 36px;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+
+  #header .header-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fafafa;
+    white-space: nowrap;
+  }
+
+  /* @AI-Modified: 2026-02-04 - Vertical dividers */
+  #header .header-divider {
+    width: 1px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin: 0 20px;
+    flex-shrink: 0;
+  }
+
+  /* @AI-Modified: 2026-02-04 - Page title (Swagger Spec) */
+  #header .header-page-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fafafa;
+    white-space: nowrap;
+  }
+
+  /* @AI-Modified: 2026-02-04 - Dropdown section */
+  #header .dropdown {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+
+  #header .dropdown-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 4px;
+  }
+
+  #header .dropdown select,
+  #header #objectTypeSelector {
+    min-width: 160px;
+    padding: 6px 30px 6px 10px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: transparent;
+    color: #fafafa;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23fafafa' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+
+  #header .dropdown select:hover,
+  #header #objectTypeSelector:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  #header .dropdown select:focus,
+  #header #objectTypeSelector:focus {
+    outline: none;
+    border-color: #0091DA;
+  }
+
+  #header .dropdown select option,
+  #header #objectTypeSelector option {
+    background-color: #00364d;
+    color: #fafafa;
+  }
+
+  /* Style chosen dropdown for dark theme (if chosen.js is used) */
+  #header .chosen-container-single .chosen-single {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    color: #fafafa;
+    height: 28px;
+    line-height: 26px;
+    box-shadow: none;
+    padding: 0 10px;
+  }
+
+  #header .chosen-container-single .chosen-single span {
+    color: #fafafa;
+  }
+
+  #header .chosen-container-single .chosen-single div b {
+    background-position: 0 5px;
+    filter: brightness(0) invert(1);
+  }
+
+  #header .chosen-container-active.chosen-with-drop .chosen-single div b {
+    background-position: -18px 5px;
+    filter: brightness(0) invert(1);
+  }
+
+  #header .chosen-container {
+    width: 160px !important;
+  }
+
+  /* @AI-Modified: 2026-02-04 - Spec file section */
+  #header .spec {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+
+  #header .spec-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 4px;
+  }
+
+  #header .openedFileLabel,
+  #header .openedFileLabel a {
+    font-size: 13px;
+    color: #fafafa;
+    text-decoration: none;
+  }
+
+  #header .openedFileLabel a:hover {
+    text-decoration: underline;
+  }
+
+  /* @AI-Modified: 2026-02-04 - Hide old swagger-ui-wrap structure if present */
+  #header > .swagger-ui-wrap {
+    display: none;
+  }
+
+  /* General swagger-ui-wrap styling */
   .swagger-section .swagger-ui-wrap {
       line-height: 1;
-      font-family: "Droid Sans", sans-serif;
+      font-family: 'Metropolis', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
       min-width: 760px;
       max-width: 960px;
       margin-left: auto;
       margin-right: auto;
-  }
-  
-  body.swagger-section #header>div.swagger-ui-wrap {
-    box-sizing: border-box;
-    padding-left: 120px;
-    background-image: url('../img/avi-logo.svg');
-    background-repeat: no-repeat;
-    background-size: auto 50px;
-    background-position: 20px 16px;
-  }
-  
-  body.swagger-section #header>div.swagger-ui-wrap>div {
-    display: inline-block;
-    margin: 14px 2em;
-    line-height: 20px;
-    color: white;
-  }
-  
-  body.swagger-section #header>div.swagger-ui-wrap>div>div:first-child {
-    margin-bottom: 5px;
-  }
-  
-  body.swagger-section #header>div.swagger-ui-wrap>div.dropdown {
-    width: 160px;
-  }
-  
-  body.swagger-section #header>div.swagger-ui-wrap>div.dropdown a {
-    color: black;
-  }
-  
-  body.swagger-section #header>div.swagger-ui-wrap>div.dropdown>div.chosen-container {
-    width: 100% !important;
-  }
-  
-  body.swagger-section #header>div.swagger-ui-wrap div.openedFileLabel>a {
-    color: #DDD;
   }
   
   .swagger-ui .scheme-container {
@@ -109,4 +223,9 @@ html {
   h2.title {
       padding: 10px 0;
   }
-  
+
+  /* @AI-Modified: 2026-02-04 - Adjust body margin */
+  body.swagger-section {
+      margin: 0;
+      padding: 0;
+  }
