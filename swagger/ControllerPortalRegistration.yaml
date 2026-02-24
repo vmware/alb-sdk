@@ -422,6 +422,9 @@ definitions:
             portal_auth:
                 description: " Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ControllerPortalAuth'
+            site_info:
+                description: "Site information for the controller registration. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ControllerPortalSiteInfo'
             tenant_ref:
                 description: " It is a reference to an object of type Tenant. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -446,4 +449,13 @@ definitions:
                 items:
                     $ref: "#/definitions/ControllerPortalRegistration"
             next:
+                type: string
+    ControllerPortalSiteInfo:
+        type: object
+        properties:
+            site_id:
+                description: "Site ID to which the controller is registered. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                type: string
+            site_name:
+                description: "Site name to which the controller is registered. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: string
