@@ -22,6 +22,9 @@ type ControllerPortalRegistration struct {
 	//  Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PortalAuth *ControllerPortalAuth `json:"portal_auth,omitempty"`
 
+	// Site information for the controller registration. Field introduced in 32.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	SiteInfo *ControllerPortalSiteInfo `json:"site_info,omitempty"`
+
 	//  It is a reference to an object of type Tenant. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
