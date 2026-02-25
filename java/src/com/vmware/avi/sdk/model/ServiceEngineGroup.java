@@ -421,7 +421,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer memoryPerSe = 2048;
 
     @JsonProperty("metrics_collection_mode")
-    private Integer metricsCollectionMode = 1;
+    private Integer metricsCollectionMode = 0;
 
     @JsonProperty("mgmt_network_ref")
     private String mgmtNetworkRef;
@@ -4468,7 +4468,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Special values are 9- reset metrics collection state.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return metricsCollectionMode
      */
     public Integer getMetricsCollectionMode() {
@@ -4485,7 +4485,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Special values are 9- reset metrics collection state.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param metricsCollectionMode set the metricsCollectionMode.
      */
     public void setMetricsCollectionMode(Integer  metricsCollectionMode) {
