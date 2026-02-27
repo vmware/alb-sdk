@@ -4426,7 +4426,6 @@ definitions:
     JWTValidationVsConfig:
         type: object
         required:
-            -   audience
             -   jwt_location
         properties:
             audience:
