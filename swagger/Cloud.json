@@ -2829,7 +2829,7 @@
                     "type": "string"
                 },
                 "nsxt_url": {
-                    "description": "NSX-T manager hostname or IP address. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "NSX-T manager hostname or IP address. URL changes are allowed only between IP and FQDN formats that resolve to the same NSX-T manager. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "onboard_avi_into_nsx": {
