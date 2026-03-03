@@ -72,7 +72,7 @@ func getValidTokenV2() (string, error) {
 	tokenPath := "api/user-token"
 	aviVersion, ok := os.LookupEnv("AVI_VERSION")
 	if !ok {
-		aviVersion = "18.1.3"
+		aviVersion = "20.1.7"
 	}
 	var robj interface{}
 	data := make(map[string]string)
@@ -153,7 +153,7 @@ func getSessions(t *testing.T) []*AviSession {
 func testControllerStatusCheckLimits(t *testing.T) {
 	aviVersion, ok := os.LookupEnv("AVI_VERSION")
 	if !ok {
-		aviVersion = "18.1.3"
+		aviVersion = "20.1.7"
 	}
 
 	var err error
@@ -201,7 +201,7 @@ func testControllerStatusCheckLimits(t *testing.T) {
 func testControllerStatusCheckDisabled(t *testing.T) {
 	aviVersion, ok := os.LookupEnv("AVI_VERSION")
 	if !ok {
-		aviVersion = "18.1.3"
+		aviVersion = "20.1.7"
 	}
 
 	var err error
