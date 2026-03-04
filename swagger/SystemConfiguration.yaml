@@ -422,7 +422,7 @@ definitions:
                 type: string
                 default: "localhost"
             mail_server_port:
-                description: "Mail server port. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Mail server port. Allowed values are 1-65535. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 25
                 format: uint32
