@@ -557,6 +557,9 @@ type EventDetails struct {
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeObjsyncPeerDownDetails *SeObjsyncPeerDownDetails `json:"se_objsync_peer_down_details,omitempty"`
 
+	//  Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SePcapModeEventDetails *SePcapModeEventDetails `json:"se_pcap_mode_event_details,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SePersistenceDetails *SePersistenceEventDetails `json:"se_persistence_details,omitempty"`
 
