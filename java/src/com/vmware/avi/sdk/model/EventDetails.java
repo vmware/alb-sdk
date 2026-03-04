@@ -570,6 +570,9 @@ public class EventDetails  {
     @JsonProperty("se_objsync_peer_down_details")
     private SeObjsyncPeerDownDetails seObjsyncPeerDownDetails;
 
+    @JsonProperty("se_pcap_mode_event_details")
+    private SePcapModeEventDetails sePcapModeEventDetails;
+
     @JsonProperty("se_persistence_details")
     private SePersistenceEventDetails sePersistenceDetails;
 
@@ -4631,6 +4634,28 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sePcapModeEventDetails
+     */
+    public SePcapModeEventDetails getSePcapModeEventDetails() {
+        return sePcapModeEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sePcapModeEventDetails set the sePcapModeEventDetails.
+     */
+    public void setSePcapModeEventDetails(SePcapModeEventDetails sePcapModeEventDetails) {
+        this.sePcapModeEventDetails = sePcapModeEventDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sePersistenceDetails
@@ -6302,6 +6327,7 @@ public class EventDetails  {
   Objects.equals(this.seObjsyncPeerDownDetails, objEventDetails.seObjsyncPeerDownDetails)&&
   Objects.equals(this.seRateLimiterDropDetails, objEventDetails.seRateLimiterDropDetails)&&
   Objects.equals(this.seQatModeEventDetail, objEventDetails.seQatModeEventDetail)&&
+  Objects.equals(this.sePcapModeEventDetails, objEventDetails.sePcapModeEventDetails)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -6668,6 +6694,7 @@ public class EventDetails  {
                         sb.append("    seMemoryLimitEventDetails: ").append(toIndentedString(seMemoryLimitEventDetails)).append("\n");
                         sb.append("    seNtpSynchronizationFailed: ").append(toIndentedString(seNtpSynchronizationFailed)).append("\n");
                         sb.append("    seObjsyncPeerDownDetails: ").append(toIndentedString(seObjsyncPeerDownDetails)).append("\n");
+                        sb.append("    sePcapModeEventDetails: ").append(toIndentedString(sePcapModeEventDetails)).append("\n");
                         sb.append("    sePersistenceDetails: ").append(toIndentedString(sePersistenceDetails)).append("\n");
                         sb.append("    sePoolLbDetails: ").append(toIndentedString(sePoolLbDetails)).append("\n");
                         sb.append("    seProcessCrashedDetails: ").append(toIndentedString(seProcessCrashedDetails)).append("\n");
