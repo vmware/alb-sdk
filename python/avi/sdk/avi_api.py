@@ -146,7 +146,7 @@ class AviCredentials(object):
     controller = ''
     username = ''
     password = ''
-    api_version = '20.1.1'
+    api_version = '20.1.7'
     tenant = None
     tenant_uuid = None
     token = None
