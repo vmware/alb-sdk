@@ -219,6 +219,7 @@ public class EmailConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Mail server port.
+     * Allowed values are 1-65535.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 25.
      * @return mailServerPort
@@ -230,6 +231,7 @@ public class EmailConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Mail server port.
+     * Allowed values are 1-65535.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 25.
      * @param mailServerPort set the mailServerPort.
