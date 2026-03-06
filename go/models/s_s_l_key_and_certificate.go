@@ -86,6 +86,9 @@ type SSLKeyAndCertificate struct {
 	// Read Only: true
 	OcspResponseInfo *OCSPResponseInfo `json:"ocsp_response_info,omitempty"`
 
+	// Skip automatic chain selection for the certificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SkipAutoChain *bool `json:"skip_auto_chain,omitempty"`
+
 	//  Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Status *string `json:"status,omitempty"`
 
