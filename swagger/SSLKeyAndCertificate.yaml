@@ -862,7 +862,8 @@ definitions:
                 description: "Skip automatic chain selection for the certificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             status:
-                description: " Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Status of the certificate. Allowed values - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                readOnly: True
                 type: string
                 default: "SSL_CERTIFICATE_FINISHED"
             tenant_ref:
