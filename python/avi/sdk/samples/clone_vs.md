@@ -190,6 +190,10 @@ The mapping below will replace Pool Members with IP `10.100.100.1` with IP `10.1
 
 > clone_vs.py -c controller1.example.com vs example cloned-example -v 10.0.0.0/16 -v6 fd00:dead:beef:bad:f00d::/64
 
+### Cloning a VS, attaching the cloned VS to an existing VsVip for VIP sharing scenarios
+
+> clone_vs.py -c controller1.example.com vs example cloned-example -mv example-vsvip
+
 ### Cloning a GSLB Service within a tenant
 
 > clone_vs.py -c controller.example.com gs example cloned-example -dn cloned-example.gslb.example.com
