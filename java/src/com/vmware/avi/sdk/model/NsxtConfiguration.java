@@ -266,6 +266,7 @@ public class NsxtConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Nsx-t manager hostname or ip address.
+     * Url changes are allowed only between ip and fqdn formats that resolve to the same nsx-t manager.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -278,6 +279,7 @@ public class NsxtConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Nsx-t manager hostname or ip address.
+     * Url changes are allowed only between ip and fqdn formats that resolve to the same nsx-t manager.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
