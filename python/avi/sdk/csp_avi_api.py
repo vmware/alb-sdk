@@ -1,4 +1,4 @@
-# Copyright 2021 VMware, Inc.
+# Copyright (c) 2026 Broadcom Inc. and/or its subsidiaries. All Rights Reserved. Broadcom Confidential.
 # SPDX-License-Identifier: Apache License 2.0
 
 from __future__ import (absolute_import, division, print_function)
@@ -7,7 +7,6 @@ __metaclass__ = type
 
 from avi.sdk.avi_api import ApiSession, \
     sessionDict, APIError, AviCredentials
-import sys
 import logging
 import time
 

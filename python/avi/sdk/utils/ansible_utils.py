@@ -1,4 +1,4 @@
-# Copyright 2021 VMware, Inc.
+# Copyright (c) 2026 Broadcom Inc. and/or its subsidiaries. All Rights Reserved. Broadcom Confidential.
 # SPDX-License-Identifier: Apache License 2.0
 
 """
@@ -8,7 +8,6 @@ Created on Aug 16, 2016
 """
 import os
 import re
-import sys
 import yaml
 import time
 import logging
@@ -125,11 +124,11 @@ def cleanup_absent_fields(obj):
     :param obj:
     :return: Purged object
     """
-    if type(obj) != dict:
+    if not isinstance(obj, dict):
         return obj
     cleanup_keys = []
     for k, v in obj.items():
-        if type(v) == dict:
+        if isinstance(v, dict):
             if (('state' in v and v['state'] == 'absent') or
                     (v == "{'state': 'absent'}")):
                 cleanup_keys.append(k)
@@ -137,7 +136,7 @@ def cleanup_absent_fields(obj):
                 cleanup_absent_fields(v)
                 if not v:
                     cleanup_keys.append(k)
-        elif type(v) == list:
+        elif isinstance(v, list):
             new_list = []
             for elem in v:
                 elem = cleanup_absent_fields(elem)
@@ -157,10 +156,8 @@ def cleanup_absent_fields(obj):
 
 
 def get_unicode_type():
-    if sys.version_info < (3, 3):
-        return unicode
-    else:
-        return str
+    """Return the unicode type; Python 2 is deprecated, so always str."""
+    return str
 
 
 RE_REF_MATCH = re.compile(r'^/api/[\w/]+\?name\=[\w*]+[^#<>]*$')
@@ -171,6 +168,7 @@ HTTP_REF_MATCH = re.compile(r'https://[\w.0-9:-]+/api/.+')
 HTTP_REF_MATCH_IPV6 = re.compile(r'https://[[\w.0-9:-]+]/api/.+')
 HTTP_REF_W_NAME_MATCH = re.compile(r'https://[\w.0-9:-]+/api/.*#.+')
 HTTP_REF_W_NAME_MATCH_IPV6 = re.compile(r'https://[[\w.0-9:-]+]/api/.*#.+')
+
 
 def ref_n_str_cmp(x, y):
     """
@@ -193,7 +191,7 @@ def ref_n_str_cmp(x, y):
     Returns
         True if they are equivalent else False
     """
-    if type(y) in (int, float, bool, int, complex):
+    if isinstance(y, (int, float, bool, complex)):
         y = str(y)
         x = str(x)
     unicode_type = get_unicode_type()
@@ -271,10 +269,10 @@ def avi_obj_cmp(x, y, sensitive_fields=None):
     if isinstance(x, str) or isinstance(x, unicode_type):
         # Special handling for strings as they can be references.
         return ref_n_str_cmp(x, y)
-    if type(x) not in [list, dict]:
+    if not isinstance(x, (list, dict)):
         # if it is not list or dict or string then simply compare the values
         return x == y
-    if type(x) == list:
+    if isinstance(x, list):
         # should compare each item in the list and that should match
         if len(x) != len(y):
             log.debug('x has %d items y has %d', len(x), len(y))
@@ -284,7 +282,7 @@ def avi_obj_cmp(x, y, sensitive_fields=None):
                 # no need to continue
                 return False
 
-    if type(x) == dict:
+    if isinstance(x, dict):
         x.pop('_last_modified', None)
         x.pop('tenant', None)
         y.pop('_last_modified', None)
@@ -304,7 +302,7 @@ def avi_obj_cmp(x, y, sensitive_fields=None):
                 continue
             if isinstance(v, dict):
                 if ('state' in v) and (v['state'] == 'absent'):
-                    if type(y) == dict and k not in y:
+                    if isinstance(y, dict) and k not in y:
                         d_x_absent_ks.append(k)
                     else:
                         return False
