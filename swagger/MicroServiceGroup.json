@@ -606,7 +606,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/MicroServiceGroupDetail"
                         }
                     },
                     "401": {
@@ -683,6 +683,33 @@
                     }
                 },
                 "next": {
+                    "type": "string"
+                }
+            }
+        },
+        "MicroServiceGroupDetail": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "description": "Name of the MicroService group. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "se_uuid": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "service_refs": {
+                    "description": "Configure MicroService(es). It is a reference to an object of type MicroService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "uuid": {
+                    "description": "UUID of the MicroService group. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

@@ -606,7 +606,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/NetworkProfileInternal"
                         }
                     },
                     "401": {
@@ -723,6 +723,31 @@
                     }
                 },
                 "next": {
+                    "type": "string"
+                }
+            }
+        },
+        "NetworkProfileInternal": {
+            "type": "object",
+            "required": [
+                "np_rtm_ref_l4"
+            ],
+            "properties": {
+                "network_profile_config": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/NetworkProfile"
+                },
+                "np_rtm_ref_l4": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "proc_id": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "se_uuid": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

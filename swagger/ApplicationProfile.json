@@ -606,7 +606,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/ApplicationProfileInternal"
                         }
                     },
                     "401": {
@@ -736,6 +736,70 @@
                     }
                 },
                 "next": {
+                    "type": "string"
+                }
+            }
+        },
+        "ApplicationProfileInternal": {
+            "type": "object",
+            "required": [
+                "app_cfg_ref_l4",
+                "application_profile_config"
+            ],
+            "properties": {
+                "app_cfg_ref_l4": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "application_profile_config": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ApplicationProfile"
+                },
+                "proc_id": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "se_uuid": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "ApplicationProfileInternalRtmL4": {
+            "type": "object",
+            "required": [
+                "app_rtm_name_l4",
+                "app_rtm_ref_l4",
+                "app_rtm_type_l4",
+                "app_rtm_uuid_l4",
+                "app_rtm_vserver_name_l4",
+                "app_rtm_vserver_uuid_l4"
+            ],
+            "properties": {
+                "app_rtm_name_l4": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "app_rtm_ref_l4": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "app_rtm_type_l4": {
+                    "description": " Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS, APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP, APPLICATION_PROFILE_TYPE_DIAMETER. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "app_rtm_uuid_l4": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "app_rtm_vserver_name_l4": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "app_rtm_vserver_uuid_l4": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
