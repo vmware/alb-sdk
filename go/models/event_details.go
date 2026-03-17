@@ -386,6 +386,9 @@ type EventDetails struct {
 	// NSX-T IP group sync event. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxtIPGroup *NsxtIPGroup `json:"nsxt_ip_group,omitempty"`
 
+	// NSX-T IP group members limit exceeded event. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	NsxtIPGroupMembersLimitExceeded *NsxtIPGroupMembersLimitExceeded `json:"nsxt_ip_group_members_limit_exceeded,omitempty"`
+
 	// NSX-T ServiceInsertion RedirectPolicy event. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxtPolicyDetails *NsxtSIpolicyDetails `json:"nsxt_policy_details,omitempty"`
 

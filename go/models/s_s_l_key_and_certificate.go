@@ -89,8 +89,7 @@ type SSLKeyAndCertificate struct {
 	// Skip automatic chain selection for the certificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SkipAutoChain *bool `json:"skip_auto_chain,omitempty"`
 
-	// Status of the certificate. Allowed values - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	// Read Only: true
+	//  Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Status *string `json:"status,omitempty"`
 
 	//  It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
