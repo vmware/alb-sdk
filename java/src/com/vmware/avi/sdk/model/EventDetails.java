@@ -399,6 +399,9 @@ public class EventDetails  {
     @JsonProperty("nsxt_ip_group")
     private NsxtIPGroup nsxtIpGroup;
 
+    @JsonProperty("nsxt_ip_group_members_limit_exceeded")
+    private NsxtIPGroupMembersLimitExceeded nsxtIpGroupMembersLimitExceeded;
+
     @JsonProperty("nsxt_policy_details")
     private NsxtSIPolicyDetails nsxtPolicyDetails;
 
@@ -3436,6 +3439,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Nsx-t ip group members limit exceeded event.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nsxtIpGroupMembersLimitExceeded
+     */
+    public NsxtIPGroupMembersLimitExceeded getNsxtIpGroupMembersLimitExceeded() {
+        return nsxtIpGroupMembersLimitExceeded;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Nsx-t ip group members limit exceeded event.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param nsxtIpGroupMembersLimitExceeded set the nsxtIpGroupMembersLimitExceeded.
+     */
+    public void setNsxtIpGroupMembersLimitExceeded(NsxtIPGroupMembersLimitExceeded nsxtIpGroupMembersLimitExceeded) {
+        this.nsxtIpGroupMembersLimitExceeded = nsxtIpGroupMembersLimitExceeded;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Nsx-t serviceinsertion redirectpolicy event.
      * Field introduced in 21.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -6468,6 +6495,7 @@ public class EventDetails  {
   Objects.equals(this.managementSvcAccessGrantDetails, objEventDetails.managementSvcAccessGrantDetails)&&
   Objects.equals(this.nsxtIpGroup, objEventDetails.nsxtIpGroup)&&
   Objects.equals(this.nsxtGroupFetch, objEventDetails.nsxtGroupFetch)&&
+  Objects.equals(this.nsxtIpGroupMembersLimitExceeded, objEventDetails.nsxtIpGroupMembersLimitExceeded)&&
   Objects.equals(this.psmProgramDetails, objEventDetails.psmProgramDetails)&&
   Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
   Objects.equals(this.falsePositiveDetails, objEventDetails.falsePositiveDetails)&&
@@ -6637,6 +6665,7 @@ public class EventDetails  {
                         sb.append("    nsxtImgDetails: ").append(toIndentedString(nsxtImgDetails)).append("\n");
                         sb.append("    nsxtInfo: ").append(toIndentedString(nsxtInfo)).append("\n");
                         sb.append("    nsxtIpGroup: ").append(toIndentedString(nsxtIpGroup)).append("\n");
+                        sb.append("    nsxtIpGroupMembersLimitExceeded: ").append(toIndentedString(nsxtIpGroupMembersLimitExceeded)).append("\n");
                         sb.append("    nsxtPolicyDetails: ").append(toIndentedString(nsxtPolicyDetails)).append("\n");
                         sb.append("    nsxtRuleDetails: ").append(toIndentedString(nsxtRuleDetails)).append("\n");
                         sb.append("    nsxtServiceDetails: ").append(toIndentedString(nsxtServiceDetails)).append("\n");
