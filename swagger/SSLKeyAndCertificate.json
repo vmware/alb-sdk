@@ -1270,8 +1270,7 @@
                     "type": "boolean"
                 },
                 "status": {
-                    "description": "Status of the certificate. Allowed values - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "readOnly": true,
+                    "description": " Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SSL_CERTIFICATE_FINISHED"
                 },
