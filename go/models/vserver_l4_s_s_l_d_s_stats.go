@@ -23,6 +23,9 @@ type VserverL4SSLDSStats struct {
 	// Number of times the collect API yields. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CollectYield *uint64 `json:"collect_yield,omitempty"`
 
+	// Number of DS errors in the L4 Loadbalancing events. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	L4LbEventErrors *uint64 `json:"l4_lb_event_errors,omitempty"`
+
 	// Skip reading data from socket whenpeer is under back-pressure. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumReadsSkippedFromSocket *uint64 `json:"num_reads_skipped_from_socket,omitempty"`
 
@@ -37,6 +40,9 @@ type VserverL4SSLDSStats struct {
 
 	// Number of times the send API yields. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SendYield *uint64 `json:"send_yield,omitempty"`
+
+	// Number of DS errors in the Server SSL Hello and Handshake-done events. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ServerSslEventErrors *uint64 `json:"server_ssl_event_errors,omitempty"`
 
 	// Number of DS errors in the SSL handshake done event. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslDoneEventErrors *uint64 `json:"ssl_done_event_errors,omitempty"`
